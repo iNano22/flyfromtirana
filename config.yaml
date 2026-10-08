@@ -20,8 +20,10 @@ scan_return_flights: true          # also scan DEST -> TIA so posts can show "Kt
 #   - it is at least deal_discount_pct % cheaper than the route's median price
 #     over the last median_window_days (40 -> price <= 60% of the median), OR
 #   - it is at/below the route's absolute_threshold_eur (see routes below)
-#     and also below the median (so we never post "€35, usually ~€30").
+#     AND at least threshold_min_discount_pct cheaper than the median
+#     (so we never post weak deals like "€14, usually ~€18").
 deal_discount_pct: 40
+threshold_min_discount_pct: 25
 median_window_days: 30
 min_samples_for_median: 10         # ignore the median until we've seen this many prices for a route
 repost_cooldown_days: 7            # don't repost the same route + date + price band within 7 days
@@ -114,13 +116,13 @@ airlines:
 # absolute_threshold_eur: any one-way price at/below this is a deal.
 #   These are starting guesses - tune them once you see real prices.
 routes:
-  - { iata: MXP, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Malpensa,  absolute_threshold_eur: 30 }
-  - { iata: BGY, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Bergamo,   absolute_threshold_eur: 25 }
-  - { iata: FCO, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Fiumicino, absolute_threshold_eur: 30 }
-  - { iata: CIA, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Ciampino,  absolute_threshold_eur: 25 }
-  - { iata: BLQ, city: Bolonjë,   city_en: Bologna,   flag: "🇮🇹", absolute_threshold_eur: 30 }
-  - { iata: VCE, city: Venecia,   city_en: Venice,    flag: "🇮🇹", absolute_threshold_eur: 30 }
-  - { iata: NAP, city: Napoli,    city_en: Naples,    flag: "🇮🇹", absolute_threshold_eur: 30 }
+  - { iata: MXP, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Malpensa,  absolute_threshold_eur: 15 }
+  - { iata: BGY, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Bergamo,   absolute_threshold_eur: 12 }
+  - { iata: FCO, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Fiumicino, absolute_threshold_eur: 15 }
+  - { iata: CIA, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Ciampino,  absolute_threshold_eur: 12 }
+  - { iata: BLQ, city: Bolonjë,   city_en: Bologna,   flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: VCE, city: Venecia,   city_en: Venice,    flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: NAP, city: Napoli,    city_en: Naples,    flag: "🇮🇹", absolute_threshold_eur: 15 }
   - { iata: ATH, city: Athinë,    city_en: Athens,    flag: "🇬🇷", absolute_threshold_eur: 40 }
   - { iata: SKG, city: Selanik,   city_en: Thessaloniki, flag: "🇬🇷", absolute_threshold_eur: 40 }
   - { iata: LHR, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Heathrow,  absolute_threshold_eur: 60 }

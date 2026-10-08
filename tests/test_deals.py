@@ -24,10 +24,14 @@ def test_threshold_rule_works_without_history():
     assert deal_reason(26, median=None, threshold=25, discount_pct=40) is None
 
 
-def test_threshold_ignored_when_price_is_not_below_median():
-    # "€24 (usually ~€20)" is not a deal, even under the €25 threshold
-    assert deal_reason(24, median=20, threshold=25, discount_pct=40) is None
-    assert deal_reason(24, median=30, threshold=25, discount_pct=40) == "threshold"
+def test_threshold_also_needs_a_real_saving():
+    def reason(price, median):
+        return deal_reason(price, median=median, threshold=25, discount_pct=40, threshold_min_discount_pct=25)
+
+    assert reason(24, median=20) is None         # pricier than usual
+    assert reason(14, median=18) is None         # only 22% cheaper: too weak
+    assert reason(15, median=20) == "threshold"  # exactly 25% cheaper
+    assert reason(24, median=36) == "threshold"  # 33% cheaper, under €25
 
 
 def test_no_threshold_no_history_means_no_deal():

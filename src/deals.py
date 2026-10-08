@@ -4,7 +4,8 @@ For each route:
   1. Work out the "normal" price: the median of every price seen for the
      route in the last 30 days (only once we have enough observations).
   2. A date is a deal if its price is deal_discount_pct below that median,
-     or at/below the route's absolute threshold (and still below the median).
+     or at/below the route's absolute threshold AND at least
+     threshold_min_discount_pct below the median (when we know the median).
   3. Skip dates we already posted recently at the same price band (dedupe).
   4. Bundle the cheapest remaining date with other similarly cheap dates
      into one Deal (one post per route), plus the cheapest flight back.
@@ -54,14 +55,15 @@ def price_band(price: float, band_eur: float) -> int:
     return int(price // band_eur)
 
 
-def deal_reason(price: float, median: float | None, threshold: float | None, discount_pct: float) -> str | None:
+def deal_reason(price: float, median: float | None, threshold: float | None,
+                discount_pct: float, threshold_min_discount_pct: float = 0) -> str | None:
     """Return why this price is a deal ("median" / "threshold"), or None if it isn't one."""
     if median is not None:
         if price <= median * (1 - discount_pct / 100):
             return "median"
-        if price >= median:
-            # Under the absolute threshold but not below the usual price: posting
-            # "€35 (usually ~€30)" would look silly, so it's not a deal.
+        if price > median * (1 - threshold_min_discount_pct / 100):
+            # Under the absolute threshold but barely cheaper than usual:
+            # "€14 (usually ~€18)" isn't exciting enough to post.
             return None
     if threshold is not None and price <= threshold:
         return "threshold"
@@ -91,7 +93,8 @@ def find_route_deal(
     cooldown_start = now - timedelta(days=rules.repost_cooldown_days)
     candidates: list[tuple[Quote, str]] = []
     for quote in sorted(outbound, key=lambda q: q.price):
-        reason = deal_reason(quote.price, median, route.absolute_threshold_eur, rules.discount_pct)
+        reason = deal_reason(quote.price, median, route.absolute_threshold_eur,
+                             rules.discount_pct, rules.threshold_min_discount_pct)
         if reason is None:
             continue
         band = price_band(quote.price, rules.price_band_eur)

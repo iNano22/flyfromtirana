@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS prices (
     airline      TEXT,               -- IATA code, e.g. W6
     transfers    INTEGER,            -- 0 = direct
     duration_min INTEGER,
-    link         TEXT,               -- Aviasales search path
+    link         TEXT,               -- no longer filled (kept so older DBs still match)
     fetched_at   TEXT NOT NULL       -- ISO-8601 UTC
 );
 CREATE INDEX IF NOT EXISTS idx_prices_route ON prices (origin, destination, fetched_at);
@@ -68,8 +68,10 @@ class Storage:
 
     def save_quotes(self, quotes: list[Quote]) -> int:
         rows = [
+            # The link isn't saved: it's ~400 characters, only needed for this run's
+            # posts, and would make the committed DB grow ~5x faster.
             (q.origin, q.destination, q.depart_date.isoformat(), q.price, q.airline,
-             q.transfers, q.duration_min, q.link, to_iso(q.fetched_at))
+             q.transfers, q.duration_min, None, to_iso(q.fetched_at))
             for q in quotes
         ]
         with self.conn:  # commits when the block ends

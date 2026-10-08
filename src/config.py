@@ -42,6 +42,7 @@ class DealRules:
     """Knobs for deal detection and dedupe (explained in config.yaml)."""
 
     discount_pct: float = 40
+    threshold_min_discount_pct: float = 25
     median_window_days: int = 30
     min_samples_for_median: int = 10
     repost_cooldown_days: int = 7
@@ -125,6 +126,7 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
 
     rules = DealRules(
         discount_pct=float(raw.get("deal_discount_pct", 40)),
+        threshold_min_discount_pct=float(raw.get("threshold_min_discount_pct", 25)),
         median_window_days=int(raw.get("median_window_days", 30)),
         min_samples_for_median=int(raw.get("min_samples_for_median", 10)),
         repost_cooldown_days=int(raw.get("repost_cooldown_days", 7)),

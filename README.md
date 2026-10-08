@@ -106,7 +106,7 @@ permissions → **Read and write permissions**.
 | `deal_discount_pct` | 40 | Deal if the price is ≥40% below the route's median (price ≤ 60% of median) |
 | `median_window_days` | 30 | Median is over every price seen for the route in this window |
 | `min_samples_for_median` | 10 | Median isn't trusted until we have this many prices |
-| `absolute_threshold_eur` (per route) | | Any price at/below this is a deal, as long as it's also below the median |
+| `absolute_threshold_eur` (per route) | | A price at/below this is a deal, if it's also ≥ `threshold_min_discount_pct` (25%) below the median |
 | `repost_cooldown_days` | 7 | Same route + date + price band isn't reposted within this window |
 | `price_band_eur` | 10 | €20–29.99 is one band. A drop into a cheaper band *is* reposted |
 | `max_posts_per_run` | 3 | Best deals (biggest % saving) go first |
