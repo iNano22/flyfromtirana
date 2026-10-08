@@ -1,0 +1,140 @@
+# FlyFromTirana configuration.
+# Secrets (API tokens, marker) are NOT kept here. They come from environment
+# variables: .env locally (see .env.example), GitHub Actions secrets in CI.
+
+brand: FlyFromTirana
+channel_handle: "@flyfromtirana"   # shown in the post footer
+origin: TIA
+language: sq                       # post template = templates/sq.txt (add templates/en.txt for English)
+timezone: Europe/Tirane            # used for "today" and quiet hours
+
+# --- Scanning ----------------------------------------------------------------
+lookahead_days: 60                 # scan departures from tomorrow up to 60 days ahead
+currency: eur
+market: null                       # optional Travelpayouts "market" (which price cache to read); null = API default
+request_delay_seconds: 0.5         # pause between API calls, to stay well inside rate limits
+scan_return_flights: true          # also scan DEST -> TIA so posts can show "Kthimi nga €X"
+
+# --- Deal detection ----------------------------------------------------------
+# A price is a deal if EITHER:
+#   - it is at least deal_discount_pct % cheaper than the route's median price
+#     over the last median_window_days (40 -> price <= 60% of the median), OR
+#   - it is at/below the route's absolute_threshold_eur (see routes below)
+#     and also below the median (so we never post "€35, usually ~€30").
+deal_discount_pct: 40
+median_window_days: 30
+min_samples_for_median: 10         # ignore the median until we've seen this many prices for a route
+repost_cooldown_days: 7            # don't repost the same route + date + price band within 7 days
+price_band_eur: 10                 # €20-29.99 = one band, €30-39.99 = the next, ...
+date_price_tolerance_pct: 10       # extra dates listed in a post must be within 10% of its headline price
+return_min_days: 2                 # "Kthimi nga" = cheapest flight back 2..14 days after departure
+return_max_days: 14
+
+# --- Posting -----------------------------------------------------------------
+max_posts_per_run: 3               # best deals first
+max_dates_per_post: 4
+quiet_hours:                       # still scan at night, but don't post (local time). null = always post.
+  start: "23:00"                   # keep the quotes - YAML reads 23:00 as a number otherwise
+  end: "08:00"
+
+# --- Storage -----------------------------------------------------------------
+db_path: data/prices.db
+history_retention_days: 45         # older price rows are deleted so the committed DB stays small
+
+# --- Affiliate links (all built in src/links.py) -----------------------------
+links:
+  sub_id: telegram                 # Travelpayouts SubID: shows which channel earned the click
+
+  flight:
+    base_url: https://www.aviasales.com
+    # Optional: wrap flight links in the Travelpayouts tracking redirect.
+    # Aviasales is program p=4114, campaign_id=100; trs = your Travelpayouts project ID:
+    #   wrapper: "https://tp.media/r?marker={marker}&trs=YOUR_PROJECT_ID&p=4114&campaign_id=100&u={url}"
+    # Empty = plain Aviasales link with ?marker=... (also tracked).
+    wrapper: ""
+
+  # Other affiliate programs. Each one becomes a {NAME_LINK} placeholder in the
+  # post template (hotel -> {HOTEL_LINK}). While `url` is empty, the post leaves
+  # that link out. You can add more, e.g. car_rental -> {CAR_RENTAL_LINK}.
+  #
+  # Placeholders you can use in url:  {city} {city_en} {iata} {origin} {checkin} {checkout} {marker} {sub_id}
+  # Placeholders you can use in wrapper:  {url} (the finished url, encoded) {marker} {sub_id}
+  # Or paste a ready-made link from the Travelpayouts link generator as url, with no wrapper.
+  partners:
+    hotel:
+      # Hotellook closed in Oct 2025. Join Booking.com / Trip.com / Agoda in Travelpayouts, e.g.:
+      #   url: "https://www.booking.com/searchresults.html?ss={city_en}&checkin={checkin}&checkout={checkout}"
+      #   wrapper: "https://tp.media/r?marker={marker}&trs=YOUR_PROJECT_ID&p=PROGRAM_ID&campaign_id=CAMPAIGN_ID&u={url}"
+      url: ""
+      wrapper: ""
+    esim:
+      url: ""
+      wrapper: ""
+    insurance:
+      url: ""
+      wrapper: ""
+
+# --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
+airlines:
+  W6: Wizz Air
+  W4: Wizz Air
+  W9: Wizz Air
+  FR: Ryanair
+  RK: Ryanair
+  AL: Ryanair (Malta Air)
+  ZB: Air Albania
+  A3: Aegean
+  OA: Olympic Air
+  GQ: SKY express
+  AZ: ITA Airways
+  XZ: Aeroitalia
+  U2: easyJet
+  EC: easyJet
+  OS: Austrian
+  LH: Lufthansa
+  EW: Eurowings
+  LX: SWISS
+  TK: Turkish Airlines
+  PC: Pegasus
+  VF: AJet
+  JU: Air Serbia
+  VY: Vueling
+  IB: Iberia
+  BA: British Airways
+  SN: Brussels Airlines
+  LO: LOT
+  AF: Air France
+  KL: KLM
+  # Quote codes YAML might misread as true/false, e.g. "NO": Neos
+
+# --- Routes (from origin) ----------------------------------------------------
+# iata:      destination airport (or city) code
+# city:      Albanian name used in posts;  city_en: English name for hotel searches
+# airport:   optional label for cities with several airports, shown as "MILANO (Bergamo)"
+# absolute_threshold_eur: any one-way price at/below this is a deal.
+#   These are starting guesses - tune them once you see real prices.
+routes:
+  - { iata: MXP, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Malpensa,  absolute_threshold_eur: 30 }
+  - { iata: BGY, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Bergamo,   absolute_threshold_eur: 25 }
+  - { iata: FCO, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Fiumicino, absolute_threshold_eur: 30 }
+  - { iata: CIA, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Ciampino,  absolute_threshold_eur: 25 }
+  - { iata: BLQ, city: Bolonjë,   city_en: Bologna,   flag: "🇮🇹", absolute_threshold_eur: 30 }
+  - { iata: VCE, city: Venecia,   city_en: Venice,    flag: "🇮🇹", absolute_threshold_eur: 30 }
+  - { iata: NAP, city: Napoli,    city_en: Naples,    flag: "🇮🇹", absolute_threshold_eur: 30 }
+  - { iata: ATH, city: Athinë,    city_en: Athens,    flag: "🇬🇷", absolute_threshold_eur: 40 }
+  - { iata: SKG, city: Selanik,   city_en: Thessaloniki, flag: "🇬🇷", absolute_threshold_eur: 40 }
+  - { iata: LHR, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Heathrow,  absolute_threshold_eur: 60 }
+  - { iata: STN, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Stansted,  absolute_threshold_eur: 35 }
+  - { iata: LTN, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Luton,     absolute_threshold_eur: 35 }
+  - { iata: MUC, city: Mynih,     city_en: Munich,    flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: FRA, city: Frankfurt, city_en: Frankfurt, flag: "🇩🇪", absolute_threshold_eur: 50 }
+  - { iata: STR, city: Shtutgart, city_en: Stuttgart, flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: DUS, city: Dyseldorf, city_en: Dusseldorf, flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: VIE, city: Vjenë,     city_en: Vienna,    flag: "🇦🇹", absolute_threshold_eur: 35 }
+  - { iata: ZRH, city: Cyrih,     city_en: Zurich,    flag: "🇨🇭", absolute_threshold_eur: 50 }
+  - { iata: BCN, city: Barcelonë, city_en: Barcelona, flag: "🇪🇸", absolute_threshold_eur: 45 }
+  - { iata: MAD, city: Madrid,    city_en: Madrid,    flag: "🇪🇸", absolute_threshold_eur: 50 }
+  - { iata: IST, city: Stamboll,  city_en: Istanbul,  flag: "🇹🇷", absolute_threshold_eur: 50 }
+  - { iata: BER, city: Berlin,    city_en: Berlin,    flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: BRU, city: Bruksel,   city_en: Brussels,  flag: "🇧🇪", absolute_threshold_eur: 40 }
+  - { iata: CRL, city: Bruksel,   city_en: Brussels,  flag: "🇧🇪", airport: Charleroi, absolute_threshold_eur: 30 }

@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# SQLite temp files (data/prices.db itself IS committed - it's the price history)
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+.DS_Store

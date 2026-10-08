@@ -1,0 +1,10 @@
+✈️ TIRANË → {CITY_UPPER}[[ ({AIRPORT})]][[ {FLAG}]]
+💰 €{PRICE} one way[[ (zakonisht ~€{MEDIAN})]]
+📅 Data: {DATES}
+🛫 {AIRLINE} · {STOPS}[[ · {DURATION}]]
+🔁 Kthimi nga €{RETURN_PRICE}
+👉 <a href="{FLIGHT_LINK}">Rezervo tani</a>
+🏨 <a href="{HOTEL_LINK}">Hotele në {CITY}</a>
+[[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]
+⏳ Çmimet ndryshojnë shpejt!
+🔔 Ndiq {CHANNEL} për oferta çdo ditë
