@@ -37,11 +37,12 @@ def test_full_post_matches_template(route):
     )
     assert post(deal, links) == "\n".join([
         "✈️ TIRANË → MILANO (Bergamo) 🇮🇹",
-        "💰 €20 one way (zakonisht ~€62)",
+        "💰 nga €20 one way (zakonisht ~€62)",
         "📅 Data: 15 Tet, 20 Tet",
         "🛫 Wizz Air · direkt · 1 orë 35 min",
         "🔁 Kthimi nga €24",
-        '👉 <a href="https://www.aviasales.com/search/TIA2010BGY1?marker=12345.telegram">Rezervo tani</a>',
+        '👉 <a href="https://www.aviasales.com/search/TIA2010BGY1'
+        '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a>',
         '🏨 <a href="https://hotels.example/?city=Milan&amp;in=2026-10-20&amp;out=2026-10-27">Hotele në Milano</a>',
         '📱 <a href="https://esim.example/BGY">eSIM</a>   🛡️ <a href="https://insurance.example/?m=12345">Sigurim</a>',
         "⏳ Çmimet ndryshojnë shpejt!",
@@ -55,11 +56,12 @@ def test_optional_lines_are_left_out():
                 median=None, reason="threshold")
     assert post(deal) == "\n".join([
         "✈️ TIRANË → VJENË 🇦🇹",            # no (airport)
-        "💰 €19 one way",                    # no median yet
+        "💰 nga €19 one way",                    # no median yet
         "📅 Data: 20 Tet",
         "🛫 Wizz Air · me ndalesë",          # no duration
         # no return line, no hotel line, no eSIM/insurance line
-        '👉 <a href="https://www.aviasales.com/search/TIA2010VIE1?marker=12345.telegram">Rezervo tani</a>',
+        '👉 <a href="https://www.aviasales.com/search/TIA2010VIE1'
+        '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a>',
         "⏳ Çmimet ndryshojnë shpejt!",
         "🔔 Ndiq @flyfromtirana për oferta çdo ditë",
     ])

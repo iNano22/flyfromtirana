@@ -92,7 +92,7 @@ def run(
     session = session or requests.Session()
 
     routes = select_routes(config.routes, only_routes)
-    links = LinkBuilder(config.links, secrets.travelpayouts_marker, origin=config.origin)
+    links = LinkBuilder(config.links, secrets.travelpayouts_marker, origin=config.origin, currency=config.currency)
     links.validate()
     if not secrets.travelpayouts_marker:
         log.warning("TRAVELPAYOUTS_MARKER is not set: links in this dry run carry no affiliate marker")

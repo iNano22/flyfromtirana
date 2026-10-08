@@ -15,10 +15,11 @@ from src.scanner import Quote
 
 
 class LinkBuilder:
-    def __init__(self, settings: LinkSettings, marker: str, origin: str = "TIA"):
+    def __init__(self, settings: LinkSettings, marker: str, origin: str = "TIA", currency: str = "eur"):
         self.settings = settings
         self.marker = marker
         self.origin = origin
+        self.currency = currency  # Aviasales opens in this currency, so prices match the post
 
     @property
     def partner_names(self) -> list[str]:
@@ -34,6 +35,7 @@ class LinkBuilder:
         """Aviasales search for this flight, tagged with our marker."""
         path = quote.link or aviasales_search_path(quote.origin, quote.destination, quote.depart_date)
         url = f"{self.settings.flight_base_url}/{path.lstrip('/')}"
+        url = add_query_params(url, currency=self.currency)
         if self.marker:
             url = add_query_params(url, marker=self.tracking_marker())
         return self._wrap(url, self.settings.flight_wrapper, "links.flight")

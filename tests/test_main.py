@@ -52,7 +52,7 @@ def test_dry_run_prints_posts_and_sends_nothing(config):
     assert len(printed) == 1
     post = printed[0]
     assert "✈️ TIRANË → MILANO (Bergamo) 🇮🇹" in post
-    assert "💰 €19 one way (zakonisht ~€" in post
+    assert "💰 nga €19 one way (zakonisht ~€" in post
     assert "📅 Data: 20 Nën, 22 Nën" in post
     assert "🔁 Kthimi nga €24" in post
     assert telegram_calls(session) == []

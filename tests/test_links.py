@@ -12,12 +12,12 @@ from tests.conftest import make_quote
 def test_flight_link_keeps_api_params_and_adds_marker():
     links = LinkBuilder(LinkSettings(sub_id="telegram"), marker="12345")
     url = links.flight(make_quote(19, link="/search/TIA2010BGY1?t=abc"))
-    assert url == "https://www.aviasales.com/search/TIA2010BGY1?t=abc&marker=12345.telegram"
+    assert url == "https://www.aviasales.com/search/TIA2010BGY1?t=abc&currency=eur&marker=12345.telegram"
 
 
 def test_flight_link_built_when_api_gives_none():
     links = LinkBuilder(LinkSettings(), marker="12345")
-    assert links.flight(make_quote(19, date(2026, 3, 5))) == "https://www.aviasales.com/search/TIA0503BGY1?marker=12345"
+    assert links.flight(make_quote(19, date(2026, 3, 5))) == "https://www.aviasales.com/search/TIA0503BGY1?currency=eur&marker=12345"
 
 
 def test_flight_link_without_marker():
@@ -30,7 +30,7 @@ def test_wrapper_encodes_target_url():
     url = LinkBuilder(settings, marker="12345").flight(make_quote(19, date(2026, 10, 20)))
     query = parse_qs(urlsplit(url).query)
     assert url.startswith("https://tp.media/r?marker=12345&p=4114&u=https%3A%2F%2Fwww.aviasales.com")
-    assert query["u"] == ["https://www.aviasales.com/search/TIA2010BGY1?marker=12345"]
+    assert query["u"] == ["https://www.aviasales.com/search/TIA2010BGY1?currency=eur&marker=12345"]
 
 
 def test_partner_template_fills_and_encodes(route):
