@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from dataclasses import replace
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from typing import Callable
@@ -47,6 +48,8 @@ def main(argv: list[str] | None = None) -> int:
     load_dotenv(PROJECT_ROOT / ".env")  # does nothing if there's no .env (e.g. on GitHub)
     try:
         config = load_config(args.config)
+        if args.ignore_quiet_hours:
+            config = replace(config, quiet_hours=None)
         secrets = load_secrets(dry_run=args.dry_run)
         only_routes = {code.strip().upper() for code in args.routes.split(",")} if args.routes else None
         return run(config, secrets, dry_run=args.dry_run, only_routes=only_routes)
@@ -66,6 +69,8 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true",
                         help="print posts instead of sending them (nothing is marked as posted)")
     parser.add_argument("--routes", help="only scan these destinations, e.g. BGY,VIE")
+    parser.add_argument("--ignore-quiet-hours", action="store_true",
+                        help="post even during quiet hours (e.g. a manual test at night)")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH, help="path to config.yaml")
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
     return parser.parse_args(argv)
