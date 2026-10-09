@@ -102,5 +102,6 @@ def test_premium_first_then_free_six_hours_later(config):
     assert "e morën këtë ofertë 6 orë më parë" in free_posts[0]
 
 
-def test_config_premium_off_by_default():
-    assert load_config().premium.enabled is False
+def test_premium_rules_are_looser_than_free():
+    config = load_config()
+    assert config.premium.rules.discount_pct < config.rules.discount_pct

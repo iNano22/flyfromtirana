@@ -14,7 +14,10 @@ SECRETS = Secrets("tp-token", "12345", "123:bot", "@flyfromtirana")
 
 @pytest.fixture
 def config(tmp_path):
-    return replace(load_config(), db_path=tmp_path / "prices.db", request_delay_seconds=0)
+    base = load_config()
+    # These tests cover the free channel on its own; premium has tests/test_premium.py.
+    return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
+                   premium=replace(base.premium, enabled=False))
 
 
 def fake_world(telegram_ok: bool = True) -> FakeSession:

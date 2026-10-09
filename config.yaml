@@ -46,10 +46,10 @@ quiet_hours:                       # still scan at night, but don't post (local 
 # To turn on: create the private channel, add the bot as admin, set the
 # TELEGRAM_PREMIUM_CHANNEL_ID secret, paste the paid invite link below, enabled: true.
 premium:
-  enabled: false
+  enabled: true
   free_delay_hours: 6
   max_posts_per_run: 4
-  join_link: ""                    # e.g. https://t.me/+AbCdEf... (the paid subscription link)
+  join_link: "https://t.me/+si76P_lGqV0wNmY0"   # paid subscription invite link
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
   threshold_min_discount_pct: 20
 
