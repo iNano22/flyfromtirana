@@ -56,7 +56,8 @@ def format_post(deal: Deal, links: LinkBuilder, *, language: str, channel_handle
 
 
 def load_template(name: str) -> str:
-    path = TEMPLATES_DIR / f"{name}.txt"
+    """templates/<name>.txt, or templates/<name> when the name has its own extension (e.g. site.html)."""
+    path = TEMPLATES_DIR / (name if "." in name else f"{name}.txt")
     if not path.exists():
         raise ConfigError(f"No post template {name!r} (expected {path})")
     return path.read_text(encoding="utf-8")

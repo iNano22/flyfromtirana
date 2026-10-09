@@ -53,6 +53,15 @@ premium:
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
   threshold_min_discount_pct: 20
 
+# --- Website (GitHub Pages) --------------------------------------------------
+# src/website.py renders one page from the price database into output_dir, and
+# the workflow rebuilds + commits it after every scan. To publish it once:
+# GitHub repo -> Settings -> Pages -> Deploy from a branch -> main, /docs.
+website:
+  output_dir: docs                 # GitHub Pages can serve the repo root or docs/, nothing else
+  sub_id: website                  # Travelpayouts SubID for links on the site ("telegram" is used in posts)
+  url: https://inano22.github.io/flyfromtirana/   # public address, for the page's canonical/og:url tags
+
 # --- Storage -----------------------------------------------------------------
 db_path: data/prices.db
 history_retention_days: 45         # older price rows are deleted so the committed DB stays small
@@ -131,32 +140,33 @@ airlines:
 
 # --- Routes (from origin) ----------------------------------------------------
 # iata:      destination airport (or city) code
-# city:      Albanian name used in posts;  city_en: English name for hotel searches
-# airport:   optional label for cities with several airports, shown as "MILANO (Bergamo)"
+# city:      the city's English name, shown in the Telegram posts and on the website (e.g. Vienna)
+# city_en:   optional: a different spelling for hotel search links (defaults to city)
+# airport:   optional label for cities with several airports, shown as "MILAN (Bergamo)"
 # absolute_threshold_eur: any one-way price at/below this is a deal.
 #   These are starting guesses - tune them once you see real prices.
 routes:
-  - { iata: MXP, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Malpensa,  absolute_threshold_eur: 15 }
-  - { iata: BGY, city: Milano,    city_en: Milan,     flag: "🇮🇹", airport: Bergamo,   absolute_threshold_eur: 12 }
-  - { iata: FCO, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Fiumicino, absolute_threshold_eur: 15 }
-  - { iata: CIA, city: Romë,      city_en: Rome,      flag: "🇮🇹", airport: Ciampino,  absolute_threshold_eur: 12 }
-  - { iata: BLQ, city: Bolonjë,   city_en: Bologna,   flag: "🇮🇹", absolute_threshold_eur: 15 }
-  - { iata: VCE, city: Venecia,   city_en: Venice,    flag: "🇮🇹", absolute_threshold_eur: 15 }
-  - { iata: NAP, city: Napoli,    city_en: Naples,    flag: "🇮🇹", absolute_threshold_eur: 15 }
-  - { iata: ATH, city: Athinë,    city_en: Athens,    flag: "🇬🇷", absolute_threshold_eur: 40 }
-  - { iata: SKG, city: Selanik,   city_en: Thessaloniki, flag: "🇬🇷", absolute_threshold_eur: 40 }
-  - { iata: LHR, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Heathrow,  absolute_threshold_eur: 60 }
-  - { iata: STN, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Stansted,  absolute_threshold_eur: 35 }
-  - { iata: LTN, city: Londër,    city_en: London,    flag: "🇬🇧", airport: Luton,     absolute_threshold_eur: 35 }
-  - { iata: MUC, city: Mynih,     city_en: Munich,    flag: "🇩🇪", absolute_threshold_eur: 40 }
-  - { iata: FRA, city: Frankfurt, city_en: Frankfurt, flag: "🇩🇪", absolute_threshold_eur: 50 }
-  - { iata: STR, city: Shtutgart, city_en: Stuttgart, flag: "🇩🇪", absolute_threshold_eur: 40 }
-  - { iata: DUS, city: Dyseldorf, city_en: Dusseldorf, flag: "🇩🇪", absolute_threshold_eur: 40 }
-  - { iata: VIE, city: Vjenë,     city_en: Vienna,    flag: "🇦🇹", absolute_threshold_eur: 35 }
-  - { iata: ZRH, city: Cyrih,     city_en: Zurich,    flag: "🇨🇭", absolute_threshold_eur: 50 }
-  - { iata: BCN, city: Barcelonë, city_en: Barcelona, flag: "🇪🇸", absolute_threshold_eur: 45 }
-  - { iata: MAD, city: Madrid,    city_en: Madrid,    flag: "🇪🇸", absolute_threshold_eur: 50 }
-  - { iata: IST, city: Stamboll,  city_en: Istanbul,  flag: "🇹🇷", absolute_threshold_eur: 50 }
-  - { iata: BER, city: Berlin,    city_en: Berlin,    flag: "🇩🇪", absolute_threshold_eur: 40 }
-  - { iata: BRU, city: Bruksel,   city_en: Brussels,  flag: "🇧🇪", absolute_threshold_eur: 40 }
-  - { iata: CRL, city: Bruksel,   city_en: Brussels,  flag: "🇧🇪", airport: Charleroi, absolute_threshold_eur: 30 }
+  - { iata: MXP, city: Milan,        flag: "🇮🇹", airport: Malpensa,  absolute_threshold_eur: 15 }
+  - { iata: BGY, city: Milan,        flag: "🇮🇹", airport: Bergamo,   absolute_threshold_eur: 12 }
+  - { iata: FCO, city: Rome,         flag: "🇮🇹", airport: Fiumicino, absolute_threshold_eur: 15 }
+  - { iata: CIA, city: Rome,         flag: "🇮🇹", airport: Ciampino,  absolute_threshold_eur: 12 }
+  - { iata: BLQ, city: Bologna,      flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: VCE, city: Venice,       flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: NAP, city: Naples,       flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: ATH, city: Athens,       flag: "🇬🇷", absolute_threshold_eur: 40 }
+  - { iata: SKG, city: Thessaloniki, flag: "🇬🇷", absolute_threshold_eur: 40 }
+  - { iata: LHR, city: London,       flag: "🇬🇧", airport: Heathrow,  absolute_threshold_eur: 60 }
+  - { iata: STN, city: London,       flag: "🇬🇧", airport: Stansted,  absolute_threshold_eur: 35 }
+  - { iata: LTN, city: London,       flag: "🇬🇧", airport: Luton,     absolute_threshold_eur: 35 }
+  - { iata: MUC, city: Munich,       flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: FRA, city: Frankfurt,    flag: "🇩🇪", absolute_threshold_eur: 50 }
+  - { iata: STR, city: Stuttgart,    flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: DUS, city: Düsseldorf,   flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: VIE, city: Vienna,       flag: "🇦🇹", absolute_threshold_eur: 35 }
+  - { iata: ZRH, city: Zurich,       flag: "🇨🇭", absolute_threshold_eur: 50 }
+  - { iata: BCN, city: Barcelona,    flag: "🇪🇸", absolute_threshold_eur: 45 }
+  - { iata: MAD, city: Madrid,       flag: "🇪🇸", absolute_threshold_eur: 50 }
+  - { iata: IST, city: Istanbul,     flag: "🇹🇷", absolute_threshold_eur: 50 }
+  - { iata: BER, city: Berlin,       flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: BRU, city: Brussels,     flag: "🇧🇪", absolute_threshold_eur: 40 }
+  - { iata: CRL, city: Brussels,     flag: "🇧🇪", airport: Charleroi, absolute_threshold_eur: 30 }

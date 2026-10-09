@@ -101,6 +101,31 @@ class Storage:
             self.conn.execute("VACUUM")
         return deleted
 
+    def latest_quotes(self, origin: str, destination: str) -> list[Quote]:
+        """The prices from the most recent scan of this route, one per departure date.
+
+        Every quote of a run shares the same fetched_at, so the newest fetched_at
+        for the route picks out that whole scan.
+        """
+        rows = self.conn.execute(
+            "SELECT origin, destination, depart_date, price, airline, transfers, duration_min, link, fetched_at"
+            " FROM prices WHERE origin = ? AND destination = ?"
+            " AND fetched_at = (SELECT MAX(fetched_at) FROM prices WHERE origin = ? AND destination = ?)"
+            " ORDER BY depart_date",
+            (origin, destination, origin, destination),
+        ).fetchall()
+        return [
+            Quote(origin=row[0], destination=row[1], depart_date=date.fromisoformat(row[2]), price=row[3],
+                  airline=row[4] or "", transfers=row[5] or 0, duration_min=row[6], link=row[7],
+                  fetched_at=datetime.fromisoformat(row[8]))
+            for row in rows
+        ]
+
+    def last_fetched_at(self) -> datetime | None:
+        """When the newest price in the database was fetched (UTC), or None if it's empty."""
+        row = self.conn.execute("SELECT MAX(fetched_at) FROM prices").fetchone()
+        return datetime.fromisoformat(row[0]) if row and row[0] else None
+
     # --- posted deals (dedupe) ----------------------------------------------
 
     def was_posted(self, channel: str, origin: str, destination: str, depart_date: date,

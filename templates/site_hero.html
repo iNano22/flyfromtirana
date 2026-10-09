@@ -1,0 +1,15 @@
+<!-- One banner in the hero carousel at the top of the page: src/website.py renders it for the
+     three best deals (HERO_SLIDES) and puts the result in the page's HERO_SLIDES value, after
+     the brand slide that lives in site.html. Same values and rules as site_row.html; this
+     comment is removed before the page is written. -->
+<li class="slide slide-deal[[ c-{COUNTRY}]]" data-iata="{IATA}">
+  <div class="slide-in">
+    <p class="tag deal">Ofertë e momentit</p>
+    <h2 class="slide-city">[[<span class="flag">{FLAG}</span> ]]{CITY}[[ <span class="airport">{AIRPORT}</span>]]</h2>
+    <p class="slide-price"><span class="from">nga</span> €{PRICE}</p>
+    <p class="slide-usual">zakonisht €{MEDIAN}, vajtje për person</p>
+    <p class="slide-meta"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>{DATES}, {AIRLINE}, {STOPS}</p>
+    <a class="btn-book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">Rezervo</a>
+    <span class="sticker">-{SAVING}%</span>
+  </div>
+</li>

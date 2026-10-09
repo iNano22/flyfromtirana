@@ -1,4 +1,4 @@
-✈️ TIRANË → {CITY_UPPER}[[ ({AIRPORT})]][[ {FLAG}]]
+✈️ TIRANA → {CITY_UPPER}[[ ({AIRPORT})]][[ {FLAG}]]
 💰 nga €{PRICE} one way[[ (zakonisht ~€{MEDIAN})]]
 📅 Data: {DATES}
 🛫 {AIRLINE} · {STOPS}[[ · {DURATION}]]

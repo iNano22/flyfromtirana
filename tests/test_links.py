@@ -36,7 +36,7 @@ def test_wrapper_encodes_target_url():
 def test_partner_template_fills_and_encodes(route):
     settings = LinkSettings(partners={"hotel": LinkTemplate(url="https://h.example/?q={city}&in={checkin}")})
     url = LinkBuilder(settings, marker="1").partner("hotel", route, date(2026, 10, 20), date(2026, 10, 23))
-    assert url == "https://h.example/?q=Milano&in=2026-10-20"
+    assert url == "https://h.example/?q=Milan&in=2026-10-20"
 
 
 def test_partner_with_non_ascii_city(route):

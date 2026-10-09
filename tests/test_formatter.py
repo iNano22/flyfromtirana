@@ -36,14 +36,14 @@ def test_full_post_matches_template(route):
         insurance="https://insurance.example/?m={marker}",
     )
     assert post(deal, links) == "\n".join([
-        "✈️ TIRANË → MILANO (Bergamo) 🇮🇹",
+        "✈️ TIRANA → MILAN (Bergamo) 🇮🇹",
         "💰 nga €20 one way (zakonisht ~€62)",
         "📅 Data: 15 Tet, 20 Tet",
         "🛫 Wizz Air · direkt · 1 orë 35 min",
         "🔁 Kthimi nga €24",
         '👉 <a href="https://www.aviasales.com/search/TIA2010BGY1'
         '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a>',
-        '🏨 <a href="https://hotels.example/?city=Milan&amp;in=2026-10-20&amp;out=2026-10-27">Hotele në Milano</a>',
+        '🏨 <a href="https://hotels.example/?city=Milan&amp;in=2026-10-20&amp;out=2026-10-27">Hotele në Milan</a>',
         '📱 <a href="https://esim.example/BGY">eSIM</a>   🛡️ <a href="https://insurance.example/?m=12345">Sigurim</a>',
         "⏳ Çmimet ndryshojnë shpejt!",
         "🔔 Ndiq @flyfromtirana për oferta çdo ditë",
@@ -51,11 +51,11 @@ def test_full_post_matches_template(route):
 
 
 def test_optional_lines_are_left_out():
-    plain = Route(iata="VIE", city="Vjenë", city_en="Vienna", flag="🇦🇹")
+    plain = Route(iata="VIE", city="Vienna", city_en="Vienna", flag="🇦🇹")
     deal = Deal(route=plain, quotes=[make_quote(19, destination="VIE", transfers=1, duration_min=None)],
                 median=None, reason="threshold")
     assert post(deal) == "\n".join([
-        "✈️ TIRANË → VJENË 🇦🇹",            # no (airport)
+        "✈️ TIRANA → VIENNA 🇦🇹",            # no (airport)
         "💰 nga €19 one way",                    # no median yet
         "📅 Data: 20 Tet",
         "🛫 Wizz Air · me ndalesë",          # no duration

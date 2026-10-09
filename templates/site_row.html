@@ -1,0 +1,30 @@
+<!-- One route in "Të gjitha destinacionet", drawn as a boarding pass: the main part (flag stamp,
+     city, the TIA - - > IATA route, dates, airline) and, past the perforated tear line, the stub
+     with the fare and Rezervo where the barcode would be. Deals get a yellow stub and an OFERTË
+     rubber stamp over the flight path (its line needs DEAL, so it's left out for other routes).
+     Same rules as the post templates: a NAME in curly braces is a value, [[ ... ]] is optional
+     and must stay on one line, and a line with a missing value is left out. This comment is
+     removed before the page is written.
+     Values: everything templates/sq.txt can use, plus IATA, COUNTRY (lowercase code taken from
+     the flag, e.g. "it": the CSS class that picks the flag stamp's colour), DEAL ("deal", or
+     missing when the route isn't one), SAVING (percent below the usual price) and BEST_DATE (the
+     cheapest date as YYYY-MM-DD). The page's JavaScript reads the data- attributes to pre-fill
+     the search card and to sort and filter the list, and the .city and .book elements. -->
+<li class="row[[ {DEAL}]][[ c-{COUNTRY}]]" data-iata="{IATA}" data-date="{BEST_DATE}" data-price="{PRICE}"[[ data-saving="{SAVING}"]]>
+  <div class="where">
+    <div class="head">[[<span class="flag" aria-hidden="true">{FLAG}</span>]]<h3 class="city">{CITY}[[ <span class="airport">{AIRPORT}</span>]]</h3></div>
+    <div class="route"><span class="code">TIA</span><span class="path" aria-hidden="true"></span><span class="code">{IATA}</span>
+      <span class="seal {DEAL}">Ofertë</span>
+    </div>
+    <p class="dates"><span class="lbl">Nisja</span>{DATES}</p>
+    <p class="meta">{AIRLINE}, {STOPS}[[, {DURATION}]]</p>
+    <p class="meta">Kthimi nga €{RETURN_PRICE}</p>
+    <p class="meta"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">Hotele në {CITY}</a></p>
+  </div>
+  <div class="fare">
+    <p class="price"><span class="from">nga</span> <span class="amount">€{PRICE}</span></p>
+    <p class="way">vajtje, për person</p>
+    <p class="usual"><span>zakonisht €{MEDIAN}</span>[[ <b class="saving">-{SAVING}%</b>]]</p>
+    <a class="book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">Rezervo</a>
+  </div>
+</li>

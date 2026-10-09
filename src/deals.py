@@ -31,13 +31,18 @@ class Deal:
     route: Route
     quotes: list[Quote]          # dates shown in the post, cheapest first (quotes[0] = headline)
     median: float | None         # typical price for the route, if we have enough history
-    reason: str                  # why it's a deal: "median" or "threshold" (for logs)
+    reason: str | None           # why it's a deal: "median" or "threshold" (for logs).
+                                 # None = not a deal: the website lists every route, deal or not.
     return_quote: Quote | None = None  # cheapest flight back, if any
     premium_lead_hours: int | None = None  # free channel: how many hours earlier premium got this
 
     @property
     def best(self) -> Quote:
         return self.quotes[0]
+
+    @property
+    def is_deal(self) -> bool:
+        return self.reason is not None
 
     @property
     def score(self) -> float:

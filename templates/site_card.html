@@ -1,0 +1,16 @@
+<!-- One photo card in the "Zbulo destinacionet" carousel (like an airline's "explore our
+     destinations" row): src/website.py renders it for every route, deals first, and puts the
+     result in the page's DEST_CARDS value. The whole card is the Rezervo link.
+     Same values and rules as site_row.html, plus PHOTO (img/dest/<iata>.webp, or missing when
+     there's no photo: the card then shows its country colours), COUNTRY_NAME ("Austri") and
+     BEST_DAY (the cheapest date, "14 Nën"). The sticker line needs DEAL and SAVING, so it only
+     shows on deals. This comment is removed before the page is written. -->
+<li class="dcard[[ {DEAL}]][[ c-{COUNTRY}]]" data-iata="{IATA}">
+  <a href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">
+    [[<img src="{PHOTO}" alt="" width="600" height="840" loading="lazy" decoding="async">]]
+    [[<span class="dair">{AIRPORT}</span>]]
+    <span class="sticker {DEAL}">-{SAVING}%</span>
+    <span class="dinfo"><span class="dprice"><small>nga</small> €{PRICE}</span><span class="dplace"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>{CITY}[[, {COUNTRY_NAME}]]</span><span class="dmeta">{BEST_DAY}, vajtje për person</span></span>
+    <span class="dgo">Rezervo<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span>
+  </a>
+</li>

@@ -97,7 +97,7 @@ def storage():
 
 @pytest.fixture
 def route() -> Route:
-    return Route(iata="BGY", city="Milano", city_en="Milan", flag="🇮🇹", airport="Bergamo",
+    return Route(iata="BGY", city="Milan", city_en="Milan", flag="🇮🇹", airport="Bergamo",
                  absolute_threshold_eur=25)
 
 

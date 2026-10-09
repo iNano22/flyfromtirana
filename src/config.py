@@ -79,6 +79,15 @@ class PremiumSettings:
 
 
 @dataclass(frozen=True)
+class WebsiteSettings:
+    """The static site built by src/website.py (served by GitHub Pages from the docs/ folder)."""
+
+    output_dir: Path = PROJECT_ROOT / "docs"
+    sub_id: str = "website"   # Travelpayouts SubID for links on the site ("telegram" is used in posts)
+    url: str = ""             # public address, for the page's canonical/og:url tags; empty = left out
+
+
+@dataclass(frozen=True)
 class Config:
     brand: str
     channel_handle: str
@@ -103,6 +112,7 @@ class Config:
     links: LinkSettings
     airlines: dict[str, str]
     premium: PremiumSettings = field(default_factory=PremiumSettings)
+    website: WebsiteSettings = field(default_factory=WebsiteSettings)
 
 
 @dataclass(frozen=True)
@@ -183,6 +193,18 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         links=_build_links(raw.get("links") or {}),
         airlines={str(k).upper(): str(v) for k, v in (raw.get("airlines") or {}).items()},
         premium=_build_premium(raw.get("premium") or {}, rules),
+        website=_build_website(raw.get("website") or {}, base_dir),
+    )
+
+
+def _build_website(raw: dict, base_dir: Path) -> WebsiteSettings:
+    output_dir = Path(raw.get("output_dir") or "docs")
+    if not output_dir.is_absolute():
+        output_dir = base_dir / output_dir
+    return WebsiteSettings(
+        output_dir=output_dir,
+        sub_id=str(raw.get("sub_id") or "website"),
+        url=str(raw.get("url") or "").strip(),
     )
 
 

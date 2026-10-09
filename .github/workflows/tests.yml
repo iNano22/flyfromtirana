@@ -2,7 +2,7 @@ name: Tests
 
 on:
   push:
-    paths-ignore: ["data/**"]   # the 3-hourly price commits don't need a test run
+    paths-ignore: ["data/**", "docs/**"]   # the 3-hourly price/website commits don't need a test run
   pull_request:
 
 jobs:

@@ -1,0 +1,216 @@
+"""The static website: which routes it lists, in what order, and what the page contains."""
+from dataclasses import replace
+from datetime import date, timedelta
+
+import pytest
+
+from src.config import Route, load_config
+from src.formatter import PLACEHOLDER
+from src.links import LinkBuilder
+from src.storage import Storage
+from src.formatter import load_template
+from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
+                         render_site, telegram_url)
+from tests.conftest import NOW, make_quote, seed_history
+
+NOV = date(2026, 11, 1)
+
+
+@pytest.fixture
+def config(tmp_path):
+    base = load_config()
+    return replace(base, db_path=tmp_path / "prices.db",
+                   website=replace(base.website, output_dir=tmp_path / "site"))
+
+
+def latest_scan(storage, destination, prices: dict[date, float], back: dict[date, float] | None = None,
+                fetched_at=NOW):
+    """Pretend the newest run saw these prices: outbound by date, plus flights back."""
+    quotes = [make_quote(p, d, destination=destination, fetched_at=fetched_at) for d, p in prices.items()]
+    quotes += [make_quote(p, d, origin=destination, destination="TIA", fetched_at=fetched_at)
+               for d, p in (back or {}).items()]
+    storage.save_quotes(quotes)
+
+
+def two_routes(storage):
+    """BGY: usually €60, now €19 (a deal). VIE: usually €50, now €45 (not a deal). ATH: no prices."""
+    seed_history(storage, [60] * 12, destination="BGY", days_ago=2)
+    latest_scan(storage, "BGY", {NOV + timedelta(days=20): 19, NOV + timedelta(days=22): 20,
+                                 NOV + timedelta(days=25): 30, NOV + timedelta(days=30): 61},
+                back={NOV + timedelta(days=27): 24})
+    seed_history(storage, [50] * 12, destination="VIE", days_ago=2)
+    latest_scan(storage, "VIE", {NOV + timedelta(days=10): 45, NOV + timedelta(days=12): 48})
+
+
+def test_offers_list_deals_first_and_bundle_cheap_dates(config, storage):
+    two_routes(storage)
+    offers = build_offers(config, storage, NOW)
+
+    assert [o.route.iata for o in offers] == ["BGY", "VIE"]
+    bgy, vie = offers
+    assert bgy.is_deal and bgy.median == 60
+    assert [q.price for q in bgy.quotes] == [19, 20]       # €30 is more than 10% above €19
+    assert bgy.return_quote.price == 24
+    assert not vie.is_deal and vie.best.price == 45 and vie.median == 50
+
+
+def test_past_dates_and_stale_routes_are_left_off(config, storage):
+    latest_scan(storage, "BGY", {date(2026, 10, 1): 10, NOV + timedelta(days=20): 50})
+    latest_scan(storage, "VIE", {NOV + timedelta(days=5): 12}, fetched_at=NOW - timedelta(days=3))
+    offers = build_offers(config, storage, NOW)
+
+    assert [o.route.iata for o in offers] == ["BGY"]      # VIE's prices are too old
+    assert offers[0].best.depart_date == NOV + timedelta(days=20)
+
+
+def test_latest_quotes_returns_only_the_newest_scan(storage):
+    latest_scan(storage, "BGY", {NOV: 50}, fetched_at=NOW - timedelta(hours=3))
+    latest_scan(storage, "BGY", {NOV: 40, NOV + timedelta(days=1): 45})
+    assert [q.price for q in storage.latest_quotes("TIA", "BGY")] == [40, 45]
+    assert storage.latest_quotes("TIA", "ATH") == []
+    assert storage.last_fetched_at() == NOW
+
+
+def test_page_contains_rows_links_and_no_leftover_placeholders(config, storage):
+    two_routes(storage)
+    offers = build_offers(config, storage, NOW)
+    links = LinkBuilder(replace(config.links, sub_id="website"), "12345")
+    page = render_site(offers, config, links, updated_at=NOW, now=NOW)
+
+    # The data attributes feed the page's JavaScript (search card, sort, filter).
+    assert '<li class="row deal c-it" data-iata="BGY" data-date="2026-11-21" data-price="19" data-saving="68">' in page
+    assert '<li class="row c-at" data-iata="VIE" data-date="2026-11-11" data-price="45" data-saving="10">' in page
+    assert page.index('data-iata="BGY"') < page.index('data-iata="VIE"')
+    assert "€19" in page and "zakonisht €60" in page and "-68%" in page
+    assert "që nga <b>€19</b>" in page                     # MIN_PRICE: the cheapest price on the page
+    # The best deal's chip on the first slide: city, price and saving.
+    assert '<b>Milan (Bergamo) nga €19</b></span><span class="td-save">-68%</span>' in page
+    # The search card's strip: search, deals, how it works (Premium lives in the nav only).
+    assert 'class="stab" href="#si-funksionon"' in page
+    assert 'class="stab" href="https://t.me' not in page
+    assert 'Ofertat <span class="n">1</span>' in page      # DEAL_COUNT: one deal, on the Ofertat tabs
+    assert '<span class="count">2</span>' in page          # ROUTE_COUNT: two routes
+    # The deal is a banner in the hero carousel, the other route is not.
+    assert '<li class="slide slide-deal c-it" data-iata="BGY">' in page
+    assert 'slide-deal c-at' not in page
+    # The search card: one <option> per route, deals grouped first, and the date window.
+    assert '<optgroup label="Ofertat e momentit"><option value="BGY" data-date="2026-11-21" data-price="19">Milan (Bergamo), nga €19</option></optgroup>' in page
+    assert '<optgroup label="Destinacionet e tjera"><option value="VIE" data-date="2026-11-11" data-price="45">Vienna, nga €45</option></optgroup>' in page
+    assert 'value="2026-10-10" min="2026-10-10" max="2026-12-08"' in page   # tomorrow .. +60 days (lookahead_days)
+    assert "<!--" not in page                              # template notes never reach the page
+    assert "Kthimi nga €24" in page
+    assert "marker=12345.website" in page                  # the site's own SubID
+    assert 'href="https://t.me/flyfromtirana"' in page
+    assert "Përditësuar më 9 Tet 2026, 12:00" in page      # 10:00 UTC = 12:00 in Tirana
+    assert not PLACEHOLDER.search(page)                   # every {NAME} was filled in or dropped
+
+
+def test_values_are_html_escaped(config, storage):
+    odd = Route(iata="XYZ", city="A<b> & C", city_en="C", flag="")
+    config = replace(config, routes=[odd])
+    latest_scan(storage, "XYZ", {NOV: 30})
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
+                       updated_at=NOW, now=NOW)
+    assert "A&lt;b&gt; &amp; C" in page and "A<b>" not in page
+
+
+def test_build_site_writes_files_and_handles_an_empty_database(config):
+    index = build_site(config, "12345", now=NOW)
+    assert index == config.website.output_dir / "index.html"
+    assert (config.website.output_dir / ".nojekyll").exists()
+    page = index.read_text(encoding="utf-8")
+    assert "Ende nuk ka çmime" in page
+    assert '<li class="row' not in page and "Përditësuar" not in page
+    assert 'class="top-deal"' not in page                  # no deals, no chip on the first slide
+
+
+def test_cli_builds_from_a_config_file(tmp_path, monkeypatch):
+    monkeypatch.delenv("TRAVELPAYOUTS_MARKER", raising=False)
+    (tmp_path / "config.yaml").write_text(
+        "routes:\n  - { iata: BGY, city: Milano }\nwebsite:\n  output_dir: site\n", encoding="utf-8")
+    assert main(["--config", str(tmp_path / "config.yaml")]) == 0
+    assert (tmp_path / "site" / "index.html").exists()
+
+
+def test_hero_shows_at_most_three_deals(config, storage):
+    for i, iata in enumerate(["BGY", "VIE", "ATH", "MUC", "FCO"]):
+        seed_history(storage, [80] * 12, destination=iata, days_ago=2)
+        latest_scan(storage, iata, {NOV + timedelta(days=i): 20 + i})   # every route is a deal (-70%+)
+    offers = build_offers(config, storage, NOW)
+    assert all(o.is_deal for o in offers) and len(offers) == 5
+    page = render_site(offers, config, LinkBuilder(config.links, "1"), updated_at=NOW, now=NOW)
+    assert page.count('class="slide slide-deal') == 3                   # the three best, biggest saving first
+    assert page.count('<li class="row deal') == 5                       # 5 rows in the list...
+    assert page.count('<li class="dcard deal') == 5                     # ...and 5 photo cards in the carousel
+
+
+def test_site_templates_lose_their_comments():
+    assert "<!--" in load_template("site_row.html")        # the note for editors is in the file...
+    for name in ("site.html", "site_row.html", "site_hero.html", "site_card.html"):
+        assert "<!--" not in load_site_template(name)      # ...but never in what gets rendered
+
+
+def test_city_label():
+    assert city_label(Route(iata="BGY", city="Milano", city_en="Milan", flag="", airport="Bergamo")) == "Milano (Bergamo)"
+    assert city_label(Route(iata="VIE", city="Vjenë", city_en="Vienna", flag="")) == "Vjenë"
+
+
+def test_country_code():
+    assert country_code("🇮🇹") == "it"
+    assert country_code("🇬🇧") == "gb"
+    assert country_code("") is None                        # no flag configured
+    assert country_code("✈️") is None                      # not a flag
+
+
+def test_telegram_url():
+    assert telegram_url("@flyfromtirana") == "https://t.me/flyfromtirana"
+    assert telegram_url("-1001234567890") is None          # private channel id: no public link
+    assert telegram_url("") is None
+
+
+def test_photo_cards_show_every_route_deals_first(config, storage):
+    two_routes(storage)
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
+                       updated_at=NOW, now=NOW)
+    cards = page[page.index('class="strip stories"'):page.index('data-ctl="stories"')]
+    assert cards.index('data-iata="BGY"') < cards.index('data-iata="VIE"')      # the deal comes first
+    assert '<li class="dcard deal c-it" data-iata="BGY">' in cards
+    assert '<img src="img/dest/bgy.webp"' in cards                             # the route's photo
+    assert "Milan, Italy" in cards and "Vienna, Austria" in cards              # city and country, in English
+    assert "Milano" not in page and "Vjenë" not in page                        # no Albanian city names
+    assert cards.count('class="sticker deal"') == 1                            # the sticker is for deals only
+    assert '<span class="dair">Bergamo</span>' in cards                        # the airport, for multi-airport cities
+
+
+def test_route_without_a_photo_keeps_its_colours(config, storage):
+    odd = Route(iata="XYZ", city="Diku", city_en="Somewhere", flag="🇮🇹")
+    config = replace(config, routes=[odd])
+    latest_scan(storage, "XYZ", {NOV: 30})
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
+                       updated_at=NOW, now=NOW)
+    card = page[page.index('<li class="dcard'):page.index("</li>", page.index('<li class="dcard'))]
+    assert 'class="dcard c-it"' in card and "<img" not in card
+
+
+def test_build_copies_the_photos_and_lists_their_credits(config, storage):
+    two_routes(storage)
+    index = build_site(config, "12345", now=NOW)
+    out = config.website.output_dir
+    assert (out / "img" / "dest" / "bgy.webp").exists()
+    assert (out / "img" / "services" / "esim.webp").exists()
+    assert not (out / "img" / "credits.json").exists()                         # the credits go in the page instead
+    page = index.read_text(encoding="utf-8")
+    credits = page[page.index('<details class="credits">'):page.index("</details>")]
+    assert credits.count("<li>") >= 25
+    assert "Milan (Malpensa): " in credits and "creativecommons.org" in credits
+    assert "Prerë dhe zvogëluar." in credits
+    for img in ("img/services/esim.webp", "img/services/insurance.webp"):
+        assert img in page                                                     # the service cards
+
+
+def test_service_card_without_a_link_is_left_out(config, storage):
+    two_routes(storage)
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
+                       updated_at=NOW, now=NOW)
+    assert "img/services/hotel.webp" not in page       # config.yaml has no hotel link yet
+    assert "img/services/esim.webp" in page

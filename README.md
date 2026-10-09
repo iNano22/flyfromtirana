@@ -3,6 +3,8 @@
 Scans cheap flights from Tirana (TIA), spots deals, and posts them to the
 Telegram channel [@flyfromtirana](https://t.me/flyfromtirana) with affiliate
 links. It runs every 3 hours on GitHub Actions, so there's no server to manage.
+The same run also renders a one-page **website** with the cheapest price to
+every destination, served by GitHub Pages from the `docs/` folder.
 
 ## How it works
 
@@ -14,8 +16,10 @@ GitHub Actions (every 3h)
        3. deals.py     deal = ≥40% below the route's 30-day median, or under the route's € threshold
                        skip anything already posted in the last 7 days at the same price band
        4. formatter.py build the Albanian post from templates/sq.txt (links from links.py)
-       5. telegram.py  send it to the channel (best 3 deals per run)
-  └─ commit data/prices.db back to the repo, so price history persists
+       5. telegram.py  send it to the channel (best deals first)
+  └─ python -m src.website
+       6. website.py   rebuild docs/index.html from the database (every route, deals first)
+  └─ commit data/prices.db and docs/ back to the repo, so history and the site persist
 ```
 
 Prices come from the Travelpayouts **Data API** (`aviasales/v3/prices_for_dates`).
@@ -25,8 +29,12 @@ availability. That's fine for spotting deals: the booking link opens a live sear
 ## Project layout
 
 ```
-config.yaml              routes, deal rules, link templates (no secrets)
+config.yaml              routes, deal rules, link templates, website settings (no secrets)
 templates/sq.txt         post wording (Albanian)
+templates/site.html      the website page (wording, CSS, a little JS); site_row.html = one route in the
+                         list, site_card.html = one photo card, site_hero.html = one hero banner
+assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
+docs/                    the generated website (index.html + img/), what GitHub Pages serves
 src/
   main.py                orchestrator + CLI (--dry-run, --routes)
   config.py              loads config.yaml + env vars
@@ -36,6 +44,7 @@ src/
   links.py               ALL affiliate link building
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
+  website.py             renders docs/index.html from the database (no API calls)
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
 tests/                   pytest suite (HTTP is mocked; no network needed)
@@ -97,6 +106,105 @@ median), but it never marks deals as posted.
 If the commit step fails with a 403: Settings → Actions → General → Workflow
 permissions → **Read and write permissions**.
 
+## Website (GitHub Pages)
+
+One static page, in Albanian, built from `data/prices.db` after every scan.
+Its layout follows an airline booking page, top to bottom:
+
+- **Sticky top bar** with the brand and a "Bashkohu në Telegram" button.
+- **Hero carousel**: a brand slide (headline, today's lowest price, the best deal
+  as a chip, live counts), then the three best deals as big banners. It moves on
+  every 6.5 s and stops as soon as the visitor touches it.
+- **Search card** over the hero: pick a destination, date, passengers and one-way
+  or return. It highlights that route on the page, fills in its cheapest date, and
+  "Kërko fluturime" opens the matching Aviasales search with your marker.
+- **Zbulo destinacionet**: a carousel of photo cards, one per route, with the
+  cheapest price, city, country and date. The whole card is the "Rezervo" link.
+  Deals come first (biggest saving first) with a yellow price and saving sticker;
+  they use the free channel's deal rules without the "already posted" filter.
+- **Gjithçka për udhëtimin**: white photo cards for the partner links (eSIM,
+  insurance, car rental, compensation, and hotels once `links.partners.hotel` has
+  a url). A card whose link is empty is left out.
+- **Të gjitha destinacionet**: every route, deals included, drawn as a boarding
+  pass, with a sort menu (deals first, cheapest, biggest saving, soonest). The
+  ticket shows the city, the TIA → airport route, the cheapest date (plus other
+  dates within 10%), airline and the cheapest flight back; past the tear line, the
+  stub holds the price, the usual price and "Rezervo" with your marker. Deals get a
+  yellow stub and a red "OFERTË" stamp.
+- A full-width "Mos humb asnjë ofertë" Telegram band with the Premium link (when
+  enabled), and a footer with the affiliate disclosure and the photo credits.
+
+Everything still works with JavaScript off: the carousels become plain scrolling
+rows and the search button jumps to the list.
+
+City and country names are in English ("Vienna, Austria"), on the website and in
+the Telegram posts alike: both use each route's `city` from config.yaml.
+
+Booking links carry the SubID `website` (posts use `telegram`), so Travelpayouts
+stats show which one earned a click. Routes whose newest prices are older than
+2 days are left off the page.
+
+### Publish it (once)
+
+1. Push the repo (including the `docs/` folder).
+2. GitHub repo → **Settings → Pages** → Source: **Deploy from a branch** →
+   Branch: `main`, folder: `/docs` → Save. Or from a terminal:
+   `gh api -X POST repos/OWNER/flyfromtirana/pages -f build_type=legacy -f 'source[branch]=main' -f 'source[path]=/docs'`
+3. After a minute the site is at `https://OWNER.github.io/flyfromtirana/`.
+   Put that address in `website.url` in config.yaml (it's used for the page's
+   canonical/og:url tags). A custom domain can be added later on the same
+   Pages settings screen.
+
+From then on every scan run rebuilds `docs/index.html` and commits it together
+with the database.
+
+### Preview locally
+
+```bash
+python -m src.website            # writes docs/index.html from your local prices.db
+open docs/index.html             # macOS; or open the file in any browser
+python -m src.website --out /tmp/site   # somewhere else, leaving docs/ alone
+```
+
+### Photos
+
+The photos live in `assets/img`: `dest/<iata>.webp` (600×840) for each route's card
+and `services/<partner>.webp` (720×450) for the travel services. Every build copies
+them to `docs/img`. They come from Openverse and Wikimedia Commons under licences
+that allow commercial use (CC0, public domain, CC BY, CC BY-SA). Each one's author,
+source and licence is in `assets/img/credits.json`, which the footer lists under
+"Fotot dhe licencat e tyre", as CC BY and CC BY-SA require.
+
+- **New route without a photo**: its card shows its country colours instead. To add
+  one, save a 600×840 WebP as `assets/img/dest/<iata>.webp` (lowercase code) and add
+  its entry to `credits.json`: `file`, `slot` (the IATA code), `title`, `creator`,
+  `creator_url`, `source_url`, `license`, `license_url`.
+- **Replacing a photo**: overwrite the file and update its entry in `credits.json`.
+
+### Change the wording or look
+
+- `templates/site.html` is the whole page (text, CSS and a little JavaScript).
+  `templates/site_row.html` is one route in the list, `templates/site_card.html` one
+  photo card in the destinations carousel, and `templates/site_hero.html` one banner
+  in the hero carousel (the three best deals). All follow the post template rules
+  (`{NAME}`, `[[optional]]`, a line with a missing value is dropped); HTML comments
+  are stripped, so notes in the templates never reach the page. The row and hero
+  templates can use every placeholder from `templates/sq.txt` plus `{IATA}`,
+  `{DEAL}`, `{SAVING}`, `{COUNTRY}` (lowercase code taken from the flag, e.g. `it`:
+  it picks the card's colours), `{COUNTRY_NAME}` ("Austri"), `{PHOTO}` (the route's
+  photo, if it has one), `{BEST_DATE}` (cheapest date, `YYYY-MM-DD`) and `{BEST_DAY}`
+  (the same date as "14 Nën").
+  The page template also gets `{MIN_PRICE}` (cheapest price on the page),
+  `{DEAL_COUNT}`, `{ROUTE_COUNT}`, `{TOP_CITY}`/`{TOP_PRICE}`/`{TOP_SAVING}` (the best
+  deal, shown as a chip on the first hero slide), `{DATE_MIN}`/`{DATE_MAX}` (the search
+  card's date window), `{HERO_SLIDES}` and `{DESTINATION_OPTIONS}` (the `<option>` list
+  for the search card's destination picker), `{DEST_CARDS}` (the photo cards) and
+  `{PHOTO_CREDITS}` (the footer's credits list).
+- The search card never shows availability: with JavaScript it builds a tracked
+  Aviasales search link (route, date, passengers) from a "Rezervo" link's query
+  string; without it the button simply jumps to the list.
+- Deal detection on the site uses the same `deal_discount_pct` etc. as the posts.
+
 ## Configuration (config.yaml)
 
 ### Deal rules
@@ -123,10 +231,10 @@ that run's own prices across ~60 dates, so deals can still be found right away.
 Add one line under `routes:`:
 
 ```yaml
-  - { iata: PRG, city: Pragë, city_en: Prague, flag: "🇨🇿", absolute_threshold_eur: 35 }
+  - { iata: PRG, city: Prague, flag: "🇨🇿", absolute_threshold_eur: 35 }
 ```
 
-Use `airport:` for cities with several airports (it's shown as "MILANO (Bergamo)").
+Use `airport:` for cities with several airports (it's shown as "MILAN (Bergamo)").
 Try it with `python -m src.main --dry-run --routes PRG`.
 
 ### Change the post wording

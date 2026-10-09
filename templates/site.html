@@ -1,0 +1,981 @@
+<!doctype html>
+<!-- The website page. Same rules as the post templates: a NAME in curly braces is a value,
+     [[ ... ]] is optional (and must stay on one line), and a line whose value is missing is left
+     out, so anything that should disappear together (a heading and its rows, say) stays on one line.
+     This comment, and every other HTML comment, is removed before the page is written.
+     Values: BRAND CHANNEL LOOKAHEAD_DAYS UPDATED EMPTY MIN_PRICE DEAL_COUNT ROUTE_COUNT TOP_CITY
+     TOP_PRICE TOP_SAVING (the best deal, for the chip on the first slide) DATE_MIN DATE_MAX
+     DEAL_ROWS PRICE_ROWS HERO_SLIDES DEST_CARDS (the photo cards) PHOTO_CREDITS (the footer's
+     list of photo authors and licences) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
+     PREMIUM_LINK SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
+     INSURANCE_LINK, CAR_RENTAL_LINK, COMPENSATION_LINK, HOTEL_LINK).
+     Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
+     one of these values, never write two opening square brackets in a row, and keep JS variable
+     names lowercase. -->
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{BRAND}: fluturime të lira nga Tirana</title>
+<meta name="description" content="Çmimi më i lirë për çdo destinacion nga Tirana, me ofertat e momentit në krye. Çmimet kontrollohen çdo 3 orë.">
+<link rel="canonical" href="{SITE_URL}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{BRAND}: fluturime të lira nga Tirana">
+<meta property="og:description" content="Çmimi më i lirë për çdo destinacion nga Tirana, i përditësuar çdo 3 orë.">
+<meta property="og:url" content="{SITE_URL}">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#170b3b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ffe14d'/><path transform='translate(4 4) rotate(45 12 12)' fill='%23170b3b' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<style>
+/* One scheme on purpose: a deep indigo night that the colourful cards glow against. It looks the
+   same whatever the phone's light/dark setting. The search card is the one white slab. */
+:root {
+  color-scheme: dark;
+  --night: #170b3b;                      /* page background */
+  --night-2: #211359;                    /* quiet panels */
+  --ink: #ffffff;                        /* text */
+  --muted: #bdb3e3;                      /* secondary text (9:1 on the background) */
+  --line: rgba(255, 255, 255, 0.14);     /* dividers */
+  --surface: rgba(255, 255, 255, 0.09);  /* quiet pills and boxes */
+  --sun: #ffe14d;                        /* stickers, counters, the search button, the footer */
+  --sun-ink: #1a1030;                    /* text on yellow and on white */
+  --tg: #2aabee;                         /* Telegram's blue, for the paper-plane icon only */
+  --tg-deep: #0d3f9e;                    /* text on the white Telegram buttons */
+  --paper: #ffffff;                      /* the search card */
+  --paper-muted: #5b5577;                /* secondary text on white (7:1) */
+  --field: #f1eefb;                      /* form fields on the search card */
+  --nav-h: 60px;
+  --gutter: max(16px, calc((100% - 1080px) / 2));   /* page margin, so edge-to-edge strips align with the content */
+  /* Card colours: one family (same lightness and saturation for every country, only the hue
+     changes), with the same hue per country as the original cards: Italy sunset red, Austria
+     alpine green, Spain hot pink, Belgium gold. c2 is the base, c1 the glow in the corner. White
+     text keeps 4.5:1 or better on both, except Belgium's gold glow, which is why the cards also
+     carry a soft text shadow. Default = any country not listed below. */
+  --c1: #0274c7;
+  --c2: #004f8b;
+}
+.c-it { --c1: #c4391e; --c2: #901500; }   /* Italy: sunset red */
+.c-ch { --c1: #c23359; --c2: #920037; }   /* Switzerland: crimson */
+.c-es { --c1: #b93780; --c2: #8a085a; }   /* Spain: hot pink */
+.c-be { --c1: #bf860c; --c2: #944e00; }   /* Belgium: gold */
+.c-de { --c1: #08856a; --c2: #045b48; }   /* Germany: mint to teal */
+.c-gr { --c1: #0b7f94; --c2: #005766; }   /* Greece: Aegean cyan */
+.c-gb { --c1: #3c68d9; --c2: #1e41a8; }   /* UK: blue to indigo */
+.c-tr { --c1: #8451c9; --c2: #5e2b9a; }   /* Turkey: violet */
+.c-at { --c1: #17890b; --c2: #015f00; }   /* Austria: alpine green */
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--ink);
+  font-family: "Gabarito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, p { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+.scard :focus-visible, .foot :focus-visible { outline-color: var(--sun-ink); }
+[hidden] { display: none !important; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+section[id], .how { scroll-margin-top: calc(var(--nav-h) + 12px); }
+.ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ic-fill { fill: currentColor; stroke: none; }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--sun-ink); font-weight: 800; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
+.skip:focus { top: 12px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* 1. Slim sticky nav */
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(23, 11, 59, 0.78); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid transparent; }
+.past-hero .nav { border-bottom-color: var(--line); }
+.nav-in { height: var(--nav-h); display: flex; align-items: center; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; margin-right: auto; white-space: nowrap; }
+.mark { width: 30px; height: 30px; border-radius: 9px; background: var(--sun); color: var(--sun-ink); display: grid; place-items: center; flex: none; }
+.mark .ic { width: 18px; height: 18px; }
+.nav-links { display: none; gap: 2px; }
+.nav-links a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--muted); padding: 8px 12px; border-radius: 999px; }
+.nav-links a:hover { color: var(--ink); background: var(--surface); }
+.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px 0 9px; border-radius: 999px; background: var(--surface); color: var(--ink); font-weight: 800; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.nav-tg .ic { width: 24px; height: 24px; }
+.past-hero .nav-tg { background: #ffffff; color: var(--tg-deep); box-shadow: 0 0 0 4px rgba(42, 171, 238, 0.35); }
+
+/* 2. Hero banner carousel: the brand slide, then the best deals as full-width banners */
+.hero { position: relative; background: radial-gradient(560px 420px at 8% -4%, rgba(255, 122, 61, 0.5), transparent 70%), radial-gradient(520px 380px at 98% 2%, rgba(79, 140, 255, 0.44), transparent 70%), var(--night); }
+.hero-strip { list-style: none; margin: 0; padding: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.hero-strip::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; scroll-snap-stop: always; display: flex; }
+.slide-in { position: relative; width: 100%; max-width: 1080px; margin: 0 auto; padding: 26px 16px 110px; }
+.arc { display: none; }
+h1 { font-size: clamp(44px, 12.5vw, 96px); line-height: 0.95; letter-spacing: -0.035em; font-weight: 900; margin: 0 0 18px; }
+h1 span { display: block; }
+.from-price { display: inline-block; margin: 0 0 18px; background: var(--sun); color: var(--sun-ink); font-weight: 800; font-size: clamp(18px, 5.2vw, 24px); line-height: 1; padding: 12px 16px; border-radius: 14px; transform: rotate(-2deg); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35); }
+.from-price b { font-weight: 900; font-size: 1.25em; }
+.top-deal { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 10px; min-height: 54px; margin: 0 0 16px; padding: 6px 10px 6px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); color: var(--ink); text-decoration: none; }   /* the best deal, so the first screen shows a real price */
+.top-deal:hover { background: rgba(255, 255, 255, 0.18); }
+.top-deal .td { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.top-deal small { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.top-deal b { font-weight: 900; font-size: 17px; }
+.top-deal .td-save { flex: none; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 15px; line-height: 1; padding: 9px 10px; border-radius: 10px; transform: rotate(-4deg); }
+.top-deal .ic { width: 20px; height: 20px; stroke-width: 2.5; }
+.lead { font-size: 18px; margin: 0 0 14px; max-width: 30em; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; }
+.stat { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 14px; font-weight: 700; color: var(--muted); }
+.stat b { color: var(--ink); font-weight: 900; font-size: 17px; font-variant-numeric: tabular-nums; }
+.updated { color: var(--muted); font-size: 14px; margin: 0; display: flex; align-items: center; gap: 8px; }
+.updated::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex: none; }
+.empty { background: var(--surface); border-radius: 20px; padding: 18px; margin: 24px 0 0; font-size: 17px; }
+.slide-deal { color: #ffffff; background: radial-gradient(80% 90% at 100% 0%, var(--c1) 0%, transparent 60%), linear-gradient(180deg, rgba(23, 11, 59, 0) 40%, rgba(23, 11, 59, 0.6) 100%), var(--c2); }
+.slide-deal { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+.sticker, .tag, .book, .btn-book { text-shadow: none; }
+.tag.deal { display: inline-block; background: rgba(255, 255, 255, 0.2); padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 800; margin: 0; }
+.slide-city { font-size: clamp(26px, 7vw, 40px); font-weight: 800; line-height: 1.1; margin: 12px 0 0; padding-right: 96px; }
+.slide-city .airport, .city .airport { display: block; font-size: 0.55em; font-weight: 600; opacity: 0.92; margin-top: 2px; }
+.slide-price { margin: 6px 0 0; font-size: clamp(84px, 24vw, 160px); line-height: 0.9; font-weight: 900; letter-spacing: -0.05em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.slide-price .from, .stories .from { display: block; font-size: 16px; font-weight: 700; letter-spacing: 0; margin-bottom: 4px; }
+.slide-usual { margin: 10px 0 0; font-size: 18px; font-weight: 700; }
+.slide-meta { margin: 4px 0 0; font-size: 15px; opacity: 0.94; display: flex; align-items: center; gap: 6px; }
+.btn-book { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; margin-top: 18px; background: #ffffff; color: var(--c2); font-weight: 800; font-size: 17px; border-radius: 999px; text-decoration: none; }
+.sticker { background: var(--sun); color: var(--sun-ink); font-weight: 900; line-height: 1; border-radius: 14px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28); }
+.slide-deal .sticker { display: block; position: absolute; top: 24px; right: 16px; font-size: clamp(28px, 8vw, 44px); padding: 12px 14px; transform: rotate(7deg); }
+.hero-ctl { position: absolute; left: 0; right: 0; bottom: 60px; pointer-events: none; }
+.hero-ctl .ctl { pointer-events: auto; }
+
+/* Carousel controls (made by the script, so nothing shows without it) */
+.ctl { display: flex; align-items: center; gap: 8px; }
+.ctl:empty, .ctl.is-idle { display: none; }   /* is-idle: everything already fits, so no arrows */
+.arrow { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; flex: none; }
+.arrow .ic { width: 22px; height: 22px; stroke-width: 2.5; }
+.arrow:hover { background: rgba(255, 255, 255, 0.18); }
+.arrow:disabled { opacity: 0.35; cursor: default; }
+.dots { display: flex; align-items: center; justify-content: center; gap: 4px; flex: 1 1 auto; min-width: 0; }
+.dot { flex: 0 0 44px; width: 44px; height: 44px; border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; align-items: center; }   /* one per page, never per card */
+.dot::before { content: ""; display: block; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.3); }
+.dot.on::before { background: var(--sun); }
+.bar { position: relative; flex: 1 1 auto; max-width: 320px; height: 44px; display: grid; align-items: center; }   /* more than six pages (phones): a progress bar instead */
+.bar::before { content: ""; display: block; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.2); }
+.bar i { position: absolute; top: 20px; left: 0; width: 20%; height: 4px; border-radius: 2px; background: var(--sun); }
+
+/* 3. The search card, overlapping the hero */
+.search { position: relative; z-index: 2; margin-top: -48px; }
+.scard { color-scheme: light; background: var(--paper); color: var(--sun-ink); border-radius: 28px; padding: 14px 14px 16px; box-shadow: 0 32px 60px -28px rgba(0, 0, 0, 0.75); }
+.stabs { display: flex; gap: 6px; margin: 0 0 14px; overflow-x: auto; scrollbar-width: none; }
+.stabs::-webkit-scrollbar { display: none; }
+.stab { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; padding: 0 10px; border-radius: 14px; text-decoration: none; font-weight: 800; font-size: 14px; color: var(--sun-ink); background: var(--field); white-space: nowrap; }
+.stab .ic { width: 18px; height: 18px; }
+.stab:not(.is-on) .ic, .stab .w { display: none; }   /* phones: short labels, so all three fit on one row */
+.stab.is-on { background: var(--night); color: #ffffff; }
+.stab .n { background: var(--sun); color: var(--sun-ink); border-radius: 999px; padding: 1px 7px; font-size: 12px; }
+.sform { margin: 0; }
+.trip { display: flex; flex-wrap: wrap; gap: 6px; border: 0; padding: 0; margin: 0 0 10px; min-width: 0; }
+.trip label { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 10px; border-radius: 999px; background: var(--field); font-weight: 700; font-size: 14px; cursor: pointer; }
+.trip input { accent-color: var(--night); width: 18px; height: 18px; margin: 0; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: relative; }
+.field { display: flex; flex-direction: column; justify-content: center; gap: 1px; min-height: 60px; padding: 8px 14px; border-radius: 16px; background: var(--field); border: 1.5px solid transparent; min-width: 0; }
+.field:focus-within { border-color: var(--night); box-shadow: 0 0 0 3px rgba(255, 225, 77, 0.7); }
+.field.from, .field.to { grid-column: 1 / -1; }
+.flabel { font-size: 12px; font-weight: 700; color: var(--paper-muted); display: flex; align-items: center; gap: 5px; }
+.fvalue { font-weight: 800; font-size: 16px; }
+.fvalue small { font-weight: 700; color: var(--paper-muted); font-size: 13px; margin-left: 4px; }
+.field select, .field input { border: 0; background: transparent; font: inherit; font-weight: 800; font-size: 16px; color: inherit; padding: 0; margin: 0; width: 100%; min-height: 24px; outline: none; text-overflow: ellipsis; }
+.field select { appearance: none; -webkit-appearance: none; padding-right: 22px; background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1030' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>") no-repeat right center / 16px; }
+.field input[type="date"] { -webkit-appearance: none; appearance: none; min-height: 26px; }
+.field input::-webkit-date-and-time-value { text-align: left; }
+.hop { position: absolute; right: 12px; top: 46px; width: 36px; height: 36px; border-radius: 50%; background: var(--night); color: #ffffff; display: grid; place-items: center; box-shadow: 0 0 0 4px var(--paper); z-index: 1; }
+.hop .ic { width: 18px; height: 18px; transform: rotate(90deg); }
+.field.back { display: none; }
+.sform.is-return .field.back { display: flex; }
+.sform.is-return .field.pax { grid-column: 1 / -1; }
+.btn-go { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 24px; margin-top: 4px; border-radius: 999px; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 18px; text-decoration: none; box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.5); }
+.btn-go .ic { width: 22px; height: 22px; stroke-width: 2.5; }
+.btn-go:hover { filter: brightness(1.04); }
+.shint { margin: 10px 2px 0; font-size: 13px; color: var(--paper-muted); line-height: 1.4; }
+.sfound { margin: 10px 0 0; padding: 10px 14px; border-radius: 14px; background: var(--field); font-size: 14px; line-height: 1.4; }
+
+/* Section headings */
+h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.count { display: inline-grid; place-items: center; min-width: 32px; height: 32px; padding: 0 9px; border-radius: 999px; background: var(--sun); color: var(--sun-ink); font-size: 17px; }
+.hint { color: var(--muted); margin: 0; font-size: 15px; max-width: 40em; }
+.shead { padding-top: 48px; }
+.board { list-style: none; margin: 0; padding: 0; }
+.row { position: relative; }
+.city { font-weight: 800; margin: 0; line-height: 1.15; }
+.dates, .meta, .way, .usual, .price { margin: 0; }
+.dates { display: flex; align-items: center; gap: 6px; }
+.sticker { display: none; }
+
+/* 4. The deal cards: an edge-to-edge carousel, 1.5 cards on a phone, 3-4 on a desktop */
+.deals { position: relative; }
+.strip { display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; padding: 14px var(--gutter) 22px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; -webkit-mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 44px), transparent); }
+.strip::-webkit-scrollbar { display: none; }
+/* A photo card: the photo fills it, a dark fade at the bottom keeps the white text readable on
+   any photo, and the whole card is the Rezervo link. Deals get the yellow sticker and a yellow
+   price. Without a photo the card shows its country colours instead. */
+.dcard { position: relative; flex: 0 0 min(62vw, 270px); aspect-ratio: 5 / 7; scroll-snap-align: start; border-radius: 26px; overflow: hidden; color: #ffffff; background: radial-gradient(110% 75% at 100% 0%, var(--c1) 0%, transparent 62%), var(--c2); box-shadow: 0 24px 44px -26px rgba(0, 0, 0, 0.85); }
+.dcard a { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 18px; color: inherit; text-decoration: none; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5); }
+.dcard a:focus-visible { outline: 3px solid var(--sun); outline-offset: -3px; border-radius: 26px; }
+.dcard img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
+.dcard a::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(12, 5, 34, 0.35) 0%, rgba(12, 5, 34, 0) 22%, rgba(12, 5, 34, 0) 42%, rgba(12, 5, 34, 0.7) 66%, rgba(12, 5, 34, 0.94) 100%); }
+.dcard .dinfo, .dcard .dgo { position: relative; z-index: 2; }   /* above the photo and its fade */
+.dinfo { display: flex; flex-direction: column; gap: 6px; }
+.dprice { font-size: 42px; line-height: 1; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dprice small { font-size: 16px; font-weight: 700; letter-spacing: 0; }
+.dcard.deal .dprice { color: var(--sun); }
+.dplace { display: flex; align-items: flex-start; gap: 6px; font-weight: 800; font-size: 17px; line-height: 1.25; }
+.dplace .ic { width: 18px; height: 18px; flex: none; margin-top: 1px; }
+.dmeta { font-size: 14px; color: rgba(255, 255, 255, 0.88); }
+.dgo { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; margin-top: 14px; padding: 0 14px 0 18px; border-radius: 999px; background: #ffffff; color: var(--sun-ink); font-weight: 800; font-size: 15px; text-shadow: none; }
+.dgo .ic { width: 18px; height: 18px; stroke-width: 2.5; }
+.dcard.deal .dgo { background: var(--sun); }
+.dair { position: absolute; z-index: 2; top: 14px; left: 14px; max-width: calc(100% - 110px); padding: 6px 11px; border-radius: 999px; background: rgba(12, 5, 34, 0.62); font-size: 13px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: none; }
+.dcard .sticker { display: block; position: absolute; z-index: 2; top: 12px; right: 12px; font-size: 22px; padding: 9px 11px; transform: rotate(7deg); text-shadow: none; }
+.deals .ctl { margin-top: 2px; }
+
+/* 5. Every destination: tabs, sort, then the list */
+.listbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 18px 0 0; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.tabs { display: flex; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 14px; color: var(--muted); white-space: nowrap; }
+.tab:hover { color: var(--ink); }
+.tab.is-on { background: var(--surface); color: var(--ink); }
+.tab .n { background: var(--sun); color: var(--sun-ink); border-radius: 999px; padding: 1px 6px; font-size: 12px; }
+.tab.is-on .n, .stab.is-on .n { box-shadow: none; }
+.sort { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); font-weight: 700; }
+.sort select { font: inherit; font-weight: 800; color: var(--ink); background: var(--surface); border: 0; border-radius: 999px; padding: 0 34px 0 14px; min-height: 44px; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; }
+.sort select option { color: var(--sun-ink); background: #ffffff; }
+.js-only { display: none; }
+.js .js-only { display: inline-flex; }
+.status { margin: 12px 0 0; padding: 12px 14px; border-radius: 14px; background: var(--surface); font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.linkish { background: none; border: 0; padding: 0; color: var(--sun); font-weight: 800; text-decoration: underline; cursor: pointer; min-height: 32px; }
+/* Every destination is a boarding pass: the main part (flag stamp, city, the TIA - - > IATA route,
+   dates, airline), then a perforated tear line with two notches cut out of the edges, then the
+   stub with the fare and Rezervo where the barcode would be. Deals: yellow stub and outline, and a
+   red rubber stamp over the flight path, each one at a slightly different angle. */
+.list { display: grid; gap: 16px; padding-top: 18px; }
+.list .row { --stub: 124px; position: relative; display: flex; background: var(--paper); color: var(--sun-ink); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+.list .row::before, .list .row::after { content: ""; position: absolute; z-index: 2; right: calc(var(--stub) - 11px); width: 22px; height: 22px; border-radius: 50%; background: var(--night); }   /* the notches: page-coloured circles, half cut off */
+.list .row::before { top: -11px; }
+.list .row::after { bottom: -11px; }
+.list .where { flex: 1 1 auto; min-width: 0; padding: 16px 14px 16px 16px; }
+.list .head { display: flex; align-items: center; gap: 11px; }
+.list .flag { flex: none; display: grid; place-items: center; width: 40px; height: 40px; font-size: 22px; line-height: 1; border: 2px dotted var(--c1); border-radius: 7px; transform: rotate(-4deg); }
+.list .city { font-size: 22px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.list .airport { display: block; margin-top: 2px; font-size: 14px; font-weight: 700; color: var(--paper-muted); letter-spacing: 0; }
+.list .route { position: relative; display: flex; align-items: center; gap: 8px; margin: 13px 0 10px; }
+.list .code { font-size: 19px; font-weight: 900; letter-spacing: 0.05em; line-height: 1; }
+.list .path { position: relative; flex: 1 1 auto; min-width: 36px; border-top: 2px dashed #cdc6e4; }
+.list .path::after { content: ""; position: absolute; right: -2px; top: -10px; width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231a1030' transform='rotate(90 12 12)' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/%3E%3C/svg%3E") center / contain no-repeat; }
+.list .seal { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(var(--tilt, -7deg)); padding: 4px 8px 3px; border: 3px double #c3122f; border-radius: 6px; background: rgba(255, 255, 255, 0.82); color: #c3122f; font-size: 14px; font-weight: 900; letter-spacing: 0.14em; line-height: 1; text-transform: uppercase; white-space: nowrap; }
+.list .row:nth-child(3n + 2) .seal { --tilt: -3deg; }
+.list .row:nth-child(3n) .seal { --tilt: -11deg; }
+.list .dates { display: block; font-weight: 800; font-size: 15px; line-height: 1.3; }
+.list .lbl { margin-right: 6px; font-weight: 600; font-size: 13px; color: var(--paper-muted); }
+.list .meta { margin-top: 3px; color: var(--paper-muted); font-size: 13.5px; line-height: 1.3; }
+.list .meta a { color: var(--tg-deep); font-weight: 700; }
+.list .fare { flex: 0 0 var(--stub); display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding: 14px 12px 12px; border-left: 2px dashed #d6cfec; background: var(--field); }
+.list .price { margin: 0; line-height: 1; }
+.list .from { display: block; font-size: 13px; font-weight: 700; color: var(--paper-muted); }
+.list .amount { display: block; margin-top: 2px; font-size: 38px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.list .way { margin-top: 4px; font-size: 12.5px; line-height: 1.2; color: var(--paper-muted); }
+.list .usual { margin: 6px 0 12px; font-size: 13px; line-height: 1.35; color: var(--paper-muted); }
+.list .usual span, .list .saving { display: inline-block; white-space: nowrap; }
+.list .saving { color: #c3122f; font-weight: 900; }
+.list .book { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; background: var(--sun-ink); color: #ffffff; border-radius: 12px; font-weight: 800; font-size: 15px; text-decoration: none; }
+.list .book:hover { background: #33255e; }
+.list .row.deal { box-shadow: 0 0 0 3px var(--sun), 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+.list .deal .fare { background: var(--sun); border-left-color: rgba(26, 16, 48, 0.3); }
+.list .deal .from, .list .deal .way, .list .deal .usual { color: var(--sun-ink); }
+.list .deal .saving { margin-top: 3px; padding: 1px 6px; border-radius: 6px; background: var(--sun-ink); color: var(--sun); }
+.js .prices[data-view="how"] .list, .js .prices[data-view="how"] .sort, .js .prices[data-view="how"] .status { display: none; }
+.js .prices:not([data-view="how"]) .how { display: none; }
+.how { padding-top: 8px; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 14px; }
+.steps li { counter-increment: step; background: var(--night-2); border-radius: 22px; padding: 20px 20px 20px 66px; position: relative; }
+.steps li::before { content: counter(step); position: absolute; left: 18px; top: 18px; width: 34px; height: 34px; border-radius: 50%; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 17px; display: grid; place-items: center; }
+.steps h3 { margin: 0 0 6px; font-size: 18px; font-weight: 800; }
+.steps p { margin: 0; color: var(--muted); font-size: 15px; }
+.steps a { color: var(--ink); }
+
+/* 6. Travel services: white photo cards (eSIM, insurance, car rental, compensation, hotels) */
+.extras { position: relative; }
+.svcs { list-style: none; margin: 0; }
+.svc { flex: 0 0 min(74vw, 290px); scroll-snap-align: start; border-radius: 22px; overflow: hidden; background: var(--paper); color: var(--sun-ink); box-shadow: 0 24px 44px -28px rgba(0, 0, 0, 0.85); }
+.svc a { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
+.svc a:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 22px; }
+.svc img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--field); }
+.svc-body { flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 16px 18px 18px; }
+.svc-body b { font-size: 19px; font-weight: 900; line-height: 1.2; }
+.svc-body span { color: var(--paper-muted); font-size: 15px; line-height: 1.4; }
+.svc-body .svc-go { display: inline-flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 10px; min-height: 44px; color: var(--tg-deep); font-weight: 800; }
+.svc-go .ic { width: 18px; height: 18px; stroke-width: 2.5; }
+.svc a:hover .svc-go { text-decoration: underline; }
+
+/* 7. The Telegram band */
+.join { margin-top: 44px; background: linear-gradient(160deg, #1a72cc, #0d3f9e); }   /* a full-width band, like the reference */
+.join-in { padding-top: 32px; padding-bottom: 32px; display: grid; gap: 18px; }
+.join h2 { margin: 0 0 6px; }
+.join .plane { width: 56px; height: 56px; margin-bottom: 14px; display: block; }
+.join p { margin: 0; font-size: 18px; max-width: 32em; }
+.btn-tg { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 24px; background: #ffffff; color: var(--tg-deep); font-weight: 800; text-decoration: none; border-radius: 999px; font-size: 17px; }
+.btn-tg:focus-visible { outline-color: #ffffff; }
+.join .premium { margin: 14px 0 0; font-size: 15px; }
+.premium a { color: #ffffff; font-weight: 700; }
+
+/* 8. The footer: the page ends on a slab of sunshine */
+.foot { margin-top: 56px; background: var(--sun); color: var(--sun-ink); padding: 40px 0 28px; }
+.fgrid { display: grid; gap: 24px 18px; grid-template-columns: 1fr 1fr; }
+.fbrand { grid-column: 1 / -1; }
+.foot .brand { color: var(--sun-ink); margin: 0 0 10px; }
+.foot .mark { background: var(--sun-ink); color: var(--sun); }
+.fbrand p { margin: 0 0 14px; max-width: 28em; font-size: 15px; }
+.fpill { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 18px 0 10px; border-radius: 999px; background: var(--sun-ink); color: #ffffff; font-weight: 800; text-decoration: none; font-size: 15px; }
+.fpill .ic { width: 24px; height: 24px; }
+.fcol h3 { margin: 0 0 10px; font-size: 16px; font-weight: 900; }
+.fcol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.fcol a { display: inline-flex; align-items: center; min-height: 38px; font-weight: 700; font-size: 15px; text-decoration: none; }
+.fcol a:hover { text-decoration: underline; }
+.flegal { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(26, 16, 48, 0.2); font-size: 14px; }
+.flegal p { margin: 0 0 8px; max-width: 70ch; }
+.credits { margin: 6px 0 12px; }
+.credits summary { cursor: pointer; font-weight: 800; min-height: 44px; display: inline-flex; align-items: center; }
+.credits ul { margin: 4px 0 0; padding-left: 18px; columns: 2 320px; column-gap: 32px; font-size: 13px; }
+.credits li { margin: 0 0 6px; break-inside: avoid; }
+
+/* Picked route (from the search card) */
+.dcard.is-picked, .list .row.is-picked { outline: 4px solid var(--sun); outline-offset: 4px; }
+.slide.is-picked .slide-in { outline: 4px solid var(--sun); outline-offset: 4px; border-radius: 28px; }
+
+/* Wider screens */
+@media (min-width: 700px) {
+  .scard { padding: 18px 18px 20px; }
+  .stab { font-size: 15px; padding: 0 16px; }
+  .stab:not(.is-on) .ic { display: inline-block; }
+  .stab .w { display: inline; }
+  .fields { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .field.from, .field.to { grid-column: span 2; }
+  .sform.is-return .field.pax { grid-column: auto; }
+  .fgrid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+  .fbrand { grid-column: auto; }
+  .steps { grid-template-columns: repeat(3, 1fr); }
+  .join-in { grid-template-columns: 1fr auto; align-items: center; padding-top: 44px; padding-bottom: 44px; }
+}
+@media (min-width: 900px) {
+  :root { --nav-h: 64px; }
+  .brand { font-size: 19px; }
+  .nav-links { display: flex; margin-right: 6px; }
+  .nav-tg { font-size: 15px; }
+  .slide-in { padding: 44px 16px 132px; }
+  .arc { display: block; position: absolute; right: 16px; top: 24px; width: 46%; max-width: 560px; height: auto; pointer-events: none; }
+  .slide-deal .sticker { top: 72px; right: 72px; font-size: 96px; padding: 22px 28px; border-radius: 28px; transform: rotate(8deg); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
+  .slide-price { font-size: 170px; }
+  .hero-ctl { bottom: 78px; }
+  .search { margin-top: -64px; }
+  .stab { flex: 0 1 auto; padding: 0 20px; }
+  .fields { display: flex; align-items: stretch; }
+  .field { flex: 1 1 0; }
+  .field.to { flex: 1.6 1 0; }
+  .field.from { flex: 1.1 1 0; margin-right: 44px; }
+  .hop { position: absolute; left: 0; top: 50%; transform: translate(0, -50%); right: auto; }
+  .fields .field.from + .hop { left: calc((100% - 48px) * 1.1 / 5.7 + 4px); }
+  .fields { position: relative; }
+  .field.from, .field.to, .sform.is-return .field.pax { grid-column: auto; }
+  .fields .btn-go { margin: 0; flex: 0 0 auto; }
+  .dcard { flex-basis: calc((100% - 40px) / 3); }
+  .svc { flex-basis: calc((100% - 40px) / 3); }
+  .strip { gap: 20px; }
+  .dprice { font-size: 46px; }
+  .list { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .list .row { --stub: 150px; }
+  .list .where { padding: 18px 18px 18px 20px; }
+  .list .fare { padding: 16px 16px 14px; }
+  .list .amount { font-size: 44px; }
+  .shead { padding-top: 60px; }
+  .tab { font-size: 15px; padding: 0 14px; }
+  h2 { font-size: 32px; }
+  .deals .arrow, .extras .arrow { position: absolute; top: calc(50% + 20px); z-index: 3; background: var(--night-2); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4); }
+  .deals .arrow.prev, .extras .arrow.prev { left: calc(var(--gutter) - 56px); }
+  .deals .arrow.next, .extras .arrow.next { right: calc(var(--gutter) - 56px); }
+  .deals .ctl, .extras .ctl { justify-content: center; }
+  .deals .dots, .extras .dots { flex: 0 1 320px; }
+}
+@media (min-width: 1200px) {
+  .dcard, .svc { flex-basis: calc((100% - 60px) / 4); }
+}
+@media (max-width: 360px) {
+  .dprice { font-size: 36px; }
+  .list .row { --stub: 108px; }
+  .list .amount { font-size: 32px; }
+  .list .code { font-size: 17px; }
+  .list .seal { font-size: 12px; letter-spacing: 0.1em; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .dcard img { transition: transform 0.5s ease-out; }
+  .list .row { transition: transform 0.18s ease-out; }
+  .list .row:hover { transform: translateY(-3px); }
+  .dcard:hover img { transform: scale(1.05); }   /* the photo leans in under the pointer */
+}
+
+/* Motion: one orchestrated welcome (cards land, stickers stamp on), plus press feedback.
+   All of it is skipped when the phone asks for less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .dcard { animation: land 0.7s cubic-bezier(0.2, 0.8, 0.2, 1.05) both; animation-delay: calc(var(--i, 0) * 90ms); }
+  .dcard .sticker { animation: stamp 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.25) both; animation-delay: calc(var(--i, 0) * 90ms + 380ms); }
+  .dcard:nth-child(2) { --i: 1; }
+  .dcard:nth-child(3) { --i: 2; }
+  .dcard:nth-child(4) { --i: 3; }
+  .dcard:nth-child(n + 5) { --i: 4; }
+  .slide-deal .sticker { animation: stamp 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.25) both 300ms; }
+  .nav-tg, .dot::before, .tab, .stab, .field { transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .dcard, .svc, .btn-go, .btn-tg, .btn-book, .book, .arrow, .fpill, .nav-tg { transition: transform 0.12s ease-out; }
+  .dcard:active, .svc:active { transform: scale(0.98); }
+  .btn-go:active, .btn-tg:active, .btn-book:active, .book:active, .arrow:active, .fpill:active, .nav-tg:active { transform: scale(0.96); }
+}
+@keyframes land {
+  from { opacity: 0; transform: translateY(28px) scale(0.94) rotate(-1.5deg); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes stamp {
+  from { opacity: 0; transform: rotate(18deg) scale(1.9); }
+  to { opacity: 1; transform: rotate(7deg) scale(1); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#kerko">Kalo te kërkimi</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-5-6.3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.4-7-11.7a7 7 0 0 1 14 0c0 5.3-7 11.7-7 11.7z"/><circle cx="12" cy="9.8" r="2.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-sim" viewBox="0 0 24 24"><path d="M6.5 2.5h7l4 4V19a2.5 2.5 0 0 1-2.5 2.5H6.5A2.5 2.5 0 0 1 4 19V5a2.5 2.5 0 0 1 2.5-2.5z"/><rect x="8" y="11" width="6" height="6" rx="1"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5v-6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 15.5V12l2.2-5.2A1.5 1.5 0 0 1 6.6 6h10.8a1.5 1.5 0 0 1 1.4.8L21 12v3.5"/><path d="M3 15.5h18M5 15.5v2.5M19 15.5v2.5M7 12h.01M17 12h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 15.5h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
+</svg>
+<header class="nav">
+  <div class="nav-in wrap">
+    <a class="brand" href="#top"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
+    <nav class="nav-links" aria-label="Faqja">
+      <a href="#ofertat">Ofertat</a>
+      <a href="#destinacionet">Destinacionet</a>
+      <a href="#si-funksionon">Si funksionon</a>
+      <a href="{PREMIUM_LINK}">Premium</a>
+    </nav>
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>Bashkohu në Telegram</a>
+  </div>
+</header>
+<main id="top">
+  <section class="hero" aria-label="Kreu">
+    <ol class="hero-strip" aria-label="Banderolat">
+      <li class="slide slide-brand">
+        <div class="slide-in">
+          <svg class="arc" viewBox="0 0 600 420" aria-hidden="true"><path d="M10 400 C 150 150, 360 70, 548 44" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3" stroke-dasharray="2 16" stroke-linecap="round"/><circle cx="10" cy="400" r="7" fill="#ffffff" fill-opacity="0.6"/><use href="#i-plane" x="528" y="4" width="68" height="68" fill="#ffe14d"/></svg>
+          <h1><span>Fluturo lirë</span><span>nga Tirana</span></h1>
+          <p class="from-price">Sot që nga <b>€{MIN_PRICE}</b> vajtje</p>
+          <a class="top-deal" href="#ofertat" data-slide="1"><span class="td"><small>Oferta më e mirë sot</small><b>{TOP_CITY} nga €{TOP_PRICE}</b></span>[[<span class="td-save">-{TOP_SAVING}%</span>]]<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
+          <p class="lead">Çmimi më i lirë për çdo destinacion gjatë {LOOKAHEAD_DAYS} ditëve të ardhshme, i kontrolluar çdo 3 orë.</p>
+          <p class="stats"><span class="stat"><b data-count="{ROUTE_COUNT}">{ROUTE_COUNT}</b> destinacione</span>[[<span class="stat"><b data-count="{DEAL_COUNT}">{DEAL_COUNT}</b> oferta sot</span>]]</p>
+          <p class="updated">Përditësuar më {UPDATED}, ora e Tiranës</p>
+          <p class="empty">{EMPTY}</p>
+        </div>
+      </li>
+      {HERO_SLIDES}
+    </ol>
+    <div class="hero-ctl"><div class="wrap"><div class="ctl" data-ctl="hero"></div></div></div>
+  </section>
+  <section class="search wrap" id="kerko" aria-label="Kërko fluturim">
+    <div class="scard">
+      <nav class="stabs" aria-label="Çfarë kërkon">
+        <a class="stab is-on" href="#kerko" aria-current="page"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg>Kërko<span class="w"> fluturim</span></a>
+        <a class="stab" href="#ofertat"><svg class="ic" aria-hidden="true"><use href="#i-percent"/></svg>Ofertat[[ <span class="n">{DEAL_COUNT}</span>]]</a>
+        <a class="stab" href="#si-funksionon"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg>Si funksionon</a>
+      </nav>
+      <form class="sform" action="#destinacionet" method="get" data-lookahead="{LOOKAHEAD_DAYS}">
+        <fieldset class="trip">
+          <legend class="sr">Lloji i udhëtimit</legend>
+          <label><input type="radio" name="trip" value="oneway" checked>Vajtje</label>
+          <label><input type="radio" name="trip" value="return">Vajtje-ardhje</label>
+        </fieldset>
+        <div class="fields">
+          <div class="field from"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Nga</span><span class="fvalue">Tirana<small>TIA</small></span></div>
+          <span class="hop" aria-hidden="true"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>
+          <label class="field to"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Për</span><select name="to"><option value="">Zgjidh destinacionin</option>{DESTINATION_OPTIONS}</select></label>
+          <label class="field date"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Nisja</span><input type="date" name="date" value="{DATE_MIN}" min="{DATE_MIN}" max="{DATE_MAX}"></label>
+          <label class="field back"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Kthimi</span><input type="date" name="back" min="{DATE_MIN}" max="{DATE_MAX}"></label>
+          <label class="field pax"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Pasagjerë</span><select name="pax"><option value="1">1 pasagjer</option><option value="2">2 pasagjerë</option><option value="3">3 pasagjerë</option><option value="4">4 pasagjerë</option><option value="5">5 pasagjerë</option><option value="6">6 pasagjerë</option><option value="7">7 pasagjerë</option><option value="8">8 pasagjerë</option><option value="9">9 pasagjerë</option></select></label>
+          <a class="btn-go" href="#destinacionet"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>Kërko fluturime</a>
+        </div>
+        <p class="sfound" aria-live="polite" hidden></p>
+        <p class="shint">Hap kërkimin në Aviasales në një skedë të re, me datën më të lirë që gjetëm të parazgjedhur. Çmimi përfundimtar dhe vendet e lira shfaqen atje.</p>
+      </form>
+    </div>
+  </section>
+  <section class="deals" id="ofertat" aria-labelledby="deals-h"><div class="wrap shead"><h2 id="deals-h">Zbulo destinacionet[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">Rezervo fluturimin për destinacionin që të pëlqen. Ofertat e momentit, me kursimin në të verdhë, janë të parat.</p></div><ol class="strip stories" aria-label="Destinacionet">{DEST_CARDS}</ol><div class="wrap"><div class="ctl" data-ctl="stories"></div></div></section>
+  <section class="extras" id="sherbime" aria-labelledby="extras-h">
+    <div class="wrap shead"><h2 id="extras-h">Gjithçka për udhëtimin</h2><p class="hint">Shërbime nga partnerët tanë, që udhëtimi të shkojë pa telashe.</p></div>
+    <ul class="strip svcs" aria-label="Shërbime për udhëtimin">
+      <li class="svc"><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/esim.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>eSIM për internet jashtë</b><span>Internet në telefon sapo zbret, pa tarifa roaming.</span><span class="svc-go">Bli eSIM<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/insurance.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Sigurim udhëtimi</b><span>Mbulim për shpenzimet mjekësore jashtë vendit, i blerë online në pak minuta.</span><span class="svc-go">Shiko sigurimin<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/car_rental.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Makinë me qira</b><span>Krahaso çmimet dhe merre makinën në destinacion.</span><span class="svc-go">Gjej makinë<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/compensation.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Vonesë ose anulim?</b><span>Nëse fluturimi u vonua ose u anulua, mund të marrësh deri €600 kompensim.</span><span class="svc-go">Kontrollo kompensimin<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/hotel.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Hotele</b><span>Gjej ku të qëndrosh, me çmime të krahasuara.</span><span class="svc-go">Gjej hotel<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+    </ul>
+    <div class="wrap"><div class="ctl" data-ctl="services"></div></div>
+  </section>
+  <section class="prices wrap" id="destinacionet" aria-labelledby="all-h">
+    <div class="shead"><h2 id="all-h">Të gjitha destinacionet[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">Çmimi dhe data më e lirë e çdo rruge nga skanimi i fundit, deri {LOOKAHEAD_DAYS} ditë përpara.</p></div>
+    <div class="listbar">
+      <div class="tabs">
+        <a class="tab is-on" href="#destinacionet" data-filter="all">Të gjitha[[ <span class="n">{ROUTE_COUNT}</span>]]</a>
+        <a class="tab" href="#ofertat" data-filter="deals">Ofertat[[ <span class="n">{DEAL_COUNT}</span>]]</a>
+        <a class="tab" href="#si-funksionon" data-filter="how">Si funksionon</a>
+      </div>
+      <label class="sort js-only"><span>Rendit</span><select name="sort"><option value="deals">Ofertat para</option><option value="price">Më e lira</option><option value="saving">Kursimi më i madh</option><option value="date">Më e afërt</option></select></label>
+    </div>
+    <p class="status" hidden></p>
+    <ol class="board list" aria-label="Çdo destinacion">[[{DEAL_ROWS}]][[{PRICE_ROWS}]]</ol>
+    <div class="how" id="si-funksionon">
+      <ol class="steps">
+        <li><h3>Kontrollojmë çmimet çdo 3 orë</h3><p>Për çdo destinacion marrim çmimin më të lirë që udhëtarë të tjerë gjetën së fundmi në Aviasales, për {LOOKAHEAD_DAYS} ditët e ardhshme.</p></li>
+        <li><h3>I krahasojmë me çmimin e zakonshëm</h3><p>Ruajmë historikun e çdo rruge. Kur një çmim bie shumë nën mesataren e javëve të fundit, shënohet si Ofertë dhe postohet në <a href="{TELEGRAM_URL}">Telegram</a>.</p></li>
+        <li><h3>Ti rezervon te kompania ajrore</h3><p>"Rezervo" hap kërkimin në Aviasales, ku sheh çmimin përfundimtar dhe zgjedh ku ta blesh. Nëse rezervon prej andej, ne marrim një komision të vogël; ti paguan njësoj.</p></li>
+      </ol>
+    </div>
+  </section>
+  <section class="join" id="telegram" aria-labelledby="join-h">
+    <div class="join-in wrap">
+      <div>
+        <svg class="plane" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffffff"/><path fill="#1a72cc" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></svg>
+        <h2 id="join-h">Mos humb asnjë ofertë</h2>
+        <p>Çdo ofertë postohet në kanal sapo gjendet. Falas, pa regjistrim.</p>
+      </div>
+      <div>
+        <a class="btn-tg" href="{TELEGRAM_URL}">Bashkohu te {CHANNEL}</a>
+        <p class="premium">Anëtarët Premium i marrin ofertat {PREMIUM_HOURS} orë më herët. <a href="{PREMIUM_LINK}">Bëhu Premium</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="brand" href="#top"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
+        <p>Çmimi më i lirë nga Tirana për çdo destinacion, i përditësuar çdo 3 orë.</p>
+        <a class="fpill" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>Bashkohu në Telegram</a>
+      </div>
+      <nav class="fcol" aria-label="Faqja, në fund">
+        <h3>Faqja</h3>
+        <ul>
+          <li><a href="#kerko">Kërko fluturim</a></li>
+          <li><a href="#ofertat">Zbulo destinacionet</a></li>
+          <li><a href="#destinacionet">Çdo destinacion</a></li>
+          <li><a href="#si-funksionon">Si funksionon</a></li>
+        </ul>
+      </nav>
+      <nav class="fcol" aria-label="Për udhëtimin, në fund">
+        <h3>Për udhëtimin</h3>
+        <ul>
+          <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">eSIM</a></li>
+          <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">Sigurim udhëtimi</a></li>
+          <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">Makinë me qira</a></li>
+          <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">Kompensim për vonesa</a></li>
+        </ul>
+      </nav>
+      <nav class="fcol" aria-label="Komuniteti">
+        <h3>Komuniteti</h3>
+        <ul>
+          <li><a href="{TELEGRAM_URL}">Kanali {CHANNEL}</a></li>
+          <li><a href="{PREMIUM_LINK}">Premium, {PREMIUM_HOURS} orë më herët</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="flegal">
+      <p>Çmimet janë ato që udhëtarë të tjerë gjetën së fundmi në Aviasales dhe mund të kenë ndryshuar. Çmimi përfundimtar shfaqet kur hap lidhjen.</p>
+      <p>Disa lidhje janë lidhje partnere: nëse rezervon përmes tyre, {BRAND} merr një komision të vogël, pa kosto shtesë për ty.</p>
+      <details class="credits"><summary>Fotot dhe licencat e tyre</summary><ul>{PHOTO_CREDITS}</ul></details>
+      <p>© {YEAR} {BRAND}</p>
+    </div>
+  </div>
+</footer>
+<script>
+/* Progressive extras only: the page works the same with JavaScript off.
+   1) The nav's Telegram button lights up once the hero has scrolled away.
+   2) The carousels (hero banners, destination cards, travel services) get arrows, one dot per page (a progress bar
+      when there would be many), arrow keys, and the hero advances by itself until it is touched.
+   3) The search card builds a tracked Aviasales link from the chosen destination, date and
+      passengers, re-using the query string of a Rezervo link so the affiliate marker is kept
+      (also when that link is wrapped in a tp.media redirect).
+   4) The list's tabs and sort, and the destination chosen in the search card, share one small
+      state: the chosen route is highlighted in the list and the cards, nothing is hidden.
+   5) The counters in the hero count up once. */
+(function () {
+  var doc = document;
+  doc.documentElement.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var smooth = reduce ? 'auto' : 'smooth';
+  var months = ['Jan', 'Shk', 'Mar', 'Pri', 'Maj', 'Qer', 'Korr', 'Gush', 'Sht', 'Tet', 'Nën', 'Dhj'];
+  function qs(sel, el) { return (el || doc).querySelector(sel); }
+  function qsa(sel, el) { return Array.prototype.slice.call((el || doc).querySelectorAll(sel)); }
+  function make(tag, cls, inner) { var e = doc.createElement(tag); if (cls) { e.className = cls; } if (inner) { e.innerHTML = inner; } return e; }
+  function icon(name) { return '<svg class="ic" aria-hidden="true"><use href="#i-' + name + '"/></svg>'; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : '&quot;'; }); }
+
+  /* 1. Nav state */
+  var hero = qs('.hero');
+  if (hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      doc.body.classList.toggle('past-hero', !entries[0].isIntersecting);
+    }, { rootMargin: '-64px 0px 0px 0px', threshold: 0 }).observe(hero);
+  }
+
+  /* 2. Carousels */
+  function carousel(strip, ctl, label, options) {
+    options = options || {};
+    if (!strip || !ctl) { return null; }
+    var slides = qsa(':scope > li', strip);
+    if (slides.length < 2) { return null; }
+    var prev = make('button', 'arrow prev', icon('left'));
+    var next = make('button', 'arrow next', icon('right'));
+    prev.type = next.type = 'button';
+    prev.setAttribute('aria-label', label + ': e mëparshmja');
+    next.setAttribute('aria-label', label + ': tjetra');
+    var dots = make('div', 'dots');
+    ctl.appendChild(prev); ctl.appendChild(dots); ctl.appendChild(next);
+    var buttons = [], thumb = null, visible = 1, pages = 1, page = 0, timer = null, waiting = false;
+    function offset(i) { return slides[i].offsetLeft - slides[0].offsetLeft; }
+    function maxScroll() { return Math.max(0, strip.scrollWidth - strip.clientWidth); }
+    function pageStart(p) { return Math.min(offset(Math.min(slides.length - 1, p * visible)), maxScroll()); }
+    /* How many slides fit side by side decides how many pages (dots) there are. */
+    function measure() {
+      var style = getComputedStyle(strip);
+      var usable = strip.clientWidth - (parseFloat(style.paddingLeft) || 0) - (parseFloat(style.paddingRight) || 0);
+      var step = offset(1) || slides[0].offsetWidth || 1;
+      var gap = Math.max(0, step - slides[0].offsetWidth);
+      visible = Math.max(1, Math.floor((usable + gap + 1) / step));
+      pages = Math.max(1, Math.ceil(slides.length / visible));
+      ctl.classList.toggle('is-idle', pages <= 1);   /* everything fits: hide the arrows and dots */
+      dots.textContent = '';
+      buttons = []; thumb = null;
+      if (pages <= 6) {
+        for (var i = 0; i < pages; i++) { buttons.push(dot(i)); }
+      } else {
+        var bar = make('div', 'bar');
+        thumb = doc.createElement('i');
+        bar.appendChild(thumb);
+        dots.appendChild(bar);
+      }
+      paint();
+    }
+    function dot(i) {
+      var b = make('button', 'dot');
+      b.type = 'button';
+      b.setAttribute('aria-label', label + ' ' + (i + 1) + ' nga ' + pages);
+      b.addEventListener('click', function () { stop(); go(i); });
+      dots.appendChild(b);
+      return b;
+    }
+    function go(p) {
+      p = Math.max(0, Math.min(pages - 1, p));
+      strip.scrollTo({ left: pageStart(p), behavior: smooth });
+    }
+    function move(dir) {
+      var target = page + dir;
+      if (options.loop) { target = (target + pages) % pages; }
+      go(target);
+    }
+    /* Scroll one slide into view (the search card uses it for the chosen route's card). */
+    function toSlide(i) {
+      if (i < 0 || i >= slides.length) { return; }
+      strip.scrollTo({ left: Math.min(offset(i), maxScroll()), behavior: smooth });
+    }
+    function paint() {
+      var x = strip.scrollLeft, max = maxScroll(), dist = Infinity;
+      for (var p = 0; p < pages; p++) { var d = Math.abs(pageStart(p) - x); if (d < dist) { dist = d; page = p; } }
+      buttons.forEach(function (b, i) {
+        b.classList.toggle('on', i === page);
+        b.setAttribute('aria-current', i === page ? 'true' : 'false');
+      });
+      if (thumb) {
+        thumb.style.width = Math.max(8, strip.clientWidth / strip.scrollWidth * 100) + '%';
+        thumb.style.left = (x / strip.scrollWidth * 100) + '%';
+      }
+      prev.disabled = !options.loop && x <= 2;
+      next.disabled = !options.loop && x >= max - 2;
+    }
+    /* Auto-advance (hero only): every 6.5 s while the strip is on screen and the tab is visible;
+       never under reduced motion; over for good at the first touch, wheel, click or focus. */
+    function start() { if (!options.auto || reduce || timer) { return; } timer = setInterval(function () { if (!doc.hidden) { move(1); } }, 6500); }
+    function pause() { if (timer) { clearInterval(timer); timer = null; } }
+    function stop() { options.auto = false; pause(); }
+    prev.addEventListener('click', function () { stop(); move(-1); });
+    next.addEventListener('click', function () { stop(); move(1); });
+    strip.addEventListener('pointerdown', stop, { passive: true });
+    strip.addEventListener('touchstart', stop, { passive: true });
+    strip.addEventListener('wheel', stop, { passive: true });
+    strip.addEventListener('focusin', stop);
+    strip.addEventListener('scroll', function () {
+      if (!waiting) { waiting = true; requestAnimationFrame(function () { waiting = false; paint(); }); }
+    }, { passive: true });
+    strip.addEventListener('keydown', function (e) {
+      if (e.target.closest('select, input')) { return; }
+      if (e.key === 'ArrowRight') { e.preventDefault(); stop(); move(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); stop(); move(-1); }
+    });
+    if (!strip.hasAttribute('tabindex')) { strip.setAttribute('tabindex', '0'); }
+    var resizing = null;
+    window.addEventListener('resize', function () { clearTimeout(resizing); resizing = setTimeout(measure, 120); });
+    if (options.auto && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { start(); } else { pause(); }
+      }, { threshold: 0.4 }).observe(strip);
+    } else {
+      start();
+    }
+    measure();
+    if (doc.fonts && doc.fonts.ready) { doc.fonts.ready.then(measure); }
+    return { go: go, toSlide: toSlide, stop: stop, slides: slides };
+  }
+  var heroStrip = carousel(qs('.hero-strip'), qs('[data-ctl="hero"]'), 'Banderola', { loop: true, auto: true });
+  var stories = carousel(qs('.stories'), qs('[data-ctl="stories"]'), 'Destinacioni', {});
+  carousel(qs('.svcs'), qs('[data-ctl="services"]'), 'Shërbimi', {});
+  /* The "best deal today" chip on the first slide jumps to that deal's banner. */
+  qsa('[data-slide]').forEach(function (chip) {
+    chip.addEventListener('click', function (e) {
+      if (!heroStrip) { return; }
+      e.preventDefault();
+      heroStrip.stop();
+      heroStrip.toSlide(parseInt(chip.getAttribute('data-slide'), 10) || 0);
+    });
+  });
+
+  /* 4. One state for the list: which tab, which sort, which route was picked in the search card */
+  var prices = qs('.prices');
+  var list = qs('.list');
+  var rows = list ? qsa(':scope > .row', list) : [];
+  var tabs = prices ? qsa('.tab', prices) : [];
+  var tablist = prices ? qs('.tabs', prices) : null;
+  var status = prices ? qs('.status', prices) : null;
+  var sortBox = prices ? qs('.sort select', prices) : null;
+  var state = { view: 'all', sort: 'deals', pick: '' };
+  rows.forEach(function (row, i) { row.setAttribute('data-order', i); });
+  function num(row, attr) { return parseFloat(row.getAttribute(attr)) || 0; }
+  function byOrder(a, b) { return num(a, 'data-order') - num(b, 'data-order'); }
+  var sorters = {
+    deals: byOrder,
+    price: function (a, b) { return num(a, 'data-price') - num(b, 'data-price') || byOrder(a, b); },
+    saving: function (a, b) { return num(b, 'data-saving') - num(a, 'data-saving') || num(a, 'data-price') - num(b, 'data-price'); },
+    date: function (a, b) { var x = a.getAttribute('data-date'), y = b.getAttribute('data-date'); return (x < y ? -1 : x > y ? 1 : 0) || num(a, 'data-price') - num(b, 'data-price'); }
+  };
+  function cityOf(iata) {
+    var row = rows.filter(function (r) { return r.getAttribute('data-iata') === iata; })[0];
+    if (!row) { return iata; }
+    var city = qs('.city', row).cloneNode(true);
+    var flag = qs('.flag', city);
+    if (flag) { flag.remove(); }   /* the flag emoji reads badly in the middle of a sentence */
+    return city.textContent.replace(/\s+/g, ' ').trim();
+  }
+  function apply() {
+    if (!prices) { return; }
+    prices.setAttribute('data-view', state.view);
+    tabs.forEach(function (tab) {
+      var on = tab.getAttribute('data-filter') === state.view;
+      tab.classList.toggle('is-on', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+    });
+    if (list) {
+      rows.slice().sort(sorters[state.sort] || byOrder).forEach(function (row) { list.appendChild(row); });
+    }
+    var shown = 0;
+    rows.forEach(function (row) {
+      var visible = state.view !== 'deals' || row.classList.contains('deal');
+      row.hidden = !visible;
+      if (visible) { shown++; }
+      row.classList.toggle('is-picked', !!state.pick && row.getAttribute('data-iata') === state.pick);
+    });
+    qsa('.stories .dcard, .slide-deal').forEach(function (card) {
+      card.classList.toggle('is-picked', !!state.pick && card.getAttribute('data-iata') === state.pick);
+    });
+    if (!status) { return; }
+    if (state.pick) {
+      status.hidden = false;
+      status.innerHTML = '<span><b>' + esc(cityOf(state.pick)) + '</b> është theksuar në listë.</span><button type="button" class="linkish" data-jump>Shko te rreshti</button><button type="button" class="linkish" data-clear>Hiq theksimin</button>';
+    } else if (state.view === 'deals' && shown === 0) {
+      status.hidden = false;
+      status.textContent = 'Tani për tani s\'ka oferta. Kontrollo sërish pas pak orësh, ose ndiq kanalin në Telegram.';
+    } else {
+      status.hidden = true;
+    }
+  }
+  function pick(iata) {
+    state.pick = iata || '';
+    if (iata) { state.view = 'all'; }
+    apply();
+    if (iata && stories) {
+      var i = stories.slides.map(function (s) { return s.getAttribute('data-iata'); }).indexOf(iata);
+      if (i >= 0) { stories.toSlide(i); }
+    }
+  }
+  if (tablist) {
+    tablist.setAttribute('role', 'tablist');
+    tabs.forEach(function (tab, i) {
+      tab.setAttribute('role', 'tab');
+      tab.addEventListener('click', function (e) {
+        e.preventDefault();
+        state.view = tab.getAttribute('data-filter');
+        state.pick = '';
+        apply();
+      });
+      tab.addEventListener('keydown', function (e) {
+        var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (step) { e.preventDefault(); var n = tabs[(i + step + tabs.length) % tabs.length]; n.focus(); n.click(); }
+      });
+    });
+  }
+  if (sortBox) { sortBox.addEventListener('change', function () { state.sort = sortBox.value; apply(); }); }
+  if (status) {
+    status.addEventListener('click', function (e) {
+      if (e.target.hasAttribute('data-clear')) { pick(''); var to = qs('.sform [name="to"]'); if (to) { to.value = ''; } var found = qs('.sfound'); if (found) { found.hidden = true; } }
+      if (e.target.hasAttribute('data-jump')) { var picked = qs('.list .row.is-picked'); if (picked) { picked.scrollIntoView({ behavior: smooth, block: 'center' }); } }
+    });
+  }
+  function fromHash() {
+    if (!prices) { return; }
+    if (location.hash === '#si-funksionon') { state.view = 'how'; state.pick = ''; apply(); prices.scrollIntoView({ behavior: smooth, block: 'start' }); }
+  }
+  window.addEventListener('hashchange', fromHash);
+  apply();
+  fromHash();
+
+  /* 3. The search card */
+  var form = qs('.sform');
+  if (form) {
+    var to = qs('[name="to"]', form), dep = qs('[name="date"]', form), back = qs('[name="back"]', form);
+    var pax = qs('[name="pax"]', form), go = qs('.btn-go', form), found = qs('.sfound', form);
+    var trips = qsa('[name="trip"]', form);
+    var sample = qs('.row .book');
+    var base = null, origin = 'TIA';
+    try {
+      if (sample) {
+        base = new URL(sample.href);
+        var m = decodeURIComponent(base.href).match(/\/search\/([A-Z]{3})/);
+        if (m) { origin = m[1]; }
+      }
+    } catch (err) { base = null; }
+    /* The Rezervo link with its path swapped for the chosen route, dates and passengers; its
+       query string (currency, affiliate marker) stays. With config.yaml's tp.media wrapper the
+       Aviasales link sits inside the wrapper's "u" parameter, so that one is rewritten instead. */
+    function searchUrl(path) {
+      if (!base) { return null; }
+      try {
+        var url = new URL(base.href);
+        if (url.pathname.indexOf('/search/') === 0) { url.pathname = path; return url.href; }
+        var inner = url.searchParams.get('u');
+        if (inner && inner.indexOf('/search/') !== -1) {
+          var innerUrl = new URL(inner);
+          innerUrl.pathname = path;
+          url.searchParams.set('u', innerUrl.href);
+          return url.href;
+        }
+      } catch (err) { /* an unexpected link shape: the button keeps pointing at the list */ }
+      return null;
+    }
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function iso(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+    function addDays(day, n) { var p = day.split('-'); return iso(new Date(+p[0], +p[1] - 1, +p[2] + n)); }
+    function ddmm(day) { return day.slice(8, 10) + day.slice(5, 7); }
+    function pretty(day) { return parseInt(day.slice(8, 10), 10) + ' ' + months[parseInt(day.slice(5, 7), 10) - 1]; }
+    /* The date window follows the viewer's clock: tomorrow up to the scanner's lookahead. */
+    var lookahead = parseInt(form.getAttribute('data-lookahead'), 10) || 60;
+    var minDay = addDays(iso(new Date()), 1), maxDay = addDays(iso(new Date()), lookahead);
+    function clamp(day) { return day < minDay ? minDay : (day > maxDay ? maxDay : day); }
+    [dep, back].forEach(function (input) { if (input) { input.min = minDay; input.max = maxDay; } });
+    if (dep.value && dep.value < minDay) { dep.value = minDay; }
+    function isReturn() { return trips.some(function (r) { return r.checked && r.value === 'return'; }); }
+    function update() {
+      form.classList.toggle('is-return', isReturn());
+      if (isReturn() && back && dep.value && (!back.value || back.value < dep.value)) { back.value = clamp(addDays(dep.value, 3)); }
+      var href = null;
+      if (to.value && dep.value) {
+        var path = '/search/' + origin + ddmm(dep.value) + to.value;
+        if (isReturn() && back && back.value) { path += ddmm(back.value); }
+        href = searchUrl(path + (pax.value || '1'));
+      }
+      if (href) {
+        go.href = href;
+        go.target = '_blank';
+        go.rel = 'noopener sponsored';
+      } else {
+        go.href = '#destinacionet';
+        go.removeAttribute('target');
+        go.removeAttribute('rel');
+      }
+    }
+    to.addEventListener('change', function () {
+      var opt = to.options[to.selectedIndex];
+      var best = opt ? opt.getAttribute('data-date') : null;
+      if (to.value && best) {
+        dep.value = clamp(best);
+        if (back) { back.value = clamp(addDays(dep.value, 3)); }
+        found.hidden = false;
+        found.innerHTML = '<b>' + esc(opt.textContent.replace(/, nga .*$/, '')) + '</b>: më lirë €' + esc(opt.getAttribute('data-price')) + ' më ' + pretty(best) + '. E theksuam te ofertat dhe në listë.';
+      } else {
+        found.hidden = true;
+      }
+      pick(to.value);
+      update();
+    });
+    [dep, back, pax].forEach(function (input) { if (input) { input.addEventListener('change', update); } });
+    trips.forEach(function (r) { r.addEventListener('change', update); });
+    go.addEventListener('click', function (e) {
+      if (!to.value) {
+        e.preventDefault();
+        found.hidden = false;
+        found.textContent = 'Zgjidh një destinacion për të hapur kërkimin.';
+        to.focus();
+      }
+    });
+    update();
+  }
+
+  /* 5. Counters count up once, when they come into view */
+  var counters = qsa('[data-count]');
+  if (counters.length && !reduce && 'IntersectionObserver' in window) {
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { return; }
+        watch.unobserve(entry.target);
+        var target = parseInt(entry.target.getAttribute('data-count'), 10);
+        if (!target) { return; }
+        var start = null;
+        function step(ts) {
+          if (start === null) { start = ts; }
+          var p = Math.min(1, (ts - start) / 900);
+          var eased = 1 - Math.pow(1 - p, 3);
+          entry.target.textContent = Math.round(target * eased);
+          if (p < 1) { requestAnimationFrame(step); }
+        }
+        entry.target.textContent = '0';
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (c) { watch.observe(c); });
+  }
+})();
+</script>
+</body>
+</html>
