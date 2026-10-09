@@ -118,6 +118,16 @@ class Storage:
         ).fetchone()
         return row is not None
 
+    def first_posted_at(self, channel: str, origin: str, destination: str, depart_date: date,
+                        since: datetime, until: datetime) -> datetime | None:
+        """When this route + date was first posted on `channel` between since and until, or None."""
+        row = self.conn.execute(
+            "SELECT MIN(posted_at) FROM posted_deals WHERE channel = ? AND origin = ? AND destination = ?"
+            " AND depart_date = ? AND posted_at >= ? AND posted_at <= ?",
+            (channel, origin, destination, depart_date.isoformat(), to_iso(since), to_iso(until)),
+        ).fetchone()
+        return datetime.fromisoformat(row[0]) if row and row[0] else None
+
     def record_post(self, channel: str, quote: Quote, price_band: int, posted_at: datetime) -> None:
         with self.conn:
             self.conn.execute(

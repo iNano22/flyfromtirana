@@ -169,6 +169,26 @@ rows older than `history_retention_days` (45) are deleted. If the repo ever
 gets heavy, the next step is to move the DB to a separate `data` branch that
 is force-pushed (no history kept).
 
+## Premium channel (built, off by default)
+
+A paid, private channel that gets deals **instantly**, with looser rules (30%
+below the median instead of 40%) so it gets more of them. The free channel only
+posts a deal once premium has had it for `free_delay_hours` (6), and adds a line
+like "⚡ Anëtarët Premium e morën këtë ofertë 6 orë më parë · Bashkohu".
+
+To turn it on:
+1. Create a **private** Telegram channel and add the bot as an admin with **Post messages**.
+2. Get its numeric id (it starts with `-100`): forward any post from the channel to
+   [@userinfobot](https://t.me/userinfobot), or open the channel in Telegram Web,
+   where the URL shows `#-100...`.
+3. Add it as `TELEGRAM_PREMIUM_CHANNEL_ID` in `.env` and in the GitHub secrets.
+4. Channel settings → Invite links → create a **paid subscription** link (Telegram
+   Stars, monthly). Paste it as `premium.join_link` in config.yaml.
+5. Set `premium.enabled: true`, then commit and push.
+
+Posts for each channel are logged separately (`[premium]` / `[free]`) and
+deduped separately. Premium's wording is in `templates/sq_premium.txt`.
+
 ## Exit codes
 
 `0` OK · `1` the run failed (API down, bad token, a post failed) · `2` configuration
@@ -180,8 +200,8 @@ problem (missing env var, bad config.yaml). GitHub Actions marks the run red on 
   `telegram.py` and call it from `main.publish()`. `Deal` already carries
   everything an image generator needs. Use a new `channel` name (e.g. `"instagram"`)
   so it dedupes separately in `posted_deals`.
-- **Phase 3: premium Telegram tier.** Same detection with different rules or
-  routes (e.g. instant alerts with a lower `deal_discount_pct`) and its own `channel` name.
+- **Phase 3b: custom alerts** ("tell me when TIA → LON is under €30"). Needs a bot
+  that stores each subscriber's routes and sends them direct messages.
 - **Phase 4: English channel for flights *into* Tirana.** Return-direction
   prices (DEST → TIA) are already being scanned and stored. Add `templates/en.txt`
   and a config where origin and destination are swapped.

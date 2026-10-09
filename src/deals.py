@@ -7,6 +7,8 @@ For each route:
      or at/below the route's absolute threshold AND at least
      threshold_min_discount_pct below the median (when we know the median).
   3. Skip dates we already posted recently at the same price band (dedupe).
+     With a premium channel, the free channel also skips dates premium hasn't
+     had for long enough (early_access_from / early_access_until below).
   4. Bundle the cheapest remaining date with other similarly cheap dates
      into one Deal (one post per route), plus the cheapest flight back.
 Then rank all routes' deals and keep the best few.
@@ -31,6 +33,7 @@ class Deal:
     median: float | None         # typical price for the route, if we have enough history
     reason: str                  # why it's a deal: "median" or "threshold" (for logs)
     return_quote: Quote | None = None  # cheapest flight back, if any
+    premium_lead_hours: int | None = None  # free channel: how many hours earlier premium got this
 
     @property
     def best(self) -> Quote:
@@ -79,8 +82,14 @@ def find_route_deal(
     rules: DealRules,
     now: datetime,
     channel: str,
+    early_access_from: str | None = None,
+    early_access_until: datetime | None = None,
 ) -> Deal | None:
-    """Best not-yet-posted deal for one route, or None."""
+    """Best not-yet-posted deal for one route, or None.
+
+    early_access_from / early_access_until: only allow dates that were already
+    posted on that channel (premium) at or before that time.
+    """
     median, samples = storage.route_median(origin, route.iata, since=now - timedelta(days=rules.median_window_days))
     if samples < rules.min_samples_for_median:
         log.debug("%s: only %d prices in history, median not used yet", route.iata, samples)
@@ -92,6 +101,7 @@ def find_route_deal(
 
     cooldown_start = now - timedelta(days=rules.repost_cooldown_days)
     candidates: list[tuple[Quote, str]] = []
+    early_posted_at: dict[Quote, datetime] = {}
     for quote in sorted(outbound, key=lambda q: q.price):
         reason = deal_reason(quote.price, median, route.absolute_threshold_eur,
                              rules.discount_pct, rules.threshold_min_discount_pct)
@@ -101,6 +111,12 @@ def find_route_deal(
         if storage.was_posted(channel, origin, route.iata, quote.depart_date, band, since=cooldown_start):
             log.info("Skipping %s→%s %s €%.0f: already posted", origin, route.iata, quote.depart_date, quote.price)
             continue
+        if early_access_from:
+            first = storage.first_posted_at(early_access_from, origin, route.iata, quote.depart_date,
+                                            since=cooldown_start, until=early_access_until)
+            if first is None:
+                continue  # premium hasn't had it long enough yet
+            early_posted_at[quote] = first
         candidates.append((quote, reason))
 
     if not candidates:
@@ -110,8 +126,11 @@ def find_route_deal(
     # Other dates shown in the same post must be about as cheap as the headline price.
     max_price = best.price * (1 + rules.date_price_tolerance_pct / 100)
     shown = [q for q, _ in candidates if q.price <= max_price][: rules.max_dates_per_post]
+    lead = None
+    if best in early_posted_at:
+        lead = round((now - early_posted_at[best]).total_seconds() / 3600)
     return Deal(route=route, quotes=shown, median=median, reason=reason,
-                return_quote=cheapest_return(best, inbound, rules))
+                return_quote=cheapest_return(best, inbound, rules), premium_lead_hours=lead)
 
 
 def cheapest_return(outbound: Quote, inbound: list[Quote], rules: DealRules) -> Quote | None:

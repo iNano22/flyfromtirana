@@ -47,21 +47,23 @@ OPTIONAL_PART = re.compile(r"\[\[(.*?)\]\]")
 
 
 def format_post(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
-                airline_names: dict[str, str]) -> str:
+                airline_names: dict[str, str], template: str | None = None,
+                premium_link: str | None = None) -> str:
+    """template: file name in templates/ without .txt (default: the language, e.g. "sq")."""
     values = build_values(deal, links, language=language, channel_handle=channel_handle,
-                          airline_names=airline_names)
-    return render(load_template(language), values)
+                          airline_names=airline_names, premium_link=premium_link)
+    return render(load_template(template or language), values)
 
 
-def load_template(language: str) -> str:
-    path = TEMPLATES_DIR / f"{language}.txt"
+def load_template(name: str) -> str:
+    path = TEMPLATES_DIR / f"{name}.txt"
     if not path.exists():
-        raise ConfigError(f"No post template for language {language!r} (expected {path})")
+        raise ConfigError(f"No post template {name!r} (expected {path})")
     return path.read_text(encoding="utf-8")
 
 
 def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
-                 airline_names: dict[str, str]) -> dict[str, str | None]:
+                 airline_names: dict[str, str], premium_link: str | None = None) -> dict[str, str | None]:
     """Every {NAME} a template can use. None = no value (the line/part is left out)."""
     if language not in WORDS:
         raise ConfigError(f"Unsupported language {language!r}; add it to WORDS in src/formatter.py")
@@ -83,8 +85,9 @@ def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handl
         "DURATION": format_duration(best.duration_min, words),
         "RETURN_PRICE": format_price(deal.return_quote.price) if deal.return_quote else None,
         "CHANNEL": channel_handle,
+        "PREMIUM_HOURS": str(deal.premium_lead_hours) if deal.premium_lead_hours else None,
     }
-    urls = {"FLIGHT_LINK": links.flight(best)}
+    urls = {"FLIGHT_LINK": links.flight(best), "PREMIUM_LINK": premium_link or None}
     for name in links.partner_names:  # hotel -> HOTEL_LINK, esim -> ESIM_LINK, ...
         urls[f"{name.upper()}_LINK"] = links.partner(name, deal.route, checkin, checkout)
 

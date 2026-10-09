@@ -7,7 +7,7 @@ message instead of crashing halfway through a run.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import time
 from pathlib import Path
 
@@ -68,6 +68,17 @@ class LinkSettings:
 
 
 @dataclass(frozen=True)
+class PremiumSettings:
+    """Paid early-access channel. The free channel only gets a deal free_delay_hours later."""
+
+    enabled: bool = False
+    free_delay_hours: float = 6
+    max_posts_per_run: int = 4
+    join_link: str = ""                                    # paid invite link, advertised in free posts
+    rules: DealRules = field(default_factory=DealRules)    # usually looser than the free channel's
+
+
+@dataclass(frozen=True)
 class Config:
     brand: str
     channel_handle: str
@@ -91,6 +102,7 @@ class Config:
     # links + display
     links: LinkSettings
     airlines: dict[str, str]
+    premium: PremiumSettings = field(default_factory=PremiumSettings)
 
 
 @dataclass(frozen=True)
@@ -99,6 +111,7 @@ class Secrets:
     travelpayouts_marker: str = ""
     telegram_bot_token: str = ""
     telegram_channel_id: str = ""
+    telegram_premium_channel_id: str = ""
 
 
 def load_config(path: str | Path = DEFAULT_CONFIG_PATH) -> Config:
@@ -169,6 +182,25 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         history_retention_days=int(raw.get("history_retention_days", 45)),
         links=_build_links(raw.get("links") or {}),
         airlines={str(k).upper(): str(v) for k, v in (raw.get("airlines") or {}).items()},
+        premium=_build_premium(raw.get("premium") or {}, rules),
+    )
+
+
+def _build_premium(raw: dict, free_rules: DealRules) -> PremiumSettings:
+    # Premium uses the free channel's rules, except for the keys set under premium:
+    rules = replace(
+        free_rules,
+        discount_pct=float(raw.get("deal_discount_pct", free_rules.discount_pct)),
+        threshold_min_discount_pct=float(raw.get("threshold_min_discount_pct", free_rules.threshold_min_discount_pct)),
+    )
+    if not 0 < rules.discount_pct < 100:
+        raise ValueError("premium.deal_discount_pct must be between 0 and 100")
+    return PremiumSettings(
+        enabled=bool(raw.get("enabled", False)),
+        free_delay_hours=float(raw.get("free_delay_hours", 6)),
+        max_posts_per_run=int(raw.get("max_posts_per_run", 4)),
+        join_link=str(raw.get("join_link") or ""),
+        rules=rules,
     )
 
 
@@ -217,7 +249,7 @@ def require_env(*names: str) -> dict[str, str]:
     return values
 
 
-def load_secrets(*, dry_run: bool) -> Secrets:
+def load_secrets(*, dry_run: bool, premium: bool = False) -> Secrets:
     """A real run needs everything; a dry run only needs the Travelpayouts token."""
     if dry_run:
         env = require_env("TRAVELPAYOUTS_TOKEN")
@@ -225,10 +257,14 @@ def load_secrets(*, dry_run: bool) -> Secrets:
             travelpayouts_token=env["TRAVELPAYOUTS_TOKEN"],
             travelpayouts_marker=os.environ.get("TRAVELPAYOUTS_MARKER", "").strip(),
         )
-    env = require_env("TRAVELPAYOUTS_TOKEN", "TRAVELPAYOUTS_MARKER", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHANNEL_ID")
+    names = ["TRAVELPAYOUTS_TOKEN", "TRAVELPAYOUTS_MARKER", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHANNEL_ID"]
+    if premium:
+        names.append("TELEGRAM_PREMIUM_CHANNEL_ID")
+    env = require_env(*names)
     return Secrets(
         travelpayouts_token=env["TRAVELPAYOUTS_TOKEN"],
         travelpayouts_marker=env["TRAVELPAYOUTS_MARKER"],
         telegram_bot_token=env["TELEGRAM_BOT_TOKEN"],
         telegram_channel_id=env["TELEGRAM_CHANNEL_ID"],
+        telegram_premium_channel_id=env.get("TELEGRAM_PREMIUM_CHANNEL_ID", ""),
     )

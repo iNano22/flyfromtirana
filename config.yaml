@@ -39,6 +39,20 @@ quiet_hours:                       # still scan at night, but don't post (local 
   start: "23:00"                   # keep the quotes - YAML reads 23:00 as a number otherwise
   end: "08:00"
 
+# --- Premium channel (paid, private) -----------------------------------------
+# Premium gets deals instantly and with looser rules; the free channel only
+# posts a deal after premium has had it for free_delay_hours, with a
+# "Premium members got this X hours earlier · Join" line.
+# To turn on: create the private channel, add the bot as admin, set the
+# TELEGRAM_PREMIUM_CHANNEL_ID secret, paste the paid invite link below, enabled: true.
+premium:
+  enabled: false
+  free_delay_hours: 6
+  max_posts_per_run: 4
+  join_link: ""                    # e.g. https://t.me/+AbCdEf... (the paid subscription link)
+  deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
+  threshold_min_discount_pct: 20
+
 # --- Storage -----------------------------------------------------------------
 db_path: data/prices.db
 history_retention_days: 45         # older price rows are deleted so the committed DB stays small

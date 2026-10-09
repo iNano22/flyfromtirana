@@ -1,4 +1,4 @@
-✈️ TIRANË → {CITY_UPPER}[[ ({AIRPORT})]][[ {FLAG}]]
+💎 PREMIUM · ✈️ TIRANË → {CITY_UPPER}[[ ({AIRPORT})]][[ {FLAG}]]
 💰 nga €{PRICE} one way[[ (zakonisht ~€{MEDIAN})]]
 📅 Data: {DATES}
 🛫 {AIRLINE} · {STOPS}[[ · {DURATION}]]
@@ -7,5 +7,4 @@
 🏨 <a href="{HOTEL_LINK}">Hotele në {CITY}</a>
 [[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]
 ⏳ Çmimet ndryshojnë shpejt!
-⚡ Anëtarët Premium e morën këtë ofertë {PREMIUM_HOURS} orë më parë[[ · <a href="{PREMIUM_LINK}">Bashkohu</a>]]
-🔔 Ndiq {CHANNEL} për oferta çdo ditë
+💎 E more i pari: kanali falas e merr këtë ofertë më vonë.

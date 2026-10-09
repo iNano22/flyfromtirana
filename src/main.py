@@ -22,7 +22,17 @@ from zoneinfo import ZoneInfo
 import requests
 from dotenv import load_dotenv
 
-from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, Route, Secrets, load_config, load_secrets
+from src.config import (
+    DEFAULT_CONFIG_PATH,
+    PROJECT_ROOT,
+    Config,
+    ConfigError,
+    DealRules,
+    Route,
+    Secrets,
+    load_config,
+    load_secrets,
+)
 from src.deals import Deal, find_route_deal, price_band, rank_deals
 from src.formatter import format_post
 from src.links import LinkBuilder
@@ -32,9 +42,13 @@ from src.telegram import TelegramClient, TelegramError
 
 log = logging.getLogger("flyfromtirana")
 
-# Name used in the posted_deals table. Future channels (Instagram, premium,
-# English) get their own name, so each one dedupes independently.
+# Names used in the posted_deals table. Each channel dedupes independently;
+# future ones (Instagram, English) get their own name too.
 CHANNEL = "telegram"
+PREMIUM_CHANNEL = "telegram_premium"
+# GitHub starts scheduled runs a few minutes late, so "posted 6h ago" is checked
+# with this much slack. Otherwise a deal could miss a run by 2 minutes.
+EARLY_ACCESS_SLACK = timedelta(minutes=30)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -50,7 +64,7 @@ def main(argv: list[str] | None = None) -> int:
         config = load_config(args.config)
         if args.ignore_quiet_hours:
             config = replace(config, quiet_hours=None)
-        secrets = load_secrets(dry_run=args.dry_run)
+        secrets = load_secrets(dry_run=args.dry_run, premium=config.premium.enabled)
         only_routes = {code.strip().upper() for code in args.routes.split(",")} if args.routes else None
         return run(config, secrets, dry_run=args.dry_run, only_routes=only_routes)
     except ConfigError as exc:
@@ -105,7 +119,10 @@ def run(
         request_delay_seconds=config.request_delay_seconds,
         session=session,
     )
-    telegram = None if dry_run else TelegramClient(secrets.telegram_bot_token, secrets.telegram_channel_id, session)
+    def telegram_for(chat_id: str) -> TelegramClient | None:
+        return None if dry_run else TelegramClient(secrets.telegram_bot_token, chat_id, session)
+
+    premium = config.premium
 
     log.info("Scanning %d route(s) from %s%s", len(routes), config.origin, " (dry run)" if dry_run else "")
     with Storage(config.db_path) as storage:
@@ -115,21 +132,31 @@ def run(
             log.error("Every route failed to fetch, nothing to do")
             return 1
 
-        # 2) Find deals, best first
-        deals = []
-        for route in routes:
-            if route.iata not in outbound:
-                continue
-            deal = find_route_deal(route, config.origin, outbound[route.iata], inbound.get(route.iata, []),
-                                   storage, config.rules, now, CHANNEL)
-            if deal:
-                deals.append(deal)
-        best = rank_deals(deals, config.max_posts_per_run)
-        log.info("%d route(s) with new deals, posting the best %d", len(deals), len(best))
+        # 2) Find deals and post the best ones: premium first (instantly), then free
+        common = dict(config=config, links=links, storage=storage, dry_run=dry_run,
+                      now=now, local_now=local_now, output=output)
+        exit_code = 0
+        if premium.enabled:
+            deals = find_deals(routes, outbound, inbound, storage, config.origin, premium.rules, now,
+                               PREMIUM_CHANNEL)
+            best = rank_deals(deals, premium.max_posts_per_run)
+            log.info("[premium] %d route(s) with new deals, posting the best %d", len(deals), len(best))
+            exit_code |= publish(best, channel=PREMIUM_CHANNEL, template=f"{config.language}_premium",
+                                 telegram=telegram_for(secrets.telegram_premium_channel_id), **common)
 
-        # 3) Post them
-        exit_code = publish(best, config=config, links=links, storage=storage, telegram=telegram,
-                            dry_run=dry_run, now=now, local_now=local_now, output=output)
+        # The free channel only gets deals premium has had for free_delay_hours.
+        early_access = {}
+        if premium.enabled:
+            early_access = dict(early_access_from=PREMIUM_CHANNEL,
+                                early_access_until=now - timedelta(hours=premium.free_delay_hours)
+                                + EARLY_ACCESS_SLACK)
+        deals = find_deals(routes, outbound, inbound, storage, config.origin, config.rules, now, CHANNEL,
+                           **early_access)
+        best = rank_deals(deals, config.max_posts_per_run)
+        log.info("[free] %d route(s) with new deals, posting the best %d", len(deals), len(best))
+        exit_code |= publish(best, channel=CHANNEL, template=config.language,
+                             telegram=telegram_for(secrets.telegram_channel_id),
+                             premium_link=premium.join_link if premium.enabled else None, **common)
 
         # 4) Housekeeping
         pruned = storage.prune_prices(now - timedelta(days=config.history_retention_days))
@@ -172,10 +199,25 @@ def scan_routes(scanner: PriceScanner, storage: Storage, config: Config, routes:
     return outbound, inbound
 
 
-def publish(deals: list[Deal], *, config: Config, links: LinkBuilder, storage: Storage,
-            telegram: TelegramClient | None, dry_run: bool, now: datetime, local_now: datetime,
-            output: Callable[[str], None]) -> int:
-    """Send (or, in a dry run, print) each deal. Returns 1 if any post failed, else 0."""
+def find_deals(routes: list[Route], outbound: dict[str, list[Quote]], inbound: dict[str, list[Quote]],
+               storage: Storage, origin: str, rules: DealRules, now: datetime, channel: str,
+               **early_access) -> list[Deal]:
+    """One Deal per route that has something new to post on `channel`."""
+    deals = []
+    for route in routes:
+        if route.iata not in outbound:
+            continue
+        deal = find_route_deal(route, origin, outbound[route.iata], inbound.get(route.iata, []),
+                               storage, rules, now, channel, **early_access)
+        if deal:
+            deals.append(deal)
+    return deals
+
+
+def publish(deals: list[Deal], *, channel: str, template: str, config: Config, links: LinkBuilder,
+            storage: Storage, telegram: TelegramClient | None, dry_run: bool, now: datetime,
+            local_now: datetime, output: Callable[[str], None], premium_link: str | None = None) -> int:
+    """Send (or, in a dry run, print) each deal to one channel. Returns 1 if any post failed, else 0."""
     if not deals:
         return 0
     quiet = in_quiet_hours(local_now.time(), config.quiet_hours)
@@ -188,21 +230,21 @@ def publish(deals: list[Deal], *, config: Config, links: LinkBuilder, storage: S
 
     failures = 0
     for deal in deals:
-        text = format_post(deal, links, language=config.language,
-                           channel_handle=config.channel_handle, airline_names=config.airlines)
+        text = format_post(deal, links, language=config.language, channel_handle=config.channel_handle,
+                           airline_names=config.airlines, template=template, premium_link=premium_link)
         if dry_run:
-            output(f"\n----- DRY RUN · {deal.summary()} -----\n{text}\n")
+            output(f"\n----- DRY RUN [{channel}] · {deal.summary()} -----\n{text}\n")
             continue
         try:
             message_id = telegram.send_message(text)
         except TelegramError as exc:
-            log.error("Could not post %s: %s", deal.summary(), exc)
+            log.error("[%s] Could not post %s: %s", channel, deal.summary(), exc)
             failures += 1
             continue
         # Remember every date shown in the post, so none of them is reposted too soon.
         for quote in deal.quotes:
-            storage.record_post(CHANNEL, quote, price_band(quote.price, config.rules.price_band_eur), now)
-        log.info("Posted %s (message %s)", deal.summary(), message_id)
+            storage.record_post(channel, quote, price_band(quote.price, config.rules.price_band_eur), now)
+        log.info("[%s] Posted %s (message %s)", channel, deal.summary(), message_id)
     return 1 if failures else 0
 
 
