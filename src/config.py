@@ -18,7 +18,7 @@ DEFAULT_CONFIG_PATH = PROJECT_ROOT / "config.yaml"
 
 # Partner link slots that always exist, so the template can reference
 # {HOTEL_LINK} etc. even before they are filled in config.yaml.
-DEFAULT_PARTNERS = ("hotel", "esim", "insurance")
+DEFAULT_PARTNERS = ("hotel", "esim", "insurance", "compensation", "car_rental")
 
 
 class ConfigError(Exception):

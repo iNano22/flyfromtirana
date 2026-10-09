@@ -89,6 +89,12 @@ links:
     insurance:
       url: "https://ektatraveling.tp.st/XKbXrxq5"   # EKTA, generated in Travelpayouts (Tools -> Links)
       wrapper: ""
+    compensation:                  # flight delay/cancellation claims
+      url: "https://airhelp.tp.st/bZg6g8jh"        # AirHelp
+      wrapper: ""
+    car_rental:
+      url: "https://getrentacar.tp.st/zqdZHOw2"    # GetRentacar
+      wrapper: ""
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

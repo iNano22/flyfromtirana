@@ -5,6 +5,7 @@
 🔁 Kthimi nga €{RETURN_PRICE}
 👉 <a href="{FLIGHT_LINK}">Rezervo tani</a>
 🏨 <a href="{HOTEL_LINK}">Hotele në {CITY}</a>
-[[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]
+[[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]   [[🚗 <a href="{CAR_RENTAL_LINK}">Makinë me qira</a>]]
+⚖️ Vonesë ose anulim? <a href="{COMPENSATION_LINK}">Merr deri €600 kompensim</a>
 ⏳ Çmimet ndryshojnë shpejt!
 💎 E more i pari: kanali falas e merr këtë ofertë më vonë.

@@ -135,7 +135,7 @@ Edit `templates/sq.txt`. Rules:
 
 - `{NAME}` is replaced with a value: `CITY CITY_UPPER AIRPORT FLAG PRICE MEDIAN
   DATES AIRLINE STOPS DURATION RETURN_PRICE CHANNEL FLIGHT_LINK HOTEL_LINK
-  ESIM_LINK INSURANCE_LINK`.
+  ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK PREMIUM_HOURS PREMIUM_LINK`.
 - `[[ ... ]]` marks an optional part. It's removed if any value inside it is missing.
 - A line with a missing value (outside `[[ ]]`) is removed, e.g. the "Kthimi"
   line when there's no return flight.
