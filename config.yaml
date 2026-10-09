@@ -49,7 +49,7 @@ premium:
   enabled: true
   free_delay_hours: 6
   max_posts_per_run: 4
-  join_link: "https://t.me/+oel9o68GHPw2YTg0"   # paid subscription invite link
+  join_link: "https://t.me/+IwCW3S2em3c2Zjhk"   # paid subscription invite link
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
   threshold_min_discount_pct: 20
 
