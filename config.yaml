@@ -87,7 +87,7 @@ links:
       url: "https://airalo.tp.st/kR78iHcI"   # Airalo, generated in Travelpayouts (Tools -> Links)
       wrapper: ""
     insurance:
-      url: ""
+      url: "https://ektatraveling.tp.st/XKbXrxq5"   # EKTA, generated in Travelpayouts (Tools -> Links)
       wrapper: ""
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
