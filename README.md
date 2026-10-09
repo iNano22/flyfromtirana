@@ -109,7 +109,7 @@ permissions → **Read and write permissions**.
 | `absolute_threshold_eur` (per route) | | A price at/below this is a deal, if it's also ≥ `threshold_min_discount_pct` (25%) below the median |
 | `repost_cooldown_days` | 7 | Same route + date + price band isn't reposted within this window |
 | `price_band_eur` | 10 | €20–29.99 is one band. A drop into a cheaper band *is* reposted |
-| `max_posts_per_run` | 3 | Best deals (biggest % saving) go first |
+| `max_posts_per_run` | 2 | Best deals (biggest % saving) go first |
 | `quiet_hours` | 23:00–08:00 | Scan at night but don't post. `null` to disable |
 
 One post covers one route. It shows the cheapest date plus up to 3 more dates
