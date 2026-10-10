@@ -7,7 +7,8 @@
      TOP_PRICE TOP_SAVING (the best deal, for the chip on the first slide) DATE_MIN DATE_MAX
      DEAL_ROWS PRICE_ROWS HERO_SLIDES DEST_CARDS (the photo cards) PHOTO_CREDITS (the footer's
      photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
-     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
+     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive
+     script, only when one is set) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
      PREMIUM_LINK SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
      INSURANCE_LINK, CAR_RENTAL_LINK, COMPENSATION_LINK, HOTEL_LINK).
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
@@ -468,6 +469,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   to { opacity: 1; transform: rotate(7deg) scale(1); }
 }
 </style>
+{DRIVE}
 </head>
 <body>
 <a class="skip" href="#kerko">Kalo te kërkimi</a>

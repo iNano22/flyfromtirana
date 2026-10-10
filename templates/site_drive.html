@@ -1,0 +1,17 @@
+<!-- Travelpayouts Drive: the script Travelpayouts gives a project under Drive in its dashboard.
+     It turns travel words on the page into affiliate links and can add offers and previews;
+     what it does is switched on and off in the dashboard, not here. This block is only put on a
+     page (in its head) when website.travelpayouts_drive_script is set in config.yaml; DRIVE_URL
+     is that address. The rest is the snippet exactly as Travelpayouts provides it, so keep it
+     as it is (the odd attributes tell speed-up tools not to delay or rewrite it).
+     Same rules as the other templates: never write an uppercase word in curly braces unless it
+     is a value, never two opening square brackets in a row. -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = '{DRIVE_URL}';
+      document.head.appendChild(script);
+  })();
+</script>

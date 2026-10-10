@@ -98,6 +98,8 @@ class WebsiteSettings:
     # True: Analytics waits for the visitor's "Pranoj". False: it counts from the first
     # page view and the visitor can only switch it off afterwards.
     google_analytics_ask_first: bool = True
+    # The address of this project's Travelpayouts Drive script; empty = no Drive on the site.
+    travelpayouts_drive_script: str = ""
 
 
 @dataclass(frozen=True)
@@ -222,11 +224,17 @@ def _build_website(raw: dict, base_dir: Path, links: LinkSettings) -> WebsiteSet
     # The ID is written into the page's JavaScript, so only the real shape is let through.
     if analytics_id and not re.fullmatch(r"G-[A-Z0-9]{4,20}", analytics_id):
         raise ValueError("website.google_analytics_id must look like G-XXXXXXXXXX (a GA4 Measurement ID)")
+    drive_script = str(raw.get("travelpayouts_drive_script") or "").strip()
+    # Like the Analytics ID, this is written into a script on the page: only a plain https address.
+    if drive_script and not re.fullmatch(r"https://[A-Za-z0-9.-]+/[A-Za-z0-9._~/?=&%-]*", drive_script):
+        raise ValueError("website.travelpayouts_drive_script must be the https address of the Drive script, "
+                         "the one in script.src = '...' in the snippet Travelpayouts gives")
     return WebsiteSettings(
         output_dir=output_dir,
         sub_id=sub_id,
         url=str(raw.get("url") or "").strip(),
         google_analytics_id=analytics_id,
+        travelpayouts_drive_script=drive_script,
         google_analytics_ask_first=bool(raw.get("google_analytics_ask_first", True)),
         links=_website_links(raw.get("links") or {}, links, sub_id),
     )

@@ -42,7 +42,8 @@ templates/site.html      the website page (wording, CSS, a little JS); site_row.
                          list, site_card.html = one photo card, site_hero.html = one hero banner
 templates/site_dest.html a city's own page; site_dest_fare.html = one airport's price on it;
                          site_guide.html = a city's photo tile on the main page;
-                         site_analytics.html = Google Analytics and its cookie box
+                         site_analytics.html = Google Analytics and its cookie box;
+                         site_drive.html = the Travelpayouts Drive script
 content/destinations/    the city guides, one file per city (the text of the city pages)
 content/countries.yaml   the entry documents for each country, shown on its cities' pages
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
@@ -241,6 +242,20 @@ of two ways, chosen by `website.google_analytics_ask_first` in config.yaml:
 Either way the answer is remembered in the visitor's browser, and "Cilësimet e
 cookies" in the footer lets them change it. With the ID empty there is no
 Analytics, no box and no cookie.
+
+### Travelpayouts Drive
+
+Drive is Travelpayouts' own script for a site: it turns travel words in the text
+into affiliate links and can add offers and link previews. Every page of the site
+loads it, from its `<head>` (`templates/site_drive.html`).
+
+- The script belongs to the "Flyfromtirana" project. Its address is
+  `website.travelpayouts_drive_script` in config.yaml: the one inside
+  `script.src = '...'` in the snippet the dashboard shows under Drive.
+- What Drive does on the pages (keyword links, inserted recommendations, offers
+  in a background tab, previews) is switched on and off in the Travelpayouts
+  dashboard, not in this repo. Its results are under Drive → Content analytics.
+- Set the address to `""` to take Drive off the site.
 
 ### Where it is served
 

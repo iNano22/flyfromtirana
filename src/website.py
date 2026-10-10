@@ -274,6 +274,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["DESTINATION_OPTIONS"] = destination_options(offers)
     values["GUIDE_TILES"] = guide_tiles(guides, offers, config)
     values["ANALYTICS"] = analytics_html(config)
+    values["DRIVE"] = drive_html(config)
     return render(load_site_template("site.html"), values) + "\n"
 
 
@@ -441,6 +442,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         values[f"{part}_ON"] = "1" if values[part] else None
     values["OTHER_GUIDES"] = guide_tiles(guides, offers, config, prefix="../", skip=guide.city)
     values["ANALYTICS"] = analytics_html(config)
+    values["DRIVE"] = drive_html(config)
     return render(load_site_template("site_dest.html"), values) + "\n"
 
 
@@ -453,6 +455,14 @@ def analytics_html(config: Config) -> str | None:
     # Exactly one of GA_ASK / GA_AUTO has a value: it picks the box's wording and behaviour.
     values = {"GA_ID": analytics_id, "GA_ASK": "1" if ask_first else None, "GA_AUTO": None if ask_first else "1"}
     return render(load_site_template("site_analytics.html"), values)
+
+
+def drive_html(config: Config) -> str | None:
+    """The Travelpayouts Drive snippet (templates/site_drive.html), or None when no script is set."""
+    script = config.website.travelpayouts_drive_script
+    if not script:
+        return None
+    return render(load_site_template("site_drive.html"), {"DRIVE_URL": script})
 
 
 def write_sitemap(out_dir: Path, config: Config, guides: dict[str, Guide], now: datetime) -> None:

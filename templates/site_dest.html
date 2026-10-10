@@ -13,7 +13,8 @@
      "Në këtë faqe" list go with it. OTHER_GUIDES (the other cities' photo tiles, from site_guide.html) HOME (the way back to the
      main page, "../") GUIDE_PHOTO (the city's wide photo) PHOTO (a route's photo, only when
      there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
-     ANALYTICS and GA_ON (only with Google Analytics on), plus one NAME_LINK per partner.
+     ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive script,
+     only when one is set), plus one NAME_LINK per partner.
      Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
      values, and never two opening square brackets in a row. -->
 <html lang="sq">
@@ -227,6 +228,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
   .gtile a:hover img { transform: scale(1.05); }
 }
 </style>
+{DRIVE}
 </head>
 <body[[ class="c-{COUNTRY}"]]>
 <a class="skip" href="#cmimet">Kalo te çmimet</a>

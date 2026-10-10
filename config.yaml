@@ -76,6 +76,11 @@ website:
   # true:  nothing is loaded from Google until the visitor presses "Pranoj". That is what the
   #        EU's cookie rules ask for, but visitors who ignore the box are then not counted.
   google_analytics_ask_first: false
+  # Travelpayouts Drive: the script of the "Flyfromtirana" project (dashboard -> Drive). Only its
+  # address goes here: the one in script.src = '...' in the snippet they give. What Drive does on
+  # the pages (keyword links, offers, previews) is switched on and off in the dashboard.
+  # Empty = no Drive on the site.
+  travelpayouts_drive_script: "https://emrldtp.cc/NTgzODE4.js?t=583818"
 
   # The site's own affiliate links, made in its own Travelpayouts project
   # ("Flyfromtirana"), so the site's clicks are counted there and not under the

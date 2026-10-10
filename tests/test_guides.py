@@ -249,6 +249,39 @@ def test_config_counts_from_the_first_page_view(tmp_path):
     assert load_config(path).website.google_analytics_ask_first is True  # not set: ask first
 
 
+# --- Travelpayouts Drive ---------------------------------------------------------------
+
+def test_drive_script_is_in_the_head_of_every_page(config, storage):
+    config = replace(config, website=replace(config.website,
+                                             travelpayouts_drive_script="https://drive.example/abc.js?t=1"))
+    for page in analytics_pages(config, storage):
+        head = page[:page.index("</head>")]
+        assert "script.src = 'https://drive.example/abc.js?t=1';" in head
+        assert '<script nowprocket data-noptimize="1" data-cfasync="false"' in head   # the snippet as Travelpayouts gives it
+        assert "<!--" not in page and not PLACEHOLDER.search(page)
+
+
+def test_no_drive_script_without_one_in_the_config(config, storage):
+    assert load_config().website.travelpayouts_drive_script.startswith("https://")   # config.yaml has the site's
+    config = replace(config, website=replace(config.website, travelpayouts_drive_script=""))
+    for page in analytics_pages(config, storage):
+        assert "nowprocket" not in page and "document.head.appendChild" not in page[:page.index("</head>")]
+
+
+def test_drive_script_must_be_a_plain_https_address(tmp_path):
+    def load(value):
+        path = tmp_path / "config.yaml"
+        path.write_text("routes:\n  - { iata: BGY, city: Milan }\nwebsite:\n"
+                        f"  travelpayouts_drive_script: {value}\n", encoding="utf-8")
+        return load_config(path).website.travelpayouts_drive_script
+
+    assert load('"https://emrldtp.cc/abc.js?t=1"') == "https://emrldtp.cc/abc.js?t=1"
+    assert load('""') == ""
+    for bad in ('"http://emrldtp.cc/abc.js"', "\"https://x.example/a.js';alert(1)//\"", '"<script src=x>"'):
+        with pytest.raises(ConfigError, match="travelpayouts_drive_script"):
+            load(bad)
+
+
 def test_analytics_id_must_look_like_one(tmp_path):
     def load(analytics_id):
         path = tmp_path / "config.yaml"
