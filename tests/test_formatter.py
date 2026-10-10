@@ -7,6 +7,7 @@ from src.deals import Deal
 from src.formatter import (WORDS, format_dates, format_duration, format_post, format_price, render,
                            saving_percent, tidy)
 from src.links import LinkBuilder
+from src import photos
 from src.photos import PostPhoto, post_photo
 from tests.conftest import make_quote
 
@@ -94,13 +95,25 @@ def test_photo_credit_is_the_last_line(route, tmp_path):
     assert "Foto:" not in post(deal)
 
 
-def test_post_photo_and_its_credit():
+def test_post_photo_needs_no_credit_today():
     vienna = post_photo("VIE")
     assert vienna.path.name == "vie.jpg" and vienna.path.exists()
-    assert vienna.credit == "Tauralbus, CC BY 2.0"         # CC BY: the author must be named
-    assert vienna.source_url.startswith("https://")
-    assert post_photo("bgy").credit is None                # CC0: no credit needed
+    assert vienna.credit is None                           # Unsplash License: no credit needed
+    assert post_photo("bgy").credit is None                # CC0: none either
     assert post_photo("XXX") is None                       # no assets/telegram/xxx.jpg
+
+
+def test_cc_by_photo_names_its_author(tmp_path, monkeypatch):
+    # Should a CC BY photo come back one day, its post must credit the author again.
+    (tmp_path / "vie.jpg").write_bytes(b"jpeg")
+    credits = tmp_path / "credits.json"
+    credits.write_text('[{"slot": "VIE", "creator": "Jane Doe", "license": "CC BY 2.0",'
+                       ' "source_url": "https://photos.example/1"}]', encoding="utf-8")
+    monkeypatch.setattr(photos, "POST_PHOTOS_DIR", tmp_path)
+    monkeypatch.setattr(photos, "CREDITS_FILE", credits)
+    vienna = post_photo("VIE")
+    assert vienna.credit == "Jane Doe, CC BY 2.0"
+    assert vienna.source_url == "https://photos.example/1"
 
 
 def test_post_photos_are_small_jpegs():

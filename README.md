@@ -155,7 +155,7 @@ Its layout follows an airline booking page, top to bottom:
   stub holds the price, the usual price and "Rezervo" with your marker. Deals get a
   yellow stub and a red "OFERTË" stamp.
 - A full-width "Mos humb asnjë ofertë" Telegram band with the Premium link (when
-  enabled), and a footer with the affiliate disclosure and the photo credits.
+  enabled), and a footer with the affiliate disclosure.
 
 Everything still works with JavaScript off: the carousels become plain scrolling
 rows and the search button jumps to the list.
@@ -193,10 +193,20 @@ python -m src.website --out /tmp/site   # somewhere else, leaving docs/ alone
 
 The photos live in `assets/img`: `dest/<iata>.webp` (600×840) for each route's card
 and `services/<partner>.webp` (720×450) for the travel services. Every build copies
-them to `docs/img`. They come from Openverse and Wikimedia Commons under licences
-that allow commercial use (CC0, public domain, CC BY, CC BY-SA). Each one's author,
-source and licence is in `assets/img/credits.json`, which the footer lists under
-"Fotot dhe licencat e tyre", as CC BY and CC BY-SA require.
+them to `docs/img`. Most destination photos come from [Unsplash](https://unsplash.com)
+(downloaded from the website, under the Unsplash License, which allows commercial
+use and asks for no credit); the rest are CC0 or CC BY from Openverse and Wikimedia
+Commons. Each one's author, source and licence is kept in `assets/img/credits.json`
+as a record of where it came from.
+
+The page shows no photo credits, because none of the photos on it requires one.
+Only a CC BY or CC BY-SA photo does: while one is on the page, the footer lists it
+under "Fotot dhe licencat e tyre". Today that is just the hotel card's photo, and
+that card only appears once a hotel link is set.
+
+**New photos: take free ones from Unsplash**, from the website (not Unsplash+, and
+not through the Unsplash API: the API's own rules require crediting the photographer
+wherever a photo is shown). Then nothing needs a credit, on the page or in a post.
 
 - **New route without a photo**: its card shows its country colours instead. To add
   one, save a 600×840 WebP as `assets/img/dest/<iata>.webp` (lowercase code) and add
@@ -206,18 +216,22 @@ source and licence is in `assets/img/credits.json`, which the footer lists under
 
 **Photos on the Telegram posts.** Each post is sent as the destination's photo with
 the text under it. Telegram wants a JPEG, so every route's photo is also kept as
-`assets/telegram/<iata>.jpg`. After adding or replacing a WebP, make its JPEG (macOS):
+`assets/telegram/<iata>.jpg` (1080×1512 is a good size; the website's WebP is the
+same picture at 600×840). To make one from the other (macOS; `cwebp` is from
+`brew install webp`):
 
 ```bash
-sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/telegram/vie.jpg
+cwebp -q 72 -resize 600 840 assets/telegram/vie.jpg -o assets/img/dest/vie.webp   # JPEG -> the site's WebP
+sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/telegram/vie.jpg   # or WebP -> JPEG
 ```
 
 - A route without a JPEG gets a post without a photo. So does any post Telegram
   refuses the photo for (the log says why), or whose text is longer than the 1024
   characters allowed under a photo. A photo problem never loses a post.
-- CC BY and CC BY-SA photos must name their author, so those posts end with a line
-  like "📷 Foto: D-Stanley, CC BY 2.0", linked to the photo's source. It comes from
-  `credits.json`; CC0 photos get no such line.
+- No destination photo needs a credit today (they are Unsplash or CC0), so posts
+  carry none. If you add a CC BY or CC BY-SA photo, its posts end with a line like
+  "📷 Foto: Jane Doe, CC BY 2.0", linked to the photo's source, because those
+  licences require naming the author. It is read from `credits.json`.
 - `post_photos: false` in config.yaml sends text only, as before.
 
 ### Change the wording or look
@@ -238,7 +252,7 @@ sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/te
   deal, shown as a chip on the first hero slide), `{DATE_MIN}`/`{DATE_MAX}` (the search
   card's date window), `{HERO_SLIDES}` and `{DESTINATION_OPTIONS}` (the `<option>` list
   for the search card's destination picker), `{DEST_CARDS}` (the photo cards) and
-  `{PHOTO_CREDITS}` (the footer's credits list).
+  `{PHOTO_CREDITS}` (the footer's credits, only there when a photo requires one).
 - The search card never shows availability: with JavaScript it builds a tracked
   Aviasales search link (route, date, passengers) from a "Rezervo" link's query
   string; without it the button simply jumps to the list.

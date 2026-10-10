@@ -20,15 +20,21 @@ ASSETS_DIR = PROJECT_ROOT / "assets"
 CREDITS_FILE = ASSETS_DIR / "img" / "credits.json"
 POST_PHOTOS_DIR = ASSETS_DIR / "telegram"
 
-# Licences that ask for no credit. Every other one (CC BY, CC BY-SA) does,
-# so the post names the author and the licence under the photo.
-NO_CREDIT_NEEDED = ("cc0", "public domain", "pd")
+# Licences that ask for no credit (the Unsplash License says so in as many
+# words). Every other one (CC BY, CC BY-SA) does, so the post names the
+# author and the licence under the photo.
+NO_CREDIT_NEEDED = ("cc0", "public domain", "pd", "unsplash")
+
+
+def needs_credit(licence: str) -> bool:
+    """Does this licence require naming the photo's author? CC BY and CC BY-SA do."""
+    return not licence.lower().startswith(NO_CREDIT_NEEDED)
 
 
 @dataclass(frozen=True)
 class PostPhoto:
     path: Path                # the JPEG to upload
-    credit: str | None        # "D-Stanley, CC BY 2.0", or None when the licence asks for none
+    credit: str | None        # "Jane Doe, CC BY 2.0", or None when the licence asks for none
     source_url: str | None    # where the photo comes from: the credit links to it
 
 
@@ -38,7 +44,7 @@ def post_photo(iata: str) -> PostPhoto | None:
     if not path.exists():
         return None
     entry = _credit_entry(iata)
-    if entry is None or entry["license"].lower().startswith(NO_CREDIT_NEEDED):
+    if entry is None or not needs_credit(entry["license"]):
         return PostPhoto(path=path, credit=None, source_url=None)
     return PostPhoto(path=path, credit=f'{entry["creator"]}, {entry["license"]}',
                      source_url=entry.get("source_url") or entry.get("license_url") or None)

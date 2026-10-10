@@ -44,7 +44,7 @@ from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, i
 from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
                            saving_percent)
 from src.links import LinkBuilder
-from src.photos import ASSETS_DIR, CREDITS_FILE
+from src.photos import ASSETS_DIR, CREDITS_FILE, needs_credit
 from src.storage import Storage
 
 log = logging.getLogger("flyfromtirana.website")
@@ -291,19 +291,26 @@ def route_photo(iata: str) -> str | None:
 
 
 def photo_credits(config: Config) -> str | None:
-    """The footer's list of photo credits (author, source and licence of each photo), as HTML.
+    """The footer's photo credits, as HTML. None (no credits block at all) when no photo needs one.
 
-    Most photos are CC BY or CC BY-SA, which ask for exactly this: who took it, where
-    it comes from, which licence, and that it was changed (cropped and resized).
+    Only photos whose licence requires a credit are listed, and only while they
+    are on the page. The photos in use are Unsplash or CC0, which require none,
+    so the footer normally has no credits. A CC BY or CC BY-SA photo would bring
+    its credit back, because those licences ask for exactly this: who took it,
+    where it comes from, which licence, and that it was changed (cropped and resized).
     """
     if not CREDITS_FILE.exists():
         return None
     names = {route.iata: city_label(route) for route in config.routes}
-    names.update(SERVICE_PHOTO_NAMES)
+    # A service card is only on the page when its partner link is set in config.yaml.
+    names.update({slot: name for slot, name in SERVICE_PHOTO_NAMES.items()
+                  if slot in config.links.partners and config.links.partners[slot].url})
     esc = html.escape
     items = []
     for photo in json.loads(CREDITS_FILE.read_text(encoding="utf-8")):
         if not (ASSETS_DIR / photo["file"]).exists():
+            continue
+        if photo["slot"] not in names or not needs_credit(photo["license"]):
             continue
         title = f'<a href="{esc(photo["source_url"])}">{esc(photo["title"])}</a>' if photo["source_url"] else esc(photo["title"])
         creator = esc(photo["creator"])
@@ -312,7 +319,7 @@ def photo_credits(config: Config) -> str | None:
         licence = esc(photo["license"])
         if photo.get("license_url"):
             licence = f'<a href="{esc(photo["license_url"])}">{licence}</a>'
-        label = esc(names.get(photo["slot"], photo["slot"]))
+        label = esc(names[photo["slot"]])
         items.append(f"<li>{label}: {title}, nga {creator}, {licence}. Prerë dhe zvogëluar.</li>")
     return "".join(items) or None
 

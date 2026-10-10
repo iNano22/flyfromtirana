@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 import pytest
 
-from src.config import Route, load_config
+from src.config import LinkTemplate, Route, load_config
 from src.deals import PREMIUM_CHANNEL, price_band
 from src.formatter import PLACEHOLDER
 from src.links import LinkBuilder
@@ -247,20 +247,32 @@ def test_route_without_a_photo_keeps_its_colours(config, storage):
     assert 'class="dcard c-it"' in card and "<img" not in card
 
 
-def test_build_copies_the_photos_and_lists_their_credits(config, storage):
+def test_build_copies_the_photos_and_shows_no_credits(config, storage):
     two_routes(storage)
     index = build_site(config, "12345", now=NOW)
     out = config.website.output_dir
     assert (out / "img" / "dest" / "bgy.webp").exists()
     assert (out / "img" / "services" / "esim.webp").exists()
-    assert not (out / "img" / "credits.json").exists()                         # the credits go in the page instead
+    assert not (out / "img" / "credits.json").exists()                         # the list of sources stays behind
     page = index.read_text(encoding="utf-8")
-    credits = page[page.index('<details class="credits">'):page.index("</details>")]
-    assert credits.count("<li>") >= 25
-    assert "Milan (Malpensa): " in credits and "creativecommons.org" in credits
-    assert "Prerë dhe zvogëluar." in credits
+    # Every photo on the page is Unsplash or CC0, which need no credit: the footer has no credits block.
+    assert '<details class="credits">' not in page and "Fotot dhe licencat" not in page
     for img in ("img/services/esim.webp", "img/services/insurance.webp"):
         assert img in page                                                     # the service cards
+
+
+def test_photo_that_requires_a_credit_gets_one_while_it_is_on_the_page(config, storage):
+    # The hotel card's photo is CC BY. With no hotel link the card is not on the page (see the
+    # test below); once a link is set, the card appears and its author must be named.
+    two_routes(storage)
+    partners = dict(config.links.partners, hotel=LinkTemplate(url="https://hotels.example/"))
+    config = replace(config, links=replace(config.links, partners=partners))
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
+                       updated_at=NOW, now=NOW)
+    assert "img/services/hotel.webp" in page
+    credits = page[page.index('<details class="credits">'):page.index("</details>")]
+    assert credits.count("<li>") == 1
+    assert "Hotele: " in credits and "CC BY 2.0" in credits and "Prerë dhe zvogëluar." in credits
 
 
 def test_service_card_without_a_link_is_left_out(config, storage):
