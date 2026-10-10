@@ -84,7 +84,8 @@ class WebsiteSettings:
 
     output_dir: Path = PROJECT_ROOT / "docs"
     sub_id: str = "website"   # Travelpayouts SubID for links on the site ("telegram" is used in posts)
-    url: str = ""             # public address, for the page's canonical/og:url tags; empty = left out
+    url: str = ""             # public address: linked in posts and used for the page's
+                              # canonical/og:url tags; empty = left out
 
 
 @dataclass(frozen=True)

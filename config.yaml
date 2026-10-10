@@ -61,7 +61,8 @@ premium:
 website:
   output_dir: docs                 # the server mounts its site volume here
   sub_id: website                  # Travelpayouts SubID for links on the site ("telegram" is used in posts)
-  url: https://flyfromtirana.devbay.cloud/   # public address, for the page's canonical/og:url tags
+  url: https://flyfromtirana.devbay.cloud/   # public address: linked at the bottom of every post, and
+                                             # used for the page's canonical/og:url tags
 
 # --- Storage -----------------------------------------------------------------
 db_path: data/prices.db

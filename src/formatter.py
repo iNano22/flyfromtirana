@@ -6,7 +6,10 @@ touching code. Template rules:
   [[ ... ]]   optional part: removed if any {NAME} inside it has no value
   A line with a {NAME} that has no value (outside [[ ]]) is removed entirely.
 Telegram gets the text with parse_mode=HTML, so templates can use
-<a href="...">, <b> and <i>. Values are HTML-escaped automatically.
+<a href="...">, <b>, <i> and <blockquote> (the tinted box around the flight
+details). Values are HTML-escaped automatically.
+Keep <blockquote> on a line that is always there and </blockquote> on a line
+of its own: a tag on a line that gets removed would break the whole post.
 
 Adding a language = add templates/<lang>.txt and a WORDS entry below.
 """
@@ -48,11 +51,12 @@ OPTIONAL_PART = re.compile(r"\[\[(.*?)\]\]")
 
 def format_post(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
                 airline_names: dict[str, str], template: str | None = None,
-                premium_link: str | None = None) -> str:
+                premium_link: str | None = None, website_url: str | None = None) -> str:
     """template: file name in templates/ without .txt (default: the language, e.g. "sq")."""
     values = build_values(deal, links, language=language, channel_handle=channel_handle,
-                          airline_names=airline_names, premium_link=premium_link)
-    return render(load_template(template or language), values)
+                          airline_names=airline_names, premium_link=premium_link,
+                          website_url=website_url)
+    return tidy(render(load_template(template or language), values))
 
 
 def load_template(name: str) -> str:
@@ -64,7 +68,8 @@ def load_template(name: str) -> str:
 
 
 def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
-                 airline_names: dict[str, str], premium_link: str | None = None) -> dict[str, str | None]:
+                 airline_names: dict[str, str], premium_link: str | None = None,
+                 website_url: str | None = None) -> dict[str, str | None]:
     """Every {NAME} a template can use. None = no value (the line/part is left out)."""
     if language not in WORDS:
         raise ConfigError(f"Unsupported language {language!r}; add it to WORDS in src/formatter.py")
@@ -80,6 +85,7 @@ def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handl
         "FLAG": deal.route.flag,
         "PRICE": format_price(best.price),
         "MEDIAN": f"{deal.median:.0f}" if deal.median else None,
+        "SAVING": saving_percent(deal),
         "DATES": format_dates([q.depart_date for q in deal.quotes], words["months"]),
         "AIRLINE": airline_names.get(best.airline, best.airline) or None,
         "STOPS": words["direct"] if best.is_direct else words["with_stops"],
@@ -88,7 +94,8 @@ def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handl
         "CHANNEL": channel_handle,
         "PREMIUM_HOURS": str(deal.premium_lead_hours) if deal.premium_lead_hours else None,
     }
-    urls = {"FLIGHT_LINK": links.flight(best), "PREMIUM_LINK": premium_link or None}
+    urls = {"FLIGHT_LINK": links.flight(best), "PREMIUM_LINK": premium_link or None,
+            "WEBSITE_LINK": website_url or None}
     for name in links.partner_names:  # hotel -> HOTEL_LINK, esim -> ESIM_LINK, ...
         urls[f"{name.upper()}_LINK"] = links.partner(name, deal.route, checkin, checkout)
 
@@ -112,6 +119,15 @@ def render(template: str, values: dict[str, str | None]) -> str:
     return "\n".join(lines).strip()
 
 
+def tidy(text: str) -> str:
+    """Clean up what left-out lines leave behind in a post."""
+    # </blockquote> has a line of its own in the template; in the post it
+    # belongs right after the last line of the quote, with no empty line inside.
+    text = text.replace("\n</blockquote>", "</blockquote>")
+    # A whole group of lines can be left out: never show two blank lines in a row.
+    return re.sub(r"\n{3,}", "\n\n", text)
+
+
 def _has_values(text: str, values: dict[str, str | None]) -> bool:
     for name in PLACEHOLDER.findall(text):
         if name not in values:
@@ -124,6 +140,12 @@ def _has_values(text: str, values: dict[str, str | None]) -> bool:
 def format_price(price: float) -> str:
     """Whole euros, rounded up: never advertise a price lower than the real one."""
     return str(math.ceil(round(price, 2)))
+
+
+def saving_percent(deal: Deal) -> str | None:
+    """'68' when the price is 68% below the route's usual price; None without a usual price (or a saving)."""
+    saving = round((1 - deal.best.price / deal.median) * 100) if deal.median else 0
+    return str(saving) if saving >= 1 else None
 
 
 def format_dates(dates: list[date], month_names: list[str]) -> str:

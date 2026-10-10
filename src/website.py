@@ -38,7 +38,8 @@ from dotenv import load_dotenv
 
 from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, Route, load_config
 from src.deals import Deal, cheapest_return, deal_reason
-from src.formatter import WORDS, build_values, format_dates, format_price, load_template, render
+from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
+                           saving_percent)
 from src.links import LinkBuilder
 from src.storage import Storage
 
@@ -254,7 +255,6 @@ def row_values(offer: Deal, config: Config, links: LinkBuilder) -> dict[str, str
     values.update({
         "IATA": offer.route.iata,
         "DEAL": "deal" if offer.is_deal else None,  # a CSS class; template parts using it vanish for other routes
-        "SAVING": saving_percent(offer),
         "COUNTRY": country_code(offer.route.flag),   # "it" for 🇮🇹: the CSS class that picks the card's colours
         "BEST_DATE": offer.best.depart_date.isoformat(),  # "2026-11-21": the page's JavaScript pre-fills the date picker with it
         # For the photo cards: "14 Nën", "Austri" and the route's photo (None when there isn't one).
@@ -296,12 +296,6 @@ def photo_credits(config: Config) -> str | None:
         label = esc(names.get(photo["slot"], photo["slot"]))
         items.append(f"<li>{label}: {title}, nga {creator}, {licence}. Prerë dhe zvogëluar.</li>")
     return "".join(items) or None
-
-
-def saving_percent(offer: Deal) -> str | None:
-    """'68' when the price is 68% below the route's usual price; None without a usual price (or a saving)."""
-    saving = round((1 - offer.best.price / offer.median) * 100) if offer.median else 0
-    return str(saving) if saving >= 1 else None
 
 
 def city_label(route: Route) -> str:

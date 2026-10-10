@@ -54,10 +54,12 @@ def test_dry_run_prints_posts_and_sends_nothing(config):
     assert code == 0
     assert len(printed) == 1
     post = printed[0]
-    assert "✈️ TIRANA → MILAN (Bergamo) 🇮🇹" in post
-    assert "💰 nga €19 one way (zakonisht ~€" in post
-    assert "📅 Data: 20 Nën, 22 Nën" in post
+    assert "✈️ <b>TIRANA → MILAN</b> (Bergamo) 🇮🇹" in post
+    assert "💰 <b>nga €19</b> one way" in post
+    assert "🔥 <b>-69%</b> · zakonisht ~€62" in post
+    assert "📅 <b>20 Nën, 22 Nën</b>" in post
     assert "🔁 Kthimi nga €24" in post
+    assert f'<a href="{config.website.url}">Të gjitha ofertat në faqen tonë</a>' in post
     assert telegram_calls(session) == []
     assert posted_count(config) == 0  # dry runs don't mark anything as posted
 

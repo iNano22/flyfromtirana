@@ -1,12 +1,18 @@
-✈️ TIRANA → {CITY_UPPER}[[ ({AIRPORT})]][[ {FLAG}]]
-💰 nga €{PRICE} one way[[ (zakonisht ~€{MEDIAN})]]
-📅 Data: {DATES}
+✈️ <b>TIRANA → {CITY_UPPER}</b>[[ ({AIRPORT})]][[ {FLAG}]]
+
+💰 <b>nga €{PRICE}</b> one way
+[[🔥 <b>-{SAVING}%</b> · ]]zakonisht ~€{MEDIAN}
+<blockquote>📅 <b>{DATES}</b>
 🛫 {AIRLINE} · {STOPS}[[ · {DURATION}]]
 🔁 Kthimi nga €{RETURN_PRICE}
-👉 <a href="{FLIGHT_LINK}">Rezervo tani</a>
+</blockquote>
+👉 <b><a href="{FLIGHT_LINK}">Rezervo tani</a></b>
+⏳ <i>Çmimet ndryshojnë shpejt!</i>
+
 🏨 <a href="{HOTEL_LINK}">Hotele në {CITY}</a>
 [[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]   [[🚗 <a href="{CAR_RENTAL_LINK}">Makinë me qira</a>]]
 ⚖️ Vonesë ose anulim? <a href="{COMPENSATION_LINK}">Merr deri €600 kompensim</a>
-⏳ Çmimet ndryshojnë shpejt!
+
 ⚡ Anëtarët Premium e morën këtë ofertë {PREMIUM_HOURS} orë më parë[[ · <a href="{PREMIUM_LINK}">Bashkohu</a>]]
+🌐 <a href="{WEBSITE_LINK}">Të gjitha ofertat në faqen tonë</a>
 🔔 Ndiq {CHANNEL} për oferta çdo ditë

@@ -232,7 +232,8 @@ def publish(deals: list[Deal], *, channel: str, template: str, config: Config, l
     failures = 0
     for deal in deals:
         text = format_post(deal, links, language=config.language, channel_handle=config.channel_handle,
-                           airline_names=config.airlines, template=template, premium_link=premium_link)
+                           airline_names=config.airlines, template=template, premium_link=premium_link,
+                           website_url=config.website.url)
         if dry_run:
             output(f"\n----- DRY RUN [{channel}] · {deal.summary()} -----\n{text}\n")
             continue

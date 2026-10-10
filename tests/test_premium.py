@@ -66,7 +66,7 @@ def test_premium_template(route):
     deal = Deal(route=route, quotes=[make_quote(19)], median=None, reason="threshold")
     text = format_post(deal, make_links(), language="sq", channel_handle="@flyfromtirana",
                        airline_names=AIRLINES, template="sq_premium")
-    assert text.startswith("💎 PREMIUM · ✈️ TIRANA → MILAN (Bergamo) 🇮🇹")
+    assert text.startswith("💎 <b>PREMIUM</b>\n✈️ <b>TIRANA → MILAN</b> (Bergamo) 🇮🇹")
     assert "Ndiq @flyfromtirana" not in text
 
 

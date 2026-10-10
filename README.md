@@ -163,7 +163,8 @@ stats show which one earned a click. Routes whose newest prices are older than
 The `web` container serves the `site` volume, which the scanner fills: once
 when it starts, then after every scan. Point a domain at the `web` service in
 the deploy tool (Coolify: its Domains field) and put that address in
-`website.url` in config.yaml (it's used for the page's canonical/og:url tags).
+`website.url` in config.yaml (it's linked at the bottom of every Telegram post and
+used for the page's canonical/og:url tags).
 
 ### Preview locally
 
@@ -197,7 +198,7 @@ source and licence is in `assets/img/credits.json`, which the footer lists under
   (`{NAME}`, `[[optional]]`, a line with a missing value is dropped); HTML comments
   are stripped, so notes in the templates never reach the page. The row and hero
   templates can use every placeholder from `templates/sq.txt` plus `{IATA}`,
-  `{DEAL}`, `{SAVING}`, `{COUNTRY}` (lowercase code taken from the flag, e.g. `it`:
+  `{DEAL}`, `{COUNTRY}` (lowercase code taken from the flag, e.g. `it`:
   it picks the card's colours), `{COUNTRY_NAME}` ("Austri"), `{PHOTO}` (the route's
   photo, if it has one), `{BEST_DATE}` (cheapest date, `YYYY-MM-DD`) and `{BEST_DAY}`
   (the same date as "14 Nën").
@@ -249,12 +250,19 @@ Try it with `python -m src.main --dry-run --routes PRG`.
 Edit `templates/sq.txt`. Rules:
 
 - `{NAME}` is replaced with a value: `CITY CITY_UPPER AIRPORT FLAG PRICE MEDIAN
-  DATES AIRLINE STOPS DURATION RETURN_PRICE CHANNEL FLIGHT_LINK HOTEL_LINK
-  ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK PREMIUM_HOURS PREMIUM_LINK`.
+  SAVING DATES AIRLINE STOPS DURATION RETURN_PRICE CHANNEL FLIGHT_LINK HOTEL_LINK
+  ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK PREMIUM_HOURS PREMIUM_LINK
+  WEBSITE_LINK`. `SAVING` is the percent below the usual price ("68"); `WEBSITE_LINK`
+  is `website.url` from config.yaml.
 - `[[ ... ]]` marks an optional part. It's removed if any value inside it is missing.
 - A line with a missing value (outside `[[ ]]`) is removed, e.g. the "Kthimi"
   line when there's no return flight.
-- Posts are sent as Telegram HTML, so links are written as `<a href="{FLIGHT_LINK}">Rezervo tani</a>`.
+- Posts are sent as Telegram HTML, so links are written as `<a href="{FLIGHT_LINK}">Rezervo tani</a>`,
+  and `<b>`, `<i>` and `<blockquote>` (the tinted box around the flight details) work too.
+- Keep `<blockquote>` on a line that is always there (the dates) and `</blockquote>` on a
+  line of its own. A tag on a line that gets removed would make Telegram refuse the post.
+- An empty line in the template is an empty line in the post. If everything between two
+  empty lines is left out, only one of them is kept.
 
 For an English version later: add `templates/en.txt` and set `language: en`.
 The English month names etc. are already in `src/formatter.py`.

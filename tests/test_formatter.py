@@ -4,7 +4,8 @@ import pytest
 
 from src.config import DEFAULT_PARTNERS, ConfigError, LinkSettings, LinkTemplate, Route
 from src.deals import Deal
-from src.formatter import WORDS, format_dates, format_duration, format_post, format_price, render
+from src.formatter import (WORDS, format_dates, format_duration, format_post, format_price, render,
+                           saving_percent, tidy)
 from src.links import LinkBuilder
 from tests.conftest import make_quote
 
@@ -17,9 +18,9 @@ def make_links(**partner_urls) -> LinkBuilder:
     return LinkBuilder(LinkSettings(sub_id="telegram", partners=partners), marker="12345")
 
 
-def post(deal, links=None):
+def post(deal, links=None, **kwargs):
     return format_post(deal, links or make_links(), language="sq",
-                       channel_handle="@flyfromtirana", airline_names=AIRLINES)
+                       channel_handle="@flyfromtirana", airline_names=AIRLINES, **kwargs)
 
 
 def test_full_post_matches_template(route):
@@ -35,17 +36,22 @@ def test_full_post_matches_template(route):
         esim="https://esim.example/{iata}",
         insurance="https://insurance.example/?m={marker}",
     )
-    assert post(deal, links) == "\n".join([
-        "✈️ TIRANA → MILAN (Bergamo) 🇮🇹",
-        "💰 nga €20 one way (zakonisht ~€62)",
-        "📅 Data: 15 Tet, 20 Tet",
+    assert post(deal, links, website_url="https://site.example/") == "\n".join([
+        "✈️ <b>TIRANA → MILAN</b> (Bergamo) 🇮🇹",
+        "",
+        "💰 <b>nga €20</b> one way",
+        "🔥 <b>-69%</b> · zakonisht ~€62",
+        "<blockquote>📅 <b>15 Tet, 20 Tet</b>",
         "🛫 Wizz Air · direkt · 1 orë 35 min",
-        "🔁 Kthimi nga €24",
-        '👉 <a href="https://www.aviasales.com/search/TIA2010BGY1'
-        '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a>',
+        "🔁 Kthimi nga €24</blockquote>",
+        '👉 <b><a href="https://www.aviasales.com/search/TIA2010BGY1'
+        '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a></b>',
+        "⏳ <i>Çmimet ndryshojnë shpejt!</i>",
+        "",
         '🏨 <a href="https://hotels.example/?city=Milan&amp;in=2026-10-20&amp;out=2026-10-27">Hotele në Milan</a>',
         '📱 <a href="https://esim.example/BGY">eSIM</a>   🛡️ <a href="https://insurance.example/?m=12345">Sigurim</a>',
-        "⏳ Çmimet ndryshojnë shpejt!",
+        "",
+        '🌐 <a href="https://site.example/">Të gjitha ofertat në faqen tonë</a>',
         "🔔 Ndiq @flyfromtirana për oferta çdo ditë",
     ])
 
@@ -55,16 +61,28 @@ def test_optional_lines_are_left_out():
     deal = Deal(route=plain, quotes=[make_quote(19, destination="VIE", transfers=1, duration_min=None)],
                 median=None, reason="threshold")
     assert post(deal) == "\n".join([
-        "✈️ TIRANA → VIENNA 🇦🇹",            # no (airport)
-        "💰 nga €19 one way",                    # no median yet
-        "📅 Data: 20 Tet",
-        "🛫 Wizz Air · me ndalesë",          # no duration
-        # no return line, no hotel line, no eSIM/insurance line
-        '👉 <a href="https://www.aviasales.com/search/TIA2010VIE1'
-        '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a>',
-        "⏳ Çmimet ndryshojnë shpejt!",
-        "🔔 Ndiq @flyfromtirana për oferta çdo ditë",
+        "✈️ <b>TIRANA → VIENNA</b> 🇦🇹",     # no (airport)
+        "",
+        "💰 <b>nga €19</b> one way",          # no median yet, so no "zakonisht" line either
+        "<blockquote>📅 <b>20 Tet</b>",
+        "🛫 Wizz Air · me ndalesë</blockquote>",   # no duration, no return line
+        '👉 <b><a href="https://www.aviasales.com/search/TIA2010VIE1'
+        '?currency=eur&amp;marker=12345.telegram">Rezervo tani</a></b>',
+        "⏳ <i>Çmimet ndryshojnë shpejt!</i>",
+        "",                                    # no hotel/eSIM/insurance lines, and only one blank line for them
+        "🔔 Ndiq @flyfromtirana për oferta çdo ditë",   # no website line without website_url
     ])
+
+
+def test_quote_survives_without_airline_and_return(route):
+    # Whatever is missing inside the quote, its tags must still open and close.
+    deal = Deal(route=route, quotes=[make_quote(19, airline="")], median=None, reason="threshold")
+    assert "<blockquote>📅 <b>20 Tet</b></blockquote>\n👉" in post(deal)
+
+
+def test_tidy():
+    assert tidy("A\n\n\n\nB") == "A\n\nB"
+    assert tidy("<blockquote>A\nB\n</blockquote>\nC") == "<blockquote>A\nB</blockquote>\nC"
 
 
 def test_only_one_of_esim_and_insurance(route):
@@ -89,6 +107,15 @@ def test_unknown_placeholder_is_an_error():
 
 def test_blank_template_lines_are_kept():
     assert render("A {X}\n\nB", {"X": "1"}) == "A 1\n\nB"
+
+
+def test_saving_percent(route):
+    def saving(price, median):
+        return saving_percent(Deal(route=route, quotes=[make_quote(price)], median=median, reason="median"))
+
+    assert saving(20, 62) == "68"
+    assert saving(20, None) is None    # no usual price yet
+    assert saving(62, 62) is None      # no saving to show
 
 
 def test_helpers():
