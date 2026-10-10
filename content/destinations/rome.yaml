@@ -15,6 +15,10 @@ sights:
     text: Tempulli romak me kupolën e hapur në mes, i ruajtur pothuajse i paprekur.
   - name: Trastevere
     text: Lagjja me rrugica me kalldrëm, më e mira për darkë.
+  - name: Piazza Navona dhe Shkallët Spanjolle
+    text: Dy nga sheshet më të bukura baroke, që lidhen me një shëtitje gjysmë ore nëpër qendër.
+  - name: Castel Sant'Angelo
+    text: Mauzoleu i perandorit Hadrian, më vonë kështjellë e papëve, me pamje mbi Tiber dhe Vatikan.
 airports:
   FCO: >-
     Treni Leonardo Express shkon pa ndalesa në stacionin Termini për 32 minuta (€14). Treni
@@ -24,9 +28,48 @@ airports:
     Ciampino është aeroport i vogël, rreth 15 km nga qendra. Autobusët direkt për në Termini
     bëjnë rreth 40 minuta dhe kushtojnë rreth €6.
 budget: >-
-  Një espresso në banak kushton rreth €1.20, një pjatë pasta €10-14, bileta e metrosë dhe e autobusit €1.50.
+  Një espresso në banak kushton rreth €1.20, një pjatë pasta €10-14, bileta e metrosë dhe e autobusit rreth €1.50-2.
 when: >-
   Pranvera dhe vjeshta janë ideale. Korriku dhe gushti janë shumë të nxehtë dhe me radhë të gjata.
 tips:
   - "Rezervo online biletat për Koloseun dhe Muzetë e Vatikanit, që të shmangësh radhët."
   - "Uji i çezmave publike (nasoni) është i pijshëm: mbaj një shishe me vete."
+  - "Shumë muze shtetërorë, mes tyre Koloseu, kanë hyrje falas të dielën e parë të çdo muaji."
+itinerary:
+  - "Roma antike: Koloseu, Forumi Romak dhe kodra Palatine me një biletë. Pasdite Kapitoli dhe Piazza Venezia, darka në lagjen Monti."
+  - "Vatikani në mëngjes: Muzetë, Kapela Sikstine dhe Bazilika e Shën Pjetrit. Pasdite Castel Sant'Angelo dhe mbrëmja në Trastevere."
+  - "Qendra baroke në këmbë: Fontana di Trevi, Panteoni, Piazza Navona dhe Shkallët Spanjolle. Në perëndim ngjitu te kodra Pincio ose Gianicolo për pamjen."
+areas:
+  - name: Centro Storico
+    text: "Mes Panteonit dhe Piazza Navona: gjithçka në këmbë, por me çmimet më të larta."
+  - name: Trastevere
+    text: Rrugica me kalldrëm, taverna dhe jetë nate. Më autentike, por pak më larg metrosë.
+  - name: Monti dhe Termini
+    text: Monti është lagje e këndshme pranë Koloseut. Zona e stacionit Termini është më e lira dhe më praktikja për aeroportet.
+  - name: Prati
+    text: Lagje e qetë banimi pranë Vatikanit, me metro dhe restorante me çmime të arsyeshme.
+food:
+  - name: Carbonara dhe cacio e pepe
+    text: "Dy pastat romake më të njohura: e para me vezë e guanciale, e dyta vetëm me djathë pecorino dhe piper."
+  - name: Supplì
+    text: Qofte orizi të skuqura me mocarela brenda, mezeja tipike e piceriave.
+  - name: Pizza al taglio
+    text: Pica e prerë në copa dhe e shitur me peshë, ideale për një drekë të shpejtë.
+  - name: Gelato
+    text: "Akullorja artizanale. Shmang vendet me male shumëngjyrëshe: e mira mbahet në enë të mbuluara."
+transport: >-
+  Qendra historike përshkohet në këmbë dhe metroja nuk hyn në të, prandaj përgatitu të ecësh
+  shumë. Metroja (linjat A dhe B) shërben për Vatikanin, Koloseun dhe Terminin; bileta vlen 100
+  minuta edhe për autobusë e tramvaje. Mund të paguash edhe me kartë bankare pa kontakt.
+daytrips:
+  - name: Tivoli
+    text: Villa d'Este me shatërvanët e saj dhe Villa Adriana, rreth një orë nga qyteti.
+  - name: Ostia Antica
+    text: Porti i lashtë i Romës, i ruajtur si një Pompei më i vogël, 30 minuta me tren.
+  - name: Firence
+    text: Vetëm 1.5 orë me tren të shpejtë, e mundshme si udhëtim ditor.
+faq:
+  - q: "Fiumicino apo Ciampino?"
+    a: "Fiumicino është aeroporti kryesor dhe ka trena direktë. Ciampino është më i vogël dhe më afër, por lidhet vetëm me autobus. Nëse çmimi i fluturimit është i ngjashëm, Fiumicino është më i rehatshëm."
+  - q: "Sa para duhen në ditë në Rome?"
+    a: "Pa fluturimin dhe fjetjen, €50-80 në ditë mjaftojnë për ushqim, transport dhe një atraksion me pagesë. Koloseu kushton rreth €18 dhe Muzetë e Vatikanit rreth €20."

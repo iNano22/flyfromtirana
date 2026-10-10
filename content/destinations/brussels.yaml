@@ -14,6 +14,10 @@ sights:
     text: Struktura në formë atomi nga Ekspozita Botërore e vitit 1958, me pamje nga sfera e sipërme.
   - name: Galeries Royales Saint-Hubert
     text: Pasazhi elegant i mbuluar, plot çokollatari dhe kafene.
+  - name: Mont des Arts
+    text: Kopshti me pamjen më të bukur mbi qytetin e vjetër, mes muzeve mbretërore.
+  - name: Rruga e stripave
+    text: Dhjetëra murale me Tintinin, Smurfët dhe heronj të tjerë belgë në fasadat e qendrës.
 airports:
   BRU: >-
     Trenat nga stacioni nën terminal arrijnë në Brussels Central për 17-20 minuta. Bileta kushton
@@ -29,3 +33,42 @@ when: >-
 tips:
   - "Bruges dhe Ghent janë udhëtime ditore të lehta me tren."
   - "Nga Charleroi llogarit të paktën një orë e gjysmë deri në qendër të Brussels."
+  - "Patatet e skuqura blihen te qoshqet e rrugës dhe hahen me majonezë ose me një nga dhjetëra salcat."
+itinerary:
+  - "Grand Place, Manneken Pis dhe Galeries Royales. Pasdite Mont des Arts dhe Muzeu Magritte, darkë me midhje në Sainte-Catherine."
+  - "Atomium dhe Mini-Europe në mëngjes. Pasdite Lagjja Evropiane me Parlamentarium (falas) dhe parku Cinquantenaire."
+  - "Udhëtim ditor në Bruges ose Ghent; të dy bëhen edhe në të njëjtën ditë."
+areas:
+  - name: Qendra
+    text: Rreth Grand Place dhe stacionit Central, gjithçka në këmbë.
+  - name: Sainte-Catherine
+    text: Lagjja e restoranteve të peshkut dhe e bareve, pesë minuta nga qendra.
+  - name: Ixelles dhe Saint-Gilles
+    text: Arkitekturë Art Nouveau, kafene dhe jetë vendase.
+  - name: Pranë Gare du Midi
+    text: Praktike për autobusin nga Charleroi dhe trenat ndërkombëtarë, por jo zona më e këndshme.
+food:
+  - name: Moules-frites
+    text: Midhje në tenxhere me patate të skuqura, pjata kombëtare.
+  - name: Vaflet
+    text: Ajo e Brukselit është e lehtë dhe katrore; ajo e Liezhit më e ëmbël dhe më e dendur.
+  - name: Çokollata
+    text: "Pralinat u shpikën këtu: Neuhaus, Pierre Marcolini dhe dhjetëra çokollatari artizanale."
+  - name: Birra belge
+    text: "Qindra lloje, nga Trappist te lambic. Shumë janë të forta: lexo përqindjen."
+transport: >-
+  Qendra shihet në këmbë. Metroja dhe tramvajet paguhen duke kaluar kartën bankare pa kontakt,
+  me kufi ditor të shpenzimit. Trenat nga tri stacionet kryesore (Nord, Central, Midi) të çojnë
+  për më pak se një orë në pothuajse çdo qytet të Belgjikës.
+daytrips:
+  - name: Bruges
+    text: Qyteti mesjetar i kanaleve, rreth një orë me tren.
+  - name: Ghent
+    text: Më pak turistik dhe po aq i bukur, 35 minuta me tren.
+  - name: Antwerp
+    text: Qyteti i diamanteve dhe i Rubensit, 40-50 minuta me tren.
+faq:
+  - q: "Zaventem apo Charleroi?"
+    a: "Zaventem (BRU) është 20 minuta me tren nga qendra. Charleroi (CRL) ka shpesh bileta më të lira, por është 55 km larg: shto rreth një orë dhe €15-19 për autobusin. Krahaso çmimin total, jo vetëm biletën."
+  - q: "Sa para duhen në ditë në Brussels?"
+    a: "Pa fluturimin dhe fjetjen, €50-75 në ditë. Udhëtimet ditore me tren janë të lira: Bruges ose Ghent kushtojnë rreth €10-17 për drejtim."

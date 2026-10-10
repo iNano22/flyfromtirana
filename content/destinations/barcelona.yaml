@@ -15,6 +15,10 @@ sights:
     text: Dy shtëpitë më të famshme të Gaudít, në bulevardin Passeig de Gràcia.
   - name: Barceloneta
     text: Plazhi i qytetit, pak minuta nga qendra.
+  - name: Montjuïc
+    text: Kodra me kështjellën, Muzeun e Artit të Katalonjës dhe pamje mbi port.
+  - name: La Boqueria
+    text: Tregu më i famshëm i qytetit, në La Rambla. Shko në mëngjes, para turmës.
 airports:
   BCN: >-
     Autobusi Aerobús të çon në Plaça de Catalunya për rreth 35 minuta (rreth €7-8). Treni R2 Nord
@@ -26,3 +30,42 @@ when: >-
 tips:
   - "Biletat për Sagrada Família dhe Park Güell blihen online dhe mbarojnë ditë përpara."
   - "Ki kujdes nga hajdutët e xhepave në La Rambla dhe në metro."
+  - "Darka nis vonë, rreth orës 21:00. Për drekë kërko «menú del día»: disa pjata me pije, me çmim fiks."
+itinerary:
+  - "Sagrada Família në mëngjes (me biletë të rezervuar), pastaj Passeig de Gràcia me Casa Batlló dhe La Pedrera. Mbrëmja në El Born."
+  - "Lagjja Gotike, Katedralja dhe La Boqueria. Pasdite Barceloneta dhe plazhi, perëndimi nga Montjuïc."
+  - "Park Güell në mëngjes dhe lagjja Gràcia. Pasdite muzetë e Montjuïc-ut, ose një udhëtim ditor në Montserrat."
+areas:
+  - name: Barri Gòtic dhe El Born
+    text: "Qendra historike: atmosferë dhe jetë nate, por zhurmë dhe rrugica të ngushta."
+  - name: Eixample
+    text: Lagjja me rrugë të gjera dhe ndërtesat e Gaudít, e qetë dhe e lidhur mirë.
+  - name: Gràcia
+    text: Sheshe të vogla dhe lokale vendase, pranë Park Güell.
+  - name: Barceloneta
+    text: Pranë plazhit, më e mira në verë.
+food:
+  - name: Tapas
+    text: "Pjata të vogla për t'u ndarë: patatas bravas, kroketa, speca të skuqur."
+  - name: Pa amb tomàquet
+    text: Bukë e fërkuar me domate dhe vaj ulliri, fillimi i çdo vakti katalanas.
+  - name: Paella dhe fideuà
+    text: Oriz ose makarona të holla me fruta deti, më të mirat pranë detit në Barceloneta.
+  - name: Crema catalana
+    text: Krem i ëmbël me kore sheqeri të djegur.
+transport: >-
+  Metroja mbulon gjithë qytetin dhe punon deri vonë. Karta T-casual me 10 udhëtime është
+  zgjidhja më e mirë për disa ditë, por nuk vlen për metronë e aeroportit. Qendra historike dhe
+  bregdeti shihen më mirë në këmbë.
+daytrips:
+  - name: Montserrat
+    text: Manastiri mes shkëmbinjve të çuditshëm, rreth 1 orë e 15 minuta me tren dhe teleferik.
+  - name: Girona
+    text: Qytet mesjetar me shtëpi shumëngjyrëshe buzë lumit, 40 minuta me tren të shpejtë.
+  - name: Sitges
+    text: Qytezë bregdetare me plazhe, 40 minuta me tren.
+faq:
+  - q: "A duhen rezervuar atraksionet në Barcelona?"
+    a: "Po. Sagrada Família dhe Park Güell shesin bileta vetëm me orar dhe shpesh mbarojnë ditë përpara, sidomos në verë. Rezervo edhe Casa Batlló nëse do ta vizitosh brenda."
+  - q: "Sa para duhen në ditë në Barcelona?"
+    a: "Pa fluturimin dhe fjetjen, €50-75 në ditë. Hyrjet e Gaudít janë të shtrenjta (Sagrada Família rreth €26), ndërsa dreka me menú del día është e lirë."

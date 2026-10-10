@@ -13,6 +13,10 @@ sights:
     text: Kështjella buzë detit, me shëtitoren Lungomare dhe pamjen nga Vezuvi.
   - name: Pompei
     text: Qyteti romak i mbuluar nga hiri i Vezuvit, rreth 35 minuta me tren.
+  - name: Kapela Sansevero
+    text: Shtëpia e «Krishtit të Mbuluar», një nga skulpturat më mbresëlënëse në botë. Biletat rezervohen online.
+  - name: Napoli Sotterranea
+    text: Tunelet dhe cisternat nën qytet, të hapura nga grekët dhe romakët.
 airports:
   NAP: >-
     Autobusi Alibus lidh aeroportin me stacionin qendror (Piazza Garibaldi) për 15-20 minuta dhe
@@ -24,3 +28,40 @@ when: >-
 tips:
   - "Për Pompein merr trenin Circumvesuviana nga stacioni Garibaldi."
   - "Ki kujdes me çantën dhe telefonin në rrugët e mbushura dhe në transportin publik."
+  - "Shumë piceri të famshme nuk pranojnë rezervime: shko para orës 19:30 ose përgatitu për radhë."
+itinerary:
+  - "Qendra historike: Spaccanapoli, Kapela Sansevero dhe Napoli Sotterranea. Pica për drekë në Via dei Tribunali, pasdite Muzeu Arkeologjik."
+  - "Pompei në mëngjes me trenin Circumvesuviana. Pasdite ngjitu me funikular në Vomero për pamjen nga Castel Sant'Elmo."
+  - "Shëtitorja Lungomare, Castel dell'Ovo dhe Piazza del Plebiscito. Ose merr tragetin për një ditë në Capri apo Procida."
+areas:
+  - name: Centro Storico
+    text: "Mes Spaccanapolit dhe Via dei Tribunali: zhurmë, jetë dhe piceritë më të mira."
+  - name: Chiaia dhe Lungomare
+    text: Zona elegante buzë detit, më e qetë dhe më e shtrenjtë.
+  - name: Pranë Piazza Garibaldi
+    text: Më e lira dhe më praktikja për trenat dhe aeroportin, por jo më e këndshmja në mbrëmje.
+food:
+  - name: Pizza napoletana
+    text: Margherita ose marinara, me brumë të butë dhe buzë të fryra, e pjekur për 90 sekonda.
+  - name: Pizza fritta
+    text: Pica e skuqur, e mbushur me rikotë dhe proshutë.
+  - name: Sfogliatella
+    text: Ëmbëlsirë me petë kërcitëse ose brumë të butë, e mbushur me rikotë.
+  - name: Espresso
+    text: Kafeja këtu është e shkurtër, e fortë dhe pihet në këmbë në banak.
+transport: >-
+  Qendra shihet në këmbë. Metroja (Linja 1) është e njohur për stacionet e saj të dizajnuara si
+  galeri arti, ndërsa funikularët të ngjitin në kodrën Vomero. Trenat Circumvesuviana për Pompei
+  dhe Sorrento nisen nga Piazza Garibaldi.
+daytrips:
+  - name: Capri
+    text: Rreth 50 minuta me traget të shpejtë nga porti Molo Beverello.
+  - name: Bregu i Amalfit
+    text: Positano dhe Amalfi, me traget në verë ose me tren deri në Sorrento dhe pastaj autobus.
+  - name: Herkulanumi
+    text: Më i vogël dhe më i ruajtur se Pompei, 20 minuta me tren.
+faq:
+  - q: "Sa larg është Pompei nga Naples?"
+    a: "Rreth 35-40 minuta me trenin Circumvesuviana deri në stacionin Pompei Scavi, që është përballë hyrjes. Lër të paktën tri-katër orë për vizitën."
+  - q: "Sa para duhen në ditë në Naples?"
+    a: "Pa fluturimin dhe fjetjen, €40-60 në ditë. Naples është qyteti i madh më i lirë i Italisë: një picë e shkëlqyer kushton më pak se €10."

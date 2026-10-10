@@ -3,12 +3,13 @@
 One file per city in content/destinations/<slug>.yaml (see milan.yaml for the
 shape). src/website.py turns each one into the page /<slug>/, with the
 current prices on top and the guide underneath. A city without a file simply
-has no page.
+has no page. content/countries.yaml adds what is the same for every city of a
+country: the documents an Albanian citizen needs to get in.
 """
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import yaml
@@ -16,26 +17,43 @@ import yaml
 from src.config import PROJECT_ROOT, ConfigError
 
 GUIDES_DIR = PROJECT_ROOT / "content" / "destinations"
+COUNTRIES_FILE = PROJECT_ROOT / "content" / "countries.yaml"
 SLUG = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")   # "milan", "new-york": safe in a web address
 
 
 @dataclass(frozen=True)
-class Sight:
+class Entry:
+    """A named thing with a sentence or two about it: a sight, a neighbourhood, a dish, a day trip."""
+
     name: str   # "Duomo di Milano"
-    text: str   # one sentence about it
+    text: str
+
+
+@dataclass(frozen=True)
+class Question:
+    q: str   # "Malpensa apo Bergamo?"
+    a: str   # the answer
 
 
 @dataclass(frozen=True)
 class Guide:
+    """One city's guide. Only the first three are required; a part that is empty is left off the page."""
+
     city: str                  # the city name used for its routes in config.yaml, e.g. "Milan"
     slug: str                  # the page's address: "milan" -> /milan/
-    tagline: str               # a few words under the city's name on the main page
     intro: str                 # two or three sentences under the headline
-    sights: list[Sight]        # what to see
-    airports: dict[str, str]   # airport code -> how to get from that airport to the centre
-    budget: str                # typical prices
-    when: str                  # the best time to go
-    tips: list[str]            # short practical tips
+    tagline: str = ""          # a few words under the city's name on the main page
+    sights: list[Entry] = field(default_factory=list)       # what to see
+    itinerary: list[str] = field(default_factory=list)      # a plan, one entry per day
+    areas: list[Entry] = field(default_factory=list)        # where to stay
+    food: list[Entry] = field(default_factory=list)         # what to eat
+    airports: dict[str, str] = field(default_factory=dict)  # airport code -> how to reach the centre from it
+    transport: str = ""        # getting around the city
+    daytrips: list[Entry] = field(default_factory=list)     # places a day trip away
+    budget: str = ""           # typical prices
+    when: str = ""             # the best time to go
+    tips: list[str] = field(default_factory=list)           # short practical tips
+    faq: list[Question] = field(default_factory=list)       # questions people ask about this city
 
 
 def load_guides(directory: Path = GUIDES_DIR) -> dict[str, Guide]:
@@ -66,14 +84,35 @@ def _build_guide(raw: dict) -> Guide:
     return Guide(
         city=str(raw["city"]).strip(),
         slug=slug,
-        tagline=_text(raw.get("tagline") or ""),
         intro=_text(raw["intro"]),
-        sights=[Sight(name=_text(s["name"]), text=_text(s["text"])) for s in raw.get("sights") or []],
+        tagline=_text(raw.get("tagline") or ""),
+        sights=_entries(raw.get("sights")),
+        itinerary=[_text(day) for day in raw.get("itinerary") or []],
+        areas=_entries(raw.get("areas")),
+        food=_entries(raw.get("food")),
         airports={str(code).upper(): _text(text) for code, text in (raw.get("airports") or {}).items()},
+        transport=_text(raw.get("transport") or ""),
+        daytrips=_entries(raw.get("daytrips")),
         budget=_text(raw.get("budget") or ""),
         when=_text(raw.get("when") or ""),
         tips=[_text(tip) for tip in raw.get("tips") or []],
+        faq=[Question(q=_text(item["q"]), a=_text(item["a"])) for item in raw.get("faq") or []],
     )
+
+
+def _entries(raw: list | None) -> list[Entry]:
+    return [Entry(name=_text(item["name"]), text=_text(item["text"])) for item in raw or []]
+
+
+def load_entry_rules(path: Path = COUNTRIES_FILE) -> dict[str, str]:
+    """Country code ("it") -> what an Albanian citizen needs to enter that country."""
+    if not path.exists():
+        return {}
+    try:
+        raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        return {str(code).lower(): _text(text) for code, text in raw.items()}
+    except (TypeError, AttributeError, yaml.YAMLError) as exc:
+        raise ConfigError(f"{path.name} is not valid: {exc}") from None
 
 
 def _text(value) -> str:

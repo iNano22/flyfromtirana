@@ -13,6 +13,10 @@ sights:
     text: Rreth 40 km portikë të mbuluar. Më i gjati të ngjit deri te Santuari i San Lucës, me pamje mbi qytet.
   - name: Quadrilatero
     text: Tregu i vjetër pranë sheshit, plot dyqane me djathë, proshutë dhe pasta të freskëta.
+  - name: Archiginnasio
+    text: Selia e parë e universitetit, me Teatrin Anatomik prej druri ku jepeshin leksionet e mjekësisë.
+  - name: Santo Stefano
+    text: Kompleksi i «Shtatë Kishave», një nga qoshet më të qeta dhe më të vjetra të qytetit.
 airports:
   BLQ: >-
     Treni i lehtë Marconi Express lidh aeroportin me stacionin Bologna Centrale për 7 minuta
@@ -24,3 +28,40 @@ when: >-
 tips:
   - "Mos kërko «spaghetti bolognese»: këtu ragù hahet me tagliatelle."
   - "Nga Bologna Centrale arrin me tren të shpejtë për rreth 40 minuta në Firence dhe për rreth një orë në Milan."
+  - "Shumë restorante mbyllen mes drekës dhe darkës, rreth orës 15:00-19:00: planifiko vaktet sipas orarit italian."
+itinerary:
+  - "Piazza Maggiore, San Petronio dhe Shatërvani i Neptunit. Drekë në tregun Quadrilatero, pasdite Archiginnasio dhe Dy Kullat."
+  - "Ecje nën portikë deri te Santuari i San Lucës, rreth një orë në ngjitje. Pasdite Santo Stefano dhe aperitiv në zonën universitare."
+  - "Udhëtim ditor me tren: Firence, Modena ose Parma. Kush do makinat, shkon te muzetë Ferrari në Maranello dhe Modena."
+areas:
+  - name: Centro Storico
+    text: Brenda unazës së mureve të vjetra gjithçka është 10-15 minuta në këmbë.
+  - name: Zona universitare
+    text: Rreth Via Zamboni, e gjallë dhe me lokale të lira, por e zhurmshme në mbrëmje.
+  - name: Pranë stacionit
+    text: Praktike për Marconi Express dhe për udhëtimet ditore me tren, 15 minuta në këmbë nga Piazza Maggiore.
+food:
+  - name: Tagliatelle al ragù
+    text: Origjinali i asaj që bota e quan «bolognese», me makarona të freskëta me vezë.
+  - name: Tortellini in brodo
+    text: Makarona të vogla të mbushura, të shërbyera në lëng mishi.
+  - name: Mortadella
+    text: Sallami i famshëm i qytetit, në sanduiç ose si meze me një gotë verë.
+  - name: Lasagne verdi
+    text: Lazanja me petë të gjelbra me spinaq, ragù dhe beshamel.
+transport: >-
+  Bologna është qytet për këmbësorë: thuajse gjithçka ndodhet brenda mureve të vjetra dhe
+  portikët të mbrojnë nga shiu e dielli. Autobusët duhen vetëm për San Lucën dhe për zonat jashtë
+  qendrës. Në fundjavë pjesa qendrore mbyllet për makinat.
+daytrips:
+  - name: Firence
+    text: Rreth 40 minuta me tren të shpejtë.
+  - name: Modena
+    text: "25 minuta me tren: uthulla balsamike, katedralja dhe muzeu Enzo Ferrari."
+  - name: Ravenna
+    text: Mozaikët bizantinë më të bukur në Evropë, rreth 1 orë e 15 minuta me tren.
+faq:
+  - q: "A mjafton një ditë për Bologna?"
+    a: "Qendra shihet në një ditë, por dy ditë të lejojnë të ngjitesh te San Luca dhe të shijosh kuzhinën pa nxitim. Me një ditë të tretë bën një udhëtim ditor me tren."
+  - q: "Sa para duhen në ditë në Bologna?"
+    a: "Pa fluturimin dhe fjetjen, €45-70 në ditë. Bologna është më e lirë se Milan, Rome apo Venice, dhe ushqimi është ndër më të mirët në vend."

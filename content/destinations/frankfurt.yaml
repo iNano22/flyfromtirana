@@ -14,6 +14,10 @@ sights:
     text: Bregu i muzeve përgjatë lumit Main, me Muzeun Städel si më të njohurin.
   - name: Sachsenhausen
     text: Lagjja e lokaleve tradicionale ku shërbehet Apfelwein, vera e mollës.
+  - name: Katedralja
+    text: Kisha ku kurorëzoheshin perandorët gjermanë, me kullë që ngjitet për pamjen.
+  - name: Kleinmarkthalle
+    text: Tregu i mbuluar me ushqime nga gjithë bota, i dashur për vendasit.
 airports:
   FRA: >-
     Trenat S8 dhe S9 arrijnë në stacionin qendror (Hauptbahnhof) për 11-15 minuta, me biletë
@@ -25,3 +29,40 @@ when: >-
 tips:
   - "Gjatë panaireve të mëdha, si Panairi i Librit në tetor, hotelet shtrenjtohen shumë."
   - "Heidelberg dhe Mainz arrihen për më pak se një orë me tren."
+  - "Në disa të shtuna bregu i lumit në anën e muzeve kthehet në një treg të madh antikash dhe sendesh të përdorura."
+itinerary:
+  - "Römerberg, Katedralja dhe qyteti i vjetër i rindërtuar. Drekë në Kleinmarkthalle, pasdite ngjitu në Main Tower dhe ec përgjatë lumit."
+  - "Bregu i muzeve: Städel për artin ose një nga muzetë e tjerë. Pasdite kopshti botanik Palmengarten, mbrëmja me Apfelwein në Sachsenhausen."
+  - "Udhëtim ditor: Heidelberg, Mainz ose lugina e Rinit me kështjellat e saj."
+areas:
+  - name: Innenstadt dhe Altstadt
+    text: "Mes rrugës tregtare Zeil, Römerberg dhe lumit: qendrore dhe e këndshme."
+  - name: Bahnhofsviertel
+    text: Pranë stacionit qendror, me hotele të lira dhe restorante nga gjithë bota, por e zhurmshme natën.
+  - name: Sachsenhausen
+    text: "Në anën tjetër të lumit: lokale tradicionale dhe atmosferë lagjeje."
+food:
+  - name: Apfelwein
+    text: Vera e thartë e mollës, e shërbyer në kana gri me lule blu.
+  - name: Grüne Soße
+    text: Salcë e ftohtë me shtatë barishte, me vezë të ziera dhe patate.
+  - name: Frankfurter Würstchen
+    text: Salsiçet e holla që i dhanë emrin «frankfurter».
+  - name: Handkäse mit Musik
+    text: Djathë i fortë i marinuar me qepë dhe uthull, për guximtarët.
+transport: >-
+  Qendra është kompakte dhe përshkohet në këmbë. Për pjesën tjetër ka U-Bahn, S-Bahn dhe
+  tramvaje; nga aeroporti në qendër janë vetëm 11-15 minuta. Stacioni qendror është një nga
+  nyjat më të mëdha hekurudhore në Evropë, me trena të shpejtë për gjithë Gjermaninë.
+daytrips:
+  - name: Heidelberg
+    text: Kështjella mbi lumin Neckar dhe qyteti i vjetër universitar, rreth një orë me tren.
+  - name: Mainz dhe Wiesbaden
+    text: Dy qytete buzë Rinit, 35-40 minuta me S-Bahn.
+  - name: Lugina e Rinit
+    text: Rüdesheim dhe kështjellat mes vreshtave, rreth një orë me tren.
+faq:
+  - q: "A ia vlen Frankfurt, apo është vetëm për tranzit?"
+    a: "Një ditë e plotë mjafton për qendrën dhe bregun e muzeve. Vlera e tij e vërtetë është si bazë: me tren arrin shpejt në Heidelberg, Mainz, Këln apo Stuttgart."
+  - q: "Sa para duhen në ditë në Frankfurt?"
+    a: "Pa fluturimin dhe fjetjen, €50-75 në ditë. Hotelet janë më të lira në fundjavë dhe shtrenjtohen shumë gjatë panaireve."

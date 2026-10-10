@@ -13,6 +13,10 @@ sights:
     text: Lagjet e vjetra me taverna, dyqane dhe tregun e së dielës.
   - name: Kodra e Likavitit
     text: Pika më e lartë e qytetit, më e bukura në perëndim të diellit.
+  - name: Agora e Lashtë
+    text: Tregu dhe qendra politike e Athinës antike, me tempullin e Hefestit, ndër më të ruajturit në Greqi.
+  - name: Tregu Qendror
+    text: Tregu i mishit, peshkut dhe erëzave, me taverna të thjeshta përreth.
 airports:
   ATH: >-
     Metroja (linja 3, blu) të çon në Syntagma për rreth 40 minuta, me biletë €9. Autobusi X95
@@ -24,3 +28,41 @@ when: >-
 tips:
   - "Bileta e Akropolit blihet online me orar hyrjeje: rezervoje përpara."
   - "Shko në Akropol sapo hapet në mëngjes: ka më pak njerëz dhe më pak vapë."
+  - "Të dielën në orën 11:00 bëhet ndërrimi solemn i rojës para Parlamentit, në sheshin Syntagma."
+itinerary:
+  - "Akropoli sapo hapet, pastaj Muzeu i Akropolit. Pasdite shëtitje në Plaka dhe Anafiotika, darkë me pamje nga Akropoli i ndriçuar."
+  - "Agora e Lashtë dhe tregu i Monastirakit në mëngjes. Pasdite Tregu Qendror dhe sheshi Syntagma, në perëndim Kodra e Likavitit."
+  - "Një ditë te deti: tramvaji deri në plazhet e Glyfadës, ose trageti për ishullin Egina. Alternativë: Tempulli i Poseidonit në Sounion."
+areas:
+  - name: Plaka
+    text: Lagjja më e bukur, nën Akropol, por edhe më turistikja.
+  - name: Monastiraki dhe Psyrri
+    text: Qendrore, me bare, tarraca dhe metro direkt nga aeroporti.
+  - name: Koukaki
+    text: Lagje banimi pranë Muzeut të Akropolit, më e qetë dhe me çmime më të mira.
+food:
+  - name: Suvlaki dhe gyros
+    text: Mish në hell ose i prerë nga helli i madh, i mbështjellë në pitë.
+  - name: Musaka
+    text: Tavë me patëllxhanë, mish të grirë dhe beshamel.
+  - name: Sallata e fshatit
+    text: Domate, kastravec, ullinj dhe një fetë e trashë djathi feta, pa marule.
+  - name: Lukumadhes
+    text: Petulla të vogla me mjaltë dhe kanellë.
+transport: >-
+  Metroja ka tri linja dhe mbulon gjithë qendrën, portin e Pireut dhe aeroportin. Bileta
+  90-minutëshe vlen për metro, autobus dhe tramvaj; bileta 5-ditore kushton rreth €8-9, por nuk
+  përfshin aeroportin. Sitet kryesore janë afër njëri-tjetrit dhe lidhen me një shëtitore për
+  këmbësorë.
+daytrips:
+  - name: Kepi Sounion
+    text: Tempulli i Poseidonit mbi det, rreth 1.5 orë me autobus, më i bukuri në perëndim të diellit.
+  - name: Egina
+    text: Ishulli më i afërt, 40 deri në 75 minuta me traget nga Pireu.
+  - name: Delfi
+    text: Orakulli i lashtë në mal, rreth 2.5 orë me autobus ose me turne të organizuar.
+faq:
+  - q: "A arrihen ishujt nga Athens?"
+    a: "Po. Nga porti i Pireut, 20 minuta me metro nga qendra, nisen tragetet. Egina, Hidra dhe Poros bëhen si udhëtim ditor; për Mikonos, Santorini apo Kretë duhen disa orë ose një natë udhëtim."
+  - q: "Sa para duhen në ditë në Athens?"
+    a: "Pa fluturimin dhe fjetjen, €40-60 në ditë. Ushqimi në rrugë është i lirë, ndërsa shpenzimi më i madh është Akropoli, që kushton rreth €30."

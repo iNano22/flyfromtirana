@@ -44,6 +44,7 @@ templates/site_dest.html a city's own page; site_dest_fare.html = one airport's 
                          site_guide.html = a city's photo tile on the main page;
                          site_analytics.html = Google Analytics and its cookie box
 content/destinations/    the city guides, one file per city (the text of the city pages)
+content/countries.yaml   the entry documents for each country, shown on its cities' pages
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
 docs/                    the generated website (index.html + img/), what the `web` container serves
@@ -184,9 +185,12 @@ cheapest other date. So nobody can read a premium deal off the website early.
 ### City pages
 
 Every city has a page of its own (`/milan/`, `/rome/`, ... on the site): the
-current cheapest price for each of its airports on top, then a short guide: what
-to see, how to get from each airport to the centre, typical prices, when to go
-and a few tips. The main page links to them from the "Udhëzues për qytetet"
+current cheapest price for each of its airports on top, then a full guide of
+roughly 1,000 words: what to see, a three-day plan, where to stay, what to eat,
+how to get from each airport to the centre, getting around, day trips, typical
+prices, when to go, tips and a few questions and answers. A row of jump links
+under the prices leads to each part, and "Destinacione të tjera" at the end shows
+the other cities as the same photo tiles the main page uses. The main page links to them from the "Udhëzues për qytetet"
 section (a wide photo tile per city, with a short teaser and the cheapest price:
 a row to swipe on phones, a grid on larger screens) and from every ticket in the
 list. These pages are what search engines
@@ -196,7 +200,13 @@ can find the site by, so the build also writes `sitemap.xml` and `robots.txt`
 The text of a guide is one file, `content/destinations/<slug>.yaml`
 (`milan.yaml` explains the shape):
 
-- **Change a guide**: edit its file. The page is rebuilt with the next run.
+- **Change a guide**: edit its file. The page is rebuilt with the next run. Only
+  `city`, `slug` and `intro` are required; any other part (`sights`, `itinerary`,
+  `areas`, `food`, `airports`, `transport`, `daytrips`, `budget`, `when`, `tips`,
+  `faq`) can be left out, and then it is not on the page.
+- **Entry documents**: the answer to "Çfarë dokumentesh duhen?" is the same for
+  every city of a country, so it lives in `content/countries.yaml`, one entry per
+  country. Review it when the rules change (the EU's ETIAS above all).
 - **New route in a city that has a guide**: add the airport under `airports:`
   in that city's file (a test fails until every airport of a city is covered).
 - **New city**: add a file. `city` must be exactly the route's `city` in
@@ -207,8 +217,8 @@ The text of a guide is one file, `content/destinations/<slug>.yaml`
   picture from the route's tall card photo. Without one, the tile shows the
   country's colours and the page uses the route's photo.
 - `tagline` in the file is the short line under the city's name on its tile.
-- The transport and food prices in the guides are rough figures from 2026. They
-  go out of date: review them once or twice a year.
+- The prices in the guides (transport, tickets, food, a day's budget) are rough
+  figures from 2026. They go out of date: review them once or twice a year.
 
 ### Google Analytics
 

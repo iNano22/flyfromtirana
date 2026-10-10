@@ -372,7 +372,8 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 
 /* Wider screens */
 @media (min-width: 700px) {
-  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; overflow: visible; }
+  /* As a grid the tiles line up exactly with the headings (a .wrap is 1080px wide with 16px of padding). */
+  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; overflow: visible; padding-inline: max(16px, calc((100% - 1080px) / 2 + 16px)); }
   .scard { padding: 18px 18px 20px; }
   .stab { font-size: 15px; padding: 0 16px; }
   .stab:not(.is-on) .ic { display: inline-block; }

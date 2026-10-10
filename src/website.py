@@ -44,7 +44,7 @@ from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, R
 from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, is_premium_only
 from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
                            saving_percent)
-from src.guides import Guide, load_guides
+from src.guides import Entry, Guide, load_entry_rules, load_guides
 from src.links import LinkBuilder
 from src.photos import ASSETS_DIR, CREDITS_FILE, needs_credit
 from src.storage import Storage
@@ -320,33 +320,20 @@ def site_base_url(config: Config) -> str | None:
     return config.website.url.rstrip("/") + "/" if config.website.url else None
 
 
-def guide_links(guides: dict[str, Guide], offers: list[Deal], *, prefix: str = "",
-                skip: str | None = None) -> str | None:
-    """<li> links to the city pages, each with the city's cheapest price when it has one.
-
-    prefix: "" on the main page, "../" on a city page. skip: the city whose page this is.
-    """
-    cheapest: dict[str, float] = {}
-    for offer in offers:
-        city = offer.route.city
-        cheapest[city] = min(offer.best.price, cheapest.get(city, offer.best.price))
-    items = []
-    for guide in guides.values():
-        if guide.city == skip:
-            continue
-        price = f"<span>nga €{format_price(cheapest[guide.city])}</span>" if guide.city in cheapest else ""
-        items.append(f'<li><a href="{prefix}{guide.slug}/">{html.escape(guide.city)}{price}</a></li>')
-    return "".join(items) or None
-
-
 def guide_photo(guide: Guide) -> str | None:
     """'img/guides/milan.webp' when the city has a wide photo in assets/img/guides, else None."""
     path = f"img/guides/{guide.slug}.webp"
     return path if (ASSETS_DIR / path).exists() else None
 
 
-def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config) -> str | None:
-    """The photo tiles of "Udhëzues për qytetet" on the main page, one per city page."""
+def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config, *, prefix: str = "",
+                skip: str | None = None) -> str | None:
+    """One photo tile per city page: "Udhëzues për qytetet" on the main page, and
+    "Destinacione të tjera" on a city page.
+
+    prefix: "" on the main page, "../" on a city page (the way to the other pages and
+    the photos). skip: the city whose page this is, which doesn't link to itself.
+    """
     cheapest: dict[str, float] = {}
     for offer in offers:
         city = offer.route.city
@@ -356,14 +343,17 @@ def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config) ->
     esc = html.escape
     tiles = []
     for guide in guides.values():
+        if guide.city == skip:
+            continue
         flag = flags.get(guide.city) or None
+        photo = guide_photo(guide)
         tiles.append(render(template, {
             "CITY": esc(guide.city, quote=False),
             "FLAG": flag,
             "COUNTRY": country_code(flag or ""),
             "TAGLINE": esc(guide.tagline, quote=False) or None,
-            "GUIDE_URL": f"{guide.slug}/",
-            "GUIDE_PHOTO": guide_photo(guide),
+            "GUIDE_URL": f"{prefix}{guide.slug}/",
+            "GUIDE_PHOTO": prefix + photo if photo else None,
             "PRICE": format_price(cheapest[guide.city]) if guide.city in cheapest else None,
         }))
     return "\n".join(tiles) or None
@@ -401,8 +391,11 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         "MIN_PRICE": format_price(best.best.price) if best else None,
         "UPDATED": format_updated(updated_at, config) if updated_at else None,
         "NO_FARES": TEXTS[language]["no_fares"] if not fares else None,
+        "TRANSPORT": guide.transport or None,
         "BUDGET": guide.budget or None,
         "WHEN": guide.when or None,
+        "ENTRY_RULES": load_entry_rules().get(country or ""),
+        "DAYS": str(len(guide.itinerary)) if guide.itinerary else None,
         "PREMIUM_HOURS": f"{premium.free_delay_hours:g}" if premium_on else None,
         "YEAR": str(local_now.year),
         "GA_ON": "1" if config.website.google_analytics_id else None,
@@ -427,13 +420,26 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values.update({key: esc(value, quote=True) if value else None for key, value in urls.items()})
     # These are HTML already, so they go in as they are.
     values["FARES"] = "\n".join(fares) or None
-    values["SIGHTS"] = "".join(f"<li><b>{esc(s.name)}</b>{esc(s.text)}</li>" for s in guide.sights) or None
+    def cards(entries: list[Entry]) -> str | None:
+        """Sights, neighbourhoods, dishes and day trips are all drawn the same: a name, then its text."""
+        return "".join(f"<li><b>{esc(e.name)}</b>{esc(e.text)}</li>" for e in entries) or None
+
+    values["SIGHTS"] = cards(guide.sights)
+    values["AREAS"] = cards(guide.areas)
+    values["FOOD"] = cards(guide.food)
+    values["DAYTRIPS"] = cards(guide.daytrips)
+    values["ITINERARY"] = "".join(f"<li>{esc(day)}</li>" for day in guide.itinerary) or None
     values["AIRPORTS"] = "".join(
         f'<div class="airport"><h3>{esc(route.airport or route.city)} ({esc(route.iata)})</h3>'
         f"<p>{esc(guide.airports[route.iata])}</p></div>"
         for route in routes if route.iata in guide.airports) or None
     values["TIPS"] = "".join(f"<li>{esc(tip)}</li>" for tip in guide.tips) or None
-    values["OTHER_GUIDES"] = guide_links(guides, offers, prefix="../", skip=guide.city)
+    values["FAQ"] = "".join(f'<div class="qa"><h3>{esc(item.q)}</h3><p>{esc(item.a)}</p></div>'
+                            for item in guide.faq) or None
+    # A link in "Në këtë faqe" only for the parts this guide has.
+    for part in ("SIGHTS", "ITINERARY", "AREAS", "FOOD", "AIRPORTS", "TRANSPORT", "DAYTRIPS"):
+        values[f"{part}_ON"] = "1" if values[part] else None
+    values["OTHER_GUIDES"] = guide_tiles(guides, offers, config, prefix="../", skip=guide.city)
     values["ANALYTICS"] = analytics_html(config)
     return render(load_site_template("site_dest.html"), values) + "\n"
 

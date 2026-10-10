@@ -13,6 +13,10 @@ sights:
     text: Një nga parqet më të mëdha urbane në Evropë, me sërfistët e valës Eisbach.
   - name: Hofbräuhaus
     text: Birraria më e famshme në botë, me muzikë bavareze çdo mbrëmje.
+  - name: Viktualienmarkt
+    text: Tregu i hapur i qytetit, me tezga ushqimi dhe një kopsht birre në mes.
+  - name: Pallati Nymphenburg
+    text: Rezidenca verore e mbretërve të Bavarisë, me park të madh, 20 minuta me tramvaj.
 airports:
   MUC: >-
     Trenat S-Bahn S1 dhe S8 të çojnë në qendër (Hauptbahnhof, Marienplatz) për rreth 40 minuta.
@@ -25,3 +29,40 @@ when: >-
 tips:
   - "Gjatë Oktoberfestit çmimet e hoteleve dyfishohen e trefishohen: rezervo muaj përpara."
   - "Kështjella Neuschwanstein vizitohet si udhëtim ditor, me tren deri në Füssen (rreth 2 orë)."
+  - "Dyqanet dhe supermarketet janë të mbyllura të dielave: bëje pazarin të shtunën."
+itinerary:
+  - "Marienplatz me Glockenspiel, Frauenkirche dhe Viktualienmarkt. Pasdite Rezidenca dhe një birrë në Hofbräuhaus."
+  - "Englischer Garten me sërfistët dhe kopshtin e birrës te Kulla Kineze. Pasdite muzetë e artit (Pinakotekat), ose BMW Welt dhe Parku Olimpik."
+  - "Pallati Nymphenburg, ose një udhëtim ditor në Neuschwanstein apo Salzburg."
+areas:
+  - name: Altstadt
+    text: Rreth Marienplatz, gjithçka në këmbë, me çmimet më të larta.
+  - name: Pranë Hauptbahnhof
+    text: Zona më praktike për trenin e aeroportit dhe me hotelet më të lira.
+  - name: Schwabing
+    text: Lagjja e kafeneve dhe e studentëve, pranë Englischer Garten.
+food:
+  - name: Weißwurst
+    text: Salsiçe të bardha që hahen për mëngjes, me mustardë të ëmbël dhe gjevrek.
+  - name: Schweinshaxe
+    text: Kofshë derri e pjekur me lëkurë kërcitëse.
+  - name: Brezn
+    text: Gjevreku i madh bavarez, shoqëruesi i çdo birre.
+  - name: Kopshtet e birrës
+    text: "Në kopshtet tradicionale lejohet të sjellësh ushqimin tënd: blen vetëm birrën."
+transport: >-
+  Rrjeti i U-Bahn, S-Bahn dhe tramvajeve është i shpejtë dhe i saktë. Biletat prej letre duhen
+  vulosur para hipjes dhe kontrollet janë të shpeshta. Për një ditë me shumë lëvizje ia vlen
+  bileta ditore, sidomos ajo në grup për 2 deri në 5 persona.
+daytrips:
+  - name: Neuschwanstein
+    text: Kështjella e përrallave, rreth 2 orë me tren dhe autobus.
+  - name: Salzburg
+    text: Qyteti i Mozartit në Austri, rreth 1.5-2 orë me tren.
+  - name: Dachau
+    text: Memoriali i kampit të përqendrimit, 25 minuta me S-Bahn.
+faq:
+  - q: "Kur mbahet Oktoberfest?"
+    a: "Nis në mes të shtatorit dhe zgjat rreth 16 ditë, deri në të dielën e parë të tetorit. Hyrja në çadra është falas, por në fundjavë ato mbushen që në mëngjes."
+  - q: "Sa para duhen në ditë në Munich?"
+    a: "Pa fluturimin dhe fjetjen, €50-80 në ditë. Munich është qyteti më i shtrenjtë i Gjermanisë: fjetja është shpenzimi kryesor, ndërsa ushqimi në birrari mbetet i arsyeshëm."

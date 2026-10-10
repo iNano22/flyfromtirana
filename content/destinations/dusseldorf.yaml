@@ -13,6 +13,10 @@ sights:
     text: Porti i vjetër i kthyer në lagje moderne, me ndërtesat e lakuara të Frank Gehry-t.
   - name: Königsallee
     text: Bulevardi i dyqaneve luksoze, i ndarë nga një kanal me pemë.
+  - name: Rheinturm
+    text: Kulla 240 metra e lartë buzë Rinit, me platformë pamjeje dhe restorant që rrotullohet.
+  - name: Little Tokyo
+    text: Lagjja japoneze rreth Immermannstraße, me disa nga restorantet më të mira aziatike në Gjermani.
 airports:
   DUS: >-
     Treni S11 lidh terminalin me stacionin qendror (Hauptbahnhof) për rreth 12 minuta, me biletë
@@ -25,3 +29,39 @@ when: >-
 tips:
   - "Këlni është vetëm gjysmë ore larg me tren: Katedralja është ngjitur me stacionin."
   - "Në birraritë e Altstadt kamerieri të sjell birrë të re derisa ta mbulosh gotën me nënvendosëse."
+  - "Mos porosit birrë Kölsch në Düsseldorf: rivaliteti me Këlnin është i vjetër dhe këtu pihet vetëm Altbier."
+itinerary:
+  - "Altstadt, sheshi Burgplatz dhe shëtitorja e Rinit deri në Medienhafen. Ngjitu në Rheinturm për perëndimin e diellit."
+  - "Königsallee dhe parku Hofgarten në mëngjes, muzetë e artit K20 ose K21 pasdite. Darka në Little Tokyo."
+  - "Udhëtim ditor në Këln, ose një pasdite në Kaiserswerth, lagjja e vjetër buzë lumit në veri."
+areas:
+  - name: Altstadt
+    text: Mes lokaleve dhe shëtitores së Rinit; e zhurmshme në fundjavë.
+  - name: Stadtmitte
+    text: Mes stacionit qendror dhe Königsallee, praktike dhe me çmime mesatare.
+  - name: Medienhafen
+    text: Hotele moderne mes arkitekturës së portit, 20 minuta në këmbë nga qendra.
+food:
+  - name: Altbier
+    text: Birra e errët e qytetit, e shërbyer në gota të vogla në birraritë e vjetra.
+  - name: Rheinischer Sauerbraten
+    text: Mish i marinuar për ditë të tëra, me salcë të ëmbël e të thartë.
+  - name: Himmel un Ääd
+    text: "«Qiell dhe tokë»: pure patatesh me mollë dhe sallam gjaku të skuqur."
+  - name: Ramen dhe sushi
+    text: Në Little Tokyo, falë komunitetit të madh japonez të qytetit.
+transport: >-
+  Qendra shihet në këmbë përgjatë Rinit. Tramvajet dhe U-Bahn mbulojnë pjesën tjetër, ndërsa
+  trenat rajonalë lidhin qytetin me Këlnin, Essenin dhe gjithë zonën e Ruhrit çdo pak minuta.
+daytrips:
+  - name: Këln
+    text: Katedralja gotike dhe qyteti i vjetër, 25-30 minuta me tren.
+  - name: Essen
+    text: Zeche Zollverein, miniera e kthyer në muze dhe trashëgimi botërore, 30 minuta me tren.
+  - name: Aachen
+    text: Katedralja e Karlit të Madh, rreth 1 orë e 20 minuta me tren.
+faq:
+  - q: "Sa larg është Këlni nga Düsseldorf?"
+    a: "Rreth 40 km: trenat rajonalë bëjnë 25-30 minuta dhe nisen disa herë në orë. Shumë vizitorë i shohin të dy qytetet në të njëjtin udhëtim."
+  - q: "Sa para duhen në ditë në Düsseldorf?"
+    a: "Pa fluturimin dhe fjetjen, €50-75 në ditë. Gjatë panaireve të mëdha hotelet mund të kushtojnë dyfish."

@@ -13,6 +13,10 @@ sights:
     text: Makinat më të njohura të markës, në lagjen Zuffenhausen.
   - name: Stadtbibliothek
     text: Biblioteka e qytetit, një kub i bardhë që është bërë e famshme për brendësinë e saj.
+  - name: Kulla e Televizionit
+    text: Kulla e parë televizive prej betoni në botë, me platformë pamjeje mbi qytet dhe vreshta.
+  - name: Wilhelma
+    text: Kopshti zoologjik dhe botanik në një park mbretëror të shekullit XIX.
 airports:
   STR: >-
     Trenat S2 dhe S3 të çojnë në stacionin qendror (Hauptbahnhof) për 27 minuta, me biletë rreth
@@ -24,3 +28,40 @@ when: >-
 tips:
   - "Muzetë Mercedes-Benz dhe Porsche janë të mbyllur të hënave."
   - "Tübingen dhe Ludwigsburg janë udhëtime të shkurtra ditore me tren."
+  - "Qyteti shtrihet në një luginë: shkallët e shumta (Stäffele) të çojnë te pikat e pamjes mbi çatitë dhe vreshtat."
+itinerary:
+  - "Schlossplatz, rruga tregtare Königstraße dhe tregu i mbuluar Markthalle. Pasdite Biblioteka e Qytetit dhe Galeria Shtetërore."
+  - "Muzeu Mercedes-Benz në mëngjes dhe Muzeu Porsche pasdite: janë në dy anë të qytetit, por lidhen me S-Bahn."
+  - "Kulla e Televizionit dhe një shëtitje mes vreshtave, ose një udhëtim ditor në Tübingen apo Ludwigsburg."
+areas:
+  - name: Mitte
+    text: Rreth Königstraße dhe Schlossplatz, pranë stacionit qendror.
+  - name: Bad Cannstatt
+    text: Pranë Muzeut Mercedes-Benz, stadiumit dhe banjave termale.
+  - name: Stuttgart-West
+    text: Lagje banimi me kafene dhe restorante, 10 minuta me U-Bahn nga qendra.
+food:
+  - name: Maultaschen
+    text: Makarona të mëdha të mbushura me mish dhe spinaq, në lëng ose të skuqura.
+  - name: Käsespätzle
+    text: Makarona të vogla shtëpie me djathë të shkrirë dhe qepë të skuqura.
+  - name: Zwiebelrostbraten
+    text: Biftek me qepë të skuqura, pjata e festave në Shvabi.
+  - name: Verërat vendase
+    text: Trollinger dhe Lemberger nga vreshtat e qytetit, më të mirat në tavernat sezonale të vreshtarëve.
+transport: >-
+  S-Bahn dhe Stadtbahn (U-Bahn) mbulojnë qytetin dhe rrethinat; të dy muzetë e makinave kanë
+  stacionin e tyre. Qendra është zonë për këmbësorë. Stacioni qendror është në rindërtim prej
+  vitesh, prandaj lër pak kohë më shumë për ndërrimet.
+daytrips:
+  - name: Ludwigsburg
+    text: Një nga pallatet baroke më të mëdha në Gjermani, 15 minuta me S-Bahn.
+  - name: Tübingen
+    text: Qytet universitar me shtëpi shumëngjyrëshe buzë lumit Neckar, rreth një orë me tren.
+  - name: Kështjella Hohenzollern
+    text: Kështjella mbi mal e dinastisë prusiane, rreth 1 orë e 15 minuta me tren dhe autobus.
+faq:
+  - q: "Muzeu Mercedes-Benz apo Porsche?"
+    a: "Mercedes-Benz është më i madh dhe tregon gjithë historinë e automobilit: lër 3 orë. Porsche është më i vogël dhe i përqendruar te makinat sportive: mjaftojnë 1.5 orë. Me një ditë të plotë bëhen të dy."
+  - q: "Sa para duhen në ditë në Stuttgart?"
+    a: "Pa fluturimin dhe fjetjen, €45-70 në ditë. Hyrja në secilin muze makinash kushton rreth €12-16."

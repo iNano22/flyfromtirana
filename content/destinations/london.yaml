@@ -13,6 +13,10 @@ sights:
     text: Një nga muzetë më të mëdhenj në botë, me hyrje falas.
   - name: Buckingham Palace
     text: Rezidenca mbretërore, me ndërrimin e rojës dhe parqet St James's dhe Hyde Park aty pranë.
+  - name: South Bank
+    text: Shëtitorja buzë Tamizit nga London Eye te Tate Modern dhe Borough Market.
+  - name: Tregjet
+    text: Camden për modën alternative, Portobello Road për antikat dhe Borough Market për ushqimin.
 airports:
   LHR: >-
     Elizabeth line të çon në qendër (Paddington, Tottenham Court Road) për 30-40 minuta, me rreth
@@ -33,3 +37,42 @@ when: >-
 tips:
   - "Shqiptarëve u duhet vizë për Mbretërinë e Bashkuar: apliko me kohë, para se të blesh biletën."
   - "Paguaje transportin me kartë bankare pa kontakt: del më lirë se biletat prej letre."
+  - "Muzetë e mëdhenj (British Museum, National Gallery, Natural History Museum, Tate Modern) janë falas, por në fundjavë ia vlen të rezervosh orarin online."
+itinerary:
+  - "Westminster: Big Ben, Abbey dhe Buckingham Palace me ndërrimin e rojës. Pasdite Trafalgar Square, National Gallery dhe Covent Garden."
+  - "Tower of London dhe Tower Bridge në mëngjes. Kalo lumin për Borough Market, Tate Modern dhe shëtitjen në South Bank deri te London Eye."
+  - "British Museum në mëngjes, pastaj Camden ose Notting Hill. Në mbrëmje një shfaqje në West End, ose pamja falas nga Sky Garden (me rezervim)."
+areas:
+  - name: Westminster dhe South Bank
+    text: Pranë atraksioneve kryesore, por me çmimet më të larta.
+  - name: Paddington dhe Bayswater
+    text: Praktike për Heathrow me Elizabeth line dhe pranë Hyde Park.
+  - name: King's Cross dhe St Pancras
+    text: Ku mbërrijnë trenat nga Luton, me lidhje metroje në çdo drejtim.
+  - name: Zona 2
+    text: "Lagje si Camden, Shoreditch apo Greenwich: hotele më të lira, 15-20 minuta me metro nga qendra."
+food:
+  - name: Fish and chips
+    text: Peshk i skuqur me patate, klasikja britanike.
+  - name: Sunday roast
+    text: "Dreka e së dielës në pub: mish i pjekur, patate dhe Yorkshire pudding."
+  - name: Full English breakfast
+    text: Mëngjesi i plotë me vezë, proshutë, salsiçe dhe fasule.
+  - name: Kuzhinat e botës
+    text: Kerri indiane në Brick Lane dhe ushqim rruge në Borough Market apo Camden.
+transport: >-
+  Metroja (Tube) dhe autobusët e kuq të çojnë kudo. Mos bli bileta prej letre: paguaj me kartë
+  bankare pa kontakt ose me telefon, dhe sistemi e kufizon vetë shpenzimin ditor. Autobusi
+  kushton rreth £1.75 pavarësisht distancës dhe është mënyra më e lirë për të parë qytetin.
+daytrips:
+  - name: Windsor
+    text: Kështjella mbretërore, më pak se një orë me tren.
+  - name: Oxford ose Cambridge
+    text: Qytetet universitare, rreth një orë me tren secili.
+  - name: Brighton
+    text: Qyteti buzë detit në jug, një orë me tren.
+faq:
+  - q: "Cili aeroport i London është më i mirë?"
+    a: "Heathrow është më afër dhe lidhet me metro e me Elizabeth line. Luton dhe Stansted kanë zakonisht bileta më të lira nga Tirana, por llogarit 45-60 minuta dhe £15-20 për të arritur në qendër."
+  - q: "Sa para duhen në ditë në London?"
+    a: "Pa fluturimin dhe fjetjen, £60-90 në ditë. Muzetë falas e ulin shumë koston, ndërsa atraksionet me pagesë (Tower of London, London Eye) kushtojnë £30-35 secila."

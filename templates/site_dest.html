@@ -6,8 +6,11 @@
      and its list stay on one line. Every HTML comment is removed before the page is written.
      Values: BRAND CHANNEL CITY COUNTRY (lowercase code, for the colours) COUNTRY_NAME FLAG INTRO
      MIN_PRICE (cheapest price to the city now) UPDATED FARES (one ticket per airport, from
-     site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) SIGHTS AIRPORTS
-     BUDGET WHEN TIPS OTHER_GUIDES (links to the other cities' pages) HOME (the way back to the
+     site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) and the guide's
+     parts: SIGHTS ITINERARY DAYS (how many days the plan has) AREAS FOOD AIRPORTS TRANSPORT
+     DAYTRIPS BUDGET WHEN TIPS FAQ ENTRY_RULES (the documents needed, from content/countries.yaml).
+     A part the guide doesn't have is simply missing, and its heading and its link in the
+     "Në këtë faqe" list go with it. OTHER_GUIDES (the other cities' photo tiles, from site_guide.html) HOME (the way back to the
      main page, "../") GUIDE_PHOTO (the city's wide photo) PHOTO (a route's photo, only when
      there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
      ANALYTICS and GA_ON (only with Google Analytics on), plus one NAME_LINK per partner.
@@ -48,6 +51,7 @@
   --paper-muted: #5b5577;
   --field: #f1eefb;
   --nav-h: 60px;
+  --gutter: max(16px, calc((100% - 1080px) / 2));   /* page margin, so the row of tiles lines up with the text */
   --c1: #0274c7;
   --c2: #004f8b;
 }
@@ -133,8 +137,22 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 .btn-book:hover { background: #33255e; }
 .nofares { margin: 0; padding: 18px; border-radius: 18px; background: var(--surface); }
 
+/* "Në këtë faqe": jump links to the parts of the guide */
+.toc { padding-top: 26px; }
+.toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.toc a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); font-size: 15px; font-weight: 700; text-decoration: none; color: var(--muted); }
+.toc a:hover { color: var(--ink); background: var(--surface); }
+
 /* The guide */
-.gsec { margin-top: 40px; }
+.gsec { margin-top: 44px; scroll-margin-top: calc(var(--nav-h) + 14px); }
+.gsec > p { margin: 14px 0 0; max-width: 46em; }
+.days { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; counter-reset: day; max-width: 52em; }
+.days li { counter-increment: day; padding: 14px 16px 14px 18px; border-radius: 16px; background: var(--surface); border-left: 5px solid var(--c1); }
+.days li::before { content: "Dita " counter(day); display: block; margin-bottom: 2px; font-size: 14px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sun); }
+.qas { display: grid; gap: 10px; margin-top: 16px; max-width: 52em; }
+.qa { padding: 14px 16px; border-radius: 16px; background: var(--night-2); }
+.qa h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
+.qa p { margin: 0; }
 .sights { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
 .sights li { padding: 14px 16px; border-radius: 16px; background: var(--surface); }
 .sights b { display: block; margin-bottom: 2px; font-size: 18px; font-weight: 900; }
@@ -152,10 +170,23 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 /* Links: travel services and the other cities */
 .pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .pills a { display: inline-flex; align-items: center; min-height: 46px; padding: 0 18px; border-radius: 999px; background: var(--surface); font-weight: 800; font-size: 16px; text-decoration: none; }
-.pills a:hover, .glist a:hover { background: rgba(255, 255, 255, 0.17); }
-.glist { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-.glist a { display: flex; flex-direction: column; justify-content: center; gap: 1px; min-height: 62px; padding: 10px 14px; border-radius: 14px; background: var(--surface); font-weight: 900; line-height: 1.2; text-decoration: none; }
-.glist span { font-weight: 700; font-size: 14px; color: var(--sun); }
+.pills a:hover { background: rgba(255, 255, 255, 0.17); }
+/* The other cities: the same photo tiles as "Udhëzues për qytetet" on the main page. A row to
+   swipe on phones, a grid from 700px up. Each tile is in its own country's colours. */
+.gtiles { list-style: none; margin: 0; display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; padding: 4px var(--gutter) 22px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.gtiles::-webkit-scrollbar { display: none; }
+.gtile { flex: 0 0 min(78%, 330px); scroll-snap-align: start; }
+.gtile a { position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; color: #ffffff; text-decoration: none; background: radial-gradient(80% 90% at 100% 0%, var(--c1) 0%, transparent 60%), var(--c2); box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+.gtile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gtile a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23, 11, 59, 0) 30%, rgba(23, 11, 59, 0.9) 100%); }
+.ginfo { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 2px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+.ginfo b { font-size: 23px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
+.gflag { font-size: 0.8em; }
+.gtag { font-size: 14.5px; font-weight: 600; line-height: 1.25; color: rgba(255, 255, 255, 0.92); }
+.gread { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; font-size: 14px; font-weight: 800; color: var(--sun); }
+.gread .ic { width: 16px; height: 16px; stroke-width: 2.5; }
+.gprice { position: absolute; z-index: 1; top: 12px; right: 12px; padding: 8px 10px; border-radius: 11px; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 17px; line-height: 1; transform: rotate(3deg); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+.gprice small { font-size: 12px; font-weight: 800; }
 
 /* Telegram band and footer, as on the main page */
 .join { margin-top: 52px; background: linear-gradient(160deg, #1a72cc, #0d3f9e); }
@@ -179,6 +210,8 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
   .fare-info { padding: 20px 20px 20px 22px; }
   .fare-buy { flex-basis: 168px; padding: 18px 16px 16px; }
   .join-in { grid-template-columns: 1.2fr 1fr; align-items: center; }
+  /* As a grid the tiles line up exactly with the headings (a .wrap is 1080px wide with 16px of padding). */
+  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; overflow: visible; padding-inline: max(16px, calc((100% - 1080px) / 2 + 16px)); }
 }
 @media (min-width: 900px) {
   .dhero-in { grid-template-columns: 1.25fr 0.75fr; align-items: center; padding-top: 28px; padding-bottom: 48px; }
@@ -188,8 +221,10 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
   .fares { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .btn-book, .btn-tg, .pills a, .glist a, .nav-tg { transition: transform 0.12s ease-out, background-color 0.12s ease-out; }
-  .btn-book:active, .btn-tg:active, .pills a:active, .glist a:active, .nav-tg:active { transform: scale(0.97); }
+  .btn-book, .btn-tg, .pills a, .nav-tg { transition: transform 0.12s ease-out, background-color 0.12s ease-out; }
+  .btn-book:active, .btn-tg:active, .pills a:active, .nav-tg:active { transform: scale(0.97); }
+  .gtile img { transition: transform 0.35s ease-out; }
+  .gtile a:hover img { transform: scale(1.05); }
 }
 </style>
 </head>
@@ -198,6 +233,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
   <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
 </svg>
 <header class="nav">
   <div class="nav-in wrap">
@@ -230,15 +266,40 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
     <ul class="fares">{FARES}</ul>
     <p class="nofares">{NO_FARES}</p>
   </section>
-  <section class="block wrap" aria-label="Udhëzues për {CITY}">
-    <div><h2>Çfarë të shohësh në {CITY}</h2><ul class="sights">{SIGHTS}</ul></div>
-    <div class="gsec"><h2>Nga aeroporti në qendër</h2><div class="airports">{AIRPORTS}</div></div>
+  <nav class="toc wrap" aria-label="Në këtë faqe">
+    <ul>
+      <li><a href="#shiko" data-part="{SIGHTS_ON}">Çfarë të shohësh</a></li>
+      <li><a href="#itinerari" data-part="{ITINERARY_ON}">Itinerar</a></li>
+      <li><a href="#fjetja" data-part="{AREAS_ON}">Ku të qëndrosh</a></li>
+      <li><a href="#ushqimi" data-part="{FOOD_ON}">Çfarë të hash</a></li>
+      <li><a href="#aeroporti" data-part="{AIRPORTS_ON}">Nga aeroporti</a></li>
+      <li><a href="#transporti" data-part="{TRANSPORT_ON}">Transporti</a></li>
+      <li><a href="#udhetime-ditore" data-part="{DAYTRIPS_ON}">Udhëtime ditore</a></li>
+      <li><a href="#pyetje">Pyetje të shpeshta</a></li>
+    </ul>
+  </nav>
+  <section class="wrap" aria-label="Udhëzues për {CITY}">
+    <div class="gsec" id="shiko"><h2>Çfarë të shohësh në {CITY}</h2><ul class="sights">{SIGHTS}</ul></div>
+    <div class="gsec" id="itinerari"><h2>Itinerar për {DAYS} ditë</h2><ol class="days">{ITINERARY}</ol></div>
+    <div class="gsec" id="fjetja"><h2>Ku të qëndrosh</h2><ul class="sights">{AREAS}</ul></div>
+    <div class="gsec" id="ushqimi"><h2>Çfarë të hash</h2><ul class="sights">{FOOD}</ul></div>
+    <div class="gsec" id="aeroporti"><h2>Nga aeroporti në qendër</h2><div class="airports">{AIRPORTS}</div></div>
+    <div class="gsec" id="transporti"><h2>Si të lëvizësh në qytet</h2><p>{TRANSPORT}</p></div>
+    <div class="gsec" id="udhetime-ditore"><h2>Udhëtime ditore nga {CITY}</h2><ul class="sights">{DAYTRIPS}</ul></div>
     <div class="facts">
       <div class="fact"><h3>Sa kushton</h3><p>{BUDGET}</p></div>
       <div class="fact"><h3>Kur të shkosh</h3><p>{WHEN}</p></div>
     </div>
     <div class="gsec"><h2>Këshilla</h2><ul class="tips">{TIPS}</ul></div>
-    <p class="note">Çmimet e transportit dhe të shërbimeve janë orientuese dhe ndryshojnë me kohën: kontrolloji para nisjes.</p>
+    <div class="gsec" id="pyetje">
+      <h2>Pyetje të shpeshta</h2>
+      <div class="qas">
+        {FAQ}
+        <div class="qa"><h3>Çfarë dokumentesh duhen?</h3><p>{ENTRY_RULES}</p></div>
+        <div class="qa"><h3>Kur janë biletat më të lira?</h3><p>Zakonisht nga nëntori deri në mars, jashtë festave dhe fundjavave të gjata, dhe për nisje në mes të javës. Çmimet në këtë faqe kontrollohen çdo 3 orë, ndërsa ofertat më të mira postohen në kanalin tonë në Telegram.</p></div>
+      </div>
+    </div>
+    <p class="note">Çmimet e transportit, të hyrjeve dhe të shërbimeve janë orientuese dhe ndryshojnë me kohën: kontrolloji para nisjes.</p>
   </section>
   <section class="block wrap" aria-labelledby="extras-h">
     <h2 id="extras-h">Për udhëtimin</h2>
@@ -251,7 +312,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
       <li><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">Hotele në {CITY}</a></li>
     </ul>
   </section>
-  <section class="block wrap" aria-labelledby="more-h"><h2 id="more-h">Destinacione të tjera</h2><p class="hint">Çmimet dhe udhëzuesit për qytetet e tjera ku fluturohet nga Tirana.</p><ul class="glist">{OTHER_GUIDES}</ul></section>
+  <section class="block" aria-labelledby="more-h"><div class="wrap"><h2 id="more-h">Destinacione të tjera</h2><p class="hint">Çmimet dhe udhëzuesit për qytetet e tjera ku fluturohet nga Tirana.</p></div><ul class="gtiles" aria-label="Destinacione të tjera">{OTHER_GUIDES}</ul></section>
   <section class="join" aria-labelledby="join-h">
     <div class="join-in wrap">
       <div>

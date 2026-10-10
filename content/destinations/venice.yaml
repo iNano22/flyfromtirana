@@ -13,6 +13,10 @@ sights:
     text: Ura më e vjetër mbi Kanalin e Madh, me tregun e peshkut dhe të perimeve aty pranë.
   - name: Murano dhe Burano
     text: Ishujt e qelqit dhe të shtëpive shumëngjyrëshe, 15 deri në 45 minuta me vaporetto.
+  - name: Santa Maria della Salute
+    text: Kisha me kupolë në hyrje të Kanalit të Madh, me hyrje falas.
+  - name: Getoja Hebraike
+    text: Getoja më e vjetër në botë, në lagjen e qetë Cannaregio.
 airports:
   VCE: >-
     Autobusët ATVO dhe ACTV të çojnë në Piazzale Roma, hyrja e qytetit, për 20-25 minuta (rreth
@@ -25,3 +29,40 @@ when: >-
 tips:
   - "Në disa data të pranverës dhe të verës vizitorët ditorë paguajnë një tarifë hyrjeje online: kontrollo kalendarin para nisjes."
   - "Ha larg San Marcos: në lagjet Cannaregio dhe Castello çmimet janë shumë më të ulëta."
+  - "Mos u ul në shkallët e urave dhe mos ha ulur në tokë në sheshe: gjobat për turistët janë të larta."
+itinerary:
+  - "Piazza San Marco, Bazilika dhe Pallati i Dogjëve në mëngjes. Pasdite Ura e Rialtos dhe një xhiro me vaporetto nëpër Kanalin e Madh (linja 1)."
+  - "Ishujt: Murano për qelqin dhe Burano për shtëpitë shumëngjyrëshe. Kthehu për perëndimin e diellit në shëtitoren Zattere."
+  - "Venice pa hartë: Cannaregio, Getoja dhe lagjja Dorsoduro me Santa Maria della Salute. Kush do artin, viziton Gallerie dell'Accademia."
+areas:
+  - name: San Marco
+    text: Zemra e qytetit, me çmimet më të larta dhe më shumë turmë.
+  - name: Cannaregio
+    text: Lagje banimi më e qetë dhe më e lirë, pranë stacionit të trenit.
+  - name: Mestre
+    text: "Pjesa në tokë e qytetit: hotelet kushtojnë shumë më pak dhe treni ose autobusi të çon në Venice për 10-15 minuta."
+food:
+  - name: Cicchetti
+    text: Meze të vogla që hahen në këmbë në bare të quajtura bàcari, me një gotë verë.
+  - name: Sarde in saor
+    text: Sardele të marinuara me qepë, uthull dhe rrush të thatë.
+  - name: Risotto al nero di seppia
+    text: Rizoto e zezë me bojë sepjeje.
+  - name: Spritz
+    text: "Aperitivi lindi në këtë rajon: provoje me Aperol ose me Select, versionin venecian."
+transport: >-
+  Në qytet lëvizet vetëm në këmbë ose me vaporetto, autobusët mbi ujë. Bileta e vetme është e
+  shtrenjtë, ndaj bileta 24- ose 48-orëshe del më mirë nëse do të shkosh edhe në ishuj. Gondolat
+  kanë tarifë zyrtare, rreth €90 për 30 minuta.
+daytrips:
+  - name: Verona
+    text: Rreth 1 orë e 10 minuta me tren.
+  - name: Padova
+    text: Kapela Scrovegni me afresket e Giotto-s, 30 minuta me tren.
+  - name: Dolomitet
+    text: Cortina d'Ampezzo arrihet për rreth 2 orë me autobus, për një ditë në mal.
+faq:
+  - q: "A ia vlen të flesh në Mestre?"
+    a: "Po, nëse do të kursesh: hotelet kushtojnë shpesh sa gjysma dhe lidhja me tren e autobus është e shpeshtë. E vetmja gjë që humbet janë mbrëmjet e qeta në Venice, kur ikin vizitorët ditorë."
+  - q: "Sa para duhen në ditë në Venice?"
+    a: "Pa fluturimin dhe fjetjen, €60-90 në ditë. Vaporetto-t dhe restorantet pranë San Marcos e rritin shpejt faturën; me cicchetti dhe ecje në këmbë shpenzon shumë më pak."

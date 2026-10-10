@@ -15,6 +15,10 @@ sights:
     text: Kulla mesjetare me pamje 360 gradë dhe rruga këmbësore më e gjallë e qytetit.
   - name: Bosfori
     text: Një udhëtim me traget mes Evropës dhe Azisë kushton sa një biletë autobusi.
+  - name: Cisterna e Bazilikës
+    text: Rezervuari nëntokësor bizantin me qindra kolona, pranë Aja Sofisë.
+  - name: Xhamia e Sulejmanit
+    text: Kryevepra e arkitektit Sinan, më e qetë se Xhamia Blu dhe me pamje mbi Bririn e Artë.
 airports:
   IST: >-
     Nga Aeroporti i Istanbulit (IST) metroja M11 të çon në Gayrettepe, ku ndërron për linjën M2
@@ -29,3 +33,41 @@ when: >-
 tips:
   - "Shqiptarët hyjnë në Turqi pa vizë, për qëndrime deri në 90 ditë."
   - "Merr kartën Istanbulkart sapo të mbërrish: vlen për metro, tramvaj, autobus dhe tragete."
+  - "Në xhami hyhet pa këpucë dhe me veshje që mbulon supet e gjunjët; gratë mbulojnë kokën me shall. Gjatë faljeve vizitorët presin jashtë."
+  - "Në pazar pazarllëku është pjesë e lojës: nis me rreth gjysmën e çmimit të kërkuar."
+itinerary:
+  - "Sultanahmet: Aja Sofia, Xhamia Blu, Cisterna e Bazilikës dhe Pallati Topkapi. Është një ditë e plotë: nis herët."
+  - "Pazari i Madh dhe Pazari i Erëzave në mëngjes, pastaj Xhamia e Sulejmanit. Pasdite kalo Urën e Galatës, ngjitu te Kulla dhe ec nëpër Istiklal deri në Taksim."
+  - "Një xhiro me traget në Bosfor, pastaj ana aziatike: tregu i Kadıköy-t dhe perëndimi i diellit në Üsküdar."
+areas:
+  - name: Sultanahmet
+    text: Pranë monumenteve kryesore; e qetë në mbrëmje.
+  - name: Beyoğlu, Galata dhe Karaköy
+    text: Kafene, bare dhe jetë nate, me pamje nga tarracat.
+  - name: Kadıköy
+    text: "Në anën aziatike: tregje, lokale vendase dhe çmime më të ulëta, një udhëtim me traget larg."
+food:
+  - name: Qebapët
+    text: Nga Adana pikant te İskender me kos dhe salcë domatesh.
+  - name: Balık ekmek
+    text: Sanduiç me peshk të pjekur, i shitur pranë Urës së Galatës në Eminönü.
+  - name: Mëngjesi turk
+    text: Dhjetëra pjata të vogla me djathëra, ullinj, vezë, mjaltë dhe kajmak.
+  - name: Bakllava dhe çaj
+    text: Ëmbëlsira me fëstëkë dhe çaji në gotë të hollë, në çdo orë të ditës.
+transport: >-
+  Trafiku është i rëndë, ndaj shmang taksitë në orët e pikut. Tramvaji T1 lidh Sultanahmetin me
+  Urën e Galatës dhe Kabataşin, metroja dhe treni Marmaray kalojnë nën Bosfor, dhe tragetet janë
+  mënyra më e bukur për të ndërruar kontinent. Të gjitha paguhen me Istanbulkart.
+daytrips:
+  - name: Ishujt e Princave
+    text: Pa makina, me vila druri dhe pisha, rreth një orë me traget.
+  - name: Bosfori i sipërm
+    text: Trageti i gjatë publik të çon deri në Anadolu Kavağı, pranë Detit të Zi.
+  - name: Bursa
+    text: Kryeqyteti i parë osman, me traget dhe autobus në rreth 2-3 orë.
+faq:
+  - q: "Ana evropiane apo aziatike?"
+    a: "Për vizitën e parë fli në anën evropiane, në Sultanahmet ose Beyoğlu, ku janë monumentet. Ana aziatike (Kadıköy) është më e qetë, më e lirë dhe më vendase, ideale për vizitën e dytë."
+  - q: "Sa para duhen në ditë në Istanbul?"
+    a: "Pa fluturimin dhe fjetjen, €35-60 në ditë. Ushqimi dhe transporti janë të lirë, por hyrjet për të huajt janë shtrenjtuar shumë: Aja Sofia dhe Topkapi kushtojnë rreth €25-50 secila."

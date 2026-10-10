@@ -13,6 +13,10 @@ sights:
     text: Qyteti i sipërm me shtëpi të vjetra dhe muret bizantine, me pamjen më të mirë mbi gjirin.
   - name: Rotonda dhe Harku i Galerit
     text: Dy monumentet romake në mes të qytetit, pranë njëri-tjetrit.
+  - name: Muzeu Arkeologjik
+    text: Thesaret e arta të Maqedonisë së lashtë, pak minuta nga Kulla e Bardhë.
+  - name: Ladadika
+    text: Lagjja e vjetër e depove pranë portit, sot plot taverna dhe bare.
 airports:
   SKG: >-
     Autobusi 01X (natën 01N) lidh aeroportin me qendrën dhe stacionin e trenit për rreth 45
@@ -24,3 +28,40 @@ when: >-
 tips:
   - "Provo bougatsa-n me krem në mëngjes: është specialiteti i qytetit."
   - "Për Halkidikin të duhet makinë me qira ose autobusët KTEL."
+  - "Shëtitorja ka korsi biçikletash përgjatë gjithë bregut: biçikleta me qira është mënyra më e këndshme për ta përshkuar."
+itinerary:
+  - "Kulla e Bardhë, shëtitorja dhe Çadrat. Pasdite sheshi Aristotelous, tregjet Modiano dhe Kapani, darkë në Ladadika."
+  - "Rotonda, Harku i Galerit dhe kisha e Shën Dhimitrit. Pasdite ngjitu në Ano Poli për perëndimin e diellit nga muret."
+  - "Një ditë në plazhet e Halkidikit, ose te varret mbretërore të Verginës."
+areas:
+  - name: Qendra
+    text: Rreth sheshit Aristotelous dhe shëtitores, me gjithçka në këmbë.
+  - name: Ladadika
+    text: Pranë portit, zona më e gjallë për darkë dhe jetë nate.
+  - name: Ano Poli
+    text: "Qyteti i sipërm: pamje, qetësi dhe rrugica të vjetra, por me ngjitje të pjerrëta."
+food:
+  - name: Bougatsa
+    text: Byrek me petë të hollë, me krem, djathë ose mish, për mëngjes.
+  - name: Koulouri
+    text: Gjevrek me susam, i shitur në çdo cep.
+  - name: Gyros
+    text: Këtu shërbehet me porcione të mëdha, në pitë ose në pjatë.
+  - name: Trigona Panoramatos
+    text: Kone me petë kërcitëse të mbushura me krem, specialiteti i lagjes Panorama.
+transport: >-
+  Qendra është e sheshtë dhe përshkohet në këmbë përgjatë detit. Për distanca më të gjata ka
+  autobusë dhe metronë e re, të hapur në fund të vitit 2024, me një linjë që përshkon qendrën.
+  Taksitë janë të lira krahasuar me Evropën Perëndimore.
+daytrips:
+  - name: Halkidiki
+    text: Plazhet e Kasandrës janë rreth një orë larg me makinë ose me autobus KTEL.
+  - name: Vergina
+    text: Varri i Filipit II, babait të Aleksandrit të Madh, rreth një orë me makinë.
+  - name: Mali Olimp
+    text: Fshati Litohoro, pika e nisjes për shtigjet, arrihet për rreth 1.5 orë.
+faq:
+  - q: "A duhet makinë në Thessaloniki?"
+    a: "Për qytetin jo. Për Halkidikin, Olimpin apo Verginën makina me qira të jep lirinë më të madhe, sidomos jashtë sezonit, kur autobusët janë më të rrallë."
+  - q: "Sa para duhen në ditë në Thessaloniki?"
+    a: "Pa fluturimin dhe fjetjen, €35-55 në ditë. Është ndër destinacionet më të lira nga Tirana, me porcione bujare dhe çmime më të ulëta se në Athens."

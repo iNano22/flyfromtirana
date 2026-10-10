@@ -14,6 +14,10 @@ sights:
     text: Një nga rrugët tregtare më të shtrenjta në botë, nga stacioni deri te liqeni.
   - name: Uetliberg
     text: Mali i qytetit, 20 minuta me tren, me pamje mbi Zurich dhe Alpet.
+  - name: Fraumünster
+    text: Kisha me vitrazhet e Marc Chagall-it, në bregun përballë Grossmünster-it.
+  - name: Lindenhof
+    text: Kodra e vogël në mes të qytetit të vjetër, me pamje mbi lumin dhe çatitë.
 airports:
   ZRH: >-
     Trenat nisen çdo pak minuta dhe arrijnë në stacionin qendror (Zürich HB) për 10-12 minuta.
@@ -25,3 +29,40 @@ when: >-
 tips:
   - "Zvicra përdor frangën (CHF), jo euron, edhe pse është në zonën Shengen."
   - "Uji i çezmave publike është i pijshëm, dhe supermarketet Migros e Coop janë mënyra më e lirë për të ngrënë."
+  - "Në verë vendasit notojnë në liqen dhe në lumin Limmat: banjat publike kushtojnë pak dhe në mbrëmje kthehen në bare."
+itinerary:
+  - "Bahnhofstrasse, Lindenhof, Fraumünster dhe Grossmünster. Pasdite shëtitje buzë liqenit dhe një xhiro e shkurtër me varkë."
+  - "Uetliberg në mëngjes, për pamjen mbi qytet dhe Alpet. Pasdite Kunsthaus ose Muzeu Kombëtar, mbrëmja në Zürich West."
+  - "Udhëtim ditor: Lucerni, Ujëvara e Rinit ose një mal si Rigi."
+areas:
+  - name: Altstadt
+    text: Qyteti i vjetër, më i bukuri dhe më i shtrenjti.
+  - name: Zürich West
+    text: Ish-zona industriale, sot me bare, dizajn dhe hotele moderne.
+  - name: Pranë stacionit qendror
+    text: Praktike për trenin e aeroportit dhe për udhëtimet ditore.
+food:
+  - name: Fondue dhe raclette
+    text: Djathë i shkrirë me bukë ose patate, klasiket e dimrit.
+  - name: Zürcher Geschnetzeltes
+    text: Mish viçi në salcë kremi me kërpudha, i shërbyer me Rösti, patate të grira e të skuqura.
+  - name: Çokollata
+    text: Sprüngli dhe Läderach janë emrat më të njohur të qytetit.
+  - name: Supermarketet
+    text: "Restorantet janë të shtrenjta: ushqimi i gatshëm te Migros dhe Coop është zgjidhja e vendasve."
+transport: >-
+  Tramvajet janë të shpeshtë dhe të përpiktë. Biletat blihen sipas zonave dhe vlejnë edhe për
+  varkat e liqenit. Zürich Card (24 ose 72 orë) përfshin transportin, trenin e aeroportit dhe
+  shumë muze. Qyteti i vjetër është i gjithi për këmbësorë.
+daytrips:
+  - name: Lucerni
+    text: Ura e drunjtë e Kapelës dhe liqeni mes maleve, 45-50 minuta me tren.
+  - name: Ujëvara e Rinit
+    text: Ujëvara më e madhe në Evropë, rreth 45 minuta me tren deri në Schaffhausen.
+  - name: Mali Rigi
+    text: «Mbretëresha e maleve», me tren dhe varkë, për një ditë në Alpe.
+faq:
+  - q: "Si të kursesh në Zurich?"
+    a: "Pi ujë nga çezmat publike, ha drekën te supermarketet, përdor biletën ditore të transportit dhe shijo gjërat falas: liqenin, Lindenhofin dhe shëtitjet në Uetliberg. Fli pranë stacionit ose jashtë qendrës."
+  - q: "Sa para duhen në ditë në Zurich?"
+    a: "Pa fluturimin dhe fjetjen, 80-130 franga në ditë. Zurich është ndër qytetet më të shtrenjta në botë: një darkë në restorant kalon lehtë 40 franga për person."

@@ -13,6 +13,10 @@ sights:
     text: Dy sheshet historike në zemër të qytetit, pak minuta larg njëri-tjetrit.
   - name: Parku Retiro
     text: Parku i madh qendror, me liqen për varka dhe Pallatin e Kristalit.
+  - name: Muzeu Reina Sofía
+    text: Arti modern spanjoll, me «Guernica»-n e Picasso-s.
+  - name: Tempulli i Debodit
+    text: Tempull egjiptian i dhuruar Spanjës, vendi më i mirë për perëndimin e diellit.
 airports:
   MAD: >-
     Metroja (linja 8) të çon në Nuevos Ministerios për 25-30 minuta, me biletë rreth €5 bashkë me
@@ -25,3 +29,41 @@ when: >-
 tips:
   - "Muzeu Prado ka hyrje falas dy orët e fundit çdo ditë."
   - "Toledo arrihet për rreth gjysmë ore me tren të shpejtë nga stacioni Atocha."
+  - "Dreka hahet rreth orës 14:00-15:30 dhe darka pas 21:00: shumë kuzhina janë të mbyllura ndërmjet."
+itinerary:
+  - "Puerta del Sol, Plaza Mayor dhe Pallati Mbretëror me Katedralen Almudena. Perëndimi te Tempulli i Debodit, tapas në La Latina."
+  - "Muzeu Prado në mëngjes, pastaj Parku Retiro me liqenin dhe Pallatin e Kristalit. Pasdite Reina Sofía për «Guernica»-n."
+  - "Gran Vía, Malasaña dhe Chueca në këmbë. Tifozët vizitojnë stadiumin Santiago Bernabéu; alternativa është një udhëtim ditor në Toledo."
+areas:
+  - name: Sol dhe Centro
+    text: Në mes të gjithçkaje, por e zhurmshme ditë e natë.
+  - name: Malasaña dhe Chueca
+    text: Lagjet e bareve, dyqaneve vintage dhe jetës së natës.
+  - name: La Latina
+    text: Rrugica të vjetra dhe baret më të mira të tapas.
+  - name: Retiro dhe Salamanca
+    text: Më të qeta dhe elegante, pranë parkut dhe muzeve.
+food:
+  - name: Bocadillo de calamares
+    text: Sanduiç me kallamarë të skuqur, tipik rreth Plaza Mayor.
+  - name: Cocido madrileño
+    text: Tavë dimri me qiqra, mish dhe perime, e shërbyer në dy ose tri pjata.
+  - name: Churros con chocolate
+    text: Brumë i skuqur që ngjyhet në çokollatë të trashë, për mëngjes ose pas një nate jashtë.
+  - name: Tapas
+    text: Në La Latina dhe në tregun San Miguel, me një gotë verë ose vermut.
+transport: >-
+  Metroja është e gjerë, e lirë dhe e shpejtë. Karta me 10 udhëtime mund të ndahet edhe mes disa
+  personave. Qendra, nga Pallati Mbretëror te Retiro, përshkohet në këmbë për rreth 30 minuta.
+daytrips:
+  - name: Toledo
+    text: Qyteti i tri kulturave mbi lumin Tajo, rreth gjysmë ore me tren të shpejtë.
+  - name: Segovia
+    text: Akuedukti romak dhe kështjella Alcázar, rreth 30 minuta me tren të shpejtë.
+  - name: El Escorial
+    text: Manastiri-pallat i Filipit II, rreth një orë me tren.
+faq:
+  - q: "Në ç'orë hahet në Madrid?"
+    a: "Vonë. Dreka është pas orës 14:00 dhe darka rrallë para 21:00. Ndërmjet tyre baret shërbejnë tapas, kështu që askush nuk mbetet pa ngrënë."
+  - q: "Sa para duhen në ditë në Madrid?"
+    a: "Pa fluturimin dhe fjetjen, €45-70 në ditë. Madrid është më i lirë se Barcelona, dhe muzetë e mëdhenj kanë orare me hyrje falas."

@@ -1,0 +1,46 @@
+# What an Albanian citizen needs to enter each country we fly to, keyed by the
+# country's two-letter code (the one behind a route's flag in config.yaml).
+# Shown on every city page of that country, under "Çfarë dokumentesh duhen?".
+# These rules change: review them a couple of times a year (ETIAS above all).
+it: >-
+  Italia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën
+  3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në fuqi.
+gr: >-
+  Greqia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën
+  3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në fuqi.
+de: >-
+  Gjermania është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë,
+  për qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të
+  paktën 3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES),
+  ndërsa autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në fuqi.
+at: >-
+  Austria është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën
+  3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në fuqi.
+ch: >-
+  Zvicra nuk është në BE, por është në zonën Shengen. Shtetasit shqiptarë me pasaportë
+  biometrike hyjnë pa vizë, për qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet
+  të jetë e vlefshme të paktën 3 muaj pas datës së kthimit. Autorizimi online ETIAS pritet të
+  bëhet i detyrueshëm edhe për Zvicrën: kontrollo para nisjes nëse ka hyrë në fuqi.
+es: >-
+  Spanja është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën
+  3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në fuqi.
+be: >-
+  Belgjika është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë,
+  për qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të
+  paktën 3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES),
+  ndërsa autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në fuqi.
+gb: >-
+  Mbretëria e Bashkuar nuk është në zonën Shengen. Shtetasve shqiptarë u duhet vizë vizitori
+  (Standard Visitor visa), që aplikohet online dhe kërkon një takim për të dhënat biometrike.
+  Apliko disa javë përpara dhe mos e bli biletën pa e marrë vizën.
+tr: >-
+  Shtetasit shqiptarë hyjnë në Turqi pa vizë, për qëndrime deri në 90 ditë. Mjafton pasaporta,
+  që këshillohet të jetë e vlefshme të paktën 6 muaj pas datës së hyrjes.

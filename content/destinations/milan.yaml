@@ -3,6 +3,10 @@
 # has one entry per route (airport code) of that city. `tagline` is the short
 # line under the city's name on the main page. All text is Albanian, with the
 # city's name in English, like everywhere else on the site.
+# The parts, in the order the page shows them: intro, sights, itinerary (one
+# entry per day), areas (where to stay), food, airports, transport, daytrips,
+# budget, when, tips, faq. Only city, slug and intro are required: a part that
+# is left out is simply not on the page.
 # The page's wide photo is assets/img/guides/<slug>.webp (960x600), if there is one.
 city: Milan
 slug: milan
@@ -19,6 +23,10 @@ sights:
     text: Kështjella e familjes Sforza, me muze brenda dhe parkun Sempione pas saj.
   - name: Navigli
     text: Lagjja e kanaleve, vendi më i mirë për aperitiv në mbrëmje.
+  - name: Pinacoteca di Brera
+    text: Galeria kryesore e artit në qytet, në lagjen bohemiane Brera, plot rrugica me kafene.
+  - name: San Siro
+    text: Stadiumi i Milanit dhe i Interit. Jashtë ditëve të ndeshjeve vizitohet me turne dhe muze.
 airports:
   MXP: >-
     Treni Malpensa Express të çon në Milano Centrale ose Cadorna për rreth 50 minuta (rreth €13).
@@ -33,3 +41,40 @@ when: >-
 tips:
   - "Biletat për «Darkën e Fundit» të Leonardo da Vinçit mbarojnë shpejt: rezervoji javë përpara."
   - "Nga Bergamo ia vlen një ndalesë në Città Alta, qytetin e vjetër mbi kodër, vetëm 20 minuta nga aeroporti."
+  - "Aperitivi nis rreth orës 18:00: me çmimin e një pijeje (€10-15) shumë lokale ofrojnë edhe ushqim nga bufeja."
+itinerary:
+  - "Duomo me ngjitje në tarracë, Galleria Vittorio Emanuele II dhe Teatro alla Scala. Pasdite Castello Sforzesco dhe parku Sempione, në mbrëmje aperitiv në Brera."
+  - "«Darka e Fundit» në mëngjes (me rezervim), pastaj lagjja Brera dhe Pinacoteca. Pasdite dyqanet e Corso Buenos Aires ose Quadrilatero della Moda, mbrëmja në Navigli."
+  - "Një ditë jashtë qytetit, në Liqenin e Komos ose në Bergamo. Ndryshe, San Siro dhe lagjja moderne Porta Nuova me Bosco Verticale."
+areas:
+  - name: Duomo dhe Brera
+    text: Në qendër të gjithçkaje, por me çmimet më të larta. Ideale për një qëndrim të shkurtër.
+  - name: Navigli
+    text: Lagjja e kanaleve dhe e jetës së natës, e lidhur me metro me qendrën.
+  - name: Stazione Centrale
+    text: "Zona më praktike dhe më e lirë: nga këtu nisen autobusët dhe trenat për të dy aeroportet."
+food:
+  - name: Risotto alla milanese
+    text: Rizoto e verdhë me shafran, pjata simbol e qytetit.
+  - name: Cotoletta alla milanese
+    text: Kotëletë viçi e pane, e skuqur në gjalpë.
+  - name: Panzerotti
+    text: Brumë i skuqur i mbushur me domate dhe mocarela, një vakt i shpejtë pranë Duomos.
+  - name: Aperitivo
+    text: "Rituali i mbrëmjes: një spritz ose negroni me meze, para darkës."
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa pesë linjat e metrosë dhe tramvajet të çojnë kudo. Nuk ke
+  nevojë për biletë prej letre: mjafton të kalosh kartën bankare pa kontakt në hyrje. Bileta
+  ditore kushton rreth €7.60.
+daytrips:
+  - name: Liqeni i Komos
+    text: Rreth një orë me tren deri në Como ose Varenna, nga ku merr varkën për Bellagio.
+  - name: Bergamo
+    text: Qyteti i vjetër mbi kodër (Città Alta), 50 minuta me tren.
+  - name: Verona
+    text: Arena romake dhe ballkoni i Zhulietës, rreth 1 orë e 15 minuta me tren të shpejtë.
+faq:
+  - q: "Malpensa apo Bergamo: cili aeroport është më i mirë?"
+    a: "Malpensa lidhet me tren direkt me qendrën. Për Bergamon zakonisht ka bileta më të lira, por llogarit rreth një orë me autobus deri në Milano Centrale. Në të dyja rastet udhëtimi kushton rreth €10-13."
+  - q: "Sa para duhen në ditë në Milan?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-80 në ditë për ushqim, transport dhe një hyrje në muze. Milan është ndër qytetet më të shtrenjta të Italisë, sidomos për hotelet."

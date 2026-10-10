@@ -13,6 +13,10 @@ sights:
     text: Pallati perandorak dhe bulevardi rrethor me Operën, Parlamentin dhe muzetë.
   - name: Belvedere
     text: Pallati barok ku ekspozohet «Puthja» e Gustav Klimtit.
+  - name: Prater
+    text: Parku i madh me rrotën gjigante Riesenrad, të vitit 1897.
+  - name: MuseumsQuartier dhe Naschmarkt
+    text: Kompleksi i muzeve moderne me oborr plot kafene dhe, pak më tej, tregu më i njohur i qytetit.
 airports:
   VIE: >-
     Treni S7 dhe trenat Railjet të çojnë në qendër (Wien Mitte ose Hauptbahnhof) për 15-25
@@ -25,3 +29,40 @@ when: >-
 tips:
   - "Mos e merr CAT-in pa nevojë: S7 kushton tri herë më pak dhe bën vetëm 10 minuta më shumë."
   - "Uji i çezmës vjen nga Alpet dhe është i shkëlqyer."
+  - "Për Operën Shtetërore shiten bileta në këmbë me çmim shumë të ulët, pak para shfaqjes."
+itinerary:
+  - "Stephansdom, rruga Graben dhe Hofburg. Pasdite Ringstraße me tramvaj dhe një kafe me tortë në një kafene historike."
+  - "Schönbrunn në mëngjes: pallati, kopshtet dhe kodra Gloriette. Pasdite Naschmarkt dhe MuseumsQuartier."
+  - "Belvedere për Klimtin, pastaj Prater dhe rrota gjigante. Në mbrëmje një Heuriger, taverna e verës në kodrat e Grinzingut."
+areas:
+  - name: Innere Stadt
+    text: "Rrethi i parë, brenda Ringut: gjithçka në këmbë, me çmimet më të larta."
+  - name: Leopoldstadt
+    text: Rrethi i dytë, mes kanalit të Danubit dhe Praterit, me çmime më të mira.
+  - name: Neubau dhe Mariahilf
+    text: Lagjet e dyqaneve, kafeneve dhe galerive, pranë MuseumsQuartier.
+food:
+  - name: Wiener Schnitzel
+    text: Shnicel viçi i hollë dhe i pane, më i madh se pjata.
+  - name: Sachertorte
+    text: Torta me çokollatë dhe reçel kajsie, e shpikur në Hotel Sacher.
+  - name: Apfelstrudel
+    text: Shtrudel me mollë, më i miri në kafenetë historike.
+  - name: Würstelstand
+    text: Qoshqet e salsiçeve, ushqimi i natës i vjenezëve. Provo Käsekrainer, salsiçen me djathë.
+transport: >-
+  U-Bahn, tramvajet dhe autobusët punojnë me një biletë të vetme. Bileta 24-, 48- ose 72-orëshe
+  ia vlen pothuajse gjithmonë. Tramvajet 1 dhe 2 bëjnë xhiron e Ringut përpara ndërtesave
+  kryesore, si një turne i lirë i qytetit.
+daytrips:
+  - name: Bratislava
+    text: Kryeqyteti i Sllovakisë është vetëm një orë larg me tren, ose me varkë mbi Danub.
+  - name: Lugina Wachau
+    text: Abacia e Melkut dhe fshatrat e verës buzë Danubit, rreth një orë me tren.
+  - name: Salzburg
+    text: Rreth 2.5 orë me tren, e mundshme si një ditë e gjatë.
+faq:
+  - q: "A duhet rezervuar Schönbrunn?"
+    a: "Po, sidomos nga prilli në tetor: biletat për brendësinë e pallatit shiten me orar dhe mbarojnë. Kopshtet janë falas dhe hapen që në mëngjes."
+  - q: "Sa para duhen në ditë në Vienna?"
+    a: "Pa fluturimin dhe fjetjen, €50-80 në ditë. Hyrjet në pallate janë shpenzimi më i madh: Schönbrunn dhe Belvedere kushtojnë rreth €20-30 secili."

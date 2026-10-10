@@ -6,10 +6,11 @@ import pytest
 
 from src.config import ConfigError, load_config
 from src.formatter import PLACEHOLDER
-from src.guides import Guide, load_guides
+from src.guides import Guide, load_entry_rules, load_guides
 from src.links import LinkBuilder
 from src.photos import ASSETS_DIR
-from src.website import build_offers, build_site, guide_tiles, render_guide_page, render_site, site_guides
+from src.website import (build_offers, build_site, country_code, guide_tiles, render_guide_page, render_site,
+                         site_guides)
 from tests.conftest import NOW, make_quote, seed_history
 
 NOV = date(2026, 11, 1)
@@ -42,11 +43,22 @@ def test_every_city_has_a_guide_that_covers_its_airports():
     assert set(guides) == set(airports)                    # one guide per city we fly to, and no stray ones
     for city, guide in guides.items():
         assert set(guide.airports) == airports[city], city # how to reach the centre, for each of its airports
-        assert guide.intro and guide.budget and guide.when and len(guide.sights) >= 3 and guide.tips, city
+        assert guide.intro and guide.budget and guide.when and guide.transport and guide.tips, city
         assert guide.tagline, city                         # the line on its tile on the main page
+        # Every guide has all the parts of a full page.
+        assert len(guide.sights) >= 5 and len(guide.itinerary) >= 3 and len(guide.areas) >= 3, city
+        assert len(guide.food) >= 3 and len(guide.daytrips) >= 3 and len(guide.faq) >= 2, city
     # Every wide photo belongs to a guide (the file is named after the guide's slug).
     slugs = {guide.slug for guide in guides.values()}
     assert {path.stem for path in (ASSETS_DIR / "img" / "guides").glob("*.webp")} <= slugs
+
+
+def test_every_country_we_fly_to_has_its_entry_rules():
+    rules = load_entry_rules()
+    countries = {country_code(route.flag) for route in load_config().routes}
+    assert countries <= set(rules)                         # the "Çfarë dokumentesh duhen?" answer
+    assert "pa vizë" in rules["it"] and "vizë vizitori" in rules["gb"]
+    assert load_entry_rules(load_config().db_path.parent / "no-such-file.yaml") == {}
 
 
 def test_guides_are_listed_in_the_order_of_the_routes():
@@ -89,17 +101,34 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert '<li class="fare deal">' in page and page.count("<span class=\"tag deal\">") == 1
     assert "Kthimi nga €24" in page and "zakonisht €60 <b>-68%</b>" in page
     assert 'class="btn-book" href="https://aviasales.tp.st/' in page         # the site's own tracked links
-    # The guide.
+    # The guide, part by part.
     assert "<li><b>Duomo di Milano</b>" in page
+    assert '<h2>Itinerar për 3 ditë</h2><ol class="days"><li>Duomo me ngjitje në tarracë' in page
+    assert "<h2>Ku të qëndrosh</h2>" in page and "<li><b>Navigli</b>" in page
+    assert "<h2>Çfarë të hash</h2>" in page and "<li><b>Risotto alla milanese</b>" in page
     assert "<h3>Malpensa (MXP)</h3>" in page and "<h3>Bergamo (BGY)</h3>" in page
+    assert "<h2>Si të lëvizësh në qytet</h2><p>Qendra përshkohet në këmbë" in page
+    assert "<h2>Udhëtime ditore nga Milan</h2>" in page and "<li><b>Liqeni i Komos</b>" in page
     assert "Malpensa Express" in page and "<h3>Sa kushton</h3>" in page and "<h3>Kur të shkosh</h3>" in page
+    # Questions: the city's own, the country's entry rules, and the one every page has.
+    assert '<div class="qa"><h3>Malpensa apo Bergamo: cili aeroport është më i mirë?</h3>' in page
+    assert "<h3>Çfarë dokumentesh duhen?</h3><p>Italia është në zonën Shengen." in page
+    assert "<h3>Kur janë biletat më të lira?</h3>" in page
+    # The jump links at the top go to parts that exist.
+    for anchor in ("shiko", "itinerari", "fjetja", "ushqimi", "aeroporti", "transporti", "udhetime-ditore", "pyetje"):
+        assert f'<a href="#{anchor}"' in page and f'id="{anchor}"' in page, anchor
     # Links back to the main page and on to the other cities, but not to itself.
     assert '<a class="brand" href="../">' in page
     assert '<img class="dphoto wide" src="../img/guides/milan.webp"' in page  # the city's own wide photo...
     assert "../img/dest/" not in page                                        # ...instead of a route's photo
     assert '<meta property="og:image" content="https://flyfromtirana.devbay.cloud/img/guides/milan.webp">' in page
     assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
-    assert '<li><a href="../rome/">Rome</a></li>' in page and 'href="../milan/"' not in page
+    # "Destinacione të tjera": a photo tile for each of the 18 other cities.
+    others = page[page.index('<ul class="gtiles"'):page.index("</ul>", page.index('<ul class="gtiles"'))]
+    assert others.count('<li class="gtile') == 18 and 'href="../milan/"' not in page
+    assert '<a href="../rome/">' in others and '<img src="../img/guides/rome.webp"' in others
+    assert "Koloseu, Vatikani dhe pasta" in others and '<use href="#i-right"/>' in others
+    assert '<symbol id="i-right"' in page                                    # the tiles' arrow is drawn on this page too
     assert "googletagmanager" not in page and "Cilësimet e cookies" not in page   # analytics is off
     assert "<!--" not in page and not PLACEHOLDER.search(page)
 
@@ -168,6 +197,12 @@ def test_city_without_a_wide_photo_still_gets_a_tile_and_a_page(config, storage)
                              LinkBuilder(config.website.links, "1"), updated_at=NOW, now=NOW)
     assert '<img class="dphoto" src="../img/dest/mxp.webp"' in page          # falls back to a route's photo
     assert "dphoto wide" not in page.split("</style>")[1] and not PLACEHOLDER.search(page)
+    # A short guide: the parts it lacks are left off, with their headings and jump links.
+    body = page.split("</style>")[1]
+    for missing in ("Itinerar", "Ku të qëndrosh", "Çfarë të hash", "Udhëtime ditore", "Si të lëvizësh"):
+        assert missing not in body, missing
+    assert 'href="#itinerari"' not in body and 'href="#pyetje"' in body      # the questions block is always there
+    assert "<h3>Çfarë dokumentesh duhen?</h3>" in body
 
 
 # --- Google Analytics ---------------------------------------------------------------

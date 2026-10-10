@@ -13,6 +13,10 @@ sights:
     text: Pesë muze në një ishull të lumit Spree, pranë Katedrales së Berlinit.
   - name: Alexanderplatz
     text: Sheshi i madh i Lindjes, me Kullën e Televizionit dhe pamjen nga 200 metra.
+  - name: Memoriali i Holokaustit
+    text: Fusha me mijëra blloqe betoni pranë Portës së Brandenburgut.
+  - name: Checkpoint Charlie
+    text: Pika e famshme e kalimit mes Lindjes dhe Perëndimit gjatë Luftës së Ftohtë.
 airports:
   BER: >-
     Trenat FEX, RE dhe RB arrijnë në stacionin qendror (Hauptbahnhof) për rreth 30 minuta; S-Bahn
@@ -24,3 +28,42 @@ when: >-
 tips:
   - "Vizita në kupolën e Reichstagut është falas, por duhet rezervuar online ditë përpara."
   - "Shumë lokale të vogla pranojnë vetëm para në dorë: mbaj disa euro me vete."
+  - "Dyqanet janë të mbyllura të dielave. Vulose biletën e transportit para hipjes: kontrollorët janë pa uniformë dhe gjoba është €60."
+itinerary:
+  - "Porta e Brandenburgut, Reichstag dhe Memoriali i Holokaustit. Pasdite bulevardi Unter den Linden deri në Ishullin e Muzeve dhe Alexanderplatz."
+  - "Muri: Memoriali në Bernauer Straße në mëngjes dhe East Side Gallery pasdite. Mbrëmja në Kreuzberg ose Friedrichshain."
+  - "Charlottenburg dhe Kurfürstendamm, ose Tempelhofer Feld, ish-aeroporti i kthyer në park. Alternativë: udhëtim ditor në Potsdam."
+areas:
+  - name: Mitte
+    text: Qendra historike, pranë Ishullit të Muzeve dhe Portës së Brandenburgut.
+  - name: Kreuzberg dhe Friedrichshain
+    text: Lagjet e jetës së natës, artit në rrugë dhe ushqimit nga gjithë bota.
+  - name: Prenzlauer Berg
+    text: E qetë, me kafene dhe sheshe me pemë, e preferuar nga familjet.
+  - name: Charlottenburg
+    text: Berlini Perëndimor klasik, pranë Kurfürstendamm dhe pallatit.
+food:
+  - name: Currywurst
+    text: Salsiçe e prerë me salcë domatesh dhe kerri, shpikje berlineze.
+  - name: Döner Kebab
+    text: Versioni në bukë lindi këtu, në komunitetin turk të qytetit.
+  - name: Berliner Pfannkuchen
+    text: Petull e mbushur me reçel.
+  - name: Tregjet e ushqimit
+    text: Markthalle Neun në Kreuzberg, me mbrëmjen e ushqimit të rrugës çdo të enjte.
+transport: >-
+  U-Bahn, S-Bahn, tramvajet dhe autobusët punojnë me të njëjtën biletë; për qytetin mjaftojnë
+  zonat AB, për aeroportin duhet ABC. Bileta 24-orëshe ia vlen nga udhëtimi i tretë. Qyteti
+  është i sheshtë dhe plot korsi biçikletash.
+daytrips:
+  - name: Potsdam
+    text: Pallati Sanssouci dhe kopshtet e mbretërve prusianë, 30-40 minuta me S-Bahn.
+  - name: Sachsenhausen
+    text: Memoriali i kampit të përqendrimit në Oranienburg, rreth 45 minuta me tren.
+  - name: Dresden
+    text: Qyteti barok mbi lumin Elbë, rreth 2 orë me tren.
+faq:
+  - q: "A punojnë dyqanet të dielën në Berlin?"
+    a: "Jo, pothuajse të gjitha dyqanet dhe supermarketet janë të mbyllura. Të hapura mbeten restorantet, muzetë, tregjet e së dielës (si ai në Mauerpark) dhe dyqanet në stacionet e mëdha."
+  - q: "Sa para duhen në ditë në Berlin?"
+    a: "Pa fluturimin dhe fjetjen, €45-70 në ditë. Berlin është më i lirë se Munich apo Frankfurt, dhe shumë nga historia e tij shihet falas në rrugë."
