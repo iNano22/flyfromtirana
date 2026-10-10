@@ -1,0 +1,26 @@
+city: Madrid
+slug: madrid
+intro: >-
+  Madrid është kryeqyteti i Spanjës, me muze të mëdhenj arti, sheshe të gjalla dhe darka që nisin
+  pas orës 21:00. Dy-tri ditë mjaftojnë për qendrën.
+sights:
+  - name: Muzeu Prado
+    text: Një nga koleksionet më të mëdha të pikturës evropiane, me Velázquez dhe Goya.
+  - name: Pallati Mbretëror
+    text: Pallati më i madh mbretëror në Evropën Perëndimore, me kopshte dhe pamje nga perëndimi.
+  - name: Plaza Mayor dhe Puerta del Sol
+    text: Dy sheshet historike në zemër të qytetit, pak minuta larg njëri-tjetrit.
+  - name: Parku Retiro
+    text: Parku i madh qendror, me liqen për varka dhe Pallatin e Kristalit.
+airports:
+  MAD: >-
+    Metroja (linja 8) të çon në Nuevos Ministerios për 25-30 minuta, me biletë rreth €5 bashkë me
+    shtesën e aeroportit. Autobusi Exprés Aeropuerto punon 24 orë dhe arrin në Atocha ose Cibeles
+    për rreth 40 minuta (€5).
+budget: >-
+  Një kafe kushton rreth €2, një menu dreke €13-17, një udhëtim me metro €1.50-2.
+when: >-
+  Pranvera dhe vjeshta. Korriku dhe gushti janë shumë të nxehtë dhe qyteti zbrazet.
+tips:
+  - "Muzeu Prado ka hyrje falas dy orët e fundit çdo ditë."
+  - "Toledo arrihet për rreth gjysmë ore me tren të shpejtë nga stacioni Atocha."

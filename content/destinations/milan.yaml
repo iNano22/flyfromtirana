@@ -1,0 +1,32 @@
+# The guide for one city: its page on the website is /milan/.
+# `city` must be the city name used for its routes in config.yaml; `airports`
+# has one entry per route (airport code) of that city. All text is Albanian,
+# with the city's name in English, like everywhere else on the site.
+city: Milan
+slug: milan
+intro: >-
+  Milan është kryeqyteti i modës dhe i dizajnit në Itali, me një qendër që përshkohet lehtë në
+  këmbë. Dy-tri ditë mjaftojnë për Duomon, Galerinë dhe një aperitiv buzë kanaleve të Navigli.
+sights:
+  - name: Duomo di Milano
+    text: Katedralja gotike në zemër të qytetit. Ngjitu në tarracë për pamjen mbi çatitë dhe, në ditë të kthjellëta, deri te Alpet.
+  - name: Galleria Vittorio Emanuele II
+    text: Pasazhi i mbuluar me xham ngjitur me Duomon, plot kafene historike dhe dyqane.
+  - name: Castello Sforzesco
+    text: Kështjella e familjes Sforza, me muze brenda dhe parkun Sempione pas saj.
+  - name: Navigli
+    text: Lagjja e kanaleve, vendi më i mirë për aperitiv në mbrëmje.
+airports:
+  MXP: >-
+    Treni Malpensa Express të çon në Milano Centrale ose Cadorna për rreth 50 minuta (rreth €13).
+    Autobusët për në Centrale kushtojnë rreth €10 dhe bëjnë afro një orë.
+  BGY: >-
+    Aeroporti është në Bergamo, rreth 50 km nga Milan. Autobusët direkt për në Milano Centrale
+    nisen çdo 20-30 minuta, bëjnë rreth një orë dhe kushtojnë rreth €10.
+budget: >-
+  Një kafe në banak kushton rreth €1.50, një pica €8-12, ndërsa bileta e metrosë rreth €2.20.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Në gusht shumë lokale mbyllen për pushime.
+tips:
+  - "Biletat për «Darkën e Fundit» të Leonardo da Vinçit mbarojnë shpejt: rezervoji javë përpara."
+  - "Nga Bergamo ia vlen një ndalesë në Città Alta, qytetin e vjetër mbi kodër, vetëm 20 minuta nga aeroporti."

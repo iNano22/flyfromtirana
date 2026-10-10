@@ -7,6 +7,7 @@ message instead of crashing halfway through a run.
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field, replace
 from datetime import time
 from pathlib import Path
@@ -93,6 +94,10 @@ class WebsiteSettings:
     links: LinkSettings = field(default_factory=LinkSettings)
     url: str = ""             # public address: linked in posts and used for the page's
                               # canonical/og:url tags; empty = left out
+    google_analytics_id: str = ""   # "G-XXXXXXXXXX" turns Google Analytics on
+    # True: Analytics waits for the visitor's "Pranoj". False: it counts from the first
+    # page view and the visitor can only switch it off afterwards.
+    google_analytics_ask_first: bool = True
 
 
 @dataclass(frozen=True)
@@ -213,10 +218,16 @@ def _build_website(raw: dict, base_dir: Path, links: LinkSettings) -> WebsiteSet
     if not output_dir.is_absolute():
         output_dir = base_dir / output_dir
     sub_id = str(raw.get("sub_id") or "website")
+    analytics_id = str(raw.get("google_analytics_id") or "").strip()
+    # The ID is written into the page's JavaScript, so only the real shape is let through.
+    if analytics_id and not re.fullmatch(r"G-[A-Z0-9]{4,20}", analytics_id):
+        raise ValueError("website.google_analytics_id must look like G-XXXXXXXXXX (a GA4 Measurement ID)")
     return WebsiteSettings(
         output_dir=output_dir,
         sub_id=sub_id,
         url=str(raw.get("url") or "").strip(),
+        google_analytics_id=analytics_id,
+        google_analytics_ask_first=bool(raw.get("google_analytics_ask_first", True)),
         links=_website_links(raw.get("links") or {}, links, sub_id),
     )
 

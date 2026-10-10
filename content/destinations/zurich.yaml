@@ -1,0 +1,26 @@
+city: Zurich
+slug: zurich
+intro: >-
+  Zurich shtrihet buzë liqenit, me një qendër të vjetër të mbajtur në mënyrë perfekte dhe Alpet
+  në horizont. Është i shtrenjtë, por shumë gjëra të bukura janë falas: liqeni, shëtitjet dhe
+  pamjet.
+sights:
+  - name: Altstadt dhe Grossmünster
+    text: Qyteti i vjetër në të dyja anët e lumit Limmat, me katedralen me dy kulla.
+  - name: Liqeni i Zurichut
+    text: Shëtitorja buzë liqenit dhe varkat që lidhin qytezat përreth.
+  - name: Bahnhofstrasse
+    text: Një nga rrugët tregtare më të shtrenjta në botë, nga stacioni deri te liqeni.
+  - name: Uetliberg
+    text: Mali i qytetit, 20 minuta me tren, me pamje mbi Zurich dhe Alpet.
+airports:
+  ZRH: >-
+    Trenat nisen çdo pak minuta dhe arrijnë në stacionin qendror (Zürich HB) për 10-12 minuta.
+    Bileta kushton rreth 7 franga.
+budget: >-
+  Një kafe kushton 5-6 franga, një vakt i thjeshtë 20-30 franga, bileta 24-orëshe për qytetin rreth 9 franga.
+when: >-
+  Qershori-shtatori për liqenin dhe malet. Dhjetori për tregjet e Krishtlindjeve.
+tips:
+  - "Zvicra përdor frangën (CHF), jo euron, edhe pse është në zonën Shengen."
+  - "Uji i çezmave publike është i pijshëm, dhe supermarketet Migros e Coop janë mënyra më e lirë për të ngrënë."

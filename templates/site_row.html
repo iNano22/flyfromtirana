@@ -7,7 +7,8 @@
      removed before the page is written.
      Values: everything templates/sq.txt can use, plus IATA, COUNTRY (lowercase code taken from
      the flag, e.g. "it": the CSS class that picks the flag stamp's colour), DEAL ("deal", or
-     missing when the route isn't one) and BEST_DATE (the cheapest date as YYYY-MM-DD). The page's JavaScript reads the data- attributes to pre-fill
+     missing when the route isn't one), GUIDE_URL (the city's own page, when it has a guide) and
+     BEST_DATE (the cheapest date as YYYY-MM-DD). The page's JavaScript reads the data- attributes to pre-fill
      the search card and to sort and filter the list, and the .city and .book elements. -->
 <li class="row[[ {DEAL}]][[ c-{COUNTRY}]]" data-iata="{IATA}" data-date="{BEST_DATE}" data-price="{PRICE}"[[ data-saving="{SAVING}"]]>
   <div class="where">
@@ -19,6 +20,7 @@
     <p class="meta">{AIRLINE}, {STOPS}[[, {DURATION}]]</p>
     <p class="meta">Kthimi nga €{RETURN_PRICE}</p>
     <p class="meta"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">Hotele në {CITY}</a></p>
+    <p class="meta"><a href="{GUIDE_URL}">Udhëzues për {CITY}</a></p>
   </div>
   <div class="fare">
     <p class="price"><span class="from">nga</span> <span class="amount">€{PRICE}</span></p>

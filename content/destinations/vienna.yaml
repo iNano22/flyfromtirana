@@ -1,0 +1,26 @@
+city: Vienna
+slug: vienna
+intro: >-
+  Vienna është qyteti i pallateve perandorake, i muzikës klasike dhe i kafeneve historike. Ka
+  transport publik shembullor dhe dy-tri ditë mjaftojnë për pjesët kryesore.
+sights:
+  - name: Pallati Schönbrunn
+    text: Rezidenca verore e Habsburgëve, me kopshte të mëdha dhe pamje mbi qytet.
+  - name: Stephansdom
+    text: Katedralja gotike e Shën Stefanit, në mes të qendrës historike.
+  - name: Hofburg dhe Ringstraße
+    text: Pallati perandorak dhe bulevardi rrethor me Operën, Parlamentin dhe muzetë.
+  - name: Belvedere
+    text: Pallati barok ku ekspozohet «Puthja» e Gustav Klimtit.
+airports:
+  VIE: >-
+    Treni S7 dhe trenat Railjet të çojnë në qendër (Wien Mitte ose Hauptbahnhof) për 15-25
+    minuta, me biletë rreth €5. Treni City Airport Train (CAT) bën 16 minuta, por kushton rreth
+    €15.
+budget: >-
+  Një kafe melange kushton €4-5, një Wiener Schnitzel €15-22, bileta 24-orëshe e transportit rreth €8-10.
+when: >-
+  Prilli-tetori për parqet dhe pallatet. Nga mesi i nëntorit hapen tregjet e Krishtlindjeve.
+tips:
+  - "Mos e merr CAT-in pa nevojë: S7 kushton tri herë më pak dhe bën vetëm 10 minuta më shumë."
+  - "Uji i çezmës vjen nga Alpet dhe është i shkëlqyer."

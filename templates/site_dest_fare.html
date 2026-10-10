@@ -1,0 +1,19 @@
+<!-- One airport's current price on a destination page (templates/site_dest.html), drawn like the
+     tickets on the main page: the flight on the left, the fare and Rezervo on the right.
+     Same rules and the same values as templates/site_row.html. This comment is removed before
+     the page is written. -->
+<li class="fare[[ {DEAL}]]">
+  <div class="fare-info">
+    <p class="fare-route"><span class="code">TIA</span><span class="path" aria-hidden="true"></span><span class="code">{IATA}</span>[[<span class="tag {DEAL}">Ofertë</span>]]</p>
+    <p class="fare-airport">{CITY}[[ ({AIRPORT})]]</p>
+    <p class="fare-dates"><span class="lbl">Nisja</span>{DATES}</p>
+    <p class="fare-meta">{AIRLINE}, {STOPS}[[, {DURATION}]]</p>
+    <p class="fare-meta">Kthimi nga €{RETURN_PRICE}</p>
+  </div>
+  <div class="fare-buy">
+    <p class="fare-price"><span>nga</span> <b>€{PRICE}</b></p>
+    <p class="fare-way">vajtje, për person</p>
+    <p class="fare-usual">zakonisht €{MEDIAN}[[ <b>-{SAVING}%</b>]]</p>
+    <a class="btn-book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">Rezervo</a>
+  </div>
+</li>

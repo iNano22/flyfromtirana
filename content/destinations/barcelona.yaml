@@ -1,0 +1,27 @@
+city: Barcelona
+slug: barcelona
+intro: >-
+  Barcelona bashkon plazhin me arkitekturën e Gaudít dhe një jetë nate që nis vonë. Tri-katër
+  ditë janë ideale.
+sights:
+  - name: Sagrada Família
+    text: Bazilika e papërfunduar e Gaudít, ndërtesa më e vizituar në Spanjë.
+  - name: Park Güell
+    text: Parku me mozaikë shumëngjyrësh dhe pamje mbi qytet e det.
+  - name: Lagjja Gotike dhe La Rambla
+    text: Qendra mesjetare me rrugica të ngushta dhe shëtitorja më e njohur e qytetit.
+  - name: Casa Batlló dhe La Pedrera
+    text: Dy shtëpitë më të famshme të Gaudít, në bulevardin Passeig de Gràcia.
+  - name: Barceloneta
+    text: Plazhi i qytetit, pak minuta nga qendra.
+airports:
+  BCN: >-
+    Autobusi Aerobús të çon në Plaça de Catalunya për rreth 35 minuta (rreth €7-8). Treni R2 Nord
+    nga Terminali 2 arrin në Sants dhe Passeig de Gràcia për rreth 25 minuta, me biletë rreth €5.
+budget: >-
+  Një kafe kushton rreth €2, një menu dreke (menú del día) €13-18, karta T-casual me 10 udhëtime rreth €13.
+when: >-
+  Maji-qershori dhe shtatori-tetori. Korriku dhe gushti janë të nxehtë dhe shumë të mbushur.
+tips:
+  - "Biletat për Sagrada Família dhe Park Güell blihen online dhe mbarojnë ditë përpara."
+  - "Ki kujdes nga hajdutët e xhepave në La Rambla dhe në metro."

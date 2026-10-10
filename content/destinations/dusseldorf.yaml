@@ -1,0 +1,26 @@
+city: Düsseldorf
+slug: dusseldorf
+intro: >-
+  Düsseldorf shtrihet buzë Rinit dhe njihet për modën, arkitekturën moderne të Medienhafen dhe
+  birrën Altbier. Është edhe aeroporti kryesor për zonën e Ruhrit dhe për Këlnin.
+sights:
+  - name: Altstadt
+    text: Qyteti i vjetër me qindra lokale, i quajtur «banaku më i gjatë në botë».
+  - name: Shëtitorja e Rinit
+    text: Shëtitorja buzë lumit që lidh qytetin e vjetër me Medienhafen.
+  - name: Medienhafen
+    text: Porti i vjetër i kthyer në lagje moderne, me ndërtesat e lakuara të Frank Gehry-t.
+  - name: Königsallee
+    text: Bulevardi i dyqaneve luksoze, i ndarë nga një kanal me pemë.
+airports:
+  DUS: >-
+    Treni S11 lidh terminalin me stacionin qendror (Hauptbahnhof) për rreth 12 minuta, me biletë
+    rreth €3.50. Trenat rajonalë për Këln, Duisburg dhe Essen nisen nga stacioni i aeroportit, ku
+    të çon SkyTrain falas.
+budget: >-
+  Një gotë Altbier kushton rreth €3, një pjatë në birrari €13-18, një biletë e vetme në qytet rreth €3.50.
+when: >-
+  Maji-shtatori. Karnavali në shkurt dhe tregu i Krishtlindjeve në dhjetor e mbushin qytetin.
+tips:
+  - "Këlni është vetëm gjysmë ore larg me tren: Katedralja është ngjitur me stacionin."
+  - "Në birraritë e Altstadt kamerieri të sjell birrë të re derisa ta mbulosh gotën me nënvendosëse."

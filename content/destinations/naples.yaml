@@ -1,0 +1,25 @@
+city: Naples
+slug: naples
+intro: >-
+  Naples është atdheu i picës, një qytet i zhurmshëm dhe plot jetë nën hijen e Vezuvit. Është
+  edhe porta për në Pompei, Capri dhe Bregun e Amalfit.
+sights:
+  - name: Spaccanapoli
+    text: Rruga e ngushtë që e ndan më dysh qendrën historike, plot kisha, dyqane dhe piceri.
+  - name: Muzeu Arkeologjik Kombëtar
+    text: Koleksioni më i pasur i mozaikëve dhe objekteve të nxjerra nga Pompei.
+  - name: Castel dell'Ovo
+    text: Kështjella buzë detit, me shëtitoren Lungomare dhe pamjen nga Vezuvi.
+  - name: Pompei
+    text: Qyteti romak i mbuluar nga hiri i Vezuvit, rreth 35 minuta me tren.
+airports:
+  NAP: >-
+    Autobusi Alibus lidh aeroportin me stacionin qendror (Piazza Garibaldi) për 15-20 minuta dhe
+    me portin për rreth 30 minuta. Bileta kushton €5.
+budget: >-
+  Një pica margherita kushton €5-8, një espresso rreth €1.20, bileta e metrosë rreth €1.50.
+when: >-
+  Prilli-qershori dhe shtatori-tetori. Vera është e nxehtë, por e mirë për ishujt.
+tips:
+  - "Për Pompein merr trenin Circumvesuviana nga stacioni Garibaldi."
+  - "Ki kujdes me çantën dhe telefonin në rrugët e mbushura dhe në transportin publik."

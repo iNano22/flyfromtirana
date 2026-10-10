@@ -1,0 +1,25 @@
+city: Bologna
+slug: bologna
+intro: >-
+  Bologna është qyteti i portikëve, i universitetit më të vjetër në Evropë dhe i kuzhinës më të
+  mirë italiane. Është kompakte dhe përshkohet e gjitha në këmbë.
+sights:
+  - name: Piazza Maggiore
+    text: Sheshi kryesor, me Bazilikën e San Petronios dhe Shatërvanin e Neptunit.
+  - name: Due Torri
+    text: Dy kullat mesjetare të pjerrëta, simboli i qytetit.
+  - name: Portikët dhe San Luca
+    text: Rreth 40 km portikë të mbuluar. Më i gjati të ngjit deri te Santuari i San Lucës, me pamje mbi qytet.
+  - name: Quadrilatero
+    text: Tregu i vjetër pranë sheshit, plot dyqane me djathë, proshutë dhe pasta të freskëta.
+airports:
+  BLQ: >-
+    Treni i lehtë Marconi Express lidh aeroportin me stacionin Bologna Centrale për 7 minuta
+    (rreth €13). Me taksi qendra është 15-20 minuta larg.
+budget: >-
+  Një pjatë tagliatelle al ragù kushton €10-14, një kafe rreth €1.30, bileta e autobusit rreth €2.30.
+when: >-
+  Pranvera dhe vjeshta. Dimri është i ftohtë dhe me mjegull, por portikët të mbrojnë nga shiu.
+tips:
+  - "Mos kërko «spaghetti bolognese»: këtu ragù hahet me tagliatelle."
+  - "Nga Bologna Centrale arrin me tren të shpejtë për rreth 40 minuta në Firence dhe për rreth një orë në Milan."

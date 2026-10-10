@@ -1,0 +1,26 @@
+city: Venice
+slug: venice
+intro: >-
+  Venice është ndërtuar mbi ujë: s'ka makina, vetëm kanale, ura dhe rrugica ku ia vlen të
+  humbasësh. Një ose dy ditë mjaftojnë për pjesët kryesore.
+sights:
+  - name: Piazza San Marco
+    text: Sheshi kryesor, me Bazilikën e Shën Markut dhe kambanoren.
+  - name: Pallati i Dogjëve
+    text: Selia e Republikës së Venecias, e lidhur me burgun përmes Urës së Psherëtimave.
+  - name: Ura e Rialtos
+    text: Ura më e vjetër mbi Kanalin e Madh, me tregun e peshkut dhe të perimeve aty pranë.
+  - name: Murano dhe Burano
+    text: Ishujt e qelqit dhe të shtëpive shumëngjyrëshe, 15 deri në 45 minuta me vaporetto.
+airports:
+  VCE: >-
+    Autobusët ATVO dhe ACTV të çojnë në Piazzale Roma, hyrja e qytetit, për 20-25 minuta (rreth
+    €10). Varka Alilaguna shkon drejt e në San Marco për rreth 75 minuta (rreth €15).
+budget: >-
+  Një kafe larg San Marcos kushton rreth €1.50. Një biletë e vetme vaporetto kushton rreth €9.50,
+  prandaj ia vlen bileta ditore (rreth €25).
+when: >-
+  Prilli-qershori dhe shtatori-tetori. Në nëntor e dhjetor mund të ketë «acqua alta», ujë të lartë në sheshe.
+tips:
+  - "Në disa data të pranverës dhe të verës vizitorët ditorë paguajnë një tarifë hyrjeje online: kontrollo kalendarin para nisjes."
+  - "Ha larg San Marcos: në lagjet Cannaregio dhe Castello çmimet janë shumë më të ulëta."

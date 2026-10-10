@@ -1,0 +1,25 @@
+city: Athens
+slug: athens
+intro: >-
+  Athens bashkon Akropolin 2,500-vjeçar me lagje plot kafene, tregje dhe tarraca me pamje. Dy-tri
+  ditë mjaftojnë për qytetin; me një ditë më shumë arrin edhe në një ishull aty pranë.
+sights:
+  - name: Akropoli
+    text: Kodra e shenjtë me Partenonin, simboli i Greqisë së lashtë.
+  - name: Muzeu i Akropolit
+    text: Muze modern në këmbët e kodrës, me skulpturat origjinale të tempujve.
+  - name: Plaka dhe Monastiraki
+    text: Lagjet e vjetra me taverna, dyqane dhe tregun e së dielës.
+  - name: Kodra e Likavitit
+    text: Pika më e lartë e qytetit, më e bukura në perëndim të diellit.
+airports:
+  ATH: >-
+    Metroja (linja 3, blu) të çon në Syntagma për rreth 40 minuta, me biletë €9. Autobusi X95
+    punon gjithë natën, kushton rreth €5.50 dhe bën rreth një orë.
+budget: >-
+  Një suvlaki kushton €3.50-4.50, një kafe freddo rreth €3, bileta 90-minutëshe e metrosë €1.20.
+when: >-
+  Prilli-qershori dhe shtatori-tetori. Në korrik e gusht temperaturat kalojnë shpesh 35°C.
+tips:
+  - "Bileta e Akropolit blihet online me orar hyrjeje: rezervoje përpara."
+  - "Shko në Akropol sapo hapet në mëngjes: ka më pak njerëz dhe më pak vapë."

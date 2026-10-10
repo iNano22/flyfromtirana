@@ -1,0 +1,31 @@
+city: Rome
+slug: rome
+intro: >-
+  Rome është një muze në qiell të hapur: Koloseu, Vatikani dhe sheshe baroke që i gjen pothuajse
+  në çdo cep. Planifiko të paktën tri ditë dhe këpucë të rehatshme.
+sights:
+  - name: Koloseu dhe Forumi Romak
+    text: Amfiteatri më i madh i botës antike dhe qendra e Romës së lashtë, me një biletë të përbashkët.
+  - name: Vatikani
+    text: Bazilika e Shën Pjetrit dhe Muzetë e Vatikanit me Kapelën Sikstine.
+  - name: Fontana di Trevi
+    text: Shatërvani më i famshëm i qytetit. Shko herët në mëngjes për ta parë pa turmë.
+  - name: Panteoni
+    text: Tempulli romak me kupolën e hapur në mes, i ruajtur pothuajse i paprekur.
+  - name: Trastevere
+    text: Lagjja me rrugica me kalldrëm, më e mira për darkë.
+airports:
+  FCO: >-
+    Treni Leonardo Express shkon pa ndalesa në stacionin Termini për 32 minuta (€14). Treni
+    rajonal FL1 ndalon në Trastevere dhe Ostiense për rreth €8, ndërsa autobusët për në Termini
+    kushtojnë €6-7.
+  CIA: >-
+    Ciampino është aeroport i vogël, rreth 15 km nga qendra. Autobusët direkt për në Termini
+    bëjnë rreth 40 minuta dhe kushtojnë rreth €6.
+budget: >-
+  Një espresso në banak kushton rreth €1.20, një pjatë pasta €10-14, bileta e metrosë dhe e autobusit €1.50.
+when: >-
+  Pranvera dhe vjeshta janë ideale. Korriku dhe gushti janë shumë të nxehtë dhe me radhë të gjata.
+tips:
+  - "Rezervo online biletat për Koloseun dhe Muzetë e Vatikanit, që të shmangësh radhët."
+  - "Uji i çezmave publike (nasoni) është i pijshëm: mbaj një shishe me vete."

@@ -1,0 +1,25 @@
+city: Berlin
+slug: berlin
+intro: >-
+  Berlin është qyteti i historisë së shekullit XX dhe i jetës alternative: Muri, muzetë, arti në
+  rrugë dhe klubet. Tri-katër ditë janë ideale.
+sights:
+  - name: Porta e Brandenburgut dhe Reichstag
+    text: Simboli i qytetit dhe Parlamenti gjerman, me kupolën e qelqtë që vizitohet falas.
+  - name: East Side Gallery
+    text: Pjesa më e gjatë e mbetur e Murit të Berlinit, e mbuluar me piktura.
+  - name: Ishulli i Muzeve
+    text: Pesë muze në një ishull të lumit Spree, pranë Katedrales së Berlinit.
+  - name: Alexanderplatz
+    text: Sheshi i madh i Lindjes, me Kullën e Televizionit dhe pamjen nga 200 metra.
+airports:
+  BER: >-
+    Trenat FEX, RE dhe RB arrijnë në stacionin qendror (Hauptbahnhof) për rreth 30 minuta; S-Bahn
+    S9 dhe S45 bëjnë më shumë ndalesa. Të duhet bileta për zonat ABC (rreth €5).
+budget: >-
+  Një döner kushton €7-8, një birrë €4-5, bileta 24-orëshe për zonat AB rreth €11.
+when: >-
+  Maji-shtatori. Dimri është i ftohtë, por dhjetori ka tregje Krishtlindjesh në çdo lagje.
+tips:
+  - "Vizita në kupolën e Reichstagut është falas, por duhet rezervuar online ditë përpara."
+  - "Shumë lokale të vogla pranojnë vetëm para në dorë: mbaj disa euro me vete."

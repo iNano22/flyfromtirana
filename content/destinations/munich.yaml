@@ -1,0 +1,26 @@
+city: Munich
+slug: munich
+intro: >-
+  Munich është kryeqyteti i Bavarisë: sheshe historike, kopshte birre dhe Alpet një orë larg.
+  Dy-tri ditë mjaftojnë për qytetin.
+sights:
+  - name: Marienplatz
+    text: Sheshi qendror me Bashkinë e Re dhe figurat lëvizëse të Glockenspiel-it, në orën 11:00 dhe 12:00.
+  - name: Frauenkirche
+    text: Katedralja me dy kullat me kupola, silueta më e njohur e qytetit.
+  - name: Englischer Garten
+    text: Një nga parqet më të mëdha urbane në Evropë, me sërfistët e valës Eisbach.
+  - name: Hofbräuhaus
+    text: Birraria më e famshme në botë, me muzikë bavareze çdo mbrëmje.
+airports:
+  MUC: >-
+    Trenat S-Bahn S1 dhe S8 të çojnë në qendër (Hauptbahnhof, Marienplatz) për rreth 40 minuta.
+    Bileta kushton rreth €14; bileta ditore Airport-City-Day-Ticket (rreth €16) ia vlen nëse do
+    të lëvizësh edhe në qytet.
+budget: >-
+  Një birrë gjysmëlitërshe kushton €5-6, një pjatë në birrari €14-20, një biletë e vetme në qytet rreth €4.
+when: >-
+  Maji-shtatori për kopshtet e birrës. Oktoberfest mbahet nga fundi i shtatorit deri në fillim të tetorit.
+tips:
+  - "Gjatë Oktoberfestit çmimet e hoteleve dyfishohen e trefishohen: rezervo muaj përpara."
+  - "Kështjella Neuschwanstein vizitohet si udhëtim ditor, me tren deri në Füssen (rreth 2 orë)."

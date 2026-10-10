@@ -1,0 +1,30 @@
+city: Brussels
+slug: brussels
+intro: >-
+  Brussels është kryeqyteti i Belgjikës dhe i Bashkimit Evropian, i njohur për Grand Place,
+  çokollatën, vaflet dhe patatet e skuqura. Një-dy ditë mjaftojnë, dhe Bruges e Ghent janë më
+  pak se një orë larg me tren.
+sights:
+  - name: Grand Place
+    text: Sheshi qendror me fasadat e praruara, një nga më të bukurit në Evropë.
+  - name: Manneken Pis
+    text: Statuja e vogël e djalit, simboli më i çuditshëm i qytetit.
+  - name: Atomium
+    text: Struktura në formë atomi nga Ekspozita Botërore e vitit 1958, me pamje nga sfera e sipërme.
+  - name: Galeries Royales Saint-Hubert
+    text: Pasazhi elegant i mbuluar, plot çokollatari dhe kafene.
+airports:
+  BRU: >-
+    Trenat nga stacioni nën terminal arrijnë në Brussels Central për 17-20 minuta. Bileta kushton
+    rreth €11, bashkë me shtesën e aeroportit.
+  CRL: >-
+    Aeroporti është në Charleroi, rreth 55 km në jug të Brussels. Autobusët Flibco shkojnë direkt
+    në stacionin Brussels-Midi për rreth një orë. Bileta kushton €15-19 dhe është më e lirë
+    online.
+budget: >-
+  Një vafle kushton €3-5, patatet e skuqura rreth €4-5, një birrë belge €4-6, një udhëtim me metro ose tramvaj rreth €2.50.
+when: >-
+  Maji-shtatori. Dhjetori ka tregun e Krishtlindjeve dhe shfaqjen e dritave në Grand Place.
+tips:
+  - "Bruges dhe Ghent janë udhëtime ditore të lehta me tren."
+  - "Nga Charleroi llogarit të paktën një orë e gjysmë deri në qendër të Brussels."

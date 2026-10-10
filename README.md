@@ -3,9 +3,10 @@
 Scans cheap flights from Tirana (TIA), spots deals, and posts them to the
 Telegram channel [@flyfromtirana](https://t.me/flyfromtirana) with affiliate
 links. It runs every 3 hours in a Docker container on a small server. The same
-run also renders a one-page **website** with the cheapest price to every
-destination, which a second container serves. The paid premium channel gets its
-own quick scan every 15 minutes in between.
+run also renders the **website**: a main page with the cheapest price to every
+destination, plus a page per city with its prices and a short guide. A second
+container serves it. The paid premium channel gets its own quick scan every 15
+minutes in between.
 
 ## How it works
 
@@ -20,6 +21,7 @@ src/scheduler.py (every 3h, in the `scanner` container)
        5. telegram.py  send it to the channel with the destination's photo (best deals first)
   └─ python -m src.website
        6. website.py   rebuild docs/index.html from the database (every route, deals first)
+                       and one page per city (docs/milan/, docs/rome/, ...) from content/destinations/
 src/scheduler.py (every 15 min in between, when premium is on)
   └─ python -m src.main --premium-only
        steps 1 and 3-5 for the premium channel only: nothing is saved, the free
@@ -38,6 +40,9 @@ config.yaml              routes, deal rules, link templates, website settings (n
 templates/sq.txt         post wording (Albanian)
 templates/site.html      the website page (wording, CSS, a little JS); site_row.html = one route in the
                          list, site_card.html = one photo card, site_hero.html = one hero banner
+templates/site_dest.html a city's own page; site_dest_fare.html = one airport's price on it;
+                         site_analytics.html = Google Analytics and its cookie question
+content/destinations/    the city guides, one file per city (the text of the city pages)
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
 docs/                    the generated website (index.html + img/), what the `web` container serves
@@ -51,7 +56,8 @@ src/
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
   photos.py              which photo goes on a route's posts, and its credit
-  website.py             renders docs/index.html from the database (no API calls)
+  website.py             renders docs/index.html and the city pages from the database (no API calls)
+  guides.py              loads the city guides from content/destinations/
   scheduler.py           the server's loop: a scan, then the website, every 3 hours,
                          and quick premium scans in between
   http_client.py         shared retry/backoff for HTTP calls
@@ -174,6 +180,50 @@ is a deal for premium is left out until premium has had it for `free_delay_hours
 which is when the free channel may post it too. Until then the route shows its
 cheapest other date. So nobody can read a premium deal off the website early.
 
+### City pages
+
+Every city has a page of its own (`/milan/`, `/rome/`, ... on the site): the
+current cheapest price for each of its airports on top, then a short guide: what
+to see, how to get from each airport to the centre, typical prices, when to go
+and a few tips. The main page links to them from the "Udhëzues për qytetet"
+section and from every ticket in the list. These pages are what search engines
+can find the site by, so the build also writes `sitemap.xml` and `robots.txt`
+(they need `website.url`).
+
+The text of a guide is one file, `content/destinations/<slug>.yaml`
+(`milan.yaml` explains the shape):
+
+- **Change a guide**: edit its file. The page is rebuilt with the next run.
+- **New route in a city that has a guide**: add the airport under `airports:`
+  in that city's file (a test fails until every airport of a city is covered).
+- **New city**: add a file. `city` must be exactly the route's `city` in
+  config.yaml, and `slug` (lowercase letters, digits, hyphens) becomes the address.
+  Until a city has a file it simply has no page.
+- The transport and food prices in the guides are rough figures from 2026. They
+  go out of date: review them once or twice a year.
+
+### Google Analytics
+
+To count visitors, create a Google Analytics 4 property for the site at
+[analytics.google.com](https://analytics.google.com), add a **Web** data stream,
+and paste its Measurement ID (`G-XXXXXXXXXX`) into `website.google_analytics_id`
+in config.yaml. Then commit, push and redeploy.
+
+Analytics sets cookies, so every page shows a small box about it. It works in one
+of two ways, chosen by `website.google_analytics_ask_first` in config.yaml:
+
+- `false` (what config.yaml has now): every visitor is counted from the first
+  page view. The box tells them so, and "Refuzoj" stops Analytics, removes its
+  cookies and keeps it off for that visitor.
+- `true`: nothing is loaded from Google until the visitor presses "Pranoj". This
+  is what the EU's cookie rules (and Google's own terms for visitors from the EU)
+  ask for, but everyone who ignores the box goes uncounted, so the numbers are
+  much lower than the real traffic.
+
+Either way the answer is remembered in the visitor's browser, and "Cilësimet e
+cookies" in the footer lets them change it. With the ID empty there is no
+Analytics, no box and no cookie.
+
 ### Where it is served
 
 The `web` container serves the `site` volume, which the scanner fills: once
@@ -189,6 +239,7 @@ python -m src.website            # writes docs/index.html from your local prices
 python -m src.website --no-premium-delay   # also show the deals premium is still getting early
 open docs/index.html             # macOS; or open the file in any browser
 python -m src.website --out /tmp/site   # somewhere else, leaving docs/ alone
+python -m http.server --directory docs  # then http://localhost:8000 : needed to click through to the city pages
 ```
 
 ### Photos

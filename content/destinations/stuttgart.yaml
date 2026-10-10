@@ -1,0 +1,25 @@
+city: Stuttgart
+slug: stuttgart
+intro: >-
+  Stuttgart është shtëpia e Mercedes-Benz dhe e Porsche, e rrethuar nga kodra me vreshta. Është
+  destinacion i mirë për një fundjavë dhe për të vizituar të afërmit në Baden-Württemberg.
+sights:
+  - name: Schlossplatz
+    text: Sheshi kryesor me Pallatin e Ri, zemra e qytetit.
+  - name: Muzeu Mercedes-Benz
+    text: Mbi 130 vjet histori automobilash, në një ndërtesë spirale.
+  - name: Muzeu Porsche
+    text: Makinat më të njohura të markës, në lagjen Zuffenhausen.
+  - name: Stadtbibliothek
+    text: Biblioteka e qytetit, një kub i bardhë që është bërë e famshme për brendësinë e saj.
+airports:
+  STR: >-
+    Trenat S2 dhe S3 të çojnë në stacionin qendror (Hauptbahnhof) për 27 minuta, me biletë rreth
+    €4-5.
+budget: >-
+  Një pjatë Maultaschen ose Spätzle kushton €10-15, një birrë rreth €5, një biletë e vetme në qytet rreth €3.50.
+when: >-
+  Maji-shtatori. Festa e birrës Cannstatter Volksfest mbahet në fund të shtatorit, tregu i Krishtlindjeve në dhjetor.
+tips:
+  - "Muzetë Mercedes-Benz dhe Porsche janë të mbyllur të hënave."
+  - "Tübingen dhe Ludwigsburg janë udhëtime të shkurtra ditore me tren."

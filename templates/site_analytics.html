@@ -1,0 +1,79 @@
+<!-- Google Analytics and its cookie box. This block is only put on a page when
+     website.google_analytics_id is set in config.yaml; GA_ID is that ID. It works in one of two
+     ways, chosen by website.google_analytics_ask_first:
+     - ask first (GA_ASK has a value): nothing is loaded from Google and no cookie is set until
+       the visitor presses "Pranoj".
+     - count right away (GA_AUTO has a value): Analytics starts with the page, and the box only
+       tells the visitor so. "Refuzoj" stops it, removes its cookies and keeps it off from then on.
+     The lines with GA_ASK or GA_AUTO are the two wordings: only one of the two values exists, so
+     only one set of lines stays. The answer is remembered in the browser (localStorage
+     "ga-consent": yes / no), and any element with data-consent-open (the "Cilësimet e cookies"
+     link in the footer) shows the box again.
+     Same rules as the other templates: never write an uppercase word in curly braces unless it
+     is a value, never two opening square brackets in a row, JS variable names lowercase. -->
+<style>
+.consent { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; max-width: 560px; margin: 0 auto; padding: 16px; border-radius: 18px; background: #ffffff; color: #1a1030; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55); font-size: 15px; line-height: 1.4; }
+.consent p { margin: 0 0 12px; }
+.consent-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.consent button { flex: 1 1 140px; min-height: 46px; padding: 0 16px; border: 0; border-radius: 999px; font: inherit; font-weight: 800; cursor: pointer; }
+.consent .yes { background: #1a1030; color: #ffffff; }
+.consent .no { background: #f1eefb; color: #1a1030; }
+.consent :focus-visible { outline: 3px solid #0d3f9e; outline-offset: 2px; }
+</style>
+<div class="consent" id="consent"[[ data-auto="{GA_AUTO}"]] role="dialog" aria-live="polite" aria-label="Cookies për statistika" hidden>
+  <p data-ask="{GA_ASK}">Përdorim Google Analytics për të numëruar vizitat në faqe. A na lejon të vendosim cookies për këtë? Faqja punon njësoj edhe pa to.</p>
+  <p data-auto="{GA_AUTO}">Kjo faqe përdor Google Analytics dhe cookies për të numëruar vizitat. Nëse nuk do, shtyp «Refuzoj»: faqja punon njësoj edhe pa to.</p>
+  <div class="consent-btns">
+    <button type="button" class="yes" data-consent="yes" data-ask="{GA_ASK}">Pranoj</button>
+    <button type="button" class="yes" data-consent="yes" data-auto="{GA_AUTO}">Në rregull</button>
+    <button type="button" class="no" data-consent="no">Refuzoj</button>
+  </div>
+</div>
+<script>
+(function () {
+  var id = '{GA_ID}', key = 'ga-consent', box = document.getElementById('consent'), started = false;
+  var auto = box.hasAttribute('data-auto');   /* count right away, without waiting for a yes */
+  function start() {
+    if (started) { return; }
+    started = true;
+    window['ga-disable-' + id] = false;
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+    document.head.appendChild(tag);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+  }
+  /* A "no": Google's own off switch for this ID, and its cookies (_ga, _ga_...) are removed. */
+  function stop() {
+    window['ga-disable-' + id] = true;
+    var names = document.cookie.split(';').map(function (c) { return c.split('=')[0].trim(); });
+    var parts = window.location.hostname.split('.');
+    names.forEach(function (name) {
+      if (name.indexOf('_ga') !== 0) { return; }
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+      for (var i = 0; i < parts.length - 1; i += 1) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.' + parts.slice(i).join('.');
+      }
+    });
+  }
+  function read() { try { return window.localStorage.getItem(key); } catch (err) { return null; } }
+  function save(answer) { try { window.localStorage.setItem(key, answer); } catch (err) { /* private mode: ask again next time */ } }
+  var choice = read();
+  if (choice === 'yes' || (auto && choice !== 'no')) { start(); }
+  if (choice !== 'yes' && choice !== 'no') { box.hidden = false; }
+  box.addEventListener('click', function (event) {
+    var answer = event.target.getAttribute('data-consent');
+    if (!answer) { return; }
+    save(answer);
+    box.hidden = true;
+    if (answer === 'yes') { start(); } else { stop(); }
+  });
+  document.addEventListener('click', function (event) {
+    var opener = event.target.closest ? event.target.closest('[data-consent-open]') : null;
+    if (opener) { event.preventDefault(); box.hidden = false; }
+  });
+})();
+</script>

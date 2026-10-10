@@ -1,0 +1,278 @@
+<!doctype html>
+<!-- One destination's own page (/milan/, /rome/, ...): the current prices for the city on top, its
+     guide from content/destinations/<slug>.yaml underneath. One page per city that has a guide.
+     Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
+     (and must stay on one line), and a line whose value is missing is left out, so a heading
+     and its list stay on one line. Every HTML comment is removed before the page is written.
+     Values: BRAND CHANNEL CITY COUNTRY (lowercase code, for the colours) COUNTRY_NAME FLAG INTRO
+     MIN_PRICE (cheapest price to the city now) UPDATED FARES (one ticket per airport, from
+     site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) SIGHTS AIRPORTS
+     BUDGET WHEN TIPS OTHER_GUIDES (links to the other cities' pages) HOME (the way back to the
+     main page, "../") PHOTO PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
+     ANALYTICS and GA_ON (only with Google Analytics on), plus one NAME_LINK per partner.
+     Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
+     values, and never two opening square brackets in a row. -->
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fluturime të lira Tirana – {CITY}: çmime dhe udhëzues | {BRAND}</title>
+<meta name="description" content="Fluturimi më i lirë nga Tirana për në {CITY}[[, nga €{MIN_PRICE}]], dhe një udhëzues i shkurtër: çfarë të shohësh, si të shkosh nga aeroporti në qendër dhe sa kushton.">
+<link rel="canonical" href="{PAGE_URL}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fluturime të lira Tirana – {CITY} | {BRAND}">
+<meta property="og:description" content="Çmimi më i lirë nga Tirana për në {CITY} dhe një udhëzues i shkurtër për qytetin.">
+<meta property="og:url" content="{PAGE_URL}">
+<meta property="og:image" content="{PHOTO_URL}">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#170b3b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ffe14d'/><path transform='translate(4 4) rotate(45 12 12)' fill='%23170b3b' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<style>
+/* The same indigo night, yellow and country colours as the main page (templates/site.html). */
+:root {
+  color-scheme: dark;
+  --night: #170b3b;
+  --night-2: #211359;
+  --ink: #ffffff;
+  --muted: #bdb3e3;
+  --line: rgba(255, 255, 255, 0.14);
+  --surface: rgba(255, 255, 255, 0.09);
+  --sun: #ffe14d;
+  --sun-ink: #1a1030;
+  --tg-deep: #0d3f9e;
+  --paper: #ffffff;
+  --paper-muted: #5b5577;
+  --field: #f1eefb;
+  --nav-h: 60px;
+  --c1: #0274c7;
+  --c2: #004f8b;
+}
+.c-it { --c1: #c4391e; --c2: #901500; }
+.c-ch { --c1: #c23359; --c2: #920037; }
+.c-es { --c1: #b93780; --c2: #8a085a; }
+.c-be { --c1: #bf860c; --c2: #944e00; }
+.c-de { --c1: #08856a; --c2: #045b48; }
+.c-gr { --c1: #0b7f94; --c2: #005766; }
+.c-gb { --c1: #3c68d9; --c2: #1e41a8; }
+.c-tr { --c1: #8451c9; --c2: #5e2b9a; }
+.c-at { --c1: #17890b; --c2: #015f00; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--night); color: var(--ink); font-family: "Gabarito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; line-height: 1.5; overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3, p, li { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+.foot :focus-visible, .fare :focus-visible { outline-color: var(--tg-deep); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+.ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ic-fill { fill: currentColor; stroke: none; }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--sun-ink); font-weight: 800; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* Top bar */
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(23, 11, 59, 0.82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+.nav-in { height: var(--nav-h); display: flex; align-items: center; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; margin-right: auto; white-space: nowrap; }
+.mark { width: 30px; height: 30px; border-radius: 9px; background: var(--sun); color: var(--sun-ink); display: grid; place-items: center; flex: none; }
+.mark .ic { width: 18px; height: 18px; }
+.nav-links { display: none; gap: 2px; }
+.nav-links a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--muted); padding: 8px 12px; border-radius: 999px; }
+.nav-links a:hover { color: var(--ink); background: var(--surface); }
+.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px 0 9px; border-radius: 999px; background: #ffffff; color: var(--tg-deep); font-weight: 800; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.nav-tg .ic { width: 24px; height: 24px; }
+
+/* Headline: the city in its country's colours, with its photo */
+.dhero { background: radial-gradient(90% 120% at 100% 0%, var(--c1) 0%, transparent 62%), linear-gradient(180deg, var(--c2) 0%, var(--night) 100%); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+.dhero-in { display: grid; gap: 26px; padding-top: 20px; padding-bottom: 36px; }
+.crumbs { margin: 0 0 16px; font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.82); }
+.crumbs a { text-underline-offset: 3px; }
+h1 { margin: 0 0 16px; font-size: clamp(40px, 11vw, 76px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 900; }
+h1 small { display: block; margin-bottom: 10px; font-size: 17px; line-height: 1.2; letter-spacing: 0.02em; font-weight: 800; text-transform: uppercase; color: rgba(255, 255, 255, 0.82); }
+.lead { margin: 0 0 20px; max-width: 34em; font-size: 19px; }
+.from-price { display: inline-block; margin: 0 0 16px; padding: 12px 16px; border-radius: 14px; background: var(--sun); color: var(--sun-ink); font-weight: 800; font-size: 20px; line-height: 1; transform: rotate(-2deg); text-shadow: none; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3); }
+.from-price b { font-weight: 900; font-size: 1.3em; }
+.updated { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 14px; color: rgba(255, 255, 255, 0.82); }
+.updated::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex: none; }
+.dphoto { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 22px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9); }
+
+/* Sections */
+.block { padding-top: 46px; }
+h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 900; }
+.hint { margin: 0 0 18px; max-width: 40em; font-size: 15px; color: var(--muted); }
+
+/* The prices: one ticket per airport, like the list on the main page */
+.fares { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.fare { display: flex; max-width: 680px; background: var(--paper); color: var(--sun-ink); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+.fare.deal { box-shadow: 0 0 0 3px var(--sun), 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+.fare p { margin: 0; }
+.fare-info { flex: 1 1 auto; min-width: 0; padding: 16px 14px 16px 16px; }
+.fare-route { display: flex; align-items: center; gap: 8px; }
+.code { font-size: 19px; font-weight: 900; letter-spacing: 0.05em; line-height: 1; }
+.path { flex: 0 1 70px; min-width: 24px; border-top: 2px dashed #cdc6e4; }
+.tag { margin-left: 6px; padding: 3px 8px 2px; border: 3px double #c3122f; border-radius: 6px; color: #c3122f; font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; transform: rotate(-5deg); }
+.fare .fare-airport { margin-top: 10px; font-size: 21px; font-weight: 900; line-height: 1.15; }
+.fare .fare-dates { margin-top: 8px; font-weight: 800; font-size: 15px; line-height: 1.3; }
+.lbl { margin-right: 6px; font-weight: 600; font-size: 13px; color: var(--paper-muted); }
+.fare .fare-meta { margin-top: 3px; font-size: 14px; line-height: 1.3; color: var(--paper-muted); }
+.fare-buy { flex: 0 0 132px; display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding: 14px 12px 12px; border-left: 2px dashed #d6cfec; background: var(--field); }
+.fare.deal .fare-buy { background: var(--sun); border-left-color: rgba(26, 16, 48, 0.3); }
+.fare-price { line-height: 1; }
+.fare-price span { display: block; font-size: 13px; font-weight: 700; color: var(--paper-muted); }
+.fare-price b { display: block; margin-top: 2px; font-size: 38px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fare .fare-way { margin-top: 4px; font-size: 12.5px; line-height: 1.2; color: var(--paper-muted); }
+.fare .fare-usual { margin: 6px 0 12px; font-size: 13px; line-height: 1.35; color: var(--paper-muted); }
+.fare-usual b { color: #c3122f; font-weight: 900; white-space: nowrap; }
+.fare.deal .fare-price span, .fare.deal .fare-way, .fare.deal .fare-usual { color: var(--sun-ink); }
+.fare.deal .fare-usual b { padding: 1px 6px; border-radius: 6px; background: var(--sun-ink); color: var(--sun); }
+.btn-book { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; background: var(--sun-ink); color: #ffffff; border-radius: 12px; font-weight: 800; font-size: 15px; text-decoration: none; }
+.btn-book:hover { background: #33255e; }
+.nofares { margin: 0; padding: 18px; border-radius: 18px; background: var(--surface); }
+
+/* The guide */
+.gsec { margin-top: 40px; }
+.sights { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.sights li { padding: 14px 16px; border-radius: 16px; background: var(--surface); }
+.sights b { display: block; margin-bottom: 2px; font-size: 18px; font-weight: 900; }
+.airports { display: grid; gap: 10px; margin-top: 16px; }
+.airport { padding: 14px 16px; border-radius: 16px; background: var(--surface); border-left: 5px solid var(--sun); }
+.airport h3, .fact h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
+.airport p, .fact p { margin: 0; }
+.facts { display: grid; gap: 10px; margin-top: 40px; }
+.fact { padding: 16px; border-radius: 16px; background: var(--night-2); }
+.fact h3 { color: var(--sun); }
+.tips { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 8px; max-width: 46em; }
+.tips li::marker { color: var(--sun); }
+.note { margin: 20px 0 0; max-width: 46em; font-size: 14px; color: var(--muted); }
+
+/* Links: travel services and the other cities */
+.pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.pills a { display: inline-flex; align-items: center; min-height: 46px; padding: 0 18px; border-radius: 999px; background: var(--surface); font-weight: 800; font-size: 16px; text-decoration: none; }
+.pills a:hover, .glist a:hover { background: rgba(255, 255, 255, 0.17); }
+.glist { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.glist a { display: flex; flex-direction: column; justify-content: center; gap: 1px; min-height: 62px; padding: 10px 14px; border-radius: 14px; background: var(--surface); font-weight: 900; line-height: 1.2; text-decoration: none; }
+.glist span { font-weight: 700; font-size: 14px; color: var(--sun); }
+
+/* Telegram band and footer, as on the main page */
+.join { margin-top: 52px; background: linear-gradient(160deg, #1a72cc, #0d3f9e); }
+.join-in { padding-top: 32px; padding-bottom: 32px; display: grid; gap: 18px; }
+.join h2 { margin: 0 0 6px; }
+.join p { margin: 0; font-size: 18px; max-width: 32em; }
+.btn-tg { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 24px; background: #ffffff; color: var(--tg-deep); font-weight: 800; font-size: 17px; text-decoration: none; border-radius: 999px; }
+.btn-tg:focus-visible { outline-color: #ffffff; }
+.join .premium { margin: 14px 0 0; font-size: 15px; }
+.premium a { color: #ffffff; font-weight: 700; }
+.foot { background: var(--sun); color: var(--sun-ink); padding: 34px 0 26px; font-size: 15px; }
+.foot .brand { color: var(--sun-ink); margin: 0 0 6px; }
+.foot .mark { background: var(--sun-ink); color: var(--sun); }
+.foot p { margin: 0 0 8px; max-width: 70ch; }
+.foot a { font-weight: 700; }
+.flegal { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(26, 16, 48, 0.2); font-size: 14px; }
+
+@media (min-width: 700px) {
+  .nav-links { display: flex; }
+  .sights, .facts { grid-template-columns: 1fr 1fr; }
+  .fare-info { padding: 20px 20px 20px 22px; }
+  .fare-buy { flex-basis: 168px; padding: 18px 16px 16px; }
+  .join-in { grid-template-columns: 1.2fr 1fr; align-items: center; }
+}
+@media (min-width: 900px) {
+  .dhero-in { grid-template-columns: 1.25fr 0.75fr; align-items: center; padding-top: 28px; padding-bottom: 48px; }
+  .dphoto { max-width: 340px; aspect-ratio: 5 / 7; justify-self: end; transform: rotate(2deg); }
+  .fares { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn-book, .btn-tg, .pills a, .glist a, .nav-tg { transition: transform 0.12s ease-out, background-color 0.12s ease-out; }
+  .btn-book:active, .btn-tg:active, .pills a:active, .glist a:active, .nav-tg:active { transform: scale(0.97); }
+}
+</style>
+</head>
+<body[[ class="c-{COUNTRY}"]]>
+<a class="skip" href="#cmimet">Kalo te çmimet</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
+</svg>
+<header class="nav">
+  <div class="nav-in wrap">
+    <a class="brand" href="{HOME}"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
+    <nav class="nav-links" aria-label="Faqja">
+      <a href="{HOME}#ofertat">Ofertat</a>
+      <a href="{HOME}#destinacionet">Çdo destinacion</a>
+      <a href="{HOME}#udhezues">Udhëzues</a>
+    </nav>
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>Bashkohu në Telegram</a>
+  </div>
+</header>
+<main>
+  <section class="dhero" aria-label="{CITY}">
+    <div class="dhero-in wrap">
+      <div>
+        <p class="crumbs"><a href="{HOME}">{BRAND}</a> › <a href="{HOME}#udhezues">Udhëzues</a> › {CITY}</p>
+        <h1><small>Fluturime të lira nga Tirana</small>[[{FLAG} ]]{CITY}</h1>
+        <p class="lead">{INTRO}</p>
+        <p class="from-price">nga <b>€{MIN_PRICE}</b> vajtje</p>
+        <p class="updated">Përditësuar më {UPDATED}, ora e Tiranës</p>
+      </div>
+      <img class="dphoto" src="{PHOTO}" alt="Pamje nga {CITY}[[, {COUNTRY_NAME}]]" width="600" height="840" decoding="async">
+    </div>
+  </section>
+  <section class="block wrap" id="cmimet" aria-labelledby="fares-h">
+    <h2 id="fares-h">Çmimet më të lira tani</h2>
+    <p class="hint">Çmimi më i lirë për çdo aeroport, nga kontrolli i fundit i çmimeve. «Rezervo» hap kërkimin në Aviasales, ku shfaqet çmimi përfundimtar.</p>
+    <ul class="fares">{FARES}</ul>
+    <p class="nofares">{NO_FARES}</p>
+  </section>
+  <section class="block wrap" aria-label="Udhëzues për {CITY}">
+    <div><h2>Çfarë të shohësh në {CITY}</h2><ul class="sights">{SIGHTS}</ul></div>
+    <div class="gsec"><h2>Nga aeroporti në qendër</h2><div class="airports">{AIRPORTS}</div></div>
+    <div class="facts">
+      <div class="fact"><h3>Sa kushton</h3><p>{BUDGET}</p></div>
+      <div class="fact"><h3>Kur të shkosh</h3><p>{WHEN}</p></div>
+    </div>
+    <div class="gsec"><h2>Këshilla</h2><ul class="tips">{TIPS}</ul></div>
+    <p class="note">Çmimet e transportit dhe të shërbimeve janë orientuese dhe ndryshojnë me kohën: kontrolloji para nisjes.</p>
+  </section>
+  <section class="block wrap" aria-labelledby="extras-h">
+    <h2 id="extras-h">Për udhëtimin</h2>
+    <p class="hint">Shërbime nga partnerët tanë, që udhëtimi të shkojë pa telashe.</p>
+    <ul class="pills">
+      <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">eSIM për internet jashtë</a></li>
+      <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">Sigurim udhëtimi</a></li>
+      <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">Makinë me qira</a></li>
+      <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">Kompensim për vonesa</a></li>
+      <li><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">Hotele në {CITY}</a></li>
+    </ul>
+  </section>
+  <section class="block wrap" aria-labelledby="more-h"><h2 id="more-h">Destinacione të tjera</h2><p class="hint">Çmimet dhe udhëzuesit për qytetet e tjera ku fluturohet nga Tirana.</p><ul class="glist">{OTHER_GUIDES}</ul></section>
+  <section class="join" aria-labelledby="join-h">
+    <div class="join-in wrap">
+      <div>
+        <h2 id="join-h">Mos humb asnjë ofertë</h2>
+        <p>Çdo ofertë postohet në kanal sapo gjendet. Falas, pa regjistrim.</p>
+      </div>
+      <div>
+        <a class="btn-tg" href="{TELEGRAM_URL}">Bashkohu te {CHANNEL}</a>
+        <p class="premium">Anëtarët Premium i marrin ofertat {PREMIUM_HOURS} orë më herët. <a href="{PREMIUM_LINK}">Bëhu Premium</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="{HOME}"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
+    <p>Çmimi më i lirë nga Tirana për çdo destinacion, i përditësuar çdo 3 orë. <a href="{HOME}">Shiko të gjitha destinacionet</a></p>
+    <div class="flegal">
+      <p>Çmimet janë ato që udhëtarë të tjerë gjetën së fundmi në Aviasales dhe mund të kenë ndryshuar. Çmimi përfundimtar shfaqet kur hap lidhjen.</p>
+      <p>Disa lidhje janë lidhje partnere: nëse rezervon përmes tyre, {BRAND} merr një komision të vogël, pa kosto shtesë për ty.</p>
+      <p><a href="#consent" data-consent-open="{GA_ON}">Cilësimet e cookies</a></p>
+      <p>© {YEAR} {BRAND}</p>
+    </div>
+  </div>
+</footer>
+{ANALYTICS}
+</body>
+</html>

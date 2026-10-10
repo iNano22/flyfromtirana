@@ -1,0 +1,25 @@
+city: Thessaloniki
+slug: thessaloniki
+intro: >-
+  Thessaloniki është qyteti i dytë i Greqisë, i njohur për shëtitoren buzë detit, ushqimin dhe
+  jetën e natës. Është edhe pika e nisjes për plazhet e Halkidikit.
+sights:
+  - name: Kulla e Bardhë
+    text: Simboli i qytetit në buzë të detit, me muze brenda dhe pamje nga maja.
+  - name: Shëtitorja Nea Paralia
+    text: Pesë kilometra buzë detit, me kopshte dhe skulpturën e famshme të çadrave.
+  - name: Ano Poli
+    text: Qyteti i sipërm me shtëpi të vjetra dhe muret bizantine, me pamjen më të mirë mbi gjirin.
+  - name: Rotonda dhe Harku i Galerit
+    text: Dy monumentet romake në mes të qytetit, pranë njëri-tjetrit.
+airports:
+  SKG: >-
+    Autobusi 01X (natën 01N) lidh aeroportin me qendrën dhe stacionin e trenit për rreth 45
+    minuta, me biletë rreth €2. Taksia për në qendër kushton rreth €25-30.
+budget: >-
+  Një bougatsa për mëngjes kushton rreth €3, një gyros €4-5, një kafe freddo rreth €3.
+when: >-
+  Maji, qershori dhe shtatori janë më të mirët. Vera është ideale nëse e kombinon me Halkidikin.
+tips:
+  - "Provo bougatsa-n me krem në mëngjes: është specialiteti i qytetit."
+  - "Për Halkidikin të duhet makinë me qira ose autobusët KTEL."

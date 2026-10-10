@@ -1,0 +1,34 @@
+city: London
+slug: london
+intro: >-
+  London ka gjithçka: muze falas të klasit botëror, parqe mbretërore, tregje dhe teatro. Katër
+  ditë janë minimumi për të parë pjesët kryesore.
+sights:
+  - name: Big Ben dhe Westminster
+    text: Kulla e sahatit, Parlamenti dhe Westminster Abbey, të gjitha në pak hapa.
+  - name: Tower Bridge dhe Tower of London
+    text: Ura më e njohur mbi Tamiz dhe kështjella ku ruhen xhevahiret e Kurorës.
+  - name: British Museum
+    text: Një nga muzetë më të mëdhenj në botë, me hyrje falas.
+  - name: Buckingham Palace
+    text: Rezidenca mbretërore, me ndërrimin e rojës dhe parqet St James's dhe Hyde Park aty pranë.
+airports:
+  LHR: >-
+    Elizabeth line të çon në qendër (Paddington, Tottenham Court Road) për 30-40 minuta, me rreth
+    £13. Metroja Piccadilly është më e lirë (rreth £6), por bën afro një orë.
+  STN: >-
+    Treni Stansted Express shkon në Liverpool Street për rreth 50 minuta. Bileta është më e lirë
+    kur blihet herët online dhe kalon £20 në vend. Autobusët janë më të lirë, por bëjnë një orë
+    e gjysmë e më shumë.
+  LTN: >-
+    Treni i vogël DART të çon për 4 minuta në stacionin Luton Airport Parkway, nga ku trenat
+    Thameslink arrijnë në St Pancras për rreth 35 minuta (gjithsej rreth £17-20). Autobusët për
+    në Victoria janë më të lirë, por bëjnë mbi një orë.
+budget: >-
+  Një kafe kushton rreth £3.50 dhe një vakt i thjeshtë £12-18. Udhëtimet me metro dhe autobus në
+  zonat 1-2 kufizohen në rreth £9 në ditë, nëse paguan me kartë pa kontakt.
+when: >-
+  Maji-shtatori ka ditët më të gjata dhe motin më të butë. Dhjetori është i bukur për dritat e Krishtlindjeve.
+tips:
+  - "Shqiptarëve u duhet vizë për Mbretërinë e Bashkuar: apliko me kohë, para se të blesh biletën."
+  - "Paguaje transportin me kartë bankare pa kontakt: del më lirë se biletat prej letre."

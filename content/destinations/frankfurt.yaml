@@ -1,0 +1,26 @@
+city: Frankfurt
+slug: frankfurt
+intro: >-
+  Frankfurt është qendra financiare e Gjermanisë, me rrokaqiej buzë lumit Main dhe një qendër të
+  vjetër të rindërtuar. Një ose dy ditë mjaftojnë, dhe është nyje e mirë për të vazhduar me tren
+  në gjithë Gjermaninë.
+sights:
+  - name: Römerberg
+    text: Sheshi historik me shtëpitë me trarë druri dhe bashkinë e vjetër.
+  - name: Main Tower
+    text: Rrokaqielli me platformë pamjeje në 200 metra lartësi.
+  - name: Museumsufer
+    text: Bregu i muzeve përgjatë lumit Main, me Muzeun Städel si më të njohurin.
+  - name: Sachsenhausen
+    text: Lagjja e lokaleve tradicionale ku shërbehet Apfelwein, vera e mollës.
+airports:
+  FRA: >-
+    Trenat S8 dhe S9 arrijnë në stacionin qendror (Hauptbahnhof) për 11-15 minuta, me biletë
+    rreth €6. Stacioni është brenda Terminalit 1.
+budget: >-
+  Një gotë Apfelwein kushton €3-4, një pjatë tradicionale €12-18, një biletë e vetme në qytet rreth €4.
+when: >-
+  Maji-shtatori. Në dhjetor tregu i Krishtlindjeve në Römerberg është nga më të bukurit në Gjermani.
+tips:
+  - "Gjatë panaireve të mëdha, si Panairi i Librit në tetor, hotelet shtrenjtohen shumë."
+  - "Heidelberg dhe Mainz arrihen për më pak se një orë me tren."

@@ -1,0 +1,30 @@
+city: Istanbul
+slug: istanbul
+intro: >-
+  Istanbul shtrihet në dy kontinente, me xhami madhështore, pazare të mbuluara dhe tragetet e
+  Bosforit. Katër ditë janë pak, por mjaftojnë për një fillim.
+sights:
+  - name: Aja Sofia dhe Xhamia Blu
+    text: Dy monumentet më të njohura të qytetit, përballë njëra-tjetrës në Sultanahmet.
+  - name: Pallati Topkapi
+    text: Rezidenca e sulltanëve osmanë, me thesarin dhe pamje mbi Bosfor.
+  - name: Pazari i Madh
+    text: Një nga tregjet e mbuluara më të vjetra në botë, me mijëra dyqane. Pazari i Erëzave është pak më tej.
+  - name: Kulla e Galatës dhe Istiklal
+    text: Kulla mesjetare me pamje 360 gradë dhe rruga këmbësore më e gjallë e qytetit.
+  - name: Bosfori
+    text: Një udhëtim me traget mes Evropës dhe Azisë kushton sa një biletë autobusi.
+airports:
+  IST: >-
+    Nga Aeroporti i Istanbulit (IST) metroja M11 të çon në Gayrettepe, ku ndërron për linjën M2
+    drejt Taksimit. Autobusët Havaist shkojnë direkt në Taksim dhe Sultanahmet për 60-90 minuta.
+    Nëse fluturimi zbret në Sabiha Gökçen (SAW), në anën aziatike, merr autobusët Havabus për në
+    Taksim ose Kadıköy.
+budget: >-
+  Çmimet në lira ndryshojnë shpesh. Një vakt i thjeshtë (qebap, pide) kushton sa €6-10 dhe një
+  çaj më pak se €1.
+when: >-
+  Prilli-qershori dhe shtatori-tetori. Vera është e nxehtë dhe me lagështi, dimri me shi.
+tips:
+  - "Shqiptarët hyjnë në Turqi pa vizë, për qëndrime deri në 90 ditë."
+  - "Merr kartën Istanbulkart sapo të mbërrish: vlen për metro, tramvaj, autobus dhe tragete."
