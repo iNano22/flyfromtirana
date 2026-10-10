@@ -272,7 +272,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["DEST_CARDS"] = "\n".join(dest_cards) or None
     values["PHOTO_CREDITS"] = photo_credits(config, links)
     values["DESTINATION_OPTIONS"] = destination_options(offers)
-    values["GUIDE_LINKS"] = guide_links(guides, offers)
+    values["GUIDE_TILES"] = guide_tiles(guides, offers, config)
     values["ANALYTICS"] = analytics_html(config)
     return render(load_site_template("site.html"), values) + "\n"
 
@@ -339,6 +339,36 @@ def guide_links(guides: dict[str, Guide], offers: list[Deal], *, prefix: str = "
     return "".join(items) or None
 
 
+def guide_photo(guide: Guide) -> str | None:
+    """'img/guides/milan.webp' when the city has a wide photo in assets/img/guides, else None."""
+    path = f"img/guides/{guide.slug}.webp"
+    return path if (ASSETS_DIR / path).exists() else None
+
+
+def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config) -> str | None:
+    """The photo tiles of "Udhëzues për qytetet" on the main page, one per city page."""
+    cheapest: dict[str, float] = {}
+    for offer in offers:
+        city = offer.route.city
+        cheapest[city] = min(offer.best.price, cheapest.get(city, offer.best.price))
+    flags = {route.city: route.flag for route in reversed(config.routes)}   # a city's first route wins
+    template = load_site_template("site_guide.html")
+    esc = html.escape
+    tiles = []
+    for guide in guides.values():
+        flag = flags.get(guide.city) or None
+        tiles.append(render(template, {
+            "CITY": esc(guide.city, quote=False),
+            "FLAG": flag,
+            "COUNTRY": country_code(flag or ""),
+            "TAGLINE": esc(guide.tagline, quote=False) or None,
+            "GUIDE_URL": f"{guide.slug}/",
+            "GUIDE_PHOTO": guide_photo(guide),
+            "PRICE": format_price(cheapest[guide.city]) if guide.city in cheapest else None,
+        }))
+    return "\n".join(tiles) or None
+
+
 def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal], config: Config,
                       links: LinkBuilder, *, updated_at: datetime | None, now: datetime) -> str:
     """One city's page as HTML: its current prices (one ticket per airport), then its guide."""
@@ -356,7 +386,9 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     premium_on = premium.enabled and bool(premium.join_link)
     first = routes[0]
     country = country_code(first.flag)
-    photo = next((path for path in (route_photo(route.iata) for route in routes) if path), None)
+    # The city's own wide photo; without one, the photo of one of its routes.
+    wide_photo = guide_photo(guide)
+    photo = wide_photo or next((path for path in (route_photo(route.iata) for route in routes) if path), None)
     base_url = site_base_url(config)
     text = {
         "BRAND": config.brand,
@@ -377,7 +409,8 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     }
     urls = {
         "HOME": "../",
-        "PHOTO": f"../{photo}" if photo else None,
+        "GUIDE_PHOTO": f"../{wide_photo}" if wide_photo else None,
+        "PHOTO": f"../{photo}" if photo and not wide_photo else None,
         "PHOTO_URL": base_url + photo if base_url and photo else None,
         "PAGE_URL": f"{base_url}{guide.slug}/" if base_url else None,
         "TELEGRAM_URL": telegram_url(config.channel_handle),

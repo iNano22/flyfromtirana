@@ -1,9 +1,12 @@
 # The guide for one city: its page on the website is /milan/.
 # `city` must be the city name used for its routes in config.yaml; `airports`
-# has one entry per route (airport code) of that city. All text is Albanian,
-# with the city's name in English, like everywhere else on the site.
+# has one entry per route (airport code) of that city. `tagline` is the short
+# line under the city's name on the main page. All text is Albanian, with the
+# city's name in English, like everywhere else on the site.
+# The page's wide photo is assets/img/guides/<slug>.webp (960x600), if there is one.
 city: Milan
 slug: milan
+tagline: Modë, Duomo dhe aperitiv në Navigli
 intro: >-
   Milan është kryeqyteti i modës dhe i dizajnit në Itali, me një qendër që përshkohet lehtë në
   këmbë. Dy-tri ditë mjaftojnë për Duomon, Galerinë dhe një aperitiv buzë kanaleve të Navigli.

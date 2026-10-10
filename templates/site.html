@@ -6,8 +6,8 @@
      Values: BRAND CHANNEL LOOKAHEAD_DAYS UPDATED EMPTY MIN_PRICE DEAL_COUNT ROUTE_COUNT TOP_CITY
      TOP_PRICE TOP_SAVING (the best deal, for the chip on the first slide) DATE_MIN DATE_MAX
      DEAL_ROWS PRICE_ROWS HERO_SLIDES DEST_CARDS (the photo cards) PHOTO_CREDITS (the footer's
-     photo credits, missing unless a photo's licence requires one) GUIDE_LINKS and GUIDE_COUNT (the
-     links to the city pages) ANALYTICS and GA_ON (only with Google Analytics on) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
+     photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
+     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
      PREMIUM_LINK SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
      INSURANCE_LINK, CAR_RENTAL_LINK, COMPENSATION_LINK, HOTEL_LINK).
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
@@ -319,11 +319,22 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 .svc a:hover .svc-go { text-decoration: underline; }
 
 /* 7. The Telegram band */
-/* The city guides: one link per city page (/milan/, /rome/, ...) */
-.glist { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-.glist a { display: flex; flex-direction: column; justify-content: center; gap: 1px; min-height: 62px; padding: 10px 14px; border-radius: 14px; background: var(--surface); font-weight: 900; line-height: 1.2; text-decoration: none; }
-.glist a:hover { background: rgba(255, 255, 255, 0.17); }
-.glist span { font-weight: 700; font-size: 14px; color: var(--sun); }
+/* The city guides: one wide photo tile per city page (/milan/, /rome/, ...). A row to swipe
+   on phones (it is a .strip), a grid from 700px up. A tile without a photo shows its country's
+   colours instead. */
+.gtiles { list-style: none; margin: 0; }
+.gtile { flex: 0 0 min(78%, 330px); scroll-snap-align: start; }
+.gtile a { position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; color: #ffffff; text-decoration: none; background: radial-gradient(80% 90% at 100% 0%, var(--c1) 0%, transparent 60%), var(--c2); box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+.gtile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gtile a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23, 11, 59, 0) 30%, rgba(23, 11, 59, 0.9) 100%); }
+.ginfo { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 2px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+.ginfo b { font-size: 23px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
+.gflag { font-size: 0.8em; }
+.gtag { font-size: 14.5px; font-weight: 600; line-height: 1.25; color: rgba(255, 255, 255, 0.92); }
+.gread { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; font-size: 14px; font-weight: 800; color: var(--sun); }
+.gread .ic { width: 16px; height: 16px; stroke-width: 2.5; }
+.gprice { position: absolute; z-index: 1; top: 12px; right: 12px; padding: 8px 10px; border-radius: 11px; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 17px; line-height: 1; transform: rotate(3deg); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+.gprice small { font-size: 12px; font-weight: 800; }
 
 .join { margin-top: 44px; background: linear-gradient(160deg, #1a72cc, #0d3f9e); }   /* a full-width band, like the reference */
 .join-in { padding-top: 32px; padding-bottom: 32px; display: grid; gap: 18px; }
@@ -361,6 +372,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 
 /* Wider screens */
 @media (min-width: 700px) {
+  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; overflow: visible; }
   .scard { padding: 18px 18px 20px; }
   .stab { font-size: 15px; padding: 0 16px; }
   .stab:not(.is-on) .ic { display: inline-block; }
@@ -423,6 +435,8 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   .list .seal { font-size: 12px; letter-spacing: 0.1em; }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .gtile img { transition: transform 0.35s ease-out; }
+  .gtile a:hover img { transform: scale(1.05); }
   .dcard img { transition: transform 0.5s ease-out; }
   .list .row { transition: transform 0.18s ease-out; }
   .list .row:hover { transform: translateY(-3px); }
@@ -563,7 +577,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       </ol>
     </div>
   </section>
-  <section class="guides wrap" id="udhezues" aria-labelledby="guides-h"><div class="shead"><h2 id="guides-h">Udhëzues për qytetet <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">Çfarë të shohësh, si të shkosh nga aeroporti në qendër dhe sa kushton, bashkë me çmimin më të lirë të momentit.</p></div><ul class="glist">{GUIDE_LINKS}</ul></section>
+  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">Udhëzues për qytetet <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">Çfarë të shohësh, si të shkosh nga aeroporti në qendër dhe sa kushton, bashkë me çmimin më të lirë të momentit.</p></div><ul class="strip gtiles" aria-label="Udhëzues për qytetet">{GUIDE_TILES}</ul></section>
   <section class="join" id="telegram" aria-labelledby="join-h">
     <div class="join-in wrap">
       <div>
@@ -618,7 +632,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       <p>Disa lidhje janë lidhje partnere: nëse rezervon përmes tyre, {BRAND} merr një komision të vogël, pa kosto shtesë për ty.</p>
       <details class="credits"><summary>Fotot dhe licencat e tyre</summary><ul>{PHOTO_CREDITS}</ul></details>
       <p><a href="#consent" data-consent-open="{GA_ON}">Cilësimet e cookies</a></p>
-      <p>© {YEAR} {BRAND}</p>
+      <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
     </div>
   </div>
 </footer>

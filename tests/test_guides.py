@@ -6,9 +6,10 @@ import pytest
 
 from src.config import ConfigError, load_config
 from src.formatter import PLACEHOLDER
-from src.guides import load_guides
+from src.guides import Guide, load_guides
 from src.links import LinkBuilder
-from src.website import build_offers, build_site, render_guide_page, render_site, site_guides
+from src.photos import ASSETS_DIR
+from src.website import build_offers, build_site, guide_tiles, render_guide_page, render_site, site_guides
 from tests.conftest import NOW, make_quote, seed_history
 
 NOV = date(2026, 11, 1)
@@ -42,6 +43,10 @@ def test_every_city_has_a_guide_that_covers_its_airports():
     for city, guide in guides.items():
         assert set(guide.airports) == airports[city], city # how to reach the centre, for each of its airports
         assert guide.intro and guide.budget and guide.when and len(guide.sights) >= 3 and guide.tips, city
+        assert guide.tagline, city                         # the line on its tile on the main page
+    # Every wide photo belongs to a guide (the file is named after the guide's slug).
+    slugs = {guide.slug for guide in guides.values()}
+    assert {path.stem for path in (ASSETS_DIR / "img" / "guides").glob("*.webp")} <= slugs
 
 
 def test_guides_are_listed_in_the_order_of_the_routes():
@@ -89,7 +94,11 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert "<h3>Malpensa (MXP)</h3>" in page and "<h3>Bergamo (BGY)</h3>" in page
     assert "Malpensa Express" in page and "<h3>Sa kushton</h3>" in page and "<h3>Kur të shkosh</h3>" in page
     # Links back to the main page and on to the other cities, but not to itself.
-    assert '<a class="brand" href="../">' in page and '<img class="dphoto" src="../img/dest/mxp.webp"' in page
+    assert '<a class="brand" href="../">' in page
+    assert '<img class="dphoto wide" src="../img/guides/milan.webp"' in page  # the city's own wide photo...
+    assert "../img/dest/" not in page                                        # ...instead of a route's photo
+    assert '<meta property="og:image" content="https://flyfromtirana.devbay.cloud/img/guides/milan.webp">' in page
+    assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
     assert '<li><a href="../rome/">Rome</a></li>' in page and 'href="../milan/"' not in page
     assert "googletagmanager" not in page and "Cilësimet e cookies" not in page   # analytics is off
     assert "<!--" not in page and not PLACEHOLDER.search(page)
@@ -132,12 +141,33 @@ def test_main_page_links_to_the_city_pages(config, storage):
     page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.website.links, "1"),
                        updated_at=NOW, now=NOW, guides=guides)
     assert 'id="udhezues"' in page and '<span class="count">19</span>' in page
-    assert '<li><a href="milan/">Milan<span>nga €19</span></a></li>' in page  # with the city's cheapest price
-    assert '<li><a href="rome/">Rome</a></li>' in page                        # no price yet: just the name
+    tiles = page[page.index('<ul class="strip gtiles"'):page.index("</ul>", page.index('<ul class="strip gtiles"'))]
+    assert tiles.count('<li class="gtile') == 19
+    milan = tiles[tiles.index('<a href="milan/">'):tiles.index('<a href="rome/">')]
+    assert '<img src="img/guides/milan.webp"' in milan                        # its wide photo
+    assert "<small>nga</small> €19" in milan                                  # the city's cheapest price
+    assert "Milan</b>" in milan and "Modë, Duomo dhe aperitiv në Navigli" in milan and "Lexo udhëzuesin" in milan
+    rome = tiles[tiles.index('<a href="rome/">'):tiles.index('<a href="bologna/">')]
+    assert "gprice" not in rome and "Rome</b>" in rome                        # no price yet: no sticker
     assert '<a href="milan/">Udhëzues për Milan</a>' in page                  # on Milan's tickets
     assert "Udhëzues për 19 qytete" in page                                   # footer
+    assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
     without = render_site([], config, LinkBuilder(config.website.links, "1"), updated_at=NOW, now=NOW)
     assert 'id="udhezues"' not in without and "Udhëzues" not in without
+
+
+def test_city_without_a_wide_photo_still_gets_a_tile_and_a_page(config, storage):
+    milan_prices(storage)
+    plain = Guide(city="Milan", slug="no-photo-here", tagline="", intro="Intro.", sights=[], airports={},
+                  budget="", when="", tips=[])
+    guides = {"Milan": plain}
+    tile = guide_tiles(guides, build_offers(config, storage, NOW), config)
+    assert '<li class="gtile c-it">' in tile and "<img" not in tile          # the country's colours instead
+    assert '<a href="no-photo-here/">' in tile and "gtag" not in tile and not PLACEHOLDER.search(tile)
+    page = render_guide_page(plain, guides, build_offers(config, storage, NOW), config,
+                             LinkBuilder(config.website.links, "1"), updated_at=NOW, now=NOW)
+    assert '<img class="dphoto" src="../img/dest/mxp.webp"' in page          # falls back to a route's photo
+    assert "dphoto wide" not in page.split("</style>")[1] and not PLACEHOLDER.search(page)
 
 
 # --- Google Analytics ---------------------------------------------------------------

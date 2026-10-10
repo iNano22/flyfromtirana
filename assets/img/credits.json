@@ -288,5 +288,195 @@
   "source_url": "https://www.flickr.com/photos/7633518@N08/51714019040",
   "license": "CC BY 2.0",
   "license_url": "https://creativecommons.org/licenses/by/2.0/"
+ },
+ {
+  "file": "img/guides/milan.webp",
+  "slot": "guide-milan",
+  "title": "Navigli canal, Milan",
+  "creator": "@m_siavash",
+  "creator_url": "https://unsplash.com/@m_siavash",
+  "source_url": "https://unsplash.com/photos/5QrM3dEf5mA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/rome.webp",
+  "slot": "guide-rome",
+  "title": "St. Peter's Basilica and the Tiber, Rome",
+  "creator": "@joshuakettle",
+  "creator_url": "https://unsplash.com/@joshuakettle",
+  "source_url": "https://unsplash.com/photos/LngfycTL3oQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/bologna.webp",
+  "slot": "guide-bologna",
+  "title": "Piazza Maggiore, Bologna",
+  "creator": "@pan_snig",
+  "creator_url": "https://unsplash.com/@pan_snig",
+  "source_url": "https://unsplash.com/photos/yN_xMo20Hpw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/venice.webp",
+  "slot": "guide-venice",
+  "title": "Grand Canal, Venice",
+  "creator": "@rickpsd",
+  "creator_url": "https://unsplash.com/@rickpsd",
+  "source_url": "https://unsplash.com/photos/RKsLQoSnuTc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/naples.webp",
+  "slot": "guide-naples",
+  "title": "Naples and Mount Vesuvius",
+  "creator": "@aa_poe",
+  "creator_url": "https://unsplash.com/@aa_poe",
+  "source_url": "https://unsplash.com/photos/SZS3H14W18o",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/athens.webp",
+  "slot": "guide-athens",
+  "title": "Acropolis at golden hour, Athens",
+  "creator": "@ckollias",
+  "creator_url": "https://unsplash.com/@ckollias",
+  "source_url": "https://unsplash.com/photos/yqBvJJ8jGBQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/thessaloniki.webp",
+  "slot": "guide-thessaloniki",
+  "title": "The Umbrellas on the seafront, Thessaloniki",
+  "creator": "@jimkalligas",
+  "creator_url": "https://unsplash.com/@jimkalligas",
+  "source_url": "https://unsplash.com/photos/FExAM6F_nzU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/london.webp",
+  "slot": "guide-london",
+  "title": "London skyline and the Thames",
+  "creator": "@bendavisual",
+  "creator_url": "https://unsplash.com/@bendavisual",
+  "source_url": "https://unsplash.com/photos/Oja2ty_9ZLM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/munich.webp",
+  "slot": "guide-munich",
+  "title": "Englischer Garten and the Frauenkirche, Munich",
+  "creator": "@elmuff",
+  "creator_url": "https://unsplash.com/@elmuff",
+  "source_url": "https://unsplash.com/photos/EoTaEMulwCg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/frankfurt.webp",
+  "slot": "guide-frankfurt",
+  "title": "The Römer, Frankfurt",
+  "creator": "@juhi_0907",
+  "creator_url": "https://unsplash.com/@juhi_0907",
+  "source_url": "https://unsplash.com/photos/6KQps28XYMM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/stuttgart.webp",
+  "slot": "guide-stuttgart",
+  "title": "Johanneskirche at the Feuersee, Stuttgart",
+  "creator": "@kweinland",
+  "creator_url": "https://unsplash.com/@kweinland",
+  "source_url": "https://unsplash.com/photos/PN0kTzLZVes",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/dusseldorf.webp",
+  "slot": "guide-dusseldorf",
+  "title": "The Rhine and the Rheinturm, Düsseldorf",
+  "creator": "@nicolaspeyrol",
+  "creator_url": "https://unsplash.com/@nicolaspeyrol",
+  "source_url": "https://unsplash.com/photos/l2VmsBG8nPE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/vienna.webp",
+  "slot": "guide-vienna",
+  "title": "Schönbrunn Palace, Vienna",
+  "creator": "@ediop",
+  "creator_url": "https://unsplash.com/@ediop",
+  "source_url": "https://unsplash.com/photos/D_b3n_paRpE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/zurich.webp",
+  "slot": "guide-zurich",
+  "title": "The Limmat and the old town, Zurich",
+  "creator": "@rtriangle",
+  "creator_url": "https://unsplash.com/@rtriangle",
+  "source_url": "https://unsplash.com/photos/VSxrqKYxL5w",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/barcelona.webp",
+  "slot": "guide-barcelona",
+  "title": "Park Güell, Barcelona",
+  "creator": "@cooljonez",
+  "creator_url": "https://unsplash.com/@cooljonez",
+  "source_url": "https://unsplash.com/photos/qiH16d5SRxg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/madrid.webp",
+  "slot": "guide-madrid",
+  "title": "Plaza Mayor, Madrid",
+  "creator": "@aarsoph",
+  "creator_url": "https://unsplash.com/@aarsoph",
+  "source_url": "https://unsplash.com/photos/rH96m-z1TmI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/istanbul.webp",
+  "slot": "guide-istanbul",
+  "title": "Galata Tower and the Bosphorus, Istanbul",
+  "creator": "@ibuzn",
+  "creator_url": "https://unsplash.com/@ibuzn",
+  "source_url": "https://unsplash.com/photos/qbaOwbtmfrI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/berlin.webp",
+  "slot": "guide-berlin",
+  "title": "The Spree and the TV Tower, Berlin",
+  "creator": "@florianwehde",
+  "creator_url": "https://unsplash.com/@florianwehde",
+  "source_url": "https://unsplash.com/photos/1uWanmgkd5g",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/brussels.webp",
+  "slot": "guide-brussels",
+  "title": "Mont des Arts, Brussels",
+  "creator": "@samatarstudios",
+  "creator_url": "https://unsplash.com/@samatarstudios",
+  "source_url": "https://unsplash.com/photos/SXcA2DfasvM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

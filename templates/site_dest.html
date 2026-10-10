@@ -8,7 +8,8 @@
      MIN_PRICE (cheapest price to the city now) UPDATED FARES (one ticket per airport, from
      site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) SIGHTS AIRPORTS
      BUDGET WHEN TIPS OTHER_GUIDES (links to the other cities' pages) HOME (the way back to the
-     main page, "../") PHOTO PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
+     main page, "../") GUIDE_PHOTO (the city's wide photo) PHOTO (a route's photo, only when
+     there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
      ANALYTICS and GA_ON (only with Google Analytics on), plus one NAME_LINK per partner.
      Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
      values, and never two opening square brackets in a row. -->
@@ -182,6 +183,8 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 @media (min-width: 900px) {
   .dhero-in { grid-template-columns: 1.25fr 0.75fr; align-items: center; padding-top: 28px; padding-bottom: 48px; }
   .dphoto { max-width: 340px; aspect-ratio: 5 / 7; justify-self: end; transform: rotate(2deg); }
+  .dphoto.wide { max-width: none; aspect-ratio: 16 / 10; transform: rotate(1.5deg); }
+  .dhero-in:has(.wide) { grid-template-columns: 1.05fr 0.95fr; }
   .fares { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -217,6 +220,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
         <p class="from-price">nga <b>€{MIN_PRICE}</b> vajtje</p>
         <p class="updated">Përditësuar më {UPDATED}, ora e Tiranës</p>
       </div>
+      <img class="dphoto wide" src="{GUIDE_PHOTO}" alt="Pamje nga {CITY}[[, {COUNTRY_NAME}]]" width="960" height="600" decoding="async">
       <img class="dphoto" src="{PHOTO}" alt="Pamje nga {CITY}[[, {COUNTRY_NAME}]]" width="600" height="840" decoding="async">
     </div>
   </section>
@@ -269,7 +273,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
       <p>Çmimet janë ato që udhëtarë të tjerë gjetën së fundmi në Aviasales dhe mund të kenë ndryshuar. Çmimi përfundimtar shfaqet kur hap lidhjen.</p>
       <p>Disa lidhje janë lidhje partnere: nëse rezervon përmes tyre, {BRAND} merr një komision të vogël, pa kosto shtesë për ty.</p>
       <p><a href="#consent" data-consent-open="{GA_ON}">Cilësimet e cookies</a></p>
-      <p>© {YEAR} {BRAND}</p>
+      <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
     </div>
   </div>
 </footer>

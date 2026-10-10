@@ -29,6 +29,7 @@ class Sight:
 class Guide:
     city: str                  # the city name used for its routes in config.yaml, e.g. "Milan"
     slug: str                  # the page's address: "milan" -> /milan/
+    tagline: str               # a few words under the city's name on the main page
     intro: str                 # two or three sentences under the headline
     sights: list[Sight]        # what to see
     airports: dict[str, str]   # airport code -> how to get from that airport to the centre
@@ -65,6 +66,7 @@ def _build_guide(raw: dict) -> Guide:
     return Guide(
         city=str(raw["city"]).strip(),
         slug=slug,
+        tagline=_text(raw.get("tagline") or ""),
         intro=_text(raw["intro"]),
         sights=[Sight(name=_text(s["name"]), text=_text(s["text"])) for s in raw.get("sights") or []],
         airports={str(code).upper(): _text(text) for code, text in (raw.get("airports") or {}).items()},

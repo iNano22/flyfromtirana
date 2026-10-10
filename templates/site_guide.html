@@ -1,0 +1,14 @@
+<!-- One city in "Udhëzues për qytetet" on the main page: a wide photo tile that opens the city's
+     own page. Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]]
+     is optional and must stay on one line, and a line with a missing value is left out. This
+     comment is removed before the page is written.
+     Values: CITY FLAG COUNTRY (lowercase code: the tile's colours while it has no photo) TAGLINE
+     (the short line from the guide) GUIDE_URL (the city's page) GUIDE_PHOTO (its wide photo,
+     assets/img/guides/<slug>.webp) PRICE (the city's cheapest price now, if it has one). -->
+<li class="gtile[[ c-{COUNTRY}]]">
+  <a href="{GUIDE_URL}">
+    <img src="{GUIDE_PHOTO}" alt="" width="960" height="600" loading="lazy" decoding="async">
+    <span class="gprice"><small>nga</small> €{PRICE}</span>
+    <span class="ginfo"><b>[[<span class="gflag" aria-hidden="true">{FLAG}</span> ]]{CITY}</b>[[<span class="gtag">{TAGLINE}</span>]]<span class="gread">Lexo udhëzuesin<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span>
+  </a>
+</li>

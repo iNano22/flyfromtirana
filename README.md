@@ -41,7 +41,8 @@ templates/sq.txt         post wording (Albanian)
 templates/site.html      the website page (wording, CSS, a little JS); site_row.html = one route in the
                          list, site_card.html = one photo card, site_hero.html = one hero banner
 templates/site_dest.html a city's own page; site_dest_fare.html = one airport's price on it;
-                         site_analytics.html = Google Analytics and its cookie question
+                         site_guide.html = a city's photo tile on the main page;
+                         site_analytics.html = Google Analytics and its cookie box
 content/destinations/    the city guides, one file per city (the text of the city pages)
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
@@ -186,7 +187,9 @@ Every city has a page of its own (`/milan/`, `/rome/`, ... on the site): the
 current cheapest price for each of its airports on top, then a short guide: what
 to see, how to get from each airport to the centre, typical prices, when to go
 and a few tips. The main page links to them from the "Udhëzues për qytetet"
-section and from every ticket in the list. These pages are what search engines
+section (a wide photo tile per city, with a short teaser and the cheapest price:
+a row to swipe on phones, a grid on larger screens) and from every ticket in the
+list. These pages are what search engines
 can find the site by, so the build also writes `sitemap.xml` and `robots.txt`
 (they need `website.url`).
 
@@ -199,6 +202,11 @@ The text of a guide is one file, `content/destinations/<slug>.yaml`
 - **New city**: add a file. `city` must be exactly the route's `city` in
   config.yaml, and `slug` (lowercase letters, digits, hyphens) becomes the address.
   Until a city has a file it simply has no page.
+- **Its photo**: a wide photo of the city, `assets/img/guides/<slug>.webp`
+  (960×600), is used on its tile and at the top of its page. It is a different
+  picture from the route's tall card photo. Without one, the tile shows the
+  country's colours and the page uses the route's photo.
+- `tagline` in the file is the short line under the city's name on its tile.
 - The transport and food prices in the guides are rough figures from 2026. They
   go out of date: review them once or twice a year.
 
@@ -244,8 +252,9 @@ python -m http.server --directory docs  # then http://localhost:8000 : needed to
 
 ### Photos
 
-The photos live in `assets/img`: `dest/<iata>.webp` (600×840) for each route's card
-and `services/<partner>.webp` (720×450) for the travel services. Every build copies
+The photos live in `assets/img`: `dest/<iata>.webp` (600×840) for each route's card,
+`guides/<slug>.webp` (960×600) for each city's guide, and `services/<partner>.webp`
+(720×450) for the travel services. Every build copies
 them to `docs/img`. Most destination photos come from [Unsplash](https://unsplash.com)
 (downloaded from the website, under the Unsplash License, which allows commercial
 use and asks for no credit); the rest are CC0 or CC BY from Openverse and Wikimedia
