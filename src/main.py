@@ -4,6 +4,8 @@ Run from the repo root:
     python -m src.main --dry-run                     # print posts instead of sending them
     python -m src.main --dry-run --routes BGY,VIE -v # a couple of routes, debug logging
     python -m src.main                               # the real thing (what src/scheduler.py runs)
+    python -m src.main --premium-only                # the scheduler's quick scan between full runs:
+                                                     # posts to premium only, saves no prices
 
 Exit codes: 0 = OK, 1 = the run failed (API down, a post failed, ...),
 2 = configuration problem (missing env var, bad config.yaml).
@@ -33,7 +35,8 @@ from src.config import (
     load_config,
     load_secrets,
 )
-from src.deals import Deal, find_route_deal, price_band, rank_deals
+from src.deals import (CHANNEL, PREMIUM_CHANNEL, Deal, early_access_cutoff, find_route_deal, price_band,
+                       rank_deals)
 from src.formatter import format_post
 from src.links import LinkBuilder
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
@@ -41,15 +44,6 @@ from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
 
 log = logging.getLogger("flyfromtirana")
-
-# Names used in the posted_deals table. Each channel dedupes independently;
-# future ones (Instagram, English) get their own name too.
-CHANNEL = "telegram"
-PREMIUM_CHANNEL = "telegram_premium"
-# A run posts a little after its slot starts (the scan comes first), so "posted
-# 6h ago" is checked with this much slack. Otherwise a deal could miss a run by
-# 2 minutes.
-EARLY_ACCESS_SLACK = timedelta(minutes=30)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -67,7 +61,8 @@ def main(argv: list[str] | None = None) -> int:
             config = replace(config, quiet_hours=None)
         secrets = load_secrets(dry_run=args.dry_run, premium=config.premium.enabled)
         only_routes = {code.strip().upper() for code in args.routes.split(",")} if args.routes else None
-        return run(config, secrets, dry_run=args.dry_run, only_routes=only_routes)
+        return run(config, secrets, dry_run=args.dry_run, only_routes=only_routes,
+                   premium_only=args.premium_only)
     except ConfigError as exc:
         log.error("Configuration problem: %s", exc)
         return 2
@@ -84,6 +79,9 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true",
                         help="print posts instead of sending them (nothing is marked as posted)")
     parser.add_argument("--routes", help="only scan these destinations, e.g. BGY,VIE")
+    parser.add_argument("--premium-only", action="store_true",
+                        help="quick scan: post new deals to the premium channel only (no free-channel "
+                             "posts, prices are not saved)")
     parser.add_argument("--ignore-quiet-hours", action="store_true",
                         help="post even during quiet hours (e.g. a manual test at night)")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH, help="path to config.yaml")
@@ -97,14 +95,29 @@ def run(
     *,
     dry_run: bool,
     only_routes: set[str] | None = None,
+    premium_only: bool = False,
     session: requests.Session | None = None,
     now: datetime | None = None,
     output: Callable[[str], None] = print,
 ) -> int:
-    """One full scan. `session`, `now` and `output` are only passed in by tests."""
+    """One scan. `session`, `now` and `output` are only passed in by tests.
+
+    premium_only: the quick scan the scheduler runs between the full ones, so
+    premium gets a deal within minutes. It only posts to the premium channel
+    and saves no prices: the price history (and so the "usual" price) keeps
+    growing at the pace of the full runs, and the database stays small.
+    """
     now = now or datetime.now(timezone.utc)
     local_now = now.astimezone(ZoneInfo(config.timezone))
     session = session or requests.Session()
+    premium = config.premium
+    if premium_only and not premium.enabled:
+        log.info("Premium is off in config.yaml: a premium-only scan has nothing to do")
+        return 0
+    if premium_only and not dry_run and in_quiet_hours(local_now.time(), config.quiet_hours):
+        # Nothing would be posted or saved, so don't spend the API calls.
+        log.info("Quiet hours (%s local): skipping the premium scan", local_now.strftime("%H:%M"))
+        return 0
 
     routes = select_routes(config.routes, only_routes)
     links = LinkBuilder(config.links, secrets.travelpayouts_marker, origin=config.origin, currency=config.currency)
@@ -123,12 +136,12 @@ def run(
     def telegram_for(chat_id: str) -> TelegramClient | None:
         return None if dry_run else TelegramClient(secrets.telegram_bot_token, chat_id, session)
 
-    premium = config.premium
-
-    log.info("Scanning %d route(s) from %s%s", len(routes), config.origin, " (dry run)" if dry_run else "")
+    log.info("Scanning %d route(s) from %s%s%s", len(routes), config.origin,
+             " (premium only)" if premium_only else "", " (dry run)" if dry_run else "")
     with Storage(config.db_path) as storage:
         # 1) Fetch and store prices
-        outbound, inbound = scan_routes(scanner, storage, config, routes, local_now.date(), now)
+        outbound, inbound = scan_routes(scanner, storage, config, routes, local_now.date(), now,
+                                        save=not premium_only)
         if not outbound:
             log.error("Every route failed to fetch, nothing to do")
             return 1
@@ -144,13 +157,14 @@ def run(
             log.info("[premium] %d route(s) with new deals, posting the best %d", len(deals), len(best))
             exit_code |= publish(best, channel=PREMIUM_CHANNEL, template=f"{config.language}_premium",
                                  telegram=telegram_for(secrets.telegram_premium_channel_id), **common)
+        if premium_only:
+            return exit_code
 
         # The free channel only gets deals premium has had for free_delay_hours.
         early_access = {}
         if premium.enabled:
             early_access = dict(early_access_from=PREMIUM_CHANNEL,
-                                early_access_until=now - timedelta(hours=premium.free_delay_hours)
-                                + EARLY_ACCESS_SLACK)
+                                early_access_until=early_access_cutoff(now, premium.free_delay_hours))
         deals = find_deals(routes, outbound, inbound, storage, config.origin, config.rules, now, CHANNEL,
                            **early_access)
         best = rank_deals(deals, config.max_posts_per_run)
@@ -176,11 +190,13 @@ def select_routes(routes: list[Route], only: set[str] | None) -> list[Route]:
 
 
 def scan_routes(scanner: PriceScanner, storage: Storage, config: Config, routes: list[Route],
-                today: date, now: datetime) -> tuple[dict[str, list[Quote]], dict[str, list[Quote]]]:
+                today: date, now: datetime, *,
+                save: bool = True) -> tuple[dict[str, list[Quote]], dict[str, list[Quote]]]:
     """Fetch and save prices for every route, both directions.
 
     Returns (outbound, inbound), keyed by destination code. Routes that failed
     are left out; a route with no prices maps to an empty list.
+    save=False (the quick premium scan) leaves the price history as it is.
     """
     outbound: dict[str, list[Quote]] = {}
     inbound: dict[str, list[Quote]] = {}
@@ -196,7 +212,8 @@ def scan_routes(scanner: PriceScanner, storage: Storage, config: Config, routes:
                 inbound[route.iata] = scanner.fetch_route(route.iata, config.origin, today, now)
             except RouteFetchError as exc:
                 log.warning("No return prices for %s: %s", route.iata, exc)
-        storage.save_quotes(outbound[route.iata] + inbound[route.iata])
+        if save:
+            storage.save_quotes(outbound[route.iata] + inbound[route.iata])
     return outbound, inbound
 
 

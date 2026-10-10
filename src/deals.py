@@ -25,6 +25,15 @@ from src.storage import Storage
 
 log = logging.getLogger(__name__)
 
+# Names used in the posted_deals table. Each channel dedupes independently;
+# future ones (Instagram, English) get their own name too.
+CHANNEL = "telegram"
+PREMIUM_CHANNEL = "telegram_premium"
+# A run posts a little after its slot starts (the scan comes first), so "posted
+# 6h ago" is checked with this much slack. Otherwise a deal could miss a run by
+# 2 minutes.
+EARLY_ACCESS_SLACK = timedelta(minutes=30)
+
 
 @dataclass
 class Deal:
@@ -136,6 +145,29 @@ def find_route_deal(
         lead = round((now - early_posted_at[best]).total_seconds() / 3600)
     return Deal(route=route, quotes=shown, median=median, reason=reason,
                 return_quote=cheapest_return(best, inbound, rules), premium_lead_hours=lead)
+
+
+def early_access_cutoff(now: datetime, free_delay_hours: float) -> datetime:
+    """A deal premium got at or before this moment is old enough for the free channel and the website."""
+    return now - timedelta(hours=free_delay_hours) + EARLY_ACCESS_SLACK
+
+
+def is_premium_only(quote: Quote, route: Route, median: float | None, storage: Storage,
+                    premium_rules: DealRules, now: datetime, cutoff: datetime) -> bool:
+    """Is this price still for premium members only?
+
+    True for a price that is a deal by premium's rules until premium has had
+    it since `cutoff` (see early_access_cutoff). The website leaves such
+    prices out, the same way the free channel waits for them.
+    """
+    reason = deal_reason(quote.price, median, route.absolute_threshold_eur,
+                         premium_rules.discount_pct, premium_rules.threshold_min_discount_pct)
+    if reason is None:
+        return False  # an ordinary price: nothing to hold back
+    cooldown_start = now - timedelta(days=premium_rules.repost_cooldown_days)
+    first = storage.first_posted_at(PREMIUM_CHANNEL, quote.origin, route.iata, quote.depart_date,
+                                    since=cooldown_start, until=cutoff)
+    return first is None
 
 
 def cheapest_return(outbound: Quote, inbound: list[Quote], rules: DealRules) -> Quote | None:

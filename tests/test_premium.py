@@ -4,13 +4,14 @@ from datetime import date, timedelta
 
 import pytest
 
-from src.config import Secrets, load_config
+from src.config import ConfigError, Secrets, load_config
 from src.deals import Deal, find_route_deal, price_band
 from src.formatter import format_post
 from src.main import run
 from tests.conftest import NOW, make_quote
 from tests.test_formatter import AIRLINES, make_links
-from tests.test_main import fake_world
+from src.storage import Storage
+from tests.test_main import fake_world, telegram_calls
 
 PREMIUM_ID = "-1001234567890"
 SECRETS = Secrets("tp-token", "12345", "123:bot", "@flyfromtirana", PREMIUM_ID)
@@ -100,6 +101,62 @@ def test_premium_first_then_free_six_hours_later(config):
     free_posts = sent_to(six_h, "@flyfromtirana")
     assert len(free_posts) == 1
     assert "e morën këtë ofertë 6 orë më parë" in free_posts[0]
+
+
+# --- quick premium scans between the full runs -------------------------------------
+
+def price_rows(config):
+    with Storage(config.db_path) as storage:
+        return storage.conn.execute("SELECT COUNT(*) FROM prices").fetchone()[0]
+
+
+def test_premium_only_scan_posts_to_premium_and_saves_no_prices(config):
+    run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=fake_world(),
+        now=NOW.replace(hour=5))                               # quiet hours: a full run saves the history
+    history = price_rows(config)
+    assert history > 0
+
+    quick = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, premium_only=True, session=quick, now=NOW) == 0
+    assert len(sent_to(quick, PREMIUM_ID)) == 1
+    assert sent_to(quick, "@flyfromtirana") == []
+    assert price_rows(config) == history                       # the quick scan added nothing
+
+    # The free channel still gets it at its own run, once premium has had it for 6 hours.
+    later = fake_world()
+    run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=later, now=NOW + timedelta(hours=6))
+    assert len(sent_to(later, "@flyfromtirana")) == 1
+    assert sent_to(later, PREMIUM_ID) == []                    # premium is not told twice
+
+
+def test_premium_only_scan_is_skipped_in_quiet_hours(config):
+    session = fake_world()
+    night = NOW.replace(hour=22)  # 00:00 in Tirana
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, premium_only=True, session=session,
+               now=night) == 0
+    assert session.calls == []                                 # not even the price API was asked
+
+
+def test_premium_only_scan_does_nothing_when_premium_is_off(config):
+    config = replace(config, premium=replace(config.premium, enabled=False))
+    session = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, premium_only=True, session=session, now=NOW) == 0
+    assert telegram_calls(session) == []
+
+
+def test_scan_every_minutes_is_read_and_checked(tmp_path):
+    assert load_config().premium.scan_every_minutes == 15
+
+    def load(premium_yaml):
+        path = tmp_path / "config.yaml"
+        path.write_text(f"routes:\n  - {{ iata: BGY, city: Milan }}\npremium:\n  {premium_yaml}\n",
+                        encoding="utf-8")
+        return load_config(path)
+
+    assert load("enabled: true").premium.scan_every_minutes == 0        # not set = no quick scans
+    assert load("scan_every_minutes: 30").premium.scan_every_minutes == 30
+    with pytest.raises(ConfigError, match="scan_every_minutes"):
+        load("scan_every_minutes: 1")
 
 
 def test_premium_rules_are_looser_than_free():

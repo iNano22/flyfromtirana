@@ -19,6 +19,9 @@ DEFAULT_CONFIG_PATH = PROJECT_ROOT / "config.yaml"
 # Partner link slots that always exist, so the template can reference
 # {HOTEL_LINK} etc. even before they are filled in config.yaml.
 DEFAULT_PARTNERS = ("hotel", "esim", "insurance", "compensation", "car_rental")
+# A scan of every route takes a couple of minutes, so scanning more often than
+# this would only queue runs up behind each other.
+MIN_PREMIUM_SCAN_MINUTES = 5
 
 
 class ConfigError(Exception):
@@ -73,6 +76,7 @@ class PremiumSettings:
 
     enabled: bool = False
     free_delay_hours: float = 6
+    scan_every_minutes: float = 0                          # quick premium scans between full runs; 0 = none
     max_posts_per_run: int = 4
     join_link: str = ""                                    # paid invite link, advertised in free posts
     rules: DealRules = field(default_factory=DealRules)    # usually looser than the free channel's
@@ -218,9 +222,13 @@ def _build_premium(raw: dict, free_rules: DealRules) -> PremiumSettings:
     )
     if not 0 < rules.discount_pct < 100:
         raise ValueError("premium.deal_discount_pct must be between 0 and 100")
+    scan_every_minutes = float(raw.get("scan_every_minutes") or 0)
+    if scan_every_minutes and scan_every_minutes < MIN_PREMIUM_SCAN_MINUTES:
+        raise ValueError(f"premium.scan_every_minutes must be 0 (off) or at least {MIN_PREMIUM_SCAN_MINUTES}")
     return PremiumSettings(
         enabled=bool(raw.get("enabled", False)),
         free_delay_hours=float(raw.get("free_delay_hours", 6)),
+        scan_every_minutes=scan_every_minutes,
         max_posts_per_run=int(raw.get("max_posts_per_run", 4)),
         join_link=str(raw.get("join_link") or ""),
         rules=rules,

@@ -5,6 +5,7 @@ from datetime import date, timedelta
 import pytest
 
 from src.config import Route, load_config
+from src.deals import PREMIUM_CHANNEL, price_band
 from src.formatter import PLACEHOLDER
 from src.links import LinkBuilder
 from src.storage import Storage
@@ -19,8 +20,20 @@ NOV = date(2026, 11, 1)
 @pytest.fixture
 def config(tmp_path):
     base = load_config()
+    # Most tests look at the page without a premium channel; the ones about
+    # premium's head start switch it on themselves (with_premium below).
     return replace(base, db_path=tmp_path / "prices.db",
-                   website=replace(base.website, output_dir=tmp_path / "site"))
+                   website=replace(base.website, output_dir=tmp_path / "site"),
+                   premium=replace(base.premium, enabled=False))
+
+
+def with_premium(config):
+    return replace(config, premium=replace(config.premium, enabled=True, free_delay_hours=6))
+
+
+def premium_posted(storage, destination, depart, price, hours_ago):
+    storage.record_post(PREMIUM_CHANNEL, make_quote(price, depart, destination=destination),
+                        price_band(price, 10), posted_at=NOW - timedelta(hours=hours_ago))
 
 
 def latest_scan(storage, destination, prices: dict[date, float], back: dict[date, float] | None = None,
@@ -52,6 +65,48 @@ def test_offers_list_deals_first_and_bundle_cheap_dates(config, storage):
     assert [q.price for q in bgy.quotes] == [19, 20]       # €30 is more than 10% above €19
     assert bgy.return_quote.price == 24
     assert not vie.is_deal and vie.best.price == 45 and vie.median == 50
+
+
+# --- premium's head start: the page waits like the free channel does -----------
+
+def test_premium_deals_are_held_back_until_the_free_channel_may_have_them(config, storage):
+    config = with_premium(config)
+    two_routes(storage)
+    # Premium has not posted BGY yet: its three deal prices (€19, €20, €30) stay off the page.
+    bgy = next(o for o in build_offers(config, storage, NOW) if o.route.iata == "BGY")
+    assert not bgy.is_deal and bgy.best.price == 61
+
+    # Posted on premium two hours ago: still premium's alone.
+    premium_posted(storage, "BGY", NOV + timedelta(days=20), 19, hours_ago=2)
+    bgy = next(o for o in build_offers(config, storage, NOW) if o.route.iata == "BGY")
+    assert bgy.best.price == 61
+
+
+def test_premium_deals_show_once_premium_had_them_long_enough(config, storage):
+    config = with_premium(config)
+    two_routes(storage)
+    premium_posted(storage, "BGY", NOV + timedelta(days=20), 19, hours_ago=7)
+    premium_posted(storage, "BGY", NOV + timedelta(days=22), 20, hours_ago=7)
+
+    offers = build_offers(config, storage, NOW)
+    assert [o.route.iata for o in offers] == ["BGY", "VIE"]   # the deal is back at the top
+    bgy = offers[0]
+    assert bgy.is_deal and [q.price for q in bgy.quotes] == [19, 20]
+
+
+def test_ordinary_prices_never_wait_for_premium(config, storage):
+    config = with_premium(config)
+    two_routes(storage)
+    vie = next(o for o in build_offers(config, storage, NOW) if o.route.iata == "VIE")
+    assert vie.best.price == 45                               # €45 against a usual €50 is no deal
+
+
+def test_route_is_left_off_while_all_its_prices_are_premium_only(config, storage):
+    config = with_premium(config)
+    seed_history(storage, [60] * 12, destination="BGY", days_ago=2)
+    latest_scan(storage, "BGY", {NOV + timedelta(days=20): 19})
+    assert build_offers(config, storage, NOW) == []
+    assert [o.best.price for o in build_offers(config, storage, NOW, premium_delay=False)] == [19]
 
 
 def test_past_dates_and_stale_routes_are_left_off(config, storage):

@@ -1,10 +1,13 @@
 """The server scheduler: slot times, database seeding, and scan-then-website order."""
+from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
 import pytest
 
 from src import scheduler
-from src.scheduler import next_slot, run_once, seed_database
+from src.config import load_config
+from src.scheduler import (next_run, next_slot, premium_scan_interval, run_once, run_premium_scan,
+                           seed_database)
 
 
 def utc(hour: int, minute: int, second: int = 0, day: int = 10) -> datetime:
@@ -26,6 +29,38 @@ def test_next_slot_is_minute_17_of_every_third_hour(now, expected):
 def test_next_slot_reads_other_timezones_as_utc():
     tirana = timezone(timedelta(hours=2))
     assert next_slot(datetime(2026, 10, 10, 17, 0, tzinfo=tirana)) == utc(15, 17)
+
+
+QUARTER = timedelta(minutes=15)
+
+
+@pytest.mark.parametrize("last_start, expected", [
+    (utc(15, 17, 5), (utc(15, 32, 5), False)),     # after a full run: a premium scan 15 minutes later
+    (utc(15, 32, 5), (utc(15, 47, 5), False)),
+    (utc(18, 2, 30), (utc(18, 17), True)),         # 18:17:30 would pass the slot: the full run takes over
+    (utc(18, 2), (utc(18, 17), True)),             # landing exactly on the slot counts too
+])
+def test_premium_scans_fill_the_time_between_full_runs(last_start, expected):
+    assert next_run(last_start, QUARTER) == expected
+
+
+def test_without_premium_scans_every_run_is_a_full_one():
+    assert next_run(utc(15, 17, 5), None) == (utc(18, 17), True)
+
+
+def test_premium_scan_interval_comes_from_the_config():
+    config = load_config()
+    on = replace(config, premium=replace(config.premium, enabled=True, scan_every_minutes=15))
+    assert premium_scan_interval(on) == QUARTER
+    assert premium_scan_interval(replace(on, premium=replace(on.premium, scan_every_minutes=0))) is None
+    assert premium_scan_interval(replace(on, premium=replace(on.premium, enabled=False))) is None
+
+
+def test_premium_scan_runs_the_scan_only(monkeypatch):
+    ran = []
+    monkeypatch.setattr(scheduler, "run_step", lambda name, module, timeout, *args: ran.append((module, args)) or 0)
+    assert run_premium_scan() == 0
+    assert ran == [("src.main", ("--premium-only",))]          # no website build
 
 
 def test_seed_starts_a_new_database_and_never_overwrites_one(tmp_path):

@@ -4,7 +4,8 @@ Scans cheap flights from Tirana (TIA), spots deals, and posts them to the
 Telegram channel [@flyfromtirana](https://t.me/flyfromtirana) with affiliate
 links. It runs every 3 hours in a Docker container on a small server. The same
 run also renders a one-page **website** with the cheapest price to every
-destination, which a second container serves.
+destination, which a second container serves. The paid premium channel gets its
+own quick scan every 15 minutes in between.
 
 ## How it works
 
@@ -19,6 +20,10 @@ src/scheduler.py (every 3h, in the `scanner` container)
        5. telegram.py  send it to the channel (best deals first)
   └─ python -m src.website
        6. website.py   rebuild docs/index.html from the database (every route, deals first)
+src/scheduler.py (every 15 min in between, when premium is on)
+  └─ python -m src.main --premium-only
+       steps 1 and 3-5 for the premium channel only: nothing is saved, the free
+       channel and the website are left alone
   data/prices.db and docs/ live in Docker volumes, so history and the site survive redeploys
 ```
 
@@ -45,7 +50,8 @@ src/
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
   website.py             renders docs/index.html from the database (no API calls)
-  scheduler.py           the server's loop: a scan, then the website, every 3 hours
+  scheduler.py           the server's loop: a scan, then the website, every 3 hours,
+                         and quick premium scans in between
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
 Dockerfile               the scanner image
@@ -100,8 +106,9 @@ median), but it never marks deals as posted.
 ### 4. Run it on a server
 
 `docker-compose.yml` runs two containers: `scanner` (the scheduler: a scan at
-minute 17 of every third hour UTC, then the website build) and `web` (serves
-the page). With plain Docker:
+minute 17 of every third hour UTC, then the website build, plus a quick premium
+scan every `premium.scan_every_minutes` in between) and `web` (serves the page).
+With plain Docker:
 
 ```bash
 cp .env.example .env          # the same values as for local runs
@@ -158,6 +165,11 @@ Booking links carry the SubID `website` (posts use `telegram`), so Travelpayouts
 stats show which one earned a click. Routes whose newest prices are older than
 2 days are left off the page.
 
+With the premium channel on, the page follows the **free channel**: a price that
+is a deal for premium is left out until premium has had it for `free_delay_hours`,
+which is when the free channel may post it too. Until then the route shows its
+cheapest other date. So nobody can read a premium deal off the website early.
+
 ### Where it is served
 
 The `web` container serves the `site` volume, which the scanner fills: once
@@ -170,6 +182,7 @@ used for the page's canonical/og:url tags).
 
 ```bash
 python -m src.website            # writes docs/index.html from your local prices.db
+python -m src.website --no-premium-delay   # also show the deals premium is still getting early
 open docs/index.html             # macOS; or open the file in any browser
 python -m src.website --out /tmp/site   # somewhere else, leaving docs/ alone
 ```
@@ -286,18 +299,30 @@ becomes a `{NAME_LINK}` placeholder, so you can add e.g. `car_rental` and use
 
 ## Data
 
-`data/prices.db` grows with every run (8× a day). To keep it small: only the
+`data/prices.db` grows with every full run (8× a day). To keep it small: only the
 cheapest price per route, direction, and date is stored per run, and rows older
-than `history_retention_days` (45) are deleted. On the server the file lives in
+than `history_retention_days` (45) are deleted. The quick premium scans save no
+prices at all, so they don't make it grow. On the server the file lives in
 the `data` volume; the copy committed here is only the starting point for a new
 volume, and the database local runs use.
 
 ## Premium channel (built, off by default)
 
-A paid, private channel that gets deals **instantly**, with looser rules (30%
+A paid, private channel that gets deals **within minutes**, with looser rules (30%
 below the median instead of 40%) so it gets more of them. The free channel only
 posts a deal once premium has had it for `free_delay_hours` (6), and adds a line
-like "⚡ Anëtarët Premium e morën këtë ofertë 6 orë më parë · Bashkohu".
+like "⚡ Anëtarët Premium e morën këtë ofertë 6 orë më parë · Bashkohu". The
+website waits the same way (see Website above).
+
+Premium doesn't wait for the 3-hour runs: every `premium.scan_every_minutes` (15)
+the scheduler runs `python -m src.main --premium-only`, which checks the prices
+and posts any new deal to premium straight away (never during quiet hours). That
+is up to about 150 API calls per scan, far below Travelpayouts' limit of 600 a minute.
+`premium.max_posts_per_run` (4) now counts per scan, so it no longer caps a whole
+day; lower it if the channel gets too busy. Set `scan_every_minutes: 0` to go back
+to posting only with the 3-hour runs. The free channel still posts at its first
+3-hour run after the 6 hours, so its wait is between about 5.5 and 8.5 hours
+(longer when that run falls in quiet hours).
 
 To turn it on:
 1. Create a **private** Telegram channel and add the bot as an admin with **Post messages**.

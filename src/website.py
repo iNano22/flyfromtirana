@@ -2,6 +2,7 @@
 
     python -m src.website               # writes docs/index.html (and docs/.nojekyll)
     python -m src.website --out /tmp/x  # write it somewhere else, e.g. to look at it locally
+    python -m src.website --no-premium-delay   # also show what premium is still getting early
 
 It only reads data/prices.db (no API calls), so it can run at any time. On the
 server src/scheduler.py runs it after every scan, and the `web` container
@@ -10,7 +11,9 @@ serves the docs/ folder as the site.
 Per route the page shows: the cheapest date from the newest scan (plus other
 dates about as cheap), the usual price, the cheapest flight back and a booking
 link. Routes that meet the free channel's deal rules come first, as "Ofertat
-e momentit". Wording and layout live in templates/site.html (the page),
+e momentit". With a premium channel the page follows the free channel: a price
+premium members are still getting early is left out until the free channel may
+have it too (build_offers below). Wording and layout live in templates/site.html (the page),
 templates/site_row.html (one route in the list), site_card.html (one photo card
 in the destinations carousel) and site_hero.html (one hero banner), which follow
 the same {NAME} and [[optional]] rules as the post templates (see src/formatter.py).
@@ -37,7 +40,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 
 from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, Route, load_config
-from src.deals import Deal, cheapest_return, deal_reason
+from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, is_premium_only
 from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
                            saving_percent)
 from src.links import LinkBuilder
@@ -87,6 +90,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build the FlyFromTirana website from the price database.")
     parser.add_argument("--out", type=Path, help="output folder (default: website.output_dir in config.yaml)")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH, help="path to config.yaml")
+    parser.add_argument("--no-premium-delay", action="store_true",
+                        help="also show the prices premium is still getting early (for a local preview)")
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO,
@@ -97,7 +102,7 @@ def main(argv: list[str] | None = None) -> int:
         marker = os.environ.get("TRAVELPAYOUTS_MARKER", "").strip()
         if not marker:
             log.warning("TRAVELPAYOUTS_MARKER is not set: booking links on the site carry no affiliate marker")
-        path = build_site(config, marker, out_dir=args.out)
+        path = build_site(config, marker, out_dir=args.out, premium_delay=not args.no_premium_delay)
         log.info("Website written to %s", path)
         return 0
     except ConfigError as exc:
@@ -109,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
-               now: datetime | None = None) -> Path:
+               now: datetime | None = None, premium_delay: bool = True) -> Path:
     """Read the database, render the page, write it. Returns the path of index.html."""
     now = now or datetime.now(timezone.utc)
     out_dir = out_dir or config.website.output_dir
@@ -119,7 +124,7 @@ def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
                         origin=config.origin, currency=config.currency)
     links.validate()
     with Storage(config.db_path) as storage:
-        offers = build_offers(config, storage, now)
+        offers = build_offers(config, storage, now, premium_delay=premium_delay)
         updated_at = storage.last_fetched_at()
     page = render_site(offers, config, links, updated_at=updated_at, now=now)
 
@@ -140,13 +145,22 @@ def copy_photos(out_dir: Path) -> None:
                         ignore=shutil.ignore_patterns("*.json"))
 
 
-def build_offers(config: Config, storage: Storage, now: datetime) -> list[Deal]:
+def build_offers(config: Config, storage: Storage, now: datetime, *,
+                 premium_delay: bool = True) -> list[Deal]:
     """One Deal per route that has current prices; its reason is None when it isn't a deal.
 
     Deals come first, biggest saving first, then the other routes, cheapest first.
+
+    With a premium channel, the page waits like the free channel does: a price
+    that is a deal for premium is left out until premium has had it for
+    free_delay_hours. Until then the route shows its cheapest other date.
+    premium_delay=False shows everything (a local preview).
     """
     today = now.astimezone(ZoneInfo(config.timezone)).date()
     rules = config.rules
+    premium = config.premium
+    hold_back = premium_delay and premium.enabled
+    cutoff = early_access_cutoff(now, premium.free_delay_hours)
     offers = []
     for route in config.routes:
         outbound = [q for q in storage.latest_quotes(config.origin, route.iata) if q.depart_date > today]
@@ -159,6 +173,12 @@ def build_offers(config: Config, storage: Storage, now: datetime) -> list[Deal]:
                                                since=now - timedelta(days=rules.median_window_days))
         if samples < rules.min_samples_for_median:
             median = None
+        if hold_back:
+            outbound = [q for q in outbound
+                        if not is_premium_only(q, route, median, storage, premium.rules, now, cutoff)]
+            if not outbound:
+                log.info("%s: every price is still premium-only, leaving it off the page for now", route.iata)
+                continue
         by_price = sorted(outbound, key=lambda q: q.price)
         best = by_price[0]
         reason = deal_reason(best.price, median, route.absolute_threshold_eur,
