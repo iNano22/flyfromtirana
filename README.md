@@ -163,8 +163,10 @@ rows and the search button jumps to the list.
 City and country names are in English ("Vienna, Austria"), on the website and in
 the Telegram posts alike: both use each route's `city` from config.yaml.
 
-Booking links carry the SubID `website` (posts use `telegram`), so Travelpayouts
-stats show which one earned a click. Routes whose newest prices are older than
+The site's partner links (eSIM, insurance, …) are its own, made in its own
+Travelpayouts project, and so are its flight links: see `website.links` in
+config.yaml. Travelpayouts shows the two projects' clicks and earnings separately
+(the posts' links also carry the SubID `telegram`). Routes whose newest prices are older than
 2 days are left off the page.
 
 With the premium channel on, the page follows the **free channel**: a price that
@@ -326,6 +328,15 @@ under `links.partners` in config.yaml. Each one has:
 While `url` is empty, that link is simply left out of posts. Each partner
 becomes a `{NAME_LINK}` placeholder, so you can add e.g. `car_rental` and use
 `{CAR_RENTAL_LINK}` in the template.
+
+**The website has its own links.** Travelpayouts counts clicks per project, and the
+site is its own project ("Flyfromtirana") next to the Telegram one. Links made in
+the site's project go under `website.links` in config.yaml, which has the same
+shape as `links`; whatever isn't set there falls back to the link the posts use.
+A new program on the site therefore needs a link generated in the site's project.
+The site's flight links use its Aviasales short link as a redirect
+(`website.links.flight.wrapper`): `https://aviasales.tp.st/...?u=<search page>`
+opens that search instead of the homepage and counts the click under the site's project.
 
 > **Hotellook closed in October 2025**, so hotels need another Travelpayouts
 > program (Booking.com, Trip.com, Agoda, …). Join one, then fill in `links.partners.hotel`.

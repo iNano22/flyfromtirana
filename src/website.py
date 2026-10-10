@@ -32,7 +32,6 @@ import os
 import re
 import shutil
 import sys
-from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -117,10 +116,10 @@ def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
     """Read the database, render the page, write it. Returns the path of index.html."""
     now = now or datetime.now(timezone.utc)
     out_dir = out_dir or config.website.output_dir
-    # Same link builder as the posts, but with the site's own SubID, so the
-    # Travelpayouts stats show which clicks came from the website.
-    links = LinkBuilder(replace(config.links, sub_id=config.website.sub_id), marker,
-                        origin=config.origin, currency=config.currency)
+    # Same link builder as the posts, but with the site's own links and SubID
+    # (website.links in config.yaml), so the Travelpayouts stats show which
+    # clicks came from the website.
+    links = LinkBuilder(config.website.links, marker, origin=config.origin, currency=config.currency)
     links.validate()
     with Storage(config.db_path) as storage:
         offers = build_offers(config, storage, now, premium_delay=premium_delay)
@@ -253,7 +252,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["PRICE_ROWS"] = "\n".join(other_rows) or None
     values["HERO_SLIDES"] = "\n".join(hero_slides) or None
     values["DEST_CARDS"] = "\n".join(dest_cards) or None
-    values["PHOTO_CREDITS"] = photo_credits(config)
+    values["PHOTO_CREDITS"] = photo_credits(config, links)
     values["DESTINATION_OPTIONS"] = destination_options(offers)
     return render(load_site_template("site.html"), values) + "\n"
 
@@ -290,7 +289,7 @@ def route_photo(iata: str) -> str | None:
     return path if (ASSETS_DIR / path).exists() else None
 
 
-def photo_credits(config: Config) -> str | None:
+def photo_credits(config: Config, links: LinkBuilder) -> str | None:
     """The footer's photo credits, as HTML. None (no credits block at all) when no photo needs one.
 
     Only photos whose licence requires a credit are listed, and only while they
@@ -303,8 +302,9 @@ def photo_credits(config: Config) -> str | None:
         return None
     names = {route.iata: city_label(route) for route in config.routes}
     # A service card is only on the page when its partner link is set in config.yaml.
+    partners = links.settings.partners
     names.update({slot: name for slot, name in SERVICE_PHOTO_NAMES.items()
-                  if slot in config.links.partners and config.links.partners[slot].url})
+                  if slot in partners and partners[slot].url})
     esc = html.escape
     items = []
     for photo in json.loads(CREDITS_FILE.read_text(encoding="utf-8")):

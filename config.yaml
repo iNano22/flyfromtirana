@@ -70,6 +70,28 @@ website:
   url: https://flyfromtirana.devbay.cloud/   # public address: linked at the bottom of every post, and
                                              # used for the page's canonical/og:url tags
 
+  # The site's own affiliate links, made in its own Travelpayouts project
+  # ("Flyfromtirana"), so the site's clicks are counted there and not under the
+  # Telegram project. Same shape as `links:` below. Anything left out here uses
+  # the link from `links:`.
+  links:
+    flight:
+      # The site's Aviasales short link, used as a redirect: with ?u=... added it
+      # opens that Aviasales page (a search for one route and date) instead of
+      # the homepage, and the click is counted under the site's project.
+      # Travelpayouts puts its own marker on the link, so the "website" SubID is
+      # not used here. Empty = the plain Aviasales link with marker.website.
+      wrapper: "https://aviasales.tp.st/XXen6cDo?u={url}"
+    partners:
+      esim:
+        url: "https://airalo.tp.st/3G2AG28z"          # Airalo
+      insurance:
+        url: "https://ektatraveling.tp.st/Kpr5NLtE"   # EKTA
+      compensation:
+        url: "https://airhelp.tp.st/IQSDOJpj"         # AirHelp
+      car_rental:
+        url: "https://getrentacar.tp.st/Z8ZRzVQV"     # GetRentacar
+
 # --- Storage -----------------------------------------------------------------
 db_path: data/prices.db
 history_retention_days: 45         # older price rows are deleted so the database stays small

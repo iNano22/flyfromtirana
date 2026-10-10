@@ -88,6 +88,9 @@ class WebsiteSettings:
 
     output_dir: Path = PROJECT_ROOT / "docs"
     sub_id: str = "website"   # Travelpayouts SubID for links on the site ("telegram" is used in posts)
+    # The site's affiliate links: the ones the posts use, except where
+    # website.links in config.yaml gives the site its own (and with sub_id above).
+    links: LinkSettings = field(default_factory=LinkSettings)
     url: str = ""             # public address: linked in posts and used for the page's
                               # canonical/og:url tags; empty = left out
 
@@ -178,6 +181,7 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
     db_path = Path(raw.get("db_path", "data/prices.db"))
     if not db_path.is_absolute():
         db_path = base_dir / db_path
+    links = _build_links(raw.get("links") or {})
 
     return Config(
         brand=str(raw.get("brand", "FlyFromTirana")),
@@ -196,22 +200,38 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         quiet_hours=quiet_hours,
         db_path=db_path,
         history_retention_days=int(raw.get("history_retention_days", 45)),
-        links=_build_links(raw.get("links") or {}),
+        links=links,
         airlines={str(k).upper(): str(v) for k, v in (raw.get("airlines") or {}).items()},
         premium=_build_premium(raw.get("premium") or {}, rules),
-        website=_build_website(raw.get("website") or {}, base_dir),
+        website=_build_website(raw.get("website") or {}, base_dir, links),
         post_photos=bool(raw.get("post_photos", True)),
     )
 
 
-def _build_website(raw: dict, base_dir: Path) -> WebsiteSettings:
+def _build_website(raw: dict, base_dir: Path, links: LinkSettings) -> WebsiteSettings:
     output_dir = Path(raw.get("output_dir") or "docs")
     if not output_dir.is_absolute():
         output_dir = base_dir / output_dir
+    sub_id = str(raw.get("sub_id") or "website")
     return WebsiteSettings(
         output_dir=output_dir,
-        sub_id=str(raw.get("sub_id") or "website"),
+        sub_id=sub_id,
         url=str(raw.get("url") or "").strip(),
+        links=_website_links(raw.get("links") or {}, links, sub_id),
+    )
+
+
+def _website_links(raw: dict, links: LinkSettings, sub_id: str) -> LinkSettings:
+    """The site's links: the posts' links, with anything set under website.links laid over them."""
+    flight = raw.get("flight") or {}
+    partners = dict(links.partners)
+    partners.update(_build_partners(raw.get("partners") or {}))
+    return replace(
+        links,
+        sub_id=sub_id,
+        flight_base_url=str(flight.get("base_url") or links.flight_base_url).rstrip("/"),
+        flight_wrapper=str(flight.get("wrapper") or links.flight_wrapper),
+        partners=partners,
     )
 
 
@@ -255,18 +275,25 @@ def _build_route(raw: dict) -> Route:
 def _build_links(raw: dict) -> LinkSettings:
     flight = raw.get("flight") or {}
     partners = {name: LinkTemplate() for name in DEFAULT_PARTNERS}
-    for name, template in (raw.get("partners") or {}).items():
-        template = template or {}
-        partners[str(name).lower()] = LinkTemplate(
-            url=str(template.get("url") or ""),
-            wrapper=str(template.get("wrapper") or ""),
-        )
+    partners.update(_build_partners(raw.get("partners") or {}))
     return LinkSettings(
         sub_id=str(raw.get("sub_id") or ""),
         flight_base_url=str(flight.get("base_url") or "https://www.aviasales.com").rstrip("/"),
         flight_wrapper=str(flight.get("wrapper") or ""),
         partners=partners,
     )
+
+
+def _build_partners(raw: dict) -> dict[str, LinkTemplate]:
+    """{"hotel": {"url": ..., "wrapper": ...}} from config.yaml -> {"hotel": LinkTemplate}."""
+    partners = {}
+    for name, template in raw.items():
+        template = template or {}
+        partners[str(name).lower()] = LinkTemplate(
+            url=str(template.get("url") or ""),
+            wrapper=str(template.get("wrapper") or ""),
+        )
+    return partners
 
 
 def require_env(*names: str) -> dict[str, str]:

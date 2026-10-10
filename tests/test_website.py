@@ -275,6 +275,39 @@ def test_photo_that_requires_a_credit_gets_one_while_it_is_on_the_page(config, s
     assert "Hotele: " in credits and "CC BY 2.0" in credits and "Prerë dhe zvogëluar." in credits
 
 
+def test_site_uses_its_own_partner_links(config, storage):
+    # config.yaml: the site's eSIM link is not the one the Telegram posts use.
+    assert config.website.links.partners["esim"].url != config.links.partners["esim"].url
+    assert config.website.links.sub_id == "website" and config.links.sub_id == "telegram"
+    two_routes(storage)
+    # The link builder build_site() uses: the site's own links.
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.website.links, "12345"),
+                       updated_at=NOW, now=NOW)
+    assert config.website.links.partners["esim"].url in page
+    assert config.links.partners["esim"].url not in page
+    # Flight links go through the site's own Aviasales short link, with the search inside it.
+    redirect = config.website.links.flight_wrapper.split("{url}")[0]
+    assert redirect.startswith("https://") and config.links.flight_wrapper == ""
+    assert f'class="book" href="{redirect}https%3A%2F%2Fwww.aviasales.com%2Fsearch%2FTIA2111BGY1%3F' in page
+
+
+def test_website_links_fall_back_to_the_posts_links(tmp_path):
+    (tmp_path / "config.yaml").write_text(
+        "routes:\n  - { iata: BGY, city: Milan }\n"
+        "links:\n  sub_id: telegram\n  partners:\n"
+        "    esim: { url: 'https://posts.example/esim' }\n"
+        "    insurance: { url: 'https://posts.example/insurance' }\n"
+        "website:\n  links:\n    flight: { wrapper: 'https://tp.example/r?u={url}' }\n"
+        "    partners:\n      esim: { url: 'https://site.example/esim' }\n", encoding="utf-8")
+    config = load_config(tmp_path / "config.yaml")
+    site = config.website.links
+    assert site.partners["esim"].url == "https://site.example/esim"            # the site's own
+    assert site.partners["insurance"].url == "https://posts.example/insurance"  # not set for the site: the posts' link
+    assert site.flight_wrapper == "https://tp.example/r?u={url}" and config.links.flight_wrapper == ""
+    assert site.sub_id == "website"
+    assert config.links.partners["esim"].url == "https://posts.example/esim"    # the posts are untouched
+
+
 def test_service_card_without_a_link_is_left_out(config, storage):
     two_routes(storage)
     page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
