@@ -118,6 +118,7 @@ class Config:
     airlines: dict[str, str]
     premium: PremiumSettings = field(default_factory=PremiumSettings)
     website: WebsiteSettings = field(default_factory=WebsiteSettings)
+    post_photos: bool = True               # send each post with its destination photo
 
 
 @dataclass(frozen=True)
@@ -199,6 +200,7 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         airlines={str(k).upper(): str(v) for k, v in (raw.get("airlines") or {}).items()},
         premium=_build_premium(raw.get("premium") or {}, rules),
         website=_build_website(raw.get("website") or {}, base_dir),
+        post_photos=bool(raw.get("post_photos", True)),
     )
 
 

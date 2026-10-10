@@ -17,7 +17,7 @@ src/scheduler.py (every 3h, in the `scanner` container)
        3. deals.py     deal = ≥40% below the route's 30-day median, or under the route's € threshold
                        skip anything already posted in the last 7 days at the same price band
        4. formatter.py build the Albanian post from templates/sq.txt (links from links.py)
-       5. telegram.py  send it to the channel (best deals first)
+       5. telegram.py  send it to the channel with the destination's photo (best deals first)
   └─ python -m src.website
        6. website.py   rebuild docs/index.html from the database (every route, deals first)
 src/scheduler.py (every 15 min in between, when premium is on)
@@ -39,6 +39,7 @@ templates/sq.txt         post wording (Albanian)
 templates/site.html      the website page (wording, CSS, a little JS); site_row.html = one route in the
                          list, site_card.html = one photo card, site_hero.html = one hero banner
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
+assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
 docs/                    the generated website (index.html + img/), what the `web` container serves
 src/
   main.py                orchestrator + CLI (--dry-run, --routes)
@@ -49,6 +50,7 @@ src/
   links.py               ALL affiliate link building
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
+  photos.py              which photo goes on a route's posts, and its credit
   website.py             renders docs/index.html from the database (no API calls)
   scheduler.py           the server's loop: a scan, then the website, every 3 hours,
                          and quick premium scans in between
@@ -202,6 +204,22 @@ source and licence is in `assets/img/credits.json`, which the footer lists under
   `creator_url`, `source_url`, `license`, `license_url`.
 - **Replacing a photo**: overwrite the file and update its entry in `credits.json`.
 
+**Photos on the Telegram posts.** Each post is sent as the destination's photo with
+the text under it. Telegram wants a JPEG, so every route's photo is also kept as
+`assets/telegram/<iata>.jpg`. After adding or replacing a WebP, make its JPEG (macOS):
+
+```bash
+sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/telegram/vie.jpg
+```
+
+- A route without a JPEG gets a post without a photo. So does any post Telegram
+  refuses the photo for (the log says why), or whose text is longer than the 1024
+  characters allowed under a photo. A photo problem never loses a post.
+- CC BY and CC BY-SA photos must name their author, so those posts end with a line
+  like "📷 Foto: D-Stanley, CC BY 2.0", linked to the photo's source. It comes from
+  `credits.json`; CC0 photos get no such line.
+- `post_photos: false` in config.yaml sends text only, as before.
+
 ### Change the wording or look
 
 - `templates/site.html` is the whole page (text, CSS and a little JavaScript).
@@ -265,8 +283,9 @@ Edit `templates/sq.txt`. Rules:
 - `{NAME}` is replaced with a value: `CITY CITY_UPPER AIRPORT FLAG PRICE MEDIAN
   SAVING DATES AIRLINE STOPS DURATION RETURN_PRICE CHANNEL FLIGHT_LINK HOTEL_LINK
   ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK PREMIUM_HOURS PREMIUM_LINK
-  WEBSITE_LINK`. `SAVING` is the percent below the usual price ("68"); `WEBSITE_LINK`
-  is `website.url` from config.yaml.
+  WEBSITE_LINK PHOTO_CREDIT PHOTO_LINK`. `SAVING` is the percent below the usual price
+  ("68"); `WEBSITE_LINK` is `website.url` from config.yaml; `PHOTO_CREDIT` and
+  `PHOTO_LINK` are the author, licence and source of the post's photo (see Photos).
 - `[[ ... ]]` marks an optional part. It's removed if any value inside it is missing.
 - A line with a missing value (outside `[[ ]]`) is removed, e.g. the "Kthimi"
   line when there's no return flight.

@@ -44,6 +44,7 @@ from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, i
 from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
                            saving_percent)
 from src.links import LinkBuilder
+from src.photos import ASSETS_DIR, CREDITS_FILE
 from src.storage import Storage
 
 log = logging.getLogger("flyfromtirana.website")
@@ -55,12 +56,10 @@ STALE_AFTER = timedelta(days=2)
 # How many deals become banners in the hero carousel at the top of the page.
 HERO_SLIDES = 3
 
-# Photos for the page: assets/img/dest/<iata>.webp for a route's card,
-# assets/img/services/<partner>.webp for the travel services, and credits.json
-# with the author and licence of each one. A route without a photo simply gets
-# its country-coloured card instead.
-ASSETS_DIR = PROJECT_ROOT / "assets"
-CREDITS_FILE = ASSETS_DIR / "img" / "credits.json"
+# Photos for the page (ASSETS_DIR, from src/photos.py): assets/img/dest/<iata>.webp
+# for a route's card, assets/img/services/<partner>.webp for the travel services,
+# and credits.json with the author and licence of each one. A route without a
+# photo simply gets its country-coloured card instead.
 
 # Country names for the photo cards ("Vienna, Austria"), keyed by the code taken from
 # the route's flag. Place names are in English, like the city names in config.yaml.

@@ -7,6 +7,7 @@ from src.deals import Deal
 from src.formatter import (WORDS, format_dates, format_duration, format_post, format_price, render,
                            saving_percent, tidy)
 from src.links import LinkBuilder
+from src.photos import PostPhoto, post_photo
 from tests.conftest import make_quote
 
 AIRLINES = {"W6": "Wizz Air"}
@@ -78,6 +79,37 @@ def test_quote_survives_without_airline_and_return(route):
     # Whatever is missing inside the quote, its tags must still open and close.
     deal = Deal(route=route, quotes=[make_quote(19, airline="")], median=None, reason="threshold")
     assert "<blockquote>📅 <b>20 Tet</b></blockquote>\n👉" in post(deal)
+
+
+def test_photo_credit_is_the_last_line(route, tmp_path):
+    deal = Deal(route=route, quotes=[make_quote(19)], median=None, reason="threshold")
+    photo = PostPhoto(path=tmp_path / "bgy.jpg", credit="D-Stanley, CC BY 2.0",
+                      source_url="https://photos.example/1?a=1&b=2")
+    assert post(deal, photo=photo).endswith(
+        "🔔 Ndiq @flyfromtirana për oferta çdo ditë\n"
+        '📷 <i>Foto: <a href="https://photos.example/1?a=1&amp;b=2">D-Stanley, CC BY 2.0</a></i>')
+    # A photo whose licence asks for no credit, and a post without a photo: no such line.
+    no_credit = PostPhoto(path=tmp_path / "bgy.jpg", credit=None, source_url=None)
+    assert "Foto:" not in post(deal, photo=no_credit)
+    assert "Foto:" not in post(deal)
+
+
+def test_post_photo_and_its_credit():
+    vienna = post_photo("VIE")
+    assert vienna.path.name == "vie.jpg" and vienna.path.exists()
+    assert vienna.credit == "Tauralbus, CC BY 2.0"         # CC BY: the author must be named
+    assert vienna.source_url.startswith("https://")
+    assert post_photo("bgy").credit is None                # CC0: no credit needed
+    assert post_photo("XXX") is None                       # no assets/telegram/xxx.jpg
+
+
+def test_post_photos_are_small_jpegs():
+    photos = sorted(post_photo("VIE").path.parent.glob("*"))
+    assert len(photos) >= 24
+    for path in photos:
+        assert path.suffix == ".jpg", path.name
+        assert path.read_bytes()[:2] == b"\xff\xd8", f"{path.name} is not a JPEG"
+        assert path.stat().st_size < 1_000_000, f"{path.name} is larger than a post photo needs to be"
 
 
 def test_tidy():

@@ -8,7 +8,7 @@ from src.config import ConfigError, Secrets, load_config
 from src.deals import Deal, find_route_deal, price_band
 from src.formatter import format_post
 from src.main import run
-from tests.conftest import NOW, make_quote
+from tests.conftest import NOW, make_quote, telegram_chat, telegram_text
 from tests.test_formatter import AIRLINES, make_links
 from src.storage import Storage
 from tests.test_main import fake_world, telegram_calls
@@ -81,8 +81,8 @@ def config(tmp_path):
 
 
 def sent_to(session, chat_id):
-    return [c["json"]["text"] for c in session.calls
-            if "api.telegram.org" in c["url"] and c["json"]["chat_id"] == chat_id]
+    return [telegram_text(c) for c in session.calls
+            if "api.telegram.org" in c["url"] and telegram_chat(c) == chat_id]
 
 
 def test_premium_first_then_free_six_hours_later(config):

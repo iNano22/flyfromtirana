@@ -16,3 +16,4 @@
 ⚡ Anëtarët Premium e morën këtë ofertë {PREMIUM_HOURS} orë më parë[[ · <a href="{PREMIUM_LINK}">Bashkohu</a>]]
 🌐 <a href="{WEBSITE_LINK}">Të gjitha ofertat në faqen tonë</a>
 🔔 Ndiq {CHANNEL} për oferta çdo ditë
+📷 <i>Foto: <a href="{PHOTO_LINK}">{PHOTO_CREDIT}</a></i>

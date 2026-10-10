@@ -16,3 +16,4 @@
 
 💎 E more i pari: kanali falas e merr këtë ofertë më vonë.
 🌐 <a href="{WEBSITE_LINK}">Të gjitha ofertat në faqen tonë</a>
+📷 <i>Foto: <a href="{PHOTO_LINK}">{PHOTO_CREDIT}</a></i>

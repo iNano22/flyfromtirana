@@ -36,6 +36,8 @@ return_max_days: 14
 # --- Posting -----------------------------------------------------------------
 max_posts_per_run: 2               # best deals first (5 posting runs a day -> up to 10 posts)
 max_dates_per_post: 4
+post_photos: true                  # send each post with the destination's photo (assets/telegram/<iata>.jpg).
+                                   # false = text only, as before.
 quiet_hours:                       # still scan at night, but don't post (local time). null = always post.
   start: "23:00"                   # keep the quotes - YAML reads 23:00 as a number otherwise
   end: "08:00"

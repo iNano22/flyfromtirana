@@ -43,6 +43,15 @@ class FakeSession:
         return self.handler(method, url, kwargs)
 
 
+def telegram_text(call: dict) -> str:
+    """The text of one recorded Telegram call: a plain message's text, or a photo's caption."""
+    return call["json"]["text"] if "json" in call else call["data"]["caption"]
+
+
+def telegram_chat(call: dict) -> str:
+    return (call.get("json") or call["data"])["chat_id"]
+
+
 def api_row(origin: str, destination: str, day: date, price: float, /, **extra) -> dict:
     """One row shaped like the prices_for_dates response. **extra overrides any field."""
     row = {

@@ -7,7 +7,7 @@ import pytest
 from src.config import Secrets, load_config
 from src.main import in_quiet_hours, main, run
 from src.storage import Storage
-from tests.conftest import NOW, FakeResponse, FakeSession, api_row, travelpayouts_handler
+from tests.conftest import NOW, FakeResponse, FakeSession, api_row, telegram_text, travelpayouts_handler
 
 SECRETS = Secrets("tp-token", "12345", "123:bot", "@flyfromtirana")
 
@@ -75,6 +75,23 @@ def test_real_run_posts_once_then_dedupes(config):
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session2,
                now=NOW + timedelta(hours=3)) == 0
     assert telegram_calls(session2) == []
+
+
+def test_post_goes_out_with_the_destination_photo(config):
+    session = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    call, = telegram_calls(session)
+    assert call["url"].endswith("/sendPhoto")
+    assert call["files"]["photo"][0] == "bgy.jpg"
+    assert "TIRANA → MILAN" in telegram_text(call)
+
+
+def test_post_photos_can_be_switched_off(config):
+    session = fake_world()
+    config = replace(config, post_photos=False)
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    call, = telegram_calls(session)
+    assert call["url"].endswith("/sendMessage")
 
 
 def test_quiet_hours_skip_posting(config):

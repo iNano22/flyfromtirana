@@ -39,6 +39,7 @@ from src.deals import (CHANNEL, PREMIUM_CHANNEL, Deal, early_access_cutoff, find
                        rank_deals)
 from src.formatter import format_post
 from src.links import LinkBuilder
+from src.photos import post_photo
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
@@ -248,14 +249,17 @@ def publish(deals: list[Deal], *, channel: str, template: str, config: Config, l
 
     failures = 0
     for deal in deals:
+        # The destination's photo, if the route has one (assets/telegram/<iata>.jpg).
+        photo = post_photo(deal.route.iata) if config.post_photos else None
         text = format_post(deal, links, language=config.language, channel_handle=config.channel_handle,
                            airline_names=config.airlines, template=template, premium_link=premium_link,
-                           website_url=config.website.url)
+                           website_url=config.website.url, photo=photo)
         if dry_run:
-            output(f"\n----- DRY RUN [{channel}] · {deal.summary()} -----\n{text}\n")
+            with_photo = f" · photo {photo.path.name}" if photo else ""
+            output(f"\n----- DRY RUN [{channel}] · {deal.summary()}{with_photo} -----\n{text}\n")
             continue
         try:
-            message_id = telegram.send_message(text)
+            message_id = telegram.send_post(text, photo.path if photo else None)
         except TelegramError as exc:
             log.error("[%s] Could not post %s: %s", channel, deal.summary(), exc)
             failures += 1
