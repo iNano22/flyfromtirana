@@ -80,7 +80,7 @@ class PremiumSettings:
 
 @dataclass(frozen=True)
 class WebsiteSettings:
-    """The static site built by src/website.py (served by GitHub Pages from the docs/ folder)."""
+    """The static site built by src/website.py (the docs/ folder, served by the `web` container)."""
 
     output_dir: Path = PROJECT_ROOT / "docs"
     sub_id: str = "website"   # Travelpayouts SubID for links on the site ("telegram" is used in posts)
@@ -266,7 +266,7 @@ def require_env(*names: str) -> dict[str, str]:
         raise ConfigError(
             f"Missing environment variable(s): {', '.join(missing)}. "
             "Locally: copy .env.example to .env and fill it in. "
-            "On GitHub: Settings -> Secrets and variables -> Actions."
+            "On the server: set them in the deploy tool's environment variables."
         )
     return values
 

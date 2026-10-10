@@ -1,0 +1,23 @@
+# Secrets and local state never enter the image
+.env
+.git
+.venv
+venv
+.vercel
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.DS_Store
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# Not needed to run
+.github
+tests
+ig_preview
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore

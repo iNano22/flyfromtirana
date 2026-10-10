@@ -3,7 +3,7 @@
 Run from the repo root:
     python -m src.main --dry-run                     # print posts instead of sending them
     python -m src.main --dry-run --routes BGY,VIE -v # a couple of routes, debug logging
-    python -m src.main                               # the real thing (what GitHub Actions runs)
+    python -m src.main                               # the real thing (what src/scheduler.py runs)
 
 Exit codes: 0 = OK, 1 = the run failed (API down, a post failed, ...),
 2 = configuration problem (missing env var, bad config.yaml).
@@ -46,8 +46,9 @@ log = logging.getLogger("flyfromtirana")
 # future ones (Instagram, English) get their own name too.
 CHANNEL = "telegram"
 PREMIUM_CHANNEL = "telegram_premium"
-# GitHub starts scheduled runs a few minutes late, so "posted 6h ago" is checked
-# with this much slack. Otherwise a deal could miss a run by 2 minutes.
+# A run posts a little after its slot starts (the scan comes first), so "posted
+# 6h ago" is checked with this much slack. Otherwise a deal could miss a run by
+# 2 minutes.
 EARLY_ACCESS_SLACK = timedelta(minutes=30)
 
 
@@ -59,7 +60,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     # urllib3's debug lines include request URLs, and the Telegram URL contains the bot token.
     logging.getLogger("urllib3").setLevel(logging.WARNING)
-    load_dotenv(PROJECT_ROOT / ".env")  # does nothing if there's no .env (e.g. on GitHub)
+    load_dotenv(PROJECT_ROOT / ".env")  # does nothing if there's no .env (e.g. on the server)
     try:
         config = load_config(args.config)
         if args.ignore_quiet_hours:

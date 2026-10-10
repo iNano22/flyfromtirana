@@ -1,7 +1,7 @@
 """SQLite storage: price history (for medians) and posted deals (for dedupe).
 
-The database file (data/prices.db) is committed back to the repo by the
-GitHub Actions workflow, so the history survives between runs.
+On the server the database file (data/prices.db) lives in a Docker volume, so
+the history survives between runs and redeploys.
 """
 from __future__ import annotations
 
@@ -69,7 +69,7 @@ class Storage:
     def save_quotes(self, quotes: list[Quote]) -> int:
         rows = [
             # The link isn't saved: it's ~400 characters, only needed for this run's
-            # posts, and would make the committed DB grow ~5x faster.
+            # posts, and would make the database grow ~5x faster.
             (q.origin, q.destination, q.depart_date.isoformat(), q.price, q.airline,
              q.transfers, q.duration_min, None, to_iso(q.fetched_at))
             for q in quotes
@@ -92,7 +92,7 @@ class Storage:
         return (statistics.median(prices) if prices else None), len(prices)
 
     def prune_prices(self, older_than: datetime) -> int:
-        """Delete old observations and shrink the file, so the committed DB stays small."""
+        """Delete old observations and shrink the file, so the database stays small."""
         with self.conn:
             deleted = self.conn.execute(
                 "DELETE FROM prices WHERE fetched_at < ?", (to_iso(older_than),)

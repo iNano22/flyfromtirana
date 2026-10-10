@@ -3,9 +3,9 @@
     python -m src.website               # writes docs/index.html (and docs/.nojekyll)
     python -m src.website --out /tmp/x  # write it somewhere else, e.g. to look at it locally
 
-It only reads data/prices.db (no API calls), so it can run at any time. The
-GitHub Actions workflow runs it after every scan and commits the result, and
-GitHub Pages serves the docs/ folder as the site.
+It only reads data/prices.db (no API calls), so it can run at any time. On the
+server src/scheduler.py runs it after every scan, and the `web` container
+serves the docs/ folder as the site.
 
 Per route the page shows: the cheapest date from the newest scan (plus other
 dates about as cheap), the usual price, the cheapest flight back and a booking
@@ -90,7 +90,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO,
                         format="%(asctime)s %(levelname)-7s %(name)s: %(message)s")
-    load_dotenv(PROJECT_ROOT / ".env")  # does nothing if there's no .env (e.g. on GitHub)
+    load_dotenv(PROJECT_ROOT / ".env")  # does nothing if there's no .env (e.g. on the server)
     try:
         config = load_config(args.config)
         marker = os.environ.get("TRAVELPAYOUTS_MARKER", "").strip()
@@ -126,7 +126,7 @@ def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
     index = out_dir / "index.html"
     index.write_text(page, encoding="utf-8")
     copy_photos(out_dir)
-    (out_dir / ".nojekyll").touch()  # tells GitHub Pages to serve the files as they are
+    (out_dir / ".nojekyll").touch()  # harmless elsewhere; GitHub Pages needs it to serve the files as they are
     log.info("%d route(s) on the page, %d of them deals", len(offers), sum(o.is_deal for o in offers))
     return index
 

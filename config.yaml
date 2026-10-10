@@ -1,6 +1,7 @@
 # FlyFromTirana configuration.
 # Secrets (API tokens, marker) are NOT kept here. They come from environment
-# variables: .env locally (see .env.example), GitHub Actions secrets in CI.
+# variables: .env locally (see .env.example), the deploy tool's environment
+# variables on the server.
 
 brand: FlyFromTirana
 channel_handle: "@flyfromtirana"   # shown in the post footer
@@ -53,18 +54,18 @@ premium:
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
   threshold_min_discount_pct: 20
 
-# --- Website (GitHub Pages) --------------------------------------------------
-# src/website.py renders one page from the price database into output_dir, and
-# the workflow rebuilds + commits it after every scan. To publish it once:
-# GitHub repo -> Settings -> Pages -> Deploy from a branch -> main, /docs.
+# --- Website -----------------------------------------------------------------
+# src/website.py renders one page from the price database into output_dir. On
+# the server the scheduler rebuilds it after every scan and the `web` container
+# serves that folder (docker-compose.yml).
 website:
-  output_dir: docs                 # GitHub Pages can serve the repo root or docs/, nothing else
+  output_dir: docs                 # the server mounts its site volume here
   sub_id: website                  # Travelpayouts SubID for links on the site ("telegram" is used in posts)
-  url: https://inano22.github.io/flyfromtirana/   # public address, for the page's canonical/og:url tags
+  url: https://flyfromtirana.devbay.cloud/   # public address, for the page's canonical/og:url tags
 
 # --- Storage -----------------------------------------------------------------
 db_path: data/prices.db
-history_retention_days: 45         # older price rows are deleted so the committed DB stays small
+history_retention_days: 45         # older price rows are deleted so the database stays small
 
 # --- Affiliate links (all built in src/links.py) -----------------------------
 links:

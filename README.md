@@ -2,14 +2,14 @@
 
 Scans cheap flights from Tirana (TIA), spots deals, and posts them to the
 Telegram channel [@flyfromtirana](https://t.me/flyfromtirana) with affiliate
-links. It runs every 3 hours on GitHub Actions, so there's no server to manage.
-The same run also renders a one-page **website** with the cheapest price to
-every destination, served by GitHub Pages from the `docs/` folder.
+links. It runs every 3 hours in a Docker container on a small server. The same
+run also renders a one-page **website** with the cheapest price to every
+destination, which a second container serves.
 
 ## How it works
 
 ```
-GitHub Actions (every 3h)
+src/scheduler.py (every 3h, in the `scanner` container)
   └─ python -m src.main
        1. scanner.py   fetch prices TIA → each destination (and back) for the next 60 days
        2. storage.py   save them in data/prices.db (SQLite)
@@ -19,7 +19,7 @@ GitHub Actions (every 3h)
        5. telegram.py  send it to the channel (best deals first)
   └─ python -m src.website
        6. website.py   rebuild docs/index.html from the database (every route, deals first)
-  └─ commit data/prices.db and docs/ back to the repo, so history and the site persist
+  data/prices.db and docs/ live in Docker volumes, so history and the site survive redeploys
 ```
 
 Prices come from the Travelpayouts **Data API** (`aviasales/v3/prices_for_dates`).
@@ -34,7 +34,7 @@ templates/sq.txt         post wording (Albanian)
 templates/site.html      the website page (wording, CSS, a little JS); site_row.html = one route in the
                          list, site_card.html = one photo card, site_hero.html = one hero banner
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
-docs/                    the generated website (index.html + img/), what GitHub Pages serves
+docs/                    the generated website (index.html + img/), what the `web` container serves
 src/
   main.py                orchestrator + CLI (--dry-run, --routes)
   config.py              loads config.yaml + env vars
@@ -45,10 +45,13 @@ src/
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
   website.py             renders docs/index.html from the database (no API calls)
+  scheduler.py           the server's loop: a scan, then the website, every 3 hours
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
+Dockerfile               the scanner image
+docker-compose.yml       scanner + web containers and their two volumes
 tests/                   pytest suite (HTTP is mocked; no network needed)
-.github/workflows/       scan.yml (every 3h), tests.yml (on push)
+.github/workflows/       tests.yml (on push)
 ```
 
 ## Setup
@@ -94,19 +97,30 @@ python -m src.main                              # real run: posts to the channel
 A dry run still saves prices to `data/prices.db` (that's what builds the
 median), but it never marks deals as posted.
 
-### 4. GitHub Actions
+### 4. Run it on a server
 
-1. Create a repo named `flyfromtirana` and push this folder.
-2. Settings → Secrets and variables → Actions → **New repository secret**, add:
-   `TRAVELPAYOUTS_TOKEN`, `TRAVELPAYOUTS_MARKER`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHANNEL_ID`.
-3. Actions tab → **Scan flights** → **Run workflow** with "Dry run" ticked →
-   check the log shows sensible posts.
-4. That's it. It now runs every 3 hours and commits `data/prices.db` after each run.
+`docker-compose.yml` runs two containers: `scanner` (the scheduler: a scan at
+minute 17 of every third hour UTC, then the website build) and `web` (serves
+the page). With plain Docker:
 
-If the commit step fails with a 403: Settings → Actions → General → Workflow
-permissions → **Read and write permissions**.
+```bash
+cp .env.example .env          # the same values as for local runs
+docker compose up -d --build
+docker compose logs -f scanner
+```
 
-## Website (GitHub Pages)
+On Coolify: new resource → this repo → Docker Compose build pack, enter the same
+variables under Environment Variables, and give the `web` service a domain.
+
+- The price history lives in the `data` volume. A brand-new volume starts from
+  the `data/prices.db` committed here, so the first run knows what was already
+  posted and doesn't repeat the last week's deals.
+- Try it without posting anything:
+  `docker compose exec scanner python -m src.main --dry-run --routes BGY,VIE`
+- Never run it in two places at once. Each copy keeps its own "already posted"
+  list, so the channel would get every deal twice.
+
+## Website
 
 One static page, in Albanian, built from `data/prices.db` after every scan.
 Its layout follows an airline booking page, top to bottom:
@@ -144,19 +158,12 @@ Booking links carry the SubID `website` (posts use `telegram`), so Travelpayouts
 stats show which one earned a click. Routes whose newest prices are older than
 2 days are left off the page.
 
-### Publish it (once)
+### Where it is served
 
-1. Push the repo (including the `docs/` folder).
-2. GitHub repo → **Settings → Pages** → Source: **Deploy from a branch** →
-   Branch: `main`, folder: `/docs` → Save. Or from a terminal:
-   `gh api -X POST repos/OWNER/flyfromtirana/pages -f build_type=legacy -f 'source[branch]=main' -f 'source[path]=/docs'`
-3. After a minute the site is at `https://OWNER.github.io/flyfromtirana/`.
-   Put that address in `website.url` in config.yaml (it's used for the page's
-   canonical/og:url tags). A custom domain can be added later on the same
-   Pages settings screen.
-
-From then on every scan run rebuilds `docs/index.html` and commits it together
-with the database.
+The `web` container serves the `site` volume, which the scanner fills: once
+when it starts, then after every scan. Point a domain at the `web` service in
+the deploy tool (Coolify: its Domains field) and put that address in
+`website.url` in config.yaml (it's used for the page's canonical/og:url tags).
 
 ### Preview locally
 
@@ -269,13 +276,13 @@ becomes a `{NAME_LINK}` placeholder, so you can add e.g. `car_rental` and use
 > **Hotellook closed in October 2025**, so hotels need another Travelpayouts
 > program (Booking.com, Trip.com, Agoda, …). Join one, then fill in `links.partners.hotel`.
 
-## Data and repo size
+## Data
 
-`data/prices.db` is committed after every run (8× a day). To keep it small:
-only the cheapest price per route, direction, and date is stored per run, and
-rows older than `history_retention_days` (45) are deleted. If the repo ever
-gets heavy, the next step is to move the DB to a separate `data` branch that
-is force-pushed (no history kept).
+`data/prices.db` grows with every run (8× a day). To keep it small: only the
+cheapest price per route, direction, and date is stored per run, and rows older
+than `history_retention_days` (45) are deleted. On the server the file lives in
+the `data` volume; the copy committed here is only the starting point for a new
+volume, and the database local runs use.
 
 ## Premium channel (built, off by default)
 
@@ -289,10 +296,10 @@ To turn it on:
 2. Get its numeric id (it starts with `-100`): forward any post from the channel to
    [@userinfobot](https://t.me/userinfobot), or open the channel in Telegram Web,
    where the URL shows `#-100...`.
-3. Add it as `TELEGRAM_PREMIUM_CHANNEL_ID` in `.env` and in the GitHub secrets.
+3. Add it as `TELEGRAM_PREMIUM_CHANNEL_ID` in `.env` and in the server's environment variables.
 4. Channel settings → Invite links → create a **paid subscription** link (Telegram
    Stars, monthly). Paste it as `premium.join_link` in config.yaml.
-5. Set `premium.enabled: true`, then commit and push.
+5. Set `premium.enabled: true`, then commit, push and redeploy.
 
 Posts for each channel are logged separately (`[premium]` / `[free]`) and
 deduped separately. Premium's wording is in `templates/sq_premium.txt`.
@@ -300,7 +307,7 @@ deduped separately. Premium's wording is in `templates/sq_premium.txt`.
 ## Exit codes
 
 `0` OK · `1` the run failed (API down, bad token, a post failed) · `2` configuration
-problem (missing env var, bad config.yaml). GitHub Actions marks the run red on 1 and 2.
+problem (missing env var, bad config.yaml). The scheduler logs any non-zero code as an error.
 
 ## Roadmap (not built yet: where it plugs in)
 

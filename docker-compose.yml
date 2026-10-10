@@ -1,0 +1,55 @@
+# FlyFromTirana on a server (README: "Run it on a server").
+#
+#   scanner  scans, posts and rebuilds the website every 3 hours (src/scheduler.py)
+#   web      serves the generated website
+#
+# The variables below are filled in by the deploy tool (Coolify lists them
+# under Environment Variables) or by a .env file next to this one.
+
+services:
+  scanner:
+    build: .
+    init: true
+    restart: unless-stopped
+    # A redeploy lets a scan in progress finish (normally a minute or two).
+    stop_grace_period: 5m
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    environment:
+      TRAVELPAYOUTS_TOKEN: ${TRAVELPAYOUTS_TOKEN:?}
+      TRAVELPAYOUTS_MARKER: ${TRAVELPAYOUTS_MARKER:?}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:?}
+      TELEGRAM_CHANNEL_ID: ${TELEGRAM_CHANNEL_ID:?}
+      # Only read when premium.enabled is true in config.yaml.
+      TELEGRAM_PREMIUM_CHANNEL_ID: ${TELEGRAM_PREMIUM_CHANNEL_ID:-}
+    volumes:
+      - data:/app/data      # prices.db: price history and what was already posted
+      - site:/app/docs      # the generated website
+
+  web:
+    image: caddy:2-alpine
+    command: ["caddy", "file-server", "--root", "/srv/site", "--listen", ":80"]
+    restart: unless-stopped
+    logging: *logging
+    # Started after the scanner, which creates the site volume with its own
+    # (unprivileged) owner and the page already in it.
+    depends_on:
+      - scanner
+    # Reached by the reverse proxy over the Docker network — no host port.
+    expose:
+      - "80"
+    volumes:
+      - site:/srv/site:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  data:
+  site:
