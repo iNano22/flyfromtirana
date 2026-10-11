@@ -1,0 +1,67 @@
+city: Bologna
+slug: bologna
+tagline: Porticoes, towers and food
+intro: >-
+  Bologna is the city of porticoes, of the oldest university in Europe and of Italy's best cooking.
+  It's compact and you can cover all of it on foot.
+sights:
+  - name: Piazza Maggiore
+    text: The main square, with the Basilica of San Petronio and the Fountain of Neptune.
+  - name: Due Torri
+    text: The two leaning medieval towers, the symbol of the city.
+  - name: The porticoes and San Luca
+    text: About 40 km of covered porticoes. The longest one climbs all the way up to the Sanctuary of San Luca, with views over the city.
+  - name: Quadrilatero
+    text: The old market next to the square, packed with shops selling cheese, cured ham and fresh pasta.
+  - name: Archiginnasio
+    text: The university's first seat, with the wooden Anatomical Theatre where medical lectures were given.
+  - name: Santo Stefano
+    text: The complex of the “Seven Churches”, one of the quietest and oldest corners of the city.
+airports:
+  BLQ: >-
+    The Marconi Express light rail links the airport with Bologna Centrale station in 7 minutes
+    (about €13). By taxi the centre is 15-20 minutes away.
+budget: >-
+  A plate of tagliatelle al ragù costs €10-14, a coffee about €1.30, and a bus ticket about €2.30.
+when: >-
+  Spring and autumn. Winter is cold and foggy, but the porticoes keep you out of the rain.
+tips:
+  - "Don't ask for “spaghetti bolognese”: here ragù is eaten with tagliatelle."
+  - "From Bologna Centrale, high-speed trains get you to Florence in about 40 minutes and to Milan in about an hour."
+  - "Many restaurants close between lunch and dinner, around 15:00-19:00: plan your meals around Italian hours."
+itinerary:
+  - "Piazza Maggiore, San Petronio and the Fountain of Neptune. Lunch in the Quadrilatero market, then the Archiginnasio and the Two Towers in the afternoon."
+  - "A walk under the porticoes up to the Sanctuary of San Luca, about an hour uphill. In the afternoon, Santo Stefano and an aperitivo in the university quarter."
+  - "A day trip by train: Florence, Modena or Parma. Car lovers head for the Ferrari museums in Maranello and Modena."
+areas:
+  - name: Centro Storico
+    text: Inside the ring of the old walls everything is 10-15 minutes away on foot.
+  - name: University quarter
+    text: Around Via Zamboni, lively and with cheap bars and restaurants, but noisy in the evening.
+  - name: Near the station
+    text: Handy for the Marconi Express and for day trips by train, 15 minutes on foot from Piazza Maggiore.
+food:
+  - name: Tagliatelle al ragù
+    text: The original of what the world calls “bolognese”, made with fresh egg pasta.
+  - name: Tortellini in brodo
+    text: Small stuffed pasta, served in meat broth.
+  - name: Mortadella
+    text: The city's famous sausage, in a sandwich or as a nibble with a glass of wine.
+  - name: Lasagne verdi
+    text: Lasagne made with green spinach pasta sheets, ragù and béchamel.
+transport: >-
+  Bologna is a city for walkers: almost everything is inside the old walls, and the porticoes
+  shelter you from rain and sun. You only need buses for San Luca and for areas outside the centre.
+  At weekends the central area is closed to cars.
+daytrips:
+  - name: Florence
+    text: About 40 minutes by high-speed train.
+  - name: Modena
+    text: "25 minutes by train: balsamic vinegar, the cathedral and the Enzo Ferrari museum."
+  - name: Ravenna
+    text: The most beautiful Byzantine mosaics in Europe, about 1 hour and 15 minutes by train.
+faq:
+  - q: "Is one day enough for Bologna?"
+    a: "You can see the centre in a day, but two days let you climb up to San Luca and enjoy the food without rushing. With a third day you can take a day trip by train."
+  - q: "How much money do you need per day in Bologna?"
+    a: "Excluding the flight and accommodation, plan on €45-70 a day. Bologna is cheaper than Milan, Rome or Venice, and the food is among the best in the country."

@@ -44,6 +44,13 @@ WORDS = {
         "hours": "h",
         "minutes": "min",
     },
+    "it": {
+        "months": ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"],
+        "direct": "diretto",
+        "with_stops": "con scalo",
+        "hours": "h",
+        "minutes": "min",
+    },
 }
 
 PLACEHOLDER = re.compile(r"\{([A-Z_]+)\}")

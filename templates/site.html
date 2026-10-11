@@ -8,22 +8,27 @@
      DEAL_ROWS PRICE_ROWS HERO_SLIDES DEST_CARDS (the photo cards) PHOTO_CREDITS (the footer's
      photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
      photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive
-     script, only when one is set) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
+     script, only when one is set) LANG (the page's language code) LANG_MENU (the language
+     dropdown, from site_lang.html) LANG_LINKS (the same links as a row, in the footer) HREFLANG (the tags that tell search engines about the other languages) ASSETS (the
+     way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
+     The text itself is not in this file: T_NAME stands for the entry NAME in
+     templates/strings/<language>.yaml, one file per language (see src/i18n.py) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
      PREMIUM_LINK SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
      INSURANCE_LINK, CAR_RENTAL_LINK, COMPENSATION_LINK, HOTEL_LINK).
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
      one of these values, never write two opening square brackets in a row, and keep JS variable
      names lowercase. -->
-<html lang="sq">
+<html lang="{LANG}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{BRAND}: fluturime të lira nga Tirana</title>
-<meta name="description" content="Çmimi më i lirë për çdo destinacion nga Tirana, me ofertat e momentit në krye. Çmimet kontrollohen çdo 3 orë.">
+<title>{T_TITLE}</title>
+<meta name="description" content="{T_DESCRIPTION}">
 <link rel="canonical" href="{SITE_URL}">
+{HREFLANG}
 <meta property="og:type" content="website">
-<meta property="og:title" content="{BRAND}: fluturime të lira nga Tirana">
-<meta property="og:description" content="Çmimi më i lirë për çdo destinacion nga Tirana, i përditësuar çdo 3 orë.">
+<meta property="og:title" content="{T_TITLE}">
+<meta property="og:description" content="{T_OG_DESCRIPTION}">
 <meta property="og:url" content="{SITE_URL}">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#170b3b">
@@ -94,6 +99,29 @@ section[id], .how { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--sun-ink); font-weight: 800; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
 .skip:focus { top: 12px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* The language switcher: a small dropdown (AL, EN, IT) in a slim bar above the top bar
+   (templates/site_lang.html), and the same links as a plain row in the footer. */
+.langbar { background: #110829; font-size: 14px; }
+.langbar .wrap { display: flex; justify-content: flex-end; }
+.lang { position: relative; }
+.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 2px 0 8px; list-style: none; cursor: pointer; font-weight: 800; letter-spacing: 0.03em; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary .ic { width: 16px; height: 16px; color: var(--muted); }
+.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; }
+.lang[open] summary .chev { transform: rotate(180deg); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 4px); z-index: 30; display: grid; gap: 2px; min-width: 156px; padding: 6px; border-radius: 12px; background: #ffffff; color: var(--sun-ink); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
+.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 40px; padding: 9px 10px; border-radius: 8px; text-decoration: none; }
+.lang-menu b { min-width: 22px; font-weight: 900; }
+.lang-menu span { font-size: 13.5px; font-weight: 600; color: var(--paper-muted); }
+.lang-menu a:hover { background: var(--field); }
+.lang-menu a[aria-current] { background: var(--sun); }
+.lang-menu a[aria-current] span { color: var(--sun-ink); }
+.lang-menu :focus-visible { outline-color: var(--tg-deep); }
+.langs { display: flex; align-items: center; gap: 2px; min-height: 36px; }
+.langs a { padding: 5px 11px; border-radius: 999px; font-weight: 800; font-size: 14px; letter-spacing: 0.03em; text-decoration: none; color: var(--sun-ink); }
+.langs a[aria-current] { background: var(--sun-ink); color: var(--sun); }
+.flangs { margin: 0 0 8px -11px; }
 
 /* 1. Slim sticky nav */
 .nav { position: sticky; top: 0; z-index: 20; background: rgba(23, 11, 59, 0.78); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid transparent; }
@@ -472,7 +500,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 {DRIVE}
 </head>
 <body>
-<a class="skip" href="#kerko">Kalo te kërkimi</a>
+<a class="skip" href="#kerko">{T_SKIP}</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
   <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
@@ -489,31 +517,32 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
   <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
 </svg>
+{LANG_MENU}
 <header class="nav">
   <div class="nav-in wrap">
     <a class="brand" href="#top"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
-    <nav class="nav-links" aria-label="Faqja">
-      <a href="#ofertat">Ofertat</a>
-      <a href="#destinacionet">Destinacionet</a>
-      [[<a href="#udhezues" data-guides="{GUIDE_COUNT}">Udhëzues</a>]]
-      <a href="#si-funksionon">Si funksionon</a>
+    <nav class="nav-links" aria-label="{T_SITE}">
+      <a href="#ofertat">{T_DEALS}</a>
+      <a href="#destinacionet">{T_DESTINATIONS}</a>
+      [[<a href="#udhezues" data-guides="{GUIDE_COUNT}">{T_GUIDES}</a>]]
+      <a href="#si-funksionon">{T_HOW}</a>
       <a href="{PREMIUM_LINK}">Premium</a>
     </nav>
-    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>Bashkohu në Telegram</a>
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_TELEGRAM}</a>
   </div>
 </header>
 <main id="top">
-  <section class="hero" aria-label="Kreu">
-    <ol class="hero-strip" aria-label="Banderolat">
+  <section class="hero" aria-label="{T_HERO}">
+    <ol class="hero-strip" aria-label="{T_BANNERS}">
       <li class="slide slide-brand">
         <div class="slide-in">
           <svg class="arc" viewBox="0 0 600 420" aria-hidden="true"><path d="M10 400 C 150 150, 360 70, 548 44" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3" stroke-dasharray="2 16" stroke-linecap="round"/><circle cx="10" cy="400" r="7" fill="#ffffff" fill-opacity="0.6"/><use href="#i-plane" x="528" y="4" width="68" height="68" fill="#ffe14d"/></svg>
-          <h1><span>Fluturo lirë</span><span>nga Tirana</span></h1>
-          <p class="from-price">Sot që nga <b>€{MIN_PRICE}</b> vajtje</p>
-          <a class="top-deal" href="#ofertat" data-slide="1"><span class="td"><small>Oferta më e mirë sot</small><b>{TOP_CITY} nga €{TOP_PRICE}</b></span>[[<span class="td-save">-{TOP_SAVING}%</span>]]<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-          <p class="lead">Çmimi më i lirë për çdo destinacion gjatë {LOOKAHEAD_DAYS} ditëve të ardhshme, i kontrolluar çdo 3 orë.</p>
-          <p class="stats"><span class="stat"><b data-count="{ROUTE_COUNT}">{ROUTE_COUNT}</b> destinacione</span>[[<span class="stat"><b data-count="{DEAL_COUNT}">{DEAL_COUNT}</b> oferta sot</span>]]</p>
-          <p class="updated">Përditësuar më {UPDATED}, ora e Tiranës</p>
+          <h1><span>{T_HEADLINE_A}</span><span>{T_HEADLINE_B}</span></h1>
+          <p class="from-price">{T_FROM_PRICE}</p>
+          <a class="top-deal" href="#ofertat" data-slide="1"><span class="td"><small>{T_BEST_TODAY}</small><b>{T_TOP_DEAL}</b></span>[[<span class="td-save">-{TOP_SAVING}%</span>]]<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
+          <p class="lead">{T_LEAD}</p>
+          <p class="stats"><span class="stat"><b data-count="{ROUTE_COUNT}">{ROUTE_COUNT}</b> {T_STAT_DESTINATIONS}</span>[[<span class="stat"><b data-count="{DEAL_COUNT}">{DEAL_COUNT}</b> {T_STAT_DEALS}</span>]]</p>
+          <p class="updated">{T_UPDATED_LINE}</p>
           <p class="empty">{EMPTY}</p>
         </div>
       </li>
@@ -521,76 +550,76 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     </ol>
     <div class="hero-ctl"><div class="wrap"><div class="ctl" data-ctl="hero"></div></div></div>
   </section>
-  <section class="search wrap" id="kerko" aria-label="Kërko fluturim">
+  <section class="search wrap" id="kerko" aria-label="{T_SEARCH_FLIGHT}">
     <div class="scard">
-      <nav class="stabs" aria-label="Çfarë kërkon">
-        <a class="stab is-on" href="#kerko" aria-current="page"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg>Kërko<span class="w"> fluturim</span></a>
-        <a class="stab" href="#ofertat"><svg class="ic" aria-hidden="true"><use href="#i-percent"/></svg>Ofertat[[ <span class="n">{DEAL_COUNT}</span>]]</a>
-        <a class="stab" href="#si-funksionon"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg>Si funksionon</a>
+      <nav class="stabs" aria-label="{T_LOOKING_FOR}">
+        <a class="stab is-on" href="#kerko" aria-current="page"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg>{T_TAB_SEARCH}</a>
+        <a class="stab" href="#ofertat"><svg class="ic" aria-hidden="true"><use href="#i-percent"/></svg>{T_DEALS}[[ <span class="n">{DEAL_COUNT}</span>]]</a>
+        <a class="stab" href="#si-funksionon"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg>{T_HOW}</a>
       </nav>
       <form class="sform" action="#destinacionet" method="get" data-lookahead="{LOOKAHEAD_DAYS}">
         <fieldset class="trip">
-          <legend class="sr">Lloji i udhëtimit</legend>
-          <label><input type="radio" name="trip" value="oneway" checked>Vajtje</label>
-          <label><input type="radio" name="trip" value="return">Vajtje-ardhje</label>
+          <legend class="sr">{T_TRIP_TYPE}</legend>
+          <label><input type="radio" name="trip" value="oneway" checked>{T_ONE_WAY}</label>
+          <label><input type="radio" name="trip" value="return">{T_RETURN_TRIP}</label>
         </fieldset>
         <div class="fields">
-          <div class="field from"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Nga</span><span class="fvalue">Tirana<small>TIA</small></span></div>
+          <div class="field from"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>{T_FROM_PLACE}</span><span class="fvalue">Tirana<small>TIA</small></span></div>
           <span class="hop" aria-hidden="true"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>
-          <label class="field to"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Për</span><select name="to"><option value="">Zgjidh destinacionin</option>{DESTINATION_OPTIONS}</select></label>
-          <label class="field date"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Nisja</span><input type="date" name="date" value="{DATE_MIN}" min="{DATE_MIN}" max="{DATE_MAX}"></label>
-          <label class="field back"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Kthimi</span><input type="date" name="back" min="{DATE_MIN}" max="{DATE_MAX}"></label>
-          <label class="field pax"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Pasagjerë</span><select name="pax"><option value="1">1 pasagjer</option><option value="2">2 pasagjerë</option><option value="3">3 pasagjerë</option><option value="4">4 pasagjerë</option><option value="5">5 pasagjerë</option><option value="6">6 pasagjerë</option><option value="7">7 pasagjerë</option><option value="8">8 pasagjerë</option><option value="9">9 pasagjerë</option></select></label>
-          <a class="btn-go" href="#destinacionet"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>Kërko fluturime</a>
+          <label class="field to"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>{T_TO_PLACE}</span><select name="to"><option value="">{T_CHOOSE_DESTINATION}</option>{DESTINATION_OPTIONS}</select></label>
+          <label class="field date"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>{T_DEPARTURE}</span><input type="date" name="date" value="{DATE_MIN}" min="{DATE_MIN}" max="{DATE_MAX}"></label>
+          <label class="field back"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>{T_RETURN}</span><input type="date" name="back" min="{DATE_MIN}" max="{DATE_MAX}"></label>
+          <label class="field pax"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>{T_PASSENGERS}</span><select name="pax"><option value="1">1 {T_PASSENGER}</option><option value="2">2 {T_PASSENGERS_N}</option><option value="3">3 {T_PASSENGERS_N}</option><option value="4">4 {T_PASSENGERS_N}</option><option value="5">5 {T_PASSENGERS_N}</option><option value="6">6 {T_PASSENGERS_N}</option><option value="7">7 {T_PASSENGERS_N}</option><option value="8">8 {T_PASSENGERS_N}</option><option value="9">9 {T_PASSENGERS_N}</option></select></label>
+          <a class="btn-go" href="#destinacionet"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>{T_SEARCH_FLIGHTS}</a>
         </div>
         <p class="sfound" aria-live="polite" hidden></p>
-        <p class="shint">Hap kërkimin në Aviasales në një skedë të re, me datën më të lirë që gjetëm të parazgjedhur. Çmimi përfundimtar dhe vendet e lira shfaqen atje.</p>
+        <p class="shint">{T_SEARCH_HINT}</p>
       </form>
     </div>
   </section>
-  <section class="deals" id="ofertat" aria-labelledby="deals-h"><div class="wrap shead"><h2 id="deals-h">Zbulo destinacionet[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">Rezervo fluturimin për destinacionin që të pëlqen. Ofertat e momentit, me kursimin në të verdhë, janë të parat.</p></div><ol class="strip stories" aria-label="Destinacionet">{DEST_CARDS}</ol><div class="wrap"><div class="ctl" data-ctl="stories"></div></div></section>
+  <section class="deals" id="ofertat" aria-labelledby="deals-h"><div class="wrap shead"><h2 id="deals-h">{T_DISCOVER}[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">{T_DISCOVER_HINT}</p></div><ol class="strip stories" aria-label="{T_DESTINATIONS}">{DEST_CARDS}</ol><div class="wrap"><div class="ctl" data-ctl="stories"></div></div></section>
   <section class="extras" id="sherbime" aria-labelledby="extras-h">
-    <div class="wrap shead"><h2 id="extras-h">Gjithçka për udhëtimin</h2><p class="hint">Shërbime nga partnerët tanë, që udhëtimi të shkojë pa telashe.</p></div>
-    <ul class="strip svcs" aria-label="Shërbime për udhëtimin">
-      <li class="svc"><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/esim.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>eSIM për internet jashtë</b><span>Internet në telefon sapo zbret, pa tarifa roaming.</span><span class="svc-go">Bli eSIM<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
-      <li class="svc"><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/insurance.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Sigurim udhëtimi</b><span>Mbulim për shpenzimet mjekësore jashtë vendit, i blerë online në pak minuta.</span><span class="svc-go">Shiko sigurimin<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
-      <li class="svc"><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/car_rental.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Makinë me qira</b><span>Krahaso çmimet dhe merre makinën në destinacion.</span><span class="svc-go">Gjej makinë<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
-      <li class="svc"><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/compensation.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Vonesë ose anulim?</b><span>Nëse fluturimi u vonua ose u anulua, mund të marrësh deri €600 kompensim.</span><span class="svc-go">Kontrollo kompensimin<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
-      <li class="svc"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored"><img src="img/services/hotel.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>Hotele</b><span>Gjej ku të qëndrosh, me çmime të krahasuara.</span><span class="svc-go">Gjej hotel<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+    <div class="wrap shead"><h2 id="extras-h">{T_EXTRAS_TITLE}</h2><p class="hint">{T_EXTRAS_HINT}</p></div>
+    <ul class="strip svcs" aria-label="{T_EXTRAS_LABEL}">
+      <li class="svc"><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/esim.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_ESIM_TITLE}</b><span>{T_ESIM_TEXT}</span><span class="svc-go">{T_ESIM_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/insurance.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_INSURANCE_TITLE}</b><span>{T_INSURANCE_TEXT}</span><span class="svc-go">{T_INSURANCE_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/car_rental.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_CAR_TITLE}</b><span>{T_CAR_TEXT}</span><span class="svc-go">{T_CAR_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/compensation.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_DELAY_TITLE}</b><span>{T_DELAY_TEXT}</span><span class="svc-go">{T_DELAY_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/hotel.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_HOTEL_TITLE}</b><span>{T_HOTEL_TEXT}</span><span class="svc-go">{T_HOTEL_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
     </ul>
     <div class="wrap"><div class="ctl" data-ctl="services"></div></div>
   </section>
   <section class="prices wrap" id="destinacionet" aria-labelledby="all-h">
-    <div class="shead"><h2 id="all-h">Të gjitha destinacionet[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">Çmimi dhe data më e lirë e çdo rruge nga skanimi i fundit, deri {LOOKAHEAD_DAYS} ditë përpara.</p></div>
+    <div class="shead"><h2 id="all-h">{T_ALL_DESTINATIONS}[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">{T_ALL_HINT}</p></div>
     <div class="listbar">
       <div class="tabs">
-        <a class="tab is-on" href="#destinacionet" data-filter="all">Të gjitha[[ <span class="n">{ROUTE_COUNT}</span>]]</a>
-        <a class="tab" href="#ofertat" data-filter="deals">Ofertat[[ <span class="n">{DEAL_COUNT}</span>]]</a>
-        <a class="tab" href="#si-funksionon" data-filter="how">Si funksionon</a>
+        <a class="tab is-on" href="#destinacionet" data-filter="all">{T_TAB_ALL}[[ <span class="n">{ROUTE_COUNT}</span>]]</a>
+        <a class="tab" href="#ofertat" data-filter="deals">{T_DEALS}[[ <span class="n">{DEAL_COUNT}</span>]]</a>
+        <a class="tab" href="#si-funksionon" data-filter="how">{T_HOW}</a>
       </div>
-      <label class="sort js-only"><span>Rendit</span><select name="sort"><option value="deals">Ofertat para</option><option value="price">Më e lira</option><option value="saving">Kursimi më i madh</option><option value="date">Më e afërt</option></select></label>
+      <label class="sort js-only"><span>{T_SORT}</span><select name="sort"><option value="deals">{T_SORT_DEALS}</option><option value="price">{T_SORT_PRICE}</option><option value="saving">{T_SORT_SAVING}</option><option value="date">{T_SORT_DATE}</option></select></label>
     </div>
     <p class="status" hidden></p>
-    <ol class="board list" aria-label="Çdo destinacion">[[{DEAL_ROWS}]][[{PRICE_ROWS}]]</ol>
+    <ol class="board list" aria-label="{T_EVERY_DESTINATION}">[[{DEAL_ROWS}]][[{PRICE_ROWS}]]</ol>
     <div class="how" id="si-funksionon">
       <ol class="steps">
-        <li><h3>Kontrollojmë çmimet çdo 3 orë</h3><p>Për çdo destinacion marrim çmimin më të lirë që udhëtarë të tjerë gjetën së fundmi në Aviasales, për {LOOKAHEAD_DAYS} ditët e ardhshme.</p></li>
-        <li><h3>I krahasojmë me çmimin e zakonshëm</h3><p>Ruajmë historikun e çdo rruge. Kur një çmim bie shumë nën mesataren e javëve të fundit, shënohet si Ofertë dhe postohet në <a href="{TELEGRAM_URL}">Telegram</a>.</p></li>
-        <li><h3>Ti rezervon te kompania ajrore</h3><p>"Rezervo" hap kërkimin në Aviasales, ku sheh çmimin përfundimtar dhe zgjedh ku ta blesh. Nëse rezervon prej andej, ne marrim një komision të vogël; ti paguan njësoj.</p></li>
+        <li><h3>{T_HOW_A_TITLE}</h3><p>{T_HOW_A_TEXT}</p></li>
+        <li><h3>{T_HOW_B_TITLE}</h3><p>{T_HOW_B_TEXT}</p></li>
+        <li><h3>{T_HOW_C_TITLE}</h3><p>{T_HOW_C_TEXT}</p></li>
       </ol>
     </div>
   </section>
-  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">Udhëzues për qytetet <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">Çfarë të shohësh, si të shkosh nga aeroporti në qendër dhe sa kushton, bashkë me çmimin më të lirë të momentit.</p></div><ul class="strip gtiles" aria-label="Udhëzues për qytetet">{GUIDE_TILES}</ul></section>
+  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul></section>
   <section class="join" id="telegram" aria-labelledby="join-h">
     <div class="join-in wrap">
       <div>
         <svg class="plane" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffffff"/><path fill="#1a72cc" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></svg>
-        <h2 id="join-h">Mos humb asnjë ofertë</h2>
-        <p>Çdo ofertë postohet në kanal sapo gjendet. Falas, pa regjistrim.</p>
+        <h2 id="join-h">{T_JOIN_TITLE}</h2>
+        <p>{T_JOIN_TEXT}</p>
       </div>
       <div>
-        <a class="btn-tg" href="{TELEGRAM_URL}">Bashkohu te {CHANNEL}</a>
-        <p class="premium">Anëtarët Premium i marrin ofertat {PREMIUM_HOURS} orë më herët. <a href="{PREMIUM_LINK}">Bëhu Premium</a></p>
+        <a class="btn-tg" href="{TELEGRAM_URL}">{T_JOIN_CHANNEL}</a>
+        <p class="premium">{T_PREMIUM_EARLIER} <a href="{PREMIUM_LINK}">{T_BECOME_PREMIUM}</a></p>
       </div>
     </div>
   </section>
@@ -600,41 +629,42 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     <div class="fgrid">
       <div class="fbrand">
         <a class="brand" href="#top"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
-        <p>Çmimi më i lirë nga Tirana për çdo destinacion, i përditësuar çdo 3 orë.</p>
-        <a class="fpill" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>Bashkohu në Telegram</a>
+        <p>{T_FOOT_TAGLINE}</p>
+        <a class="fpill" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_TELEGRAM}</a>
       </div>
-      <nav class="fcol" aria-label="Faqja, në fund">
-        <h3>Faqja</h3>
+      <nav class="fcol" aria-label="{T_FOOT_SITE_LABEL}">
+        <h3>{T_SITE}</h3>
         <ul>
-          <li><a href="#kerko">Kërko fluturim</a></li>
-          <li><a href="#ofertat">Zbulo destinacionet</a></li>
-          <li><a href="#destinacionet">Çdo destinacion</a></li>
-          [[<li><a href="#udhezues">Udhëzues për {GUIDE_COUNT} qytete</a></li>]]
-          <li><a href="#si-funksionon">Si funksionon</a></li>
+          <li><a href="#kerko">{T_SEARCH_FLIGHT}</a></li>
+          <li><a href="#ofertat">{T_DISCOVER}</a></li>
+          <li><a href="#destinacionet">{T_EVERY_DESTINATION}</a></li>
+          [[<li><a href="#udhezues">{T_FOOT_GUIDES}</a></li>]]
+          <li><a href="#si-funksionon">{T_HOW}</a></li>
         </ul>
       </nav>
-      <nav class="fcol" aria-label="Për udhëtimin, në fund">
-        <h3>Për udhëtimin</h3>
+      <nav class="fcol" aria-label="{T_FOOT_TRIP_LABEL}">
+        <h3>{T_FOR_THE_TRIP}</h3>
         <ul>
           <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">eSIM</a></li>
-          <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">Sigurim udhëtimi</a></li>
-          <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">Makinë me qira</a></li>
-          <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">Kompensim për vonesa</a></li>
+          <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">{T_INSURANCE_TITLE}</a></li>
+          <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">{T_CAR_TITLE}</a></li>
+          <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">{T_COMPENSATION}</a></li>
         </ul>
       </nav>
-      <nav class="fcol" aria-label="Komuniteti">
-        <h3>Komuniteti</h3>
+      <nav class="fcol" aria-label="{T_COMMUNITY}">
+        <h3>{T_COMMUNITY}</h3>
         <ul>
-          <li><a href="{TELEGRAM_URL}">Kanali {CHANNEL}</a></li>
-          <li><a href="{PREMIUM_LINK}">Premium, {PREMIUM_HOURS} orë më herët</a></li>
+          <li><a href="{TELEGRAM_URL}">{T_FOOT_CHANNEL}</a></li>
+          <li><a href="{PREMIUM_LINK}">{T_FOOT_PREMIUM}</a></li>
         </ul>
       </nav>
     </div>
     <div class="flegal">
-      <p>Çmimet janë ato që udhëtarë të tjerë gjetën së fundmi në Aviasales dhe mund të kenë ndryshuar. Çmimi përfundimtar shfaqet kur hap lidhjen.</p>
-      <p>Disa lidhje janë lidhje partnere: nëse rezervon përmes tyre, {BRAND} merr një komision të vogël, pa kosto shtesë për ty.</p>
-      <details class="credits"><summary>Fotot dhe licencat e tyre</summary><ul>{PHOTO_CREDITS}</ul></details>
-      <p><a href="#consent" data-consent-open="{GA_ON}">Cilësimet e cookies</a></p>
+      <p>{T_LEGAL_PRICES}</p>
+      <p>{T_LEGAL_PARTNERS}</p>
+      <details class="credits"><summary>{T_PHOTO_CREDITS_TITLE}</summary><ul>{PHOTO_CREDITS}</ul></details>
+      <div class="flangs">{LANG_LINKS}</div>
+      <p><a href="#consent" data-consent-open="{GA_ON}">{T_COOKIE_SETTINGS}</a></p>
       <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
     </div>
   </div>
@@ -655,7 +685,11 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   doc.documentElement.classList.add('js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var smooth = reduce ? 'auto' : 'smooth';
-  var months = ['Jan', 'Shk', 'Mar', 'Pri', 'Maj', 'Qer', 'Korr', 'Gush', 'Sht', 'Tet', 'Nën', 'Dhj'];
+  /* The words this script shows, in the page's language: templates/strings/<language>.yaml, part "js". */
+  var words = {JS_WORDS};
+  var months = words.months;
+  /* fill('{city} from €{price}', {city: 'Rome', price: 17}) puts the values into a sentence. */
+  function fill(text, values) { return text.replace(/\{([a-z]+)\}/g, function (all, name) { return values[name]; }); }
   function qs(sel, el) { return (el || doc).querySelector(sel); }
   function qsa(sel, el) { return Array.prototype.slice.call((el || doc).querySelectorAll(sel)); }
   function make(tag, cls, inner) { var e = doc.createElement(tag); if (cls) { e.className = cls; } if (inner) { e.innerHTML = inner; } return e; }
@@ -679,8 +713,8 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     var prev = make('button', 'arrow prev', icon('left'));
     var next = make('button', 'arrow next', icon('right'));
     prev.type = next.type = 'button';
-    prev.setAttribute('aria-label', label + ': e mëparshmja');
-    next.setAttribute('aria-label', label + ': tjetra');
+    prev.setAttribute('aria-label', label + ': ' + words.prev);
+    next.setAttribute('aria-label', label + ': ' + words.next);
     var dots = make('div', 'dots');
     ctl.appendChild(prev); ctl.appendChild(dots); ctl.appendChild(next);
     var buttons = [], thumb = null, visible = 1, pages = 1, page = 0, timer = null, waiting = false;
@@ -711,7 +745,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     function dot(i) {
       var b = make('button', 'dot');
       b.type = 'button';
-      b.setAttribute('aria-label', label + ' ' + (i + 1) + ' nga ' + pages);
+      b.setAttribute('aria-label', label + ' ' + (i + 1) + ' ' + words.of + ' ' + pages);
       b.addEventListener('click', function () { stop(); go(i); });
       dots.appendChild(b);
       return b;
@@ -777,9 +811,9 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     if (doc.fonts && doc.fonts.ready) { doc.fonts.ready.then(measure); }
     return { go: go, toSlide: toSlide, stop: stop, slides: slides };
   }
-  var heroStrip = carousel(qs('.hero-strip'), qs('[data-ctl="hero"]'), 'Banderola', { loop: true, auto: true });
-  var stories = carousel(qs('.stories'), qs('[data-ctl="stories"]'), 'Destinacioni', {});
-  carousel(qs('.svcs'), qs('[data-ctl="services"]'), 'Shërbimi', {});
+  var heroStrip = carousel(qs('.hero-strip'), qs('[data-ctl="hero"]'), words.banner, { loop: true, auto: true });
+  var stories = carousel(qs('.stories'), qs('[data-ctl="stories"]'), words.destination, {});
+  carousel(qs('.svcs'), qs('[data-ctl="services"]'), words.service, {});
   /* The "best deal today" chip on the first slide jumps to that deal's banner. */
   qsa('[data-slide]').forEach(function (chip) {
     chip.addEventListener('click', function (e) {
@@ -841,10 +875,10 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     if (!status) { return; }
     if (state.pick) {
       status.hidden = false;
-      status.innerHTML = '<span><b>' + esc(cityOf(state.pick)) + '</b> është theksuar në listë.</span><button type="button" class="linkish" data-jump>Shko te rreshti</button><button type="button" class="linkish" data-clear>Hiq theksimin</button>';
+      status.innerHTML = '<span>' + fill(words.picked, { city: '<b>' + esc(cityOf(state.pick)) + '</b>' }) + '</span><button type="button" class="linkish" data-jump>' + words.jump + '</button><button type="button" class="linkish" data-clear>' + words.clear + '</button>';
     } else if (state.view === 'deals' && shown === 0) {
       status.hidden = false;
-      status.textContent = 'Tani për tani s\'ka oferta. Kontrollo sërish pas pak orësh, ose ndiq kanalin në Telegram.';
+      status.textContent = words.nodeals;
     } else {
       status.hidden = true;
     }
@@ -960,7 +994,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
         dep.value = clamp(best);
         if (back) { back.value = clamp(addDays(dep.value, 3)); }
         found.hidden = false;
-        found.innerHTML = '<b>' + esc(opt.textContent.replace(/, nga .*$/, '')) + '</b>: më lirë €' + esc(opt.getAttribute('data-price')) + ' më ' + pretty(best) + '. E theksuam te ofertat dhe në listë.';
+        found.innerHTML = fill(words.found, { city: '<b>' + esc(opt.textContent.replace(/,[^,]*€\d+$/, '')) + '</b>', price: esc(opt.getAttribute('data-price')), date: pretty(best) });
       } else {
         found.hidden = true;
       }
@@ -973,7 +1007,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       if (!to.value) {
         e.preventDefault();
         found.hidden = false;
-        found.textContent = 'Zgjidh një destinacion për të hapur kërkimin.';
+        found.textContent = words.choose;
         to.focus();
       }
     });

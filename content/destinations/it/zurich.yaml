@@ -1,0 +1,69 @@
+city: Zurich
+name: Zurigo
+slug: zurich
+tagline: Lago, città vecchia e Alpi
+intro: >-
+  Zurigo si stende sulla riva del lago, con un centro storico tenuto alla perfezione e le Alpi
+  all'orizzonte. È cara, ma molte cose belle sono gratis: il lago, le passeggiate e i panorami.
+sights:
+  - name: Altstadt e Grossmünster
+    text: La città vecchia sulle due rive della Limmat, con la cattedrale dalle due torri.
+  - name: Lago di Zurigo
+    text: Il lungolago e i battelli che collegano i paesi intorno.
+  - name: Bahnhofstrasse
+    text: Una delle vie dello shopping più care del mondo, dalla stazione fino al lago.
+  - name: Uetliberg
+    text: La montagna della città, a 20 minuti di treno, con vista su Zurigo e sulle Alpi.
+  - name: Fraumünster
+    text: La chiesa con le vetrate di Marc Chagall, sulla riva di fronte al Grossmünster.
+  - name: Lindenhof
+    text: La collinetta nel cuore della città vecchia, con vista sul fiume e sui tetti.
+airports:
+  ZRH: >-
+    I treni partono ogni pochi minuti e arrivano alla stazione centrale (Zürich HB) in 10-12
+    minuti. Il biglietto costa circa 7 franchi.
+budget: >-
+  Un caffè costa 5-6 franchi, un pasto semplice 20-30 franchi, il biglietto da 24 ore per la
+  città circa 9 franchi.
+when: >-
+  Giugno-settembre per il lago e le montagne. Dicembre per i mercatini di Natale.
+tips:
+  - "La Svizzera usa il franco (CHF), non l'euro, anche se fa parte dell'area Schengen."
+  - "L'acqua delle fontane pubbliche è potabile, e i supermercati Migros e Coop sono il modo più economico per mangiare."
+  - "D'estate gli zurighesi nuotano nel lago e nella Limmat: gli stabilimenti balneari pubblici costano poco e la sera si trasformano in bar."
+itinerary:
+  - "Bahnhofstrasse, Lindenhof, Fraumünster e Grossmünster. Nel pomeriggio una passeggiata sul lungolago e un breve giro in battello."
+  - "Uetliberg al mattino, per la vista sulla città e sulle Alpi. Nel pomeriggio la Kunsthaus o il Museo Nazionale, la sera a Zürich West."
+  - "Gita in giornata: Lucerna, le Cascate del Reno o una montagna come il Rigi."
+areas:
+  - name: Altstadt
+    text: La città vecchia, la zona più bella e la più cara.
+  - name: Zürich West
+    text: L'ex zona industriale, oggi con bar, design e hotel moderni.
+  - name: Vicino alla stazione centrale
+    text: Pratica per il treno dell'aeroporto e per le gite in giornata.
+food:
+  - name: Fondue e raclette
+    text: Formaggio fuso con pane o patate, i classici dell'inverno.
+  - name: Zürcher Geschnetzeltes
+    text: Vitello in salsa alla panna con funghi, servito con i Rösti, patate grattugiate e fritte.
+  - name: Cioccolato
+    text: Sprüngli e Läderach sono i nomi più famosi della città.
+  - name: Supermercati
+    text: "I ristoranti sono cari: i piatti pronti di Migros e Coop sono la soluzione di chi vive qui."
+transport: >-
+  I tram sono frequenti e puntuali. I biglietti si comprano per zone e valgono anche sui battelli
+  del lago. La Zürich Card (24 o 72 ore) comprende i trasporti, il treno per l'aeroporto e molti
+  musei. La città vecchia è tutta pedonale.
+daytrips:
+  - name: Lucerna
+    text: Il Ponte della Cappella, in legno, e il lago tra le montagne, a 45-50 minuti di treno.
+  - name: Cascate del Reno
+    text: Le cascate più grandi d'Europa, a circa 45 minuti di treno fino a Sciaffusa.
+  - name: Monte Rigi
+    text: La «Regina delle montagne», tra treno e battello, per una giornata sulle Alpi.
+faq:
+  - q: "Come risparmiare a Zurigo?"
+    a: "Bevi l'acqua delle fontane pubbliche, pranza nei supermercati, usa il biglietto giornaliero dei trasporti e goditi le cose gratuite: il lago, il Lindenhof e le passeggiate sull'Uetliberg. Dormi vicino alla stazione o fuori dal centro."
+  - q: "Quanto si spende al giorno a Zurigo?"
+    a: "Volo e alloggio esclusi, 80-130 franchi al giorno. Zurigo è tra le città più care del mondo: una cena al ristorante supera facilmente i 40 franchi a persona."

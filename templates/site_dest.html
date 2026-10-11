@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- One destination's own page (/milan/, /rome/, ...): the current prices for the city on top, its
-     guide from content/destinations/<slug>.yaml underneath. One page per city that has a guide.
+     guide from content/destinations/<language>/<slug>.yaml underneath. One page per city and language.
      Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
      (and must stay on one line), and a line whose value is missing is left out, so a heading
      and its list stay on one line. Every HTML comment is removed before the page is written.
@@ -8,25 +8,28 @@
      MIN_PRICE (cheapest price to the city now) UPDATED FARES (one ticket per airport, from
      site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) and the guide's
      parts: SIGHTS ITINERARY DAYS (how many days the plan has) AREAS FOOD AIRPORTS TRANSPORT
-     DAYTRIPS BUDGET WHEN TIPS FAQ ENTRY_RULES (the documents needed, from content/countries.yaml).
+     DAYTRIPS BUDGET WHEN TIPS FAQ ENTRY_RULES (the documents needed, from content/countries/<language>.yaml).
      A part the guide doesn't have is simply missing, and its heading and its link in the
      "Në këtë faqe" list go with it. OTHER_GUIDES (the other cities' photo tiles, from site_guide.html) HOME (the way back to the
      main page, "../") GUIDE_PHOTO (the city's wide photo) PHOTO (a route's photo, only when
      there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
      ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive script,
-     only when one is set), plus one NAME_LINK per partner.
+     only when one is set) LANG, LANG_MENU, LANG_LINKS and HREFLANG (the page's language, the
+     language dropdown, the same links as a row in the footer, and the tags for search engines). The text itself is not in this file: T_NAME
+     stands for the entry NAME in templates/strings/<language>.yaml (see src/i18n.py), plus one NAME_LINK per partner.
      Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
      values, and never two opening square brackets in a row. -->
-<html lang="sq">
+<html lang="{LANG}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fluturime të lira Tirana – {CITY}: çmime dhe udhëzues | {BRAND}</title>
-<meta name="description" content="Fluturimi më i lirë nga Tirana për në {CITY}[[, nga €{MIN_PRICE}]], dhe një udhëzues i shkurtër: çfarë të shohësh, si të shkosh nga aeroporti në qendër dhe sa kushton.">
+<title>{T_D_TITLE}</title>
+<meta name="description" content="{T_D_DESCRIPTION}">
 <link rel="canonical" href="{PAGE_URL}">
+{HREFLANG}
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fluturime të lira Tirana – {CITY} | {BRAND}">
-<meta property="og:description" content="Çmimi më i lirë nga Tirana për në {CITY} dhe një udhëzues i shkurtër për qytetin.">
+<meta property="og:title" content="{T_D_OG_TITLE}">
+<meta property="og:description" content="{T_D_OG_DESCRIPTION}">
 <meta property="og:url" content="{PAGE_URL}">
 <meta property="og:image" content="{PHOTO_URL}">
 <meta name="color-scheme" content="dark">
@@ -78,6 +81,30 @@ h1, h2, h3, p, li { overflow-wrap: anywhere; }
 .ic-fill { fill: currentColor; stroke: none; }
 .skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--sun-ink); font-weight: 800; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
 .skip:focus { top: 12px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* The language switcher: a small dropdown (AL, EN, IT) in a slim bar above the top bar
+   (templates/site_lang.html), and the same links as a plain row in the footer. */
+.langbar { background: #110829; font-size: 14px; }
+.langbar .wrap { display: flex; justify-content: flex-end; }
+.lang { position: relative; }
+.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 2px 0 8px; list-style: none; cursor: pointer; font-weight: 800; letter-spacing: 0.03em; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary .ic { width: 16px; height: 16px; color: var(--muted); }
+.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; }
+.lang[open] summary .chev { transform: rotate(180deg); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 4px); z-index: 30; display: grid; gap: 2px; min-width: 156px; padding: 6px; border-radius: 12px; background: #ffffff; color: var(--sun-ink); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
+.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 40px; padding: 9px 10px; border-radius: 8px; text-decoration: none; }
+.lang-menu b { min-width: 22px; font-weight: 900; }
+.lang-menu span { font-size: 13.5px; font-weight: 600; color: var(--paper-muted); }
+.lang-menu a:hover { background: var(--field); }
+.lang-menu a[aria-current] { background: var(--sun); }
+.lang-menu a[aria-current] span { color: var(--sun-ink); }
+.lang-menu :focus-visible { outline-color: var(--tg-deep); }
+.langs { display: flex; align-items: center; gap: 2px; min-height: 36px; }
+.langs a { padding: 5px 11px; border-radius: 999px; font-weight: 800; font-size: 14px; letter-spacing: 0.03em; text-decoration: none; color: var(--sun-ink); }
+.langs a[aria-current] { background: var(--sun-ink); color: var(--sun); }
+.flangs { margin: 0 0 8px -11px; }
 
 /* Top bar */
 .nav { position: sticky; top: 0; z-index: 20; background: rgba(23, 11, 59, 0.82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
@@ -149,7 +176,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 .gsec > p { margin: 14px 0 0; max-width: 46em; }
 .days { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; counter-reset: day; max-width: 52em; }
 .days li { counter-increment: day; padding: 14px 16px 14px 18px; border-radius: 16px; background: var(--surface); border-left: 5px solid var(--c1); }
-.days li::before { content: "Dita " counter(day); display: block; margin-bottom: 2px; font-size: 14px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sun); }
+.days li::before { content: "{T_D_DAY} " counter(day); display: block; margin-bottom: 2px; font-size: 14px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sun); }
 .qas { display: grid; gap: 10px; margin-top: 16px; max-width: 52em; }
 .qa { padding: 14px 16px; border-radius: 16px; background: var(--night-2); }
 .qa h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
@@ -231,99 +258,100 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 {DRIVE}
 </head>
 <body[[ class="c-{COUNTRY}"]]>
-<a class="skip" href="#cmimet">Kalo te çmimet</a>
+<a class="skip" href="#cmimet">{T_D_SKIP}</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
   <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
 </svg>
+{LANG_MENU}
 <header class="nav">
   <div class="nav-in wrap">
     <a class="brand" href="{HOME}"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
-    <nav class="nav-links" aria-label="Faqja">
-      <a href="{HOME}#ofertat">Ofertat</a>
-      <a href="{HOME}#destinacionet">Çdo destinacion</a>
-      <a href="{HOME}#udhezues">Udhëzues</a>
+    <nav class="nav-links" aria-label="{T_SITE}">
+      <a href="{HOME}#ofertat">{T_DEALS}</a>
+      <a href="{HOME}#destinacionet">{T_EVERY_DESTINATION}</a>
+      <a href="{HOME}#udhezues">{T_GUIDES}</a>
     </nav>
-    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>Bashkohu në Telegram</a>
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_TELEGRAM}</a>
   </div>
 </header>
 <main>
   <section class="dhero" aria-label="{CITY}">
     <div class="dhero-in wrap">
       <div>
-        <p class="crumbs"><a href="{HOME}">{BRAND}</a> › <a href="{HOME}#udhezues">Udhëzues</a> › {CITY}</p>
-        <h1><small>Fluturime të lira nga Tirana</small>[[{FLAG} ]]{CITY}</h1>
+        <p class="crumbs"><a href="{HOME}">{BRAND}</a> › <a href="{HOME}#udhezues">{T_GUIDES}</a> › {CITY}</p>
+        <h1><small>{T_D_KICKER}</small>[[{FLAG} ]]{CITY}</h1>
         <p class="lead">{INTRO}</p>
-        <p class="from-price">nga <b>€{MIN_PRICE}</b> vajtje</p>
-        <p class="updated">Përditësuar më {UPDATED}, ora e Tiranës</p>
+        <p class="from-price">{T_D_FROM_PRICE}</p>
+        <p class="updated">{T_UPDATED_LINE}</p>
       </div>
-      <img class="dphoto wide" src="{GUIDE_PHOTO}" alt="Pamje nga {CITY}[[, {COUNTRY_NAME}]]" width="960" height="600" decoding="async">
-      <img class="dphoto" src="{PHOTO}" alt="Pamje nga {CITY}[[, {COUNTRY_NAME}]]" width="600" height="840" decoding="async">
+      <img class="dphoto wide" src="{GUIDE_PHOTO}" alt="{T_D_PHOTO_ALT}" width="960" height="600" decoding="async">
+      <img class="dphoto" src="{PHOTO}" alt="{T_D_PHOTO_ALT}" width="600" height="840" decoding="async">
     </div>
   </section>
   <section class="block wrap" id="cmimet" aria-labelledby="fares-h">
-    <h2 id="fares-h">Çmimet më të lira tani</h2>
-    <p class="hint">Çmimi më i lirë për çdo aeroport, nga kontrolli i fundit i çmimeve. «Rezervo» hap kërkimin në Aviasales, ku shfaqet çmimi përfundimtar.</p>
+    <h2 id="fares-h">{T_D_FARES_TITLE}</h2>
+    <p class="hint">{T_D_FARES_HINT}</p>
     <ul class="fares">{FARES}</ul>
     <p class="nofares">{NO_FARES}</p>
   </section>
-  <nav class="toc wrap" aria-label="Në këtë faqe">
+  <nav class="toc wrap" aria-label="{T_D_ON_THIS_PAGE}">
     <ul>
-      <li><a href="#shiko" data-part="{SIGHTS_ON}">Çfarë të shohësh</a></li>
-      <li><a href="#itinerari" data-part="{ITINERARY_ON}">Itinerar</a></li>
-      <li><a href="#fjetja" data-part="{AREAS_ON}">Ku të qëndrosh</a></li>
-      <li><a href="#ushqimi" data-part="{FOOD_ON}">Çfarë të hash</a></li>
-      <li><a href="#aeroporti" data-part="{AIRPORTS_ON}">Nga aeroporti</a></li>
-      <li><a href="#transporti" data-part="{TRANSPORT_ON}">Transporti</a></li>
-      <li><a href="#udhetime-ditore" data-part="{DAYTRIPS_ON}">Udhëtime ditore</a></li>
-      <li><a href="#pyetje">Pyetje të shpeshta</a></li>
+      <li><a href="#shiko" data-part="{SIGHTS_ON}">{T_D_TOC_SIGHTS}</a></li>
+      <li><a href="#itinerari" data-part="{ITINERARY_ON}">{T_D_TOC_ITINERARY}</a></li>
+      <li><a href="#fjetja" data-part="{AREAS_ON}">{T_D_AREAS}</a></li>
+      <li><a href="#ushqimi" data-part="{FOOD_ON}">{T_D_FOOD}</a></li>
+      <li><a href="#aeroporti" data-part="{AIRPORTS_ON}">{T_D_TOC_AIRPORTS}</a></li>
+      <li><a href="#transporti" data-part="{TRANSPORT_ON}">{T_D_TOC_TRANSPORT}</a></li>
+      <li><a href="#udhetime-ditore" data-part="{DAYTRIPS_ON}">{T_D_TOC_DAYTRIPS}</a></li>
+      <li><a href="#pyetje">{T_D_FAQ}</a></li>
     </ul>
   </nav>
-  <section class="wrap" aria-label="Udhëzues për {CITY}">
-    <div class="gsec" id="shiko"><h2>Çfarë të shohësh në {CITY}</h2><ul class="sights">{SIGHTS}</ul></div>
-    <div class="gsec" id="itinerari"><h2>Itinerar për {DAYS} ditë</h2><ol class="days">{ITINERARY}</ol></div>
-    <div class="gsec" id="fjetja"><h2>Ku të qëndrosh</h2><ul class="sights">{AREAS}</ul></div>
-    <div class="gsec" id="ushqimi"><h2>Çfarë të hash</h2><ul class="sights">{FOOD}</ul></div>
-    <div class="gsec" id="aeroporti"><h2>Nga aeroporti në qendër</h2><div class="airports">{AIRPORTS}</div></div>
-    <div class="gsec" id="transporti"><h2>Si të lëvizësh në qytet</h2><p>{TRANSPORT}</p></div>
-    <div class="gsec" id="udhetime-ditore"><h2>Udhëtime ditore nga {CITY}</h2><ul class="sights">{DAYTRIPS}</ul></div>
+  <section class="wrap" aria-label="{T_GUIDE_FOR}">
+    <div class="gsec" id="shiko"><h2>{T_D_SIGHTS_TITLE}</h2><ul class="sights">{SIGHTS}</ul></div>
+    <div class="gsec" id="itinerari"><h2>{T_D_ITINERARY_TITLE}</h2><ol class="days">{ITINERARY}</ol></div>
+    <div class="gsec" id="fjetja"><h2>{T_D_AREAS}</h2><ul class="sights">{AREAS}</ul></div>
+    <div class="gsec" id="ushqimi"><h2>{T_D_FOOD}</h2><ul class="sights">{FOOD}</ul></div>
+    <div class="gsec" id="aeroporti"><h2>{T_D_AIRPORTS_TITLE}</h2><div class="airports">{AIRPORTS}</div></div>
+    <div class="gsec" id="transporti"><h2>{T_D_TRANSPORT_TITLE}</h2><p>{TRANSPORT}</p></div>
+    <div class="gsec" id="udhetime-ditore"><h2>{T_D_DAYTRIPS_TITLE}</h2><ul class="sights">{DAYTRIPS}</ul></div>
     <div class="facts">
-      <div class="fact"><h3>Sa kushton</h3><p>{BUDGET}</p></div>
-      <div class="fact"><h3>Kur të shkosh</h3><p>{WHEN}</p></div>
+      <div class="fact"><h3>{T_D_BUDGET}</h3><p>{BUDGET}</p></div>
+      <div class="fact"><h3>{T_D_WHEN}</h3><p>{WHEN}</p></div>
     </div>
-    <div class="gsec"><h2>Këshilla</h2><ul class="tips">{TIPS}</ul></div>
+    <div class="gsec"><h2>{T_D_TIPS}</h2><ul class="tips">{TIPS}</ul></div>
     <div class="gsec" id="pyetje">
-      <h2>Pyetje të shpeshta</h2>
+      <h2>{T_D_FAQ}</h2>
       <div class="qas">
         {FAQ}
-        <div class="qa"><h3>Çfarë dokumentesh duhen?</h3><p>{ENTRY_RULES}</p></div>
-        <div class="qa"><h3>Kur janë biletat më të lira?</h3><p>Zakonisht nga nëntori deri në mars, jashtë festave dhe fundjavave të gjata, dhe për nisje në mes të javës. Çmimet në këtë faqe kontrollohen çdo 3 orë, ndërsa ofertat më të mira postohen në kanalin tonë në Telegram.</p></div>
+        <div class="qa"><h3>{T_D_Q_DOCUMENTS}</h3><p>{ENTRY_RULES}</p></div>
+        <div class="qa"><h3>{T_D_Q_CHEAPEST}</h3><p>{T_D_A_CHEAPEST}</p></div>
       </div>
     </div>
-    <p class="note">Çmimet e transportit, të hyrjeve dhe të shërbimeve janë orientuese dhe ndryshojnë me kohën: kontrolloji para nisjes.</p>
+    <p class="note">{T_D_NOTE}</p>
   </section>
   <section class="block wrap" aria-labelledby="extras-h">
-    <h2 id="extras-h">Për udhëtimin</h2>
-    <p class="hint">Shërbime nga partnerët tanë, që udhëtimi të shkojë pa telashe.</p>
+    <h2 id="extras-h">{T_FOR_THE_TRIP}</h2>
+    <p class="hint">{T_EXTRAS_HINT}</p>
     <ul class="pills">
-      <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">eSIM për internet jashtë</a></li>
-      <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">Sigurim udhëtimi</a></li>
-      <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">Makinë me qira</a></li>
-      <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">Kompensim për vonesa</a></li>
-      <li><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">Hotele në {CITY}</a></li>
+      <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">{T_ESIM_TITLE}</a></li>
+      <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">{T_INSURANCE_TITLE}</a></li>
+      <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">{T_CAR_TITLE}</a></li>
+      <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">{T_COMPENSATION}</a></li>
+      <li><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">{T_HOTELS_IN}</a></li>
     </ul>
   </section>
-  <section class="block" aria-labelledby="more-h"><div class="wrap"><h2 id="more-h">Destinacione të tjera</h2><p class="hint">Çmimet dhe udhëzuesit për qytetet e tjera ku fluturohet nga Tirana.</p></div><ul class="gtiles" aria-label="Destinacione të tjera">{OTHER_GUIDES}</ul></section>
+  <section class="block" aria-labelledby="more-h"><div class="wrap"><h2 id="more-h">{T_D_OTHERS}</h2><p class="hint">{T_D_OTHERS_HINT}</p></div><ul class="gtiles" aria-label="{T_D_OTHERS}">{OTHER_GUIDES}</ul></section>
   <section class="join" aria-labelledby="join-h">
     <div class="join-in wrap">
       <div>
-        <h2 id="join-h">Mos humb asnjë ofertë</h2>
-        <p>Çdo ofertë postohet në kanal sapo gjendet. Falas, pa regjistrim.</p>
+        <h2 id="join-h">{T_JOIN_TITLE}</h2>
+        <p>{T_JOIN_TEXT}</p>
       </div>
       <div>
-        <a class="btn-tg" href="{TELEGRAM_URL}">Bashkohu te {CHANNEL}</a>
-        <p class="premium">Anëtarët Premium i marrin ofertat {PREMIUM_HOURS} orë më herët. <a href="{PREMIUM_LINK}">Bëhu Premium</a></p>
+        <a class="btn-tg" href="{TELEGRAM_URL}">{T_JOIN_CHANNEL}</a>
+        <p class="premium">{T_PREMIUM_EARLIER} <a href="{PREMIUM_LINK}">{T_BECOME_PREMIUM}</a></p>
       </div>
     </div>
   </section>
@@ -331,11 +359,12 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="{HOME}"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
-    <p>Çmimi më i lirë nga Tirana për çdo destinacion, i përditësuar çdo 3 orë. <a href="{HOME}">Shiko të gjitha destinacionet</a></p>
+    <p>{T_FOOT_TAGLINE} <a href="{HOME}">{T_D_SEE_ALL}</a></p>
     <div class="flegal">
-      <p>Çmimet janë ato që udhëtarë të tjerë gjetën së fundmi në Aviasales dhe mund të kenë ndryshuar. Çmimi përfundimtar shfaqet kur hap lidhjen.</p>
-      <p>Disa lidhje janë lidhje partnere: nëse rezervon përmes tyre, {BRAND} merr një komision të vogël, pa kosto shtesë për ty.</p>
-      <p><a href="#consent" data-consent-open="{GA_ON}">Cilësimet e cookies</a></p>
+      <p>{T_LEGAL_PRICES}</p>
+      <p>{T_LEGAL_PARTNERS}</p>
+      <div class="flangs">{LANG_LINKS}</div>
+      <p><a href="#consent" data-consent-open="{GA_ON}">{T_COOKIE_SETTINGS}</a></p>
       <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
     </div>
   </div>

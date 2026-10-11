@@ -1,0 +1,70 @@
+city: Venice
+name: Venezia
+slug: venice
+tagline: Canali, gondole e isole
+intro: >-
+  Venezia è costruita sull'acqua: niente auto, solo canali, ponti e calli in cui vale la pena
+  perdersi. Uno o due giorni bastano per l'essenziale.
+sights:
+  - name: Piazza San Marco
+    text: La piazza principale, con la Basilica di San Marco e il campanile.
+  - name: Palazzo Ducale
+    text: La sede della Repubblica di Venezia, collegata alle prigioni dal Ponte dei Sospiri.
+  - name: Ponte di Rialto
+    text: Il ponte più antico sul Canal Grande, con il mercato del pesce e della verdura lì accanto.
+  - name: Murano e Burano
+    text: Le isole del vetro e delle case colorate, da 15 a 45 minuti di vaporetto.
+  - name: Santa Maria della Salute
+    text: La chiesa a cupola all'imbocco del Canal Grande, a ingresso gratuito.
+  - name: Ghetto Ebraico
+    text: Il ghetto più antico del mondo, nel tranquillo sestiere di Cannaregio.
+airports:
+  VCE: >-
+    Gli autobus ATVO e ACTV ti portano a Piazzale Roma, l'ingresso della città, in 20-25 minuti
+    (circa €10). Il battello Alilaguna va dritto a San Marco in circa 75 minuti (circa €15).
+budget: >-
+  Un caffè lontano da San Marco costa circa €1,50. Un biglietto singolo del vaporetto costa circa
+  €9,50, quindi conviene il giornaliero (circa €25).
+when: >-
+  Aprile-giugno e settembre-ottobre. A novembre e dicembre può esserci l'«acqua alta», che allaga
+  le piazze.
+tips:
+  - "In alcune date di primavera e d'estate i visitatori giornalieri pagano online un contributo di accesso: controlla il calendario prima di partire."
+  - "Mangia lontano da San Marco: nei sestieri di Cannaregio e Castello i prezzi sono molto più bassi."
+  - "Non sederti sui gradini dei ponti e non mangiare seduto per terra nelle piazze: le multe per i turisti sono salate."
+itinerary:
+  - "Piazza San Marco, la Basilica e Palazzo Ducale al mattino. Nel pomeriggio il Ponte di Rialto e un giro in vaporetto sul Canal Grande (linea 1)."
+  - "Le isole: Murano per il vetro e Burano per le case colorate. Rientra per il tramonto sulla passeggiata delle Zattere."
+  - "Venezia senza mappa: Cannaregio, il Ghetto e il sestiere di Dorsoduro con Santa Maria della Salute. Chi ama l'arte visita le Gallerie dell'Accademia."
+areas:
+  - name: San Marco
+    text: Il cuore della città, con i prezzi più alti e più folla.
+  - name: Cannaregio
+    text: Sestiere residenziale più tranquillo e più economico, vicino alla stazione ferroviaria.
+  - name: Mestre
+    text: "La parte di terraferma della città: gli hotel costano molto meno e il treno o l'autobus ti portano a Venezia in 10-15 minuti."
+food:
+  - name: Cicchetti
+    text: Piccoli stuzzichini che si mangiano in piedi nei bar chiamati bàcari, con un bicchiere di vino.
+  - name: Sarde in saor
+    text: Sarde marinate con cipolla, aceto e uvetta.
+  - name: Risotto al nero di seppia
+    text: Risotto nero, con l'inchiostro di seppia.
+  - name: Spritz
+    text: "L'aperitivo è nato in questa regione: provalo con l'Aperol o con il Select, la versione veneziana."
+transport: >-
+  In città ci si muove solo a piedi o in vaporetto, l'autobus sull'acqua. Il biglietto singolo è
+  caro, quindi quello da 24 o 48 ore conviene se vuoi andare anche sulle isole. Le gondole hanno
+  una tariffa ufficiale, circa €90 per 30 minuti.
+daytrips:
+  - name: Verona
+    text: Circa 1 ora e 10 minuti di treno.
+  - name: Padova
+    text: La Cappella degli Scrovegni con gli affreschi di Giotto, a 30 minuti di treno.
+  - name: Dolomiti
+    text: Cortina d'Ampezzo si raggiunge in circa 2 ore di autobus, per una giornata in montagna.
+faq:
+  - q: "Conviene dormire a Mestre?"
+    a: "Sì, se vuoi risparmiare: gli hotel costano spesso la metà e i collegamenti in treno e autobus sono frequenti. L'unica cosa che perdi sono le serate tranquille a Venezia, quando i visitatori giornalieri se ne vanno."
+  - q: "Quanto si spende al giorno a Venezia?"
+    a: "Volo e alloggio esclusi, €60-90 al giorno. I vaporetti e i ristoranti vicino a San Marco fanno salire in fretta il conto; con i cicchetti e spostandoti a piedi spendi molto meno."

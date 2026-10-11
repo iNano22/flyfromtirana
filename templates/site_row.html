@@ -14,18 +14,18 @@
   <div class="where">
     <div class="head">[[<span class="flag" aria-hidden="true">{FLAG}</span>]]<h3 class="city">{CITY}[[ <span class="airport">{AIRPORT}</span>]]</h3></div>
     <div class="route"><span class="code">TIA</span><span class="path" aria-hidden="true"></span><span class="code">{IATA}</span>
-      <span class="seal {DEAL}">Ofertë</span>
+      <span class="seal {DEAL}">{T_DEAL_STAMP}</span>
     </div>
-    <p class="dates"><span class="lbl">Nisja</span>{DATES}</p>
+    <p class="dates"><span class="lbl">{T_DEPARTURE}</span>{DATES}</p>
     <p class="meta">{AIRLINE}, {STOPS}[[, {DURATION}]]</p>
-    <p class="meta">Kthimi nga €{RETURN_PRICE}</p>
-    <p class="meta"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">Hotele në {CITY}</a></p>
-    <p class="meta"><a href="{GUIDE_URL}">Udhëzues për {CITY}</a></p>
+    <p class="meta">{T_RETURN_FROM}</p>
+    <p class="meta"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">{T_HOTELS_IN}</a></p>
+    <p class="meta"><a href="{GUIDE_URL}">{T_GUIDE_FOR}</a></p>
   </div>
   <div class="fare">
-    <p class="price"><span class="from">nga</span> <span class="amount">€{PRICE}</span></p>
-    <p class="way">vajtje, për person</p>
-    <p class="usual"><span>zakonisht €{MEDIAN}</span>[[ <b class="saving">-{SAVING}%</b>]]</p>
-    <a class="book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">Rezervo</a>
+    <p class="price"><span class="from">{T_FROM}</span> <span class="amount">€{PRICE}</span></p>
+    <p class="way">{T_ONE_WAY_PP}</p>
+    <p class="usual"><span>{T_USUALLY}</span>[[ <b class="saving">-{SAVING}%</b>]]</p>
+    <a class="book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">{T_BOOK}</a>
   </div>
 </li>

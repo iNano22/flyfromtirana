@@ -1,0 +1,73 @@
+# The guide for Milan in English. Same parts and the same number of entries as ../sq/milan.yaml.
+city: Milan
+slug: milan
+tagline: Fashion, the Duomo and aperitivo on the Navigli
+intro: >-
+  Milan is Italy's capital of fashion and design, with a centre that's easy to cover on foot. Two
+  or three days are enough for the Duomo, the Galleria and an aperitivo by the canals of the
+  Navigli.
+sights:
+  - name: Duomo di Milano
+    text: The Gothic cathedral in the heart of the city. Go up to the rooftop terrace for the view over the rooftops and, on clear days, all the way to the Alps.
+  - name: Galleria Vittorio Emanuele II
+    text: The glass-roofed arcade next to the Duomo, full of historic cafés and shops.
+  - name: Castello Sforzesco
+    text: The castle of the Sforza family, with museums inside and Sempione park behind it.
+  - name: Navigli
+    text: The canal district, the best place for an evening aperitivo.
+  - name: Pinacoteca di Brera
+    text: The city's main art gallery, in the bohemian Brera district, full of little streets lined with cafés.
+  - name: San Siro
+    text: The stadium of AC Milan and Inter. Outside match days you can visit it on a tour that includes the museum.
+airports:
+  MXP: >-
+    The Malpensa Express train takes you to Milano Centrale or Cadorna in about 50 minutes (about
+    €13). Buses to Centrale cost about €10 and take nearly an hour.
+  BGY: >-
+    The airport is in Bergamo, about 50 km from Milan. Direct buses to Milano Centrale leave every
+    20-30 minutes, take about an hour and cost about €10.
+budget: >-
+  A coffee at the bar costs about €1.50, a pizza €8-12, and a metro ticket about €2.20.
+when: >-
+  April to June and September to October have the best weather. In August many places close for
+  the holidays.
+tips:
+  - "Tickets for Leonardo da Vinci's “Last Supper” sell out fast: book them weeks ahead."
+  - "From Bergamo it's worth stopping in the Città Alta, the old town on the hill, only 20 minutes from the airport."
+  - "Aperitivo starts around 18:00: for the price of a drink (€10-15) many bars also offer food from the buffet."
+itinerary:
+  - "The Duomo with a climb to the rooftop terrace, the Galleria Vittorio Emanuele II and the Teatro alla Scala. In the afternoon, Castello Sforzesco and Sempione park, then an aperitivo in Brera in the evening."
+  - "The “Last Supper” in the morning (booking required), then the Brera district and the Pinacoteca. In the afternoon, the shops of Corso Buenos Aires or the Quadrilatero della Moda, then the evening on the Navigli."
+  - "A day out of the city, at Lake Como or in Bergamo. Otherwise, San Siro and the modern Porta Nuova district with the Bosco Verticale."
+areas:
+  - name: Duomo and Brera
+    text: At the centre of everything, but with the highest prices. Ideal for a short stay.
+  - name: Navigli
+    text: The district of canals and nightlife, linked to the centre by metro.
+  - name: Stazione Centrale
+    text: "The most practical and cheapest area: the buses and trains to both airports leave from here."
+food:
+  - name: Risotto alla milanese
+    text: Yellow risotto with saffron, the city's signature dish.
+  - name: Cotoletta alla milanese
+    text: A breaded veal cutlet, fried in butter.
+  - name: Panzerotti
+    text: Fried dough filled with tomato and mozzarella, a quick bite near the Duomo.
+  - name: Aperitivo
+    text: "The evening ritual: a spritz or a negroni with nibbles, before dinner."
+transport: >-
+  The centre is walkable, and the five metro lines and the trams take you everywhere. You don't
+  need a paper ticket: just tap your contactless bank card at the gate. A day ticket costs about
+  €7.60.
+daytrips:
+  - name: Lake Como
+    text: About an hour by train to Como or Varenna, where you catch the boat to Bellagio.
+  - name: Bergamo
+    text: The old town on the hill (Città Alta), 50 minutes by train.
+  - name: Verona
+    text: The Roman arena and Juliet's balcony, about 1 hour and 15 minutes by high-speed train.
+faq:
+  - q: "Malpensa or Bergamo: which airport is better?"
+    a: "Malpensa has a direct train to the centre. Flights to Bergamo are usually cheaper, but allow about an hour by bus to Milano Centrale. Either way the journey costs about €10-13."
+  - q: "How much money do you need per day in Milan?"
+    a: "Excluding the flight and accommodation, plan on €50-80 a day for food, transport and one museum ticket. Milan is among the most expensive cities in Italy, especially for hotels."

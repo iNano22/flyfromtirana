@@ -1,0 +1,71 @@
+city: Berlin
+name: Berlino
+slug: berlin
+tagline: Storia, arte e vita notturna
+intro: >-
+  Berlino è la città della storia del XX secolo e della cultura alternativa: il Muro, i musei, la
+  street art e i club. Tre o quattro giorni sono l'ideale.
+sights:
+  - name: Porta di Brandeburgo e Reichstag
+    text: Il simbolo della città e il Parlamento tedesco, con la cupola di vetro che si visita gratis.
+  - name: East Side Gallery
+    text: Il tratto più lungo rimasto del Muro di Berlino, ricoperto di dipinti.
+  - name: Isola dei Musei
+    text: Cinque musei su un'isola della Sprea, accanto al Duomo di Berlino.
+  - name: Alexanderplatz
+    text: La grande piazza dell'Est, con la Torre della Televisione e la vista da 200 metri.
+  - name: Memoriale dell'Olocausto
+    text: Una distesa di migliaia di blocchi di cemento vicino alla Porta di Brandeburgo.
+  - name: Checkpoint Charlie
+    text: Il celebre posto di blocco tra Est e Ovest durante la Guerra Fredda.
+airports:
+  BER: >-
+    I treni FEX, RE e RB arrivano alla stazione centrale (Hauptbahnhof) in circa 30 minuti; le
+    S-Bahn S9 e S45 fanno più fermate. Ti serve il biglietto per le zone ABC (circa €5).
+budget: >-
+  Un döner costa €7-8, una birra €4-5, il biglietto da 24 ore per le zone AB circa €11.
+when: >-
+  Maggio-settembre. L'inverno è freddo, ma a dicembre ci sono mercatini di Natale in ogni
+  quartiere.
+tips:
+  - "La visita alla cupola del Reichstag è gratuita, ma va prenotata online con giorni di anticipo."
+  - "Molti locali piccoli accettano solo contanti: tieni qualche euro con te."
+  - "La domenica i negozi sono chiusi. Timbra il biglietto dei mezzi prima di salire: i controllori sono in borghese e la multa è di €60."
+itinerary:
+  - "Porta di Brandeburgo, Reichstag e Memoriale dell'Olocausto. Nel pomeriggio il viale Unter den Linden fino all'Isola dei Musei e ad Alexanderplatz."
+  - "Il Muro: il Memoriale di Bernauer Straße al mattino e la East Side Gallery nel pomeriggio. Serata a Kreuzberg o a Friedrichshain."
+  - "Charlottenburg e il Kurfürstendamm, oppure il Tempelhofer Feld, l'ex aeroporto trasformato in parco. In alternativa, una gita in giornata a Potsdam."
+areas:
+  - name: Mitte
+    text: Il centro storico, vicino all'Isola dei Musei e alla Porta di Brandeburgo.
+  - name: Kreuzberg e Friedrichshain
+    text: I quartieri della vita notturna, della street art e delle cucine di tutto il mondo.
+  - name: Prenzlauer Berg
+    text: Tranquillo, con caffè e piazze alberate, il preferito dalle famiglie.
+  - name: Charlottenburg
+    text: La classica Berlino Ovest, vicino al Kurfürstendamm e al castello.
+food:
+  - name: Currywurst
+    text: Salsiccia a pezzi con salsa di pomodoro e curry, un'invenzione berlinese.
+  - name: Döner Kebab
+    text: La versione nel pane è nata qui, nella comunità turca della città.
+  - name: Berliner Pfannkuchen
+    text: Un bombolone ripieno di marmellata.
+  - name: Mercati gastronomici
+    text: La Markthalle Neun a Kreuzberg, con la serata dello street food ogni giovedì.
+transport: >-
+  U-Bahn, S-Bahn, tram e autobus funzionano con lo stesso biglietto; per la città bastano le zone
+  AB, per l'aeroporto serve ABC. Il biglietto da 24 ore conviene dalla terza corsa in poi. La
+  città è pianeggiante e piena di piste ciclabili.
+daytrips:
+  - name: Potsdam
+    text: Il palazzo di Sanssouci e i giardini dei re di Prussia, a 30-40 minuti di S-Bahn.
+  - name: Sachsenhausen
+    text: Il memoriale del campo di concentramento a Oranienburg, a circa 45 minuti di treno.
+  - name: Dresda
+    text: La città barocca sull'Elba, a circa 2 ore di treno.
+faq:
+  - q: "A Berlino i negozi sono aperti la domenica?"
+    a: "No, quasi tutti i negozi e i supermercati sono chiusi. Restano aperti i ristoranti, i musei, i mercatini della domenica (come quello del Mauerpark) e i negozi nelle grandi stazioni."
+  - q: "Quanto si spende al giorno a Berlino?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno. Berlino è più economica di Monaco o Francoforte, e gran parte della sua storia si vede gratis per strada."

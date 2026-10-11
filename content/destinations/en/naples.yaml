@@ -1,0 +1,67 @@
+city: Naples
+slug: naples
+tagline: Pizza, Vesuvius and Pompeii
+intro: >-
+  Naples is the home of pizza, a noisy city full of life in the shadow of Vesuvius. It is also the
+  gateway to Pompeii, Capri and the Amalfi Coast.
+sights:
+  - name: Spaccanapoli
+    text: The narrow street that cuts the historic centre in two, lined with churches, shops and pizzerias.
+  - name: National Archaeological Museum
+    text: The richest collection of mosaics and objects recovered from Pompeii.
+  - name: Castel dell'Ovo
+    text: The seafront castle, with the Lungomare promenade and the view of Vesuvius.
+  - name: Pompeii
+    text: The Roman city buried by the ash of Vesuvius, about 35 minutes by train.
+  - name: Sansevero Chapel
+    text: Home of the “Veiled Christ”, one of the most striking sculptures in the world. Tickets are booked online.
+  - name: Napoli Sotterranea
+    text: The tunnels and cisterns beneath the city, dug by the Greeks and the Romans.
+airports:
+  NAP: >-
+    The Alibus links the airport with the main station (Piazza Garibaldi) in 15-20 minutes and with
+    the port in about 30 minutes. The ticket costs €5.
+budget: >-
+  A pizza margherita costs €5-8, an espresso about €1.20, and a metro ticket about €1.50.
+when: >-
+  April to June and September to October. Summer is hot, but good for the islands.
+tips:
+  - "For Pompeii, take the Circumvesuviana train from Garibaldi station."
+  - "Keep an eye on your bag and phone in crowded streets and on public transport."
+  - "Many famous pizzerias don't take bookings: go before 19:30 or be ready to queue."
+itinerary:
+  - "The historic centre: Spaccanapoli, the Sansevero Chapel and Napoli Sotterranea. Pizza for lunch on Via dei Tribunali, then the Archaeological Museum in the afternoon."
+  - "Pompeii in the morning on the Circumvesuviana train. In the afternoon, take the funicular up to Vomero for the view from Castel Sant'Elmo."
+  - "The Lungomare promenade, Castel dell'Ovo and Piazza del Plebiscito. Or take the ferry for a day on Capri or Procida."
+areas:
+  - name: Centro Storico
+    text: "Between Spaccanapoli and Via dei Tribunali: noise, life and the best pizzerias."
+  - name: Chiaia and Lungomare
+    text: The elegant seafront area, quieter and more expensive.
+  - name: Near Piazza Garibaldi
+    text: The cheapest and most practical for trains and the airport, but not the most pleasant in the evening.
+food:
+  - name: Pizza napoletana
+    text: Margherita or marinara, with soft dough and a puffed-up rim, baked for 90 seconds.
+  - name: Pizza fritta
+    text: Fried pizza, filled with ricotta and ham.
+  - name: Sfogliatella
+    text: A pastry with crisp layers or soft dough, filled with ricotta.
+  - name: Espresso
+    text: Coffee here is short, strong and drunk standing at the bar.
+transport: >-
+  The centre can be seen on foot. The metro (Line 1) is known for its stations designed like art
+  galleries, while the funiculars take you up Vomero hill. Circumvesuviana trains to Pompeii and
+  Sorrento leave from Piazza Garibaldi.
+daytrips:
+  - name: Capri
+    text: About 50 minutes by fast ferry from the Molo Beverello port.
+  - name: Amalfi Coast
+    text: Positano and Amalfi, by ferry in summer or by train to Sorrento and then a bus.
+  - name: Herculaneum
+    text: Smaller and better preserved than Pompeii, 20 minutes by train.
+faq:
+  - q: "How far is Pompeii from Naples?"
+    a: "About 35-40 minutes on the Circumvesuviana train to Pompei Scavi station, which is opposite the entrance. Allow at least three or four hours for the visit."
+  - q: "How much money do you need per day in Naples?"
+    a: "Excluding the flight and accommodation, plan on €40-60 a day. Naples is Italy's cheapest big city: an excellent pizza costs less than €10."

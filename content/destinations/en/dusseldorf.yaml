@@ -1,0 +1,68 @@
+city: Düsseldorf
+slug: dusseldorf
+tagline: The Rhine, fashion and Altbier
+intro: >-
+  Düsseldorf stretches along the Rhine and is known for fashion, the modern architecture of the
+  Medienhafen and its Altbier beer. It is also the main airport for the Ruhr area and for Cologne.
+sights:
+  - name: Altstadt
+    text: The old town with hundreds of bars, nicknamed “the longest bar in the world”.
+  - name: Rhine promenade
+    text: The riverside promenade that links the old town with the Medienhafen.
+  - name: Medienhafen
+    text: The old harbour turned into a modern district, with Frank Gehry's curving buildings.
+  - name: Königsallee
+    text: The boulevard of luxury shops, divided by a tree-lined canal.
+  - name: Rheinturm
+    text: The 240-metre tower beside the Rhine, with a viewing platform and a revolving restaurant.
+  - name: Little Tokyo
+    text: The Japanese quarter around Immermannstraße, with some of the best Asian restaurants in Germany.
+airports:
+  DUS: >-
+    The S11 train links the terminal with the main station (Hauptbahnhof) in about 12 minutes, and
+    the ticket costs about €3.50. Regional trains to Cologne, Duisburg and Essen leave from the
+    airport station, which you reach on the free SkyTrain.
+budget: >-
+  A glass of Altbier costs about €3, a dish in a brewery pub €13-18, and a single ticket in the
+  city about €3.50.
+when: >-
+  May to September. Carnival in February and the Christmas market in December fill the city.
+tips:
+  - "Cologne is only half an hour away by train: the Cathedral is right next to the station."
+  - "In the brewery pubs of the Altstadt the waiter keeps bringing you a fresh beer until you cover your glass with a beer mat."
+  - "Don't order Kölsch beer in Düsseldorf: the rivalry with Cologne is an old one, and here people drink only Altbier."
+itinerary:
+  - "The Altstadt, Burgplatz square and the Rhine promenade as far as the Medienhafen. Go up the Rheinturm for sunset."
+  - "Königsallee and the Hofgarten park in the morning, the K20 or K21 art museums in the afternoon. Dinner in Little Tokyo."
+  - "A day trip to Cologne, or an afternoon in Kaiserswerth, the old riverside district to the north."
+areas:
+  - name: Altstadt
+    text: Between the bars and the Rhine promenade; noisy at weekends.
+  - name: Stadtmitte
+    text: Between the main station and Königsallee, practical and mid-priced.
+  - name: Medienhafen
+    text: Modern hotels amid the harbour architecture, 20 minutes on foot from the centre.
+food:
+  - name: Altbier
+    text: The city's dark beer, served in small glasses in the old brewery pubs.
+  - name: Rheinischer Sauerbraten
+    text: Meat marinated for days on end, with a sweet-and-sour sauce.
+  - name: Himmel un Ääd
+    text: "“Heaven and earth”: mashed potato with apple and fried black pudding."
+  - name: Ramen and sushi
+    text: In Little Tokyo, thanks to the city's large Japanese community.
+transport: >-
+  The centre can be seen on foot along the Rhine. Trams and the U-Bahn cover the rest, while
+  regional trains link the city with Cologne, Essen and the whole Ruhr area every few minutes.
+daytrips:
+  - name: Cologne
+    text: The Gothic cathedral and the old town, 25-30 minutes by train.
+  - name: Essen
+    text: Zeche Zollverein, the mine turned into a museum and World Heritage Site, 30 minutes by train.
+  - name: Aachen
+    text: Charlemagne's cathedral, about 1 hour and 20 minutes by train.
+faq:
+  - q: "How far is Cologne from Düsseldorf?"
+    a: "About 40 km: regional trains take 25-30 minutes and leave several times an hour. Many visitors see both cities on the same trip."
+  - q: "How much money do you need per day in Düsseldorf?"
+    a: "Excluding the flight and accommodation, plan on €50-75 a day. During the big trade fairs hotels can cost twice as much."

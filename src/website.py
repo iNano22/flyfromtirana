@@ -35,6 +35,7 @@ import re
 import shutil
 import sys
 from datetime import datetime, timedelta, timezone
+from functools import lru_cache
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -45,6 +46,7 @@ from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, i
 from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
                            saving_percent)
 from src.guides import Entry, Guide, load_entry_rules, load_guides
+from src.i18n import LANGUAGE_CODES, LANGUAGE_NAMES, Strings, load_strings, localize
 from src.links import LinkBuilder
 from src.photos import ASSETS_DIR, CREDITS_FILE, needs_credit
 from src.storage import Storage
@@ -75,20 +77,6 @@ COUNTRY_NAMES = {
 }
 
 # What the credits list calls the service photos.
-SERVICE_PHOTO_NAMES = {
-    "esim": "eSIM", "insurance": "Sigurim udhëtimi", "car_rental": "Makinë me qira",
-    "compensation": "Kompensim", "hotel": "Hotele",
-}
-
-# The one sentence the code has to produce itself; all other wording is in the templates.
-TEXTS = {
-    "sq": {"empty": "Ende nuk ka çmime. Skanimi i parë përfundon brenda pak orësh.",
-           "no_fares": "Për momentin nuk kemi çmime për këtë destinacion. Provo përsëri pas pak orësh."},
-    "en": {"empty": "No prices yet. The first scan finishes within a few hours.",
-           "no_fares": "We have no prices for this destination right now. Try again in a few hours."},
-}
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build the FlyFromTirana website from the price database.")
     parser.add_argument("--out", type=Path, help="output folder (default: website.output_dir in config.yaml)")
@@ -129,25 +117,28 @@ def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
     with Storage(config.db_path) as storage:
         offers = build_offers(config, storage, now, premium_delay=premium_delay)
         updated_at = storage.last_fetched_at()
-    guides = site_guides(config)
-    page = render_site(offers, config, links, updated_at=updated_at, now=now, guides=guides)
-
-    out_dir.mkdir(parents=True, exist_ok=True)
-    index = out_dir / "index.html"
-    index.write_text(page, encoding="utf-8")
-    # One page per city guide: /milan/index.html, so its address is /milan/.
-    for guide in guides.values():
-        folder = out_dir / guide.slug
-        folder.mkdir(exist_ok=True)
+    # One copy of the site per language. The first language's pages sit at the top
+    # (/, /milan/), every other language's in its own folder (/en/, /en/milan/).
+    for language in config.website.languages:
+        guides = site_guides(config, language)
+        folder = out_dir / language_folder(config, language)
+        folder.mkdir(parents=True, exist_ok=True)
         (folder / "index.html").write_text(
-            render_guide_page(guide, guides, offers, config, links, updated_at=updated_at, now=now),
+            render_site(offers, config, links, updated_at=updated_at, now=now, guides=guides, language=language),
             encoding="utf-8")
-    write_sitemap(out_dir, config, guides, now)
+        # One page per city guide: /milan/index.html, so its address is /milan/.
+        for guide in guides.values():
+            (folder / guide.slug).mkdir(exist_ok=True)
+            (folder / guide.slug / "index.html").write_text(
+                render_guide_page(guide, guides, offers, config, links, updated_at=updated_at, now=now,
+                                  language=language),
+                encoding="utf-8")
+        log.info("[%s] %d route(s) on the page, %d of them deals, %d city page(s)", language, len(offers),
+                 sum(o.is_deal for o in offers), len(guides))
+    write_sitemap(out_dir, config, now)
     copy_photos(out_dir)
     (out_dir / ".nojekyll").touch()  # harmless elsewhere; GitHub Pages needs it to serve the files as they are
-    log.info("%d route(s) on the page, %d of them deals, %d city page(s)", len(offers),
-             sum(o.is_deal for o in offers), len(guides))
-    return index
+    return out_dir / "index.html"
 
 
 def copy_photos(out_dir: Path) -> None:
@@ -208,21 +199,28 @@ def build_offers(config: Config, storage: Storage, now: datetime, *,
 
 
 def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
-                updated_at: datetime | None, now: datetime, guides: dict[str, Guide] | None = None) -> str:
-    """The whole main page as HTML. guides: the city guides that have a page (see site_guides)."""
+                updated_at: datetime | None, now: datetime, guides: dict[str, Guide] | None = None,
+                language: str | None = None) -> str:
+    """The whole main page as HTML, in one language (default: the site's first).
+
+    guides: that language's city guides that have a page (see site_guides).
+    """
     guides = guides or {}
-    language = config.language
-    if language not in TEXTS or language not in WORDS:
-        raise ConfigError(f"Unsupported language {language!r}; add it to TEXTS in src/website.py")
-    row_template = load_site_template("site_row.html")
-    deal_rows = [render(row_template, row_values(o, config, links, guides)) for o in offers if o.is_deal]
-    other_rows = [render(row_template, row_values(o, config, links, guides)) for o in offers if not o.is_deal]
+    language = language or config.website.languages[0]
+    strings = load_strings(language)
+    root = "./" if language == config.website.languages[0] else "../"   # from this page to the top of the site
+
+    def rows(template_name: str, chosen: list[Deal]) -> list[str]:
+        template = load_site_template(template_name, strings)
+        return [render(template, row_values(o, config, links, guides, language=language, root=root)) for o in chosen]
+
+    deal_rows = rows("site_row.html", [o for o in offers if o.is_deal])
+    other_rows = rows("site_row.html", [o for o in offers if not o.is_deal])
     # The hero banners at the top of the page: the three best deals, one slide each.
-    hero_template = load_site_template("site_hero.html")
-    hero_slides = [render(hero_template, row_values(o, config, links)) for o in offers if o.is_deal][:HERO_SLIDES]
+    hero_slides = rows("site_hero.html", [o for o in offers if o.is_deal][:HERO_SLIDES])
     # The destinations carousel: one photo card per route, deals first (the order of offers).
-    card_template = load_site_template("site_card.html")
-    dest_cards = [render(card_template, row_values(o, config, links)) for o in offers]
+    dest_cards = rows("site_card.html", offers)
+    names = {city: guide.display_name for city, guide in guides.items()}   # "Milan" -> "Milano" on the Italian page
 
     local_now = now.astimezone(ZoneInfo(config.timezone))
     today = local_now.date()
@@ -235,15 +233,16 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         "BRAND": config.brand,
         "CHANNEL": config.channel_handle,
         "LOOKAHEAD_DAYS": str(config.lookahead_days),
-        "UPDATED": format_updated(updated_at, config) if updated_at else None,
-        "EMPTY": TEXTS[language]["empty"] if not offers else None,
+        "LANG": language,
+        "UPDATED": format_updated(updated_at, config, language) if updated_at else None,
+        "EMPTY": strings.words["empty"] if not offers else None,
         "PREMIUM_HOURS": f"{premium.free_delay_hours:g}" if premium_on else None,  # :g turns 6.0 into "6"
         "YEAR": str(local_now.year),
         # For the headline ("Sot që nga €14") and the badges next to the section headings.
         "MIN_PRICE": format_price(min(o.best.price for o in offers)) if offers else None,
         "DEAL_COUNT": str(len(deal_rows)) if deal_rows else None,
         "ROUTE_COUNT": str(len(offers)) if offers else None,
-        "TOP_CITY": city_label(top.route) if top else None,
+        "TOP_CITY": city_label(top.route, names.get(top.route.city)) if top else None,
         "TOP_PRICE": format_price(top.best.price) if top else None,
         "TOP_SAVING": saving_percent(top) if top else None,
         "GUIDE_COUNT": str(len(guides)) if guides else None,
@@ -255,7 +254,8 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     urls = {
         "TELEGRAM_URL": telegram_url(config.channel_handle),
         "PREMIUM_LINK": premium.join_link if premium_on else None,
-        "SITE_URL": config.website.url or None,
+        "SITE_URL": page_url(config, language),
+        "ASSETS": root,
     }
     # Footer links (eSIM, insurance, ...). A partner URL template may mention a city
     # and dates (that's for per-post hotel links); here a generic route and today stand in.
@@ -270,29 +270,126 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["PRICE_ROWS"] = "\n".join(other_rows) or None
     values["HERO_SLIDES"] = "\n".join(hero_slides) or None
     values["DEST_CARDS"] = "\n".join(dest_cards) or None
-    values["PHOTO_CREDITS"] = photo_credits(config, links)
-    values["DESTINATION_OPTIONS"] = destination_options(offers)
-    values["GUIDE_TILES"] = guide_tiles(guides, offers, config)
-    values["ANALYTICS"] = analytics_html(config)
+    values["PHOTO_CREDITS"] = photo_credits(config, links, strings, names)
+    values["DESTINATION_OPTIONS"] = destination_options(offers, strings, names)
+    values["GUIDE_TILES"] = guide_tiles(guides, offers, config, root=root, language=language)
+    values["LANG_MENU"] = language_menu(config, language, root)
+    values["LANG_LINKS"] = language_links(config, language, root)
+    values["HREFLANG"] = hreflang_links(config)
+    values["JS_WORDS"] = script_words(strings)
+    values["ANALYTICS"] = analytics_html(config, language)
     values["DRIVE"] = drive_html(config)
-    return render(load_site_template("site.html"), values) + "\n"
+    return render(load_site_template("site.html", strings), values) + "\n"
 
 
-def load_site_template(name: str) -> str:
-    """templates/<name> without its HTML comments.
+def load_site_template(name: str, strings: Strings | None = None) -> str:
+    """templates/<name> without its HTML comments, and with a language's wording put in.
 
     The comments are notes for whoever edits the template; stripping them here keeps
     them off the page (the row template would otherwise repeat its note once per route).
+    strings: the language whose text replaces every {T_NAME} (see src/i18n.py).
     """
-    return re.sub(r"<!--.*?-->", "", load_template(name), flags=re.DOTALL)
+    template = re.sub(r"<!--.*?-->", "", load_template(name), flags=re.DOTALL)
+    return localize(template, strings) if strings else template
 
 
-def row_values(offer: Deal, config: Config, links: LinkBuilder,
-               guides: dict[str, Guide] | None = None) -> dict[str, str | None]:
-    """Everything templates/site_row.html and site_hero.html can use: the post placeholders plus a few of their own."""
-    values = build_values(offer, links, language=config.language, channel_handle=config.channel_handle,
+def script_words(strings: Strings) -> str:
+    """The words the main page's script needs, as the JavaScript object it calls `words`."""
+    words = dict(strings.js, months=WORDS[strings.language]["months"])
+    # "</" would end the <script> block early if a text ever contained it.
+    return json.dumps(words, ensure_ascii=False).replace("</", "<\\/")
+
+
+# --- languages ---------------------------------------------------------------------
+
+def language_folder(config: Config, language: str) -> str:
+    """Where a language's pages sit under the site's top folder: "" for the first language, "en/" for English."""
+    return "" if language == config.website.languages[0] else f"{language}/"
+
+
+def page_url(config: Config, language: str, slug: str | None = None) -> str | None:
+    """A page's full address (None when website.url isn't set): the main page, or the city page `slug`."""
+    base_url = site_base_url(config)
+    if not base_url:
+        return None
+    return base_url + language_folder(config, language) + (f"{slug}/" if slug else "")
+
+
+def languages_with(config: Config, slug: str | None) -> list[str]:
+    """The languages a page exists in: all of them for the main page, those with the guide for a city page."""
+    return [language for language in config.website.languages
+            if slug is None or any(guide.slug == slug for guide in site_guides(config, language).values())]
+
+
+def language_targets(config: Config, language: str, root: str, slug: str | None = None) -> list[dict]:
+    """Where this page is in every language of the site, for the language switcher.
+
+    root: the way from this page to the top of the site ("./", "../" or "../../").
+    A city page that has no guide in a language leads to that language's main page.
+    """
+    translated = languages_with(config, slug)
+    return [{
+        "language": code,
+        "href": html.escape(root + language_folder(config, code) + (f"{slug}/" if slug and code in translated else "")),
+        "current": ' aria-current="page"' if code == language else "",
+        "code": html.escape(LANGUAGE_CODES.get(code, code.upper())),            # "AL"
+        "name": html.escape(LANGUAGE_NAMES.get(code, code.upper())),            # "Shqip"
+    } for code in config.website.languages]
+
+
+def language_menu(config: Config, language: str, root: str, slug: str | None = None) -> str | None:
+    """The language dropdown above the top bar (templates/site_lang.html). None with only one language."""
+    if len(config.website.languages) < 2:
+        return None
+    options = "".join(
+        '<a href="{href}" lang="{language}" hreflang="{language}"{current}><b>{code}</b><span>{name}</span></a>'.format(**t)
+        for t in language_targets(config, language, root, slug))
+    return render(load_site_template("site_lang.html"), {
+        "LANG_CODE": html.escape(LANGUAGE_CODES.get(language, language.upper())),
+        "LANG_LABEL": html.escape(load_strings(language).words["languages"]),
+        "LANG_OPTIONS": options,
+    })
+
+
+def language_links(config: Config, language: str, root: str, slug: str | None = None) -> str | None:
+    """The same links as a plain row (AL EN IT), for the footer. None with only one language."""
+    if len(config.website.languages) < 2:
+        return None
+    links = "".join(
+        '<a href="{href}" lang="{language}" hreflang="{language}"{current}>{code}<span class="sr"> {name}</span></a>'.format(**t)
+        for t in language_targets(config, language, root, slug))
+    label = html.escape(load_strings(language).words["languages"])
+    return f'<nav class="langs" aria-label="{label}">{links}</nav>'
+
+
+def hreflang_links(config: Config, slug: str | None = None) -> str | None:
+    """<link rel="alternate" hreflang=...> tags, telling search engines about a page's other languages."""
+    languages = languages_with(config, slug)
+    if len(languages) < 2 or not site_base_url(config):
+        return None
+    tags = [f'<link rel="alternate" hreflang="{code}" href="{html.escape(page_url(config, code, slug))}">'
+            for code in languages]
+    # x-default: the page for visitors whose language the site doesn't have.
+    tags.append(f'<link rel="alternate" hreflang="x-default" href="{html.escape(page_url(config, languages[0], slug))}">')
+    return "\n".join(tags)
+
+
+def row_values(offer: Deal, config: Config, links: LinkBuilder, guides: dict[str, Guide] | None = None, *,
+               language: str | None = None, root: str = "./") -> dict[str, str | None]:
+    """Everything templates/site_row.html and site_hero.html can use: the post placeholders plus a few of their own.
+
+    language: the page's language (default: the site's first). root: the way from the
+    page to the top of the site, where the photos are.
+    """
+    language = language or config.website.languages[0]
+    values = build_values(offer, links, language=language, channel_handle=config.channel_handle,
                           airline_names=config.airlines)
     guide = (guides or {}).get(offer.route.city)
+    countries = load_strings(language).words.get("countries", COUNTRY_NAMES)
+    photo = route_photo(offer.route.iata)
+    if guide and guide.name:   # the city's name in this language: "Milano"
+        values["CITY"] = html.escape(guide.name, quote=False)
+        values["CITY_UPPER"] = html.escape(guide.name.upper(), quote=False)
     values.update({
         "GUIDE_URL": f"{guide.slug}/" if guide else None,   # the city's own page, when it has a guide
         "IATA": offer.route.iata,
@@ -300,18 +397,24 @@ def row_values(offer: Deal, config: Config, links: LinkBuilder,
         "COUNTRY": country_code(offer.route.flag),   # "it" for 🇮🇹: the CSS class that picks the card's colours
         "BEST_DATE": offer.best.depart_date.isoformat(),  # "2026-11-21": the page's JavaScript pre-fills the date picker with it
         # For the photo cards: "14 Nën", "Austri" and the route's photo (None when there isn't one).
-        "BEST_DAY": format_dates([offer.best.depart_date], WORDS[config.language]["months"]),
-        "COUNTRY_NAME": COUNTRY_NAMES.get(country_code(offer.route.flag) or ""),
-        "PHOTO": route_photo(offer.route.iata),
+        "BEST_DAY": format_dates([offer.best.depart_date], WORDS[language]["months"]),
+        "COUNTRY_NAME": countries.get(country_code(offer.route.flag) or ""),
+        "PHOTO": root + photo if photo else None,
     })
     return values
 
 
 # --- the city pages ---------------------------------------------------------------
 
-def site_guides(config: Config) -> dict[str, Guide]:
-    """The guides that get a page: those of cities we fly to, in the order of config.yaml's routes."""
-    guides = load_guides()
+@lru_cache(maxsize=None)
+def guides_in(language: str) -> dict[str, Guide]:
+    """Every guide written in a language. Read once: a build asks for them many times."""
+    return load_guides(language)
+
+
+def site_guides(config: Config, language: str | None = None) -> dict[str, Guide]:
+    """A language's guides that get a page: those of cities we fly to, in the order of config.yaml's routes."""
+    guides = guides_in(language or config.website.languages[0])
     cities = dict.fromkeys(route.city for route in config.routes)   # each city once, in order
     return {city: guides[city] for city in cities if city in guides}
 
@@ -327,20 +430,21 @@ def guide_photo(guide: Guide) -> str | None:
     return path if (ASSETS_DIR / path).exists() else None
 
 
-def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config, *, prefix: str = "",
-                skip: str | None = None) -> str | None:
+def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config, *, pages: str = "",
+                root: str = "./", skip: str | None = None, language: str | None = None) -> str | None:
     """One photo tile per city page: "Udhëzues për qytetet" on the main page, and
     "Destinacione të tjera" on a city page.
 
-    prefix: "" on the main page, "../" on a city page (the way to the other pages and
-    the photos). skip: the city whose page this is, which doesn't link to itself.
+    pages: the way to the city pages of this language ("" on the main page, "../" on a
+    city page). root: the way to the top of the site, where the photos are. skip: the
+    city whose page this is, which doesn't link to itself.
     """
     cheapest: dict[str, float] = {}
     for offer in offers:
         city = offer.route.city
         cheapest[city] = min(offer.best.price, cheapest.get(city, offer.best.price))
     flags = {route.city: route.flag for route in reversed(config.routes)}   # a city's first route wins
-    template = load_site_template("site_guide.html")
+    template = load_site_template("site_guide.html", load_strings(language or config.website.languages[0]))
     esc = html.escape
     tiles = []
     for guide in guides.values():
@@ -349,28 +453,34 @@ def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config, *,
         flag = flags.get(guide.city) or None
         photo = guide_photo(guide)
         tiles.append(render(template, {
-            "CITY": esc(guide.city, quote=False),
+            "CITY": esc(guide.display_name, quote=False),
             "FLAG": flag,
             "COUNTRY": country_code(flag or ""),
             "TAGLINE": esc(guide.tagline, quote=False) or None,
-            "GUIDE_URL": f"{prefix}{guide.slug}/",
-            "GUIDE_PHOTO": prefix + photo if photo else None,
+            "GUIDE_URL": f"{pages}{guide.slug}/",
+            "GUIDE_PHOTO": root + photo if photo else None,
             "PRICE": format_price(cheapest[guide.city]) if guide.city in cheapest else None,
         }))
     return "\n".join(tiles) or None
 
 
 def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal], config: Config,
-                      links: LinkBuilder, *, updated_at: datetime | None, now: datetime) -> str:
-    """One city's page as HTML: its current prices (one ticket per airport), then its guide."""
-    language = config.language
-    if language not in TEXTS or language not in WORDS:
-        raise ConfigError(f"Unsupported language {language!r}; add it to TEXTS in src/website.py")
+                      links: LinkBuilder, *, updated_at: datetime | None, now: datetime,
+                      language: str | None = None) -> str:
+    """One city's page as HTML: its current prices (one ticket per airport), then its guide.
+
+    guide and guides are in `language` (default: the site's first).
+    """
+    language = language or config.website.languages[0]
+    strings = load_strings(language)
+    # From this page to the top of the site: one folder up, two for a language with its own folder.
+    root = "../" if language == config.website.languages[0] else "../../"
     routes = [route for route in config.routes if route.city == guide.city]
     city_offers = sorted((o for o in offers if o.route.city == guide.city), key=lambda o: o.best.price)
     best = city_offers[0] if city_offers else None
-    fare_template = load_site_template("site_dest_fare.html")
-    fares = [render(fare_template, row_values(o, config, links)) for o in city_offers]
+    fare_template = load_site_template("site_dest_fare.html", strings)
+    fares = [render(fare_template, row_values(o, config, links, guides, language=language, root=root))
+             for o in city_offers]
 
     local_now = now.astimezone(ZoneInfo(config.timezone))
     premium = config.premium
@@ -384,29 +494,30 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     text = {
         "BRAND": config.brand,
         "CHANNEL": config.channel_handle,
-        "CITY": guide.city,
+        "LANG": language,
+        "CITY": guide.display_name,
         "COUNTRY": country,
-        "COUNTRY_NAME": COUNTRY_NAMES.get(country or ""),
+        "COUNTRY_NAME": strings.words.get("countries", COUNTRY_NAMES).get(country or ""),
         "FLAG": first.flag or None,
         "INTRO": guide.intro,
         "MIN_PRICE": format_price(best.best.price) if best else None,
-        "UPDATED": format_updated(updated_at, config) if updated_at else None,
-        "NO_FARES": TEXTS[language]["no_fares"] if not fares else None,
+        "UPDATED": format_updated(updated_at, config, language) if updated_at else None,
+        "NO_FARES": strings.words["no_fares"] if not fares else None,
         "TRANSPORT": guide.transport or None,
         "BUDGET": guide.budget or None,
         "WHEN": guide.when or None,
-        "ENTRY_RULES": load_entry_rules().get(country or ""),
+        "ENTRY_RULES": load_entry_rules(language).get(country or ""),
         "DAYS": str(len(guide.itinerary)) if guide.itinerary else None,
         "PREMIUM_HOURS": f"{premium.free_delay_hours:g}" if premium_on else None,
         "YEAR": str(local_now.year),
         "GA_ON": "1" if config.website.google_analytics_id else None,
     }
     urls = {
-        "HOME": "../",
-        "GUIDE_PHOTO": f"../{wide_photo}" if wide_photo else None,
-        "PHOTO": f"../{photo}" if photo and not wide_photo else None,
+        "HOME": "../",   # this language's main page
+        "GUIDE_PHOTO": root + wide_photo if wide_photo else None,
+        "PHOTO": root + photo if photo and not wide_photo else None,
         "PHOTO_URL": base_url + photo if base_url and photo else None,
-        "PAGE_URL": f"{base_url}{guide.slug}/" if base_url else None,
+        "PAGE_URL": page_url(config, language, guide.slug),
         "TELEGRAM_URL": telegram_url(config.channel_handle),
         "PREMIUM_LINK": premium.join_link if premium_on else None,
     }
@@ -440,13 +551,17 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     # A link in "Në këtë faqe" only for the parts this guide has.
     for part in ("SIGHTS", "ITINERARY", "AREAS", "FOOD", "AIRPORTS", "TRANSPORT", "DAYTRIPS"):
         values[f"{part}_ON"] = "1" if values[part] else None
-    values["OTHER_GUIDES"] = guide_tiles(guides, offers, config, prefix="../", skip=guide.city)
-    values["ANALYTICS"] = analytics_html(config)
+    values["OTHER_GUIDES"] = guide_tiles(guides, offers, config, pages="../", root=root, skip=guide.city,
+                                         language=language)
+    values["LANG_MENU"] = language_menu(config, language, root, guide.slug)
+    values["LANG_LINKS"] = language_links(config, language, root, guide.slug)
+    values["HREFLANG"] = hreflang_links(config, guide.slug)
+    values["ANALYTICS"] = analytics_html(config, language)
     values["DRIVE"] = drive_html(config)
-    return render(load_site_template("site_dest.html"), values) + "\n"
+    return render(load_site_template("site_dest.html", strings), values) + "\n"
 
 
-def analytics_html(config: Config) -> str | None:
+def analytics_html(config: Config, language: str | None = None) -> str | None:
     """The Google Analytics block (templates/site_analytics.html), or None when no ID is set."""
     analytics_id = config.website.google_analytics_id
     if not analytics_id:
@@ -454,7 +569,8 @@ def analytics_html(config: Config) -> str | None:
     ask_first = config.website.google_analytics_ask_first
     # Exactly one of GA_ASK / GA_AUTO has a value: it picks the box's wording and behaviour.
     values = {"GA_ID": analytics_id, "GA_ASK": "1" if ask_first else None, "GA_AUTO": None if ask_first else "1"}
-    return render(load_site_template("site_analytics.html"), values)
+    strings = load_strings(language or config.website.languages[0])
+    return render(load_site_template("site_analytics.html", strings), values)
 
 
 def drive_html(config: Config) -> str | None:
@@ -465,8 +581,9 @@ def drive_html(config: Config) -> str | None:
     return render(load_site_template("site_drive.html"), {"DRIVE_URL": script})
 
 
-def write_sitemap(out_dir: Path, config: Config, guides: dict[str, Guide], now: datetime) -> None:
-    """sitemap.xml and robots.txt, so search engines find the main page and every city page.
+def write_sitemap(out_dir: Path, config: Config, now: datetime) -> None:
+    """sitemap.xml and robots.txt, so search engines find every page: the main page and the city
+    pages, in every language.
 
     Both need full addresses, so they are only written when website.url is set.
     """
@@ -474,7 +591,10 @@ def write_sitemap(out_dir: Path, config: Config, guides: dict[str, Guide], now: 
     if not base_url:
         return
     day = now.astimezone(ZoneInfo(config.timezone)).date().isoformat()
-    pages = [base_url] + [f"{base_url}{guide.slug}/" for guide in guides.values()]
+    pages = []
+    for language in config.website.languages:
+        pages.append(page_url(config, language))
+        pages += [page_url(config, language, guide.slug) for guide in site_guides(config, language).values()]
     entries = "".join(f"  <url><loc>{html.escape(page)}</loc><lastmod>{day}</lastmod></url>\n" for page in pages)
     (out_dir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -489,7 +609,8 @@ def route_photo(iata: str) -> str | None:
     return path if (ASSETS_DIR / path).exists() else None
 
 
-def photo_credits(config: Config, links: LinkBuilder) -> str | None:
+def photo_credits(config: Config, links: LinkBuilder, strings: Strings,
+                  names: dict[str, str] | None = None) -> str | None:
     """The footer's photo credits, as HTML. None (no credits block at all) when no photo needs one.
 
     Only photos whose licence requires a credit are listed, and only while they
@@ -500,17 +621,18 @@ def photo_credits(config: Config, links: LinkBuilder) -> str | None:
     """
     if not CREDITS_FILE.exists():
         return None
-    names = {route.iata: city_label(route) for route in config.routes}
+    # What each photo shows, by its slot in credits.json: a route's city, or a travel service.
+    places = {route.iata: city_label(route, (names or {}).get(route.city)) for route in config.routes}
     # A service card is only on the page when its partner link is set in config.yaml.
     partners = links.settings.partners
-    names.update({slot: name for slot, name in SERVICE_PHOTO_NAMES.items()
-                  if slot in partners and partners[slot].url})
+    places.update({slot: name for slot, name in strings.words["services"].items()
+                   if slot in partners and partners[slot].url})
     esc = html.escape
     items = []
     for photo in json.loads(CREDITS_FILE.read_text(encoding="utf-8")):
         if not (ASSETS_DIR / photo["file"]).exists():
             continue
-        if photo["slot"] not in names or not needs_credit(photo["license"]):
+        if photo["slot"] not in places or not needs_credit(photo["license"]):
             continue
         title = f'<a href="{esc(photo["source_url"])}">{esc(photo["title"])}</a>' if photo["source_url"] else esc(photo["title"])
         creator = esc(photo["creator"])
@@ -519,17 +641,18 @@ def photo_credits(config: Config, links: LinkBuilder) -> str | None:
         licence = esc(photo["license"])
         if photo.get("license_url"):
             licence = f'<a href="{esc(photo["license_url"])}">{licence}</a>'
-        label = esc(names[photo["slot"]])
-        items.append(f"<li>{label}: {title}, nga {creator}, {licence}. Prerë dhe zvogëluar.</li>")
+        line = strings.words["credit"].format(place=esc(places[photo["slot"]]), title=title, author=creator,
+                                              licence=licence)
+        items.append(f"<li>{line}</li>")
     return "".join(items) or None
 
 
-def city_label(route: Route) -> str:
-    """'Milano (Bergamo)', or just the city when it has one airport."""
-    return route.city + (f" ({route.airport})" if route.airport else "")
+def city_label(route: Route, name: str | None = None) -> str:
+    """'Milan (Bergamo)', or just the city when it has one airport. name: the city in the page's language."""
+    return (name or route.city) + (f" ({route.airport})" if route.airport else "")
 
 
-def destination_options(offers: list[Deal]) -> str | None:
+def destination_options(offers: list[Deal], strings: Strings, names: dict[str, str] | None = None) -> str | None:
     """The <option> list for the search card's "Për" (to) select, one per route on the page.
 
     Deals come in their own group at the top. Each option carries the route's cheapest
@@ -537,17 +660,19 @@ def destination_options(offers: list[Deal]) -> str | None:
     picker and show the price without looking anything up.
     """
     def option(offer: Deal) -> str:
-        label = f"{city_label(offer.route)}, nga €{format_price(offer.best.price)}"
+        city = city_label(offer.route, (names or {}).get(offer.route.city))
+        label = strings.words["option"].format(city=city, price=format_price(offer.best.price))
         return (f'<option value="{html.escape(offer.route.iata)}" data-date="{offer.best.depart_date.isoformat()}"'
                 f' data-price="{format_price(offer.best.price)}">{html.escape(label, quote=False)}</option>')
 
-    groups = [("Ofertat e momentit", [o for o in offers if o.is_deal]),
-              ("Destinacionet e tjera", [o for o in offers if not o.is_deal])]
+    groups = [(strings.words["deals_group"], [o for o in offers if o.is_deal]),
+              (strings.words["others_group"], [o for o in offers if not o.is_deal])]
     parts = []
     for title, group in groups:
         if group:
             by_city = sorted(group, key=lambda o: (o.route.city, o.route.airport))
-            parts.append(f'<optgroup label="{title}">' + "".join(option(o) for o in by_city) + "</optgroup>")
+            parts.append(f'<optgroup label="{html.escape(title)}">' + "".join(option(o) for o in by_city)
+                         + "</optgroup>")
     return "\n".join(parts) or None
 
 
@@ -565,10 +690,10 @@ def telegram_url(channel_handle: str) -> str | None:
     return f"https://t.me/{handle}"
 
 
-def format_updated(moment: datetime, config: Config) -> str:
-    """'9 Tet 2026, 12:00' in the configured timezone, with the post template's month names."""
+def format_updated(moment: datetime, config: Config, language: str | None = None) -> str:
+    """'9 Tet 2026, 12:00' in the configured timezone, with the language's month names."""
     local = moment.astimezone(ZoneInfo(config.timezone))
-    months = WORDS[config.language]["months"]
+    months = WORDS[language or config.website.languages[0]]["months"]
     return f"{local.day} {months[local.month - 1]} {local.year}, {local:%H:%M}"
 
 

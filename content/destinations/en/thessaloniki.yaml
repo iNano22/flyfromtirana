@@ -1,0 +1,67 @@
+city: Thessaloniki
+slug: thessaloniki
+tagline: The sea, food and nightlife
+intro: >-
+  Thessaloniki is Greece's second city, known for its seafront promenade, its food and its
+  nightlife. It is also the starting point for the beaches of Halkidiki.
+sights:
+  - name: White Tower
+    text: The symbol of the city on the seafront, with a museum inside and views from the top.
+  - name: Nea Paralia promenade
+    text: Five kilometres along the sea, with gardens and the famous umbrellas sculpture.
+  - name: Ano Poli
+    text: The upper town, with old houses and the Byzantine walls, and the best view over the gulf.
+  - name: Rotunda and Arch of Galerius
+    text: The two Roman monuments in the middle of the city, close to each other.
+  - name: Archaeological Museum
+    text: The gold treasures of ancient Macedonia, a few minutes from the White Tower.
+  - name: Ladadika
+    text: The old warehouse district by the port, now full of tavernas and bars.
+airports:
+  SKG: >-
+    Bus 01X (01N at night) links the airport with the centre and the railway station in about 45
+    minutes, and the ticket costs about €2. A taxi to the centre costs about €25-30.
+budget: >-
+  A bougatsa for breakfast costs about €3, a gyros €4-5, and a freddo coffee about €3.
+when: >-
+  May, June and September are the best months. Summer is ideal if you combine it with Halkidiki.
+tips:
+  - "Try the custard bougatsa in the morning: it's the city's speciality."
+  - "For Halkidiki you need a hire car or the KTEL buses."
+  - "The promenade has cycle lanes along the whole waterfront: a hired bike is the most pleasant way to cover it."
+itinerary:
+  - "The White Tower, the promenade and the Umbrellas. In the afternoon, Aristotelous Square and the Modiano and Kapani markets, then dinner in Ladadika."
+  - "The Rotunda, the Arch of Galerius and the Church of Saint Demetrius. In the afternoon, climb up to Ano Poli for sunset from the walls."
+  - "A day on the beaches of Halkidiki, or at the royal tombs of Vergina."
+areas:
+  - name: City centre
+    text: Around Aristotelous Square and the promenade, with everything within walking distance.
+  - name: Ladadika
+    text: By the port, the liveliest area for dinner and nightlife.
+  - name: Ano Poli
+    text: "The upper town: views, peace and quiet and old lanes, but with steep climbs."
+food:
+  - name: Bougatsa
+    text: A pie of thin filo pastry, with custard, cheese or meat, for breakfast.
+  - name: Koulouri
+    text: A sesame bread ring, sold on every corner.
+  - name: Gyros
+    text: Here it comes in big portions, in pita or on a plate.
+  - name: Trigona Panoramatos
+    text: Cones of crisp filo filled with custard, the speciality of the Panorama district.
+transport: >-
+  The centre is flat and walkable along the seafront. For longer distances there are buses and the
+  new metro, opened at the end of 2024, with one line running through the centre. Taxis are cheap
+  compared with Western Europe.
+daytrips:
+  - name: Halkidiki
+    text: The beaches of Kassandra are about an hour away by car or KTEL bus.
+  - name: Vergina
+    text: The tomb of Philip II, the father of Alexander the Great, about an hour by car.
+  - name: Mount Olympus
+    text: The village of Litochoro, the starting point for the trails, can be reached in about 1.5 hours.
+faq:
+  - q: "Do you need a car in Thessaloniki?"
+    a: "Not for the city. For Halkidiki, Olympus or Vergina a hire car gives you the most freedom, especially out of season, when buses are less frequent."
+  - q: "How much money do you need per day in Thessaloniki?"
+    a: "Excluding the flight and accommodation, plan on €35-55 a day. It's among the cheapest destinations from Tirana, with generous portions and lower prices than in Athens."

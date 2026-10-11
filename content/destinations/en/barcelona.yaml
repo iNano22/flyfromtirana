@@ -1,0 +1,73 @@
+city: Barcelona
+slug: barcelona
+tagline: Gaudí, the beach and nightlife
+intro: >-
+  Barcelona combines the beach with Gaudí's architecture and a nightlife that starts late. Three or
+  four days are ideal.
+sights:
+  - name: Sagrada Família
+    text: Gaudí's unfinished basilica, the most visited building in Spain.
+  - name: Park Güell
+    text: The park with colourful mosaics and views over the city and the sea.
+  - name: Gothic Quarter and La Rambla
+    text: The medieval centre with its narrow lanes, and the city's best-known promenade.
+  - name: Casa Batlló and La Pedrera
+    text: Gaudí's two most famous houses, on the Passeig de Gràcia boulevard.
+  - name: Barceloneta
+    text: The city beach, a few minutes from the centre.
+  - name: Montjuïc
+    text: The hill with the castle, the National Art Museum of Catalonia and views over the port.
+  - name: La Boqueria
+    text: The city's most famous market, on La Rambla. Go in the morning, before the crowds.
+airports:
+  BCN: >-
+    The Aerobús takes you to Plaça de Catalunya in about 35 minutes (about €7-8). The R2 Nord train
+    from Terminal 2 reaches Sants and Passeig de Gràcia in about 25 minutes, and the ticket costs
+    about €5.
+budget: >-
+  A coffee costs about €2, a set lunch (menú del día) €13-18, and the T-casual card with 10
+  journeys about €13.
+when: >-
+  May to June and September to October. July and August are hot and very crowded.
+tips:
+  - "Tickets for the Sagrada Família and Park Güell are sold online and sell out days ahead."
+  - "Watch out for pickpockets on La Rambla and in the metro."
+  - "Dinner starts late, around 21:00. For lunch, ask for the “menú del día”: several courses with a drink, at a fixed price."
+itinerary:
+  - "The Sagrada Família in the morning (with a pre-booked ticket), then Passeig de Gràcia with Casa Batlló and La Pedrera. The evening in El Born."
+  - "The Gothic Quarter, the Cathedral and La Boqueria. In the afternoon, Barceloneta and the beach, then sunset from Montjuïc."
+  - "Park Güell and the Gràcia neighbourhood in the morning. In the afternoon, the museums on Montjuïc, or a day trip to Montserrat."
+areas:
+  - name: Barri Gòtic and El Born
+    text: "The historic centre: atmosphere and nightlife, but also noise and narrow lanes."
+  - name: Eixample
+    text: The district of wide streets and Gaudí's buildings, quiet and well connected.
+  - name: Gràcia
+    text: Small squares and local bars and restaurants, near Park Güell.
+  - name: Barceloneta
+    text: Next to the beach, best in summer.
+food:
+  - name: Tapas
+    text: "Small plates for sharing: patatas bravas, croquettes, fried peppers."
+  - name: Pa amb tomàquet
+    text: Bread rubbed with tomato and olive oil, the start of every Catalan meal.
+  - name: Paella and fideuà
+    text: Rice or thin noodles with seafood, at their best by the sea in Barceloneta.
+  - name: Crema catalana
+    text: A sweet custard with a crust of burnt sugar.
+transport: >-
+  The metro covers the whole city and runs until late. The T-casual card with 10 journeys is the
+  best option for a few days, but it isn't valid on the airport metro. The historic centre and the
+  seafront are best seen on foot.
+daytrips:
+  - name: Montserrat
+    text: The monastery among strange rock formations, about 1 hour and 15 minutes by train and cable car.
+  - name: Girona
+    text: A medieval city with colourful houses along the river, 40 minutes by high-speed train.
+  - name: Sitges
+    text: A seaside town with beaches, 40 minutes by train.
+faq:
+  - q: "Do you need to book the attractions in Barcelona?"
+    a: "Yes. The Sagrada Família and Park Güell only sell timed tickets, which often sell out days ahead, especially in summer. Book Casa Batlló too if you want to see inside."
+  - q: "How much money do you need per day in Barcelona?"
+    a: "Excluding the flight and accommodation, plan on €50-75 a day. Gaudí's sights are expensive to get into (the Sagrada Família is about €26), while lunch from the menú del día is cheap."

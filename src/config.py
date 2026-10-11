@@ -88,6 +88,9 @@ class WebsiteSettings:
     """The static site built by src/website.py (the docs/ folder, served by the `web` container)."""
 
     output_dir: Path = PROJECT_ROOT / "docs"
+    # The site's languages. The first one's pages sit at the top of the site (/, /milan/),
+    # every other one's in a folder of its own (/en/, /en/milan/).
+    languages: tuple[str, ...] = ("sq",)
     sub_id: str = "website"   # Travelpayouts SubID for links on the site ("telegram" is used in posts)
     # The site's affiliate links: the ones the posts use, except where
     # website.links in config.yaml gives the site its own (and with sub_id above).
@@ -210,15 +213,20 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         links=links,
         airlines={str(k).upper(): str(v) for k, v in (raw.get("airlines") or {}).items()},
         premium=_build_premium(raw.get("premium") or {}, rules),
-        website=_build_website(raw.get("website") or {}, base_dir, links),
+        website=_build_website(raw.get("website") or {}, base_dir, links, str(raw.get("language", "sq"))),
         post_photos=bool(raw.get("post_photos", True)),
     )
 
 
-def _build_website(raw: dict, base_dir: Path, links: LinkSettings) -> WebsiteSettings:
+def _build_website(raw: dict, base_dir: Path, links: LinkSettings, default_language: str) -> WebsiteSettings:
     output_dir = Path(raw.get("output_dir") or "docs")
     if not output_dir.is_absolute():
         output_dir = base_dir / output_dir
+    # Without website.languages the site has one language: the one the posts are in.
+    languages = tuple(str(code).strip().lower() for code in raw.get("languages") or [default_language])
+    # A code becomes a folder name (/en/), so only plain two- or three-letter codes.
+    if any(not re.fullmatch(r"[a-z]{2,3}", code) for code in languages) or len(set(languages)) != len(languages):
+        raise ValueError("website.languages must be a list of different language codes, e.g. [sq, en, it]")
     sub_id = str(raw.get("sub_id") or "website")
     analytics_id = str(raw.get("google_analytics_id") or "").strip()
     # The ID is written into the page's JavaScript, so only the real shape is let through.
@@ -231,6 +239,7 @@ def _build_website(raw: dict, base_dir: Path, links: LinkSettings) -> WebsiteSet
                          "the one in script.src = '...' in the snippet Travelpayouts gives")
     return WebsiteSettings(
         output_dir=output_dir,
+        languages=languages,
         sub_id=sub_id,
         url=str(raw.get("url") or "").strip(),
         google_analytics_id=analytics_id,

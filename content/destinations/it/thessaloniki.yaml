@@ -1,0 +1,68 @@
+city: Thessaloniki
+name: Salonicco
+slug: thessaloniki
+tagline: Mare, cibo e vita notturna
+intro: >-
+  Salonicco è la seconda città della Grecia, famosa per il lungomare, il cibo e la vita notturna.
+  È anche il punto di partenza per le spiagge della Calcidica.
+sights:
+  - name: Torre Bianca
+    text: Il simbolo della città in riva al mare, con un museo all'interno e la vista dalla cima.
+  - name: Lungomare Nea Paralia
+    text: Cinque chilometri in riva al mare, con giardini e la famosa scultura degli Ombrelli.
+  - name: Ano Poli
+    text: La città alta con le case antiche e le mura bizantine, con la vista migliore sul golfo.
+  - name: Rotonda e Arco di Galerio
+    text: I due monumenti romani nel cuore della città, uno accanto all'altro.
+  - name: Museo Archeologico
+    text: I tesori d'oro dell'antica Macedonia, a pochi minuti dalla Torre Bianca.
+  - name: Ladadika
+    text: Il vecchio quartiere dei magazzini vicino al porto, oggi pieno di taverne e bar.
+airports:
+  SKG: >-
+    L'autobus 01X (di notte 01N) collega l'aeroporto al centro e alla stazione ferroviaria in
+    circa 45 minuti, con un biglietto da circa €2. Il taxi per il centro costa circa €25-30.
+budget: >-
+  Una bougatsa a colazione costa circa €3, un gyros €4-5, un caffè freddo circa €3.
+when: >-
+  Maggio, giugno e settembre sono i mesi migliori. L'estate è ideale se la abbini alla Calcidica.
+tips:
+  - "Prova la bougatsa alla crema al mattino: è la specialità della città."
+  - "Per la Calcidica ti serve un'auto a noleggio oppure gli autobus KTEL."
+  - "Il lungomare ha una pista ciclabile lungo tutta la costa: la bici a noleggio è il modo più piacevole per percorrerlo."
+itinerary:
+  - "Torre Bianca, lungomare e gli Ombrelli. Nel pomeriggio piazza Aristotelous, i mercati Modiano e Kapani, cena a Ladadika."
+  - "Rotonda, Arco di Galerio e chiesa di San Demetrio. Nel pomeriggio sali ad Ano Poli per il tramonto dalle mura."
+  - "Una giornata sulle spiagge della Calcidica, oppure alle tombe reali di Verghina."
+areas:
+  - name: Centro
+    text: Intorno a piazza Aristotelous e al lungomare, con tutto raggiungibile a piedi.
+  - name: Ladadika
+    text: Vicino al porto, la zona più animata per la cena e la vita notturna.
+  - name: Ano Poli
+    text: "La città alta: panorami, tranquillità e vicoli antichi, ma con salite ripide."
+food:
+  - name: Bougatsa
+    text: Sfoglia di pasta fillo ripiena di crema, formaggio o carne, per colazione.
+  - name: Koulouri
+    text: Ciambella di pane al sesamo, venduta a ogni angolo.
+  - name: Gyros
+    text: Qui si serve in porzioni abbondanti, nella pita o al piatto.
+  - name: Trigona Panoramatos
+    text: Coni di sfoglia croccante ripieni di crema, la specialità del quartiere di Panorama.
+transport: >-
+  Il centro è pianeggiante e si gira a piedi lungo il mare. Per le distanze più lunghe ci sono
+  gli autobus e la nuova metro, aperta alla fine del 2024, con una linea che attraversa il
+  centro. I taxi costano poco rispetto all'Europa occidentale.
+daytrips:
+  - name: Calcidica
+    text: Le spiagge di Kassandra sono a circa un'ora in auto o con l'autobus KTEL.
+  - name: Verghina
+    text: La tomba di Filippo II, padre di Alessandro Magno, a circa un'ora in auto.
+  - name: Monte Olimpo
+    text: Il villaggio di Litochoro, punto di partenza dei sentieri, si raggiunge in circa 1,5 ore.
+faq:
+  - q: "Serve l'auto a Salonicco?"
+    a: "Per la città no. Per la Calcidica, l'Olimpo o Verghina l'auto a noleggio ti dà la massima libertà, soprattutto fuori stagione, quando gli autobus sono più rari."
+  - q: "Quanto si spende al giorno a Salonicco?"
+    a: "Volo e alloggio esclusi, €35-55 al giorno. È tra le mete più economiche da Tirana, con porzioni generose e prezzi più bassi che ad Atene."

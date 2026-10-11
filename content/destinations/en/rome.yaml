@@ -1,0 +1,75 @@
+city: Rome
+slug: rome
+tagline: The Colosseum, the Vatican and pasta
+intro: >-
+  Rome is an open-air museum: the Colosseum, the Vatican and Baroque squares that you come across
+  on almost every corner. Allow at least three days and bring comfortable shoes.
+sights:
+  - name: Colosseum and Roman Forum
+    text: The largest amphitheatre of the ancient world and the heart of ancient Rome, on one combined ticket.
+  - name: The Vatican
+    text: St. Peter's Basilica and the Vatican Museums with the Sistine Chapel.
+  - name: Trevi Fountain
+    text: The city's most famous fountain. Go early in the morning to see it without the crowds.
+  - name: Pantheon
+    text: The Roman temple whose dome is open at the centre, preserved almost intact.
+  - name: Trastevere
+    text: The neighbourhood of cobbled lanes, the best place for dinner.
+  - name: Piazza Navona and the Spanish Steps
+    text: Two of the most beautiful Baroque squares, linked by a half-hour walk through the centre.
+  - name: Castel Sant'Angelo
+    text: The mausoleum of the emperor Hadrian, later a fortress of the popes, with views over the Tiber and the Vatican.
+airports:
+  FCO: >-
+    The Leonardo Express train runs non-stop to Termini station in 32 minutes (€14). The FL1
+    regional train stops at Trastevere and Ostiense for about €8, while buses to Termini cost €6-7.
+  CIA: >-
+    Ciampino is a small airport, about 15 km from the centre. Direct buses to Termini take about 40
+    minutes and cost about €6.
+budget: >-
+  An espresso at the bar costs about €1.20, a plate of pasta €10-14, and a ticket for the metro and
+  buses about €1.50-2.
+when: >-
+  Spring and autumn are ideal. July and August are very hot, with long queues.
+tips:
+  - "Book your tickets for the Colosseum and the Vatican Museums online to avoid the queues."
+  - "The water from the public drinking fountains (nasoni) is safe to drink: carry a bottle with you."
+  - "Many state museums, the Colosseum among them, have free entry on the first Sunday of every month."
+itinerary:
+  - "Ancient Rome: the Colosseum, the Roman Forum and the Palatine Hill on one ticket. In the afternoon, the Capitoline Hill and Piazza Venezia, then dinner in the Monti neighbourhood."
+  - "The Vatican in the morning: the Museums, the Sistine Chapel and St. Peter's Basilica. In the afternoon, Castel Sant'Angelo, then the evening in Trastevere."
+  - "The Baroque centre on foot: the Trevi Fountain, the Pantheon, Piazza Navona and the Spanish Steps. At sunset, climb the Pincio or the Gianicolo hill for the view."
+areas:
+  - name: Centro Storico
+    text: "Between the Pantheon and Piazza Navona: everything within walking distance, but with the highest prices."
+  - name: Trastevere
+    text: Cobbled lanes, trattorias and nightlife. More authentic, but a little further from the metro.
+  - name: Monti and Termini
+    text: Monti is a pleasant neighbourhood near the Colosseum. The area around Termini station is the cheapest and the most practical for the airports.
+  - name: Prati
+    text: A quiet residential neighbourhood near the Vatican, on the metro and with reasonably priced restaurants.
+food:
+  - name: Carbonara and cacio e pepe
+    text: "The two best-known Roman pastas: the first with egg and guanciale, the second with just pecorino cheese and pepper."
+  - name: Supplì
+    text: Fried rice balls with mozzarella inside, the classic pizzeria starter.
+  - name: Pizza al taglio
+    text: Pizza cut into slices and sold by weight, ideal for a quick lunch.
+  - name: Gelato
+    text: "Artisan ice cream. Avoid the places with brightly coloured mounds: the good stuff is kept in covered tubs."
+transport: >-
+  The historic centre is walkable and the metro doesn't go into it, so be ready to walk a lot. The
+  metro (lines A and B) serves the Vatican, the Colosseum and Termini; the ticket is valid for 100
+  minutes on buses and trams too. You can also pay with a contactless bank card.
+daytrips:
+  - name: Tivoli
+    text: Villa d'Este with its fountains and Hadrian's Villa, about an hour from the city.
+  - name: Ostia Antica
+    text: The ancient port of Rome, preserved like a smaller Pompeii, 30 minutes by train.
+  - name: Florence
+    text: Only 1.5 hours by high-speed train, doable as a day trip.
+faq:
+  - q: "Fiumicino or Ciampino?"
+    a: "Fiumicino is the main airport and has direct trains. Ciampino is smaller and closer, but is only linked by bus. If the flights cost about the same, Fiumicino is the more convenient choice."
+  - q: "How much money do you need per day in Rome?"
+    a: "Excluding the flight and accommodation, €50-80 a day is enough for food, transport and one paid attraction. The Colosseum costs about €18 and the Vatican Museums about €20."

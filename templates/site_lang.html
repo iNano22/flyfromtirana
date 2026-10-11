@@ -1,0 +1,24 @@
+<!-- The language switcher: a small dropdown in a slim bar above the top bar. Closed, it shows the
+     page's own language as a code (AL, EN, IT); open, it lists every language of the site, each
+     linking to this same page in that language. It is put on a page only when the site has more
+     than one language (website.languages in config.yaml).
+     Values: LANG_CODE (the code of the page's language), LANG_LABEL ("Gjuha", for screen
+     readers) and LANG_OPTIONS (the links, built in src/website.py).
+     It opens and closes without any script (it is a <details>); the script below only closes it
+     again on a click elsewhere or on Escape.
+     Same rules as the other templates: never write an uppercase word in curly braces unless it
+     is a value, never two opening square brackets in a row. -->
+<div class="langbar"><div class="wrap">
+<details class="lang">
+<summary><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"/></svg><span class="sr">{LANG_LABEL}: </span>{LANG_CODE}<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></summary>
+<nav class="lang-menu" aria-label="{LANG_LABEL}">{LANG_OPTIONS}</nav>
+</details>
+</div></div>
+<script>
+(function () {
+  var menu = document.querySelector('details.lang');
+  if (!menu) { return; }
+  document.addEventListener('click', function (event) { if (menu.open && !menu.contains(event.target)) { menu.open = false; } });
+  document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); } });
+})();
+</script>

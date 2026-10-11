@@ -1,0 +1,69 @@
+city: Munich
+slug: munich
+tagline: Beer, squares and the Alps
+intro: >-
+  Munich is the capital of Bavaria: historic squares, beer gardens and the Alps an hour away. Two
+  or three days are enough for the city.
+sights:
+  - name: Marienplatz
+    text: The central square with the New Town Hall and the moving figures of the Glockenspiel, at 11:00 and 12:00.
+  - name: Frauenkirche
+    text: The cathedral with its two domed towers, the city's best-known silhouette.
+  - name: Englischer Garten
+    text: One of the largest urban parks in Europe, with the surfers on the Eisbach wave.
+  - name: Hofbräuhaus
+    text: The most famous beer hall in the world, with Bavarian music every evening.
+  - name: Viktualienmarkt
+    text: The city's open-air market, with food stalls and a beer garden in the middle.
+  - name: Nymphenburg Palace
+    text: The summer residence of the kings of Bavaria, with a large park, 20 minutes away by tram.
+airports:
+  MUC: >-
+    The S-Bahn trains S1 and S8 take you to the centre (Hauptbahnhof, Marienplatz) in about 40
+    minutes. The ticket costs about €14; the Airport-City-Day-Ticket day pass (about €16) is worth
+    it if you'll also be getting around the city.
+budget: >-
+  A half-litre of beer costs €5-6, a dish in a beer hall €14-20, and a single ticket in the city
+  about €4.
+when: >-
+  May to September for the beer gardens. Oktoberfest runs from mid-September to early October.
+tips:
+  - "During Oktoberfest hotel prices double or triple: book months ahead."
+  - "Neuschwanstein Castle can be visited as a day trip, by train to Füssen (about 2 hours)."
+  - "Shops and supermarkets are closed on Sundays: do your shopping on Saturday."
+itinerary:
+  - "Marienplatz with the Glockenspiel, the Frauenkirche and the Viktualienmarkt. In the afternoon, the Residenz and a beer at the Hofbräuhaus."
+  - "The Englischer Garten with its surfers and the beer garden at the Chinese Tower. In the afternoon, the art museums (the Pinakotheken), or BMW Welt and the Olympic Park."
+  - "Nymphenburg Palace, or a day trip to Neuschwanstein or Salzburg."
+areas:
+  - name: Altstadt
+    text: Around Marienplatz, with everything within walking distance and the highest prices.
+  - name: Near the Hauptbahnhof
+    text: The most practical area for the airport train, and the one with the cheapest hotels.
+  - name: Schwabing
+    text: The neighbourhood of cafés and students, next to the Englischer Garten.
+food:
+  - name: Weißwurst
+    text: White sausages eaten for breakfast, with sweet mustard and a pretzel.
+  - name: Schweinshaxe
+    text: Roast pork knuckle with crisp crackling.
+  - name: Brezn
+    text: The big Bavarian pretzel, the companion to every beer.
+  - name: Beer gardens
+    text: "In the traditional beer gardens you're allowed to bring your own food: you only buy the beer."
+transport: >-
+  The network of U-Bahn, S-Bahn and trams is fast and punctual. Paper tickets must be validated
+  before boarding, and inspections are frequent. For a day with a lot of travelling the day ticket
+  is worth it, especially the group one for 2 to 5 people.
+daytrips:
+  - name: Neuschwanstein
+    text: The fairy-tale castle, about 2 hours by train and bus.
+  - name: Salzburg
+    text: Mozart's city in Austria, about 1.5-2 hours by train.
+  - name: Dachau
+    text: The concentration camp memorial, 25 minutes by S-Bahn.
+faq:
+  - q: "When is Oktoberfest held?"
+    a: "It starts in mid-September and lasts about 16 days, until the first Sunday in October. Entry to the tents is free, but at weekends they fill up from the morning."
+  - q: "How much money do you need per day in Munich?"
+    a: "Excluding the flight and accommodation, plan on €50-80 a day. Munich is Germany's most expensive city: accommodation is the main expense, while food in the beer halls stays reasonable."

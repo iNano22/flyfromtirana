@@ -58,7 +58,7 @@ def test_every_country_we_fly_to_has_its_entry_rules():
     countries = {country_code(route.flag) for route in load_config().routes}
     assert countries <= set(rules)                         # the "Çfarë dokumentesh duhen?" answer
     assert "pa vizë" in rules["it"] and "vizë vizitori" in rules["gb"]
-    assert load_entry_rules(load_config().db_path.parent / "no-such-file.yaml") == {}
+    assert load_entry_rules(path=load_config().db_path.parent / "no-such-file.yaml") == {}
 
 
 def test_guides_are_listed_in_the_order_of_the_routes():
@@ -71,11 +71,11 @@ def test_guides_are_listed_in_the_order_of_the_routes():
 def test_broken_guide_file_names_the_file(tmp_path):
     (tmp_path / "nowhere.yaml").write_text("city: Nowhere\nslug: No Where\nintro: x\n", encoding="utf-8")
     with pytest.raises(ConfigError, match="nowhere.yaml.*slug"):
-        load_guides(tmp_path)
+        load_guides(directory=tmp_path)
     (tmp_path / "nowhere.yaml").write_text("city: Nowhere\nintro: x\n", encoding="utf-8")
     with pytest.raises(ConfigError, match="nowhere.yaml.*slug"):
-        load_guides(tmp_path)
-    assert load_guides(tmp_path / "missing") == {}          # no folder: no guides, no error
+        load_guides(directory=tmp_path)
+    assert load_guides(directory=tmp_path / "missing") == {}   # no folder: no guides, no error
 
 
 # --- a city page -----------------------------------------------------------------
@@ -125,7 +125,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
     # "Destinacione të tjera": a photo tile for each of the 18 other cities.
     others = page[page.index('<ul class="gtiles"'):page.index("</ul>", page.index('<ul class="gtiles"'))]
-    assert others.count('<li class="gtile') == 18 and 'href="../milan/"' not in page
+    assert others.count('<li class="gtile') == 18 and 'href="../milan/"' not in others
     assert '<a href="../rome/">' in others and '<img src="../img/guides/rome.webp"' in others
     assert "Koloseu, Vatikani dhe pasta" in others and '<use href="#i-right"/>' in others
     assert '<symbol id="i-right"' in page                                    # the tiles' arrow is drawn on this page too
@@ -149,7 +149,8 @@ def test_build_writes_a_page_per_city_and_a_sitemap(config):
     for guide in cities.values():
         assert (out / guide.slug / "index.html").exists(), guide.slug
     sitemap = (out / "sitemap.xml").read_text(encoding="utf-8")
-    assert sitemap.count("<url>") == 20                                      # the main page and every city
+    # The main page and every city, once per language of the site.
+    assert sitemap.count("<url>") == 20 * len(config.website.languages)
     assert "<loc>https://flyfromtirana.devbay.cloud/</loc>" in sitemap
     assert "<loc>https://flyfromtirana.devbay.cloud/milan/</loc><lastmod>2026-10-09</lastmod>" in sitemap
     assert "Sitemap: https://flyfromtirana.devbay.cloud/sitemap.xml" in (out / "robots.txt").read_text()
@@ -173,7 +174,7 @@ def test_main_page_links_to_the_city_pages(config, storage):
     tiles = page[page.index('<ul class="strip gtiles"'):page.index("</ul>", page.index('<ul class="strip gtiles"'))]
     assert tiles.count('<li class="gtile') == 19
     milan = tiles[tiles.index('<a href="milan/">'):tiles.index('<a href="rome/">')]
-    assert '<img src="img/guides/milan.webp"' in milan                        # its wide photo
+    assert '<img src="./img/guides/milan.webp"' in milan                      # its wide photo
     assert "<small>nga</small> €19" in milan                                  # the city's cheapest price
     assert "Milan</b>" in milan and "Modë, Duomo dhe aperitiv në Navigli" in milan and "Lexo udhëzuesin" in milan
     rome = tiles[tiles.index('<a href="rome/">'):tiles.index('<a href="bologna/">')]

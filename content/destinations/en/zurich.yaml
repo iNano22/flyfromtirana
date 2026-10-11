@@ -1,0 +1,68 @@
+city: Zurich
+slug: zurich
+tagline: The lake, the old town and the Alps
+intro: >-
+  Zurich sits on the lakeshore, with a perfectly kept old town and the Alps on the horizon. It's
+  expensive, but many of the best things are free: the lake, the walks and the views.
+sights:
+  - name: Altstadt and Grossmünster
+    text: The old town on both sides of the River Limmat, with the twin-towered cathedral.
+  - name: Lake Zurich
+    text: The lakeside promenade and the boats that link the towns around it.
+  - name: Bahnhofstrasse
+    text: One of the most expensive shopping streets in the world, running from the station to the lake.
+  - name: Uetliberg
+    text: The city's own mountain, 20 minutes by train, with views over Zurich and the Alps.
+  - name: Fraumünster
+    text: The church with Marc Chagall's stained-glass windows, on the bank opposite the Grossmünster.
+  - name: Lindenhof
+    text: The small hill in the middle of the old town, with views over the river and the rooftops.
+airports:
+  ZRH: >-
+    Trains leave every few minutes and reach the main station (Zürich HB) in 10-12 minutes. The
+    ticket costs about 7 francs.
+budget: >-
+  A coffee costs 5-6 francs, a simple meal 20-30 francs, and the 24-hour ticket for the city about
+  9 francs.
+when: >-
+  June to September for the lake and the mountains. December for the Christmas markets.
+tips:
+  - "Switzerland uses the franc (CHF), not the euro, even though it is in the Schengen area."
+  - "The water from the public fountains is safe to drink, and the Migros and Coop supermarkets are the cheapest way to eat."
+  - "In summer the locals swim in the lake and in the River Limmat: the public baths cost little and turn into bars in the evening."
+itinerary:
+  - "Bahnhofstrasse, Lindenhof, the Fraumünster and the Grossmünster. In the afternoon, a walk along the lake and a short boat trip."
+  - "Uetliberg in the morning, for the view over the city and the Alps. In the afternoon, the Kunsthaus or the National Museum, then the evening in Zürich West."
+  - "A day trip: Lucerne, the Rhine Falls or a mountain such as Rigi."
+areas:
+  - name: Altstadt
+    text: The old town, the prettiest area and the most expensive.
+  - name: Zürich West
+    text: The former industrial area, now with bars, design and modern hotels.
+  - name: Near the main station
+    text: Handy for the airport train and for day trips.
+food:
+  - name: Fondue and raclette
+    text: Melted cheese with bread or potatoes, the winter classics.
+  - name: Zürcher Geschnetzeltes
+    text: Veal in a cream and mushroom sauce, served with Rösti, grated and fried potatoes.
+  - name: Chocolate
+    text: Sprüngli and Läderach are the city's best-known names.
+  - name: Supermarkets
+    text: "Restaurants are expensive: ready-made food from Migros and Coop is what the locals go for."
+transport: >-
+  The trams are frequent and punctual. Tickets are bought by zone and are also valid on the lake
+  boats. The Zürich Card (24 or 72 hours) covers transport, the airport train and many museums. The
+  old town is entirely pedestrian.
+daytrips:
+  - name: Lucerne
+    text: The wooden Chapel Bridge and the lake among the mountains, 45-50 minutes by train.
+  - name: Rhine Falls
+    text: The largest waterfall in Europe, about 45 minutes by train to Schaffhausen.
+  - name: Mount Rigi
+    text: "The “Queen of the Mountains”, by train and boat, for a day in the Alps."
+faq:
+  - q: "How do you save money in Zurich?"
+    a: "Drink water from the public fountains, have lunch from the supermarkets, use the day ticket for transport and enjoy the free things: the lake, the Lindenhof and the walks on Uetliberg. Stay near the station or outside the centre."
+  - q: "How much money do you need per day in Zurich?"
+    a: "Excluding the flight and accommodation, plan on 80-130 francs a day. Zurich is among the most expensive cities in the world: dinner in a restaurant easily tops 40 francs per person."

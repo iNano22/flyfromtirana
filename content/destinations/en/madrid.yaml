@@ -1,0 +1,70 @@
+city: Madrid
+slug: madrid
+tagline: Museums, squares and late dinners
+intro: >-
+  Madrid is the capital of Spain, with great art museums, lively squares and dinners that start
+  after 21:00. Two or three days are enough for the centre.
+sights:
+  - name: Prado Museum
+    text: One of the greatest collections of European painting, with Velázquez and Goya.
+  - name: Royal Palace
+    text: The largest royal palace in Western Europe, with gardens and views to the west.
+  - name: Plaza Mayor and Puerta del Sol
+    text: The two historic squares in the heart of the city, a few minutes apart.
+  - name: Retiro Park
+    text: The big central park, with a boating lake and the Crystal Palace.
+  - name: Reina Sofía Museum
+    text: Spanish modern art, with Picasso's “Guernica”.
+  - name: Temple of Debod
+    text: An Egyptian temple given to Spain as a gift, and the best spot for sunset.
+airports:
+  MAD: >-
+    The metro (line 8) takes you to Nuevos Ministerios in 25-30 minutes, and the ticket costs about
+    €5 including the airport supplement. The Exprés Aeropuerto bus runs 24 hours and reaches Atocha
+    or Cibeles in about 40 minutes (€5).
+budget: >-
+  A coffee costs about €2, a set lunch €13-17, and a metro journey €1.50-2.
+when: >-
+  Spring and autumn. July and August are very hot and the city empties out.
+tips:
+  - "The Prado Museum has free entry for the last two hours of every day."
+  - "Toledo is about half an hour away by high-speed train from Atocha station."
+  - "Lunch is eaten around 14:00-15:30 and dinner after 21:00: many kitchens are closed in between."
+itinerary:
+  - "Puerta del Sol, Plaza Mayor and the Royal Palace with the Almudena Cathedral. Sunset at the Temple of Debod, then tapas in La Latina."
+  - "The Prado Museum in the morning, then Retiro Park with its lake and the Crystal Palace. In the afternoon, the Reina Sofía for “Guernica”."
+  - "Gran Vía, Malasaña and Chueca on foot. Football fans visit the Santiago Bernabéu stadium; the alternative is a day trip to Toledo."
+areas:
+  - name: Sol and Centro
+    text: In the middle of everything, but noisy day and night.
+  - name: Malasaña and Chueca
+    text: The neighbourhoods for bars, vintage shops and nightlife.
+  - name: La Latina
+    text: Old lanes and the best tapas bars.
+  - name: Retiro and Salamanca
+    text: Quieter and more elegant, close to the park and the museums.
+food:
+  - name: Bocadillo de calamares
+    text: A fried squid sandwich, typical of the area around Plaza Mayor.
+  - name: Cocido madrileño
+    text: A winter stew of chickpeas, meat and vegetables, served in two or three courses.
+  - name: Churros con chocolate
+    text: Fried dough that you dip in thick chocolate, for breakfast or after a night out.
+  - name: Tapas
+    text: In La Latina and at the San Miguel market, with a glass of wine or vermouth.
+transport: >-
+  The metro is extensive, cheap and fast. The card with 10 journeys can also be shared between
+  several people. The centre, from the Royal Palace to the Retiro, can be crossed on foot in about
+  30 minutes.
+daytrips:
+  - name: Toledo
+    text: The city of three cultures above the River Tagus, about half an hour by high-speed train.
+  - name: Segovia
+    text: The Roman aqueduct and the Alcázar castle, about 30 minutes by high-speed train.
+  - name: El Escorial
+    text: The monastery-palace of Philip II, about an hour by train.
+faq:
+  - q: "What time do people eat in Madrid?"
+    a: "Late. Lunch is after 14:00 and dinner rarely before 21:00. In between, the bars serve tapas, so nobody goes hungry."
+  - q: "How much money do you need per day in Madrid?"
+    a: "Excluding the flight and accommodation, plan on €45-70 a day. Madrid is cheaper than Barcelona, and the big museums have free-entry hours."

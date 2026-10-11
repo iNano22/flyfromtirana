@@ -1,0 +1,70 @@
+city: Athens
+name: Atene
+slug: athens
+tagline: Acropoli e terrazze con vista
+intro: >-
+  Atene unisce l'Acropoli, vecchia di 2.500 anni, a quartieri pieni di caffè, mercati e terrazze
+  panoramiche. Due o tre giorni bastano per la città; con un giorno in più arrivi anche su
+  un'isola vicina.
+sights:
+  - name: Acropoli
+    text: La collina sacra con il Partenone, simbolo della Grecia antica.
+  - name: Museo dell'Acropoli
+    text: Museo moderno ai piedi della collina, con le sculture originali dei templi.
+  - name: Plaka e Monastiraki
+    text: I quartieri vecchi con taverne, negozi e il mercato della domenica.
+  - name: Colle del Licabetto
+    text: Il punto più alto della città, al suo meglio al tramonto.
+  - name: Agorà antica
+    text: Il mercato e centro politico dell'antica Atene, con il tempio di Efesto, tra i meglio conservati della Grecia.
+  - name: Mercato Centrale
+    text: Il mercato della carne, del pesce e delle spezie, con taverne semplici tutt'intorno.
+airports:
+  ATH: >-
+    La metro (linea 3, blu) ti porta a Syntagma in circa 40 minuti, con un biglietto da €9.
+    L'autobus X95 funziona tutta la notte, costa circa €5,50 e impiega circa un'ora.
+budget: >-
+  Un souvlaki costa €3,50-4,50, un caffè freddo circa €3, il biglietto della metro da 90 minuti
+  €1,20.
+when: >-
+  Aprile-giugno e settembre-ottobre. A luglio e agosto le temperature superano spesso i 35°C.
+tips:
+  - "Il biglietto per l'Acropoli si compra online con orario d'ingresso: prenotalo in anticipo."
+  - "Vai all'Acropoli appena apre al mattino: c'è meno gente e meno caldo."
+  - "La domenica alle 11:00 c'è il cambio solenne della guardia davanti al Parlamento, in piazza Syntagma."
+itinerary:
+  - "L'Acropoli appena apre, poi il Museo dell'Acropoli. Nel pomeriggio una passeggiata tra Plaka e Anafiotika, cena con vista sull'Acropoli illuminata."
+  - "Agorà antica e mercato di Monastiraki al mattino. Nel pomeriggio Mercato Centrale e piazza Syntagma, al tramonto il Colle del Licabetto."
+  - "Una giornata al mare: in tram fino alle spiagge di Glyfada, oppure in traghetto all'isola di Egina. In alternativa, il Tempio di Poseidone a Sounion."
+areas:
+  - name: Plaka
+    text: Il quartiere più bello, sotto l'Acropoli, ma anche il più turistico.
+  - name: Monastiraki e Psyrri
+    text: Centrali, con bar, terrazze e la metro diretta dall'aeroporto.
+  - name: Koukaki
+    text: Quartiere residenziale vicino al Museo dell'Acropoli, più tranquillo e con prezzi migliori.
+food:
+  - name: Souvlaki e gyros
+    text: Carne su spiedini o tagliata dal grande spiedo, avvolta nella pita.
+  - name: Moussaka
+    text: Sformato di melanzane, carne macinata e besciamella.
+  - name: Insalata greca
+    text: Pomodori, cetrioli, olive e una fetta spessa di feta, senza lattuga.
+  - name: Loukoumades
+    text: Frittelle piccole con miele e cannella.
+transport: >-
+  La metro ha tre linee e copre tutto il centro, il porto del Pireo e l'aeroporto. Il biglietto
+  da 90 minuti vale per metro, autobus e tram; quello da 5 giorni costa circa €8-9, ma non
+  comprende l'aeroporto. I siti principali sono vicini tra loro e collegati da un viale pedonale.
+daytrips:
+  - name: Capo Sounion
+    text: Il Tempio di Poseidone a picco sul mare, a circa 1,5 ore di autobus, al suo meglio al tramonto.
+  - name: Egina
+    text: L'isola più vicina, da 40 a 75 minuti di traghetto dal Pireo.
+  - name: Delfi
+    text: L'antico oracolo in montagna, a circa 2,5 ore in autobus o con un tour organizzato.
+faq:
+  - q: "Da Atene si raggiungono le isole?"
+    a: "Sì. I traghetti partono dal porto del Pireo, a 20 minuti di metro dal centro. Egina, Idra e Poros si visitano in giornata; per Mykonos, Santorini o Creta servono diverse ore o una notte di viaggio."
+  - q: "Quanto si spende al giorno ad Atene?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno. Il cibo di strada è economico, mentre la spesa più grossa è l'Acropoli, che costa circa €30."

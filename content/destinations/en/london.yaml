@@ -1,0 +1,80 @@
+city: London
+slug: london
+tagline: Free museums, parks and theatre
+intro: >-
+  London has it all: world-class free museums, royal parks, markets and theatres. Four days is the
+  minimum to see the main sights.
+sights:
+  - name: Big Ben and Westminster
+    text: The clock tower, the Houses of Parliament and Westminster Abbey, all within a few steps of each other.
+  - name: Tower Bridge and the Tower of London
+    text: The best-known bridge over the Thames and the fortress where the Crown Jewels are kept.
+  - name: British Museum
+    text: One of the largest museums in the world, with free entry.
+  - name: Buckingham Palace
+    text: The royal residence, with the Changing of the Guard and St James's Park and Hyde Park close by.
+  - name: South Bank
+    text: The riverside walk along the Thames from the London Eye to Tate Modern and Borough Market.
+  - name: The markets
+    text: Camden for alternative fashion, Portobello Road for antiques and Borough Market for food.
+airports:
+  LHR: >-
+    The Elizabeth line takes you to the centre (Paddington, Tottenham Court Road) in 30-40 minutes,
+    for about £13. The Piccadilly line of the Underground is cheaper (about £6), but takes nearly
+    an hour.
+  STN: >-
+    The Stansted Express train runs to Liverpool Street in about 50 minutes. The ticket is cheaper
+    when bought early online and costs more than £20 on the spot. Buses are cheaper, but take an
+    hour and a half or more.
+  LTN: >-
+    The DART shuttle train takes you in 4 minutes to Luton Airport Parkway station, from where
+    Thameslink trains reach St Pancras in about 35 minutes (about £17-20 in total). Buses to
+    Victoria are cheaper, but take over an hour.
+budget: >-
+  A coffee costs about £3.50 and a simple meal £12-18. Tube and bus journeys in zones 1-2 are
+  capped at about £9 a day if you pay by contactless card.
+when: >-
+  May to September has the longest days and the mildest weather. December is lovely for the
+  Christmas lights.
+tips:
+  - "Albanian citizens need a visa for the United Kingdom: apply in good time, before you buy your ticket."
+  - "Pay for transport with a contactless bank card: it works out cheaper than paper tickets."
+  - "The big museums (British Museum, National Gallery, Natural History Museum, Tate Modern) are free, but at weekends it's worth booking a time slot online."
+itinerary:
+  - "Westminster: Big Ben, the Abbey and Buckingham Palace with the Changing of the Guard. In the afternoon, Trafalgar Square, the National Gallery and Covent Garden."
+  - "The Tower of London and Tower Bridge in the morning. Cross the river for Borough Market, Tate Modern and the walk along the South Bank to the London Eye."
+  - "The British Museum in the morning, then Camden or Notting Hill. In the evening, a West End show, or the free view from the Sky Garden (booking required)."
+areas:
+  - name: Westminster and South Bank
+    text: Close to the main attractions, but with the highest prices.
+  - name: Paddington and Bayswater
+    text: Handy for Heathrow on the Elizabeth line and close to Hyde Park.
+  - name: King's Cross and St Pancras
+    text: Where the trains from Luton arrive, with Tube connections in every direction.
+  - name: Zone 2
+    text: "Neighbourhoods like Camden, Shoreditch or Greenwich: cheaper hotels, 15-20 minutes by Tube from the centre."
+food:
+  - name: Fish and chips
+    text: Fried fish with chips, the British classic.
+  - name: Sunday roast
+    text: "Sunday lunch at the pub: roast meat, potatoes and Yorkshire pudding."
+  - name: Full English breakfast
+    text: The full breakfast with eggs, bacon, sausages and beans.
+  - name: Food from around the world
+    text: Indian curry on Brick Lane and street food at Borough Market or Camden.
+transport: >-
+  The Underground (the Tube) and the red buses take you everywhere. Don't buy paper tickets: pay
+  with a contactless bank card or your phone, and the system caps your daily spending by itself. A
+  bus ride costs about £1.75 whatever the distance and is the cheapest way to see the city.
+daytrips:
+  - name: Windsor
+    text: The royal castle, less than an hour by train.
+  - name: Oxford or Cambridge
+    text: The university cities, each about an hour by train.
+  - name: Brighton
+    text: The seaside city in the south, an hour by train.
+faq:
+  - q: "Which London airport is best?"
+    a: "Heathrow is the closest and is linked by the Tube and the Elizabeth line. Luton and Stansted usually have cheaper tickets from Tirana, but allow 45-60 minutes and £15-20 to reach the centre."
+  - q: "How much money do you need per day in London?"
+    a: "Excluding the flight and accommodation, plan on £60-90 a day. The free museums bring the cost down a lot, while paid attractions (Tower of London, London Eye) cost £30-35 each."

@@ -1,0 +1,71 @@
+city: Frankfurt
+name: Francoforte
+slug: frankfurt
+tagline: Grattacieli sulle rive del Meno
+intro: >-
+  Francoforte è il centro finanziario della Germania, con i grattacieli lungo il Meno e un centro
+  storico ricostruito. Uno o due giorni bastano, ed è un buon nodo per proseguire in treno in
+  tutta la Germania.
+sights:
+  - name: Römerberg
+    text: La piazza storica con le case a graticcio e il vecchio municipio.
+  - name: Main Tower
+    text: Il grattacielo con piattaforma panoramica a 200 metri di altezza.
+  - name: Museumsufer
+    text: La riva dei musei lungo il Meno, con lo Städel Museum, il più famoso.
+  - name: Sachsenhausen
+    text: Il quartiere dei locali tradizionali dove si serve l'Apfelwein, il vino di mele.
+  - name: Duomo
+    text: La chiesa dove venivano incoronati gli imperatori tedeschi, con una torre su cui si sale per il panorama.
+  - name: Kleinmarkthalle
+    text: Il mercato coperto con cibi da tutto il mondo, molto amato dalla gente del posto.
+airports:
+  FRA: >-
+    I treni S8 e S9 arrivano alla stazione centrale (Hauptbahnhof) in 11-15 minuti, con un
+    biglietto da circa €6. La stazione è dentro il Terminal 1.
+budget: >-
+  Un bicchiere di Apfelwein costa €3-4, un piatto tradizionale €12-18, un biglietto singolo in
+  città circa €4.
+when: >-
+  Maggio-settembre. A dicembre il mercatino di Natale sul Römerberg è tra i più belli della
+  Germania.
+tips:
+  - "Durante le grandi fiere, come la Fiera del Libro a ottobre, gli hotel diventano molto più cari."
+  - "Heidelberg e Magonza si raggiungono in meno di un'ora di treno."
+  - "Certi sabati la riva del fiume dal lato dei musei si trasforma in un grande mercato dell'antiquariato e dell'usato."
+itinerary:
+  - "Römerberg, il Duomo e la città vecchia ricostruita. Pranzo alla Kleinmarkthalle, nel pomeriggio sali sulla Main Tower e passeggia lungo il fiume."
+  - "La riva dei musei: lo Städel per l'arte o uno degli altri musei. Nel pomeriggio il giardino botanico Palmengarten, la sera Apfelwein a Sachsenhausen."
+  - "Gita in giornata: Heidelberg, Magonza o la valle del Reno con i suoi castelli."
+areas:
+  - name: Innenstadt e Altstadt
+    text: "Tra la via dello shopping Zeil, il Römerberg e il fiume: centrale e piacevole."
+  - name: Bahnhofsviertel
+    text: Vicino alla stazione centrale, con hotel economici e ristoranti di tutto il mondo, ma rumoroso di notte.
+  - name: Sachsenhausen
+    text: "Sull'altra riva del fiume: locali tradizionali e atmosfera di quartiere."
+food:
+  - name: Apfelwein
+    text: Il vino di mele dal gusto aspro, servito in brocche grigie a fiori blu.
+  - name: Grüne Soße
+    text: Salsa fredda alle sette erbe, con uova sode e patate.
+  - name: Frankfurter Würstchen
+    text: Le salsicce sottili che hanno dato il nome ai «frankfurter».
+  - name: Handkäse mit Musik
+    text: Formaggio dal sapore forte, marinato con cipolla e aceto, per i più coraggiosi.
+transport: >-
+  Il centro è compatto e si gira a piedi. Per il resto ci sono U-Bahn, S-Bahn e tram;
+  dall'aeroporto al centro bastano 11-15 minuti. La stazione centrale è uno dei più grandi nodi
+  ferroviari d'Europa, con treni veloci per tutta la Germania.
+daytrips:
+  - name: Heidelberg
+    text: Il castello sopra il Neckar e la vecchia città universitaria, a circa un'ora di treno.
+  - name: Magonza e Wiesbaden
+    text: Due città sul Reno, a 35-40 minuti di S-Bahn.
+  - name: Valle del Reno
+    text: Rüdesheim e i castelli tra i vigneti, a circa un'ora di treno.
+faq:
+  - q: "Francoforte merita una visita o è solo una città di transito?"
+    a: "Una giornata piena basta per il centro e la riva dei musei. Il suo vero valore è come base: in treno arrivi in fretta a Heidelberg, Magonza, Colonia o Stoccarda."
+  - q: "Quanto si spende al giorno a Francoforte?"
+    a: "Volo e alloggio esclusi, €50-75 al giorno. Gli hotel costano meno nel fine settimana e rincarano molto durante le fiere."

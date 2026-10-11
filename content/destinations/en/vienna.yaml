@@ -1,0 +1,69 @@
+city: Vienna
+slug: vienna
+tagline: Palaces, music and coffee houses
+intro: >-
+  Vienna is the city of imperial palaces, classical music and historic coffee houses. It has
+  exemplary public transport, and two or three days are enough for the main sights.
+sights:
+  - name: Schönbrunn Palace
+    text: The summer residence of the Habsburgs, with vast gardens and views over the city.
+  - name: Stephansdom
+    text: The Gothic St. Stephen's Cathedral, in the middle of the historic centre.
+  - name: Hofburg and Ringstraße
+    text: The imperial palace and the ring boulevard with the Opera, Parliament and the museums.
+  - name: Belvedere
+    text: The Baroque palace where Gustav Klimt's “The Kiss” is on display.
+  - name: Prater
+    text: The big park with the Riesenrad giant Ferris wheel, dating from 1897.
+  - name: MuseumsQuartier and Naschmarkt
+    text: The complex of modern museums with a courtyard full of cafés and, a little further on, the city's best-known market.
+airports:
+  VIE: >-
+    The S7 train and the Railjet trains take you to the centre (Wien Mitte or Hauptbahnhof) in
+    15-25 minutes, and the ticket costs about €5. The City Airport Train (CAT) takes 16 minutes,
+    but costs about €15.
+budget: >-
+  A melange coffee costs €4-5, a Wiener Schnitzel €15-22, and the 24-hour transport ticket about
+  €8-10.
+when: >-
+  April to October for the parks and palaces. The Christmas markets open from mid-November.
+tips:
+  - "Don't take the CAT unless you need to: the S7 costs a third as much and takes only 10 minutes longer."
+  - "The tap water comes from the Alps and is excellent."
+  - "For the State Opera, standing tickets are sold at a very low price shortly before the performance."
+itinerary:
+  - "Stephansdom, the Graben and the Hofburg. In the afternoon, the Ringstraße by tram, then coffee and cake in a historic coffee house."
+  - "Schönbrunn in the morning: the palace, the gardens and the Gloriette hill. In the afternoon, the Naschmarkt and the MuseumsQuartier."
+  - "The Belvedere for Klimt, then the Prater and the giant Ferris wheel. In the evening, a Heuriger, a wine tavern in the hills of Grinzing."
+areas:
+  - name: Innere Stadt
+    text: "The first district, inside the Ring: everything within walking distance, with the highest prices."
+  - name: Leopoldstadt
+    text: The second district, between the Danube Canal and the Prater, with better prices.
+  - name: Neubau and Mariahilf
+    text: The neighbourhoods of shops, cafés and galleries, close to the MuseumsQuartier.
+food:
+  - name: Wiener Schnitzel
+    text: A thin, breaded veal schnitzel, bigger than the plate.
+  - name: Sachertorte
+    text: The chocolate cake with apricot jam, invented at the Hotel Sacher.
+  - name: Apfelstrudel
+    text: Apple strudel, at its best in the historic coffee houses.
+  - name: Würstelstand
+    text: The sausage stands, the late-night food of the Viennese. Try a Käsekrainer, the sausage with cheese.
+transport: >-
+  The U-Bahn, trams and buses all run on a single ticket. The 24-, 48- or 72-hour ticket is almost
+  always worth it. Trams 1 and 2 go round the Ring past the main buildings, like a cheap tour of
+  the city.
+daytrips:
+  - name: Bratislava
+    text: The capital of Slovakia is only an hour away by train, or by boat on the Danube.
+  - name: Wachau Valley
+    text: Melk Abbey and the wine villages along the Danube, about an hour by train.
+  - name: Salzburg
+    text: About 2.5 hours by train, doable as a long day out.
+faq:
+  - q: "Do you need to book Schönbrunn?"
+    a: "Yes, especially from April to October: tickets for the palace interior are sold for a set time and sell out. The gardens are free and open from early in the morning."
+  - q: "How much money do you need per day in Vienna?"
+    a: "Excluding the flight and accommodation, plan on €50-80 a day. Palace admissions are the biggest expense: Schönbrunn and the Belvedere cost about €20-30 each."

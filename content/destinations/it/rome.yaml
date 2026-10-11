@@ -1,0 +1,77 @@
+city: Rome
+name: Roma
+slug: rome
+tagline: Colosseo, Vaticano e pasta
+intro: >-
+  Roma è un museo a cielo aperto: il Colosseo, il Vaticano e piazze barocche che trovi quasi a
+  ogni angolo. Metti in conto almeno tre giorni e un paio di scarpe comode.
+sights:
+  - name: Colosseo e Foro Romano
+    text: L'anfiteatro più grande dell'antichità e il centro della Roma antica, con un biglietto unico.
+  - name: Vaticano
+    text: La Basilica di San Pietro e i Musei Vaticani con la Cappella Sistina.
+  - name: Fontana di Trevi
+    text: La fontana più famosa della città. Vacci la mattina presto per vederla senza folla.
+  - name: Pantheon
+    text: Il tempio romano con la cupola aperta al centro, arrivato fino a noi quasi intatto.
+  - name: Trastevere
+    text: Il quartiere dei vicoli acciottolati, il posto migliore per cenare.
+  - name: Piazza Navona e Piazza di Spagna
+    text: Due delle piazze barocche più belle, collegate da una passeggiata di mezz'ora attraverso il centro.
+  - name: Castel Sant'Angelo
+    text: Il mausoleo dell'imperatore Adriano, poi fortezza dei papi, con vista sul Tevere e sul Vaticano.
+airports:
+  FCO: >-
+    Il treno Leonardo Express arriva senza fermate alla stazione Termini in 32 minuti (€14). Il
+    treno regionale FL1 ferma a Trastevere e Ostiense per circa €8, mentre gli autobus per Termini
+    costano €6-7.
+  CIA: >-
+    Ciampino è un aeroporto piccolo, a circa 15 km dal centro. Gli autobus diretti per Termini
+    impiegano circa 40 minuti e costano circa €6.
+budget: >-
+  Un espresso al banco costa circa €1,20, un piatto di pasta €10-14, il biglietto di metro e
+  autobus circa €1,50-2.
+when: >-
+  Primavera e autunno sono ideali. A luglio e agosto fa molto caldo e le code sono lunghe.
+tips:
+  - "Prenota online i biglietti per il Colosseo e i Musei Vaticani, così eviti le code."
+  - "L'acqua delle fontanelle pubbliche (i nasoni) è potabile: porta con te una borraccia."
+  - "Molti musei statali, tra cui il Colosseo, sono gratuiti la prima domenica di ogni mese."
+itinerary:
+  - "Roma antica: Colosseo, Foro Romano e Palatino con un solo biglietto. Nel pomeriggio Campidoglio e Piazza Venezia, cena nel rione Monti."
+  - "Vaticano al mattino: i Musei, la Cappella Sistina e la Basilica di San Pietro. Nel pomeriggio Castel Sant'Angelo, la sera a Trastevere."
+  - "Il centro barocco a piedi: Fontana di Trevi, Pantheon, Piazza Navona e la scalinata di Piazza di Spagna. Al tramonto sali al Pincio o al Gianicolo per il panorama."
+areas:
+  - name: Centro Storico
+    text: "Tra il Pantheon e Piazza Navona: tutto a piedi, ma con i prezzi più alti."
+  - name: Trastevere
+    text: Vicoli acciottolati, trattorie e vita notturna. Più autentico, ma un po' lontano dalla metro.
+  - name: Monti e Termini
+    text: Monti è un quartiere piacevole vicino al Colosseo. La zona della stazione Termini è la più economica e la più pratica per gli aeroporti.
+  - name: Prati
+    text: Quartiere residenziale tranquillo vicino al Vaticano, con la metro e ristoranti dai prezzi ragionevoli.
+food:
+  - name: Carbonara e cacio e pepe
+    text: "Le due paste romane più famose: la prima con uova e guanciale, la seconda solo con pecorino e pepe."
+  - name: Supplì
+    text: Crocchette di riso fritte con la mozzarella dentro, l'antipasto tipico delle pizzerie.
+  - name: Pizza al taglio
+    text: Pizza tagliata a pezzi e venduta a peso, ideale per un pranzo veloce.
+  - name: Gelato
+    text: "Il gelato artigianale. Evita le gelaterie con le montagne colorate: quello buono si conserva in contenitori coperti."
+transport: >-
+  Il centro storico si gira a piedi e la metro non ci entra, quindi preparati a camminare
+  parecchio. La metro (linee A e B) serve per il Vaticano, il Colosseo e Termini; il biglietto
+  vale 100 minuti anche su autobus e tram. Puoi pagare anche con la carta bancaria contactless.
+daytrips:
+  - name: Tivoli
+    text: Villa d'Este con le sue fontane e Villa Adriana, a circa un'ora dalla città.
+  - name: Ostia Antica
+    text: L'antico porto di Roma, conservato come una piccola Pompei, a 30 minuti di treno.
+  - name: Firenze
+    text: Solo 1,5 ore con il treno veloce, fattibile in giornata.
+faq:
+  - q: "Fiumicino o Ciampino?"
+    a: "Fiumicino è l'aeroporto principale e ha treni diretti. Ciampino è più piccolo e più vicino, ma è collegato solo in autobus. Se il prezzo del volo è simile, Fiumicino è più comodo."
+  - q: "Quanto si spende al giorno a Roma?"
+    a: "Volo e alloggio esclusi, €50-80 al giorno bastano per mangiare, spostarti e un'attrazione a pagamento. Il Colosseo costa circa €18 e i Musei Vaticani circa €20."

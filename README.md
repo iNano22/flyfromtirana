@@ -4,8 +4,8 @@ Scans cheap flights from Tirana (TIA), spots deals, and posts them to the
 Telegram channel [@flyfromtirana](https://t.me/flyfromtirana) with affiliate
 links. It runs every 3 hours in a Docker container on a small server. The same
 run also renders the **website**: a main page with the cheapest price to every
-destination, plus a page per city with its prices and a short guide. A second
-container serves it. The paid premium channel gets its own quick scan every 15
+destination, plus a page per city with its prices and a guide, in Albanian,
+English and Italian. A second container serves it. The paid premium channel gets its own quick scan every 15
 minutes in between.
 
 ## How it works
@@ -38,14 +38,16 @@ availability. That's fine for spotting deals: the booking link opens a live sear
 ```
 config.yaml              routes, deal rules, link templates, website settings (no secrets)
 templates/sq.txt         post wording (Albanian)
-templates/site.html      the website page (wording, CSS, a little JS); site_row.html = one route in the
+templates/site.html      the website page (layout, CSS, a little JS); site_row.html = one route in the
                          list, site_card.html = one photo card, site_hero.html = one hero banner
+templates/strings/       the website's wording, one file per language (sq.yaml, en.yaml, it.yaml)
 templates/site_dest.html a city's own page; site_dest_fare.html = one airport's price on it;
                          site_guide.html = a city's photo tile on the main page;
                          site_analytics.html = Google Analytics and its cookie box;
-                         site_drive.html = the Travelpayouts Drive script
-content/destinations/    the city guides, one file per city (the text of the city pages)
-content/countries.yaml   the entry documents for each country, shown on its cities' pages
+                         site_drive.html = the Travelpayouts Drive script;
+                         site_lang.html = the language dropdown
+content/destinations/    the city guides: one folder per language, one file per city in each
+content/countries/       the entry documents for each country, one file per language
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
 docs/                    the generated website (index.html + img/), what the `web` container serves
@@ -61,6 +63,7 @@ src/
   photos.py              which photo goes on a route's posts, and its credit
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
+  i18n.py                the website's languages: loads a language's wording into the templates
   scheduler.py           the server's loop: a scan, then the website, every 3 hours,
                          and quick premium scans in between
   http_client.py         shared retry/backoff for HTTP calls
@@ -140,9 +143,14 @@ variables under Environment Variables, and give the `web` service a domain.
 
 ## Website
 
-One static page, in Albanian, built from `data/prices.db` after every scan.
-Its layout follows an airline booking page, top to bottom:
+Static pages built from `data/prices.db` after every scan, in three languages:
+Albanian at the top of the site (`/`, `/milan/`), English under `/en/` and
+Italian under `/it/` (see [Languages](#languages) below). The main page's
+layout follows an airline booking page, top to bottom:
 
+- **Language dropdown**: a slim strip above the top bar with a small dropdown. It
+  shows the page's language as a code (AL, EN, IT) and opens a list that leads to
+  the same page in the other languages. The footer has the same links as a row.
 - **Sticky top bar** with the brand and a "Bashkohu në Telegram" button.
 - **Hero carousel**: a brand slide (headline, today's lowest price, the best deal
   as a chip, live counts), then the three best deals as big banners. It moves on
@@ -183,6 +191,44 @@ is a deal for premium is left out until premium has had it for `free_delay_hours
 which is when the free channel may post it too. Until then the route shows its
 cheapest other date. So nobody can read a premium deal off the website early.
 
+### Languages
+
+`website.languages` in config.yaml lists the site's languages (`[sq, en, it]`).
+The first one is the main one, with its pages at the top of the site; every other
+language gets a folder: `/en/`, `/en/milan/`, `/it/`, `/it/milan/`. Every page
+links to itself in the other languages and tells search engines about them
+(`hreflang`), and the sitemap lists all of them. The Telegram posts are not part
+of this: they stay in `language` (Albanian).
+
+A language is made of three things:
+
+- **The wording of the pages**: `templates/strings/<code>.yaml`. The templates hold
+  no text themselves: `{T_NAME}` in a template stands for the entry `NAME` of the
+  language's file. To change a sentence, edit it in that file (in all three, if the
+  meaning changes). All files must have the same entries; a test checks it.
+- **The city guides**: `content/destinations/<code>/<slug>.yaml`, one per city, plus
+  `content/countries/<code>.yaml` for the entry documents. A translated guide has
+  the same parts and the same number of entries as the Albanian one, and keeps every
+  number (prices, minutes); tests check that too. It may give the city's name in its
+  language (`name: Milano`), which the Italian pages then use everywhere; `city`
+  and `slug` stay the same in every language, so the address is `/it/milan/`.
+- **Month names and a few flight words** ("direkt", "me ndalesë"): `WORDS` in
+  `src/formatter.py`.
+
+So when you **change a guide**, change it in all three folders. When you **add a
+city**, add its guide in all three; until a language has it, that language simply
+has no page for the city, and the language dropdown on the city's other pages leads
+to that language's main page instead.
+
+**Add a language**: copy `templates/strings/en.yaml` to `<code>.yaml` and translate
+it, translate the guides into `content/destinations/<code>/` and
+`content/countries/<code>.yaml`, add the language to `WORDS` (src/formatter.py) and
+to `LANGUAGE_NAMES` and `LANGUAGE_CODES` (src/i18n.py: its name and the short code
+the dropdown shows), then add the code to `website.languages`.
+
+The dropdown itself is `templates/site_lang.html`. Albanian is shown there as "AL",
+the code people know, while its folder and its code for browsers stay `sq`.
+
 ### City pages
 
 Every city has a page of its own (`/milan/`, `/rome/`, ... on the site): the
@@ -198,16 +244,16 @@ list. These pages are what search engines
 can find the site by, so the build also writes `sitemap.xml` and `robots.txt`
 (they need `website.url`).
 
-The text of a guide is one file, `content/destinations/<slug>.yaml`
-(`milan.yaml` explains the shape):
+The text of a guide is one file per language, `content/destinations/<language>/<slug>.yaml`
+(`sq/milan.yaml` explains the shape):
 
 - **Change a guide**: edit its file. The page is rebuilt with the next run. Only
   `city`, `slug` and `intro` are required; any other part (`sights`, `itinerary`,
   `areas`, `food`, `airports`, `transport`, `daytrips`, `budget`, `when`, `tips`,
   `faq`) can be left out, and then it is not on the page.
 - **Entry documents**: the answer to "Çfarë dokumentesh duhen?" is the same for
-  every city of a country, so it lives in `content/countries.yaml`, one entry per
-  country. Review it when the rules change (the EU's ETIAS above all).
+  every city of a country, so it lives in `content/countries/<language>.yaml`, one
+  entry per country. Review it when the rules change (the EU's ETIAS above all).
 - **New route in a city that has a guide**: add the airport under `airports:`
   in that city's file (a test fails until every airport of a city is covered).
 - **New city**: add a file. `city` must be exactly the route's `city` in
@@ -323,7 +369,9 @@ sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/te
 
 ### Change the wording or look
 
-- `templates/site.html` is the whole page (text, CSS and a little JavaScript).
+- **Wording**: every sentence on the pages is in `templates/strings/<language>.yaml`
+  (see [Languages](#languages)). In the templates `{T_NAME}` marks where a text goes.
+- **Look**: `templates/site.html` is the whole page (layout, CSS and a little JavaScript).
   `templates/site_row.html` is one route in the list, `templates/site_card.html` one
   photo card in the destinations carousel, and `templates/site_hero.html` one banner
   in the hero carousel (the three best deals). All follow the post template rules

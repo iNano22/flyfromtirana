@@ -1,0 +1,81 @@
+city: London
+name: Londra
+slug: london
+tagline: Musei gratuiti, parchi e teatri
+intro: >-
+  Londra ha tutto: musei gratuiti di livello mondiale, parchi reali, mercati e teatri. Quattro
+  giorni sono il minimo per vedere l'essenziale.
+sights:
+  - name: Big Ben e Westminster
+    text: La torre dell'orologio, il Parlamento e l'Abbazia di Westminster, tutti a pochi passi l'uno dall'altro.
+  - name: Tower Bridge e Torre di Londra
+    text: Il ponte più famoso sul Tamigi e la fortezza dove sono custoditi i Gioielli della Corona.
+  - name: British Museum
+    text: Uno dei musei più grandi del mondo, a ingresso gratuito.
+  - name: Buckingham Palace
+    text: La residenza reale, con il cambio della guardia e, lì accanto, i parchi di St James's e Hyde Park.
+  - name: South Bank
+    text: La passeggiata lungo il Tamigi dal London Eye alla Tate Modern e al Borough Market.
+  - name: I mercati
+    text: Camden per la moda alternativa, Portobello Road per l'antiquariato e Borough Market per il cibo.
+airports:
+  LHR: >-
+    La Elizabeth line ti porta in centro (Paddington, Tottenham Court Road) in 30-40 minuti, per
+    circa £13. La linea Piccadilly della metro costa meno (circa £6), ma impiega quasi un'ora.
+  STN: >-
+    Il treno Stansted Express arriva a Liverpool Street in circa 50 minuti. Il biglietto costa
+    meno se lo compri online in anticipo, mentre sul posto supera le £20. Gli autobus sono più
+    economici, ma impiegano un'ora e mezza o più.
+  LTN: >-
+    La navetta DART ti porta in 4 minuti alla stazione di Luton Airport Parkway, da dove i treni
+    Thameslink arrivano a St Pancras in circa 35 minuti (in tutto circa £17-20). Gli autobus per
+    Victoria sono più economici, ma impiegano più di un'ora.
+budget: >-
+  Un caffè costa circa £3,50 e un pasto semplice £12-18. Le corse in metro e autobus nelle zone
+  1-2 hanno un tetto di circa £9 al giorno, se paghi con carta contactless.
+when: >-
+  Maggio-settembre ha le giornate più lunghe e il clima più mite. Dicembre è bello per le luci di
+  Natale.
+tips:
+  - "Ai cittadini albanesi serve il visto per il Regno Unito: richiedilo per tempo, prima di comprare il biglietto."
+  - "Paga i trasporti con la carta bancaria contactless: costa meno dei biglietti cartacei."
+  - "I grandi musei (British Museum, National Gallery, Natural History Museum, Tate Modern) sono gratuiti, ma nel fine settimana conviene prenotare l'orario online."
+itinerary:
+  - "Westminster: Big Ben, l'Abbazia e Buckingham Palace con il cambio della guardia. Nel pomeriggio Trafalgar Square, National Gallery e Covent Garden."
+  - "Torre di Londra e Tower Bridge al mattino. Attraversa il fiume per il Borough Market, la Tate Modern e la passeggiata sul South Bank fino al London Eye."
+  - "British Museum al mattino, poi Camden o Notting Hill. La sera uno spettacolo nel West End, oppure la vista gratuita dallo Sky Garden (su prenotazione)."
+areas:
+  - name: Westminster e South Bank
+    text: Vicino alle attrazioni principali, ma con i prezzi più alti.
+  - name: Paddington e Bayswater
+    text: Pratica per Heathrow con la Elizabeth line e vicina a Hyde Park.
+  - name: King's Cross e St Pancras
+    text: Dove arrivano i treni da Luton, con collegamenti in metro in ogni direzione.
+  - name: Zona 2
+    text: "Quartieri come Camden, Shoreditch o Greenwich: hotel più economici, a 15-20 minuti di metro dal centro."
+food:
+  - name: Fish and chips
+    text: Pesce fritto con patatine, il classico britannico.
+  - name: Sunday roast
+    text: "Il pranzo della domenica al pub: carne arrosto, patate e Yorkshire pudding."
+  - name: Full English breakfast
+    text: La colazione completa con uova, bacon, salsicce e fagioli.
+  - name: Cucine del mondo
+    text: Curry indiano a Brick Lane e street food al Borough Market o a Camden.
+transport: >-
+  La metro (Tube) e gli autobus rossi ti portano ovunque. Non comprare biglietti cartacei: paga
+  con la carta bancaria contactless o con il telefono, e il sistema limita da solo la spesa
+  giornaliera. L'autobus costa circa £1,75 a prescindere dalla distanza ed è il modo più
+  economico per vedere la città.
+daytrips:
+  - name: Windsor
+    text: Il castello reale, a meno di un'ora di treno.
+  - name: Oxford o Cambridge
+    text: Le città universitarie, a circa un'ora di treno ciascuna.
+  - name: Brighton
+    text: La città di mare a sud, a un'ora di treno.
+faq:
+  - q: "Qual è l'aeroporto migliore di Londra?"
+    a: "Heathrow è il più vicino ed è collegato con la metro e con la Elizabeth line. Luton e Stansted hanno di solito biglietti più economici da Tirana, ma calcola 45-60 minuti e £15-20 per arrivare in centro."
+  - q: "Quanto si spende al giorno a Londra?"
+    a: "Volo e alloggio esclusi, £60-90 al giorno. I musei gratuiti abbassano molto i costi, mentre le attrazioni a pagamento (Torre di Londra, London Eye) costano £30-35 ciascuna."

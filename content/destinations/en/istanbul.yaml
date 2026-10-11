@@ -1,0 +1,73 @@
+city: Istanbul
+slug: istanbul
+tagline: Mosques, bazaars and the Bosphorus
+intro: >-
+  Istanbul spans two continents, with magnificent mosques, covered bazaars and the ferries of the
+  Bosphorus. Four days isn't much, but it's enough for a start.
+sights:
+  - name: Hagia Sophia and the Blue Mosque
+    text: The city's two best-known monuments, facing each other in Sultanahmet.
+  - name: Topkapi Palace
+    text: The residence of the Ottoman sultans, with its treasury and views over the Bosphorus.
+  - name: Grand Bazaar
+    text: One of the oldest covered markets in the world, with thousands of shops. The Spice Bazaar is a little further on.
+  - name: Galata Tower and Istiklal
+    text: The medieval tower with a 360-degree view, and the city's liveliest pedestrian street.
+  - name: The Bosphorus
+    text: A ferry ride between Europe and Asia costs the same as a bus ticket.
+  - name: Basilica Cistern
+    text: The underground Byzantine reservoir with hundreds of columns, next to Hagia Sophia.
+  - name: Süleymaniye Mosque
+    text: The masterpiece of the architect Sinan, quieter than the Blue Mosque and with views over the Golden Horn.
+airports:
+  IST: >-
+    From Istanbul Airport (IST) the M11 metro takes you to Gayrettepe, where you change to the M2
+    line towards Taksim. Havaist buses run direct to Taksim and Sultanahmet in 60-90 minutes. If
+    your flight lands at Sabiha Gökçen (SAW), on the Asian side, take the Havabus buses to Taksim
+    or Kadıköy.
+budget: >-
+  Prices in lira change often. A simple meal (kebab, pide) costs the equivalent of €6-10 and a tea
+  less than €1.
+when: >-
+  April to June and September to October. Summer is hot and humid, winter is rainy.
+tips:
+  - "Albanian citizens enter Turkey without a visa, for stays of up to 90 days."
+  - "Get an Istanbulkart as soon as you arrive: it's valid on the metro, trams, buses and ferries."
+  - "Take off your shoes to enter a mosque and wear clothes that cover your shoulders and knees; women cover their heads with a scarf. During prayers visitors wait outside."
+  - "In the bazaar haggling is part of the game: start at about half the asking price."
+itinerary:
+  - "Sultanahmet: Hagia Sophia, the Blue Mosque, the Basilica Cistern and Topkapi Palace. It's a full day: start early."
+  - "The Grand Bazaar and the Spice Bazaar in the morning, then the Süleymaniye Mosque. In the afternoon, cross the Galata Bridge, climb up to the Tower and walk along Istiklal to Taksim."
+  - "A ferry trip on the Bosphorus, then the Asian side: the Kadıköy market and sunset in Üsküdar."
+areas:
+  - name: Sultanahmet
+    text: Close to the main monuments; quiet in the evening.
+  - name: Beyoğlu, Galata and Karaköy
+    text: Cafés, bars and nightlife, with views from the rooftop terraces.
+  - name: Kadıköy
+    text: "On the Asian side: markets, local bars and restaurants, and lower prices, all a ferry ride away."
+food:
+  - name: Kebabs
+    text: From spicy Adana to İskender with yoghurt and tomato sauce.
+  - name: Balık ekmek
+    text: A grilled fish sandwich, sold next to the Galata Bridge in Eminönü.
+  - name: Turkish breakfast
+    text: Dozens of small plates of cheeses, olives, eggs, honey and kaymak.
+  - name: Baklava and tea
+    text: The pistachio pastry and tea in a slender glass, at any time of day.
+transport: >-
+  Traffic is heavy, so avoid taxis at rush hour. The T1 tram links Sultanahmet with the Galata
+  Bridge and Kabataş, the metro and the Marmaray train run under the Bosphorus, and the ferries are
+  the loveliest way to change continents. You pay for all of them with the Istanbulkart.
+daytrips:
+  - name: Princes' Islands
+    text: Car-free, with wooden villas and pine trees, about an hour by ferry.
+  - name: Upper Bosphorus
+    text: The long route of the public ferry takes you as far as Anadolu Kavağı, near the Black Sea.
+  - name: Bursa
+    text: The first Ottoman capital, about 2-3 hours away by ferry and bus.
+faq:
+  - q: "The European side or the Asian side?"
+    a: "For a first visit, stay on the European side, in Sultanahmet or Beyoğlu, where the monuments are. The Asian side (Kadıköy) is quieter, cheaper and more local, ideal for a second visit."
+  - q: "How much money do you need per day in Istanbul?"
+    a: "Excluding the flight and accommodation, plan on €35-60 a day. Food and transport are cheap, but entrance fees for foreigners have gone up a lot: Hagia Sophia and Topkapi cost about €25-50 each."

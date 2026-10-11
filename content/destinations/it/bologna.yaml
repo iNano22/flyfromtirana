@@ -1,0 +1,69 @@
+city: Bologna
+name: Bologna
+slug: bologna
+tagline: Portici, torri e buona cucina
+intro: >-
+  Bologna è la città dei portici, dell'università più antica d'Europa e della migliore cucina
+  italiana. È compatta e si gira tutta a piedi.
+sights:
+  - name: Piazza Maggiore
+    text: La piazza principale, con la Basilica di San Petronio e la Fontana del Nettuno.
+  - name: Due Torri
+    text: Le due torri medievali pendenti, simbolo della città.
+  - name: Portici e San Luca
+    text: Circa 40 km di portici. Il più lungo sale fino al Santuario di San Luca, con vista sulla città.
+  - name: Quadrilatero
+    text: Il vecchio mercato accanto alla piazza, pieno di botteghe di formaggi, salumi e pasta fresca.
+  - name: Archiginnasio
+    text: La prima sede dell'università, con il Teatro Anatomico in legno dove si tenevano le lezioni di medicina.
+  - name: Santo Stefano
+    text: Il complesso delle «Sette Chiese», uno degli angoli più tranquilli e più antichi della città.
+airports:
+  BLQ: >-
+    La monorotaia Marconi Express collega l'aeroporto alla stazione di Bologna Centrale in 7
+    minuti (circa €13). In taxi il centro è a 15-20 minuti.
+budget: >-
+  Un piatto di tagliatelle al ragù costa €10-14, un caffè circa €1,30, il biglietto dell'autobus
+  circa €2,30.
+when: >-
+  Primavera e autunno. L'inverno è freddo e nebbioso, ma i portici ti riparano dalla pioggia.
+tips:
+  - "Non chiedere gli «spaghetti alla bolognese»: qui il ragù si mangia con le tagliatelle."
+  - "Da Bologna Centrale con il treno veloce arrivi in circa 40 minuti a Firenze e in circa un'ora a Milano."
+  - "Molti ristoranti chiudono tra pranzo e cena, più o meno dalle 15:00 alle 19:00: organizza i pasti secondo gli orari italiani."
+itinerary:
+  - "Piazza Maggiore, San Petronio e la Fontana del Nettuno. Pranzo al mercato del Quadrilatero, nel pomeriggio l'Archiginnasio e le Due Torri."
+  - "A piedi sotto i portici fino al Santuario di San Luca, circa un'ora in salita. Nel pomeriggio Santo Stefano e aperitivo in zona universitaria."
+  - "Gita in giornata in treno: Firenze, Modena o Parma. Chi ama i motori va ai musei Ferrari di Maranello e Modena."
+areas:
+  - name: Centro Storico
+    text: Dentro la cerchia delle antiche mura tutto è a 10-15 minuti a piedi.
+  - name: Zona universitaria
+    text: Intorno a Via Zamboni, vivace e con locali economici, ma rumorosa la sera.
+  - name: Vicino alla stazione
+    text: Pratica per il Marconi Express e per le gite in treno, a 15 minuti a piedi da Piazza Maggiore.
+food:
+  - name: Tagliatelle al ragù
+    text: L'originale di quello che il mondo chiama «bolognese», con pasta fresca all'uovo.
+  - name: Tortellini in brodo
+    text: Piccola pasta ripiena, servita nel brodo di carne.
+  - name: Mortadella
+    text: Il celebre salume della città, nel panino o come antipasto con un bicchiere di vino.
+  - name: Lasagne verdi
+    text: Lasagne con sfoglia verde agli spinaci, ragù e besciamella.
+transport: >-
+  Bologna è una città da girare a piedi: quasi tutto si trova dentro le antiche mura e i portici
+  ti riparano dalla pioggia e dal sole. Gli autobus servono solo per San Luca e per le zone fuori
+  dal centro. Nel fine settimana la parte centrale è chiusa alle auto.
+daytrips:
+  - name: Firenze
+    text: Circa 40 minuti con il treno veloce.
+  - name: Modena
+    text: "25 minuti di treno: l'aceto balsamico, il duomo e il museo Enzo Ferrari."
+  - name: Ravenna
+    text: I mosaici bizantini più belli d'Europa, a circa 1 ora e 15 minuti di treno.
+faq:
+  - q: "Basta un giorno per Bologna?"
+    a: "Il centro si vede in un giorno, ma con due giorni puoi salire a San Luca e goderti la cucina senza fretta. Con un terzo giorno fai una gita in giornata in treno."
+  - q: "Quanto si spende al giorno a Bologna?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno. Bologna è più economica di Milano, Roma o Venezia, e la cucina è tra le migliori del paese."

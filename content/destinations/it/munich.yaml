@@ -1,0 +1,70 @@
+city: Munich
+name: Monaco di Baviera
+slug: munich
+tagline: Birra, piazze e Alpi
+intro: >-
+  Monaco è il capoluogo della Baviera: piazze storiche, Biergarten (le birrerie all'aperto) e le
+  Alpi a un'ora di distanza. Due o tre giorni bastano per la città.
+sights:
+  - name: Marienplatz
+    text: La piazza centrale con il Municipio Nuovo e le figure animate del Glockenspiel, alle 11:00 e alle 12:00.
+  - name: Frauenkirche
+    text: La cattedrale dalle due torri con le cupole, il profilo più riconoscibile della città.
+  - name: Englischer Garten
+    text: Uno dei parchi urbani più grandi d'Europa, con i surfisti sull'onda dell'Eisbach.
+  - name: Hofbräuhaus
+    text: La birreria più famosa del mondo, con musica bavarese ogni sera.
+  - name: Viktualienmarkt
+    text: Il mercato all'aperto della città, con banchi di gastronomia e un Biergarten al centro.
+  - name: Castello di Nymphenburg
+    text: La residenza estiva dei re di Baviera, con un grande parco, a 20 minuti di tram.
+airports:
+  MUC: >-
+    I treni S-Bahn S1 e S8 ti portano in centro (Hauptbahnhof, Marienplatz) in circa 40 minuti.
+    Il biglietto costa circa €14; il giornaliero Airport-City-Day-Ticket (circa €16) conviene se
+    ti sposterai anche in città.
+budget: >-
+  Una birra da mezzo litro costa €5-6, un piatto in birreria €14-20, un biglietto singolo in
+  città circa €4.
+when: >-
+  Maggio-settembre per i Biergarten. L'Oktoberfest si tiene da metà settembre a inizio ottobre.
+tips:
+  - "Durante l'Oktoberfest i prezzi degli hotel raddoppiano o triplicano: prenota con mesi di anticipo."
+  - "Il Castello di Neuschwanstein si visita in giornata, in treno fino a Füssen (circa 2 ore)."
+  - "Negozi e supermercati sono chiusi la domenica: fai la spesa il sabato."
+itinerary:
+  - "Marienplatz con il Glockenspiel, Frauenkirche e Viktualienmarkt. Nel pomeriggio la Residenz e una birra alla Hofbräuhaus."
+  - "Englischer Garten con i surfisti e il Biergarten della Torre Cinese. Nel pomeriggio i musei d'arte (le Pinacoteche), oppure BMW Welt e il Parco Olimpico."
+  - "Castello di Nymphenburg, oppure una gita in giornata a Neuschwanstein o a Salisburgo."
+areas:
+  - name: Altstadt
+    text: Intorno a Marienplatz, tutto a piedi, con i prezzi più alti.
+  - name: Vicino alla Hauptbahnhof
+    text: La zona più pratica per il treno dell'aeroporto e con gli hotel più economici.
+  - name: Schwabing
+    text: Il quartiere dei caffè e degli studenti, vicino all'Englischer Garten.
+food:
+  - name: Weißwurst
+    text: Salsicce bianche che si mangiano a colazione, con senape dolce e brezel.
+  - name: Schweinshaxe
+    text: Stinco di maiale arrosto con la cotenna croccante.
+  - name: Brezn
+    text: Il grande brezel bavarese, compagno di ogni birra.
+  - name: Biergarten
+    text: "Nei Biergarten tradizionali puoi portare il tuo cibo: compri solo la birra."
+transport: >-
+  La rete di U-Bahn, S-Bahn e tram è veloce e puntuale. I biglietti cartacei vanno timbrati prima
+  di salire e i controlli sono frequenti. Per una giornata con molti spostamenti conviene il
+  biglietto giornaliero, soprattutto quello di gruppo da 2 a 5 persone.
+daytrips:
+  - name: Neuschwanstein
+    text: Il castello delle fiabe, a circa 2 ore tra treno e autobus.
+  - name: Salisburgo
+    text: La città di Mozart in Austria, a circa 1,5-2 ore di treno.
+  - name: Dachau
+    text: Il memoriale del campo di concentramento, a 25 minuti di S-Bahn.
+faq:
+  - q: "Quando si tiene l'Oktoberfest?"
+    a: "Comincia a metà settembre e dura circa 16 giorni, fino alla prima domenica di ottobre. L'ingresso ai tendoni è gratuito, ma nel fine settimana si riempiono già dal mattino."
+  - q: "Quanto si spende al giorno a Monaco di Baviera?"
+    a: "Volo e alloggio esclusi, €50-80 al giorno. Monaco è la città più cara della Germania: l'alloggio è la spesa principale, mentre mangiare in birreria resta ragionevole."

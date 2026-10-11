@@ -1,0 +1,74 @@
+city: Brussels
+slug: brussels
+tagline: Chocolate, waffles and the Grand Place
+intro: >-
+  Brussels is the capital of Belgium and of the European Union, known for the Grand Place,
+  chocolate, waffles and fries. One or two days are enough, and Bruges and Ghent are less than an
+  hour away by train.
+sights:
+  - name: Grand Place
+    text: The central square with its gilded façades, one of the most beautiful in Europe.
+  - name: Manneken Pis
+    text: The little statue of a boy, the city's quirkiest symbol.
+  - name: Atomium
+    text: The atom-shaped structure from the 1958 World's Fair, with views from the top sphere.
+  - name: Galeries Royales Saint-Hubert
+    text: The elegant covered arcade, full of chocolate shops and cafés.
+  - name: Mont des Arts
+    text: The garden with the finest view over the old town, set among the royal museums.
+  - name: Comic Book Route
+    text: Dozens of murals of Tintin, the Smurfs and other Belgian heroes on façades around the centre.
+airports:
+  BRU: >-
+    Trains from the station beneath the terminal reach Brussels Central in 17-20 minutes. The
+    ticket costs about €11, including the airport supplement.
+  CRL: >-
+    The airport is in Charleroi, about 55 km south of Brussels. Flibco buses run direct to
+    Brussels-Midi station in about an hour. The ticket costs €15-19 and is cheaper online.
+budget: >-
+  A waffle costs €3-5, fries about €4-5, a Belgian beer €4-6, and a metro or tram journey about
+  €2.50.
+when: >-
+  May to September. December brings the Christmas market and the light show on the Grand Place.
+tips:
+  - "Bruges and Ghent are easy day trips by train."
+  - "From Charleroi, allow at least an hour and a half to reach the centre of Brussels."
+  - "Fries are bought from street kiosks and eaten with mayonnaise or one of dozens of sauces."
+itinerary:
+  - "The Grand Place, Manneken Pis and the Galeries Royales. In the afternoon, Mont des Arts and the Magritte Museum, then mussels for dinner in Sainte-Catherine."
+  - "The Atomium and Mini-Europe in the morning. In the afternoon, the European Quarter with the Parlamentarium (free) and the Cinquantenaire park."
+  - "A day trip to Bruges or Ghent; you can even do both in the same day."
+areas:
+  - name: City centre
+    text: Around the Grand Place and Central station, with everything within walking distance.
+  - name: Sainte-Catherine
+    text: The neighbourhood of fish restaurants and bars, five minutes from the centre.
+  - name: Ixelles and Saint-Gilles
+    text: Art Nouveau architecture, cafés and local life.
+  - name: Near Gare du Midi
+    text: Handy for the bus from Charleroi and for international trains, but not the most pleasant area.
+food:
+  - name: Moules-frites
+    text: A pot of mussels with fries, the national dish.
+  - name: Waffles
+    text: The Brussels waffle is light and rectangular; the Liège one is sweeter and denser.
+  - name: Chocolate
+    text: "Pralines were invented here: Neuhaus, Pierre Marcolini and dozens of artisan chocolate shops."
+  - name: Belgian beer
+    text: "Hundreds of kinds, from Trappist to lambic. Many are strong: check the percentage."
+transport: >-
+  The centre can be seen on foot. You pay for the metro and trams by tapping a contactless bank
+  card, with a daily cap on what you spend. Trains from the three main stations (Nord, Central,
+  Midi) take you to almost any city in Belgium in under an hour.
+daytrips:
+  - name: Bruges
+    text: The medieval city of canals, about an hour by train.
+  - name: Ghent
+    text: Less touristy and just as beautiful, 35 minutes by train.
+  - name: Antwerp
+    text: The city of diamonds and of Rubens, 40-50 minutes by train.
+faq:
+  - q: "Zaventem or Charleroi?"
+    a: "Zaventem (BRU) is 20 minutes by train from the centre. Charleroi (CRL) often has cheaper fares, but it's 55 km away: add about an hour and €15-19 for the bus. Compare the total price, not just the fare."
+  - q: "How much money do you need per day in Brussels?"
+    a: "Excluding the flight and accommodation, plan on €50-75 a day. Day trips by train are cheap: Bruges or Ghent cost about €10-17 each way."

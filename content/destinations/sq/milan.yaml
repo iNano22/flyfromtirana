@@ -1,4 +1,7 @@
-# The guide for one city: its page on the website is /milan/.
+# The guide for one city, in Albanian: its page on the website is /milan/.
+# The same guide in another language is ../<language>/milan.yaml, with the same
+# parts and the same number of entries in each. There, `name` may give the
+# city's name in that language (name: Milano); `city` and `slug` never change.
 # `city` must be the city name used for its routes in config.yaml; `airports`
 # has one entry per route (airport code) of that city. `tagline` is the short
 # line under the city's name on the main page. All text is Albanian, with the

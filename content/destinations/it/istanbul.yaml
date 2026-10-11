@@ -1,0 +1,74 @@
+city: Istanbul
+name: Istanbul
+slug: istanbul
+tagline: Moschee, bazar e Bosforo
+intro: >-
+  Istanbul si estende su due continenti, tra moschee maestose, bazar coperti e i traghetti del
+  Bosforo. Quattro giorni sono pochi, ma bastano per cominciare.
+sights:
+  - name: Santa Sofia e Moschea Blu
+    text: I due monumenti più famosi della città, uno di fronte all'altro a Sultanahmet.
+  - name: Palazzo Topkapı
+    text: La residenza dei sultani ottomani, con il tesoro e la vista sul Bosforo.
+  - name: Gran Bazar
+    text: Uno dei mercati coperti più antichi del mondo, con migliaia di negozi. Il Bazar delle Spezie è poco più in là.
+  - name: Torre di Galata e İstiklal Caddesi
+    text: La torre medievale con vista a 360 gradi e la via pedonale più animata della città.
+  - name: Bosforo
+    text: Una traversata in traghetto tra Europa e Asia costa quanto un biglietto dell'autobus.
+  - name: Cisterna Basilica
+    text: La cisterna sotterranea bizantina con centinaia di colonne, accanto a Santa Sofia.
+  - name: Moschea di Solimano
+    text: Il capolavoro dell'architetto Sinan, più tranquilla della Moschea Blu e con vista sul Corno d'Oro.
+airports:
+  IST: >-
+    Dall'Aeroporto di Istanbul (IST) la metro M11 ti porta a Gayrettepe, dove cambi per la linea
+    M2 verso Taksim. Gli autobus Havaist vanno diretti a Taksim e a Sultanahmet in 60-90 minuti.
+    Se il volo atterra a Sabiha Gökçen (SAW), sulla sponda asiatica, prendi gli autobus Havabus
+    per Taksim o Kadıköy.
+budget: >-
+  I prezzi in lire cambiano spesso. Un pasto semplice (kebab, pide) costa l'equivalente di €6-10
+  e un tè meno di €1.
+when: >-
+  Aprile-giugno e settembre-ottobre. L'estate è calda e umida, l'inverno piovoso.
+tips:
+  - "I cittadini albanesi entrano in Turchia senza visto, per soggiorni fino a 90 giorni."
+  - "Prendi la Istanbulkart appena arrivi: vale per metro, tram, autobus e traghetti."
+  - "Nelle moschee si entra senza scarpe e con abiti che coprono spalle e ginocchia; le donne si coprono il capo con un foulard. Durante le preghiere i visitatori aspettano fuori."
+  - "Al bazar contrattare fa parte del gioco: parti da circa metà del prezzo richiesto."
+itinerary:
+  - "Sultanahmet: Santa Sofia, Moschea Blu, Cisterna Basilica e Palazzo Topkapı. È una giornata piena: parti presto."
+  - "Gran Bazar e Bazar delle Spezie al mattino, poi la Moschea di Solimano. Nel pomeriggio attraversa il Ponte di Galata, sali alla Torre e percorri İstiklal Caddesi fino a Taksim."
+  - "Un giro in traghetto sul Bosforo, poi la sponda asiatica: il mercato di Kadıköy e il tramonto a Üsküdar."
+areas:
+  - name: Sultanahmet
+    text: Vicino ai monumenti principali; tranquillo la sera.
+  - name: Beyoğlu, Galata e Karaköy
+    text: Caffè, bar e vita notturna, con vista dalle terrazze.
+  - name: Kadıköy
+    text: "Sulla sponda asiatica: mercati, locali frequentati dalla gente del posto e prezzi più bassi, a un traghetto di distanza."
+food:
+  - name: Kebab
+    text: Dall'Adana piccante all'İskender con yogurt e salsa di pomodoro.
+  - name: Balık ekmek
+    text: Panino con pesce alla griglia, venduto vicino al Ponte di Galata a Eminönü.
+  - name: Colazione turca
+    text: Decine di piattini con formaggi, olive, uova, miele e kaymak.
+  - name: Baklava e tè
+    text: Il dolce ai pistacchi e il tè nel bicchierino sottile, a ogni ora del giorno.
+transport: >-
+  Il traffico è pesante, quindi evita i taxi nelle ore di punta. Il tram T1 collega Sultanahmet
+  al Ponte di Galata e a Kabataş, la metro e il treno Marmaray passano sotto il Bosforo e i
+  traghetti sono il modo più bello per cambiare continente. Tutto si paga con la Istanbulkart.
+daytrips:
+  - name: Isole dei Principi
+    text: Senza auto, con ville di legno e pini, a circa un'ora di traghetto.
+  - name: Alto Bosforo
+    text: Il lungo giro in traghetto pubblico ti porta fino ad Anadolu Kavağı, vicino al Mar Nero.
+  - name: Bursa
+    text: La prima capitale ottomana, a circa 2-3 ore tra traghetto e autobus.
+faq:
+  - q: "Sponda europea o asiatica?"
+    a: "Per la prima visita dormi sulla sponda europea, a Sultanahmet o a Beyoğlu, dove si trovano i monumenti. La sponda asiatica (Kadıköy) è più tranquilla, più economica e più autentica, ideale per la seconda visita."
+  - q: "Quanto si spende al giorno a Istanbul?"
+    a: "Volo e alloggio esclusi, €35-60 al giorno. Mangiare e spostarsi costa poco, ma gli ingressi per gli stranieri sono aumentati molto: Santa Sofia e Topkapı costano circa €25-50 ciascuno."

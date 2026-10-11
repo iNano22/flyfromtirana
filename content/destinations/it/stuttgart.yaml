@@ -1,0 +1,70 @@
+city: Stuttgart
+name: Stoccarda
+slug: stuttgart
+tagline: Mercedes, Porsche e vigneti
+intro: >-
+  Stoccarda è la casa di Mercedes-Benz e Porsche, circondata da colline coperte di vigneti. È una
+  buona meta per un fine settimana e per andare a trovare i parenti nel Baden-Württemberg.
+sights:
+  - name: Schlossplatz
+    text: La piazza principale con il Castello Nuovo, il cuore della città.
+  - name: Museo Mercedes-Benz
+    text: Oltre 130 anni di storia dell'automobile, in un edificio a spirale.
+  - name: Museo Porsche
+    text: Le auto più famose del marchio, nel quartiere di Zuffenhausen.
+  - name: Stadtbibliothek
+    text: La biblioteca civica, un cubo bianco diventato famoso per i suoi interni.
+  - name: Torre della Televisione
+    text: La prima torre televisiva in cemento del mondo, con piattaforma panoramica sulla città e sui vigneti.
+  - name: Wilhelma
+    text: Lo zoo e giardino botanico in un parco reale del XIX secolo.
+airports:
+  STR: >-
+    I treni S2 e S3 ti portano alla stazione centrale (Hauptbahnhof) in 27 minuti, con un
+    biglietto da circa €4-5.
+budget: >-
+  Un piatto di Maultaschen o di Spätzle costa €10-15, una birra circa €5, un biglietto singolo in
+  città circa €3,50.
+when: >-
+  Maggio-settembre. La festa della birra Cannstatter Volksfest si tiene a fine settembre, il
+  mercatino di Natale a dicembre.
+tips:
+  - "I musei Mercedes-Benz e Porsche sono chiusi il lunedì."
+  - "Tubinga e Ludwigsburg sono brevi gite in giornata in treno."
+  - "La città si trova in una valle: le tante scalinate (Stäffele) ti portano ai punti panoramici sui tetti e sui vigneti."
+itinerary:
+  - "Schlossplatz, la via dello shopping Königstraße e il mercato coperto Markthalle. Nel pomeriggio la Biblioteca civica e la Galleria di Stato."
+  - "Museo Mercedes-Benz al mattino e Museo Porsche nel pomeriggio: sono ai due lati opposti della città, ma collegati dalla S-Bahn."
+  - "La Torre della Televisione e una passeggiata tra i vigneti, oppure una gita in giornata a Tubinga o a Ludwigsburg."
+areas:
+  - name: Mitte
+    text: Intorno alla Königstraße e alla Schlossplatz, vicino alla stazione centrale.
+  - name: Bad Cannstatt
+    text: Vicino al Museo Mercedes-Benz, allo stadio e ai bagni termali.
+  - name: Stuttgart-West
+    text: Quartiere residenziale con caffè e ristoranti, a 10 minuti di U-Bahn dal centro.
+food:
+  - name: Maultaschen
+    text: Grandi ravioli ripieni di carne e spinaci, in brodo o rosolati in padella.
+  - name: Käsespätzle
+    text: Gnocchetti di pasta fatti in casa con formaggio fuso e cipolle fritte.
+  - name: Zwiebelrostbraten
+    text: Bistecca con cipolle fritte, il piatto delle feste in Svevia.
+  - name: Vini locali
+    text: Trollinger e Lemberger dai vigneti della città, al loro meglio nelle osterie stagionali dei vignaioli.
+transport: >-
+  S-Bahn e Stadtbahn (U-Bahn) coprono la città e i dintorni; ciascuno dei due musei dell'auto ha
+  la sua stazione. Il centro è zona pedonale. La stazione centrale è in ricostruzione da anni,
+  quindi calcola un po' di tempo in più per i cambi.
+daytrips:
+  - name: Ludwigsburg
+    text: Uno dei più grandi palazzi barocchi della Germania, a 15 minuti di S-Bahn.
+  - name: Tubinga
+    text: Città universitaria con case colorate lungo il Neckar, a circa un'ora di treno.
+  - name: Castello di Hohenzollern
+    text: Il castello in cima al monte della dinastia prussiana, a circa 1 ora e 15 minuti tra treno e autobus.
+faq:
+  - q: "Museo Mercedes-Benz o Museo Porsche?"
+    a: "Il Mercedes-Benz è più grande e racconta tutta la storia dell'automobile: calcola 3 ore. Il Porsche è più piccolo e dedicato alle auto sportive: bastano 1,5 ore. Con una giornata intera si visitano entrambi."
+  - q: "Quanto si spende al giorno a Stoccarda?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno. L'ingresso a ciascuno dei due musei dell'auto costa circa €12-16."

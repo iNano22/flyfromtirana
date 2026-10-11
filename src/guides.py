@@ -1,10 +1,11 @@
 """The city guides: the text of each destination's own page on the website.
 
-One file per city in content/destinations/<slug>.yaml (see milan.yaml for the
-shape). src/website.py turns each one into the page /<slug>/, with the
-current prices on top and the guide underneath. A city without a file simply
-has no page. content/countries.yaml adds what is the same for every city of a
-country: the documents an Albanian citizen needs to get in.
+One file per city and language in content/destinations/<language>/<slug>.yaml
+(see sq/milan.yaml for the shape). src/website.py turns each one into the page
+/<slug>/ (Albanian) or /<language>/<slug>/, with the current prices on top and
+the guide underneath. A city without a file in a language simply has no page
+in that language. content/countries/<language>.yaml adds what is the same for
+every city of a country: the documents an Albanian citizen needs to get in.
 """
 from __future__ import annotations
 
@@ -16,8 +17,8 @@ import yaml
 
 from src.config import PROJECT_ROOT, ConfigError
 
-GUIDES_DIR = PROJECT_ROOT / "content" / "destinations"
-COUNTRIES_FILE = PROJECT_ROOT / "content" / "countries.yaml"
+GUIDES_DIR = PROJECT_ROOT / "content" / "destinations"   # one folder per language inside
+COUNTRIES_DIR = PROJECT_ROOT / "content" / "countries"   # one file per language inside
 SLUG = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")   # "milan", "new-york": safe in a web address
 
 
@@ -42,6 +43,7 @@ class Guide:
     city: str                  # the city name used for its routes in config.yaml, e.g. "Milan"
     slug: str                  # the page's address: "milan" -> /milan/
     intro: str                 # two or three sentences under the headline
+    name: str = ""             # the city's name in this guide's language, when it differs: "Milano"
     tagline: str = ""          # a few words under the city's name on the main page
     sights: list[Entry] = field(default_factory=list)       # what to see
     itinerary: list[str] = field(default_factory=list)      # a plan, one entry per day
@@ -55,9 +57,18 @@ class Guide:
     tips: list[str] = field(default_factory=list)           # short practical tips
     faq: list[Question] = field(default_factory=list)       # questions people ask about this city
 
+    @property
+    def display_name(self) -> str:
+        """The city's name as this guide's language writes it ("Milano"), else the route's name ("Milan")."""
+        return self.name or self.city
 
-def load_guides(directory: Path = GUIDES_DIR) -> dict[str, Guide]:
-    """Every guide in the folder, keyed by city name. A broken file is a ConfigError naming it."""
+
+def load_guides(language: str = "sq", *, directory: Path | None = None) -> dict[str, Guide]:
+    """Every guide written in `language`, keyed by city name. A broken file is a ConfigError naming it.
+
+    directory: read the guides from this folder instead of content/destinations/<language>.
+    """
+    directory = directory or GUIDES_DIR / language
     guides: dict[str, Guide] = {}
     slugs: dict[str, str] = {}
     if not directory.is_dir():
@@ -85,6 +96,7 @@ def _build_guide(raw: dict) -> Guide:
         city=str(raw["city"]).strip(),
         slug=slug,
         intro=_text(raw["intro"]),
+        name=_text(raw.get("name") or ""),
         tagline=_text(raw.get("tagline") or ""),
         sights=_entries(raw.get("sights")),
         itinerary=[_text(day) for day in raw.get("itinerary") or []],
@@ -104,8 +116,9 @@ def _entries(raw: list | None) -> list[Entry]:
     return [Entry(name=_text(item["name"]), text=_text(item["text"])) for item in raw or []]
 
 
-def load_entry_rules(path: Path = COUNTRIES_FILE) -> dict[str, str]:
-    """Country code ("it") -> what an Albanian citizen needs to enter that country."""
+def load_entry_rules(language: str = "sq", *, path: Path | None = None) -> dict[str, str]:
+    """Country code ("it") -> what an Albanian citizen needs to enter that country, in `language`."""
+    path = path or COUNTRIES_DIR / f"{language}.yaml"
     if not path.exists():
         return {}
     try:

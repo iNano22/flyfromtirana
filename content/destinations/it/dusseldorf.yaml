@@ -1,0 +1,71 @@
+city: Düsseldorf
+name: Düsseldorf
+slug: dusseldorf
+tagline: Reno, moda e Altbier
+intro: >-
+  Düsseldorf si stende lungo il Reno ed è nota per la moda, l'architettura moderna del
+  Medienhafen e la birra Altbier. È anche l'aeroporto principale per la regione della Ruhr e per
+  Colonia.
+sights:
+  - name: Altstadt
+    text: La città vecchia con centinaia di locali, soprannominata «il bancone più lungo del mondo».
+  - name: Lungoreno
+    text: La passeggiata lungo il fiume che collega la città vecchia al Medienhafen.
+  - name: Medienhafen
+    text: Il vecchio porto trasformato in quartiere moderno, con gli edifici dalle linee curve di Frank Gehry.
+  - name: Königsallee
+    text: Il viale dei negozi di lusso, diviso da un canale alberato.
+  - name: Rheinturm
+    text: La torre alta 240 metri sul Reno, con piattaforma panoramica e ristorante girevole.
+  - name: Little Tokyo
+    text: Il quartiere giapponese intorno alla Immermannstraße, con alcuni dei migliori ristoranti asiatici della Germania.
+airports:
+  DUS: >-
+    Il treno S11 collega il terminal alla stazione centrale (Hauptbahnhof) in circa 12 minuti,
+    con un biglietto da circa €3,50. I treni regionali per Colonia, Duisburg ed Essen partono
+    dalla stazione dell'aeroporto, dove ti porta lo SkyTrain gratuito.
+budget: >-
+  Un bicchiere di Altbier costa circa €3, un piatto in birreria €13-18, un biglietto singolo in
+  città circa €3,50.
+when: >-
+  Maggio-settembre. Il Carnevale a febbraio e il mercatino di Natale a dicembre riempiono la
+  città.
+tips:
+  - "Colonia è a solo mezz'ora di treno: il Duomo è accanto alla stazione."
+  - "Nelle birrerie dell'Altstadt il cameriere ti porta un'altra birra finché non copri il bicchiere con il sottobicchiere."
+  - "Non ordinare una Kölsch a Düsseldorf: la rivalità con Colonia è antica e qui si beve solo Altbier."
+itinerary:
+  - "Altstadt, la piazza Burgplatz e il lungoreno fino al Medienhafen. Sali sulla Rheinturm per il tramonto."
+  - "Königsallee e parco Hofgarten al mattino, i musei d'arte K20 o K21 nel pomeriggio. Cena a Little Tokyo."
+  - "Gita in giornata a Colonia, oppure un pomeriggio a Kaiserswerth, il vecchio quartiere sul fiume a nord."
+areas:
+  - name: Altstadt
+    text: Tra i locali e il lungoreno; rumorosa nel fine settimana.
+  - name: Stadtmitte
+    text: Tra la stazione centrale e la Königsallee, pratica e con prezzi medi.
+  - name: Medienhafen
+    text: Hotel moderni tra le architetture del porto, a 20 minuti a piedi dal centro.
+food:
+  - name: Altbier
+    text: La birra scura della città, servita in bicchieri piccoli nelle vecchie birrerie.
+  - name: Rheinischer Sauerbraten
+    text: Carne marinata per giorni, con salsa agrodolce.
+  - name: Himmel un Ääd
+    text: "«Cielo e terra»: purè di patate con mele e sanguinaccio fritto."
+  - name: Ramen e sushi
+    text: A Little Tokyo, grazie alla grande comunità giapponese della città.
+transport: >-
+  Il centro si visita a piedi lungo il Reno. Tram e U-Bahn coprono il resto, mentre i treni
+  regionali collegano la città a Colonia, a Essen e a tutta la Ruhr ogni pochi minuti.
+daytrips:
+  - name: Colonia
+    text: Il Duomo gotico e la città vecchia, a 25-30 minuti di treno.
+  - name: Essen
+    text: Lo Zeche Zollverein, la miniera diventata museo e patrimonio dell'umanità, a 30 minuti di treno.
+  - name: Aquisgrana
+    text: La cattedrale di Carlo Magno, a circa 1 ora e 20 minuti di treno.
+faq:
+  - q: "Quanto dista Colonia da Düsseldorf?"
+    a: "Circa 40 km: i treni regionali impiegano 25-30 minuti e partono più volte all'ora. Molti visitatori vedono entrambe le città nello stesso viaggio."
+  - q: "Quanto si spende al giorno a Düsseldorf?"
+    a: "Volo e alloggio esclusi, €50-75 al giorno. Durante le grandi fiere gli hotel possono costare il doppio."

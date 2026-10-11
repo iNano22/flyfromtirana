@@ -1,0 +1,69 @@
+city: Venice
+slug: venice
+tagline: Canals, gondolas and islands
+intro: >-
+  Venice is built on water: there are no cars, only canals, bridges and alleys worth getting lost
+  in. One or two days are enough for the main sights.
+sights:
+  - name: Piazza San Marco
+    text: The main square, with St. Mark's Basilica and the bell tower.
+  - name: Doge's Palace
+    text: The seat of the Venetian Republic, linked to the prison by the Bridge of Sighs.
+  - name: Rialto Bridge
+    text: The oldest bridge over the Grand Canal, with the fish and vegetable market close by.
+  - name: Murano and Burano
+    text: The islands of glass and of colourful houses, 15 to 45 minutes by vaporetto.
+  - name: Santa Maria della Salute
+    text: The domed church at the entrance to the Grand Canal, with free entry.
+  - name: Jewish Ghetto
+    text: The oldest ghetto in the world, in the quiet Cannaregio district.
+airports:
+  VCE: >-
+    The ATVO and ACTV buses take you to Piazzale Roma, the gateway to the city, in 20-25 minutes
+    (about €10). The Alilaguna boat goes straight to San Marco in about 75 minutes (about €15).
+budget: >-
+  A coffee away from San Marco costs about €1.50. A single vaporetto ticket costs about €9.50, so
+  the day ticket (about €25) is worth it.
+when: >-
+  April to June and September to October. In November and December there can be “acqua alta”, high
+  water in the squares.
+tips:
+  - "On some dates in spring and summer day visitors pay an entry fee online: check the calendar before you travel."
+  - "Eat away from San Marco: in the Cannaregio and Castello districts prices are much lower."
+  - "Don't sit on the steps of the bridges and don't eat sitting on the ground in the squares: the fines for tourists are steep."
+itinerary:
+  - "Piazza San Marco, the Basilica and the Doge's Palace in the morning. In the afternoon, the Rialto Bridge and a vaporetto ride along the Grand Canal (line 1)."
+  - "The islands: Murano for glass and Burano for the colourful houses. Come back for sunset on the Zattere promenade."
+  - "Venice without a map: Cannaregio, the Ghetto and the Dorsoduro district with Santa Maria della Salute. Art lovers visit the Gallerie dell'Accademia."
+areas:
+  - name: San Marco
+    text: The heart of the city, with the highest prices and the biggest crowds.
+  - name: Cannaregio
+    text: A quieter and cheaper residential district, close to the railway station.
+  - name: Mestre
+    text: "The mainland part of the city: hotels cost far less and the train or bus gets you to Venice in 10-15 minutes."
+food:
+  - name: Cicchetti
+    text: Small snacks eaten standing up in bars called bàcari, with a glass of wine.
+  - name: Sarde in saor
+    text: Sardines marinated with onion, vinegar and raisins.
+  - name: Risotto al nero di seppia
+    text: Black risotto with cuttlefish ink.
+  - name: Spritz
+    text: "The aperitif was born in this region: try it with Aperol or with Select, the Venetian version."
+transport: >-
+  You get around the city only on foot or by vaporetto, the water buses. A single ticket is
+  expensive, so the 24- or 48-hour ticket works out better if you're also going to the islands.
+  Gondolas have an official fare, about €90 for 30 minutes.
+daytrips:
+  - name: Verona
+    text: About 1 hour and 10 minutes by train.
+  - name: Padua
+    text: The Scrovegni Chapel with Giotto's frescoes, 30 minutes by train.
+  - name: The Dolomites
+    text: Cortina d'Ampezzo can be reached in about 2 hours by bus, for a day in the mountains.
+faq:
+  - q: "Is it worth staying in Mestre?"
+    a: "Yes, if you want to save money: hotels often cost half as much and the train and bus connections are frequent. The only thing you miss is the quiet evenings in Venice, once the day visitors have left."
+  - q: "How much money do you need per day in Venice?"
+    a: "Excluding the flight and accommodation, plan on €60-90 a day. Vaporetto rides and restaurants near San Marco quickly push up the bill; with cicchetti and getting around on foot you spend far less."

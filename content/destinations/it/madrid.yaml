@@ -1,0 +1,70 @@
+city: Madrid
+name: Madrid
+slug: madrid
+tagline: Musei, piazze e cene tardive
+intro: >-
+  Madrid è la capitale della Spagna, con grandi musei d'arte, piazze piene di vita e cene che
+  cominciano dopo le 21:00. Due o tre giorni bastano per il centro.
+sights:
+  - name: Museo del Prado
+    text: Una delle più grandi collezioni di pittura europea, con Velázquez e Goya.
+  - name: Palazzo Reale
+    text: Il più grande palazzo reale dell'Europa occidentale, con giardini e vista verso ovest.
+  - name: Plaza Mayor e Puerta del Sol
+    text: Le due piazze storiche nel cuore della città, a pochi minuti l'una dall'altra.
+  - name: Parco del Retiro
+    text: Il grande parco centrale, con il laghetto per le barche e il Palazzo di Cristallo.
+  - name: Museo Reina Sofía
+    text: L'arte moderna spagnola, con «Guernica» di Picasso.
+  - name: Tempio di Debod
+    text: Tempio egizio donato alla Spagna, il posto migliore per il tramonto.
+airports:
+  MAD: >-
+    La metro (linea 8) ti porta a Nuevos Ministerios in 25-30 minuti, con un biglietto da circa
+    €5 compreso il supplemento aeroportuale. L'autobus Exprés Aeropuerto funziona 24 ore su 24 e
+    arriva ad Atocha o a Cibeles in circa 40 minuti (€5).
+budget: >-
+  Un caffè costa circa €2, un menù del pranzo €13-17, una corsa in metro €1,50-2.
+when: >-
+  Primavera e autunno. A luglio e agosto fa molto caldo e la città si svuota.
+tips:
+  - "Il Museo del Prado è gratuito nelle ultime due ore di ogni giorno."
+  - "Toledo si raggiunge in circa mezz'ora con il treno veloce dalla stazione di Atocha."
+  - "Si pranza verso le 14:00-15:30 e si cena dopo le 21:00: nel mezzo molte cucine sono chiuse."
+itinerary:
+  - "Puerta del Sol, Plaza Mayor e Palazzo Reale con la Cattedrale dell'Almudena. Tramonto al Tempio di Debod, tapas a La Latina."
+  - "Museo del Prado al mattino, poi il Parco del Retiro con il laghetto e il Palazzo di Cristallo. Nel pomeriggio il Reina Sofía per «Guernica»."
+  - "Gran Vía, Malasaña e Chueca a piedi. I tifosi visitano lo stadio Santiago Bernabéu; l'alternativa è una gita in giornata a Toledo."
+areas:
+  - name: Sol e Centro
+    text: In mezzo a tutto, ma rumorosa giorno e notte.
+  - name: Malasaña e Chueca
+    text: I quartieri dei bar, dei negozi vintage e della vita notturna.
+  - name: La Latina
+    text: Vicoli antichi e i migliori bar di tapas.
+  - name: Retiro e Salamanca
+    text: Più tranquilli ed eleganti, vicino al parco e ai musei.
+food:
+  - name: Bocadillo de calamares
+    text: Panino con calamari fritti, tipico della zona di Plaza Mayor.
+  - name: Cocido madrileño
+    text: Stufato invernale di ceci, carne e verdure, servito in due o tre portate.
+  - name: Churros con chocolate
+    text: Pasta fritta da intingere nella cioccolata densa, a colazione o dopo una notte fuori.
+  - name: Tapas
+    text: A La Latina e al mercato di San Miguel, con un bicchiere di vino o di vermut.
+transport: >-
+  La metro è estesa, economica e veloce. La tessera da 10 corse si può anche condividere tra più
+  persone. Il centro, dal Palazzo Reale al Retiro, si attraversa a piedi in circa 30 minuti.
+daytrips:
+  - name: Toledo
+    text: La città delle tre culture sopra il fiume Tago, a circa mezz'ora con il treno veloce.
+  - name: Segovia
+    text: L'acquedotto romano e la fortezza dell'Alcázar, a circa 30 minuti con il treno veloce.
+  - name: El Escorial
+    text: Il monastero-palazzo di Filippo II, a circa un'ora di treno.
+faq:
+  - q: "A che ora si mangia a Madrid?"
+    a: "Tardi. Si pranza dopo le 14:00 e si cena di rado prima delle 21:00. Tra i due pasti i bar servono tapas, così nessuno resta a digiuno."
+  - q: "Quanto si spende al giorno a Madrid?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno. Madrid è più economica di Barcellona, e i grandi musei hanno fasce orarie a ingresso gratuito."

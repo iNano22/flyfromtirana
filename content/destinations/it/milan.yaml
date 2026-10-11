@@ -1,0 +1,74 @@
+# The guide for Milan in Italian. Same parts and the same number of entries as ../sq/milan.yaml.
+city: Milan
+name: Milano
+slug: milan
+tagline: Moda, Duomo e aperitivo sui Navigli
+intro: >-
+  Milano è la capitale italiana della moda e del design, con un centro che si gira comodamente a
+  piedi. Due o tre giorni bastano per il Duomo, la Galleria e un aperitivo lungo i canali dei
+  Navigli.
+sights:
+  - name: Duomo di Milano
+    text: La cattedrale gotica nel cuore della città. Sali sulle terrazze per la vista sui tetti e, nelle giornate limpide, fino alle Alpi.
+  - name: Galleria Vittorio Emanuele II
+    text: La galleria con la copertura in vetro accanto al Duomo, piena di caffè storici e negozi.
+  - name: Castello Sforzesco
+    text: Il castello degli Sforza, con i musei all'interno e il Parco Sempione alle spalle.
+  - name: Navigli
+    text: Il quartiere dei canali, il posto migliore per l'aperitivo serale.
+  - name: Pinacoteca di Brera
+    text: La principale galleria d'arte della città, nel quartiere bohémien di Brera, tra vicoli pieni di caffè.
+  - name: San Siro
+    text: Lo stadio del Milan e dell'Inter. Nei giorni senza partite si visita con tour e museo.
+airports:
+  MXP: >-
+    Il treno Malpensa Express ti porta a Milano Centrale o a Cadorna in circa 50 minuti (circa
+    €13). Gli autobus per la Centrale costano circa €10 e impiegano quasi un'ora.
+  BGY: >-
+    L'aeroporto è a Bergamo, a circa 50 km da Milano. Gli autobus diretti per Milano Centrale
+    partono ogni 20-30 minuti, impiegano circa un'ora e costano circa €10.
+budget: >-
+  Un caffè al banco costa circa €1,50, una pizza €8-12 e il biglietto della metro circa €2,20.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. Ad agosto molti locali chiudono per
+  ferie.
+tips:
+  - "I biglietti per l'«Ultima Cena» di Leonardo da Vinci finiscono in fretta: prenotali con settimane di anticipo."
+  - "Da Bergamo vale la pena fermarsi a Città Alta, la città vecchia sul colle, a soli 20 minuti dall'aeroporto."
+  - "L'aperitivo comincia verso le 18:00: al prezzo di un drink (€10-15) molti locali offrono anche il buffet."
+itinerary:
+  - "Duomo con salita alle terrazze, Galleria Vittorio Emanuele II e Teatro alla Scala. Nel pomeriggio Castello Sforzesco e Parco Sempione, la sera aperitivo a Brera."
+  - "L'«Ultima Cena» al mattino (su prenotazione), poi il quartiere di Brera e la Pinacoteca. Nel pomeriggio i negozi di Corso Buenos Aires o del Quadrilatero della Moda, la sera sui Navigli."
+  - "Una giornata fuori città, sul Lago di Como o a Bergamo. In alternativa, San Siro e il quartiere moderno di Porta Nuova con il Bosco Verticale."
+areas:
+  - name: Duomo e Brera
+    text: Al centro di tutto, ma con i prezzi più alti. Ideale per un soggiorno breve.
+  - name: Navigli
+    text: Il quartiere dei canali e della vita notturna, collegato al centro con la metro.
+  - name: Stazione Centrale
+    text: "La zona più pratica e più economica: da qui partono autobus e treni per entrambi gli aeroporti."
+food:
+  - name: Risotto alla milanese
+    text: Risotto giallo allo zafferano, il piatto simbolo della città.
+  - name: Cotoletta alla milanese
+    text: Cotoletta di vitello impanata e fritta nel burro.
+  - name: Panzerotti
+    text: Impasto fritto ripieno di pomodoro e mozzarella, un pasto veloce a due passi dal Duomo.
+  - name: Aperitivo
+    text: "Il rito della sera: uno spritz o un negroni con qualche stuzzichino, prima di cena."
+transport: >-
+  Il centro si gira a piedi, mentre le cinque linee della metro e i tram ti portano ovunque. Non
+  serve il biglietto cartaceo: basta avvicinare la carta bancaria contactless ai tornelli. Il
+  biglietto giornaliero costa circa €7,60.
+daytrips:
+  - name: Lago di Como
+    text: Circa un'ora di treno fino a Como o a Varenna, da dove prendi il battello per Bellagio.
+  - name: Bergamo
+    text: La città vecchia sul colle (Città Alta), a 50 minuti di treno.
+  - name: Verona
+    text: L'Arena romana e il balcone di Giulietta, a circa 1 ora e 15 minuti con il treno veloce.
+faq:
+  - q: "Malpensa o Bergamo: qual è l'aeroporto migliore?"
+    a: "Malpensa è collegata al centro con un treno diretto. Per Bergamo di solito ci sono biglietti più economici, ma calcola circa un'ora di autobus fino a Milano Centrale. In entrambi i casi il tragitto costa circa €10-13."
+  - q: "Quanto si spende al giorno a Milano?"
+    a: "Volo e alloggio esclusi, calcola €50-80 al giorno per mangiare, spostarti e un ingresso in un museo. Milano è tra le città più care d'Italia, soprattutto per gli hotel."

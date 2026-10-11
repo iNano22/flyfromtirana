@@ -1,0 +1,69 @@
+city: Athens
+slug: athens
+tagline: The Acropolis and rooftop views
+intro: >-
+  Athens pairs the 2,500-year-old Acropolis with neighbourhoods full of cafés, markets and rooftop
+  terraces with a view. Two or three days are enough for the city; with one more day you can also
+  get to a nearby island.
+sights:
+  - name: Acropolis
+    text: The sacred hill crowned by the Parthenon, the symbol of ancient Greece.
+  - name: Acropolis Museum
+    text: A modern museum at the foot of the hill, holding the original sculptures from the temples.
+  - name: Plaka and Monastiraki
+    text: The old quarters, with tavernas, shops and the Sunday market.
+  - name: Lycabettus Hill
+    text: The highest point in the city, at its best at sunset.
+  - name: Ancient Agora
+    text: The marketplace and political centre of ancient Athens, with the Temple of Hephaestus, one of the best preserved in Greece.
+  - name: Central Market
+    text: The meat, fish and spice market, with simple tavernas all around it.
+airports:
+  ATH: >-
+    The metro (line 3, blue) takes you to Syntagma in about 40 minutes, and the ticket costs €9.
+    The X95 bus runs all night, costs about €5.50 and takes about an hour.
+budget: >-
+  A souvlaki costs €3.50-4.50, a freddo coffee about €3, and the 90-minute metro ticket €1.20.
+when: >-
+  April to June and September to October. In July and August temperatures often climb above 35°C.
+tips:
+  - "Acropolis tickets are sold online for a set entry time: book ahead."
+  - "Go to the Acropolis as soon as it opens in the morning: there are fewer people and it's less hot."
+  - "On Sundays at 11:00 the ceremonial changing of the guard takes place in front of Parliament, on Syntagma Square."
+itinerary:
+  - "The Acropolis as soon as it opens, then the Acropolis Museum. In the afternoon, a stroll through Plaka and Anafiotika, then dinner with a view of the floodlit Acropolis."
+  - "The Ancient Agora and the Monastiraki market in the morning. In the afternoon, the Central Market and Syntagma Square, then Lycabettus Hill at sunset."
+  - "A day by the sea: the tram to the beaches of Glyfada, or the ferry to the island of Aegina. Alternatively, the Temple of Poseidon at Sounion."
+areas:
+  - name: Plaka
+    text: The prettiest neighbourhood, right below the Acropolis, but also the most touristy.
+  - name: Monastiraki and Psyrri
+    text: Central, with bars, rooftop terraces and a direct metro from the airport.
+  - name: Koukaki
+    text: A residential neighbourhood near the Acropolis Museum, quieter and better value.
+food:
+  - name: Souvlaki and gyros
+    text: Meat grilled on a skewer or carved from the big spit, wrapped in pita.
+  - name: Moussaka
+    text: A baked dish of aubergine, minced meat and béchamel.
+  - name: Greek salad
+    text: Tomato, cucumber, olives and a thick slab of feta, with no lettuce.
+  - name: Loukoumades
+    text: Small doughnuts with honey and cinnamon.
+transport: >-
+  The metro has three lines and covers the whole centre, the port of Piraeus and the airport. The
+  90-minute ticket is valid on the metro, buses and trams; the 5-day ticket costs about €8-9, but
+  doesn't include the airport. The main sites are close together and linked by a pedestrian
+  promenade.
+daytrips:
+  - name: Cape Sounion
+    text: The Temple of Poseidon above the sea, about 1.5 hours by bus, at its most beautiful at sunset.
+  - name: Aegina
+    text: The nearest island, 40 to 75 minutes by ferry from Piraeus.
+  - name: Delphi
+    text: The ancient oracle in the mountains, about 2.5 hours by bus or on an organised tour.
+faq:
+  - q: "Can you reach the islands from Athens?"
+    a: "Yes. The ferries leave from the port of Piraeus, 20 minutes by metro from the centre. Aegina, Hydra and Poros work as day trips; Mykonos, Santorini or Crete take several hours or an overnight crossing."
+  - q: "How much money do you need per day in Athens?"
+    a: "Excluding the flight and accommodation, plan on €40-60 a day. Street food is cheap, and the biggest expense is the Acropolis, which costs about €30."

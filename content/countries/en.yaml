@@ -1,0 +1,51 @@
+# What an Albanian citizen needs to enter each country we fly to, in English.
+# Same country codes as sq.yaml. Shown on every city page of that country.
+it: >-
+  Italy is in the Schengen area. Albanian citizens with a biometric passport enter without a visa,
+  for stays of up to 90 days in any 180-day period. Your passport must be valid for at least 3
+  months after your return date. Biometric data is recorded at the border (the EES system), and the
+  ETIAS online authorisation is expected to become mandatory: check before you leave whether it has
+  come into force.
+gr: >-
+  Greece is in the Schengen area. Albanian citizens with a biometric passport enter without a visa,
+  for stays of up to 90 days in any 180-day period. Your passport must be valid for at least 3
+  months after your return date. Biometric data is recorded at the border (the EES system), and the
+  ETIAS online authorisation is expected to become mandatory: check before you leave whether it has
+  come into force.
+de: >-
+  Germany is in the Schengen area. Albanian citizens with a biometric passport enter without a
+  visa, for stays of up to 90 days in any 180-day period. Your passport must be valid for at least
+  3 months after your return date. Biometric data is recorded at the border (the EES system), and
+  the ETIAS online authorisation is expected to become mandatory: check before you leave whether it
+  has come into force.
+at: >-
+  Austria is in the Schengen area. Albanian citizens with a biometric passport enter without a
+  visa, for stays of up to 90 days in any 180-day period. Your passport must be valid for at least
+  3 months after your return date. Biometric data is recorded at the border (the EES system), and
+  the ETIAS online authorisation is expected to become mandatory: check before you leave whether it
+  has come into force.
+ch: >-
+  Switzerland is not in the EU, but it is in the Schengen area. Albanian citizens with a biometric
+  passport enter without a visa, for stays of up to 90 days in any 180-day period. Your passport
+  must be valid for at least 3 months after your return date. The ETIAS online authorisation is
+  expected to become mandatory for Switzerland too: check before you leave whether it has come into
+  force.
+es: >-
+  Spain is in the Schengen area. Albanian citizens with a biometric passport enter without a visa,
+  for stays of up to 90 days in any 180-day period. Your passport must be valid for at least 3
+  months after your return date. Biometric data is recorded at the border (the EES system), and the
+  ETIAS online authorisation is expected to become mandatory: check before you leave whether it has
+  come into force.
+be: >-
+  Belgium is in the Schengen area. Albanian citizens with a biometric passport enter without a
+  visa, for stays of up to 90 days in any 180-day period. Your passport must be valid for at least
+  3 months after your return date. Biometric data is recorded at the border (the EES system), and
+  the ETIAS online authorisation is expected to become mandatory: check before you leave whether it
+  has come into force.
+gb: >-
+  The United Kingdom is not in the Schengen area. Albanian citizens need a visitor visa (Standard
+  Visitor visa), which you apply for online and which requires an appointment to give your
+  biometric data. Apply several weeks ahead and don't buy your ticket until you have the visa.
+tr: >-
+  Albanian citizens enter Turkey without a visa, for stays of up to 90 days. All you need is your
+  passport, which should ideally be valid for at least 6 months after your date of entry.

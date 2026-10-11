@@ -1,0 +1,69 @@
+city: Stuttgart
+slug: stuttgart
+tagline: Mercedes, Porsche and vineyards
+intro: >-
+  Stuttgart is the home of Mercedes-Benz and Porsche, surrounded by vine-covered hills. It's a good
+  destination for a weekend and for visiting relatives in Baden-Württemberg.
+sights:
+  - name: Schlossplatz
+    text: The main square with the New Palace, the heart of the city.
+  - name: Mercedes-Benz Museum
+    text: More than 130 years of motoring history, in a spiral building.
+  - name: Porsche Museum
+    text: The brand's best-known cars, in the Zuffenhausen district.
+  - name: Stadtbibliothek
+    text: The city library, a white cube that has become famous for its interior.
+  - name: TV Tower
+    text: The world's first concrete television tower, with a viewing platform over the city and the vineyards.
+  - name: Wilhelma
+    text: The zoo and botanical garden in a 19th-century royal park.
+airports:
+  STR: >-
+    The S2 and S3 trains take you to the main station (Hauptbahnhof) in 27 minutes, and the ticket
+    costs about €4-5.
+budget: >-
+  A plate of Maultaschen or Spätzle costs €10-15, a beer about €5, and a single ticket in the city
+  about €3.50.
+when: >-
+  May to September. The Cannstatter Volksfest beer festival is held at the end of September, the
+  Christmas market in December.
+tips:
+  - "The Mercedes-Benz and Porsche museums are closed on Mondays."
+  - "Tübingen and Ludwigsburg are short day trips by train."
+  - "The city lies in a valley: the many flights of steps (Stäffele) lead up to the viewpoints over the rooftops and the vineyards."
+itinerary:
+  - "Schlossplatz, the Königstraße shopping street and the Markthalle covered market. In the afternoon, the City Library and the State Gallery."
+  - "The Mercedes-Benz Museum in the morning and the Porsche Museum in the afternoon: they're on opposite sides of the city, but linked by S-Bahn."
+  - "The TV Tower and a walk through the vineyards, or a day trip to Tübingen or Ludwigsburg."
+areas:
+  - name: Mitte
+    text: Around Königstraße and Schlossplatz, close to the main station.
+  - name: Bad Cannstatt
+    text: Close to the Mercedes-Benz Museum, the stadium and the thermal baths.
+  - name: Stuttgart-West
+    text: A residential neighbourhood with cafés and restaurants, 10 minutes by U-Bahn from the centre.
+food:
+  - name: Maultaschen
+    text: Large pasta parcels filled with meat and spinach, served in broth or fried.
+  - name: Käsespätzle
+    text: Small homemade noodles with melted cheese and fried onions.
+  - name: Zwiebelrostbraten
+    text: Steak with fried onions, the dish for special occasions in Swabia.
+  - name: Local wines
+    text: Trollinger and Lemberger from the city's vineyards, at their best in the winegrowers' seasonal taverns.
+transport: >-
+  The S-Bahn and the Stadtbahn (U-Bahn) cover the city and its surroundings; both car museums have
+  their own station. The centre is a pedestrian zone. The main station has been under
+  reconstruction for years, so leave a little extra time for changes.
+daytrips:
+  - name: Ludwigsburg
+    text: One of the largest Baroque palaces in Germany, 15 minutes by S-Bahn.
+  - name: Tübingen
+    text: A university town with colourful houses along the River Neckar, about an hour by train.
+  - name: Hohenzollern Castle
+    text: The hilltop castle of the Prussian dynasty, about 1 hour and 15 minutes by train and bus.
+faq:
+  - q: "The Mercedes-Benz Museum or the Porsche Museum?"
+    a: "Mercedes-Benz is bigger and tells the whole history of the car: allow 3 hours. Porsche is smaller and focused on sports cars: 1.5 hours is enough. With a full day you can do both."
+  - q: "How much money do you need per day in Stuttgart?"
+    a: "Excluding the flight and accommodation, plan on €45-70 a day. Entry to each of the car museums costs about €12-16."

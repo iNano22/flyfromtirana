@@ -1,0 +1,74 @@
+city: Barcelona
+name: Barcellona
+slug: barcelona
+tagline: Gaudí, spiaggia e vita notturna
+intro: >-
+  Barcellona unisce la spiaggia all'architettura di Gaudí e a una vita notturna che comincia
+  tardi. Tre o quattro giorni sono l'ideale.
+sights:
+  - name: Sagrada Família
+    text: La basilica incompiuta di Gaudí, l'edificio più visitato della Spagna.
+  - name: Park Güell
+    text: Il parco dai mosaici colorati, con vista sulla città e sul mare.
+  - name: Quartiere Gotico e La Rambla
+    text: Il centro medievale dai vicoli stretti e il viale più famoso della città.
+  - name: Casa Batlló e La Pedrera
+    text: Le due case più famose di Gaudí, sul Passeig de Gràcia.
+  - name: Barceloneta
+    text: La spiaggia cittadina, a pochi minuti dal centro.
+  - name: Montjuïc
+    text: La collina con il castello, il Museo d'Arte della Catalogna e la vista sul porto.
+  - name: La Boqueria
+    text: Il mercato più famoso della città, sulla Rambla. Vai al mattino, prima della folla.
+airports:
+  BCN: >-
+    L'autobus Aerobús ti porta in Plaça de Catalunya in circa 35 minuti (circa €7-8). Il treno R2
+    Nord dal Terminal 2 arriva a Sants e a Passeig de Gràcia in circa 25 minuti, con un biglietto
+    da circa €5.
+budget: >-
+  Un caffè costa circa €2, un menù del pranzo (menú del día) €13-18, la tessera T-casual da 10
+  corse circa €13.
+when: >-
+  Maggio-giugno e settembre-ottobre. Luglio e agosto sono caldi e molto affollati.
+tips:
+  - "I biglietti per la Sagrada Família e il Park Güell si comprano online e si esauriscono con giorni di anticipo."
+  - "Attento ai borseggiatori sulla Rambla e in metro."
+  - "La cena comincia tardi, verso le 21:00. A pranzo chiedi il «menú del día»: più portate con bevanda, a prezzo fisso."
+itinerary:
+  - "Sagrada Família al mattino (con biglietto prenotato), poi Passeig de Gràcia con Casa Batlló e La Pedrera. Serata a El Born."
+  - "Quartiere Gotico, Cattedrale e La Boqueria. Nel pomeriggio Barceloneta e la spiaggia, tramonto dal Montjuïc."
+  - "Park Güell al mattino e il quartiere di Gràcia. Nel pomeriggio i musei del Montjuïc, oppure una gita in giornata a Montserrat."
+areas:
+  - name: Barri Gòtic e El Born
+    text: "Il centro storico: atmosfera e vita notturna, ma anche rumore e vicoli stretti."
+  - name: Eixample
+    text: Il quartiere dalle strade larghe con gli edifici di Gaudí, tranquillo e ben collegato.
+  - name: Gràcia
+    text: Piazzette e locali frequentati dalla gente del posto, vicino al Park Güell.
+  - name: Barceloneta
+    text: Vicino alla spiaggia, la scelta migliore in estate.
+food:
+  - name: Tapas
+    text: "Piattini da condividere: patatas bravas, crocchette, peperoni fritti."
+  - name: Pa amb tomàquet
+    text: Pane strofinato con pomodoro e olio d'oliva, l'inizio di ogni pasto catalano.
+  - name: Paella e fideuà
+    text: Riso o pasta sottile ai frutti di mare, al loro meglio vicino al mare, alla Barceloneta.
+  - name: Crema catalana
+    text: Crema dolce con una crosta di zucchero bruciato.
+transport: >-
+  La metro copre tutta la città e funziona fino a tardi. La tessera T-casual da 10 corse è la
+  soluzione migliore per qualche giorno, ma non vale sulla metro per l'aeroporto. Il centro
+  storico e il lungomare si vedono meglio a piedi.
+daytrips:
+  - name: Montserrat
+    text: Il monastero tra rocce dalle forme bizzarre, a circa 1 ora e 15 minuti tra treno e funivia.
+  - name: Girona
+    text: Città medievale con case colorate lungo il fiume, a 40 minuti con il treno veloce.
+  - name: Sitges
+    text: Cittadina di mare con spiagge, a 40 minuti di treno.
+faq:
+  - q: "A Barcellona bisogna prenotare le attrazioni?"
+    a: "Sì. La Sagrada Família e il Park Güell vendono solo biglietti a orario, che spesso finiscono con giorni di anticipo, soprattutto in estate. Prenota anche Casa Batlló, se vuoi visitarne l'interno."
+  - q: "Quanto si spende al giorno a Barcellona?"
+    a: "Volo e alloggio esclusi, €50-75 al giorno. Gli ingressi alle opere di Gaudí sono cari (la Sagrada Família circa €26), mentre il pranzo con il menú del día è economico."

@@ -1,0 +1,68 @@
+city: Naples
+name: Napoli
+slug: naples
+tagline: Pizza, Vesuvio e Pompei
+intro: >-
+  Napoli è la patria della pizza, una città rumorosa e piena di vita all'ombra del Vesuvio. È
+  anche la porta d'accesso a Pompei, a Capri e alla Costiera Amalfitana.
+sights:
+  - name: Spaccanapoli
+    text: La via stretta che taglia in due il centro storico, piena di chiese, botteghe e pizzerie.
+  - name: Museo Archeologico Nazionale
+    text: La più ricca collezione di mosaici e reperti provenienti da Pompei.
+  - name: Castel dell'Ovo
+    text: Il castello sul mare, con il Lungomare e la vista sul Vesuvio.
+  - name: Pompei
+    text: La città romana sepolta dalla cenere del Vesuvio, a circa 35 minuti di treno.
+  - name: Cappella Sansevero
+    text: Qui si trova il «Cristo velato», una delle sculture più impressionanti del mondo. I biglietti si prenotano online.
+  - name: Napoli Sotterranea
+    text: I cunicoli e le cisterne sotto la città, scavati da greci e romani.
+airports:
+  NAP: >-
+    L'autobus Alibus collega l'aeroporto alla stazione centrale (Piazza Garibaldi) in 15-20 minuti
+    e al porto in circa 30 minuti. Il biglietto costa €5.
+budget: >-
+  Una pizza margherita costa €5-8, un espresso circa €1,20, il biglietto della metro circa €1,50.
+when: >-
+  Aprile-giugno e settembre-ottobre. L'estate è calda, ma va bene per le isole.
+tips:
+  - "Per Pompei prendi il treno della Circumvesuviana dalla stazione di Garibaldi."
+  - "Fai attenzione a borsa e telefono nelle strade affollate e sui mezzi pubblici."
+  - "Molte pizzerie famose non accettano prenotazioni: vai prima delle 19:30 o preparati a fare la fila."
+itinerary:
+  - "Il centro storico: Spaccanapoli, Cappella Sansevero e Napoli Sotterranea. Pizza a pranzo in Via dei Tribunali, nel pomeriggio il Museo Archeologico."
+  - "Pompei al mattino con la Circumvesuviana. Nel pomeriggio sali in funicolare al Vomero per la vista da Castel Sant'Elmo."
+  - "Il Lungomare, Castel dell'Ovo e Piazza del Plebiscito. Oppure prendi il traghetto per una giornata a Capri o a Procida."
+areas:
+  - name: Centro Storico
+    text: "Tra Spaccanapoli e Via dei Tribunali: rumore, vita e le migliori pizzerie."
+  - name: Chiaia e Lungomare
+    text: La zona elegante sul mare, più tranquilla e più cara.
+  - name: Vicino a Piazza Garibaldi
+    text: La più economica e la più pratica per i treni e l'aeroporto, ma non la più piacevole la sera.
+food:
+  - name: Pizza napoletana
+    text: Margherita o marinara, con impasto morbido e cornicione gonfio, cotta in 90 secondi.
+  - name: Pizza fritta
+    text: La pizza fritta, ripiena di ricotta e prosciutto.
+  - name: Sfogliatella
+    text: Dolce ripieno di ricotta, con sfoglia croccante oppure con pasta morbida.
+  - name: Espresso
+    text: Qui il caffè è corto, forte e si beve in piedi al banco.
+transport: >-
+  Il centro si visita a piedi. La metro (Linea 1) è famosa per le sue stazioni progettate come
+  gallerie d'arte, mentre le funicolari ti portano su alla collina del Vomero. I treni della
+  Circumvesuviana per Pompei e Sorrento partono da Piazza Garibaldi.
+daytrips:
+  - name: Capri
+    text: Circa 50 minuti di traghetto veloce dal Molo Beverello.
+  - name: Costiera Amalfitana
+    text: Positano e Amalfi, in traghetto d'estate oppure in treno fino a Sorrento e poi in autobus.
+  - name: Ercolano
+    text: Più piccola e meglio conservata di Pompei, a 20 minuti di treno.
+faq:
+  - q: "Quanto dista Pompei da Napoli?"
+    a: "Circa 35-40 minuti con la Circumvesuviana fino alla stazione di Pompei Scavi, proprio di fronte all'ingresso. Calcola almeno tre o quattro ore per la visita."
+  - q: "Quanto si spende al giorno a Napoli?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno. Napoli è la grande città più economica d'Italia: una pizza eccellente costa meno di €10."

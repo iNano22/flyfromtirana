@@ -4,16 +4,16 @@
      the page is written. -->
 <li class="fare[[ {DEAL}]]">
   <div class="fare-info">
-    <p class="fare-route"><span class="code">TIA</span><span class="path" aria-hidden="true"></span><span class="code">{IATA}</span>[[<span class="tag {DEAL}">Ofertë</span>]]</p>
+    <p class="fare-route"><span class="code">TIA</span><span class="path" aria-hidden="true"></span><span class="code">{IATA}</span>[[<span class="tag {DEAL}">{T_DEAL_STAMP}</span>]]</p>
     <p class="fare-airport">{CITY}[[ ({AIRPORT})]]</p>
-    <p class="fare-dates"><span class="lbl">Nisja</span>{DATES}</p>
+    <p class="fare-dates"><span class="lbl">{T_DEPARTURE}</span>{DATES}</p>
     <p class="fare-meta">{AIRLINE}, {STOPS}[[, {DURATION}]]</p>
-    <p class="fare-meta">Kthimi nga €{RETURN_PRICE}</p>
+    <p class="fare-meta">{T_RETURN_FROM}</p>
   </div>
   <div class="fare-buy">
-    <p class="fare-price"><span>nga</span> <b>€{PRICE}</b></p>
-    <p class="fare-way">vajtje, për person</p>
-    <p class="fare-usual">zakonisht €{MEDIAN}[[ <b>-{SAVING}%</b>]]</p>
-    <a class="btn-book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">Rezervo</a>
+    <p class="fare-price"><span>{T_FROM}</span> <b>€{PRICE}</b></p>
+    <p class="fare-way">{T_ONE_WAY_PP}</p>
+    <p class="fare-usual">{T_USUALLY}[[ <b>-{SAVING}%</b>]]</p>
+    <a class="btn-book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">{T_BOOK}</a>
   </div>
 </li>

@@ -1,0 +1,77 @@
+city: Brussels
+name: Bruxelles
+slug: brussels
+tagline: Cioccolato, waffle e Grand Place
+intro: >-
+  Bruxelles è la capitale del Belgio e dell'Unione Europea, famosa per la Grand Place, il
+  cioccolato, i waffle e le patatine fritte. Uno o due giorni bastano, e Bruges e Gand sono a
+  meno di un'ora di treno.
+sights:
+  - name: Grand Place
+    text: La piazza centrale dalle facciate dorate, una delle più belle d'Europa.
+  - name: Manneken Pis
+    text: La statuetta del bambino, il simbolo più curioso della città.
+  - name: Atomium
+    text: La struttura a forma di atomo dell'Esposizione Universale del 1958, con vista dalla sfera più alta.
+  - name: Galeries Royales Saint-Hubert
+    text: L'elegante galleria coperta, piena di cioccolaterie e caffè.
+  - name: Mont des Arts
+    text: Il giardino con la vista più bella sulla città vecchia, tra i musei reali.
+  - name: Percorso del fumetto
+    text: Decine di murales con Tintin, i Puffi e altri eroi belgi sulle facciate del centro.
+airports:
+  BRU: >-
+    I treni dalla stazione sotto il terminal arrivano a Bruxelles-Central in 17-20 minuti. Il
+    biglietto costa circa €11, compreso il supplemento aeroportuale.
+  CRL: >-
+    L'aeroporto è a Charleroi, circa 55 km a sud di Bruxelles. Gli autobus Flibco vanno diretti
+    alla stazione di Bruxelles-Midi in circa un'ora. Il biglietto costa €15-19 ed è più economico
+    online.
+budget: >-
+  Un waffle costa €3-5, le patatine fritte circa €4-5, una birra belga €4-6, una corsa in metro o
+  in tram circa €2,50.
+when: >-
+  Maggio-settembre. A dicembre ci sono il mercatino di Natale e lo spettacolo di luci sulla Grand
+  Place.
+tips:
+  - "Bruges e Gand sono gite in giornata facili da fare in treno."
+  - "Da Charleroi calcola almeno un'ora e mezza per arrivare in centro a Bruxelles."
+  - "Le patatine fritte si comprano nei chioschi per strada e si mangiano con la maionese o con una delle decine di salse."
+itinerary:
+  - "Grand Place, Manneken Pis e Galeries Royales. Nel pomeriggio Mont des Arts e Museo Magritte, cena a base di cozze a Sainte-Catherine."
+  - "Atomium e Mini-Europe al mattino. Nel pomeriggio il Quartiere Europeo con il Parlamentarium (gratuito) e il Parco del Cinquantenario."
+  - "Gita in giornata a Bruges o a Gand; si possono vedere anche tutte e due nello stesso giorno."
+areas:
+  - name: Centro
+    text: Intorno alla Grand Place e alla stazione Centrale, tutto a piedi.
+  - name: Sainte-Catherine
+    text: Il quartiere dei ristoranti di pesce e dei bar, a cinque minuti dal centro.
+  - name: Ixelles e Saint-Gilles
+    text: Architettura Art Nouveau, caffè e vita di quartiere.
+  - name: Vicino alla Gare du Midi
+    text: Pratica per l'autobus da Charleroi e per i treni internazionali, ma non la zona più piacevole.
+food:
+  - name: Moules-frites
+    text: Cozze in pentola con patatine fritte, il piatto nazionale.
+  - name: Waffle
+    text: Quello di Bruxelles è leggero e rettangolare; quello di Liegi è più dolce e più compatto.
+  - name: Cioccolato
+    text: "Le praline sono state inventate qui: Neuhaus, Pierre Marcolini e decine di cioccolaterie artigianali."
+  - name: Birra belga
+    text: "Centinaia di tipi, dalle trappiste alle lambic. Molte sono forti: leggi la gradazione."
+transport: >-
+  Il centro si visita a piedi. Metro e tram si pagano avvicinando la carta bancaria contactless,
+  con un tetto di spesa giornaliero. I treni dalle tre stazioni principali (Nord, Central, Midi)
+  ti portano in meno di un'ora in quasi tutte le città del Belgio.
+daytrips:
+  - name: Bruges
+    text: La città medievale dei canali, a circa un'ora di treno.
+  - name: Gand
+    text: Meno turistica e altrettanto bella, a 35 minuti di treno.
+  - name: Anversa
+    text: La città dei diamanti e di Rubens, a 40-50 minuti di treno.
+faq:
+  - q: "Zaventem o Charleroi?"
+    a: "Zaventem (BRU) è a 20 minuti di treno dal centro. Charleroi (CRL) ha spesso biglietti più economici, ma è a 55 km: aggiungi circa un'ora e €15-19 per l'autobus. Confronta il prezzo totale, non solo quello del biglietto."
+  - q: "Quanto si spende al giorno a Bruxelles?"
+    a: "Volo e alloggio esclusi, €50-75 al giorno. Le gite in giornata in treno costano poco: Bruges o Gand costano circa €10-17 a tratta."

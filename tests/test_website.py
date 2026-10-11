@@ -230,7 +230,7 @@ def test_photo_cards_show_every_route_deals_first(config, storage):
     cards = page[page.index('class="strip stories"'):page.index('data-ctl="stories"')]
     assert cards.index('data-iata="BGY"') < cards.index('data-iata="VIE"')      # the deal comes first
     assert '<li class="dcard deal c-it" data-iata="BGY">' in cards
-    assert '<img src="img/dest/bgy.webp"' in cards                             # the route's photo
+    assert '<img src="./img/dest/bgy.webp"' in cards                           # the route's photo
     assert "Milan, Italy" in cards and "Vienna, Austria" in cards              # city and country, in English
     assert "Milano" not in page and "Vjenë" not in page                        # no Albanian city names
     assert cards.count('class="sticker deal"') == 1                            # the sticker is for deals only
@@ -270,7 +270,8 @@ def test_photo_that_requires_a_credit_gets_one_while_it_is_on_the_page(config, s
     page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
                        updated_at=NOW, now=NOW)
     assert "img/services/hotel.webp" in page
-    credits = page[page.index('<details class="credits">'):page.index("</details>")]
+    start = page.index('<details class="credits">')
+    credits = page[start:page.index("</details>", start)]
     assert credits.count("<li>") == 1
     assert "Hotele: " in credits and "CC BY 2.0" in credits and "Prerë dhe zvogëluar." in credits
 

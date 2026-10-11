@@ -1,0 +1,70 @@
+city: Berlin
+slug: berlin
+tagline: History, art and nightlife
+intro: >-
+  Berlin is the city of 20th-century history and alternative living: the Wall, the museums, street
+  art and the clubs. Three or four days are ideal.
+sights:
+  - name: Brandenburg Gate and Reichstag
+    text: The symbol of the city and the German parliament, whose glass dome can be visited for free.
+  - name: East Side Gallery
+    text: The longest surviving stretch of the Berlin Wall, covered in paintings.
+  - name: Museum Island
+    text: Five museums on an island in the River Spree, next to Berlin Cathedral.
+  - name: Alexanderplatz
+    text: The great square of the East, with the TV Tower and the view from 200 metres up.
+  - name: Holocaust Memorial
+    text: A field of thousands of concrete blocks near the Brandenburg Gate.
+  - name: Checkpoint Charlie
+    text: The famous crossing point between East and West during the Cold War.
+airports:
+  BER: >-
+    The FEX, RE and RB trains reach the main station (Hauptbahnhof) in about 30 minutes; the S-Bahn
+    lines S9 and S45 make more stops. You need a ticket for zones ABC (about €5).
+budget: >-
+  A döner costs €7-8, a beer €4-5, and the 24-hour ticket for zones AB about €11.
+when: >-
+  May to September. Winter is cold, but in December there are Christmas markets in every
+  neighbourhood.
+tips:
+  - "Visiting the Reichstag dome is free, but you have to book online days in advance."
+  - "Many small places only take cash: carry a few euros with you."
+  - "Shops are closed on Sundays. Validate your transport ticket before boarding: the inspectors are in plain clothes and the fine is €60."
+itinerary:
+  - "The Brandenburg Gate, the Reichstag and the Holocaust Memorial. In the afternoon, the Unter den Linden boulevard as far as Museum Island and Alexanderplatz."
+  - "The Wall: the Memorial on Bernauer Straße in the morning and the East Side Gallery in the afternoon. The evening in Kreuzberg or Friedrichshain."
+  - "Charlottenburg and Kurfürstendamm, or Tempelhofer Feld, the former airport turned into a park. Alternatively, a day trip to Potsdam."
+areas:
+  - name: Mitte
+    text: The historic centre, close to Museum Island and the Brandenburg Gate.
+  - name: Kreuzberg and Friedrichshain
+    text: The neighbourhoods for nightlife, street art and food from all over the world.
+  - name: Prenzlauer Berg
+    text: Quiet, with cafés and tree-lined squares, a favourite with families.
+  - name: Charlottenburg
+    text: Classic West Berlin, near Kurfürstendamm and the palace.
+food:
+  - name: Currywurst
+    text: Sliced sausage with tomato and curry sauce, a Berlin invention.
+  - name: Döner Kebab
+    text: The version served in bread was born here, in the city's Turkish community.
+  - name: Berliner Pfannkuchen
+    text: A doughnut filled with jam.
+  - name: Food markets
+    text: Markthalle Neun in Kreuzberg, with its street food evening every Thursday.
+transport: >-
+  The U-Bahn, S-Bahn, trams and buses all run on the same ticket; zones AB are enough for the city,
+  and you need ABC for the airport. The 24-hour ticket pays for itself from the third journey. The
+  city is flat and full of cycle lanes.
+daytrips:
+  - name: Potsdam
+    text: Sanssouci Palace and the gardens of the Prussian kings, 30-40 minutes by S-Bahn.
+  - name: Sachsenhausen
+    text: The concentration camp memorial in Oranienburg, about 45 minutes by train.
+  - name: Dresden
+    text: The Baroque city on the River Elbe, about 2 hours by train.
+faq:
+  - q: "Are shops open on Sundays in Berlin?"
+    a: "No, almost all shops and supermarkets are closed. Restaurants, museums, the Sunday markets (like the one in Mauerpark) and the shops in the big stations stay open."
+  - q: "How much money do you need per day in Berlin?"
+    a: "Excluding the flight and accommodation, plan on €45-70 a day. Berlin is cheaper than Munich or Frankfurt, and much of its history can be seen for free in the streets."

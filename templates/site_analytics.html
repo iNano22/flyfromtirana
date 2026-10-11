@@ -20,13 +20,13 @@
 .consent .no { background: #f1eefb; color: #1a1030; }
 .consent :focus-visible { outline: 3px solid #0d3f9e; outline-offset: 2px; }
 </style>
-<div class="consent" id="consent"[[ data-auto="{GA_AUTO}"]] role="dialog" aria-live="polite" aria-label="Cookies për statistika" hidden>
-  <p data-ask="{GA_ASK}">Përdorim Google Analytics për të numëruar vizitat në faqe. A na lejon të vendosim cookies për këtë? Faqja punon njësoj edhe pa to.</p>
-  <p data-auto="{GA_AUTO}">Kjo faqe përdor Google Analytics dhe cookies për të numëruar vizitat. Nëse nuk do, shtyp «Refuzoj»: faqja punon njësoj edhe pa to.</p>
+<div class="consent" id="consent"[[ data-auto="{GA_AUTO}"]] role="dialog" aria-live="polite" aria-label="{T_COOKIES_LABEL}" hidden>
+  <p data-ask="{GA_ASK}">{T_COOKIES_ASK}</p>
+  <p data-auto="{GA_AUTO}">{T_COOKIES_NOTICE}</p>
   <div class="consent-btns">
-    <button type="button" class="yes" data-consent="yes" data-ask="{GA_ASK}">Pranoj</button>
-    <button type="button" class="yes" data-consent="yes" data-auto="{GA_AUTO}">Në rregull</button>
-    <button type="button" class="no" data-consent="no">Refuzoj</button>
+    <button type="button" class="yes" data-consent="yes" data-ask="{GA_ASK}">{T_COOKIES_ACCEPT}</button>
+    <button type="button" class="yes" data-consent="yes" data-auto="{GA_AUTO}">{T_COOKIES_OK}</button>
+    <button type="button" class="no" data-consent="no">{T_COOKIES_REFUSE}</button>
   </div>
 </div>
 <script>
