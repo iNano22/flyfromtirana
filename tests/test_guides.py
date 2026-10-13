@@ -333,7 +333,6 @@ def test_drive_script_is_in_the_head_of_every_page(config, storage):
 
 
 def test_no_drive_script_without_one_in_the_config(config, storage):
-    assert load_config().website.travelpayouts_drive_script.startswith("https://")   # config.yaml has the site's
     config = replace(config, website=replace(config.website, travelpayouts_drive_script=""))
     for page in analytics_pages(config, storage):
         assert "nowprocket" not in page and "document.head.appendChild" not in page[:page.index("</head>")]

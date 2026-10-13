@@ -89,7 +89,10 @@ website:
   # address goes here: the one in script.src = '...' in the snippet they give. What Drive does on
   # the pages (keyword links, offers, previews) is switched on and off in the dashboard.
   # Empty = no Drive on the site.
-  travelpayouts_drive_script: "https://emrldtp.cc/NTgzODE4.js?t=583818"
+  # Switched off in Oct 2026: Travelpayouts could not connect the project to Booking.com and
+  # Viator, and Drive's keyword links do not work without them. To put it back, once those
+  # programs are open to the project: "https://emrldtp.cc/NTgzODE4.js?t=583818"
+  travelpayouts_drive_script: ""
   # GetYourGuide's widget on every city page: a grid of that city's tours and activities, with
   # photos, which GetYourGuide fills in and keeps up to date itself. This is how many activities
   # it shows; 0 = no widget. It uses the Partner ID and the city pages of the tours link
