@@ -96,7 +96,7 @@ def test_english_main_page(config, storage):
     page = main_page(config, storage, "en")
     assert '<html lang="en">' in page
     assert "<title>FlyFromTirana: cheap flights from Tirana</title>" in page
-    assert '<link rel="canonical" href="https://flyfromtirana.devbay.cloud/en/">' in page
+    assert '<link rel="canonical" href="https://flyfromtirana.al/en/">' in page
     assert "<h1><span>Fly cheap</span><span>from Tirana</span></h1>" in page
     assert "Today from <b>€19</b> one way" in page and "Updated 9 Oct 2026, 12:00, Tirana time" in page
     # A ticket in the list: English labels, English month names, the same tracked link.
@@ -138,7 +138,7 @@ def test_albanian_main_page_is_at_the_top_and_unchanged(config, storage):
     page = main_page(config, storage, "sq")
     assert page == render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.website.links, "12345"),
                                updated_at=NOW, now=NOW, guides=site_guides(config))   # sq is the default
-    assert '<html lang="sq">' in page and '<link rel="canonical" href="https://flyfromtirana.devbay.cloud/">' in page
+    assert '<html lang="sq">' in page and '<link rel="canonical" href="https://flyfromtirana.al/">' in page
     assert "<h1><span>Fluturo lirë</span><span>nga Tirana</span></h1>" in page
     assert '<img src="./img/dest/bgy.webp"' in page
 
@@ -164,7 +164,7 @@ def test_main_pages_link_to_each_other(config, storage):
             '<a href="../" lang="sq" hreflang="sq">AL<span class="sr"> Shqip</span></a>') in en
     for page in (sq, en):   # and search engines are told about all of them, on every one
         for code, address in (("sq", ""), ("en", "en/"), ("it", "it/"), ("x-default", "")):
-            assert f'<link rel="alternate" hreflang="{code}" href="https://flyfromtirana.devbay.cloud/{address}">' in page
+            assert f'<link rel="alternate" hreflang="{code}" href="https://flyfromtirana.al/{address}">' in page
 
 
 def test_city_page_in_english(config, storage):
@@ -172,8 +172,8 @@ def test_city_page_in_english(config, storage):
     page = milan_page(config, storage, "en")
     assert '<html lang="en">' in page
     assert "<title>Cheap flights Tirana – Milan: prices and guide | FlyFromTirana</title>" in page
-    assert '<link rel="canonical" href="https://flyfromtirana.devbay.cloud/en/milan/">' in page
-    assert '<link rel="alternate" hreflang="it" href="https://flyfromtirana.devbay.cloud/it/milan/">' in page
+    assert '<link rel="canonical" href="https://flyfromtirana.al/en/milan/">' in page
+    assert '<link rel="alternate" hreflang="it" href="https://flyfromtirana.al/it/milan/">' in page
     assert "from <b>€19</b> one way" in page and "<h2>What to see in Milan</h2>" in page
     assert "<h2>A 3-day itinerary</h2>" in page and 'content: "Day " counter(day)' in page
     assert "<h3>What documents do I need?</h3><p>" in page and "Schengen" in page
@@ -224,7 +224,7 @@ def test_build_writes_every_language(config):
     assert (out / "img" / "dest" / "bgy.webp").exists() and not (out / "en" / "img").exists()   # the photos, once
     sitemap = (out / "sitemap.xml").read_text(encoding="utf-8")
     for address in ("", "milan/", "en/", "en/milan/", "it/", "it/zurich/"):
-        assert f"<loc>https://flyfromtirana.devbay.cloud/{address}</loc>" in sitemap
+        assert f"<loc>https://flyfromtirana.al/{address}</loc>" in sitemap
 
 
 def test_languages_setting_is_read_and_checked(tmp_path):

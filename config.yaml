@@ -72,8 +72,10 @@ website:
   # The Telegram posts are not affected: they stay in `language` (top of this file).
   languages: [sq, en, it]
   sub_id: website                  # Travelpayouts SubID for links on the site ("telegram" is used in posts)
-  url: https://flyfromtirana.devbay.cloud/   # public address: linked at the bottom of every post, and
-                                             # used for the page's canonical/og:url tags
+  url: https://flyfromtirana.al/             # public address: linked at the bottom of every post, and
+                                             # used for the page's canonical/og:url tags. The old
+                                             # address, flyfromtirana.devbay.cloud, still serves the
+                                             # same site (both are set on the `web` service).
   # Google Analytics, to count visitors. Paste the GA4 Measurement ID ("G-XXXXXXXXXX") from
   # analytics.google.com (Admin -> Data streams -> your web stream). Empty = no Google Analytics.
   google_analytics_id: "G-W3PTGHESC1"

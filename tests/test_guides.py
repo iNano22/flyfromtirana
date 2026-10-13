@@ -92,7 +92,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     page = milan_page(config, storage)
 
     assert "<title>Fluturime të lira Tirana – Milan: çmime dhe udhëzues | FlyFromTirana</title>" in page
-    assert '<link rel="canonical" href="https://flyfromtirana.devbay.cloud/milan/">' in page
+    assert '<link rel="canonical" href="https://flyfromtirana.al/milan/">' in page
     assert '<body class="c-it">' in page                                     # Italy's colours
     assert 'nga <b>€19</b> vajtje' in page                                   # the cheapest of the city's airports
     # One ticket per airport, cheapest first; only Bergamo is a deal.
@@ -121,7 +121,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert '<a class="brand" href="../">' in page
     assert '<img class="dphoto wide" src="../img/guides/milan.webp"' in page  # the city's own wide photo...
     assert "../img/dest/" not in page                                        # ...instead of a route's photo
-    assert '<meta property="og:image" content="https://flyfromtirana.devbay.cloud/img/guides/milan.webp">' in page
+    assert '<meta property="og:image" content="https://flyfromtirana.al/img/guides/milan.webp">' in page
     assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
     # "Destinacione të tjera": a photo tile for each of the 18 other cities.
     others = page[page.index('<ul class="gtiles"'):page.index("</ul>", page.index('<ul class="gtiles"'))]
@@ -151,9 +151,9 @@ def test_build_writes_a_page_per_city_and_a_sitemap(config):
     sitemap = (out / "sitemap.xml").read_text(encoding="utf-8")
     # The main page and every city, once per language of the site.
     assert sitemap.count("<url>") == 20 * len(config.website.languages)
-    assert "<loc>https://flyfromtirana.devbay.cloud/</loc>" in sitemap
-    assert "<loc>https://flyfromtirana.devbay.cloud/milan/</loc><lastmod>2026-10-09</lastmod>" in sitemap
-    assert "Sitemap: https://flyfromtirana.devbay.cloud/sitemap.xml" in (out / "robots.txt").read_text()
+    assert "<loc>https://flyfromtirana.al/</loc>" in sitemap
+    assert "<loc>https://flyfromtirana.al/milan/</loc><lastmod>2026-10-09</lastmod>" in sitemap
+    assert "Sitemap: https://flyfromtirana.al/sitemap.xml" in (out / "robots.txt").read_text()
 
 
 def test_no_sitemap_without_a_site_address(config):
