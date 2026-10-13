@@ -39,7 +39,8 @@ availability. That's fine for spotting deals: the booking link opens a live sear
 config.yaml              routes, deal rules, link templates, website settings (no secrets)
 templates/sq.txt         post wording (Albanian)
 templates/site.html      the website page (layout, CSS, a little JS); site_row.html = one route in the
-                         list, site_card.html = one photo card, site_hero.html = one hero banner
+                         price table, site_card.html = one photo card, site_hero.html = one line of
+                         the board at the top, site_premium.html = the block about the Premium channel
 templates/strings/       the website's wording, one file per language (sq.yaml, en.yaml, it.yaml)
 templates/site_dest.html a city's own page; site_dest_fare.html = one airport's price on it;
                          site_guide.html = a city's photo tile on the main page;
@@ -146,37 +147,48 @@ variables under Environment Variables, and give the `web` service a domain.
 Static pages built from `data/prices.db` after every scan, in three languages:
 Albanian at the top of the site (`/`, `/milan/`), English under `/en/` and
 Italian under `/it/` (see [Languages](#languages) below). The main page's
-layout follows an airline booking page, top to bottom:
+look is airport signage: signal yellow, black and white on a light grey floor,
+with airport codes in a monospace face. Yellow always means a deal or the way
+to one. Top to bottom:
 
-- **Language dropdown**: a slim strip above the top bar with a small dropdown. It
-  shows the page's language as a code (AL, EN, IT) and opens a list that leads to
-  the same page in the other languages. The footer has the same links as a row.
-- **Sticky top bar** with the brand and a "Bashkohu në Telegram" button.
-- **Hero carousel**: a brand slide (headline, today's lowest price, the best deal
-  as a chip, live counts), then the three best deals as big banners. It moves on
-  every 6.5 s and stops as soon as the visitor touches it.
-- **Search card** over the hero: pick a destination, date, passengers and one-way
-  or return. It highlights that route on the page, fills in its cheapest date, and
-  "Kërko fluturime" opens the matching Aviasales search with your marker.
-- **Zbulo destinacionet**: a carousel of photo cards, one per route, with the
-  cheapest price, city, country and date. The whole card is the "Rezervo" link.
-  Deals come first (biggest saving first) with a yellow price and saving sticker;
-  they use the free channel's deal rules without the "already posted" filter.
+- **Black top bar** (sticky) with the brand, the section links (wide screens), the
+  language dropdown and a yellow "Bashkohu në Telegram" button. The dropdown shows
+  the page's language as a code (AL, EN, IT) and opens a list that leads to the
+  same page in the other languages. The footer has the same links as a row.
+- **Yellow hero**: the headline, live counts and today's lowest price on the left;
+  on the right a black board, "Çmimet më të mira sot", with one line for each of
+  the page's first five routes (deals first), like a departures board. Each line
+  is a "Rezervo" link. A phone shows the first three lines.
+- **Search card** over the end of the hero: pick a destination, date, passengers
+  and one-way or return. It marks that route on the page, fills in its cheapest
+  date, and "Kërko fluturime" opens the matching Aviasales search with your marker.
+- **Zbulo destinacionet**: photo cards, one per route, with the route's code on the
+  photo and the cheapest price, city, country and date underneath. The whole card
+  is the "Rezervo" link. Deals come first (biggest saving first) with the saving
+  on yellow; they use the free channel's deal rules without the "already posted"
+  filter. A phone swipes through all of them; a wide screen shows the first two
+  rows, and the table below has every route.
+- **Premium block** (only while `premium.enabled` and a `join_link` are set): "Merri
+  ofertat në kohë reale", with the button to join and who gets a deal first. Its
+  numbers come from config.yaml: `premium.free_delay_hours`,
+  `premium.scan_every_minutes` and `quiet_hours`.
+- **Të gjitha destinacionet**: every route, deals included, as a price table with
+  tabs (all / deals) and a sort menu (deals first, cheapest, biggest saving,
+  soonest). A line has the airport code, the city, the cheapest date (plus other
+  dates within 10%), the cheapest flight back, the airline, the saving, the price
+  with the usual price under it, and "Rezervo" with your marker. Deals get an
+  "OFERTË" tag and their price on yellow. On a phone a line becomes a compact block.
+- **Si funksionon**: the three steps.
+- **Udhëzues për qytetet**: one photo tile per city page.
 - **Gjithçka për udhëtimin**: white photo cards for the partner links (eSIM,
   attraction tickets, airport transfer, car rental, luggage storage, compensation,
   and insurance and hotels once their `links.partners` entry has a url). A card
   whose link is empty is left out.
-- **Të gjitha destinacionet**: every route, deals included, drawn as a boarding
-  pass, with a sort menu (deals first, cheapest, biggest saving, soonest). The
-  ticket shows the city, the TIA → airport route, the cheapest date (plus other
-  dates within 10%), airline and the cheapest flight back; past the tear line, the
-  stub holds the price, the usual price and "Rezervo" with your marker. Deals get a
-  yellow stub and a red "OFERTË" stamp.
-- A full-width "Mos humb asnjë ofertë" Telegram band with the Premium link (when
-  enabled), and a footer with the affiliate disclosure.
+- A full-width yellow "Mos humb asnjë ofertë" Telegram band with the Premium line
+  (when enabled), and a black footer with the affiliate disclosure.
 
-Everything still works with JavaScript off: the carousels become plain scrolling
-rows and the search button jumps to the list.
+Everything still works with JavaScript off: the tabs and the search button simply
+jump to the list.
 
 City and country names are in English ("Vienna, Austria"), on the website and in
 the Telegram posts alike: both use each route's `city` from config.yaml.
@@ -262,8 +274,8 @@ The text of a guide is one file per language, `content/destinations/<language>/<
   Until a city has a file it simply has no page.
 - **Its photo**: a wide photo of the city, `assets/img/guides/<slug>.webp`
   (960×600), is used on its tile and at the top of its page. It is a different
-  picture from the route's tall card photo. Without one, the tile shows the
-  country's colours and the page uses the route's photo.
+  picture from the route's tall card photo. Without one, the tile has a
+  plain black top and the page uses the route's photo.
 - `tagline` in the file is the short line under the city's name on its tile.
 - The prices in the guides (transport, tickets, food, a day's budget) are rough
   figures from 2026. They go out of date: review them once or twice a year.
@@ -342,7 +354,7 @@ that card only appears once a hotel link is set.
 not through the Unsplash API: the API's own rules require crediting the photographer
 wherever a photo is shown). Then nothing needs a credit, on the page or in a post.
 
-- **New route without a photo**: its card shows its country colours instead. To add
+- **New route without a photo**: its card has a plain black top instead. To add
   one, save a 600×840 WebP as `assets/img/dest/<iata>.webp` (lowercase code) and add
   its entry to `credits.json`: `file`, `slot` (the IATA code), `title`, `creator`,
   `creator_url`, `source_url`, `license`, `license_url`.
@@ -373,22 +385,24 @@ sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/te
 - **Wording**: every sentence on the pages is in `templates/strings/<language>.yaml`
   (see [Languages](#languages)). In the templates `{T_NAME}` marks where a text goes.
 - **Look**: `templates/site.html` is the whole page (layout, CSS and a little JavaScript).
-  `templates/site_row.html` is one route in the list, `templates/site_card.html` one
-  photo card in the destinations carousel, and `templates/site_hero.html` one banner
-  in the hero carousel (the three best deals). All follow the post template rules
-  (`{NAME}`, `[[optional]]`, a line with a missing value is dropped); HTML comments
-  are stripped, so notes in the templates never reach the page. The row and hero
-  templates can use every placeholder from `templates/sq.txt` plus `{IATA}`,
-  `{DEAL}`, `{COUNTRY}` (lowercase code taken from the flag, e.g. `it`:
-  it picks the card's colours), `{COUNTRY_NAME}` ("Austri"), `{PHOTO}` (the route's
-  photo, if it has one), `{BEST_DATE}` (cheapest date, `YYYY-MM-DD`) and `{BEST_DAY}`
-  (the same date as "14 Nën").
+  `templates/site_row.html` is one route in the price table, `templates/site_card.html`
+  one photo card, `templates/site_hero.html` one line of the board at the top (the
+  page's first five routes; `HERO_ROWS` in `src/website.py`) and
+  `templates/site_premium.html` the block about the Premium channel. All follow the
+  post template rules (`{NAME}`, `[[optional]]`, a line with a missing value is
+  dropped); HTML comments are stripped, so notes in the templates never reach the
+  page. The row, card and board templates can use every placeholder from
+  `templates/sq.txt` plus `{IATA}`, `{DEAL}`, `{COUNTRY_NAME}` ("Austri"), `{PHOTO}`
+  (the route's photo, if it has one), `{BEST_DATE}` (cheapest date, `YYYY-MM-DD`)
+  and `{BEST_DAY}` (the same date as "14 Nën").
   The page template also gets `{MIN_PRICE}` (cheapest price on the page),
-  `{DEAL_COUNT}`, `{ROUTE_COUNT}`, `{TOP_CITY}`/`{TOP_PRICE}`/`{TOP_SAVING}` (the best
-  deal, shown as a chip on the first hero slide), `{DATE_MIN}`/`{DATE_MAX}` (the search
-  card's date window), `{HERO_SLIDES}` and `{DESTINATION_OPTIONS}` (the `<option>` list
-  for the search card's destination picker), `{DEST_CARDS}` (the photo cards) and
-  `{PHOTO_CREDITS}` (the footer's credits, only there when a photo requires one).
+  `{DEAL_COUNT}`, `{ROUTE_COUNT}`, `{DATE_MIN}`/`{DATE_MAX}` (the search card's date
+  window), `{HERO_ROWS}` and `{DESTINATION_OPTIONS}` (the `<option>` list for the
+  search card's destination picker), `{DEST_CARDS}` (the photo cards), `{PREMIUM}`
+  (the Premium block) and `{PHOTO_CREDITS}` (the footer's credits, only there when
+  a photo requires one).
+  The colours are named once, at the top of each page's CSS (`--sun` is the yellow,
+  `--ink` the black): change them there, in `site.html` and `site_dest.html`.
 - The search card never shows availability: with JavaScript it builds a tracked
   Aviasales search link (route, date, passengers) from a "Rezervo" link's query
   string; without it the button simply jumps to the list.

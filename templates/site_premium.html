@@ -1,0 +1,32 @@
+<!-- The black "Merri ofertat në kohë reale" block about the Premium channel, on the main page
+     between the photo cards and the price table. src/website.py (premium_html) only puts it
+     on the page while there is a premium channel to join (premium.enabled and a join_link in
+     config.yaml). On the left: what Premium is and the button to join. On the right: who gets
+     a deal first (Premium right away, the free channel and this page some hours later).
+     Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
+     and must stay on one line, and a line with a missing value is left out. This comment is
+     removed before the page is written.
+     Values: PREMIUM_LINK (the paid invite link) PREMIUM_HOURS (premium.free_delay_hours: how
+     much later the free channel and the page get a deal) PREMIUM_MINUTES
+     (premium.scan_every_minutes; missing when the quick premium scans are off, and the
+     sentences about them go with it) CHANNEL (the free channel's handle) QUIET_START and
+     QUIET_END (quiet_hours, "23:00" and "08:00"; missing when posts go out at any hour). -->
+<section class="premium wrap" id="premium" aria-labelledby="premium-h">
+  <div class="pbox">
+    <div>
+      <p class="ptag">{T_PREMIUM_KICKER}</p>
+      <h2 id="premium-h">{T_PREMIUM_TITLE}</h2>
+      <p class="ptext">{T_PREMIUM_TEXT}[[ {T_PREMIUM_FAST}]]</p>
+      <a class="btn-premium" href="{PREMIUM_LINK}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_BECOME_PREMIUM}</a>
+    </div>
+    <div class="pwho">
+      <h3>{T_PREMIUM_WHO}</h3>
+      <ol>
+        <li class="first"><div><b>{T_PREMIUM_A}</b>[[<span>{T_PREMIUM_A_SUB}</span>]]</div><strong>{T_PREMIUM_NOW}</strong><i aria-hidden="true"></i></li>
+        <li><div><b>{T_PREMIUM_B}</b><span>{CHANNEL}</span></div><strong>{T_PREMIUM_LATER}</strong><i aria-hidden="true"></i></li>
+        <li><div><b>{T_PREMIUM_C}</b><span>{T_PREMIUM_C_SUB}</span></div><strong>{T_PREMIUM_LATER}</strong><i aria-hidden="true"></i></li>
+      </ol>
+      <p class="pnote">{T_PREMIUM_QUIET}</p>
+    </div>
+  </div>
+</section>

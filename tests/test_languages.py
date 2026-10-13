@@ -108,7 +108,7 @@ def test_english_main_page(config, storage):
     assert '<img src="../img/dest/bgy.webp"' in page and '<img src="../img/guides/milan.webp"' in page
     assert '<img src="../img/services/esim.webp"' in page
     # The script gets its words in English too.
-    assert 'var words = {"prev": "previous"' in page and '"months": ["Jan", "Feb"' in page
+    assert 'var words = {"picked": "{city} is highlighted in the list."' in page and '"months": ["Jan", "Feb"' in page
     assert not PLACEHOLDER.search(page) and "<!--" not in page
 
 

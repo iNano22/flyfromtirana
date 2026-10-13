@@ -1,14 +1,18 @@
-<!-- One city as a wide photo tile that opens the city's own page: in "Udhëzues për qytetet" on
-     the main page and in "Destinacione të tjera" on every city page. Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]]
-     is optional and must stay on one line, and a line with a missing value is left out. This
-     comment is removed before the page is written.
-     Values: CITY FLAG COUNTRY (lowercase code: the tile's colours while it has no photo) TAGLINE
-     (the short line from the guide) GUIDE_URL (the city's page) GUIDE_PHOTO (its wide photo,
-     assets/img/guides/<slug>.webp) PRICE (the city's cheapest price now, if it has one). -->
-<li class="gtile[[ c-{COUNTRY}]]">
+<!-- One city as a photo tile that opens the city's own page: in "Udhëzues për qytetet" on the
+     main page and in "Destinacione të tjera" on every city page. The photo is on top, with the
+     city's cheapest price on yellow in its corner; the name and the short line are underneath.
+     Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
+     and must stay on one line, and a line with a missing value is left out. This comment is
+     removed before the page is written.
+     Values: CITY TAGLINE (the short line from the guide) GUIDE_URL (the city's page)
+     GUIDE_PHOTO (its wide photo, assets/img/guides/<slug>.webp; without one the tile has a
+     plain black top) PRICE (the city's cheapest price now, if it has one). -->
+<li class="gtile">
   <a href="{GUIDE_URL}">
-    <img src="{GUIDE_PHOTO}" alt="" width="960" height="600" loading="lazy" decoding="async">
-    <span class="gprice"><small>{T_FROM}</small> €{PRICE}</span>
-    <span class="ginfo"><b>[[<span class="gflag" aria-hidden="true">{FLAG}</span> ]]{CITY}</b>[[<span class="gtag">{TAGLINE}</span>]]<span class="gread">{T_READ_GUIDE}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span>
+    <span class="gphoto">
+      <img src="{GUIDE_PHOTO}" alt="" width="960" height="600" loading="lazy" decoding="async">
+      <span class="gprice"><small>{T_FROM}</small> €{PRICE}</span>
+    </span>
+    <span class="ginfo"><b>{CITY}</b>[[<span class="gtag">{TAGLINE}</span>]]<span class="gread">{T_READ_GUIDE}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span>
   </a>
 </li>

@@ -4,7 +4,7 @@
      Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
      (and must stay on one line), and a line whose value is missing is left out, so a heading
      and its list stay on one line. Every HTML comment is removed before the page is written.
-     Values: BRAND CHANNEL CITY COUNTRY (lowercase code, for the colours) COUNTRY_NAME FLAG INTRO
+     Values: BRAND CHANNEL CITY COUNTRY_NAME INTRO
      MIN_PRICE (cheapest price to the city now) UPDATED FARES (one ticket per airport, from
      site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) and the guide's
      parts: SIGHTS ITINERARY DAYS (how many days the plan has) AREAS FOOD AIRPORTS TRANSPORT
@@ -15,7 +15,7 @@
      there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
      ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive script,
      only when one is set) LANG, LANG_MENU, LANG_LINKS and HREFLANG (the page's language, the
-     language dropdown, the same links as a row in the footer, and the tags for search engines). The text itself is not in this file: T_NAME
+     language dropdown in the top bar, the same links as a row in the footer, and the tags for search engines). The text itself is not in this file: T_NAME
      stands for the entry NAME in templates/strings/<language>.yaml (see src/i18n.py), plus one NAME_LINK per partner.
      Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
      values, and never two opening square brackets in a row. -->
@@ -32,241 +32,258 @@
 <meta property="og:description" content="{T_D_OG_DESCRIPTION}">
 <meta property="og:url" content="{PAGE_URL}">
 <meta property="og:image" content="{PHOTO_URL}">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#170b3b">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ffe14d'/><path transform='translate(4 4) rotate(45 12 12)' fill='%23170b3b' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0f1114">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ffd60a'/><path transform='translate(4 4) rotate(45 12 12)' fill='%230f1114' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-/* The same indigo night, yellow and country colours as the main page (templates/site.html). */
+/* The same airport-signage look as the main page (templates/site.html): signal yellow, black
+   and white on a light grey floor; Archivo for text, IBM Plex Mono for codes and small labels. */
 :root {
-  color-scheme: dark;
-  --night: #170b3b;
-  --night-2: #211359;
-  --ink: #ffffff;
-  --muted: #bdb3e3;
-  --line: rgba(255, 255, 255, 0.14);
-  --surface: rgba(255, 255, 255, 0.09);
-  --sun: #ffe14d;
-  --sun-ink: #1a1030;
-  --tg-deep: #0d3f9e;
-  --paper: #ffffff;
-  --paper-muted: #5b5577;
-  --field: #f1eefb;
+  color-scheme: light;
+  --ink: #0f1114;                        /* text, the top bar, the black panels, the footer */
+  --ground: #eff1f3;                     /* page background */
+  --panel: #ffffff;                      /* cards */
+  --line: #d5d9de;                       /* outlines, and the hairline under every card */
+  --rule: #e3e6ea;                       /* dividers inside a card */
+  --muted: #555b64;                      /* secondary text on white or grey */
+  --sun: #ffd60a;                        /* the signal yellow */
+  --hover: #2a2e35;                      /* a black button under the pointer */
+  --board-line: #2a2e35;                 /* dividers on black */
+  --board-muted: #a9afb8;                /* secondary text on black */
+  --focus: #2f6bff;                      /* keyboard focus ring */
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --nav-h: 60px;
-  --gutter: max(16px, calc((100% - 1080px) / 2));   /* page margin, so the row of tiles lines up with the text */
-  --c1: #0274c7;
-  --c2: #004f8b;
+  --gutter: clamp(16px, 4vw, 32px);      /* page margin */
 }
-.c-it { --c1: #c4391e; --c2: #901500; }
-.c-ch { --c1: #c23359; --c2: #920037; }
-.c-es { --c1: #b93780; --c2: #8a085a; }
-.c-be { --c1: #bf860c; --c2: #944e00; }
-.c-de { --c1: #08856a; --c2: #045b48; }
-.c-gr { --c1: #0b7f94; --c2: #005766; }
-.c-gb { --c1: #3c68d9; --c2: #1e41a8; }
-.c-tr { --c1: #8451c9; --c2: #5e2b9a; }
-.c-at { --c1: #17890b; --c2: #015f00; }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--night); color: var(--ink); font-family: "Gabarito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; line-height: 1.5; overflow-x: hidden; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.5; overflow-x: hidden; }
 a { color: inherit; }
 h1, h2, h3, p, li { overflow-wrap: anywhere; }
-:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
-.foot :focus-visible, .fare :focus-visible { outline-color: var(--tg-deep); }
-.wrap { max-width: 1080px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
 .ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .ic-fill { fill: currentColor; stroke: none; }
-.skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--sun-ink); font-weight: 800; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--ink); font-weight: 700; padding: 10px 16px; border-radius: 6px; text-decoration: none; }
 .skip:focus { top: 12px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* The language switcher: a small dropdown (AL, EN, IT) in a slim bar above the top bar
-   (templates/site_lang.html), and the same links as a plain row in the footer. */
-.langbar { background: #110829; font-size: 14px; }
-.langbar .wrap { display: flex; justify-content: flex-end; }
-.lang { position: relative; }
-.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 2px 0 8px; list-style: none; cursor: pointer; font-weight: 800; letter-spacing: 0.03em; }
-.lang summary::-webkit-details-marker { display: none; }
-.lang summary .ic { width: 16px; height: 16px; color: var(--muted); }
-.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; }
-.lang[open] summary .chev { transform: rotate(180deg); }
-.lang-menu { position: absolute; right: 0; top: calc(100% + 4px); z-index: 30; display: grid; gap: 2px; min-width: 156px; padding: 6px; border-radius: 12px; background: #ffffff; color: var(--sun-ink); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
-.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 40px; padding: 9px 10px; border-radius: 8px; text-decoration: none; }
-.lang-menu b { min-width: 22px; font-weight: 900; }
-.lang-menu span { font-size: 13.5px; font-weight: 600; color: var(--paper-muted); }
-.lang-menu a:hover { background: var(--field); }
-.lang-menu a[aria-current] { background: var(--sun); }
-.lang-menu a[aria-current] span { color: var(--sun-ink); }
-.lang-menu :focus-visible { outline-color: var(--tg-deep); }
-.langs { display: flex; align-items: center; gap: 2px; min-height: 36px; }
-.langs a { padding: 5px 11px; border-radius: 999px; font-weight: 800; font-size: 14px; letter-spacing: 0.03em; text-decoration: none; color: var(--sun-ink); }
-.langs a[aria-current] { background: var(--sun-ink); color: var(--sun); }
-.flangs { margin: 0 0 8px -11px; }
-
-/* Top bar */
-.nav { position: sticky; top: 0; z-index: 20; background: rgba(23, 11, 59, 0.82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
-.nav-in { height: var(--nav-h); display: flex; align-items: center; gap: 12px; }
-.brand { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; margin-right: auto; white-space: nowrap; }
-.mark { width: 30px; height: 30px; border-radius: 9px; background: var(--sun); color: var(--sun-ink); display: grid; place-items: center; flex: none; }
-.mark .ic { width: 18px; height: 18px; }
+/* The black top bar: brand, links (wide screens), language, Telegram */
+.nav { position: sticky; top: 0; z-index: 20; background: var(--ink); color: #ffffff; }
+.nav-in { min-height: var(--nav-h); display: flex; align-items: center; gap: 10px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-right: auto; font-weight: 800; font-stretch: 88%; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.mark { width: 34px; height: 34px; border-radius: 6px; background: var(--sun); color: var(--ink); display: grid; place-items: center; flex: none; }
+.mark .ic { width: 20px; height: 20px; }
 .nav-links { display: none; gap: 2px; }
-.nav-links a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--muted); padding: 8px 12px; border-radius: 999px; }
-.nav-links a:hover { color: var(--ink); background: var(--surface); }
-.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px 0 9px; border-radius: 999px; background: #ffffff; color: var(--tg-deep); font-weight: 800; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #d5d9de; }
+.nav-links a:hover { color: #ffffff; background: #1b1e23; }
+.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
 .nav-tg .ic { width: 24px; height: 24px; }
+.nav-tg span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }   /* phones: the paper plane alone (screen readers still get the words) */
+/* The language switcher: a small dropdown (AL, EN, IT) in the top bar (templates/site_lang.html),
+   and the same links as a plain row in the footer. */
+.lang { position: relative; }
+.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 10px; border: 1.5px solid #3a3f47; border-radius: 6px; list-style: none; cursor: pointer; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary .ic { width: 16px; height: 16px; color: var(--board-muted); }
+.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; color: inherit; }
+.lang[open] summary .chev { transform: rotate(180deg); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; display: grid; gap: 2px; min-width: 160px; padding: 6px; border-radius: 8px; background: var(--panel); color: var(--ink); box-shadow: 0 0 0 1px var(--line), 0 16px 40px rgba(15, 17, 20, 0.35); }
+.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 44px; padding: 11px 10px; border-radius: 6px; text-decoration: none; }
+.lang-menu b { min-width: 22px; font-weight: 800; }
+.lang-menu span { font-size: 14px; color: var(--muted); }
+.lang-menu a:hover { background: var(--ground); }
+.lang-menu a[aria-current] { background: var(--sun); }
+.lang-menu a[aria-current] span { color: var(--ink); }
+.langs { display: flex; align-items: center; gap: 4px; }
+.langs a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-decoration: none; }
+.langs a[aria-current] { background: var(--sun); color: var(--ink); }
+.flangs { margin: 4px 0 8px -12px; }
 
-/* Headline: the city in its country's colours, with its photo */
-.dhero { background: radial-gradient(90% 120% at 100% 0%, var(--c1) 0%, transparent 62%), linear-gradient(180deg, var(--c2) 0%, var(--night) 100%); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
-.dhero-in { display: grid; gap: 26px; padding-top: 20px; padding-bottom: 36px; }
-.crumbs { margin: 0 0 16px; font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.82); }
+/* The yellow headline: the city's name, its price in a black tag, and its photo */
+.dhero { background: var(--sun); }
+.dhero-in { display: grid; gap: 26px; padding-top: 20px; padding-bottom: 40px; }
+.crumbs { margin: 0 0 18px; font-size: 14px; font-weight: 600; }
 .crumbs a { text-underline-offset: 3px; }
-h1 { margin: 0 0 16px; font-size: clamp(40px, 11vw, 76px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 900; }
-h1 small { display: block; margin-bottom: 10px; font-size: 17px; line-height: 1.2; letter-spacing: 0.02em; font-weight: 800; text-transform: uppercase; color: rgba(255, 255, 255, 0.82); }
-.lead { margin: 0 0 20px; max-width: 34em; font-size: 19px; }
-.from-price { display: inline-block; margin: 0 0 16px; padding: 12px 16px; border-radius: 14px; background: var(--sun); color: var(--sun-ink); font-weight: 800; font-size: 20px; line-height: 1; transform: rotate(-2deg); text-shadow: none; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3); }
-.from-price b { font-weight: 900; font-size: 1.3em; }
-.updated { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 14px; color: rgba(255, 255, 255, 0.82); }
-.updated::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex: none; }
-.dphoto { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 22px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9); }
+h1 { margin: 0; font-size: clamp(52px, 15vw, 150px); line-height: 0.86; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
+h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius: 6px; background: var(--ink); color: #ffffff; font-family: var(--mono); font-weight: 600; font-stretch: 100%; font-size: 12px; line-height: 1.3; letter-spacing: 0.06em; text-transform: uppercase; }
+.lead { margin: 20px 0 0; max-width: 32em; font-size: 18px; line-height: 1.45; font-weight: 500; }
+.from-price { display: inline-flex; align-items: baseline; gap: 7px; margin: 22px 0 0; padding: 9px 14px; border-radius: 6px; background: var(--ink); color: #ffffff; font-size: 15px; font-weight: 600; }
+.from-price b { font-size: 30px; line-height: 1; font-weight: 800; font-stretch: 76%; font-variant-numeric: tabular-nums; }
+.updated { display: flex; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 13px; font-weight: 500; }
+.updated::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #0b7a3b; box-shadow: 0 0 0 2px var(--ink); flex: none; }
+.dphoto { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; background: var(--ink); box-shadow: 0 24px 40px -24px rgba(15, 17, 20, 0.6); }
 
 /* Sections */
-.block { padding-top: 46px; }
-h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 900; }
-.hint { margin: 0 0 18px; max-width: 40em; font-size: 15px; color: var(--muted); }
+.block { padding-top: 56px; }
+.block h2 { margin: 0; font-size: clamp(34px, 4.2vw, 48px); line-height: 1; font-weight: 800; font-stretch: 76%; letter-spacing: -0.01em; }
+.hint { margin: 8px 0 20px; max-width: 44em; font-size: 15px; color: var(--muted); }
 
-/* The prices: one ticket per airport, like the list on the main page */
-.fares { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
-.fare { display: flex; max-width: 680px; background: var(--paper); color: var(--sun-ink); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
-.fare.deal { box-shadow: 0 0 0 3px var(--sun), 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
+/* The prices: one ticket per airport (templates/site_dest_fare.html). The flight is on the
+   left; the fare and Rezervo are on the right, on yellow when the price is a deal. */
+.fares { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.fare { display: flex; flex-wrap: wrap; border-radius: 10px; overflow: hidden; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
 .fare p { margin: 0; }
-.fare-info { flex: 1 1 auto; min-width: 0; padding: 16px 14px 16px 16px; }
-.fare-route { display: flex; align-items: center; gap: 8px; }
-.code { font-size: 19px; font-weight: 900; letter-spacing: 0.05em; line-height: 1; }
-.path { flex: 0 1 70px; min-width: 24px; border-top: 2px dashed #cdc6e4; }
-.tag { margin-left: 6px; padding: 3px 8px 2px; border: 3px double #c3122f; border-radius: 6px; color: #c3122f; font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; transform: rotate(-5deg); }
-.fare .fare-airport { margin-top: 10px; font-size: 21px; font-weight: 900; line-height: 1.15; }
-.fare .fare-dates { margin-top: 8px; font-weight: 800; font-size: 15px; line-height: 1.3; }
-.lbl { margin-right: 6px; font-weight: 600; font-size: 13px; color: var(--paper-muted); }
-.fare .fare-meta { margin-top: 3px; font-size: 14px; line-height: 1.3; color: var(--paper-muted); }
-.fare-buy { flex: 0 0 132px; display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding: 14px 12px 12px; border-left: 2px dashed #d6cfec; background: var(--field); }
-.fare.deal .fare-buy { background: var(--sun); border-left-color: rgba(26, 16, 48, 0.3); }
+.fare-info { flex: 999 1 280px; min-width: 0; padding: 20px; }
+.fare-route { display: flex; align-items: center; gap: 12px; }
+.code { flex: none; font-family: var(--mono); font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: 0.04em; white-space: nowrap; }
+.path { position: relative; flex: 1 1 28px; max-width: 160px; min-width: 20px; border-top: 2px dashed var(--board-muted); }
+.path::after { content: ""; position: absolute; right: -2px; top: -12px; width: 22px; height: 22px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230f1114' transform='rotate(90 12 12)' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/%3E%3C/svg%3E") center / contain no-repeat; }
+.tag { flex: none; margin-left: 4px; padding: 3px 7px; white-space: nowrap; border-radius: 4px; background: var(--sun); font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.fare .fare-airport { margin-top: 14px; font-size: 21px; line-height: 1.15; font-weight: 800; font-stretch: 88%; }
+.fare .fare-dates { margin-top: 8px; font-size: 15px; font-weight: 600; line-height: 1.3; }
+.lbl { margin-right: 6px; font-weight: 500; font-size: 13px; color: var(--muted); }
+.fare .fare-meta { margin-top: 3px; font-size: 14px; line-height: 1.3; color: var(--muted); }
+.fare-buy { flex: 1 1 220px; display: flex; flex-direction: column; padding: 20px; background: var(--ground); }
+.fare.deal .fare-buy { background: var(--sun); }
 .fare-price { line-height: 1; }
-.fare-price span { display: block; font-size: 13px; font-weight: 700; color: var(--paper-muted); }
-.fare-price b { display: block; margin-top: 2px; font-size: 38px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.fare .fare-way { margin-top: 4px; font-size: 12.5px; line-height: 1.2; color: var(--paper-muted); }
-.fare .fare-usual { margin: 6px 0 12px; font-size: 13px; line-height: 1.35; color: var(--paper-muted); }
-.fare-usual b { color: #c3122f; font-weight: 900; white-space: nowrap; }
-.fare.deal .fare-price span, .fare.deal .fare-way, .fare.deal .fare-usual { color: var(--sun-ink); }
-.fare.deal .fare-usual b { padding: 1px 6px; border-radius: 6px; background: var(--sun-ink); color: var(--sun); }
-.btn-book { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; background: var(--sun-ink); color: #ffffff; border-radius: 12px; font-weight: 800; font-size: 15px; text-decoration: none; }
-.btn-book:hover { background: #33255e; }
-.nofares { margin: 0; padding: 18px; border-radius: 18px; background: var(--surface); }
+.fare-price span { margin-right: 4px; font-size: 15px; font-weight: 600; }
+.fare-price b { font-size: 60px; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fare .fare-way { margin-top: 6px; font-size: 14px; }
+.fare .fare-usual { margin: 4px 0 16px; font-size: 14px; }
+.fare-usual b { margin-left: 4px; font-family: var(--mono); font-weight: 600; font-size: 13px; white-space: nowrap; }
+.fare.deal .fare-usual b { padding: 2px 6px; border-radius: 4px; background: var(--ink); color: var(--sun); }
+.btn-book { margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 6px; background: var(--ink); color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; }
+.btn-book:hover, .btn-tg:hover { background: var(--hover); }
+.nofares { margin: 0; padding: 18px; border-radius: 10px; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+/* Under the prices: deals reach the Premium channel first (only while there is one to join) */
+.pstrip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin: 12px 0 0; padding: 16px 18px; border-radius: 10px; background: var(--ink); color: #ffffff; }
+.pstrip > span { flex: 1 1 300px; font-size: 15px; }
+.ptag { display: inline-block; margin-right: 10px; padding: 4px 8px; border-radius: 4px; background: var(--sun); color: var(--ink); font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.btn-premium { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px 0 12px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 16px; text-decoration: none; }
+.btn-premium .ic { width: 26px; height: 26px; }
 
-/* "Në këtë faqe": jump links to the parts of the guide */
-.toc { padding-top: 26px; }
-.toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.toc a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); font-size: 15px; font-weight: 700; text-decoration: none; color: var(--muted); }
-.toc a:hover { color: var(--ink); background: var(--surface); }
+/* "Në këtë faqe" (jump links to the parts of the guide) and, beside it on wide screens, the guide */
+.gwrap { display: grid; gap: 28px; padding-top: 56px; }
+.toc { padding: 12px 12px 14px; border-radius: 10px; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+.toc-h { margin: 0 0 10px; padding: 0 4px; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.toc a { display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; background: var(--ground); font-size: 15px; font-weight: 600; text-decoration: none; }
+.toc a:hover { background: var(--line); }
 
 /* The guide */
-.gsec { margin-top: 44px; scroll-margin-top: calc(var(--nav-h) + 14px); }
-.gsec > p { margin: 14px 0 0; max-width: 46em; }
-.days { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; counter-reset: day; max-width: 52em; }
-.days li { counter-increment: day; padding: 14px 16px 14px 18px; border-radius: 16px; background: var(--surface); border-left: 5px solid var(--c1); }
-.days li::before { content: "{T_D_DAY} " counter(day); display: block; margin-bottom: 2px; font-size: 14px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sun); }
-.qas { display: grid; gap: 10px; margin-top: 16px; max-width: 52em; }
-.qa { padding: 14px 16px; border-radius: 16px; background: var(--night-2); }
-.qa h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
-.qa p { margin: 0; }
-.sights { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
-.sights li { padding: 14px 16px; border-radius: 16px; background: var(--surface); }
-.sights b { display: block; margin-bottom: 2px; font-size: 18px; font-weight: 900; }
-.airports { display: grid; gap: 10px; margin-top: 16px; }
-.airport { padding: 14px 16px; border-radius: 16px; background: var(--surface); border-left: 5px solid var(--sun); }
-.airport h3, .fact h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
-.airport p, .fact p { margin: 0; }
-.facts { display: grid; gap: 10px; margin-top: 40px; }
-.fact { padding: 16px; border-radius: 16px; background: var(--night-2); }
-.fact h3 { color: var(--sun); }
-.tips { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 8px; max-width: 46em; }
-.tips li::marker { color: var(--sun); }
-.note { margin: 20px 0 0; max-width: 46em; font-size: 14px; color: var(--muted); }
+.guide { min-width: 0; }
+.gsec { margin-top: 48px; scroll-margin-top: calc(var(--nav-h) + 14px); }
+.guide > .gsec:first-child { margin-top: 0; }
+.gsec h2 { margin: 0 0 16px; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.05; font-weight: 800; font-stretch: 78%; letter-spacing: -0.01em; }
+.gsec > p { margin: 0; max-width: 46em; font-size: 17px; }
+/* Sights, neighbourhoods, dishes and day trips: white cards with a name and its text. The
+   sights are numbered 01, 02, ... */
+.sights { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.sights li { padding: 16px 18px 18px; border-radius: 10px; background: var(--panel); box-shadow: 0 1px 0 var(--line); font-size: 15px; color: var(--muted); }
+.sights b { display: block; margin-bottom: 4px; font-size: 19px; line-height: 1.2; font-weight: 800; font-stretch: 88%; color: var(--ink); }
+#shiko .sights { counter-reset: sight; }
+#shiko .sights li::before { counter-increment: sight; content: counter(sight, decimal-leading-zero); display: block; margin-bottom: 8px; font-family: var(--mono); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; }
+.days { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: day; }
+.days li { counter-increment: day; padding: 16px 18px; border-radius: 10px; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+.days li::before { content: "{T_D_DAY} " counter(day); display: table; margin-bottom: 8px; padding: 5px 9px; border-radius: 4px; background: var(--ink); color: var(--sun); font-family: var(--mono); font-weight: 600; font-size: 12px; line-height: 1.3; letter-spacing: 0.08em; text-transform: uppercase; }
+.airports { display: grid; gap: 10px; }
+.airport, .qa { padding: 16px 18px 18px; border-radius: 10px; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+.airport h3, .qa h3 { margin: 0 0 6px; font-size: 19px; line-height: 1.25; font-weight: 800; font-stretch: 88%; }
+.airport p, .qa p { margin: 0; max-width: 46em; }
+.qa p { color: #3a3f47; }
+.qas { display: grid; gap: 10px; }
 /* A partner link under a part of the guide: tickets under the sights, a transfer under the airports. */
-.gmore a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; color: var(--sun); }
+.gsec > .gmore { margin-top: 8px; font-size: 16px; }
+.gmore a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
+.facts { display: grid; gap: 12px; margin-top: 48px; }
+.fact { padding: 20px; border-radius: 10px; background: var(--ink); color: #ffffff; }
+.fact h3 { margin: 0 0 8px; font-family: var(--mono); font-weight: 600; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sun); }
+.fact p { margin: 0; font-size: 17px; }
+.tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 46em; font-size: 17px; }
+.tips li { position: relative; padding-left: 28px; }
+.tips li::before { content: ""; position: absolute; left: 0; top: 0.4em; width: 12px; height: 12px; border: 2px solid var(--ink); border-radius: 3px; background: var(--sun); }
+.note { margin: 18px 0 0; max-width: 46em; font-size: 14px; color: var(--muted); }
 
 /* Links: travel services and the other cities */
 .pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.pills a { display: inline-flex; align-items: center; min-height: 46px; padding: 0 18px; border-radius: 999px; background: var(--surface); font-weight: 800; font-size: 16px; text-decoration: none; }
-.pills a:hover { background: rgba(255, 255, 255, 0.17); }
-/* The other cities: the same photo tiles as "Udhëzues për qytetet" on the main page. A row to
-   swipe on phones, a grid from 700px up. Each tile is in its own country's colours. */
-.gtiles { list-style: none; margin: 0; display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; padding: 4px var(--gutter) 22px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.pills a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 6px; background: var(--panel); box-shadow: 0 1px 0 var(--line); font-weight: 700; font-size: 16px; text-decoration: none; }
+.pills a:hover, .gtile a:hover { box-shadow: 0 0 0 2px var(--ink); }
+/* The other cities: the same photo tiles as "Udhëzues për qytetet" on the main page
+   (templates/site_guide.html). A row to swipe on phones, a grid from 700px up. */
+.gtiles { list-style: none; margin: 0; display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; padding: 2px var(--gutter) 10px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .gtiles::-webkit-scrollbar { display: none; }
-.gtile { flex: 0 0 min(78%, 330px); scroll-snap-align: start; }
-.gtile a { position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; color: #ffffff; text-decoration: none; background: radial-gradient(80% 90% at 100% 0%, var(--c1) 0%, transparent 60%), var(--c2); box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
-.gtile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.gtile a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23, 11, 59, 0) 30%, rgba(23, 11, 59, 0.9) 100%); }
-.ginfo { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 2px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
-.ginfo b { font-size: 23px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
-.gflag { font-size: 0.8em; }
-.gtag { font-size: 14.5px; font-weight: 600; line-height: 1.25; color: rgba(255, 255, 255, 0.92); }
-.gread { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; font-size: 14px; font-weight: 800; color: var(--sun); }
+.gtile { flex: 0 0 min(72vw, 280px); scroll-snap-align: start; }
+.gtile a { display: flex; flex-direction: column; height: 100%; border-radius: 10px; overflow: hidden; background: var(--panel); box-shadow: 0 1px 0 var(--line); color: inherit; text-decoration: none; }
+.gphoto { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--ink); }
+.gphoto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gprice { position: absolute; right: 10px; bottom: 10px; padding: 6px 8px; border-radius: 4px; background: var(--sun); font-weight: 800; font-stretch: 76%; font-size: 18px; line-height: 1; }
+.gprice small { font-size: 13px; font-weight: 600; font-stretch: 100%; }
+.ginfo { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 14px; }
+.ginfo b { font-size: 21px; line-height: 1.15; font-weight: 800; font-stretch: 86%; }
+.gtag { font-size: 14px; color: var(--muted); }
+.gread { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 14px; font-weight: 700; }
 .gread .ic { width: 16px; height: 16px; stroke-width: 2.5; }
-.gprice { position: absolute; z-index: 1; top: 12px; right: 12px; padding: 8px 10px; border-radius: 11px; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 17px; line-height: 1; transform: rotate(3deg); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
-.gprice small { font-size: 12px; font-weight: 800; }
 
-/* Telegram band and footer, as on the main page */
-.join { margin-top: 52px; background: linear-gradient(160deg, #1a72cc, #0d3f9e); }
-.join-in { padding-top: 32px; padding-bottom: 32px; display: grid; gap: 18px; }
-.join h2 { margin: 0 0 6px; }
-.join p { margin: 0; font-size: 18px; max-width: 32em; }
-.btn-tg { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 24px; background: #ffffff; color: var(--tg-deep); font-weight: 800; font-size: 17px; text-decoration: none; border-radius: 999px; }
-.btn-tg:focus-visible { outline-color: #ffffff; }
-.join .premium { margin: 14px 0 0; font-size: 15px; }
-.premium a { color: #ffffff; font-weight: 700; }
-.foot { background: var(--sun); color: var(--sun-ink); padding: 34px 0 26px; font-size: 15px; }
-.foot .brand { color: var(--sun-ink); margin: 0 0 6px; }
-.foot .mark { background: var(--sun-ink); color: var(--sun); }
-.foot p { margin: 0 0 8px; max-width: 70ch; }
-.foot a { font-weight: 700; }
-.flegal { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(26, 16, 48, 0.2); font-size: 14px; }
+/* The yellow Telegram band and the black footer, as on the main page */
+.join { margin-top: 64px; background: var(--sun); }
+.join-in { display: grid; gap: 22px; padding-top: 40px; padding-bottom: 40px; }
+.join h2 { margin: 0; font-size: clamp(48px, 6vw, 80px); line-height: 0.9; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
+.join p { margin: 14px 0 0; max-width: 30em; font-size: 17px; font-weight: 500; }
+.btn-tg { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 24px 0 14px; border-radius: 6px; background: var(--ink); color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; }
+.btn-tg .ic { width: 28px; height: 28px; }
+.join .pline { font-size: 15px; }
+.pline a { font-weight: 700; text-underline-offset: 3px; }
+.foot { background: var(--ink); color: #ffffff; padding: 40px 0 28px; font-size: 15px; }
+.foot p { margin: 8px 0 0; max-width: 76ch; color: var(--board-muted); }
+.foot p a { color: #ffffff; font-weight: 700; text-underline-offset: 3px; }
+.flegal { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--board-line); font-size: 14px; }
 
+@media (min-width: 560px) {
+  .nav-tg { padding: 0 16px 0 10px; }
+  .nav-tg span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+}
 @media (min-width: 700px) {
   .nav-links { display: flex; }
-  .sights, .facts { grid-template-columns: 1fr 1fr; }
-  .fare-info { padding: 20px 20px 20px 22px; }
-  .fare-buy { flex-basis: 168px; padding: 18px 16px 16px; }
-  .join-in { grid-template-columns: 1.2fr 1fr; align-items: center; }
-  /* As a grid the tiles line up exactly with the headings (a .wrap is 1080px wide with 16px of padding). */
-  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; overflow: visible; padding-inline: max(16px, calc((100% - 1080px) / 2 + 16px)); }
+  .sights { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .btn-tg { display: inline-flex; }
+  .join-in { grid-template-columns: 1fr auto; align-items: center; padding-top: 56px; padding-bottom: 56px; }
+  /* As a grid the tiles line up with the headings (a .wrap is 1240px wide). */
+  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; overflow: visible; max-width: 1240px; margin-left: auto; margin-right: auto; }
 }
 @media (min-width: 900px) {
-  .dhero-in { grid-template-columns: 1.25fr 0.75fr; align-items: center; padding-top: 28px; padding-bottom: 48px; }
-  .dphoto { max-width: 340px; aspect-ratio: 5 / 7; justify-self: end; transform: rotate(2deg); }
-  .dphoto.wide { max-width: none; aspect-ratio: 16 / 10; transform: rotate(1.5deg); }
-  .dhero-in:has(.wide) { grid-template-columns: 1.05fr 0.95fr; }
-  .fares { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+  :root { --nav-h: 68px; }
+  .brand { font-size: 20px; }
+  .nav-in { gap: 16px; }
+  .dhero-in { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: center; padding-top: 28px; padding-bottom: 64px; }
+  h1 { font-size: clamp(64px, 8vw, 120px); }
+  h1 small { font-size: 13px; }
+  .lead { font-size: 19px; }
+  .dphoto:not(.wide) { max-width: 340px; aspect-ratio: 5 / 7; justify-self: end; }
+  .block { padding-top: 88px; }
+  .fares { grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); }
+  .fare-info, .fare-buy { padding: 24px; }
+  .gwrap { grid-template-columns: 230px minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 88px; }
+  .toc { position: sticky; top: calc(var(--nav-h) + 16px); padding: 8px; }
+  .toc-h { margin: 0; padding: 10px 12px 8px; }
+  .toc ul { display: block; }
+  .toc a { background: none; }
+  .toc a:hover { background: var(--ground); }
+  .gsec, .facts { margin-top: 64px; }
+  .join { margin-top: 96px; }
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .btn-book, .btn-tg, .pills a, .nav-tg { transition: transform 0.12s ease-out, background-color 0.12s ease-out; }
-  .btn-book:active, .btn-tg:active, .pills a:active, .nav-tg:active { transform: scale(0.97); }
-  .gtile img { transition: transform 0.35s ease-out; }
-  .gtile a:hover img { transform: scale(1.05); }
+  .btn-book, .btn-tg, .btn-premium, .nav-tg { transition: background-color 0.15s, transform 0.12s ease-out; }
+  .btn-book:active, .btn-tg:active, .btn-premium:active, .nav-tg:active { transform: scale(0.97); }
+  .gphoto img { transition: transform 0.35s ease-out; }
+  .gtile a:hover img { transform: scale(1.04); }
 }
 </style>
 {DRIVE}
 </head>
-<body[[ class="c-{COUNTRY}"]]>
+<body>
 <a class="skip" href="#cmimet">{T_D_SKIP}</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
   <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
 </svg>
-{LANG_MENU}
 <header class="nav">
   <div class="nav-in wrap">
     <a class="brand" href="{HOME}"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
@@ -275,7 +292,8 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
       <a href="{HOME}#destinacionet">{T_EVERY_DESTINATION}</a>
       <a href="{HOME}#udhezues">{T_GUIDES}</a>
     </nav>
-    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_TELEGRAM}</a>
+    {LANG_MENU}
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg><span>{T_JOIN_TELEGRAM}</span></a>
   </div>
 </header>
 <main>
@@ -283,7 +301,7 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
     <div class="dhero-in wrap">
       <div>
         <p class="crumbs"><a href="{HOME}">{BRAND}</a> › <a href="{HOME}#udhezues">{T_GUIDES}</a> › {CITY}</p>
-        <h1><small>{T_D_KICKER}</small>[[{FLAG} ]]{CITY}</h1>
+        <h1><small>{T_D_KICKER}</small>{CITY}</h1>
         <p class="lead">{INTRO}</p>
         <p class="from-price">{T_D_FROM_PRICE}</p>
         <p class="updated">{T_UPDATED_LINE}</p>
@@ -297,42 +315,46 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
     <p class="hint">{T_D_FARES_HINT}</p>
     <ul class="fares">{FARES}</ul>
     <p class="nofares">{NO_FARES}</p>
+    <p class="pstrip" id="premium"><span><b class="ptag">Premium</b>{T_D_PREMIUM}</span><a class="btn-premium" href="{PREMIUM_LINK}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_BECOME_PREMIUM}</a></p>
   </section>
-  <nav class="toc wrap" aria-label="{T_D_ON_THIS_PAGE}">
-    <ul>
-      <li><a href="#shiko" data-part="{SIGHTS_ON}">{T_D_TOC_SIGHTS}</a></li>
-      <li><a href="#itinerari" data-part="{ITINERARY_ON}">{T_D_TOC_ITINERARY}</a></li>
-      <li><a href="#fjetja" data-part="{AREAS_ON}">{T_D_AREAS}</a></li>
-      <li><a href="#ushqimi" data-part="{FOOD_ON}">{T_D_FOOD}</a></li>
-      <li><a href="#aeroporti" data-part="{AIRPORTS_ON}">{T_D_TOC_AIRPORTS}</a></li>
-      <li><a href="#transporti" data-part="{TRANSPORT_ON}">{T_D_TOC_TRANSPORT}</a></li>
-      <li><a href="#udhetime-ditore" data-part="{DAYTRIPS_ON}">{T_D_TOC_DAYTRIPS}</a></li>
-      <li><a href="#pyetje">{T_D_FAQ}</a></li>
-    </ul>
-  </nav>
-  <section class="wrap" aria-label="{T_GUIDE_FOR}">
-    <div class="gsec" id="shiko"><h2>{T_D_SIGHTS_TITLE}</h2><ul class="sights">{SIGHTS}</ul>[[<p class="gmore"><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_D_TICKETS_GO}</a></p>]]</div>
-    <div class="gsec" id="itinerari"><h2>{T_D_ITINERARY_TITLE}</h2><ol class="days">{ITINERARY}</ol></div>
-    <div class="gsec" id="fjetja"><h2>{T_D_AREAS}</h2><ul class="sights">{AREAS}</ul></div>
-    <div class="gsec" id="ushqimi"><h2>{T_D_FOOD}</h2><ul class="sights">{FOOD}</ul></div>
-    <div class="gsec" id="aeroporti"><h2>{T_D_AIRPORTS_TITLE}</h2><div class="airports">{AIRPORTS}</div>[[<p class="gmore"><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_D_TRANSFER_GO}</a></p>]]</div>
-    <div class="gsec" id="transporti"><h2>{T_D_TRANSPORT_TITLE}</h2><p>{TRANSPORT}</p></div>
-    <div class="gsec" id="udhetime-ditore"><h2>{T_D_DAYTRIPS_TITLE}</h2><ul class="sights">{DAYTRIPS}</ul></div>
-    <div class="facts">
-      <div class="fact"><h3>{T_D_BUDGET}</h3><p>{BUDGET}</p></div>
-      <div class="fact"><h3>{T_D_WHEN}</h3><p>{WHEN}</p></div>
-    </div>
-    <div class="gsec"><h2>{T_D_TIPS}</h2><ul class="tips">{TIPS}</ul></div>
-    <div class="gsec" id="pyetje">
-      <h2>{T_D_FAQ}</h2>
-      <div class="qas">
-        {FAQ}
-        <div class="qa"><h3>{T_D_Q_DOCUMENTS}</h3><p>{ENTRY_RULES}</p></div>
-        <div class="qa"><h3>{T_D_Q_CHEAPEST}</h3><p>{T_D_A_CHEAPEST}</p></div>
+  <div class="gwrap wrap">
+    <nav class="toc" aria-label="{T_D_ON_THIS_PAGE}">
+      <p class="toc-h" aria-hidden="true">{T_D_ON_THIS_PAGE}</p>
+      <ul>
+        <li><a href="#shiko" data-part="{SIGHTS_ON}">{T_D_TOC_SIGHTS}</a></li>
+        <li><a href="#itinerari" data-part="{ITINERARY_ON}">{T_D_TOC_ITINERARY}</a></li>
+        <li><a href="#fjetja" data-part="{AREAS_ON}">{T_D_AREAS}</a></li>
+        <li><a href="#ushqimi" data-part="{FOOD_ON}">{T_D_FOOD}</a></li>
+        <li><a href="#aeroporti" data-part="{AIRPORTS_ON}">{T_D_TOC_AIRPORTS}</a></li>
+        <li><a href="#transporti" data-part="{TRANSPORT_ON}">{T_D_TOC_TRANSPORT}</a></li>
+        <li><a href="#udhetime-ditore" data-part="{DAYTRIPS_ON}">{T_D_TOC_DAYTRIPS}</a></li>
+        <li><a href="#pyetje">{T_D_FAQ}</a></li>
+      </ul>
+    </nav>
+    <section class="guide" aria-label="{T_GUIDE_FOR}">
+      <div class="gsec" id="shiko"><h2>{T_D_SIGHTS_TITLE}</h2><ul class="sights">{SIGHTS}</ul>[[<p class="gmore"><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_D_TICKETS_GO}</a></p>]]</div>
+      <div class="gsec" id="itinerari"><h2>{T_D_ITINERARY_TITLE}</h2><ol class="days">{ITINERARY}</ol></div>
+      <div class="gsec" id="fjetja"><h2>{T_D_AREAS}</h2><ul class="sights">{AREAS}</ul></div>
+      <div class="gsec" id="ushqimi"><h2>{T_D_FOOD}</h2><ul class="sights">{FOOD}</ul></div>
+      <div class="gsec" id="aeroporti"><h2>{T_D_AIRPORTS_TITLE}</h2><div class="airports">{AIRPORTS}</div>[[<p class="gmore"><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_D_TRANSFER_GO}</a></p>]]</div>
+      <div class="gsec" id="transporti"><h2>{T_D_TRANSPORT_TITLE}</h2><p>{TRANSPORT}</p></div>
+      <div class="gsec" id="udhetime-ditore"><h2>{T_D_DAYTRIPS_TITLE}</h2><ul class="sights">{DAYTRIPS}</ul></div>
+      <div class="facts">
+        <div class="fact"><h3>{T_D_BUDGET}</h3><p>{BUDGET}</p></div>
+        <div class="fact"><h3>{T_D_WHEN}</h3><p>{WHEN}</p></div>
       </div>
-    </div>
-    <p class="note">{T_D_NOTE}</p>
-  </section>
+      <div class="gsec"><h2>{T_D_TIPS}</h2><ul class="tips">{TIPS}</ul></div>
+      <div class="gsec" id="pyetje">
+        <h2>{T_D_FAQ}</h2>
+        <div class="qas">
+          {FAQ}
+          <div class="qa"><h3>{T_D_Q_DOCUMENTS}</h3><p>{ENTRY_RULES}</p></div>
+          <div class="qa"><h3>{T_D_Q_CHEAPEST}</h3><p>{T_D_A_CHEAPEST}</p></div>
+        </div>
+      </div>
+      <p class="note">{T_D_NOTE}</p>
+    </section>
+  </div>
   <section class="block wrap" aria-labelledby="extras-h">
     <h2 id="extras-h">{T_FOR_THE_TRIP}</h2>
     <p class="hint">{T_EXTRAS_HINT}</p>
@@ -355,8 +377,8 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
         <p>{T_JOIN_TEXT}</p>
       </div>
       <div>
-        <a class="btn-tg" href="{TELEGRAM_URL}">{T_JOIN_CHANNEL}</a>
-        <p class="premium">{T_PREMIUM_EARLIER} <a href="{PREMIUM_LINK}">{T_BECOME_PREMIUM}</a></p>
+        <a class="btn-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_CHANNEL}</a>
+        <p class="pline">{T_PREMIUM_EARLIER} <a href="{PREMIUM_LINK}">{T_BECOME_PREMIUM}</a></p>
       </div>
     </div>
   </section>

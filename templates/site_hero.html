@@ -1,15 +1,15 @@
-<!-- One banner in the hero carousel at the top of the page: src/website.py renders it for the
-     three best deals (HERO_SLIDES) and puts the result in the page's HERO_SLIDES value, after
-     the brand slide that lives in site.html. Same values and rules as site_row.html; this
-     comment is removed before the page is written. -->
-<li class="slide slide-deal[[ c-{COUNTRY}]]" data-iata="{IATA}">
-  <div class="slide-in">
-    <p class="tag deal">{T_DEAL_NOW}</p>
-    <h2 class="slide-city">[[<span class="flag">{FLAG}</span> ]]{CITY}[[ <span class="airport">{AIRPORT}</span>]]</h2>
-    <p class="slide-price"><span class="from">{T_FROM}</span> €{PRICE}</p>
-    <p class="slide-usual">{T_SLIDE_USUAL}</p>
-    <p class="slide-meta"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>{DATES}, {AIRLINE}, {STOPS}</p>
-    <a class="btn-book" href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">{T_BOOK}</a>
-    <span class="sticker">-{SAVING}%</span>
-  </div>
+<!-- One line of the black board at the top of the page ("Çmimet më të mira sot"), like a line on
+     an airport's departures board: the airport code, the city, the date and airline, the
+     saving and the price. src/website.py renders it for the first few routes of the page
+     (HERO_ROWS of them: the deals first, biggest saving first) and puts the result in the
+     page's HERO_ROWS value. The whole line is the Rezervo link. On a deal the saving is on
+     yellow; on other routes it is a quiet outline.
+     Same values and rules as site_row.html; this comment is removed before the page is written. -->
+<li class="brow[[ {DEAL}]]" data-iata="{IATA}">
+  <a href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">
+    <span class="bcode">{IATA}</span>
+    <span class="bwhere"><b>{CITY}[[ {AIRPORT}]]</b><span>{BEST_DAY}[[ · {AIRLINE}, {STOPS}]]</span></span>
+    <span class="bsave">-{SAVING}%</span>
+    <span class="bprice">[[<small>{T_USUALLY}</small>]]<b>€{PRICE}</b></span>
+  </a>
 </li>

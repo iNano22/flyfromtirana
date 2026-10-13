@@ -16,9 +16,10 @@ Routes that meet the free channel's deal rules come first, as "Ofertat
 e momentit". With a premium channel the page follows the free channel: a price
 premium members are still getting early is left out until the free channel may
 have it too (build_offers below). Wording and layout live in templates/site.html (the page),
-templates/site_row.html (one route in the list), site_card.html (one photo card
-in the destinations carousel) and site_hero.html (one hero banner), which follow
-the same {NAME} and [[optional]] rules as the post templates (see src/formatter.py).
+templates/site_row.html (one route in the price table), site_card.html (one photo
+card), site_hero.html (one line of the board at the top) and site_premium.html (the
+block about the Premium channel), which follow the same {NAME} and [[optional]]
+rules as the post templates (see src/formatter.py).
 
 Photos live in assets/img (dest/<iata>.webp per route, services/<partner>.webp),
 with their authors and licences in assets/img/credits.json. Every build copies
@@ -43,8 +44,7 @@ from dotenv import load_dotenv
 
 from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, Route, load_config
 from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, is_premium_only
-from src.formatter import (WORDS, build_values, format_dates, format_price, load_template, render,
-                           saving_percent)
+from src.formatter import WORDS, build_values, format_dates, format_price, load_template, render
 from src.guides import Entry, Guide, load_entry_rules, load_guides
 from src.i18n import LANGUAGE_CODES, LANGUAGE_NAMES, Strings, load_strings, localize
 from src.links import LinkBuilder
@@ -57,13 +57,14 @@ log = logging.getLogger("flyfromtirana.website")
 # kept failing for it, say). Stale prices would only disappoint.
 STALE_AFTER = timedelta(days=2)
 
-# How many deals become banners in the hero carousel at the top of the page.
-HERO_SLIDES = 3
+# How many routes get a line on the black board at the top of the page ("Çmimet më të mira
+# sot"): the first ones of the page, so the deals, biggest saving first, then the cheapest.
+HERO_ROWS = 5
 
 # Photos for the page (ASSETS_DIR, from src/photos.py): assets/img/dest/<iata>.webp
 # for a route's card, assets/img/services/<partner>.webp for the travel services,
 # and credits.json with the author and licence of each one. A route without a
-# photo simply gets its country-coloured card instead.
+# photo simply gets a card with a plain black top instead.
 
 # Country names for the photo cards ("Vienna, Austria"), keyed by the code taken from
 # the route's flag. Place names are in English, like the city names in config.yaml.
@@ -216,9 +217,9 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
 
     deal_rows = rows("site_row.html", [o for o in offers if o.is_deal])
     other_rows = rows("site_row.html", [o for o in offers if not o.is_deal])
-    # The hero banners at the top of the page: the three best deals, one slide each.
-    hero_slides = rows("site_hero.html", [o for o in offers if o.is_deal][:HERO_SLIDES])
-    # The destinations carousel: one photo card per route, deals first (the order of offers).
+    # The board at the top of the page: one line for each of the first routes (deals come first).
+    hero_rows = rows("site_hero.html", offers[:HERO_ROWS])
+    # The photo cards: one per route, deals first (the order of offers).
     dest_cards = rows("site_card.html", offers)
     names = {city: guide.display_name for city, guide in guides.items()}   # "Milan" -> "Milano" on the Italian page
 
@@ -226,9 +227,6 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     today = local_now.date()
     premium = config.premium
     premium_on = premium.enabled and bool(premium.join_link)
-    # The best deal (offers start with the deals, biggest saving first) gets a chip on the
-    # hero's first slide, so a phone shows a real price before anyone swipes.
-    top = offers[0] if offers and offers[0].is_deal else None
     text = {
         "BRAND": config.brand,
         "CHANNEL": config.channel_handle,
@@ -242,9 +240,6 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         "MIN_PRICE": format_price(min(o.best.price for o in offers)) if offers else None,
         "DEAL_COUNT": str(len(deal_rows)) if deal_rows else None,
         "ROUTE_COUNT": str(len(offers)) if offers else None,
-        "TOP_CITY": city_label(top.route, names.get(top.route.city)) if top else None,
-        "TOP_PRICE": format_price(top.best.price) if top else None,
-        "TOP_SAVING": saving_percent(top) if top else None,
         "GUIDE_COUNT": str(len(guides)) if guides else None,
         "GA_ON": "1" if config.website.google_analytics_id else None,
         # The search card's date picker only allows dates the scanner actually covers.
@@ -253,7 +248,6 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     }
     urls = {
         "TELEGRAM_URL": telegram_url(config.channel_handle),
-        "PREMIUM_LINK": premium.join_link if premium_on else None,
         "SITE_URL": page_url(config, language),
         "ASSETS": root,
     }
@@ -269,11 +263,12 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     # These are HTML already, so they go in as they are.
     values["DEAL_ROWS"] = "\n".join(deal_rows) or None
     values["PRICE_ROWS"] = "\n".join(other_rows) or None
-    values["HERO_SLIDES"] = "\n".join(hero_slides) or None
+    values["HERO_ROWS"] = "\n".join(hero_rows) or None
     values["DEST_CARDS"] = "\n".join(dest_cards) or None
     values["PHOTO_CREDITS"] = photo_credits(config, links, strings, names)
     values["DESTINATION_OPTIONS"] = destination_options(offers, strings, names)
     values["GUIDE_TILES"] = guide_tiles(guides, offers, config, root=root, language=language)
+    values["PREMIUM"] = premium_html(config, strings)
     values["LANG_MENU"] = language_menu(config, language, root)
     values["LANG_LINKS"] = language_links(config, language, root)
     values["HREFLANG"] = hreflang_links(config)
@@ -339,7 +334,7 @@ def language_targets(config: Config, language: str, root: str, slug: str | None 
 
 
 def language_menu(config: Config, language: str, root: str, slug: str | None = None) -> str | None:
-    """The language dropdown above the top bar (templates/site_lang.html). None with only one language."""
+    """The language dropdown in the top bar (templates/site_lang.html). None with only one language."""
     if len(config.website.languages) < 2:
         return None
     options = "".join(
@@ -395,7 +390,6 @@ def row_values(offer: Deal, config: Config, links: LinkBuilder, guides: dict[str
         "GUIDE_URL": f"{guide.slug}/" if guide else None,   # the city's own page, when it has a guide
         "IATA": offer.route.iata,
         "DEAL": "deal" if offer.is_deal else None,  # a CSS class; template parts using it vanish for other routes
-        "COUNTRY": country_code(offer.route.flag),   # "it" for 🇮🇹: the CSS class that picks the card's colours
         "BEST_DATE": offer.best.depart_date.isoformat(),  # "2026-11-21": the page's JavaScript pre-fills the date picker with it
         # For the photo cards: "14 Nën", "Austri" and the route's photo (None when there isn't one).
         "BEST_DAY": format_dates([offer.best.depart_date], WORDS[language]["months"]),
@@ -444,19 +438,15 @@ def guide_tiles(guides: dict[str, Guide], offers: list[Deal], config: Config, *,
     for offer in offers:
         city = offer.route.city
         cheapest[city] = min(offer.best.price, cheapest.get(city, offer.best.price))
-    flags = {route.city: route.flag for route in reversed(config.routes)}   # a city's first route wins
     template = load_site_template("site_guide.html", load_strings(language or config.website.languages[0]))
     esc = html.escape
     tiles = []
     for guide in guides.values():
         if guide.city == skip:
             continue
-        flag = flags.get(guide.city) or None
         photo = guide_photo(guide)
         tiles.append(render(template, {
             "CITY": esc(guide.display_name, quote=False),
-            "FLAG": flag,
-            "COUNTRY": country_code(flag or ""),
             "TAGLINE": esc(guide.tagline, quote=False) or None,
             "GUIDE_URL": f"{pages}{guide.slug}/",
             "GUIDE_PHOTO": root + photo if photo else None,
@@ -497,9 +487,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         "CHANNEL": config.channel_handle,
         "LANG": language,
         "CITY": guide.display_name,
-        "COUNTRY": country,
         "COUNTRY_NAME": strings.words.get("countries", COUNTRY_NAMES).get(country or ""),
-        "FLAG": first.flag or None,
         "INTRO": guide.intro,
         "MIN_PRICE": format_price(best.best.price) if best else None,
         "UPDATED": format_updated(updated_at, config, language) if updated_at else None,
@@ -562,6 +550,28 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     return render(load_site_template("site_dest.html", strings), values) + "\n"
 
 
+def premium_html(config: Config, strings: Strings) -> str | None:
+    """The main page's block about the Premium channel (templates/site_premium.html).
+
+    None while there is no premium channel to join. The block says how much later the free
+    channel and the page get a deal, how often premium checks the prices, and the hours at
+    night when nothing is posted: all three come from config.yaml, so the page never promises
+    more than the scanner does.
+    """
+    premium = config.premium
+    if not (premium.enabled and premium.join_link):
+        return None
+    quiet = config.quiet_hours   # (start, end) or None
+    return render(load_site_template("site_premium.html", strings), {
+        "PREMIUM_LINK": html.escape(premium.join_link, quote=True),
+        "PREMIUM_HOURS": f"{premium.free_delay_hours:g}",   # :g turns 6.0 into "6"
+        "PREMIUM_MINUTES": f"{premium.scan_every_minutes:g}" if premium.scan_every_minutes else None,
+        "CHANNEL": html.escape(config.channel_handle, quote=False),
+        "QUIET_START": f"{quiet[0]:%H:%M}" if quiet else None,
+        "QUIET_END": f"{quiet[1]:%H:%M}" if quiet else None,
+    })
+
+
 def analytics_html(config: Config, language: str | None = None) -> str | None:
     """The Google Analytics block (templates/site_analytics.html), or None when no ID is set."""
     analytics_id = config.website.google_analytics_id
@@ -605,7 +615,7 @@ def write_sitemap(out_dir: Path, config: Config, now: datetime) -> None:
 
 
 def route_photo(iata: str) -> str | None:
-    """'img/dest/vie.webp' when assets/img/dest/vie.webp exists, else None (the card shows its colours)."""
+    """'img/dest/vie.webp' when assets/img/dest/vie.webp exists, else None (the card then has a plain black top)."""
     path = f"img/dest/{iata.lower()}.webp"
     return path if (ASSETS_DIR / path).exists() else None
 

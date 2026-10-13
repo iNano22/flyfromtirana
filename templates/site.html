@@ -3,17 +3,19 @@
      [[ ... ]] is optional (and must stay on one line), and a line whose value is missing is left
      out, so anything that should disappear together (a heading and its rows, say) stays on one line.
      This comment, and every other HTML comment, is removed before the page is written.
-     Values: BRAND CHANNEL LOOKAHEAD_DAYS UPDATED EMPTY MIN_PRICE DEAL_COUNT ROUTE_COUNT TOP_CITY
-     TOP_PRICE TOP_SAVING (the best deal, for the chip on the first slide) DATE_MIN DATE_MAX
-     DEAL_ROWS PRICE_ROWS HERO_SLIDES DEST_CARDS (the photo cards) PHOTO_CREDITS (the footer's
+     Values: BRAND CHANNEL LOOKAHEAD_DAYS UPDATED EMPTY MIN_PRICE DEAL_COUNT ROUTE_COUNT
+     DATE_MIN DATE_MAX DEAL_ROWS PRICE_ROWS (the lines of the price table, from site_row.html)
+     HERO_ROWS (the lines of the black board at the top, from site_hero.html) DEST_CARDS (the
+     photo cards, from site_card.html) PREMIUM (the block about the Premium channel, from
+     site_premium.html, only while there is a premium channel) PHOTO_CREDITS (the footer's
      photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
      photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive
      script, only when one is set) LANG (the page's language code) LANG_MENU (the language
-     dropdown, from site_lang.html) LANG_LINKS (the same links as a row, in the footer) HREFLANG (the tags that tell search engines about the other languages) ASSETS (the
+     dropdown in the top bar, from site_lang.html) LANG_LINKS (the same links as a row, in the footer) HREFLANG (the tags that tell search engines about the other languages) ASSETS (the
      way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
      The text itself is not in this file: T_NAME stands for the entry NAME in
      templates/strings/<language>.yaml, one file per language (see src/i18n.py) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
-     PREMIUM_LINK SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
+     SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
      TICKETS_LINK, TRANSFER_LINK, CAR_RENTAL_LINK, LUGGAGE_LINK, COMPENSATION_LINK,
      INSURANCE_LINK, HOTEL_LINK). A partner without a link has no value, so its card is left out.
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
@@ -31,471 +33,411 @@
 <meta property="og:title" content="{T_TITLE}">
 <meta property="og:description" content="{T_OG_DESCRIPTION}">
 <meta property="og:url" content="{SITE_URL}">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#170b3b">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23ffe14d'/><path transform='translate(4 4) rotate(45 12 12)' fill='%23170b3b' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0f1114">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ffd60a'/><path transform='translate(4 4) rotate(45 12 12)' fill='%230f1114' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-/* One scheme on purpose: a deep indigo night that the colourful cards glow against. It looks the
-   same whatever the phone's light/dark setting. The search card is the one white slab. */
+/* The look is airport signage: signal yellow, black and white on a light grey floor. Yellow
+   always means the same thing, a deal or the way to one (the hero, a saving, a deal's price,
+   the Telegram band). One scheme on purpose: it looks the same whatever the phone's light/dark
+   setting. Two typefaces: Archivo for everything (narrow and heavy for headlines and prices),
+   IBM Plex Mono for airport codes and small labels, like the letters on a departures board. */
 :root {
-  color-scheme: dark;
-  --night: #170b3b;                      /* page background */
-  --night-2: #211359;                    /* quiet panels */
-  --ink: #ffffff;                        /* text */
-  --muted: #bdb3e3;                      /* secondary text (9:1 on the background) */
-  --line: rgba(255, 255, 255, 0.14);     /* dividers */
-  --surface: rgba(255, 255, 255, 0.09);  /* quiet pills and boxes */
-  --sun: #ffe14d;                        /* stickers, counters, the search button, the footer */
-  --sun-ink: #1a1030;                    /* text on yellow and on white */
-  --tg: #2aabee;                         /* Telegram's blue, for the paper-plane icon only */
-  --tg-deep: #0d3f9e;                    /* text on the white Telegram buttons */
-  --paper: #ffffff;                      /* the search card */
-  --paper-muted: #5b5577;                /* secondary text on white (7:1) */
-  --field: #f1eefb;                      /* form fields on the search card */
+  color-scheme: light;
+  --ink: #0f1114;                        /* text, the top bar, the black panels, the footer */
+  --ground: #eff1f3;                     /* page background */
+  --panel: #ffffff;                      /* cards, the search card, the price table */
+  --line: #d5d9de;                       /* outlines, and the hairline under every card */
+  --rule: #e3e6ea;                       /* dividers inside a card */
+  --muted: #555b64;                      /* secondary text on white or grey (6:1 or better) */
+  --sun: #ffd60a;                        /* the signal yellow */
+  --hover: #2a2e35;                      /* a black button under the pointer */
+  --board-line: #2a2e35;                 /* dividers on black */
+  --board-muted: #a9afb8;                /* secondary text on black (8:1) */
+  --tint: #fffbe0;                       /* the row picked in the search card */
+  --focus: #2f6bff;                      /* keyboard focus ring: shows on yellow, black and white */
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --nav-h: 60px;
-  --gutter: max(16px, calc((100% - 1080px) / 2));   /* page margin, so edge-to-edge strips align with the content */
-  /* Card colours: one family (same lightness and saturation for every country, only the hue
-     changes), with the same hue per country as the original cards: Italy sunset red, Austria
-     alpine green, Spain hot pink, Belgium gold. c2 is the base, c1 the glow in the corner. White
-     text keeps 4.5:1 or better on both, except Belgium's gold glow, which is why the cards also
-     carry a soft text shadow. Default = any country not listed below. */
-  --c1: #0274c7;
-  --c2: #004f8b;
+  --gutter: clamp(16px, 4vw, 32px);      /* page margin */
 }
-.c-it { --c1: #c4391e; --c2: #901500; }   /* Italy: sunset red */
-.c-ch { --c1: #c23359; --c2: #920037; }   /* Switzerland: crimson */
-.c-es { --c1: #b93780; --c2: #8a085a; }   /* Spain: hot pink */
-.c-be { --c1: #bf860c; --c2: #944e00; }   /* Belgium: gold */
-.c-de { --c1: #08856a; --c2: #045b48; }   /* Germany: mint to teal */
-.c-gr { --c1: #0b7f94; --c2: #005766; }   /* Greece: Aegean cyan */
-.c-gb { --c1: #3c68d9; --c2: #1e41a8; }   /* UK: blue to indigo */
-.c-tr { --c1: #8451c9; --c2: #5e2b9a; }   /* Turkey: violet */
-.c-at { --c1: #17890b; --c2: #015f00; }   /* Austria: alpine green */
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
-  background: var(--night);
+  background: var(--ground);
   color: var(--ink);
-  font-family: "Gabarito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.45;
   overflow-x: hidden;
 }
 a { color: inherit; }
-button { font: inherit; color: inherit; }
+button, select, input { font: inherit; color: inherit; }
 h1, h2, h3, p { overflow-wrap: anywhere; }
-:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
-.scard :focus-visible, .foot :focus-visible { outline-color: var(--sun-ink); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
 [hidden] { display: none !important; }
-.wrap { max-width: 1080px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
-section[id], .how { scroll-margin-top: calc(var(--nav-h) + 12px); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .ic-fill { fill: currentColor; stroke: none; }
-.skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--sun-ink); font-weight: 800; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 30; background: var(--sun); color: var(--ink); font-weight: 700; padding: 10px 16px; border-radius: 6px; text-decoration: none; }
 .skip:focus { top: 12px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* The language switcher: a small dropdown (AL, EN, IT) in a slim bar above the top bar
-   (templates/site_lang.html), and the same links as a plain row in the footer. */
-.langbar { background: #110829; font-size: 14px; }
-.langbar .wrap { display: flex; justify-content: flex-end; }
-.lang { position: relative; }
-.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 2px 0 8px; list-style: none; cursor: pointer; font-weight: 800; letter-spacing: 0.03em; }
-.lang summary::-webkit-details-marker { display: none; }
-.lang summary .ic { width: 16px; height: 16px; color: var(--muted); }
-.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; }
-.lang[open] summary .chev { transform: rotate(180deg); }
-.lang-menu { position: absolute; right: 0; top: calc(100% + 4px); z-index: 30; display: grid; gap: 2px; min-width: 156px; padding: 6px; border-radius: 12px; background: #ffffff; color: var(--sun-ink); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
-.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 40px; padding: 9px 10px; border-radius: 8px; text-decoration: none; }
-.lang-menu b { min-width: 22px; font-weight: 900; }
-.lang-menu span { font-size: 13.5px; font-weight: 600; color: var(--paper-muted); }
-.lang-menu a:hover { background: var(--field); }
-.lang-menu a[aria-current] { background: var(--sun); }
-.lang-menu a[aria-current] span { color: var(--sun-ink); }
-.lang-menu :focus-visible { outline-color: var(--tg-deep); }
-.langs { display: flex; align-items: center; gap: 2px; min-height: 36px; }
-.langs a { padding: 5px 11px; border-radius: 999px; font-weight: 800; font-size: 14px; letter-spacing: 0.03em; text-decoration: none; color: var(--sun-ink); }
-.langs a[aria-current] { background: var(--sun-ink); color: var(--sun); }
-.flangs { margin: 0 0 8px -11px; }
-
-/* 1. Slim sticky nav */
-.nav { position: sticky; top: 0; z-index: 20; background: rgba(23, 11, 59, 0.78); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid transparent; }
-.past-hero .nav { border-bottom-color: var(--line); }
-.nav-in { height: var(--nav-h); display: flex; align-items: center; gap: 12px; }
-.brand { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; margin-right: auto; white-space: nowrap; }
-.mark { width: 30px; height: 30px; border-radius: 9px; background: var(--sun); color: var(--sun-ink); display: grid; place-items: center; flex: none; }
-.mark .ic { width: 18px; height: 18px; }
+/* 1. The black top bar: brand, links (wide screens), language, Telegram */
+.nav { position: sticky; top: 0; z-index: 20; background: var(--ink); color: #ffffff; }
+.nav-in { min-height: var(--nav-h); display: flex; align-items: center; gap: 10px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-right: auto; font-weight: 800; font-stretch: 88%; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.mark { width: 34px; height: 34px; border-radius: 6px; background: var(--sun); color: var(--ink); display: grid; place-items: center; flex: none; }
+.mark .ic { width: 20px; height: 20px; }
 .nav-links { display: none; gap: 2px; }
-.nav-links a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--muted); padding: 8px 12px; border-radius: 999px; }
-.nav-links a:hover { color: var(--ink); background: var(--surface); }
-.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px 0 9px; border-radius: 999px; background: var(--surface); color: var(--ink); font-weight: 800; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #d5d9de; }
+.nav-links a:hover { color: #ffffff; background: #1b1e23; }
+.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
 .nav-tg .ic { width: 24px; height: 24px; }
-.past-hero .nav-tg { background: #ffffff; color: var(--tg-deep); box-shadow: 0 0 0 4px rgba(42, 171, 238, 0.35); }
+.nav-tg span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }   /* phones: the paper plane alone (screen readers still get the words) */
+/* The language switcher: a small dropdown (AL, EN, IT) in the top bar (templates/site_lang.html),
+   and the same links as a plain row in the footer. */
+.lang { position: relative; }
+.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 10px; border: 1.5px solid #3a3f47; border-radius: 6px; list-style: none; cursor: pointer; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary .ic { width: 16px; height: 16px; color: var(--board-muted); }
+.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; color: inherit; }
+.lang[open] summary .chev { transform: rotate(180deg); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; display: grid; gap: 2px; min-width: 160px; padding: 6px; border-radius: 8px; background: var(--panel); color: var(--ink); box-shadow: 0 0 0 1px var(--line), 0 16px 40px rgba(15, 17, 20, 0.35); }
+.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 44px; padding: 11px 10px; border-radius: 6px; text-decoration: none; }
+.lang-menu b { min-width: 22px; font-weight: 800; }
+.lang-menu span { font-size: 14px; color: var(--muted); }
+.lang-menu a:hover { background: var(--ground); }
+.lang-menu a[aria-current] { background: var(--sun); }
+.lang-menu a[aria-current] span { color: var(--ink); }
+.langs { display: flex; align-items: center; gap: 4px; }
+.langs a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-decoration: none; }
+.langs a[aria-current] { background: var(--sun); color: var(--ink); }
+.flangs { margin: 4px 0 8px -12px; }
 
-/* 2. Hero banner carousel: the brand slide, then the best deals as full-width banners */
-.hero { position: relative; background: radial-gradient(560px 420px at 8% -4%, rgba(255, 122, 61, 0.5), transparent 70%), radial-gradient(520px 380px at 98% 2%, rgba(79, 140, 255, 0.44), transparent 70%), var(--night); }
-.hero-strip { list-style: none; margin: 0; padding: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-.hero-strip::-webkit-scrollbar { display: none; }
-.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; scroll-snap-stop: always; display: flex; }
-.slide-in { position: relative; width: 100%; max-width: 1080px; margin: 0 auto; padding: 26px 16px 110px; }
-.arc { display: none; }
-h1 { font-size: clamp(44px, 12.5vw, 96px); line-height: 0.95; letter-spacing: -0.035em; font-weight: 900; margin: 0 0 18px; }
+/* 2. The yellow hero: the headline on the left, the black board with today's best prices
+      beside it (under it on a phone) */
+.hero { background: var(--sun); }
+.hero-in { display: grid; gap: 26px; padding-top: 26px; padding-bottom: 100px; }
+.hero-text { min-width: 0; }
+.kicker { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 20px; padding: 7px 12px 7px 9px; border-radius: 6px; background: var(--ink); color: #ffffff; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.kicker .ic { width: 16px; height: 16px; stroke-width: 2.5; }
+h1 { margin: 0; font-size: clamp(60px, 17vw, 128px); line-height: 0.86; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
 h1 span { display: block; }
-.from-price { display: inline-block; margin: 0 0 18px; background: var(--sun); color: var(--sun-ink); font-weight: 800; font-size: clamp(18px, 5.2vw, 24px); line-height: 1; padding: 12px 16px; border-radius: 14px; transform: rotate(-2deg); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35); }
-.from-price b { font-weight: 900; font-size: 1.25em; }
-.top-deal { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 10px; min-height: 54px; margin: 0 0 16px; padding: 6px 10px 6px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); color: var(--ink); text-decoration: none; }   /* the best deal, so the first screen shows a real price */
-.top-deal:hover { background: rgba(255, 255, 255, 0.18); }
-.top-deal .td { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
-.top-deal small { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
-.top-deal b { font-weight: 900; font-size: 17px; }
-.top-deal .td-save { flex: none; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 15px; line-height: 1; padding: 9px 10px; border-radius: 10px; transform: rotate(-4deg); }
-.top-deal .ic { width: 20px; height: 20px; stroke-width: 2.5; }
-.lead { font-size: 18px; margin: 0 0 14px; max-width: 30em; }
-.stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; }
-.stat { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 14px; font-weight: 700; color: var(--muted); }
-.stat b { color: var(--ink); font-weight: 900; font-size: 17px; font-variant-numeric: tabular-nums; }
-.updated { color: var(--muted); font-size: 14px; margin: 0; display: flex; align-items: center; gap: 8px; }
-.updated::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex: none; }
-.empty { background: var(--surface); border-radius: 20px; padding: 18px; margin: 24px 0 0; font-size: 17px; }
-.slide-deal { color: #ffffff; background: radial-gradient(80% 90% at 100% 0%, var(--c1) 0%, transparent 60%), linear-gradient(180deg, rgba(23, 11, 59, 0) 40%, rgba(23, 11, 59, 0.6) 100%), var(--c2); }
-.slide-deal { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
-.sticker, .tag, .book, .btn-book { text-shadow: none; }
-.tag.deal { display: inline-block; background: rgba(255, 255, 255, 0.2); padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 800; margin: 0; }
-.slide-city { font-size: clamp(26px, 7vw, 40px); font-weight: 800; line-height: 1.1; margin: 12px 0 0; padding-right: 96px; }
-.slide-city .airport, .city .airport { display: block; font-size: 0.55em; font-weight: 600; opacity: 0.92; margin-top: 2px; }
-.slide-price { margin: 6px 0 0; font-size: clamp(84px, 24vw, 160px); line-height: 0.9; font-weight: 900; letter-spacing: -0.05em; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.slide-price .from, .stories .from { display: block; font-size: 16px; font-weight: 700; letter-spacing: 0; margin-bottom: 4px; }
-.slide-usual { margin: 10px 0 0; font-size: 18px; font-weight: 700; }
-.slide-meta { margin: 4px 0 0; font-size: 15px; opacity: 0.94; display: flex; align-items: center; gap: 6px; }
-.btn-book { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; margin-top: 18px; background: #ffffff; color: var(--c2); font-weight: 800; font-size: 17px; border-radius: 999px; text-decoration: none; }
-.sticker { background: var(--sun); color: var(--sun-ink); font-weight: 900; line-height: 1; border-radius: 14px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28); }
-.slide-deal .sticker { display: block; position: absolute; top: 24px; right: 16px; font-size: clamp(28px, 8vw, 44px); padding: 12px 14px; transform: rotate(7deg); }
-.hero-ctl { position: absolute; left: 0; right: 0; bottom: 60px; pointer-events: none; }
-.hero-ctl .ctl { pointer-events: auto; }
+.lead { margin: 20px 0 0; max-width: 30em; font-size: 17px; line-height: 1.4; font-weight: 500; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; }
+.stat { display: inline-flex; align-items: baseline; gap: 7px; padding: 8px 12px; border: 2px solid var(--ink); border-radius: 6px; font-size: 14px; font-weight: 600; }
+.stat b { font-size: 24px; line-height: 1; font-weight: 800; font-stretch: 76%; font-variant-numeric: tabular-nums; }
+.stat-from { background: var(--ink); color: #ffffff; }
+.updated { display: flex; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 13px; font-weight: 500; }
+.updated::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #0b7a3b; box-shadow: 0 0 0 2px var(--ink); flex: none; }
+.empty { margin: 22px 0 0; padding: 16px; border: 2px solid var(--ink); border-radius: 6px; font-size: 17px; font-weight: 600; }
+/* The board: one line per route (templates/site_hero.html), like an airport's departures
+   board. The parts are placed by column, so a line without a saving keeps its price on the right. */
+.board { min-width: 0; align-self: end; background: var(--ink); color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 24px 40px -24px rgba(15, 17, 20, 0.6); }
+.board-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px 12px; }
+.board-head h2 { margin: 0; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sun); }
+.board-head span { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--board-muted); white-space: nowrap; }
+.board ol { list-style: none; margin: 0; padding: 0; }
+.brow:nth-child(n + 4) { display: none; }   /* phones: the three best; wide screens show them all */
+.brow a { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto auto; align-items: center; gap: 10px; min-height: 70px; padding: 8px 16px; border-top: 1px solid var(--board-line); color: inherit; text-decoration: none; }
+.brow a:hover { background: #1b1e23; }
+.bcode { grid-column: 1; font-family: var(--mono); font-weight: 600; font-size: 15px; letter-spacing: 0.04em; color: var(--sun); }
+.bwhere { grid-column: 2; min-width: 0; }
+.bwhere b { display: block; font-size: 17px; font-weight: 700; line-height: 1.15; }
+.bwhere span { display: block; margin-top: 2px; font-size: 13px; color: var(--board-muted); }
+.bsave { grid-column: 3; padding: 3px 6px; border: 1px solid #3a3f47; border-radius: 4px; font-family: var(--mono); font-weight: 600; font-size: 13px; color: var(--board-muted); }
+.brow.deal .bsave { border-color: var(--sun); background: var(--sun); color: var(--ink); }
+.bprice { grid-column: 4; min-width: 46px; text-align: right; line-height: 1; }
+.bprice small { display: none; margin-bottom: 4px; font-size: 12px; color: var(--board-muted); }
+.bprice b { font-size: 30px; font-weight: 800; font-stretch: 76%; font-variant-numeric: tabular-nums; }
+.board-more { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; border-top: 1px solid var(--board-line); color: var(--sun); font-weight: 700; font-size: 15px; text-decoration: none; }
+.board-more:hover { background: #1b1e23; }
+.board-more .ic { width: 18px; height: 18px; stroke-width: 2.5; }
 
-/* Carousel controls (made by the script, so nothing shows without it) */
-.ctl { display: flex; align-items: center; gap: 8px; }
-.ctl:empty, .ctl.is-idle { display: none; }   /* is-idle: everything already fits, so no arrows */
-.arrow { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; flex: none; }
-.arrow .ic { width: 22px; height: 22px; stroke-width: 2.5; }
-.arrow:hover { background: rgba(255, 255, 255, 0.18); }
-.arrow:disabled { opacity: 0.35; cursor: default; }
-.dots { display: flex; align-items: center; justify-content: center; gap: 4px; flex: 1 1 auto; min-width: 0; }
-.dot { flex: 0 0 44px; width: 44px; height: 44px; border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; align-items: center; }   /* one per page, never per card */
-.dot::before { content: ""; display: block; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.3); }
-.dot.on::before { background: var(--sun); }
-.bar { position: relative; flex: 1 1 auto; max-width: 320px; height: 44px; display: grid; align-items: center; }   /* more than six pages (phones): a progress bar instead */
-.bar::before { content: ""; display: block; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.2); }
-.bar i { position: absolute; top: 20px; left: 0; width: 20%; height: 4px; border-radius: 2px; background: var(--sun); }
-
-/* 3. The search card, overlapping the hero */
-.search { position: relative; z-index: 2; margin-top: -48px; }
-.scard { color-scheme: light; background: var(--paper); color: var(--sun-ink); border-radius: 28px; padding: 14px 14px 16px; box-shadow: 0 32px 60px -28px rgba(0, 0, 0, 0.75); }
-.stabs { display: flex; gap: 6px; margin: 0 0 14px; overflow-x: auto; scrollbar-width: none; }
-.stabs::-webkit-scrollbar { display: none; }
-.stab { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; padding: 0 10px; border-radius: 14px; text-decoration: none; font-weight: 800; font-size: 14px; color: var(--sun-ink); background: var(--field); white-space: nowrap; }
-.stab .ic { width: 18px; height: 18px; }
-.stab:not(.is-on) .ic, .stab .w { display: none; }   /* phones: short labels, so all three fit on one row */
-.stab.is-on { background: var(--night); color: #ffffff; }
-.stab .n { background: var(--sun); color: var(--sun-ink); border-radius: 999px; padding: 1px 7px; font-size: 12px; }
+/* 3. The white search card, overlapping the end of the hero */
+.search { position: relative; z-index: 2; margin-top: -76px; }
+.scard { padding: 14px; background: var(--panel); border-radius: 10px; box-shadow: 0 1px 0 var(--line), 0 24px 40px -28px rgba(15, 17, 20, 0.5); }
 .sform { margin: 0; }
-.trip { display: flex; flex-wrap: wrap; gap: 6px; border: 0; padding: 0; margin: 0 0 10px; min-width: 0; }
-.trip label { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 10px; border-radius: 999px; background: var(--field); font-weight: 700; font-size: 14px; cursor: pointer; }
-.trip input { accent-color: var(--night); width: 18px; height: 18px; margin: 0; }
-.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: relative; }
-.field { display: flex; flex-direction: column; justify-content: center; gap: 1px; min-height: 60px; padding: 8px 14px; border-radius: 16px; background: var(--field); border: 1.5px solid transparent; min-width: 0; }
-.field:focus-within { border-color: var(--night); box-shadow: 0 0 0 3px rgba(255, 225, 77, 0.7); }
+.trip { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; margin: 0 0 12px; padding: 0; border: 0; }
+.trip label { flex: 1 1 0; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 1.5px solid var(--ink); border-radius: 6px; font-weight: 700; font-size: 15px; white-space: nowrap; cursor: pointer; }
+.trip input { width: 18px; height: 18px; margin: 0; accent-color: var(--ink); }
+.trip label:has(input:checked) { background: var(--ink); color: #ffffff; }
+.trip label:has(input:checked) input { accent-color: var(--sun); }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.field { display: flex; flex-direction: column; justify-content: center; gap: 2px; min-width: 0; min-height: 56px; padding: 7px 14px; border: 1.5px solid transparent; border-radius: 6px; background: var(--ground); }
+.field:focus-within { border-color: var(--ink); }
 .field.from, .field.to { grid-column: 1 / -1; }
-.flabel { font-size: 12px; font-weight: 700; color: var(--paper-muted); display: flex; align-items: center; gap: 5px; }
-.fvalue { font-weight: 800; font-size: 16px; }
-.fvalue small { font-weight: 700; color: var(--paper-muted); font-size: 13px; margin-left: 4px; }
-.field select, .field input { border: 0; background: transparent; font: inherit; font-weight: 800; font-size: 16px; color: inherit; padding: 0; margin: 0; width: 100%; min-height: 24px; outline: none; text-overflow: ellipsis; }
-.field select { appearance: none; -webkit-appearance: none; padding-right: 22px; background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1030' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>") no-repeat right center / 16px; }
+.flabel { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.fvalue { font-weight: 700; font-size: 16px; }
+.fvalue small { margin-left: 6px; font-family: var(--mono); font-weight: 600; font-size: 13px; color: var(--muted); }
+.field select, .field input { width: 100%; min-height: 24px; margin: 0; padding: 0; border: 0; outline: none; background: transparent; font-weight: 700; font-size: 16px; text-overflow: ellipsis; }
 .field input[type="date"] { -webkit-appearance: none; appearance: none; min-height: 26px; }
 .field input::-webkit-date-and-time-value { text-align: left; }
-.hop { position: absolute; right: 12px; top: 46px; width: 36px; height: 36px; border-radius: 50%; background: var(--night); color: #ffffff; display: grid; place-items: center; box-shadow: 0 0 0 4px var(--paper); z-index: 1; }
-.hop .ic { width: 18px; height: 18px; transform: rotate(90deg); }
 .field.back { display: none; }
 .sform.is-return .field.back { display: flex; }
 .sform.is-return .field.pax { grid-column: 1 / -1; }
-.btn-go { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 24px; margin-top: 4px; border-radius: 999px; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 18px; text-decoration: none; box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.5); }
-.btn-go .ic { width: 22px; height: 22px; stroke-width: 2.5; }
-.btn-go:hover { filter: brightness(1.04); }
-.shint { margin: 10px 2px 0; font-size: 13px; color: var(--paper-muted); line-height: 1.4; }
-.sfound { margin: 10px 0 0; padding: 10px 14px; border-radius: 14px; background: var(--field); font-size: 14px; line-height: 1.4; }
+.btn-go { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; margin-top: 2px; padding: 0 24px; border-radius: 6px; background: var(--ink); color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; white-space: nowrap; }
+.btn-go .ic { width: 20px; height: 20px; stroke-width: 2.5; }
+.btn-go:hover, .book:hover, .btn-tg:hover { background: var(--hover); }
+.shint { margin: 10px 2px 0; font-size: 13px; line-height: 1.4; color: var(--muted); }
+.sfound { margin: 10px 0 0; padding: 10px 14px; border-radius: 6px; background: var(--sun); font-size: 14px; line-height: 1.4; }
 
-/* Section headings */
-h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.count { display: inline-grid; place-items: center; min-width: 32px; height: 32px; padding: 0 9px; border-radius: 999px; background: var(--sun); color: var(--sun-ink); font-size: 17px; }
-.hint { color: var(--muted); margin: 0; font-size: 15px; max-width: 40em; }
-.shead { padding-top: 48px; }
-.board { list-style: none; margin: 0; padding: 0; }
-.row { position: relative; }
-.city { font-weight: 800; margin: 0; line-height: 1.15; }
-.dates, .meta, .way, .usual, .price { margin: 0; }
-.dates { display: flex; align-items: center; gap: 6px; }
-.sticker { display: none; }
-
-/* 4. The deal cards: an edge-to-edge carousel, 1.5 cards on a phone, 3-4 on a desktop */
-.deals { position: relative; }
-.strip { display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; padding: 14px var(--gutter) 22px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; -webkit-mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 44px), transparent); }
+/* Section headings, with the counter in a black tag */
+.shead { padding-top: 56px; padding-bottom: 20px; }
+.shead h2 { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; font-size: clamp(34px, 4.2vw, 48px); line-height: 1; font-weight: 800; font-stretch: 76%; letter-spacing: -0.01em; }
+.count { padding: 4px 8px; border-radius: 4px; background: var(--ink); color: var(--sun); font-family: var(--mono); font-weight: 600; font-size: 14px; letter-spacing: 0; }
+.hint { margin: 8px 0 0; max-width: 40em; font-size: 15px; color: var(--muted); }
+/* A row of cards to swipe sideways on a phone. On wide screens each kind becomes a grid (below). */
+.strip { list-style: none; margin: 0; display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; padding: 2px var(--gutter) 10px; scroll-padding-inline: var(--gutter); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .strip::-webkit-scrollbar { display: none; }
-/* A photo card: the photo fills it, a dark fade at the bottom keeps the white text readable on
-   any photo, and the whole card is the Rezervo link. Deals get the yellow sticker and a yellow
-   price. Without a photo the card shows its country colours instead. */
-.dcard { position: relative; flex: 0 0 min(62vw, 270px); aspect-ratio: 5 / 7; scroll-snap-align: start; border-radius: 26px; overflow: hidden; color: #ffffff; background: radial-gradient(110% 75% at 100% 0%, var(--c1) 0%, transparent 62%), var(--c2); box-shadow: 0 24px 44px -26px rgba(0, 0, 0, 0.85); }
-.dcard a { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 18px; color: inherit; text-decoration: none; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5); }
-.dcard a:focus-visible { outline: 3px solid var(--sun); outline-offset: -3px; border-radius: 26px; }
-.dcard img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
-.dcard a::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(12, 5, 34, 0.35) 0%, rgba(12, 5, 34, 0) 22%, rgba(12, 5, 34, 0) 42%, rgba(12, 5, 34, 0.7) 66%, rgba(12, 5, 34, 0.94) 100%); }
-.dcard .dinfo, .dcard .dgo { position: relative; z-index: 2; }   /* above the photo and its fade */
-.dinfo { display: flex; flex-direction: column; gap: 6px; }
-.dprice { font-size: 42px; line-height: 1; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.dprice small { font-size: 16px; font-weight: 700; letter-spacing: 0; }
-.dcard.deal .dprice { color: var(--sun); }
-.dplace { display: flex; align-items: flex-start; gap: 6px; font-weight: 800; font-size: 17px; line-height: 1.25; }
-.dplace .ic { width: 18px; height: 18px; flex: none; margin-top: 1px; }
-.dmeta { font-size: 14px; color: rgba(255, 255, 255, 0.88); }
-.dgo { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; margin-top: 14px; padding: 0 14px 0 18px; border-radius: 999px; background: #ffffff; color: var(--sun-ink); font-weight: 800; font-size: 15px; text-shadow: none; }
-.dgo .ic { width: 18px; height: 18px; stroke-width: 2.5; }
-.dcard.deal .dgo { background: var(--sun); }
-.dair { position: absolute; z-index: 2; top: 14px; left: 14px; max-width: calc(100% - 110px); padding: 6px 11px; border-radius: 999px; background: rgba(12, 5, 34, 0.62); font-size: 13px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: none; }
-.dcard .sticker { display: block; position: absolute; z-index: 2; top: 12px; right: 12px; font-size: 22px; padding: 9px 11px; transform: rotate(7deg); text-shadow: none; }
-.deals .ctl { margin-top: 2px; }
 
-/* 5. Every destination: tabs, sort, then the list */
-.listbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 18px 0 0; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.tabs { display: flex; gap: 4px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
-.tabs::-webkit-scrollbar { display: none; }
-.tab { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 14px; color: var(--muted); white-space: nowrap; }
-.tab:hover { color: var(--ink); }
-.tab.is-on { background: var(--surface); color: var(--ink); }
-.tab .n { background: var(--sun); color: var(--sun-ink); border-radius: 999px; padding: 1px 6px; font-size: 12px; }
-.tab.is-on .n, .stab.is-on .n { box-shadow: none; }
-.sort { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); font-weight: 700; }
-.sort select { font: inherit; font-weight: 800; color: var(--ink); background: var(--surface); border: 0; border-radius: 999px; padding: 0 34px 0 14px; min-height: 44px; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; }
-.sort select option { color: var(--sun-ink); background: #ffffff; }
+/* 4. The photo cards (templates/site_card.html): the photo with the route's code on it, the
+      saving in yellow on a deal, then the city, the price and Rezervo. The whole card is the link. */
+.dcard { flex: 0 0 min(68vw, 270px); scroll-snap-align: start; border-radius: 10px; overflow: hidden; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+.dcard a { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
+.dphoto { position: relative; display: block; aspect-ratio: 5 / 4; overflow: hidden; background: var(--ink); }   /* black while there is no photo */
+.dphoto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dcode { position: absolute; left: 10px; top: 10px; padding: 5px 8px; border-radius: 4px; background: var(--ink); color: #ffffff; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.04em; }
+.sticker { position: absolute; right: 10px; top: 10px; padding: 6px 8px; border-radius: 4px; background: var(--sun); color: var(--ink); font-weight: 800; font-stretch: 76%; font-size: 24px; line-height: 1; }
+.dbody { flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px; padding: 14px; }
+.dcity { font-size: 20px; line-height: 1.15; font-weight: 800; font-stretch: 86%; }
+.dmeta { font-size: 14px; color: var(--muted); }
+.dfoot { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 4px 10px; margin-top: auto; padding-top: 12px; }
+.dprice { grid-column: 1; font-size: 40px; line-height: 1; font-weight: 800; font-stretch: 76%; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dprice small { font-size: 14px; font-weight: 600; font-stretch: 100%; letter-spacing: 0; }
+.dusual { grid-column: 1; font-size: 13px; color: var(--muted); }
+.dgo { grid-column: 2; grid-row: 1 / span 2; align-self: end; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 6px; background: var(--ink); color: #ffffff; font-weight: 700; font-size: 15px; }
+.dcard a:hover .dgo { background: var(--hover); }
+.more { margin-top: 12px; margin-bottom: 0; }
+.more a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
+.more .ic { width: 18px; height: 18px; stroke-width: 2.5; }
+
+/* 5. The Premium block (templates/site_premium.html): black, with who gets a deal first */
+.premium { padding-top: 56px; }
+.pbox { display: grid; gap: 28px; padding: 22px 20px 20px; border-radius: 10px; background: var(--ink); color: #ffffff; }
+.ptag { display: inline-flex; margin: 0 0 16px; padding: 5px 9px; border-radius: 4px; background: var(--sun); color: var(--ink); font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.pbox h2 { margin: 0; font-size: clamp(44px, 5.4vw, 72px); line-height: 0.9; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
+.ptext { margin: 14px 0 0; max-width: 32em; font-size: 16px; line-height: 1.45; color: #d5d9de; }
+.btn-premium { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; margin-top: 20px; padding: 0 22px 0 14px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 17px; text-decoration: none; }
+.btn-premium .ic { width: 28px; height: 28px; }
+.pwho h3 { margin: 0 0 8px; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--board-muted); }
+.pwho ol { list-style: none; margin: 0; padding: 0; }
+.pwho li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px 12px; padding: 14px 0; border-top: 1px solid var(--board-line); }
+.pwho li b { display: block; font-size: 18px; font-weight: 700; line-height: 1.2; }
+.pwho li span { display: block; margin-top: 2px; font-size: 13px; color: var(--board-muted); }
+.pwho strong { font-size: 28px; line-height: 1; font-weight: 800; font-stretch: 76%; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pwho i { grid-column: 1 / -1; display: block; height: 8px; border-radius: 4px; background: var(--board-muted); }   /* the bar is the wait: full for the free channel and the page */
+.pwho .first strong { color: var(--sun); }
+.pwho .first i { background: linear-gradient(90deg, var(--sun) 0 5%, var(--board-line) 5%); }   /* ...and a sliver for Premium */
+.pnote { margin: 0; padding-top: 12px; border-top: 1px solid var(--board-line); font-size: 13px; color: var(--board-muted); }
+
+/* 6. Every destination: the tabs and the sort, then one line per route (templates/site_row.html).
+      Here, for phones, a line is a compact block: code, then the details, then the price and
+      Rezervo on the right. On wide screens it becomes a line of a table (below). */
+.table { background: var(--panel); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 0 var(--line); }
+.listbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 12px 14px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border: 1.5px solid var(--line); border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; }
+.tab .n { padding: 2px 6px; border-radius: 3px; background: var(--ground); font-family: var(--mono); font-weight: 600; font-size: 12px; }
+.tab.is-on { border-color: var(--ink); background: var(--ink); color: #ffffff; }
+.tab.is-on .n { background: var(--sun); color: var(--ink); }
+.sort { align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--muted); }
+.sort select { min-height: 44px; padding: 0 10px; border: 1.5px solid var(--line); border-radius: 6px; background: var(--panel); font-weight: 700; font-size: 15px; color: var(--ink); }
 .js-only { display: none; }
 .js .js-only { display: inline-flex; }
-.status { margin: 12px 0 0; padding: 12px 14px; border-radius: 14px; background: var(--surface); font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
-.linkish { background: none; border: 0; padding: 0; color: var(--sun); font-weight: 800; text-decoration: underline; cursor: pointer; min-height: 32px; }
-/* Every destination is a boarding pass: the main part (flag stamp, city, the TIA - - > IATA route,
-   dates, airline), then a perforated tear line with two notches cut out of the edges, then the
-   stub with the fare and Rezervo where the barcode would be. Deals: yellow stub and outline, and a
-   red rubber stamp over the flight path, each one at a slightly different angle. */
-.list { display: grid; gap: 16px; padding-top: 18px; }
-.list .row { --stub: 124px; position: relative; display: flex; background: var(--paper); color: var(--sun-ink); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
-.list .row::before, .list .row::after { content: ""; position: absolute; z-index: 2; right: calc(var(--stub) - 11px); width: 22px; height: 22px; border-radius: 50%; background: var(--night); }   /* the notches: page-coloured circles, half cut off */
-.list .row::before { top: -11px; }
-.list .row::after { bottom: -11px; }
-.list .where { flex: 1 1 auto; min-width: 0; padding: 16px 14px 16px 16px; }
-.list .head { display: flex; align-items: center; gap: 11px; }
-.list .flag { flex: none; display: grid; place-items: center; width: 40px; height: 40px; font-size: 22px; line-height: 1; border: 2px dotted var(--c1); border-radius: 7px; transform: rotate(-4deg); }
-.list .city { font-size: 22px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; overflow-wrap: anywhere; }
-.list .airport { display: block; margin-top: 2px; font-size: 14px; font-weight: 700; color: var(--paper-muted); letter-spacing: 0; }
-.list .route { position: relative; display: flex; align-items: center; gap: 8px; margin: 13px 0 10px; }
-.list .code { font-size: 19px; font-weight: 900; letter-spacing: 0.05em; line-height: 1; }
-.list .path { position: relative; flex: 1 1 auto; min-width: 36px; border-top: 2px dashed #cdc6e4; }
-.list .path::after { content: ""; position: absolute; right: -2px; top: -10px; width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231a1030' transform='rotate(90 12 12)' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/%3E%3C/svg%3E") center / contain no-repeat; }
-.list .seal { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(var(--tilt, -7deg)); padding: 4px 8px 3px; border: 3px double #c3122f; border-radius: 6px; background: rgba(255, 255, 255, 0.82); color: #c3122f; font-size: 14px; font-weight: 900; letter-spacing: 0.14em; line-height: 1; text-transform: uppercase; white-space: nowrap; }
-.list .row:nth-child(3n + 2) .seal { --tilt: -3deg; }
-.list .row:nth-child(3n) .seal { --tilt: -11deg; }
-.list .dates { display: block; font-weight: 800; font-size: 15px; line-height: 1.3; }
-.list .lbl { margin-right: 6px; font-weight: 600; font-size: 13px; color: var(--paper-muted); }
-.list .meta { margin-top: 3px; color: var(--paper-muted); font-size: 13.5px; line-height: 1.3; }
-.list .meta a { color: var(--tg-deep); font-weight: 700; }
-.list .fare { flex: 0 0 var(--stub); display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding: 14px 12px 12px; border-left: 2px dashed #d6cfec; background: var(--field); }
-.list .price { margin: 0; line-height: 1; }
-.list .from { display: block; font-size: 13px; font-weight: 700; color: var(--paper-muted); }
-.list .amount { display: block; margin-top: 2px; font-size: 38px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.list .way { margin-top: 4px; font-size: 12.5px; line-height: 1.2; color: var(--paper-muted); }
-.list .usual { margin: 6px 0 12px; font-size: 13px; line-height: 1.35; color: var(--paper-muted); }
-.list .usual span, .list .saving { display: inline-block; white-space: nowrap; }
-.list .saving { color: #c3122f; font-weight: 900; }
-.list .book { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; background: var(--sun-ink); color: #ffffff; border-radius: 12px; font-weight: 800; font-size: 15px; text-decoration: none; }
-.list .book:hover { background: #33255e; }
-.list .row.deal { box-shadow: 0 0 0 3px var(--sun), 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
-.list .deal .fare { background: var(--sun); border-left-color: rgba(26, 16, 48, 0.3); }
-.list .deal .from, .list .deal .way, .list .deal .usual { color: var(--sun-ink); }
-.list .deal .saving { margin-top: 3px; padding: 1px 6px; border-radius: 6px; background: var(--sun-ink); color: var(--sun); }
-.js .prices[data-view="how"] .list, .js .prices[data-view="how"] .sort, .js .prices[data-view="how"] .status { display: none; }
-.js .prices:not([data-view="how"]) .how { display: none; }
-.how { padding-top: 8px; }
-.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 14px; }
-.steps li { counter-increment: step; background: var(--night-2); border-radius: 22px; padding: 20px 20px 20px 66px; position: relative; }
-.steps li::before { content: counter(step); position: absolute; left: 18px; top: 18px; width: 34px; height: 34px; border-radius: 50%; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 17px; display: grid; place-items: center; }
-.steps h3 { margin: 0 0 6px; font-size: 18px; font-weight: 800; }
-.steps p { margin: 0; color: var(--muted); font-size: 15px; }
-.steps a { color: var(--ink); }
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 0; padding: 12px 14px; background: var(--sun); font-size: 15px; }
+.linkish { min-height: 32px; padding: 0; border: 0; background: none; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.thead { display: none; }
+.list { list-style: none; margin: 0; padding: 0; }
+.row { display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; align-items: start; gap: 12px; padding: 14px; border-top: 1px solid var(--rule); }
+.row p, .row h3 { margin: 0; }
+.code { justify-self: start; padding: 3px 6px; border: 1.5px solid var(--ink); border-radius: 4px; font-family: var(--mono); font-weight: 600; font-size: 13px; line-height: 1.3; letter-spacing: 0.04em; }
+.info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.where { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; }
+.city { font-size: 18px; font-weight: 700; line-height: 1.2; }
+.city .airport { font-weight: 500; color: var(--muted); }
+.seal { padding: 2px 6px; border-radius: 3px; background: var(--sun); font-family: var(--mono); font-weight: 600; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.links { flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 0 12px; }
+.row .meta { font-size: 13px; line-height: 1.4; color: var(--muted); }
+.row .meta a { display: inline-block; padding: 3px 0; color: var(--ink); text-underline-offset: 3px; }
+.dates { font-size: 15px; font-weight: 600; line-height: 1.3; }
+.lbl { margin-right: 6px; font-weight: 500; font-size: 13px; color: var(--muted); }
+.fare { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; }
+.cost { order: 1; line-height: 1; }
+.price .from { font-size: 13px; color: var(--muted); }
+.amount { display: inline-block; font-size: 26px; font-weight: 800; font-stretch: 76%; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.row.deal .amount { padding: 4px 8px; border-radius: 4px; background: var(--sun); }
+.row .way, .row .usual { margin-top: 4px; font-size: 12px; color: var(--muted); white-space: nowrap; }
+.saving { order: 2; font-family: var(--mono); font-weight: 500; font-size: 13px; color: var(--muted); }
+.row.deal .saving { padding: 3px 6px; border-radius: 4px; background: var(--ink); color: var(--sun); font-weight: 600; }
+.book { order: 3; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 14px; border-radius: 6px; background: var(--ink); color: #ffffff; font-weight: 700; font-size: 15px; text-decoration: none; }
 
-/* 6. Travel services: white photo cards (eSIM, tickets, transfer, car rental, luggage, compensation, insurance, hotels) */
-.extras { position: relative; }
-.svcs { list-style: none; margin: 0; }
-.svc { flex: 0 0 min(74vw, 290px); scroll-snap-align: start; border-radius: 22px; overflow: hidden; background: var(--paper); color: var(--sun-ink); box-shadow: 0 24px 44px -28px rgba(0, 0, 0, 0.85); }
-.svc a { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
-.svc a:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 22px; }
-.svc img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--field); }
-.svc-body { flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 16px 18px 18px; }
-.svc-body b { font-size: 19px; font-weight: 900; line-height: 1.2; }
-.svc-body span { color: var(--paper-muted); font-size: 15px; line-height: 1.4; }
-.svc-body .svc-go { display: inline-flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 10px; min-height: 44px; color: var(--tg-deep); font-weight: 800; }
-.svc-go .ic { width: 18px; height: 18px; stroke-width: 2.5; }
-.svc a:hover .svc-go { text-decoration: underline; }
+/* 7. How it works: three numbered steps */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 12px; }
+.steps li { counter-increment: step; position: relative; padding: 16px 16px 16px 70px; background: var(--panel); border-radius: 10px; box-shadow: 0 1px 0 var(--line); }
+.steps li::before { content: counter(step); position: absolute; left: 16px; top: 16px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 6px; background: var(--sun); font-family: var(--mono); font-weight: 600; font-size: 18px; }
+.steps h3 { margin: 0 0 6px; font-size: 19px; line-height: 1.2; font-weight: 800; font-stretch: 88%; }
+.steps p { margin: 0; font-size: 15px; color: var(--muted); }
+.steps a { color: var(--ink); font-weight: 700; text-underline-offset: 3px; }
 
-/* 7. The Telegram band */
-/* The city guides: one wide photo tile per city page (/milan/, /rome/, ...). A row to swipe
-   on phones (it is a .strip), a grid from 700px up. A tile without a photo shows its country's
-   colours instead. */
-.gtiles { list-style: none; margin: 0; }
-.gtile { flex: 0 0 min(78%, 330px); scroll-snap-align: start; }
-.gtile a { position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; color: #ffffff; text-decoration: none; background: radial-gradient(80% 90% at 100% 0%, var(--c1) 0%, transparent 60%), var(--c2); box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.9); }
-.gtile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.gtile a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23, 11, 59, 0) 30%, rgba(23, 11, 59, 0.9) 100%); }
-.ginfo { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px; display: flex; flex-direction: column; gap: 2px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
-.ginfo b { font-size: 23px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
-.gflag { font-size: 0.8em; }
-.gtag { font-size: 14.5px; font-weight: 600; line-height: 1.25; color: rgba(255, 255, 255, 0.92); }
-.gread { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; font-size: 14px; font-weight: 800; color: var(--sun); }
-.gread .ic { width: 16px; height: 16px; stroke-width: 2.5; }
-.gprice { position: absolute; z-index: 1; top: 12px; right: 12px; padding: 8px 10px; border-radius: 11px; background: var(--sun); color: var(--sun-ink); font-weight: 900; font-size: 17px; line-height: 1; transform: rotate(3deg); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
-.gprice small { font-size: 12px; font-weight: 800; }
+/* 8. The city guides (templates/site_guide.html) and the travel services: photo on top, text below */
+.gtiles, .svcs { list-style: none; margin: 0; }
+.gtile, .svc { flex: 0 0 min(72vw, 280px); scroll-snap-align: start; }
+.gtile a, .svc a { display: flex; flex-direction: column; height: 100%; border-radius: 10px; overflow: hidden; background: var(--panel); box-shadow: 0 1px 0 var(--line); color: inherit; text-decoration: none; }
+.gtile a:hover, .svc a:hover { box-shadow: 0 0 0 2px var(--ink); }
+.gphoto { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--ink); }
+.gphoto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gprice { position: absolute; right: 10px; bottom: 10px; padding: 6px 8px; border-radius: 4px; background: var(--sun); font-weight: 800; font-stretch: 76%; font-size: 18px; line-height: 1; }
+.gprice small { font-size: 13px; font-weight: 600; font-stretch: 100%; }
+.ginfo { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 14px; }
+.ginfo b { font-size: 21px; line-height: 1.15; font-weight: 800; font-stretch: 86%; }
+.gtag { font-size: 14px; color: var(--muted); }
+.gread, .svc-body .svc-go { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 700; color: var(--ink); }
+.gread { margin-top: 6px; }
+.gread .ic, .svc-go .ic { width: 16px; height: 16px; stroke-width: 2.5; }
+.svc img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--ground); }
+.svc-body { flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 16px 12px; }
+.svc-body b { font-size: 19px; line-height: 1.2; font-weight: 800; font-stretch: 88%; }
+.svc-body span { font-size: 15px; line-height: 1.4; color: var(--muted); }
+.svc-body .svc-go { min-height: 44px; margin-top: auto; }
+.svc a:hover .svc-go { text-decoration: underline; text-underline-offset: 3px; }
 
-.join { margin-top: 44px; background: linear-gradient(160deg, #1a72cc, #0d3f9e); }   /* a full-width band, like the reference */
-.join-in { padding-top: 32px; padding-bottom: 32px; display: grid; gap: 18px; }
-.join h2 { margin: 0 0 6px; }
-.join .plane { width: 56px; height: 56px; margin-bottom: 14px; display: block; }
-.join p { margin: 0; font-size: 18px; max-width: 32em; }
-.btn-tg { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 24px; background: #ffffff; color: var(--tg-deep); font-weight: 800; text-decoration: none; border-radius: 999px; font-size: 17px; }
-.btn-tg:focus-visible { outline-color: #ffffff; }
-.join .premium { margin: 14px 0 0; font-size: 15px; }
-.premium a { color: #ffffff; font-weight: 700; }
-
-/* 8. The footer: the page ends on a slab of sunshine */
-.foot { margin-top: 56px; background: var(--sun); color: var(--sun-ink); padding: 40px 0 28px; }
-.fgrid { display: grid; gap: 24px 18px; grid-template-columns: 1fr 1fr; }
+/* 9. The yellow Telegram band, then the black footer */
+.join { margin-top: 64px; background: var(--sun); }
+.join-in { display: grid; gap: 22px; padding-top: 40px; padding-bottom: 40px; }
+.join h2 { margin: 0; font-size: clamp(48px, 6vw, 80px); line-height: 0.9; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
+.join p { margin: 14px 0 0; max-width: 30em; font-size: 17px; font-weight: 500; }
+.btn-tg { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 24px 0 14px; border-radius: 6px; background: var(--ink); color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; }
+.btn-tg .ic { width: 28px; height: 28px; }
+.join .pline { font-size: 15px; }
+.pline a { font-weight: 700; text-underline-offset: 3px; }
+.foot { background: var(--ink); color: #ffffff; padding: 48px 0 32px; }
+.fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 18px; }
 .fbrand { grid-column: 1 / -1; }
-.foot .brand { color: var(--sun-ink); margin: 0 0 10px; }
-.foot .mark { background: var(--sun-ink); color: var(--sun); }
-.fbrand p { margin: 0 0 14px; max-width: 28em; font-size: 15px; }
-.fpill { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 18px 0 10px; border-radius: 999px; background: var(--sun-ink); color: #ffffff; font-weight: 800; text-decoration: none; font-size: 15px; }
+.fbrand p { margin: 8px 0 14px; max-width: 26em; font-size: 15px; color: var(--board-muted); }
+.fpill { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 16px 0 10px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; }
 .fpill .ic { width: 24px; height: 24px; }
-.fcol h3 { margin: 0 0 10px; font-size: 16px; font-weight: 900; }
-.fcol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
-.fcol a { display: inline-flex; align-items: center; min-height: 38px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.fcol a:hover { text-decoration: underline; }
-.flegal { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(26, 16, 48, 0.2); font-size: 14px; }
-.flegal p { margin: 0 0 8px; max-width: 70ch; }
+.fcol h3 { margin: 0 0 8px; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--board-muted); }
+.fcol ul { list-style: none; margin: 0; padding: 0; }
+.fcol a { display: inline-flex; align-items: center; min-height: 40px; font-weight: 600; font-size: 15px; text-decoration: none; }
+.fcol a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.flegal { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--board-line); font-size: 14px; color: var(--board-muted); }
+.flegal p { margin: 0 0 8px; max-width: 76ch; }
+.flegal a { color: #ffffff; text-underline-offset: 3px; }
 .credits { margin: 6px 0 12px; }
-.credits summary { cursor: pointer; font-weight: 800; min-height: 44px; display: inline-flex; align-items: center; }
+.credits summary { display: inline-flex; align-items: center; min-height: 44px; cursor: pointer; font-weight: 700; color: #ffffff; }
 .credits ul { margin: 4px 0 0; padding-left: 18px; columns: 2 320px; column-gap: 32px; font-size: 13px; }
 .credits li { margin: 0 0 6px; break-inside: avoid; }
 
-/* Picked route (from the search card) */
-.dcard.is-picked, .list .row.is-picked { outline: 4px solid var(--sun); outline-offset: 4px; }
-.slide.is-picked .slide-in { outline: 4px solid var(--sun); outline-offset: 4px; border-radius: 28px; }
+/* The route picked in the search card: marked in the board, the cards and the table */
+.dcard.is-picked { outline: 3px solid var(--ink); outline-offset: 3px; }
+.brow.is-picked a { background: #1b1e23; outline: 2px solid var(--sun); outline-offset: -2px; }
+.row.is-picked { background: var(--tint); box-shadow: inset 0 0 0 3px var(--ink); }
 
 /* Wider screens */
+@media (min-width: 560px) {
+  .nav-tg { padding: 0 16px 0 10px; }
+  .nav-tg span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+  .bprice small { display: block; }
+}
 @media (min-width: 700px) {
-  /* As a grid the tiles line up exactly with the headings (a .wrap is 1080px wide with 16px of padding). */
-  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; overflow: visible; padding-inline: max(16px, calc((100% - 1080px) / 2 + 16px)); }
-  .scard { padding: 18px 18px 20px; }
-  .stab { font-size: 15px; padding: 0 16px; }
-  .stab:not(.is-on) .ic { display: inline-block; }
-  .stab .w { display: inline; }
-  .fields { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .scard { padding: 18px 20px 16px; }
+  .trip label { flex: 0 0 auto; padding: 0 14px 0 12px; }
+  .fields { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .field.from, .field.to { grid-column: span 2; }
   .sform.is-return .field.pax { grid-column: auto; }
+  .pbox { padding: 32px; }
+  .btn-premium, .btn-tg { display: inline-flex; }
+  .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; overflow: visible; }
+  .join-in { grid-template-columns: 1fr auto; align-items: center; padding-top: 56px; padding-bottom: 56px; }
   .fgrid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
   .fbrand { grid-column: auto; }
-  .steps { grid-template-columns: repeat(3, 1fr); }
-  .join-in { grid-template-columns: 1fr auto; align-items: center; padding-top: 44px; padding-bottom: 44px; }
 }
 @media (min-width: 900px) {
-  :root { --nav-h: 64px; }
-  .brand { font-size: 19px; }
-  .nav-links { display: flex; margin-right: 6px; }
-  .nav-tg { font-size: 15px; }
-  .slide-in { padding: 44px 16px 132px; }
-  .arc { display: block; position: absolute; right: 16px; top: 24px; width: 46%; max-width: 560px; height: auto; pointer-events: none; }
-  .slide-deal .sticker { top: 72px; right: 72px; font-size: 96px; padding: 22px 28px; border-radius: 28px; transform: rotate(8deg); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
-  .slide-price { font-size: 170px; }
-  .hero-ctl { bottom: 78px; }
-  .search { margin-top: -64px; }
-  .stab { flex: 0 1 auto; padding: 0 20px; }
-  .fields { display: flex; align-items: stretch; }
-  .field { flex: 1 1 0; }
-  .field.to { flex: 1.6 1 0; }
-  .field.from { flex: 1.1 1 0; margin-right: 44px; }
-  .hop { position: absolute; left: 0; top: 50%; transform: translate(0, -50%); right: auto; }
-  .fields .field.from + .hop { left: calc((100% - 48px) * 1.1 / 5.7 + 4px); }
-  .fields { position: relative; }
-  .field.from, .field.to, .sform.is-return .field.pax { grid-column: auto; }
-  .fields .btn-go { margin: 0; flex: 0 0 auto; }
-  .dcard { flex-basis: calc((100% - 40px) / 3); }
-  .svc { flex-basis: calc((100% - 40px) / 3); }
-  .strip { gap: 20px; }
-  .dprice { font-size: 46px; }
-  .list { grid-template-columns: 1fr 1fr; gap: 22px; }
-  .list .row { --stub: 150px; }
-  .list .where { padding: 18px 18px 18px 20px; }
-  .list .fare { padding: 16px 16px 14px; }
-  .list .amount { font-size: 44px; }
-  .shead { padding-top: 60px; }
-  .tab { font-size: 15px; padding: 0 14px; }
-  h2 { font-size: 32px; }
-  .deals .arrow, .extras .arrow { position: absolute; top: calc(50% + 20px); z-index: 3; background: var(--night-2); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4); }
-  .deals .arrow.prev, .extras .arrow.prev { left: calc(var(--gutter) - 56px); }
-  .deals .arrow.next, .extras .arrow.next { right: calc(var(--gutter) - 56px); }
-  .deals .ctl, .extras .ctl { justify-content: center; }
-  .deals .dots, .extras .dots { flex: 0 1 320px; }
+  :root { --nav-h: 68px; }
+  .brand { font-size: 20px; }
+  .nav-in { gap: 16px; }
+  .nav-links { display: flex; }
+  .hero-in { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: end; padding-top: 56px; padding-bottom: 132px; }
+  h1 { font-size: clamp(60px, 7.6vw, 112px); }
+  .kicker { font-size: 13px; }
+  .lead { margin-top: 28px; font-size: 20px; }
+  .stats { margin-top: 28px; gap: 10px; }
+  .stat { padding: 9px 14px; font-size: 15px; }
+  .stat b { font-size: 28px; }
+  .updated { margin-top: 18px; font-size: 14px; }
+  .brow:nth-child(n + 4) { display: block; }
+  .brow a { grid-template-columns: 48px minmax(0, 1fr) auto auto; gap: 14px; padding: 8px 20px; }
+  .board-head, .board-more { padding-left: 20px; padding-right: 20px; }
+  .bwhere b { font-size: 19px; }
+  .bprice { min-width: 62px; }
+  .bprice b { font-size: 32px; }
+  .search { margin-top: -92px; }
+  .fields { display: flex; align-items: stretch; gap: 10px; }
+  .field { flex: 1 1 0; min-height: 60px; }
+  .field.to { flex: 1.5 1 0; }
+  .fields .btn-go { flex: 0 0 auto; min-height: 60px; margin: 0; }
+  .shead { padding-top: 88px; padding-bottom: 28px; }
+  /* From here the rows of cards are grids, in line with the headings (a .wrap is 1240px wide). */
+  .strip { max-width: 1240px; margin-left: auto; margin-right: auto; overflow: visible; }
+  .stories, .svcs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .stories .dcard:nth-child(n + 7) { display: none; }   /* two rows of cards; the table below has every route */
+  .dphoto { aspect-ratio: 1 / 1; }
+  .premium { padding-top: 88px; }
+  .pbox { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; padding: 48px; }
+  .ptext { font-size: 18px; }
+  .pwho li b { font-size: 20px; }
+  .pwho strong { font-size: 32px; }
+  /* The price table: every part of a line gets its own column, under the black headings. The
+     two wrappers (.info, .fare) step aside so their parts line up in the line's grid; each part
+     names its column, so a line without a saving (say) keeps the others in place. */
+  .listbar { padding: 12px 20px; }
+  .thead, .row { display: grid; grid-template-columns: 64px minmax(0, 1.5fr) minmax(0, 1.1fr) minmax(0, 1.4fr) 68px 156px 104px; gap: 16px; align-items: center; }
+  .thead { padding: 11px 20px; background: var(--ink); color: var(--board-muted); font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+  .row { min-height: 64px; padding: 10px 20px; }
+  .row:hover { background: #f6f7f8; }
+  .row.is-picked, .row.is-picked:hover { background: var(--tint); }
+  .info, .fare { display: contents; }
+  .code, .where, .when, .flight, .saving, .cost, .book { grid-row: 1; }
+  .code { grid-column: 1; font-size: 14px; }
+  .where { grid-column: 2; }
+  .when { grid-column: 3; }
+  .flight { grid-column: 4; }
+  .flight .meta { font-size: 14px; color: var(--ink); }
+  .saving { grid-column: 5; justify-self: start; }
+  .cost { grid-column: 6; text-align: left; }
+  .book { grid-column: 7; }
+  .amount { font-size: 28px; }
+  .lbl, .price .from, .row .way { display: none; }   /* the headings say it */
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .steps li { padding: 80px 24px 24px; }
+  .steps li::before { left: 24px; top: 24px; }
+  .join { margin-top: 96px; }
 }
-@media (min-width: 1200px) {
-  .dcard, .svc { flex-basis: calc((100% - 60px) / 4); }
+@media (min-width: 1120px) {
+  .stories, .svcs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stories .dcard:nth-child(n + 7) { display: block; }
+  .stories .dcard:nth-child(n + 9) { display: none; }
 }
 @media (max-width: 360px) {
-  .dprice { font-size: 36px; }
-  .list .row { --stub: 108px; }
-  .list .amount { font-size: 32px; }
-  .list .code { font-size: 17px; }
-  .list .seal { font-size: 12px; letter-spacing: 0.1em; }
+  h1 { font-size: 54px; }
+  .row { grid-template-columns: 42px minmax(0, 1fr) auto; gap: 10px; padding: 12px; }
+  .amount { font-size: 24px; }
 }
+/* Motion: the photo leans in under the pointer and buttons give under a press. All of it is
+   skipped when the phone asks for less motion. */
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .gtile img { transition: transform 0.35s ease-out; }
-  .gtile a:hover img { transform: scale(1.05); }
-  .dcard img { transition: transform 0.5s ease-out; }
-  .list .row { transition: transform 0.18s ease-out; }
-  .list .row:hover { transform: translateY(-3px); }
-  .dcard:hover img { transform: scale(1.05); }   /* the photo leans in under the pointer */
-}
-
-/* Motion: one orchestrated welcome (cards land, stickers stamp on), plus press feedback.
-   All of it is skipped when the phone asks for less motion. */
-@media (prefers-reduced-motion: no-preference) {
-  .dcard { animation: land 0.7s cubic-bezier(0.2, 0.8, 0.2, 1.05) both; animation-delay: calc(var(--i, 0) * 90ms); }
-  .dcard .sticker { animation: stamp 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.25) both; animation-delay: calc(var(--i, 0) * 90ms + 380ms); }
-  .dcard:nth-child(2) { --i: 1; }
-  .dcard:nth-child(3) { --i: 2; }
-  .dcard:nth-child(4) { --i: 3; }
-  .dcard:nth-child(n + 5) { --i: 4; }
-  .slide-deal .sticker { animation: stamp 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.25) both 300ms; }
-  .nav-tg, .dot::before, .tab, .stab, .field { transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s; }
-  .dcard, .svc, .btn-go, .btn-tg, .btn-book, .book, .arrow, .fpill, .nav-tg { transition: transform 0.12s ease-out; }
-  .dcard:active, .svc:active { transform: scale(0.98); }
-  .btn-go:active, .btn-tg:active, .btn-book:active, .book:active, .arrow:active, .fpill:active, .nav-tg:active { transform: scale(0.96); }
-}
-@keyframes land {
-  from { opacity: 0; transform: translateY(28px) scale(0.94) rotate(-1.5deg); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes stamp {
-  from { opacity: 0; transform: rotate(18deg) scale(1.9); }
-  to { opacity: 1; transform: rotate(7deg) scale(1); }
+  .dphoto img, .gphoto img { transition: transform 0.35s ease-out; }
+  .dcard a:hover img, .gtile a:hover img { transform: scale(1.04); }
+  .book, .btn-go, .btn-tg, .btn-premium, .nav-tg, .fpill, .tab { transition: background-color 0.15s, transform 0.12s ease-out; }
+  .book:active, .btn-go:active, .btn-tg:active, .btn-premium:active, .nav-tg:active, .fpill:active { transform: scale(0.97); }
 }
 </style>
 {DRIVE}
@@ -505,20 +447,11 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
   <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
-  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-5-6.3"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.4-7-11.7a7 7 0 0 1 14 0c0 5.3-7 11.7-7 11.7z"/><circle cx="12" cy="9.8" r="2.5"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
-  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
-  <symbol id="i-sim" viewBox="0 0 24 24"><path d="M6.5 2.5h7l4 4V19a2.5 2.5 0 0 1-2.5 2.5H6.5A2.5 2.5 0 0 1 4 19V5a2.5 2.5 0 0 1 2.5-2.5z"/><rect x="8" y="11" width="6" height="6" rx="1"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5v-6z"/><path d="m9 12 2 2 4-4"/></symbol>
-  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 15.5V12l2.2-5.2A1.5 1.5 0 0 1 6.6 6h10.8a1.5 1.5 0 0 1 1.4.8L21 12v3.5"/><path d="M3 15.5h18M5 15.5v2.5M19 15.5v2.5M7 12h.01M17 12h.01"/></symbol>
-  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4.5M12 15.5h.01"/></symbol>
-  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
-  <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-depart" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
 </svg>
-{LANG_MENU}
 <header class="nav">
   <div class="nav-in wrap">
     <a class="brand" href="#top"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
@@ -527,37 +460,28 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       <a href="#destinacionet">{T_DESTINATIONS}</a>
       [[<a href="#udhezues" data-guides="{GUIDE_COUNT}">{T_GUIDES}</a>]]
       <a href="#si-funksionon">{T_HOW}</a>
-      <a href="{PREMIUM_LINK}">Premium</a>
+      <a href="#premium" data-hours="{PREMIUM_HOURS}">Premium</a>
     </nav>
-    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_TELEGRAM}</a>
+    {LANG_MENU}
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg><span>{T_JOIN_TELEGRAM}</span></a>
   </div>
 </header>
 <main id="top">
   <section class="hero" aria-label="{T_HERO}">
-    <ol class="hero-strip" aria-label="{T_BANNERS}">
-      <li class="slide slide-brand">
-        <div class="slide-in">
-          <svg class="arc" viewBox="0 0 600 420" aria-hidden="true"><path d="M10 400 C 150 150, 360 70, 548 44" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3" stroke-dasharray="2 16" stroke-linecap="round"/><circle cx="10" cy="400" r="7" fill="#ffffff" fill-opacity="0.6"/><use href="#i-plane" x="528" y="4" width="68" height="68" fill="#ffe14d"/></svg>
-          <h1><span>{T_HEADLINE_A}</span><span>{T_HEADLINE_B}</span></h1>
-          <p class="from-price">{T_FROM_PRICE}</p>
-          <a class="top-deal" href="#ofertat" data-slide="1"><span class="td"><small>{T_BEST_TODAY}</small><b>{T_TOP_DEAL}</b></span>[[<span class="td-save">-{TOP_SAVING}%</span>]]<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-          <p class="lead">{T_LEAD}</p>
-          <p class="stats"><span class="stat"><b data-count="{ROUTE_COUNT}">{ROUTE_COUNT}</b> {T_STAT_DESTINATIONS}</span>[[<span class="stat"><b data-count="{DEAL_COUNT}">{DEAL_COUNT}</b> {T_STAT_DEALS}</span>]]</p>
-          <p class="updated">{T_UPDATED_LINE}</p>
-          <p class="empty">{EMPTY}</p>
-        </div>
-      </li>
-      {HERO_SLIDES}
-    </ol>
-    <div class="hero-ctl"><div class="wrap"><div class="ctl" data-ctl="hero"></div></div></div>
+    <div class="hero-in wrap">
+      <div class="hero-text">
+        <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-depart"/></svg>{T_KICKER}</p>
+        <h1><span>{T_HEADLINE_A}</span><span>{T_HEADLINE_B}</span></h1>
+        <p class="lead">{T_LEAD}</p>
+        <p class="stats"><span class="stat"><b data-count="{ROUTE_COUNT}">{ROUTE_COUNT}</b> {T_STAT_DESTINATIONS}</span>[[<span class="stat"><b data-count="{DEAL_COUNT}">{DEAL_COUNT}</b> {T_STAT_DEALS}</span>]][[<span class="stat stat-from">{T_FROM_PRICE}</span>]]</p>
+        <p class="updated">{T_UPDATED_LINE}</p>
+        <p class="empty">{EMPTY}</p>
+      </div>
+      <div class="board"><div class="board-head"><h2>{T_BEST_TODAY}</h2><span>{T_ONE_WAY_PP}</span></div><ol>{HERO_ROWS}</ol><a class="board-more" href="#ofertat">{T_DISCOVER}<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a></div>
+    </div>
   </section>
   <section class="search wrap" id="kerko" aria-label="{T_SEARCH_FLIGHT}">
     <div class="scard">
-      <nav class="stabs" aria-label="{T_LOOKING_FOR}">
-        <a class="stab is-on" href="#kerko" aria-current="page"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg>{T_TAB_SEARCH}</a>
-        <a class="stab" href="#ofertat"><svg class="ic" aria-hidden="true"><use href="#i-percent"/></svg>{T_DEALS}[[ <span class="n">{DEAL_COUNT}</span>]]</a>
-        <a class="stab" href="#si-funksionon"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg>{T_HOW}</a>
-      </nav>
       <form class="sform" action="#destinacionet" method="get" data-lookahead="{LOOKAHEAD_DAYS}">
         <fieldset class="trip">
           <legend class="sr">{T_TRIP_TYPE}</legend>
@@ -565,12 +489,11 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
           <label><input type="radio" name="trip" value="return">{T_RETURN_TRIP}</label>
         </fieldset>
         <div class="fields">
-          <div class="field from"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>{T_FROM_PLACE}</span><span class="fvalue">Tirana<small>TIA</small></span></div>
-          <span class="hop" aria-hidden="true"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>
-          <label class="field to"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>{T_TO_PLACE}</span><select name="to"><option value="">{T_CHOOSE_DESTINATION}</option>{DESTINATION_OPTIONS}</select></label>
-          <label class="field date"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>{T_DEPARTURE}</span><input type="date" name="date" value="{DATE_MIN}" min="{DATE_MIN}" max="{DATE_MAX}"></label>
-          <label class="field back"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>{T_RETURN}</span><input type="date" name="back" min="{DATE_MIN}" max="{DATE_MAX}"></label>
-          <label class="field pax"><span class="flabel"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>{T_PASSENGERS}</span><select name="pax"><option value="1">1 {T_PASSENGER}</option><option value="2">2 {T_PASSENGERS_N}</option><option value="3">3 {T_PASSENGERS_N}</option><option value="4">4 {T_PASSENGERS_N}</option><option value="5">5 {T_PASSENGERS_N}</option><option value="6">6 {T_PASSENGERS_N}</option><option value="7">7 {T_PASSENGERS_N}</option><option value="8">8 {T_PASSENGERS_N}</option><option value="9">9 {T_PASSENGERS_N}</option></select></label>
+          <div class="field from"><span class="flabel">{T_FROM_PLACE}</span><span class="fvalue">Tirana<small>TIA</small></span></div>
+          <label class="field to"><span class="flabel">{T_TO_PLACE}</span><select name="to"><option value="">{T_CHOOSE_DESTINATION}</option>{DESTINATION_OPTIONS}</select></label>
+          <label class="field date"><span class="flabel">{T_DEPARTURE}</span><input type="date" name="date" value="{DATE_MIN}" min="{DATE_MIN}" max="{DATE_MAX}"></label>
+          <label class="field back"><span class="flabel">{T_RETURN}</span><input type="date" name="back" min="{DATE_MIN}" max="{DATE_MAX}"></label>
+          <label class="field pax"><span class="flabel">{T_PASSENGERS}</span><select name="pax"><option value="1">1 {T_PASSENGER}</option><option value="2">2 {T_PASSENGERS_N}</option><option value="3">3 {T_PASSENGERS_N}</option><option value="4">4 {T_PASSENGERS_N}</option><option value="5">5 {T_PASSENGERS_N}</option><option value="6">6 {T_PASSENGERS_N}</option><option value="7">7 {T_PASSENGERS_N}</option><option value="8">8 {T_PASSENGERS_N}</option><option value="9">9 {T_PASSENGERS_N}</option></select></label>
           <a class="btn-go" href="#destinacionet"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>{T_SEARCH_FLIGHTS}</a>
         </div>
         <p class="sfound" aria-live="polite" hidden></p>
@@ -578,7 +501,32 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       </form>
     </div>
   </section>
-  <section class="deals" id="ofertat" aria-labelledby="deals-h"><div class="wrap shead"><h2 id="deals-h">{T_DISCOVER}[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">{T_DISCOVER_HINT}</p></div><ol class="strip stories" aria-label="{T_DESTINATIONS}">{DEST_CARDS}</ol><div class="wrap"><div class="ctl" data-ctl="stories"></div></div></section>
+  <section class="deals" id="ofertat" aria-labelledby="deals-h"><div class="wrap shead"><h2 id="deals-h">{T_DISCOVER}[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">{T_DISCOVER_HINT}</p></div><ol class="strip stories" aria-label="{T_DESTINATIONS}">{DEST_CARDS}</ol><p class="more wrap"><a href="#destinacionet">{T_ALL_DESTINATIONS}<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a></p></section>
+  {PREMIUM}
+  <section class="prices wrap" id="destinacionet" aria-labelledby="all-h">
+    <div class="shead"><h2 id="all-h">{T_ALL_DESTINATIONS}[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">{T_ALL_HINT}</p></div>
+    <div class="table">
+      <div class="listbar">
+        <div class="tabs">
+          <a class="tab is-on" href="#destinacionet" data-filter="all">{T_TAB_ALL}[[ <span class="n">{ROUTE_COUNT}</span>]]</a>
+          <a class="tab" href="#ofertat" data-filter="deals">{T_DEALS}[[ <span class="n">{DEAL_COUNT}</span>]]</a>
+        </div>
+        <label class="sort js-only"><span>{T_SORT}</span><select name="sort"><option value="deals">{T_SORT_DEALS}</option><option value="price">{T_SORT_PRICE}</option><option value="saving">{T_SORT_SAVING}</option><option value="date">{T_SORT_DATE}</option></select></label>
+      </div>
+      <p class="status" hidden></p>
+      <div class="thead" aria-hidden="true" data-routes="{ROUTE_COUNT}"><span>{T_TH_CODE}</span><span>{T_TH_DESTINATION}</span><span>{T_DEPARTURE}</span><span>{T_TH_FLIGHT}</span><span>{T_TH_SAVING}</span><span>{T_ONE_WAY_PP}</span></div>
+      <ol class="board-list list" aria-label="{T_EVERY_DESTINATION}">[[{DEAL_ROWS}]][[{PRICE_ROWS}]]</ol>
+    </div>
+  </section>
+  <section class="how wrap" id="si-funksionon" aria-labelledby="how-h">
+    <div class="shead"><h2 id="how-h">{T_HOW}</h2></div>
+    <ol class="steps">
+      <li><h3>{T_HOW_A_TITLE}</h3><p>{T_HOW_A_TEXT}</p></li>
+      <li><h3>{T_HOW_B_TITLE}</h3><p>{T_HOW_B_TEXT}</p></li>
+      <li><h3>{T_HOW_C_TITLE}</h3><p>{T_HOW_C_TEXT}</p></li>
+    </ol>
+  </section>
+  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul></section>
   <section class="extras" id="sherbime" aria-labelledby="extras-h">
     <div class="wrap shead"><h2 id="extras-h">{T_EXTRAS_TITLE}</h2><p class="hint">{T_EXTRAS_HINT}</p></div>
     <ul class="strip svcs" aria-label="{T_EXTRAS_LABEL}">
@@ -591,39 +539,16 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       <li class="svc"><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/insurance.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_INSURANCE_TITLE}</b><span>{T_INSURANCE_TEXT}</span><span class="svc-go">{T_INSURANCE_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/hotel.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_HOTEL_TITLE}</b><span>{T_HOTEL_TEXT}</span><span class="svc-go">{T_HOTEL_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
     </ul>
-    <div class="wrap"><div class="ctl" data-ctl="services"></div></div>
   </section>
-  <section class="prices wrap" id="destinacionet" aria-labelledby="all-h">
-    <div class="shead"><h2 id="all-h">{T_ALL_DESTINATIONS}[[ <span class="count">{ROUTE_COUNT}</span>]]</h2><p class="hint">{T_ALL_HINT}</p></div>
-    <div class="listbar">
-      <div class="tabs">
-        <a class="tab is-on" href="#destinacionet" data-filter="all">{T_TAB_ALL}[[ <span class="n">{ROUTE_COUNT}</span>]]</a>
-        <a class="tab" href="#ofertat" data-filter="deals">{T_DEALS}[[ <span class="n">{DEAL_COUNT}</span>]]</a>
-        <a class="tab" href="#si-funksionon" data-filter="how">{T_HOW}</a>
-      </div>
-      <label class="sort js-only"><span>{T_SORT}</span><select name="sort"><option value="deals">{T_SORT_DEALS}</option><option value="price">{T_SORT_PRICE}</option><option value="saving">{T_SORT_SAVING}</option><option value="date">{T_SORT_DATE}</option></select></label>
-    </div>
-    <p class="status" hidden></p>
-    <ol class="board list" aria-label="{T_EVERY_DESTINATION}">[[{DEAL_ROWS}]][[{PRICE_ROWS}]]</ol>
-    <div class="how" id="si-funksionon">
-      <ol class="steps">
-        <li><h3>{T_HOW_A_TITLE}</h3><p>{T_HOW_A_TEXT}</p></li>
-        <li><h3>{T_HOW_B_TITLE}</h3><p>{T_HOW_B_TEXT}</p></li>
-        <li><h3>{T_HOW_C_TITLE}</h3><p>{T_HOW_C_TEXT}</p></li>
-      </ol>
-    </div>
-  </section>
-  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul></section>
   <section class="join" id="telegram" aria-labelledby="join-h">
     <div class="join-in wrap">
       <div>
-        <svg class="plane" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffffff"/><path fill="#1a72cc" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></svg>
         <h2 id="join-h">{T_JOIN_TITLE}</h2>
         <p>{T_JOIN_TEXT}</p>
       </div>
       <div>
-        <a class="btn-tg" href="{TELEGRAM_URL}">{T_JOIN_CHANNEL}</a>
-        <p class="premium">{T_PREMIUM_EARLIER} <a href="{PREMIUM_LINK}">{T_BECOME_PREMIUM}</a></p>
+        <a class="btn-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_CHANNEL}</a>
+        <p class="pline">{T_PREMIUM_EARLIER} <a href="#premium">{T_BECOME_PREMIUM}</a></p>
       </div>
     </div>
   </section>
@@ -662,7 +587,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
         <h3>{T_COMMUNITY}</h3>
         <ul>
           <li><a href="{TELEGRAM_URL}">{T_FOOT_CHANNEL}</a></li>
-          <li><a href="{PREMIUM_LINK}">{T_FOOT_PREMIUM}</a></li>
+          <li><a href="#premium">{T_FOOT_PREMIUM}</a></li>
         </ul>
       </nav>
     </div>
@@ -678,15 +603,13 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 </footer>
 <script>
 /* Progressive extras only: the page works the same with JavaScript off.
-   1) The nav's Telegram button lights up once the hero has scrolled away.
-   2) The carousels (hero banners, destination cards, travel services) get arrows, one dot per page (a progress bar
-      when there would be many), arrow keys, and the hero advances by itself until it is touched.
-   3) The search card builds a tracked Aviasales link from the chosen destination, date and
+   1) The price table's tabs and sort, and the destination chosen in the search card, share one
+      small state: the chosen route is marked in the board, the cards and the table, nothing is
+      hidden because of it.
+   2) The search card builds a tracked Aviasales link from the chosen destination, date and
       passengers, re-using the query string of a Rezervo link so the affiliate marker is kept
       (also when that link is wrapped in a tp.media redirect).
-   4) The list's tabs and sort, and the destination chosen in the search card, share one small
-      state: the chosen route is highlighted in the list and the cards, nothing is hidden.
-   5) The counters in the hero count up once. */
+   3) The counters in the hero count up once. */
 (function () {
   var doc = document;
   doc.documentElement.classList.add('js');
@@ -699,139 +622,9 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   function fill(text, values) { return text.replace(/\{([a-z]+)\}/g, function (all, name) { return values[name]; }); }
   function qs(sel, el) { return (el || doc).querySelector(sel); }
   function qsa(sel, el) { return Array.prototype.slice.call((el || doc).querySelectorAll(sel)); }
-  function make(tag, cls, inner) { var e = doc.createElement(tag); if (cls) { e.className = cls; } if (inner) { e.innerHTML = inner; } return e; }
-  function icon(name) { return '<svg class="ic" aria-hidden="true"><use href="#i-' + name + '"/></svg>'; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : '&quot;'; }); }
 
-  /* 1. Nav state */
-  var hero = qs('.hero');
-  if (hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      doc.body.classList.toggle('past-hero', !entries[0].isIntersecting);
-    }, { rootMargin: '-64px 0px 0px 0px', threshold: 0 }).observe(hero);
-  }
-
-  /* 2. Carousels */
-  function carousel(strip, ctl, label, options) {
-    options = options || {};
-    if (!strip || !ctl) { return null; }
-    var slides = qsa(':scope > li', strip);
-    if (slides.length < 2) { return null; }
-    var prev = make('button', 'arrow prev', icon('left'));
-    var next = make('button', 'arrow next', icon('right'));
-    prev.type = next.type = 'button';
-    prev.setAttribute('aria-label', label + ': ' + words.prev);
-    next.setAttribute('aria-label', label + ': ' + words.next);
-    var dots = make('div', 'dots');
-    ctl.appendChild(prev); ctl.appendChild(dots); ctl.appendChild(next);
-    var buttons = [], thumb = null, visible = 1, pages = 1, page = 0, timer = null, waiting = false;
-    function offset(i) { return slides[i].offsetLeft - slides[0].offsetLeft; }
-    function maxScroll() { return Math.max(0, strip.scrollWidth - strip.clientWidth); }
-    function pageStart(p) { return Math.min(offset(Math.min(slides.length - 1, p * visible)), maxScroll()); }
-    /* How many slides fit side by side decides how many pages (dots) there are. */
-    function measure() {
-      var style = getComputedStyle(strip);
-      var usable = strip.clientWidth - (parseFloat(style.paddingLeft) || 0) - (parseFloat(style.paddingRight) || 0);
-      var step = offset(1) || slides[0].offsetWidth || 1;
-      var gap = Math.max(0, step - slides[0].offsetWidth);
-      visible = Math.max(1, Math.floor((usable + gap + 1) / step));
-      pages = Math.max(1, Math.ceil(slides.length / visible));
-      ctl.classList.toggle('is-idle', pages <= 1);   /* everything fits: hide the arrows and dots */
-      dots.textContent = '';
-      buttons = []; thumb = null;
-      if (pages <= 6) {
-        for (var i = 0; i < pages; i++) { buttons.push(dot(i)); }
-      } else {
-        var bar = make('div', 'bar');
-        thumb = doc.createElement('i');
-        bar.appendChild(thumb);
-        dots.appendChild(bar);
-      }
-      paint();
-    }
-    function dot(i) {
-      var b = make('button', 'dot');
-      b.type = 'button';
-      b.setAttribute('aria-label', label + ' ' + (i + 1) + ' ' + words.of + ' ' + pages);
-      b.addEventListener('click', function () { stop(); go(i); });
-      dots.appendChild(b);
-      return b;
-    }
-    function go(p) {
-      p = Math.max(0, Math.min(pages - 1, p));
-      strip.scrollTo({ left: pageStart(p), behavior: smooth });
-    }
-    function move(dir) {
-      var target = page + dir;
-      if (options.loop) { target = (target + pages) % pages; }
-      go(target);
-    }
-    /* Scroll one slide into view (the search card uses it for the chosen route's card). */
-    function toSlide(i) {
-      if (i < 0 || i >= slides.length) { return; }
-      strip.scrollTo({ left: Math.min(offset(i), maxScroll()), behavior: smooth });
-    }
-    function paint() {
-      var x = strip.scrollLeft, max = maxScroll(), dist = Infinity;
-      for (var p = 0; p < pages; p++) { var d = Math.abs(pageStart(p) - x); if (d < dist) { dist = d; page = p; } }
-      buttons.forEach(function (b, i) {
-        b.classList.toggle('on', i === page);
-        b.setAttribute('aria-current', i === page ? 'true' : 'false');
-      });
-      if (thumb) {
-        thumb.style.width = Math.max(8, strip.clientWidth / strip.scrollWidth * 100) + '%';
-        thumb.style.left = (x / strip.scrollWidth * 100) + '%';
-      }
-      prev.disabled = !options.loop && x <= 2;
-      next.disabled = !options.loop && x >= max - 2;
-    }
-    /* Auto-advance (hero only): every 6.5 s while the strip is on screen and the tab is visible;
-       never under reduced motion; over for good at the first touch, wheel, click or focus. */
-    function start() { if (!options.auto || reduce || timer) { return; } timer = setInterval(function () { if (!doc.hidden) { move(1); } }, 6500); }
-    function pause() { if (timer) { clearInterval(timer); timer = null; } }
-    function stop() { options.auto = false; pause(); }
-    prev.addEventListener('click', function () { stop(); move(-1); });
-    next.addEventListener('click', function () { stop(); move(1); });
-    strip.addEventListener('pointerdown', stop, { passive: true });
-    strip.addEventListener('touchstart', stop, { passive: true });
-    strip.addEventListener('wheel', stop, { passive: true });
-    strip.addEventListener('focusin', stop);
-    strip.addEventListener('scroll', function () {
-      if (!waiting) { waiting = true; requestAnimationFrame(function () { waiting = false; paint(); }); }
-    }, { passive: true });
-    strip.addEventListener('keydown', function (e) {
-      if (e.target.closest('select, input')) { return; }
-      if (e.key === 'ArrowRight') { e.preventDefault(); stop(); move(1); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); stop(); move(-1); }
-    });
-    if (!strip.hasAttribute('tabindex')) { strip.setAttribute('tabindex', '0'); }
-    var resizing = null;
-    window.addEventListener('resize', function () { clearTimeout(resizing); resizing = setTimeout(measure, 120); });
-    if (options.auto && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) { start(); } else { pause(); }
-      }, { threshold: 0.4 }).observe(strip);
-    } else {
-      start();
-    }
-    measure();
-    if (doc.fonts && doc.fonts.ready) { doc.fonts.ready.then(measure); }
-    return { go: go, toSlide: toSlide, stop: stop, slides: slides };
-  }
-  var heroStrip = carousel(qs('.hero-strip'), qs('[data-ctl="hero"]'), words.banner, { loop: true, auto: true });
-  var stories = carousel(qs('.stories'), qs('[data-ctl="stories"]'), words.destination, {});
-  carousel(qs('.svcs'), qs('[data-ctl="services"]'), words.service, {});
-  /* The "best deal today" chip on the first slide jumps to that deal's banner. */
-  qsa('[data-slide]').forEach(function (chip) {
-    chip.addEventListener('click', function (e) {
-      if (!heroStrip) { return; }
-      e.preventDefault();
-      heroStrip.stop();
-      heroStrip.toSlide(parseInt(chip.getAttribute('data-slide'), 10) || 0);
-    });
-  });
-
-  /* 4. One state for the list: which tab, which sort, which route was picked in the search card */
+  /* 1. One state for the table: which tab, which sort, which route was picked in the search card */
   var prices = qs('.prices');
   var list = qs('.list');
   var rows = list ? qsa(':scope > .row', list) : [];
@@ -839,6 +632,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   var tablist = prices ? qs('.tabs', prices) : null;
   var status = prices ? qs('.status', prices) : null;
   var sortBox = prices ? qs('.sort select', prices) : null;
+  var cards = qs('.stories');
   var state = { view: 'all', sort: 'deals', pick: '' };
   rows.forEach(function (row, i) { row.setAttribute('data-order', i); });
   function num(row, attr) { return parseFloat(row.getAttribute(attr)) || 0; }
@@ -851,15 +645,10 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
   };
   function cityOf(iata) {
     var row = rows.filter(function (r) { return r.getAttribute('data-iata') === iata; })[0];
-    if (!row) { return iata; }
-    var city = qs('.city', row).cloneNode(true);
-    var flag = qs('.flag', city);
-    if (flag) { flag.remove(); }   /* the flag emoji reads badly in the middle of a sentence */
-    return city.textContent.replace(/\s+/g, ' ').trim();
+    return row ? qs('.city', row).textContent.replace(/\s+/g, ' ').trim() : iata;
   }
   function apply() {
     if (!prices) { return; }
-    prices.setAttribute('data-view', state.view);
     tabs.forEach(function (tab) {
       var on = tab.getAttribute('data-filter') === state.view;
       tab.classList.toggle('is-on', on);
@@ -876,7 +665,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       if (visible) { shown++; }
       row.classList.toggle('is-picked', !!state.pick && row.getAttribute('data-iata') === state.pick);
     });
-    qsa('.stories .dcard, .slide-deal').forEach(function (card) {
+    qsa('.dcard, .brow').forEach(function (card) {
       card.classList.toggle('is-picked', !!state.pick && card.getAttribute('data-iata') === state.pick);
     });
     if (!status) { return; }
@@ -894,9 +683,10 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     state.pick = iata || '';
     if (iata) { state.view = 'all'; }
     apply();
-    if (iata && stories) {
-      var i = stories.slides.map(function (s) { return s.getAttribute('data-iata'); }).indexOf(iata);
-      if (i >= 0) { stories.toSlide(i); }
+    /* On a phone the cards are a row to swipe: bring the picked route's card into view. */
+    var card = iata && cards ? qs('.dcard.is-picked', cards) : null;
+    if (card && cards.scrollWidth > cards.clientWidth) {
+      cards.scrollTo({ left: Math.max(0, card.offsetLeft - cards.offsetLeft - 16), behavior: smooth });
     }
   }
   if (tablist) {
@@ -922,15 +712,9 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
       if (e.target.hasAttribute('data-jump')) { var picked = qs('.list .row.is-picked'); if (picked) { picked.scrollIntoView({ behavior: smooth, block: 'center' }); } }
     });
   }
-  function fromHash() {
-    if (!prices) { return; }
-    if (location.hash === '#si-funksionon') { state.view = 'how'; state.pick = ''; apply(); prices.scrollIntoView({ behavior: smooth, block: 'start' }); }
-  }
-  window.addEventListener('hashchange', fromHash);
   apply();
-  fromHash();
 
-  /* 3. The search card */
+  /* 2. The search card */
   var form = qs('.sform');
   if (form) {
     var to = qs('[name="to"]', form), dep = qs('[name="date"]', form), back = qs('[name="back"]', form);
@@ -1021,7 +805,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     update();
   }
 
-  /* 5. Counters count up once, when they come into view */
+  /* 3. Counters count up once, when they come into view */
   var counters = qsa('[data-count]');
   if (counters.length && !reduce && 'IntersectionObserver' in window) {
     var watch = new IntersectionObserver(function (entries) {

@@ -121,7 +121,6 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
 
     assert "<title>Fluturime të lira Tirana – Milan: çmime dhe udhëzues | FlyFromTirana</title>" in page
     assert '<link rel="canonical" href="https://flyfromtirana.al/milan/">' in page
-    assert '<body class="c-it">' in page                                     # Italy's colours
     assert 'nga <b>€19</b> vajtje' in page                                   # the cheapest of the city's airports
     # One ticket per airport, cheapest first; only Bergamo is a deal.
     assert page.count('<li class="fare') == 2
@@ -220,7 +219,7 @@ def test_city_without_a_wide_photo_still_gets_a_tile_and_a_page(config, storage)
                   budget="", when="", tips=[])
     guides = {"Milan": plain}
     tile = guide_tiles(guides, build_offers(config, storage, NOW), config)
-    assert '<li class="gtile c-it">' in tile and "<img" not in tile          # the country's colours instead
+    assert '<li class="gtile">' in tile and "<img" not in tile               # a plain black top instead
     assert '<a href="no-photo-here/">' in tile and "gtag" not in tile and not PLACEHOLDER.search(tile)
     page = render_guide_page(plain, guides, build_offers(config, storage, NOW), config,
                              LinkBuilder(config.website.links, "1"), updated_at=NOW, now=NOW)

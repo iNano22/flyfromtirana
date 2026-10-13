@@ -1,6 +1,6 @@
 """The static website: which routes it lists, in what order, and what the page contains."""
 from dataclasses import replace
-from datetime import date, timedelta
+from datetime import date, time, timedelta
 from urllib.parse import quote
 
 import pytest
@@ -149,21 +149,16 @@ def test_page_contains_rows_links_and_no_leftover_placeholders(config, storage):
     page = render_site(offers, config, links, updated_at=NOW, now=NOW)
 
     # The data attributes feed the page's JavaScript (search card, sort, filter).
-    assert '<li class="row deal c-it" data-iata="BGY" data-date="2026-11-21" data-price="19" data-saving="68">' in page
-    assert '<li class="row c-at" data-iata="VIE" data-date="2026-11-11" data-price="45" data-saving="10">' in page
+    assert '<li class="row deal" data-iata="BGY" data-date="2026-11-21" data-price="19" data-saving="68">' in page
+    assert '<li class="row" data-iata="VIE" data-date="2026-11-11" data-price="45" data-saving="10">' in page
     assert page.index('data-iata="BGY"') < page.index('data-iata="VIE"')
     assert "€19" in page and "zakonisht €60" in page and "-68%" in page
     assert "që nga <b>€19</b>" in page                     # MIN_PRICE: the cheapest price on the page
-    # The best deal's chip on the first slide: city, price and saving.
-    assert '<b>Milan (Bergamo) nga €19</b></span><span class="td-save">-68%</span>' in page
-    # The search card's strip: search, deals, how it works (Premium lives in the nav only).
-    assert 'class="stab" href="#si-funksionon"' in page
-    assert 'class="stab" href="https://t.me' not in page
+    # The board at the top: one line per route, the deal first, with its saving and its price.
+    assert '<li class="brow deal" data-iata="BGY">' in page and '<li class="brow" data-iata="VIE">' in page
+    assert '<span class="bsave">-68%</span>' in page and '<small>zakonisht €60</small><b>€19</b>' in page
     assert 'Ofertat <span class="n">1</span>' in page      # DEAL_COUNT: one deal, on the Ofertat tabs
     assert '<span class="count">2</span>' in page          # ROUTE_COUNT: two routes
-    # The deal is a banner in the hero carousel, the other route is not.
-    assert '<li class="slide slide-deal c-it" data-iata="BGY">' in page
-    assert 'slide-deal c-at' not in page
     # The search card: one <option> per route, deals grouped first, and the date window.
     assert '<optgroup label="Ofertat e momentit"><option value="BGY" data-date="2026-11-21" data-price="19">Milan (Bergamo), nga €19</option></optgroup>' in page
     assert '<optgroup label="Destinacionet e tjera"><option value="VIE" data-date="2026-11-11" data-price="45">Vienna, nga €45</option></optgroup>' in page
@@ -192,7 +187,7 @@ def test_build_site_writes_files_and_handles_an_empty_database(config):
     page = index.read_text(encoding="utf-8")
     assert "Ende nuk ka çmime" in page
     assert '<li class="row' not in page and "Përditësuar" not in page
-    assert 'class="top-deal"' not in page                  # no deals, no chip on the first slide
+    assert 'class="board"' not in page                     # no prices, no board at the top
 
 
 def test_cli_builds_from_a_config_file(tmp_path, monkeypatch):
@@ -203,21 +198,45 @@ def test_cli_builds_from_a_config_file(tmp_path, monkeypatch):
     assert (tmp_path / "site" / "index.html").exists()
 
 
-def test_hero_shows_at_most_three_deals(config, storage):
+def test_hero_board_stops_at_its_number_of_lines(config, storage, monkeypatch):
+    monkeypatch.setattr("src.website.HERO_ROWS", 3)
     for i, iata in enumerate(["BGY", "VIE", "ATH", "MUC", "FCO"]):
         seed_history(storage, [80] * 12, destination=iata, days_ago=2)
         latest_scan(storage, iata, {NOV + timedelta(days=i): 20 + i})   # every route is a deal (-70%+)
     offers = build_offers(config, storage, NOW)
     assert all(o.is_deal for o in offers) and len(offers) == 5
     page = render_site(offers, config, LinkBuilder(config.links, "1"), updated_at=NOW, now=NOW)
-    assert page.count('class="slide slide-deal') == 3                   # the three best, biggest saving first
-    assert page.count('<li class="row deal') == 5                       # 5 rows in the list...
-    assert page.count('<li class="dcard deal') == 5                     # ...and 5 photo cards in the carousel
+    assert page.count('<li class="brow deal') == 3                      # the three best, biggest saving first
+    assert page.count('<li class="row deal') == 5                       # 5 lines in the table...
+    assert page.count('<li class="dcard deal') == 5                     # ...and 5 photo cards
+
+
+def test_premium_block_shows_only_while_there_is_a_premium_channel(config, storage):
+    two_routes(storage)
+    links = LinkBuilder(config.links, "1")
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert 'id="premium"' not in page and 'href="#premium"' not in page     # no channel: no block, no links to it
+
+    # With a channel: what config.yaml says about it, and nothing more.
+    premium = replace(with_premium(config).premium, join_link="https://t.me/+abc", scan_every_minutes=15)
+    config = replace(config, premium=premium, quiet_hours=(time(23, 0), time(8, 0)))
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert '<section class="premium wrap" id="premium"' in page
+    assert '<a class="btn-premium" href="https://t.me/+abc">' in page
+    assert "i marrin 6 orë më vonë" in page and "<strong>+6 orë</strong>" in page
+    assert "kontrollohen çdo 15 minuta" in page and "nga ora 23:00 deri në 08:00" in page
+    assert page.count('href="#premium"') == 3                               # the top bar, the Telegram band, the footer
+
+    # No quick premium scans and no quiet hours: the sentences about them are left out.
+    config = replace(config, premium=replace(premium, scan_every_minutes=0), quiet_hours=None)
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert 'id="premium"' in page and "minuta" not in page and "Natën" not in page
+    assert not PLACEHOLDER.search(page)
 
 
 def test_site_templates_lose_their_comments():
     assert "<!--" in load_template("site_row.html")        # the note for editors is in the file...
-    for name in ("site.html", "site_row.html", "site_hero.html", "site_card.html"):
+    for name in ("site.html", "site_row.html", "site_hero.html", "site_card.html", "site_premium.html"):
         assert "<!--" not in load_site_template(name)      # ...but never in what gets rendered
 
 
@@ -243,9 +262,9 @@ def test_photo_cards_show_every_route_deals_first(config, storage):
     two_routes(storage)
     page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
                        updated_at=NOW, now=NOW)
-    cards = page[page.index('class="strip stories"'):page.index('data-ctl="stories"')]
+    cards = page[page.index('class="strip stories"'):page.index("</ol>", page.index('class="strip stories"'))]
     assert cards.index('data-iata="BGY"') < cards.index('data-iata="VIE"')      # the deal comes first
-    assert '<li class="dcard deal c-it" data-iata="BGY">' in cards
+    assert '<li class="dcard deal" data-iata="BGY">' in cards
     assert '<img src="./img/dest/bgy.webp"' in cards                           # the route's photo
     assert "Milan, Italy" in cards and "Vienna, Austria" in cards              # city and country, in English
     assert "Milano" not in page and "Vjenë" not in page                        # no Albanian city names
@@ -253,14 +272,14 @@ def test_photo_cards_show_every_route_deals_first(config, storage):
     assert '<span class="dair">Bergamo</span>' in cards                        # the airport, for multi-airport cities
 
 
-def test_route_without_a_photo_keeps_its_colours(config, storage):
+def test_route_without_a_photo_gets_a_plain_card(config, storage):
     odd = Route(iata="XYZ", city="Diku", city_en="Somewhere", flag="🇮🇹")
     config = replace(config, routes=[odd])
     latest_scan(storage, "XYZ", {NOV: 30})
     page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.links, "1"),
                        updated_at=NOW, now=NOW)
     card = page[page.index('<li class="dcard'):page.index("</li>", page.index('<li class="dcard'))]
-    assert 'class="dcard c-it"' in card and "<img" not in card
+    assert 'class="dcard"' in card and "<img" not in card
 
 
 def test_build_copies_the_photos_and_shows_no_credits(config, storage):
