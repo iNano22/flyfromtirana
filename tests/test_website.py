@@ -96,6 +96,20 @@ def test_premium_deals_show_once_premium_had_them_long_enough(config, storage):
     assert bgy.is_deal and [q.price for q in bgy.quotes] == [19, 20]
 
 
+def test_a_cheaper_price_waits_again_although_premium_had_the_date(config, storage):
+    config = with_premium(config)
+    two_routes(storage)
+    # Premium was sent 21 Nov at €25 seven hours ago. Today's €19 is a cheaper price band: premium
+    # has not had that price yet, so the page keeps it back, like the free channel does.
+    premium_posted(storage, "BGY", NOV + timedelta(days=20), 25, hours_ago=7)
+    bgy = next(o for o in build_offers(config, storage, NOW) if o.route.iata == "BGY")
+    assert bgy.best.price == 61
+    # Once premium has had €19 itself for long enough, it shows.
+    premium_posted(storage, "BGY", NOV + timedelta(days=20), 19, hours_ago=7)
+    bgy = next(o for o in build_offers(config, storage, NOW) if o.route.iata == "BGY")
+    assert bgy.is_deal and bgy.best.price == 19
+
+
 def test_ordinary_prices_never_wait_for_premium(config, storage):
     config = with_premium(config)
     two_routes(storage)

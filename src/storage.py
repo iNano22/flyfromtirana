@@ -144,12 +144,16 @@ class Storage:
         return row is not None
 
     def first_posted_at(self, channel: str, origin: str, destination: str, depart_date: date,
-                        since: datetime, until: datetime) -> datetime | None:
-        """When this route + date was first posted on `channel` between since and until, or None."""
+                        price_band: int, since: datetime, until: datetime) -> datetime | None:
+        """When this route + date was first posted on `channel` at this price band or a cheaper
+        one, between since and until, or None.
+
+        A post at a pricier band doesn't count: the channel had the date then, but not this price.
+        """
         row = self.conn.execute(
             "SELECT MIN(posted_at) FROM posted_deals WHERE channel = ? AND origin = ? AND destination = ?"
-            " AND depart_date = ? AND posted_at >= ? AND posted_at <= ?",
-            (channel, origin, destination, depart_date.isoformat(), to_iso(since), to_iso(until)),
+            " AND depart_date = ? AND price_band <= ? AND posted_at >= ? AND posted_at <= ?",
+            (channel, origin, destination, depart_date.isoformat(), price_band, to_iso(since), to_iso(until)),
         ).fetchone()
         return datetime.fromisoformat(row[0]) if row and row[0] else None
 

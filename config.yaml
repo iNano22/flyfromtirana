@@ -47,7 +47,9 @@ quiet_hours:                       # still scan at night, but don't post (local 
 # only posts a deal after premium has had it for free_delay_hours (at its next
 # 3-hour run after that), with a "Premium members got this X hours earlier ·
 # Join" line. The website waits the same way: it leaves a premium deal's price
-# out until the free channel may have it.
+# out until the free channel may have it. The wait is per price: when a date's
+# price falls into a cheaper band (price_band_eur), premium gets the new price
+# first and the hours count from that post.
 # To turn on: create the private channel, add the bot as admin, set the
 # TELEGRAM_PREMIUM_CHANNEL_ID secret, paste the paid invite link below, enabled: true.
 premium:
@@ -55,7 +57,7 @@ premium:
   free_delay_hours: 6
   scan_every_minutes: 15           # premium checks prices this often and posts a new deal straight away
                                    # (outside quiet hours). 0 = only with the full run every 3 hours.
-  max_posts_per_run: 4
+  max_posts_per_run: 1             # per scan, so up to 4 an hour: the best new deal each time
   join_link: "https://t.me/+IwCW3S2em3c2Zjhk"   # paid subscription invite link
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
   threshold_min_discount_pct: 20

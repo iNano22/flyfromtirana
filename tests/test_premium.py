@@ -43,6 +43,27 @@ def test_free_gets_it_after_the_delay(storage, route, rules):
     assert deal.premium_lead_hours == 7
 
 
+def test_a_price_drop_starts_the_wait_again(storage, route, rules):
+    # Premium was sent this date at €24 thirty hours ago. Now it costs €17: a cheaper price band,
+    # so a new deal, which premium gets first. The old post does not let the free channel in.
+    premium_posted(storage, 24, hours_ago=30)
+    assert find_free(route, storage, rules, [make_quote(17)]) is None
+    premium_posted(storage, 17, hours_ago=2)
+    assert find_free(route, storage, rules, [make_quote(17)]) is None   # premium has had €17 for 2h only
+    # Later, once premium has had the €17 price for the 6 hours, the post counts from that one.
+    later = NOW + timedelta(hours=5)
+    deal = find_route_deal(route, "TIA", [make_quote(17)], [], storage, rules, later, "telegram",
+                           early_access_from="telegram_premium", early_access_until=later - timedelta(hours=6))
+    assert deal is not None and deal.premium_lead_hours == 7            # not 35, the age of the €24 post
+
+
+def test_a_dearer_price_counts_from_the_cheaper_post(storage, route, rules):
+    # Premium got the date at €17. If it now costs €24, premium has had this offer (and better) all along.
+    premium_posted(storage, 17, hours_ago=30)
+    deal = find_free(route, storage, rules, [make_quote(24)])
+    assert deal is not None and deal.premium_lead_hours == 30
+
+
 def test_free_ignores_premium_posts_older_than_cooldown(storage, route, rules):
     premium_posted(storage, 19, hours_ago=24 * 8)  # cooldown is 7 days
     assert find_free(route, storage, rules, [make_quote(19)]) is None

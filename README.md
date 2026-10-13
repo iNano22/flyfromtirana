@@ -507,12 +507,18 @@ posts a deal once premium has had it for `free_delay_hours` (6), and adds a line
 like "⚡ Anëtarët Premium e morën këtë ofertë 6 orë më parë · Bashkohu". The
 website waits the same way (see Website above).
 
+The wait is per price, not per date. When a date premium was already sent falls
+into a cheaper price band (`price_band_eur`), premium gets the new price first, and
+the free channel's 6 hours and the hours in its post count from that post. The
+number in a free post is often much larger than 6: the free channel posts 2 deals a
+run, best saving first, so a weaker deal can wait a day or two for its turn.
+
 Premium doesn't wait for the 3-hour runs: every `premium.scan_every_minutes` (15)
 the scheduler runs `python -m src.main --premium-only`, which checks the prices
 and posts any new deal to premium straight away (never during quiet hours). That
 is up to about 150 API calls per scan, far below Travelpayouts' limit of 600 a minute.
-`premium.max_posts_per_run` (4) now counts per scan, so it no longer caps a whole
-day; lower it if the channel gets too busy. Set `scan_every_minutes: 0` to go back
+`premium.max_posts_per_run` (1) counts per scan, so premium gets the best new deal
+of each scan: up to 4 posts an hour. Set `scan_every_minutes: 0` to go back
 to posting only with the 3-hour runs. The free channel still posts at its first
 3-hour run after the 6 hours, so its wait is between about 5.5 and 8.5 hours
 (longer when that run falls in quiet hours).

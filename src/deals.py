@@ -43,7 +43,7 @@ class Deal:
     reason: str | None           # why it's a deal: "median" or "threshold" (for logs).
                                  # None = not a deal: the website lists every route, deal or not.
     return_quote: Quote | None = None  # cheapest flight back, if any
-    premium_lead_hours: int | None = None  # free channel: how many hours earlier premium got this
+    premium_lead_hours: int | None = None  # free channel: how many hours earlier premium got this price
 
     @property
     def best(self) -> Quote:
@@ -101,8 +101,10 @@ def find_route_deal(
 ) -> Deal | None:
     """Best not-yet-posted deal for one route, or None.
 
-    early_access_from / early_access_until: only allow dates that were already
-    posted on that channel (premium) at or before that time.
+    early_access_from / early_access_until: only allow prices that channel
+    (premium) was already sent at or before that time: the same date, at this
+    price band or a cheaper one. So when a price premium has had falls into a
+    cheaper band, premium gets the new price first and the wait starts again.
     """
     median, samples = storage.route_median(origin, route.iata, since=now - timedelta(days=rules.median_window_days))
     if samples < rules.min_samples_for_median:
@@ -126,10 +128,10 @@ def find_route_deal(
             log.info("Skipping %s→%s %s €%.0f: already posted", origin, route.iata, quote.depart_date, quote.price)
             continue
         if early_access_from:
-            first = storage.first_posted_at(early_access_from, origin, route.iata, quote.depart_date,
+            first = storage.first_posted_at(early_access_from, origin, route.iata, quote.depart_date, band,
                                             since=cooldown_start, until=early_access_until)
             if first is None:
-                continue  # premium hasn't had it long enough yet
+                continue  # premium hasn't had this price long enough yet
             early_posted_at[quote] = first
         candidates.append((quote, reason))
 
@@ -157,15 +159,17 @@ def is_premium_only(quote: Quote, route: Route, median: float | None, storage: S
     """Is this price still for premium members only?
 
     True for a price that is a deal by premium's rules until premium has had
-    it since `cutoff` (see early_access_cutoff). The website leaves such
-    prices out, the same way the free channel waits for them.
+    it (this date, at this price band or a cheaper one) since `cutoff` (see
+    early_access_cutoff). The website leaves such prices out, the same way
+    the free channel waits for them.
     """
     reason = deal_reason(quote.price, median, route.absolute_threshold_eur,
                          premium_rules.discount_pct, premium_rules.threshold_min_discount_pct)
     if reason is None:
         return False  # an ordinary price: nothing to hold back
     cooldown_start = now - timedelta(days=premium_rules.repost_cooldown_days)
-    first = storage.first_posted_at(PREMIUM_CHANNEL, quote.origin, route.iata, quote.depart_date,
+    band = price_band(quote.price, premium_rules.price_band_eur)
+    first = storage.first_posted_at(PREMIUM_CHANNEL, quote.origin, route.iata, quote.depart_date, band,
                                     since=cooldown_start, until=cutoff)
     return first is None
 
