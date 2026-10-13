@@ -1,0 +1,22 @@
+# The web server's settings (Caddy): it serves the generated website, the `site`
+# volume that docker-compose.yml mounts at /srv/site.
+#
+# ":80" = plain HTTP on port 80. The reverse proxy in front (Coolify's) adds
+# HTTPS and the domain names.
+:80 {
+	root * /srv/site
+	encode zstd gzip
+	file_server
+
+	# An address that doesn't exist gets the site's own "page not found" page,
+	# still answered as 404 so search engines don't list it.
+	handle_errors {
+		@missing `{err.status_code} == 404`
+		handle @missing {
+			# {path.0} is the address's first folder: /en/anything gets /en/404.html,
+			# its own language. Everything else gets the main /404.html.
+			try_files /{path.0}/404.html /404.html
+			file_server
+		}
+	}
+}

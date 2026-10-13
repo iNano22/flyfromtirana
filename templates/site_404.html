@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- The "page not found" page: 404.html, one per language (/404.html, /en/404.html, ...). The web
+     server shows it in place of any address that doesn't exist (web/Caddyfile), whatever folder
+     that address is in. So nothing here is written from "this folder": HOME starts at the top of
+     the site ("/" or "/en/"), and the page has no photo.
+     Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
+     (and must stay on one line). Every HTML comment is removed before the page is written.
+     Values: BRAND LANG HOME TELEGRAM_URL. The text itself is not in this file: T_NAME stands for
+     the entry NAME in templates/strings/<language>.yaml (see src/i18n.py).
+     Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
+     values, and never two opening square brackets in a row. -->
+<html lang="{LANG}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{T_NOT_FOUND_TITLE}</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0f1114">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ffd60a'/><path transform='translate(4 4) rotate(45 12 12)' fill='%230f1114' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* The same airport signage as the rest of the site (templates/site.html): a black top bar over
+   one yellow sign. The colours have the same names as there. */
+:root {
+  color-scheme: light;
+  --ink: #0f1114;
+  --sun: #ffd60a;
+  --hover: #2a2e35;                      /* a black button under the pointer */
+  --focus: #2f6bff;                      /* keyboard focus ring */
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gutter: clamp(16px, 4vw, 32px);      /* page margin */
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;                /* the yellow sign fills the screen under the top bar */
+  background: var(--sun);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+a { color: inherit; }
+h1, p { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.ic { width: 1em; height: 1em; flex: none; }
+
+/* 1. The black top bar: the brand, which leads back to the main page */
+.nav { background: var(--ink); color: #ffffff; }
+.nav-in { min-height: 60px; display: flex; align-items: center; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 800; font-stretch: 88%; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.mark { width: 34px; height: 34px; border-radius: 6px; background: var(--sun); color: var(--ink); display: grid; place-items: center; flex: none; }
+.mark .ic { width: 20px; height: 20px; fill: currentColor; }
+
+/* 2. The sign: what happened, and the way back */
+.lost { flex: 1; display: flex; align-items: center; padding: 48px 0 72px; }
+.kicker { display: inline-block; margin: 0 0 20px; padding: 7px 12px; border-radius: 6px; background: var(--ink); color: #ffffff; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(52px, 14vw, 120px); line-height: 0.9; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
+.lead { margin: 20px 0 0; max-width: 30em; font-size: 17px; line-height: 1.4; font-weight: 500; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 22px; border-radius: 6px; border: 2px solid var(--ink); background: var(--ink); color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; }
+.btn:hover { background: var(--hover); border-color: var(--hover); }
+.btn-line { padding-left: 12px; background: transparent; color: var(--ink); }
+.btn-line:hover { background: rgba(15, 17, 20, 0.08); border-color: var(--ink); }
+.btn .ic { width: 28px; height: 28px; }
+@media (min-width: 900px) {
+  .nav-in { min-height: 68px; }
+  .brand { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee"/><path fill="#ffffff" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
+</svg>
+<header class="nav">
+  <div class="nav-in wrap">
+    <a class="brand" href="{HOME}"><span class="mark"><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
+  </div>
+</header>
+<main class="lost">
+  <div class="wrap">
+    <p class="kicker">{T_NOT_FOUND_KICKER}</p>
+    <h1>{T_NOT_FOUND_HEADLINE}</h1>
+    <p class="lead">{T_NOT_FOUND_TEXT}</p>
+    <p class="actions"><a class="btn" href="{HOME}">{T_NOT_FOUND_HOME}</a>[[<a class="btn btn-line" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg>{T_JOIN_TELEGRAM}</a>]]</p>
+  </div>
+</main>
+</body>
+</html>

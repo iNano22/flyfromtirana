@@ -1,7 +1,7 @@
 # FlyFromTirana on a server (README: "Run it on a server").
 #
 #   scanner  scans, posts and rebuilds the website every 3 hours (src/scheduler.py)
-#   web      serves the generated website
+#   web      serves the generated website (Caddy, set up in web/Caddyfile)
 #
 # The variables below are filled in by the deploy tool (Coolify lists them
 # under Environment Variables) or by a .env file next to this one.
@@ -30,8 +30,9 @@ services:
       - site:/app/docs      # the generated website
 
   web:
-    image: caddy:2-alpine
-    command: ["caddy", "file-server", "--root", "/srv/site", "--listen", ":80"]
+    # Caddy with web/Caddyfile: the site's files, and its own page for an
+    # address that doesn't exist.
+    build: ./web
     restart: unless-stopped
     logging: *logging
     # Started after the scanner, which creates the site volume with its own

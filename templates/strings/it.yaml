@@ -179,6 +179,12 @@ page:
   COOKIES_OK: "Va bene"
   COOKIES_REFUSE: "Rifiuta"
   D_DAY: "Giorno"
+  # The page for an address that doesn't exist (templates/site_404.html).
+  NOT_FOUND_TITLE: "Pagina non trovata | {BRAND}"
+  NOT_FOUND_KICKER: "Errore 404"
+  NOT_FOUND_HEADLINE: "Pagina non trovata"
+  NOT_FOUND_TEXT: "Questo indirizzo non esiste più o è stato scritto male. Prezzi e offerte sono nella pagina principale."
+  NOT_FOUND_HOME: "Torna alla pagina principale"
 
 words:
   empty: "Non ci sono ancora prezzi. La prima scansione termina entro poche ore."

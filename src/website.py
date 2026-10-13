@@ -12,6 +12,8 @@ Per route the page shows: the cheapest date from the newest scan (plus other
 dates about as cheap), the usual price, the cheapest flight back and a booking
 link. Every city with a guide in content/destinations/ also gets a page of its
 own (/milan/, /rome/, ...): its current prices, then the guide (src/guides.py).
+Each language also gets a 404.html, the page the web server shows for an address
+that doesn't exist (templates/site_404.html and web/Caddyfile).
 Routes that meet the free channel's deal rules come first, as "Ofertat
 e momentit". With a premium channel the page follows the free channel: a price
 premium members are still getting early is left out until the free channel may
@@ -23,7 +25,9 @@ rules as the post templates (see src/formatter.py).
 
 Photos live in assets/img (dest/<iata>.webp per route, services/<partner>.webp),
 with their authors and licences in assets/img/credits.json. Every build copies
-them next to the page and lists the credits in the footer.
+them next to the page and lists the credits in the footer. assets/img/share has
+the picture a link to the main page shows on Telegram or WhatsApp, one per
+language (made by scripts/share_card.py).
 """
 from __future__ import annotations
 
@@ -134,6 +138,8 @@ def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
                 render_guide_page(guide, guides, offers, config, links, updated_at=updated_at, now=now,
                                   language=language),
                 encoding="utf-8")
+        # The page for an address that doesn't exist: /404.html, /en/404.html, ...
+        (folder / "404.html").write_text(render_not_found(config, language), encoding="utf-8")
         log.info("[%s] %d route(s) on the page, %d of them deals, %d city page(s)", language, len(offers),
                  sum(o.is_deal for o in offers), len(guides))
     write_sitemap(out_dir, config, now)
@@ -246,9 +252,13 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         "DATE_MIN": (today + timedelta(days=1)).isoformat(),
         "DATE_MAX": (today + timedelta(days=config.lookahead_days)).isoformat(),
     }
+    base_url = site_base_url(config)
+    picture = share_image(language)
     urls = {
         "TELEGRAM_URL": telegram_url(config.channel_handle),
         "SITE_URL": page_url(config, language),
+        # Apps that show a preview of a link need the picture's full address.
+        "SHARE_IMAGE": base_url + picture if base_url and picture else None,
         "ASSETS": root,
     }
     # Footer links (eSIM, insurance, ...). A partner URL template may mention a city
@@ -419,6 +429,12 @@ def site_base_url(config: Config) -> str | None:
     return config.website.url.rstrip("/") + "/" if config.website.url else None
 
 
+def share_image(language: str) -> str | None:
+    """'img/share/en.png' when the language has a picture for link previews in assets/img/share, else None."""
+    path = f"img/share/{language}.png"
+    return path if (ASSETS_DIR / path).exists() else None
+
+
 def guide_photo(guide: Guide) -> str | None:
     """'img/guides/milan.webp' when the city has a wide photo in assets/img/guides, else None."""
     path = f"img/guides/{guide.slug}.webp"
@@ -548,6 +564,23 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values["ANALYTICS"] = analytics_html(config, language)
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site_dest.html", strings), values) + "\n"
+
+
+def render_not_found(config: Config, language: str | None = None) -> str:
+    """The "page not found" page as HTML (templates/site_404.html), in one language.
+
+    The web server shows it in place of any address that doesn't exist, whatever folder
+    that address is in. So its link to the main page starts from the top of the site
+    ("/" or "/en/"), not from "this folder" like the links on the other pages.
+    """
+    language = language or config.website.languages[0]
+    values = {
+        "BRAND": html.escape(config.brand, quote=False),
+        "LANG": language,
+        "HOME": html.escape("/" + language_folder(config, language), quote=True),
+        "TELEGRAM_URL": html.escape(telegram_url(config.channel_handle) or "", quote=True) or None,
+    }
+    return render(load_site_template("site_404.html", load_strings(language)), values) + "\n"
 
 
 def premium_html(config: Config, strings: Strings) -> str | None:

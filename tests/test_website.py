@@ -190,6 +190,31 @@ def test_build_site_writes_files_and_handles_an_empty_database(config):
     assert 'class="board"' not in page                     # no prices, no board at the top
 
 
+def test_main_page_names_the_picture_for_link_previews(config):
+    index = build_site(config, "12345", now=NOW)
+    # Telegram, WhatsApp and the like need the picture's full address, and the file has to be there.
+    assert '<meta property="og:image" content="https://flyfromtirana.al/img/share/sq.png">' in index.read_text(encoding="utf-8")
+    assert (config.website.output_dir / "img" / "share" / "sq.png").exists()
+
+    # Without the site's address there is no full address to give: the tag is left out.
+    config = replace(config, website=replace(config.website, url=""))
+    assert "og:image" not in build_site(config, "12345", now=NOW).read_text(encoding="utf-8")
+
+
+def test_build_writes_the_page_for_an_address_that_does_not_exist(config):
+    build_site(config, "12345", now=NOW)
+    out = config.website.output_dir
+    page = (out / "404.html").read_text(encoding="utf-8")
+    assert "<h1>Faqja nuk u gjet</h1>" in page
+    # The server shows this page in any folder, so its links start from the top of the site.
+    assert '<a class="btn" href="/">Kthehu te faqja kryesore</a>' in page
+    assert 'href="./' not in page and 'href="../' not in page
+    assert 'href="https://t.me/flyfromtirana"' in page
+    assert '<meta name="robots" content="noindex">' in page                   # search engines leave it out...
+    assert "404" not in (out / "sitemap.xml").read_text(encoding="utf-8")     # ...and the sitemap doesn't list it
+    assert "<!--" not in page and not PLACEHOLDER.search(page)
+
+
 def test_cli_builds_from_a_config_file(tmp_path, monkeypatch):
     monkeypatch.delenv("TRAVELPAYOUTS_MARKER", raising=False)
     (tmp_path / "config.yaml").write_text(

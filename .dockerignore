@@ -16,6 +16,7 @@ data/*.db-shm
 .github
 tests
 ig_preview
+web
 README.md
 Dockerfile
 docker-compose.yml

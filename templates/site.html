@@ -15,7 +15,8 @@
      way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
      The text itself is not in this file: T_NAME stands for the entry NAME in
      templates/strings/<language>.yaml, one file per language (see src/i18n.py) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
-     SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
+     SITE_URL YEAR SHARE_IMAGE (the picture a link to the page shows on Telegram or WhatsApp,
+     from assets/img/share), plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
      TICKETS_LINK, TRANSFER_LINK, CAR_RENTAL_LINK, LUGGAGE_LINK, COMPENSATION_LINK,
      INSURANCE_LINK, HOTEL_LINK). A partner without a link has no value, so its card is left out.
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
@@ -33,6 +34,7 @@
 <meta property="og:title" content="{T_TITLE}">
 <meta property="og:description" content="{T_OG_DESCRIPTION}">
 <meta property="og:url" content="{SITE_URL}">
+<meta property="og:image" content="{SHARE_IMAGE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0f1114">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ffd60a'/><path transform='translate(4 4) rotate(45 12 12)' fill='%230f1114' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
@@ -96,7 +98,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .mark { width: 34px; height: 34px; border-radius: 6px; background: var(--sun); color: var(--ink); display: grid; place-items: center; flex: none; }
 .mark .ic { width: 20px; height: 20px; }
 .nav-links { display: none; gap: 2px; }
-.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #d5d9de; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #d5d9de; white-space: nowrap; }
 .nav-links a:hover { color: #ffffff; background: #1b1e23; }
 .nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
 .nav-tg .ic { width: 24px; height: 24px; }
@@ -420,6 +422,15 @@ h1 span { display: block; }
   .steps li { padding: 80px 24px 24px; }
   .steps li::before { left: 24px; top: 24px; }
   .join { margin-top: 96px; }
+}
+/* 900 to 1119px (a tablet on its side, a small laptop window): the five links are on, and the
+   Telegram button's words don't fit next to them. So the button is the paper plane alone, as on
+   a phone, and the links sit a little closer. From 1120px everything fits: the Albanian bar,
+   the longest of the three languages, needs 1088px. */
+@media (min-width: 900px) and (max-width: 1119.98px) {
+  .nav-links a { padding: 0 8px; }
+  .nav-tg { padding: 0 10px; }
+  .nav-tg span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
 @media (min-width: 1120px) {
   .stories, .svcs { grid-template-columns: repeat(4, minmax(0, 1fr)); }

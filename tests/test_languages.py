@@ -227,6 +227,20 @@ def test_build_writes_every_language(config):
         assert f"<loc>https://flyfromtirana.al/{address}</loc>" in sitemap
 
 
+def test_every_language_has_its_own_not_found_page_and_share_picture(config):
+    build_site(config, "12345", now=NOW)
+    out = config.website.output_dir
+    english = (out / "en" / "404.html").read_text(encoding="utf-8")
+    assert '<html lang="en">' in english and "<h1>Page not found</h1>" in english
+    assert '<a class="btn" href="/en/">Back to the main page</a>' in english      # the English main page
+    italian = (out / "it" / "404.html").read_text(encoding="utf-8")
+    assert "<h1>Pagina non trovata</h1>" in italian and 'href="/it/"' in italian
+    for language, folder in (("sq", ""), ("en", "en/"), ("it", "it/")):
+        assert (out / "img" / "share" / f"{language}.png").exists(), language
+        page = (out / folder / "index.html").read_text(encoding="utf-8")
+        assert f'content="https://flyfromtirana.al/img/share/{language}.png"' in page
+
+
 def test_languages_setting_is_read_and_checked(tmp_path):
     def load(extra):
         path = tmp_path / "config.yaml"

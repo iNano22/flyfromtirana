@@ -47,9 +47,11 @@ templates/site_dest.html a city's own page; site_dest_fare.html = one airport's 
                          site_analytics.html = Google Analytics and its cookie box;
                          site_drive.html = the Travelpayouts Drive script;
                          site_lang.html = the language dropdown
+templates/site_404.html  the "page not found" page
 content/destinations/    the city guides: one folder per language, one file per city in each
 content/countries/       the entry documents for each country, one file per language
-assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences)
+assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences);
+                         share/ = the picture a link to the site shows on Telegram or WhatsApp
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
 docs/                    the generated website (index.html + img/), what the `web` container serves
 src/
@@ -69,7 +71,9 @@ src/
                          and quick premium scans in between
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
+scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
 Dockerfile               the scanner image
+web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
 tests/                   pytest suite (HTTP is mocked; no network needed)
 .github/workflows/       tests.yml (on push)
@@ -122,8 +126,8 @@ median), but it never marks deals as posted.
 
 `docker-compose.yml` runs two containers: `scanner` (the scheduler: a scan at
 minute 17 of every third hour UTC, then the website build, plus a quick premium
-scan every `premium.scan_every_minutes` in between) and `web` (serves the page).
-With plain Docker:
+scan every `premium.scan_every_minutes` in between) and `web` (serves the page:
+Caddy, set up in `web/Caddyfile`). With plain Docker:
 
 ```bash
 cp .env.example .env          # the same values as for local runs
@@ -324,6 +328,12 @@ the deploy tool (Coolify: its Domains field) and put that address in
 `website.url` in config.yaml (it's linked at the bottom of every Telegram post and
 used for the page's canonical/og:url tags).
 
+An address that doesn't exist gets the site's own "page not found" page
+(`templates/site_404.html`), in the language of the folder it was asked in:
+`/en/anything` gets `/en/404.html`, everything else `/404.html`. The build writes
+those files and `web/Caddyfile` tells the server to use them. A mistake in the
+Caddyfile stops the image build, so the running site stays up.
+
 ### Preview locally
 
 ```bash
@@ -349,6 +359,20 @@ The page shows no photo credits, because none of the photos on it requires one.
 Only a CC BY or CC BY-SA photo does: while one is on the page, the footer lists it
 under "Fotot dhe licencat e tyre". Today that is just the hotel card's photo, and
 that card only appears once a hotel link is set.
+
+**The share picture.** When someone pastes a link to the main page into Telegram,
+WhatsApp or Facebook, the preview shows `assets/img/share/<language>.png` (1200×630):
+the headline in that language on the yellow sign, next to a small departures board.
+It is not a photo but a drawing of `scripts/share_card.html`, so after changing the
+headline (`KICKER`, `HEADLINE_A`, `HEADLINE_B` in `templates/strings/`) make the
+pictures again:
+
+```bash
+python scripts/share_card.py     # needs Google Chrome and an internet connection (for the fonts)
+```
+
+City pages show their own photo instead. Apps keep a link's preview for a while, so
+an old link may show the old picture for some days.
 
 **New photos: take free ones from Unsplash**, from the website (not Unsplash+, and
 not through the Unsplash API: the API's own rules require crediting the photographer
@@ -402,7 +426,12 @@ sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/te
   (the Premium block) and `{PHOTO_CREDITS}` (the footer's credits, only there when
   a photo requires one).
   The colours are named once, at the top of each page's CSS (`--sun` is the yellow,
-  `--ink` the black): change them there, in `site.html` and `site_dest.html`.
+  `--ink` the black): change them there, in `site.html`, `site_dest.html` and
+  `site_404.html` (the "page not found" page).
+- **The top bar on narrow screens**: when the menu links and the yellow Telegram button
+  don't fit side by side (a tablet, a small laptop window), the button shows the paper
+  plane alone. The widths are in each page's CSS, with the reason next to them. A longer
+  menu word or a new link needs them checked again, in all three languages.
 - The search card never shows availability: with JavaScript it builds a tracked
   Aviasales search link (route, date, passengers) from a "Rezervo" link's query
   string; without it the button simply jumps to the list.

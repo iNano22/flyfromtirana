@@ -179,6 +179,12 @@ page:
   COOKIES_OK: "Në rregull"
   COOKIES_REFUSE: "Refuzoj"
   D_DAY: "Dita"
+  # The page for an address that doesn't exist (templates/site_404.html).
+  NOT_FOUND_TITLE: "Faqja nuk u gjet | {BRAND}"
+  NOT_FOUND_KICKER: "Gabim 404"
+  NOT_FOUND_HEADLINE: "Faqja nuk u gjet"
+  NOT_FOUND_TEXT: "Kjo adresë nuk ekziston më ose është shkruar gabim. Çmimet dhe ofertat i gjen te faqja kryesore."
+  NOT_FOUND_HOME: "Kthehu te faqja kryesore"
 
 words:
   empty: "Ende nuk ka çmime. Skanimi i parë përfundon brenda pak orësh."

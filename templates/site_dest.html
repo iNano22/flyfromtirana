@@ -80,7 +80,7 @@ h1, h2, h3, p, li { overflow-wrap: anywhere; }
 .mark { width: 34px; height: 34px; border-radius: 6px; background: var(--sun); color: var(--ink); display: grid; place-items: center; flex: none; }
 .mark .ic { width: 20px; height: 20px; }
 .nav-links { display: none; gap: 2px; }
-.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #d5d9de; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; color: #d5d9de; white-space: nowrap; }
 .nav-links a:hover { color: #ffffff; background: #1b1e23; }
 .nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
 .nav-tg .ic { width: 24px; height: 24px; }
@@ -246,6 +246,13 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
   .join-in { grid-template-columns: 1fr auto; align-items: center; padding-top: 56px; padding-bottom: 56px; }
   /* As a grid the tiles line up with the headings (a .wrap is 1240px wide). */
   .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; overflow: visible; max-width: 1240px; margin-left: auto; margin-right: auto; }
+}
+/* 700 to 959px (a tablet held upright): the links are on, and the Telegram button's words don't
+   fit next to them. So the button is the paper plane alone, as on a phone. From 960px everything
+   fits: the Albanian bar, the longest of the three languages, needs 896px. */
+@media (min-width: 700px) and (max-width: 959.98px) {
+  .nav-tg { padding: 0 10px; }
+  .nav-tg span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
 @media (min-width: 900px) {
   :root { --nav-h: 68px; }
