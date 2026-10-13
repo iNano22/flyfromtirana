@@ -259,9 +259,10 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     }
     # Footer links (eSIM, insurance, ...). A partner URL template may mention a city
     # and dates (that's for per-post hotel links); here a generic route and today stand in.
+    # This page is about no one city, so each partner's general link, not a city's own page.
     route = offers[0].route if offers else config.routes[0]
     for name in links.partner_names:
-        urls[f"{name.upper()}_LINK"] = links.partner(name, route, today, today + timedelta(days=3))
+        urls[f"{name.upper()}_LINK"] = links.partner(name, route, today, today + timedelta(days=3), city_page=False)
 
     values = {key: html.escape(value, quote=False) if value else None for key, value in text.items()}
     values.update({key: html.escape(value, quote=True) if value else None for key, value in urls.items()})

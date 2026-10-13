@@ -130,6 +130,18 @@ def test_tidy():
     assert tidy("<blockquote>A\nB\n</blockquote>\nC") == "<blockquote>A\nB</blockquote>\nC"
 
 
+def test_trip_links_row(route):
+    deal = Deal(route=route, quotes=[make_quote(19)], median=None, reason="threshold")
+    urls = {name: f"https://{name}.example/" for name in ("esim", "car_rental", "tickets", "transfer", "luggage")}
+    text = post(deal, make_links(**urls))
+    assert ('\n📱 <a href="https://esim.example/">eSIM</a>   🚗 <a href="https://car_rental.example/">Makinë me qira</a>'
+            '\n🎟️ <a href="https://tickets.example/">Bileta për atraksione</a>   🚕 <a href="https://transfer.example/">Transfertë</a>'
+            '   🧳 <a href="https://luggage.example/">Bagazhe</a>\n') in text
+    # A link missing from the middle of the row leaves no wider gap behind.
+    del urls["transfer"]
+    assert ('Bileta për atraksione</a>   🧳 <a href="https://luggage.example/">Bagazhe</a>\n') in post(deal, make_links(**urls))
+
+
 def test_only_one_of_esim_and_insurance(route):
     deal = Deal(route=route, quotes=[make_quote(19)], median=None, reason="threshold")
     text = post(deal, make_links(insurance="https://insurance.example/"))

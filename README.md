@@ -163,8 +163,9 @@ layout follows an airline booking page, top to bottom:
   Deals come first (biggest saving first) with a yellow price and saving sticker;
   they use the free channel's deal rules without the "already posted" filter.
 - **Gjithçka për udhëtimin**: white photo cards for the partner links (eSIM,
-  insurance, car rental, compensation, and hotels once `links.partners.hotel` has
-  a url). A card whose link is empty is left out.
+  attraction tickets, airport transfer, car rental, luggage storage, compensation,
+  and insurance and hotels once their `links.partners` entry has a url). A card
+  whose link is empty is left out.
 - **Të gjitha destinacionet**: every route, deals included, drawn as a boarding
   pass, with a sort menu (deals first, cheapest, biggest saving, soonest). The
   ticket shows the city, the TIA → airport route, the cheapest date (plus other
@@ -431,7 +432,8 @@ Edit `templates/sq.txt`. Rules:
 
 - `{NAME}` is replaced with a value: `CITY CITY_UPPER AIRPORT FLAG PRICE MEDIAN
   SAVING DATES AIRLINE STOPS DURATION RETURN_PRICE CHANNEL FLIGHT_LINK HOTEL_LINK
-  ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK PREMIUM_HOURS PREMIUM_LINK
+  ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK TICKETS_LINK TRANSFER_LINK
+  LUGGAGE_LINK PREMIUM_HOURS PREMIUM_LINK
   WEBSITE_LINK PHOTO_CREDIT PHOTO_LINK`. `SAVING` is the percent below the usual price
   ("68"); `WEBSITE_LINK` is `website.url` from config.yaml; `PHOTO_CREDIT` and
   `PHOTO_LINK` are the author, licence and source of the post's photo (see Photos).
@@ -462,6 +464,16 @@ While `url` is empty, that link is simply left out of posts. Each partner
 becomes a `{NAME_LINK}` placeholder, so you can add e.g. `car_rental` and use
 `{CAR_RENTAL_LINK}` in the template.
 
+**A partner's own page for a city.** Tiqets (`tickets`), Welcome Pickups
+(`transfer`) and Radical Storage (`luggage`) have a page per city, listed under
+`links.city_pages` in config.yaml. A post about a flight to Milan, and the site's
+Milan page, link to the partner's Milan page; the site's main page, which is about
+no one city, links to the partner's `url`. For this to be counted, the partner's
+`wrapper` is its Travelpayouts short link with `?u={url}` added, which opens the
+given page instead of the homepage. A new route needs its city added to each
+partner in that list (a test checks that none is missing); until then its links
+open the partner's homepage.
+
 **The website has its own links.** Travelpayouts counts clicks per project, and the
 site is its own project ("Flyfromtirana") next to the Telegram one. Links made in
 the site's project go under `website.links` in config.yaml, which has the same
@@ -473,6 +485,10 @@ opens that search instead of the homepage and counts the click under the site's 
 
 > **Hotellook closed in October 2025**, so hotels need another Travelpayouts
 > program (Booking.com, Trip.com, Agoda, …). Join one, then fill in `links.partners.hotel`.
+>
+> **EKTA closed in October 2026**, so travel insurance is switched off the same way
+> (`links.partners.insurance` is empty). The two insurance programs left in
+> Travelpayouts, VisitorsCoverage and Insubuy, were not open to these projects yet.
 
 ## Data
 

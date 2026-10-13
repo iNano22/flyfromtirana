@@ -194,6 +194,8 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
 .tips { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 8px; max-width: 46em; }
 .tips li::marker { color: var(--sun); }
 .note { margin: 20px 0 0; max-width: 46em; font-size: 14px; color: var(--muted); }
+/* A partner link under a part of the guide: tickets under the sights, a transfer under the airports. */
+.gmore a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; color: var(--sun); }
 
 /* Links: travel services and the other cities */
 .pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -309,11 +311,11 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
     </ul>
   </nav>
   <section class="wrap" aria-label="{T_GUIDE_FOR}">
-    <div class="gsec" id="shiko"><h2>{T_D_SIGHTS_TITLE}</h2><ul class="sights">{SIGHTS}</ul></div>
+    <div class="gsec" id="shiko"><h2>{T_D_SIGHTS_TITLE}</h2><ul class="sights">{SIGHTS}</ul>[[<p class="gmore"><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_D_TICKETS_GO}</a></p>]]</div>
     <div class="gsec" id="itinerari"><h2>{T_D_ITINERARY_TITLE}</h2><ol class="days">{ITINERARY}</ol></div>
     <div class="gsec" id="fjetja"><h2>{T_D_AREAS}</h2><ul class="sights">{AREAS}</ul></div>
     <div class="gsec" id="ushqimi"><h2>{T_D_FOOD}</h2><ul class="sights">{FOOD}</ul></div>
-    <div class="gsec" id="aeroporti"><h2>{T_D_AIRPORTS_TITLE}</h2><div class="airports">{AIRPORTS}</div></div>
+    <div class="gsec" id="aeroporti"><h2>{T_D_AIRPORTS_TITLE}</h2><div class="airports">{AIRPORTS}</div>[[<p class="gmore"><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_D_TRANSFER_GO}</a></p>]]</div>
     <div class="gsec" id="transporti"><h2>{T_D_TRANSPORT_TITLE}</h2><p>{TRANSPORT}</p></div>
     <div class="gsec" id="udhetime-ditore"><h2>{T_D_DAYTRIPS_TITLE}</h2><ul class="sights">{DAYTRIPS}</ul></div>
     <div class="facts">
@@ -336,9 +338,12 @@ h2 { margin: 0 0 6px; font-size: 27px; line-height: 1.15; letter-spacing: -0.02e
     <p class="hint">{T_EXTRAS_HINT}</p>
     <ul class="pills">
       <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">{T_ESIM_TITLE}</a></li>
-      <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">{T_INSURANCE_TITLE}</a></li>
+      <li><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_TICKETS_IN}</a></li>
+      <li><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_TRANSFER_TITLE}</a></li>
       <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">{T_CAR_TITLE}</a></li>
+      <li><a href="{LUGGAGE_LINK}" target="_blank" rel="noopener sponsored">{T_LUGGAGE_IN}</a></li>
       <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">{T_COMPENSATION}</a></li>
+      <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">{T_INSURANCE_TITLE}</a></li>
       <li><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">{T_HOTELS_IN}</a></li>
     </ul>
   </section>

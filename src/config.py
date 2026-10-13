@@ -19,7 +19,7 @@ DEFAULT_CONFIG_PATH = PROJECT_ROOT / "config.yaml"
 
 # Partner link slots that always exist, so the template can reference
 # {HOTEL_LINK} etc. even before they are filled in config.yaml.
-DEFAULT_PARTNERS = ("hotel", "esim", "insurance", "compensation", "car_rental")
+DEFAULT_PARTNERS = ("hotel", "esim", "insurance", "compensation", "car_rental", "tickets", "transfer", "luggage")
 # A scan of every route takes a couple of minutes, so scanning more often than
 # this would only queue runs up behind each other.
 MIN_PREMIUM_SCAN_MINUTES = 5
@@ -69,6 +69,9 @@ class LinkSettings:
     flight_base_url: str = "https://www.aviasales.com"
     flight_wrapper: str = ""
     partners: dict[str, LinkTemplate] = field(default_factory=dict)  # "hotel" -> LinkTemplate
+    # A partner's own page for a city: "tickets" -> {"Milan": "https://...milan..."}. A post or a
+    # page about that city links there instead of to the partner's general url.
+    city_pages: dict[str, dict[str, str]] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -192,6 +195,14 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
     if not db_path.is_absolute():
         db_path = base_dir / db_path
     links = _build_links(raw.get("links") or {})
+    # A city page under a misspelt name would never be used, so say so now.
+    cities = {route.city for route in routes}
+    for partner, pages in links.city_pages.items():
+        if partner not in links.partners:
+            raise ValueError(f"links.city_pages has pages for {partner!r}, which is not under links.partners")
+        for city in pages:
+            if city not in cities:
+                raise ValueError(f"links.city_pages.{partner} has a page for {city!r}, which is no route's city")
 
     return Config(
         brand=str(raw.get("brand", "FlyFromTirana")),
@@ -309,6 +320,8 @@ def _build_links(raw: dict) -> LinkSettings:
         flight_base_url=str(flight.get("base_url") or "https://www.aviasales.com").rstrip("/"),
         flight_wrapper=str(flight.get("wrapper") or ""),
         partners=partners,
+        city_pages={str(name).lower(): {str(city): str(url) for city, url in (pages or {}).items()}
+                    for name, pages in (raw.get("city_pages") or {}).items()},
     )
 
 

@@ -1,15 +1,17 @@
 """The static website: which routes it lists, in what order, and what the page contains."""
 from dataclasses import replace
 from datetime import date, timedelta
+from urllib.parse import quote
 
 import pytest
 
-from src.config import LinkTemplate, Route, load_config
+from src.config import ConfigError, LinkTemplate, Route, load_config
 from src.deals import PREMIUM_CHANNEL, price_band
 from src.formatter import PLACEHOLDER
 from src.links import LinkBuilder
 from src.storage import Storage
 from src.formatter import load_template
+from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
                          render_site, telegram_url)
 from tests.conftest import NOW, make_quote, seed_history
@@ -257,7 +259,7 @@ def test_build_copies_the_photos_and_shows_no_credits(config, storage):
     page = index.read_text(encoding="utf-8")
     # Every photo on the page is Unsplash or CC0, which need no credit: the footer has no credits block.
     assert '<details class="credits">' not in page and "Fotot dhe licencat" not in page
-    for img in ("img/services/esim.webp", "img/services/insurance.webp"):
+    for img in ("img/services/esim.webp", "img/services/car_rental.webp"):
         assert img in page                                                     # the service cards
 
 
@@ -307,6 +309,45 @@ def test_website_links_fall_back_to_the_posts_links(tmp_path):
     assert site.flight_wrapper == "https://tp.example/r?u={url}" and config.links.flight_wrapper == ""
     assert site.sub_id == "website"
     assert config.links.partners["esim"].url == "https://posts.example/esim"    # the posts are untouched
+
+
+def test_tickets_transfer_and_luggage_cards_open_the_partners_general_pages(config, storage):
+    two_routes(storage)
+    site = config.website.links
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(site, "12345"), updated_at=NOW, now=NOW)
+    for name, title in (("tickets", "Bileta për muze dhe atraksione"), ("transfer", "Transfertë nga aeroporti"),
+                        ("luggage", "Ruajtje bagazhesh")):
+        assert (ASSETS_DIR / "img" / "services" / f"{name}.webp").exists()
+        assert f'<img src="./img/services/{name}.webp"' in page and f"<b>{title}</b>" in page
+        # The site's own short link (not the posts'), opening the partner's homepage: the main
+        # page is about no one city, whichever route happens to be the cheapest.
+        general = site.partners[name].wrapper.format(url=quote(site.partners[name].url, safe=""))
+        assert page.count(f'href="{general}"') == 2                     # the card and the footer
+        assert site.partners[name].wrapper != config.links.partners[name].wrapper
+    assert "attractions-c" not in page and "luggage-storage" not in page
+
+
+def test_every_city_has_its_own_partner_pages():
+    # config.yaml: a route whose city is missing here would send its links to the partner's homepage.
+    config = load_config()
+    cities = {route.city for route in config.routes}
+    assert config.website.links.city_pages == config.links.city_pages      # one list, for the posts and the site
+    for name in ("tickets", "transfer", "luggage"):
+        assert set(config.links.city_pages[name]) == cities
+
+
+def test_city_pages_must_name_a_route_and_a_partner(tmp_path):
+    def load(city_pages: str):
+        path = tmp_path / "config.yaml"
+        path.write_text("routes:\n  - { iata: BGY, city: Milan }\nlinks:\n  partners:\n"
+                        "    tickets: { url: 'https://t.example/' }\n  city_pages:\n" + city_pages, encoding="utf-8")
+        return load_config(path).links.city_pages
+
+    assert load("    tickets: { Milan: 'https://t.example/milan/' }\n") == {"tickets": {"Milan": "https://t.example/milan/"}}
+    with pytest.raises(ConfigError, match="'Milano', which is no route's city"):
+        load("    tickets: { Milano: 'https://t.example/milan/' }\n")
+    with pytest.raises(ConfigError, match="'ticket', which is not under links.partners"):
+        load("    ticket: { Milan: 'https://t.example/milan/' }\n")
 
 
 def test_service_card_without_a_link_is_left_out(config, storage):

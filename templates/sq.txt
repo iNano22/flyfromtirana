@@ -10,7 +10,8 @@
 ⏳ <i>Çmimet ndryshojnë shpejt!</i>
 
 🏨 <a href="{HOTEL_LINK}">Hotele në {CITY}</a>
-[[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]   [[🚗 <a href="{CAR_RENTAL_LINK}">Makinë me qira</a>]]
+[[📱 <a href="{ESIM_LINK}">eSIM</a>]]   [[🚗 <a href="{CAR_RENTAL_LINK}">Makinë me qira</a>]]   [[🛡️ <a href="{INSURANCE_LINK}">Sigurim</a>]]
+[[🎟️ <a href="{TICKETS_LINK}">Bileta për atraksione</a>]]   [[🚕 <a href="{TRANSFER_LINK}">Transfertë</a>]]   [[🧳 <a href="{LUGGAGE_LINK}">Bagazhe</a>]]
 ⚖️ Vonesë ose anulim? <a href="{COMPENSATION_LINK}">Merr deri €600 kompensim</a>
 
 ⚡ Anëtarët Premium e morën këtë ofertë {PREMIUM_HOURS} orë më parë[[ · <a href="{PREMIUM_LINK}">Bashkohu</a>]]

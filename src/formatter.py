@@ -137,6 +137,9 @@ def tidy(text: str) -> str:
     # </blockquote> has a line of its own in the template; in the post it
     # belongs right after the last line of the quote, with no empty line inside.
     text = text.replace("\n</blockquote>", "</blockquote>")
+    # A link left out of the middle of a row of links leaves its spaces behind: keep the
+    # gap between its neighbours at the usual three.
+    text = re.sub(r" {4,}", "   ", text)
     # A whole group of lines can be left out: never show two blank lines in a row.
     return re.sub(r"\n{3,}", "\n\n", text)
 

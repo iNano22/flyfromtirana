@@ -50,6 +50,23 @@ def test_empty_partner_is_none(route):
     assert LinkBuilder(settings, marker="1").partner("esim", route, date.today(), date.today()) is None
 
 
+def test_partner_opens_its_own_page_for_the_city(route):
+    settings = LinkSettings(partners={"tickets": LinkTemplate(url="https://t.example/", wrapper="https://tp.example/x?u={url}")},
+                            city_pages={"tickets": {"Milan": "https://t.example/milan-c1/"}})
+    links, day = LinkBuilder(settings, marker="1"), date(2026, 10, 20)
+    # A post or a page about Milan: the partner's Milan page, inside the same tracking link.
+    assert links.partner("tickets", route, day, day) == "https://tp.example/x?u=https%3A%2F%2Ft.example%2Fmilan-c1%2F"
+    # The main page is about no one city, and a city without a page has nowhere better to go.
+    assert links.partner("tickets", route, day, day, city_page=False) == "https://tp.example/x?u=https%3A%2F%2Ft.example%2F"
+    assert links.partner("tickets", replace(route, city="Vienna"), day, day) == "https://tp.example/x?u=https%3A%2F%2Ft.example%2F"
+
+
+def test_city_pages_do_not_switch_a_partner_on(route):
+    # An empty url still means "leave this partner out", whatever pages are listed for it.
+    settings = LinkSettings(partners={"tickets": LinkTemplate()}, city_pages={"tickets": {"Milan": "https://t.example/milan/"}})
+    assert LinkBuilder(settings, marker="1").partner("tickets", route, date.today(), date.today()) is None
+
+
 def test_validate_catches_typos():
     settings = LinkSettings(partners={"hotel": LinkTemplate(url="https://h.example/?q={citty}")})
     with pytest.raises(ConfigError, match="citty"):

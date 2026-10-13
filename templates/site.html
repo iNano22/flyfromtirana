@@ -14,7 +14,8 @@
      The text itself is not in this file: T_NAME stands for the entry NAME in
      templates/strings/<language>.yaml, one file per language (see src/i18n.py) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
      PREMIUM_LINK SITE_URL YEAR, plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
-     INSURANCE_LINK, CAR_RENTAL_LINK, COMPENSATION_LINK, HOTEL_LINK).
+     TICKETS_LINK, TRANSFER_LINK, CAR_RENTAL_LINK, LUGGAGE_LINK, COMPENSATION_LINK,
+     INSURANCE_LINK, HOTEL_LINK). A partner without a link has no value, so its card is left out.
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
      one of these values, never write two opening square brackets in a row, and keep JS variable
      names lowercase. -->
@@ -333,7 +334,7 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
 .steps p { margin: 0; color: var(--muted); font-size: 15px; }
 .steps a { color: var(--ink); }
 
-/* 6. Travel services: white photo cards (eSIM, insurance, car rental, compensation, hotels) */
+/* 6. Travel services: white photo cards (eSIM, tickets, transfer, car rental, luggage, compensation, insurance, hotels) */
 .extras { position: relative; }
 .svcs { list-style: none; margin: 0; }
 .svc { flex: 0 0 min(74vw, 290px); scroll-snap-align: start; border-radius: 22px; overflow: hidden; background: var(--paper); color: var(--sun-ink); box-shadow: 0 24px 44px -28px rgba(0, 0, 0, 0.85); }
@@ -582,9 +583,12 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
     <div class="wrap shead"><h2 id="extras-h">{T_EXTRAS_TITLE}</h2><p class="hint">{T_EXTRAS_HINT}</p></div>
     <ul class="strip svcs" aria-label="{T_EXTRAS_LABEL}">
       <li class="svc"><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/esim.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_ESIM_TITLE}</b><span>{T_ESIM_TEXT}</span><span class="svc-go">{T_ESIM_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
-      <li class="svc"><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/insurance.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_INSURANCE_TITLE}</b><span>{T_INSURANCE_TEXT}</span><span class="svc-go">{T_INSURANCE_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/tickets.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_TICKETS_TITLE}</b><span>{T_TICKETS_TEXT}</span><span class="svc-go">{T_TICKETS_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/transfer.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_TRANSFER_TITLE}</b><span>{T_TRANSFER_TEXT}</span><span class="svc-go">{T_TRANSFER_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/car_rental.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_CAR_TITLE}</b><span>{T_CAR_TEXT}</span><span class="svc-go">{T_CAR_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{LUGGAGE_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/luggage.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_LUGGAGE_TITLE}</b><span>{T_LUGGAGE_TEXT}</span><span class="svc-go">{T_LUGGAGE_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/compensation.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_DELAY_TITLE}</b><span>{T_DELAY_TEXT}</span><span class="svc-go">{T_DELAY_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/insurance.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_INSURANCE_TITLE}</b><span>{T_INSURANCE_TEXT}</span><span class="svc-go">{T_INSURANCE_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/hotel.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_HOTEL_TITLE}</b><span>{T_HOTEL_TEXT}</span><span class="svc-go">{T_HOTEL_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
     </ul>
     <div class="wrap"><div class="ctl" data-ctl="services"></div></div>
@@ -646,9 +650,12 @@ h2 { font-size: 26px; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 4px
         <h3>{T_FOR_THE_TRIP}</h3>
         <ul>
           <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">eSIM</a></li>
-          <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">{T_INSURANCE_TITLE}</a></li>
+          <li><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_TICKETS_TITLE}</a></li>
+          <li><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_TRANSFER_TITLE}</a></li>
           <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">{T_CAR_TITLE}</a></li>
+          <li><a href="{LUGGAGE_LINK}" target="_blank" rel="noopener sponsored">{T_LUGGAGE_TITLE}</a></li>
           <li><a href="{COMPENSATION_LINK}" target="_blank" rel="noopener sponsored">{T_COMPENSATION}</a></li>
+          <li><a href="{INSURANCE_LINK}" target="_blank" rel="noopener sponsored">{T_INSURANCE_TITLE}</a></li>
         </ul>
       </nav>
       <nav class="fcol" aria-label="{T_COMMUNITY}">

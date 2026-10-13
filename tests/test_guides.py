@@ -1,10 +1,11 @@
 """The city guides (content/destinations) and the pages the website builds from them."""
 from dataclasses import replace
 from datetime import date, timedelta
+from urllib.parse import quote
 
 import pytest
 
-from src.config import ConfigError, load_config
+from src.config import ConfigError, LinkTemplate, load_config
 from src.formatter import PLACEHOLDER
 from src.guides import Guide, load_entry_rules, load_guides
 from src.links import LinkBuilder
@@ -85,6 +86,33 @@ def milan_page(config, storage):
     offers = build_offers(config, storage, NOW)
     return render_guide_page(guides["Milan"], guides, offers, config, LinkBuilder(config.website.links, "12345"),
                              updated_at=NOW, now=NOW)
+
+
+def test_city_page_links_to_the_partners_pages_for_that_city(config, storage):
+    milan_prices(storage)
+    page = milan_page(config, storage)
+    site = config.website.links
+
+    def link(name: str) -> str:
+        """The site's short link for this partner, with the partner's Milan page inside it."""
+        return site.partners[name].wrapper.format(url=quote(site.city_pages[name]["Milan"], safe=""))
+
+    # Under the sights: tickets for Milan's sights. Under the airports: a transfer in Milan.
+    sights = page[page.index('id="shiko"'):page.index('id="itinerari"')]
+    assert f'<p class="gmore"><a href="{link("tickets")}"' in sights and "atraksionet në Milan →" in sights
+    airports = page[page.index('id="aeroporti"'):page.index('id="transporti"')]
+    assert f'<p class="gmore"><a href="{link("transfer")}"' in airports
+    # And all three among the travel services at the bottom.
+    pills = page[page.index('<ul class="pills">'):]
+    for name, label in (("tickets", "Bileta për atraksionet në Milan"), ("transfer", "Transfertë nga aeroporti"),
+                        ("luggage", "Ruajtje bagazhesh në Milan")):
+        assert f'<li><a href="{link(name)}" target="_blank" rel="noopener sponsored">{label}</a></li>' in pills
+
+    # Without the partner links the guide's parts are still there, just without those lines.
+    off = {name: LinkTemplate() for name in ("tickets", "transfer", "luggage")}
+    config = replace(config, website=replace(config.website, links=replace(site, partners=dict(site.partners, **off))))
+    page = milan_page(config, storage)
+    assert 'class="gmore"' not in page and 'id="shiko"' in page and 'id="aeroporti"' in page
 
 
 def test_city_page_shows_prices_then_the_guide(config, storage):

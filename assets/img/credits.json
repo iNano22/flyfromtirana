@@ -290,6 +290,36 @@
   "license_url": "https://creativecommons.org/licenses/by/2.0/"
  },
  {
+  "file": "img/services/tickets.webp",
+  "slot": "tickets",
+  "title": "Colosseum, Rome",
+  "creator": "@blitzment",
+  "creator_url": "https://unsplash.com/@blitzment",
+  "source_url": "https://unsplash.com/photos/EXcFeg5I0k0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/services/transfer.webp",
+  "slot": "transfer",
+  "title": "Yellow taxi light sign",
+  "creator": "@waldemarbrandt67w",
+  "creator_url": "https://unsplash.com/@waldemarbrandt67w",
+  "source_url": "https://unsplash.com/photos/kYbYIWdJRh0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/services/luggage.webp",
+  "slot": "luggage",
+  "title": "Left luggage airport",
+  "creator": "autor i panjohur",
+  "creator_url": "",
+  "source_url": "https://www.rawpixel.com/image/6041895/photo-image-public-domain-business-interior",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ {
   "file": "img/guides/milan.webp",
   "slot": "guide-milan",
   "title": "Navigli canal, Milan",

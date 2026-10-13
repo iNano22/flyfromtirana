@@ -4,9 +4,12 @@
   optionally wrapped in the tp.media tracking redirect (config: links.flight).
 - Everything else (hotel, eSIM, insurance, ...): URL templates from
   config.yaml (links.partners). An empty url means "leave it out of the post".
+  A partner can also have a page of its own per city (links.city_pages): a post
+  or a page about Milan then opens the partner's Milan page.
 """
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import date
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
@@ -40,11 +43,19 @@ class LinkBuilder:
             url = add_query_params(url, marker=self.tracking_marker())
         return self._wrap(url, self.settings.flight_wrapper, "links.flight")
 
-    def partner(self, name: str, route: Route, checkin: date, checkout: date) -> str | None:
-        """Link for a partner program (hotel, esim, ...), or None if its url isn't configured."""
+    def partner(self, name: str, route: Route, checkin: date, checkout: date, *,
+                city_page: bool = True) -> str | None:
+        """Link for a partner program (hotel, esim, ...), or None if its url isn't configured.
+
+        When the partner has a page of its own for the route's city (links.city_pages), the
+        link opens that page. city_page=False asks for the partner's general link anyway:
+        the main page uses it, because it is about no one city.
+        """
         template = self.settings.partners.get(name) or LinkTemplate()
         if not template.url:
             return None
+        if city_page:
+            template = replace(template, url=self.settings.city_pages.get(name, {}).get(route.city) or template.url)
         values = {
             "city": route.city,
             "city_en": route.city_en,
@@ -65,6 +76,8 @@ class LinkBuilder:
         sample_day = date(2000, 1, 1)
         for name in self.settings.partners:
             self.partner(name, sample_route, sample_day, sample_day)
+            for city in self.settings.city_pages.get(name, {}):
+                self.partner(name, replace(sample_route, city=city), sample_day, sample_day)
         self._wrap("https://example.com", self.settings.flight_wrapper, "links.flight")
 
     def _wrap(self, url: str, wrapper: str, where: str) -> str:

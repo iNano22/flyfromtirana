@@ -105,11 +105,22 @@ website:
       esim:
         url: "https://airalo.tp.st/3G2AG28z"          # Airalo
       insurance:
-        url: "https://ektatraveling.tp.st/Kpr5NLtE"   # EKTA
+        url: ""                                       # EKTA closed in Oct 2026 (see `links:` below)
       compensation:
         url: "https://airhelp.tp.st/IQSDOJpj"         # AirHelp
       car_rental:
         url: "https://getrentacar.tp.st/Z8ZRzVQV"     # GetRentacar
+      # The three below open a city's own page where there is one (city_pages under `links:`),
+      # so each has the site's short link as a wrapper, like the flight link above.
+      tickets:                                        # Tiqets: museum and attraction tickets
+        url: "https://www.tiqets.com/en/"
+        wrapper: "https://tiqets.tp.st/Z99xzVot?u={url}"
+      transfer:                                       # Welcome Pickups: airport transfers
+        url: "https://www.welcomepickups.com/"
+        wrapper: "https://tp.st/4kttr89i?u={url}"
+      luggage:                                        # Radical Storage: luggage storage
+        url: "https://radicalstorage.com/"
+        wrapper: "https://radicalstorage.tp.st/dXBrRhJg?u={url}"
 
 # --- Storage -----------------------------------------------------------------
 db_path: data/prices.db
@@ -145,7 +156,10 @@ links:
       url: "https://airalo.tp.st/kR78iHcI"   # Airalo, generated in Travelpayouts (Tools -> Links)
       wrapper: ""
     insurance:
-      url: "https://ektatraveling.tp.st/XKbXrxq5"   # EKTA, generated in Travelpayouts (Tools -> Links)
+      # EKTA closed in Oct 2026: its links stopped taking bookings on Oct 8. Join another
+      # insurance program in Travelpayouts (they suggest VisitorsCoverage or Insubuy) and paste
+      # its link here and under website.links. While empty, posts and the site leave insurance out.
+      url: ""
       wrapper: ""
     compensation:                  # flight delay/cancellation claims
       url: "https://airhelp.tp.st/bZg6g8jh"        # AirHelp
@@ -153,6 +167,84 @@ links:
     car_rental:
       url: "https://getrentacar.tp.st/zqdZHOw2"    # GetRentacar
       wrapper: ""
+    # The three below open a city's own page where there is one (city_pages, further down), so
+    # each has the Telegram project's short link as a wrapper: with ?u=... added it opens that
+    # page instead of the partner's homepage. `url` is where it goes for a city without a page.
+    tickets:                       # Tiqets: museum and attraction tickets
+      url: "https://www.tiqets.com/en/"
+      wrapper: "https://tiqets.tp.st/VmHfUFkI?u={url}"
+    transfer:                      # Welcome Pickups: airport transfers
+      url: "https://www.welcomepickups.com/"
+      wrapper: "https://tp.st/FOXpwIDB?u={url}"
+    luggage:                       # Radical Storage: luggage storage
+      url: "https://radicalstorage.com/"
+      wrapper: "https://radicalstorage.tp.st/0j7EaQvI?u={url}"
+
+  # A partner's own page for a city. A post about a flight to Milan, and the site's Milan page,
+  # link to these instead of the partner's `url` above; the site's main page, which is about no
+  # one city, keeps `url`. The city is written as in `routes`. The posts and the site share this
+  # list. New route: add its city to each partner here, or its links open the partner's homepage.
+  city_pages:
+    tickets:             # Tiqets
+      Milan:        https://www.tiqets.com/en/milan-attractions-c71749/
+      Rome:         https://www.tiqets.com/en/rome-attractions-c71631/
+      Bologna:      https://www.tiqets.com/en/bologna-attractions-c71986/
+      Venice:       https://www.tiqets.com/en/venice-attractions-c71510/
+      Naples:       https://www.tiqets.com/en/naples-attractions-c71720/
+      Athens:       https://www.tiqets.com/en/athens-attractions-c99239/
+      Thessaloniki: https://www.tiqets.com/en/thessaloniki-attractions-c67911/
+      London:       https://www.tiqets.com/en/london-attractions-c67458/
+      Munich:       https://www.tiqets.com/en/munich-attractions-c31/
+      Frankfurt:    https://www.tiqets.com/en/frankfurt-attractions-c64980/
+      Stuttgart:    https://www.tiqets.com/en/stuttgart-attractions-c64378/
+      Düsseldorf:   https://www.tiqets.com/en/dusseldorf-attractions-c65037/
+      Vienna:       https://www.tiqets.com/en/vienna-attractions-c60335/
+      Zurich:       https://www.tiqets.com/en/zurich-attractions-c20/
+      Barcelona:    https://www.tiqets.com/en/barcelona-attractions-c66342/
+      Madrid:       https://www.tiqets.com/en/madrid-attractions-c66254/
+      Istanbul:     https://www.tiqets.com/en/istanbul-attractions-c79079/
+      Berlin:       https://www.tiqets.com/en/berlin-attractions-c65144/
+      Brussels:     https://www.tiqets.com/en/brussels-attractions-c60843/
+    transfer:            # Welcome Pickups
+      Milan:        https://www.welcomepickups.com/milan/
+      Rome:         https://www.welcomepickups.com/rome/
+      Bologna:      https://www.welcomepickups.com/bologna/
+      Venice:       https://www.welcomepickups.com/venice/
+      Naples:       https://www.welcomepickups.com/naples/
+      Athens:       https://www.welcomepickups.com/athens/
+      Thessaloniki: https://www.welcomepickups.com/thessaloniki/
+      London:       https://www.welcomepickups.com/london/
+      Munich:       https://www.welcomepickups.com/munich/
+      Frankfurt:    https://www.welcomepickups.com/frankfurt/
+      Stuttgart:    https://www.welcomepickups.com/stuttgart/
+      Düsseldorf:   https://www.welcomepickups.com/dusseldorf/
+      Vienna:       https://www.welcomepickups.com/vienna/
+      Zurich:       https://www.welcomepickups.com/zurich/
+      Barcelona:    https://www.welcomepickups.com/barcelona/
+      Madrid:       https://www.welcomepickups.com/madrid/
+      Istanbul:     https://www.welcomepickups.com/istanbul/
+      Berlin:       https://www.welcomepickups.com/berlin/
+      Brussels:     https://www.welcomepickups.com/brussels/
+    luggage:             # Radical Storage
+      Milan:        https://radicalstorage.com/luggage-storage/milan
+      Rome:         https://radicalstorage.com/luggage-storage/rome
+      Bologna:      https://radicalstorage.com/luggage-storage/bologna
+      Venice:       https://radicalstorage.com/luggage-storage/venice
+      Naples:       https://radicalstorage.com/luggage-storage/naples
+      Athens:       https://radicalstorage.com/luggage-storage/athens
+      Thessaloniki: https://radicalstorage.com/luggage-storage/thessaloniki
+      London:       https://radicalstorage.com/luggage-storage/london
+      Munich:       https://radicalstorage.com/luggage-storage/munich
+      Frankfurt:    https://radicalstorage.com/luggage-storage/frankfurt-main
+      Stuttgart:    https://radicalstorage.com/luggage-storage/stuttgart
+      Düsseldorf:   https://radicalstorage.com/luggage-storage/dusseldorf
+      Vienna:       https://radicalstorage.com/luggage-storage/vienna
+      Zurich:       https://radicalstorage.com/luggage-storage/zurich
+      Barcelona:    https://radicalstorage.com/luggage-storage/barcelona
+      Madrid:       https://radicalstorage.com/luggage-storage/madrid
+      Istanbul:     https://radicalstorage.com/luggage-storage/istanbul
+      Berlin:       https://radicalstorage.com/luggage-storage/berlin
+      Brussels:     https://radicalstorage.com/luggage-storage/brussels
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:
