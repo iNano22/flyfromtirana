@@ -142,6 +142,14 @@ def test_trip_links_row(route):
     assert ('Bileta për atraksione</a>   🧳 <a href="https://luggage.example/">Bagazhe</a>\n') in post(deal, make_links(**urls))
 
 
+def test_tours_line(route):
+    deal = Deal(route=route, quotes=[make_quote(19)], median=None, reason="threshold")
+    text = post(deal, make_links(tours="https://tours.example/milan/", esim="https://esim.example/"))
+    assert ('\n\n🧭 <a href="https://tours.example/milan/">Ture dhe aktivitete në Milan</a>'
+            '\n📱 <a href="https://esim.example/">eSIM</a>\n') in text
+    assert "🧭" not in post(deal, make_links(esim="https://esim.example/"))   # no link, no line
+
+
 def test_only_one_of_esim_and_insurance(route):
     deal = Deal(route=route, quotes=[make_quote(19)], median=None, reason="threshold")
     text = post(deal, make_links(insurance="https://insurance.example/"))

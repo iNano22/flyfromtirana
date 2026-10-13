@@ -19,7 +19,8 @@ DEFAULT_CONFIG_PATH = PROJECT_ROOT / "config.yaml"
 
 # Partner link slots that always exist, so the template can reference
 # {HOTEL_LINK} etc. even before they are filled in config.yaml.
-DEFAULT_PARTNERS = ("hotel", "esim", "insurance", "compensation", "car_rental", "tickets", "transfer", "luggage")
+DEFAULT_PARTNERS = ("hotel", "esim", "insurance", "compensation", "car_rental", "tickets", "transfer", "luggage",
+                    "tours")
 # A scan of every route takes a couple of minutes, so scanning more often than
 # this would only queue runs up behind each other.
 MIN_PREMIUM_SCAN_MINUTES = 5
@@ -60,7 +61,9 @@ class DealRules:
 @dataclass(frozen=True)
 class LinkTemplate:
     url: str = ""      # target URL template; empty = this link is left out of posts
-    wrapper: str = ""  # optional tracking redirect; {url} is replaced by the encoded target
+    # Optional tracking link around the target: {url} is replaced by the encoded target (a
+    # redirect: ...?u={url}), {plain_url} by the target as it is (an ID added to its end).
+    wrapper: str = ""
 
 
 @dataclass(frozen=True)
@@ -106,6 +109,8 @@ class WebsiteSettings:
     google_analytics_ask_first: bool = True
     # The address of this project's Travelpayouts Drive script; empty = no Drive on the site.
     travelpayouts_drive_script: str = ""
+    # How many activities GetYourGuide's widget shows on a city page; 0 = no widget.
+    getyourguide_activities: int = 0
 
 
 @dataclass(frozen=True)
@@ -248,6 +253,9 @@ def _build_website(raw: dict, base_dir: Path, links: LinkSettings, default_langu
     if drive_script and not re.fullmatch(r"https://[A-Za-z0-9.-]+/[A-Za-z0-9._~/?=&%-]*", drive_script):
         raise ValueError("website.travelpayouts_drive_script must be the https address of the Drive script, "
                          "the one in script.src = '...' in the snippet Travelpayouts gives")
+    activities = int(raw.get("getyourguide_activities") or 0)
+    if not 0 <= activities <= 30:
+        raise ValueError("website.getyourguide_activities must be between 0 (no widget) and 30")
     return WebsiteSettings(
         output_dir=output_dir,
         languages=languages,
@@ -255,6 +263,7 @@ def _build_website(raw: dict, base_dir: Path, links: LinkSettings, default_langu
         url=str(raw.get("url") or "").strip(),
         google_analytics_id=analytics_id,
         travelpayouts_drive_script=drive_script,
+        getyourguide_activities=activities,
         google_analytics_ask_first=bool(raw.get("google_analytics_ask_first", True)),
         links=_website_links(raw.get("links") or {}, links, sub_id),
     )

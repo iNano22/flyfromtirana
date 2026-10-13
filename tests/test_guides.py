@@ -12,7 +12,7 @@ from src.links import LinkBuilder
 from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, country_code, guide_tiles, render_guide_page, render_site,
                          site_guides)
-from tests.conftest import NOW, make_quote, seed_history
+from tests.conftest import NOW, make_quote, seed_history, with_tours
 
 NOV = date(2026, 11, 1)
 
@@ -109,10 +109,53 @@ def test_city_page_links_to_the_partners_pages_for_that_city(config, storage):
         assert f'<li><a href="{link(name)}" target="_blank" rel="noopener sponsored">{label}</a></li>' in pills
 
     # Without the partner links the guide's parts are still there, just without those lines.
-    off = {name: LinkTemplate() for name in ("tickets", "transfer", "luggage")}
+    off = {name: LinkTemplate() for name in ("tickets", "transfer", "luggage", "tours")}
     config = replace(config, website=replace(config.website, links=replace(site, partners=dict(site.partners, **off))))
     page = milan_page(config, storage)
     assert 'class="gmore"' not in page and 'id="shiko"' in page and 'id="aeroporti"' in page
+
+
+def test_city_page_shows_getyourguides_widget_for_that_city(config, storage):
+    milan_prices(storage)
+    page = milan_page(with_tours(config), storage)
+    link = "https://www.getyourguide.com/milan-l139/?partner_id=ABC123&amp;cmp=website"
+    # The widget: Milan's number at GetYourGuide (the 139 in its address), 8 activities, the link's Partner ID.
+    tours = page[page.index('<section class="block wrap" id="ture"'):page.index('<ul class="pills">')]
+    assert '<h2 id="tours-h">Ture dhe aktivitete në Milan</h2>' in tours
+    assert ('data-gyg-widget="activities" data-gyg-location-id="139" data-gyg-number-of-items="8" '
+            'data-gyg-locale-code="en-US" data-gyg-cmp="website" data-gyg-partner-id="ABC123"></div>') in tours
+    # GetYourGuide's script draws it. It is in the page's head, once, as on every page of the site.
+    script = 'pa.umd.production.min.js" data-gyg-partner-id="ABC123"></script>'
+    assert page.count(script) == 1 and page.index(script) < page.index("</head>")
+    assert f'<p class="gmore"><a href="{link}"' in tours and "Shiko të gjitha turet dhe aktivitetet në Milan →" in tours
+    # The same link under the day trips and among the services; "Në këtë faqe" leads to the widget.
+    daytrips = page[page.index('id="udhetime-ditore"'):page.index('class="facts"')]
+    assert f'<p class="gmore"><a href="{link}"' in daytrips and "udhëtimet ditore nga Milan →" in daytrips
+    assert f'<li><a href="{link}" target="_blank" rel="noopener sponsored">Ture dhe aktivitete në Milan</a></li>' in page
+    assert '<li><a href="#ture" data-part="1">Ture dhe aktivitete</a></li>' in page
+    assert not PLACEHOLDER.search(page)
+
+    # 0 activities: the widget goes; the links stay, and the script with them (it counts the visits).
+    page = milan_page(with_tours(config, activities=0), storage)
+    assert "data-gyg-widget" not in page and 'id="ture"' not in page and 'href="#ture"' not in page
+    assert f'<p class="gmore"><a href="{link}"' in page and page.count(script) == 1
+    # No tours link (config.yaml before it has a Partner ID): nothing of GetYourGuide on the page.
+    site = config.website.links
+    off = replace(site, partners=dict(site.partners, tours=LinkTemplate()))
+    page = milan_page(replace(config, website=replace(config.website, links=off, getyourguide_activities=8)), storage)
+    assert "getyourguide.com" not in page and "data-gyg" not in page and "Ture dhe aktivitete" not in page
+
+
+def test_widget_setting_is_read_and_checked(tmp_path):
+    def load(value: str) -> int:
+        path = tmp_path / "config.yaml"
+        path.write_text(f"routes:\n  - {{ iata: BGY, city: Milan }}\nwebsite:\n  getyourguide_activities: {value}\n",
+                        encoding="utf-8")
+        return load_config(path).website.getyourguide_activities
+
+    assert load("8") == 8 and load("0") == 0
+    with pytest.raises(ConfigError, match="getyourguide_activities"):
+        load("31")
 
 
 def test_city_page_shows_prices_then_the_guide(config, storage):

@@ -1,5 +1,6 @@
 """The static website: which routes it lists, in what order, and what the page contains."""
 from dataclasses import replace
+import re
 from datetime import date, time, timedelta
 from urllib.parse import quote
 
@@ -14,7 +15,7 @@ from src.formatter import load_template
 from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
                          render_site, telegram_url)
-from tests.conftest import NOW, make_quote, seed_history
+from tests.conftest import NOW, make_quote, seed_history, with_tours
 
 NOV = date(2026, 11, 1)
 
@@ -385,13 +386,35 @@ def test_tickets_transfer_and_luggage_cards_open_the_partners_general_pages(conf
     assert "attractions-c" not in page and "luggage-storage" not in page
 
 
+def test_tours_card_opens_getyourguide_with_the_partner_id(config, storage):
+    two_routes(storage)
+    config = with_tours(config)
+    page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.website.links, "12345"),
+                       updated_at=NOW, now=NOW)
+    assert (ASSETS_DIR / "img" / "services" / "tours.webp").exists()
+    assert '<img src="./img/services/tours.webp"' in page and "<b>Ture dhe aktivitete</b>" in page
+    # No redirect link: GetYourGuide's own address with the Partner ID on its end, counted as "website".
+    assert page.count('href="https://www.getyourguide.com/?partner_id=ABC123&amp;cmp=website"') == 2   # card and footer
+    # GetYourGuide's script is on this page too (it counts the visits), but the widget is for the city pages.
+    script = '<script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="ABC123"></script>'
+    assert page.count(script) == 1 and page.index(script) < page.index("</head>")
+    assert "data-gyg-widget" not in page
+    # Without the tours link, nothing is loaded from GetYourGuide.
+    site = config.website.links
+    off = replace(config, website=replace(config.website, links=replace(site, partners=dict(site.partners, tours=LinkTemplate()))))
+    page = render_site(build_offers(off, storage, NOW), off, LinkBuilder(off.website.links, "12345"), updated_at=NOW, now=NOW)
+    assert "getyourguide" not in page
+
+
 def test_every_city_has_its_own_partner_pages():
     # config.yaml: a route whose city is missing here would send its links to the partner's homepage.
     config = load_config()
     cities = {route.city for route in config.routes}
     assert config.website.links.city_pages == config.links.city_pages      # one list, for the posts and the site
-    for name in ("tickets", "transfer", "luggage"):
+    for name in ("tickets", "transfer", "luggage", "tours"):
         assert set(config.links.city_pages[name]) == cities
+    # GetYourGuide's widget reads the city's number from the end of its page's address (rome-l33/).
+    assert all(re.search(r"-l\d+/$", url) for url in config.links.city_pages["tours"].values())
 
 
 def test_city_pages_must_name_a_route_and_a_partner(tmp_path):

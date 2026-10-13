@@ -12,7 +12,7 @@ from src.i18n import LANGUAGE_NAMES, STRINGS_DIR, TOKEN, load_strings, localize
 from src.links import LinkBuilder
 from src.website import (build_offers, build_site, language_links, language_menu, render_guide_page,
                          render_site, site_guides)
-from tests.conftest import NOW, make_quote, seed_history
+from tests.conftest import NOW, make_quote, seed_history, with_tours
 
 NOV = date(2026, 11, 1)
 LANGUAGES = load_config().website.languages
@@ -194,6 +194,15 @@ def test_city_page_in_italian_is_about_milano(config, storage):
     assert "<h2>Cosa vedere a Milano</h2>" in page and '<p class="fare-airport">Milano (Bergamo)</p>' in page
     assert 'alt="Veduta di Milano, Italia"' in page and 'content: "Giorno " counter(day)' in page
     assert "Roma</b>" in page                              # the tiles of the other cities, in Italian too
+
+
+def test_getyourguide_widget_speaks_the_pages_language_where_it_can(config, storage):
+    milan_prices(storage)
+    config = with_tours(config)
+    page = milan_page(config, storage, "it")
+    assert '<h2 id="tours-h">Tour e attività a Milano</h2>' in page and 'data-gyg-locale-code="it-IT"' in page
+    assert 'data-gyg-locale-code="en-US"' in milan_page(config, storage, "en")
+    assert 'data-gyg-locale-code="en-US"' in milan_page(config, storage, "sq")   # GetYourGuide has no Albanian
 
 
 def test_city_without_a_guide_in_a_language_links_to_that_languages_main_page(config, monkeypatch):

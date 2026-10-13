@@ -300,6 +300,16 @@
   "license_url": "https://unsplash.com/license"
  },
  {
+  "file": "img/services/tours.webp",
+  "slot": "tours",
+  "title": "Grand Canal, Venice",
+  "creator": "@rickpsd",
+  "creator_url": "https://unsplash.com/@rickpsd",
+  "source_url": "https://unsplash.com/photos/RKsLQoSnuTc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
   "file": "img/services/transfer.webp",
   "slot": "transfer",
   "title": "Yellow taxi light sign",

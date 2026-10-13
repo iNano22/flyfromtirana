@@ -2,11 +2,12 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import date, datetime, timedelta, timezone
 
 import pytest
 
-from src.config import DealRules, Route
+from src.config import Config, DealRules, LinkTemplate, Route
 from src.scanner import Quote
 from src.storage import Storage
 
@@ -96,6 +97,14 @@ def seed_history(storage: Storage, prices: list[float], *, destination: str = "B
     quotes = [make_quote(p, date(2026, 11, 1) + timedelta(days=i), destination=destination, fetched_at=fetched)
               for i, p in enumerate(prices)]
     storage.save_quotes(quotes)
+
+
+def with_tours(config: Config, activities: int = 8) -> Config:
+    """The site with GetYourGuide switched on, as config.yaml has it once its Partner ID is filled in."""
+    site = config.website.links
+    tours = LinkTemplate(url="https://www.getyourguide.com/", wrapper="{plain_url}?partner_id=ABC123&cmp={sub_id}")
+    return replace(config, website=replace(config.website, getyourguide_activities=activities,
+                                           links=replace(site, partners=dict(site.partners, tours=tours))))
 
 
 @pytest.fixture

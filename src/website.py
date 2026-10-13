@@ -42,6 +42,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
+from urllib.parse import parse_qsl, urlsplit
 from zoneinfo import ZoneInfo
 
 from dotenv import load_dotenv
@@ -267,6 +268,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     route = offers[0].route if offers else config.routes[0]
     for name in links.partner_names:
         urls[f"{name.upper()}_LINK"] = links.partner(name, route, today, today + timedelta(days=3), city_page=False)
+    urls["GYG_PARTNER"] = getyourguide_values(config, urls.get("TOURS_LINK"))["GYG_PARTNER"]
 
     values = {key: html.escape(value, quote=False) if value else None for key, value in text.items()}
     values.update({key: html.escape(value, quote=True) if value else None for key, value in urls.items()})
@@ -531,6 +533,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     checkin = best.best.depart_date if best else local_now.date()
     for name in links.partner_names:
         urls[f"{name.upper()}_LINK"] = links.partner(name, first, checkin, checkin + timedelta(days=3))
+    urls.update(getyourguide_values(config, urls.get("TOURS_LINK")))
 
     esc = html.escape
     values = {key: esc(value, quote=False) if value else None for key, value in text.items()}
@@ -564,6 +567,29 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values["ANALYTICS"] = analytics_html(config, language)
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site_dest.html", strings), values) + "\n"
+
+
+def getyourguide_values(config: Config, tours_link: str | None) -> dict[str, str | None]:
+    """What a page needs from GetYourGuide: the Partner ID for their script, and the widget's values.
+
+    The Partner ID and the city's number at GetYourGuide are read from the page's tours link
+    (https://www.getyourguide.com/rome-l33/?partner_id=ABC123), so they are set in one place
+    (links in config.yaml). A page with that link loads GetYourGuide's script, which counts
+    the page's visits for their statistics. The widget's values are None when the widget is
+    off or the link is to no one city (the main page).
+    """
+    parts = urlsplit(tours_link or "")
+    query = dict(parse_qsl(parts.query))
+    city = re.search(r"-l(\d+)/?$", parts.path)   # "/rome-l33/" -> "33"
+    on = bool(config.website.getyourguide_activities and query.get("partner_id") and city)
+    return {
+        "GYG_PARTNER": query.get("partner_id"),
+        "GYG_CITY": city.group(1) if on else None,
+        "GYG_ITEMS": str(config.website.getyourguide_activities) if on else None,
+        # The campaign name: GetYourGuide's statistics show the widget's bookings under it.
+        "GYG_CMP": (query.get("cmp") or config.website.sub_id) if on else None,
+        "TOURS_ON": "1" if on else None,
+    }
 
 
 def render_not_found(config: Config, language: str | None = None) -> str:

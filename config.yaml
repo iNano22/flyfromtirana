@@ -90,6 +90,13 @@ website:
   # the pages (keyword links, offers, previews) is switched on and off in the dashboard.
   # Empty = no Drive on the site.
   travelpayouts_drive_script: "https://emrldtp.cc/NTgzODE4.js?t=583818"
+  # GetYourGuide's widget on every city page: a grid of that city's tours and activities, with
+  # photos, which GetYourGuide fills in and keeps up to date itself. This is how many activities
+  # it shows; 0 = no widget. It uses the Partner ID and the city pages of the tours link
+  # (links.partners.tours and links.city_pages.tours, further down), so it only appears once
+  # that link is switched on. It is shown in Italian on the Italian pages and in English on the
+  # others: GetYourGuide has no Albanian.
+  getyourguide_activities: 8
 
   # The site's own affiliate links, made in its own Travelpayouts project
   # ("Flyfromtirana"), so the site's clicks are counted there and not under the
@@ -145,7 +152,8 @@ links:
   # that link out. You can add more, e.g. car_rental -> {CAR_RENTAL_LINK}.
   #
   # Placeholders you can use in url:  {city} {city_en} {iata} {origin} {checkin} {checkout} {marker} {sub_id}
-  # Placeholders you can use in wrapper:  {url} (the finished url, encoded) {marker} {sub_id}
+  # Placeholders you can use in wrapper:  {url} (the finished url, encoded) {plain_url} (the same,
+  #   as it is: for a program that adds its ID to the end of the address) {marker} {sub_id}
   # Or paste a ready-made link from the Travelpayouts link generator as url, with no wrapper.
   partners:
     hotel:
@@ -181,6 +189,17 @@ links:
     luggage:                       # Radical Storage: luggage storage
       url: "https://radicalstorage.com/"
       wrapper: "https://radicalstorage.tp.st/0j7EaQvI?u={url}"
+    # GetYourGuide: guided tours, day trips and activities. It is GetYourGuide's own partner
+    # program (partner.getyourguide.com), not Travelpayouts, so there is no short link: the link
+    # is the page's own address with your Partner ID added to its end. cmp is the campaign name
+    # their statistics show: "telegram" for the posts, "website" for the site. The site's city
+    # pages also show GetYourGuide's widget, with this same ID (website.getyourguide_activities).
+    # 0Y4RGTR is this account's Partner ID (dashboard -> Tools -> Links shows it in every link).
+    # To switch GetYourGuide off, set url to "": the posts and the site then leave it out, the
+    # widget too.
+    tours:
+      url: "https://www.getyourguide.com/"
+      wrapper: "{plain_url}?partner_id=0Y4RGTR&cmp={sub_id}"
 
   # A partner's own page for a city. A post about a flight to Milan, and the site's Milan page,
   # link to these instead of the partner's `url` above; the site's main page, which is about no
@@ -207,6 +226,26 @@ links:
       Istanbul:     https://www.tiqets.com/en/istanbul-attractions-c79079/
       Berlin:       https://www.tiqets.com/en/berlin-attractions-c65144/
       Brussels:     https://www.tiqets.com/en/brussels-attractions-c60843/
+    tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
+      Milan:        https://www.getyourguide.com/milan-l139/
+      Rome:         https://www.getyourguide.com/rome-l33/
+      Bologna:      https://www.getyourguide.com/bologna-l1431/
+      Venice:       https://www.getyourguide.com/venice-l35/
+      Naples:       https://www.getyourguide.com/naples-l162/
+      Athens:       https://www.getyourguide.com/athens-l91/
+      Thessaloniki: https://www.getyourguide.com/thessaloniki-l115/
+      London:       https://www.getyourguide.com/london-l57/
+      Munich:       https://www.getyourguide.com/munich-l26/
+      Frankfurt:    https://www.getyourguide.com/frankfurt-l21/
+      Stuttgart:    https://www.getyourguide.com/stuttgart-l27/
+      Düsseldorf:   https://www.getyourguide.com/dusseldorf-l125/
+      Vienna:       https://www.getyourguide.com/vienna-l7/
+      Zurich:       https://www.getyourguide.com/zurich-l55/
+      Barcelona:    https://www.getyourguide.com/barcelona-l45/
+      Madrid:       https://www.getyourguide.com/madrid-l46/
+      Istanbul:     https://www.getyourguide.com/istanbul-l56/
+      Berlin:       https://www.getyourguide.com/berlin-l17/
+      Brussels:     https://www.getyourguide.com/brussels-l8/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/

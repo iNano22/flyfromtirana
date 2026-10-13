@@ -9,7 +9,7 @@
      photo cards, from site_card.html) PREMIUM (the block about the Premium channel, from
      site_premium.html, only while there is a premium channel) PHOTO_CREDITS (the footer's
      photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
-     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive
+     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their script, which counts the visits) DRIVE (the Travelpayouts Drive
      script, only when one is set) LANG (the page's language code) LANG_MENU (the language
      dropdown in the top bar, from site_lang.html) LANG_LINKS (the same links as a row, in the footer) HREFLANG (the tags that tell search engines about the other languages) ASSETS (the
      way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
@@ -17,7 +17,7 @@
      templates/strings/<language>.yaml, one file per language (see src/i18n.py) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
      SITE_URL YEAR SHARE_IMAGE (the picture a link to the page shows on Telegram or WhatsApp,
      from assets/img/share), plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
-     TICKETS_LINK, TRANSFER_LINK, CAR_RENTAL_LINK, LUGGAGE_LINK, COMPENSATION_LINK,
+     TICKETS_LINK, TOURS_LINK, TRANSFER_LINK, CAR_RENTAL_LINK, LUGGAGE_LINK, COMPENSATION_LINK,
      INSURANCE_LINK, HOTEL_LINK). A partner without a link has no value, so its card is left out.
      Careful in the CSS and JS below: never write an uppercase word in curly braces unless it is
      one of these values, never write two opening square brackets in a row, and keep JS variable
@@ -452,6 +452,7 @@ h1 span { display: block; }
 }
 </style>
 {DRIVE}
+<script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="{GYG_PARTNER}"></script>
 </head>
 <body>
 <a class="skip" href="#kerko">{T_SKIP}</a>
@@ -543,6 +544,7 @@ h1 span { display: block; }
     <ul class="strip svcs" aria-label="{T_EXTRAS_LABEL}">
       <li class="svc"><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/esim.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_ESIM_TITLE}</b><span>{T_ESIM_TEXT}</span><span class="svc-go">{T_ESIM_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/tickets.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_TICKETS_TITLE}</b><span>{T_TICKETS_TEXT}</span><span class="svc-go">{T_TICKETS_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
+      <li class="svc"><a href="{TOURS_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/tours.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_TOURS_TITLE}</b><span>{T_TOURS_TEXT}</span><span class="svc-go">{T_TOURS_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/transfer.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_TRANSFER_TITLE}</b><span>{T_TRANSFER_TEXT}</span><span class="svc-go">{T_TRANSFER_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/car_rental.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_CAR_TITLE}</b><span>{T_CAR_TEXT}</span><span class="svc-go">{T_CAR_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
       <li class="svc"><a href="{LUGGAGE_LINK}" target="_blank" rel="noopener sponsored"><img src="{ASSETS}img/services/luggage.webp" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="svc-body"><b>{T_LUGGAGE_TITLE}</b><span>{T_LUGGAGE_TEXT}</span><span class="svc-go">{T_LUGGAGE_GO}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></span></span></a></li>
@@ -587,6 +589,7 @@ h1 span { display: block; }
         <ul>
           <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">eSIM</a></li>
           <li><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_TICKETS_TITLE}</a></li>
+          <li><a href="{TOURS_LINK}" target="_blank" rel="noopener sponsored">{T_TOURS_TITLE}</a></li>
           <li><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_TRANSFER_TITLE}</a></li>
           <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">{T_CAR_TITLE}</a></li>
           <li><a href="{LUGGAGE_LINK}" target="_blank" rel="noopener sponsored">{T_LUGGAGE_TITLE}</a></li>

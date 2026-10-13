@@ -186,7 +186,7 @@ to one. Top to bottom:
 - **Udhëzues për qytetet**: one photo tile per city page.
 - **Gjithçka për udhëtimin**: white photo cards for the partner links (eSIM,
   attraction tickets, airport transfer, car rental, luggage storage, compensation,
-  and insurance and hotels once their `links.partners` entry has a url). A card
+  and tours, insurance and hotels once their `links.partners` entry has a url). A card
   whose link is empty is left out.
 - A full-width yellow "Mos humb asnjë ofertë" Telegram band with the Premium line
   (when enabled), and a black footer with the affiliate disclosure.
@@ -305,6 +305,27 @@ of two ways, chosen by `website.google_analytics_ask_first` in config.yaml:
 Either way the answer is remembered in the visitor's browser, and "Cilësimet e
 cookies" in the footer lets them change it. With the ID empty there is no
 Analytics, no box and no cookie.
+
+### GetYourGuide's widget
+
+Every city page can show GetYourGuide's activity widget under its guide: a grid
+of that city's tours and activities with photos, which GetYourGuide fills in and
+keeps up to date itself (`id="ture"` in `templates/site_dest.html`).
+
+- `website.getyourguide_activities` in config.yaml is how many activities it
+  shows; `0` takes the widget off.
+- It has no settings of its own beyond that: the Partner ID and the city are read
+  from the city's tours link (`links.partners.tours` and `links.city_pages.tours`,
+  see Affiliate links). The number after `-l` in a city's address there
+  (`rome-l33`) is the city's number at GetYourGuide. So the widget only appears
+  once the tours link is switched on, and always earns under the same ID.
+- It is shown in Italian on the Italian pages and in English on the others
+  (`GYG_LOCALE` in `templates/strings/<language>.yaml`): GetYourGuide has no Albanian.
+- The widget draws itself in a frame loaded from getyourguide.com.
+- Every page that has the tours link (the main page and the city pages) loads
+  GetYourGuide's script from its `<head>`, with the Partner ID. It is the one their
+  dashboard calls "GetYourGuide Analytics": it counts the pages' visits for their
+  statistics, and on the city pages it also draws the widget.
 
 ### Travelpayouts Drive
 
@@ -476,7 +497,7 @@ Edit `templates/sq.txt`. Rules:
 - `{NAME}` is replaced with a value: `CITY CITY_UPPER AIRPORT FLAG PRICE MEDIAN
   SAVING DATES AIRLINE STOPS DURATION RETURN_PRICE CHANNEL FLIGHT_LINK HOTEL_LINK
   ESIM_LINK INSURANCE_LINK COMPENSATION_LINK CAR_RENTAL_LINK TICKETS_LINK TRANSFER_LINK
-  LUGGAGE_LINK PREMIUM_HOURS PREMIUM_LINK
+  LUGGAGE_LINK TOURS_LINK PREMIUM_HOURS PREMIUM_LINK
   WEBSITE_LINK PHOTO_CREDIT PHOTO_LINK`. `SAVING` is the percent below the usual price
   ("68"); `WEBSITE_LINK` is `website.url` from config.yaml; `PHOTO_CREDIT` and
   `PHOTO_LINK` are the author, licence and source of the post's photo (see Photos).
@@ -516,6 +537,16 @@ no one city, links to the partner's `url`. For this to be counted, the partner's
 given page instead of the homepage. A new route needs its city added to each
 partner in that list (a test checks that none is missing); until then its links
 open the partner's homepage.
+
+**GetYourGuide (`tours`) is not a Travelpayouts program.** It is GetYourGuide's own
+partner program (partner.getyourguide.com), and it has no short link: a link is
+the page's own address with your Partner ID added to its end. Its `wrapper` is
+therefore `{plain_url}?partner_id=<your ID>&cmp={sub_id}`, where `{plain_url}` is
+the address as it is (not encoded, as `{url}` is for a redirect) and `cmp` is the
+campaign name GetYourGuide's statistics show: `telegram` for the posts, `website`
+for the site. It has a page per city too, under `links.city_pages`. The posts get
+a "Ture dhe aktivitete në <city>" line; the site gets a card, the links on the
+city pages and the widget (see GetYourGuide's widget).
 
 **The website has its own links.** Travelpayouts counts clicks per project, and the
 site is its own project ("Flyfromtirana") next to the Telegram one. Links made in

@@ -14,7 +14,10 @@
      main page, "../") GUIDE_PHOTO (the city's wide photo) PHOTO (a route's photo, only when
      there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
      ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive script,
-     only when one is set) LANG, LANG_MENU, LANG_LINKS and HREFLANG (the page's language, the
+     only when one is set) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their
+     script, which counts the visits and draws the widget) GYG_CITY GYG_ITEMS GYG_CMP and TOURS_ON
+     (the widget: the city's number there, how many activities and the campaign name; all missing
+     when the widget is off, and its whole line with them) LANG, LANG_MENU, LANG_LINKS and HREFLANG (the page's language, the
      language dropdown in the top bar, the same links as a row in the footer, and the tags for search engines). The text itself is not in this file: T_NAME
      stands for the entry NAME in templates/strings/<language>.yaml (see src/i18n.py), plus one NAME_LINK per partner.
      Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
@@ -188,8 +191,9 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
 .airport p, .qa p { margin: 0; max-width: 46em; }
 .qa p { color: #3a3f47; }
 .qas { display: grid; gap: 10px; }
-/* A partner link under a part of the guide: tickets under the sights, a transfer under the airports. */
-.gsec > .gmore { margin-top: 8px; font-size: 16px; }
+/* A partner link under a part of the guide: tickets under the sights, a transfer under the airports.
+   The same under GetYourGuide's widget (.gyg), which draws itself inside a frame. */
+.gsec > .gmore, .gyg + .gmore { margin-top: 8px; font-size: 16px; }
 .gmore a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
 .facts { display: grid; gap: 12px; margin-top: 48px; }
 .fact { padding: 20px; border-radius: 10px; background: var(--ink); color: #ffffff; }
@@ -283,6 +287,7 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
 }
 </style>
 {DRIVE}
+<script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="{GYG_PARTNER}"></script>
 </head>
 <body>
 <a class="skip" href="#cmimet">{T_D_SKIP}</a>
@@ -335,6 +340,7 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
         <li><a href="#aeroporti" data-part="{AIRPORTS_ON}">{T_D_TOC_AIRPORTS}</a></li>
         <li><a href="#transporti" data-part="{TRANSPORT_ON}">{T_D_TOC_TRANSPORT}</a></li>
         <li><a href="#udhetime-ditore" data-part="{DAYTRIPS_ON}">{T_D_TOC_DAYTRIPS}</a></li>
+        <li><a href="#ture" data-part="{TOURS_ON}">{T_D_TOC_TOURS}</a></li>
         <li><a href="#pyetje">{T_D_FAQ}</a></li>
       </ul>
     </nav>
@@ -345,7 +351,7 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
       <div class="gsec" id="ushqimi"><h2>{T_D_FOOD}</h2><ul class="sights">{FOOD}</ul></div>
       <div class="gsec" id="aeroporti"><h2>{T_D_AIRPORTS_TITLE}</h2><div class="airports">{AIRPORTS}</div>[[<p class="gmore"><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_D_TRANSFER_GO}</a></p>]]</div>
       <div class="gsec" id="transporti"><h2>{T_D_TRANSPORT_TITLE}</h2><p>{TRANSPORT}</p></div>
-      <div class="gsec" id="udhetime-ditore"><h2>{T_D_DAYTRIPS_TITLE}</h2><ul class="sights">{DAYTRIPS}</ul></div>
+      <div class="gsec" id="udhetime-ditore"><h2>{T_D_DAYTRIPS_TITLE}</h2><ul class="sights">{DAYTRIPS}</ul>[[<p class="gmore"><a href="{TOURS_LINK}" target="_blank" rel="noopener sponsored">{T_D_TOURS_GO}</a></p>]]</div>
       <div class="facts">
         <div class="fact"><h3>{T_D_BUDGET}</h3><p>{BUDGET}</p></div>
         <div class="fact"><h3>{T_D_WHEN}</h3><p>{WHEN}</p></div>
@@ -362,12 +368,14 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
       <p class="note">{T_D_NOTE}</p>
     </section>
   </div>
+  <section class="block wrap" id="ture" aria-labelledby="tours-h"><h2 id="tours-h">{T_D_TOURS_TITLE}</h2><p class="hint">{T_D_TOURS_HINT}</p><div class="gyg" data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-widget="activities" data-gyg-location-id="{GYG_CITY}" data-gyg-number-of-items="{GYG_ITEMS}" data-gyg-locale-code="{T_GYG_LOCALE}" data-gyg-cmp="{GYG_CMP}" data-gyg-partner-id="{GYG_PARTNER}"></div><p class="gmore"><a href="{TOURS_LINK}" target="_blank" rel="noopener sponsored">{T_D_TOURS_ALL}</a></p></section>
   <section class="block wrap" aria-labelledby="extras-h">
     <h2 id="extras-h">{T_FOR_THE_TRIP}</h2>
     <p class="hint">{T_EXTRAS_HINT}</p>
     <ul class="pills">
       <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">{T_ESIM_TITLE}</a></li>
       <li><a href="{TICKETS_LINK}" target="_blank" rel="noopener sponsored">{T_TICKETS_IN}</a></li>
+      <li><a href="{TOURS_LINK}" target="_blank" rel="noopener sponsored">{T_TOURS_IN}</a></li>
       <li><a href="{TRANSFER_LINK}" target="_blank" rel="noopener sponsored">{T_TRANSFER_TITLE}</a></li>
       <li><a href="{CAR_RENTAL_LINK}" target="_blank" rel="noopener sponsored">{T_CAR_TITLE}</a></li>
       <li><a href="{LUGGAGE_LINK}" target="_blank" rel="noopener sponsored">{T_LUGGAGE_IN}</a></li>

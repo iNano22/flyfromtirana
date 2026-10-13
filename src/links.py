@@ -81,11 +81,16 @@ class LinkBuilder:
         self._wrap("https://example.com", self.settings.flight_wrapper, "links.flight")
 
     def _wrap(self, url: str, wrapper: str, where: str) -> str:
-        """Put `url` inside a tracking redirect like tp.media/r?...&u={url}, if one is configured."""
+        """Put `url` inside a tracking link, if one is configured.
+
+        Either a redirect that takes the address encoded (tp.media/r?...&u={url}), or the
+        address as it is with the program's ID added to its end ({plain_url}?partner_id=...).
+        """
         if not wrapper:
             return url
         values = {
             "url": quote(url, safe=""),
+            "plain_url": url,
             "marker": quote(self.marker, safe=""),
             "sub_id": quote(self.settings.sub_id, safe=""),
         }

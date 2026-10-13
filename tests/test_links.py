@@ -61,6 +61,16 @@ def test_partner_opens_its_own_page_for_the_city(route):
     assert links.partner("tickets", replace(route, city="Vienna"), day, day) == "https://tp.example/x?u=https%3A%2F%2Ft.example%2F"
 
 
+def test_wrapper_can_add_an_id_to_the_end_of_the_address(route):
+    # GetYourGuide has no redirect link: its Partner ID goes on the end of the page's own address.
+    tours = LinkTemplate(url="https://g.example/", wrapper="{plain_url}?partner_id=ABC&cmp={sub_id}")
+    settings = LinkSettings(sub_id="telegram", partners={"tours": tours},
+                            city_pages={"tours": {"Milan": "https://g.example/milan-l139/"}})
+    links, day = LinkBuilder(settings, marker="1"), date(2026, 10, 20)
+    assert links.partner("tours", route, day, day) == "https://g.example/milan-l139/?partner_id=ABC&cmp=telegram"
+    assert links.partner("tours", route, day, day, city_page=False) == "https://g.example/?partner_id=ABC&cmp=telegram"
+
+
 def test_city_pages_do_not_switch_a_partner_on(route):
     # An empty url still means "leave this partner out", whatever pages are listed for it.
     settings = LinkSettings(partners={"tickets": LinkTemplate()}, city_pages={"tickets": {"Milan": "https://t.example/milan/"}})
