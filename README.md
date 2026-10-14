@@ -79,6 +79,7 @@ scripts/post_test.py     send one test message to the channel
 scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
 scripts/alert_chat.py    find your chat for the failure alerts, and send a test alert there
 scripts/social_preview.py  draw sample Instagram/Facebook cards into ig_preview/, to check the look
+scripts/social_test.py   scan today's prices and send one draft to the drafts chat now
 Dockerfile               the scanner image
 web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
@@ -688,9 +689,13 @@ To turn it on:
    the bot is an admin works too.
 3. `social.enabled: true` in config.yaml (it is).
 
-To see the cards without waiting for a deal: `python scripts/social_preview.py`
-draws three sample deals into `ig_preview/`. A `python -m src.main --dry-run` prints
-each draft's caption and the folder its cards were drawn into. The cards are drawn
+To get a draft right now: `python scripts/social_test.py` scans today's prices and
+sends the draft of the best deal of the moment to the drafts chat (`--routes BGY,VIE`
+to scan only those). Nothing is posted to the channel or marked as posted, so the next
+real run may send the same deal again. To see the cards without any deal:
+`python scripts/social_preview.py` draws three sample deals into `ig_preview/`. A
+`python -m src.main --dry-run` prints each draft's caption and the folder its cards
+were drawn into. The cards are drawn
 with Pillow and the fonts in `assets/fonts/` (the website keeps loading the same
 fonts from Google Fonts). The city photos are the Telegram ones
 (`assets/telegram/`); `bgy.jpg` is the smallest (600px wide), so Milan Bergamo's
