@@ -12,6 +12,7 @@ an admin and use the channel's -100... number.
 
 Needs TELEGRAM_BOT_TOKEN (from .env or the environment).
 """
+import json
 import sys
 from pathlib import Path
 
@@ -29,8 +30,13 @@ from src.telegram import API_URL, TelegramClient, TelegramError  # noqa: E402
 
 def list_chats(token: str) -> int:
     """Print every chat that wrote to the bot in the last day (what Telegram still keeps)."""
+    # Telegram remembers which kinds of updates a bot last asked for, and drops the others.
+    # Once something asked only for channel posts, so private messages were never delivered:
+    # asking for them by name here puts them back.
+    wanted = json.dumps(["message", "my_chat_member", "channel_post"])
     try:
-        response = requests.get(API_URL.format(token=token, method="getUpdates"), timeout=20)
+        response = requests.get(API_URL.format(token=token, method="getUpdates"),
+                                params={"allowed_updates": wanted}, timeout=20)
         body = response.json()
     except (requests.RequestException, ValueError) as exc:
         print(f"❌ Could not reach Telegram ({type(exc).__name__})")   # not the error itself: it holds the token
@@ -46,7 +52,8 @@ def list_chats(token: str) -> int:
             name = chat.get("title") or " ".join(filter(None, [chat.get("first_name"), chat.get("last_name")]))
             chats[chat["id"]] = f"{name} ({chat['type']})"
     if not chats:
-        print("No chats yet. Open the bot in Telegram, press Start (or send it any message), and run this again.")
+        print("No chats yet. Open the bot in Telegram, send it any message (\"hi\"), and run this again.")
+        print("A message sent before the first run of this script may not count: send a new one.")
         return 1
     for chat_id, label in chats.items():
         print(f"{chat_id}   {label}")
