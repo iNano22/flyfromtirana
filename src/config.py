@@ -90,6 +90,17 @@ class PremiumSettings:
 
 
 @dataclass(frozen=True)
+class SocialSettings:
+    """Instagram/Facebook drafts: the pictures and caption of a deal, sent to the owner's chat (src/social.py)."""
+
+    enabled: bool = False
+    max_posts_per_day: int = 2      # the free channel's best deals of the day get a draft, this many at most
+    handle: str = ""                # the account's name on the cards, e.g. "@flyfromtirana" (empty = channel_handle)
+    sub_id: str = "facebook"        # Travelpayouts SubID of the booking link given for the Facebook post
+    hashtags: str = ""              # the last line of every caption
+
+
+@dataclass(frozen=True)
 class WebsiteSettings:
     """The static site built by src/website.py (the docs/ folder, served by the `web` container)."""
 
@@ -143,6 +154,7 @@ class Config:
     airlines: dict[str, str]
     premium: PremiumSettings = field(default_factory=PremiumSettings)
     website: WebsiteSettings = field(default_factory=WebsiteSettings)
+    social: SocialSettings = field(default_factory=SocialSettings)
     post_photos: bool = True               # send each post with its destination photo
 
 
@@ -153,6 +165,7 @@ class Secrets:
     telegram_bot_token: str = ""
     telegram_channel_id: str = ""
     telegram_premium_channel_id: str = ""
+    telegram_drafts_chat_id: str = ""      # where the Instagram/Facebook drafts go; empty = no drafts
 
 
 def load_config(path: str | Path = DEFAULT_CONFIG_PATH) -> Config:
@@ -234,7 +247,21 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         airlines={str(k).upper(): str(v) for k, v in (raw.get("airlines") or {}).items()},
         premium=_build_premium(raw.get("premium") or {}, rules),
         website=_build_website(raw.get("website") or {}, base_dir, links, str(raw.get("language", "sq"))),
+        social=_build_social(raw.get("social") or {}),
         post_photos=bool(raw.get("post_photos", True)),
+    )
+
+
+def _build_social(raw: dict) -> SocialSettings:
+    max_posts_per_day = int(raw.get("max_posts_per_day", 2))
+    if max_posts_per_day < 1:
+        raise ValueError("social.max_posts_per_day must be at least 1 (or set social.enabled: false)")
+    return SocialSettings(
+        enabled=bool(raw.get("enabled", False)),
+        max_posts_per_day=max_posts_per_day,
+        handle=str(raw.get("handle") or "").strip(),
+        sub_id=str(raw.get("sub_id") or "facebook").strip(),
+        hashtags=" ".join(str(raw.get("hashtags") or "").split()),   # one line, single spaces
     )
 
 
@@ -377,10 +404,15 @@ def load_secrets(*, dry_run: bool, premium: bool = False) -> Secrets:
     if premium:
         names.append("TELEGRAM_PREMIUM_CHANNEL_ID")
     env = require_env(*names)
+    # The drafts go to their own chat, or else to the chat the alerts go to: usually
+    # both are the owner's chat with the bot, so one variable can serve both.
+    drafts_chat = (os.environ.get("TELEGRAM_DRAFTS_CHAT_ID", "").strip()
+                   or os.environ.get("TELEGRAM_ALERT_CHAT_ID", "").strip())
     return Secrets(
         travelpayouts_token=env["TRAVELPAYOUTS_TOKEN"],
         travelpayouts_marker=env["TRAVELPAYOUTS_MARKER"],
         telegram_bot_token=env["TELEGRAM_BOT_TOKEN"],
         telegram_channel_id=env["TELEGRAM_CHANNEL_ID"],
         telegram_premium_channel_id=env.get("TELEGRAM_PREMIUM_CHANNEL_ID", ""),
+        telegram_drafts_chat_id=drafts_chat,
     )

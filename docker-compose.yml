@@ -28,6 +28,9 @@ services:
       # Where the bot says so when a scan or the website build fails, and when it works
       # again (README: "Alerts"). Empty = failures are only in the logs.
       TELEGRAM_ALERT_CHAT_ID: ${TELEGRAM_ALERT_CHAT_ID:-}
+      # Where the Instagram/Facebook drafts go (README: "Instagram and Facebook drafts").
+      # Empty = the alert chat.
+      TELEGRAM_DRAFTS_CHAT_ID: ${TELEGRAM_DRAFTS_CHAT_ID:-}
     volumes:
       - data:/app/data      # prices.db: price history and what was already posted
       - site:/app/docs      # the generated website

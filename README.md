@@ -37,7 +37,8 @@ availability. That's fine for spotting deals: the booking link opens a live sear
 
 ```
 config.yaml              routes, deal rules, link templates, website settings (no secrets)
-templates/sq.txt         post wording (Albanian)
+templates/sq.txt         post wording (Albanian); sq_premium.txt = the premium channel's,
+                         sq_social.txt = the caption of the Instagram/Facebook drafts
 templates/site.html      the website page (layout, CSS, a little JS); site_row.html = one route in the
                          price table, site_card.html = one photo card, site_hero.html = one line of
                          the board at the top, site_premium.html = the block about the Premium channel
@@ -54,9 +55,10 @@ content/countries/       the entry documents for each country, one file per lang
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences);
                          share/ = the picture a link to the site shows on Telegram or WhatsApp
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
+assets/fonts/            Archivo and IBM Plex Mono (SIL Open Font License), for drawing the deal cards
 docs/                    the generated website (index.html + img/), what the `web` container serves
 src/
-  main.py                orchestrator + CLI (--dry-run, --routes)
+  main.py                orchestrator + CLI (--dry-run, --routes): scan, post, then the social drafts
   config.py              loads config.yaml + env vars
   scanner.py             Travelpayouts API client
   storage.py             SQLite: price history + posted deals
@@ -65,6 +67,8 @@ src/
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
   photos.py              which photo goes on a route's posts, and its credit
+  cards.py               draws a deal's Instagram/Facebook pictures (feed card + story card)
+  social.py              the draft of a social media post: the cards, the caption, the link
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
   i18n.py                the website's languages: loads a language's wording into the templates
@@ -74,6 +78,7 @@ src/
 scripts/post_test.py     send one test message to the channel
 scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
 scripts/alert_chat.py    find your chat for the failure alerts, and send a test alert there
+scripts/social_preview.py  draw sample Instagram/Facebook cards into ig_preview/, to check the look
 Dockerfile               the scanner image
 web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
@@ -650,6 +655,49 @@ To turn it on:
 Posts for each channel are logged separately (`[premium]` / `[free]`) and
 deduped separately. Premium's wording is in `templates/sq_premium.txt`.
 
+## Instagram and Facebook drafts
+
+Every deal the free channel posts also becomes a ready-made social media post,
+sent to you on Telegram right after the channel post (`social` in config.yaml).
+Each draft is three messages:
+
+1. **Two pictures**, drawn by `src/cards.py` in the website's look: a feed card
+   (1080×1350, the tallest picture Instagram's feed takes; Facebook takes it too)
+   and a story card (1080×1920). They come as *files*, not photos, so Telegram
+   keeps them at full size: save them to the phone's gallery and post them as they are.
+2. **The caption** (`templates/sq_social.txt`), to copy under the post. It has no
+   link: Instagram doesn't make links in captions clickable, so it says "linku në
+   bio" — put `flyfromtirana.al` in the account's bio. It ends with `social.hashtags`.
+3. **The booking link for Facebook**, where links do work. It carries the SubID
+   `social.sub_id` (`facebook`), so its clicks show apart from the channel's and the
+   website's in Travelpayouts.
+
+Which deals get a draft: the free channel's, best first, at most
+`social.max_posts_per_day` (2) a day, counted in Tirana time; never during quiet
+hours, and never the same route, date and price band twice within
+`repost_cooldown_days` (the drafts are remembered in `posted_deals` under the
+name `social`). A draft that fails to send is logged, left unrecorded (so the next
+run tries again) and never holds up the channel posts, which are already out.
+
+To turn it on:
+1. Open the bot in Telegram and press Start, then run `python scripts/alert_chat.py`
+   to see your chat's number (the same steps as for the failure alerts above).
+2. Set `TELEGRAM_DRAFTS_CHAT_ID` to that number in `.env` and in Coolify's Environment
+   Variables, then redeploy. Left empty, the drafts go to `TELEGRAM_ALERT_CHAT_ID`;
+   with neither set the bot logs a warning and sends no drafts. A private channel where
+   the bot is an admin works too.
+3. `social.enabled: true` in config.yaml (it is).
+
+To see the cards without waiting for a deal: `python scripts/social_preview.py`
+draws three sample deals into `ig_preview/`. A `python -m src.main --dry-run` prints
+each draft's caption and the folder its cards were drawn into. The cards are drawn
+with Pillow and the fonts in `assets/fonts/` (the website keeps loading the same
+fonts from Google Fonts). The city photos are the Telegram ones
+(`assets/telegram/`); `bgy.jpg` is the smallest (600px wide), so Milan Bergamo's
+card is a little softer than the others until that photo is replaced.
+
+Not built yet: posting to Instagram and Facebook by itself (see the roadmap).
+
 ## Exit codes
 
 `0` OK · `1` the run failed (API down, bad token, a post failed) · `2` configuration
@@ -657,10 +705,17 @@ problem (missing env var, bad config.yaml). The scheduler logs any non-zero code
 
 ## Roadmap (not built yet: where it plugs in)
 
-- **Phase 2: Instagram/Facebook + deal images.** Add a publisher next to
-  `telegram.py` and call it from `main.publish()`. `Deal` already carries
-  everything an image generator needs. Use a new `channel` name (e.g. `"instagram"`)
-  so it dedupes separately in `posted_deals`.
+- **Phase 2: post to Instagram and Facebook by itself.** The drafts above are
+  phase 1. Phase 2 is a publisher next to `telegram.py` that sends the feed card to
+  the Instagram account (as a post and a story) and to the Facebook Page through
+  Meta's Graph API with one long-lived Page token, called from `main.publish_social`
+  instead of `send_draft`. Instagram only fetches pictures from a public address, so
+  the cards would be written under `docs/social/` (the website) for a week. Needs an
+  Instagram *Business* account linked to a Facebook Page, and a Meta developer app.
+- **Phase 3: keep the accounts busy.** A weekly "top 5" carousel from the website's
+  deal list, a city-guide post on days without a deal, a short Reel (the card with a
+  slow zoom, ffmpeg). TikTok stays by hand: an app TikTok hasn't audited can only
+  post privately.
 - **Phase 3b: custom alerts** ("tell me when TIA → LON is under €30"). Needs a bot
   that stores each subscriber's routes and sends them direct messages.
 - **Phase 4: English channel for flights *into* Tirana.** Return-direction

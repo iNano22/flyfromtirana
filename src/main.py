@@ -1,4 +1,4 @@
-"""FlyFromTirana entry point: scan prices -> store -> detect deals -> post.
+"""FlyFromTirana entry point: scan prices -> store -> detect deals -> post -> social drafts.
 
 Run from the repo root:
     python -m src.main --dry-run                     # print posts instead of sending them
@@ -14,7 +14,9 @@ from __future__ import annotations
 
 import argparse
 import logging
+import shutil
 import sys
+import tempfile
 from dataclasses import replace
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
@@ -41,6 +43,7 @@ from src.formatter import format_post
 from src.links import LinkBuilder
 from src.photos import post_photo
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
+from src.social import SOCIAL_CHANNEL, make_draft, send_draft
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
 
@@ -174,6 +177,11 @@ def run(
                              telegram=telegram_for(secrets.telegram_channel_id),
                              premium_link=premium.join_link if premium.enabled else None, **common)
 
+        # 3) The Instagram/Facebook drafts for the free channel's deals, sent to the owner
+        exit_code |= publish_social(best, telegram=telegram_for(secrets.telegram_drafts_chat_id),
+                                    drafts_chat=bool(secrets.telegram_drafts_chat_id),
+                                    marker=secrets.travelpayouts_marker, **common)
+
         # 4) Housekeeping
         pruned = storage.prune_prices(now - timedelta(days=config.history_retention_days))
         if pruned:
@@ -268,6 +276,67 @@ def publish(deals: list[Deal], *, channel: str, template: str, config: Config, l
         for quote in deal.quotes:
             storage.record_post(channel, quote, price_band(quote.price, config.rules.price_band_eur), now)
         log.info("[%s] Posted %s (message %s)", channel, deal.summary(), message_id)
+    return 1 if failures else 0
+
+
+def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, storage: Storage,
+                   telegram: TelegramClient | None, drafts_chat: bool, marker: str, dry_run: bool,
+                   now: datetime, local_now: datetime, output: Callable[[str], None]) -> int:
+    """Send the Instagram/Facebook draft of each deal to the owner's chat (src/social.py).
+
+    `deals` are the free channel's posts of this run, best first. Only the first
+    social.max_posts_per_day of a day get a draft, and a deal the drafts chat
+    already had (same route, date and price band) is skipped, like a channel
+    skips a repost. Returns 1 if a draft could not be sent, else 0. A problem
+    here never stops the Telegram posts: they are already out.
+    """
+    social = config.social
+    if not social.enabled or not deals:
+        return 0
+    if not dry_run and not drafts_chat:
+        log.warning("Social drafts are on in config.yaml but TELEGRAM_DRAFTS_CHAT_ID is not set: no drafts sent")
+        return 0
+    if in_quiet_hours(local_now.time(), config.quiet_hours) and not dry_run:
+        return 0   # the channel posts wait for the morning, and so do their drafts
+
+    day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
+    left = social.max_posts_per_day - storage.count_posts(SOCIAL_CHANNEL, day_start)
+    if left <= 0:
+        log.info("[social] Today's %d draft(s) are already out", social.max_posts_per_day)
+        return 0
+    # The booking link for Facebook carries its own SubID, so its clicks show apart in the stats.
+    social_links = LinkBuilder(replace(links.settings, sub_id=social.sub_id), marker,
+                               origin=config.origin, currency=config.currency)
+    since = now - timedelta(days=config.rules.repost_cooldown_days)
+    # The cards are drawn into a folder of their own. A real run deletes it once
+    # they are sent; a dry run keeps it, so the pictures can be looked at.
+    folder = Path(tempfile.mkdtemp(prefix="flyfromtirana-social-"))
+    failures = 0
+    sent = 0
+    for deal in deals:
+        if sent >= left:
+            break
+        best = deal.best
+        band = price_band(best.price, config.rules.price_band_eur)
+        if storage.was_posted(SOCIAL_CHANNEL, best.origin, best.destination, best.depart_date, band, since):
+            continue
+        draft = make_draft(deal, config, social_links, folder, photo=post_photo(deal.route.iata))
+        if dry_run:
+            output(f"\n----- DRY RUN [social] · {deal.summary()} · cards in {folder} -----\n{draft.caption}\n")
+            sent += 1
+            continue
+        try:
+            send_draft(telegram, draft)
+        except TelegramError as exc:
+            log.error("[social] Could not send the draft for %s: %s", deal.summary(), exc)
+            failures += 1
+            continue
+        for quote in deal.quotes:
+            storage.record_post(SOCIAL_CHANNEL, quote, price_band(quote.price, config.rules.price_band_eur), now)
+        sent += 1
+        log.info("[social] Sent the draft for %s", deal.summary())
+    if not dry_run:
+        shutil.rmtree(folder, ignore_errors=True)
     return 1 if failures else 0
 
 

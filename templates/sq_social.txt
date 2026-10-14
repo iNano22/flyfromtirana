@@ -1,0 +1,13 @@
+✈️ TIRANA → {CITY_UPPER}[[ ({AIRPORT})]] nga €{PRICE} one way[[ 🔥 -{SAVING}%]]
+[[💡 Zakonisht ~€{MEDIAN}]]
+
+📅 {DATES}
+🛫 {AIRLINE} · {STOPS}[[ · {DURATION}]]
+🔁 Kthimi nga €{RETURN_PRICE}
+
+👉 Rezervo nga linku në bio: {WEBSITE}
+🔔 Ofertat dalin të parat në Telegram: {CHANNEL}
+⏳ Çmimet ndryshojnë shpejt!
+📷 Foto: {PHOTO_CREDIT}
+
+{HASHTAGS}

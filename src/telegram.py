@@ -3,10 +3,14 @@
 The bot must be an admin of the channel with permission to post messages.
 Docs: https://core.telegram.org/bots/api#sendmessage
       https://core.telegram.org/bots/api#sendphoto
+
+The same client also sends the social media drafts to the owner's own chat
+(src/social.py): any chat the bot may write to works as chat_id.
 """
 from __future__ import annotations
 
 import html
+import json
 import logging
 import re
 from pathlib import Path
@@ -74,6 +78,27 @@ class TelegramClient:
         # The file is read into memory first, so a retry sends the whole photo again.
         files = {"photo": (photo.name, photo.read_bytes(), "image/jpeg")}
         return self._call("sendPhoto", data=fields, files=files)["message_id"]
+
+    def send_files(self, paths: list[Path], caption: str) -> list[int]:
+        """Send pictures as files, in one group, with HTML text under the group.
+
+        A photo sent as a file keeps its size and quality (Telegram shrinks a
+        "photo" to 1280px), so the receiver can post it elsewhere as it is.
+        Returns the message_id of each file (Telegram makes one message per file).
+        Docs: https://core.telegram.org/bots/api#sendmediagroup
+        """
+        # Each item names its file as attach://<field>; the fields hold the bytes.
+        media = []
+        files = {}
+        for number, path in enumerate(paths):
+            field = f"file{number}"
+            item = {"type": "document", "media": f"attach://{field}"}
+            if number == 0:
+                item.update(caption=caption, parse_mode="HTML")   # shown once, under the whole group
+            media.append(item)
+            files[field] = (path.name, path.read_bytes(), "image/jpeg")
+        fields = {"chat_id": self.chat_id, "media": json.dumps(media)}
+        return [message["message_id"] for message in self._call("sendMediaGroup", data=fields, files=files)]
 
     def _call(self, method: str, **request) -> dict:
         """One Bot API call. Returns its "result", or raises TelegramError."""

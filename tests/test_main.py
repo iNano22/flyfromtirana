@@ -1,4 +1,5 @@
 """End-to-end runs of main.run() with fake Travelpayouts + Telegram."""
+import json
 from dataclasses import replace
 from datetime import date, time, timedelta
 
@@ -15,9 +16,11 @@ SECRETS = Secrets("tp-token", "12345", "123:bot", "@flyfromtirana")
 @pytest.fixture
 def config(tmp_path):
     base = load_config()
-    # These tests cover the free channel on its own; premium has tests/test_premium.py.
+    # These tests cover the free channel on its own; premium has tests/test_premium.py
+    # and the social media drafts tests/test_social.py.
     return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
-                   premium=replace(base.premium, enabled=False))
+                   premium=replace(base.premium, enabled=False),
+                   social=replace(base.social, enabled=False))
 
 
 def fake_world(telegram_ok: bool = True) -> FakeSession:
@@ -32,6 +35,9 @@ def fake_world(telegram_ok: bool = True) -> FakeSession:
         if "api.telegram.org" in url:
             if not telegram_ok:
                 return FakeResponse(400, {"ok": False, "description": "Bad Request: chat not found"})
+            if url.endswith("/sendMediaGroup"):   # a group of files: Telegram answers one message per file
+                messages = [{"message_id": next(message_ids)} for _ in json.loads(kwargs["data"]["media"])]
+                return FakeResponse(200, {"ok": True, "result": messages})
             return FakeResponse(200, {"ok": True, "result": {"message_id": next(message_ids)}})
         return api(method, url, kwargs)
 

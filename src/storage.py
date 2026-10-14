@@ -157,6 +157,19 @@ class Storage:
         ).fetchone()
         return datetime.fromisoformat(row[0]) if row and row[0] else None
 
+    def count_posts(self, channel: str, since: datetime) -> int:
+        """How many posts went to `channel` since `since`.
+
+        A post lists several dates, each one its own row, but they all share the
+        route and the moment of posting: counting those pairs counts posts.
+        """
+        row = self.conn.execute(
+            "SELECT COUNT(*) FROM (SELECT DISTINCT origin, destination, posted_at FROM posted_deals"
+            " WHERE channel = ? AND posted_at >= ?)",
+            (channel, to_iso(since)),
+        ).fetchone()
+        return row[0]
+
     def record_post(self, channel: str, quote: Quote, price_band: int, posted_at: datetime) -> None:
         with self.conn:
             self.conn.execute(

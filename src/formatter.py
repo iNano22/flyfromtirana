@@ -60,14 +60,17 @@ OPTIONAL_PART = re.compile(r"\[\[(.*?)\]\]")
 def format_post(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
                 airline_names: dict[str, str], template: str | None = None,
                 premium_link: str | None = None, website_url: str | None = None,
-                photo: PostPhoto | None = None) -> str:
+                photo: PostPhoto | None = None, extra: dict[str, str | None] | None = None) -> str:
     """template: file name in templates/ without .txt (default: the language, e.g. "sq").
 
     photo: the photo the post is sent with, if any, so the text can credit its author.
+    extra: more {NAME} values for this template, e.g. {"HASHTAGS": "#tirana"} (None = no value).
     """
     values = build_values(deal, links, language=language, channel_handle=channel_handle,
                           airline_names=airline_names, premium_link=premium_link,
                           website_url=website_url, photo=photo)
+    for name, value in (extra or {}).items():
+        values[name] = html.escape(value, quote=False) if value else None
     return tidy(render(load_template(template or language), values))
 
 

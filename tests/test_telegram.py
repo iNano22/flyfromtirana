@@ -1,3 +1,5 @@
+import json
+
 import pytest
 import requests
 
@@ -45,6 +47,26 @@ def test_send_photo_uploads_the_file_with_the_text_as_caption(photo):
     assert call["data"] == {"chat_id": "@flyfromtirana", "caption": "<b>hi</b>", "parse_mode": "HTML"}
     assert call["files"]["photo"] == ("bgy.jpg", b"jpeg bytes", "image/jpeg")
     assert methods(session) == ["sendPhoto"]
+
+
+def test_send_files_groups_the_pictures_as_documents(tmp_path):
+    feed, story = tmp_path / "bgy_feed.jpg", tmp_path / "bgy_story.jpg"
+    feed.write_bytes(b"feed bytes")
+    story.write_bytes(b"story bytes")
+    group = FakeResponse(200, {"ok": True, "result": [{"message_id": 7}, {"message_id": 8}]})
+    session = FakeSession(lambda m, u, kw: group)
+
+    assert TelegramClient(TOKEN, "777", session).send_files([feed, story], "<b>draft</b>") == [7, 8]
+
+    call = session.calls[0]
+    assert call["url"].endswith("/sendMediaGroup")
+    assert call["data"]["chat_id"] == "777"
+    media = json.loads(call["data"]["media"])
+    # Documents keep their full size; the text goes under the first one only.
+    assert media == [{"type": "document", "media": "attach://file0", "caption": "<b>draft</b>", "parse_mode": "HTML"},
+                     {"type": "document", "media": "attach://file1"}]
+    assert call["files"] == {"file0": ("bgy_feed.jpg", b"feed bytes", "image/jpeg"),
+                             "file1": ("bgy_story.jpg", b"story bytes", "image/jpeg")}
 
 
 def test_post_without_a_photo_is_a_plain_message():
