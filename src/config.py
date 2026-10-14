@@ -89,15 +89,23 @@ class PremiumSettings:
     rules: DealRules = field(default_factory=DealRules)    # usually looser than the free channel's
 
 
+SOCIAL_PLATFORMS = ("instagram", "facebook")
+
+
 @dataclass(frozen=True)
 class SocialSettings:
-    """Instagram/Facebook drafts: the pictures and caption of a deal, sent to the owner's chat (src/social.py)."""
+    """Instagram/Facebook posts: the pictures and caption of a deal, posted by the bot or sent to the
+    owner's chat as a draft (src/social.py)."""
 
     enabled: bool = False
-    max_posts_per_day: int = 2      # the free channel's best deals of the day get a draft, this many at most
+    max_posts_per_day: int = 2      # the free channel's best deals of the day, this many at most
     handle: str = ""                # the account's name on the cards, e.g. "@flyfromtirana" (empty = channel_handle)
-    sub_id: str = "facebook"        # Travelpayouts SubID of the booking link given for the Facebook post
+    sub_id: str = "facebook"        # Travelpayouts SubID of the booking link in the Facebook post
     hashtags: str = ""              # the last line of every caption
+    # Where the bot posts by itself once META_PAGE_TOKEN is set: "instagram" (a feed post and a
+    # story) and/or "facebook" (a Page post with the booking link). Empty = only the Telegram drafts.
+    publish: tuple[str, ...] = ()
+    keep_pictures_days: int = 7     # the posted pictures stay on the website this long (Instagram fetches them there)
 
 
 @dataclass(frozen=True)
@@ -165,7 +173,8 @@ class Secrets:
     telegram_bot_token: str = ""
     telegram_channel_id: str = ""
     telegram_premium_channel_id: str = ""
-    telegram_drafts_chat_id: str = ""      # where the Instagram/Facebook drafts go; empty = no drafts
+    telegram_drafts_chat_id: str = ""      # where the Instagram/Facebook drafts and reports go; empty = none
+    meta_page_token: str = ""              # the Facebook Page's token (posts to Instagram and the Page); empty = drafts only
 
 
 def load_config(path: str | Path = DEFAULT_CONFIG_PATH) -> Config:
@@ -256,12 +265,21 @@ def _build_social(raw: dict) -> SocialSettings:
     max_posts_per_day = int(raw.get("max_posts_per_day", 2))
     if max_posts_per_day < 1:
         raise ValueError("social.max_posts_per_day must be at least 1 (or set social.enabled: false)")
+    publish = tuple(str(name).strip().lower() for name in raw.get("publish") or [])
+    unknown = [name for name in publish if name not in SOCIAL_PLATFORMS]
+    if unknown:
+        raise ValueError(f"social.publish only knows {', '.join(SOCIAL_PLATFORMS)}, not {', '.join(unknown)}")
+    keep_days = int(raw.get("keep_pictures_days", 7))
+    if keep_days < 1:
+        raise ValueError("social.keep_pictures_days must be at least 1")
     return SocialSettings(
         enabled=bool(raw.get("enabled", False)),
         max_posts_per_day=max_posts_per_day,
         handle=str(raw.get("handle") or "").strip(),
         sub_id=str(raw.get("sub_id") or "facebook").strip(),
         hashtags=" ".join(str(raw.get("hashtags") or "").split()),   # one line, single spaces
+        publish=publish,
+        keep_pictures_days=keep_days,
     )
 
 
@@ -415,4 +433,5 @@ def load_secrets(*, dry_run: bool, premium: bool = False) -> Secrets:
         telegram_channel_id=env["TELEGRAM_CHANNEL_ID"],
         telegram_premium_channel_id=env.get("TELEGRAM_PREMIUM_CHANNEL_ID", ""),
         telegram_drafts_chat_id=drafts_chat,
+        meta_page_token=os.environ.get("META_PAGE_TOKEN", "").strip(),
     )

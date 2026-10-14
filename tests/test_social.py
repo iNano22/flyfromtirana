@@ -186,3 +186,129 @@ def test_config_yaml_settings():
     assert social.max_posts_per_day == 2
     assert social.sub_id == "facebook"
     assert social.hashtags.startswith("#")
+
+
+# --- posting by the bot (META_PAGE_TOKEN set) ----------------------------------------
+
+from src.meta import GRAPH_URL  # noqa: E402
+from tests.test_meta import ME, graph_handler  # noqa: E402
+
+META_SECRETS = replace(SECRETS, meta_page_token="page-token")
+
+
+@pytest.fixture
+def posting(config, tmp_path):
+    """The config with the bot posting on both platforms, the site built into a temp folder."""
+    site = replace(config.website, output_dir=tmp_path / "docs", url="https://flyfromtirana.al/")
+    return replace(config, website=site, social=replace(config.social, publish=("instagram", "facebook")))
+
+
+def with_graph(session, **graph_options) -> FakeSession:
+    """The fake world plus a fake graph.facebook.com."""
+    telegram_and_api = session.handler
+    graph = graph_handler(**graph_options)
+
+    def handler(method, url, kwargs):
+        if "graph.facebook.com" in url:
+            return graph(method, url, kwargs)
+        return telegram_and_api(method, url, kwargs)
+    session.handler = handler
+    return session
+
+
+def graph_calls(session) -> list[str]:
+    return [f'{c["method"]} {c["url"].replace(GRAPH_URL.format(path=""), "")}'
+            for c in session.calls if "graph.facebook.com" in c["url"]]
+
+
+def test_bot_posts_on_instagram_and_facebook_and_reports(posting):
+    session = with_graph(fake_world())
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+
+    # The pictures are on the site, named after the route and the moment of posting.
+    folder = posting.website.output_dir / "social"
+    assert sorted(p.name for p in folder.iterdir()) == ["bgy_20261009-1000_feed.jpg", "bgy_20261009-1000_story.jpg"]
+
+    # Instagram: a feed post and a story, Facebook: one Page post, all from those addresses.
+    calls = graph_calls(session)
+    assert calls.count("POST 17841417241858036/media") == 2
+    assert calls.count("POST 17841417241858036/media_publish") == 2
+    assert calls.count("POST 1348603305007068/photos") == 1
+    graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
+    feed, story = [c["data"] for c in graph if c["url"].endswith("/media")]
+    assert feed["image_url"] == "https://flyfromtirana.al/social/bgy_20261009-1000_feed.jpg"
+    assert feed["caption"].startswith("✈️ TIRANA → MILAN (Bergamo) nga €19 one way 🔥 -69%")
+    assert "linku në bio" in feed["caption"] and "&amp;" not in feed["caption"]
+    assert story == {"image_url": "https://flyfromtirana.al/social/bgy_20261009-1000_story.jpg", "media_type": "STORIES"}
+    photo, = [c["data"] for c in graph if c["url"].endswith("/photos")]
+    assert photo["url"] == feed["image_url"]
+    assert "👉 Rezervo këtu: https://" in photo["message"] and "marker=12345.facebook" in photo["message"]
+    assert "&amp;" not in photo["message"] and "linku në bio" not in photo["message"]
+
+    # The owner gets one report with the links, no draft; the deal is remembered.
+    report, = drafts(session)
+    text = telegram_text(report)
+    assert text.startswith("✅ <b>U postua</b> · TIRANA → MILAN (Bergamo) nga €19")
+    assert "https://www.instagram.com/p/abc123/" in text
+    assert "https://www.facebook.com/1348603305007068_777" in text
+    assert "📱 Story: ✅" in text
+    assert social_rows(posting) == 2
+
+
+def test_failed_platform_is_reported_and_sent_as_a_draft(posting):
+    session = with_graph(fake_world(), facebook_ok=False)
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+
+    report, files, caption, link = drafts(session)
+    text = telegram_text(report)
+    assert text.startswith("⚠️ <b>Postim i pjesshëm</b>")
+    assert "https://www.instagram.com/p/abc123/" in text
+    assert "❌ Facebook: Meta refused the call (HTTP 400, code 100): Invalid parameter" in text
+    assert "Postoje me dorë" in text
+    assert methods([files, caption, link]) == ["sendMediaGroup", "sendMessage", "sendMessage"]
+    assert social_rows(posting) == 2   # handled: posted on Instagram, handed over for Facebook
+
+
+def test_bad_token_means_a_draft_for_everything(posting):
+    session = fake_world()
+    good = session.handler
+
+    def handler(method, url, kwargs):
+        if "graph.facebook.com" in url:
+            return FakeResponse(400, {"error": {"message": "Error validating access token", "code": 190}})
+        return good(method, url, kwargs)
+    session.handler = handler
+
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    report, files, caption, link = drafts(session)
+    text = telegram_text(report)
+    assert text.startswith("❌ <b>Postimi dështoi</b>")
+    assert "META_PAGE_TOKEN is no longer valid" in text
+    assert methods([files, caption, link]) == ["sendMediaGroup", "sendMessage", "sendMessage"]
+    assert social_rows(posting) == 2
+
+
+def test_without_the_token_the_posts_are_drafts(posting):
+    session = with_graph(fake_world())
+    assert run(posting, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert graph_calls(session) == []
+    assert methods(drafts(session)) == ["sendMediaGroup", "sendMessage", "sendMessage"]
+    assert not (posting.website.output_dir / "social").exists()
+
+
+def test_old_pictures_are_removed_from_the_site(posting):
+    import os
+    folder = posting.website.output_dir / "social"
+    folder.mkdir(parents=True)
+    old = folder / "vie_20260901-0817_feed.jpg"
+    old.write_bytes(b"old")
+    stamp = (NOW - timedelta(days=10)).timestamp()
+    os.utime(old, (stamp, stamp))
+    fresh = folder / "fco_20261008-0817_feed.jpg"
+    fresh.write_bytes(b"fresh")
+
+    session = with_graph(fake_world())
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    names = sorted(p.name for p in folder.iterdir())
+    assert "vie_20260901-0817_feed.jpg" not in names
+    assert "fco_20261008-0817_feed.jpg" in names

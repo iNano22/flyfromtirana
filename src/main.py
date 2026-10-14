@@ -41,9 +41,11 @@ from src.deals import (CHANNEL, PREMIUM_CHANNEL, Deal, early_access_cutoff, find
                        rank_deals)
 from src.formatter import format_post
 from src.links import LinkBuilder
+from src.meta import MetaClient, MetaError
 from src.photos import post_photo
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
-from src.social import SOCIAL_CHANNEL, make_draft, send_draft
+from src.social import (PICTURES_FOLDER, SOCIAL_CHANNEL, Draft, failed, make_draft, post_on_platforms,
+                        prune_pictures, put_pictures_online, report, send_draft)
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
 
@@ -177,9 +179,11 @@ def run(
                              telegram=telegram_for(secrets.telegram_channel_id),
                              premium_link=premium.join_link if premium.enabled else None, **common)
 
-        # 3) The Instagram/Facebook drafts for the free channel's deals, sent to the owner
+        # 3) The Instagram/Facebook posts of the free channel's deals: posted by the bot, or
+        #    sent to the owner as drafts
         exit_code |= publish_social(best, telegram=telegram_for(secrets.telegram_drafts_chat_id),
                                     drafts_chat=bool(secrets.telegram_drafts_chat_id),
+                                    meta=meta_client(config, secrets, session, dry_run=dry_run),
                                     marker=secrets.travelpayouts_marker, **common)
 
         # 4) Housekeeping
@@ -279,35 +283,58 @@ def publish(deals: list[Deal], *, channel: str, template: str, config: Config, l
     return 1 if failures else 0
 
 
+def meta_client(config: Config, secrets: Secrets, session: requests.Session, *, dry_run: bool) -> MetaClient | None:
+    """The Meta client for posting by the bot, or None when the posts go out as drafts instead."""
+    social = config.social
+    if dry_run or not social.enabled or not social.publish:
+        return None
+    if not secrets.meta_page_token:
+        log.info("META_PAGE_TOKEN is not set: Instagram/Facebook posts are sent to the owner as drafts")
+        return None
+    if not config.website.url:
+        log.error("social.publish needs website.url in config.yaml (Instagram fetches the pictures from "
+                  "the site): the posts are sent as drafts instead")
+        return None
+    return MetaClient(secrets.meta_page_token, session)
+
+
 def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, storage: Storage,
-                   telegram: TelegramClient | None, drafts_chat: bool, marker: str, dry_run: bool,
-                   now: datetime, local_now: datetime, output: Callable[[str], None]) -> int:
-    """Send the Instagram/Facebook draft of each deal to the owner's chat (src/social.py).
+                   telegram: TelegramClient | None, drafts_chat: bool, meta: MetaClient | None, marker: str,
+                   dry_run: bool, now: datetime, local_now: datetime, output: Callable[[str], None]) -> int:
+    """Post each deal on Instagram/Facebook, or send its draft to the owner's chat (src/social.py).
 
     `deals` are the free channel's posts of this run, best first. Only the first
-    social.max_posts_per_day of a day get a draft, and a deal the drafts chat
-    already had (same route, date and price band) is skipped, like a channel
-    skips a repost. Returns 1 if a draft could not be sent, else 0. A problem
-    here never stops the Telegram posts: they are already out.
+    social.max_posts_per_day of a day are taken, and a deal already handled
+    (same route, date and price band) is skipped, like a channel skips a repost.
+    With `meta` the bot posts and reports to the owner; a post that fails is sent
+    as a draft, so it can go out by hand. Either way the deal counts as handled.
+    Returns 1 if the owner's chat could not be reached, else 0. A problem here
+    never stops the Telegram posts: they are already out.
     """
     social = config.social
     if not social.enabled or not deals:
         return 0
     if not dry_run and not drafts_chat:
-        log.warning("Social drafts are on in config.yaml but TELEGRAM_DRAFTS_CHAT_ID is not set: no drafts sent")
+        log.warning("Social posts are on in config.yaml but TELEGRAM_DRAFTS_CHAT_ID is not set: nothing sent")
         return 0
     if in_quiet_hours(local_now.time(), config.quiet_hours) and not dry_run:
-        return 0   # the channel posts wait for the morning, and so do their drafts
+        return 0   # the channel posts wait for the morning, and so do these
 
     day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
     left = social.max_posts_per_day - storage.count_posts(SOCIAL_CHANNEL, day_start)
     if left <= 0:
-        log.info("[social] Today's %d draft(s) are already out", social.max_posts_per_day)
+        log.info("[social] Today's %d post(s) are already out", social.max_posts_per_day)
         return 0
     # The booking link for Facebook carries its own SubID, so its clicks show apart in the stats.
     social_links = LinkBuilder(replace(links.settings, sub_id=social.sub_id), marker,
                                origin=config.origin, currency=config.currency)
     since = now - timedelta(days=config.rules.repost_cooldown_days)
+    pictures_folder = config.website.output_dir / PICTURES_FOLDER
+    if meta is not None:
+        gone = prune_pictures(pictures_folder, now - timedelta(days=social.keep_pictures_days))
+        if gone:
+            log.info("[social] Removed %d posted picture(s) older than %d days from the site", gone,
+                     social.keep_pictures_days)
     # The cards are drawn into a folder of their own. A real run deletes it once
     # they are sent; a dry run keeps it, so the pictures can be looked at.
     folder = Path(tempfile.mkdtemp(prefix="flyfromtirana-social-"))
@@ -326,18 +353,39 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
             sent += 1
             continue
         try:
-            send_draft(telegram, draft)
+            if meta is None:
+                send_draft(telegram, draft)
+                log.info("[social] Sent the draft for %s", deal.summary())
+            else:
+                post_by_bot(draft, meta, social.publish, pictures_folder, config.website.url, telegram, now)
         except TelegramError as exc:
-            log.error("[social] Could not send the draft for %s: %s", deal.summary(), exc)
+            log.error("[social] Could not reach the owner's chat about %s: %s", deal.summary(), exc)
             failures += 1
             continue
         for quote in deal.quotes:
             storage.record_post(SOCIAL_CHANNEL, quote, price_band(quote.price, config.rules.price_band_eur), now)
         sent += 1
-        log.info("[social] Sent the draft for %s", deal.summary())
     if not dry_run:
         shutil.rmtree(folder, ignore_errors=True)
     return 1 if failures else 0
+
+
+def post_by_bot(draft: Draft, meta: MetaClient, platforms: tuple[str, ...], pictures_folder: Path,
+                site_url: str, telegram: TelegramClient, now: datetime) -> None:
+    """Put the pictures on the site, post on each platform, report to the owner.
+
+    A post that failed is also sent as a draft, so the owner can make it by hand.
+    """
+    pictures = put_pictures_online(draft.cards, pictures_folder, site_url, now)
+    outcomes = post_on_platforms(draft, meta, platforms, pictures)
+    for what, outcome in outcomes:
+        if isinstance(outcome, MetaError):
+            log.error("[social] %s failed for %s: %s", what, draft.deal.summary(), outcome)
+        else:
+            log.info("[social] %s done for %s", what, draft.deal.summary())
+    telegram.send_message(report(draft, outcomes))
+    if failed(outcomes):
+        send_draft(telegram, draft)
 
 
 def in_quiet_hours(local_time: time, quiet_hours: tuple[time, time] | None) -> bool:

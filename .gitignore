@@ -17,3 +17,6 @@ data/*.db-shm
 
 # Instagram previews made locally, not part of the project
 ig_preview/
+
+# Pictures of the social media posts, written on the server for Instagram to fetch
+docs/social/

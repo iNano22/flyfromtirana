@@ -38,7 +38,7 @@ availability. That's fine for spotting deals: the booking link opens a live sear
 ```
 config.yaml              routes, deal rules, link templates, website settings (no secrets)
 templates/sq.txt         post wording (Albanian); sq_premium.txt = the premium channel's,
-                         sq_social.txt = the caption of the Instagram/Facebook drafts
+                         sq_social.txt = the Instagram caption, sq_facebook.txt = the Facebook post
 templates/site.html      the website page (layout, CSS, a little JS); site_row.html = one route in the
                          price table, site_card.html = one photo card, site_hero.html = one line of
                          the board at the top, site_premium.html = the block about the Premium channel
@@ -68,7 +68,8 @@ src/
   telegram.py            Telegram Bot API client
   photos.py              which photo goes on a route's posts, and its credit
   cards.py               draws a deal's Instagram/Facebook pictures (feed card + story card)
-  social.py              the draft of a social media post: the cards, the caption, the link
+  social.py              a social media post: the cards, the captions, posting it or drafting it
+  meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
   i18n.py                the website's languages: loads a language's wording into the templates
@@ -79,7 +80,8 @@ scripts/post_test.py     send one test message to the channel
 scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
 scripts/alert_chat.py    find your chat for the failure alerts, and send a test alert there
 scripts/social_preview.py  draw sample Instagram/Facebook cards into ig_preview/, to check the look
-scripts/social_test.py   scan today's prices and send one draft to the drafts chat now
+scripts/social_test.py   scan today's prices and make one social media post now (draft or --publish)
+scripts/meta_check.py    check META_PAGE_TOKEN: which Page and Instagram account it opens
 Dockerfile               the scanner image
 web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
@@ -656,52 +658,88 @@ To turn it on:
 Posts for each channel are logged separately (`[premium]` / `[free]`) and
 deduped separately. Premium's wording is in `templates/sq_premium.txt`.
 
-## Instagram and Facebook drafts
+## Instagram and Facebook posts
 
-Every deal the free channel posts also becomes a ready-made social media post,
-sent to you on Telegram right after the channel post (`social` in config.yaml).
-Each draft is three messages:
+Every deal the free channel posts also goes out on Instagram and Facebook
+(`social` in config.yaml): a feed card (1080×1350, the tallest picture
+Instagram's feed takes; Facebook takes it too) and a story card (1080×1920),
+drawn by `src/cards.py` in the website's look, with a caption. The posts are
+made by the bot itself once `META_PAGE_TOKEN` is set; until then, or whenever a
+post fails, you get them as a **draft** on Telegram to post by hand.
 
-1. **Two pictures**, drawn by `src/cards.py` in the website's look: a feed card
-   (1080×1350, the tallest picture Instagram's feed takes; Facebook takes it too)
-   and a story card (1080×1920). They come as *files*, not photos, so Telegram
-   keeps them at full size: save them to the phone's gallery and post them as they are.
-2. **The caption** (`templates/sq_social.txt`), to copy under the post. It has no
-   link: Instagram doesn't make links in captions clickable, so it says "linku në
-   bio" — put `flyfromtirana.al` in the account's bio. It ends with `social.hashtags`.
-3. **The booking link for Facebook**, where links do work. It carries the SubID
-   `social.sub_id` (`facebook`), so its clicks show apart from the channel's and the
-   website's in Travelpayouts.
+**By the bot.** Right after the channel post, the bot:
+1. puts the two pictures on the website under `/social/` (Instagram only fetches
+   pictures from a public address; they are removed after `social.keep_pictures_days`),
+2. publishes the feed card as an Instagram post with the caption from
+   `templates/sq_social.txt` (no link: Instagram captions aren't clickable, so it
+   says "linku në bio" — put `flyfromtirana.al` in the account's bio), then as a story,
+3. publishes the feed card on the Facebook Page with `templates/sq_facebook.txt`,
+   which holds the booking link (SubID `social.sub_id`, `facebook`, so its clicks show
+   apart from the channel's and the website's in Travelpayouts),
+4. sends a report to your chat (`TELEGRAM_DRAFTS_CHAT_ID`) with the posts' links.
+   A post that failed (Meta refused it, the token stopped working, ...) is in the
+   report with the reason, and the draft follows so you can make it by hand.
 
-Which deals get a draft: the free channel's, best first, at most
-`social.max_posts_per_day` (2) a day, counted in Tirana time; never during quiet
-hours, and never the same route, date and price band twice within
-`repost_cooldown_days` (the drafts are remembered in `posted_deals` under the
-name `social`). A draft that fails to send is logged, left unrecorded (so the next
-run tries again) and never holds up the channel posts, which are already out.
+`social.publish` says where the bot posts (`instagram`, `facebook`, or fewer).
+
+**As a draft** (no `META_PAGE_TOKEN`): three messages in your chat: the two pictures
+as *files*, not photos, so Telegram keeps them at full size (save them to the phone's
+gallery and post them as they are); the caption to copy; and the booking link for
+the Facebook post.
+
+Which deals: the free channel's, best first, at most `social.max_posts_per_day` (2) a
+day, counted in Tirana time; never during quiet hours, and never the same route, date
+and price band twice within `repost_cooldown_days` (they are remembered in
+`posted_deals` under the name `social`). A deal counts as handled once it is posted
+or its draft reached you. Only a Telegram failure is left unrecorded (the next run
+tries again). None of this holds up the channel posts, which are already out.
 
 To turn it on:
 1. Open the bot in Telegram and press Start, then run `python scripts/alert_chat.py`
    to see your chat's number (the same steps as for the failure alerts above).
 2. Set `TELEGRAM_DRAFTS_CHAT_ID` to that number in `.env` and in Coolify's Environment
-   Variables, then redeploy. Left empty, the drafts go to `TELEGRAM_ALERT_CHAT_ID`;
-   with neither set the bot logs a warning and sends no drafts. A private channel where
-   the bot is an admin works too.
-3. `social.enabled: true` in config.yaml (it is).
+   Variables. Left empty, the messages go to `TELEGRAM_ALERT_CHAT_ID`; with neither set
+   the bot logs a warning and sends nothing. A private channel where the bot is an admin
+   works too.
+3. `social.enabled: true` in config.yaml (it is). That gives you the drafts.
+4. For the bot to post itself, make the Page token (once; it doesn't expire):
+   - The Instagram account must be a **Business** account linked to a Facebook Page
+     (Page settings → Linked accounts). Stories through the API need Business, not Creator.
+   - On developers.facebook.com create an app (type Business) with the use cases "Manage
+     everything on your Page" and "Manage messaging & content on Instagram"; under each
+     use case's permissions add `pages_show_list`, `pages_read_engagement`,
+     `pages_manage_posts`, `instagram_basic`, `instagram_content_publish`,
+     `business_management`. Settings → Basic: Privacy Policy URL
+     `https://flyfromtirana.al/privacy/`. The app stays in Development mode: for your
+     own accounts Meta needs no App Review.
+   - Graph API Explorer (developers.facebook.com/tools/explorer): pick the app, add the
+     same six permissions, **Generate Access Token**, and in the dialog allow only the
+     FlyFromTirana Page, business and Instagram account.
+   - That token lives an hour. Click ⓘ next to it → Open in Access Token Tool →
+     **Extend Access Token**; paste the extended token back into the Explorer and run
+     `me/accounts?fields=name,access_token`. The `access_token` next to the Page is
+     the permanent Page token.
+   - Set it as `META_PAGE_TOKEN` in `.env` and in Coolify, then redeploy.
+     `python scripts/meta_check.py` shows which Page and Instagram account it opens and
+     how many of Instagram's 100 API posts a day are used. Posts start with the next run.
 
-To get a draft right now: `python scripts/social_test.py` scans today's prices and
-sends the draft of the best deal of the moment to the drafts chat (`--routes BGY,VIE`
-to scan only those). Nothing is posted to the channel or marked as posted, so the next
-real run may send the same deal again. To see the cards without any deal:
+To make a post right now: `python scripts/social_test.py` scans today's prices and
+sends the draft of the best deal of the moment to your chat (`--routes BGY,VIE` to
+scan only those); on the server, `--publish` posts it for real (Coolify: Terminal →
+`python scripts/social_test.py --publish`; a laptop can't, because Instagram fetches the
+pictures from the site). Nothing is posted to the channel or marked as posted, so the
+next real run may post the same deal again. To see the cards without any deal:
 `python scripts/social_preview.py` draws three sample deals into `ig_preview/`. A
-`python -m src.main --dry-run` prints each draft's caption and the folder its cards
-were drawn into. The cards are drawn
-with Pillow and the fonts in `assets/fonts/` (the website keeps loading the same
-fonts from Google Fonts). The city photos are the Telegram ones
-(`assets/telegram/`); `bgy.jpg` is the smallest (600px wide), so Milan Bergamo's
-card is a little softer than the others until that photo is replaced.
+`python -m src.main --dry-run` prints each caption and the folder its cards were drawn
+into. The cards are drawn with Pillow and the fonts in `assets/fonts/` (the website
+keeps loading the same fonts from Google Fonts). The city photos are the Telegram ones
+(`assets/telegram/`); `bgy.jpg` is the smallest (600px wide), so Milan Bergamo's card is
+a little softer than the others until that photo is replaced.
 
-Not built yet: posting to Instagram and Facebook by itself (see the roadmap).
+Things to watch after the first automatic post: that Meta could fetch the pictures
+through Cloudflare (the report says "could not take the picture" otherwise: then allow
+`/social/` for Meta's crawler in Cloudflare's WAF), and Meta's limit of 100 Instagram
+posts a day through the API, far above the 2 made here.
 
 ## Exit codes
 
@@ -710,13 +748,6 @@ problem (missing env var, bad config.yaml). The scheduler logs any non-zero code
 
 ## Roadmap (not built yet: where it plugs in)
 
-- **Phase 2: post to Instagram and Facebook by itself.** The drafts above are
-  phase 1. Phase 2 is a publisher next to `telegram.py` that sends the feed card to
-  the Instagram account (as a post and a story) and to the Facebook Page through
-  Meta's Graph API with one long-lived Page token, called from `main.publish_social`
-  instead of `send_draft`. Instagram only fetches pictures from a public address, so
-  the cards would be written under `docs/social/` (the website) for a week. Needs an
-  Instagram *Business* account linked to a Facebook Page, and a Meta developer app.
 - **Phase 3: keep the accounts busy.** A weekly "top 5" carousel from the website's
   deal list, a city-guide post on days without a deal, a short Reel (the card with a
   slow zoom, ffmpeg). TikTok stays by hand: an app TikTok hasn't audited can only

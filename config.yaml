@@ -62,18 +62,22 @@ premium:
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals
   threshold_min_discount_pct: 20
 
-# --- Instagram and Facebook drafts -------------------------------------------
+# --- Instagram and Facebook posts --------------------------------------------
 # For the free channel's deals (the best first, max_posts_per_day a day) the bot
-# draws a feed card and a story card (src/cards.py), writes the caption
-# (templates/sq_social.txt) and sends them to the chat in TELEGRAM_DRAFTS_CHAT_ID
-# (or TELEGRAM_ALERT_CHAT_ID), ready to post by hand. README: "Instagram and
-# Facebook drafts".
+# draws a feed card and a story card (src/cards.py) and writes the caption
+# (templates/sq_social.txt, sq_facebook.txt). With META_PAGE_TOKEN set it posts
+# them itself on the platforms under `publish` and reports to the chat in
+# TELEGRAM_DRAFTS_CHAT_ID (or TELEGRAM_ALERT_CHAT_ID); without the token, or
+# when a post fails, that chat gets the pictures and the caption as a draft to
+# post by hand. README: "Instagram and Facebook posts".
 social:
   enabled: true
   max_posts_per_day: 2
   handle: "@flyfromtirana"         # the account's name, shown on the cards
-  sub_id: facebook                 # Travelpayouts SubID of the booking link given for the Facebook post
+  sub_id: facebook                 # Travelpayouts SubID of the booking link in the Facebook post
   hashtags: "#flyfromtirana #fluturime #oferta #udhetim #tirana #rinas #biletaavioni #pushime"
+  publish: [instagram, facebook]   # instagram = a feed post + a story; facebook = a Page post with the link
+  keep_pictures_days: 7            # Instagram fetches the pictures from the website (/social/); kept this long
 
 # --- Website -----------------------------------------------------------------
 # src/website.py renders one page from the price database into output_dir. On

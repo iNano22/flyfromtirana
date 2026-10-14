@@ -28,9 +28,11 @@ services:
       # Where the bot says so when a scan or the website build fails, and when it works
       # again (README: "Alerts"). Empty = failures are only in the logs.
       TELEGRAM_ALERT_CHAT_ID: ${TELEGRAM_ALERT_CHAT_ID:-}
-      # Where the Instagram/Facebook drafts go (README: "Instagram and Facebook drafts").
-      # Empty = the alert chat.
+      # Where the Instagram/Facebook posts are reported, or sent as drafts (README:
+      # "Instagram and Facebook posts"). Empty = the alert chat.
       TELEGRAM_DRAFTS_CHAT_ID: ${TELEGRAM_DRAFTS_CHAT_ID:-}
+      # The Facebook Page's token: with it the bot posts to Instagram and the Page itself.
+      META_PAGE_TOKEN: ${META_PAGE_TOKEN:-}
     volumes:
       - data:/app/data      # prices.db: price history and what was already posted
       - site:/app/docs      # the generated website
