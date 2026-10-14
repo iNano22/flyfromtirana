@@ -16,9 +16,11 @@ Instagram fetches the pictures from the website, so --publish only works where
 the site's folder is served: on the server (in Coolify: Terminal ->
 `python scripts/social_test.py --publish`), not on a laptop.
 
-Nothing else happens: the channel gets no post, the prices are fetched into a
-throwaway copy of the database, and the deal is not marked as posted, so the
-next real run may post it again.
+The channel gets no post, and the prices are fetched into a throwaway copy of the
+database. What was posted (or drafted) is remembered like a real post, so the bot
+doesn't repeat it: the deal stays off the social posts for the cooldown, the week's
+top is done for today, and the city guide moves on to the next city. To mark the
+next city as done without posting it (you posted it by hand): --guide --skip.
 
 Needs TRAVELPAYOUTS_TOKEN, TRAVELPAYOUTS_MARKER, TELEGRAM_BOT_TOKEN and one of the
 chat ids (from .env or the environment); --publish also needs META_PAGE_TOKEN.
@@ -40,13 +42,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from dotenv import load_dotenv  # noqa: E402
 
 from src.config import PROJECT_ROOT, ConfigError, load_config, require_env  # noqa: E402
-from src.deals import CHANNEL, rank_deals  # noqa: E402
+from src.deals import CHANNEL, price_band, rank_deals  # noqa: E402
 from src.links import LinkBuilder  # noqa: E402
 from src.main import choose_guide, city_price, find_deals, post_by_bot, scan_routes, select_routes  # noqa: E402
 from src.meta import MetaClient, MetaError  # noqa: E402
 from src.photos import post_photo  # noqa: E402
-from src.scanner import PriceScanner, ScannerError  # noqa: E402
-from src.social import PICTURES_FOLDER, WEEKLY_MIN_DEALS, deal_post, failed, guide_post, send_draft, weekly_post  # noqa: E402
+from src.scanner import PriceScanner, Quote, ScannerError  # noqa: E402
+from src.social import (GUIDE_CHANNEL, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL, WEEKLY_MIN_DEALS,  # noqa: E402
+                        deal_post, failed, guide_post, send_draft, weekly_post)
 from src.website import build_offers, page_url  # noqa: E402
 from src.storage import Storage  # noqa: E402
 from src.telegram import TelegramClient, TelegramError  # noqa: E402
@@ -60,6 +63,8 @@ def main() -> int:
     parser.add_argument("--weekly", action="store_true",
                         help="the week's top deals (a carousel) from the database, no scan")
     parser.add_argument("--guide", action="store_true", help="the next city guide, no scan")
+    parser.add_argument("--skip", action="store_true",
+                        help="with --guide: mark the next city as posted without posting it")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)-7s %(name)s: %(message)s")
     logging.getLogger("urllib3").setLevel(logging.WARNING)
@@ -93,6 +98,7 @@ def main() -> int:
         # today's prices are saved into the copy only, and the real file stays as it is.
         db_copy = Path(folder) / "prices.db"
         shutil.copy2(config.db_path, db_copy)
+        remember: list[tuple[str, list[Quote]]] = []   # what to record in the real database afterwards
         with Storage(db_copy) as storage:
             if args.weekly:
                 top = [o for o in build_offers(config, storage, now) if o.is_deal][: config.social.weekly_count]
@@ -101,6 +107,7 @@ def main() -> int:
                     return 1
                 photos = {o.route.iata: post_photo(o.route.iata) for o in top}
                 post = weekly_post(top, config, Path(folder), photos=photos, now=local_now)
+                remember.append((WEEKLY_CHANNEL, [o.best for o in top]))
             elif args.guide:
                 choice = choose_guide(config, storage)
                 page = page_url(config, config.language, choice[0].slug) if choice else None
@@ -109,6 +116,15 @@ def main() -> int:
                     return 1
                 guide, iata = choice
                 price = city_price(build_offers(config, storage, now), guide.city)
+                marker = Quote(origin=config.origin, destination=iata, depart_date=local_now.date(), price=price or 0,
+                               airline="", transfers=0, duration_min=None, link=None, fetched_at=now)
+                remember.append((GUIDE_CHANNEL, [marker]))
+                if args.skip:
+                    record(config, remember, now)
+                    following = choose_guide(config, Storage(config.db_path))
+                    print(f"✅ {guide.display_name} is marked as posted; the next guide is "
+                          f"{following[0].display_name if following else 'none'}.")
+                    return 0
                 post = guide_post(guide, iata, price, config, Path(folder), photo=post_photo(iata), page_url=page)
             else:
                 scanner = PriceScanner(env["TRAVELPAYOUTS_TOKEN"], currency=config.currency, market=config.market,
@@ -126,6 +142,7 @@ def main() -> int:
                     print("No route is a deal by the free channel's rules right now: nothing to post.")
                     return 1
                 post = deal_post(best[0], config, links, Path(folder), photo=post_photo(best[0].route.iata))
+                remember.append((SOCIAL_CHANNEL, best[0].quotes))
         telegram = TelegramClient(env["TELEGRAM_BOT_TOKEN"], chat_id)
         try:
             if meta is None:
@@ -149,7 +166,16 @@ def main() -> int:
             print(f"❌ {exc}")
             print("Check: did you press Start in the bot's chat (or make it an admin of the channel)?")
             return 1
+        record(config, remember, now)
     return 0
+
+
+def record(config, remember: list[tuple[str, list[Quote]]], now: datetime) -> None:
+    """Remember the post in the real database, as a run would, so the bot doesn't repeat it."""
+    with Storage(config.db_path) as real:
+        for channel, quotes in remember:
+            for quote in quotes:
+                real.record_post(channel, quote, price_band(quote.price, config.rules.price_band_eur), now)
 
 
 if __name__ == "__main__":

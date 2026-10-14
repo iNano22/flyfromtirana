@@ -746,8 +746,10 @@ scan only those); `--weekly` makes the week's top deals and `--guide` the next c
 guide instead, from the database as it is (no scan). On the server, `--publish` posts
 it for real (Coolify: Terminal → `python scripts/social_test.py --publish`, or
 `--weekly --publish`; a laptop can't, because Instagram fetches the pictures from the
-site). Nothing is posted to the channel or marked as posted, so the
-next real run may post the same deal again. To see the cards without any deal:
+site). Nothing is posted to the channel and no prices are saved, but the post is
+remembered like a real one, so the bot doesn't repeat it; `--guide --skip` marks the
+next city as posted without posting it (when you made that post by hand). To see the
+cards without any deal:
 `python scripts/social_preview.py` draws three sample deals, a top-5 cover and a guide card into
 `ig_preview/`. A
 `python -m src.main --dry-run` prints each caption and the folder its cards were drawn
