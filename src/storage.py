@@ -170,6 +170,14 @@ class Storage:
         ).fetchone()
         return row[0]
 
+    def last_posts(self, channel: str) -> dict[str, datetime]:
+        """When each destination was last posted on `channel`: {"FCO": datetime, ...} (UTC)."""
+        rows = self.conn.execute(
+            "SELECT destination, MAX(posted_at) FROM posted_deals WHERE channel = ? GROUP BY destination",
+            (channel,),
+        ).fetchall()
+        return {row[0]: datetime.fromisoformat(row[1]) for row in rows}
+
     def record_post(self, channel: str, quote: Quote, price_band: int, posted_at: datetime) -> None:
         with self.conn:
             self.conn.execute(

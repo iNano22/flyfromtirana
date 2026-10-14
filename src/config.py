@@ -106,6 +106,15 @@ class SocialSettings:
     # story) and/or "facebook" (a Page post with the booking link). Empty = only the Telegram drafts.
     publish: tuple[str, ...] = ()
     keep_pictures_days: int = 7     # the posted pictures stay on the website this long (Instagram fetches them there)
+    # Keeping the accounts busy: a "top deals of the week" carousel on one weekday
+    # (0 = Monday ... 6 = Sunday; None = never), and on a day with no deal post, a
+    # city-guide post once the clock passes filler_hour (local; None = never).
+    weekly_day: int | None = None
+    weekly_count: int = 5
+    filler_hour: int | None = None
+
+
+WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
 
 
 @dataclass(frozen=True)
@@ -272,6 +281,15 @@ def _build_social(raw: dict) -> SocialSettings:
     keep_days = int(raw.get("keep_pictures_days", 7))
     if keep_days < 1:
         raise ValueError("social.keep_pictures_days must be at least 1")
+    weekly_day = _weekday(raw.get("weekly_day"))
+    weekly_count = int(raw.get("weekly_count", 5))
+    if not 2 <= weekly_count <= 9:   # the cover plus the deals must fit Instagram's 10 pictures
+        raise ValueError("social.weekly_count must be between 2 and 9")
+    filler_hour = raw.get("filler_hour")
+    if filler_hour is not None:
+        filler_hour = int(filler_hour)
+        if not 0 <= filler_hour <= 23:
+            raise ValueError("social.filler_hour must be an hour of the day (0-23) or empty")
     return SocialSettings(
         enabled=bool(raw.get("enabled", False)),
         max_posts_per_day=max_posts_per_day,
@@ -280,7 +298,24 @@ def _build_social(raw: dict) -> SocialSettings:
         hashtags=" ".join(str(raw.get("hashtags") or "").split()),   # one line, single spaces
         publish=publish,
         keep_pictures_days=keep_days,
+        weekly_day=weekly_day,
+        weekly_count=weekly_count,
+        filler_hour=filler_hour,
     )
+
+
+def _weekday(raw) -> int | None:
+    """"sunday" -> 6; a number 0-6 as it is; empty = None."""
+    if raw is None or raw == "":
+        return None
+    if isinstance(raw, int):
+        if not 0 <= raw <= 6:
+            raise ValueError("social.weekly_day must be a weekday name or 0 (Monday) to 6 (Sunday)")
+        return raw
+    name = str(raw).strip().lower()
+    if name not in WEEKDAYS:
+        raise ValueError(f"social.weekly_day must be a weekday name ({', '.join(WEEKDAYS)}) or empty")
+    return WEEKDAYS.index(name)
 
 
 def _build_website(raw: dict, base_dir: Path, links: LinkSettings, default_language: str) -> WebsiteSettings:

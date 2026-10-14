@@ -67,8 +67,8 @@ src/
   formatter.py           Deal → post text
   telegram.py            Telegram Bot API client
   photos.py              which photo goes on a route's posts, and its credit
-  cards.py               draws a deal's Instagram/Facebook pictures (feed card + story card)
-  social.py              a social media post: the cards, the captions, posting it or drafting it
+  cards.py               draws the Instagram/Facebook pictures: deal cards, the weekly cover, guide cards
+  social.py              a social media post (deal, weekly top, city guide): pictures, captions, posting or drafting
   meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
@@ -682,6 +682,20 @@ post fails, you get them as a **draft** on Telegram to post by hand.
 
 `social.publish` says where the bot posts (`instagram`, `facebook`, or fewer).
 
+**Two more kinds of post keep the accounts busy** (same mechanics, same report):
+- **The week's top deals**, once on `social.weekly_day` (Sunday): a cover card listing
+  the best `social.weekly_count` (5) deals the website shows, plus each deal's card,
+  posted together as one Instagram carousel and one Facebook post with all the
+  pictures. It needs at least 3 deals on the site; the caption lists them with their
+  dates. Remembered in `posted_deals` as `social_weekly`.
+- **A city guide**, on a day with no deal post, at the first run after
+  `social.filler_hour` (17:00 Tirana): the city's photo, its name, the guide's tagline,
+  the cheapest current flight and the page's address (`flyfromtirana.al/rome/`), as a
+  post and a story; the Facebook post links to the page. The cities with a guide in the
+  posts' language take turns, the one posted longest ago first. Remembered as
+  `social_guide` (one row per city, under its airport code). Empty `weekly_day` or
+  `filler_hour` switches that kind off.
+
 **As a draft** (no `META_PAGE_TOKEN`): three messages in your chat: the two pictures
 as *files*, not photos, so Telegram keeps them at full size (save them to the phone's
 gallery and post them as they are); the caption to copy; and the booking link for
@@ -725,11 +739,14 @@ To turn it on:
 
 To make a post right now: `python scripts/social_test.py` scans today's prices and
 sends the draft of the best deal of the moment to your chat (`--routes BGY,VIE` to
-scan only those); on the server, `--publish` posts it for real (Coolify: Terminal →
-`python scripts/social_test.py --publish`; a laptop can't, because Instagram fetches the
-pictures from the site). Nothing is posted to the channel or marked as posted, so the
+scan only those); `--weekly` makes the week's top deals and `--guide` the next city
+guide instead, from the database as it is (no scan). On the server, `--publish` posts
+it for real (Coolify: Terminal → `python scripts/social_test.py --publish`, or
+`--weekly --publish`; a laptop can't, because Instagram fetches the pictures from the
+site). Nothing is posted to the channel or marked as posted, so the
 next real run may post the same deal again. To see the cards without any deal:
-`python scripts/social_preview.py` draws three sample deals into `ig_preview/`. A
+`python scripts/social_preview.py` draws three sample deals, a top-5 cover and a guide card into
+`ig_preview/`. A
 `python -m src.main --dry-run` prints each caption and the folder its cards were drawn
 into. The cards are drawn with Pillow and the fonts in `assets/fonts/` (the website
 keeps loading the same fonts from Google Fonts). The city photos are the Telegram ones
@@ -748,10 +765,12 @@ problem (missing env var, bad config.yaml). The scheduler logs any non-zero code
 
 ## Roadmap (not built yet: where it plugs in)
 
-- **Phase 3: keep the accounts busy.** A weekly "top 5" carousel from the website's
-  deal list, a city-guide post on days without a deal, a short Reel (the card with a
-  slow zoom, ffmpeg). TikTok stays by hand: an app TikTok hasn't audited can only
-  post privately.
+- **Reels.** The weekly top and the city guides are built (see "Instagram and
+  Facebook posts"); a short Reel (the card with a slow zoom, made with ffmpeg) is
+  not. It needs ffmpeg in the scanner image, a public MP4 like the pictures, and
+  Instagram's video container, which takes a minute to process. Music can't be
+  added through the API. TikTok stays by hand: an app TikTok hasn't audited can
+  only post privately.
 - **Phase 3b: custom alerts** ("tell me when TIA → LON is under €30"). Needs a bot
   that stores each subscriber's routes and sends them direct messages.
 - **Phase 4: English channel for flights *into* Tirana.** Return-direction

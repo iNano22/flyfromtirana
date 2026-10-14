@@ -40,14 +40,17 @@ from src.config import (
 from src.deals import (CHANNEL, PREMIUM_CHANNEL, Deal, early_access_cutoff, find_route_deal, price_band,
                        rank_deals)
 from src.formatter import format_post
+from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import post_photo
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
-from src.social import (PICTURES_FOLDER, SOCIAL_CHANNEL, Draft, failed, make_draft, post_on_platforms,
-                        prune_pictures, put_pictures_online, report, send_draft)
+from src.social import (GUIDE_CHANNEL, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL, WEEKLY_MIN_DEALS, Post,
+                        deal_post, failed, guide_post, post_on_platforms, prune_pictures, put_pictures_online,
+                        report, send_draft, weekly_post)
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
+from src.website import build_offers, page_url, site_guides
 
 log = logging.getLogger("flyfromtirana")
 
@@ -301,18 +304,19 @@ def meta_client(config: Config, secrets: Secrets, session: requests.Session, *, 
 def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, storage: Storage,
                    telegram: TelegramClient | None, drafts_chat: bool, meta: MetaClient | None, marker: str,
                    dry_run: bool, now: datetime, local_now: datetime, output: Callable[[str], None]) -> int:
-    """Post each deal on Instagram/Facebook, or send its draft to the owner's chat (src/social.py).
+    """The Instagram/Facebook posts of this run (src/social.py): the free channel's deals,
+    the week's top deals on social.weekly_day, and a city guide on a day without a post.
 
     `deals` are the free channel's posts of this run, best first. Only the first
     social.max_posts_per_day of a day are taken, and a deal already handled
     (same route, date and price band) is skipped, like a channel skips a repost.
     With `meta` the bot posts and reports to the owner; a post that fails is sent
-    as a draft, so it can go out by hand. Either way the deal counts as handled.
+    as a draft, so it can go out by hand. Either way the post counts as handled.
     Returns 1 if the owner's chat could not be reached, else 0. A problem here
     never stops the Telegram posts: they are already out.
     """
     social = config.social
-    if not social.enabled or not deals:
+    if not social.enabled:
         return 0
     if not dry_run and not drafts_chat:
         log.warning("Social posts are on in config.yaml but TELEGRAM_DRAFTS_CHAT_ID is not set: nothing sent")
@@ -321,72 +325,137 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
         return 0   # the channel posts wait for the morning, and so do these
 
     day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
-    left = social.max_posts_per_day - storage.count_posts(SOCIAL_CHANNEL, day_start)
-    if left <= 0:
-        log.info("[social] Today's %d post(s) are already out", social.max_posts_per_day)
-        return 0
-    # The booking link for Facebook carries its own SubID, so its clicks show apart in the stats.
-    social_links = LinkBuilder(replace(links.settings, sub_id=social.sub_id), marker,
-                               origin=config.origin, currency=config.currency)
-    since = now - timedelta(days=config.rules.repost_cooldown_days)
     pictures_folder = config.website.output_dir / PICTURES_FOLDER
     if meta is not None:
         gone = prune_pictures(pictures_folder, now - timedelta(days=social.keep_pictures_days))
         if gone:
             log.info("[social] Removed %d posted picture(s) older than %d days from the site", gone,
                      social.keep_pictures_days)
-    # The cards are drawn into a folder of their own. A real run deletes it once
+    # The booking link for Facebook carries its own SubID, so its clicks show apart in the stats.
+    social_links = LinkBuilder(replace(links.settings, sub_id=social.sub_id), marker,
+                               origin=config.origin, currency=config.currency)
+    # The pictures are drawn into a folder of their own. A real run deletes it once
     # they are sent; a dry run keeps it, so the pictures can be looked at.
     folder = Path(tempfile.mkdtemp(prefix="flyfromtirana-social-"))
     failures = 0
-    sent = 0
+    posted_today = storage.count_posts(SOCIAL_CHANNEL, day_start) + storage.count_posts(WEEKLY_CHANNEL, day_start)
+
+    def deliver(post: Post, channel: str, quotes: list[Quote]) -> bool:
+        """Post it, or send its draft, and remember it. False when the owner's chat failed."""
+        if dry_run:
+            output(f"\n----- DRY RUN [social] · {post.title} · pictures in {folder} -----\n{post.caption}\n")
+            return True
+        try:
+            if meta is None:
+                send_draft(telegram, post)
+                log.info("[social] Sent the draft: %s", post.title)
+            else:
+                post_by_bot(post, meta, social.publish, pictures_folder, config.website.url, telegram, now)
+        except TelegramError as exc:
+            log.error("[social] Could not reach the owner's chat about %s: %s", post.title, exc)
+            return False
+        for quote in quotes:
+            storage.record_post(channel, quote, price_band(quote.price, config.rules.price_band_eur), now)
+        return True
+
+    # 1) The deals the free channel just posted, best first, up to the day's quota.
+    left = social.max_posts_per_day - storage.count_posts(SOCIAL_CHANNEL, day_start)
+    since = now - timedelta(days=config.rules.repost_cooldown_days)
     for deal in deals:
-        if sent >= left:
+        if left <= 0:
+            log.info("[social] Today's %d deal post(s) are already out", social.max_posts_per_day)
             break
         best = deal.best
         band = price_band(best.price, config.rules.price_band_eur)
         if storage.was_posted(SOCIAL_CHANNEL, best.origin, best.destination, best.depart_date, band, since):
             continue
-        draft = make_draft(deal, config, social_links, folder, photo=post_photo(deal.route.iata))
-        if dry_run:
-            output(f"\n----- DRY RUN [social] · {deal.summary()} · cards in {folder} -----\n{draft.caption}\n")
-            sent += 1
-            continue
-        try:
-            if meta is None:
-                send_draft(telegram, draft)
-                log.info("[social] Sent the draft for %s", deal.summary())
-            else:
-                post_by_bot(draft, meta, social.publish, pictures_folder, config.website.url, telegram, now)
-        except TelegramError as exc:
-            log.error("[social] Could not reach the owner's chat about %s: %s", deal.summary(), exc)
+        post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata))
+        if deliver(post, SOCIAL_CHANNEL, deal.quotes):
+            left -= 1
+            posted_today += 1
+        else:
             failures += 1
-            continue
-        for quote in deal.quotes:
-            storage.record_post(SOCIAL_CHANNEL, quote, price_band(quote.price, config.rules.price_band_eur), now)
-        sent += 1
+
+    # 2) The week's top deals, once on the chosen weekday: what the website lists as deals.
+    if (social.weekly_day is not None and local_now.weekday() == social.weekly_day
+            and storage.count_posts(WEEKLY_CHANNEL, day_start) == 0):
+        top = [offer for offer in build_offers(config, storage, now) if offer.is_deal][: social.weekly_count]
+        if len(top) < WEEKLY_MIN_DEALS:
+            log.info("[social] Only %d deal(s) on the website: no top-of-the-week post", len(top))
+        else:
+            photos = {offer.route.iata: post_photo(offer.route.iata) for offer in top}
+            post = weekly_post(top, config, folder, photos=photos, now=local_now)
+            if deliver(post, WEEKLY_CHANNEL, [offer.best for offer in top]):
+                posted_today += 1
+            else:
+                failures += 1
+
+    # 3) A city guide, when the day had no post and the clock has passed filler_hour.
+    if (social.filler_hour is not None and local_now.hour >= social.filler_hour and posted_today == 0
+            and storage.count_posts(GUIDE_CHANNEL, day_start) == 0):
+        choice = choose_guide(config, storage)
+        page = page_url(config, config.language, choice[0].slug) if choice else None
+        if choice is None or not page:
+            log.info("[social] No city guide to post (needs a guide in %s and website.url)", config.language)
+        else:
+            guide, iata = choice
+            price = city_price(build_offers(config, storage, now), guide.city)
+            post = guide_post(guide, iata, price, config, folder, photo=post_photo(iata), page_url=page)
+            # Remembered as a "post" of the city's route on this day, so the cities take turns.
+            marker_quote = Quote(origin=config.origin, destination=iata, depart_date=local_now.date(),
+                                 price=price or 0, airline="", transfers=0, duration_min=None, link=None,
+                                 fetched_at=now)
+            if not deliver(post, GUIDE_CHANNEL, [marker_quote]):
+                failures += 1
+
     if not dry_run:
         shutil.rmtree(folder, ignore_errors=True)
     return 1 if failures else 0
 
 
-def post_by_bot(draft: Draft, meta: MetaClient, platforms: tuple[str, ...], pictures_folder: Path,
+def choose_guide(config: Config, storage: Storage) -> tuple[Guide, str] | None:
+    """The city guide to post next, and the route (airport code) to show for it.
+
+    Cities with a guide take turns: a city never posted comes first (in the order of
+    config.yaml's routes), then the one posted longest ago. None without any guide.
+    """
+    guides = site_guides(config, config.language)
+    if not guides:
+        return None
+    last = storage.last_posts(GUIDE_CHANNEL)
+    cities = []   # (when last posted, position in config.yaml, city, first airport)
+    for position, route in enumerate(config.routes):
+        if route.city in guides and route.city not in [city for _, _, city, _ in cities]:
+            codes = [r.iata for r in config.routes if r.city == route.city]
+            posted = max((last[code] for code in codes if code in last), default=None)
+            cities.append((posted or datetime.min.replace(tzinfo=timezone.utc), position, route.city, route.iata))
+    _, _, city, iata = min(cities)
+    return guides[city], iata
+
+
+def city_price(offers: list[Deal], city: str) -> float | None:
+    """The cheapest current price to a city among the website's offers (any of its airports)."""
+    prices = [offer.best.price for offer in offers if offer.route.city == city]
+    return min(prices) if prices else None
+
+
+def post_by_bot(post: Post, meta: MetaClient, platforms: tuple[str, ...], pictures_folder: Path,
                 site_url: str, telegram: TelegramClient, now: datetime) -> list[tuple[str, str | None | MetaError]]:
     """Put the pictures on the site, post on each platform, report to the owner.
 
     A post that failed is also sent as a draft, so the owner can make it by hand.
     Returns what happened per post (see social.post_on_platforms).
     """
-    pictures = put_pictures_online(draft.cards, pictures_folder, site_url, now)
-    outcomes = post_on_platforms(draft, meta, platforms, pictures)
+    feed_urls, story_url = put_pictures_online(post, pictures_folder, site_url, now)
+    outcomes = post_on_platforms(post, meta, platforms, feed_urls, story_url)
     for what, outcome in outcomes:
         if isinstance(outcome, MetaError):
-            log.error("[social] %s failed for %s: %s", what, draft.deal.summary(), outcome)
+            log.error("[social] %s failed for %s: %s", what, post.title, outcome)
         else:
-            log.info("[social] %s done for %s", what, draft.deal.summary())
-    telegram.send_message(report(draft, outcomes))
+            log.info("[social] %s done for %s", what, post.title)
+    telegram.send_message(report(post, outcomes))
     if failed(outcomes):
-        send_draft(telegram, draft)
+        send_draft(telegram, post)
     return outcomes
 
 

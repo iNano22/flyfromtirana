@@ -78,6 +78,11 @@ social:
   hashtags: "#flyfromtirana #fluturime #oferta #udhetim #tirana #rinas #biletaavioni #pushime"
   publish: [instagram, facebook]   # instagram = a feed post + a story; facebook = a Page post with the link
   keep_pictures_days: 7            # Instagram fetches the pictures from the website (/social/); kept this long
+  # Keeping the accounts busy on quiet days:
+  weekly_day: sunday               # a "TOP 5 ofertat e javës" carousel (cover + one card per deal) on this day;
+  weekly_count: 5                  #   empty = never. It needs at least 3 deals on the website.
+  filler_hour: 17                  # a day with no deal post gets a city-guide post at the first run after this
+                                   #   hour (local): the city posted least recently. Empty = never.
 
 # --- Website -----------------------------------------------------------------
 # src/website.py renders one page from the price database into output_dir. On

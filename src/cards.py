@@ -1,19 +1,23 @@
-"""Draws the deal pictures for Instagram and Facebook.
+"""Draws the pictures for Instagram and Facebook.
 
-Two pictures per deal, in the website's airport-signage look (yellow sign, black
+Three kinds, all in the website's airport-signage look (yellow sign, black
 bars, Archivo + IBM Plex Mono, the fonts in assets/fonts):
+
+    draw_card        a deal: the destination's photo, then a yellow sign with the
+                     city, the price, the dates and the flight
+    draw_guide_card  a city guide: the photo, the city, its tagline and the page's address
+    draw_top_card    the week's top deals: a black departures board listing them
+
+Each comes in two sizes:
 
     feed    1080 x 1350   the tallest picture Instagram's feed allows (4:5); Facebook too
     story   1080 x 1920   an Instagram or Facebook story (9:16)
 
-The top is the destination's photo (assets/telegram/<iata>.jpg, the one the
-Telegram posts use); under it a yellow sign with the city, the price, the dates
-and the flight; a black strip with the site's address at the bottom.
-
+The photos are the ones the Telegram posts use (assets/telegram/<iata>.jpg).
 Drawing is done with Pillow, the Python image library: there is no Chrome on
 the server, and this way a card takes well under a second. Pillow draws text
 one line at a time with no layout engine, so every line's position is worked
-out here (see draw_card).
+out here.
 """
 from __future__ import annotations
 
@@ -74,40 +78,36 @@ LAYOUTS = {
 
 def save_cards(deal: Deal, out_dir: Path, *, airline_names: dict[str, str], brand: str, handle: str,
                address: str, photo: Path | None, language: str = "sq") -> dict[str, Path]:
-    """Write both cards as JPEGs: {"feed": out_dir/bgy_feed.jpg, "story": out_dir/bgy_story.jpg}."""
+    """Write both cards of a deal as JPEGs: {"feed": out_dir/bgy_feed.jpg, "story": out_dir/bgy_story.jpg}."""
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = {}
     for name in LAYOUTS:
         card = draw_card(deal, name, airline_names=airline_names, brand=brand, handle=handle,
                          address=address, photo=photo, language=language)
-        path = out_dir / f"{deal.route.iata.lower()}_{name}.jpg"
-        card.save(path, "JPEG", quality=JPEG_QUALITY, optimize=True)
-        paths[name] = path
+        paths[name] = save_jpeg(card, out_dir / f"{deal.route.iata.lower()}_{name}.jpg")
     return paths
 
 
+def save_jpeg(card: Image.Image, path: Path) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    card.save(path, "JPEG", quality=JPEG_QUALITY, optimize=True)
+    return path
+
+
+# --- the deal card ---------------------------------------------------------------------
+
 def draw_card(deal: Deal, layout_name: str, *, airline_names: dict[str, str], brand: str, handle: str,
               address: str, photo: Path | None, language: str = "sq") -> Image.Image:
-    """One card as a Pillow image (RGB). layout_name: "feed" or "story"."""
+    """A deal's card as a Pillow image (RGB). layout_name: "feed" or "story"."""
     layout = LAYOUTS[layout_name]
     words = WORDS[language]
-    card = Image.new("RGB", (layout.width, layout.height), SUN)
-    draw = ImageDraw.Draw(card)
+    card, draw = frame(layout, photo=photo, iata=deal.route.iata, brand=brand, handle=handle, address=address,
+                       tag_text="OFERTË")
     width, pad = layout.width, layout.padding
 
-    # 1) The black brand bar: the plane mark, the brand name, an "OFERTË" tag on the right.
-    draw.rectangle((0, 0, width, layout.bar), fill=INK)
-    mark_size = layout.bar - 32
-    card.paste(plane_mark(mark_size), (pad, (layout.bar - mark_size) // 2))
-    draw.text((pad + mark_size + 18, layout.bar / 2), brand, font=archivo(38, 800, 88), fill=WHITE, anchor="lm")
-    tag(draw, "OFERTË", right=width - pad, middle=layout.bar / 2, font=mono(24), fill=SUN, color=INK)
-
-    # 2) The destination photo, cropped to fill its band (a dark board when the route has none).
-    card.paste(photo_band(photo, width, layout.photo, deal.route.iata), (0, layout.bar))
-
-    # 3) The yellow sign. Lines are placed one under the other from `y` down; each
-    #    line's text sits on its baseline (anchor "ls" = left, baseline), so "nga" and
-    #    the big price can share one. px() scales the feed card's sizes for the story.
+    # The yellow sign. Lines are placed one under the other from `y` down; each
+    # line's text sits on its baseline (anchor "ls" = left, baseline), so "nga" and
+    # the big price can share one. px() scales the feed card's sizes for the story.
     def px(n: float) -> int:
         return round(n * layout.scale)
 
@@ -156,12 +156,6 @@ def draw_card(deal: Deal, layout_name: str, *, airline_names: dict[str, str], br
     details_font = fit(details, width - 2 * pad, size=px(34), weight=500, width_axis=95, smallest=px(26))
     y += cap_height(details_font)
     draw.text((pad, y), details, font=details_font, fill=INK, anchor="ls")
-
-    # 4) The black footer: the site's address and the account's name.
-    draw.rectangle((0, layout.sign_bottom, width, layout.height), fill=INK)
-    middle = layout.sign_bottom + 42   # high up in the band: a story's bottom is covered by Instagram
-    draw.text((pad, middle), address, font=mono(30), fill=WHITE, anchor="lm")
-    draw.text((width - pad, middle), handle, font=archivo(32, 700, 90), fill=SUN, anchor="rm")
     return card
 
 
@@ -174,6 +168,143 @@ def flight_line(deal: Deal, airline_names: dict[str, str], words: dict) -> str:
     if deal.return_quote:
         parts.append(f"kthimi nga €{format_price(deal.return_quote.price)}")
     return "  ·  ".join(part for part in parts if part)
+
+
+# --- the city guide card ---------------------------------------------------------------
+
+def draw_guide_card(layout_name: str, *, city: str, iata: str, tagline: str, price: float | None, page: str,
+                    photo: Path | None, brand: str, handle: str) -> Image.Image:
+    """A city guide's card: the photo, the city's name, its tagline, the flights' price and the page.
+
+    page: the guide page's address as people write it, e.g. "flyfromtirana.al/rome/".
+    """
+    layout = LAYOUTS[layout_name]
+    card, draw = frame(layout, photo=photo, iata=iata, brand=brand, handle=handle, address=page,
+                       tag_text="UDHËZUES")
+    width, pad = layout.width, layout.padding
+
+    def px(n: float) -> int:
+        return round(n * layout.scale)
+
+    y = layout.sign_top + px(44)
+    codes = mono(px(34))
+    y += cap_height(codes)
+    draw.text((pad, y), f"TIA → {iata}", font=codes, fill=INK, anchor="ls")
+    draw.text((width - pad, y), "UDHËZUESI I QYTETIT", font=codes, fill=INK, anchor="rs")
+    y += px(26)
+
+    name = city.upper()
+    name_font = fit(name, width - 2 * pad, size=px(210), weight=800, width_axis=72)
+    y += cap_height(name_font, name)
+    draw.text((pad, y), name, font=name_font, fill=INK, anchor="ls")
+    y += px(30)
+
+    # The tagline, wrapped onto two lines at most.
+    tagline_font = archivo(px(52), 600, 88)
+    for line in wrap(tagline, tagline_font, width - 2 * pad)[:2]:
+        y += cap_height(tagline_font)
+        draw.text((pad, y), line, font=tagline_font, fill=INK, anchor="ls")
+        y += px(16)
+    y += px(18)
+
+    # What's in the guide, and the flights' price.
+    y += px(8)
+    contents_font = archivo(px(34), 500, 95)
+    y += cap_height(contents_font)
+    draw.text((pad, y), "Çfarë të shohësh  ·  ku të flesh  ·  çfarë të hash  ·  si të lëvizësh",
+              font=fit("Çfarë të shohësh  ·  ku të flesh  ·  çfarë të hash  ·  si të lëvizësh", width - 2 * pad,
+                       size=px(34), weight=500, width_axis=95, smallest=px(26)),
+              fill=INK, anchor="ls")
+    if price is not None:
+        y += px(30)
+        price_font = archivo(px(46), 800, 88)
+        y += cap_height(price_font)
+        draw.text((pad, y), f"Fluturime nga Tirana nga €{format_price(price)}", font=price_font, fill=INK,
+                  anchor="ls")
+    return card
+
+
+# --- the week's top deals --------------------------------------------------------------
+
+def draw_top_card(deals: list[Deal], *, brand: str, handle: str, address: str, title: str = "TOP 5",
+                  subtitle: str = "OFERTAT E JAVËS") -> Image.Image:
+    """The cover of the weekly carousel: the title on yellow, a black board with one line per deal."""
+    layout = LAYOUTS["feed"]
+    width, pad = layout.width, layout.padding
+    card = Image.new("RGB", (width, layout.height), SUN)
+    draw = ImageDraw.Draw(card)
+    brand_bar(draw, card, layout, brand=brand, tag_text="JAVA")
+    footer(draw, layout, address=address, handle=handle)
+
+    # The title.
+    y = layout.bar + 52
+    codes = mono(36)
+    y += cap_height(codes)
+    draw.text((pad, y), f"TIA →  {subtitle}", font=codes, fill=INK, anchor="ls")
+    y += 28
+    title_font = fit(title, width - 2 * pad, size=230, weight=800, width_axis=72)
+    y += cap_height(title_font, title)
+    draw.text((pad, y), title, font=title_font, fill=INK, anchor="ls")
+    y += 44
+
+    # The board: one line per deal, like the departures board on the site.
+    rows = deals[:6]
+    top = y
+    row_height = min(140, (layout.sign_bottom - 40 - top - 70) // max(len(rows), 1))
+    bottom = top + 70 + row_height * len(rows)
+    draw.rounded_rectangle((pad, top, width - pad, bottom), radius=20, fill=INK)
+    head = mono(30)
+    draw.text((pad + 36, top + 24 + cap_height(head)), "DESTINACIONI", font=head, fill=SUN, anchor="ls")
+    draw.text((width - pad - 36, top + 24 + cap_height(head)), "NGA", font=head, fill=SUN, anchor="rs")
+    line_y = top + 70
+    code_font = mono(40)
+    city_font = archivo(48, 700, 82)
+    price_font = archivo(56, 800, 84)
+    for deal in rows:
+        draw.line((pad + 36, line_y, width - pad - 36, line_y), fill=BOARD_LINE, width=2)
+        baseline = line_y + row_height // 2 + cap_height(city_font) // 2
+        draw.text((pad + 36, baseline), deal.route.iata, font=code_font, fill=SUN, anchor="ls")
+        city = deal.route.city.upper() + (f" · {deal.route.airport}" if deal.route.airport else "")
+        price = f"€{format_price(deal.best.price)}"
+        price_width = draw.textlength(price, font=price_font)
+        city_font_fit = fit(city, width - 2 * pad - 72 - 130 - price_width - 30, size=48, weight=700,
+                            width_axis=82, smallest=30)
+        draw.text((pad + 36 + 130, baseline), city, font=city_font_fit, fill=WHITE, anchor="ls")
+        draw.text((width - pad - 36, baseline), price, font=price_font, fill=SUN, anchor="rs")
+        line_y += row_height
+    return card
+
+
+# --- the common frame: brand bar, photo, footer -----------------------------------------
+
+def frame(layout: Layout, *, photo: Path | None, iata: str, brand: str, handle: str, address: str,
+          tag_text: str) -> tuple[Image.Image, ImageDraw.ImageDraw]:
+    """A yellow card with the black brand bar, the photo band and the black footer drawn."""
+    card = Image.new("RGB", (layout.width, layout.height), SUN)
+    draw = ImageDraw.Draw(card)
+    brand_bar(draw, card, layout, brand=brand, tag_text=tag_text)
+    card.paste(photo_band(photo, layout.width, layout.photo, iata), (0, layout.bar))
+    footer(draw, layout, address=address, handle=handle)
+    return card, draw
+
+
+def brand_bar(draw: ImageDraw.ImageDraw, card: Image.Image, layout: Layout, *, brand: str, tag_text: str) -> None:
+    """The black bar at the top: the plane mark, the brand name, a yellow tag on the right."""
+    width, pad = layout.width, layout.padding
+    draw.rectangle((0, 0, width, layout.bar), fill=INK)
+    mark_size = layout.bar - 32
+    card.paste(plane_mark(mark_size), (pad, (layout.bar - mark_size) // 2))
+    draw.text((pad + mark_size + 18, layout.bar / 2), brand, font=archivo(38, 800, 88), fill=WHITE, anchor="lm")
+    tag(draw, tag_text, right=width - pad, middle=layout.bar / 2, font=mono(24), fill=SUN, color=INK)
+
+
+def footer(draw: ImageDraw.ImageDraw, layout: Layout, *, address: str, handle: str) -> None:
+    """The black strip at the bottom: an address on the left, the account's name on the right."""
+    width, pad = layout.width, layout.padding
+    draw.rectangle((0, layout.sign_bottom, width, layout.height), fill=INK)
+    middle = layout.sign_bottom + 42   # high up in the band: a story's bottom is covered by Instagram
+    draw.text((pad, middle), address, font=fit_mono(address, width - 2 * pad - 320, size=30), fill=WHITE, anchor="lm")
+    draw.text((width - pad, middle), handle, font=archivo(32, 700, 90), fill=SUN, anchor="rm")
 
 
 # --- text ------------------------------------------------------------------------------
@@ -197,6 +328,28 @@ def fit(text: str, max_width: int, *, size: int, weight: int, width_axis: int,
     while size > smallest and archivo(size, weight, width_axis).getlength(text) > max_width:
         size -= 2
     return archivo(size, weight, width_axis)
+
+
+def fit_mono(text: str, max_width: int, *, size: int, smallest: int = 20) -> ImageFont.FreeTypeFont:
+    """IBM Plex Mono at `size`, or smaller until `text` fits in max_width."""
+    while size > smallest and mono(size).getlength(text) > max_width:
+        size -= 2
+    return mono(size)
+
+
+def wrap(text: str, font: ImageFont.FreeTypeFont, max_width: int) -> list[str]:
+    """Break `text` into lines no wider than max_width (at spaces)."""
+    lines, line = [], ""
+    for word in text.split():
+        candidate = f"{line} {word}".strip()
+        if line and font.getlength(candidate) > max_width:
+            lines.append(line)
+            line = word
+        else:
+            line = candidate
+    if line:
+        lines.append(line)
+    return lines
 
 
 def cap_height(font: ImageFont.FreeTypeFont, text: str = "H") -> int:

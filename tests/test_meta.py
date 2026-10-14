@@ -30,6 +30,8 @@ def graph_handler(*, container_checks: int = 1, container_status: str = "FINISHE
             if not facebook_ok:
                 return FakeResponse(400, {"error": {"message": "Invalid parameter", "code": 100}})
             return FakeResponse(200, {"id": "PHOTO1", "post_id": "1348603305007068_777"})
+        if path.endswith("/feed"):   # a post carrying several uploaded pictures
+            return FakeResponse(200, {"id": "1348603305007068_999"})
         return FakeResponse(404, {"error": {"message": f"unknown path {path}", "code": 803}})
     return handler
 
@@ -117,3 +119,39 @@ def test_user_token_instead_of_page_token_says_so():
                                             "code": 100}})
     with pytest.raises(MetaError, match="User token, not the Page's token"):
         MetaClient(TOKEN, FakeSession(handler)).whoami()
+
+
+def test_instagram_carousel_makes_a_container_per_picture_then_one_for_all():
+    session = FakeSession(graph_handler())
+    link = MetaClient(TOKEN, session, sleep=lambda s: None).post_instagram_carousel(
+        ["https://x/cover.jpg", "https://x/1.jpg", "https://x/2.jpg"], "TOP 3")
+
+    assert link == "https://www.instagram.com/p/abc123/"
+    creates = [c["data"] for c in session.calls if c["url"].endswith("/media")]
+    assert creates[:3] == [{"image_url": "https://x/cover.jpg", "is_carousel_item": "true"},
+                           {"image_url": "https://x/1.jpg", "is_carousel_item": "true"},
+                           {"image_url": "https://x/2.jpg", "is_carousel_item": "true"}]
+    assert creates[3] == {"media_type": "CAROUSEL", "children": "CONTAINER1,CONTAINER1,CONTAINER1", "caption": "TOP 3"}
+    assert paths(session).count("POST 17841417241858036/media_publish") == 1
+
+
+def test_facebook_album_uploads_unpublished_photos_then_one_post():
+    def handler(method, url, kwargs):
+        path = url.replace(GRAPH_URL.format(path=""), "")
+        if path == "me":
+            return FakeResponse(200, ME)
+        if path.endswith("/photos"):
+            return FakeResponse(200, {"id": f"PHOTO{kwargs['data']['url'][-5]}"})
+        if path.endswith("/feed"):
+            return FakeResponse(200, {"id": "1348603305007068_999"})
+        return FakeResponse(404, {"error": {"message": path, "code": 803}})
+    session = FakeSession(handler)
+
+    address = MetaClient(TOKEN, session).post_facebook_album(["https://x/a.jpg", "https://x/b.jpg"], "TOP 2")
+
+    assert address == "https://www.facebook.com/1348603305007068_999"
+    photos = [c["data"] for c in session.calls if c["url"].endswith("/photos")]
+    assert photos == [{"url": "https://x/a.jpg", "published": "false"}, {"url": "https://x/b.jpg", "published": "false"}]
+    feed, = [c["data"] for c in session.calls if c["url"].endswith("/feed")]
+    assert feed == {"message": "TOP 2", "attached_media[0]": '{"media_fbid": "PHOTOa"}',
+                    "attached_media[1]": '{"media_fbid": "PHOTOb"}'}

@@ -14,6 +14,7 @@ Docs: https://developers.facebook.com/docs/instagram-platform/content-publishing
 """
 from __future__ import annotations
 
+import json
 import logging
 import time
 from typing import Callable
@@ -93,6 +94,26 @@ class MetaClient:
         log.info("Instagram post published: %s", permalink)
         return permalink
 
+    def post_instagram_carousel(self, image_urls: list[str], caption: str) -> str:
+        """Publish several pictures as one Instagram post (a carousel, 2 to 10 pictures). Returns its address.
+
+        Each picture gets a container of its own; a carousel container then ties
+        them together and is published like a single picture.
+        """
+        instagram = self._instagram_id()
+        children = []
+        for url in image_urls:
+            child = self._call("POST", f"{instagram}/media", image_url=url, is_carousel_item="true")["id"]
+            self._wait_for_container(child)
+            children.append(child)
+        carousel = self._call("POST", f"{instagram}/media", media_type="CAROUSEL", children=",".join(children),
+                              caption=caption)["id"]
+        self._wait_for_container(carousel)
+        media = self._call("POST", f"{instagram}/media_publish", creation_id=carousel)["id"]
+        permalink = self._call("GET", media, fields="permalink").get("permalink")
+        log.info("Instagram carousel published: %s", permalink)
+        return permalink
+
     def post_facebook(self, image_url: str, message: str) -> str:
         """Publish a picture with text on the Page. Returns the post's address."""
         page = self.whoami()["page_id"]
@@ -100,6 +121,21 @@ class MetaClient:
         post_id = result.get("post_id") or result["id"]
         address = f"https://www.facebook.com/{post_id}"
         log.info("Facebook post published: %s", address)
+        return address
+
+    def post_facebook_album(self, image_urls: list[str], message: str) -> str:
+        """Publish several pictures as one Page post. Returns the post's address.
+
+        The pictures are uploaded unpublished first, then one post carries them all.
+        """
+        page = self.whoami()["page_id"]
+        fields = {"message": message}
+        for number, url in enumerate(image_urls):
+            photo = self._call("POST", f"{page}/photos", url=url, published="false")["id"]
+            fields[f"attached_media[{number}]"] = json.dumps({"media_fbid": photo})
+        post_id = self._call("POST", f"{page}/feed", **fields)["id"]
+        address = f"https://www.facebook.com/{post_id}"
+        log.info("Facebook post with %d pictures published: %s", len(image_urls), address)
         return address
 
     def _wait_for_container(self, container: str) -> None:

@@ -76,3 +76,18 @@ def test_plane_mark_is_a_black_plane_on_yellow():
     assert mark.getpixel((32, 32))[:3] == INK     # the plane's body crosses the middle
     assert mark.getpixel((5, 32))[:3] == SUN      # the square's edge, beside the plane
     assert mark.getpixel((0, 0))[3] == 0          # the corner is rounded off (transparent)
+
+
+def test_guide_card_and_top_card_have_the_right_sizes(route):
+    from src.cards import draw_guide_card, draw_top_card
+    guide = draw_guide_card("feed", city="Rome", iata="FCO", tagline="Koloseu, Vatikani dhe pasta", price=17,
+                            page="flyfromtirana.al/rome/", photo=None, brand="FlyFromTirana", handle="@flyfromtirana")
+    assert guide.size == (1080, 1350)
+    story = draw_guide_card("story", city="Thessaloniki", iata="SKG", tagline="Deti, ushqimi dhe jeta e natës " * 3,
+                            price=None, page="flyfromtirana.al/thessaloniki/", photo=None, brand="FlyFromTirana",
+                            handle="@flyfromtirana")
+    assert story.size == (1080, 1920)
+    deals = [make_deal(route) for _ in range(5)]
+    cover = draw_top_card(deals, brand="FlyFromTirana", handle="@flyfromtirana", address="flyfromtirana.al")
+    assert cover.size == (1080, 1350)
+    assert cover.getpixel((540, 8)) == INK and cover.getpixel((20, 300)) == SUN

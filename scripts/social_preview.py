@@ -1,7 +1,8 @@
 """Draw sample Instagram/Facebook cards for made-up deals, to check the look.
 
 Usage (from the repo root):
-    python scripts/social_preview.py              # writes ig_preview/<iata>_feed.jpg and _story.jpg
+    python scripts/social_preview.py              # writes ig_preview/<iata>_feed.jpg and _story.jpg,
+                                                  # top_feed.jpg (the weekly cover) and guide_rome_*.jpg
     python scripts/social_preview.py --out DIR    # somewhere else
 
 Nothing is sent anywhere. The deals below are invented (prices, dates, airlines);
@@ -15,9 +16,10 @@ from pathlib import Path
 # Make "import src..." work when this file is run directly.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.cards import save_cards  # noqa: E402
+from src.cards import draw_guide_card, draw_top_card, save_cards, save_jpeg  # noqa: E402
 from src.config import load_config  # noqa: E402
 from src.deals import Deal  # noqa: E402
+from src.guides import load_guides  # noqa: E402
 from src.photos import post_photo  # noqa: E402
 from src.scanner import Quote  # noqa: E402
 from src.social import site_address  # noqa: E402
@@ -58,6 +60,19 @@ def main() -> int:
                            photo=photo.path if photo else None, language=config.language)
         for path in paths.values():
             print(f"✅ {path}")
+    # The weekly cover with the three deals, and Rome's guide card in both sizes.
+    deals = sample_deals(routes)
+    cover = draw_top_card(deals, brand=config.brand, handle=config.social.handle or config.channel_handle,
+                          address=site_address(config), title=f"TOP {len(deals)}")
+    print(f"✅ {save_jpeg(cover, args.out / 'top_feed.jpg')}")
+    guide = load_guides(config.language).get("Rome")
+    if guide:
+        photo = post_photo("FCO")
+        for layout in ("feed", "story"):
+            card = draw_guide_card(layout, city=guide.display_name, iata="FCO", tagline=guide.tagline, price=17,
+                                   page=f"{site_address(config)}/{guide.slug}/", photo=photo.path if photo else None,
+                                   brand=config.brand, handle=config.social.handle or config.channel_handle)
+            print(f"✅ {save_jpeg(card, args.out / f'guide_{guide.slug}_{layout}.jpg')}")
     return 0
 
 
