@@ -14,7 +14,7 @@ from src.storage import Storage
 from src.formatter import load_template
 from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
-                         render_site, telegram_url)
+                         render_privacy, render_site, telegram_url)
 from tests.conftest import NOW, make_quote, seed_history, with_tours
 
 NOV = date(2026, 11, 1)
@@ -214,6 +214,46 @@ def test_build_writes_the_page_for_an_address_that_does_not_exist(config):
     assert '<meta name="robots" content="noindex">' in page                   # search engines leave it out...
     assert "404" not in (out / "sitemap.xml").read_text(encoding="utf-8")     # ...and the sitemap doesn't list it
     assert "<!--" not in page and not PLACEHOLDER.search(page)
+
+
+def test_privacy_page_describes_what_the_site_uses(config):
+    website = replace(config.website, google_analytics_id="G-TEST", google_analytics_ask_first=False,
+                      operator="Devbay.cloud", contact_email="hello@devbay.cloud")
+    config = replace(config, website=website)
+    build_site(config, "12345", now=NOW)
+    out = config.website.output_dir
+    page = (out / "privacy" / "index.html").read_text(encoding="utf-8")
+    assert "<h1>Privatësia dhe cookies</h1>" in page
+    assert "Faqen e drejton Devbay.cloud" in page and "href='mailto:hello@devbay.cloud'" in page
+    assert "Numërimi fillon kur hapet faqja" in page          # Analytics counts right away...
+    assert "vetëm pasi shtyp «Pranoj»" not in page              # ...so not the wording for asking first
+    assert "<code>ga-consent</code>" in page
+    assert "GetYourGuide</h2>" in page                          # the tours link has a Partner ID
+    assert '<link rel="canonical" href="https://flyfromtirana.al/privacy/">' in page
+    assert "<!--" not in page and not PLACEHOLDER.search(page)
+    # Linked from the footers and from the cookie box, and listed for search engines.
+    main_page = (out / "index.html").read_text(encoding="utf-8")
+    assert '<a href="./privacy/">Privatësia</a>' in main_page
+    assert '<a href="./privacy/">Si i përdorim të dhënat</a>' in main_page
+    assert '<a href="../privacy/">Privatësia</a>' in (out / "milan" / "index.html").read_text(encoding="utf-8")
+    assert "<loc>https://flyfromtirana.al/privacy/</loc>" in (out / "sitemap.xml").read_text(encoding="utf-8")
+
+
+def test_privacy_page_leaves_out_what_the_site_does_not_use(config):
+    links = LinkBuilder(config.website.links, "12345")
+    asks_first = replace(config, website=replace(config.website, google_analytics_id="G-TEST",
+                                                 google_analytics_ask_first=True))
+    assert "vetëm pasi shtyp «Pranoj»" in render_privacy(asks_first, links, now=NOW)
+
+    # No Analytics, no contact address, no GetYourGuide: their parts are gone, the rest stays.
+    partners = {name: link for name, link in config.website.links.partners.items() if name != "tours"}
+    bare_links = replace(config.website.links, partners=partners)
+    bare = replace(config, website=replace(config.website, google_analytics_id="", contact_email="", links=bare_links))
+    page = render_privacy(bare, LinkBuilder(bare_links, "12345"), now=NOW)
+    assert "Google Analytics</h2>" not in page and "ga-consent" not in page and "Cilësimet e cookies" not in page
+    assert "Kush jemi" not in page and "GetYourGuide" not in page
+    assert "Google Fonts" in page and "Cloudflare" in page and "Të drejtat e tua" in page
+    assert not PLACEHOLDER.search(page)
 
 
 def test_cli_builds_from_a_config_file(tmp_path, monkeypatch):

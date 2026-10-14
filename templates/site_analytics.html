@@ -8,7 +8,8 @@
      The lines with GA_ASK or GA_AUTO are the two wordings: only one of the two values exists, so
      only one set of lines stays. The answer is remembered in the browser (localStorage
      "ga-consent": yes / no), and any element with data-consent-open (the "Cilësimet e cookies"
-     link in the footer) shows the box again.
+     link in the footer) shows the box again. PRIVACY_URL is the way to the privacy page, linked
+     from the box's text.
      Same rules as the other templates: never write an uppercase word in curly braces unless it
      is a value, never two opening square brackets in a row, JS variable names lowercase. -->
 <style>
@@ -21,8 +22,8 @@
 .consent :focus-visible { outline: 3px solid #2f6bff; outline-offset: 2px; }
 </style>
 <div class="consent" id="consent"[[ data-auto="{GA_AUTO}"]] role="dialog" aria-live="polite" aria-label="{T_COOKIES_LABEL}" hidden>
-  <p data-ask="{GA_ASK}">{T_COOKIES_ASK}</p>
-  <p data-auto="{GA_AUTO}">{T_COOKIES_NOTICE}</p>
+  <p data-ask="{GA_ASK}">{T_COOKIES_ASK}[[ <a href="{PRIVACY_URL}">{T_PRIVACY_MORE}</a>]]</p>
+  <p data-auto="{GA_AUTO}">{T_COOKIES_NOTICE}[[ <a href="{PRIVACY_URL}">{T_PRIVACY_MORE}</a>]]</p>
   <div class="consent-btns">
     <button type="button" class="yes" data-consent="yes" data-ask="{GA_ASK}">{T_COOKIES_ACCEPT}</button>
     <button type="button" class="yes" data-consent="yes" data-auto="{GA_AUTO}">{T_COOKIES_OK}</button>

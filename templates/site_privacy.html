@@ -1,0 +1,153 @@
+<!doctype html>
+<!-- The privacy page (/privacy/, /en/privacy/, /it/privacy/): what the site collects, who gets it,
+     and what a visitor can do about it. Its text is in templates/strings/<language>.yaml (the
+     PRIVACY_ entries), one part per line below, so a part about something the site doesn't use
+     goes with its line: Google Analytics without GA_ON (and only the wording for how it is set
+     up: GA_AUTO counts right away, GA_ASK waits for a yes), GetYourGuide without GYG_ON, and "who
+     we are" without OPERATOR and CONTACT_EMAIL (website.operator and website.contact_email).
+     When the site starts using something new that collects data, add it to the text.
+     Same rules as the other templates: a NAME in curly braces is a value, [[ ... ]] is optional
+     (and must stay on one line), and every HTML comment is removed before the page is written.
+     Values: BRAND LANG HOME PAGE_URL TELEGRAM_URL OPERATOR CONTACT_EMAIL GA_ON GA_AUTO GA_ASK
+     GYG_ON YEAR HREFLANG LANG_MENU LANG_LINKS ANALYTICS. The text itself is not in this file:
+     T_NAME stands for the entry NAME in templates/strings/<language>.yaml (see src/i18n.py).
+     Careful in the CSS: never write an uppercase word in curly braces unless it is one of these
+     values, and never two opening square brackets in a row. -->
+<html lang="{LANG}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{T_PRIVACY_TITLE}</title>
+<meta name="description" content="{T_PRIVACY_DESCRIPTION}">
+<link rel="canonical" href="{PAGE_URL}">
+{HREFLANG}
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0f1114">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ffd60a'/><path transform='translate(4 4) rotate(45 12 12)' fill='%230f1114' d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* The same look as the city pages (templates/site_dest.html): the black top bar, then the text
+   on white, then the black footer. The colours have the same names as there. */
+:root {
+  color-scheme: light;
+  --ink: #0f1114;
+  --ground: #eff1f3;
+  --panel: #ffffff;
+  --line: #d5d9de;
+  --muted: #555b64;
+  --sun: #ffd60a;
+  --board-line: #2a2e35;
+  --board-muted: #a9afb8;
+  --focus: #2f6bff;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gutter: clamp(16px, 4vw, 32px);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.55; }
+a { color: inherit; }
+h1, h2, p { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ic-fill { fill: currentColor; stroke: none; }
+
+/* 1. The black top bar: brand (back to the main page), language, Telegram */
+.nav { position: sticky; top: 0; z-index: 20; background: var(--ink); color: #ffffff; }
+.nav-in { min-height: 60px; display: flex; align-items: center; gap: 10px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-right: auto; font-weight: 800; font-stretch: 88%; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.mark { width: 34px; height: 34px; border-radius: 6px; background: var(--sun); color: var(--ink); display: grid; place-items: center; flex: none; }
+.mark .ic { width: 20px; height: 20px; }
+.nav-tg { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border-radius: 6px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
+.nav-tg .ic { width: 24px; height: 24px; }
+.nav-tg span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }   /* phones: the paper plane alone */
+/* The language dropdown (templates/site_lang.html) and the row of languages in the footer */
+.lang { position: relative; }
+.lang summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 10px; border: 1.5px solid #3a3f47; border-radius: 6px; list-style: none; cursor: pointer; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary .ic { width: 16px; height: 16px; color: var(--board-muted); }
+.lang summary .chev { width: 14px; height: 14px; stroke-width: 2.5; color: inherit; }
+.lang[open] summary .chev { transform: rotate(180deg); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; display: grid; gap: 2px; min-width: 160px; padding: 6px; border-radius: 8px; background: var(--panel); color: var(--ink); box-shadow: 0 0 0 1px var(--line), 0 16px 40px rgba(15, 17, 20, 0.35); }
+.lang-menu a { display: flex; align-items: baseline; gap: 10px; min-height: 44px; padding: 11px 10px; border-radius: 6px; text-decoration: none; }
+.lang-menu b { min-width: 22px; font-weight: 800; }
+.lang-menu span { font-size: 14px; color: var(--muted); }
+.lang-menu a:hover { background: var(--ground); }
+.lang-menu a[aria-current] { background: var(--sun); }
+.lang-menu a[aria-current] span { color: var(--ink); }
+.langs { display: flex; align-items: center; gap: 4px; }
+.langs a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-decoration: none; }
+.langs a[aria-current] { background: var(--sun); color: var(--ink); }
+
+/* 2. The text: one white sheet, a readable width */
+.doc { padding-top: 32px; padding-bottom: 56px; }
+.sheet { max-width: 760px; padding: 28px 22px 32px; border-radius: 10px; background: var(--panel); box-shadow: 0 1px 0 var(--line); }
+.doc h1 { margin: 0; font-size: clamp(40px, 9vw, 64px); line-height: 0.95; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
+.updated { margin: 12px 0 0; font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.02em; color: var(--muted); }
+.doc h2 { margin: 32px 0 0; font-size: 22px; line-height: 1.2; font-weight: 800; }
+.doc p { margin: 10px 0 0; max-width: 68ch; }
+.doc section > p:first-child { margin-top: 20px; }
+.doc a { font-weight: 700; text-underline-offset: 3px; }
+.doc code { font-family: var(--mono); font-size: 0.88em; padding: 1px 5px; border-radius: 4px; background: var(--ground); }
+
+/* 3. The footer */
+.foot { background: var(--ink); color: #ffffff; padding: 28px 0; font-size: 14px; }
+.foot p { margin: 8px 0 0; color: var(--board-muted); }
+.foot p a { color: #ffffff; font-weight: 700; text-underline-offset: 3px; }
+.flangs { margin: 0 0 8px -12px; }
+
+@media (min-width: 560px) {
+  .nav-tg { padding: 0 16px 0 10px; }
+  .nav-tg span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+}
+@media (min-width: 700px) {
+  .sheet { padding: 40px 48px 48px; }
+}
+@media (min-width: 900px) {
+  .nav-in { min-height: 68px; gap: 16px; }
+  .brand { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path transform="rotate(45 12 12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aabee" stroke="none"/><path fill="#ffffff" stroke="none" d="M5.4 11.6l11.3-4.4c.5-.2 1 .1.8.9l-1.9 9c-.1.7-.6.8-1.1.5l-2.9-2.1-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></symbol>
+</svg>
+<header class="nav">
+  <div class="nav-in wrap">
+    <a class="brand" href="{HOME}"><span class="mark"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-plane"/></svg></span>{BRAND}</a>
+    {LANG_MENU}
+    <a class="nav-tg" href="{TELEGRAM_URL}"><svg class="ic" aria-hidden="true"><use href="#i-tg"/></svg><span>{T_JOIN_TELEGRAM}</span></a>
+  </div>
+</header>
+<main class="doc wrap">
+  <article class="sheet">
+    <h1>{T_PRIVACY_HEADLINE}</h1>
+    <p class="updated">{T_PRIVACY_UPDATED}</p>
+    <section>{T_PRIVACY_INTRO}</section>
+    <section>{T_PRIVACY_WHO}</section>
+    <section>{T_PRIVACY_HOSTING}</section>
+    <section data-on="{GA_AUTO}">{T_PRIVACY_GA}{T_PRIVACY_GA_AUTO}</section>
+    <section data-on="{GA_ASK}">{T_PRIVACY_GA}{T_PRIVACY_GA_ASK}</section>
+    <section>{T_PRIVACY_FONTS}</section>
+    <section data-on="{GYG_ON}">{T_PRIVACY_GYG}</section>
+    <section>{T_PRIVACY_PARTNERS}</section>
+    <section>{T_PRIVACY_TELEGRAM}</section>
+    <section data-on="{GA_ON}">{T_PRIVACY_BROWSER}</section>
+    <section>{T_PRIVACY_RIGHTS}</section>
+  </article>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="flangs">{LANG_LINKS}</div>
+    <p><a href="#consent" data-consent-open="{GA_ON}">{T_COOKIE_SETTINGS}</a></p>
+    <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
+  </div>
+</footer>
+{ANALYTICS}
+</body>
+</html>

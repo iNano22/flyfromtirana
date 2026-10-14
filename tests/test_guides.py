@@ -219,8 +219,8 @@ def test_build_writes_a_page_per_city_and_a_sitemap(config):
     for guide in cities.values():
         assert (out / guide.slug / "index.html").exists(), guide.slug
     sitemap = (out / "sitemap.xml").read_text(encoding="utf-8")
-    # The main page and every city, once per language of the site.
-    assert sitemap.count("<url>") == 20 * len(config.website.languages)
+    # The main page, every city and the privacy page, once per language of the site.
+    assert sitemap.count("<url>") == 21 * len(config.website.languages)
     assert "<loc>https://flyfromtirana.al/</loc>" in sitemap
     assert "<loc>https://flyfromtirana.al/milan/</loc><lastmod>2026-10-09</lastmod>" in sitemap
     assert "Sitemap: https://flyfromtirana.al/sitemap.xml" in (out / "robots.txt").read_text()

@@ -196,6 +196,26 @@ page:
   NOT_FOUND_HEADLINE: "Faqja nuk u gjet"
   NOT_FOUND_TEXT: "Kjo adresë nuk ekziston më ose është shkruar gabim. Çmimet dhe ofertat i gjen te faqja kryesore."
   NOT_FOUND_HOME: "Kthehu te faqja kryesore"
+  # The privacy page (templates/site_privacy.html): each PRIVACY_ part is one section of it.
+  # Change PRIVACY_UPDATED whenever the text changes.
+  PRIVACY_LINK: "Privatësia"
+  PRIVACY_MORE: "Si i përdorim të dhënat"
+  PRIVACY_TITLE: "Privatësia dhe cookies | {BRAND}"
+  PRIVACY_DESCRIPTION: "Çfarë mblidhet kur viziton {BRAND}, kush e merr, dhe si mund ta ndalosh."
+  PRIVACY_HEADLINE: "Privatësia dhe cookies"
+  PRIVACY_UPDATED: "Përditësuar më 14 tetor 2026"
+  PRIVACY_INTRO: "<p>{BRAND} tregon çmimet e fluturimeve nga Tirana. Nuk ka llogari dhe nuk ka formularë: nuk të kërkojmë kurrë emrin, emailin apo të dhënat e kartës. Këtu shpjegojmë çfarë mblidhet gjithsesi kur e viziton faqen, kush e merr, dhe çfarë mund të bësh.</p>"
+  PRIVACY_WHO: "<h2>Kush jemi</h2><p>Faqen e drejton {OPERATOR}. Për çdo pyetje rreth të dhënave të tua, shkruaj në <a href='mailto:{CONTACT_EMAIL}'>{CONTACT_EMAIL}</a>.</p>"
+  PRIVACY_HOSTING: "<h2>Kur hap një faqe</h2><p>Çdo faqe kalon përmes Cloudflare, që e mbron faqen dhe e shpërndan më shpejt. Si çdo server, Cloudflare sheh adresën IP dhe shfletuesin tënd për çdo kërkesë, dhe mban statistika anonime të vizitave pa cookies (Cloudflare Web Analytics). Serveri ynë nuk mban regjistër të vizitave.</p>"
+  PRIVACY_GA: "<h2>Google Analytics</h2><p>Për të numëruar vizitat përdorim Google Analytics: cilat faqe lexohen, nga cili vend dhe me çfarë pajisjeje, dhe nga vijnë vizitorët. Ai vendos cookies <code>_ga</code> dhe <code>_ga_…</code>, që mbahen deri në dy vjet. Google i përpunon këto të dhëna për ne, edhe jashtë Shqipërisë dhe BE-së (në SHBA, sipas Kuadrit të Privatësisë së të Dhënave BE–SHBA). Google Analytics nuk ruan adresën tënde IP.</p>"
+  PRIVACY_GA_AUTO: "<p>Numërimi fillon kur hapet faqja. Nëse nuk do, shtyp «Refuzoj» në kutinë e cookies ose «Cilësimet e cookies» në fund të çdo faqeje: Analytics ndalet, cookies e tij fshihen dhe ai mbetet i fikur në këtë shfletues.</p>"
+  PRIVACY_GA_ASK: "<p>Numërimi fillon vetëm pasi shtyp «Pranoj» në kutinë e cookies. Përgjigjen mund ta ndryshosh kur të duash te «Cilësimet e cookies», në fund të çdo faqeje.</p>"
+  PRIVACY_FONTS: "<h2>Shkronjat</h2><p>Shkronjat e faqes (Archivo dhe IBM Plex Mono) vijnë nga Google Fonts, prandaj shfletuesi yt i kërkon nga serverat e Google dhe Google sheh adresën tënde IP. Google Fonts nuk vendos cookies, dhe sipas Google këto të dhëna përdoren vetëm për të dërguar shkronjat.</p>"
+  PRIVACY_GYG: "<h2>GetYourGuide</h2><p>Faqet me ture dhe aktivitete ngarkojnë një skript nga GetYourGuide, partneri ynë për turet. Ai shfaq aktivitetet dhe numëron vizitat që vijnë nga kjo faqe, që rezervimet t'i llogariten {BRAND}. Për këtë ruan një numër vizitori në shfletuesin tënd (cookie <code>session_id</code>, plus <code>partner_id</code> dhe <code>gyg_visitor_id</code> në kujtesën e shfletuesit) dhe ia dërgon GetYourGuide. Zgjedhja jote për cookies nuk e ndal këtë skript; mund ta bllokosh te shfletuesi.</p>"
+  PRIVACY_PARTNERS: "<h2>Lidhjet partnere</h2><p>Shumica e lidhjeve drejt faqeve të tjera (fluturime, bileta, shërbime udhëtimi) janë lidhje partnere, kryesisht përmes Travelpayouts. Kur hap një prej tyre, faqja e partnerit e di që ke ardhur nga {BRAND}, dhe nëse rezervon, ne marrim një komision të vogël, pa kosto shtesë për ty. Që aty e tutje vlen politika e privatësisë e asaj faqeje.</p>"
+  PRIVACY_TELEGRAM: "<h2>Telegram</h2><p>Kanalet tona janë në Telegram. Kur bashkohesh në to, ose paguan për Premium, vlen politika e privatësisë e Telegram.</p>"
+  PRIVACY_BROWSER: "<h2>Në shfletuesin tënd</h2><p>Faqja mban mend përgjigjen tënde për cookies në shfletues (<code>ga-consent</code>). Ajo nuk largohet nga pajisja jote.</p>"
+  PRIVACY_RIGHTS: "<h2>Të drejtat e tua</h2><p>Mund të pyesësh cilat të dhëna për ty ruhen, të kërkosh t'i korrigjojmë ose t'i fshijmë, dhe të kundërshtosh përdorimin e tyre. Meqë faqja nuk e di kush je, për Analytics dhe partnerët zakonisht është më e shpejtë të refuzosh cookies këtu, ose t'i drejtohesh vetë Google-it apo partnerit. Mund të ankohesh edhe te autoriteti për mbrojtjen e të dhënave: në Shqipëri te Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale (<a href='https://www.idp.al'>idp.al</a>), në BE te autoriteti i vendit tënd.</p>"
 
 words:
   empty: "Ende nuk ka çmime. Skanimi i parë përfundon brenda pak orësh."

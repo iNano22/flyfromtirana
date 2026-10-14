@@ -85,6 +85,10 @@ website:
   # true:  nothing is loaded from Google until the visitor presses "Pranoj". That is what the
   #        EU's cookie rules ask for, but visitors who ignore the box are then not counted.
   google_analytics_ask_first: false
+  # Who runs the site and where visitors can write about their data: both are shown on the
+  # privacy page (/privacy/). Leave either empty and that part of the page is left out.
+  operator: Devbay.cloud
+  contact_email: hello@devbay.cloud
   # Travelpayouts Drive: the script of the "Flyfromtirana" project (dashboard -> Drive). Only its
   # address goes here: the one in script.src = '...' in the snippet they give. What Drive does on
   # the pages (keyword links, offers, previews) is switched on and off in the dashboard.

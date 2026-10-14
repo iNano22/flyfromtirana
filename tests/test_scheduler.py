@@ -6,8 +6,9 @@ import pytest
 
 from src import scheduler
 from src.config import load_config
-from src.scheduler import (next_run, next_slot, premium_scan_interval, run_once, run_premium_scan,
+from src.scheduler import (Alerts, next_run, next_slot, premium_scan_interval, run_once, run_premium_scan,
                            seed_database)
+from src.telegram import TelegramClient, TelegramError
 
 
 def utc(hour: int, minute: int, second: int = 0, day: int = 10) -> datetime:
@@ -93,3 +94,73 @@ def test_website_is_rebuilt_even_when_the_scan_fails(monkeypatch):
     monkeypatch.setattr(scheduler, "run_step", fake_step)
     assert run_once() == 1                      # the scan's failure is still reported
     assert ran == ["src.main", "src.website"]   # and the site was built after it
+
+
+# --- alerts: the owner hears when a step starts failing, and when it works again ---------
+
+class FakeClient:
+    """Stands in for the Telegram client: keeps the messages instead of sending them."""
+
+    def __init__(self, fail: bool = False):
+        self.sent, self.fail = [], fail
+
+    def send_message(self, text):
+        if self.fail:
+            raise TelegramError("Could not reach Telegram (ConnectionError)")
+        self.sent.append(text)
+        return 1
+
+
+def alerts(client=None):
+    return Alerts(client, "FlyFromTirana", "Europe/Tirane")
+
+
+def test_alert_once_when_a_step_starts_failing_and_once_when_it_works_again():
+    client = FakeClient()
+    watch = alerts(client)
+    watch.report("scan", 0, now=utc(12, 17))
+    assert client.sent == []                                   # working: nothing to say
+
+    watch.report("scan", 1, now=utc(15, 17))
+    watch.report("scan", 1, now=utc(15, 32))                   # still failing: no second message
+    assert len(client.sent) == 1
+    assert "the scan failed</b> (10 Oct, 17:17 CEST)" in client.sent[0]   # 15:17 UTC = 17:17 in Tirana
+    assert "Exit code 1: the run failed" in client.sent[0]
+
+    watch.report("scan", 0, now=utc(18, 17))
+    watch.report("scan", 0, now=utc(18, 32))
+    assert len(client.sent) == 2
+    assert "the scan works again</b>. It had been failing since 10 Oct, 17:17 CEST" in client.sent[1]
+
+
+def test_steps_are_followed_separately_and_a_configuration_problem_says_so():
+    client = FakeClient()
+    watch = alerts(client)
+    watch.report("website build", 2, now=utc(15, 17))
+    watch.report("scan", 0, now=utc(15, 17))
+    assert len(client.sent) == 1 and "the website build failed" in client.sent[0]
+    assert "Exit code 2: a configuration problem" in client.sent[0]
+
+
+def test_alerts_never_stop_the_scans():
+    alerts(None).report("scan", 1)                             # no chat set: only logged
+    watch = alerts(FakeClient(fail=True))
+    watch.report("scan", 1)                                    # Telegram down: logged, no exception
+    assert "scan" in watch.failing
+
+
+def test_alerts_go_to_the_chat_in_the_environment(monkeypatch):
+    config = load_config()
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "123:abc")
+    monkeypatch.delenv("TELEGRAM_ALERT_CHAT_ID", raising=False)
+    assert Alerts.from_env(config).client is None
+    monkeypatch.setenv("TELEGRAM_ALERT_CHAT_ID", "4242")
+    client = Alerts.from_env(config).client
+    assert isinstance(client, TelegramClient) and client.chat_id == "4242"
+
+
+def test_full_run_reports_the_scan_and_the_website_build(monkeypatch):
+    monkeypatch.setattr(scheduler, "run_step", lambda name, module, timeout: 1 if module == "src.main" else 0)
+    client = FakeClient()
+    assert run_once(alerts(client)) == 1
+    assert len(client.sent) == 1 and "the scan failed" in client.sent[0]

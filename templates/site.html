@@ -15,7 +15,7 @@
      way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
      The text itself is not in this file: T_NAME stands for the entry NAME in
      templates/strings/<language>.yaml, one file per language (see src/i18n.py) DESTINATION_OPTIONS TELEGRAM_URL PREMIUM_HOURS
-     SITE_URL YEAR SHARE_IMAGE (the picture a link to the page shows on Telegram or WhatsApp,
+     SITE_URL YEAR PRIVACY_URL (the way to the privacy page) SHARE_IMAGE (the picture a link to the page shows on Telegram or WhatsApp,
      from assets/img/share), plus one NAME_LINK per partner in config.yaml (ESIM_LINK,
      TICKETS_LINK, TOURS_LINK, TRANSFER_LINK, CAR_RENTAL_LINK, LUGGAGE_LINK, COMPENSATION_LINK,
      INSURANCE_LINK, HOTEL_LINK). A partner without a link has no value, so its card is left out.
@@ -610,6 +610,7 @@ h1 span { display: block; }
       <p>{T_LEGAL_PARTNERS}</p>
       <details class="credits"><summary>{T_PHOTO_CREDITS_TITLE}</summary><ul>{PHOTO_CREDITS}</ul></details>
       <div class="flangs">{LANG_LINKS}</div>
+      <p><a href="{PRIVACY_URL}">{T_PRIVACY_LINK}</a></p>
       <p><a href="#consent" data-consent-open="{GA_ON}">{T_COOKIE_SETTINGS}</a></p>
       <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
     </div>

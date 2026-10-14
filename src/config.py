@@ -111,6 +111,10 @@ class WebsiteSettings:
     travelpayouts_drive_script: str = ""
     # How many activities GetYourGuide's widget shows on a city page; 0 = no widget.
     getyourguide_activities: int = 0
+    # Who runs the site and where to write about personal data, for the privacy page
+    # (/privacy/). Without both, the page leaves out its "who we are" part.
+    operator: str = ""
+    contact_email: str = ""
 
 
 @dataclass(frozen=True)
@@ -265,6 +269,8 @@ def _build_website(raw: dict, base_dir: Path, links: LinkSettings, default_langu
         travelpayouts_drive_script=drive_script,
         getyourguide_activities=activities,
         google_analytics_ask_first=bool(raw.get("google_analytics_ask_first", True)),
+        operator=str(raw.get("operator") or "").strip(),
+        contact_email=str(raw.get("contact_email") or "").strip(),
         links=_website_links(raw.get("links") or {}, links, sub_id),
     )
 

@@ -13,7 +13,8 @@ dates about as cheap), the usual price, the cheapest flight back and a booking
 link. Every city with a guide in content/destinations/ also gets a page of its
 own (/milan/, /rome/, ...): its current prices, then the guide (src/guides.py).
 Each language also gets a 404.html, the page the web server shows for an address
-that doesn't exist (templates/site_404.html and web/Caddyfile).
+that doesn't exist (templates/site_404.html and web/Caddyfile), and a privacy page
+(/privacy/, templates/site_privacy.html) saying what the site collects and who gets it.
 Routes that meet the free channel's deal rules come first, as "Ofertat
 e momentit". With a premium channel the page follows the free channel: a price
 premium members are still getting early is left out until the free channel may
@@ -61,6 +62,9 @@ log = logging.getLogger("flyfromtirana.website")
 # A route whose newest prices are older than this is left off the page (the API
 # kept failing for it, say). Stale prices would only disappoint.
 STALE_AFTER = timedelta(days=2)
+
+# The privacy page's folder in every language: /privacy/, /en/privacy/, /it/privacy/.
+PRIVACY_SLUG = "privacy"
 
 # How many routes get a line on the black board at the top of the page ("Çmimet më të mira
 # sot"): the first ones of the page, so the deals, biggest saving first, then the cheapest.
@@ -141,6 +145,9 @@ def build_site(config: Config, marker: str, *, out_dir: Path | None = None,
                 encoding="utf-8")
         # The page for an address that doesn't exist: /404.html, /en/404.html, ...
         (folder / "404.html").write_text(render_not_found(config, language), encoding="utf-8")
+        (folder / PRIVACY_SLUG).mkdir(exist_ok=True)
+        (folder / PRIVACY_SLUG / "index.html").write_text(render_privacy(config, links, now=now, language=language),
+                                                          encoding="utf-8")
         log.info("[%s] %d route(s) on the page, %d of them deals, %d city page(s)", language, len(offers),
                  sum(o.is_deal for o in offers), len(guides))
     write_sitemap(out_dir, config, now)
@@ -261,6 +268,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         # Apps that show a preview of a link need the picture's full address.
         "SHARE_IMAGE": base_url + picture if base_url and picture else None,
         "ASSETS": root,
+        "PRIVACY_URL": privacy_url(config, language, root),
     }
     # Footer links (eSIM, insurance, ...). A partner URL template may mention a city
     # and dates (that's for per-post hotel links); here a generic route and today stand in.
@@ -285,7 +293,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["LANG_LINKS"] = language_links(config, language, root)
     values["HREFLANG"] = hreflang_links(config)
     values["JS_WORDS"] = script_words(strings)
-    values["ANALYTICS"] = analytics_html(config, language)
+    values["ANALYTICS"] = analytics_html(config, language, privacy_url(config, language, root))
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site.html", strings), values) + "\n"
 
@@ -324,9 +332,15 @@ def page_url(config: Config, language: str, slug: str | None = None) -> str | No
 
 
 def languages_with(config: Config, slug: str | None) -> list[str]:
-    """The languages a page exists in: all of them for the main page, those with the guide for a city page."""
+    """The languages a page exists in: all of them for the main page and the privacy page,
+    those with the guide for a city page."""
     return [language for language in config.website.languages
-            if slug is None or any(guide.slug == slug for guide in site_guides(config, language).values())]
+            if slug in (None, PRIVACY_SLUG) or any(guide.slug == slug for guide in site_guides(config, language).values())]
+
+
+def privacy_url(config: Config, language: str, root: str) -> str:
+    """The way from a page to the privacy page in its language. root: the way from it to the top of the site."""
+    return root + language_folder(config, language) + f"{PRIVACY_SLUG}/"
 
 
 def language_targets(config: Config, language: str, root: str, slug: str | None = None) -> list[dict]:
@@ -527,6 +541,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         "PAGE_URL": page_url(config, language, guide.slug),
         "TELEGRAM_URL": telegram_url(config.channel_handle),
         "PREMIUM_LINK": premium.join_link if premium_on else None,
+        "PRIVACY_URL": privacy_url(config, language, root),
     }
     # The travel-service links. A partner URL template may mention the city and dates
     # (a hotel search): the cheapest flight's date stands in, or today without one.
@@ -564,7 +579,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values["LANG_MENU"] = language_menu(config, language, root, guide.slug)
     values["LANG_LINKS"] = language_links(config, language, root, guide.slug)
     values["HREFLANG"] = hreflang_links(config, guide.slug)
-    values["ANALYTICS"] = analytics_html(config, language)
+    values["ANALYTICS"] = analytics_html(config, language, privacy_url(config, language, root))
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site_dest.html", strings), values) + "\n"
 
@@ -609,6 +624,46 @@ def render_not_found(config: Config, language: str | None = None) -> str:
     return render(load_site_template("site_404.html", load_strings(language)), values) + "\n"
 
 
+def render_privacy(config: Config, links: LinkBuilder, *, now: datetime, language: str | None = None) -> str:
+    """The privacy page as HTML (templates/site_privacy.html), in one language.
+
+    It only describes what the site really uses: the part about Google Analytics is there
+    with an Analytics ID (and in the wording for ask_first), the part about GetYourGuide
+    while the tours link has a Partner ID (then its script is on the pages), and "who we
+    are" with website.operator and website.contact_email.
+    """
+    language = language or config.website.languages[0]
+    strings = load_strings(language)
+    root = "../" if language == config.website.languages[0] else "../../"   # this page is one folder down
+    website = config.website
+    analytics = bool(website.google_analytics_id)
+    today = now.astimezone(ZoneInfo(config.timezone)).date()
+    tours = links.partner("tours", config.routes[0], today, today, city_page=False)
+    text = {
+        "BRAND": config.brand,
+        "LANG": language,
+        "OPERATOR": website.operator,
+        "GA_ON": "1" if analytics else None,
+        "GA_AUTO": "1" if analytics and not website.google_analytics_ask_first else None,
+        "GA_ASK": "1" if analytics and website.google_analytics_ask_first else None,
+        "GYG_ON": "1" if getyourguide_values(config, tours)["GYG_PARTNER"] else None,
+        "YEAR": str(now.astimezone(ZoneInfo(config.timezone)).year),
+    }
+    urls = {
+        "HOME": "../",   # this language's main page
+        "PAGE_URL": page_url(config, language, PRIVACY_SLUG),
+        "TELEGRAM_URL": telegram_url(config.channel_handle),
+        "CONTACT_EMAIL": website.contact_email,
+    }
+    values = {key: html.escape(value, quote=False) if value else None for key, value in text.items()}
+    values.update({key: html.escape(value, quote=True) if value else None for key, value in urls.items()})
+    values["LANG_MENU"] = language_menu(config, language, root, PRIVACY_SLUG)
+    values["LANG_LINKS"] = language_links(config, language, root, PRIVACY_SLUG)
+    values["HREFLANG"] = hreflang_links(config, PRIVACY_SLUG)
+    values["ANALYTICS"] = analytics_html(config, language, "./")   # the cookie box's link: this same page
+    return render(load_site_template("site_privacy.html", strings), values) + "\n"
+
+
 def premium_html(config: Config, strings: Strings) -> str | None:
     """The main page's block about the Premium channel (templates/site_premium.html).
 
@@ -631,14 +686,18 @@ def premium_html(config: Config, strings: Strings) -> str | None:
     })
 
 
-def analytics_html(config: Config, language: str | None = None) -> str | None:
-    """The Google Analytics block (templates/site_analytics.html), or None when no ID is set."""
+def analytics_html(config: Config, language: str | None = None, privacy: str | None = None) -> str | None:
+    """The Google Analytics block (templates/site_analytics.html), or None when no ID is set.
+
+    privacy: the way from the page to the privacy page, linked from the cookie box.
+    """
     analytics_id = config.website.google_analytics_id
     if not analytics_id:
         return None
     ask_first = config.website.google_analytics_ask_first
     # Exactly one of GA_ASK / GA_AUTO has a value: it picks the box's wording and behaviour.
-    values = {"GA_ID": analytics_id, "GA_ASK": "1" if ask_first else None, "GA_AUTO": None if ask_first else "1"}
+    values = {"GA_ID": analytics_id, "GA_ASK": "1" if ask_first else None, "GA_AUTO": None if ask_first else "1",
+              "PRIVACY_URL": html.escape(privacy, quote=True) if privacy else None}
     strings = load_strings(language or config.website.languages[0])
     return render(load_site_template("site_analytics.html", strings), values)
 
@@ -665,6 +724,7 @@ def write_sitemap(out_dir: Path, config: Config, now: datetime) -> None:
     for language in config.website.languages:
         pages.append(page_url(config, language))
         pages += [page_url(config, language, guide.slug) for guide in site_guides(config, language).values()]
+        pages.append(page_url(config, language, PRIVACY_SLUG))
     entries = "".join(f"  <url><loc>{html.escape(page)}</loc><lastmod>{day}</lastmod></url>\n" for page in pages)
     (out_dir / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

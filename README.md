@@ -48,6 +48,7 @@ templates/site_dest.html a city's own page; site_dest_fare.html = one airport's 
                          site_drive.html = the Travelpayouts Drive script;
                          site_lang.html = the language dropdown
 templates/site_404.html  the "page not found" page
+templates/site_privacy.html  the privacy page (/privacy/): what the site collects and who gets it
 content/destinations/    the city guides: one folder per language, one file per city in each
 content/countries/       the entry documents for each country, one file per language
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences);
@@ -72,6 +73,7 @@ src/
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
 scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
+scripts/alert_chat.py    find your chat for the failure alerts, and send a test alert there
 Dockerfile               the scanner image
 web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
@@ -145,6 +147,24 @@ variables under Environment Variables, and give the `web` service a domain.
   `docker compose exec scanner python -m src.main --dry-run --routes BGY,VIE`
 - Never run it in two places at once. Each copy keeps its own "already posted"
   list, so the channel would get every deal twice.
+
+#### Alerts
+
+When a scan or the website build fails, the bot tells you on Telegram: once when it
+starts failing (with the exit code and what it means) and once when it works again,
+so a long outage is two messages, not one every 15 minutes. The quick premium scans
+count as the scan. To switch it on:
+
+1. Open the bot (the one that posts to the channel) in Telegram and press Start.
+2. Run `python scripts/alert_chat.py` locally (it needs `TELEGRAM_BOT_TOKEN` in
+   `.env`). It shows your chat's number.
+3. Set `TELEGRAM_ALERT_CHAT_ID` to that number: in `.env` and in Coolify's
+   Environment Variables, then redeploy. `python scripts/alert_chat.py --test`
+   sends a test alert. A private channel where the bot is an admin works too.
+
+Without `TELEGRAM_ALERT_CHAT_ID` failures are only in the scanner's logs. The
+alerts don't cover the whole server going down; for that, Coolify can notify you
+itself (its Notifications settings have Telegram).
 
 ## Website
 
@@ -305,6 +325,21 @@ of two ways, chosen by `website.google_analytics_ask_first` in config.yaml:
 Either way the answer is remembered in the visitor's browser, and "Cilësimet e
 cookies" in the footer lets them change it. With the ID empty there is no
 Analytics, no box and no cookie.
+
+### Privacy page
+
+`/privacy/` (and `/en/privacy/`, `/it/privacy/`) says what the site collects and who
+gets it: Cloudflare, Google Analytics, Google Fonts, GetYourGuide's script, the
+partner links and Telegram, plus the visitor's rights. It is linked from every
+footer and from the cookie box. Its text is the `PRIVACY_` entries in
+`templates/strings/<language>.yaml`; a part about something the site doesn't use
+is left out by itself (Analytics without an ID, GetYourGuide without a Partner ID).
+`website.operator` and `website.contact_email` in config.yaml say who runs the site
+and where to write about personal data.
+
+When the site starts using something new that collects data (a new script, a
+widget, a form), add it to the text in all three languages and change the date in
+`PRIVACY_UPDATED`.
 
 ### GetYourGuide's widget
 

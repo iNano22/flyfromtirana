@@ -250,6 +250,19 @@ def test_every_language_has_its_own_not_found_page_and_share_picture(config):
         assert f'content="https://flyfromtirana.al/img/share/{language}.png"' in page
 
 
+def test_privacy_page_in_every_language(config):
+    build_site(config, "12345", now=NOW)
+    out = config.website.output_dir
+    english = (out / "en" / "privacy" / "index.html").read_text(encoding="utf-8")
+    assert '<html lang="en">' in english and "<h1>Privacy and cookies</h1>" in english
+    assert '<link rel="alternate" hreflang="it" href="https://flyfromtirana.al/it/privacy/">' in english
+    assert 'href="../../it/privacy/"' in english                  # the switcher opens the same page in Italian
+    assert "<h1>Privacy e cookie</h1>" in (out / "it" / "privacy" / "index.html").read_text(encoding="utf-8")
+    assert '<a href="../en/privacy/">Privacy</a>' in (out / "en" / "index.html").read_text(encoding="utf-8")
+    sitemap = (out / "sitemap.xml").read_text(encoding="utf-8")
+    assert all(f"<loc>https://flyfromtirana.al/{folder}privacy/</loc>" in sitemap for folder in ("", "en/", "it/"))
+
+
 def test_languages_setting_is_read_and_checked(tmp_path):
     def load(extra):
         path = tmp_path / "config.yaml"

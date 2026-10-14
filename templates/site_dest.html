@@ -12,7 +12,7 @@
      A part the guide doesn't have is simply missing, and its heading and its link in the
      "Në këtë faqe" list go with it. OTHER_GUIDES (the other cities' photo tiles, from site_guide.html) HOME (the way back to the
      main page, "../") GUIDE_PHOTO (the city's wide photo) PHOTO (a route's photo, only when
-     there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR
+     there is no wide one) PHOTO_URL PAGE_URL TELEGRAM_URL PREMIUM_HOURS PREMIUM_LINK YEAR PRIVACY_URL (the way to the privacy page)
      ANALYTICS and GA_ON (only with Google Analytics on) DRIVE (the Travelpayouts Drive script,
      only when one is set) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their
      script, which counts the visits and draws the widget) GYG_CITY GYG_ITEMS GYG_CMP and TOURS_ON
@@ -406,6 +406,7 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
       <p>{T_LEGAL_PRICES}</p>
       <p>{T_LEGAL_PARTNERS}</p>
       <div class="flangs">{LANG_LINKS}</div>
+      <p><a href="{PRIVACY_URL}">{T_PRIVACY_LINK}</a></p>
       <p><a href="#consent" data-consent-open="{GA_ON}">{T_COOKIE_SETTINGS}</a></p>
       <p>© {YEAR} {BRAND} · Made by <a href="https://devbay.cloud">Devbay.cloud</a></p>
     </div>

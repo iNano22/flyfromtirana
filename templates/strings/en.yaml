@@ -196,6 +196,26 @@ page:
   NOT_FOUND_HEADLINE: "Page not found"
   NOT_FOUND_TEXT: "This address no longer exists or was mistyped. Prices and deals are on the main page."
   NOT_FOUND_HOME: "Back to the main page"
+  # The privacy page (templates/site_privacy.html): each PRIVACY_ part is one section of it.
+  # Change PRIVACY_UPDATED whenever the text changes.
+  PRIVACY_LINK: "Privacy"
+  PRIVACY_MORE: "How we use data"
+  PRIVACY_TITLE: "Privacy and cookies | {BRAND}"
+  PRIVACY_DESCRIPTION: "What is collected when you visit {BRAND}, who gets it, and how to stop it."
+  PRIVACY_HEADLINE: "Privacy and cookies"
+  PRIVACY_UPDATED: "Last updated 14 October 2026"
+  PRIVACY_INTRO: "<p>{BRAND} shows the prices of flights from Tirana. There are no accounts and no forms: we never ask for your name, email or card details. This page explains what is still collected when you visit, who gets it, and what you can do about it.</p>"
+  PRIVACY_WHO: "<h2>Who we are</h2><p>The site is run by {OPERATOR}. For any question about your data, write to <a href='mailto:{CONTACT_EMAIL}'>{CONTACT_EMAIL}</a>.</p>"
+  PRIVACY_HOSTING: "<h2>When you open a page</h2><p>Every page passes through Cloudflare, which protects the site and delivers it faster. Like any server, Cloudflare sees your IP address and browser for each request, and keeps anonymous visit statistics without cookies (Cloudflare Web Analytics). Our own server keeps no record of visits.</p>"
+  PRIVACY_GA: "<h2>Google Analytics</h2><p>We use Google Analytics to count visits: which pages are read, from which country and on what device, and where visitors come from. It sets the cookies <code>_ga</code> and <code>_ga_…</code>, kept for up to two years. Google processes this data for us, also outside Albania and the EU (in the US, under the EU–US Data Privacy Framework). Google Analytics does not store your IP address.</p>"
+  PRIVACY_GA_AUTO: "<p>Counting starts when the page opens. If you would rather not, press “Refuse” in the cookie box, or “Cookie settings” at the bottom of any page: Analytics stops, its cookies are deleted and it stays off in this browser.</p>"
+  PRIVACY_GA_ASK: "<p>Counting only starts after you press “Accept” in the cookie box. You can change your answer at any time under “Cookie settings”, at the bottom of every page.</p>"
+  PRIVACY_FONTS: "<h2>Fonts</h2><p>The site's fonts (Archivo and IBM Plex Mono) come from Google Fonts, so your browser fetches them from Google's servers and Google sees your IP address. Google Fonts sets no cookies, and Google says it uses this data only to deliver the fonts.</p>"
+  PRIVACY_GYG: "<h2>GetYourGuide</h2><p>Pages with tours and activities load a script from GetYourGuide, our partner for tours. It shows the activities and counts the visits that come from this site, so that bookings are credited to {BRAND}. For that it stores a visitor number in your browser (the cookie <code>session_id</code>, plus <code>partner_id</code> and <code>gyg_visitor_id</code> in browser storage) and sends it to GetYourGuide. Your cookie choice doesn't stop this script; you can block it in your browser.</p>"
+  PRIVACY_PARTNERS: "<h2>Partner links</h2><p>Most links to other sites (flights, tickets, travel services) are partner links, mostly through Travelpayouts. When you open one, the partner's site knows you came from {BRAND}, and if you book, we earn a small commission at no extra cost to you. From there on, that site's own privacy policy applies.</p>"
+  PRIVACY_TELEGRAM: "<h2>Telegram</h2><p>Our channels are on Telegram. When you join them, or pay for Premium, Telegram's privacy policy applies.</p>"
+  PRIVACY_BROWSER: "<h2>In your browser</h2><p>The site remembers your cookie answer in your browser (<code>ga-consent</code>). It never leaves your device.</p>"
+  PRIVACY_RIGHTS: "<h2>Your rights</h2><p>You can ask what data about you is kept, ask us to correct or delete it, and object to its use. Since the site doesn't know who you are, for Analytics and the partners it is usually quickest to refuse cookies here, or to contact Google or the partner directly. You can also complain to a data protection authority: in Albania the Commissioner for the Right to Information and Personal Data Protection (<a href='https://www.idp.al'>idp.al</a>), in the EU the authority of your country.</p>"
 
 words:
   empty: "No prices yet. The first scan finishes within a few hours."

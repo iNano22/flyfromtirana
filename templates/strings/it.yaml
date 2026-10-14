@@ -196,6 +196,26 @@ page:
   NOT_FOUND_HEADLINE: "Pagina non trovata"
   NOT_FOUND_TEXT: "Questo indirizzo non esiste più o è stato scritto male. Prezzi e offerte sono nella pagina principale."
   NOT_FOUND_HOME: "Torna alla pagina principale"
+  # The privacy page (templates/site_privacy.html): each PRIVACY_ part is one section of it.
+  # Change PRIVACY_UPDATED whenever the text changes.
+  PRIVACY_LINK: "Privacy"
+  PRIVACY_MORE: "Come usiamo i dati"
+  PRIVACY_TITLE: "Privacy e cookie | {BRAND}"
+  PRIVACY_DESCRIPTION: "Cosa viene raccolto quando visiti {BRAND}, chi lo riceve e come fermarlo."
+  PRIVACY_HEADLINE: "Privacy e cookie"
+  PRIVACY_UPDATED: "Aggiornata il 14 ottobre 2026"
+  PRIVACY_INTRO: "<p>{BRAND} mostra i prezzi dei voli da Tirana. Non ci sono account né moduli: non ti chiediamo mai nome, email o dati della carta. Questa pagina spiega cosa viene comunque raccolto quando visiti il sito, chi lo riceve e cosa puoi fare.</p>"
+  PRIVACY_WHO: "<h2>Chi siamo</h2><p>Il sito è gestito da {OPERATOR}. Per qualsiasi domanda sui tuoi dati, scrivi a <a href='mailto:{CONTACT_EMAIL}'>{CONTACT_EMAIL}</a>.</p>"
+  PRIVACY_HOSTING: "<h2>Quando apri una pagina</h2><p>Ogni pagina passa attraverso Cloudflare, che protegge il sito e lo consegna più velocemente. Come ogni server, Cloudflare vede il tuo indirizzo IP e il tuo browser a ogni richiesta, e tiene statistiche anonime delle visite senza cookie (Cloudflare Web Analytics). Il nostro server non registra le visite.</p>"
+  PRIVACY_GA: "<h2>Google Analytics</h2><p>Usiamo Google Analytics per contare le visite: quali pagine vengono lette, da quale paese e con quale dispositivo, e da dove arrivano i visitatori. Imposta i cookie <code>_ga</code> e <code>_ga_…</code>, conservati fino a due anni. Google tratta questi dati per nostro conto, anche fuori dall'Albania e dall'UE (negli USA, nell'ambito del Data Privacy Framework UE–USA). Google Analytics non memorizza il tuo indirizzo IP.</p>"
+  PRIVACY_GA_AUTO: "<p>Il conteggio parte quando si apre la pagina. Se preferisci di no, premi «Rifiuta» nel riquadro dei cookie, oppure «Impostazioni dei cookie» in fondo a ogni pagina: Analytics si ferma, i suoi cookie vengono cancellati e resta spento in questo browser.</p>"
+  PRIVACY_GA_ASK: "<p>Il conteggio parte solo dopo che premi «Accetto» nel riquadro dei cookie. Puoi cambiare la tua risposta quando vuoi in «Impostazioni dei cookie», in fondo a ogni pagina.</p>"
+  PRIVACY_FONTS: "<h2>Caratteri</h2><p>I caratteri del sito (Archivo e IBM Plex Mono) vengono da Google Fonts, quindi il tuo browser li scarica dai server di Google e Google vede il tuo indirizzo IP. Google Fonts non imposta cookie e, secondo Google, usa questi dati solo per consegnare i caratteri.</p>"
+  PRIVACY_GYG: "<h2>GetYourGuide</h2><p>Le pagine con tour e attività caricano uno script di GetYourGuide, il nostro partner per i tour. Mostra le attività e conta le visite che arrivano da questo sito, perché le prenotazioni vengano attribuite a {BRAND}. Per questo salva un numero di visitatore nel tuo browser (il cookie <code>session_id</code>, più <code>partner_id</code> e <code>gyg_visitor_id</code> nella memoria del browser) e lo invia a GetYourGuide. La tua scelta sui cookie non ferma questo script; puoi bloccarlo nel browser.</p>"
+  PRIVACY_PARTNERS: "<h2>Link di affiliazione</h2><p>La maggior parte dei link verso altri siti (voli, biglietti, servizi di viaggio) sono link di affiliazione, perlopiù tramite Travelpayouts. Quando ne apri uno, il sito del partner sa che arrivi da {BRAND} e, se prenoti, riceviamo una piccola commissione senza costi aggiuntivi per te. Da lì in poi vale l'informativa sulla privacy di quel sito.</p>"
+  PRIVACY_TELEGRAM: "<h2>Telegram</h2><p>I nostri canali sono su Telegram. Quando ti iscrivi, o paghi per Premium, vale l'informativa sulla privacy di Telegram.</p>"
+  PRIVACY_BROWSER: "<h2>Nel tuo browser</h2><p>Il sito ricorda la tua risposta sui cookie nel browser (<code>ga-consent</code>). Non lascia mai il tuo dispositivo.</p>"
+  PRIVACY_RIGHTS: "<h2>I tuoi diritti</h2><p>Puoi chiedere quali dati su di te vengono conservati, chiederci di correggerli o cancellarli e opporti al loro uso. Poiché il sito non sa chi sei, per Analytics e i partner di solito è più rapido rifiutare i cookie qui, oppure rivolgerti direttamente a Google o al partner. Puoi anche presentare reclamo a un'autorità per la protezione dei dati: in Albania il Commissario per il diritto all'informazione e la protezione dei dati personali (<a href='https://www.idp.al'>idp.al</a>), nell'UE l'autorità del tuo paese (in Italia il Garante per la protezione dei dati personali).</p>"
 
 words:
   empty: "Non ci sono ancora prezzi. La prima scansione termina entro poche ore."

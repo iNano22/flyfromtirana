@@ -17,11 +17,16 @@ channel and the website keep the 3-hour rhythm.
 The database no longer travels through git. On the server it lives in a Docker
 volume; the copy baked into the image (seed/prices.db) is only the starting
 point for a brand-new volume.
+
+When a scan or a website build fails, the owner hears about it on Telegram
+(Alerts below), once when it starts failing and once when it works again.
 """
 from __future__ import annotations
 
 import argparse
+import html
 import logging
+import os
 import shutil
 import signal
 import subprocess
@@ -29,8 +34,10 @@ import sys
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from src.config import PROJECT_ROOT, Config, ConfigError, load_config
+from src.telegram import TelegramClient, TelegramError
 
 log = logging.getLogger("flyfromtirana.scheduler")
 
@@ -44,6 +51,15 @@ SITE_TIMEOUT_SECONDS = 5 * 60
 TICK_SECONDS = 20
 
 SEED_DB = PROJECT_ROOT / "seed" / "prices.db"
+
+# The chat that hears about failures: your own chat with the bot (press Start in it first)
+# or a private channel where the bot is an admin. Not set = failures are only logged.
+ALERT_CHAT_ENV = "TELEGRAM_ALERT_CHAT_ID"
+# What an exit code means, for the alert (src/main.py; run_step gives 1 for a timeout too).
+EXIT_MEANING = {
+    1: "the run failed: the price API or Telegram didn't answer, a post was refused, or it took too long",
+    2: "a configuration problem: a missing variable or a mistake in config.yaml",
+}
 
 
 def next_slot(after: datetime) -> datetime:
@@ -104,10 +120,64 @@ def run_step(name: str, module: str, timeout: int, *args: str) -> int:
     return code
 
 
-def run_once() -> int:
+class Alerts:
+    """Tells the owner on Telegram when a step starts failing, and when it works again.
+
+    The steps are "scan" (the full scan and the quick premium scans) and "website build".
+    One message when a step fails after working (or on its first run after a start), one
+    when it works again: a long outage is two messages, not one every 15 minutes. Without
+    TELEGRAM_ALERT_CHAT_ID nothing is sent and failures are only logged.
+    """
+
+    def __init__(self, client: TelegramClient | None, brand: str, timezone_name: str):
+        self.client = client
+        self.brand = html.escape(brand)
+        self.zone = ZoneInfo(timezone_name)
+        self.failing: dict[str, datetime] = {}   # step -> when it started failing
+
+    @classmethod
+    def from_env(cls, config: Config) -> Alerts:
+        """Alerts to TELEGRAM_ALERT_CHAT_ID, sent by the channel's bot; none when it isn't set."""
+        token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+        chat = os.environ.get(ALERT_CHAT_ENV, "").strip()
+        if not (token and chat):
+            log.info("%s is not set: a failed run is only logged", ALERT_CHAT_ENV)
+            return cls(None, config.brand, config.timezone)
+        return cls(TelegramClient(token, chat), config.brand, config.timezone)
+
+    def report(self, step: str, code: int, now: datetime | None = None) -> None:
+        """Note how a step ended (its exit code), and send a message when that is news."""
+        now = now or datetime.now(timezone.utc)
+        if code != 0 and step not in self.failing:
+            self.failing[step] = now
+            meaning = EXIT_MEANING.get(code, "an unexpected error")
+            self.send(f"⚠️ <b>{self.brand}: the {step} failed</b> ({self.when(now)}).\n"
+                      f"Exit code {code}: {meaning}. The scanner's logs say more.")
+        elif code == 0 and step in self.failing:
+            since = self.failing.pop(step)
+            self.send(f"✅ <b>{self.brand}: the {step} works again</b>. It had been failing since {self.when(since)}.")
+
+    def when(self, moment: datetime) -> str:
+        """'13 Oct, 17:17 CEST': the time in the configured timezone, with that zone's short name."""
+        local = moment.astimezone(self.zone)
+        return f"{local.day} {local:%b}, {local:%H:%M %Z}"
+
+    def send(self, text: str) -> None:
+        if self.client is None:
+            return
+        try:
+            self.client.send_message(text)
+        except TelegramError as exc:   # an alert that can't be sent must never stop the scans
+            log.error("Could not send the alert to %s: %s", ALERT_CHAT_ENV, exc)
+
+
+def run_once(alerts: Alerts | None = None) -> int:
     """One scan, then the website. The site is rebuilt even after a failed scan."""
     scan = run_step("scan", "src.main", SCAN_TIMEOUT_SECONDS)
     site = run_step("website build", "src.website", SITE_TIMEOUT_SECONDS)
+    if alerts:
+        alerts.report("scan", scan)
+        alerts.report("website build", site)
     return scan or site
 
 
@@ -142,8 +212,9 @@ def main(argv: list[str] | None = None) -> int:
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
 
+    alerts = Alerts.from_env(config)
     # So the page exists right after a deploy instead of at the next slot.
-    run_step("website build", "src.website", SITE_TIMEOUT_SECONDS)
+    alerts.report("website build", run_step("website build", "src.website", SITE_TIMEOUT_SECONDS))
 
     quick_every = premium_scan_interval(config)
     if quick_every:
@@ -164,9 +235,9 @@ def main(argv: list[str] | None = None) -> int:
         if started < due:
             continue
         if full:
-            run_once()
+            run_once(alerts)
         else:
-            run_premium_scan()
+            alerts.report("scan", run_premium_scan())   # the same "scan" as the full run's
         due, full = plan(started)
     return 0
 

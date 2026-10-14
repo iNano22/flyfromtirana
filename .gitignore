@@ -14,3 +14,6 @@ data/*.db-wal
 data/*.db-shm
 
 .DS_Store
+
+# Instagram previews made locally, not part of the project
+ig_preview/
