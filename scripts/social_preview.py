@@ -2,7 +2,7 @@
 
 Usage (from the repo root):
     python scripts/social_preview.py              # writes ig_preview/<iata>_feed.jpg and _story.jpg,
-                                                  # top_feed.jpg (the weekly cover) and guide_rome_*.jpg
+                                                  # top_feed.jpg (the weekly cover) and guide_rome_*.jpg (its carousel)
     python scripts/social_preview.py --out DIR    # somewhere else
 
 Nothing is sent anywhere. The deals below are invented (prices, dates, airlines);
@@ -16,13 +16,13 @@ from pathlib import Path
 # Make "import src..." work when this file is run directly.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.cards import draw_guide_card, draw_top_card, save_cards, save_jpeg  # noqa: E402
+from src.cards import draw_guide_card, draw_list_card, draw_top_card, save_cards, save_jpeg  # noqa: E402
 from src.config import load_config  # noqa: E402
 from src.deals import Deal  # noqa: E402
 from src.guides import load_guides  # noqa: E402
 from src.photos import post_photo  # noqa: E402
 from src.scanner import Quote  # noqa: E402
-from src.social import site_address  # noqa: E402
+from src.social import guide_sections, site_address  # noqa: E402
 
 NOW = datetime(2026, 10, 14, 10, 0, tzinfo=timezone.utc)
 
@@ -73,6 +73,13 @@ def main() -> int:
                                    page=f"{site_address(config)}/{guide.slug}/", photo=photo.path if photo else None,
                                    brand=config.brand, handle=config.social.handle or config.channel_handle)
             print(f"✅ {save_jpeg(card, args.out / f'guide_{guide.slug}_{layout}.jpg')}")
+        # The guide's section cards, as in its carousel.
+        sections = guide_sections(guide)
+        for number, (key, heading, entries) in enumerate(sections, start=2):
+            card = draw_list_card(heading, f"{guide.display_name.upper()}  ·  {number}/{len(sections) + 1}", entries,
+                                  page=f"{site_address(config)}/{guide.slug}/", brand=config.brand,
+                                  handle=config.social.handle or config.channel_handle)
+            print(f"✅ {save_jpeg(card, args.out / f'guide_{guide.slug}_{number}_{key}.jpg')}")
     return 0
 
 

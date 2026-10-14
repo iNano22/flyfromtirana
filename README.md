@@ -689,9 +689,12 @@ post fails, you get them as a **draft** on Telegram to post by hand.
   pictures. It needs at least 3 deals on the site; the caption lists them with their
   dates. Remembered in `posted_deals` as `social_weekly`.
 - **A city guide**, on a day with no deal post, at the first run after
-  `social.filler_hour` (17:00 Tirana): the city's photo, its name, the guide's tagline,
-  the cheapest current flight and the page's address (`flyfromtirana.al/rome/`), as a
-  post and a story; the Facebook post links to the page. The cities with a guide in the
+  `social.filler_hour` (17:00 Tirana): a carousel of up to 8 cards, from the guide on
+  the website — a cover with the city's photo, name, tagline, the cheapest current
+  flight and the page's address (`flyfromtirana.al/rome/`), then a card per section
+  (what to see, the 3-day plan, where to stay, what to eat, airports and transport,
+  day trips, practical tips; entries that don't fit a card are left off) — plus the
+  cover as a story. The Facebook post carries the same pictures and links to the page. The cities with a guide in the
   posts' language take turns, the one posted longest ago first. Remembered as
   `social_guide` (one row per city, under its airport code). Empty `weekly_day` or
   `filler_hour` switches that kind off.

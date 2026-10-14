@@ -6,6 +6,7 @@ bars, Archivo + IBM Plex Mono, the fonts in assets/fonts):
     draw_card        a deal: the destination's photo, then a yellow sign with the
                      city, the price, the dates and the flight
     draw_guide_card  a city guide: the photo, the city, its tagline and the page's address
+    draw_list_card   one section of a guide (sights, food, ...): its entries on a black board
     draw_top_card    the week's top deals: a black departures board listing them
 
 Each comes in two sizes:
@@ -222,6 +223,74 @@ def draw_guide_card(layout_name: str, *, city: str, iata: str, tagline: str, pri
         draw.text((pad, y), f"Fluturime nga Tirana nga €{format_price(price)}", font=price_font, fill=INK,
                   anchor="ls")
     return card
+
+
+# --- a city guide's section (one card of the carousel) -----------------------------------
+
+def draw_list_card(heading: str, kicker: str, entries: list[tuple[str | None, str]], *, page: str, brand: str,
+                   handle: str) -> Image.Image:
+    """One section of a guide as a card: the heading on yellow, the entries on a black board.
+
+    entries: (name, text) pairs, e.g. ("Koloseu", "Amfiteatri më i madh..."); a name may be
+    None (a tip). Entries that don't fit on the board are left off, so give the best first.
+    kicker: the small mono line above the heading, e.g. "ROME  ·  2/7".
+    """
+    layout = LAYOUTS["feed"]
+    width, pad = layout.width, layout.padding
+    card = Image.new("RGB", (width, layout.height), SUN)
+    draw = ImageDraw.Draw(card)
+    brand_bar(draw, card, layout, brand=brand, tag_text="UDHËZUES")
+    footer(draw, layout, address=page, handle=handle)
+
+    y = layout.bar + 48
+    codes = mono(34)
+    y += cap_height(codes)
+    draw.text((pad, y), kicker, font=codes, fill=INK, anchor="ls")
+    y += 26
+    heading_font = fit(heading, width - 2 * pad, size=120, weight=800, width_axis=72, smallest=60)
+    for line in wrap(heading, heading_font, width - 2 * pad)[:2]:
+        y += cap_height(heading_font, line)
+        draw.text((pad, y), line, font=heading_font, fill=INK, anchor="ls")
+        y += 14
+    y += 30
+
+    # The board: each entry is its name, then its text on up to three lines.
+    top, bottom = y, layout.sign_bottom - 40
+    draw.rounded_rectangle((pad, top, width - pad, bottom), radius=20, fill=INK)
+    inner = width - 2 * pad - 72
+    name_font = archivo(42, 700, 86)
+    text_font = archivo(33, 500, 96)
+    line_gap = 44
+    y = top + 36
+    for number, (name, text) in enumerate(entries):
+        lines = wrap(text, text_font, inner)
+        if len(lines) > 3:   # too long for the card: keep three lines, the last one shortened
+            lines = lines[:3]
+            lines[-1] = shorten(lines[-1], text_font, inner)
+        needed = (cap_height(name_font) + 16 if name else 0) + line_gap * len(lines) + 30
+        if y + needed > bottom - 20:
+            break   # the rest doesn't fit
+        if number:
+            draw.line((pad + 36, y, width - pad - 36, y), fill=BOARD_LINE, width=2)
+            y += 30
+        if name:
+            y += cap_height(name_font)
+            draw.text((pad + 36, y), name, font=name_font, fill=SUN, anchor="ls")
+            y += 16
+        for line in lines:
+            y += cap_height(text_font)
+            draw.text((pad + 36, y), line, font=text_font, fill=WHITE, anchor="ls")
+            y += line_gap - cap_height(text_font)
+        y += 30
+    return card
+
+
+def shorten(line: str, font: ImageFont.FreeTypeFont, max_width: int) -> str:
+    """Cut a line of text so that it fits max_width with an ellipsis at the end."""
+    words = line.split()
+    while words and font.getlength(" ".join(words) + "…") > max_width:
+        words.pop()
+    return " ".join(words) + "…"
 
 
 # --- the week's top deals --------------------------------------------------------------

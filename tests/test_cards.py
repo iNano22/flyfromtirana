@@ -91,3 +91,16 @@ def test_guide_card_and_top_card_have_the_right_sizes(route):
     cover = draw_top_card(deals, brand="FlyFromTirana", handle="@flyfromtirana", address="flyfromtirana.al")
     assert cover.size == (1080, 1350)
     assert cover.getpixel((540, 8)) == INK and cover.getpixel((20, 300)) == SUN
+
+
+def test_list_card_leaves_off_what_does_not_fit():
+    from src.cards import draw_list_card
+    long = ("Një fjali e gjatë që përsëritet shumë herë për ta provuar. " * 6).strip()
+    card = draw_list_card("Çfarë të shohësh", "ROME  ·  2/7", [(f"Vendi {n}", long) for n in range(1, 9)],
+                          page="flyfromtirana.al/rome/", brand="FlyFromTirana", handle="@flyfromtirana")
+    assert card.size == (1080, 1350)
+    assert card.getpixel((540, 8)) == INK and card.getpixel((20, 300)) == SUN
+    # Tips have no name: still drawn.
+    tips = draw_list_card("Këshilla praktike", "ROME  ·  7/7", [(None, "Mbaj një shishe uji."), ("Çmimet", "€1.20")],
+                          page="flyfromtirana.al/rome/", brand="FlyFromTirana", handle="@flyfromtirana")
+    assert tips.size == (1080, 1350)

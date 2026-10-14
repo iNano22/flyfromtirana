@@ -410,13 +410,19 @@ def test_a_day_without_deals_gets_a_city_guide_in_the_evening(posting):
     assert text.startswith("✅ <b>U postua</b> · Udhëzues: Milan")   # the first city with a guide, in config order
     assert "📱 Story: ✅" in text
     graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
-    feed, story = [c["data"] for c in graph if c["url"].endswith("/media")]
-    assert feed["image_url"].endswith("/social/guide_milan_feed_20261009-1530.jpg")
-    assert "📍 MILAN:" in feed["caption"] and "flyfromtirana.al/milan/ — linku në bio" in feed["caption"]
-    assert "Fluturime nga Tirana nga €60" in feed["caption"]   # BGY's cheapest current price
-    assert story["media_type"] == "STORIES"
-    photo, = [c["data"] for c in graph if c["url"].endswith("/photos")]
-    assert "https://flyfromtirana.al/milan/" in photo["message"]
+    creates = [c["data"] for c in graph if c["url"].endswith("/media")]
+    items = [d for d in creates if d.get("is_carousel_item")]
+    assert items[0]["image_url"].endswith("/social/guide_milan_feed_20261009-1530.jpg")   # the cover first
+    assert items[1]["image_url"].endswith("/social/guide_milan_2_sights_20261009-1530.jpg")
+    assert 5 <= len(items) <= 10
+    carousel, = [d for d in creates if d.get("media_type") == "CAROUSEL"]
+    assert "📍 MILAN:" in carousel["caption"] and "flyfromtirana.al/milan/ — linku në bio" in carousel["caption"]
+    assert "👀 Mos humb: " in carousel["caption"] and "🍴 Provo: " in carousel["caption"]
+    assert "Fluturime nga Tirana nga €60" in carousel["caption"]   # BGY's cheapest current price
+    story, = [d for d in creates if d.get("media_type") == "STORIES"]
+    assert story["image_url"].endswith("/social/guide_milan_story_20261009-1530.jpg")
+    album, = [c["data"] for c in graph if c["url"].endswith("/feed")]
+    assert "https://flyfromtirana.al/milan/" in album["message"] and "attached_media[4]" in album
     assert rows(posting, GUIDE_CHANNEL) == [("MXP", "2026-10-09")]
 
     # Later the same evening: nothing more. The next day it is another city's turn.

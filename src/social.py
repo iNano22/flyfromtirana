@@ -8,8 +8,9 @@ Three kinds of post, all made the same way (main.publish_social decides when):
     booking link);
   - the week's top deals, one day a week: a cover card plus each deal's card,
     posted together as a carousel;
-  - a city guide, on a day with no deal post: the guide's card and story,
-    pointing at the city's page on the website.
+  - a city guide, on a day with no deal post: the guide's cover card, a card
+    per section of the guide (sights, plan, areas, food, airports, tips) as one
+    carousel, and a story, all pointing at the city's page on the website.
 
 Then one of two things happens:
 
@@ -34,7 +35,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
-from src.cards import draw_card, draw_guide_card, draw_top_card, save_cards, save_jpeg
+from src.cards import draw_card, draw_guide_card, draw_list_card, draw_top_card, save_cards, save_jpeg
 from src.config import Config
 from src.deals import Deal
 from src.formatter import WORDS, format_dates, format_post, format_price
@@ -116,30 +117,70 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
 
 def guide_post(guide: Guide, iata: str, price: float | None, config: Config, out_dir: Path, *,
                photo: PostPhoto | None, page_url: str) -> Post:
-    """A city guide's post: its card and story, pointing at the city's page.
+    """A city guide's post: its cover card plus a card per section (a carousel), and a story.
 
     iata: the city's route to show (its photo and code). price: the cheapest current
     flight to the city, if any. page_url: the guide page's full address.
     """
     page = page_url.split("://")[-1].rstrip("/") + "/"   # "flyfromtirana.al/rome/"
-    pictures = []
-    story = None
-    for layout in ("feed", "story"):
-        card = draw_guide_card(layout, city=guide.display_name, iata=iata, tagline=guide.tagline, price=price,
-                               page=page, photo=photo.path if photo else None, brand=config.brand,
-                               handle=handle(config))
-        path = save_jpeg(card, out_dir / f"guide_{guide.slug}_{layout}.jpg")
-        if layout == "feed":
-            pictures.append(path)
-        else:
-            story = path
+    cover = save_jpeg(draw_guide_card("feed", city=guide.display_name, iata=iata, tagline=guide.tagline, price=price,
+                                      page=page, photo=photo.path if photo else None, brand=config.brand,
+                                      handle=handle(config)), out_dir / f"guide_{guide.slug}_feed.jpg")
+    story = save_jpeg(draw_guide_card("story", city=guide.display_name, iata=iata, tagline=guide.tagline, price=price,
+                                      page=page, photo=photo.path if photo else None, brand=config.brand,
+                                      handle=handle(config)), out_dir / f"guide_{guide.slug}_story.jpg")
+    pictures = [cover]
+    sections = guide_sections(guide)
+    for number, (key, heading, entries) in enumerate(sections, start=2):
+        kicker = f"{guide.display_name.upper()}  ·  {number}/{len(sections) + 1}"
+        card = draw_list_card(heading, kicker, entries, page=page, brand=config.brand, handle=handle(config))
+        pictures.append(save_jpeg(card, out_dir / f"guide_{guide.slug}_{number}_{key}.jpg"))
+
     flights = f"✈️ Fluturime nga Tirana nga €{format_price(price)}\n" if price is not None else ""
-    head = f"📍 {guide.display_name.upper()}: {guide.tagline}\n\n{guide.intro}\n\n{flights}"
+    taste = ""
+    if guide.sights:
+        taste += "👀 Mos humb: " + ", ".join(entry.name for entry in guide.sights[:3]) + "\n"
+    if guide.food:
+        taste += "🍴 Provo: " + ", ".join(entry.name for entry in guide.food[:2]) + "\n"
+    head = f"📍 {guide.display_name.upper()}: {guide.tagline}\n\n{guide.intro}\n\n{taste}{flights}"
     tail = (f"🔔 Ofertat dalin të parat në Telegram: {config.channel_handle}" + hashtags(config))
     caption = head + f"📖 Udhëzuesi i plotë (çfarë të shohësh, ku të flesh, çfarë të hash): {page} — linku në bio\n" + tail
     facebook_text = head + f"📖 Udhëzuesi i plotë: {page_url}\n" + tail
     return Post(kind="guide", title=f"Udhëzues: {guide.display_name}", pictures=pictures, story=story,
                 caption=caption, facebook_text=facebook_text, link=page_url)
+
+
+def guide_sections(guide: Guide) -> list[tuple[str, str, list[tuple[str | None, str]]]]:
+    """The guide's sections that get a card: (key, heading, entries), only the ones with content.
+
+    At most 9 (Instagram's carousel holds 10 pictures with the cover); cards.draw_list_card
+    leaves off the entries that don't fit a card.
+    """
+    sections: list[tuple[str, str, list[tuple[str | None, str]]]] = []
+    if guide.sights:
+        sections.append(("sights", "Çfarë të shohësh", [(e.name, e.text) for e in guide.sights]))
+    if guide.itinerary:
+        sections.append(("plan", f"Plani për {len(guide.itinerary)} ditë",
+                         [(f"Dita {day}", text) for day, text in enumerate(guide.itinerary, start=1)]))
+    if guide.areas:
+        sections.append(("areas", "Ku të flesh", [(e.name, e.text) for e in guide.areas]))
+    if guide.food:
+        sections.append(("food", "Çfarë të hash", [(e.name, e.text) for e in guide.food]))
+    getting_around = [(f"Nga {code}", text) for code, text in guide.airports.items()]
+    if guide.transport:
+        getting_around.append(("Në qytet", guide.transport))
+    if getting_around:
+        sections.append(("transport", "Nga aeroporti dhe nëpër qytet", getting_around))
+    if guide.daytrips:
+        sections.append(("daytrips", "Udhëtime ditore", [(e.name, e.text) for e in guide.daytrips]))
+    practical = [(None, tip) for tip in guide.tips]
+    if guide.when:
+        practical.append(("Kur të shkosh", guide.when))
+    if guide.budget:
+        practical.append(("Çmimet", guide.budget))
+    if practical:
+        sections.append(("tips", "Këshilla praktike", practical))
+    return sections[:9]
 
 
 def hashtags(config: Config) -> str:
