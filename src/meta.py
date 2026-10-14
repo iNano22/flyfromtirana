@@ -49,7 +49,16 @@ class MetaClient:
         """The Page and Instagram account behind the token:
         {"page_id", "page_name", "instagram_id", "instagram_username"} (the last two may be None)."""
         if self._ids is None:
-            me = self._call("GET", "me", fields="id,name,instagram_business_account{id,username}")
+            try:
+                me = self._call("GET", "me", fields="id,name,instagram_business_account{id,username}")
+            except MetaError as exc:
+                # A person has no instagram_business_account field: the token belongs to a user, not the Page.
+                if "instagram_business_account" in str(exc):
+                    raise MetaError("META_PAGE_TOKEN is a User token, not the Page's token. In the Graph API "
+                                    "Explorer, with the extended token in the box, run "
+                                    "me/accounts?fields=name,access_token and copy the access_token shown "
+                                    "next to the Page's name (README: Instagram and Facebook posts)") from None
+                raise
             instagram = me.get("instagram_business_account") or {}
             self._ids = {"page_id": me["id"], "page_name": me.get("name", ""),
                          "instagram_id": instagram.get("id"), "instagram_username": instagram.get("username")}

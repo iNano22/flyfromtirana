@@ -109,3 +109,11 @@ def test_page_without_instagram_account():
         return FakeResponse(200, {"id": "1", "name": "Some Page"})
     with pytest.raises(MetaError, match="No Instagram account is linked"):
         MetaClient(TOKEN, FakeSession(handler)).post_instagram("https://x/feed.jpg", "hi")
+
+
+def test_user_token_instead_of_page_token_says_so():
+    def handler(method, url, kwargs):
+        return FakeResponse(400, {"error": {"message": "(#100) Tried accessing nonexisting field (instagram_business_account)",
+                                            "code": 100}})
+    with pytest.raises(MetaError, match="User token, not the Page's token"):
+        MetaClient(TOKEN, FakeSession(handler)).whoami()

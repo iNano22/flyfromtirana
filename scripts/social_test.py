@@ -41,10 +41,10 @@ from src.config import PROJECT_ROOT, ConfigError, load_config, require_env  # no
 from src.deals import CHANNEL, rank_deals  # noqa: E402
 from src.links import LinkBuilder  # noqa: E402
 from src.main import find_deals, post_by_bot, scan_routes, select_routes  # noqa: E402
-from src.meta import MetaClient  # noqa: E402
+from src.meta import MetaClient, MetaError  # noqa: E402
 from src.photos import post_photo  # noqa: E402
 from src.scanner import PriceScanner, ScannerError  # noqa: E402
-from src.social import PICTURES_FOLDER, make_draft, send_draft  # noqa: E402
+from src.social import PICTURES_FOLDER, failed, make_draft, send_draft  # noqa: E402
 from src.storage import Storage  # noqa: E402
 from src.telegram import TelegramClient, TelegramError  # noqa: E402
 
@@ -111,9 +111,17 @@ def main() -> int:
                 print("✅ Sent: the two cards as files, the caption, and the Facebook link.")
             else:
                 print(f"Posting {deal.summary()} on {', '.join(config.social.publish)}...")
-                post_by_bot(draft, meta, config.social.publish, config.website.output_dir / PICTURES_FOLDER,
-                            config.website.url, telegram, now)
-                print(f"✅ Done: the report (and a draft for anything that failed) went to chat {chat_id}.")
+                outcomes = post_by_bot(draft, meta, config.social.publish,
+                                       config.website.output_dir / PICTURES_FOLDER, config.website.url, telegram, now)
+                for what, outcome in outcomes:
+                    if isinstance(outcome, MetaError):
+                        print(f"❌ {what}: {outcome}")
+                    else:
+                        print(f"✅ {what}: {outcome or 'done'}")
+                print(f"The report went to chat {chat_id}" +
+                      (", with a draft for what failed." if failed(outcomes) else "."))
+                if failed(outcomes):
+                    return 1
         except TelegramError as exc:
             print(f"❌ {exc}")
             print("Check: did you press Start in the bot's chat (or make it an admin of the channel)?")

@@ -371,10 +371,11 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
 
 
 def post_by_bot(draft: Draft, meta: MetaClient, platforms: tuple[str, ...], pictures_folder: Path,
-                site_url: str, telegram: TelegramClient, now: datetime) -> None:
+                site_url: str, telegram: TelegramClient, now: datetime) -> list[tuple[str, str | None | MetaError]]:
     """Put the pictures on the site, post on each platform, report to the owner.
 
     A post that failed is also sent as a draft, so the owner can make it by hand.
+    Returns what happened per post (see social.post_on_platforms).
     """
     pictures = put_pictures_online(draft.cards, pictures_folder, site_url, now)
     outcomes = post_on_platforms(draft, meta, platforms, pictures)
@@ -386,6 +387,7 @@ def post_by_bot(draft: Draft, meta: MetaClient, platforms: tuple[str, ...], pict
     telegram.send_message(report(draft, outcomes))
     if failed(outcomes):
         send_draft(telegram, draft)
+    return outcomes
 
 
 def in_quiet_hours(local_time: time, quiet_hours: tuple[time, time] | None) -> bool:
