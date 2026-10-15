@@ -7,6 +7,7 @@ bars, Archivo + IBM Plex Mono, the fonts in assets/fonts):
                      city, the price, the dates and the flight
     draw_guide_card  a city guide: the photo, the city, its tagline and the page's address
     draw_list_card   one section of a guide (sights, food, ...): its entries on a black board
+    draw_photo_card  a photo with a headline: the introduction posts
     draw_top_card    the week's top deals: a black departures board listing them
 
 Each comes in two sizes:
@@ -228,7 +229,7 @@ def draw_guide_card(layout_name: str, *, city: str, iata: str, tagline: str, pri
 # --- a city guide's section (one card of the carousel) -----------------------------------
 
 def draw_list_card(heading: str, kicker: str, entries: list[tuple[str | None, str]], *, page: str, brand: str,
-                   handle: str) -> Image.Image:
+                   handle: str, tag_text: str = "UDHËZUES") -> Image.Image:
     """One section of a guide as a card: the heading on yellow, the entries on a black board.
 
     entries: (name, text) pairs, e.g. ("Koloseu", "Amfiteatri më i madh..."); a name may be
@@ -239,7 +240,7 @@ def draw_list_card(heading: str, kicker: str, entries: list[tuple[str | None, st
     width, pad = layout.width, layout.padding
     card = Image.new("RGB", (width, layout.height), SUN)
     draw = ImageDraw.Draw(card)
-    brand_bar(draw, card, layout, brand=brand, tag_text="UDHËZUES")
+    brand_bar(draw, card, layout, brand=brand, tag_text=tag_text)
     footer(draw, layout, address=page, handle=handle)
 
     y = layout.bar + 48
@@ -291,6 +292,34 @@ def shorten(line: str, font: ImageFont.FreeTypeFont, max_width: int) -> str:
     while words and font.getlength(" ".join(words) + "…") > max_width:
         words.pop()
     return " ".join(words) + "…"
+
+
+# --- a photo with a headline (the introduction posts) ------------------------------------
+
+def draw_photo_card(headline: str, sub: str, *, kicker: str, photo: Path | None, iata: str, tag_text: str,
+                    brand: str, handle: str, address: str) -> Image.Image:
+    """A photo on top, a headline of up to three lines and a line under it on the yellow sign."""
+    layout = LAYOUTS["feed"]
+    width, pad = layout.width, layout.padding
+    card, draw = frame(layout, photo=photo, iata=iata, brand=brand, handle=handle, address=address,
+                       tag_text=tag_text)
+    y = layout.sign_top + 44
+    codes = mono(34)
+    y += cap_height(codes)
+    draw.text((pad, y), kicker, font=codes, fill=INK, anchor="ls")
+    y += 30
+    headline_font = fit(headline, (width - 2 * pad) * 2, size=128, weight=800, width_axis=72, smallest=80)
+    for line in wrap(headline, headline_font, width - 2 * pad)[:3]:
+        y += cap_height(headline_font, line)
+        draw.text((pad, y), line, font=headline_font, fill=INK, anchor="ls")
+        y += 18
+    y += 20
+    sub_font = archivo(40, 500, 92)
+    for line in wrap(sub, sub_font, width - 2 * pad)[:2]:
+        y += cap_height(sub_font)
+        draw.text((pad, y), line, font=sub_font, fill=INK, anchor="ls")
+        y += 16
+    return card
 
 
 # --- the week's top deals --------------------------------------------------------------

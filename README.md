@@ -52,6 +52,8 @@ templates/site_404.html  the "page not found" page
 templates/site_privacy.html  the privacy page (/privacy/): what the site collects and who gets it
 content/destinations/    the city guides: one folder per language, one file per city in each
 content/countries/       the entry documents for each country, one file per language
+content/intro_posts.yaml the nine introduction posts for Instagram and Facebook (texts and card contents)
+assets/social/intro/     the website screenshot shown on the introduction posts' phone
 assets/img/              the website's photos (dest/, services/) and credits.json (authors + licences);
                          share/ = the picture a link to the site shows on Telegram or WhatsApp
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
@@ -68,6 +70,7 @@ src/
   telegram.py            Telegram Bot API client
   photos.py              which photo goes on a route's posts, and its credit
   cards.py               draws the Instagram/Facebook pictures: deal cards, the weekly cover, guide cards
+  intro_cards.py         the nine one-off introduction cards (photo-led, big numbers, phone mock-ups)
   social.py              a social media post (deal, weekly top, city guide): pictures, captions, posting or drafting
   meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
   website.py             renders docs/index.html and the city pages from the database (no API calls)
@@ -82,6 +85,7 @@ scripts/alert_chat.py    find your chat for the failure alerts, and send a test 
 scripts/social_preview.py  draw sample Instagram/Facebook cards into ig_preview/, to check the look
 scripts/social_test.py   scan today's prices and make one social media post now (draft or --publish)
 scripts/meta_check.py    check META_PAGE_TOKEN: which Page and Instagram account it opens
+scripts/intro_posts.py   the nine posts that open the accounts (content/intro_posts.yaml): draw, draft, post
 Dockerfile               the scanner image
 web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
@@ -757,6 +761,16 @@ into. The cards are drawn with Pillow and the fonts in `assets/fonts/` (the webs
 keeps loading the same fonts from Google Fonts). The city photos are the Telegram ones
 (`assets/telegram/`); `bgy.jpg` is the smallest (600px wide), so Milan Bergamo's card is
 a little softer than the others until that photo is replaced.
+
+**The opening posts.** `content/intro_posts.yaml` holds nine posts that introduce the
+accounts: a real €13 deal as the hook, this week's prices on four photos, how it works
+in three big numbers, a mosaic of destinations, the Telegram channel on a phone,
+Premium, the website on a phone, the guides, follow us. `src/intro_cards.py` draws
+them; `python scripts/intro_posts.py` writes them into `ig_preview/intro/`, `--draft` sends them to your chat for a look, and on
+the server `--publish` posts them in order (number 9 ends up top-left of the
+Instagram grid; `--from N` carries on after a stop, `--only N` posts one). Edit the
+YAML to change a card or a caption; `{TELEGRAM}`, `{WEBSITE}` and `{PREMIUM}` in a
+caption become plain words on Instagram and links on Facebook.
 
 Things to watch after the first automatic post: that Meta could fetch the pictures
 through Cloudflare (the report says "could not take the picture" otherwise: then allow

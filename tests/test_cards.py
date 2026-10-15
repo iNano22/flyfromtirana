@@ -104,3 +104,25 @@ def test_list_card_leaves_off_what_does_not_fit():
     tips = draw_list_card("Këshilla praktike", "ROME  ·  7/7", [(None, "Mbaj një shishe uji."), ("Çmimet", "€1.20")],
                           page="flyfromtirana.al/rome/", brand="FlyFromTirana", handle="@flyfromtirana")
     assert tips.size == (1080, 1350)
+
+
+def test_intro_posts_file_draws_nine_cards(tmp_path):
+    """content/intro_posts.yaml: nine posts, each drawn as a feed card with its captions filled in."""
+    import sys
+    sys.path.insert(0, "scripts")
+    from intro_posts import captions, draw, load_posts
+    from src.config import load_config
+    config = load_config()
+    posts = load_posts()
+    assert len(posts) == 9
+    for number, post in enumerate(posts, start=1):
+        path = draw(post, number, 9, config, tmp_path)
+        with Image.open(path) as card:
+            assert card.size == (1080, 1350)
+        instagram, facebook = captions(post, config)
+        assert "{" not in instagram and "{" not in facebook
+        assert instagram.endswith(config.social.hashtags) and facebook.endswith(config.social.hashtags)
+        assert "https://" not in instagram   # Instagram captions carry no links
+    assert "linku në bio" in captions(posts[0], config)[0]
+    assert "https://flyfromtirana.al/" in captions(posts[0], config)[1]
+    assert "https://t.me/flyfromtirana" in captions(posts[3], config)[1]

@@ -1,0 +1,200 @@
+# The nine posts that open the Instagram and Facebook accounts (scripts/intro_posts.py).
+# They are posted in this order, so number 9 ends up top-left of the Instagram grid.
+#
+# `card` names the picture's drawer in src/intro_cards.py; the other keys are what the
+# drawer shows (photos are airport codes: assets/telegram/<code>.jpg). In the captions,
+# {TELEGRAM}, {WEBSITE} and {PREMIUM} become "@flyfromtirana", "flyfromtirana.al (linku
+# në bio)" and a Premium line on Instagram, and clickable links on Facebook. The
+# hashtags from config.yaml are added at the end. No emoji on the cards (the fonts
+# have none); in the captions as many as you like.
+
+- card: hook
+  photo: VCE
+  kicker: "NGA TIRANA  ·  ONE WAY"
+  price: "€13"
+  city: Venice
+  line: "17 Nëntor  ·  Ryanair, direkt  ·  oferta e vërtetë"
+  sticker: "GJETUR KËTË JAVË"
+  title: "Venice për €13"
+  caption: |
+    Venice për €13? Po. Dhe e gjetëm ne, jo ti. 🛫
+
+    Jemi FlyFromTirana: gjejmë fluturimet më të lira nga Tirana (Rinas) drejt 24 qyteteve të Europës dhe i postojmë çdo ditë. Pa reklama të mërzitshme, pa "çmime nga" që nuk ekzistojnë: vetëm oferta reale, me datat dhe linkun.
+
+    Çfarë do të gjesh këtu:
+    📸 2 ofertat më të mira të ditës
+    🏆 TOP 5 e javës, çdo të diel
+    📍 udhëzues për çdo qytet
+
+    🔔 Ofertat dalin të parat në Telegram: {TELEGRAM}
+    🌐 Të gjitha ofertat: {WEBSITE}
+
+- card: prices
+  photo: MXP
+  kicker: "OFERTA REALE  ·  ONE WAY"
+  title: "Këtë javë gjetëm:"
+  tiles:
+    - { photo: MXP, city: Milan, price: "€15" }
+    - { photo: FCO, city: Rome, price: "€17" }
+    - { photo: STN, city: London, price: "€16" }
+    - { photo: VIE, city: Vienna, price: "€20" }
+  caption: |
+    Milan €15. Rome €17. London €16. Vienna €20. 🤯
+
+    Jo "çmime nga" të fryra: këto janë oferta që i gjetëm dhe i postuam këtë javë, one way nga Tirana, me datat e sakta dhe linkun e rezervimit.
+
+    Sekreti? Çmimet e lira zgjasin pak orë. Ne i kontrollojmë çdo 3 orë dhe të lajmërojmë sapo dalin. Ti vetëm duhet të jesh gati. ✈️
+
+    🔔 I merr i pari në Telegram: {TELEGRAM}
+    🌐 Të gjitha ofertat e sotme: {WEBSITE}
+
+- card: stats
+  photo: BCN
+  kicker: "SI FUNKSIONON"
+  sticker: "ROBOTI NUK FLE"
+  rows:
+    - { figure: "ÇDO 3 ORË", text: "kontrollojmë çmimet për 24 destinacione, 60 ditë përpara" }
+    - { figure: "30 DITË", text: "historik çmimesh për çdo linjë: dimë sa kushton zakonisht" }
+    - { figure: "-40%", text: "nën çmimin e zakonshëm = ofertë. Ndryshe, heshtim." }
+  title: "Si i gjejmë ofertat"
+  caption: |
+    Si i gjejmë ofertat? Me një robot që nuk fle. 🤖
+
+    ⏱️ Çdo 3 orë kontrollon çmimet e fluturimeve nga Tirana për 24 destinacione, 60 ditë përpara, në të dy drejtimet.
+    📊 Për çdo linjë mban historikun e 30 ditëve: e di sa kushton "zakonisht" një biletë.
+    🔥 Kur çmimi bie të paktën 40% nën të zakonshmin (ose nën pragun e linjës), e poston. Ndryshe hesht.
+
+    Rezultati: jo "oferta" çdo ditë për çdo gjë. Vetëm ato që ia vlejnë, me datat dhe linkun direkt.
+
+    Si rezervon: hap linkun (në Telegram është në mesazh; këtu: linku në bio → faqja), zgjidh fluturimin dhe rezervo te kompania. Çmimet janë one way me bagazh dore; kthimin e tregojmë veç.
+
+    🔔 {TELEGRAM} · 🌐 {WEBSITE}
+
+- card: mosaic
+  sticker: "24 DESTINACIONE"
+  tiles:
+    - { photo: FCO, city: Rome }
+    - { photo: LHR, city: London }
+    - { photo: BCN, city: Barcelona }
+    - { photo: IST, city: Istanbul }
+    - { photo: VIE, city: Vienna }
+    - { photo: ATH, city: Athens }
+  title: "24 destinacione"
+  caption: |
+    24 destinacione, 9 shtete, një aeroport: Rinasi. 🗺️
+
+    🇮🇹 Itali: Milan (Malpensa, Bergamo), Rome (Fiumicino, Ciampino), Bologna, Venice, Naples
+    🇬🇷 Greqi: Athens, Thessaloniki
+    🇬🇧 Angli: London (Heathrow, Stansted, Luton)
+    🇩🇪 Gjermani: Munich, Frankfurt, Stuttgart, Düsseldorf, Berlin
+    🇦🇹 Austri: Vienna · 🇨🇭 Zvicër: Zurich
+    🇪🇸 Spanjë: Barcelona, Madrid
+    🇹🇷 Turqi: Istanbul
+    🇧🇪 Belgjikë: Brussels (Zaventem, Charleroi)
+
+    Mungon qyteti yt? Na e shkruaj në komente 👇
+
+    🔔 {TELEGRAM} · 🌐 {WEBSITE}
+
+- card: telegram
+  photo: VIE
+  kicker: "TELEGRAM  ·  FALAS"
+  headline: "Çdo ofertë, në çast"
+  pill: "t.me/flyfromtirana"
+  members: "kanal publik · falas"
+  sample:
+    photo: BGY
+    time: "08:17"
+    lines:
+      - "TIRANA → MILAN (Bergamo)"
+      - "nga €14 one way"
+      - "-35% · zakonisht ~€21"
+      - "26 Tet, 28 Tet"
+      - "Wizz Air · direkt · 1 orë 55 min"
+      - "Kthimi nga €14"
+      - "Rezervo tani →"
+  title: "Telegram"
+  caption: |
+    Këtu sheh 2 oferta në ditë. Në Telegram i sheh të gjitha, në çast. 📲
+
+    Kanali ynë në Telegram merr çdo ofertë sapo gjendet, pa pritur postimin e radhës. Çdo mesazh ka datat, kompaninë, kohëzgjatjen, çmimin e kthimit dhe linkun direkt të rezervimit. Hap, kliko, rezervo.
+
+    Është falas dhe pa spam: vetëm oferta.
+
+    👉 {TELEGRAM}
+
+- card: premium
+  photo: IST
+  kicker: "TELEGRAM  ·  ME ABONIM"
+  figure: "6 ORË"
+  headline: "Më parë se të gjithë"
+  pills: ["ÇDO OFERTË 6 ORË MË PARË", "PRAGU 30%, JO 40%", "KONTROLL ÇDO 15 MIN"]
+  text: "Abonim mujor me Telegram Stars. Një biletë e vetme e shlyen."
+  sticker: "PREMIUM"
+  title: "Premium"
+  caption: |
+    6 orë. Aq zgjat ndryshimi mes "e bleva" dhe "e humba". ⏳
+
+    Premium është kanali për ata që duan të jenë të parët:
+    ⚡ çdo ofertë 6 orë para kanalit falas
+    🔎 më shumë oferta: pragu është 30% nën çmimin e zakonshëm, jo 40%
+    ⏱️ çmimet kontrollohen çdo 15 minuta dhe postimi është i menjëhershëm
+
+    Një biletë e vetme e shlyen abonimin e muajit.
+
+    Abonimi është mujor, me Telegram Stars: {PREMIUM}
+
+- card: website
+  kicker: "FAQJA JONË"
+  headline: "flyfromtirana.al"
+  sub: "Të gjitha ofertat e sotme, kërkim për çdo datë, udhëzues për çdo qytet. Në shqip, anglisht dhe italisht."
+  screenshot: site.png
+  title: "flyfromtirana.al"
+  caption: |
+    Gjithçka në një faqe: flyfromtirana.al 🌐
+
+    ✈️ të gjitha ofertat aktuale nga Tirana, të renditura nga zbritja
+    🔎 kërkim fluturimesh për çdo datë
+    📍 udhëzues për çdo qytet: çfarë të shohësh, ku të flesh, çfarë të hash
+    🇦🇱🇬🇧🇮🇹 në shqip, anglisht dhe italisht
+
+    Përditësohet çdo 3 orë, njësoj si kanali.
+
+    👉 {WEBSITE}
+
+- card: guides
+  photo: FCO
+  screenshot: guide.png
+  figure: "19"
+  headline: "Udhëzues qytetesh"
+  sub: "Çfarë të shohësh, plani për 3 ditë, ku të flesh, çfarë të hash, si arrin nga aeroporti."
+  title: "19 udhëzues"
+  caption: |
+    Bileta e lirë është gjysma e punës. Tjetrën e kemi shkruar ne. 📍
+
+    Për çdo destinacion kemi një udhëzues të plotë: vendet që duhen parë, një plan për 3 ditë, lagjet ku të flesh, pjatat që duhen provuar, si arrin nga aeroporti në qendër dhe sa kushtojnë gjërat. Plus dokumentet që të duhen për të hyrë në çdo shtet si qytetar shqiptar.
+
+    I gjen te {WEBSITE}. Dhe çdo javë postojmë një prej tyre edhe këtu, me të gjitha kartat.
+
+    🔔 {TELEGRAM}
+
+- card: follow
+  photo: LHR
+  headline: "Ndiqna"
+  pills: ["2 OFERTA NË DITË", "TOP 5 ÇDO TË DIEL", "1 UDHËZUES ÇDO JAVË"]
+  sub: "Aktivizo njoftimet, që oferta të mos të ikë."
+  title: "Ndiqna"
+  caption: |
+    Ndiqna dhe aktivizo njoftimet. Ofertat e mira nuk presin. 🔔
+
+    Që të mos humbasësh asnjë:
+    1. ndiq @flyfromtirana këtu dhe në Facebook
+    2. aktivizo njoftimet e postimeve (zilja lart djathtas)
+    3. hyr në Telegram: {TELEGRAM}
+
+    Çfarë vjen:
+    📸 2 ofertat më të mira çdo ditë
+    🏆 TOP 5 e javës, çdo të diel
+    📍 një udhëzues qyteti çdo javë
+
+    Ndaje me dikë që do të udhëtojë ✈️
