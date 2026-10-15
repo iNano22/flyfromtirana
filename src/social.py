@@ -1,14 +1,15 @@
 """Social media posts: the pictures and the captions for Instagram and Facebook.
 
-Three kinds of post, all made the same way (main.publish_social decides when):
+Three kinds of post, all made the same way (main.publish_social decides which one
+goes out at each posting time, social.post_times):
 
-  - a deal the free channel just got: the deal's feed card and story card
-    (src/cards.py) with the captions from templates/<language>_social.txt
-    (Instagram) and <language>_facebook.txt (the Page, which can hold the
-    booking link);
+  - the best deal on the website the accounts haven't had: the deal's feed card
+    and story card (src/cards.py) with the captions from
+    templates/<language>_social.txt (Instagram) and <language>_facebook.txt (the
+    Page, which can hold the booking link);
   - the week's top deals, one day a week: a cover card plus each deal's card,
     posted together as a carousel;
-  - a city guide, on a day with no deal post: the guide's cover card, a card
+  - a city guide, on a day with no post at all: the guide's cover card, a card
     per section of the guide (sights, plan, areas, food, airports, tips) as one
     carousel, and a story, all pointing at the city's page on the website.
 

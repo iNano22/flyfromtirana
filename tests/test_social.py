@@ -1,15 +1,16 @@
-"""Social media drafts: the cards and the caption go to the owner's chat for the free channel's deals."""
+"""Social media posts: at each posting time the best deal on the website, as a draft to the owner's chat or
+posted by the bot."""
 import json
 import re
 import shutil
 from dataclasses import replace
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 
 import pytest
 
-from src.config import Secrets, load_config
-from src.deals import price_band
+from src.config import Secrets, _post_times, load_config
+from src.deals import PREMIUM_CHANNEL, price_band
 from src.main import run
 from src.social import SOCIAL_CHANNEL
 from src.storage import Storage
@@ -26,7 +27,7 @@ def config(tmp_path):
     base = load_config()
     return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
                    premium=replace(base.premium, enabled=False),
-                   social=replace(base.social, enabled=True, max_posts_per_day=2, hashtags="#flyfromtirana #tirana"))
+                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana"))
 
 
 def drafts(session) -> list[dict]:
@@ -90,35 +91,54 @@ def test_draft_follows_the_channel_post(config):
     assert social_rows(config) == 2   # both dates of the post are remembered
 
 
-def test_only_the_first_drafts_of_the_day_go_out(config):
-    two_hours_ago = NOW - timedelta(hours=2)   # 10:00 in Tirana: the same day
-    seed_social_post(config, "VIE", two_hours_ago)
-    seed_social_post(config, "FCO", two_hours_ago)
-    session = fake_world()
+def test_one_post_per_posting_time_and_never_the_same_city_twice_a_day(config):
+    """12:00: one post, the best deal. The quick scans after it: nothing. 19:30: the next deal, another city."""
+    seed_current_deals(config, fetched_at=NOW, destinations=("VIE",))   # Vienna €9: the biggest saving
+    noon = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=noon, now=NOW) == 0   # 12:00
+    assert methods(channel_posts(noon)) == ["sendPhoto"]      # the channel posts as always
+    files, caption, link = drafts(noon)                       # one post, although two deals are on the site
+    assert "TIRANA → VIENNA nga €9" in telegram_text(caption)
 
-    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
-    assert methods(channel_posts(session)) == ["sendPhoto"]   # the channel is not held back
+    quarter_past = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=quarter_past, now=NOW + timedelta(minutes=15)) == 0
+    assert drafts(quarter_past) == []                         # this time's post is out
+
+    evening = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=evening,
+               now=NOW + timedelta(hours=7, minutes=30)) == 0   # 19:30
+    files, caption, link = drafts(evening)
+    assert "TIRANA → MILAN (Bergamo) nga €19" in telegram_text(caption)   # Vienna is still the best, but had its post
+
+    tomorrow = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=tomorrow, now=NOW + timedelta(days=1)) == 0
+    assert drafts(tomorrow) == []                             # both are known for repost_cooldown_days
+
+
+def test_nothing_goes_out_before_the_first_posting_time(config):
+    morning = NOW.replace(hour=7)   # 09:00 in Tirana: quiet hours are over, the channel posts
+    session = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=morning) == 0
+    assert methods(channel_posts(session)) == ["sendPhoto"]
     assert drafts(session) == []
 
 
-def test_yesterdays_drafts_do_not_count(config):
-    seed_social_post(config, "VIE", NOW - timedelta(hours=20))   # 16:00 in Tirana, the day before
-    seed_social_post(config, "FCO", NOW - timedelta(hours=20))
-    session = fake_world()
-
-    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
-    assert len(drafts(session)) == 3
-
-
-def test_a_deal_the_drafts_chat_already_had_is_skipped(config):
-    with Storage(config.db_path) as storage:
-        storage.record_post(SOCIAL_CHANNEL, make_quote(19, date(2026, 11, 20)), price_band(19, 10),
+def test_a_destination_posted_at_this_price_is_skipped_whatever_the_date(config):
+    with Storage(config.db_path) as storage:   # Milan at €19 two days ago, for another date
+        storage.record_post(SOCIAL_CHANNEL, make_quote(19, date(2026, 12, 5)), price_band(19, 10),
                             NOW - timedelta(days=2))
     session = fake_world()
 
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
     assert methods(channel_posts(session)) == ["sendPhoto"]
     assert drafts(session) == []
+
+
+def test_a_cheaper_price_is_news_again(config):
+    seed_social_post(config, "BGY", NOW - timedelta(days=2))   # Milan at €30 the other day
+    session = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert len(drafts(session)) == 3                          # €19 now: posted
 
 
 def test_failed_draft_flags_the_run_but_the_channel_post_stands(config):
@@ -184,9 +204,22 @@ def test_dry_run_prints_the_caption_and_keeps_the_cards(config):
 
 def test_config_yaml_settings():
     social = load_config().social
-    assert social.max_posts_per_day == 2
+    assert social.post_times == (time(12, 0), time(19, 30))
     assert social.sub_id == "facebook"
     assert social.hashtags.startswith("#")
+
+
+@pytest.mark.parametrize("raw, complaint", [
+    ([], "list of times"),
+    ([720], "quotes"),                                  # YAML's reading of an unquoted 12:00
+    (["noon"], "HH:MM"),
+    (["12:00", "12:30"], "an hour apart"),
+    (["19:30", "12:00"], "in order"),
+    ([f"{hour:02d}:00" for hour in range(7)], "more than 6"),
+])
+def test_post_times_are_checked(raw, complaint):
+    with pytest.raises(ValueError, match=complaint):
+        _post_times(raw)
 
 
 # --- posting by the bot (META_PAGE_TOKEN set) ----------------------------------------
@@ -335,14 +368,30 @@ def rows(config, channel) -> list[tuple]:
                                     "ORDER BY destination", (channel,)).fetchall()
 
 
-def test_sunday_gets_the_weekly_carousel_after_the_deal_post(posting):
+def test_the_quick_premium_scan_keeps_the_posting_time(config):
+    """Between full runs the 15-minute premium scan makes the post whose time has come."""
+    config = replace(config, premium=replace(load_config().premium, enabled=True))
+    secrets = replace(SECRETS, telegram_premium_channel_id="-1001234567890")
+    seed_current_deals(config, fetched_at=NOW - timedelta(hours=1), destinations=("VIE",))
+    with Storage(config.db_path) as storage:   # premium had Vienna 7 hours ago, so the website shows it
+        storage.record_post(PREMIUM_CHANNEL, make_quote(9, date(2026, 11, 20), destination="VIE"), price_band(9, 10),
+                            NOW - timedelta(hours=7))
+    session = fake_world()
+    assert run(config, secrets, dry_run=False, only_routes={"BGY"}, premium_only=True, session=session, now=NOW) == 0
+
+    assert channel_posts(session) == []                       # the free channel waits for the full run
+    files, caption, link = drafts(session)
+    assert methods([files, caption, link]) == ["sendMediaGroup", "sendMessage", "sendMessage"]
+    assert "TIRANA → VIENNA nga €9" in telegram_text(caption)
+
+
+def test_sunday_starts_with_the_weekly_carousel_and_a_deal_follows_in_the_evening(posting):
     posting = replace(posting, social=replace(posting.social, weekly_day=6, weekly_count=5))
     seed_current_deals(posting, fetched_at=SUNDAY)
     session = with_graph(fake_world())
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=SUNDAY) == 0
 
-    deal_report, weekly_report = drafts(session)
-    assert "TIRANA → MILAN (Bergamo) nga €19" in telegram_text(deal_report)
+    weekly_report, = drafts(session)   # the day's first post is the week's top, not a deal
     text = telegram_text(weekly_report)
     assert text.startswith("✅ <b>U postua</b> · TOP 3 ofertat e javës")
     assert "📱 Story" not in text   # a carousel has no story
@@ -357,21 +406,26 @@ def test_sunday_gets_the_weekly_carousel_after_the_deal_post(posting):
     assert "linku në bio" in carousel["caption"]
     album, = [c["data"] for c in graph if c["url"].endswith("/feed")]
     assert "https://flyfromtirana.al/" in album["message"] and "attached_media[3]" in album
-    assert len([c for c in graph if c["url"].endswith("/photos")]) == 1 + 4   # the deal post, then 4 unpublished
+    assert len([c for c in graph if c["url"].endswith("/photos")]) == 4   # the album's unpublished pictures
     assert rows(posting, WEEKLY_CHANNEL) == [("BGY", "2026-11-20"), ("FCO", "2026-11-20"), ("VIE", "2026-11-20")]
 
-    # Later the same day: the weekly post is not made again.
+    # Later the same day: the weekly post is not made again. At the evening's time, the best deal.
     session2 = with_graph(fake_world())
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session2,
                now=SUNDAY + timedelta(hours=3)) == 0
     assert drafts(session2) == []
+    session3 = with_graph(fake_world())
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session3,
+               now=SUNDAY + timedelta(hours=7, minutes=30)) == 0
+    deal_report, = drafts(session3)
+    assert "TIRANA → VIENNA nga €9" in telegram_text(deal_report)
 
 
 def test_weekly_needs_three_deals(posting):
     posting = replace(posting, social=replace(posting.social, weekly_day=6))
     session = with_graph(fake_world())   # only BGY is a deal
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=SUNDAY) == 0
-    assert len(drafts(session)) == 1   # the deal's report only
+    assert len(drafts(session)) == 1   # the deal's report: the day's first post is a deal instead
     assert rows(posting, WEEKLY_CHANNEL) == []
 
 
@@ -398,9 +452,8 @@ def quiet_world() -> FakeSession:
     return with_graph(session)
 
 
-def test_a_day_without_deals_gets_a_city_guide_in_the_evening(posting):
-    posting = replace(posting, social=replace(posting.social, filler_hour=17))
-    evening = NOW.replace(hour=15, minute=30)   # 17:30 in Tirana
+def test_a_day_without_deals_gets_a_city_guide_at_the_last_posting_time(posting):
+    evening = NOW.replace(hour=17, minute=30)   # 19:30 in Tirana: the day's last posting time
     session = quiet_world()
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=evening) == 0
 
@@ -412,15 +465,15 @@ def test_a_day_without_deals_gets_a_city_guide_in_the_evening(posting):
     graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
     creates = [c["data"] for c in graph if c["url"].endswith("/media")]
     items = [d for d in creates if d.get("is_carousel_item")]
-    assert items[0]["image_url"].endswith("/social/guide_milan_feed_20261009-1530.jpg")   # the cover first
-    assert items[1]["image_url"].endswith("/social/guide_milan_2_sights_20261009-1530.jpg")
+    assert items[0]["image_url"].endswith("/social/guide_milan_feed_20261009-1730.jpg")   # the cover first
+    assert items[1]["image_url"].endswith("/social/guide_milan_2_sights_20261009-1730.jpg")
     assert 5 <= len(items) <= 10
     carousel, = [d for d in creates if d.get("media_type") == "CAROUSEL"]
     assert "📍 MILAN:" in carousel["caption"] and "flyfromtirana.al/milan/ — linku në bio" in carousel["caption"]
     assert "👀 Mos humb: " in carousel["caption"] and "🍴 Provo: " in carousel["caption"]
     assert "Fluturime nga Tirana nga €60" in carousel["caption"]   # BGY's cheapest current price
     story, = [d for d in creates if d.get("media_type") == "STORIES"]
-    assert story["image_url"].endswith("/social/guide_milan_story_20261009-1530.jpg")
+    assert story["image_url"].endswith("/social/guide_milan_story_20261009-1730.jpg")
     album, = [c["data"] for c in graph if c["url"].endswith("/feed")]
     assert "https://flyfromtirana.al/milan/" in album["message"] and "attached_media[4]" in album
     assert rows(posting, GUIDE_CHANNEL) == [("MXP", "2026-10-09")]
@@ -436,13 +489,12 @@ def test_a_day_without_deals_gets_a_city_guide_in_the_evening(posting):
     assert "Udhëzues: Rome" in telegram_text(drafts(session3)[0])
 
 
-def test_no_guide_before_the_filler_hour_or_when_a_deal_was_posted(posting):
-    posting = replace(posting, social=replace(posting.social, filler_hour=17))
+def test_no_guide_before_the_last_posting_time_or_when_a_deal_was_posted(posting):
     session = quiet_world()
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0   # 12:00
-    assert drafts(session) == []
+    assert drafts(session) == []   # no deal, but the evening may still bring one
 
-    evening = NOW.replace(hour=15, minute=30)
+    evening = NOW.replace(hour=17, minute=30)   # 19:30
     session = with_graph(fake_world())   # BGY is a deal: it is posted, so no guide
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=evening) == 0
     report, = drafts(session)
@@ -450,12 +502,12 @@ def test_no_guide_before_the_filler_hour_or_when_a_deal_was_posted(posting):
     assert rows(posting, GUIDE_CHANNEL) == []
 
 
-def test_weekly_and_guide_as_drafts_without_the_token(posting):
-    posting = replace(posting, social=replace(posting.social, weekly_day=6, filler_hour=17))
+def test_the_weekly_as_a_draft_without_the_token(posting):
+    posting = replace(posting, social=replace(posting.social, weekly_day=6))
     seed_current_deals(posting, fetched_at=SUNDAY)
     session = with_graph(fake_world())
     assert run(posting, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=SUNDAY) == 0
     files = [c for c in drafts(session) if c["url"].endswith("/sendMediaGroup")]
-    assert len(files) == 2   # the deal's draft, then the weekly's
-    weekly = json.loads(files[1]["data"]["media"])
+    assert len(files) == 1   # the weekly's draft; a deal's follows in the evening
+    weekly = json.loads(files[0]["data"]["media"])
     assert len(weekly) == 4 and "carousel" in weekly[0]["caption"]

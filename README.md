@@ -19,13 +19,15 @@ src/scheduler.py (every 3h, in the `scanner` container)
                        skip anything already posted in the last 7 days at the same price band
        4. formatter.py build the Albanian post from templates/sq.txt (links from links.py)
        5. telegram.py  send it to the channel with the destination's photo (best deals first)
+          social.py    at 12:00 and 19:30 (social.post_times): the best deal on the site that
+          + meta.py    Instagram/Facebook haven't had, as a card + story + Facebook post
   └─ python -m src.website
        6. website.py   rebuild docs/index.html from the database (every route, deals first)
                        and one page per city (docs/milan/, docs/rome/, ...) from content/destinations/
 src/scheduler.py (every 15 min in between, when premium is on)
   └─ python -m src.main --premium-only
-       steps 1 and 3-5 for the premium channel only: nothing is saved, the free
-       channel and the website are left alone
+       steps 1 and 3-5 for the premium channel only, plus the Instagram/Facebook post
+       whose time has come: nothing is saved, the free channel and the website are left alone
   data/prices.db and docs/ live in Docker volumes, so history and the site survive redeploys
 ```
 
@@ -641,7 +643,8 @@ run, best saving first, so a weaker deal can wait a day or two for its turn.
 
 Premium doesn't wait for the 3-hour runs: every `premium.scan_every_minutes` (15)
 the scheduler runs `python -m src.main --premium-only`, which checks the prices
-and posts any new deal to premium straight away (never during quiet hours). That
+and posts any new deal to premium straight away (never during quiet hours), and
+makes the Instagram/Facebook post whose time has come (see below). That
 is up to about 150 API calls per scan, far below Travelpayouts' limit of 600 a minute.
 `premium.max_posts_per_run` (1) counts per scan, so premium gets the best new deal
 of each scan: up to 4 posts an hour. Set `scan_every_minutes: 0` to go back
@@ -664,14 +667,17 @@ deduped separately. Premium's wording is in `templates/sq_premium.txt`.
 
 ## Instagram and Facebook posts
 
-Every deal the free channel posts also goes out on Instagram and Facebook
-(`social` in config.yaml): a feed card (1080×1350, the tallest picture
-Instagram's feed takes; Facebook takes it too) and a story card (1080×1920),
-drawn by `src/cards.py` in the website's look, with a caption. The posts are
-made by the bot itself once `META_PAGE_TOKEN` is set; until then, or whenever a
-post fails, you get them as a **draft** on Telegram to post by hand.
+Twice a day, at `social.post_times` (12:00 and 19:30 Tirana, when people are on
+their phones), the best deal on the website that the accounts haven't had goes
+out on Instagram and Facebook (`social` in config.yaml): a feed card (1080×1350,
+the tallest picture Instagram's feed takes; Facebook takes it too) and a story
+card (1080×1920), drawn by `src/cards.py` in the website's look, with a caption.
+One post per time, never two in a row. The posts are made by the bot itself once
+`META_PAGE_TOKEN` is set; until then, or whenever a post fails, you get them as a
+**draft** on Telegram to post by hand.
 
-**By the bot.** Right after the channel post, the bot:
+**By the bot.** At a posting time (the first scan at or after it: the quick premium
+scans count, so within 15 minutes), the bot:
 1. puts the two pictures on the website under `/social/` (Instagram only fetches
    pictures from a public address; they are removed after `social.keep_pictures_days`),
 2. publishes the feed card as an Instagram post with the caption from
@@ -687,33 +693,38 @@ post fails, you get them as a **draft** on Telegram to post by hand.
 `social.publish` says where the bot posts (`instagram`, `facebook`, or fewer).
 
 **Two more kinds of post keep the accounts busy** (same mechanics, same report):
-- **The week's top deals**, once on `social.weekly_day` (Sunday): a cover card listing
-  the best `social.weekly_count` (5) deals the website shows, plus each deal's card,
-  posted together as one Instagram carousel and one Facebook post with all the
-  pictures. It needs at least 3 deals on the site; the caption lists them with their
-  dates. Remembered in `posted_deals` as `social_weekly`.
-- **A city guide**, on a day with no deal post, at the first run after
-  `social.filler_hour` (17:00 Tirana): a carousel of up to 8 cards, from the guide on
+- **The week's top deals**: on `social.weekly_day` (Sunday) the day's first post is a
+  cover card listing the best `social.weekly_count` (5) deals the website shows, plus
+  each deal's card, posted together as one Instagram carousel and one Facebook post
+  with all the pictures; the evening's post is a deal as usual. It needs at least 3
+  deals on the site (otherwise a deal is posted instead); the caption lists them with
+  their dates. Remembered in `posted_deals` as `social_weekly`.
+- **A city guide**, at the day's last posting time when the day had no post at
+  all: a carousel of up to 8 cards, from the guide on
   the website — a cover with the city's photo, name, tagline, the cheapest current
   flight and the page's address (`flyfromtirana.al/rome/`), then a card per section
   (what to see, the 3-day plan, where to stay, what to eat, airports and transport,
   day trips, practical tips; entries that don't fit a card are left off) — plus the
   cover as a story. The Facebook post carries the same pictures and links to the page. The cities with a guide in the
   posts' language take turns, the one posted longest ago first. Remembered as
-  `social_guide` (one row per city, under its airport code). Empty `weekly_day` or
-  `filler_hour` switches that kind off.
+  `social_guide` (one row per city, under its airport code). An empty `weekly_day`
+  switches the weekly post off.
 
 **As a draft** (no `META_PAGE_TOKEN`): three messages in your chat: the two pictures
 as *files*, not photos, so Telegram keeps them at full size (save them to the phone's
 gallery and post them as they are); the caption to copy; and the booking link for
 the Facebook post.
 
-Which deals: the free channel's, best first, at most `social.max_posts_per_day` (2) a
-day, counted in Tirana time; never during quiet hours, and never the same route, date
-and price band twice within `repost_cooldown_days` (they are remembered in
-`posted_deals` under the name `social`). A deal counts as handled once it is posted
-or its draft reached you. Only a Telegram failure is left unrecorded (the next run
-tries again). None of this holds up the channel posts, which are already out.
+Which deals: what the website lists as deals (the free channel's rules, and like the
+free channel it waits for prices premium is still alone with), biggest saving first,
+skipping a city already posted that day and a city posted at the same or a cheaper
+price band within `repost_cooldown_days`, whatever the date or the airport (they are
+remembered in `posted_deals` under the name `social`). A cheaper price is news again.
+A posting time stays open until the next one, so a post that missed its scan (a
+redeploy, say) still goes out; never during quiet hours. A post counts as made once
+it is posted or its draft reached you. Only a Telegram failure is left unrecorded
+(the next scan tries again). None of this holds up the channel posts, which are
+already out.
 
 To turn it on:
 1. Open the bot in Telegram and press Start, then run `python scripts/alert_chat.py`

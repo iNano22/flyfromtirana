@@ -128,20 +128,22 @@ class Storage:
 
     # --- posted deals (dedupe) ----------------------------------------------
 
-    def was_posted(self, channel: str, origin: str, destination: str, depart_date: date,
+    def was_posted(self, channel: str, origin: str, destination: str, depart_date: date | None,
                    price_band: int, since: datetime) -> bool:
         """Did we post this route + date since `since` at the same or a cheaper price band?
 
         Same band = same deal, so skip it. A cheaper band means the price fell
         further, which is news, so it may be posted again. A pricier band is
-        never worth a repost.
+        never worth a repost. depart_date None = any date of the route (the
+        social posts show one destination at a price, whatever the date).
         """
-        row = self.conn.execute(
-            "SELECT 1 FROM posted_deals WHERE channel = ? AND origin = ? AND destination = ?"
-            " AND depart_date = ? AND posted_at >= ? AND price_band <= ? LIMIT 1",
-            (channel, origin, destination, depart_date.isoformat(), to_iso(since), price_band),
-        ).fetchone()
-        return row is not None
+        sql = ("SELECT 1 FROM posted_deals WHERE channel = ? AND origin = ? AND destination = ?"
+               " AND posted_at >= ? AND price_band <= ?")
+        values: list = [channel, origin, destination, to_iso(since), price_band]
+        if depart_date is not None:
+            sql += " AND depart_date = ?"
+            values.append(depart_date.isoformat())
+        return self.conn.execute(sql + " LIMIT 1", values).fetchone() is not None
 
     def first_posted_at(self, channel: str, origin: str, destination: str, depart_date: date,
                         price_band: int, since: datetime, until: datetime) -> datetime | None:

@@ -98,7 +98,10 @@ class SocialSettings:
     owner's chat as a draft (src/social.py)."""
 
     enabled: bool = False
-    max_posts_per_day: int = 2      # the free channel's best deals of the day, this many at most
+    # When the posts go out (local time), one post per time, at the first run at or after
+    # it: the best deal on the website the accounts haven't had. So a day has at most this
+    # many posts, hours apart, when people are on their phones.
+    post_times: tuple[time, ...] = (time(12, 0), time(19, 30))
     handle: str = ""                # the account's name on the cards, e.g. "@flyfromtirana" (empty = channel_handle)
     sub_id: str = "facebook"        # Travelpayouts SubID of the booking link in the Facebook post
     hashtags: str = ""              # the last line of every caption
@@ -106,12 +109,11 @@ class SocialSettings:
     # story) and/or "facebook" (a Page post with the booking link). Empty = only the Telegram drafts.
     publish: tuple[str, ...] = ()
     keep_pictures_days: int = 7     # the posted pictures stay on the website this long (Instagram fetches them there)
-    # Keeping the accounts busy: a "top deals of the week" carousel on one weekday
-    # (0 = Monday ... 6 = Sunday; None = never), and on a day with no deal post, a
-    # city-guide post once the clock passes filler_hour (local; None = never).
+    # Keeping the accounts busy: on one weekday (0 = Monday ... 6 = Sunday; None = never)
+    # the day's first post is a "top deals of the week" carousel, and the day's last
+    # post time goes to a city guide when the day had no post at all.
     weekly_day: int | None = None
     weekly_count: int = 5
-    filler_hour: int | None = None
 
 
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
@@ -271,9 +273,7 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
 
 
 def _build_social(raw: dict) -> SocialSettings:
-    max_posts_per_day = int(raw.get("max_posts_per_day", 2))
-    if max_posts_per_day < 1:
-        raise ValueError("social.max_posts_per_day must be at least 1 (or set social.enabled: false)")
+    post_times = _post_times(raw.get("post_times", ["12:00", "19:30"]))
     publish = tuple(str(name).strip().lower() for name in raw.get("publish") or [])
     unknown = [name for name in publish if name not in SOCIAL_PLATFORMS]
     if unknown:
@@ -285,14 +285,9 @@ def _build_social(raw: dict) -> SocialSettings:
     weekly_count = int(raw.get("weekly_count", 5))
     if not 2 <= weekly_count <= 9:   # the cover plus the deals must fit Instagram's 10 pictures
         raise ValueError("social.weekly_count must be between 2 and 9")
-    filler_hour = raw.get("filler_hour")
-    if filler_hour is not None:
-        filler_hour = int(filler_hour)
-        if not 0 <= filler_hour <= 23:
-            raise ValueError("social.filler_hour must be an hour of the day (0-23) or empty")
     return SocialSettings(
         enabled=bool(raw.get("enabled", False)),
-        max_posts_per_day=max_posts_per_day,
+        post_times=post_times,
         handle=str(raw.get("handle") or "").strip(),
         sub_id=str(raw.get("sub_id") or "facebook").strip(),
         hashtags=" ".join(str(raw.get("hashtags") or "").split()),   # one line, single spaces
@@ -300,8 +295,26 @@ def _build_social(raw: dict) -> SocialSettings:
         keep_pictures_days=keep_days,
         weekly_day=weekly_day,
         weekly_count=weekly_count,
-        filler_hour=filler_hour,
     )
+
+
+def _post_times(raw) -> tuple[time, ...]:
+    """["12:00", "19:30"] -> (time(12, 0), time(19, 30)): 1 to 6 times, in order, an hour or more apart."""
+    if not isinstance(raw, list) or not raw:
+        raise ValueError('social.post_times must be a list of times, e.g. ["12:00", "19:30"]')
+    if any(isinstance(item, int) for item in raw):
+        raise ValueError('social.post_times: write the times with quotes ("12:00"), YAML reads 12:00 as a number')
+    try:
+        times = tuple(time.fromisoformat(str(item).strip()) for item in raw)
+    except ValueError as exc:
+        raise ValueError(f"social.post_times: {exc} (use HH:MM)") from None
+    if len(times) > 6:
+        raise ValueError("social.post_times: more than 6 posts a day is too many for Instagram")
+    minutes = [t.hour * 60 + t.minute for t in times]
+    if any(later - earlier < 60 for earlier, later in zip(minutes, minutes[1:])):
+        raise ValueError("social.post_times must be in order of the day and at least an hour apart,"
+                         " so the posts never follow each other")
+    return times
 
 
 def _weekday(raw) -> int | None:

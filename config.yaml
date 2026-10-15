@@ -63,26 +63,29 @@ premium:
   threshold_min_discount_pct: 20
 
 # --- Instagram and Facebook posts --------------------------------------------
-# For the free channel's deals (the best first, max_posts_per_day a day) the bot
-# draws a feed card and a story card (src/cards.py) and writes the caption
-# (templates/sq_social.txt, sq_facebook.txt). With META_PAGE_TOKEN set it posts
-# them itself on the platforms under `publish` and reports to the chat in
-# TELEGRAM_DRAFTS_CHAT_ID (or TELEGRAM_ALERT_CHAT_ID); without the token, or
-# when a post fails, that chat gets the pictures and the caption as a draft to
-# post by hand. README: "Instagram and Facebook posts".
+# At each of `post_times` the bot posts the best deal on the website that the
+# accounts haven't had yet: it draws a feed card and a story card (src/cards.py)
+# and writes the caption (templates/sq_social.txt, sq_facebook.txt). With
+# META_PAGE_TOKEN set it posts them itself on the platforms under `publish` and
+# reports to the chat in TELEGRAM_DRAFTS_CHAT_ID (or TELEGRAM_ALERT_CHAT_ID);
+# without the token, or when a post fails, that chat gets the pictures and the
+# caption as a draft to post by hand. README: "Instagram and Facebook posts".
 social:
   enabled: true
-  max_posts_per_day: 2
+  post_times: ["12:00", "19:30"]   # local; the post goes out at the first run at or after each time (the
+                                   #   scanner wakes every 15 minutes). One post per time, so a day has at
+                                   #   most this many, hours apart, when people are on their phones. Keep the
+                                   #   quotes: YAML reads 12:00 as a number. Never the same city twice a day.
   handle: "@flyfromtirana"         # the account's name, shown on the cards
   sub_id: facebook                 # Travelpayouts SubID of the booking link in the Facebook post
   hashtags: "#flyfromtirana #fluturime #oferta #udhetim #tirana #rinas #biletaavioni #pushime"
   publish: [instagram, facebook]   # instagram = a feed post + a story; facebook = a Page post with the link
   keep_pictures_days: 7            # Instagram fetches the pictures from the website (/social/); kept this long
   # Keeping the accounts busy on quiet days:
-  weekly_day: sunday               # a "TOP 5 ofertat e javës" carousel (cover + one card per deal) on this day;
-  weekly_count: 5                  #   empty = never. It needs at least 3 deals on the website.
-  filler_hour: 17                  # a day with no deal post gets a city-guide post at the first run after this
-                                   #   hour (local): the city posted least recently. Empty = never.
+  weekly_day: sunday               # on this day the first post is a "TOP 5 ofertat e javës" carousel (cover +
+  weekly_count: 5                  #   one card per deal) instead of a deal; empty = never. It needs at least
+                                   #   3 deals on the website. A day with no post at all gets a city-guide
+                                   #   post at its last post time: the city posted least recently.
 
 # --- Website -----------------------------------------------------------------
 # src/website.py renders one page from the price database into output_dir. On

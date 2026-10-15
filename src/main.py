@@ -158,6 +158,15 @@ def run(
         # 2) Find deals and post the best ones: premium first (instantly), then free
         common = dict(config=config, links=links, storage=storage, dry_run=dry_run,
                       now=now, local_now=local_now, output=output)
+
+        def social_post() -> int:
+            """The Instagram/Facebook post whose time has come (social.post_times), if any: the
+            best deal on the website, posted by the bot or sent to the owner as a draft."""
+            return publish_social(telegram=telegram_for(secrets.telegram_drafts_chat_id),
+                                  drafts_chat=bool(secrets.telegram_drafts_chat_id),
+                                  meta=meta_client(config, secrets, session, dry_run=dry_run),
+                                  marker=secrets.travelpayouts_marker, **common)
+
         exit_code = 0
         if premium.enabled:
             deals = find_deals(routes, outbound, inbound, storage, config.origin, premium.rules, now,
@@ -167,7 +176,8 @@ def run(
             exit_code |= publish(best, channel=PREMIUM_CHANNEL, template=f"{config.language}_premium",
                                  telegram=telegram_for(secrets.telegram_premium_channel_id), **common)
         if premium_only:
-            return exit_code
+            # The quick scan keeps the posting times too: a full run only comes every 3 hours.
+            return exit_code | social_post()
 
         # The free channel only gets deals premium has had for free_delay_hours.
         early_access = {}
@@ -182,12 +192,8 @@ def run(
                              telegram=telegram_for(secrets.telegram_channel_id),
                              premium_link=premium.join_link if premium.enabled else None, **common)
 
-        # 3) The Instagram/Facebook posts of the free channel's deals: posted by the bot, or
-        #    sent to the owner as drafts
-        exit_code |= publish_social(best, telegram=telegram_for(secrets.telegram_drafts_chat_id),
-                                    drafts_chat=bool(secrets.telegram_drafts_chat_id),
-                                    meta=meta_client(config, secrets, session, dry_run=dry_run),
-                                    marker=secrets.travelpayouts_marker, **common)
+        # 3) The Instagram/Facebook post, when its time has come
+        exit_code |= social_post()
 
         # 4) Housekeeping
         pruned = storage.prune_prices(now - timedelta(days=config.history_retention_days))
@@ -301,19 +307,23 @@ def meta_client(config: Config, secrets: Secrets, session: requests.Session, *, 
     return MetaClient(secrets.meta_page_token, session)
 
 
-def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, storage: Storage,
-                   telegram: TelegramClient | None, drafts_chat: bool, meta: MetaClient | None, marker: str,
-                   dry_run: bool, now: datetime, local_now: datetime, output: Callable[[str], None]) -> int:
-    """The Instagram/Facebook posts of this run (src/social.py): the free channel's deals,
-    the week's top deals on social.weekly_day, and a city guide on a day without a post.
+def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, telegram: TelegramClient | None,
+                   drafts_chat: bool, meta: MetaClient | None, marker: str, dry_run: bool, now: datetime,
+                   local_now: datetime, output: Callable[[str], None]) -> int:
+    """The Instagram/Facebook post of this run, when one is due (src/social.py).
 
-    `deals` are the free channel's posts of this run, best first. Only the first
-    social.max_posts_per_day of a day are taken, and a deal already handled
-    (same route, date and price band) is skipped, like a channel skips a repost.
+    The posts go out at social.post_times (local), one per time, at the first run
+    at or after it: so they are hours apart, never two in a row. What goes out:
+      1. on social.weekly_day, the day's first post is the week's top deals;
+      2. otherwise the best deal the website shows that these accounts haven't
+         had: not a city already posted today, and not a city posted at this
+         price or cheaper within repost_cooldown_days, whatever the date or airport;
+      3. at the day's last time, when the day had no post at all, a city guide.
     With `meta` the bot posts and reports to the owner; a post that fails is sent
-    as a draft, so it can go out by hand. Either way the post counts as handled.
+    as a draft, so it can go out by hand. Either way the post counts as made.
     Returns 1 if the owner's chat could not be reached, else 0. A problem here
-    never stops the Telegram posts: they are already out.
+    never stops the Telegram posts: they are already out. A dry run shows the
+    post that would go out next, whatever the clock says.
     """
     social = config.social
     if not social.enabled:
@@ -325,6 +335,21 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
         return 0   # the channel posts wait for the morning, and so do these
 
     day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    def posts_since(moment: datetime) -> int:
+        return sum(storage.count_posts(name, moment) for name in (SOCIAL_CHANNEL, WEEKLY_CHANNEL, GUIDE_CHANNEL))
+
+    begun = posting_time(social.post_times, local_now)
+    if dry_run:
+        slot_start, last_of_day = day_start, True   # pretend: show what would go out next
+    elif begun is None:
+        return 0   # before the day's first posting time
+    else:
+        slot_start, last_of_day = begun
+        if posts_since(slot_start):
+            return 0   # this time's post is out (quietly: the quick scan comes by every 15 minutes)
+    posted_today = posts_since(day_start)
+
     pictures_folder = config.website.output_dir / PICTURES_FOLDER
     if meta is not None:
         gone = prune_pictures(pictures_folder, now - timedelta(days=social.keep_pictures_days))
@@ -337,8 +362,6 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
     # The pictures are drawn into a folder of their own. A real run deletes it once
     # they are sent; a dry run keeps it, so the pictures can be looked at.
     folder = Path(tempfile.mkdtemp(prefix="flyfromtirana-social-"))
-    failures = 0
-    posted_today = storage.count_posts(SOCIAL_CHANNEL, day_start) + storage.count_posts(WEEKLY_CHANNEL, day_start)
 
     def deliver(post: Post, channel: str, quotes: list[Quote]) -> bool:
         """Post it, or send its draft, and remember it. False when the owner's chat failed."""
@@ -358,41 +381,32 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
             storage.record_post(channel, quote, price_band(quote.price, config.rules.price_band_eur), now)
         return True
 
-    # 1) The deals the free channel just posted, best first, up to the day's quota.
-    left = social.max_posts_per_day - storage.count_posts(SOCIAL_CHANNEL, day_start)
-    since = now - timedelta(days=config.rules.repost_cooldown_days)
-    for deal in deals:
-        if left <= 0:
-            log.info("[social] Today's %d deal post(s) are already out", social.max_posts_per_day)
-            break
-        best = deal.best
-        band = price_band(best.price, config.rules.price_band_eur)
-        if storage.was_posted(SOCIAL_CHANNEL, best.origin, best.destination, best.depart_date, band, since):
-            continue
-        post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata))
-        if deliver(post, SOCIAL_CHANNEL, deal.quotes):
-            left -= 1
-            posted_today += 1
-        else:
-            failures += 1
+    # What the website lists as deals right now, best saving first (the free channel's rules,
+    # and like the free channel it leaves out what premium is still alone with).
+    deals = [offer for offer in build_offers(config, storage, now) if offer.is_deal]
+    post: Post | None = None
+    channel, quotes = "", []
 
-    # 2) The week's top deals, once on the chosen weekday: what the website lists as deals.
+    # 1) On the weekly day, the first post is the week's top deals.
     if (social.weekly_day is not None and local_now.weekday() == social.weekly_day
             and storage.count_posts(WEEKLY_CHANNEL, day_start) == 0):
-        top = [offer for offer in build_offers(config, storage, now) if offer.is_deal][: social.weekly_count]
+        top = deals[: social.weekly_count]
         if len(top) < WEEKLY_MIN_DEALS:
             log.info("[social] Only %d deal(s) on the website: no top-of-the-week post", len(top))
         else:
             photos = {offer.route.iata: post_photo(offer.route.iata) for offer in top}
             post = weekly_post(top, config, folder, photos=photos, now=local_now)
-            if deliver(post, WEEKLY_CHANNEL, [offer.best for offer in top]):
-                posted_today += 1
-            else:
-                failures += 1
+            channel, quotes = WEEKLY_CHANNEL, [offer.best for offer in top]
 
-    # 3) A city guide, when the day had no post and the clock has passed filler_hour.
-    if (social.filler_hour is not None and local_now.hour >= social.filler_hour and posted_today == 0
-            and storage.count_posts(GUIDE_CHANNEL, day_start) == 0):
+    # 2) Otherwise the best deal these accounts haven't had.
+    if post is None:
+        deal = choose_deal(deals, config, storage, now=now, day_start=day_start)
+        if deal is not None:
+            post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata))
+            channel, quotes = SOCIAL_CHANNEL, deal.quotes
+
+    # 3) Otherwise, at the day's last time, a city guide when the day had no post at all.
+    if post is None and last_of_day and posted_today == 0:
         choice = choose_guide(config, storage)
         page = page_url(config, config.language, choice[0].slug) if choice else None
         if choice is None or not page:
@@ -405,12 +419,62 @@ def publish_social(deals: list[Deal], *, config: Config, links: LinkBuilder, sto
             marker_quote = Quote(origin=config.origin, destination=iata, depart_date=local_now.date(),
                                  price=price or 0, airline="", transfers=0, duration_min=None, link=None,
                                  fetched_at=now)
-            if not deliver(post, GUIDE_CHANNEL, [marker_quote]):
-                failures += 1
+            channel, quotes = GUIDE_CHANNEL, [marker_quote]
+
+    failures = 0
+    if post is None:
+        # Said once per posting time, not at every quick scan after it.
+        first_look = dry_run or local_now - slot_start < timedelta(minutes=20)
+        log.log(logging.INFO if first_look else logging.DEBUG,
+                "[social] Nothing to post at %s: no deal on the website these accounts haven't had",
+                local_now.strftime("%H:%M"))
+    elif not deliver(post, channel, quotes):
+        failures = 1
 
     if not dry_run:
         shutil.rmtree(folder, ignore_errors=True)
     return 1 if failures else 0
+
+
+def posting_time(post_times: tuple[time, ...], local_now: datetime) -> tuple[datetime, bool] | None:
+    """The posting time now in force: when it began today (local), and whether it is the day's last.
+
+    None before the day's first time. A time stays in force until the next one
+    begins, so a post that missed its run (a redeploy, say) still goes out.
+    """
+    begun = [local_now.replace(hour=at.hour, minute=at.minute, second=0, microsecond=0) for at in post_times]
+    begun = [moment for moment in begun if moment <= local_now]
+    if not begun:
+        return None
+    return begun[-1], len(begun) == len(post_times)
+
+
+def choose_deal(deals: list[Deal], config: Config, storage: Storage, *, now: datetime,
+                day_start: datetime) -> Deal | None:
+    """The best of the website's deals (best first) the social accounts haven't had, or None.
+
+    Skipped: a city already posted today, and a city posted at this price band or a
+    cheaper one within repost_cooldown_days, whatever the date or the airport: the post
+    shows a city at a price, so to a follower another date (or Malpensa instead of
+    Bergamo) at the same price is the same post. A cheaper price is news again.
+    """
+    cities = {route.iata: route.city for route in config.routes}
+    cities_today = {cities.get(code, code) for code, at in storage.last_posts(SOCIAL_CHANNEL).items()
+                    if at >= day_start}
+    since = now - timedelta(days=config.rules.repost_cooldown_days)
+    for deal in deals:
+        city, best = deal.route.city, deal.best
+        if city in cities_today:
+            log.debug("[social] %s: %s was posted today already", deal.route.iata, city)
+            continue
+        band = price_band(best.price, config.rules.price_band_eur)
+        airports = [code for code, name in cities.items() if name == city]
+        if any(storage.was_posted(SOCIAL_CHANNEL, best.origin, code, None, band, since) for code in airports):
+            log.debug("[social] %s at €%.0f was posted in the last %d days", city, best.price,
+                      config.rules.repost_cooldown_days)
+            continue
+        return deal
+    return None
 
 
 def choose_guide(config: Config, storage: Storage) -> tuple[Guide, str] | None:

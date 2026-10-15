@@ -11,8 +11,9 @@ progress is allowed to finish, so a redeploy can't cut a post off between
 
 Between those full runs, premium gets its own quick scan every
 premium.scan_every_minutes (config.yaml): `python -m src.main --premium-only`,
-which posts new deals to the premium channel and nothing else. The free
-channel and the website keep the 3-hour rhythm.
+which posts new deals to the premium channel, makes the Instagram/Facebook post
+whose time has come (social.post_times), and nothing else. The free channel and
+the website keep the 3-hour rhythm.
 
 The database no longer travels through git. On the server it lives in a Docker
 volume; the copy baked into the image (seed/prices.db) is only the starting
