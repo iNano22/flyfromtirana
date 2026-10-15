@@ -95,8 +95,10 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
     """
     deals = deals[: config.social.weekly_count]
     words = WORDS[config.language]
+    first = photos.get(deals[0].route.iata) if deals else None
     cover = save_jpeg(draw_top_card(deals, brand=config.brand, handle=handle(config), address=site_address(config),
-                                    title=f"TOP {len(deals)}"), out_dir / "weekly_cover.jpg")
+                                    photo=first.path if first else None, title=f"TOP {len(deals)}"),
+                      out_dir / "weekly_cover.jpg")
     pictures = [cover]
     lines = []
     for number, deal in enumerate(deals, start=1):

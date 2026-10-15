@@ -62,8 +62,9 @@ def main() -> int:
             print(f"✅ {path}")
     # The weekly cover with the three deals, and Rome's guide card in both sizes.
     deals = sample_deals(routes)
+    first = post_photo(deals[0].route.iata)
     cover = draw_top_card(deals, brand=config.brand, handle=config.social.handle or config.channel_handle,
-                          address=site_address(config), title=f"TOP {len(deals)}")
+                          address=site_address(config), photo=first.path if first else None, title=f"TOP {len(deals)}")
     print(f"✅ {save_jpeg(cover, args.out / 'top_feed.jpg')}")
     guide = load_guides(config.language).get("Rome")
     if guide:

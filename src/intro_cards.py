@@ -13,10 +13,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter
 
-from src.cards import (BOARD_LINE, INK, LAYOUTS, SUN, WHITE, archivo, cap_height, fit, footer, mono, photo_band,
-                       plane_mark, tag, wrap)
+from src.cards import (INK, LAYOUTS, SUN, WHITE, archivo, cap_height, fit, footer, mono, photo_band, plane_mark,
+                       shade, sticker, tag, wrap)
+from src.cards import brand_over_photo as brand_over, full_photo as photo_card
 from src.config import Config
 from src.photos import ASSETS_DIR, post_photo
 
@@ -299,22 +300,12 @@ def follow(post: dict, config: Config) -> Image.Image:
 def full_photo(iata: str) -> Image.Image:
     """The route's photo filling the whole card (the footer is drawn over it later)."""
     photo = post_photo(iata)
-    card = Image.new("RGB", (W, H), INK)
-    card.paste(photo_band(photo.path if photo else None, W, LAYOUT.sign_bottom, iata), (0, 0))
-    return card
+    return photo_card(photo.path if photo else None, iata, LAYOUT)
 
 
-def shade(card: Image.Image, top: int, bottom: int, *, start: int, end: int, left: int = 0,
-          right: int | None = None) -> None:
-    """Darken a band of the card with a vertical gradient: `start` opacity (0-255) at the
-    top of the band, `end` at the bottom."""
-    right = W if right is None else right
-    height, width = bottom - top, right - left
-    if height <= 0 or width <= 0:
-        return
-    ramp = Image.linear_gradient("L").resize((width, height))   # 0 at the top, 255 at the bottom
-    mask = ramp.point(lambda v: start + (end - start) * v // 255)
-    card.paste(Image.new("RGB", (width, height), INK), (left, top), mask)
+def brand_over_photo(card: Image.Image, draw: ImageDraw.ImageDraw, config: Config) -> None:
+    """The brand mark and name over a photo."""
+    brand_over(card, draw, config.brand, LAYOUT)
 
 
 def brand_bar(card: Image.Image, draw: ImageDraw.ImageDraw, config: Config) -> None:
@@ -323,32 +314,6 @@ def brand_bar(card: Image.Image, draw: ImageDraw.ImageDraw, config: Config) -> N
     mark = LAYOUT.bar - 32
     card.paste(plane_mark(mark), (PAD, (LAYOUT.bar - mark) // 2))
     draw.text((PAD + mark + 18, LAYOUT.bar / 2), config.brand, font=archivo(38, 800, 88), fill=WHITE, anchor="lm")
-
-
-def brand_over_photo(card: Image.Image, draw: ImageDraw.ImageDraw, config: Config) -> None:
-    """The brand mark and name over a photo (the top of the photo is shaded first)."""
-    mark = 64
-    card.paste(plane_mark(mark), (PAD, 32), plane_mark(mark))
-    draw.text((PAD + mark + 18, 32 + mark / 2), config.brand, font=archivo(38, 800, 88), fill=WHITE, anchor="lm")
-
-
-def sticker(card: Image.Image, text: str, *, center: tuple[int, int], angle: float, size: int = 44) -> None:
-    """A rotated yellow label with black text, like a sticker on the picture."""
-    font = archivo(size, 800, 80)
-    pad_x, pad_y = 34, 26
-    width = int(font.getlength(text)) + 2 * pad_x
-    height = cap_height(font) + 2 * pad_y
-    label = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(label)
-    draw.rounded_rectangle((0, 0, width - 1, height - 1), radius=14, fill=SUN)
-    draw.text((pad_x, pad_y + cap_height(font)), text, font=font, fill=INK, anchor="ls")
-    label = label.rotate(angle, resample=Image.Resampling.BICUBIC, expand=True)
-    shadow = Image.new("RGBA", label.size, (0, 0, 0, 0))
-    shadow.paste((0, 0, 0, 120), (0, 0, label.width, label.height), label)
-    shadow = shadow.filter(ImageFilter.GaussianBlur(12))
-    x, y = center[0] - label.width // 2, center[1] - label.height // 2
-    card.paste(shadow, (x + 6, y + 12), shadow)
-    card.paste(label, (x, y), label)
 
 
 def phone(screen: Image.Image, *, width: int = 440) -> Image.Image:

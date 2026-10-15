@@ -30,13 +30,14 @@ def test_save_cards_writes_a_feed_and_a_story_jpeg(route, tmp_path):
         assert (story.format, story.size) == ("JPEG", (1080, 1920))
 
 
-def test_card_bands_have_the_signage_colours(route):
+def test_card_has_the_brand_mark_the_photo_and_the_footer(route):
     layout = LAYOUTS["feed"]
     card = draw_card(make_deal(route), "feed", photo=POST_PHOTOS_DIR / "bgy.jpg", **LOOK)
 
-    assert card.getpixel((layout.width // 2, 8)) == INK                        # the brand bar
-    assert card.getpixel((layout.width // 2, layout.sign_top + 8)) == SUN      # the yellow sign
+    assert card.getpixel((layout.padding + 6, 38)) == SUN                     # the brand mark, top left
     assert card.getpixel((layout.width // 2, layout.height - 8)) == INK        # the footer
+    middle = card.getpixel((layout.width // 2, 400))
+    assert middle not in (INK, SUN, (42, 46, 53))                              # the photo shows through
 
 
 def test_route_without_a_photo_gets_a_dark_board(route):
@@ -44,7 +45,8 @@ def test_route_without_a_photo_gets_a_dark_board(route):
     card = draw_card(make_deal(route), "story", photo=None, **LOOK)
 
     assert card.size == (1080, 1920)
-    assert card.getpixel((20, layout.bar + 20)) == (42, 46, 53)
+    r, g, b = card.getpixel((layout.width // 2, 700))
+    assert max(r, g, b) < 80   # the dark board, shaded
 
 
 def test_deal_without_usual_price_or_return_flight_still_draws(route):
@@ -88,9 +90,10 @@ def test_guide_card_and_top_card_have_the_right_sizes(route):
                             handle="@flyfromtirana")
     assert story.size == (1080, 1920)
     deals = [make_deal(route) for _ in range(5)]
-    cover = draw_top_card(deals, brand="FlyFromTirana", handle="@flyfromtirana", address="flyfromtirana.al")
+    cover = draw_top_card(deals, brand="FlyFromTirana", handle="@flyfromtirana", address="flyfromtirana.al",
+                          photo=POST_PHOTOS_DIR / "bgy.jpg")
     assert cover.size == (1080, 1350)
-    assert cover.getpixel((540, 8)) == INK and cover.getpixel((20, 300)) == SUN
+    assert cover.getpixel((540, 1340)) == INK   # the footer
 
 
 def test_list_card_leaves_off_what_does_not_fit():
