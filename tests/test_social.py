@@ -27,7 +27,8 @@ def config(tmp_path):
     base = load_config()
     return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
                    premium=replace(base.premium, enabled=False),
-                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana"))
+                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana"),
+                   invite_links={"facebook": "https://t.me/+fb"})
 
 
 def drafts(session) -> list[dict]:
@@ -81,7 +82,8 @@ def test_draft_follows_the_channel_post(config):
     assert "📅 20 Nën, 22 Nën" in text
     assert "🔁 Kthimi nga €24" in text
     assert "linku në bio: flyfromtirana.al" in text
-    assert "@flyfromtirana" in text
+    # The channel as an address to type: "@flyfromtirana" would be the Instagram account itself.
+    assert "Telegram: t.me/flyfromtirana (linku në bio)" in text and "@flyfromtirana" not in text
     assert text.endswith("#flyfromtirana #tirana")
     assert "<a " not in text and "Foto:" not in text   # no link tags; the photo needs no credit
 
@@ -278,6 +280,7 @@ def test_bot_posts_on_instagram_and_facebook_and_reports(posting):
     assert photo["url"] == feed["image_url"]
     assert "👉 Rezervo këtu: https://" in photo["message"] and "marker=12345.facebook" in photo["message"]
     assert "&amp;" not in photo["message"] and "linku në bio" not in photo["message"]
+    assert "Ofertat dalin të parat në Telegram: https://t.me/+fb\n" in photo["message"]   # Facebook's own invite link
 
     # The owner gets one report with the links, no draft; the deal is remembered.
     report, = drafts(session)

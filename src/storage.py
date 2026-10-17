@@ -38,6 +38,24 @@ CREATE TABLE IF NOT EXISTS posted_deals (
     posted_at    TEXT NOT NULL       -- ISO-8601 UTC
 );
 CREATE INDEX IF NOT EXISTS idx_posted_route ON posted_deals (channel, origin, destination, depart_date);
+
+-- The Telegram channels' numbers, for the owner's weekly report (src/growth.py).
+CREATE TABLE IF NOT EXISTS channel_members (
+    channel      TEXT NOT NULL,      -- "free" or "premium"
+    members      INTEGER NOT NULL,   -- Telegram's count, the bot and the admins included
+    counted_at   TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS channel_joins (
+    update_id    INTEGER PRIMARY KEY,   -- Telegram's number for the update: never stored twice
+    channel      TEXT NOT NULL,
+    source       TEXT NOT NULL,      -- the invite link's place ("instagram", ...); "" = no link of ours
+    joined       INTEGER NOT NULL,   -- 1 = joined, 0 = left (who it was is not kept)
+    at           TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS reports_sent (
+    kind         TEXT NOT NULL,      -- "growth": the weekly report
+    sent_at      TEXT NOT NULL
+);
 """
 
 
@@ -188,3 +206,51 @@ class Storage:
                 (channel, quote.origin, quote.destination, quote.depart_date.isoformat(),
                  quote.price, price_band, to_iso(posted_at)),
             )
+
+    # --- the channels' numbers (src/growth.py) --------------------------------
+
+    def save_member_count(self, channel: str, members: int, counted_at: datetime) -> None:
+        with self.conn:
+            self.conn.execute("INSERT INTO channel_members (channel, members, counted_at) VALUES (?, ?, ?)",
+                              (channel, members, to_iso(counted_at)))
+
+    def member_count_since(self, channel: str, since: datetime) -> tuple[int, datetime] | None:
+        """The first count of `channel` at or after `since`: (members, when it was counted), or None."""
+        row = self.conn.execute(
+            "SELECT members, counted_at FROM channel_members WHERE channel = ? AND counted_at >= ?"
+            " ORDER BY counted_at LIMIT 1",
+            (channel, to_iso(since)),
+        ).fetchone()
+        return (row[0], datetime.fromisoformat(row[1])) if row else None
+
+    def save_join(self, update_id: int, channel: str, source: str, joined: bool, at: datetime) -> None:
+        """Note that someone joined (or left) a channel. The same update twice is kept once."""
+        with self.conn:
+            self.conn.execute(
+                "INSERT OR IGNORE INTO channel_joins (update_id, channel, source, joined, at) VALUES (?, ?, ?, ?, ?)",
+                (update_id, channel, source, 1 if joined else 0, to_iso(at)),
+            )
+
+    def joins_by_source(self, channel: str, since: datetime) -> dict[str, int]:
+        """How many joined `channel` since `since`, per place: {"instagram": 5, "": 2, ...}."""
+        rows = self.conn.execute(
+            "SELECT source, COUNT(*) FROM channel_joins WHERE channel = ? AND joined = 1 AND at >= ? GROUP BY source",
+            (channel, to_iso(since)),
+        ).fetchall()
+        return {row[0]: row[1] for row in rows}
+
+    def count_leaves(self, channel: str, since: datetime) -> int:
+        row = self.conn.execute(
+            "SELECT COUNT(*) FROM channel_joins WHERE channel = ? AND joined = 0 AND at >= ?",
+            (channel, to_iso(since)),
+        ).fetchone()
+        return row[0]
+
+    def last_report(self, kind: str) -> datetime | None:
+        """When the last report of this kind went out, or None."""
+        row = self.conn.execute("SELECT MAX(sent_at) FROM reports_sent WHERE kind = ?", (kind,)).fetchone()
+        return datetime.fromisoformat(row[0]) if row and row[0] else None
+
+    def record_report(self, kind: str, sent_at: datetime) -> None:
+        with self.conn:
+            self.conn.execute("INSERT INTO reports_sent (kind, sent_at) VALUES (?, ?)", (kind, to_iso(sent_at)))

@@ -18,6 +18,7 @@ page:
   GUIDES: "Guide"
   HOW: "Come funziona"
   JOIN_TELEGRAM: "Unisciti su Telegram"
+  SHARE_WHATSAPP: "Mandala a un amico su WhatsApp"
   HERO: "Introduzione"
   KICKER: "Partenze da Tirana · TIA"
   HEADLINE_A: "Vola low cost"
@@ -223,6 +224,7 @@ words:
   deals_group: "Offerte del momento"
   others_group: "Altre destinazioni"
   option: "{city}, da €{price}"
+  share: "✈️ Tirana → {city} da €{price} solo andata · {dates}\nOfferte come questa ogni giorno, gratis, su Telegram: {link}"
   languages: "Lingua"
   credit: "{place}: {title}, di {author}, {licence}. Ritagliata e ridimensionata."
   services:

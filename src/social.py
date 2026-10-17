@@ -40,6 +40,7 @@ from src.cards import draw_card, draw_guide_card, draw_list_card, draw_top_card,
 from src.config import Config
 from src.deals import Deal
 from src.formatter import WORDS, format_dates, format_post, format_price
+from src.growth import join_link, short_address
 from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
@@ -77,15 +78,16 @@ def deal_post(deal: Deal, config: Config, links: LinkBuilder, out_dir: Path, *, 
     booking_link = links.flight(deal.best)
     extra = {"HASHTAGS": config.social.hashtags, "WEBSITE": site_address(config), "BOOKING_LINK": booking_link}
 
-    def caption(template: str) -> str:
+    def caption(template: str, telegram: str | None) -> str:
         # format_post writes Telegram HTML (values escaped); the platforms want plain text.
         text = format_post(deal, links, language=config.language, channel_handle=config.channel_handle,
                            airline_names=config.airlines, template=f"{config.language}_{template}",
-                           website_url=config.website.url, photo=photo, extra=extra)
+                           website_url=config.website.url, photo=photo, extra=extra | {"TELEGRAM": telegram})
         return html.unescape(text)
 
     return Post(kind="deal", title=deal_title(deal), pictures=[cards["feed"]], story=cards["story"],
-                caption=caption("social"), facebook_text=caption("facebook"), link=booking_link)
+                caption=caption("social", instagram_channel(config)),
+                facebook_text=caption("facebook", facebook_channel(config)), link=booking_link)
 
 
 def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dict[str, PostPhoto | None],
@@ -111,9 +113,14 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
         when = format_dates([q.depart_date for q in deal.quotes], words["months"])
         lines.append(f"{number}️⃣ {where} nga €{format_price(deal.best.price)} · {when}")
     head = f"🏆 TOP {len(deals)} OFERTAT E JAVËS nga Tirana ({now:%d.%m})\n\n" + "\n".join(lines) + "\n\n"
-    tail = f"🔔 Ofertat dalin të parat në Telegram: {config.channel_handle}\n⏳ Çmimet ndryshojnë shpejt!"
-    caption = head + f"👉 Rezervo nga linku në bio: {site_address(config)}\n" + tail + hashtags(config)
-    facebook_text = head + f"👉 Të gjitha ofertat dhe rezervimi: {config.website.url}\n" + tail + hashtags(config)
+
+    def tail(telegram: str) -> str:
+        return (f"🔔 Ofertat dalin të parat në Telegram: {telegram}\n⏳ Çmimet ndryshojnë shpejt!"
+                + hashtags(config))
+
+    caption = head + f"👉 Rezervo nga linku në bio: {site_address(config)}\n" + tail(instagram_channel(config))
+    facebook_text = (head + f"👉 Të gjitha ofertat dhe rezervimi: {config.website.url}\n"
+                     + tail(facebook_channel(config)))
     return Post(kind="weekly", title=f"TOP {len(deals)} ofertat e javës", pictures=pictures, story=None,
                 caption=caption, facebook_text=facebook_text, link=config.website.url)
 
@@ -146,9 +153,13 @@ def guide_post(guide: Guide, iata: str, price: float | None, config: Config, out
     if guide.food:
         taste += "🍴 Provo: " + ", ".join(entry.name for entry in guide.food[:2]) + "\n"
     head = f"📍 {guide.display_name.upper()}: {guide.tagline}\n\n{guide.intro}\n\n{taste}{flights}"
-    tail = (f"🔔 Ofertat dalin të parat në Telegram: {config.channel_handle}" + hashtags(config))
-    caption = head + f"📖 Udhëzuesi i plotë (çfarë të shohësh, ku të flesh, çfarë të hash): {page} — linku në bio\n" + tail
-    facebook_text = head + f"📖 Udhëzuesi i plotë: {page_url}\n" + tail
+
+    def tail(telegram: str) -> str:
+        return f"🔔 Ofertat dalin të parat në Telegram: {telegram}" + hashtags(config)
+
+    caption = (head + f"📖 Udhëzuesi i plotë (çfarë të shohësh, ku të flesh, çfarë të hash): {page} — linku në bio\n"
+               + tail(instagram_channel(config)))
+    facebook_text = head + f"📖 Udhëzuesi i plotë: {page_url}\n" + tail(facebook_channel(config))
     return Post(kind="guide", title=f"Udhëzues: {guide.display_name}", pictures=pictures, story=story,
                 caption=caption, facebook_text=facebook_text, link=page_url)
 
@@ -192,6 +203,18 @@ def hashtags(config: Config) -> str:
 
 def handle(config: Config) -> str:
     return config.social.handle or config.channel_handle
+
+
+def instagram_channel(config: Config) -> str:
+    """How an Instagram caption points to the Telegram channel. Not "@flyfromtirana": on Instagram
+    that is the Instagram account. A caption can't hold a link, so the address to type, and the
+    bio holds the Instagram invite link (invite_links.instagram, put there by hand)."""
+    return f"{short_address(config)} (linku në bio)"
+
+
+def facebook_channel(config: Config) -> str:
+    """How a Facebook post points to the Telegram channel: the Facebook invite link, which works there."""
+    return join_link(config, "facebook") or config.channel_handle
 
 
 # --- posting by the bot ----------------------------------------------------------------

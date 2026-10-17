@@ -40,6 +40,7 @@ from src.config import (
 from src.deals import (CHANNEL, PREMIUM_CHANNEL, Deal, early_access_cutoff, find_route_deal, price_band,
                        rank_deals)
 from src.formatter import format_post
+from src.growth import whatsapp_link
 from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
@@ -190,7 +191,7 @@ def run(
         log.info("[free] %d route(s) with new deals, posting the best %d", len(deals), len(best))
         exit_code |= publish(best, channel=CHANNEL, template=config.language,
                              telegram=telegram_for(secrets.telegram_channel_id),
-                             premium_link=premium.join_link if premium.enabled else None, **common)
+                             premium_link=premium.join_link if premium.enabled else None, share=True, **common)
 
         # 3) The Instagram/Facebook post, when its time has come
         exit_code |= social_post()
@@ -256,8 +257,13 @@ def find_deals(routes: list[Route], outbound: dict[str, list[Quote]], inbound: d
 
 def publish(deals: list[Deal], *, channel: str, template: str, config: Config, links: LinkBuilder,
             storage: Storage, telegram: TelegramClient | None, dry_run: bool, now: datetime,
-            local_now: datetime, output: Callable[[str], None], premium_link: str | None = None) -> int:
-    """Send (or, in a dry run, print) each deal to one channel. Returns 1 if any post failed, else 0."""
+            local_now: datetime, output: Callable[[str], None], premium_link: str | None = None,
+            share: bool = False) -> int:
+    """Send (or, in a dry run, print) each deal to one channel. Returns 1 if any post failed, else 0.
+
+    share: give each post a "send it to a friend on WhatsApp" link (the free channel's posts:
+    premium members pay to have the deals first).
+    """
     if not deals:
         return 0
     quiet = in_quiet_hours(local_now.time(), config.quiet_hours)
@@ -274,7 +280,8 @@ def publish(deals: list[Deal], *, channel: str, template: str, config: Config, l
         photo = post_photo(deal.route.iata) if config.post_photos else None
         text = format_post(deal, links, language=config.language, channel_handle=config.channel_handle,
                            airline_names=config.airlines, template=template, premium_link=premium_link,
-                           website_url=config.website.url, photo=photo)
+                           website_url=config.website.url, photo=photo,
+                           share_link=whatsapp_link(deal, config, config.language) if share else None)
         if dry_run:
             with_photo = f" · photo {photo.path.name}" if photo else ""
             output(f"\n----- DRY RUN [{channel}] · {deal.summary()}{with_photo} -----\n{text}\n")

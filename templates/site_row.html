@@ -7,8 +7,9 @@
      and must stay on one line, and a line with a missing value is left out. This comment is
      removed before the page is written.
      Values: everything templates/sq.txt can use, plus IATA, DEAL ("deal", or missing when the
-     route isn't one), GUIDE_URL (the city's own page, when it has a guide) and BEST_DATE (the
-     cheapest date as YYYY-MM-DD). The page's JavaScript reads the data- attributes to pre-fill
+     route isn't one), GUIDE_URL (the city's own page, when it has a guide), BEST_DATE (the
+     cheapest date as YYYY-MM-DD) and WHATSAPP_LINK (sends a deal to a friend on WhatsApp, with
+     the channel's link; deals only). The page's JavaScript reads the data- attributes to pre-fill
      the search card and to sort and filter the list, and the .city and .book elements. -->
 <li class="row[[ {DEAL}]]" data-iata="{IATA}" data-date="{BEST_DATE}" data-price="{PRICE}"[[ data-saving="{SAVING}"]]>
   <span class="code">{IATA}</span>
@@ -19,6 +20,7 @@
       <div class="links">
         <p class="meta"><a href="{GUIDE_URL}">{T_GUIDE_FOR}</a></p>
         <p class="meta"><a href="{HOTEL_LINK}" target="_blank" rel="noopener sponsored">{T_HOTELS_IN}</a></p>
+        <p class="meta"><a class="share" href="{WHATSAPP_LINK}" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>{T_SHARE_WHATSAPP}</a></p>
       </div>
     </div>
     <div class="when">

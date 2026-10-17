@@ -5,7 +5,8 @@
      Same values and rules as site_row.html, plus PHOTO (img/dest/<iata>.webp, or missing when
      there's no photo: the card then has a plain black top), COUNTRY_NAME ("Austri") and
      BEST_DAY (the cheapest date, "14 Nën"). The sticker line needs DEAL and SAVING, so it only
-     shows on deals. This comment is removed before the page is written. -->
+     shows on deals, and so does the round WhatsApp button (WHATSAPP_LINK) over the photo: it
+     is a link of its own, beside the card's, since a link can't hold another. This comment is removed before the page is written. -->
 <li class="dcard[[ {DEAL}]]" data-iata="{IATA}">
   <a href="{FLIGHT_LINK}" target="_blank" rel="noopener sponsored">
     <span class="dphoto">
@@ -23,4 +24,5 @@
       </span>
     </span>
   </a>
+  <a class="dshare" href="{WHATSAPP_LINK}" target="_blank" rel="noopener" aria-label="{T_SHARE_WHATSAPP}" title="{T_SHARE_WHATSAPP}"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
 </li>

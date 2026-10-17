@@ -60,15 +60,17 @@ OPTIONAL_PART = re.compile(r"\[\[(.*?)\]\]")
 def format_post(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
                 airline_names: dict[str, str], template: str | None = None,
                 premium_link: str | None = None, website_url: str | None = None,
-                photo: PostPhoto | None = None, extra: dict[str, str | None] | None = None) -> str:
+                photo: PostPhoto | None = None, share_link: str | None = None,
+                extra: dict[str, str | None] | None = None) -> str:
     """template: file name in templates/ without .txt (default: the language, e.g. "sq").
 
     photo: the photo the post is sent with, if any, so the text can credit its author.
+    share_link: the link that sends the deal to a friend on WhatsApp (growth.whatsapp_link).
     extra: more {NAME} values for this template, e.g. {"HASHTAGS": "#tirana"} (None = no value).
     """
     values = build_values(deal, links, language=language, channel_handle=channel_handle,
                           airline_names=airline_names, premium_link=premium_link,
-                          website_url=website_url, photo=photo)
+                          website_url=website_url, photo=photo, share_link=share_link)
     for name, value in (extra or {}).items():
         values[name] = html.escape(value, quote=False) if value else None
     return tidy(render(load_template(template or language), values))
@@ -84,7 +86,8 @@ def load_template(name: str) -> str:
 
 def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handle: str,
                  airline_names: dict[str, str], premium_link: str | None = None,
-                 website_url: str | None = None, photo: PostPhoto | None = None) -> dict[str, str | None]:
+                 website_url: str | None = None, photo: PostPhoto | None = None,
+                 share_link: str | None = None) -> dict[str, str | None]:
     """Every {NAME} a template can use. None = no value (the line/part is left out)."""
     if language not in WORDS:
         raise ConfigError(f"Unsupported language {language!r}; add it to WORDS in src/formatter.py")
@@ -111,7 +114,8 @@ def build_values(deal: Deal, links: LinkBuilder, *, language: str, channel_handl
         "PHOTO_CREDIT": photo.credit if photo else None,
     }
     urls = {"FLIGHT_LINK": links.flight(best), "PREMIUM_LINK": premium_link or None,
-            "WEBSITE_LINK": website_url or None, "PHOTO_LINK": photo.source_url if photo else None}
+            "WEBSITE_LINK": website_url or None, "PHOTO_LINK": photo.source_url if photo else None,
+            "WHATSAPP_LINK": share_link or None}
     for name in links.partner_names:  # hotel -> HOTEL_LINK, esim -> ESIM_LINK, ...
         urls[f"{name.upper()}_LINK"] = links.partner(name, deal.route, checkin, checkout)
 

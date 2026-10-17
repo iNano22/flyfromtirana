@@ -6,7 +6,7 @@
 🔁 Kthimi nga €{RETURN_PRICE}
 
 👉 Rezervo nga linku në bio: {WEBSITE}
-🔔 Ofertat dalin të parat në Telegram: {CHANNEL}
+🔔 Ofertat dalin të parat në Telegram: {TELEGRAM}
 ⏳ Çmimet ndryshojnë shpejt!
 📷 Foto: {PHOTO_CREDIT}
 

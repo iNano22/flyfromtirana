@@ -51,6 +51,7 @@ from dotenv import load_dotenv
 from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, Route, load_config
 from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, is_premium_only
 from src.formatter import WORDS, build_values, format_dates, format_price, load_template, render
+from src.growth import join_link, whatsapp_link
 from src.guides import Entry, Guide, load_entry_rules, load_guides
 from src.i18n import LANGUAGE_CODES, LANGUAGE_NAMES, Strings, load_strings, localize
 from src.links import LinkBuilder
@@ -263,7 +264,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     base_url = site_base_url(config)
     picture = share_image(language)
     urls = {
-        "TELEGRAM_URL": telegram_url(config.channel_handle),
+        "TELEGRAM_URL": join_link(config, "website"),
         "SITE_URL": page_url(config, language),
         # Apps that show a preview of a link need the picture's full address.
         "SHARE_IMAGE": base_url + picture if base_url and picture else None,
@@ -409,6 +410,8 @@ def row_values(offer: Deal, config: Config, links: LinkBuilder, guides: dict[str
     guide = (guides or {}).get(offer.route.city)
     countries = load_strings(language).words.get("countries", COUNTRY_NAMES)
     photo = route_photo(offer.route.iata)
+    # A deal can be sent to a friend on WhatsApp, with the channel's link (src/growth.py).
+    share = whatsapp_link(offer, config, language, city=guide.name if guide else None) if offer.is_deal else None
     if guide and guide.name:   # the city's name in this language: "Milano"
         values["CITY"] = html.escape(guide.name, quote=False)
         values["CITY_UPPER"] = html.escape(guide.name.upper(), quote=False)
@@ -421,6 +424,7 @@ def row_values(offer: Deal, config: Config, links: LinkBuilder, guides: dict[str
         "BEST_DAY": format_dates([offer.best.depart_date], WORDS[language]["months"]),
         "COUNTRY_NAME": countries.get(country_code(offer.route.flag) or ""),
         "PHOTO": root + photo if photo else None,
+        "WHATSAPP_LINK": html.escape(share, quote=True) if share else None,
     })
     return values
 
@@ -539,7 +543,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         "PHOTO": root + photo if photo and not wide_photo else None,
         "PHOTO_URL": base_url + photo if base_url and photo else None,
         "PAGE_URL": page_url(config, language, guide.slug),
-        "TELEGRAM_URL": telegram_url(config.channel_handle),
+        "TELEGRAM_URL": join_link(config, "website"),
         "PREMIUM_LINK": premium.join_link if premium_on else None,
         "PRIVACY_URL": privacy_url(config, language, root),
     }
@@ -619,7 +623,7 @@ def render_not_found(config: Config, language: str | None = None) -> str:
         "BRAND": html.escape(config.brand, quote=False),
         "LANG": language,
         "HOME": html.escape("/" + language_folder(config, language), quote=True),
-        "TELEGRAM_URL": html.escape(telegram_url(config.channel_handle) or "", quote=True) or None,
+        "TELEGRAM_URL": html.escape(join_link(config, "website") or "", quote=True) or None,
     }
     return render(load_site_template("site_404.html", load_strings(language)), values) + "\n"
 
@@ -652,7 +656,7 @@ def render_privacy(config: Config, links: LinkBuilder, *, now: datetime, languag
     urls = {
         "HOME": "../",   # this language's main page
         "PAGE_URL": page_url(config, language, PRIVACY_SLUG),
-        "TELEGRAM_URL": telegram_url(config.channel_handle),
+        "TELEGRAM_URL": join_link(config, "website"),
         "CONTACT_EMAIL": website.contact_email,
     }
     values = {key: html.escape(value, quote=False) if value else None for key, value in text.items()}
@@ -810,14 +814,6 @@ def country_code(flag: str) -> str | None:
     """'🇮🇹' -> 'it'. A flag emoji is two "regional indicator" letters; anything else gives None."""
     letters = [chr(ord(ch) - 0x1F1E6 + ord("a")) for ch in flag if 0x1F1E6 <= ord(ch) <= 0x1F1FF]
     return "".join(letters) if len(letters) == 2 else None
-
-
-def telegram_url(channel_handle: str) -> str | None:
-    """'@flyfromtirana' -> 'https://t.me/flyfromtirana'. A numeric (private) id has no public link."""
-    handle = channel_handle.strip().lstrip("@")
-    if not handle or handle.lstrip("-").isdigit():
-        return None
-    return f"https://t.me/{handle}"
 
 
 def format_updated(moment: datetime, config: Config, language: str | None = None) -> str:

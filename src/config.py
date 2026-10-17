@@ -118,6 +118,18 @@ class SocialSettings:
 
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
 
+# The places that advertise the free channel, each with its own invite link (invite_links in
+# config.yaml), so the weekly report can say where the new members came from (src/growth.py).
+INVITE_SOURCES = ("instagram", "facebook", "website", "whatsapp")
+
+
+@dataclass(frozen=True)
+class GrowthSettings:
+    """The owner's weekly report on the Telegram channels (src/growth.py)."""
+
+    report_day: int | None = 0          # 0 = Monday ... 6 = Sunday; None = no report
+    report_time: time = time(9, 0)      # local; the report goes out at the first full run after it
+
 
 @dataclass(frozen=True)
 class WebsiteSettings:
@@ -175,6 +187,10 @@ class Config:
     website: WebsiteSettings = field(default_factory=WebsiteSettings)
     social: SocialSettings = field(default_factory=SocialSettings)
     post_photos: bool = True               # send each post with its destination photo
+    # The free channel's invite link for each place that advertises it: "website" -> "https://t.me/+...".
+    # A place without one uses the channel's public address (src/growth.py, join_link).
+    invite_links: dict[str, str] = field(default_factory=dict)
+    growth: GrowthSettings = field(default_factory=GrowthSettings)
 
 
 @dataclass(frozen=True)
@@ -269,7 +285,31 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         website=_build_website(raw.get("website") or {}, base_dir, links, str(raw.get("language", "sq"))),
         social=_build_social(raw.get("social") or {}),
         post_photos=bool(raw.get("post_photos", True)),
+        invite_links=_invite_links(raw.get("invite_links") or {}),
+        growth=_build_growth(raw.get("growth") or {}),
     )
+
+
+def _invite_links(raw: dict) -> dict[str, str]:
+    """{"website": "https://t.me/+AbC..."} from config.yaml; the places left empty are left out."""
+    links = {}
+    for source, url in raw.items():
+        source, url = str(source).strip().lower(), str(url or "").strip()
+        if source not in INVITE_SOURCES:
+            raise ValueError(f"invite_links only knows {', '.join(INVITE_SOURCES)}, not {source!r}")
+        if url and not url.startswith("https://t.me/"):
+            raise ValueError(f"invite_links.{source} must be a Telegram link (https://t.me/+...)")
+        if url:
+            links[source] = url
+    return links
+
+
+def _build_growth(raw: dict) -> GrowthSettings:
+    report_day = _weekday(raw.get("report_day", "monday"), "growth.report_day")
+    report_time = raw.get("report_time", "09:00")
+    if isinstance(report_time, int):
+        raise ValueError('growth.report_time: write the time with quotes ("09:00"), YAML reads 09:00 as a number')
+    return GrowthSettings(report_day=report_day, report_time=time.fromisoformat(str(report_time).strip()))
 
 
 def _build_social(raw: dict) -> SocialSettings:
@@ -317,17 +357,17 @@ def _post_times(raw) -> tuple[time, ...]:
     return times
 
 
-def _weekday(raw) -> int | None:
-    """"sunday" -> 6; a number 0-6 as it is; empty = None."""
+def _weekday(raw, key: str = "social.weekly_day") -> int | None:
+    """"sunday" -> 6; a number 0-6 as it is; empty = None. key: the setting's name, for the error."""
     if raw is None or raw == "":
         return None
     if isinstance(raw, int):
         if not 0 <= raw <= 6:
-            raise ValueError("social.weekly_day must be a weekday name or 0 (Monday) to 6 (Sunday)")
+            raise ValueError(f"{key} must be a weekday name or 0 (Monday) to 6 (Sunday)")
         return raw
     name = str(raw).strip().lower()
     if name not in WEEKDAYS:
-        raise ValueError(f"social.weekly_day must be a weekday name ({', '.join(WEEKDAYS)}) or empty")
+        raise ValueError(f"{key} must be a weekday name ({', '.join(WEEKDAYS)}) or empty")
     return WEEKDAYS.index(name)
 
 

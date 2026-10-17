@@ -18,6 +18,7 @@ page:
   GUIDES: "Guides"
   HOW: "How it works"
   JOIN_TELEGRAM: "Join on Telegram"
+  SHARE_WHATSAPP: "Send it to a friend on WhatsApp"
   HERO: "Introduction"
   KICKER: "Departures from Tirana · TIA"
   HEADLINE_A: "Fly cheap"
@@ -223,6 +224,7 @@ words:
   deals_group: "Deals of the moment"
   others_group: "Other destinations"
   option: "{city}, from €{price}"
+  share: "✈️ Tirana → {city} from €{price} one way · {dates}\nDeals like this every day, free, on Telegram: {link}"
   languages: "Language"
   credit: "{place}: {title}, by {author}, {licence}. Cropped and resized."
   services:

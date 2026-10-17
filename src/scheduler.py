@@ -9,6 +9,10 @@ failure still belong on the page). Runs never overlap, and on SIGTERM a run in
 progress is allowed to finish, so a redeploy can't cut a post off between
 "sent" and "remembered as sent".
 
+After each full run, `python -m src.growth` notes who joined the Telegram
+channels through which invite link and how many members they have, and sends
+the owner the weekly report when it is due.
+
 Between those full runs, premium gets its own quick scan every
 premium.scan_every_minutes (config.yaml): `python -m src.main --premium-only`,
 which posts new deals to the premium channel, makes the Instagram/Facebook post
@@ -49,6 +53,7 @@ SLOT_MINUTE = 17
 
 SCAN_TIMEOUT_SECONDS = 20 * 60   # the old workflow's timeout-minutes
 SITE_TIMEOUT_SECONDS = 5 * 60
+STATS_TIMEOUT_SECONDS = 2 * 60
 TICK_SECONDS = 20
 
 SEED_DB = PROJECT_ROOT / "seed" / "prices.db"
@@ -124,7 +129,8 @@ def run_step(name: str, module: str, timeout: int, *args: str) -> int:
 class Alerts:
     """Tells the owner on Telegram when a step starts failing, and when it works again.
 
-    The steps are "scan" (the full scan and the quick premium scans) and "website build".
+    The steps are "scan" (the full scan and the quick premium scans), "website build" and
+    "channel stats".
     One message when a step fails after working (or on its first run after a start), one
     when it works again: a long outage is two messages, not one every 15 minutes. Without
     TELEGRAM_ALERT_CHAT_ID nothing is sent and failures are only logged.
@@ -173,13 +179,16 @@ class Alerts:
 
 
 def run_once(alerts: Alerts | None = None) -> int:
-    """One scan, then the website. The site is rebuilt even after a failed scan."""
+    """One scan, then the website, then the channels' numbers (src/growth.py: the joins, the
+    member counts, and the weekly report when it is due). Each step runs whatever the others did."""
     scan = run_step("scan", "src.main", SCAN_TIMEOUT_SECONDS)
     site = run_step("website build", "src.website", SITE_TIMEOUT_SECONDS)
+    stats = run_step("channel stats", "src.growth", STATS_TIMEOUT_SECONDS)
     if alerts:
         alerts.report("scan", scan)
         alerts.report("website build", site)
-    return scan or site
+        alerts.report("channel stats", stats)
+    return scan or site or stats
 
 
 def run_premium_scan() -> int:

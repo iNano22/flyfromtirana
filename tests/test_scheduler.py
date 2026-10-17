@@ -93,7 +93,7 @@ def test_website_is_rebuilt_even_when_the_scan_fails(monkeypatch):
 
     monkeypatch.setattr(scheduler, "run_step", fake_step)
     assert run_once() == 1                      # the scan's failure is still reported
-    assert ran == ["src.main", "src.website"]   # and the site was built after it
+    assert ran == ["src.main", "src.website", "src.growth"]   # and the site and the stats came after it
 
 
 # --- alerts: the owner hears when a step starts failing, and when it works again ---------

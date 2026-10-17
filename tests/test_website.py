@@ -12,9 +12,10 @@ from src.formatter import PLACEHOLDER
 from src.links import LinkBuilder
 from src.storage import Storage
 from src.formatter import load_template
+from src.growth import join_link
 from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
-                         render_privacy, render_site, telegram_url)
+                         render_privacy, render_site)
 from tests.conftest import NOW, make_quote, seed_history, with_tours
 
 NOV = date(2026, 11, 1)
@@ -167,7 +168,7 @@ def test_page_contains_rows_links_and_no_leftover_placeholders(config, storage):
     assert "<!--" not in page                              # template notes never reach the page
     assert "Kthimi nga €24" in page
     assert "marker=12345.website" in page                  # the site's own SubID
-    assert 'href="https://t.me/flyfromtirana"' in page
+    assert f'href="{join_link(config, "website")}"' in page   # the website's own invite link
     assert "Përditësuar më 9 Tet 2026, 12:00" in page      # 10:00 UTC = 12:00 in Tirana
     assert not PLACEHOLDER.search(page)                   # every {NAME} was filled in or dropped
 
@@ -210,7 +211,7 @@ def test_build_writes_the_page_for_an_address_that_does_not_exist(config):
     # The server shows this page in any folder, so its links start from the top of the site.
     assert '<a class="btn" href="/">Kthehu te faqja kryesore</a>' in page
     assert 'href="./' not in page and 'href="../' not in page
-    assert 'href="https://t.me/flyfromtirana"' in page
+    assert f'href="{join_link(config, "website")}"' in page   # the website's own invite link
     assert '<meta name="robots" content="noindex">' in page                   # search engines leave it out...
     assert "404" not in (out / "sitemap.xml").read_text(encoding="utf-8")     # ...and the sitemap doesn't list it
     assert "<!--" not in page and not PLACEHOLDER.search(page)
@@ -316,12 +317,6 @@ def test_country_code():
     assert country_code("🇬🇧") == "gb"
     assert country_code("") is None                        # no flag configured
     assert country_code("✈️") is None                      # not a flag
-
-
-def test_telegram_url():
-    assert telegram_url("@flyfromtirana") == "https://t.me/flyfromtirana"
-    assert telegram_url("-1001234567890") is None          # private channel id: no public link
-    assert telegram_url("") is None
 
 
 def test_photo_cards_show_every_route_deals_first(config, storage):

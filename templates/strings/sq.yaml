@@ -18,6 +18,7 @@ page:
   GUIDES: "Udhëzues"
   HOW: "Si funksionon"
   JOIN_TELEGRAM: "Bashkohu në Telegram"
+  SHARE_WHATSAPP: "Dërgoja një shoku në WhatsApp"
   HERO: "Kreu"
   KICKER: "Nisjet nga Tirana · TIA"
   HEADLINE_A: "Fluturo lirë"
@@ -223,6 +224,7 @@ words:
   deals_group: "Ofertat e momentit"
   others_group: "Destinacionet e tjera"
   option: "{city}, nga €{price}"
+  share: "✈️ Tirana → {city} nga €{price} one way · {dates}\nOferta si kjo çdo ditë, falas, në Telegram: {link}"
   languages: "Gjuha"
   credit: "{place}: {title}, nga {author}, {licence}. Prerë dhe zvogëluar."
   services:

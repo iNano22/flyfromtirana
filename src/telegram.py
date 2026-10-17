@@ -100,6 +100,32 @@ class TelegramClient:
         fields = {"chat_id": self.chat_id, "media": json.dumps(media)}
         return [message["message_id"] for message in self._call("sendMediaGroup", data=fields, files=files)]
 
+    # --- the channels' numbers (src/growth.py) ---------------------------------------
+
+    def member_count(self) -> int:
+        """How many members the chat has, the bot and the admins included."""
+        return self._call("getChatMemberCount", json={"chat_id": self.chat_id})
+
+    def create_invite_link(self, name: str) -> str:
+        """A new invite link for the chat, called `name` in the app's list of links.
+
+        The bot needs the admin right to add members. Docs: https://core.telegram.org/bots/api#createchatinvitelink
+        """
+        return self._call("createChatInviteLink", json={"chat_id": self.chat_id, "name": name})["invite_link"]
+
+    def member_updates(self, offset: int | None = None, limit: int = 100) -> list[dict]:
+        """Who joined or left the chats where the bot is an admin: Telegram's "chat_member" updates.
+
+        Telegram keeps an update for 24 hours, until a call with an offset above its
+        update_id confirms it. Asking only for these makes Telegram drop other kinds
+        (private messages to the bot) from then on, until a call asks for them by name
+        (scripts/alert_chat.py does). Docs: https://core.telegram.org/bots/api#getupdates
+        """
+        payload = {"timeout": 0, "limit": limit, "allowed_updates": ["chat_member"]}
+        if offset is not None:
+            payload["offset"] = offset
+        return self._call("getUpdates", json=payload)
+
     def _call(self, method: str, **request) -> dict:
         """One Bot API call. Returns its "result", or raises TelegramError."""
         url = API_URL.format(token=self.token, method=method)

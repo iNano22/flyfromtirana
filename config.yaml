@@ -87,6 +87,24 @@ social:
                                    #   3 deals on the website. A day with no post at all gets a city-guide
                                    #   post at its last post time: the city posted least recently.
 
+# --- Growing the free channel ------------------------------------------------
+# Every place that advertises the free channel has its own invite link, so you can see
+# where new members come from: the weekly report below counts the joins per link, and
+# the Telegram app shows them too (the channel -> Manage channel -> Invite links).
+# The bot makes the missing ones: python scripts/invite_links.py (prints them for here).
+# A place left empty uses the public address, https://t.me/flyfromtirana.
+invite_links:
+  instagram: "https://t.me/+YZWmRH9QTKY1MDE8"   # for the Instagram bio, put there by hand (captions can't hold
+                                                #   a link: they say "t.me/flyfromtirana (linku në bio)")
+  facebook: "https://t.me/+awIXbIIcDW8xOGNk"    # the Facebook posts
+  website: "https://t.me/+IlHwEzGyG5QxZTFk"     # every Telegram button on the website
+  whatsapp: "https://t.me/+kW1zUnh8_n05Yjg0"    # the message the "Dërgoja një shoku në WhatsApp" links send
+                                                #   (the free channel's posts and the site's deals)
+growth:
+  report_day: monday               # your chat (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) gets
+  report_time: "09:00"             #   the week's numbers at the first full run after this time (local;
+                                   #   full runs are every 3 hours). Empty day = no report. Keep the quotes.
+
 # --- Website -----------------------------------------------------------------
 # src/website.py renders one page from the price database into output_dir. On
 # the server the scheduler rebuilds it after every scan and the `web` container

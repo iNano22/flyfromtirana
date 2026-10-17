@@ -74,12 +74,14 @@ src/
   cards.py               draws the Instagram/Facebook pictures: deal cards, the weekly cover, guide cards
   intro_cards.py         the nine one-off introduction cards (photo-led, big numbers, phone mock-ups)
   social.py              a social media post (deal, weekly top, city guide): pictures, captions, posting or drafting
+  growth.py              the free channel's join links, the WhatsApp share link, and the weekly report
+                         on both channels (who joined through which link, the member counts)
   meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
   i18n.py                the website's languages: loads a language's wording into the templates
-  scheduler.py           the server's loop: a scan, then the website, every 3 hours,
-                         and quick premium scans in between
+  scheduler.py           the server's loop: a scan, then the website, then the channel stats,
+                         every 3 hours, and quick premium scans in between
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
 scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
@@ -88,6 +90,7 @@ scripts/social_preview.py  draw sample Instagram/Facebook cards into ig_preview/
 scripts/social_test.py   scan today's prices and make one social media post now (draft or --publish)
 scripts/meta_check.py    check META_PAGE_TOKEN: which Page and Instagram account it opens
 scripts/intro_posts.py   the nine posts that open the accounts (content/intro_posts.yaml): draw, draft, post
+scripts/invite_links.py  make the free channel's invite links, one per place that advertises it
 Dockerfile               the scanner image
 web/                     the web server image: Caddy and its settings (Caddyfile)
 docker-compose.yml       scanner + web containers and their two volumes
@@ -787,6 +790,37 @@ Things to watch after the first automatic post: that Meta could fetch the pictur
 through Cloudflare (the report says "could not take the picture" otherwise: then allow
 `/social/` for Meta's crawler in Cloudflare's WAF), and Meta's limit of 100 Instagram
 posts a day through the API, far above the 2 made here.
+
+## Growing the Telegram channel
+
+Telegram shows a channel to almost no one by itself: it grows from the places that
+advertise it. So each place has its own invite link (`invite_links` in config.yaml),
+and the bot counts who joined through which one:
+
+| Place | Its link goes |
+|---|---|
+| instagram | in the Instagram bio, **by hand** (the API can't edit the bio). Captions can't hold a link, so they say "t.me/flyfromtirana (linku në bio)", never "@flyfromtirana", which on Instagram is the Instagram account itself |
+| facebook | in every Facebook post ("Ofertat dalin të parat në Telegram: …") |
+| website | on every Telegram button of the site, in all three languages |
+| whatsapp | at the end of the message a "Dërgoja një shoku në WhatsApp" link opens: under each free-channel post (not premium's: those members pay to have the deals first) and on every deal on the site (photo card, table row, city page) |
+
+The bot made the four links (`python scripts/invite_links.py` makes any missing one
+and prints it for config.yaml). They show in the Telegram app with their join counts:
+the channel → Manage channel → Invite links. A place left empty uses the public
+address.
+
+**The weekly report.** After every full run, `python -m src.growth` stores the joins and
+leaves Telegram reports to the bot (only the link's place and the time, never who it
+was) and both channels' member counts. On `growth.report_day` (Monday) after
+`report_time`, your chat (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) gets:
+the members of each channel and the change in 7 days, then where the free channel's
+new members came from. `python -m src.growth --report` sends it now; `--dry-run` prints
+it on a laptop without touching Telegram's updates (they belong to the server: a
+laptop reading them would take them away from it).
+
+Telegram keeps the join updates for 24 hours and the full runs come every 3 hours.
+Asking for them only makes Telegram drop private messages to the bot from then on;
+`scripts/alert_chat.py` asks for those by name when you need to find a chat.
 
 ## Exit codes
 

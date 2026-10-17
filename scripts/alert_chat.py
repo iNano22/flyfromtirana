@@ -10,6 +10,10 @@ as TELEGRAM_ALERT_CHAT_ID in .env for local runs, and on the server in the deplo
 tool (Coolify: Environment Variables). A private channel works too: add the bot as
 an admin and use the channel's -100... number.
 
+Your chat isn't listed? Run this once, press Start in the bot again, then run it
+again. The server's channel stats (src/growth.py) ask Telegram for joins only, and
+Telegram drops private messages to the bot until this script asks for them.
+
 Needs TELEGRAM_BOT_TOKEN (from .env or the environment).
 """
 import json
