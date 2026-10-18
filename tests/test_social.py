@@ -27,7 +27,8 @@ def config(tmp_path):
     base = load_config()
     return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
                    premium=replace(base.premium, enabled=False),
-                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana"),
+                   # Pictures here; the Reels have their own tests (the end of this file, and test_reels.py).
+                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana", reels=False),
                    invite_links={"facebook": "https://t.me/+fb"})
 
 
@@ -514,3 +515,79 @@ def test_the_weekly_as_a_draft_without_the_token(posting):
     assert len(files) == 1   # the weekly's draft; a deal's follows in the evening
     weekly = json.loads(files[0]["data"]["media"])
     assert len(weekly) == 4 and "carousel" in weekly[0]["caption"]
+
+
+# --- Reels (social.reels on) --------------------------------------------------------------
+
+@pytest.fixture
+def reels(posting, monkeypatch):
+    """Reels on, with a stand-in for the video: making a real one takes seconds (test_reels.py does)."""
+    made = []
+
+    def fake_reel(deal, out_dir, **options):
+        made.append(options)
+        video, cover = out_dir / f"{deal.route.iata.lower()}_reel.mp4", out_dir / f"{deal.route.iata.lower()}_reel.jpg"
+        video.write_bytes(b"mp4 bytes")
+        cover.write_bytes(b"jpeg bytes")
+        return video, cover
+    monkeypatch.setattr("src.social.make_reel", fake_reel)
+    config = replace(posting, social=replace(posting.social, reels=True))
+    return config, made
+
+
+def test_deal_goes_to_instagram_as_a_reel_with_its_cover(reels):
+    config, made = reels
+    session = with_graph(fake_world())
+    assert run(config, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+
+    assert made[0]["telegram"] == "t.me/flyfromtirana"
+    track, start = made[0]["music"]                       # the first Reel: the first track, from its start
+    assert track.name == "upbeat-v4-bombinsound.m4a" and start == 0
+    folder = config.website.output_dir / "social"
+    assert {"bgy_reel_20261009-1000.mp4", "bgy_reel_20261009-1000.jpg"} <= {p.name for p in folder.iterdir()}
+    graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
+    created = [c["data"] for c in graph if c["url"].endswith("/media")]
+    reel, story = created
+    assert reel["media_type"] == "REELS" and reel["share_to_feed"] == "true"
+    assert reel["video_url"] == "https://flyfromtirana.al/social/bgy_reel_20261009-1000.mp4"
+    assert reel["cover_url"] == "https://flyfromtirana.al/social/bgy_reel_20261009-1000.jpg"
+    assert reel["caption"].startswith("✈️ TIRANA → MILAN (Bergamo) nga €19")
+    assert story["media_type"] == "STORIES"
+    photo, = [c["data"] for c in graph if c["url"].endswith("/photos")]
+    assert photo["url"].endswith("/bgy_feed_20261009-1000.jpg")   # Facebook keeps the picture
+
+    report, = drafts(session)
+    assert '🎬 Reel: <a href="https://www.instagram.com/p/abc123/">' in telegram_text(report)
+
+
+def test_refused_reel_falls_back_to_the_picture(reels):
+    config, _ = reels
+    session = with_graph(fake_world())
+    graph = session.handler
+
+    def handler(method, url, kwargs):   # Instagram refuses videos, takes pictures
+        if url.endswith("/media") and kwargs.get("data", {}).get("media_type") == "REELS":
+            return FakeResponse(400, {"error": {"message": "The video file is not supported", "code": 352}})
+        return graph(method, url, kwargs)
+    session.handler = handler
+
+    assert run(config, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    report, files, caption, link = drafts(session)
+    text = telegram_text(report)
+    assert "❌ Reel: Meta refused the call (HTTP 400, code 352)" in text
+    assert '📸 Instagram: <a href="https://www.instagram.com/p/abc123/">' in text   # the picture went out instead
+    sent = json.loads(files["data"]["media"])
+    assert files["files"]["file0"][0] == "bgy_reel.mp4" and files["files"]["file0"][2] == "video/mp4"
+    assert len(sent) == 3                                                  # the video, the feed card, the story
+    assert "postoje si Reel" in sent[0]["caption"]
+
+
+def test_no_reel_without_ffmpeg_means_a_picture(posting, monkeypatch):
+    monkeypatch.setattr("src.reels.shutil.which", lambda name: None)
+    config = replace(posting, social=replace(posting.social, reels=True))
+    session = with_graph(fake_world())
+    assert run(config, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
+    assert all("media_type" not in c["data"] or c["data"]["media_type"] == "STORIES"
+               for c in graph if c["url"].endswith("/media"))
+    assert "📸 Instagram:" in telegram_text(drafts(session)[0])

@@ -56,6 +56,7 @@ from src.guides import Entry, Guide, load_entry_rules, load_guides
 from src.i18n import LANGUAGE_CODES, LANGUAGE_NAMES, Strings, load_strings, localize
 from src.links import LinkBuilder
 from src.photos import ASSETS_DIR, CREDITS_FILE, needs_credit
+from src.scanner import Quote
 from src.storage import Storage
 
 log = logging.getLogger("flyfromtirana.website")
@@ -165,8 +166,8 @@ def copy_photos(out_dir: Path) -> None:
                         ignore=shutil.ignore_patterns("*.json"))
 
 
-def build_offers(config: Config, storage: Storage, now: datetime, *,
-                 premium_delay: bool = True) -> list[Deal]:
+def build_offers(config: Config, storage: Storage, now: datetime, *, premium_delay: bool = True,
+                 scanned: tuple[dict[str, list[Quote]], dict[str, list[Quote]]] | None = None) -> list[Deal]:
     """One Deal per route that has current prices; its reason is None when it isn't a deal.
 
     Deals come first, biggest saving first, then the other routes, cheapest first.
@@ -174,7 +175,9 @@ def build_offers(config: Config, storage: Storage, now: datetime, *,
     With a premium channel, the page waits like the free channel does: a price
     that is a deal for premium is left out until premium has had it for
     free_delay_hours. Until then the route shows its cheapest other date.
-    premium_delay=False shows everything (a local preview).
+    premium_delay=False shows everything (a local preview, and Premium members' alerts).
+    scanned: (outbound, inbound) prices by destination from a scan that didn't save them
+    (the quick premium scan), used instead of the newest saved ones.
     """
     today = now.astimezone(ZoneInfo(config.timezone)).date()
     rules = config.rules
@@ -183,7 +186,10 @@ def build_offers(config: Config, storage: Storage, now: datetime, *,
     cutoff = early_access_cutoff(now, premium.free_delay_hours)
     offers = []
     for route in config.routes:
-        outbound = [q for q in storage.latest_quotes(config.origin, route.iata) if q.depart_date > today]
+        if scanned is not None:
+            outbound = [q for q in scanned[0].get(route.iata, []) if q.depart_date > today]
+        else:
+            outbound = [q for q in storage.latest_quotes(config.origin, route.iata) if q.depart_date > today]
         if not outbound:
             continue
         if outbound[0].fetched_at < now - STALE_AFTER:
@@ -206,7 +212,10 @@ def build_offers(config: Config, storage: Storage, now: datetime, *,
         # Same bundling as a post: the cheapest date plus other dates about as cheap.
         max_price = best.price * (1 + rules.date_price_tolerance_pct / 100)
         shown = [q for q in by_price if q.price <= max_price][: rules.max_dates_per_post]
-        inbound = storage.latest_quotes(route.iata, config.origin)
+        if scanned is not None:
+            inbound = scanned[1].get(route.iata, [])
+        else:
+            inbound = storage.latest_quotes(route.iata, config.origin)
         offers.append(Deal(route=route, quotes=shown, median=median, reason=reason,
                            return_quote=cheapest_return(best, inbound, rules)))
     deals = sorted((o for o in offers if o.is_deal), key=lambda o: o.score)

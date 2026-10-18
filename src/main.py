@@ -26,6 +26,8 @@ from zoneinfo import ZoneInfo
 import requests
 from dotenv import load_dotenv
 
+from src.alerts import send_alerts
+from src.bot import alert_link
 from src.config import (
     DEFAULT_CONFIG_PATH,
     PROJECT_ROOT,
@@ -45,6 +47,7 @@ from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import post_photo
+from src.reels import pick_music
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
 from src.social import (GUIDE_CHANNEL, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL, WEEKLY_MIN_DEALS, Post,
                         deal_post, failed, guide_post, post_on_platforms, prune_pictures, put_pictures_online,
@@ -54,6 +57,7 @@ from src.telegram import TelegramClient, TelegramError
 from src.website import build_offers, page_url, site_guides
 
 log = logging.getLogger("flyfromtirana")
+EVER = datetime(2000, 1, 1, tzinfo=timezone.utc)   # "since the start", for counting every post ever made
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -168,6 +172,13 @@ def run(
                                   meta=meta_client(config, secrets, session, dry_run=dry_run),
                                   marker=secrets.travelpayouts_marker, **common)
 
+        def alerts(**options) -> int:
+            """The price alerts people set with the bot (src/alerts.py)."""
+            return send_alerts(config, storage, token=secrets.telegram_bot_token,
+                               premium_chat=secrets.telegram_premium_channel_id, links=links, now=now,
+                               quiet=in_quiet_hours(local_now.time(), config.quiet_hours), dry_run=dry_run,
+                               session=session, output=output, **options)
+
         exit_code = 0
         if premium.enabled:
             deals = find_deals(routes, outbound, inbound, storage, config.origin, premium.rules, now,
@@ -177,7 +188,9 @@ def run(
             exit_code |= publish(best, channel=PREMIUM_CHANNEL, template=f"{config.language}_premium",
                                  telegram=telegram_for(secrets.telegram_premium_channel_id), **common)
         if premium_only:
-            # The quick scan keeps the posting times too: a full run only comes every 3 hours.
+            # Premium members' alerts straight away, from these (unsaved) prices. The quick scan
+            # keeps the posting times too: a full run only comes every 3 hours.
+            exit_code |= alerts(premium_only=True, scanned=(outbound, inbound))
             return exit_code | social_post()
 
         # The free channel only gets deals premium has had for free_delay_hours.
@@ -193,8 +206,9 @@ def run(
                              telegram=telegram_for(secrets.telegram_channel_id),
                              premium_link=premium.join_link if premium.enabled else None, share=True, **common)
 
-        # 3) The Instagram/Facebook post, when its time has come
+        # 3) The Instagram/Facebook post, when its time has come, and the price alerts
         exit_code |= social_post()
+        exit_code |= alerts()
 
         # 4) Housekeeping
         pruned = storage.prune_prices(now - timedelta(days=config.history_retention_days))
@@ -281,7 +295,8 @@ def publish(deals: list[Deal], *, channel: str, template: str, config: Config, l
         text = format_post(deal, links, language=config.language, channel_handle=config.channel_handle,
                            airline_names=config.airlines, template=template, premium_link=premium_link,
                            website_url=config.website.url, photo=photo,
-                           share_link=whatsapp_link(deal, config, config.language) if share else None)
+                           share_link=whatsapp_link(deal, config, config.language) if share else None,
+                           alert_link=alert_link(config, deal.route.iata))
         if dry_run:
             with_photo = f" · photo {photo.path.name}" if photo else ""
             output(f"\n----- DRY RUN [{channel}] · {deal.summary()}{with_photo} -----\n{text}\n")
@@ -409,7 +424,9 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     if post is None:
         deal = choose_deal(deals, config, storage, now=now, day_start=day_start)
         if deal is not None:
-            post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata))
+            # Each Reel gets the next track: how many deal posts came before it decides which.
+            music = pick_music(storage.count_posts(SOCIAL_CHANNEL, EVER)) if social.reels else None
+            post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata), music=music)
             channel, quotes = SOCIAL_CHANNEL, deal.quotes
 
     # 3) Otherwise, at the day's last time, a city guide when the day had no post at all.
@@ -517,8 +534,8 @@ def post_by_bot(post: Post, meta: MetaClient, platforms: tuple[str, ...], pictur
     A post that failed is also sent as a draft, so the owner can make it by hand.
     Returns what happened per post (see social.post_on_platforms).
     """
-    feed_urls, story_url = put_pictures_online(post, pictures_folder, site_url, now)
-    outcomes = post_on_platforms(post, meta, platforms, feed_urls, story_url)
+    online = put_pictures_online(post, pictures_folder, site_url, now)
+    outcomes = post_on_platforms(post, meta, platforms, online)
     for what, outcome in outcomes:
         if isinstance(outcome, MetaError):
             log.error("[social] %s failed for %s: %s", what, post.title, outcome)

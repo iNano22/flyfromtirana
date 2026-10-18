@@ -4,6 +4,8 @@ Usage (from the repo root):
     python scripts/social_preview.py              # writes ig_preview/<iata>_feed.jpg and _story.jpg,
                                                   # top_feed.jpg (the weekly cover) and guide_rome_*.jpg (its carousel)
     python scripts/social_preview.py --out DIR    # somewhere else
+    python scripts/social_preview.py --reels      # also each sample deal's Reel: <out>/reels/<iata>_reel.mp4
+                                                  # (needs ffmpeg; a few seconds each)
 
 Nothing is sent anywhere. The deals below are invented (prices, dates, airlines);
 only the routes, photos and wording come from the real configuration.
@@ -21,7 +23,9 @@ from src.config import load_config  # noqa: E402
 from src.deals import Deal  # noqa: E402
 from src.guides import load_guides  # noqa: E402
 from src.photos import post_photo  # noqa: E402
+from src.reels import make_reel, pick_music  # noqa: E402
 from src.scanner import Quote  # noqa: E402
+from src.growth import short_address  # noqa: E402
 from src.social import guide_sections, site_address  # noqa: E402
 
 NOW = datetime(2026, 10, 14, 10, 0, tzinfo=timezone.utc)
@@ -50,6 +54,7 @@ def sample_deals(routes: dict) -> list[Deal]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Draw sample social media cards.")
     parser.add_argument("--out", type=Path, default=Path("ig_preview"), help="folder for the pictures")
+    parser.add_argument("--reels", action="store_true", help="also make each sample deal's Reel (needs ffmpeg)")
     args = parser.parse_args()
     config = load_config()
     routes = {route.iata: route for route in config.routes}
@@ -60,6 +65,14 @@ def main() -> int:
                            photo=photo.path if photo else None, language=config.language)
         for path in paths.values():
             print(f"✅ {path}")
+    if args.reels:   # each with the next track, as the posts would have them
+        for number, deal in enumerate(sample_deals(routes)):
+            photo = post_photo(deal.route.iata)
+            video, _ = make_reel(deal, args.out / "reels", airline_names=config.airlines, brand=config.brand,
+                                 handle=config.social.handle or config.channel_handle, address=site_address(config),
+                                 telegram=short_address(config), photo=photo.path if photo else None,
+                                 language=config.language, music=pick_music(number))
+            print(f"🎬 {video}")
     # The weekly cover with the three deals, and Rome's guide card in both sizes.
     deals = sample_deals(routes)
     first = post_photo(deals[0].route.iata)

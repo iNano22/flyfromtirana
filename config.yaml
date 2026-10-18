@@ -80,6 +80,9 @@ social:
   sub_id: facebook                 # Travelpayouts SubID of the booking link in the Facebook post
   hashtags: "#flyfromtirana #fluturime #oferta #udhetim #tirana #rinas #biletaavioni #pushime"
   publish: [instagram, facebook]   # instagram = a feed post + a story; facebook = a Page post with the link
+  reels: true                      # a deal goes to Instagram as a Reel (a 10-second video of its card, with
+                                   #   music from assets/music) instead of the feed picture; the story and
+                                   #   Facebook keep the pictures. The weekly top and the guides stay carousels.
   keep_pictures_days: 7            # Instagram fetches the pictures from the website (/social/); kept this long
   # Keeping the accounts busy on quiet days:
   weekly_day: sunday               # on this day the first post is a "TOP 5 ofertat e javës" carousel (cover +
@@ -100,10 +103,26 @@ invite_links:
   website: "https://t.me/+IlHwEzGyG5QxZTFk"     # every Telegram button on the website
   whatsapp: "https://t.me/+kW1zUnh8_n05Yjg0"    # the message the "Dërgoja një shoku në WhatsApp" links send
                                                 #   (the free channel's posts and the site's deals)
+  bot: "https://t.me/+TPN1uet2WnM2YjQ0"         # the channel link in the price alerts and the bot's messages
 growth:
   report_day: monday               # your chat (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) gets
   report_time: "09:00"             #   the week's numbers at the first full run after this time (local;
                                    #   full runs are every 3 hours). Empty day = no report. Keep the quotes.
+
+# --- Price alerts --------------------------------------------------------------
+# In a private chat with the bot, people pick a city and a price ("tell me when Milan is
+# under €30", or "any deal"). After each scan, everyone whose city has a flight at that price
+# or cheaper gets a message with the booking link (src/alerts.py), once per city and price
+# band within repost_cooldown_days. Free alerts wait like the website and the free channel:
+# a deal Premium is still getting first comes once the free channel may have it. Premium
+# members get theirs straight away, also from the 15-minute premium scans. Nothing goes out
+# in quiet hours. The bot's chat (src/bot.py) runs inside the scanner container.
+alerts:
+  enabled: true
+  bot_username: FlyFromTiranaBot   # for the "Më njofto kur bie çmimi" links in the channel posts
+  prices: [20, 30, 40, 50, 70, 100]   # the price buttons, in euros (plus "Çdo ofertë")
+  max_per_person: 10
+  sub_id: alerts                   # Travelpayouts SubID of the booking links in the alerts
 
 # --- Website -----------------------------------------------------------------
 # src/website.py renders one page from the price database into output_dir. On

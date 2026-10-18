@@ -25,6 +25,9 @@ point for a brand-new volume.
 
 When a scan or a website build fails, the owner hears about it on Telegram
 (Alerts below), once when it starts failing and once when it works again.
+
+Alongside, a thread runs the bot's chat (src/bot.py): people set their price
+alerts there, and it notes who joins the channels.
 """
 from __future__ import annotations
 
@@ -36,12 +39,15 @@ import shutil
 import signal
 import subprocess
 import sys
+import threading
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from src.bot import Bot
 from src.config import PROJECT_ROOT, Config, ConfigError, load_config
+from src.growth import channel_chats
 from src.telegram import TelegramClient, TelegramError
 
 log = logging.getLogger("flyfromtirana.scheduler")
@@ -191,6 +197,19 @@ def run_once(alerts: Alerts | None = None) -> int:
     return scan or site or stats
 
 
+def start_bot(config: Config, stop: threading.Event) -> threading.Thread | None:
+    """Run the bot's chat (src/bot.py) in a thread of its own until `stop` is set. None without a bot token."""
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if not token:
+        log.info("TELEGRAM_BOT_TOKEN is not set: the bot's chat is off")
+        return None
+    bot = Bot(config, token, channel_chats(config, os.environ))
+    # daemon: a stop that comes while the bot waits for news doesn't wait for it to finish.
+    thread = threading.Thread(target=bot.listen, args=(stop,), name="bot", daemon=True)
+    thread.start()
+    return thread
+
+
 def run_premium_scan() -> int:
     """The quick scan between full runs: new deals go to the premium channel straight away."""
     return run_step("premium scan", "src.main", SCAN_TIMEOUT_SECONDS, "--premium-only")
@@ -212,10 +231,12 @@ def main(argv: list[str] | None = None) -> int:
         return run_once()
 
     stopping = False
+    bot_stop = threading.Event()
 
     def stop(signum, _frame) -> None:
         nonlocal stopping
         stopping = True
+        bot_stop.set()
         log.info("%s received: stopping after the current run, if one is in progress",
                  signal.Signals(signum).name)
 
@@ -223,6 +244,7 @@ def main(argv: list[str] | None = None) -> int:
     signal.signal(signal.SIGINT, stop)
 
     alerts = Alerts.from_env(config)
+    start_bot(config, bot_stop)
     # So the page exists right after a deploy instead of at the next slot.
     alerts.report("website build", run_step("website build", "src.website", SITE_TIMEOUT_SECONDS))
 

@@ -6,9 +6,9 @@ Meta's Graph API Explorer (README: "Instagram and Facebook posts") and does not
 expire. If Meta ever rejects it, every call raises MetaError, and the run tells
 the owner on Telegram.
 
-Instagram publishes in two steps: the picture's public address is given to
-Instagram, which fetches it into a "container"; once that is ready, the
-container is published. Facebook takes the address and the text in one call.
+Instagram publishes in two steps: the picture's (or the Reel video's) public
+address is given to Instagram, which fetches it into a "container"; once that
+is ready, the container is published. Facebook takes the address and the text in one call.
 Docs: https://developers.facebook.com/docs/instagram-platform/content-publishing
       https://developers.facebook.com/docs/graph-api/reference/page/photos
 """
@@ -29,6 +29,9 @@ GRAPH_URL = "https://graph.facebook.com/v26.0/{path}"
 # Instagram usually has a picture ready within a second or two.
 CONTAINER_CHECKS = 20
 CONTAINER_WAIT_SECONDS = 3
+# A video takes longer: Instagram downloads it and makes its own copies (usually under a minute).
+VIDEO_CHECKS = 60
+VIDEO_WAIT_SECONDS = 5
 TOKEN_ERROR_CODE = 190   # Meta's code for an invalid or expired token
 
 
@@ -114,6 +117,24 @@ class MetaClient:
         log.info("Instagram carousel published: %s", permalink)
         return permalink
 
+    def post_instagram_reel(self, video_url: str, caption: str, *, cover_url: str | None = None) -> str:
+        """Publish a video as a Reel, shown in the feed and the profile grid too. Returns its address.
+
+        The video must be an MP4 at a public https address (Instagram fetches it); cover_url is
+        the picture the grid shows for it. Docs:
+        https://developers.facebook.com/docs/instagram-platform/content-publishing#reels-posts
+        """
+        instagram = self._instagram_id()
+        fields = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": "true"}
+        if cover_url:
+            fields["cover_url"] = cover_url
+        container = self._call("POST", f"{instagram}/media", **fields)["id"]
+        self._wait_for_container(container, checks=VIDEO_CHECKS, wait=VIDEO_WAIT_SECONDS, what="the video")
+        media = self._call("POST", f"{instagram}/media_publish", creation_id=container)["id"]
+        permalink = self._call("GET", media, fields="permalink").get("permalink")
+        log.info("Instagram Reel published: %s", permalink)
+        return permalink
+
     def post_facebook(self, image_url: str, message: str) -> str:
         """Publish a picture with text on the Page. Returns the post's address."""
         page = self.whoami()["page_id"]
@@ -138,17 +159,18 @@ class MetaClient:
         log.info("Facebook post with %d pictures published: %s", len(image_urls), address)
         return address
 
-    def _wait_for_container(self, container: str) -> None:
-        """Instagram fetches the picture in the background: wait until it says FINISHED."""
-        for check in range(CONTAINER_CHECKS):
+    def _wait_for_container(self, container: str, *, checks: int = CONTAINER_CHECKS,
+                            wait: float = CONTAINER_WAIT_SECONDS, what: str = "the picture") -> None:
+        """Instagram fetches the picture (or video) in the background: wait until it says FINISHED."""
+        for check in range(checks):
             status = self._call("GET", container, fields="status_code,status")
             code = status.get("status_code")
             if code == "FINISHED":
                 return
             if code in ("ERROR", "EXPIRED"):
-                raise MetaError(f"Instagram could not take the picture ({code}): {status.get('status', 'no details')}")
-            self.sleep(CONTAINER_WAIT_SECONDS)
-        raise MetaError(f"Instagram did not finish preparing the picture in {CONTAINER_CHECKS * CONTAINER_WAIT_SECONDS}s")
+                raise MetaError(f"Instagram could not take {what} ({code}): {status.get('status', 'no details')}")
+            self.sleep(wait)
+        raise MetaError(f"Instagram did not finish preparing {what} in {checks * wait:g}s")
 
     def _instagram_id(self) -> str:
         instagram = self.whoami()["instagram_id"]

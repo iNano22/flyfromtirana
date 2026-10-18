@@ -155,3 +155,23 @@ def test_facebook_album_uploads_unpublished_photos_then_one_post():
     feed, = [c["data"] for c in session.calls if c["url"].endswith("/feed")]
     assert feed == {"message": "TOP 2", "attached_media[0]": '{"media_fbid": "PHOTOa"}',
                     "attached_media[1]": '{"media_fbid": "PHOTOb"}'}
+
+
+def test_reel_is_a_video_container_with_its_cover_and_waits_longer():
+    waits = []
+    session = FakeSession(graph_handler(container_checks=2))
+    client = MetaClient(TOKEN, session, sleep=waits.append)
+
+    link = client.post_instagram_reel("https://x/bgy_reel.mp4", "✈️ MILAN nga €14", cover_url="https://x/bgy_reel.jpg")
+
+    assert link == "https://www.instagram.com/p/abc123/"
+    assert session.calls[1]["data"] == {"media_type": "REELS", "video_url": "https://x/bgy_reel.mp4",
+                                        "caption": "✈️ MILAN nga €14", "share_to_feed": "true",
+                                        "cover_url": "https://x/bgy_reel.jpg"}
+    assert waits == [5]   # a video gets longer between the checks
+
+
+def test_reel_that_instagram_cannot_take_raises():
+    session = FakeSession(graph_handler(container_status="ERROR"))
+    with pytest.raises(MetaError, match="could not take the video"):
+        MetaClient(TOKEN, session, sleep=lambda s: None).post_instagram_reel("https://x/v.mp4", "x")

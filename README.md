@@ -40,7 +40,8 @@ availability. That's fine for spotting deals: the booking link opens a live sear
 ```
 config.yaml              routes, deal rules, link templates, website settings (no secrets)
 templates/sq.txt         post wording (Albanian); sq_premium.txt = the premium channel's,
-                         sq_social.txt = the Instagram caption, sq_facebook.txt = the Facebook post
+                         sq_social.txt = the Instagram caption, sq_facebook.txt = the Facebook post,
+                         sq_alert.txt = a price alert
 templates/site.html      the website page (layout, CSS, a little JS); site_row.html = one route in the
                          price table, site_card.html = one photo card, site_hero.html = one line of
                          the board at the top, site_premium.html = the block about the Premium channel
@@ -60,6 +61,7 @@ assets/img/              the website's photos (dest/, services/) and credits.jso
                          share/ = the picture a link to the site shows on Telegram or WhatsApp
 assets/telegram/         the destination photos again, as JPEGs, sent with the Telegram posts
 assets/fonts/            Archivo and IBM Plex Mono (SIL Open Font License), for drawing the deal cards
+assets/music/            the Reels' music: 17 Pixabay tracks (50 s each) and credits.json
 docs/                    the generated website (index.html + img/), what the `web` container serves
 src/
   main.py                orchestrator + CLI (--dry-run, --routes): scan, post, then the social drafts
@@ -76,6 +78,9 @@ src/
   social.py              a social media post (deal, weekly top, city guide): pictures, captions, posting or drafting
   growth.py              the free channel's join links, the WhatsApp share link, and the weekly report
                          on both channels (who joined through which link, the member counts)
+  reels.py               turns a deal card into a 10-second Instagram Reel (Pillow frames + ffmpeg, music)
+  bot.py                 the bot's private chat: people set price alerts; it also notes channel joins
+  alerts.py              sends the price alerts after each scan
   meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
@@ -695,6 +700,27 @@ scans count, so within 15 minutes), the bot:
 
 `social.publish` says where the bot posts (`instagram`, `facebook`, or fewer).
 
+**Reels.** With `social.reels: true` a deal goes to Instagram as a **Reel** instead of
+the feed picture: Instagram shows Reels to people who don't follow the account yet,
+feed posts mostly to followers. `src/reels.py` brings the deal card to life in 10
+seconds (1080×1920): the photo slowly zooms in, the route, the giant price, the city,
+the saving sticker, the dates and the flight come in one after the other, and a yellow
+closing card says "Oferta të reja çdo ditë · Rezervo: linku në bio · Njoftime falas në
+Telegram". The words keep clear of what Instagram lays over a Reel (the `reel` layout
+in `src/cards.py`). The Reel's cover, the frame with everything in place, is what the
+profile grid shows. ffmpeg makes the MP4 (the Dockerfile installs it); without ffmpeg,
+or if Instagram refuses the video, the deal goes out as the feed picture as before, and
+the report says so. The story and the Facebook post keep the pictures.
+
+The sound is one of the 17 tracks in `assets/music` (free tracks from Pixabay under the
+Pixabay Content License, none registered with Content ID, each cut to 50 energetic
+seconds; authors and pages in `credits.json`). They take turns, one per Reel, and each
+time the list comes round the next 10 seconds of a track play, so the same sound comes
+back only after 85 Reels. To add a track: put the file in `assets/music` and a line in
+`credits.json`. Instagram's own music library can't be used through the API.
+`python scripts/social_preview.py --reels` makes the sample deals' Reels in
+`ig_preview/reels/`, to watch them before any goes out.
+
 **Two more kinds of post keep the accounts busy** (same mechanics, same report):
 - **The week's top deals**: on `social.weekly_day` (Sunday) the day's first post is a
   cover card listing the best `social.weekly_count` (5) deals the website shows, plus
@@ -791,6 +817,32 @@ through Cloudflare (the report says "could not take the picture" otherwise: then
 `/social/` for Meta's crawler in Cloudflare's WAF), and Meta's limit of 100 Instagram
 posts a day through the API, far above the 2 made here.
 
+## Price alerts (the bot)
+
+People set alerts in a private chat with the bot (`alerts.bot_username`,
+[@FlyFromTiranaBot](https://t.me/FlyFromTiranaBot)): `/start` shows the cities as
+buttons, a city shows the prices (`alerts.prices`: up to €20, €30, ... or "Çdo ofertë",
+any deal), and the alert is saved. `/alerts` lists them with a delete button each,
+`/stop` deletes them all. Each free-channel and Premium post has a "🎯 Më njofto kur bie
+çmimi për Milan" link that opens the bot straight on that city's prices.
+
+After every scan, `src/alerts.py` checks each alert against the city's current prices,
+those the website shows: the cheapest flight at the alert's price or less, or a deal by
+the free channel's rules for "any deal". A match goes to the person with the
+destination's photo, the booking link (SubID `alerts`) and the channel's `bot` invite
+link (`templates/sq_alert.txt`). Free alerts wait like the website: a deal Premium is
+still getting first comes once the free channel may have it. **Premium members** (the
+bot checks who is in the Premium channel) get theirs straight away, also from the
+15-minute premium scans. A person hears about a city once per price band within
+`repost_cooldown_days`, nothing goes out in quiet hours, and someone who blocks the bot
+loses their alerts. At most `alerts.max_per_person` (10) alerts each.
+
+The bot's chat (`src/bot.py`) runs in a thread of the scheduler, waiting on Telegram
+for messages (long polling). It is the only reader of the bot's updates, so it also
+hands the channel joins to the weekly report. Never run `python -m src.bot` or
+`scripts/alert_chat.py` while the server runs: Telegram gives each update to whoever
+asks first. The privacy page says what the bot keeps (the chat's number and the alerts).
+
 ## Growing the Telegram channel
 
 Telegram shows a channel to almost no one by itself: it grows from the places that
@@ -803,24 +855,20 @@ and the bot counts who joined through which one:
 | facebook | in every Facebook post ("Ofertat dalin të parat në Telegram: …") |
 | website | on every Telegram button of the site, in all three languages |
 | whatsapp | at the end of the message a "Dërgoja një shoku në WhatsApp" link opens: under each free-channel post (not premium's: those members pay to have the deals first) and on every deal on the site (photo card, table row, city page) |
+| bot | in the price alerts and the bot's messages |
 
 The bot made the four links (`python scripts/invite_links.py` makes any missing one
 and prints it for config.yaml). They show in the Telegram app with their join counts:
 the channel → Manage channel → Invite links. A place left empty uses the public
 address.
 
-**The weekly report.** After every full run, `python -m src.growth` stores the joins and
-leaves Telegram reports to the bot (only the link's place and the time, never who it
-was) and both channels' member counts. On `growth.report_day` (Monday) after
+**The weekly report.** The bot's listener (above) stores the joins and leaves Telegram
+reports (only the link's place and the time, never who it was), and after every full
+run `python -m src.growth` notes both channels' member counts. On `growth.report_day` (Monday) after
 `report_time`, your chat (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) gets:
 the members of each channel and the change in 7 days, then where the free channel's
 new members came from. `python -m src.growth --report` sends it now; `--dry-run` prints
-it on a laptop without touching Telegram's updates (they belong to the server: a
-laptop reading them would take them away from it).
-
-Telegram keeps the join updates for 24 hours and the full runs come every 3 hours.
-Asking for them only makes Telegram drop private messages to the bot from then on;
-`scripts/alert_chat.py` asks for those by name when you need to find a chat.
+it and saves nothing.
 
 ## Exit codes
 

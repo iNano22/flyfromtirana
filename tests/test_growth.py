@@ -8,8 +8,8 @@ import pytest
 from src import growth
 from src.config import ConfigError, GrowthSettings, Route, Secrets, _build_growth, _invite_links, load_config
 from src.deals import Deal
-from src.growth import (FREE, PREMIUM, join_link, link_source, membership_change, public_url, report_due,
-                        report_text, run, short_address, whatsapp_link)
+from src.growth import (FREE, PREMIUM, join_link, link_source, membership_change, public_url,
+                        record_member_update, report_due, report_text, run, short_address, whatsapp_link)
 from src.links import LinkBuilder
 from src.main import run as run_scan
 from src.storage import Storage
@@ -169,23 +169,30 @@ def calls_to(session, method):
     return [c for c in session.calls if c["url"].endswith("/" + method)]
 
 
-def test_run_notes_joins_and_counts_and_confirms_the_updates(config):
-    session = telegram_world([
+def test_joins_are_noted_per_link_and_other_chats_ignored(config, storage):
+    chats = {FREE: "@flyfromtirana", PREMIUM: "-1009876"}
+    updates = [
         update(5, invite={"invite_link": "https://t.me/+insta", "name": "instagram"}),
-        update(6),                                                   # the public address
+        update(6),                                                     # the public address
         update(7, old="member", new="left"),
-        update(8, chat={"id": -100999, "username": "someone_else"}),   # another chat: ignored
-    ])
+        update(8, chat={"id": -100999, "username": "someone_else"}),   # another chat
+        update(9, old="member", new="administrator"),                  # an admin's rights: not a join
+        update(10, chat={"id": -1009876, "type": "channel"}),          # premium
+    ]
+    noted = [record_member_update(u, storage, config, chats) for u in updates]
+    assert noted == [True, True, True, False, False, True]
+    assert storage.joins_by_source(FREE, NOW - timedelta(days=1)) == {"instagram": 1, "": 1}
+    assert storage.count_leaves(FREE, NOW - timedelta(days=1)) == 1
+    assert storage.joins_by_source(PREMIUM, NOW - timedelta(days=1)) == {"": 1}
+
+
+def test_run_counts_the_members_and_leaves_the_updates_to_the_bot(config):
+    session = telegram_world([update(5)])
     assert run(config, ENV, session=session, now=NOW) == 0          # a Friday: no report
     with Storage(config.db_path) as storage:
-        assert storage.joins_by_source(FREE, NOW - timedelta(days=1)) == {"instagram": 1, "": 1}
-        assert storage.count_leaves(FREE, NOW - timedelta(days=1)) == 1
         assert storage.member_count_since(FREE, NOW - timedelta(days=1)) == (42, NOW)
         assert storage.member_count_since(PREMIUM, NOW - timedelta(days=1)) == (3, NOW)
-    offsets = [c["json"].get("offset") for c in calls_to(session, "getUpdates")]
-    assert offsets == [None, 9]                                      # the second call confirms them all
-    assert calls_to(session, "getUpdates")[0]["json"]["allowed_updates"] == ["chat_member"]
-    assert calls_to(session, "sendMessage") == []
+    assert calls_to(session, "getUpdates") == [] and calls_to(session, "sendMessage") == []
 
 
 def test_an_update_seen_twice_is_counted_once(config):

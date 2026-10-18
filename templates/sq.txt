@@ -8,6 +8,7 @@
 </blockquote>
 👉 <b><a href="{FLIGHT_LINK}">Rezervo tani</a></b>
 ⏳ <i>Çmimet ndryshojnë shpejt!</i>
+🎯 <a href="{ALERT_LINK}">Më njofto kur bie çmimi për {CITY}</a>
 
 🏨 <a href="{HOTEL_LINK}">Hotele në {CITY}</a>
 🧭 <a href="{TOURS_LINK}">Ture dhe aktivitete në {CITY}</a>

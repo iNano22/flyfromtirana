@@ -1,4 +1,5 @@
 """The server scheduler: slot times, database seeding, and scan-then-website order."""
+import threading
 from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 
@@ -164,3 +165,8 @@ def test_full_run_reports_the_scan_and_the_website_build(monkeypatch):
     client = FakeClient()
     assert run_once(alerts(client)) == 1
     assert len(client.sent) == 1 and "the scan failed" in client.sent[0]
+
+
+def test_the_bot_runs_only_with_a_token(monkeypatch):
+    monkeypatch.delenv("TELEGRAM_BOT_TOKEN", raising=False)
+    assert scheduler.start_bot(load_config(), threading.Event()) is None

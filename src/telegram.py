@@ -12,6 +12,7 @@ from __future__ import annotations
 import html
 import json
 import logging
+import mimetypes
 import re
 from pathlib import Path
 
@@ -25,6 +26,20 @@ API_URL = "https://api.telegram.org/bot{token}/{method}"
 # The text under a photo may be this long (a plain message may have 4096
 # characters). Telegram counts what the reader sees, not the HTML tags.
 CAPTION_LIMIT = 1024
+
+
+# Buttons under a message: rows of (label, what it does). What it does is an address
+# (https://... opens it) or a short code the bot gets back when the button is pressed.
+Buttons = list[list[tuple[str, str]]]
+# The kinds of updates the bot reads (get_updates): messages, button taps, channel joins.
+UPDATE_KINDS = ("message", "callback_query", "chat_member")
+
+
+def keyboard(buttons: Buttons) -> dict:
+    """Buttons as Telegram wants them (an inline keyboard)."""
+    return {"inline_keyboard": [[{"text": label, "url": action} if action.startswith("https://")
+                                 else {"text": label, "callback_data": action} for label, action in row]
+                                for row in buttons]}
 
 
 class TelegramError(Exception):
@@ -62,15 +77,27 @@ class TelegramClient:
             log.warning("%s. Sending the post without %s", exc, photo.name)
             return self.send_message(text)
 
-    def send_message(self, text: str) -> int:
-        """Post HTML-formatted text to the channel; returns Telegram's message_id."""
+    def send_message(self, text: str, buttons: Buttons | None = None) -> int:
+        """Post HTML-formatted text to the chat, with buttons under it if given; returns Telegram's message_id."""
         payload = {
             "chat_id": self.chat_id,
             "text": text,
             "parse_mode": "HTML",
             "link_preview_options": {"is_disabled": True},  # keep posts compact
         }
+        if buttons:
+            payload["reply_markup"] = keyboard(buttons)
         return self._call("sendMessage", json=payload)["message_id"]
+
+    def edit_message(self, message_id: int, text: str, buttons: Buttons | None = None) -> None:
+        """Replace a message's text (and buttons): the bot's menus change in place when a button is pressed."""
+        payload = {"chat_id": self.chat_id, "message_id": message_id, "text": text, "parse_mode": "HTML",
+                   "link_preview_options": {"is_disabled": True}, "reply_markup": keyboard(buttons or [])}
+        try:
+            self._call("editMessageText", json=payload)
+        except TelegramRefused as exc:
+            if "message is not modified" not in str(exc):   # the same button pressed twice: nothing to change
+                raise
 
     def send_photo(self, photo: Path, caption: str) -> int:
         """Post a photo with HTML-formatted text under it; returns Telegram's message_id."""
@@ -80,7 +107,7 @@ class TelegramClient:
         return self._call("sendPhoto", data=fields, files=files)["message_id"]
 
     def send_files(self, paths: list[Path], caption: str) -> list[int]:
-        """Send pictures as files, in one group, with HTML text under the group.
+        """Send pictures (or a video) as files, in one group, with HTML text under the group.
 
         A photo sent as a file keeps its size and quality (Telegram shrinks a
         "photo" to 1280px), so the receiver can post it elsewhere as it is.
@@ -96,7 +123,8 @@ class TelegramClient:
             if number == 0:
                 item.update(caption=caption, parse_mode="HTML")   # shown once, under the whole group
             media.append(item)
-            files[field] = (path.name, path.read_bytes(), "image/jpeg")
+            kind = mimetypes.guess_type(path.name)[0] or "application/octet-stream"   # image/jpeg, video/mp4
+            files[field] = (path.name, path.read_bytes(), kind)
         fields = {"chat_id": self.chat_id, "media": json.dumps(media)}
         return [message["message_id"] for message in self._call("sendMediaGroup", data=fields, files=files)]
 
@@ -113,18 +141,43 @@ class TelegramClient:
         """
         return self._call("createChatInviteLink", json={"chat_id": self.chat_id, "name": name})["invite_link"]
 
-    def member_updates(self, offset: int | None = None, limit: int = 100) -> list[dict]:
-        """Who joined or left the chats where the bot is an admin: Telegram's "chat_member" updates.
+    def member_status(self, user_id: int) -> str:
+        """Whether a person is in the chat: "member", "administrator", "creator", "left", "kicked", ...
 
-        Telegram keeps an update for 24 hours, until a call with an offset above its
-        update_id confirms it. Asking only for these makes Telegram drop other kinds
-        (private messages to the bot) from then on, until a call asks for them by name
-        (scripts/alert_chat.py does). Docs: https://core.telegram.org/bots/api#getupdates
+        Telegram answers this for chats where the bot is an admin (the channels)."""
+        member = self._call("getChatMember", json={"chat_id": self.chat_id, "user_id": user_id})
+        if member.get("status") == "restricted":
+            return "member" if member.get("is_member") else "left"
+        return member.get("status", "left")
+
+    # --- the bot's own chat (src/bot.py) -----------------------------------------------
+
+    def get_updates(self, offset: int | None = None, *, wait: int = 0, kinds: tuple[str, ...] = UPDATE_KINDS,
+                    limit: int = 100) -> list[dict]:
+        """What happened since the last call: messages to the bot, button taps, people joining the
+        channels. Waits up to `wait` seconds for something to happen (long polling).
+
+        Telegram keeps an update for 24 hours, until a call with an offset above its update_id
+        confirms it. It also remembers `kinds` and drops any other kind from then on, so every
+        call names all the kinds the bot needs. Docs: https://core.telegram.org/bots/api#getupdates
         """
-        payload = {"timeout": 0, "limit": limit, "allowed_updates": ["chat_member"]}
+        payload = {"timeout": wait, "limit": limit, "allowed_updates": list(kinds)}
         if offset is not None:
             payload["offset"] = offset
-        return self._call("getUpdates", json=payload)
+        return self._call("getUpdates", json=payload, timeout=wait + 15)
+
+    def answer_button(self, callback_id: str, text: str | None = None) -> None:
+        """Tell Telegram a button tap was handled (it stops the button's spinner), with a short note."""
+        payload = {"callback_query_id": callback_id}
+        if text:
+            payload["text"] = text
+        self._call("answerCallbackQuery", json=payload)
+
+    def set_commands(self, commands: list[tuple[str, str]], description: str) -> None:
+        """The bot's menu of commands, and the text people see before they press Start."""
+        self._call("setMyCommands", json={"commands": [{"command": name, "description": about}
+                                                       for name, about in commands]})
+        self._call("setMyDescription", json={"description": description})
 
     def _call(self, method: str, **request) -> dict:
         """One Bot API call. Returns its "result", or raises TelegramError."""

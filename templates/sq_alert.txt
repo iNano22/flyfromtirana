@@ -1,0 +1,13 @@
+🔔 <b>{ALERT_TITLE}</b>
+
+✈️ <b>TIRANA → {CITY_UPPER}</b>[[ ({AIRPORT})]][[ {FLAG}]]
+💰 <b>nga €{PRICE}</b> one way[[ · zakonisht ~€{MEDIAN}]]
+📅 <b>{DATES}</b>
+🛫 {AIRLINE} · {STOPS}[[ · {DURATION}]]
+🔁 Kthimi nga €{RETURN_PRICE}
+
+👉 <b><a href="{FLIGHT_LINK}">Rezervo tani</a></b>
+⏳ <i>Çmimet ndryshojnë shpejt!</i>
+
+📣 <a href="{CHANNEL_LINK}">Të gjitha ofertat në kanalin tonë</a>
+⚙️ /alerts: ndrysho ose fshi njoftimet

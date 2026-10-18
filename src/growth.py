@@ -11,14 +11,12 @@ the Instagram bio, the Facebook posts, the website and the WhatsApp share text.
 A place without one uses the channel's public address (join_link below).
 
 Who joined through which link: Telegram tells the bot, an admin of the channel,
-with a "chat_member" update. Every run notes those updates (only the link's place
-and the time, never who it was) and how many members each channel has. Once a
-week (growth.report_day) the owner's chat gets the numbers: the members now, the
-change in the week, and where the free channel's new members came from.
-
-Telegram keeps an update for 24 hours and the full runs come every 3 hours, so
-none is missed. A run on a laptop must not read them, or the server would never
-see them: --dry-run only reads the member counts, and saves nothing.
+with a "chat_member" update. The bot's listener (src/bot.py, always running in the
+scanner container) hands each one to record_member_update, which notes the link's
+place and the time, never who it was. Every full run notes how many members each
+channel has. Once a week (growth.report_day) the owner's chat gets the numbers: the
+members now, the change in the week, and where the free channel's new members came from.
+--dry-run only reads the member counts, and saves nothing.
 """
 from __future__ import annotations
 
@@ -102,31 +100,28 @@ def whatsapp_link(deal: Deal, config: Config, language: str, *, city: str | None
 
 # --- noting the numbers -----------------------------------------------------------------
 
-def note_member_updates(telegram: TelegramClient, storage: Storage, config: Config, chats: dict[str, str]) -> int:
-    """Store the joins and leaves Telegram has for the bot, then let Telegram forget them.
+def channel_chats(config: Config, env: Mapping[str, str]) -> dict[str, str]:
+    """Our name for each channel -> its chat id ("@flyfromtirana" or "-100..."), from the environment."""
+    chats = {FREE: env.get("TELEGRAM_CHANNEL_ID", "").strip()}
+    if config.premium.enabled:
+        chats[PREMIUM] = env.get("TELEGRAM_PREMIUM_CHANNEL_ID", "").strip()
+    return {name: chat_id for name, chat_id in chats.items() if chat_id}
 
-    chats: our name for each channel -> its chat id ("@flyfromtirana" or "-100...").
-    Returns how many joins and leaves were stored.
+
+def record_member_update(update: dict, storage: Storage, config: Config, chats: dict[str, str]) -> bool:
+    """Note a join or a leave from one of Telegram's "chat_member" updates. Returns whether it was one.
+
+    chats: see channel_chats. An update seen twice (after a restart) is kept once.
     """
-    stored = 0
-    offset = None
-    while True:
-        # Each call with an offset confirms every update before it, so the last (empty) call
-        # confirms them all. An update stored twice (a run cut off in between) is kept once.
-        updates = telegram.member_updates(offset)
-        if not updates:
-            return stored
-        for update in updates:
-            change = update.get("chat_member") or {}
-            channel = channel_name(change.get("chat") or {}, chats)
-            joined = membership_change(change)
-            if channel is None or joined is None:
-                continue   # another chat, or neither a join nor a leave (an admin's rights changed, say)
-            source = link_source(change.get("invite_link"), config) if joined else ""
-            at = datetime.fromtimestamp(change.get("date", 0), tz=timezone.utc)
-            storage.save_join(update["update_id"], channel, source, joined, at)
-            stored += 1
-        offset = updates[-1]["update_id"] + 1
+    change = update.get("chat_member") or {}
+    channel = channel_name(change.get("chat") or {}, chats)
+    joined = membership_change(change)
+    if channel is None or joined is None:
+        return False   # another chat, or neither a join nor a leave (an admin's rights changed, say)
+    source = link_source(change.get("invite_link"), config) if joined else ""
+    at = datetime.fromtimestamp(change.get("date", 0), tz=timezone.utc)
+    storage.save_join(update["update_id"], channel, source, joined, at)
+    return True
 
 
 def channel_name(chat: dict, chats: dict[str, str]) -> str | None:
@@ -223,17 +218,14 @@ def report_text(config: Config, storage: Storage, now: datetime, counts: dict[st
 def run(config: Config, env: Mapping[str, str], *, report_now: bool = False, dry_run: bool = False,
         now: datetime | None = None, session: requests.Session | None = None,
         output: Callable[[str], None] = print) -> int:
-    """Note the joins and the member counts, and send the weekly report when it is due.
+    """Note the member counts, and send the weekly report when it is due.
 
     env: the environment variables (os.environ). `now`, `session` and `output` are only
     passed in by tests.
     """
     now = now or datetime.now(timezone.utc)
     token = env.get("TELEGRAM_BOT_TOKEN", "").strip()
-    chats = {FREE: env.get("TELEGRAM_CHANNEL_ID", "").strip()}
-    if config.premium.enabled:
-        chats[PREMIUM] = env.get("TELEGRAM_PREMIUM_CHANNEL_ID", "").strip()
-    chats = {name: chat_id for name, chat_id in chats.items() if chat_id}
+    chats = channel_chats(config, env)
     if not token or FREE not in chats:
         raise ConfigError("the channels' numbers need TELEGRAM_BOT_TOKEN and TELEGRAM_CHANNEL_ID")
     # The report goes where the social drafts go: usually the owner's own chat with the bot.
@@ -244,10 +236,6 @@ def run(config: Config, env: Mapping[str, str], *, report_now: bool = False, dry
         return TelegramClient(token, chat_id, session)
 
     with Storage(config.db_path) as storage:
-        if not dry_run:
-            stored = note_member_updates(client(chats[FREE]), storage, config, chats)
-            if stored:
-                log.info("Noted %d join(s) or leave(s)", stored)
         counts = {name: client(chat_id).member_count() for name, chat_id in chats.items()}
         log.info("Members: %s", ", ".join(f"{name} {members}" for name, members in counts.items()))
         if not dry_run:
@@ -272,9 +260,7 @@ def run(config: Config, env: Mapping[str, str], *, report_now: bool = False, dry
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Note the Telegram channels' numbers; send the weekly report.")
     parser.add_argument("--report", action="store_true", help="send the weekly report now, whatever the day")
-    parser.add_argument("--dry-run", action="store_true",
-                        help="print the report instead of sending it; leave Telegram's updates for the "
-                             "server and save nothing")
+    parser.add_argument("--dry-run", action="store_true", help="print the report instead of sending it; save nothing")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-7s %(name)s: %(message)s")
     # urllib3's debug lines include request URLs, and the Telegram URL contains the bot token.

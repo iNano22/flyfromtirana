@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import sqlite3
 import statistics
+from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -56,7 +57,25 @@ CREATE TABLE IF NOT EXISTS reports_sent (
     kind         TEXT NOT NULL,      -- "growth": the weekly report
     sent_at      TEXT NOT NULL
 );
+
+-- The price alerts people set with the bot (src/bot.py, src/alerts.py). One per person and city.
+CREATE TABLE IF NOT EXISTS alerts (
+    chat_id      INTEGER NOT NULL,   -- the person's private chat with the bot
+    city         TEXT NOT NULL,      -- a route's city, as in config.yaml ("Milan")
+    max_price    REAL,               -- euros; NULL = any deal
+    created_at   TEXT NOT NULL,
+    PRIMARY KEY (chat_id, city)
+);
 """
+
+
+@dataclass(frozen=True)
+class Alert:
+    """"Tell me when this city has a flight at this price or cheaper" (max_price None = any deal)."""
+
+    chat_id: int
+    city: str
+    max_price: float | None
 
 
 def to_iso(moment: datetime) -> str:
@@ -70,7 +89,9 @@ class Storage:
     def __init__(self, path: str | Path = ":memory:"):
         if str(path) != ":memory:":
             Path(path).parent.mkdir(parents=True, exist_ok=True)
-        self.conn = sqlite3.connect(str(path))
+        # The bot and the scans use the database at the same time: wait for the other's write
+        # to finish (up to 30 seconds) rather than fail.
+        self.conn = sqlite3.connect(str(path), timeout=30)
         self.conn.executescript(SCHEMA)
 
     def __enter__(self) -> Storage:
@@ -254,3 +275,29 @@ class Storage:
     def record_report(self, kind: str, sent_at: datetime) -> None:
         with self.conn:
             self.conn.execute("INSERT INTO reports_sent (kind, sent_at) VALUES (?, ?)", (kind, to_iso(sent_at)))
+
+    # --- the price alerts (src/bot.py, src/alerts.py) -------------------------------
+
+    def set_alert(self, chat_id: int, city: str, max_price: float | None, now: datetime) -> None:
+        """Save a person's alert for a city; a new one for the same city replaces the old one."""
+        with self.conn:
+            self.conn.execute("INSERT OR REPLACE INTO alerts (chat_id, city, max_price, created_at)"
+                              " VALUES (?, ?, ?, ?)", (chat_id, city, max_price, to_iso(now)))
+
+    def alerts_of(self, chat_id: int) -> list[Alert]:
+        rows = self.conn.execute("SELECT chat_id, city, max_price FROM alerts WHERE chat_id = ? ORDER BY created_at",
+                                 (chat_id,)).fetchall()
+        return [Alert(*row) for row in rows]
+
+    def all_alerts(self) -> list[Alert]:
+        rows = self.conn.execute("SELECT chat_id, city, max_price FROM alerts ORDER BY chat_id, created_at").fetchall()
+        return [Alert(*row) for row in rows]
+
+    def delete_alert(self, chat_id: int, city: str) -> bool:
+        with self.conn:
+            return self.conn.execute("DELETE FROM alerts WHERE chat_id = ? AND city = ?", (chat_id, city)).rowcount > 0
+
+    def delete_alerts(self, chat_id: int) -> int:
+        """Delete all of a person's alerts. Returns how many there were."""
+        with self.conn:
+            return self.conn.execute("DELETE FROM alerts WHERE chat_id = ?", (chat_id,)).rowcount

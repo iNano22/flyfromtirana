@@ -14,6 +14,11 @@ Each comes in two sizes:
     feed    1080 x 1350   the tallest picture Instagram's feed allows (4:5); Facebook too
     story   1080 x 1920   an Instagram or Facebook story (9:16)
 
+A deal card also has a third size, "reel" (1080 x 1920), the frame of its video
+(src/reels.py): the photo runs to the bottom, and the words keep clear of what
+Instagram lays over a Reel (its name at the top, the buttons on the right, the
+caption at the bottom).
+
 The photos are the ones the Telegram posts use (assets/telegram/<iata>.jpg).
 Drawing is done with Pillow, the Python image library: there is no Chrome on
 the server, and this way a card takes well under a second. Pillow draws text
@@ -24,6 +29,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
+from typing import Callable
 from functools import lru_cache
 from pathlib import Path
 
@@ -58,6 +64,9 @@ class Layout:
     footer: int     # the black strip at the bottom (the site's address)
     padding: int    # left/right margin inside the yellow sign
     scale: float    # text sizes and spacing on the sign, relative to the feed card's
+    safe_top: int = 0      # more room at the top (a Reel: Instagram's name for the tab is there)
+    safe_right: int = 0    # more room on the right (a Reel: the like, comment and share buttons)
+    band: bool = True      # the footer is a black band; False = the photo runs to the bottom, darkened
 
     @property
     def sign_top(self) -> int:
@@ -74,7 +83,14 @@ class Layout:
 LAYOUTS = {
     "feed": Layout("feed", 1080, 1350, bar=96, photo=624, footer=80, padding=56, scale=1.0),
     "story": Layout("story", 1080, 1920, bar=120, photo=820, footer=320, padding=64, scale=1.16),
+    # A Reel's frame: Instagram covers its top ~170px, its right ~110px from the middle down,
+    # and its bottom ~450px with the caption, so the words sit higher than on the story. The
+    # profile grid shows a Reel cut to 3:4 (240px off the top and the bottom), so the brand
+    # starts below that.
+    "reel": Layout("reel", 1080, 1920, bar=120, photo=1280, footer=520, padding=64, scale=1.16,
+                   safe_top=240, safe_right=110, band=False),
 }
+CARD_SIZES = ("feed", "story")   # the pictures save_cards writes (a Reel is drawn by src/reels.py)
 
 
 def save_cards(deal: Deal, out_dir: Path, *, airline_names: dict[str, str], brand: str, handle: str,
@@ -82,7 +98,7 @@ def save_cards(deal: Deal, out_dir: Path, *, airline_names: dict[str, str], bran
     """Write both cards of a deal as JPEGs: {"feed": out_dir/bgy_feed.jpg, "story": out_dir/bgy_story.jpg}."""
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = {}
-    for name in LAYOUTS:
+    for name in CARD_SIZES:
         card = draw_card(deal, name, airline_names=airline_names, brand=brand, handle=handle,
                          address=address, photo=photo, language=language)
         paths[name] = save_jpeg(card, out_dir / f"{deal.route.iata.lower()}_{name}.jpg")
@@ -189,53 +205,101 @@ def draw_card(deal: Deal, layout_name: str, *, airline_names: dict[str, str], br
     """A deal's card as a Pillow image (RGB): the destination's photo filling the card, a giant
     price and the city over its darkened lower half, the saving as a sticker. layout_name: "feed" or "story"."""
     layout = LAYOUTS[layout_name]
-    words = WORDS[language]
-    card = full_photo(photo, deal.route.iata, layout)
-    shade(card, 0, px(layout, 260), start=150, end=0)
-    shade(card, int(layout.sign_bottom * 0.4), layout.sign_bottom, start=0, end=240)
+    card = deal_background(photo, deal.route.iata, layout)
     draw = ImageDraw.Draw(card)
-    brand_over_photo(card, draw, brand, layout)
-    footer(draw, layout, address=address, handle=handle)
+    for _, paint in deal_pieces(deal, layout, airline_names=airline_names, brand=brand, handle=handle,
+                                address=address, language=language):
+        paint(card, draw)
+    return card
+
+
+def deal_background(photo: Path | None, iata: str, layout: Layout) -> Image.Image:
+    """A deal card's photo, darkened at the top (for the brand) and from the middle down (for the words)."""
+    card = full_photo(photo, iata, layout)
+    shade(card, 0, px(layout, 260) + layout.safe_top, start=150, end=0)
+    shade(card, int(layout.sign_bottom * 0.4), layout.sign_bottom, start=0, end=240)
+    if not layout.band:   # no black footer: the photo goes on below the words, almost black
+        shade(card, layout.sign_bottom, layout.height, start=240, end=215)
+    return card
+
+
+# How to draw one piece of a card on it: paint(card, draw).
+Paint = Callable[[Image.Image, ImageDraw.ImageDraw], None]
+
+
+def deal_pieces(deal: Deal, layout: Layout, *, airline_names: dict[str, str], brand: str, handle: str,
+                address: str, language: str = "sq") -> list[tuple[str, Paint]]:
+    """The words and labels of a deal card, each with the way to draw it: [("brand", paint), ...].
+
+    draw_card paints them all on the photo, in this order. A Reel (src/reels.py) paints each
+    on a layer of its own, to bring them in one after the other. The names: brand, footer,
+    sticker, details, dates, city, price, tag.
+    """
+    words = WORDS[language]
     width, pad = layout.width, layout.padding
+    room = width - 2 * pad - layout.safe_right   # how wide a line of words may be
+    pieces: list[tuple[str, Paint]] = [
+        ("brand", lambda card, draw: brand_over_photo(card, draw, brand, layout)),
+        ("footer", lambda card, draw: footer(draw, layout, address=address, handle=handle)),
+    ]
 
     # The saving as a sticker at the top right; without a usual price, "OFERTË".
     saving = saving_percent(deal)
-    sticker(card, f"-{saving}%" if saving else "OFERTË", center=(width - px(layout, 230), px(layout, 330)),
-            angle=-8, size=px(layout, 72 if saving else 52))
+    label = f"-{saving}%" if saving else "OFERTË"
+    center = (width - px(layout, 230), px(layout, 330) + layout.safe_top)
+    pieces.append(("sticker", lambda card, draw: sticker(card, label, center=center, angle=-8,
+                                                         size=px(layout, 72 if saving else 52))))
 
     # The words, from the bottom up: the flight, the dates, the city, the price, the route.
     y = layout.sign_bottom - px(layout, 56)
     details = flight_line(deal, airline_names, words)
-    details_font = fit(details, width - 2 * pad, size=px(layout, 38), weight=600, width_axis=92, smallest=px(layout, 28))
-    draw.text((pad, y), details, font=details_font, fill=WHITE, anchor="ls")
+    details_font = fit(details, room, size=px(layout, 38), weight=600, width_axis=92, smallest=px(layout, 28))
+    pieces.append(("details", text_paint((pad, y), details, details_font, WHITE)))
     y -= cap_height(details_font) + px(layout, 24)
     dates = format_dates([q.depart_date for q in deal.quotes], words["months"]).replace(", ", "  ·  ")
     dates_font = archivo(px(layout, 46), 700, 90)
-    draw.text((pad, y), dates, font=dates_font, fill=SUN, anchor="ls")
+    pieces.append(("dates", text_paint((pad, y), dates, dates_font, SUN)))
     y -= cap_height(dates_font) + px(layout, 26)
+
     city = deal.route.city.upper()
-    city_font = fit(city, width - 2 * pad, size=px(layout, 150), weight=800, width_axis=72)
-    draw.text((pad, y), city, font=city_font, fill=WHITE, anchor="ls")
-    if deal.route.airport:
-        airport_font = archivo(px(layout, 50), 600, 90)
-        x = pad + draw.textlength(city, font=city_font) + px(layout, 22)
-        if x + draw.textlength(deal.route.airport, font=airport_font) <= width - pad:
-            draw.text((x, y), deal.route.airport, font=airport_font, fill=WHITE, anchor="ls")
+    city_font = fit(city, room, size=px(layout, 150), weight=800, width_axis=72)
+    city_y = y
+
+    def paint_city(card: Image.Image, draw: ImageDraw.ImageDraw) -> None:
+        draw.text((pad, city_y), city, font=city_font, fill=WHITE, anchor="ls")
+        if deal.route.airport:
+            airport_font = archivo(px(layout, 50), 600, 90)
+            x = pad + draw.textlength(city, font=city_font) + px(layout, 22)
+            if x + draw.textlength(deal.route.airport, font=airport_font) <= width - pad - layout.safe_right:
+                draw.text((x, city_y), deal.route.airport, font=airport_font, fill=WHITE, anchor="ls")
+    pieces.append(("city", paint_city))
     y -= cap_height(city_font, city) + px(layout, 20)
+
     price = f"€{format_price(deal.best.price)}"
     price_font = archivo(px(layout, 330), 800, 72)
     small = archivo(px(layout, 52), 700, 90)
-    draw.text((pad, y), "nga", font=small, fill=WHITE, anchor="ls")
-    x = pad + draw.textlength("nga", font=small) + px(layout, 18)
-    draw.text((x - px(layout, 8), y), price, font=price_font, fill=SUN, anchor="ls")
-    if deal.median:
-        x += draw.textlength(price, font=price_font) + px(layout, 24)
-        draw.text((x, y), f"zakonisht ~€{deal.median:.0f}", font=archivo(px(layout, 36), 500, 95), fill=WHITE,
-                  anchor="ls")
+    price_y = y
+
+    def paint_price(card: Image.Image, draw: ImageDraw.ImageDraw) -> None:
+        draw.text((pad, price_y), "nga", font=small, fill=WHITE, anchor="ls")
+        x = pad + draw.textlength("nga", font=small) + px(layout, 18)
+        draw.text((x - px(layout, 8), price_y), price, font=price_font, fill=SUN, anchor="ls")
+        if deal.median:
+            x += draw.textlength(price, font=price_font) + px(layout, 24)
+            draw.text((x, price_y), f"zakonisht ~€{deal.median:.0f}", font=archivo(px(layout, 36), 500, 95),
+                      fill=WHITE, anchor="ls")
+    pieces.append(("price", paint_price))
     y -= cap_height(price_font) + px(layout, 50)
-    tag(draw, f"{deal.best.origin} → {deal.best.destination}  ·  ONE WAY", left=pad, middle=y,
-        font=mono(px(layout, 32)), fill=INK, color=SUN)
-    return card
+
+    route = f"{deal.best.origin} → {deal.best.destination}  ·  ONE WAY"
+    pieces.append(("tag", lambda card, draw: tag(draw, route, left=pad, middle=y, font=mono(px(layout, 32)),
+                                                 fill=INK, color=SUN)))
+    return pieces
+
+
+def text_paint(xy: tuple[int, int], text: str, font: ImageFont.FreeTypeFont, fill: tuple) -> Paint:
+    """A piece that is one line of text, its baseline starting at xy."""
+    return lambda card, draw: draw.text(xy, text, font=font, fill=fill, anchor="ls")
 
 
 def flight_line(deal: Deal, airline_names: dict[str, str], words: dict) -> str:
@@ -329,9 +393,10 @@ def draw_top_card(deals: list[Deal], *, brand: str, handle: str, address: str, p
 # --- the common pieces: full photo, shading, brand, stickers, footer ------------------------
 
 def full_photo(photo: Path | None, iata: str, layout: Layout) -> Image.Image:
-    """A card with the photo filling everything above the footer."""
+    """A card with the photo filling everything above the footer (all of it, for a layout without a band)."""
     card = Image.new("RGB", (layout.width, layout.height), INK)
-    card.paste(photo_band(photo, layout.width, layout.sign_bottom, iata), (0, 0))
+    height = layout.sign_bottom if layout.band else layout.height
+    card.paste(photo_band(photo, layout.width, height, iata), (0, 0))
     return card
 
 
@@ -351,8 +416,8 @@ def shade(card: Image.Image, top: int, bottom: int, *, start: int, end: int, lef
 def brand_over_photo(card: Image.Image, draw: ImageDraw.ImageDraw, brand: str, layout: Layout) -> None:
     """The brand mark and name over a photo (shade the top of the photo first)."""
     mark = px(layout, 64)
-    top = px(layout, 32)
-    card.paste(plane_mark(mark), (layout.padding, top), plane_mark(mark))
+    top = px(layout, 32) + layout.safe_top
+    put(card, plane_mark(mark), (layout.padding, top))
     draw.text((layout.padding + mark + 18, top + mark / 2), brand, font=archivo(px(layout, 38), 800, 88), fill=WHITE,
               anchor="lm")
 
@@ -372,8 +437,17 @@ def sticker(card: Image.Image, text: str, *, center: tuple[int, int], angle: flo
     shadow.paste((0, 0, 0, 120), (0, 0, label.width, label.height), label)
     shadow = shadow.filter(ImageFilter.GaussianBlur(12))
     x, y = center[0] - label.width // 2, center[1] - label.height // 2
-    card.paste(shadow, (x + 6, y + 12), shadow)
-    card.paste(label, (x, y), label)
+    put(card, shadow, (x + 6, y + 12))
+    put(card, label, (x, y))
+
+
+def put(card: Image.Image, picture: Image.Image, xy: tuple[int, int]) -> None:
+    """Lay a picture with see-through parts (RGBA) on the card at xy. On a card that is itself
+    see-through (a Reel's layer), the two are blended, so soft edges stay soft."""
+    if card.mode == "RGBA":
+        card.alpha_composite(picture, dest=xy)
+    else:
+        card.paste(picture, xy, picture)
 
 
 def frame(layout: Layout, *, photo: Path | None, iata: str, brand: str, handle: str, address: str,
@@ -401,10 +475,11 @@ def brand_bar(draw: ImageDraw.ImageDraw, card: Image.Image, layout: Layout, *, b
 def footer(draw: ImageDraw.ImageDraw, layout: Layout, *, address: str, handle: str) -> None:
     """The black strip at the bottom: an address on the left, the account's name on the right."""
     width, pad = layout.width, layout.padding
-    draw.rectangle((0, layout.sign_bottom, width, layout.height), fill=INK)
+    if layout.band:
+        draw.rectangle((0, layout.sign_bottom, width, layout.height), fill=INK)
     middle = layout.sign_bottom + 42   # high up in the band: a story's bottom is covered by Instagram
     draw.text((pad, middle), address, font=fit_mono(address, width - 2 * pad - 320, size=30), fill=WHITE, anchor="lm")
-    draw.text((width - pad, middle), handle, font=archivo(32, 700, 90), fill=SUN, anchor="rm")
+    draw.text((width - pad - layout.safe_right, middle), handle, font=archivo(32, 700, 90), fill=SUN, anchor="rm")
 
 
 # --- text ------------------------------------------------------------------------------

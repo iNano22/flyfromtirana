@@ -114,13 +114,27 @@ class SocialSettings:
     # post time goes to a city guide when the day had no post at all.
     weekly_day: int | None = None
     weekly_count: int = 5
+    # Deal posts go to Instagram as a Reel (a short video of the card, src/reels.py) instead of
+    # the feed picture. Needs ffmpeg; without it the post stays a picture.
+    reels: bool = False
 
 
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
 
 # The places that advertise the free channel, each with its own invite link (invite_links in
 # config.yaml), so the weekly report can say where the new members came from (src/growth.py).
-INVITE_SOURCES = ("instagram", "facebook", "website", "whatsapp")
+INVITE_SOURCES = ("instagram", "facebook", "website", "whatsapp", "bot")
+
+
+@dataclass(frozen=True)
+class AlertSettings:
+    """The price alerts people set in a private chat with the bot (src/bot.py, src/alerts.py)."""
+
+    enabled: bool = False
+    bot_username: str = ""                               # "FlyFromTiranaBot", for the "alert me" links
+    prices: tuple[int, ...] = (20, 30, 40, 50, 70, 100)  # the price buttons, in euros
+    max_per_person: int = 10
+    sub_id: str = "alerts"                               # Travelpayouts SubID of the alerts' booking links
 
 
 @dataclass(frozen=True)
@@ -191,6 +205,7 @@ class Config:
     # A place without one uses the channel's public address (src/growth.py, join_link).
     invite_links: dict[str, str] = field(default_factory=dict)
     growth: GrowthSettings = field(default_factory=GrowthSettings)
+    alerts: AlertSettings = field(default_factory=AlertSettings)
 
 
 @dataclass(frozen=True)
@@ -287,7 +302,21 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         post_photos=bool(raw.get("post_photos", True)),
         invite_links=_invite_links(raw.get("invite_links") or {}),
         growth=_build_growth(raw.get("growth") or {}),
+        alerts=_build_alerts(raw.get("alerts") or {}),
     )
+
+
+def _build_alerts(raw: dict) -> AlertSettings:
+    prices = tuple(int(price) for price in raw.get("prices") or AlertSettings.prices)
+    if not prices or any(price <= 0 for price in prices) or list(prices) != sorted(set(prices)):
+        raise ValueError("alerts.prices must be whole euros from the lowest to the highest, e.g. [20, 30, 50]")
+    username = str(raw.get("bot_username") or "").strip().lstrip("@")
+    enabled = bool(raw.get("enabled", False))
+    if enabled and not username:
+        raise ValueError("alerts.bot_username is needed while alerts are on (the bot's name, e.g. FlyFromTiranaBot)")
+    return AlertSettings(enabled=enabled, bot_username=username, prices=prices,
+                         max_per_person=int(raw.get("max_per_person", 10)),
+                         sub_id=str(raw.get("sub_id") or "alerts").strip())
 
 
 def _invite_links(raw: dict) -> dict[str, str]:
@@ -335,6 +364,7 @@ def _build_social(raw: dict) -> SocialSettings:
         keep_pictures_days=keep_days,
         weekly_day=weekly_day,
         weekly_count=weekly_count,
+        reels=bool(raw.get("reels", False)),
     )
 
 

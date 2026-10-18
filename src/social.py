@@ -6,7 +6,9 @@ goes out at each posting time, social.post_times):
   - the best deal on the website the accounts haven't had: the deal's feed card
     and story card (src/cards.py) with the captions from
     templates/<language>_social.txt (Instagram) and <language>_facebook.txt (the
-    Page, which can hold the booking link);
+    Page, which can hold the booking link). With social.reels on, Instagram gets
+    the deal as a Reel (src/reels.py: the card brought to life, with music) instead
+    of the feed card; the story and the Facebook post keep the pictures;
   - the week's top deals, one day a week: a cover card plus each deal's card,
     posted together as a carousel;
   - a city guide, on a day with no post at all: the guide's cover card, a card
@@ -45,6 +47,7 @@ from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import PostPhoto
+from src.reels import ReelError, make_reel
 from src.telegram import TelegramClient
 
 log = logging.getLogger(__name__)
@@ -67,14 +70,40 @@ class Post:
     caption: str                # plain text for Instagram (no link: "linku në bio")
     facebook_text: str          # plain text for the Page, with the link
     link: str                   # the link the draft gives for the Facebook post
+    video: Path | None = None   # the Reel (MP4): Instagram gets it instead of the feed picture
+    cover: Path | None = None   # the Reel's cover picture, shown in the profile grid
+
+
+@dataclass(frozen=True)
+class Online:
+    """The public addresses of a post's files on the website (Instagram fetches them from there)."""
+
+    feed: list[str]             # the feed pictures, in order
+    story: str | None
+    video: str | None = None
+    cover: str | None = None
 
 
 # --- making the posts ----------------------------------------------------------------
 
-def deal_post(deal: Deal, config: Config, links: LinkBuilder, out_dir: Path, *, photo: PostPhoto | None) -> Post:
-    """A deal's post: its two cards and the captions. `links` carries the social SubID."""
+def deal_post(deal: Deal, config: Config, links: LinkBuilder, out_dir: Path, *, photo: PostPhoto | None,
+              music: tuple[Path, float] | None = None) -> Post:
+    """A deal's post: its two cards, its Reel (with social.reels on) and the captions.
+
+    `links` carries the social SubID. music: the Reel's track (reels.pick_music), or None.
+    A Reel that can't be made only leaves the post a picture, as before.
+    """
     cards = save_cards(deal, out_dir, airline_names=config.airlines, brand=config.brand, handle=handle(config),
                        address=site_address(config), photo=photo.path if photo else None, language=config.language)
+    video = cover = None
+    if config.social.reels:
+        try:
+            video, cover = make_reel(deal, out_dir, airline_names=config.airlines, brand=config.brand,
+                                     handle=handle(config), address=site_address(config),
+                                     telegram=short_address(config), photo=photo.path if photo else None,
+                                     language=config.language, music=music)
+        except ReelError as exc:
+            log.warning("[social] No Reel for %s, the post is a picture: %s", deal.route.iata, exc)
     booking_link = links.flight(deal.best)
     extra = {"HASHTAGS": config.social.hashtags, "WEBSITE": site_address(config), "BOOKING_LINK": booking_link}
 
@@ -87,7 +116,8 @@ def deal_post(deal: Deal, config: Config, links: LinkBuilder, out_dir: Path, *, 
 
     return Post(kind="deal", title=deal_title(deal), pictures=[cards["feed"]], story=cards["story"],
                 caption=caption("social", instagram_channel(config)),
-                facebook_text=caption("facebook", facebook_channel(config)), link=booking_link)
+                facebook_text=caption("facebook", facebook_channel(config)), link=booking_link,
+                video=video, cover=cover)
 
 
 def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dict[str, PostPhoto | None],
@@ -219,56 +249,72 @@ def facebook_channel(config: Config) -> str:
 
 # --- posting by the bot ----------------------------------------------------------------
 
-def put_pictures_online(post: Post, folder: Path, site_url: str, now: datetime) -> tuple[list[str], str | None]:
-    """Copy the post's pictures into the website's /social/ folder. Returns their public
-    addresses: the feed pictures in order, and the story's (or None).
+def put_pictures_online(post: Post, folder: Path, site_url: str, now: datetime) -> Online:
+    """Copy the post's pictures (and its Reel) into the website's /social/ folder. Returns their
+    public addresses.
 
-    The names carry the moment of posting (bgy_20261015-0817_feed.jpg), so a route
+    The names carry the moment of posting (bgy_feed_20261015-0817.jpg), so a route
     posted twice keeps both pictures until prune_pictures() removes the old ones.
     """
     folder.mkdir(parents=True, exist_ok=True)
     base = site_url.rstrip("/") + "/" + PICTURES_FOLDER + "/"
     stamp = f"{now:%Y%m%d-%H%M}"
 
-    def put(path: Path, name: str) -> str:
+    def put(path: Path | None) -> str | None:
+        if path is None:
+            return None
+        name = f"{path.stem}_{stamp}{path.suffix}"
         shutil.copy2(path, folder / name)
         return base + name
 
-    feed = [put(path, f"{path.stem}_{stamp}.jpg") for path in post.pictures]
-    story = put(post.story, f"{post.story.stem}_{stamp}.jpg") if post.story else None
-    return feed, story
+    return Online(feed=[put(path) for path in post.pictures], story=put(post.story), video=put(post.video),
+                  cover=put(post.cover))
 
 
 def prune_pictures(folder: Path, older_than: datetime) -> int:
-    """Delete posted pictures older than `older_than`. Returns how many went."""
+    """Delete posted pictures and videos older than `older_than`. Returns how many went."""
     if not folder.is_dir():
         return 0
     deleted = 0
-    for path in folder.glob("*.jpg"):
+    for path in [*folder.glob("*.jpg"), *folder.glob("*.mp4")]:
         if datetime.fromtimestamp(path.stat().st_mtime, tz=older_than.tzinfo) < older_than:
             path.unlink()
             deleted += 1
     return deleted
 
 
-def post_on_platforms(post: Post, meta: MetaClient, platforms: tuple[str, ...], feed_urls: list[str],
-                      story_url: str | None) -> list[tuple[str, str | None | MetaError]]:
+def post_on_platforms(post: Post, meta: MetaClient, platforms: tuple[str, ...],
+                      online: Online) -> list[tuple[str, str | None | MetaError]]:
     """Post on each platform. Returns one (what, outcome) per post made: the post's
-    address, None for a story (it has no address), or the MetaError."""
+    address, None for a story (it has no address), or the MetaError.
+
+    With a Reel, Instagram gets the Reel; if Instagram refuses it, the feed picture
+    goes out instead, so the deal is posted either way (the report shows both).
+    """
+    feed_urls = online.feed
     outcomes: list[tuple[str, str | None | MetaError]] = []
     for platform in platforms:
         if platform == "instagram":
-            try:
-                if len(feed_urls) == 1:
-                    outcomes.append(("Instagram", meta.post_instagram(feed_urls[0], post.caption)))
-                else:
-                    outcomes.append(("Instagram", meta.post_instagram_carousel(feed_urls, post.caption)))
-            except MetaError as exc:
-                outcomes.append(("Instagram", exc))
-                continue   # no story without the post
-            if story_url:
+            posted = False
+            if online.video:
                 try:
-                    outcomes.append(("Story", meta.post_instagram(story_url, story=True)))
+                    outcomes.append(("Reel", meta.post_instagram_reel(online.video, post.caption,
+                                                                      cover_url=online.cover)))
+                    posted = True
+                except MetaError as exc:
+                    outcomes.append(("Reel", exc))
+            if not posted:
+                try:
+                    if len(feed_urls) == 1:
+                        outcomes.append(("Instagram", meta.post_instagram(feed_urls[0], post.caption)))
+                    else:
+                        outcomes.append(("Instagram", meta.post_instagram_carousel(feed_urls, post.caption)))
+                except MetaError as exc:
+                    outcomes.append(("Instagram", exc))
+                    continue   # no story without the post
+            if online.story:
+                try:
+                    outcomes.append(("Story", meta.post_instagram(online.story, story=True)))
                 except MetaError as exc:
                     outcomes.append(("Story", exc))
         elif platform == "facebook":
@@ -294,7 +340,7 @@ def report(post: Post, outcomes: list[tuple[str, str | None | MetaError]]) -> st
     if len(problems) == len(outcomes):
         head = "❌ <b>Postimi dështoi</b>"
     lines = [f"{head} · {html.escape(post.title)}"]
-    icons = {"Instagram": "📸", "Story": "📱", "Facebook": "📘"}
+    icons = {"Instagram": "📸", "Reel": "🎬", "Story": "📱", "Facebook": "📘"}
     for what, outcome in outcomes:
         if isinstance(outcome, MetaError):
             lines.append(f"❌ {what}: {html.escape(str(outcome))}")
@@ -312,7 +358,7 @@ def report(post: Post, outcomes: list[tuple[str, str | None | MetaError]]) -> st
 def send_draft(telegram: TelegramClient, post: Post) -> int:
     """Send the post to the owner's chat as a draft: the files, the caption, the link.
     Returns the last message_id."""
-    files = post.pictures + ([post.story] if post.story else [])
+    files = ([post.video] if post.video else []) + post.pictures + ([post.story] if post.story else [])
     telegram.send_files(files, header(post))
     telegram.send_message(html.escape(post.caption, quote=False))
     return telegram.send_message(
@@ -322,8 +368,12 @@ def send_draft(telegram: TelegramClient, post: Post) -> int:
 
 def header(post: Post) -> str:
     """The text under the files: which post this is, and what to do with it."""
-    what = ("Ruaj fotot në galeri: feed (4:5) dhe story (9:16)" if post.story
-            else f"Ruaj të {len(post.pictures)} fotot në galeri dhe postoji bashkë (carousel), me këtë radhë")
+    if post.video:
+        what = "Ruaj videon dhe postoje si Reel; fotot janë për story-n (9:16) dhe Facebook-un (4:5)"
+    elif post.story:
+        what = "Ruaj fotot në galeri: feed (4:5) dhe story (9:16)"
+    else:
+        what = f"Ruaj të {len(post.pictures)} fotot në galeri dhe postoji bashkë (carousel), me këtë radhë"
     return (f"📸 <b>Draft për Instagram dhe Facebook</b>\n{html.escape(post.title)}\n\n"
             f"1️⃣ {what}\n"
             "2️⃣ Kopjo tekstin nga mesazhi tjetër\n"
