@@ -1,5 +1,8 @@
 """FlyFromTirana entry point: scan prices -> store -> detect deals -> post -> social drafts.
 
+After a full scan it also sends the price alerts people set with the bot (src/alerts.py) and
+checks the owner's own trip watches (src/trips.py).
+
 Run from the repo root:
     python -m src.main --dry-run                     # print posts instead of sending them
     python -m src.main --dry-run --routes BGY,VIE -v # a couple of routes, debug logging
@@ -54,6 +57,7 @@ from src.social import (GUIDE_CHANNEL, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_C
                         report, send_draft, weekly_post)
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
+from src.trips import send_trip_watches
 from src.website import build_offers, page_url, site_guides
 
 log = logging.getLogger("flyfromtirana")
@@ -206,9 +210,14 @@ def run(
                              telegram=telegram_for(secrets.telegram_channel_id),
                              premium_link=premium.join_link if premium.enabled else None, share=True, **common)
 
-        # 3) The Instagram/Facebook post, when its time has come, and the price alerts
+        # 3) The Instagram/Facebook post, when its time has come, the price alerts, and the
+        #    trips only the owner hears about (trip_watches)
         exit_code |= social_post()
         exit_code |= alerts()
+        owner = secrets.telegram_drafts_chat_id   # the owner's own chat with the bot
+        exit_code |= send_trip_watches(config, storage, scanner, owner=telegram_for(owner) if owner else None,
+                                       now=now, quiet=in_quiet_hours(local_now.time(), config.quiet_hours),
+                                       dry_run=dry_run, output=output)
 
         # 4) Housekeeping
         pruned = storage.prune_prices(now - timedelta(days=config.history_retention_days))

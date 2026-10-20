@@ -81,6 +81,7 @@ src/
   reels.py               turns a deal card into a 10-second Instagram Reel (Pillow frames + ffmpeg, music)
   bot.py                 the bot's private chat: people set price alerts; it also notes channel joins
   alerts.py              sends the price alerts after each scan
+  trips.py               your own trip watches (trip_watches): a cheap trip there and back, only to your chat
   meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
@@ -842,6 +843,22 @@ for messages (long polling). It is the only reader of the bot's updates, so it a
 hands the channel joins to the weekly report. Never run `python -m src.bot` or
 `scripts/alert_chat.py` while the server runs: Telegram gives each update to whoever
 asks first. The privacy page says what the bot keeps (the chat's number and the alerts).
+
+### Your own trip watches
+
+`trip_watches` in config.yaml are trips only you hear about, in your own chat
+(`TELEGRAM_DRAFTS_CHAT_ID`, or else `TELEGRAM_ALERT_CHAT_ID`), e.g. Tirana ⇄ Memmingen,
+3-4 days with a weekend, back by 24 December, up to €100 for both flights. After each
+full scan `src/trips.py` asks the price API for the watch's dates (one-way prices both
+ways, and return tickets: 3 calls a month), and writes when the cheapest trip that fits
+is at `max_price` or less: the best three, each linked to its Aviasales search (no
+affiliate marker: it's your booking). Then again only when it gets a price band cheaper,
+or after `repost_cooldown_days`. Not in quiet hours; a watch whose dates have passed does
+nothing, so you can leave it in. The destination needn't be a route: nothing about it goes
+to the channels or the site. `python -m src.trips` shows what the watches find right now.
+
+The API only has prices that people searched on Aviasales lately, so a quiet route like
+Memmingen can have gaps; the closer the dates, the more prices there are.
 
 ## Growing the Telegram channel
 

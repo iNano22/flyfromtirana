@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 import re
 from dataclasses import dataclass, field, replace
-from datetime import time
+from datetime import date, time
 from pathlib import Path
 
 import yaml
@@ -138,6 +138,22 @@ class AlertSettings:
 
 
 @dataclass(frozen=True)
+class TripWatch:
+    """A trip only the owner hears about (src/trips.py): out and back to `destination` between
+    two dates, for a few days, at max_price or less for both flights together."""
+
+    name: str                       # "Memmingen before Christmas": the message's title
+    destination: str                # airport code, e.g. "FMM"; it needn't be one of the routes
+    city: str                       # "Memmingen"
+    earliest_departure: date
+    latest_return: date
+    min_days: int                   # how long the trip is, counting the day out and the day back
+    max_days: int
+    weekend: bool = False           # True = the trip must include a Saturday and a Sunday
+    max_price: float | None = None  # euros, both flights together; None = any price
+
+
+@dataclass(frozen=True)
 class GrowthSettings:
     """The owner's weekly report on the Telegram channels (src/growth.py)."""
 
@@ -206,6 +222,7 @@ class Config:
     invite_links: dict[str, str] = field(default_factory=dict)
     growth: GrowthSettings = field(default_factory=GrowthSettings)
     alerts: AlertSettings = field(default_factory=AlertSettings)
+    trip_watches: tuple[TripWatch, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -303,6 +320,7 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         invite_links=_invite_links(raw.get("invite_links") or {}),
         growth=_build_growth(raw.get("growth") or {}),
         alerts=_build_alerts(raw.get("alerts") or {}),
+        trip_watches=tuple(_build_trip_watch(watch) for watch in raw.get("trip_watches") or []),
     )
 
 
@@ -317,6 +335,27 @@ def _build_alerts(raw: dict) -> AlertSettings:
     return AlertSettings(enabled=enabled, bot_username=username, prices=prices,
                          max_per_person=int(raw.get("max_per_person", 10)),
                          sub_id=str(raw.get("sub_id") or "alerts").strip())
+
+
+def _build_trip_watch(raw: dict) -> TripWatch:
+    name = str(raw.get("name") or "").strip()
+    destination = str(raw["destination"]).strip().upper()
+    if not re.fullmatch(r"[A-Z]{3}", destination):
+        raise ValueError(f"trip_watches: destination {destination!r} must be a 3-letter airport code")
+    # YAML reads 2026-12-01 as a date already; a quoted "2026-12-01" comes as text.
+    earliest, latest = (date.fromisoformat(str(raw[key])) for key in ("earliest_departure", "latest_return"))
+    if latest < earliest:
+        raise ValueError(f"trip_watches {name!r}: latest_return is before earliest_departure")
+    min_days, max_days = int(raw["min_days"]), int(raw.get("max_days") or raw["min_days"])
+    if not 1 <= min_days <= max_days:
+        raise ValueError(f"trip_watches {name!r}: min_days must be 1 or more, and max_days at least min_days")
+    max_price = raw.get("max_price")
+    if max_price is not None and float(max_price) <= 0:
+        raise ValueError(f"trip_watches {name!r}: max_price must be more than 0 (or empty, for any price)")
+    return TripWatch(name=name or f"Trip to {destination}", destination=destination,
+                     city=str(raw.get("city") or destination), earliest_departure=earliest, latest_return=latest,
+                     min_days=min_days, max_days=max_days, weekend=bool(raw.get("weekend", False)),
+                     max_price=float(max_price) if max_price is not None else None)
 
 
 def _invite_links(raw: dict) -> dict[str, str]:

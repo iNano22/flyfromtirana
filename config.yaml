@@ -124,6 +124,23 @@ alerts:
   max_per_person: 10
   sub_id: alerts                   # Travelpayouts SubID of the booking links in the alerts
 
+# --- Your own trip watches ------------------------------------------------------
+# Trips only you hear about: after each full scan (every 3 hours) the bot writes to your own chat
+# (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) when a trip that fits costs max_price
+# or less, and again when it gets cheaper (src/trips.py). Not in quiet hours. The destination
+# needn't be one of the routes below: nothing about it goes to the channels or the website.
+# To see what a watch finds right now: python -m src.trips
+trip_watches:
+  - name: Memmingen before Christmas
+    destination: FMM                 # Memmingen airport (Wizz Air and Ryanair fly there from Tirana)
+    city: Memmingen
+    earliest_departure: 2026-12-01
+    latest_return: 2026-12-24        # back by Christmas Eve
+    min_days: 3                      # how long, counting the day you fly out and the day you fly
+    max_days: 4                      #   back: Friday to Sunday is 3 days, Thursday to Sunday 4
+    weekend: true                    # the trip must include a Saturday and a Sunday
+    max_price: 100                   # euros, both flights together; empty = any price
+
 # --- Website -----------------------------------------------------------------
 # src/website.py renders one page from the price database into output_dir. On
 # the server the scheduler rebuilds it after every scan and the `web` container

@@ -54,6 +54,19 @@ class Quote:
         return self.transfers == 0
 
 
+@dataclass(frozen=True)
+class ReturnFare:
+    """The cheapest price seen for a return ticket: out and back in one booking."""
+
+    origin: str
+    destination: str
+    depart_date: date
+    return_date: date
+    price: float                # both flights together, in the configured currency (EUR)
+    airline: str                # IATA airline code of the flight out
+    transfers: int              # stops out + stops back; 0 = direct both ways
+
+
 class PriceScanner:
     def __init__(
         self,
@@ -79,40 +92,66 @@ class PriceScanner:
 
         Raises RouteFetchError if every month request failed, ScannerError on a bad token.
         """
-        first_day = today + timedelta(days=1)
-        last_day = today + timedelta(days=self.lookahead_days)
+        return self.fetch_dates(origin, destination, today + timedelta(days=1),
+                                today + timedelta(days=self.lookahead_days), fetched_at)
 
+    def fetch_dates(self, origin: str, destination: str, first_day: date, last_day: date,
+                    fetched_at: datetime) -> list[Quote]:
+        """Cheapest one-way quote per departure date, from first_day to last_day (both included)."""
         cheapest_by_date: dict[date, Quote] = {}
-        months = months_between(first_day, last_day)
-        failed_months = []
-        for month in months:
-            try:
-                rows = self._fetch_month(origin, destination, month)
-            except RouteFetchError as exc:
-                log.warning("%s→%s %s: %s", origin, destination, month, exc)
-                failed_months.append(month)
+        for row in self._fetch_rows(origin, destination, first_day, last_day, one_way=True):
+            quote = parse_row(row, origin, destination, fetched_at)
+            if quote is None or not first_day <= quote.depart_date <= last_day:
                 continue
-            for row in rows:
-                quote = parse_row(row, origin, destination, fetched_at)
-                if quote is None or not first_day <= quote.depart_date <= last_day:
-                    continue
-                current = cheapest_by_date.get(quote.depart_date)
-                if current is None or quote.price < current.price:
-                    cheapest_by_date[quote.depart_date] = quote
-
-        if len(failed_months) == len(months):
-            raise RouteFetchError(f"{origin}→{destination}: all {len(months)} requests failed")
+            current = cheapest_by_date.get(quote.depart_date)
+            if current is None or quote.price < current.price:
+                cheapest_by_date[quote.depart_date] = quote
 
         quotes = sorted(cheapest_by_date.values(), key=lambda q: q.depart_date)
         log.info("%s→%s: prices for %d dates", origin, destination, len(quotes))
         return quotes
 
-    def _fetch_month(self, origin: str, destination: str, month: str) -> list[dict]:
+    def fetch_return_fares(self, origin: str, destination: str, first_day: date, last_day: date) -> list[ReturnFare]:
+        """Cheapest return ticket per pair of dates, leaving from first_day to last_day.
+
+        Few people search return tickets, so there are far fewer of these than one-way prices.
+        """
+        cheapest: dict[tuple[date, date], ReturnFare] = {}
+        for row in self._fetch_rows(origin, destination, first_day, last_day, one_way=False):
+            fare = parse_return_row(row, origin, destination)
+            if fare is None or not first_day <= fare.depart_date <= last_day:
+                continue
+            dates = (fare.depart_date, fare.return_date)
+            if dates not in cheapest or fare.price < cheapest[dates].price:
+                cheapest[dates] = fare
+        log.info("%s⇄%s: return tickets for %d pairs of dates", origin, destination, len(cheapest))
+        return sorted(cheapest.values(), key=lambda fare: (fare.depart_date, fare.return_date))
+
+    def _fetch_rows(self, origin: str, destination: str, first_day: date, last_day: date, *,
+                    one_way: bool) -> list[dict]:
+        """Every row the API has for the months that first_day..last_day touch (one call per month).
+
+        Raises RouteFetchError if every month request failed.
+        """
+        months = months_between(first_day, last_day)
+        rows: list[dict] = []
+        failed_months = []
+        for month in months:
+            try:
+                rows += self._fetch_month(origin, destination, month, one_way=one_way)
+            except RouteFetchError as exc:
+                log.warning("%s→%s %s: %s", origin, destination, month, exc)
+                failed_months.append(month)
+        if len(failed_months) == len(months):
+            raise RouteFetchError(f"{origin}→{destination}: all {len(months)} requests failed")
+        return rows
+
+    def _fetch_month(self, origin: str, destination: str, month: str, *, one_way: bool = True) -> list[dict]:
         params = {
             "origin": origin,
             "destination": destination,
             "departure_at": month,   # "YYYY-MM" = every day of that month
-            "one_way": "true",
+            "one_way": "true" if one_way else "false",   # false = return tickets, back on any date
             "direct": "false",       # include flights with stops
             "currency": self.currency,
             "sorting": "price",
@@ -177,6 +216,24 @@ def parse_row(row: dict, origin: str, destination: str, fetched_at: datetime) ->
         link=row.get("link") or None,
         fetched_at=fetched_at,
     )
+
+
+def parse_return_row(row: dict, origin: str, destination: str) -> ReturnFare | None:
+    """Turn one return-ticket row into a ReturnFare, or None if it's malformed or for another airport."""
+    if not _same_place(origin, row.get("origin"), row.get("origin_airport")):
+        return None
+    if not _same_place(destination, row.get("destination"), row.get("destination_airport")):
+        return None
+    try:
+        depart_date = datetime.fromisoformat(row["departure_at"]).date()
+        return_date = datetime.fromisoformat(row["return_at"]).date()
+        price = float(row["price"])
+    except (KeyError, TypeError, ValueError):
+        log.debug("Skipping malformed return row: %r", row)
+        return None
+    return ReturnFare(origin=origin, destination=destination, depart_date=depart_date, return_date=return_date,
+                      price=price, airline=str(row.get("airline") or ""),
+                      transfers=int(row.get("transfers") or 0) + int(row.get("return_transfers") or 0))
 
 
 def _same_place(wanted: str, city_code: str | None, airport_code: str | None) -> bool:
