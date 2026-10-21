@@ -8,7 +8,7 @@ goes out at each posting time, social.post_times):
     templates/<language>_social.txt (Instagram) and <language>_facebook.txt (the
     Page, which can hold the booking link). With social.reels on, Instagram gets
     the deal as a Reel (src/reels.py: the card brought to life, with music) instead
-    of the feed card; the story and the Facebook post keep the pictures;
+    of the feed card, and the same video as the story; the Facebook post keeps the picture;
   - the week's top deals, one day a week: a cover card plus each deal's card,
     posted together as a carousel;
   - a city guide, on a day with no post at all: the guide's cover card, a card
@@ -312,7 +312,16 @@ def post_on_platforms(post: Post, meta: MetaClient, platforms: tuple[str, ...],
                 except MetaError as exc:
                     outcomes.append(("Instagram", exc))
                     continue   # no story without the post
-            if online.story:
+            # The story is the Reel's video when the Reel went out; if Instagram refuses
+            # the video as a story (or there is no Reel), the story picture goes instead.
+            story_posted = False
+            if online.video and posted:
+                try:
+                    outcomes.append(("Story", meta.post_instagram_video_story(online.video)))
+                    story_posted = True
+                except MetaError as exc:
+                    log.warning("[social] Instagram refused the video story, posting the picture: %s", exc)
+            if online.story and not story_posted:
                 try:
                     outcomes.append(("Story", meta.post_instagram(online.story, story=True)))
                 except MetaError as exc:
@@ -369,7 +378,8 @@ def send_draft(telegram: TelegramClient, post: Post) -> int:
 def header(post: Post) -> str:
     """The text under the files: which post this is, and what to do with it."""
     if post.video:
-        what = "Ruaj videon dhe postoje si Reel; fotot janë për story-n (9:16) dhe Facebook-un (4:5)"
+        what = ("Ruaj videon dhe postoje si Reel dhe si story; foto 4:5 është për Facebook-un "
+                "(foto 9:16 për story-n, nëse videoja nuk ngarkohet)")
     elif post.story:
         what = "Ruaj fotot në galeri: feed (4:5) dhe story (9:16)"
     else:

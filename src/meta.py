@@ -135,6 +135,18 @@ class MetaClient:
         log.info("Instagram Reel published: %s", permalink)
         return permalink
 
+    def post_instagram_video_story(self, video_url: str) -> None:
+        """Publish a video (the Reel's MP4) as a story. A story has no caption and no address.
+
+        Instagram takes the same MP4 as for a Reel (9:16, under 60 seconds). Docs:
+        https://developers.facebook.com/docs/instagram-platform/content-publishing#stories-posts
+        """
+        instagram = self._instagram_id()
+        container = self._call("POST", f"{instagram}/media", media_type="STORIES", video_url=video_url)["id"]
+        self._wait_for_container(container, checks=VIDEO_CHECKS, wait=VIDEO_WAIT_SECONDS, what="the video")
+        media = self._call("POST", f"{instagram}/media_publish", creation_id=container)["id"]
+        log.info("Instagram video story published (media %s)", media)
+
     def post_facebook(self, image_url: str, message: str) -> str:
         """Publish a picture with text on the Page. Returns the post's address."""
         page = self.whoami()["page_id"]

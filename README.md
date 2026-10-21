@@ -711,7 +711,9 @@ Telegram". The words keep clear of what Instagram lays over a Reel (the `reel` l
 in `src/cards.py`). The Reel's cover, the frame with everything in place, is what the
 profile grid shows. ffmpeg makes the MP4 (the Dockerfile installs it); without ffmpeg,
 or if Instagram refuses the video, the deal goes out as the feed picture as before, and
-the report says so. The story and the Facebook post keep the pictures.
+the report says so. The Instagram story is the same video as the Reel (when the Reel
+went out; if Instagram refuses the video as a story, the story picture goes instead).
+The Facebook post keeps the picture.
 
 The sound is one of the 17 tracks in `assets/music` (free tracks from Pixabay under the
 Pixabay Content License, none registered with Content ID, each cut to 50 energetic

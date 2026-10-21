@@ -552,12 +552,34 @@ def test_deal_goes_to_instagram_as_a_reel_with_its_cover(reels):
     assert reel["video_url"] == "https://flyfromtirana.al/social/bgy_reel_20261009-1000.mp4"
     assert reel["cover_url"] == "https://flyfromtirana.al/social/bgy_reel_20261009-1000.jpg"
     assert reel["caption"].startswith("✈️ TIRANA → MILAN (Bergamo) nga €19")
-    assert story["media_type"] == "STORIES"
+    assert story == {"media_type": "STORIES",                          # the story is the Reel's video
+                     "video_url": "https://flyfromtirana.al/social/bgy_reel_20261009-1000.mp4"}
     photo, = [c["data"] for c in graph if c["url"].endswith("/photos")]
     assert photo["url"].endswith("/bgy_feed_20261009-1000.jpg")   # Facebook keeps the picture
 
     report, = drafts(session)
     assert '🎬 Reel: <a href="https://www.instagram.com/p/abc123/">' in telegram_text(report)
+
+
+def test_refused_video_story_falls_back_to_the_story_picture(reels):
+    config, _ = reels
+    session = with_graph(fake_world())
+    graph = session.handler
+
+    def handler(method, url, kwargs):   # Instagram takes the Reel, but not the video as a story
+        data = kwargs.get("data", {})
+        if url.endswith("/media") and data.get("media_type") == "STORIES" and "video_url" in data:
+            return FakeResponse(400, {"error": {"message": "The video file is not supported", "code": 352}})
+        return graph(method, url, kwargs)
+    session.handler = handler
+
+    assert run(config, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    stories = [c["data"] for c in session.calls if c["url"].endswith("/media")
+               and c["data"].get("media_type") == "STORIES"]
+    assert [("video_url" in s, "image_url" in s) for s in stories] == [(True, False), (False, True)]
+    assert stories[1]["image_url"].endswith("/bgy_story_20261009-1000.jpg")
+    report, = drafts(session)                    # all went out: no draft needed
+    assert "📱 Story: ✅" in telegram_text(report)
 
 
 def test_refused_reel_falls_back_to_the_picture(reels):

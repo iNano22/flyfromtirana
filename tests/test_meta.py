@@ -175,3 +175,12 @@ def test_reel_that_instagram_cannot_take_raises():
     session = FakeSession(graph_handler(container_status="ERROR"))
     with pytest.raises(MetaError, match="could not take the video"):
         MetaClient(TOKEN, session, sleep=lambda s: None).post_instagram_reel("https://x/v.mp4", "x")
+
+
+def test_video_story_is_a_stories_container_with_the_video_and_no_address():
+    waits = []
+    session = FakeSession(graph_handler(container_checks=2))
+    assert MetaClient(TOKEN, session, sleep=waits.append).post_instagram_video_story("https://x/bgy_reel.mp4") is None
+    assert session.calls[1]["data"] == {"media_type": "STORIES", "video_url": "https://x/bgy_reel.mp4"}
+    assert "GET MEDIA1" not in paths(session)
+    assert waits == [5]   # waits like a video
