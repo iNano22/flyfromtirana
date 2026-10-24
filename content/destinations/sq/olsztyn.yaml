@@ -1,0 +1,99 @@
+city: Olsztyn
+slug: olsztyn
+tagline: Koperniku, kështjella dhe toka e liqeneve
+intro: >-
+  Olsztyn është kryeqyteti i Warmia-s dhe Masuria-s, krahinës në verilindje të Polonisë që njihet
+  si "toka e një mijë liqeneve". Ka rreth 170 mijë banorë, një qytet të vjetër të vogël mbi lumin
+  Łyna dhe 11 liqene brenda kufijve të qytetit. Këtu jetoi Koperniku si administrator i kështjellës.
+  Dy ditë mjaftojnë për qytetin; pjesa tjetër është për liqenet. Monedha është zloti polak (PLN): €1
+  është rreth 4.2 PLN.
+sights:
+  - name: Qyteti i Vjetër dhe Porta e Lartë
+    text: >-
+      Brama Wysoka, porta gotike e shekullit XIV, është e vetmja e mbetur nga muret e qytetit. Pas
+      saj është sheshi i tregut me shtëpi me harqe, të rindërtuara pas luftës, dhe Bashkia e Vjetër.
+  - name: Kështjella dhe Koperniku
+    text: >-
+      Kështjella prej tulle e shekullit XIV, ku Koperniku jetoi në vitet 1516-1521. Në murin e
+      galerisë ruhet tabela astronomike që ai vizatoi vetë. Brenda është Muzeu i Warmia-s dhe
+      Masuria-s, me biletë rreth 20-30 PLN (rreth €5-7).
+  - name: Katedralja e Shën Jakobit
+    text: >-
+      Kishë gotike prej tulle me një kullë rreth 60 m të lartë. Brenda, vër re harqet "kristal" të
+      tavanit, me forma këndore si gurë të çmuar.
+  - name: Liqeni Ukiel
+    text: >-
+      Liqeni më i madh i qytetit, rreth 3-4 km nga qendra, me plazh, shteg biçikletash përgjatë
+      bregut dhe kajakë e SUP me qira. Në verë del këtu gjithë qyteti.
+  - name: Planetariumi dhe Observatori
+    text: >-
+      Planetariumi u hap në vitin 1973, për 500-vjetorin e lindjes së Kopernikut, me filma për yjet
+      mbi kupolë. Observatori është në një kullë uji të vitit 1897. Bileta rreth 25-35 PLN (rreth
+      €6-8).
+itinerary:
+  - "Porta e Lartë, sheshi i tregut dhe Katedralja e Shën Jakobit. Pasdite kështjella dhe tabela e Kopernikut, në mbrëmje shëtitje buzë Łyna-s."
+  - "Planetariumi në mëngjes. Pasdite në Liqenin Ukiel për plazh, kajak ose biçikletë, dhe perëndimi i diellit mbi ujë."
+  - "Mikołajki me lundrim në liqenet e Masuria-s. Ndryshe, me makinë me qira, Święta Lipka dhe Strofka e Ujkut."
+areas:
+  - name: Stare Miasto (Qyteti i Vjetër)
+    text: Gjithçka në këmbë, me restorante e bare. Zona më e bukur, por me pak hotele.
+  - name: Pranë Olsztyn Główny
+    text: Rreth stacionit qendror, rreth 25 minuta në këmbë nga qyteti i vjetër, praktike për trenat.
+  - name: Pranë Liqenit Ukiel
+    text: Hotele më të qeta buzë ujit dhe pyllit, me autobus për në qendër. Ideale në verë.
+food:
+  - name: Peshk i liqeneve
+    text: Sielawa e tymosur, ngjala dhe peshq të tjerë nga liqenet e Masuria-s.
+  - name: Plince
+    text: Petulla patatesh të Masuria-s, me salcë kosi ose me gulash.
+  - name: Kartacze
+    text: Qofte të mëdha prej brumi patatesh me mish brenda, gatim tipik i verilindjes.
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë, mish, lakër ose fruta pylli.
+airports:
+  SZY: >-
+    Aeroporti Olsztyn-Mazury është në Szymany, rreth 60 km në jug të Olsztyn. Fluturimet nga Tirana
+    janë çartera sezonale, me ditë që ndryshojnë nga viti në vit. Aeroporti ka stacion treni: trenat
+    për në Olsztyn Główny, të përshtatur me disa fluturime, bëjnë rreth 1-1.5 orë dhe kushtojnë
+    rreth 15-20 PLN (rreth €4-5); në disa periudha ka edhe autobusë. Taksia bën rreth 1 orë dhe
+    kushton rreth 200-300 PLN (rreth €50-70). Në terminal ka zyra të makinave me qira.
+transport: >-
+  Qyteti i vjetër përshkohet në këmbë; tramvajet dhe autobusët lidhin stacionin, universitetin në
+  Kortowo dhe liqenet. Një biletë kushton rreth 4-5 PLN (rreth €1), ajo 24-orëshe rreth 12-16 PLN
+  (rreth €3-4), nga automatet ose në aplikacionin Jakdojade. Bolt dhe Uber janë të lirë. Për
+  Masuria-n makina me qira ia vlen, se autobusët janë të rrallë.
+daytrips:
+  - name: Mikołajki dhe liqenet e Masuria-s
+    text: >-
+      Qyteti i velave, rreth 1.5-2 orë me autobus ose, në verë, me tren. Nga skela nisen anijet për
+      Śniardwy, liqenin më të madh të Polonisë, për rreth 50-100 PLN (rreth €12-24).
+  - name: Strofka e Ujkut (Wolfsschanze)
+    text: >-
+      Selia e Hitlerit pranë Kętrzyn, ku në vitin 1944 dështoi atentati i Stauffenberg-ut, sot
+      bunkerë të shembur në pyll. Me tren deri në Kętrzyn, pastaj taksi; hyrja rreth 30-45 PLN
+      (rreth €7-11).
+  - name: Święta Lipka
+    text: >-
+      Bazilika barok e pelegrinazhit, me organon me figura që lëvizin dhe koncerte të shkurtra në
+      verë. Rreth 1.5 orë me autobus; me makinë kombinohet me Strofkën e Ujkut.
+  - name: Kështjella e Malbork-ut
+    text: >-
+      Kështjella e Kalorësve Teutonë, më e madhja prej tulle në botë, rreth 2 orë me tren. Bileta me
+      audioguidë rreth 60-80 PLN (€14-19).
+budget: >-
+  Një birrë kushton rreth 12-18 PLN (€3-4), një pjatë pierogi rreth 30-45 PLN (€7-11), një kafe
+  rreth 10-15 PLN (€2.5-3.5) dhe një kajak rreth 30-50 PLN (€7-12) në orë.
+when: >-
+  Qershori-gushti është koha e liqeneve, me ujë rreth 20-22°C. Në korrik dhe gusht zakonisht ka
+  koncerte në qytetin e vjetër. Maji dhe shtatori janë më të qetë; dimri është i ftohtë.
+tips:
+  - "Kontrollo orarin e trenit të aeroportit para nisjes: nuk lidhet me çdo fluturim."
+  - "Paguaj gjithmonë në PLN: kur terminali të ofron euro, refuzoje, se kursi është më i keq."
+  - "Buzë liqeneve në verë ka shumë mushkonja: merr spërkatës."
+faq:
+  - q: "Si shkoj nga aeroporti Szymany në Olsztyn?"
+    a: "Me tren nga stacioni i aeroportit, rreth 1-1.5 orë, kur ka tren pas fluturimit. Ndryshe, taksi rreth 200-300 PLN ose makinë me qira."
+  - q: "A është Olsztyn bazë e mirë për Masuria-n?"
+    a: "Po, sidomos me makinë: Mikołajki, Święta Lipka dhe Strofka e Ujkut janë 1-2 orë larg."
+  - q: "Sa para duhen në ditë në Olsztyn?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë. Më shumë kushtojnë makina me qira dhe lundrimet."

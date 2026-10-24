@@ -2228,5 +2228,225 @@
   "source_url": "https://unsplash.com/photos/S1oeJ0mmhik",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/osr.webp",
+  "slot": "OSR",
+  "title": "New Town Hall tower, Ostrava",
+  "creator": "@jerrykavan",
+  "creator_url": "https://unsplash.com/@jerrykavan",
+  "source_url": "https://unsplash.com/photos/jcoBYWY_VXE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/ostrava.webp",
+  "slot": "guide-ostrava",
+  "title": "Masaryk Square, Ostrava",
+  "creator": "@gabiontheroad",
+  "creator_url": "https://unsplash.com/@gabiontheroad",
+  "source_url": "https://unsplash.com/photos/YE7NM_JQaFE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ped.webp",
+  "slot": "PED",
+  "title": "Pernštýnské Square, Pardubice",
+  "creator": "@platform6ix",
+  "creator_url": "https://unsplash.com/@platform6ix",
+  "source_url": "https://unsplash.com/photos/bdJrr1HI7Qg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/pardubice.webp",
+  "slot": "guide-pardubice",
+  "title": "Kunětická hora castle near Pardubice",
+  "creator": "@steveczech",
+  "creator_url": "https://unsplash.com/@steveczech",
+  "source_url": "https://unsplash.com/photos/AQKG-ilav10",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/jcl.webp",
+  "slot": "JCL",
+  "title": "Town hall on Přemysl Otakar II Square, České Budějovice",
+  "creator": "@filipblaha_cz",
+  "creator_url": "https://unsplash.com/@filipblaha_cz",
+  "source_url": "https://unsplash.com/photos/q8CygX8u2KY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/ceske-budejovice.webp",
+  "slot": "guide-ceske-budejovice",
+  "title": "Main square and Black Tower, České Budějovice",
+  "creator": "@filipblaha_cz",
+  "creator_url": "https://unsplash.com/@filipblaha_cz",
+  "source_url": "https://unsplash.com/photos/_5pvNw6halc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/rze.webp",
+  "slot": "RZE",
+  "title": "Rzeszów",
+  "creator": "@drvmz888",
+  "creator_url": "https://unsplash.com/@drvmz888",
+  "source_url": "https://unsplash.com/photos/AhgBMczWNIY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/rzeszow.webp",
+  "slot": "guide-rzeszow",
+  "title": "The Wisłok river, Rzeszów",
+  "creator": "@drmalot",
+  "creator_url": "https://unsplash.com/@drmalot",
+  "source_url": "https://unsplash.com/photos/X3qC-1aG-60",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/szy.webp",
+  "slot": "SZY",
+  "title": "Old Town, Olsztyn",
+  "creator": "@masuren_men",
+  "creator_url": "https://unsplash.com/@masuren_men",
+  "source_url": "https://unsplash.com/photos/xA_rhdMHP30",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/olsztyn.webp",
+  "slot": "guide-olsztyn",
+  "title": "Olsztyn Castle",
+  "creator": "@masuren_men",
+  "creator_url": "https://unsplash.com/@masuren_men",
+  "source_url": "https://unsplash.com/photos/NjTsNhi3n6s",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ieg.webp",
+  "slot": "IEG",
+  "title": "Bacchus statue, Zielona Góra",
+  "creator": "@mamunessa",
+  "creator_url": "https://unsplash.com/@mamunessa",
+  "source_url": "https://unsplash.com/photos/9r4iaHWugqg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/zielona-gora.webp",
+  "slot": "guide-zielona-gora",
+  "title": "Fountain, Zielona Góra",
+  "creator": "@mamunessa",
+  "creator_url": "https://unsplash.com/@mamunessa",
+  "source_url": "https://unsplash.com/photos/PyLerIpW8_U",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/amm.webp",
+  "slot": "AMM",
+  "title": "Temple of Hercules, Amman Citadel",
+  "creator": "@whoisdenilo",
+  "creator_url": "https://unsplash.com/@whoisdenilo",
+  "source_url": "https://unsplash.com/photos/rrqOqh9t1jo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/amman.webp",
+  "slot": "guide-amman",
+  "title": "Umayyad Palace, Amman Citadel",
+  "creator": "@m7md001_",
+  "creator_url": "https://unsplash.com/@m7md001_",
+  "source_url": "https://unsplash.com/photos/vOf3uYa8Xy8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/cai.webp",
+  "slot": "CAI",
+  "title": "Pyramids of Giza",
+  "creator": "@mfbeki",
+  "creator_url": "https://unsplash.com/@mfbeki",
+  "source_url": "https://unsplash.com/photos/SVbI4MGCuco",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/cairo.webp",
+  "slot": "guide-cairo",
+  "title": "Mosques of Al-Rifai and Sultan Hassan, Cairo",
+  "creator": "@esh3rwy",
+  "creator_url": "https://unsplash.com/@esh3rwy",
+  "source_url": "https://unsplash.com/photos/pwMbtwA9LRc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ruh.webp",
+  "slot": "RUH",
+  "title": "Al Faisaliah Tower, Riyadh",
+  "creator": "@sci_fi_superfly",
+  "creator_url": "https://unsplash.com/@sci_fi_superfly",
+  "source_url": "https://unsplash.com/photos/YS23gFKcxRk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/riyadh.webp",
+  "slot": "guide-riyadh",
+  "title": "Kingdom Centre, Riyadh",
+  "creator": "@oualid24",
+  "creator_url": "https://unsplash.com/@oualid24",
+  "source_url": "https://unsplash.com/photos/ZiN8NGVd2pE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/evn.webp",
+  "slot": "EVN",
+  "title": "Republic Square, Yerevan",
+  "creator": "@oparinme",
+  "creator_url": "https://unsplash.com/@oparinme",
+  "source_url": "https://unsplash.com/photos/Nmlf0gF7_mI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/yerevan.webp",
+  "slot": "guide-yerevan",
+  "title": "Yerevan and Mount Ararat",
+  "creator": "@lyovon",
+  "creator_url": "https://unsplash.com/@lyovon",
+  "source_url": "https://unsplash.com/photos/_EpaiWp5yC8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/yyz.webp",
+  "slot": "YYZ",
+  "title": "Toronto skyline and the CN Tower",
+  "creator": "@juanrojas",
+  "creator_url": "https://unsplash.com/@juanrojas",
+  "source_url": "https://unsplash.com/photos/M62J7DBZ-hY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/toronto.webp",
+  "slot": "guide-toronto",
+  "title": "Toronto waterfront",
+  "creator": "@m_skalij",
+  "creator_url": "https://unsplash.com/@m_skalij",
+  "source_url": "https://unsplash.com/photos/AhmLdXl_azU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

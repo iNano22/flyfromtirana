@@ -1,0 +1,103 @@
+city: Yerevan
+slug: yerevan
+tagline: Kaskada, konjak armen dhe pamje nga mali Ararat
+intro: >-
+  Yerevan është kryeqyteti i Armenisë, një qytet i ndërtuar me gur rozë vullkanik, me malin Ararat
+  në horizont në ditë të kthjellëta. Është i lirë dhe i gjallë deri vonë në mbrëmje. Monedha është
+  drami armen (AMD): €1 është rreth 450 dram. Tri-katër ditë mjaftojnë për qytetin dhe dy ekskursione jashtë tij.
+  Fluturimet direkte nga Tirana janë sezonale, ndaj kontrollo datat kur ka linjë.
+sights:
+  - name: Kaskada
+    text: >-
+      Shkallare e madhe guri me kopshte dhe skulptura moderne. Brenda ka shkallë lëvizëse falas; nga
+      maja shihet gjithë Yerevani dhe, në mëngjes, mali Ararat.
+  - name: Sheshi i Republikës dhe shatërvanët këndues
+    text: >-
+      Sheshi kryesor, me ndërtesa prej guri rozë. Në mbrëmjet e stinës së ngrohtë, zakonisht nga maji
+      deri në tetor, shatërvanët kërcejnë me muzikë dhe drita, falas.
+  - name: Matenadaran
+    text: >-
+      Muzeu i dorëshkrimeve të lashta, me libra të ilustruar me dorë. Bileta kushton rreth 2500 dram
+      (rreth €5.5); ia vlen një guidë audio.
+  - name: Memoriali i Gjenocidit (Tsitsernakaberd)
+    text: >-
+      Memoriali i viktimave të vitit 1915, mbi një kodër me pamje mbi qytetin, me flakën e përjetshme
+      dhe një muze. Hyrja është falas.
+  - name: Tregu Vernissage
+    text: >-
+      Treg në ajër të hapur me piktura, qilima, punime druri, argjendi dhe suvenire. Më i madhi është
+      në fundjavë; pazari për çmimin është normal.
+  - name: Fabrika e konjakut Ararat
+    text: >-
+      Fabrika historike e konjakut armen, pranë urës mbi lumin Hrazdan. Turnet me shije zgjasin rreth
+      1 orë dhe nisin nga rreth 7000 dram (rreth €15.5); rezervo përpara.
+itinerary:
+  - "Sheshi i Republikës dhe Rruga e Veriut në mëngjes, pastaj Opera dhe Kaskada deri në majë. Pasdite Matenadaran, në mbrëmje shatërvanët këndues dhe darkë me khorovats."
+  - "Memoriali i Gjenocidit në mëngjes, pastaj një turne me shije në fabrikën e konjakut. Pasdite tregu Vernissage, në mbrëmje një kafene rreth Operas."
+  - "Një ditë jashtë qytetit: tempulli i Garnit dhe manastiri Geghard. Ndryshe, Khor Virap në mëngjes për pamjen e Araratit dhe Etchmiadzin pasdite."
+areas:
+  - name: Kentron
+    text: "Qendra rreth Sheshit të Republikës dhe Rrugës së Veriut: gjithçka në këmbë, me shumicën e hoteleve dhe restoranteve."
+  - name: Rreth Kaskadës dhe Operas
+    text: Pjesa më e këndshme e qendrës, me kafene dhe bare vere, pak më e shtrenjtë.
+  - name: Arabkir
+    text: Lagje banimi më e qetë në veri të Kaskadës, me apartamente me çmime të mira, 15-25 minuta në këmbë nga qendra.
+food:
+  - name: Khorovats
+    text: >-
+      Mish i pjekur në hell mbi prush, zakonisht derri, qengji ose pule, me perime të pjekura.
+  - name: Dolma
+    text: Gjethe hardhie ose lakre të mbushura me mish dhe oriz, të shërbyera me kos me hudhër.
+  - name: Lavash
+    text: >-
+      Buka e hollë armene, e pjekur në furrë dheu (tonir), që shoqëron çdo vakt.
+  - name: Konjaku armen
+    text: >-
+      Pija më e famshme e vendit, që pihet ngadalë pas darke. Një gotë në lokal kushton rreth
+      1500-3000 dram (rreth €3.5-6.5).
+airports:
+  EVN: >-
+    Aeroporti Ndërkombëtar Zvartnots është rreth 12 km në perëndim të qendrës. Autobusi ose
+    minibusi 201 të çon në qendër për rreth 30-40 minuta, me biletë rreth 300 dram (rreth €0.7);
+    nis afërsisht çdo 30 minuta gjatë ditës. Me aplikacionet Yandex Go ose GG udhëtimi deri në
+    qendër kushton rreth 3000-4000 dram (rreth €7-9) dhe zgjat rreth 20 minuta.
+transport: >-
+  Qendra përshkohet lehtë në këmbë. Ka një linjë metroje dhe shumë autobusë e minibusë, me biletë
+  rreth 300 dram (rreth €0.7) për udhëtim; në shumë prej tyre paguhet me kartë bankare pa kontakt.
+  Taksitë me aplikacion, Yandex Go ose GG, janë shumë të lira: një xhiro brenda qytetit kushton
+  rreth 1000-2000 dram (rreth €2-4.5).
+daytrips:
+  - name: Garni dhe Geghard
+    text: >-
+      Garni është tempulli i vetëm grek-romak i vendit, nga shekulli I, rreth 30 km në lindje, mbi
+      një grykë me kolona bazalti. Rreth 10 km më tej është Geghard, manastir i gdhendur pjesërisht në
+      shkëmb. Shko me taksi ose me një turne në grup.
+  - name: Khor Virap
+    text: >-
+      Manastir mbi një kodër të vogël rreth 45 km në jug, rreth 1 orë me makinë, me pamjen më të
+      afërt të malit Ararat. Shko në mëngjes, kur qielli është më i kthjellët.
+  - name: Liqeni Sevan
+    text: >-
+      Liqeni i madh malor rreth 65 km në verilindje, rreth 1 orë me makinë, me manastirin Sevanavank
+      mbi një gadishull. Në verë ka plazhe, por uji mbetet i ftohtë.
+  - name: Etchmiadzin
+    text: >-
+      Qendra e Kishës Armene, me katedralen e saj të lashtë, rreth 20 km në perëndim. Minibusët nga
+      qendra bëjnë rreth 30-40 minuta; rrugës ndalo te rrënojat e katedrales Zvartnots.
+budget: >-
+  Një kafe kushton rreth 800-1200 dram (rreth €2-2.5), një shawarma ose lahmajo rreth 1000-1500
+  dram (rreth €2-3.5), një darkë në restorant rreth 5000-8000 dram (rreth €11-18). Pa fluturimin
+  dhe fjetjen, llogarit €30-45 në ditë. Një shtrat në hostel nis nga rreth €10-15, një dhomë dyshe
+  në hotel të thjeshtë rreth €35-60.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë motin më të mirë. Korriku dhe gushti janë shumë të nxehtë,
+  shpesh mbi 35 gradë. Dimri është i ftohtë, me borë.
+tips:
+  - "Paguaj në dram. Karta pranohet pothuajse kudo në qendër, por për tregjet dhe disa minibusë duhen para në dorë."
+  - "Shumë mbishkrime janë edhe në anglisht; shumë njerëz flasin rusisht dhe të rinjtë anglisht."
+  - "Uji i çezmave të vogla në rrugë (pulpulak) është i pijshëm dhe i freskët."
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Autobusi ose minibusi 201 kushton rreth 300 dram dhe bën rreth 30-40 minuta. Me Yandex Go ose GG kushton rreth 3000-4000 dram deri në qendër."
+  - q: "Sa para duhen në ditë në Yerevan?"
+    a: "Pa fluturimin dhe fjetjen, rreth €30-45 në ditë. Një taksi për gjithë ditën te Garni dhe Geghard kushton rreth 15000-20000 dram (rreth €33-45) për gjithë makinën."

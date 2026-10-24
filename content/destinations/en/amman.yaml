@@ -1,0 +1,78 @@
+city: Amman
+slug: amman
+tagline: Hills, Roman ruins and the gateway to Petra
+intro: >-
+  Amman is the capital of Jordan, built on hills covered in beige stone houses. It has a citadel on a
+  hilltop, a Roman theatre, noisy souks and cheap, tasty street food. Most visitors use it as a base
+  for Petra, the Dead Sea and Wadi Rum: four to five days are enough for the city and two or three
+  trips out. Direct flights from Tirana are seasonal charters.
+sights:
+  - name: The Citadel (Jabal al-Qal'a)
+    text: The highest hill in the centre, with the Temple of Hercules and the Umayyad Palace. Entry costs about 3 JOD (€3.60); the view over the city is best at sunset.
+  - name: The Roman Theatre
+    text: A 2nd-century theatre carved into the hillside, with about 6,000 seats. Entry costs about 2 JOD (€2.40).
+  - name: Rainbow Street
+    text: The street of Jabal Amman, with cafés, bookshops and rooftop bars. From spring to autumn, on Fridays, the Souk Jara market usually opens nearby.
+  - name: The downtown souks
+    text: In Al-Balad, around the Al-Husseini Mosque, the gold souk, the vegetable market and shops selling spices and sweets. Haggling is expected.
+  - name: King Abdullah I Mosque
+    text: The blue-domed mosque in Abdali, open to visitors outside prayer times, with entry about 2 JOD. Women are given an abaya there to cover up. On Fridays it doesn't admit visitors.
+itinerary:
+  - "The Citadel in the morning, a walk down to the Roman Theatre, then the souks of Al-Balad. Lunch at Hashem, knafeh at Habibah and the evening on Rainbow Street."
+  - "Jerash in the morning, before the heat. In the afternoon the King Abdullah I Mosque and the Jordan Museum (about 5 JOD)."
+  - "Petra on the morning JETT bus and a night in Wadi Musa, the small town next to the entrance."
+  - "Petra again at dawn, when there are fewer people, then a night in Wadi Rum, or back to Amman and the Dead Sea."
+areas:
+  - name: Al-Balad (Downtown)
+    text: Close to the Roman Theatre and the souks, with the cheapest hotels, but noisy and with simple rooms.
+  - name: Jabal Amman
+    text: Around Rainbow Street, quieter, with boutique hotels and cafés, 15 minutes on foot from the centre.
+  - name: Abdali and Shmeisani
+    text: The modern area with chain hotels and shopping malls, a little far from the souks, but with cheap taxis.
+food:
+  - name: Mansaf
+    text: The national dish, lamb in a dried yogurt sauce (jameed) over rice, about 8-12 JOD (€10-14).
+  - name: Falafel at Hashem
+    text: The popular eatery in an alley of Al-Balad, with falafel, hummus and foul. A full meal costs about 3-5 JOD.
+  - name: Knafeh
+    text: A hot sweet with melted cheese and syrup. The queue at Habibah moves fast; a piece costs about 1-1.5 JOD.
+airports:
+  AMM: >-
+    Queen Alia Airport is about 35 km to the south. The Airport Express bus leaves every 30-60 minutes
+    in front of arrivals and reaches Tabarbour station (North Bus Station) in about 45-60 minutes, for
+    about 3.5 JOD (€4); from there continue by taxi. Airport taxis have a fixed fare, about 20-25 JOD
+    (€24-30) to the centre, more at night; Careem and Uber usually cost a little less. Withdraw dinars
+    at the airport: the bus and many taxis want cash.
+transport: >-
+  Amman has no metro and spreads over hills, so walking only works in the centre and in Jabal Amman.
+  The yellow taxis have meters (ask the driver to turn it on): a ride within the city usually costs
+  2-4 JOD. Careem and Uber show the price before you set off. For Petra take the JETT buses, with a
+  seat booked online; the bus usually leaves at about 6:30, but check the station when you buy the
+  ticket. Minibuses to Jerash leave from Tabarbour station when they fill up.
+daytrips:
+  - name: Petra
+    text: The Nabataean city carved into the rock, about 3-4 hours to the south. On a long day you see the Siq and the Treasury; with a night there you also reach the Monastery. Entry costs about 50 JOD (€60), if you spend at least one night in Jordan.
+  - name: Jerash
+    text: One of the best-preserved Roman cities outside Italy, with colonnaded streets, about 1 hour north by minibus. Entry costs about 10 JOD (€12).
+  - name: The Dead Sea
+    text: The lowest point on earth, where you float effortlessly, about 1 hour by car. Public beaches cost about 20-25 JOD, a day pass at a resort about 40-60 JOD.
+  - name: Wadi Rum
+    text: A desert of red rocks, about 4 hours from Amman, so combine it with Petra. A jeep tour and a night in a Bedouin camp cost about 40-80 JOD per person.
+budget: >-
+  One dinar (JOD) is about €1.2. A falafel sandwich costs about 0.5-1 JOD, a restaurant meal 4-8 JOD
+  (€5-10), a beer 5-7 JOD (€6-8.50). A hostel bed costs about 10-20 JOD (€12-24), a simple hotel 35-60
+  JOD (€42-72) a night. The Jordan Pass, about 70-80 JOD, includes Petra, Jerash, the Citadel and
+  dozens of other sites: it is worth it if you go to Petra.
+when: >-
+  March to May and September to November, with 18-28°C. Summer is hot and dry, more so in Petra and
+  Wadi Rum. Winter is cold, with nights around 5°C and sometimes snow. Ramadan moves every year (in
+  2027 it is expected around February-March): during the day many restaurants close.
+tips:
+  - "Cover your shoulders and knees, especially downtown and in mosques. Women carry a scarf for mosques."
+  - "During Ramadan, don't eat, drink or smoke in public during the day."
+  - "Friday is the day of rest: in the morning many shops are closed. Use it for Jerash or the Dead Sea."
+faq:
+  - q: "Are there direct flights from Tirana?"
+    a: "Usually only seasonal charters, in some months of the year. Otherwise you fly with one stop, for example in Istanbul."
+  - q: "How much money do you need per day in Amman?"
+    a: "Excluding the flight and accommodation, about €30-50 a day if you eat in popular local eateries. Petra and tours push the total up quickly."

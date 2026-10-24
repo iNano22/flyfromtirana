@@ -1,0 +1,78 @@
+city: Amman
+slug: amman
+tagline: Kodra, rrënoja romake dhe porta për në Petra
+intro: >-
+  Amman është kryeqyteti i Jordanisë, i ndërtuar mbi kodra me shtëpi prej guri ngjyrë bezhë. Ka
+  një kështjellë mbi kodër, një teatër romak, souk-e të zhurmshme dhe ushqim rruge të lirë e të
+  shijshëm. Shumica e vizitorëve e përdorin si bazë për Petra, Detin e Vdekur dhe Wadi Rum: katër-pesë
+  ditë mjaftojnë për qytetin dhe dy-tri dalje. Fluturimet direkte nga Tirana janë çartera sezonale.
+sights:
+  - name: Citadela (Jabal al-Qal'a)
+    text: Kodra më e lartë e qendrës, me Tempullin e Herkulit dhe Pallatin Umajad. Hyrja kushton rreth 3 JOD (€3.60); pamja mbi qytet është më e bukura në perëndim të diellit.
+  - name: Teatri Romak
+    text: Teatër i shekullit II, i gdhendur në shpatin e kodrës, me rreth 6.000 vende. Hyrja kushton rreth 2 JOD (€2.40).
+  - name: Rainbow Street
+    text: Rruga e Jabal Amman, me kafene, librari dhe bare në tarraca. Nga pranvera në vjeshtë, të premten, aty pranë hapet zakonisht tregu Souk Jara.
+  - name: Souk-et e qendrës
+    text: Në Al-Balad, rreth xhamisë Al-Husseini, souk-u i arit, tregu i perimeve dhe dyqane me erëza e ëmbëlsira. Pazarllëku pritet.
+  - name: Xhamia e Mbretit Abdullah I
+    text: Xhamia me kube blu në Abdali, e hapur për vizitorët jashtë orëve të faljes, me hyrje rreth 2 JOD. Gratë marrin aty një abaja për t'u mbuluar. Të premten nuk pranon vizitorë.
+itinerary:
+  - "Citadela në mëngjes, zbritje në këmbë te Teatri Romak, pastaj souk-et e Al-Balad. Drekë te Hashem, knafeh te Habibah dhe mbrëmja në Rainbow Street."
+  - "Jerash në mëngjes, para vapës. Pasdite Xhamia e Mbretit Abdullah I dhe Muzeu i Jordanisë (rreth 5 JOD)."
+  - "Petra me autobusin JETT të mëngjesit dhe një natë në Wadi Musa, qyteza ngjitur me hyrjen."
+  - "Petra sërish në agim, kur ka më pak njerëz, pastaj një natë në Wadi Rum, ose kthim në Amman dhe Deti i Vdekur."
+areas:
+  - name: Al-Balad (Downtown)
+    text: Pranë Teatrit Romak dhe souk-eve, me hotelet më të lira, por e zhurmshme dhe me dhoma të thjeshta.
+  - name: Jabal Amman
+    text: Rreth Rainbow Street, më e qetë, me hotele butik dhe kafene, 15 minuta në këmbë nga qendra.
+  - name: Abdali dhe Shmeisani
+    text: Zona moderne me hotele zinxhir dhe qendra tregtare, pak larg souk-eve, por me taksi të lirë.
+food:
+  - name: Mansaf
+    text: Pjata kombëtare, mish qengji në salcë kosi të tharë (jameed) mbi oriz, rreth 8-12 JOD (€10-14).
+  - name: Falafel te Hashem
+    text: Lokali popullor në një rrugicë të Al-Balad, me falafel, humus dhe ful. Një vakt i plotë kushton rreth 3-5 JOD.
+  - name: Knafeh
+    text: Ëmbëlsirë e nxehtë me djathë të shkrirë dhe shurup. Radha te Habibah lëviz shpejt; një copë kushton rreth 1-1.5 JOD.
+airports:
+  AMM: >-
+    Aeroporti Queen Alia është rreth 35 km në jug. Autobusi Airport Express niset çdo 30-60 minuta
+    para mbërritjeve dhe arrin në stacionin Tabarbour (North Bus Station) për rreth 45-60 minuta, me
+    rreth 3.5 JOD (€4); që andej vazhdo me taksi. Taksitë e aeroportit kanë tarifë fikse, rreth 20-25
+    JOD (€24-30) deri në qendër, më shumë natën; Careem dhe Uber zakonisht kushtojnë pak më pak. Tërhiq
+    dinarë në aeroport: autobusi dhe shumë taksi duan para në dorë.
+transport: >-
+  Amman nuk ka metro dhe shtrihet mbi kodra, ndaj në këmbë ecet vetëm në qendër dhe në Jabal Amman.
+  Taksitë e verdha kanë taksimetër (kërkoji shoferit ta ndezë): një udhëtim në qytet kushton zakonisht
+  2-4 JOD. Careem dhe Uber tregojnë çmimin para nisjes. Për Petra merr autobusët JETT, me vend të
+  rezervuar online; autobusi niset zakonisht rreth orës 6:30, por kontrollo stacionin kur blen
+  biletën. Minibusët për Jerash nisen nga stacioni Tabarbour kur mbushen.
+daytrips:
+  - name: Petra
+    text: Qyteti nabatean i gdhendur në shkëmb, rreth 3-4 orë në jug. Me një ditë të gjatë sheh Siqun dhe Thesarin; me një natë arrin edhe te Manastiri. Hyrja kushton rreth 50 JOD (€60), nëse fle të paktën një natë në Jordani.
+  - name: Jerash
+    text: Një nga qytetet romake më të ruajtura jashtë Italisë, me rrugë me kolona, rreth 1 orë në veri me minibus. Hyrja kushton rreth 10 JOD (€12).
+  - name: Deti i Vdekur
+    text: Pika më e ulët në tokë, ku pluskon pa u përpjekur, rreth 1 orë me makinë. Plazhet publike kushtojnë rreth 20-25 JOD, hyrja ditore në resort rreth 40-60 JOD.
+  - name: Wadi Rum
+    text: Shkretëtirë me shkëmbinj të kuq, rreth 4 orë nga Amman, ndaj kombinoje me Petra. Xhiro me xhip dhe nata në kamp beduin kushtojnë rreth 40-80 JOD për person.
+budget: >-
+  Një dinar (JOD) është rreth €1.2. Një sanduiç me falafel kushton rreth 0.5-1 JOD, një vakt në
+  restorant 4-8 JOD (€5-10), një birrë 5-7 JOD (€6-8.50). Një shtrat në hostel kushton rreth 10-20 JOD
+  (€12-24), një hotel i thjeshtë 35-60 JOD (€42-72) nata. Jordan Pass, rreth 70-80 JOD, përfshin
+  Petra, Jerash, Citadelën dhe dhjetëra vende të tjera: ia vlen nëse shkon në Petra.
+when: >-
+  Marsi-maji dhe shtatori-nëntori, me 18-28°C. Vera është e nxehtë dhe e thatë, më shumë në Petra e
+  Wadi Rum. Dimri është i ftohtë, me net rreth 5°C dhe ndonjëherë borë. Ramazani lëviz çdo vit (në
+  2027 pritet rreth shkurt-mars): ditën shumë restorante mbyllen.
+tips:
+  - "Mbulo supet dhe gjunjët, sidomos në qendër dhe në xhami. Gratë mbajnë një shall për xhamitë."
+  - "Gjatë Ramazanit mos ha, mos pi dhe mos pi duhan në publik ditën."
+  - "E premtja është dita e pushimit: në mëngjes shumë dyqane janë mbyllur. Përdore për Jerash ose Detin e Vdekur."
+faq:
+  - q: "A ka fluturime direkte nga Tirana?"
+    a: "Zakonisht vetëm çartera sezonale, në disa muaj të vitit. Ndryshe fluturohet me një ndalesë, për shembull në Istanbul."
+  - q: "Sa para duhen në ditë në Amman?"
+    a: "Pa fluturimin dhe fjetjen, rreth €30-50 në ditë, nëse ha në lokale popullore. Petra dhe turet e rrisin shpejt shumën."

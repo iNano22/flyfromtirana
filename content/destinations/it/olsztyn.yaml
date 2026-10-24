@@ -1,0 +1,101 @@
+city: Olsztyn
+slug: olsztyn
+tagline: Copernico, un castello e la terra dei laghi
+intro: >-
+  Olsztyn è il capoluogo della Varmia e Masuria, la regione nel nord-est della Polonia nota come
+  "la terra dei mille laghi". Ha circa 170 mila abitanti, una piccola città vecchia sopra il fiume
+  Łyna e 11 laghi entro i confini della città. Qui visse Copernico come amministratore del
+  castello. Due giorni bastano per la città; il resto è per i laghi. La valuta è lo złoty polacco
+  (PLN): €1 vale circa 4,2 PLN.
+sights:
+  - name: La Città Vecchia e la Porta Alta
+    text: >-
+      La Brama Wysoka, porta gotica del XIV secolo, è l'unica rimasta delle mura cittadine. Dietro
+      c'è la piazza del mercato con case porticate, ricostruite dopo la guerra, e il Vecchio
+      Municipio.
+  - name: Il castello e Copernico
+    text: >-
+      Un castello in mattoni del XIV secolo, dove Copernico visse negli anni 1516-1521. Sul muro
+      della galleria si conserva la tavola astronomica che disegnò lui stesso. Dentro c'è il Museo
+      della Varmia e Masuria, con biglietto da circa 20-30 PLN (circa €5-7).
+  - name: Cattedrale di San Giacomo
+    text: >-
+      Una chiesa gotica in mattoni con una torre alta circa 60 m. All'interno, nota le volte
+      "cristalline" del soffitto, con forme angolose come pietre preziose tagliate.
+  - name: Lago Ukiel
+    text: >-
+      Il lago più grande della città, a circa 3-4 km dal centro, con spiaggia, una pista ciclabile
+      lungo la riva e kayak e SUP a noleggio. D'estate ci va tutta la città.
+  - name: Planetario e Osservatorio
+    text: >-
+      Il planetario aprì nel 1973, per il 500° anniversario della nascita di Copernico, con film
+      sulle stelle proiettati sulla cupola. L'osservatorio è in una torre dell'acqua del 1897. Il
+      biglietto costa circa 25-35 PLN (circa €6-8).
+itinerary:
+  - "La Porta Alta, la piazza del mercato e la Cattedrale di San Giacomo. Nel pomeriggio il castello e la tavola di Copernico, la sera una passeggiata lungo la Łyna."
+  - "Il planetario al mattino. Nel pomeriggio il Lago Ukiel per la spiaggia, un kayak o un giro in bici, e il tramonto sull'acqua."
+  - "Mikołajki con una gita in battello sui laghi della Masuria. In alternativa, con un'auto a noleggio, Święta Lipka e la Tana del Lupo."
+areas:
+  - name: Stare Miasto (Città Vecchia)
+    text: Tutto a piedi, con ristoranti e locali. La zona più bella, ma con pochi hotel.
+  - name: Vicino a Olsztyn Główny
+    text: Intorno alla stazione centrale, a circa 25 minuti a piedi dalla città vecchia, comoda per i treni.
+  - name: Vicino al Lago Ukiel
+    text: Hotel più tranquilli vicino all'acqua e al bosco, con autobus per il centro. Ideale d'estate.
+food:
+  - name: Pesce di lago
+    text: Coregone affumicato (sielawa), anguilla e altri pesci dei laghi della Masuria.
+  - name: Plince
+    text: Frittelle di patate della Masuria, con panna acida o con gulasch.
+  - name: Kartacze
+    text: Grandi gnocchi di pasta di patate ripieni di carne, piatto tipico del nord-est.
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio, carne, cavolo o frutti di bosco.
+airports:
+  SZY: >-
+    L'aeroporto Olsztyn-Mazury è a Szymany, a circa 60 km a sud di Olsztyn. I voli da Tirana sono
+    charter stagionali, in giorni che cambiano di anno in anno. L'aeroporto ha una stazione
+    ferroviaria: i treni per Olsztyn Główny, coordinati con alcuni voli, impiegano circa 1-1,5 ore e
+    costano circa 15-20 PLN (circa €4-5); in alcuni periodi ci sono anche autobus. Un taxi impiega
+    circa 1 ora e costa circa 200-300 PLN (circa €50-70). Nel terminal ci sono banchi di
+    autonoleggio.
+transport: >-
+  La città vecchia si gira a piedi; tram e autobus collegano la stazione, l'università a Kortowo e
+  i laghi. Un biglietto costa circa 4-5 PLN (circa €1), quello da 24 ore circa 12-16 PLN (circa
+  €3-4), dalle macchinette o nell'app Jakdojade. Bolt e Uber sono economici. Per la Masuria
+  conviene un'auto a noleggio, perché gli autobus sono rari.
+daytrips:
+  - name: Mikołajki e i laghi della Masuria
+    text: >-
+      La cittadina della vela, a circa 1,5-2 ore di autobus o, d'estate, di treno. Dal molo partono i
+      battelli per lo Śniardwy, il lago più grande della Polonia, per circa 50-100 PLN (circa €12-24).
+  - name: La Tana del Lupo (Wolfsschanze)
+    text: >-
+      Il quartier generale di Hitler vicino a Kętrzyn, dove nel 1944 fallì l'attentato di
+      Stauffenberg, oggi bunker in rovina nel bosco. In treno fino a Kętrzyn, poi in taxi; ingresso
+      circa 30-45 PLN (circa €7-11).
+  - name: Święta Lipka
+    text: >-
+      La basilica barocca di pellegrinaggio, con un organo dalle figure mobili e brevi concerti
+      d'estate. Circa 1,5 ore di autobus; in auto si abbina alla Tana del Lupo.
+  - name: Castello di Malbork
+    text: >-
+      Il castello dei Cavalieri Teutonici, il più grande castello in mattoni del mondo, a circa 2 ore
+      di treno. Il biglietto con audioguida costa circa 60-80 PLN (€14-19).
+budget: >-
+  Una birra costa circa 12-18 PLN (€3-4), un piatto di pierogi circa 30-45 PLN (€7-11), un caffè
+  circa 10-15 PLN (€2,5-3,5) e un kayak circa 30-50 PLN (€7-12) all'ora.
+when: >-
+  Giugno-agosto è la stagione dei laghi, con l'acqua a circa 20-22°C. A luglio e agosto di solito
+  ci sono concerti nella città vecchia. Maggio e settembre sono più tranquilli; l'inverno è freddo.
+tips:
+  - "Controlla l'orario del treno dell'aeroporto prima di partire: non è coordinato con tutti i voli."
+  - "Paga sempre in PLN: quando il POS ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "D'estate vicino ai laghi ci sono molte zanzare: porta un repellente."
+faq:
+  - q: "Come arrivo dall'aeroporto di Szymany a Olsztyn?"
+    a: "In treno dalla stazione dell'aeroporto, circa 1-1,5 ore, quando c'è un treno dopo il tuo volo. Altrimenti, un taxi per circa 200-300 PLN o un'auto a noleggio."
+  - q: "Olsztyn è una buona base per la Masuria?"
+    a: "Sì, soprattutto in auto: Mikołajki, Święta Lipka e la Tana del Lupo sono a 1-2 ore."
+  - q: "Quanto si spende al giorno a Olsztyn?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno. Le spese maggiori sono l'auto a noleggio e le gite in battello."

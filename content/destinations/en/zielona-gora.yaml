@@ -1,0 +1,100 @@
+city: Zielona Góra
+slug: zielona-gora
+tagline: The wine town of bronze Bacchuses and the grape harvest festival
+intro: >-
+  Zielona Góra is a small city of about 140,000 people in western Poland, close to the German
+  border. It is known as the wine town: vineyards have been grown around it since the Middle Ages,
+  and every September the harvest festival, Winobranie, fills the centre. It has no big sights and
+  the centre can be seen in one unhurried day, but it is quiet and cheap. Day trips to Wrocław,
+  Poznań and Berlin fill the rest of the plan. The currency is the Polish złoty (PLN): €1 is about
+  4.3 PLN.
+sights:
+  - name: Stary Rynek and the Town Hall
+    text: >-
+      The market square, with colourful houses, cafés and wine bars, and the Town Hall with its
+      tower in the middle. A few steps away is the Gothic Co-Cathedral of St Hedwig, the oldest
+      church in town.
+  - name: The Bacchus hunt
+    text: >-
+      More than 50 small bronze statues of Bacchus, the Roman god of wine (bachusiki), scattered
+      around the centre. Hunting for them is the best way to see the town; you can get a map at the
+      tourist information office.
+  - name: The Wine Park and the Palmiarnia
+    text: >-
+      Park Winny is a hill with vines and footpaths, about 15 minutes on foot from the square. At the
+      top is the Palmiarnia, a glass palm house with a restaurant and a view over the town.
+  - name: The Lubusz Land Museum and the Wine Museum
+    text: >-
+      The regional museum, with local art and history. In its cellars the Wine Museum tells the
+      centuries of winemaking here; there is also an exhibition on the witch trials of the 17th
+      century. Tickets about 10-20 PLN (€2-5); usually closed on Mondays.
+  - name: The Church of Our Lady of Częstochowa
+    text: >-
+      A large church with a timber frame and brick walls, from the mid-18th century, near the
+      square. It was first built for the Protestants.
+itinerary:
+  - "Stary Rynek, the Town Hall and the Co-Cathedral, hunting for the Bacchuses along the way. In the afternoon the Church of Our Lady of Częstochowa and the Wine Museum. At dusk walk up to the Palmiarnia, then dinner with local wine."
+  - "Day trip by train: Wrocław (about 2-2.5 hours) or Poznań (about 1.5-2 hours). Leave in the morning and come back in the evening."
+  - "Berlin by direct bus for the whole day. Alternatively, with a rental car, the Muskau Park and a vineyard near town."
+areas:
+  - name: Stare Miasto (Old Town)
+    text: Around the square, with the restaurants and the Bacchuses within walking distance. The best area for a short stay.
+  - name: Near Zielona Góra Główna
+    text: Around the train and bus station, practical for day trips. The centre is about 15-20 minutes on foot.
+  - name: Near the Wine Park
+    text: A quiet, green neighbourhood with guesthouses, about 10-15 minutes on foot from the square.
+food:
+  - name: Local wine
+    text: >-
+      Whites from the Solaris and Riesling grapes, reds from Regent and Pinot Noir. Try them in the
+      wine bars in the centre or at the vineyards around town; a glass costs about 15-25 PLN
+      (€3.5-6).
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese (ruskie), meat, cabbage or fruit, boiled or fried.
+  - name: Żurek
+    text: Sour rye-flour soup with sausage and egg, often served inside a hollowed-out loaf of bread.
+airports:
+  IEG: >-
+    Zielona Góra-Babimost airport is about 35 km north-east of the city. A shuttle bus, timed to the
+    flights, takes you to the centre in about 40-50 minutes, with a ticket of about 20-30 PLN
+    (about €5-7). A taxi takes about 35-40 minutes and costs about 150-200 PLN (€35-47); book it
+    in advance. Flights from Tirana are seasonal charters.
+transport: >-
+  The centre can be seen on foot. City buses, many of them electric, link the station with the
+  neighbourhoods; a ticket costs about 4 PLN (about €1) and is usually bought by card on board.
+  Trains to Wrocław and Poznań leave from Zielona Góra Główna, buses to Berlin from the station next
+  door. Taxis are cheap.
+daytrips:
+  - name: Wrocław
+    text: >-
+      The big market square, the Ostrów Tumski island and the bronze dwarfs. About 2-2.5 hours by
+      train, about 40-60 PLN (€9-14) each way.
+  - name: Poznań
+    text: >-
+      Stary Rynek with the mechanical goats above the Town Hall clock at 12:00, and the oldest
+      cathedral in Poland. About 1.5-2 hours by train, about 35-55 PLN (€8-13).
+  - name: Berlin
+    text: >-
+      About 2.5-3 hours by direct bus (about €15-25), or by train with a change. A long day: it is
+      better with a night there.
+  - name: The Muskau Park
+    text: >-
+      Park Mużakowski, a large English-style park from the 19th century, on the UNESCO list, divided
+      by the Neisse river between Poland and Germany. About 1.5 hours by car; by public transport it
+      is difficult.
+budget: >-
+  A coffee costs about 12-15 PLN (€3-3.5), a plate of pierogi about 30-40 PLN (€7-9) and a bus
+  ticket about 4 PLN (€1). A double room in a simple hotel costs about 200-300 PLN (€47-70) a
+  night, more during Winobranie. Without the flight and accommodation, count on about €35-55 a day.
+when: >-
+  May to September has the best weather. Winobranie, the grape harvest festival and one of the
+  oldest in Poland, is held every year in September for about a week, with a parade, concerts and
+  wine stalls in the centre. Hotels fill up then: book early. Winter is cold, often below zero.
+tips:
+  - "Always pay in PLN: when the card terminal or ATM offers euros, decline, because the rate is worse."
+  - "Most shops in Poland are closed on Sundays; small supermarkets and petrol stations usually stay open."
+faq:
+  - q: "Is Zielona Góra worth it?"
+    a: "For a quiet weekend with wine and low prices, yes, especially during Winobranie. If you want more, use it as a base for Wrocław, Poznań or Berlin."
+  - q: "How do I get from the airport to the city?"
+    a: "By the shuttle bus that meets the flights (about 40-50 minutes, about 20-30 PLN), or by a booked taxi (about 150-200 PLN)."

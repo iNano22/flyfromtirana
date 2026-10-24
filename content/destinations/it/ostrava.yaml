@@ -1,0 +1,99 @@
+city: Ostrava
+slug: ostrava
+tagline: Altiforni, miniere e il festival Colours of Ostrava
+intro: >-
+  Ostrava è la terza città della Repubblica Ceca, con circa 280.000 abitanti, vicino al confine con
+  la Polonia. Per due secoli è stata la città del carbone e dell'acciaio; oggi i suoi altiforni e le
+  sue miniere sono diventati musei e sale da concerto. È economica, con pochi turisti e i monti
+  Beskydy vicini. Due giorni bastano per la città, più uno per le gite. La valuta è la corona ceca
+  (CZK): 1 euro vale circa 25 corone.
+sights:
+  - name: Dolní Vítkovice e la Bolt Tower
+    text: >-
+      L'ex area siderurgica di Vítkovice, dove gli altiforni si sono spenti nel 1998. In cima
+      all'altoforno n. 1 si trova la Bolt Tower, con un caffè e una terrazza a circa 78 metri.
+      Nell'area ci sono anche la sala Gong, in un ex gasometro, e il museo della scienza Svět techniky.
+      I biglietti costano circa 200-350 CZK (€8-14); a circa 10 minuti di tram dal centro.
+  - name: La torre del Municipio Nuovo
+    text: >-
+      La Nová radnice (1924-1930) ha la torre municipale più alta della Repubblica Ceca, circa 86
+      metri. Un ascensore porta alla terrazza a circa 73 metri, con vista fino ai Beskydy. Biglietto
+      circa 100-150 CZK (€4-6).
+  - name: Via Stodolní
+    text: >-
+      La via della vita notturna, con decine di bar e locali in poche centinaia di metri. Si anima dopo
+      le 21:00, soprattutto dal giovedì al sabato.
+  - name: Castello slesiano di Ostrava
+    text: >-
+      Lo Slezskoostravský hrad, della fine del XIII secolo, sull'altra riva del fiume Ostravice, a
+      circa 15 minuti a piedi dal centro. A causa delle miniere sottostanti, il terreno si è abbassato
+      di circa 16 metri. Biglietto circa 100-150 CZK (€4-6).
+  - name: Landek Park
+    text: >-
+      Il più grande museo minerario della Repubblica Ceca, nel quartiere di Petřkovice. Con una guida
+      scendi nelle gallerie della miniera Anselm. Su questa collina è stata trovata la Venere di
+      Petřkovice, una statuetta di circa 25.000 anni. Biglietto circa 150-250 CZK (€6-10); a circa
+      20-30 minuti di autobus dal centro.
+itinerary:
+  - "Masarykovo náměstí e la Cattedrale del Divino Salvatore. Il pomeriggio la torre del Municipio Nuovo e il Castello slesiano. La sera, via Stodolní."
+  - "Tutta la giornata a Dolní Vítkovice: l'altoforno, la Bolt Tower e Svět techniky. La sera un concerto al Gong, se c'è in programma."
+  - "Landek Park al mattino, Štramberk il pomeriggio. Oppure una giornata intera sui Beskydy e a Pustevny."
+areas:
+  - name: Moravská Ostrava (Centro)
+    text: Intorno a Masarykovo náměstí, con la maggior parte degli hotel; musei e locali sono a piedi o in tram.
+  - name: Vicino a via Stodolní
+    text: "Ideale per la vita notturna, ma rumorosa nel fine settimana: chiedi una camera sul cortile."
+  - name: Poruba e Svinov
+    text: Un quartiere tranquillo a ovest, con architettura degli anni 1950 e prezzi più bassi, vicino alla stazione di Ostrava-Svinov.
+food:
+  - name: Slezské nebe
+    text: Maiale affumicato con salsa di frutta secca e knedlík (pane bollito a fette), un piatto slesiano.
+  - name: Svíčková
+    text: Filetto di manzo in salsa cremosa di verdure, con knedlík e marmellata di mirtilli rossi.
+  - name: Birra Ostravar
+    text: La birra della città, economica e fresca alla spina.
+  - name: Štramberské uši
+    text: Biscotti speziati a forma di cono, le «orecchie di Štramberk».
+airports:
+  OSR: >-
+    L'aeroporto Leoš Janáček è a Mošnov, a circa 25 km a sud-ovest della città. Dalla stazione
+    ferroviaria accanto al terminal, i treni arrivano a Ostrava-Svinov in circa 30 minuti e a Ostrava
+    hlavní nádraží in circa 40 minuti, di solito una volta all'ora; il biglietto costa circa 50-70 CZK
+    (€2-3). Gli autobus regionali arrivano alla stazione degli autobus in centro in circa 30-40
+    minuti, per circa 50 CZK (€2). Un taxi costa circa 600-900 CZK (€24-36). I voli da Tirana sono
+    soprattutto stagionali; se arrivi tardi, controlla l'ultimo treno.
+transport: >-
+  Il centro si gira a piedi. Più lontano ci sono tram, autobus e filobus con lo stesso biglietto, che
+  si compra ai distributori, nell'app o con la carta contactless a bordo: circa 25-35 CZK (€1-1,50),
+  il biglietto da 24 ore circa 100-130 CZK (€4-5). Un Bolt costa circa 150-250 CZK (€6-10) in città.
+daytrips:
+  - name: Beskydy e Pustevny
+    text: >-
+      Le montagne a sud, con gli edifici in legno di Dušan Jurkovič a Pustevny e il sentiero per la
+      vetta del Radhošť. Circa 1,5 ore di treno fino a Frenštát pod Radhoštěm, poi un autobus fino alla
+      seggiovia.
+  - name: Štramberk
+    text: >-
+      Una cittadina di case in legno sotto la torre Trúba. Circa 1 ora di treno, spesso con cambio a
+      Studénka; vicino, a Kopřivnice, c'è il museo delle auto Tatra.
+  - name: Olomouc
+    text: >-
+      La città universitaria della Moravia, con la Colonna della Santissima Trinità (UNESCO) e un
+      orologio astronomico. Circa 1 ora di treno veloce, da circa 100-200 CZK (€4-8).
+budget: >-
+  Una birra da mezzo litro costa circa 45-65 CZK (€1,80-2,60), un piatto al ristorante circa 200-300
+  CZK (€8-12), un caffè circa 50-70 CZK (€2-3). Una doppia in un hotel semplice costa circa
+  1.200-2.200 CZK (€48-88) a notte, di più durante il festival.
+when: >-
+  Da maggio a settembre ci sono giornate lunghe e tavolini all'aperto. A metà luglio Dolní Vítkovice
+  ospita Colours of Ostrava, un festival musicale di circa 4 giorni: prenota l'alloggio con mesi di
+  anticipo. L'inverno è freddo, con il mercatino di Natale a dicembre e lo sci sui Beskydy.
+tips:
+  - "Quando il POS ti chiede euro o corone, scegli sempre le corone (CZK): la conversione in euro costa di più."
+  - "A pranzo chiedi il polední menu: zuppa e piatto principale per circa 150-200 CZK (€6-8), nei giorni feriali."
+  - "Sottoterra a Landek fa freddo anche d'estate: porta una giacca."
+faq:
+  - q: "Vale la pena Ostrava, o meglio andare direttamente a Praga?"
+    a: "Ostrava vale la pena per il patrimonio industriale, i prezzi bassi e le montagne vicine. Praga è a circa 3-3,5 ore di treno, quindi puoi combinarle."
+  - q: "Quanto si spende al giorno a Ostrava?"
+    a: "Volo e alloggio esclusi, circa €30-50 al giorno per cibo, trasporti e un ingresso."

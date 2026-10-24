@@ -1,0 +1,75 @@
+city: Riyadh
+slug: riyadh
+tagline: Mud-brick forts, skyscrapers and red dunes
+intro: >-
+  Riyadh, the capital of Saudi Arabia, is a huge metropolis in the middle of the desert, where
+  skyscrapers stand next to mud-brick forts. Four days are enough for the city, Diriyah and a trip
+  to the cliffs of the Edge of the World. The city is built for the car, so count on Uber or taxis,
+  but the new metro helps a lot.
+sights:
+  - name: Masmak Fortress
+    text: A mud-brick fort from the 19th century, where the unification of the country began in 1902. Entry is usually free. Next to it is Souq Al Zal, the old market for carpets and spices.
+  - name: Diriyah and At-Turaif
+    text: The first Saudi capital, about 20-30 minutes by car from the centre. The mud-brick ruins of At-Turaif are on the UNESCO list; a ticket costs about 100 SAR (€23). The restaurants of Bujairi Terrace are at their best after sunset.
+  - name: National Museum
+    text: The history of the Arabian Peninsula, from prehistory to the modern state, in Al Murabba. Entry is free or up to about 10 SAR, and the air-conditioned halls are a good refuge in the hot hours.
+  - name: Kingdom Centre Sky Bridge
+    text: The bridge between the two tips of the Kingdom Centre tower, about 300 metres up, with views over the whole city. A ticket costs about 70-100 SAR (€16-23); go at sunset.
+  - name: Boulevard City
+    text: The entertainment district with restaurants, lights and concerts, one of the hearts of Riyadh Season. The entry price changes every year, so check tickets online.
+airports:
+  RUH: >-
+    King Khalid International Airport is about 35 km north of the centre. The metro's Yellow Line
+    links the terminals with KAFD, where you change for Olaya; a ticket costs about 4 SAR (€1) for 2
+    hours, also with a contactless bank card. The metro opened its stations gradually from the end of
+    2024, so check whether your terminal's station is running. Uber and Careem cost about 60-100 SAR
+    (€14-23) to Olaya, official taxis about 90-150 SAR (€21-35). There are also SAPTCO buses,
+    cheaper but slower.
+budget: >-
+  One euro is about 4.3 SAR. A shawarma costs 8-15 SAR (€2-3.50), a plate of kabsa 25-45 SAR
+  (€6-10), a coffee in a modern café 15-20 SAR (€3.50-4.50), an Uber ride in the city 25-50 SAR
+  (€6-12). Hostels are few: a simple hotel costs about 200-350 SAR (€47-81) a night.
+when: >-
+  November to February is the best time, with 20-25°C by day and cool nights. Riyadh Season usually
+  runs from October to March, with concerts, shows and sporting events. June to September often goes
+  above 45°C. Direct flights from Tirana are seasonal: check the dates every year.
+tips:
+  - "Dress modestly: loose clothes that cover the shoulders and knees, for men and women alike. Foreign women are not required to wear an abaya or a headscarf, except in mosques."
+  - "Prayer time comes five times a day and some shops close for about 20-30 minutes. Check the times in an app and plan your shopping around them."
+  - "Alcohol is not allowed in the country, not even in hotels, and cannot be brought in your luggage. The weekend is Friday and Saturday."
+itinerary:
+  - "Masmak Fortress and Souq Al Zal in the morning, the National Museum in the hot hours and the Kingdom Centre Sky Bridge at sunset."
+  - "Diriyah: At-Turaif in the afternoon, when it cools down, then dinner at Bujairi Terrace."
+  - "A tour to the Edge of the World, leaving after lunch to arrive for sunset."
+  - "The red dunes or Ushaiger village in the morning, the evening at Boulevard City during Riyadh Season."
+areas:
+  - name: Olaya
+    text: The modern centre, close to the Kingdom Centre and the metro's Blue Line, with plenty of hotels and restaurants. The most practical choice.
+  - name: Al Murabba and Al Batha
+    text: "Close to the National Museum and Masmak: the cheapest hotels, noisy streets and cheap food."
+  - name: Diriyah
+    text: Luxury hotels near At-Turaif, quiet and beautiful, but far from the centre.
+food:
+  - name: Kabsa
+    text: The national dish, spiced rice with chicken or lamb, often on a large tray for the whole table.
+  - name: Dates and Arabic coffee
+    text: Arabic coffee (gahwa), light and with cardamom, is served in small cups with dates. When you don't want any more, gently shake your cup.
+  - name: Mutabbaq
+    text: Thin dough stuffed with meat or egg, cooked on a griddle, about 10-20 SAR.
+transport: >-
+  Riyadh is a car city: distances are long, pavements are few and in summer walking outdoors is
+  exhausting. The metro, with 6 lines, links the airport, KAFD, Olaya and Al Batha for about 4 SAR a
+  trip. For everything else use Uber or Careem, usually cheaper than taxis. For trips out of the
+  city take a tour or a rental car.
+daytrips:
+  - name: Edge of the World
+    text: Cliffs that drop hundreds of metres over an endless plain, about 2 hours to the northwest. The last kilometres are for 4x4s only, so it's best with a tour, about 250-400 SAR (€58-93). In summer it is often closed.
+  - name: Ushaiger
+    text: A traditional mud-brick village with a mosque and narrow lanes, about 2 hours to the northwest. Entry is usually free.
+  - name: Red dunes
+    text: Red sand dunes about 1 hour to the west. You can rent a quad bike (about 100-150 SAR an hour) or go on a tour with dinner at a camp.
+faq:
+  - q: "How much money do you need per day in Riyadh?"
+    a: "Excluding the flight and accommodation, count on €50-80 a day for food, Uber and one entry ticket. Tours outside the city push the total up quickly."
+  - q: "Can I get around without a car?"
+    a: "Yes: the metro covers the main areas, and Uber and Careem are everywhere. For the Edge of the World, Ushaiger and the dunes you need a tour or a rental car."

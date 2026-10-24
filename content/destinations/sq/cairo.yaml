@@ -1,0 +1,77 @@
+city: Cairo
+slug: cairo
+tagline: Piramida, pazare dhe Nili
+intro: >-
+  Cairo është qyteti më i madh i botës arabe, një metropol i zhurmshëm buzë Nilit, me piramidat e
+  Gizës në skaj të tij. Ka xhami mesjetare, pazare, kisha kopte dhe dy muze të mëdhenj me thesaret e
+  faraonëve. Katër ditë mjaftojnë për monumentet kryesore dhe një dalje në Saqqara. Ushqimi dhe Uber
+  kushtojnë pak: shpenzimi kryesor janë hyrjet.
+sights:
+  - name: Piramidat e Gizës dhe Sfinksi
+    text: Piramida e Keopsit, e vetmja nga Shtatë Mrekullitë e Botës së Lashtë që qëndron ende, me dy piramidat fqinje dhe Sfinksin. Hyrja kushton rreth 700 EGP (€13); brenda Piramidës së Madhe paguhet veç, rreth 1500 EGP. Shko në hapje, para vapës dhe turmave.
+  - name: Muzeu i Madh Egjiptian (GEM)
+    text: Muzeu i ri pranë piramidave, me statujën gjigante të Ramsesit II dhe gjithë thesarin e Tutankamonit. Bileta kushton rreth 1200 EGP (€22), online me orar. Llogarit gjysmë dite.
+  - name: Muzeu Egjiptian në Tahrir
+    text: Muzeu i vjetër rozë, plot statuja dhe sarkofagë. Bileta kushton rreth 550 EGP (€10). Mumiet mbretërore janë sot në Muzeun Kombëtar të Qytetërimit Egjiptian, në Fustat.
+  - name: Islamic Cairo dhe Khan el-Khalili
+    text: Qyteti mesjetar, me rrugën Al-Muizz plot xhami, minare dhe porta të lashta. Pazari Khan el-Khalili shet erëza, llamba dhe suvenire; pazarllëku pritet.
+  - name: Kalaja dhe Xhamia e Muhamed Aliut
+    text: Kalaja e Saladinit mbi qytet, me xhaminë osmane me kube dhe pamje mbi Cairo. Bileta kushton rreth 550 EGP (€10).
+  - name: Cairo Kopte
+    text: Lagjja e vjetër e të krishterëve, me Kishën e Varur, Muzeun Kopt dhe Sinagogën Ben Ezra. Kishat vizitohen falas; stacioni i metrosë është Mar Girgis.
+airports:
+  CAI: >-
+    Cairo International është rreth 20 km në verilindje të qendrës. Më e thjeshta është Uber ose
+    Careem, nga zona e caktuar për marrje: rreth 250-400 EGP (€5-7) deri në Downtown, 450-650 EGP
+    (€8-12) deri në Giza. Taksitë e aeroportit kushtojnë më shumë: lidh çmimin para se të hipësh.
+    Autobusët e aeroportit janë më të lirë, por më të ngadaltë. Sipas trafikut, rruga zgjat rreth
+    45-75 minuta deri në Downtown ose Giza.
+budget: >-
+  Një euro është rreth 55 EGP, por paundi lëviz shpesh: mbaj parasysh çmimet në euro. Një sanduiç me
+  ful ose ta'ameya kushton rreth 15-30 EGP (më pak se €1), koshari 50-100 EGP (€1-2), një vakt në
+  restorant 300-600 EGP (€6-11). Një shtrat në hostel kushton rreth €8-12, një hotel i thjeshtë në
+  Downtown €25-45 nata.
+when: >-
+  Tetori-prilli është periudha më e mirë, me 20-28°C ditën. Qershori-gushti kalon shpesh 35-40°C, dhe
+  te piramidat hije nuk ka. Ramazani lëviz çdo vit (në 2027 pritet rreth shkurt-mars): ditën ritmi
+  është më i ngadaltë.
+tips:
+  - "Te piramidat dhe në pazare të afrohen shumë shoqërues: «hyrja është mbyllur», «të çoj unë», deve dhe kuaj. Thuaj jo me mirësjellje, ec përpara dhe lidh çdo çmim para se të pranosh."
+  - "Bakshishi pritet kudo: rreth 10-20 EGP për tualetin, rojen që të tregon diçka ose ndihmën me bagazhet, rreth 10% në restorant. Mbaj kartëmonedha të vogla."
+  - "Vishu me rroba të lehta që mbulojnë supet dhe gjunjët. Në xhami hyhet pa këpucë, dhe gratë mbulojnë kokën."
+itinerary:
+  - "Piramidat e Gizës dhe Sfinksi në hapje, pastaj Muzeu i Madh Egjiptian pasdite."
+  - "Muzeu Egjiptian në Tahrir, pastaj Cairo Kopte me metro. Në perëndim të diellit një orë me felukë, varkën me vela, në Nil."
+  - "Kalaja dhe Xhamia e Muhamed Aliut, pastaj rruga Al-Muizz. Mbrëmja në Khan el-Khalili, me çaj në një kafene të vjetër."
+  - "Një ditë në Saqqara dhe Dahshur, ose me tren në Alexandria."
+areas:
+  - name: Downtown
+    text: "Qendra e vjetër rreth sheshit Tahrir: hotelet më të lira, metro dhe lokale popullore, por zhurmë dhe trafik."
+  - name: Zamalek
+    text: Ishull në Nil, me rrugë me pemë dhe kafene. Më i qetë dhe pak më i shtrenjtë, por pranë qendrës.
+  - name: Giza
+    text: Hotele me pamje nga piramidat, pranë GEM, por rreth 45-60 minuta nga qendra.
+food:
+  - name: Koshari
+    text: Oriz, thjerrëza, makarona dhe qiqra me salcë domatesh dhe qepë të skuqur, pjata kombëtare.
+  - name: Ful medames
+    text: Fasule fava të ziera ngadalë, me vaj, qimnon dhe limon, zakonisht për mëngjes.
+  - name: Ta'ameya
+    text: Falafeli egjiptian, me fava në vend të qiqrave, i gjelbër brenda.
+transport: >-
+  Metroja i shpëton trafikut: Linja 1 ndalon në Sadat (sheshi Tahrir) dhe Mar Girgis (Cairo Kopte),
+  Linja 3 në Zamalek dhe Bab El Shaaria, pranë Islamic Cairo. Bileta kushton rreth 8-20 EGP sipas
+  stacioneve. Dy vagonët në mes janë vetëm për gra. Te piramidat metroja nuk shkon: merr Uber ose
+  Careem, rreth 100-250 EGP (€2-5) brenda qytetit, me çmim të ditur që në fillim.
+daytrips:
+  - name: Saqqara dhe Dahshur
+    text: "Piramida me shkallë e Xhoserit, më e vjetra në Egjipt, dhe Piramida e Kuqe në Dahshur, me pak turistë. Rreth 1 orë larg: merr shofer për gjithë ditën, rreth €30-50 për makinën."
+  - name: Alexandria
+    text: Qyteti buzë Mesdheut, me Bibliotheca Alexandrina dhe Kalanë e Qaitbay, rreth 2.5-3 orë me tren nga stacioni Ramses.
+  - name: Fayoum
+    text: Oaz rreth 2 orë larg, me liqenet e Wadi El Rayan dhe fosilet e balenave në Wadi El Hitan. Më mirë me shofer ose tur.
+faq:
+  - q: "Sa para duhen në ditë në Cairo?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-60 në ditë. Ushqimi dhe Uber janë të lirë, por vetëm piramidat dhe GEM kushtojnë rreth €35."
+  - q: "A ka fluturime direkte nga Tirana?"
+    a: "Fluturimet direkte nga Tirana janë çartera sezonale, vetëm në disa periudha të vitit. Jashtë tyre udhëtohet me një ndalesë."

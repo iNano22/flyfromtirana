@@ -1,0 +1,95 @@
+city: České Budějovice
+slug: ceske-budejovice
+tagline: A huge square, Budvar beer and Český Krumlov close by
+intro: >-
+  České Budějovice is the capital of South Bohemia, a quiet city of about 95,000 inhabitants on the
+  Vltava and Malše rivers. It has one of the largest squares in Europe and Budvar beer, which takes its
+  name from Budweis, the German name of the city. It is also the cheapest base for Český Krumlov and
+  South Bohemia. The currency is the Czech koruna (CZK): 1 euro is about 25 korunas.
+sights:
+  - name: Přemysl Otakar II Square
+    text: >-
+      A square of about 133 by 133 metres, with arcaded houses, the Baroque Samson Fountain and the Town
+      Hall. Look for the «wandering stone» (bludný kámen) in the paving: it is said that whoever steps on
+      it after 22:00 cannot find the way home.
+  - name: The Black Tower
+    text: >-
+      The 16th-century bell tower, 72 metres tall, the symbol of the city. With 225 steps you reach the
+      gallery, with a view over the square; about 60-100 CZK (€2.50-4), usually April-October.
+  - name: St Nicholas Cathedral
+    text: The Baroque church next to the Black Tower, a cathedral since 1785. Entry is free, outside mass times.
+  - name: The Budweiser Budvar brewery
+    text: >-
+      The state brewery from 1895, about 2 km north of the square. The tour lasts about 1 hour, with a
+      beer tasting in the cellar, and costs about 250-350 CZK (€10-14); book it online.
+  - name: The riverside
+    text: >-
+      The Vltava and the Malše surround the centre and meet near the Sokolský ostrov park. Walk from the
+      Železná panna tower to the Dominican monastery; the cycle path continues all the way to Hluboká.
+airports:
+  JCL: >-
+    The airport is in Planá, about 6 km south of the centre. Flights from Tirana are seasonal charters,
+    mainly in summer: check the dates every year. A taxi takes about 15 minutes and costs about 250-400
+    CZK (€10-16); book it in advance. Local buses from Planá cost about 20-30 CZK (about €1), but they
+    run rarely: check the timetables on idos.cz.
+budget: >-
+  A half-litre of beer costs about 50-70 CZK (€2-3), the menu of the day (polední menu) about 150-200
+  CZK (€6-8). A double room in a simple hotel costs from about 1,500-2,500 CZK (€60-100) a night, less
+  than in Český Krumlov.
+when: >-
+  May-September has the best weather. In June Český Krumlov celebrates the Festival of the
+  Five-Petalled Rose; in December the square has the Christmas market, but some castles close in
+  winter.
+tips:
+  - "Sleep in České Budějovice and go to Český Krumlov on the first bus: hotels are cheaper and you arrive before the tour groups."
+  - "When the card terminal asks euros or korunas, always choose korunas (CZK): the conversion to euros costs more."
+  - "Many castles are closed on Mondays: check the opening hours before you set off."
+itinerary:
+  - "Přemysl Otakar II Square, the Black Tower and St Nicholas Cathedral. Lunch at Masné krámy, in the afternoon a walk along the rivers, in the evening a Budvar beer."
+  - "A full day in Český Krumlov: the castle, the Cloak Bridge, the gardens and the old town."
+  - "The Budvar tour in the morning, in the afternoon Hluboká Castle. Alternatively, Holašovice or Třeboň."
+areas:
+  - name: The historic centre
+    text: Around the square, everything within walking distance, with hotels in old houses.
+  - name: Near the station
+    text: >-
+      The most practical area for day trips: trains leave from Hlavní nádraží, buses from the station on
+      top of the Mercury shopping centre. The square is 10-15 minutes on foot.
+  - name: By the river
+    text: Quieter hotels near the Vltava and the Sokolský ostrov park, 5-10 minutes from the square.
+food:
+  - name: Budvar beer
+    text: >-
+      The city's lager. Try «tankové pivo», the unpasteurised beer from the tanks, at Masné krámy, the
+      16th-century old meat market, today a beer hall.
+  - name: Kulajda
+    text: A creamy South Bohemian soup with potatoes, mushrooms and dill, often with an egg on top.
+  - name: Carp
+    text: Carp from the ponds of Třeboň, fried or baked, with potato salad.
+transport: >-
+  The centre can be covered on foot and the city is flat, good for cycling. Buses and trolleybuses cost
+  about 20-30 CZK (€1) per ticket. RegioJet, Flixbus and regional buses leave from the station on top
+  of Mercury. Prague is about 2-2.5 hours away by train or bus.
+daytrips:
+  - name: Český Krumlov
+    text: >-
+      A medieval town in a bend of the Vltava, a UNESCO site, with the second largest castle in Czechia.
+      About 30-45 minutes by bus (about 40-70 CZK, €1.60-3). The courtyards are free; tours inside about
+      150-400 CZK (€6-16).
+  - name: Hluboká Castle
+    text: >-
+      The white neo-Gothic castle of the Schwarzenberg family, about 10 km north: 20-30 minutes by bus or
+      about 1 hour by bike. The park is free, the tours about 250-450 CZK (€10-18).
+  - name: Holašovice
+    text: >-
+      A small village of 19th-century Baroque farmhouses, a UNESCO site, about 15 km away. Buses are few:
+      go by taxi or by bike.
+  - name: Třeboň
+    text: >-
+      A spa town among fishponds, with an arcaded square and the Regent brewery, about 30-45 minutes by
+      train or bus. In October the carp are harvested from the ponds, with a festival on the banks.
+faq:
+  - q: "Is it better to sleep in České Budějovice or in Český Krumlov?"
+    a: "České Budějovice is cheaper and has more connections; Český Krumlov is 30-45 minutes away. To see Český Krumlov without crowds in the evening, add a night there."
+  - q: "How much money do you need per day in České Budějovice?"
+    a: "Excluding the flight and accommodation, count on €30-50 a day for food, transport and one entry ticket. The square and the riverside walks are free."

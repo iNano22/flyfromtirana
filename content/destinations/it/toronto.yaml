@@ -1,0 +1,83 @@
+city: Toronto
+slug: toronto
+tagline: La CN Tower, isole sul lago e quartieri da tutto il mondo
+intro: >-
+  Toronto è la città più grande del Canada, sulla riva del lago Ontario: grattacieli, isole con
+  spiagge e quartieri dove si parla ogni lingua del mondo. Per molti albanesi è anche il viaggio per
+  andare a trovare i parenti. Quattro giorni bastano per la città e una giornata alle cascate del
+  Niagara. La città è cara, ma con i mezzi pubblici, i mercati e il cibo dei quartieri risparmi molto.
+sights:
+  - name: CN Tower
+    text: La torre alta 553 metri, simbolo della città. La piattaforma LookOut costa circa 45-60 CAD (€28-37). Compra il biglietto online.
+  - name: Harbourfront e Toronto Islands
+    text: La passeggiata sul lago e, a 15 minuti di traghetto dal Jack Layton Ferry Terminal, le isole, con spiagge e la vista più bella sui grattacieli. Il biglietto di andata e ritorno costa circa 9-10 CAD (€6).
+  - name: Distillery District
+    text: Gli edifici in mattoni di una distilleria dell'Ottocento, oggi viuzze pedonali con gallerie e caffè.
+  - name: Kensington Market
+    text: Un quartiere bohémien con abiti usati e cibo di strada da tutto il mondo, accanto a Chinatown.
+  - name: St. Lawrence Market
+    text: Lo storico mercato coperto, pieno di formaggi, carne e pesce. Il lunedì è chiuso.
+  - name: Royal Ontario Museum (ROM)
+    text: Il museo più grande del Canada, con dinosauri e mummie egizie. Il biglietto costa circa 25-30 CAD (€16-19).
+airports:
+  YYZ: >-
+    Il treno UP Express parte dal Terminal 1 ogni 15 minuti e arriva a Union Station in circa 25
+    minuti, per circa 12-13 CAD (€7,50-8) con la carta Presto o una carta bancaria contactless. Dal
+    Terminal 3, dove di solito arriva Air Transat, prendi il treno gratuito Terminal Link fino al
+    Terminal 1. Più economico è l'autobus TTC 900 Airport Express fino alla stazione della metro
+    Kipling: una sola corsa da circa 3,30 CAD (€2) vale per tutto il viaggio, ma calcola circa 1 ora
+    per arrivare in centro. Il taxi o Uber costa circa 60-80 CAD (€37-50) fino a downtown, mancia
+    esclusa.
+budget: >-
+  Un dollaro canadese (CAD) vale circa €0,62. Un caffè costa 2-5 CAD (€1,20-3), un pasto veloce 15-20
+  CAD (€9-12), una cena al ristorante 30-50 CAD (€19-31) e una birra al bar 8-12 CAD (€5-7,50). Un
+  letto in ostello costa circa 50-80 CAD (€31-50), un hotel semplice in centro 200-300 CAD (€124-186)
+  a notte. I prezzi sono indicati senza la tassa del 13%, mentre al ristorante, al bar e in taxi si
+  lascia una mancia del 15-20%.
+when: >-
+  Da giugno a settembre è la stagione più calda, con 25-30°C e umidità; anche i voli diretti da
+  Tirana, con Air Transat, di solito ci sono solo d'estate. Fine settembre e ottobre portano i
+  colori dell'autunno. L'inverno è freddo, spesso sotto i -10°C con la neve, ma in centro si cammina
+  sottoterra, nei passaggi del PATH.
+tips:
+  - "Nei negozi e nei ristoranti i prezzi sono indicati senza la tassa del 13% (HST), che si aggiunge alla cassa."
+  - "Al ristorante, al bar e in taxi la mancia è del 15-20%: scegli tu la percentuale sul terminale della carta."
+  - "Le prese sono di tipo americano, a 120 V: porta un adattatore."
+itinerary:
+  - "La CN Tower al mattino, poi una passeggiata a Harbourfront. Nel pomeriggio il traghetto per le Toronto Islands e la vista sui grattacieli al tramonto."
+  - "St. Lawrence Market al mattino, con un panino al peameal bacon, poi il Distillery District. Nel pomeriggio Nathan Phillips Square, la sera cena a Greektown o a Little Italy."
+  - "Kensington Market e Chinatown al mattino. Nel pomeriggio il ROM e l'elegante quartiere di Yorkville, oppure Casa Loma, il castello dell'inizio del Novecento."
+  - "Una giornata alle cascate del Niagara, con una sosta a Niagara-on-the-Lake per i vini."
+areas:
+  - name: Downtown ed Entertainment District
+    text: Vicino a Union Station, all'UP Express e alla CN Tower. La zona più pratica, ma con gli hotel più cari.
+  - name: Old Town e St. Lawrence
+    text: Strade storiche, il mercato e il Distillery District a piedi, con il tram per il centro.
+  - name: Annex e Yonge-Bloor
+    text: Dove si incrociano le linee 1 e 2 della metro, vicino al ROM. Hotel e B&B un po' più economici.
+  - name: Mississauga e North York
+    text: "Periferia con hotel più economici, spesso vicino ai parenti: Mississauga è vicina all'aeroporto. Calcola 45-60 minuti per il centro."
+food:
+  - name: Peameal bacon sandwich
+    text: Lonza di maiale salata, passata nella farina di mais e cotta alla piastra, in un panino morbido. Il classico del St. Lawrence Market, circa 10-12 CAD (€6-7,50).
+  - name: Poutine
+    text: Patatine fritte con formaggio fresco in fiocchi e salsa gravy, circa 8-15 CAD.
+  - name: Cucine del mondo
+    text: "Quasi metà degli abitanti è nata fuori dal Canada: dim sum a Chinatown, gyros a Greektown, roti caraibico e cucina indiana in Gerrard Street."
+transport: >-
+  La TTC gestisce la metro (le linee principali sono la 1 e la 2), i tram e gli autobus. Una corsa
+  costa circa 3,30 CAD (€2) ed entro 2 ore puoi cambiare mezzo gratis. Non serve il biglietto
+  cartaceo: avvicina al lettore la carta Presto, una carta bancaria contactless o il telefono. I
+  bambini fino a 12 anni viaggiano gratis.
+daytrips:
+  - name: Niagara Falls
+    text: Le cascate più famose del Nord America, a circa 1,5-2 ore in auto o con il treno GO (circa 20-25 CAD a tratta). Il battello fin sotto le cascate costa circa 35-40 CAD (€22-25).
+  - name: Niagara-on-the-Lake
+    text: Una cittadina dell'Ottocento con fiori e cantine, a circa 20 minuti dalle cascate, famosa per il vino del ghiaccio. È più facile in auto.
+  - name: Algonquin Park
+    text: Foreste e laghi, a circa 3 ore di auto verso nord; senza auto è difficile da raggiungere. Fine settembre e inizio ottobre sono il periodo delle foglie rosse.
+faq:
+  - q: "Ci sono voli diretti da Tirana a Toronto?"
+    a: "Sì, ma stagionali: Air Transat vola di solito d'estate. Negli altri mesi si viaggia con uno scalo in un'altra città, quindi confronta i prezzi per tempo."
+  - q: "Quanto si spende al giorno a Toronto?"
+    a: "Volo e alloggio esclusi, calcola 100-150 CAD (€62-93) al giorno per cibo, trasporti e un'attrazione. Al ristorante tassa e mancia aggiungono circa un terzo al conto."

@@ -404,6 +404,17 @@ links:
       Cluj-Napoca:  https://www.tiqets.com/en/
       Chișinău:     https://www.tiqets.com/en/
       Łódź:         https://www.tiqets.com/en/
+      Ostrava:      https://www.tiqets.com/en/
+      Pardubice:    https://www.tiqets.com/en/
+      České Budějovice: https://www.tiqets.com/en/
+      Rzeszów:      https://www.tiqets.com/en/
+      Olsztyn:      https://www.tiqets.com/en/
+      Zielona Góra: https://www.tiqets.com/en/
+      Amman:        https://www.tiqets.com/en/amman-attractions-c72095/
+      Cairo:        https://www.tiqets.com/en/cairo-attractions-c65792/
+      Riyadh:       https://www.tiqets.com/en/
+      Yerevan:      https://www.tiqets.com/en/
+      Toronto:      https://www.tiqets.com/en/toronto-attractions-c62492/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -504,6 +515,17 @@ links:
       Cluj-Napoca:  https://www.getyourguide.com/cluj-napoca-l2393/
       Chișinău:     https://www.getyourguide.com/chisinau-l1008/
       Łódź:         https://www.getyourguide.com/lodz-l2044/
+      Ostrava:      https://www.getyourguide.com/ostrava-l87642/
+      Pardubice:    https://www.getyourguide.com/pardubice-region-l200202/
+      České Budějovice: https://www.getyourguide.com/ceske-budejovice-l152327/
+      Rzeszów:      https://www.getyourguide.com/rzeszow-l147248/
+      Olsztyn:      https://www.getyourguide.com/warmia-masuria-province-l1936/
+      Zielona Góra: https://www.getyourguide.com/zielona-gora-l147253/
+      Amman:        https://www.getyourguide.com/amman-l1035/
+      Cairo:        https://www.getyourguide.com/cairo-l92/
+      Riyadh:       https://www.getyourguide.com/riyadh-l153731/
+      Yerevan:      https://www.getyourguide.com/yerevan-l1406/
+      Toronto:      https://www.getyourguide.com/toronto-l177/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -604,6 +626,17 @@ links:
       Cluj-Napoca:  https://www.welcomepickups.com/cluj/
       Chișinău:     https://www.welcomepickups.com/chisinau/
       Łódź:         https://www.welcomepickups.com/
+      Ostrava:      https://www.welcomepickups.com/
+      Pardubice:    https://www.welcomepickups.com/
+      České Budějovice: https://www.welcomepickups.com/
+      Rzeszów:      https://www.welcomepickups.com/
+      Olsztyn:      https://www.welcomepickups.com/
+      Zielona Góra: https://www.welcomepickups.com/
+      Amman:        https://www.welcomepickups.com/amman/
+      Cairo:        https://www.welcomepickups.com/cairo/
+      Riyadh:       https://www.welcomepickups.com/riyadh/
+      Yerevan:      https://www.welcomepickups.com/yerevan/
+      Toronto:      https://www.welcomepickups.com/toronto/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -704,6 +737,17 @@ links:
       Cluj-Napoca:  https://radicalstorage.com/luggage-storage/cluj-napoca
       Chișinău:     https://radicalstorage.com/
       Łódź:         https://radicalstorage.com/luggage-storage/lodz
+      Ostrava:      https://radicalstorage.com/luggage-storage/ostrava
+      Pardubice:    https://radicalstorage.com/
+      České Budějovice: https://radicalstorage.com/
+      Rzeszów:      https://radicalstorage.com/luggage-storage/rzeszow
+      Olsztyn:      https://radicalstorage.com/luggage-storage/olsztyn
+      Zielona Góra: https://radicalstorage.com/
+      Amman:        https://radicalstorage.com/
+      Cairo:        https://radicalstorage.com/luggage-storage/cairo
+      Riyadh:       https://radicalstorage.com/
+      Yerevan:      https://radicalstorage.com/luggage-storage/yerevan
+      Toronto:      https://radicalstorage.com/luggage-storage/toronto
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

@@ -1,0 +1,97 @@
+city: Ostrava
+slug: ostrava
+tagline: Blast furnaces, mines and the Colours of Ostrava festival
+intro: >-
+  Ostrava is the third city of Czechia, with about 280,000 inhabitants, close to the border with
+  Poland. For two centuries it was the city of coal and steel; today its furnaces and mines have been
+  turned into museums and concert halls. It is cheap, with few tourists and the Beskydy mountains
+  nearby. Two days are enough for the city, plus one for day trips. The currency is the Czech koruna
+  (CZK): 1 euro is about 25 korunas.
+sights:
+  - name: Dolní Vítkovice and Bolt Tower
+    text: >-
+      The former Vítkovice steelworks, where the furnaces went cold in 1998. On top of blast furnace
+      no. 1 stands Bolt Tower, with a café and a terrace at about 78 metres. The area also has the Gong
+      hall, in a former gas holder, and the Svět techniky science museum. Tickets cost about 200-350
+      CZK (€8-14); about 10 minutes by tram from the centre.
+  - name: The New Town Hall tower
+    text: >-
+      Nová radnice (1924-1930) has the tallest town hall tower in Czechia, about 86 metres. A lift
+      takes you to the terrace at about 73 metres, with a view as far as the Beskydy. Ticket about
+      100-150 CZK (€4-6).
+  - name: Stodolní Street
+    text: >-
+      The nightlife street, with dozens of bars and clubs in a few hundred metres. It comes alive after
+      21:00, especially from Thursday to Saturday.
+  - name: Silesian Ostrava Castle
+    text: >-
+      Slezskoostravský hrad, from the end of the 13th century, on the other bank of the Ostravice
+      river, about 15 minutes on foot from the centre. Because of the mines beneath it, the ground sank
+      by about 16 metres. Ticket about 100-150 CZK (€4-6).
+  - name: Landek Park
+    text: >-
+      The largest mining museum in Czechia, in the Petřkovice district. With a guide you go down into
+      the galleries of the Anselm mine. The Venus of Petřkovice, a statuette about 25,000 years old, was
+      found on this hill. Ticket about 150-250 CZK (€6-10); about 20-30 minutes by bus from the centre.
+itinerary:
+  - "Masarykovo náměstí and the Cathedral of the Divine Saviour. In the afternoon the New Town Hall tower and Silesian Ostrava Castle. In the evening, Stodolní Street."
+  - "The whole day in Dolní Vítkovice: the blast furnace, Bolt Tower and Svět techniky. In the evening a concert at Gong, if there is one on."
+  - "Landek Park in the morning, Štramberk in the afternoon. Or a full day in the Beskydy and Pustevny."
+areas:
+  - name: Moravská Ostrava (Centre)
+    text: Around Masarykovo náměstí, with most of the hotels; the museums and bars are on foot or by tram.
+  - name: Near Stodolní Street
+    text: "Ideal for nightlife, but noisy at weekends: ask for a room facing the courtyard."
+  - name: Poruba and Svinov
+    text: A quiet district to the west, with 1950s architecture and lower prices, near Ostrava-Svinov station.
+food:
+  - name: Slezské nebe
+    text: Smoked pork with a dried-fruit sauce and knedlík (boiled bread in slices), a Silesian dish.
+  - name: Svíčková
+    text: Beef sirloin in a creamy vegetable sauce, with knedlík and cranberry jam.
+  - name: Ostravar beer
+    text: The city's beer, cheap and fresh from the tap.
+  - name: Štramberské uši
+    text: Spiced cone-shaped biscuits, the «Štramberk ears».
+airports:
+  OSR: >-
+    Leoš Janáček Airport is in Mošnov, about 25 km south-west of the city. From the train station next
+    to the terminal, trains go to Ostrava-Svinov in about 30 minutes and to Ostrava hlavní nádraží in
+    about 40 minutes, usually once an hour; a ticket is about 50-70 CZK (€2-3). Regional buses go to
+    the bus station in the centre in about 30-40 minutes, for about 50 CZK (€2). A taxi costs about
+    600-900 CZK (€24-36). Flights from Tirana run mainly in season; if you land late, check the last
+    train.
+transport: >-
+  The centre is easy to walk. Further out there are trams, buses and trolleybuses on the same ticket,
+  bought from machines, in the app or with a contactless card on board: about 25-35 CZK (€1-1.50), a
+  24-hour ticket about 100-130 CZK (€4-5). Bolt costs about 150-250 CZK (€6-10) within the city.
+daytrips:
+  - name: Beskydy and Pustevny
+    text: >-
+      The mountains to the south, with Dušan Jurkovič's wooden buildings at Pustevny and the trail to
+      Radhošť peak. About 1.5 hours by train to Frenštát pod Radhoštěm, then a bus to the chairlift.
+  - name: Štramberk
+    text: >-
+      A small town of wooden houses below the Trúba tower. About 1 hour by train, often with a change at
+      Studénka; nearby, in Kopřivnice, is the Tatra car museum.
+  - name: Olomouc
+    text: >-
+      The university city of Moravia, with the Holy Trinity Column (UNESCO) and an astronomical clock.
+      About 1 hour by fast train, from about 100-200 CZK (€4-8).
+budget: >-
+  A half-litre beer costs about 45-65 CZK (€1.80-2.60), a main course in a restaurant about 200-300
+  CZK (€8-12), a coffee about 50-70 CZK (€2-3). A double room in a simple hotel costs about
+  1,200-2,200 CZK (€48-88) a night, more during the festival.
+when: >-
+  May to September has long days and tables outside. In mid-July Dolní Vítkovice hosts Colours of
+  Ostrava, a music festival of about 4 days: book your stay months ahead. Winter is cold, with a
+  Christmas market in December and skiing in the Beskydy.
+tips:
+  - "When the card terminal asks euros or korunas, always choose korunas (CZK): converting to euros costs more."
+  - "For lunch ask for the polední menu: soup and a main course for about 150-200 CZK (€6-8), on weekdays."
+  - "Underground at Landek it is cold even in summer: bring a jacket."
+faq:
+  - q: "Is Ostrava worth it, or is it better to go straight to Prague?"
+    a: "Ostrava is worth it for its industrial heritage, low prices and the mountains nearby. Prague is about 3-3.5 hours by train, so you can combine the two."
+  - q: "How much money do I need per day in Ostrava?"
+    a: "Without the flight and accommodation, about €30-50 a day for food, transport and one ticket."

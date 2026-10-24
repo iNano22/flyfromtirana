@@ -1,0 +1,77 @@
+city: Cairo
+slug: cairo
+tagline: Pyramids, bazaars and the Nile
+intro: >-
+  Cairo is the largest city in the Arab world, a noisy metropolis on the Nile, with the pyramids of
+  Giza at its edge. It has medieval mosques, bazaars, Coptic churches and two great museums full of
+  the pharaohs' treasures. Four days are enough for the main monuments and a trip to Saqqara. Food
+  and Uber cost little: the main expense is the entrance fees.
+sights:
+  - name: The Pyramids of Giza and the Sphinx
+    text: The Pyramid of Khufu, the only one of the Seven Wonders of the Ancient World still standing, with its two neighbouring pyramids and the Sphinx. Entry costs about 700 EGP (€13); going inside the Great Pyramid is paid separately, about 1500 EGP. Go at opening time, before the heat and the crowds.
+  - name: Grand Egyptian Museum (GEM)
+    text: The new museum next to the pyramids, with the giant statue of Ramesses II and the whole treasure of Tutankhamun. A ticket costs about 1200 EGP (€22), online with a time slot. Allow half a day.
+  - name: Egyptian Museum in Tahrir
+    text: The old pink museum, packed with statues and sarcophagi. A ticket costs about 550 EGP (€10). The royal mummies are now in the National Museum of Egyptian Civilization, in Fustat.
+  - name: Islamic Cairo and Khan el-Khalili
+    text: The medieval city, with Al-Muizz Street full of mosques, minarets and ancient gates. The Khan el-Khalili bazaar sells spices, lamps and souvenirs; haggling is expected.
+  - name: The Citadel and the Muhammad Ali Mosque
+    text: Saladin's Citadel above the city, with the domed Ottoman mosque and views over Cairo. A ticket costs about 550 EGP (€10).
+  - name: Coptic Cairo
+    text: The old Christian quarter, with the Hanging Church, the Coptic Museum and the Ben Ezra Synagogue. The churches are free to visit; the metro station is Mar Girgis.
+airports:
+  CAI: >-
+    Cairo International is about 20 km north-east of the centre. The easiest option is Uber or Careem,
+    from the designated pickup area: about 250-400 EGP (€5-7) to Downtown, 450-650 EGP (€8-12) to
+    Giza. Airport taxis cost more: agree on the price before you get in. The airport buses are
+    cheaper, but slower. Depending on traffic, the ride takes about 45-75 minutes to Downtown or Giza.
+budget: >-
+  One euro is about 55 EGP, but the pound moves often: keep the euro prices in mind. A ful or
+  ta'ameya sandwich costs about 15-30 EGP (less than €1), koshari 50-100 EGP (€1-2), a restaurant
+  meal 300-600 EGP (€6-11). A hostel bed costs about €8-12, a simple hotel in Downtown €25-45 a
+  night.
+when: >-
+  October to April is the best period, with 20-28°C during the day. June to August often goes above
+  35-40°C, and at the pyramids there is no shade. Ramadan moves every year (in 2027 it is expected
+  around February-March): by day the pace is slower.
+tips:
+  - "At the pyramids and in the bazaars many touts will approach you: «the entrance is closed», «I'll take you», camels and horses. Say no politely, keep walking and agree on every price before you accept."
+  - "Baksheesh is expected everywhere: about 10-20 EGP for the toilet, a guard who shows you something or help with your bags, about 10% in restaurants. Keep small notes on you."
+  - "Wear light clothes that cover your shoulders and knees. In mosques you take your shoes off, and women cover their heads."
+itinerary:
+  - "The Pyramids of Giza and the Sphinx at opening time, then the Grand Egyptian Museum in the afternoon."
+  - "The Egyptian Museum in Tahrir, then Coptic Cairo by metro. At sunset an hour on a felucca, the sailing boat, on the Nile."
+  - "The Citadel and the Muhammad Ali Mosque, then Al-Muizz Street. The evening in Khan el-Khalili, with tea in an old café."
+  - "A day in Saqqara and Dahshur, or by train to Alexandria."
+areas:
+  - name: Downtown
+    text: "The old centre around Tahrir Square: the cheapest hotels, the metro and popular eateries, but noise and traffic."
+  - name: Zamalek
+    text: An island in the Nile, with tree-lined streets and cafés. Quieter and a bit more expensive, but close to the centre.
+  - name: Giza
+    text: Hotels with views of the pyramids, close to the GEM, but about 45-60 minutes from the centre.
+food:
+  - name: Koshari
+    text: Rice, lentils, pasta and chickpeas with tomato sauce and fried onions, the national dish.
+  - name: Ful medames
+    text: Slow-cooked fava beans with oil, cumin and lemon, usually for breakfast.
+  - name: Ta'ameya
+    text: Egyptian falafel, made with fava beans instead of chickpeas, green inside.
+transport: >-
+  The metro beats the traffic: Line 1 stops at Sadat (Tahrir Square) and Mar Girgis (Coptic Cairo),
+  Line 3 at Zamalek and Bab El Shaaria, near Islamic Cairo. A ticket costs about 8-20 EGP depending on
+  the number of stations. The two middle carriages are for women only. The metro doesn't go to the
+  pyramids: take Uber or Careem, about 100-250 EGP (€2-5) within the city, with the price known up
+  front.
+daytrips:
+  - name: Saqqara and Dahshur
+    text: "Djoser's Step Pyramid, the oldest in Egypt, and the Red Pyramid in Dahshur, with few tourists. About 1 hour away: hire a driver for the whole day, about €30-50 for the car."
+  - name: Alexandria
+    text: The city on the Mediterranean, with the Bibliotheca Alexandrina and the Citadel of Qaitbay, about 2.5-3 hours by train from Ramses station.
+  - name: Fayoum
+    text: An oasis about 2 hours away, with the lakes of Wadi El Rayan and the whale fossils of Wadi El Hitan. Best with a driver or a tour.
+faq:
+  - q: "How much money do you need per day in Cairo?"
+    a: "Excluding the flight and accommodation, about €35-60 a day. Food and Uber are cheap, but the pyramids and the GEM alone cost about €35."
+  - q: "Are there direct flights from Tirana?"
+    a: "Direct flights from Tirana are seasonal charters, only at certain times of the year. Outside those periods you travel with one stop."

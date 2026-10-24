@@ -1,0 +1,99 @@
+city: Zielona Góra
+slug: zielona-gora
+tagline: Qyteti i verës, i Bakusëve prej bronzi dhe i festës së vjeljes
+intro: >-
+  Zielona Góra është një qytet i vogël me rreth 140.000 banorë në perëndim të Polonisë, afër
+  kufirit me Gjermaninë. Njihet si qyteti i verës: rreth tij kultivohen vreshta që nga Mesjeta dhe
+  çdo shtator festa e vjeljes, Winobranie, mbush qendrën. Nuk ka atraksione të mëdha dhe qendra
+  shihet për një ditë pa nxitim, por është i qetë dhe i lirë. Pjesën tjetër të planit e plotësojnë
+  udhëtimet ditore drejt Wrocław, Poznań dhe Berlin. Monedha është zloti polak (PLN): €1 është
+  rreth 4.3 PLN.
+sights:
+  - name: Stary Rynek dhe Bashkia
+    text: >-
+      Sheshi i tregut, me shtëpi shumëngjyrëshe, kafene dhe bare vere, dhe Bashkia me kullën e saj
+      në mes. Dy hapa larg është Konkatedralja gotike e Shën Hedvigës, kisha më e vjetër e qytetit.
+  - name: Gjuetia e Bakusëve
+    text: >-
+      Mbi 50 statuja të vogla bronzi të Bakusit, perëndisë romake të verës (bachusiki), të
+      shpërndara nëpër qendër. Kërkimi i tyre është mënyra më e mirë për të parë qytetin; harta
+      merret te zyra e informacionit turistik.
+  - name: Parku i Verës dhe Palmiarnia
+    text: >-
+      Park Winny është një kodër me hardhi dhe shtigje, rreth 15 minuta në këmbë nga sheshi. Në
+      majë është Palmiarnia, një serrë xhami me palma, me restorant dhe pamje mbi qytetin.
+  - name: Muzeu i Tokës Lubuskie dhe Muzeu i Verës
+    text: >-
+      Muzeu i rajonit, me art dhe histori vendase. Në bodrumet e tij, Muzeu i Verës tregon shekujt e
+      verës këtu; ka edhe një ekspozitë për gjyqet e shtrigave të shekullit të 17-të. Bileta rreth
+      10-20 PLN (€2-5); zakonisht mbyllur të hënën.
+  - name: Kisha e Zojës së Częstochowa-s
+    text: >-
+      Kishë e madhe me skelet druri dhe mure me tulla, nga mesi i shekullit të 18-të, pranë
+      sheshit. U ndërtua fillimisht për protestantët.
+itinerary:
+  - "Stary Rynek, Bashkia dhe Konkatedralja, duke kërkuar Bakusët gjatë rrugës. Pasdite Kisha e Zojës së Częstochowa-s dhe Muzeu i Verës. Në muzg ngjitje te Palmiarnia, pastaj darkë me verë lokale."
+  - "Udhëtim ditor me tren: Wrocław (rreth 2-2.5 orë) ose Poznań (rreth 1.5-2 orë). Nisu në mëngjes dhe kthehu në mbrëmje."
+  - "Berlin me autobus direkt për gjithë ditën. Ndryshe, me makinë me qira, Parku Muskau dhe një vresht pranë qytetit."
+areas:
+  - name: Stare Miasto (Qyteti i Vjetër)
+    text: Rreth sheshit, me restorantet dhe Bakusët në këmbë. Zona më e mirë për një qëndrim të shkurtër.
+  - name: Pranë Zielona Góra Główna
+    text: Rreth stacionit të trenave dhe të autobusëve, praktike për udhëtimet ditore. Qendra është rreth 15-20 minuta në këmbë.
+  - name: Pranë Parkut të Verës
+    text: Lagje e qetë me gjelbërim dhe shtëpi pritjeje, rreth 10-15 minuta në këmbë nga sheshi.
+food:
+  - name: Vera lokale
+    text: >-
+      Të bardha nga rrushi Solaris dhe Riesling, të kuqe nga Regent dhe Pinot Noir. Provoji në baret
+      e verës në qendër ose në vreshtat përreth; një gotë kushton rreth 15-25 PLN (€3.5-6).
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë (ruskie), mish, lakër ose fruta, i zier ose i skuqur.
+  - name: Żurek
+    text: Supë e thartë me miell thekre, salsiçe dhe vezë, shpesh brenda një buke të zbrazur.
+airports:
+  IEG: >-
+    Aeroporti Zielona Góra-Babimost është rreth 35 km në verilindje të qytetit. Një autobus shuttle,
+    i lidhur me oraret e fluturimeve, të çon në qendër për rreth 40-50 minuta, me biletë rreth 20-30
+    PLN (rreth €5-7). Taksia bën rreth 35-40 minuta dhe kushton rreth 150-200 PLN (€35-47);
+    rezervoje përpara. Fluturimet nga Tirana janë çartera sezonalë.
+transport: >-
+  Qendra shihet në këmbë. Autobusët e qytetit, shumë prej tyre elektrikë, lidhin stacionin me
+  lagjet; bileta kushton rreth 4 PLN (rreth €1) dhe zakonisht blihet me kartë brenda autobusit.
+  Trenat për Wrocław dhe Poznań nisen nga Zielona Góra Główna, autobusët për Berlin nga stacioni
+  ngjitur. Taksitë janë të lira.
+daytrips:
+  - name: Wrocław
+    text: >-
+      Sheshi i madh i tregut, ishulli Ostrów Tumski dhe xhuxhët prej bronzi. Rreth 2-2.5 orë me tren,
+      rreth 40-60 PLN (€9-14) për drejtim.
+  - name: Poznań
+    text: >-
+      Stary Rynek me dhitë mekanike mbi sahatin e Bashkisë në orën 12:00 dhe katedralja më e vjetër e
+      Polonisë. Rreth 1.5-2 orë me tren, rreth 35-55 PLN (€8-13).
+  - name: Berlin
+    text: >-
+      Rreth 2.5-3 orë me autobus direkt (rreth €15-25), ose me tren me ndërrim. Ditë e gjatë: ia
+      vlen më shumë me një natë atje.
+  - name: Parku Muskau
+    text: >-
+      Park Mużakowski, park i madh në stil anglez nga shekulli i 19-të, në listën e UNESCO-s, i ndarë
+      nga lumi Neisse mes Polonisë dhe Gjermanisë. Rreth 1.5 orë me makinë; me transport publik
+      është e vështirë.
+budget: >-
+  Një kafe kushton rreth 12-15 PLN (€3-3.5), një pjatë pierogi rreth 30-40 PLN (€7-9) dhe një
+  biletë autobusi rreth 4 PLN (€1). Një dhomë dyshe në hotel të thjeshtë kushton rreth 200-300 PLN
+  (€47-70) nata, më shumë gjatë Winobranie. Pa fluturimin dhe fjetjen, llogarit rreth €35-55 në
+  ditë.
+when: >-
+  Maji-shtatori ka motin më të mirë. Winobranie, festa e vjeljes së rrushit dhe një nga më të
+  vjetrat në Poloni, mbahet çdo vit në shtator për rreth një javë, me paradë, koncerte dhe tezga
+  vere në qendër. Atëherë hotelet mbushen: rezervo herët. Dimri është i ftohtë, shpesh nën zero.
+tips:
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Shumica e dyqaneve janë të mbyllura të dielën në Poloni; supermarketet e vogla dhe pikat e karburantit zakonisht punojnë."
+faq:
+  - q: "A ia vlen Zielona Góra?"
+    a: "Për një fundjavë të qetë me verë dhe çmime të ulëta, po, sidomos gjatë Winobranie. Nëse do më shumë, përdore si bazë për Wrocław, Poznań ose Berlin."
+  - q: "Si shkoj nga aeroporti në qytet?"
+    a: "Me autobusin shuttle që pret fluturimet (rreth 40-50 minuta, rreth 20-30 PLN), ose me taksi të rezervuar (rreth 150-200 PLN)."

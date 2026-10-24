@@ -1,0 +1,106 @@
+city: Yerevan
+name: Erevan
+slug: yerevan
+tagline: La Cascata, il brandy armeno e la vista sul monte Ararat
+intro: >-
+  Erevan è la capitale dell'Armenia, una città costruita in pietra vulcanica rosa, con il monte
+  Ararat all'orizzonte nelle giornate limpide. È economica e vivace fino a tarda sera. La valuta è il
+  dram armeno (AMD): €1 vale circa 450 dram. Tre o quattro giorni bastano per la città e due gite
+  fuori. I voli diretti da Tirana sono stagionali, quindi controlla le date in cui c'è il
+  collegamento.
+sights:
+  - name: La Cascata
+    text: >-
+      Un'enorme scalinata in pietra con giardini e sculture moderne. All'interno ci sono scale mobili
+      gratuite; dalla cima si vede tutta Erevan e, al mattino, il monte Ararat.
+  - name: Piazza della Repubblica e le fontane danzanti
+    text: >-
+      La piazza principale, con edifici in pietra rosa. Nelle sere della stagione calda, di solito da
+      maggio a ottobre, le fontane danzano con musica e luci, gratis.
+  - name: Matenadaran
+    text: >-
+      Il museo dei manoscritti antichi, con libri miniati a mano. Il biglietto costa circa 2500 dram
+      (circa €5,5); l'audioguida vale la pena.
+  - name: Memoriale del Genocidio (Tsitsernakaberd)
+    text: >-
+      Il memoriale delle vittime del 1915, su una collina che domina la città, con la fiamma eterna e
+      un museo. L'ingresso è gratuito.
+  - name: Mercato Vernissage
+    text: >-
+      Un mercato all'aperto con quadri, tappeti, oggetti in legno, argento e souvenir. È più grande
+      nel fine settimana; contrattare sul prezzo è normale.
+  - name: Fabbrica di brandy Ararat
+    text: >-
+      La storica fabbrica del brandy armeno, vicino al ponte sul fiume Hrazdan. I tour con
+      degustazione durano circa 1 ora e partono da circa 7000 dram (circa €15,5); prenota in anticipo.
+itinerary:
+  - "Piazza della Repubblica e il Viale del Nord al mattino, poi l'Opera e la Cascata fino in cima. Nel pomeriggio il Matenadaran, la sera le fontane danzanti e una cena a base di khorovats."
+  - "Il Memoriale del Genocidio al mattino, poi un tour con degustazione alla fabbrica di brandy. Nel pomeriggio il mercato Vernissage, la sera un caffè intorno all'Opera."
+  - "Una giornata fuori città: il tempio di Garni e il monastero di Geghard. In alternativa, Khor Virap al mattino per la vista sull'Ararat ed Etchmiadzin nel pomeriggio."
+areas:
+  - name: Kentron
+    text: "Il centro intorno a Piazza della Repubblica e al Viale del Nord: tutto a piedi, con la maggior parte degli hotel e dei ristoranti."
+  - name: Intorno alla Cascata e all'Opera
+    text: La parte più piacevole del centro, con caffè ed enoteche, un po' più cara.
+  - name: Arabkir
+    text: Una zona residenziale più tranquilla a nord della Cascata, con appartamenti a buon prezzo, a 15-25 minuti a piedi dal centro.
+food:
+  - name: Khorovats
+    text: >-
+      Carne cotta allo spiedo sulla brace, di solito maiale, agnello o pollo, con verdure grigliate.
+  - name: Dolma
+    text: Foglie di vite o di cavolo ripiene di carne e riso, servite con yogurt all'aglio.
+  - name: Lavash
+    text: >-
+      Il sottile pane armeno, cotto in un forno di terracotta (tonir), che accompagna ogni pasto.
+  - name: Brandy armeno
+    text: >-
+      La bevanda più famosa del paese, da sorseggiare lentamente dopo cena. Un bicchiere in un locale
+      costa circa 1500-3000 dram (circa €3,5-6,5).
+airports:
+  EVN: >-
+    L'aeroporto internazionale di Zvartnots si trova a circa 12 km a ovest del centro. L'autobus o il
+    minibus 201 ti porta in centro in circa 30-40 minuti, con un biglietto di circa 300 dram (circa
+    €0,7); parte all'incirca ogni 30 minuti durante il giorno. Con le app Yandex Go o GG la corsa
+    fino al centro costa circa 3000-4000 dram (circa €7-9) e dura circa 20 minuti.
+transport: >-
+  Il centro si gira facilmente a piedi. C'è una linea di metropolitana e molti autobus e minibus, con
+  un biglietto di circa 300 dram (circa €0,7) a corsa; su molti si paga con la carta bancaria
+  contactless. I taxi con app, Yandex Go o GG, sono molto economici: una corsa in città costa circa
+  1000-2000 dram (circa €2-4,5).
+daytrips:
+  - name: Garni e Geghard
+    text: >-
+      Garni è l'unico tempio greco-romano del paese, del I secolo, a circa 30 km a est,
+      sopra una gola con colonne di basalto. Circa 10 km più avanti c'è Geghard, un monastero in parte
+      scavato nella roccia. Vai in taxi o con un tour di gruppo.
+  - name: Khor Virap
+    text: >-
+      Un monastero su una piccola collina a circa 45 km a sud, circa 1 ora in auto, con la vista più
+      ravvicinata sul monte Ararat. Vai al mattino, quando il cielo è più limpido.
+  - name: Lago Sevan
+    text: >-
+      Il grande lago di montagna a circa 65 km a nord-est, circa 1 ora in auto, con il monastero di
+      Sevanavank su una penisola. D'estate ci sono spiagge, ma l'acqua resta fredda.
+  - name: Etchmiadzin
+    text: >-
+      Il centro della Chiesa armena, con la sua antica cattedrale, a circa 20 km a ovest. I minibus dal
+      centro impiegano circa 30-40 minuti; lungo la strada fermati alle rovine della cattedrale di
+      Zvartnots.
+budget: >-
+  Un caffè costa circa 800-1200 dram (circa €2-2,5), uno shawarma o un lahmajo circa 1000-1500 dram
+  (circa €2-3,5), una cena al ristorante circa 5000-8000 dram (circa €11-18). Volo e alloggio
+  esclusi, calcola €30-45 al giorno. Un letto in ostello costa da circa €10-15, una camera doppia in
+  un hotel semplice circa €35-60.
+when: >-
+  Maggio-giugno e settembre-ottobre hanno il clima migliore. Luglio e agosto sono molto caldi, spesso
+  oltre i 35 gradi. L'inverno è freddo, con neve.
+tips:
+  - "Paga in dram. In centro la carta è accettata quasi ovunque, ma ai mercati e su alcuni minibus servono contanti."
+  - "Molti cartelli sono anche in inglese; molte persone parlano russo e i giovani parlano inglese."
+  - "L'acqua delle piccole fontanelle per strada (pulpulak) è potabile e fresca."
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "L'autobus o il minibus 201 costa circa 300 dram e impiega circa 30-40 minuti. Con Yandex Go o GG costa circa 3000-4000 dram fino al centro."
+  - q: "Quanti soldi servono al giorno a Erevan?"
+    a: "Volo e alloggio esclusi, circa €30-45 al giorno. Un taxi per tutta la giornata a Garni e Geghard costa circa 15000-20000 dram (circa €33-45) per l'intera auto."

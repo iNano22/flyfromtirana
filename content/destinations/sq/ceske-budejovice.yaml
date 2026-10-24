@@ -1,0 +1,94 @@
+city: České Budějovice
+slug: ceske-budejovice
+tagline: Një shesh i madh, birra Budvar dhe Český Krumlov afër
+intro: >-
+  České Budějovice është kryeqendra e Bohemisë së Jugut, një qytet i qetë me rreth 95.000 banorë mbi
+  lumenjtë Vltava dhe Malše. Ka një nga sheshet më të mëdha në Evropë dhe birrën Budvar, që e merr
+  emrin nga Budweis, emri gjerman i qytetit. Është edhe baza më e lirë për Český Krumlov dhe Boheminë e
+  Jugut. Monedha është korona çeke (CZK): 1 euro është rreth 25 korona.
+sights:
+  - name: Sheshi Přemysl Otakar II
+    text: >-
+      Sheshi katror, rreth 133 me 133 metra, me shtëpi me harqe, shatërvanin barok të Samsonit dhe
+      Bashkinë. Kërko në kalldrëm «gurin endacak» (bludný kámen): thuhet se kush e shkel pas orës 22:00
+      nuk e gjen dot rrugën për në shtëpi.
+  - name: Kulla e Zezë
+    text: >-
+      Kulla e kambanave e shekullit XVI, 72 metra e lartë, simboli i qytetit. Me 225 shkallë del te
+      galeria, me pamje mbi sheshin; rreth 60-100 CZK (€2.50-4), zakonisht prill-tetor.
+  - name: Katedralja e Shën Nikollës
+    text: Kisha barok ngjitur me Kullën e Zezë, katedrale që nga viti 1785. Hyrja është falas, jashtë orëve të meshës.
+  - name: Birraria Budweiser Budvar
+    text: >-
+      Birraria shtetërore e vitit 1895, rreth 2 km në veri të sheshit. Turi zgjat rreth 1 orë, me një
+      provë birre në bodrum, dhe kushton rreth 250-350 CZK (€10-14); rezervoje online.
+  - name: Buzë lumenjve
+    text: >-
+      Vltava dhe Malše rrethojnë qendrën dhe bashkohen pranë parkut Sokolský ostrov. Ec nga kulla
+      Železná panna te manastiri i Dominikanëve; shtegu i biçikletave vazhdon deri në Hluboká.
+airports:
+  JCL: >-
+    Aeroporti është në Planá, rreth 6 km në jug të qendrës. Fluturimet nga Tirana janë çarter sezonale,
+    kryesisht në verë: kontrollo datat çdo vit. Një taksi bën rreth 15 minuta dhe kushton rreth 250-400
+    CZK (€10-16); porosite paraprakisht. Autobusët lokalë nga Planá kushtojnë rreth 20-30 CZK (rreth
+    €1), por kalojnë rrallë: kontrollo oraret në idos.cz.
+budget: >-
+  Një birrë gjysmëlitërshe kushton rreth 50-70 CZK (€2-3), menyja e ditës (polední menu) rreth 150-200
+  CZK (€6-8). Një dhomë dyshe në hotel të thjeshtë kushton nga rreth 1.500-2.500 CZK (€60-100) nata,
+  më pak se në Český Krumlov.
+when: >-
+  Maji-shtatori ka motin më të mirë. Në qershor Český Krumlov feston Festën e Trëndafilit me Pesë
+  Petale; në dhjetor sheshi ka tregun e Krishtlindjeve, por disa kështjella mbyllen në dimër.
+tips:
+  - "Fli në České Budějovice dhe shko në Český Krumlov me autobusin e parë: hotelet janë më të lira dhe arrin para grupeve turistike."
+  - "Kur pos-i të pyet euro apo korona, zgjidh gjithmonë koronat (CZK): konvertimi në euro kushton më shumë."
+  - "Shumë kështjella mbyllen të hënën: kontrollo oraret para se të nisesh."
+itinerary:
+  - "Sheshi Přemysl Otakar II, Kulla e Zezë dhe Katedralja e Shën Nikollës. Drekë në Masné krámy, pasdite shëtitje buzë lumenjve, në mbrëmje një birrë Budvar."
+  - "Një ditë e plotë në Český Krumlov: kështjella, Ura e Mantelit, kopshtet dhe qyteti i vjetër."
+  - "Turi i Budvar në mëngjes, pasdite kështjella Hluboká. Ndryshe, Holašovice ose Třeboň."
+areas:
+  - name: Qendra historike
+    text: Rreth sheshit, gjithçka në këmbë, me hotele në shtëpi të vjetra.
+  - name: Pranë stacionit
+    text: >-
+      Zona më praktike për udhëtimet ditore: trenat nisen nga Hlavní nádraží, autobusët nga stacioni mbi
+      qendrën tregtare Mercury. Sheshi është 10-15 minuta në këmbë.
+  - name: Buzë lumit
+    text: Hotele më të qeta pranë Vltavës dhe parkut Sokolský ostrov, 5-10 minuta nga sheshi.
+food:
+  - name: Birra Budvar
+    text: >-
+      Lageri i qytetit. Provo «tankové pivo», birrën e papasterizuar nga tanket, në Masné krámy, tregun e
+      vjetër të mishit të shekullit XVI, sot pijetore.
+  - name: Kulajda
+    text: Supë kremoze e Bohemisë së Jugut me patate, kërpudha dhe kopër, shpesh me një vezë sipër.
+  - name: Krapi
+    text: Krap nga pellgjet e Třeboň, i skuqur ose i pjekur, me sallatë patatesh.
+transport: >-
+  Qendra përshkohet në këmbë dhe qyteti është i sheshtë, i mirë për biçikletë. Autobusët dhe
+  trolejbusët kushtojnë rreth 20-30 CZK (€1) për biletë. RegioJet, Flixbus dhe autobusët rajonalë
+  nisen nga stacioni mbi Mercury. Prague është rreth 2-2.5 orë me tren ose autobus.
+daytrips:
+  - name: Český Krumlov
+    text: >-
+      Qytet mesjetar në një kthesë të Vltavës, pjesë e UNESCO-s, me kështjellën e dytë më të madhe të
+      Çekisë. Rreth 30-45 minuta me autobus (rreth 40-70 CZK, €1.60-3). Oborret janë falas; turnet
+      brenda rreth 150-400 CZK (€6-16).
+  - name: Kështjella Hluboká
+    text: >-
+      Kështjella e bardhë neogotike e familjes Schwarzenberg, rreth 10 km në veri: 20-30 minuta me
+      autobus ose rreth 1 orë me biçikletë. Parku është falas, turnet rreth 250-450 CZK (€10-18).
+  - name: Holašovice
+    text: >-
+      Fshat i vogël me shtëpi fshatare barok të shekullit XIX, pjesë e UNESCO-s, rreth 15 km larg.
+      Autobusët janë të paktë: shko me taksi ose me biçikletë.
+  - name: Třeboň
+    text: >-
+      Qytet llixhash mes pellgjeve të peshkut, me shesh me harqe dhe birrarinë Regent, rreth 30-45
+      minuta me tren ose autobus. Në tetor nxirret krapi nga pellgjet, me festë në breg.
+faq:
+  - q: "A është më mirë të fle në České Budějovice apo në Český Krumlov?"
+    a: "České Budějovice është më i lirë dhe ka më shumë lidhje; Český Krumlov është 30-45 minuta larg. Për Český Krumlov pa turma në mbrëmje, shto atje një natë."
+  - q: "Sa para duhen në ditë në České Budějovice?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €30-50 në ditë për ushqim, transport dhe një hyrje. Sheshi dhe shëtitjet buzë lumit janë falas."

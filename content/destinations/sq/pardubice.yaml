@@ -1,0 +1,90 @@
+city: Pardubice
+slug: pardubice
+tagline: Perník, kuaj dhe Prague një orë me tren
+intro: >-
+  Pardubice është një qytet i vogël dhe i këndshëm në Bohemian Lindore, me rreth 90.000 banorë,
+  buzë lumit Elbe. Ka një shesh me shtëpi shumëngjyrëshe, një kështjellë-fortesë, biskotat me
+  mjaltë dhe erëza (perník) dhe garën më të njohur me pengesa në Evropën Qendrore. Qendra shihet për
+  gjysmë dite, ndaj Pardubice vlen më shumë si bazë e qetë dhe e lirë: Prague është rreth 1 orë me
+  tren. Monedha është korona çeke (CZK): 1 euro është rreth 25 korona.
+sights:
+  - name: Pernštýnské náměstí dhe Porta e Gjelbër
+    text: >-
+      Sheshi kryesor i Qytetit të Vjetër, me fasada renesancë dhe barok. Në skajin e tij ngrihet
+      Porta e Gjelbër (Zelená brána), kulla rreth 60 metra e lartë e portës së dikurshme; nga galeria
+      e saj shihet gjithë qyteti, për rreth 50-100 CZK (€2-4).
+  - name: Kështjella e Pardubice
+    text: >-
+      Kështjellë renesancë e familjes Pernštejn, me mure dheu dhe hendek, 5 minuta në këmbë nga
+      sheshi. Brenda është Muzeu i Bohemisë Lindore, rreth 100-200 CZK (€4-8); muret janë falas.
+  - name: Kështjella Kunětická hora
+    text: >-
+      Kështjellë gotike mbi një kodër të vetmuar, rreth 6 km në verilindje të qytetit, me pamje mbi
+      fushën e Elbe. Hapet kryesisht nga prilli në tetor; turi kushton rreth 150-250 CZK (€6-10).
+  - name: Muzeu i perníkut
+    text: >-
+      Perníková chaloupka, «shtëpiza e perníkut», në fshatin Ráby nën Kunětická hora, tregon si
+      piqen dhe zbukurohen biskotat. Bashkohet lehtë me kështjellën; bileta rreth 100 CZK (€4).
+  - name: Hipodromi i Velká pardubická
+    text: >-
+      Që nga viti 1874 këtu zhvillohet Velká pardubická, një nga garat më të vështira me pengesa në
+      Evropë, me hendekun e famshëm Taxis, të dielën e dytë të tetorit. Nga pranvera në vjeshtë ka
+      edhe gara më të qeta.
+airports:
+  PED: >-
+    Aeroporti i vogël i Pardubice është rreth 4 km nga qendra. Autobusët dhe trolejbusët urbanë të
+    çojnë te stacioni kryesor i trenave (hlavní nádraží) dhe në qendër për rreth 15-20 minuta;
+    bileta kushton rreth 25 CZK (rreth €1) dhe paguhet edhe me kartë bankare pa kontakt brenda
+    mjetit. Kontrollo oraret për fluturimet e vona. Një taksi kushton rreth 250-350 CZK (€10-14).
+budget: >-
+  Një birrë gjysmëlitërshe kushton rreth 45-65 CZK (€1.80-2.60), një pjatë në restorant 200-320 CZK
+  (€8-13), një perník i zbukuruar 30-100 CZK (€1.20-4). Një dhomë dyshe në hotel të thjeshtë kushton
+  rreth 1.200-2.200 CZK (€50-90) nata, më pak se në Prague.
+when: >-
+  Fluturimet nga Tirana janë çartera sezonale, kryesisht në verë: kontrollo datat çdo vit.
+  Maji-qershori dhe shtatori kanë motin më të mirë për udhëtime ditore; shumë kështjella hapen
+  vetëm nga prilli në tetor. Në fund të nëntorit hapen tregjet e Krishtlindjeve, me perník kudo.
+tips:
+  - "Biletat e trenit blihen online te České dráhy, RegioJet ose Leo Express: disa ditë përpara janë shpesh më të lira."
+  - "Kur pos-i të pyet euro apo korona, zgjidh gjithmonë koronat (CZK): konvertimi në euro kushton më shumë."
+  - "Për fundjavën e Velká pardubická rezervo fjetjen herët: hotelet mbushen dhe çmimet rriten."
+itinerary:
+  - "Pernštýnské náměstí, ngjitje në Portën e Gjelbër dhe kështjella me muzeun. Pasdite Třída Míru, bulevardi kryesor, dhe parqet buzë lumit Chrudimka; në mbrëmje një Porter në një pijetore."
+  - "Kunětická hora në mëngjes dhe muzeu i perníkut në Ráby. Pasdite hipodromi, ose gjysmë dite në Hradec Králové."
+  - "Udhëtim ditor në Prague me një tren të hershëm: Kështjella, Ura e Karlit dhe Qyteti i Vjetër."
+  - "Kutná Hora me kishën e kockave, ose Litomyšl me kështjellën renesancë."
+areas:
+  - name: Qyteti i Vjetër
+    text: Rreth sheshit dhe kështjellës, i qetë dhe piktoresk, me pak hotele dhe pensione.
+  - name: Třída Míru
+    text: Mes stacionit dhe Qytetit të Vjetër, me dyqane, kafene dhe hotele.
+  - name: Pranë hlavní nádraží
+    text: "Zona më praktike për udhëtimet ditore: trenat nisen këtu dhe autobusët urbanë shkojnë në aeroport."
+food:
+  - name: Pardubický perník
+    text: Biskota të buta me mjaltë dhe erëza, simboli i qytetit, shpesh të zbukuruara me sheqer të bardhë.
+  - name: Porter i Pernštejn
+    text: Birrë e zezë dhe e fortë e birrarisë së qytetit, Pernštejn.
+  - name: Svíčková
+    text: Mish viçi me salcë kremoze perimesh, me knedlík (bukë e zier në feta) dhe boronica.
+transport: >-
+  Qendra shihet në këmbë; nga stacioni kryesor deri te sheshi janë rreth 20-25 minuta përgjatë
+  Třída Míru. Trolejbusët dhe autobusët kanë të njëjtën biletë, që blihet në automate ose me kartë
+  pa kontakt brenda mjetit. Trenat për Prague nisen disa herë në orë. Qyteti është i sheshtë, me
+  shumë shtigje për biçikleta.
+daytrips:
+  - name: Prague
+    text: Kështjella, Ura e Karlit dhe Qyteti i Vjetër, rreth 1 orë me tren direkt; bileta kushton rreth 100-250 CZK (€4-10) për drejtim.
+  - name: Kutná Hora
+    text: Qyteti i vjetër i argjendit, pjesë e UNESCO-s, me katedralen e Shën Barbarës dhe kishën e kockave në Sedlec. Rreth 1 orë me tren, me ndërrim në Kolín.
+  - name: Hradec Králové
+    text: Qyteti fqinj, me një shesh të madh, Kullën e Bardhë dhe ndërtesa moderniste. Rreth 25 minuta me tren (rreth 50-80 CZK, €2-3).
+  - name: Litomyšl
+    text: Kështjella renesancë e UNESCO-s dhe qyteti i lindjes së kompozitorit Bedřich Smetana, rreth 1 orë me autobus.
+faq:
+  - q: "A ia vlen Pardubice, apo më mirë të fle në Prague?"
+    a: "Për vetë qytetin mjafton një ditë. Por fjetja kushton më pak se në Prague dhe treni bën rreth 1 orë, ndaj Pardubice është bazë e mirë për 3-4 ditë me udhëtime ditore."
+  - q: "Si shkoj nga aeroporti i Pardubice në Prague?"
+    a: "Me autobus ose trolejbus deri te stacioni kryesor (rreth 15-20 minuta), pastaj me tren direkt (rreth 1 orë). Llogarit gjithsej rreth 1.5 orë dhe rreth 130-280 CZK (€5-11)."
+  - q: "Sa para duhen në ditë në Pardubice?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €30-50 në ditë për ushqim, transport dhe një hyrje. Një ditë në Prague shton rreth €8-20 për trenin."

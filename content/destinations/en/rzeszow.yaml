@@ -1,0 +1,102 @@
+city: Rzeszów
+slug: rzeszow
+tagline: Cellars under the square, castles and a gateway to the Bieszczady
+intro: >-
+  Rzeszów is the main city of south-eastern Poland, with about 200 thousand inhabitants, about 165
+  km east of Kraków. It is a student city, with a small centre you can walk around and lower prices
+  than Kraków. One or two days are enough for the city; the rest goes on Łańcut Castle, Sanok's
+  open-air museum and the Bieszczady mountains. The currency is the Polish złoty (PLN): €1 is about
+  4.2 PLN.
+sights:
+  - name: Market Square and Town Hall
+    text: >-
+      The main square, with colourful houses and cafés with outdoor tables. In the middle stands the
+      Town Hall (Ratusz), from the 16th century, rebuilt at the end of the 19th century with
+      fairy-tale towers.
+  - name: Underground Tourist Route
+    text: >-
+      Almost 400 metres of cellars under the houses of the square, down to about 10 metres deep, where
+      merchants stored their goods. Visits are guided, at fixed times; a ticket costs about 20-30 PLN
+      (about €5-7).
+  - name: Lubomirski Castle
+    text: >-
+      The Lubomirski family's castle with bastions and a moat, rebuilt at the beginning of the 20th
+      century. For a long time it was a prison and today it is a court, so you see it from the
+      outside.
+  - name: Lubomirski Summer Palace
+    text: >-
+      A baroque palace with a garden, a few minutes on foot from the square, where the Lubomirski
+      family spent the summer. The inside rarely opens, for concerts and events, but the façade and
+      the gate can be seen freely.
+  - name: Monument of the Revolutionary Act
+    text: >-
+      One of the largest monuments of the communist era in Poland, put up in 1974 near the castle.
+      Its odd shape has earned it a cheeky nickname among locals, and the debate over whether it
+      should be removed has gone on for years.
+itinerary:
+  - "The Market Square and the Town Hall, then the Underground Tourist Route. In the afternoon, 3 Maja Street and the Farna church; in the evening, dinner on the square."
+  - "The Summer Palace, Lubomirski Castle and the Monument of the Revolutionary Act. In the afternoon, a walk along the Wisłok river."
+  - "Łańcut Castle, about 20 minutes by train, and back for dinner. With more days, Sanok's open-air museum or two days in the Bieszczady."
+areas:
+  - name: Market Square and the Old Town
+    text: Everything on foot, with apartments and small hotels. The streets near the square are noisy on weekend nights.
+  - name: Near Rzeszów Główny
+    text: "The most practical area: the train station and the bus station are next to each other, and the square is about 15 minutes on foot."
+  - name: Near the castle and the Wisłok river
+    text: Quieter and a little cheaper, with a riverside park, about 10 minutes on foot from the square.
+food:
+  - name: Proziaki
+    text: A flatbread made with baking soda, cooked on a hot plate and eaten with garlic butter. The speciality of the Podkarpacie region.
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese (ruskie), meat, cabbage or fruit, boiled or fried.
+  - name: Fuczki
+    text: Pancakes made with sauerkraut, a village dish of the Bieszczady, found in the city's regional restaurants.
+  - name: Bar mleczny
+    text: '"Milk bars", the cheap canteens of the communist era, where a lunch costs about 20-30 PLN (about €5-7).'
+airports:
+  RZE: >-
+    Rzeszów-Jasionka Airport is about 10 km north of the city. The train reaches Rzeszów Główny in
+    about 20 minutes, with a ticket of about 5-10 PLN (about €1-2.5), but it does not run often:
+    check the timetable. Buses to the centre take about 30-40 minutes, with a ticket of about 4-6
+    PLN (about €1-1.5). A taxi or Bolt takes about 20 minutes and costs about 60-90 PLN (€14-21).
+transport: >-
+  The centre is walkable; further out there are city buses, but no trams. Tickets are bought by card
+  from the machines on the bus or in the Jakdojade app; a ticket costs about 4 PLN (about €1). Bolt
+  and Uber are cheap. Trains leave from Rzeszów Główny, buses to Sanok and the Bieszczady from the
+  bus station opposite.
+daytrips:
+  - name: Łańcut Castle
+    text: >-
+      One of the most beautiful aristocratic residences in Poland, with furnished halls, a park and a
+      large carriage museum. About 20 minutes by train; a ticket costs about 50-70 PLN (about
+      €12-17).
+  - name: Kraków
+    text: >-
+      The old royal capital, with Rynek Główny, Wawel and Kazimierz. Trains take about 2-2.5 hours,
+      with tickets of about 40-80 PLN (about €10-19).
+  - name: The Bieszczady mountains
+    text: >-
+      Poland's wildest mountains, with high meadows (połoniny) and Lake Solina. The main trails are
+      about 3 hours away: better with a hire car and a night there.
+  - name: Sanok's open-air museum
+    text: >-
+      One of the largest open-air museums in Poland, with wooden churches and village houses. Sanok
+      Castle houses the gallery of the painter Beksiński. About 1.5 hours by bus.
+budget: >-
+  A half-litre beer in the centre costs about 10-15 PLN (€2.5-3.5), a plate of pierogi about 25-35
+  PLN (€6-8), a coffee about 10-14 PLN (€2.5-3.5) and a bus ticket about 4 PLN (€1).
+when: >-
+  Flights from Tirana are seasonal charters, usually in summer: check the dates every year.
+  May-September has long days and outdoor tables; for the Bieszczady the best time is
+  June-October. Winter is cold, often below 0°C.
+tips:
+  - "Always pay in PLN: when the card terminal or cash machine offers euros, decline, because the rate is worse."
+  - "Most shops are closed on Sundays; restaurants and Żabka shops are usually open."
+  - "For the Bieszczady and Sanok a hire car saves a lot of time: buses are rare outside summer."
+faq:
+  - q: "Is Rzeszów worth it, or is it better to go straight to Kraków?"
+    a: "Rzeszów is worth it as a base for the south-east: Łańcut, Sanok and the Bieszczady are close and prices are lower. Kraków is about 2 hours by train."
+  - q: "How do I fly to Rzeszów from Tirana?"
+    a: "Direct flights are seasonal charters, mainly in summer, and seats are not always sold separately. Otherwise, fly to Kraków and continue by train."
+  - q: "How much money do I need per day in Rzeszów?"
+    a: "Excluding the flight and accommodation, about €30-50 a day. Food and transport are cheap; the main costs are accommodation and day trips."

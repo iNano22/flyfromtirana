@@ -1,0 +1,81 @@
+city: Toronto
+slug: toronto
+tagline: The CN Tower, islands in the lake and neighbourhoods from all over the world
+intro: >-
+  Toronto is the largest city in Canada, on the shore of Lake Ontario: skyscrapers, islands with
+  beaches and neighbourhoods where every language in the world is spoken. For many Albanians it is
+  also the trip to see relatives. Four days are enough for the city and a day at Niagara Falls. The
+  city is expensive, but with public transport, the markets and neighbourhood food you save a lot.
+sights:
+  - name: CN Tower
+    text: The 553-metre tower, the symbol of the city. The LookOut platform costs about 45-60 CAD (€28-37). Buy your ticket online.
+  - name: Harbourfront and the Toronto Islands
+    text: The lakeside promenade and, 15 minutes by ferry from the Jack Layton Ferry Terminal, the islands, with beaches and the best view of the skyline. A return ticket costs about 9-10 CAD (€6).
+  - name: Distillery District
+    text: The brick buildings of a 19th-century distillery, now pedestrian lanes with galleries and cafés.
+  - name: Kensington Market
+    text: A bohemian neighbourhood with second-hand clothes and street food from all over the world, next to Chinatown.
+  - name: St. Lawrence Market
+    text: The historic covered market, full of cheese, meat and fish. It is closed on Mondays.
+  - name: Royal Ontario Museum (ROM)
+    text: The largest museum in Canada, with dinosaurs and Egyptian mummies. A ticket costs about 25-30 CAD (€16-19).
+airports:
+  YYZ: >-
+    The UP Express train leaves Terminal 1 every 15 minutes and reaches Union Station in about 25
+    minutes, for about 12-13 CAD (€7.50-8) with a Presto card or a contactless bank card. From
+    Terminal 3, where Air Transat usually arrives, take the free Terminal Link train to Terminal 1.
+    Cheaper is the TTC 900 Airport Express bus to Kipling subway station: one fare of about 3.30 CAD
+    (€2) covers the whole journey, but allow about 1 hour to reach the centre. A taxi or Uber costs
+    about 60-80 CAD (€37-50) to downtown, before the tip.
+budget: >-
+  One Canadian dollar (CAD) is about €0.62. A coffee costs 2-5 CAD (€1.20-3), a quick meal 15-20 CAD
+  (€9-12), a dinner in a restaurant 30-50 CAD (€19-31) and a beer in a bar 8-12 CAD (€5-7.50). A
+  hostel bed costs about 50-80 CAD (€31-50), a simple hotel in the centre 200-300 CAD (€124-186) a
+  night. Prices are shown without the 13% tax, and in restaurants, bars and taxis you leave a tip of
+  15-20%.
+when: >-
+  June to September is the warmest season, with 25-30°C and humidity; the direct flights from
+  Tirana, with Air Transat, also usually run only in summer. Late September and October bring the
+  autumn colours. Winter is cold, often below -10°C with snow, but downtown you can walk
+  underground, in the PATH walkways.
+tips:
+  - "Prices in shops and restaurants are shown without the 13% tax (HST), which is added at the till."
+  - "In restaurants, bars and taxis the tip is 15-20%: you choose the percentage yourself on the card terminal."
+  - "Sockets are the American type, at 120 V: bring an adapter."
+itinerary:
+  - "The CN Tower in the morning, then a walk along Harbourfront. In the afternoon, the ferry to the Toronto Islands and the view of the skyline at sunset."
+  - "St. Lawrence Market in the morning, with a peameal bacon sandwich, then the Distillery District. In the afternoon Nathan Phillips Square, and in the evening dinner in Greektown or Little Italy."
+  - "Kensington Market and Chinatown in the morning. In the afternoon the ROM and the elegant Yorkville neighbourhood, or Casa Loma, the early 20th-century castle."
+  - "A day at Niagara Falls, with a stop in Niagara-on-the-Lake for the wines."
+areas:
+  - name: Downtown and the Entertainment District
+    text: Close to Union Station, the UP Express and the CN Tower. The most practical, but with the most expensive hotels.
+  - name: Old Town and St. Lawrence
+    text: Historic streets, the market and the Distillery District within walking distance, with the streetcar to the centre.
+  - name: The Annex and Yonge-Bloor
+    text: Where subway lines 1 and 2 cross, close to the ROM. Hotels and B&Bs that are a little cheaper.
+  - name: Mississauga and North York
+    text: "Suburbs with cheaper hotels, often close to relatives: Mississauga is near the airport. Allow 45-60 minutes to the centre."
+food:
+  - name: Peameal bacon sandwich
+    text: Cured pork loin rolled in cornmeal and grilled, in a soft bun. The St. Lawrence Market classic, about 10-12 CAD (€6-7.50).
+  - name: Poutine
+    text: Fries with fresh cheese curds and gravy, about 8-15 CAD.
+  - name: Food from around the world
+    text: "Nearly half of the residents were born outside Canada: dim sum in Chinatown, gyros in Greektown, Caribbean roti and Indian food on Gerrard Street."
+transport: >-
+  The TTC runs the subway (the main lines are 1 and 2), streetcars and buses. A ride costs about 3.30
+  CAD (€2) and within 2 hours you can transfer for free. You don't need a paper ticket: tap the
+  reader with a Presto card, a contactless bank card or your phone. Children up to 12 ride free.
+daytrips:
+  - name: Niagara Falls
+    text: The most famous waterfalls in North America, about 1.5-2 hours by car or by GO train (about 20-25 CAD each way). The boat to the foot of the falls costs about 35-40 CAD (€22-25).
+  - name: Niagara-on-the-Lake
+    text: A 19th-century town with flowers and wineries, about 20 minutes from the falls, known for its ice wine. Easiest by car.
+  - name: Algonquin Park
+    text: Forests and lakes, about 3 hours north by car; without a car it is hard to reach. Late September and early October are the time of the red leaves.
+faq:
+  - q: "Are there direct flights from Tirana to Toronto?"
+    a: "Yes, but seasonal: Air Transat usually flies during the summer. In the other months you travel with a stop in another city, so compare prices in good time."
+  - q: "How much money do you need per day in Toronto?"
+    a: "Excluding the flight and accommodation, plan on 100-150 CAD (€62-93) a day for food, transport and one attraction. In restaurants, tax and tip add about a third to the bill."

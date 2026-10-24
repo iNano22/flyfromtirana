@@ -1,0 +1,94 @@
+city: Pardubice
+slug: pardubice
+tagline: Pan di zenzero, cavalli e Praga a un'ora di treno
+intro: >-
+  Pardubice è una cittadina piccola e piacevole della Boemia orientale, con circa 90.000 abitanti,
+  sulle rive dell'Elba. Ha una piazza di case colorate, un castello-fortezza, i biscotti al miele e
+  spezie (perník) e la corsa a ostacoli più famosa dell'Europa centrale. Il centro si vede in mezza
+  giornata, quindi Pardubice funziona meglio come base tranquilla ed economica: Praga è a circa 1
+  ora di treno. La moneta è la corona ceca (CZK): 1 euro vale circa 25 corone.
+sights:
+  - name: Piazza Pernštýnské e la Porta Verde
+    text: >-
+      La piazza principale della Città Vecchia, con facciate rinascimentali e barocche. In fondo si
+      alza la Porta Verde (Zelená brána), la torre alta circa 60 metri dell'antica porta cittadina;
+      dalla sua galleria si vede tutta la città, per circa 50-100 CZK (€2-4).
+  - name: Castello di Pardubice
+    text: >-
+      Castello rinascimentale della famiglia Pernštejn, con bastioni di terra e un fossato, a 5
+      minuti a piedi dalla piazza. All'interno c'è il Museo della Boemia orientale, circa 100-200 CZK
+      (€4-8); i bastioni sono gratuiti.
+  - name: Castello di Kunětická hora
+    text: >-
+      Castello gotico su una collina isolata, circa 6 km a nord-est della città, con vista sulla
+      pianura dell'Elba. Apre soprattutto da aprile a ottobre; la visita guidata costa circa 150-250
+      CZK (€6-10).
+  - name: Museo del pan di zenzero
+    text: >-
+      La Perníková chaloupka, la «casetta di pan di zenzero», nel villaggio di Ráby ai piedi di
+      Kunětická hora, mostra come si cuociono e si decorano i biscotti. Si abbina facilmente al
+      castello; il biglietto costa circa 100 CZK (€4).
+  - name: L'ippodromo della Velká pardubická
+    text: >-
+      Dal 1874 qui si corre la Velká pardubická, una delle corse a ostacoli più dure d'Europa, con il
+      famoso fosso Taxis, la seconda domenica di ottobre. Dalla primavera all'autunno ci sono anche
+      giornate di corse più tranquille.
+airports:
+  PED: >-
+    Il piccolo aeroporto di Pardubice è a circa 4 km dal centro. Gli autobus e i filobus urbani ti
+    portano alla stazione ferroviaria principale (hlavní nádraží) e in centro in circa 15-20 minuti;
+    il biglietto costa circa 25 CZK (circa €1) e si può pagare anche con la carta bancaria
+    contactless a bordo. Controlla gli orari per i voli in tarda serata. Un taxi costa circa 250-350
+    CZK (€10-14).
+budget: >-
+  Una birra da mezzo litro costa circa 45-65 CZK (€1,80-2,60), un piatto al ristorante 200-320 CZK
+  (€8-13), un perník decorato 30-100 CZK (€1,20-4). Una camera doppia in un hotel semplice costa
+  circa 1.200-2.200 CZK (€50-90) a notte, meno che a Praga.
+when: >-
+  I voli da Tirana sono charter stagionali, soprattutto d'estate: controlla le date ogni anno. Da
+  maggio a giugno e a settembre il tempo è migliore per le gite; molti castelli aprono solo da
+  aprile a ottobre. A fine novembre aprono i mercatini di Natale, con perník ovunque.
+tips:
+  - "I biglietti del treno si comprano online da České dráhy, RegioJet o Leo Express: qualche giorno prima sono spesso più economici."
+  - "Quando il POS chiede euro o corone, scegli sempre le corone (CZK): la conversione in euro costa di più."
+  - "Per il fine settimana della Velká pardubická prenota l'alloggio presto: gli hotel si riempiono e i prezzi salgono."
+itinerary:
+  - "Piazza Pernštýnské, salita sulla Porta Verde e il castello con il museo. Nel pomeriggio Třída Míru, il viale principale, e i parchi lungo il fiume Chrudimka; la sera una Porter in una birreria."
+  - "Kunětická hora al mattino e il museo del pan di zenzero a Ráby. Nel pomeriggio l'ippodromo, o mezza giornata a Hradec Králové."
+  - "Gita in giornata a Praga con un treno di prima mattina: il Castello, il Ponte Carlo e la Città Vecchia."
+  - "Kutná Hora con la chiesa delle ossa, o Litomyšl con il suo castello rinascimentale."
+areas:
+  - name: Città Vecchia
+    text: Intorno alla piazza e al castello, tranquilla e pittoresca, con pochi hotel e pensioni.
+  - name: Třída Míru
+    text: Tra la stazione e la Città Vecchia, con negozi, caffè e hotel.
+  - name: Vicino a hlavní nádraží
+    text: "La zona più pratica per le gite: i treni partono da qui e gli autobus urbani vanno all'aeroporto."
+food:
+  - name: Pardubický perník
+    text: Biscotti morbidi al miele e spezie, il simbolo della città, spesso decorati con glassa bianca.
+  - name: Porter Pernštejn
+    text: Una birra scura e forte del birrificio cittadino, Pernštejn.
+  - name: Svíčková
+    text: Manzo con una salsa cremosa di verdure, con knedlík (canederli di pane bollito a fette) e mirtilli rossi.
+transport: >-
+  Il centro si visita a piedi; dalla stazione principale alla piazza sono circa 20-25 minuti lungo
+  Třída Míru. Filobus e autobus usano lo stesso biglietto, che si compra alle macchinette o con la
+  carta contactless a bordo. I treni per Praga partono più volte all'ora. La città è pianeggiante,
+  con molte piste ciclabili.
+daytrips:
+  - name: Praga
+    text: Il Castello, il Ponte Carlo e la Città Vecchia, a circa 1 ora con il treno diretto; il biglietto costa circa 100-250 CZK (€4-10) a tratta.
+  - name: Kutná Hora
+    text: L'antica città dell'argento, patrimonio UNESCO, con la cattedrale di Santa Barbara e la chiesa delle ossa a Sedlec. Circa 1 ora di treno, con cambio a Kolín.
+  - name: Hradec Králové
+    text: La città vicina, con una grande piazza, la Torre Bianca ed edifici modernisti. Circa 25 minuti di treno (circa 50-80 CZK, €2-3).
+  - name: Litomyšl
+    text: Il castello rinascimentale patrimonio UNESCO e la città natale del compositore Bedřich Smetana, a circa 1 ora di autobus.
+faq:
+  - q: "Pardubice merita, o è meglio dormire a Praga?"
+    a: "Per la città in sé basta un giorno. Ma dormire costa meno che a Praga e il treno impiega circa 1 ora, quindi Pardubice è una buona base per 3-4 giorni di gite."
+  - q: "Come arrivo dall'aeroporto di Pardubice a Praga?"
+    a: "In autobus o filobus fino alla stazione principale (circa 15-20 minuti), poi con il treno diretto (circa 1 ora). Calcola in tutto circa 1,5 ore e circa 130-280 CZK (€5-11)."
+  - q: "Quanto si spende al giorno a Pardubice?"
+    a: "Volo e alloggio esclusi, calcola €30-50 al giorno per cibo, trasporti e un ingresso. Una giornata a Praga aggiunge circa €8-20 per il treno."

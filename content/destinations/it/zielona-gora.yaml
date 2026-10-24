@@ -1,0 +1,101 @@
+city: Zielona Góra
+slug: zielona-gora
+tagline: La città del vino, dei Bacco di bronzo e della festa della vendemmia
+intro: >-
+  Zielona Góra è una piccola città di circa 140.000 abitanti nella Polonia occidentale, vicino al
+  confine con la Germania. È conosciuta come la città del vino: intorno a lei si coltivano vigne dal
+  Medioevo e ogni settembre la festa della vendemmia, il Winobranie, riempie il centro. Non ha grandi
+  attrazioni e il centro si visita in una giornata senza fretta, ma è tranquilla ed economica. Il
+  resto del programma lo completano le gite in giornata a Breslavia, Poznań e Berlino. La valuta è
+  lo złoty polacco (PLN): €1 vale circa 4,3 PLN.
+sights:
+  - name: Stary Rynek e il Municipio
+    text: >-
+      La piazza del mercato, con case colorate, caffè ed enoteche, e il Municipio con la sua torre al
+      centro. A due passi c'è la Concattedrale gotica di Santa Edvige, la chiesa più antica della
+      città.
+  - name: La caccia ai Bacco
+    text: >-
+      Oltre 50 piccole statue di bronzo di Bacco, il dio romano del vino (bachusiki), sparse per il
+      centro. Cercarle è il modo migliore per vedere la città; la mappa si prende all'ufficio di
+      informazioni turistiche.
+  - name: Il Parco del Vino e la Palmiarnia
+    text: >-
+      Il Park Winny è una collina con vigne e sentieri, a circa 15 minuti a piedi dalla piazza. In
+      cima c'è la Palmiarnia, una serra di vetro con palme, un ristorante e la vista sulla città.
+  - name: Il Museo della Terra di Lubusz e il Museo del Vino
+    text: >-
+      Il museo della regione, con arte e storia locali. Nelle sue cantine il Museo del Vino racconta i
+      secoli di vino della zona; c'è anche una mostra sui processi alle streghe del 17° secolo.
+      Biglietto circa 10-20 PLN (€2-5); di solito chiuso il lunedì.
+  - name: La Chiesa della Madonna di Częstochowa
+    text: >-
+      Una grande chiesa con struttura in legno e muri in mattoni, della metà del 18° secolo, vicino
+      alla piazza. Fu costruita in origine per i protestanti.
+itinerary:
+  - "Stary Rynek, il Municipio e la Concattedrale, cercando i Bacco lungo la strada. Nel pomeriggio la Chiesa della Madonna di Częstochowa e il Museo del Vino. Al tramonto sali alla Palmiarnia, poi cena con vino locale."
+  - "Gita in giornata in treno: Breslavia (circa 2-2,5 ore) o Poznań (circa 1,5-2 ore). Parti al mattino e torna la sera."
+  - "Berlino in autobus diretto per tutta la giornata. In alternativa, con un'auto a noleggio, il Parco di Muskau e una vigna vicino alla città."
+areas:
+  - name: Stare Miasto (Città Vecchia)
+    text: Intorno alla piazza, con i ristoranti e i Bacco a piedi. La zona migliore per un soggiorno breve.
+  - name: Vicino a Zielona Góra Główna
+    text: Intorno alla stazione dei treni e degli autobus, comoda per le gite. Il centro è a circa 15-20 minuti a piedi.
+  - name: Vicino al Parco del Vino
+    text: Un quartiere tranquillo e verde con pensioni, a circa 10-15 minuti a piedi dalla piazza.
+food:
+  - name: Vino locale
+    text: >-
+      Bianchi dalle uve Solaris e Riesling, rossi da Regent e Pinot Noir. Assaggiali nelle enoteche
+      del centro o nelle vigne dei dintorni; un bicchiere costa circa 15-25 PLN (€3,5-6).
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio (ruskie), carne, cavolo o frutta, bolliti o fritti.
+  - name: Żurek
+    text: Zuppa acida di farina di segale con salsiccia e uovo, spesso servita dentro una pagnotta svuotata.
+airports:
+  IEG: >-
+    L'aeroporto di Zielona Góra-Babimost è a circa 35 km a nord-est della città. Una navetta,
+    coordinata con gli orari dei voli, porta in centro in circa 40-50 minuti, con un biglietto da
+    circa 20-30 PLN (circa €5-7). Un taxi impiega circa 35-40 minuti e costa circa 150-200 PLN
+    (€35-47); prenotalo prima. I voli da Tirana sono charter stagionali.
+transport: >-
+  Il centro si gira a piedi. Gli autobus urbani, molti dei quali elettrici, collegano la stazione
+  con i quartieri; il biglietto costa circa 4 PLN (circa €1) e di solito si compra con la carta a
+  bordo. I treni per Breslavia e Poznań partono da Zielona Góra Główna, gli autobus per Berlino dalla
+  stazione accanto. I taxi sono economici.
+daytrips:
+  - name: Breslavia
+    text: >-
+      La grande piazza del mercato, l'isola di Ostrów Tumski e i nani di bronzo. Circa 2-2,5 ore di
+      treno, circa 40-60 PLN (€9-14) a tratta.
+  - name: Poznań
+    text: >-
+      Lo Stary Rynek con le capre meccaniche sopra l'orologio del Municipio alle 12:00, e la cattedrale
+      più antica della Polonia. Circa 1,5-2 ore di treno, circa 35-55 PLN (€8-13).
+  - name: Berlino
+    text: >-
+      Circa 2,5-3 ore in autobus diretto (circa €15-25), o in treno con un cambio. Una giornata lunga:
+      conviene di più con una notte lì.
+  - name: Il Parco di Muskau
+    text: >-
+      Il Park Mużakowski, un grande parco all'inglese del 19° secolo, nella lista dell'UNESCO, diviso
+      dal fiume Neisse tra Polonia e Germania. Circa 1,5 ore in auto; con i mezzi pubblici è
+      difficile.
+budget: >-
+  Un caffè costa circa 12-15 PLN (€3-3,5), un piatto di pierogi circa 30-40 PLN (€7-9) e un
+  biglietto dell'autobus circa 4 PLN (€1). Una camera doppia in un hotel semplice costa circa
+  200-300 PLN (€47-70) a notte, di più durante il Winobranie. Volo e alloggio esclusi, calcola circa
+  €35-55 al giorno.
+when: >-
+  Maggio-settembre ha il tempo migliore. Il Winobranie, la festa della vendemmia e una delle più
+  antiche della Polonia, si tiene ogni anno a settembre per circa una settimana, con una sfilata,
+  concerti e bancarelle di vino in centro. In quei giorni gli hotel si riempiono: prenota presto.
+  L'inverno è freddo, spesso sotto zero.
+tips:
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "In Polonia la maggior parte dei negozi è chiusa la domenica; i piccoli supermercati e i distributori di benzina di solito restano aperti."
+faq:
+  - q: "Vale la pena visitare Zielona Góra?"
+    a: "Per un weekend tranquillo con vino e prezzi bassi, sì, soprattutto durante il Winobranie. Se vuoi di più, usala come base per Breslavia, Poznań o Berlino."
+  - q: "Come arrivo dall'aeroporto in città?"
+    a: "Con la navetta che aspetta i voli (circa 40-50 minuti, circa 20-30 PLN), o con un taxi prenotato (circa 150-200 PLN)."

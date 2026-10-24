@@ -1,0 +1,96 @@
+city: České Budějovice
+slug: ceske-budejovice
+tagline: Una piazza enorme, la birra Budvar e Český Krumlov a due passi
+intro: >-
+  České Budějovice è il capoluogo della Boemia meridionale, una città tranquilla di circa 95.000
+  abitanti sui fiumi Moldava (Vltava) e Malše. Ha una delle piazze più grandi d'Europa e la birra
+  Budvar, che prende il nome da Budweis, il nome tedesco della città. È anche la base più economica per
+  Český Krumlov e la Boemia meridionale. La valuta è la corona ceca (CZK): 1 euro vale circa 25 corone.
+sights:
+  - name: Piazza Přemysl Otakar II
+    text: >-
+      Una piazza di circa 133 per 133 metri, con case porticate, la fontana barocca di Sansone e il
+      Municipio. Cerca nel selciato la «pietra errante» (bludný kámen): si dice che chi la calpesta dopo
+      le 22:00 non ritrovi più la strada di casa.
+  - name: La Torre Nera
+    text: >-
+      Il campanile del XVI secolo, alto 72 metri, simbolo della città. Con 225 gradini si sale alla
+      galleria, con vista sulla piazza; circa 60-100 CZK (€2,50-4), di solito aprile-ottobre.
+  - name: Cattedrale di San Nicola
+    text: La chiesa barocca accanto alla Torre Nera, cattedrale dal 1785. L'ingresso è gratuito, fuori dagli orari della messa.
+  - name: Il birrificio Budweiser Budvar
+    text: >-
+      Il birrificio statale del 1895, a circa 2 km a nord della piazza. La visita dura circa 1 ora, con
+      una degustazione in cantina, e costa circa 250-350 CZK (€10-14); prenotala online.
+  - name: Lungo i fiumi
+    text: >-
+      La Moldava e la Malše circondano il centro e si uniscono vicino al parco di Sokolský ostrov.
+      Cammina dalla torre Železná panna al monastero domenicano; la pista ciclabile prosegue fino a
+      Hluboká.
+airports:
+  JCL: >-
+    L'aeroporto è a Planá, circa 6 km a sud del centro. I voli da Tirana sono charter stagionali,
+    soprattutto d'estate: controlla le date ogni anno. Un taxi impiega circa 15 minuti e costa circa
+    250-400 CZK (€10-16); prenotalo in anticipo. Gli autobus locali da Planá costano circa 20-30 CZK
+    (circa €1), ma passano di rado: controlla gli orari su idos.cz.
+budget: >-
+  Una birra da mezzo litro costa circa 50-70 CZK (€2-3), il menù del giorno (polední menu) circa
+  150-200 CZK (€6-8). Una camera doppia in un hotel semplice costa da circa 1.500-2.500 CZK (€60-100) a
+  notte, meno che a Český Krumlov.
+when: >-
+  Maggio-settembre ha il clima migliore. A giugno Český Krumlov celebra la Festa della Rosa a Cinque
+  Petali; a dicembre in piazza c'è il mercatino di Natale, ma alcuni castelli chiudono d'inverno.
+tips:
+  - "Dormi a České Budějovice e vai a Český Krumlov con il primo autobus: gli hotel costano meno e arrivi prima dei gruppi turistici."
+  - "Quando il POS ti chiede euro o corone, scegli sempre le corone (CZK): la conversione in euro costa di più."
+  - "Molti castelli sono chiusi il lunedì: controlla gli orari prima di partire."
+itinerary:
+  - "Piazza Přemysl Otakar II, la Torre Nera e la Cattedrale di San Nicola. Pranzo a Masné krámy, nel pomeriggio una passeggiata lungo i fiumi, la sera una birra Budvar."
+  - "Una giornata intera a Český Krumlov: il castello, il Ponte del Mantello, i giardini e la città vecchia."
+  - "La visita al Budvar la mattina, nel pomeriggio il castello di Hluboká. In alternativa, Holašovice o Třeboň."
+areas:
+  - name: Il centro storico
+    text: Intorno alla piazza, tutto a piedi, con hotel in case antiche.
+  - name: Vicino alla stazione
+    text: >-
+      La zona più pratica per le gite: i treni partono dalla Hlavní nádraží, gli autobus dalla stazione
+      sopra il centro commerciale Mercury. La piazza è a 10-15 minuti a piedi.
+  - name: Lungo il fiume
+    text: Hotel più tranquilli vicino alla Moldava e al parco di Sokolský ostrov, a 5-10 minuti dalla piazza.
+food:
+  - name: Birra Budvar
+    text: >-
+      La lager della città. Prova la «tankové pivo», la birra non pastorizzata dai serbatoi, a Masné
+      krámy, il vecchio mercato della carne del XVI secolo, oggi una birreria.
+  - name: Kulajda
+    text: Una zuppa cremosa della Boemia meridionale con patate, funghi e aneto, spesso con un uovo sopra.
+  - name: Carpa
+    text: Carpa degli stagni di Třeboň, fritta o al forno, con insalata di patate.
+transport: >-
+  Il centro si gira a piedi e la città è pianeggiante, ideale per la bici. Autobus e filobus costano
+  circa 20-30 CZK (€1) a biglietto. RegioJet, Flixbus e gli autobus regionali partono dalla stazione
+  sopra il Mercury. Praga è a circa 2-2,5 ore in treno o in autobus.
+daytrips:
+  - name: Český Krumlov
+    text: >-
+      Una cittadina medievale in un'ansa della Moldava, patrimonio UNESCO, con il secondo castello più
+      grande della Repubblica Ceca. Circa 30-45 minuti di autobus (circa 40-70 CZK, €1,60-3). I cortili
+      sono gratuiti; le visite all'interno circa 150-400 CZK (€6-16).
+  - name: Castello di Hluboká
+    text: >-
+      Il castello bianco neogotico della famiglia Schwarzenberg, a circa 10 km a nord: 20-30 minuti di
+      autobus o circa 1 ora in bici. Il parco è gratuito, le visite circa 250-450 CZK (€10-18).
+  - name: Holašovice
+    text: >-
+      Un piccolo villaggio di case contadine barocche del XIX secolo, patrimonio UNESCO, a circa 15 km.
+      Gli autobus sono pochi: vai in taxi o in bici.
+  - name: Třeboň
+    text: >-
+      Una cittadina termale tra gli stagni per i pesci, con una piazza porticata e il birrificio Regent,
+      a circa 30-45 minuti di treno o autobus. A ottobre si pescano le carpe dagli stagni, con una festa
+      sulle rive.
+faq:
+  - q: "È meglio dormire a České Budějovice o a Český Krumlov?"
+    a: "České Budějovice costa meno e ha più collegamenti; Český Krumlov è a 30-45 minuti. Per vedere Český Krumlov senza folla la sera, aggiungi una notte lì."
+  - q: "Quanto si spende al giorno a České Budějovice?"
+    a: "Volo e alloggio esclusi, calcola €30-50 al giorno per cibo, trasporti e un ingresso. La piazza e le passeggiate lungo il fiume sono gratuite."

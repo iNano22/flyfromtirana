@@ -1,0 +1,100 @@
+city: Olsztyn
+slug: olsztyn
+tagline: Copernicus, a castle and the land of lakes
+intro: >-
+  Olsztyn is the capital of Warmia and Masuria, the region in north-eastern Poland known as "the
+  land of a thousand lakes". It has about 170 thousand inhabitants, a small old town above the
+  Łyna river and 11 lakes within the city limits. Copernicus lived here as administrator of the
+  castle. Two days are enough for the city; the rest is for the lakes. The currency is the Polish
+  złoty (PLN): €1 is about 4.2 PLN.
+sights:
+  - name: The Old Town and the High Gate
+    text: >-
+      Brama Wysoka, a Gothic gate from the 14th century, is the only one left of the city walls.
+      Behind it is the market square with arcaded houses, rebuilt after the war, and the Old Town
+      Hall.
+  - name: The castle and Copernicus
+    text: >-
+      A brick castle from the 14th century, where Copernicus lived in 1516-1521. On the gallery wall
+      is the astronomical table he drew himself. Inside is the Museum of Warmia and Masuria, with a
+      ticket of about 20-30 PLN (about €5-7).
+  - name: St James Cathedral
+    text: >-
+      A Gothic brick church with a tower about 60 m high. Inside, notice the "crystal" vaults of the
+      ceiling, with angular shapes like cut gemstones.
+  - name: Lake Ukiel
+    text: >-
+      The largest lake in the city, about 3-4 km from the centre, with a beach, a cycle path along
+      the shore and kayaks and SUP boards for hire. In summer the whole city comes here.
+  - name: The Planetarium and Observatory
+    text: >-
+      The planetarium opened in 1973, for the 500th anniversary of Copernicus's birth, with films
+      about the stars on its dome. The observatory is in a water tower from 1897. A ticket is about
+      25-35 PLN (about €6-8).
+itinerary:
+  - "The High Gate, the market square and St James Cathedral. In the afternoon the castle and Copernicus's table, in the evening a walk along the Łyna."
+  - "The planetarium in the morning. In the afternoon Lake Ukiel for the beach, a kayak or a bike ride, and the sunset over the water."
+  - "Mikołajki with a boat trip on the Masurian lakes. Alternatively, with a hire car, Święta Lipka and the Wolf's Lair."
+areas:
+  - name: Stare Miasto (Old Town)
+    text: Everything on foot, with restaurants and bars. The prettiest area, but with few hotels.
+  - name: Near Olsztyn Główny
+    text: Around the main station, about 25 minutes on foot from the old town, practical for trains.
+  - name: Near Lake Ukiel
+    text: Quieter hotels by the water and the forest, with buses to the centre. Ideal in summer.
+food:
+  - name: Lake fish
+    text: Smoked vendace (sielawa), eel and other fish from the Masurian lakes.
+  - name: Plince
+    text: Masurian potato pancakes, with sour cream or with goulash.
+  - name: Kartacze
+    text: Large potato-dough dumplings with meat inside, a typical dish of the north-east.
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese, meat, cabbage or forest fruit.
+airports:
+  SZY: >-
+    Olsztyn-Mazury Airport is in Szymany, about 60 km south of Olsztyn. Flights from Tirana are
+    seasonal charters, on days that change from year to year. The airport has a railway station:
+    trains to Olsztyn Główny, timed to some flights, take about 1-1.5 hours and cost about 15-20 PLN
+    (about €4-5); in some periods there are also buses. A taxi takes about 1 hour and costs about
+    200-300 PLN (about €50-70). The terminal has car hire desks.
+transport: >-
+  The old town is walkable; trams and buses link the station, the university in Kortowo and the
+  lakes. A ticket costs about 4-5 PLN (about €1), a 24-hour one about 12-16 PLN (about €3-4), from
+  the machines or in the Jakdojade app. Bolt and Uber are cheap. For Masuria a hire car is worth
+  it, as buses are infrequent.
+daytrips:
+  - name: Mikołajki and the Masurian lakes
+    text: >-
+      The sailing town, about 1.5-2 hours by bus or, in summer, by train. Boats leave the pier for
+      Śniardwy, the largest lake in Poland, for about 50-100 PLN (about €12-24).
+  - name: The Wolf's Lair (Wolfsschanze)
+    text: >-
+      Hitler's headquarters near Kętrzyn, where Stauffenberg's assassination attempt failed in 1944,
+      today ruined bunkers in the forest. By train to Kętrzyn, then a taxi; entry about 30-45 PLN
+      (about €7-11).
+  - name: Święta Lipka
+    text: >-
+      The baroque pilgrimage basilica, with an organ with moving figures and short concerts in
+      summer. About 1.5 hours by bus; by car it combines with the Wolf's Lair.
+  - name: Malbork Castle
+    text: >-
+      The castle of the Teutonic Knights, the largest brick castle in the world, about 2 hours by
+      train. A ticket with audio guide is about 60-80 PLN (€14-19).
+budget: >-
+  A beer costs about 12-18 PLN (€3-4), a plate of pierogi about 30-45 PLN (€7-11), a coffee about
+  10-15 PLN (€2.5-3.5) and a kayak about 30-50 PLN (€7-12) an hour.
+when: >-
+  June-August is the season for the lakes, with water at about 20-22°C. In July and August there
+  are usually concerts in the old town. May and September are quieter; winter is cold.
+tips:
+  - "Check the airport train timetable before you set off: it does not connect with every flight."
+  - "Always pay in PLN: when the card terminal offers euros, decline, because the rate is worse."
+  - "By the lakes in summer there are lots of mosquitoes: bring repellent."
+faq:
+  - q: "How do I get from Szymany airport to Olsztyn?"
+    a: "By train from the airport station, about 1-1.5 hours, when there is a train after your flight. Otherwise, a taxi for about 200-300 PLN or a hire car."
+  - q: "Is Olsztyn a good base for Masuria?"
+    a: "Yes, especially by car: Mikołajki, Święta Lipka and the Wolf's Lair are 1-2 hours away."
+  - q: "How much money do I need per day in Olsztyn?"
+    a: "Excluding the flight and accommodation, about €35-55 a day. Hire cars and boat trips cost the most."

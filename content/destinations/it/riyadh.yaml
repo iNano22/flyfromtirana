@@ -1,0 +1,77 @@
+city: Riyadh
+name: Riad
+slug: riyadh
+tagline: Fortezze di fango, grattacieli e dune rosse
+intro: >-
+  Riad, la capitale dell'Arabia Saudita, è un'enorme metropoli in mezzo al deserto, dove i
+  grattacieli sorgono accanto alle fortezze di mattoni di fango. Quattro giorni bastano per la città,
+  Diriyah e un'uscita alle scogliere dell'Edge of the World. La città è costruita per l'auto, quindi
+  conta su Uber o sui taxi, ma la nuova metro aiuta molto.
+sights:
+  - name: Forte Masmak
+    text: Una fortezza di mattoni di fango del XIX secolo, dove nel 1902 iniziò l'unificazione del paese. L'ingresso di solito è gratuito. Accanto c'è il Souq Al Zal, il vecchio mercato di tappeti e spezie.
+  - name: Diriyah e At-Turaif
+    text: La prima capitale saudita, a circa 20-30 minuti d'auto dal centro. Le rovine di fango di At-Turaif sono nella lista dell'UNESCO; il biglietto costa circa 100 SAR (€23). I ristoranti della Bujairi Terrace danno il meglio dopo il tramonto.
+  - name: Museo Nazionale
+    text: La storia della Penisola Arabica, dalla preistoria allo stato moderno, ad Al Murabba. L'ingresso è gratuito o fino a circa 10 SAR, e le sale climatizzate sono un buon rifugio nelle ore calde.
+  - name: Kingdom Centre Sky Bridge
+    text: Il ponte tra le due punte della torre Kingdom Centre, a circa 300 metri d'altezza, con vista su tutta la città. Il biglietto costa circa 70-100 SAR (€16-23); vai al tramonto.
+  - name: Boulevard City
+    text: Il quartiere del divertimento con ristoranti, luci e concerti, uno dei cuori della Riyadh Season. Il prezzo d'ingresso cambia ogni anno, quindi controlla i biglietti online.
+airports:
+  RUH: >-
+    L'aeroporto King Khalid International è a circa 35 km a nord del centro. La Linea Gialla della
+    metro collega i terminal con il KAFD, dove cambi per Olaya; il biglietto costa circa 4 SAR (€1)
+    per 2 ore, anche con carta bancaria contactless. La metro ha aperto le stazioni gradualmente dalla
+    fine del 2024, quindi controlla se la stazione del tuo terminal è in funzione. Uber e Careem
+    costano circa 60-100 SAR (€14-23) fino a Olaya, i taxi ufficiali circa 90-150 SAR (€21-35). Ci
+    sono anche gli autobus SAPTCO, più economici ma più lenti.
+budget: >-
+  Un euro vale circa 4,3 SAR. Uno shawarma costa 8-15 SAR (€2-3,50), un piatto di kabsa 25-45 SAR
+  (€6-10), un caffè in un locale moderno 15-20 SAR (€3,50-4,50), una corsa in Uber in città 25-50 SAR
+  (€6-12). Gli ostelli sono pochi: un hotel semplice costa circa 200-350 SAR (€47-81) a notte.
+when: >-
+  Da novembre a febbraio è il periodo migliore, con 20-25°C di giorno e notti fresche. La Riyadh
+  Season di solito va da ottobre a marzo, con concerti, spettacoli ed eventi sportivi. Da giugno a
+  settembre si superano spesso i 45°C. I voli diretti da Tirana sono stagionali: controlla le date
+  ogni anno.
+tips:
+  - "Vestiti in modo sobrio: abiti larghi che coprano spalle e ginocchia, per uomini e donne. Le donne straniere non sono obbligate a indossare l'abaya o il velo, tranne nelle moschee."
+  - "Cinque volte al giorno arriva l'ora della preghiera e alcuni negozi chiudono per circa 20-30 minuti. Controlla gli orari in un'app e organizza gli acquisti di conseguenza."
+  - "L'alcol non è consentito nel paese, nemmeno negli hotel, e non si può portare nel bagaglio. Il fine settimana è venerdì e sabato."
+itinerary:
+  - "Il Forte Masmak e il Souq Al Zal al mattino, il Museo Nazionale nelle ore calde e il Kingdom Centre Sky Bridge al tramonto."
+  - "Diriyah: At-Turaif nel pomeriggio, quando rinfresca, poi cena alla Bujairi Terrace."
+  - "Un tour all'Edge of the World, partendo dopo pranzo per arrivare al tramonto."
+  - "Le dune rosse o il villaggio di Ushaiger al mattino, la sera a Boulevard City durante la Riyadh Season."
+areas:
+  - name: Olaya
+    text: Il centro moderno, vicino al Kingdom Centre e alla Linea Blu della metro, con molti hotel e ristoranti. La scelta più pratica.
+  - name: Al Murabba e Al Batha
+    text: "Vicino al Museo Nazionale e al Masmak: gli hotel più economici, strade rumorose e cibo a buon prezzo."
+  - name: Diriyah
+    text: Hotel di lusso vicino ad At-Turaif, tranquilli e belli, ma lontani dal centro.
+food:
+  - name: Kabsa
+    text: Il piatto nazionale, riso speziato con pollo o agnello, spesso servito su un grande vassoio per tutta la tavola.
+  - name: Datteri e caffè arabo
+    text: Il caffè arabo (gahwa), leggero e al cardamomo, si serve in tazzine con i datteri. Quando non ne vuoi più, scuoti leggermente la tazzina.
+  - name: Mutabbaq
+    text: Una sfoglia sottile ripiena di carne o uova, cotta sulla piastra, circa 10-20 SAR.
+transport: >-
+  Riad è una città da auto: le distanze sono grandi, i marciapiedi pochi e d'estate camminare
+  all'aperto è sfiancante. La metro, con 6 linee, collega l'aeroporto, il KAFD, Olaya e Al Batha per
+  circa 4 SAR a corsa. Per il resto usa Uber o Careem, di solito più economici dei taxi. Per le gite
+  fuori città prendi un tour o un'auto a noleggio.
+daytrips:
+  - name: Edge of the World
+    text: Scogliere che precipitano per centinaia di metri su una pianura sconfinata, a circa 2 ore a nord-ovest. Gli ultimi chilometri sono solo per fuoristrada, quindi meglio con un tour, circa 250-400 SAR (€58-93). D'estate è spesso chiuso.
+  - name: Ushaiger
+    text: Un villaggio tradizionale di fango con una moschea e vicoli stretti, a circa 2 ore a nord-ovest. L'ingresso di solito è gratuito.
+  - name: Dune rosse
+    text: Dune di sabbia rossa a circa 1 ora a ovest. Puoi noleggiare un quad (circa 100-150 SAR all'ora) o fare un tour con cena in un campo.
+faq:
+  - q: "Quanto si spende al giorno a Riad?"
+    a: "Volo e alloggio esclusi, conta €50-80 al giorno per cibo, Uber e un ingresso. I tour fuori città fanno salire il conto in fretta."
+  - q: "Posso muovermi senza auto?"
+    a: "Sì: la metro copre le zone principali, e Uber e Careem sono ovunque. Per l'Edge of the World, Ushaiger e le dune serve un tour o un'auto a noleggio."

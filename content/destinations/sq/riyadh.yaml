@@ -1,0 +1,75 @@
+city: Riyadh
+slug: riyadh
+tagline: Kështjella balte, qiellgërvishtës dhe duna të kuqe
+intro: >-
+  Riyadh, kryeqyteti i Arabisë Saudite, është një metropol i madh në mes të shkretëtirës, ku
+  qiellgërvishtësit qëndrojnë pranë kështjellave prej balte. Katër ditë mjaftojnë për qytetin,
+  Diriyah dhe një dalje te shkëmbinjtë e Edge of the World. Qyteti është ndërtuar për makinën, ndaj
+  llogarit Uber ose taksi, por metroja e re ndihmon shumë.
+sights:
+  - name: Kështjella Masmak
+    text: Kështjella prej balte nga shekulli XIX, ku në 1902 nisi bashkimi i vendit. Hyrja zakonisht është falas. Pranë saj është Souq Al Zal, tregu i vjetër i qilimave dhe erëzave.
+  - name: Diriyah dhe At-Turaif
+    text: Kryeqyteti i parë saudit, rreth 20-30 minuta me makinë nga qendra. Rrënojat prej balte të At-Turaif janë në listën e UNESCO-s; bileta kushton rreth 100 SAR (€23). Restorantet e Bujairi Terrace janë më të bukura pas perëndimit të diellit.
+  - name: Muzeu Kombëtar
+    text: Historia e Gadishullit Arabik, nga parahistoria deri te shteti modern, në Al Murabba. Hyrja është falas ose deri në rreth 10 SAR, dhe sallat me klimë janë strehë e mirë në orët e nxehta.
+  - name: Kingdom Centre Sky Bridge
+    text: Ura mes dy majave të kullës Kingdom Centre, rreth 300 metra lart, me pamje mbi gjithë qytetin. Bileta kushton rreth 70-100 SAR (€16-23); shko në perëndim të diellit.
+  - name: Boulevard City
+    text: Zona e argëtimit me restorante, drita dhe koncerte, një nga zemrat e Riyadh Season. Çmimi i hyrjes ndryshon çdo vit, ndaj shiko biletat online.
+airports:
+  RUH: >-
+    Aeroporti King Khalid International është rreth 35 km në veri të qendrës. Linja e Verdhë e
+    metrosë lidh terminalet me KAFD, ku ndërron për në Olaya; bileta kushton rreth 4 SAR (€1) për 2
+    orë, edhe me kartë bankare pa kontakt. Metroja i hapi stacionet gradualisht nga fundi i 2024,
+    ndaj kontrollo nëse punon stacioni i terminalit tënd. Uber dhe Careem kushtojnë rreth 60-100 SAR
+    (€14-23) deri në Olaya, taksitë zyrtare rreth 90-150 SAR (€21-35). Ka edhe autobusë të SAPTCO,
+    më të lirë, por më të ngadaltë.
+budget: >-
+  Një euro është rreth 4.3 SAR. Një shawarma kushton 8-15 SAR (€2-3.50), një pjatë kabsa 25-45 SAR
+  (€6-10), një kafe në kafene moderne 15-20 SAR (€3.50-4.50), një udhëtim me Uber në qytet 25-50 SAR
+  (€6-12). Hostelet janë të pakta: një hotel i thjeshtë kushton rreth 200-350 SAR (€47-81) nata.
+when: >-
+  Nëntori-shkurti është koha më e mirë, me 20-25°C ditën dhe net të freskëta. Zakonisht nga tetori
+  deri në mars zhvillohet Riyadh Season, me koncerte, shfaqje dhe ngjarje sportive. Qershori-shtatori
+  kalon shpesh 45°C. Fluturimet direkte nga Tirana janë sezonale: kontrollo datat çdo vit.
+tips:
+  - "Vishu me modesti: rroba të gjera që mbulojnë supet dhe gjunjët, për burrat dhe për gratë. Gratë e huaja nuk janë të detyruara të mbajnë abaja apo shami, përveçse në xhami."
+  - "Pesë herë në ditë vjen koha e namazit dhe disa dyqane mbyllen për rreth 20-30 minuta. Shiko oraret në një aplikacion dhe planifiko blerjet rreth tyre."
+  - "Alkooli nuk lejohet në vend, as në hotele, dhe nuk mund të futet në bagazh. Fundjava është e premte dhe e shtunë."
+itinerary:
+  - "Kështjella Masmak dhe Souq Al Zal në mëngjes, Muzeu Kombëtar në orët e nxehta dhe Kingdom Centre Sky Bridge në perëndim të diellit."
+  - "Diriyah: At-Turaif pasdite, kur freskohet, pastaj darkë në Bujairi Terrace."
+  - "Tur te Edge of the World, me nisje pas dreke për të arritur në perëndim të diellit."
+  - "Dunat e kuqe ose fshati Ushaiger në mëngjes, mbrëmja në Boulevard City gjatë Riyadh Season."
+areas:
+  - name: Olaya
+    text: Qendra moderne, pranë Kingdom Centre dhe Linjës Blu të metrosë, me shumë hotele dhe restorante. Zgjedhja më praktike.
+  - name: Al Murabba dhe Al Batha
+    text: "Pranë Muzeut Kombëtar dhe Masmak-ut: hotelet më të lira, rrugë të zhurmshme dhe ushqim i lirë."
+  - name: Diriyah
+    text: Hotele luksoze pranë At-Turaif, të qeta e të bukura, por larg qendrës.
+food:
+  - name: Kabsa
+    text: Pjata kombëtare, oriz me erëza me mish pule ose qengji, shpesh në një tabaka të madhe për të gjithë tryezën.
+  - name: Hurma dhe kafe arabe
+    text: Kafeja arabe (gahwa), e lehtë dhe me kardamom, shërbehet në filxhanë të vegjël me hurma. Kur nuk do më, tunde lehtë filxhanin.
+  - name: Mutabbaq
+    text: Brumë i hollë i mbushur me mish ose vezë, i pjekur në tavë, rreth 10-20 SAR.
+transport: >-
+  Riyadh është qytet i makinës: distancat janë të mëdha, trotuaret të pakta dhe në verë ecja jashtë
+  lodh shumë. Metroja, me 6 linja, lidh aeroportin, KAFD, Olaya dhe Al Batha për rreth 4 SAR
+  udhëtimi. Për pjesën tjetër përdor Uber ose Careem, zakonisht më të lira se taksitë. Për daljet
+  jashtë qytetit merr një tur ose një makinë me qira.
+daytrips:
+  - name: Edge of the World
+    text: Shkëmbinj që bien qindra metra mbi një fushë pa fund, rreth 2 orë në veriperëndim. Kilometrat e fundit janë për fuoristradë, ndaj më mirë me tur, rreth 250-400 SAR (€58-93). Në verë shpesh mbyllet.
+  - name: Ushaiger
+    text: Fshat tradicional prej balte me xhami dhe rrugica, rreth 2 orë në veriperëndim. Hyrja zakonisht është falas.
+  - name: Dunat e kuqe
+    text: Duna me rërë të kuqe rreth 1 orë në perëndim. Mund të marrësh quad me qira (rreth 100-150 SAR në orë) ose të shkosh me tur me darkë në kamp.
+faq:
+  - q: "Sa para duhen në ditë në Riyadh?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-80 në ditë për ushqim, Uber dhe një hyrje. Turet jashtë qytetit e rrisin shpejt shumën."
+  - q: "A mund të lëviz pa makinë?"
+    a: "Po: metroja mbulon zonat kryesore, ndërsa Uber dhe Careem janë kudo. Për Edge of the World, Ushaiger dhe dunat duhet një tur ose një makinë me qira."

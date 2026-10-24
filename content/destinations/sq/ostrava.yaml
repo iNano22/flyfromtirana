@@ -1,0 +1,96 @@
+city: Ostrava
+slug: ostrava
+tagline: Furra shkrirjeje, miniera dhe festivali Colours of Ostrava
+intro: >-
+  Ostrava është qyteti i tretë i Çekisë, me rreth 280.000 banorë, pranë kufirit me Poloninë. Për dy
+  shekuj ishte qyteti i qymyrit dhe i çelikut; sot furrat dhe minierat janë kthyer në muze dhe salla
+  koncertesh. Është i lirë, me pak turistë dhe me malet Beskydy afër. Dy ditë mjaftojnë për qytetin,
+  plus një për udhëtimet. Monedha është korona çeke (CZK): 1 euro është rreth 25 korona.
+sights:
+  - name: Dolní Vítkovice dhe Bolt Tower
+    text: >-
+      Ish-zona e çelikut të Vítkovice, ku furrat u fikën në vitin 1998. Mbi furrën e shkrirjes nr. 1
+      është Bolt Tower, me kafene dhe tarracë në rreth 78 metra. Në zonë janë edhe salla Gong, në një
+      ish-rezervuar gazi, dhe muzeu i shkencës Svět techniky. Biletat kushtojnë rreth 200-350 CZK
+      (€8-14); rreth 10 minuta me tramvaj nga qendra.
+  - name: Kulla e Bashkisë së Re
+    text: >-
+      Nová radnice (1924-1930) ka kullën më të lartë të një bashkie në Çeki, rreth 86 metra. Ashensori
+      të çon në tarracën në rreth 73 metra, me pamje deri te Beskydy. Bileta rreth 100-150 CZK (€4-6).
+  - name: Rruga Stodolní
+    text: >-
+      Rruga e jetës së natës, me dhjetëra bare dhe klube në pak qindra metra. Gjallërohet pas orës
+      21:00, sidomos nga e enjtja te e shtuna.
+  - name: Kështjella Silesiane e Ostrava-s
+    text: >-
+      Slezskoostravský hrad, nga fundi i shekullit XIII, në bregun tjetër të lumit Ostravice, rreth 15
+      minuta në këmbë nga qendra. Nga minierat poshtë saj, toka u ul rreth 16 metra. Bileta rreth
+      100-150 CZK (€4-6).
+  - name: Landek Park
+    text: >-
+      Muzeu më i madh i minierave në Çeki, në lagjen Petřkovice. Me guidë zbret në galeritë e minierës
+      Anselm. Në këtë kodër u gjet Venera e Petřkovice, një statujë rreth 25.000 vjeçare. Bileta rreth
+      150-250 CZK (€6-10); rreth 20-30 minuta me autobus nga qendra.
+itinerary:
+  - "Masarykovo náměstí dhe Katedralja e Shpëtimtarit Hyjnor. Pasdite kulla e Bashkisë së Re dhe Kështjella Silesiane. Në mbrëmje rruga Stodolní."
+  - "Gjithë dita në Dolní Vítkovice: furra e shkrirjes, Bolt Tower dhe Svět techniky. Në mbrëmje një koncert në Gong, nëse ka program."
+  - "Në mëngjes Landek Park, pasdite Štramberk. Ose një ditë e plotë në Beskydy dhe Pustevny."
+areas:
+  - name: Moravská Ostrava (Qendra)
+    text: Rreth Masarykovo náměstí, me shumicën e hoteleve; muzetë dhe baret janë në këmbë ose me tramvaj.
+  - name: Pranë rrugës Stodolní
+    text: "Ideale për jetën e natës, por e zhurmshme në fundjavë: kërko dhomë nga oborri."
+  - name: Poruba dhe Svinov
+    text: Lagje e qetë në perëndim, me arkitekturë të viteve 1950 dhe çmime më të ulëta, afër stacionit Ostrava-Svinov.
+food:
+  - name: Slezské nebe
+    text: Mish derri i tymosur me salcë frutash të thata dhe knedlík (bukë e zier në feta), pjatë silesiane.
+  - name: Svíčková
+    text: Fileto viçi me salcë kremoze perimesh, knedlík dhe reçel boronicash të kuqe.
+  - name: Birra Ostravar
+    text: Birra e qytetit, e lirë dhe e freskët nga fuçia.
+  - name: Štramberské uši
+    text: Ëmbëlsira me erëza në formë koni, «veshët e Štramberk-ut».
+airports:
+  OSR: >-
+    Aeroporti Leoš Janáček është në Mošnov, rreth 25 km në jugperëndim. Nga stacioni i trenit ngjitur
+    me terminalin, trenat shkojnë në Ostrava-Svinov për rreth 30 minuta dhe në Ostrava hlavní nádraží
+    për rreth 40 minuta, zakonisht një herë në orë; bileta rreth 50-70 CZK (€2-3). Autobusët rajonalë
+    shkojnë te stacioni i autobusëve në qendër për rreth 30-40 minuta, rreth 50 CZK (€2). Taksia
+    kushton rreth 600-900 CZK (€24-36). Fluturimet nga Tirana janë kryesisht në sezon; nëse mbërrin
+    vonë, kontrollo trenin e fundit.
+transport: >-
+  Qendra përshkohet në këmbë. Për më larg ka tramvaje, autobusë dhe trolejbusë me të njëjtën biletë,
+  që blihet në automate, në aplikacion ose me kartë pa kontakt brenda mjeteve: rreth 25-35 CZK
+  (€1-1.50), bileta 24-orëshe rreth 100-130 CZK (€4-5). Bolt kushton rreth 150-250 CZK (€6-10) brenda
+  qytetit.
+daytrips:
+  - name: Beskydy dhe Pustevny
+    text: >-
+      Malet në jug, me ndërtesat prej druri të Dušan Jurkovič në Pustevny dhe shtegun për në majën
+      Radhošť. Rreth 1.5 orë me tren deri në Frenštát pod Radhoštěm, pastaj autobus deri te teleferiku.
+  - name: Štramberk
+    text: >-
+      Qytet i vogël me shtëpi prej druri nën kullën Trúba. Rreth 1 orë me tren, shpesh me ndërrim në
+      Studénka; afër, në Kopřivnice, është muzeu i makinave Tatra.
+  - name: Olomouc
+    text: >-
+      Qyteti universitar i Moravisë, me Shtyllën e Trinisë së Shenjtë (UNESCO) dhe një orë
+      astronomike. Rreth 1 orë me tren të shpejtë, nga rreth 100-200 CZK (€4-8).
+budget: >-
+  Një birrë gjysmëlitërshe kushton rreth 45-65 CZK (€1.80-2.60), një pjatë në restorant rreth 200-300
+  CZK (€8-12), një kafe rreth 50-70 CZK (€2-3). Një dhomë dyshe në hotel të thjeshtë kushton rreth
+  1.200-2.200 CZK (€48-88) nata, më shumë gjatë festivalit.
+when: >-
+  Maji-shtatori ka ditë të gjata dhe tavolina jashtë. Në mes të korrikut Dolní Vítkovice pret Colours
+  of Ostrava, festival muzikor rreth 4-ditor: rezervo fjetjen muaj përpara. Dimri është i ftohtë, me
+  treg Krishtlindjesh në dhjetor dhe ski në Beskydy.
+tips:
+  - "Kur pos-i të pyet euro apo korona, zgjidh koronat (CZK): konvertimi në euro kushton më shumë."
+  - "Për drekë kërko polední menu: supë dhe pjatë kryesore për rreth 150-200 CZK (€6-8), ditëve të punës."
+  - "Nën tokë në Landek bën ftohtë edhe në verë: merr një xhaketë."
+faq:
+  - q: "A ia vlen Ostrava, apo më mirë direkt Prague?"
+    a: "Ostrava ia vlen për trashëgiminë industriale, çmimet e ulëta dhe malet afër. Prague është rreth 3-3.5 orë me tren, ndaj mund t'i kombinosh."
+  - q: "Sa para duhen në ditë në Ostrava?"
+    a: "Pa fluturimin dhe fjetjen, rreth €30-50 në ditë për ushqim, transport dhe një hyrje."

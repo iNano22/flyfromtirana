@@ -1,0 +1,81 @@
+city: Toronto
+slug: toronto
+tagline: Kulla CN, ishuj në liqen dhe lagje nga e gjithë bota
+intro: >-
+  Toronto është qyteti më i madh i Kanadasë, buzë liqenit Ontario: qiellgërvishtës, ishuj me plazhe
+  dhe lagje ku flitet çdo gjuhë e botës. Për shumë shqiptarë është edhe udhëtimi te të afërmit.
+  Katër ditë mjaftojnë për qytetin dhe një ditë në Niagara Falls. Qyteti është i shtrenjtë, por me
+  transportin publik, tregjet dhe ushqimin e lagjeve kursen shumë.
+sights:
+  - name: CN Tower
+    text: Kulla 553 metra e lartë, simboli i qytetit. Platforma LookOut kushton rreth 45-60 CAD (€28-37). Bli biletën online.
+  - name: Harbourfront dhe Toronto Islands
+    text: Shëtitorja buzë liqenit dhe, 15 minuta me traget nga Jack Layton Ferry Terminal, ishujt me plazhe dhe pamjen më të bukur të qiellgërvishtësve. Bileta vajtje-ardhje kushton rreth 9-10 CAD (€6).
+  - name: Distillery District
+    text: Ndërtesat prej tulle të një distilerie të shekullit XIX, sot rrugica për këmbësorë me galeri dhe kafene.
+  - name: Kensington Market
+    text: Lagje bohemiane me rroba të përdorura dhe ushqim rruge nga gjithë bota, ngjitur me Chinatown.
+  - name: St. Lawrence Market
+    text: Tregu i mbuluar historik, plot me djathëra, mish dhe peshk. Të hënën është i mbyllur.
+  - name: Royal Ontario Museum (ROM)
+    text: Muzeu më i madh i Kanadasë, me dinosaurë dhe mumie egjiptiane. Bileta kushton rreth 25-30 CAD (€16-19).
+airports:
+  YYZ: >-
+    Treni UP Express niset nga Terminali 1 çdo 15 minuta dhe arrin në Union Station për rreth 25
+    minuta, me rreth 12-13 CAD (€7.50-8) me kartë Presto ose kartë bankare pa kontakt. Nga Terminali
+    3, ku mbërrin zakonisht Air Transat, merr falas trenin Terminal Link deri te Terminali 1. Më
+    lirë është autobusi TTC 900 Airport Express deri në stacionin Kipling të metrosë: një biletë
+    prej rreth 3.30 CAD (€2) vlen për gjithë udhëtimin, por llogarit rreth 1 orë deri në qendër.
+    Taksia ose Uber kushton rreth 60-80 CAD (€37-50) deri në downtown, pa bakshishin.
+budget: >-
+  Një dollar kanadez (CAD) është rreth €0.62. Një kafe kushton 2-5 CAD (€1.20-3), një vakt i shpejtë
+  15-20 CAD (€9-12), një darkë në restorant 30-50 CAD (€19-31) dhe një birrë në bar 8-12 CAD (€5-7.50).
+  Një shtrat në hostel kushton rreth 50-80 CAD (€31-50), një hotel i thjeshtë në qendër 200-300 CAD
+  (€124-186) nata. Çmimet shkruhen pa taksën 13%, ndërsa në restorant, bar dhe taksi lihet bakshish
+  15-20%.
+when: >-
+  Qershori-shtatori është sezoni më i ngrohtë, me 25-30°C dhe lagështi; edhe fluturimet direkte nga
+  Tirana, me Air Transat, janë zakonisht vetëm në verë. Fundi i shtatorit dhe tetori sjellin ngjyrat
+  e vjeshtës. Dimri është i ftohtë, shpesh nën -10°C me borë, por në qendër ecën nën tokë, në rrugët
+  PATH.
+tips:
+  - "Çmimet në dyqane dhe restorante shkruhen pa taksën 13% (HST), që shtohet në arkë."
+  - "Në restorant, bar dhe taksi bakshishi është 15-20%: në terminalin e kartës zgjedh vetë përqindjen."
+  - "Prizat janë të tipit amerikan, me 120 V: merr me vete një përshtatës."
+itinerary:
+  - "CN Tower në mëngjes, pastaj shëtitja në Harbourfront. Pasdite trageti për Toronto Islands dhe pamja e qiellgërvishtësve në perëndim të diellit."
+  - "St. Lawrence Market në mëngjes, me një sanduiç peameal bacon, pastaj Distillery District. Pasdite Nathan Phillips Square, në mbrëmje darkë në Greektown ose Little Italy."
+  - "Kensington Market dhe Chinatown në mëngjes. Pasdite ROM dhe lagjja elegante Yorkville, ose Casa Loma, kështjella e fillimit të shekullit XX."
+  - "Një ditë në Niagara Falls, me një ndalesë në Niagara-on-the-Lake për verërat."
+areas:
+  - name: Downtown dhe Entertainment District
+    text: Pranë Union Station, UP Express dhe CN Tower. Më praktike, por me hotelet më të shtrenjta.
+  - name: Old Town dhe St. Lawrence
+    text: Rrugë historike, tregu dhe Distillery District në këmbë, me tramvaj për në qendër.
+  - name: Annex dhe Yonge-Bloor
+    text: Ku kryqëzohen linjat 1 dhe 2 të metrosë, pranë ROM. Hotele dhe B&B pak më të lira.
+  - name: Mississauga dhe North York
+    text: "Periferi me hotele më të lira, shpesh pranë të afërmve: Mississauga është afër aeroportit. Llogarit 45-60 minuta deri në qendër."
+food:
+  - name: Peameal bacon sandwich
+    text: Fileto derri e kripur, e mbështjellë me miell misri dhe e pjekur, në një panine të butë. Klasikja e St. Lawrence Market, rreth 10-12 CAD (€6-7.50).
+  - name: Poutine
+    text: Patate të skuqura me djathë të freskët dhe salcë mishi, rreth 8-15 CAD.
+  - name: Kuzhinat e botës
+    text: "Afro gjysma e banorëve kanë lindur jashtë Kanadasë: dim sum në Chinatown, gyros në Greektown, roti karaibe dhe ushqim indian në Gerrard Street."
+transport: >-
+  TTC ka metro (linjat kryesore janë 1 dhe 2), tramvaje dhe autobusë. Një udhëtim kushton rreth 3.30
+  CAD (€2) dhe brenda 2 orësh ndërron mjet falas. Nuk ke nevojë për biletë prej letre: prek lexuesin
+  me kartë Presto, me kartë bankare pa kontakt ose me telefon. Fëmijët deri 12 vjeç udhëtojnë falas.
+daytrips:
+  - name: Niagara Falls
+    text: Ujëvarat më të famshme të Amerikës së Veriut, rreth 1.5-2 orë me makinë ose me tren GO (rreth 20-25 CAD në drejtim). Varka deri poshtë ujëvarës kushton rreth 35-40 CAD (€22-25).
+  - name: Niagara-on-the-Lake
+    text: Qytezë e shekullit XIX me lule dhe kantina vere, rreth 20 minuta nga ujëvarat, e njohur për verën e akullit. Më lehtë me makinë.
+  - name: Algonquin Park
+    text: Pyje dhe liqene, rreth 3 orë me makinë në veri; pa makinë arrihet vështirë. Fundi i shtatorit dhe fillimi i tetorit janë koha e gjetheve të kuqe.
+faq:
+  - q: "A ka fluturime direkte nga Tirana për në Toronto?"
+    a: "Po, por sezonale: Air Transat fluturon zakonisht gjatë verës. Në muajt e tjerë udhëtohet me një ndalesë në një qytet tjetër, ndaj krahaso çmimet me kohë."
+  - q: "Sa para duhen në ditë në Toronto?"
+    a: "Pa fluturimin dhe fjetjen, llogarit 100-150 CAD (€62-93) në ditë për ushqim, transport dhe një atraksion. Në restorant taksa dhe bakshishi i shtojnë faturës rreth një të tretën."

@@ -1,0 +1,92 @@
+city: Pardubice
+slug: pardubice
+tagline: Gingerbread, horses and Prague one hour by train
+intro: >-
+  Pardubice is a small, pleasant town in East Bohemia, with about 90,000 inhabitants, on the banks
+  of the Elbe. It has a square of colourful houses, a castle-fortress, honey and spice biscuits
+  (perník) and the best-known steeplechase in Central Europe. The centre can be seen in half a day,
+  so Pardubice works best as a quiet, cheap base: Prague is about 1 hour by train. The currency is
+  the Czech koruna (CZK): 1 euro is about 25 koruna.
+sights:
+  - name: Pernštýnské Square and the Green Gate
+    text: >-
+      The main square of the Old Town, with Renaissance and Baroque facades. At its end rises the
+      Green Gate (Zelená brána), the tower, about 60 metres high, of the former town gate; from its
+      gallery you see the whole town, for about 50-100 CZK (€2-4).
+  - name: Pardubice Castle
+    text: >-
+      A Renaissance castle of the Pernštejn family, with earth ramparts and a moat, 5 minutes on foot
+      from the square. Inside is the East Bohemian Museum, about 100-200 CZK (€4-8); the ramparts are
+      free.
+  - name: Kunětická hora Castle
+    text: >-
+      A Gothic castle on a lone hill, about 6 km north-east of the town, with views over the Elbe
+      plain. It opens mainly from April to October; the tour costs about 150-250 CZK (€6-10).
+  - name: Gingerbread museum
+    text: >-
+      Perníková chaloupka, the «gingerbread cottage», in the village of Ráby below Kunětická hora,
+      shows how the biscuits are baked and decorated. It combines easily with the castle; a ticket
+      is about 100 CZK (€4).
+  - name: The Velká pardubická racecourse
+    text: >-
+      Since 1874 this has been the home of the Velká pardubická, one of the toughest steeplechases in
+      Europe, with the famous Taxis ditch, on the second Sunday of October. From spring to autumn
+      there are quieter race days too.
+airports:
+  PED: >-
+    Pardubice's small airport is about 4 km from the centre. City buses and trolleybuses take you to
+    the main railway station (hlavní nádraží) and the centre in about 15-20 minutes; a ticket costs
+    about 25 CZK (about €1) and can also be paid with a contactless bank card on board. Check the
+    timetables for late flights. A taxi costs about 250-350 CZK (€10-14).
+budget: >-
+  A half-litre beer costs about 45-65 CZK (€1.80-2.60), a main course in a restaurant 200-320 CZK
+  (€8-13), a decorated perník 30-100 CZK (€1.20-4). A double room in a simple hotel costs about
+  1,200-2,200 CZK (€50-90) a night, less than in Prague.
+when: >-
+  Flights from Tirana are seasonal charters, mainly in summer: check the dates every year. May to
+  June and September have the best weather for day trips; many castles open only from April to
+  October. At the end of November the Christmas markets open, with perník everywhere.
+tips:
+  - "Train tickets can be bought online from České dráhy, RegioJet or Leo Express: a few days ahead they are often cheaper."
+  - "When the card terminal asks euros or koruna, always choose koruna (CZK): converting to euros costs more."
+  - "For the Velká pardubická weekend, book your accommodation early: hotels fill up and prices rise."
+itinerary:
+  - "Pernštýnské Square, a climb up the Green Gate and the castle with its museum. In the afternoon Třída Míru, the main boulevard, and the parks along the Chrudimka river; in the evening a Porter in a pub."
+  - "Kunětická hora in the morning and the gingerbread museum in Ráby. In the afternoon the racecourse, or half a day in Hradec Králové."
+  - "A day trip to Prague on an early train: the Castle, Charles Bridge and the Old Town."
+  - "Kutná Hora with the bone church, or Litomyšl with its Renaissance castle."
+areas:
+  - name: Old Town
+    text: Around the square and the castle, quiet and picturesque, with few hotels and guesthouses.
+  - name: Třída Míru
+    text: Between the station and the Old Town, with shops, cafés and hotels.
+  - name: Near hlavní nádraží
+    text: "The most practical area for day trips: the trains leave from here and city buses go to the airport."
+food:
+  - name: Pardubický perník
+    text: Soft honey and spice biscuits, the symbol of the town, often decorated with white icing.
+  - name: Pernštejn Porter
+    text: A strong dark beer from the town's brewery, Pernštejn.
+  - name: Svíčková
+    text: Beef in a creamy vegetable sauce, with knedlík (boiled bread dumplings in slices) and cranberries.
+transport: >-
+  The centre can be seen on foot; from the main station to the square it is about 20-25 minutes
+  along Třída Míru. Trolleybuses and buses share the same ticket, bought from machines or with a
+  contactless card on board. Trains to Prague leave several times an hour. The town is flat, with
+  plenty of cycle paths.
+daytrips:
+  - name: Prague
+    text: The Castle, Charles Bridge and the Old Town, about 1 hour by direct train; a ticket costs about 100-250 CZK (€4-10) each way.
+  - name: Kutná Hora
+    text: The old silver town, a UNESCO site, with St. Barbara's Cathedral and the bone church in Sedlec. About 1 hour by train, changing in Kolín.
+  - name: Hradec Králové
+    text: The neighbouring city, with a large square, the White Tower and modernist buildings. About 25 minutes by train (about 50-80 CZK, €2-3).
+  - name: Litomyšl
+    text: The UNESCO Renaissance castle and the birthplace of the composer Bedřich Smetana, about 1 hour by bus.
+faq:
+  - q: "Is Pardubice worth it, or is it better to stay in Prague?"
+    a: "One day is enough for the town itself. But accommodation costs less than in Prague and the train takes about 1 hour, so Pardubice is a good base for 3-4 days of day trips."
+  - q: "How do I get from Pardubice airport to Prague?"
+    a: "By bus or trolleybus to the main station (about 15-20 minutes), then a direct train (about 1 hour). Allow about 1.5 hours in total and about 130-280 CZK (€5-11)."
+  - q: "How much money do you need per day in Pardubice?"
+    a: "Excluding the flight and accommodation, allow €30-50 a day for food, transport and one entrance fee. A day in Prague adds about €8-20 for the train."

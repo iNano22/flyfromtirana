@@ -1,0 +1,98 @@
+city: Rzeszów
+slug: rzeszow
+tagline: Bodrume nën shesh, kështjella dhe porta për Bieszczady
+intro: >-
+  Rzeszów është qyteti kryesor i juglindjes së Polonisë, me rreth 200 mijë banorë, rreth 165 km në
+  lindje të Kraków. Është qytet studentor, me një qendër të vogël që përshkohet në këmbë dhe
+  çmime më të ulëta se Kraków. Një-dy ditë mjaftojnë për qytetin; pjesa tjetër shkon për
+  kështjellën e Łańcut, skansenin e Sanok dhe malet Bieszczady. Monedha është zloti polak
+  (PLN): €1 është rreth 4.2 PLN.
+sights:
+  - name: Rynek dhe Bashkia
+    text: >-
+      Sheshi kryesor, me shtëpi shumëngjyrëshe dhe kafene me tavolina jashtë. Në mes është Bashkia
+      (Ratusz), nga shekulli XVI, e rindërtuar në fund të shekullit XIX me kulla si nga përrallat.
+  - name: Rruga Turistike Nëntokësore
+    text: >-
+      Afro 400 metra bodrume nën shtëpitë e sheshit, deri në rreth 10 metra thellësi, ku tregtarët
+      ruanin mallrat. Vizita bëhet me guidë, me orare fikse; bileta kushton rreth 20-30 PLN (rreth
+      €5-7).
+  - name: Kështjella e Lubomirski-ve
+    text: >-
+      Kështjella me bastione dhe hendek e familjes Lubomirski, e rindërtuar në fillim të shekullit
+      XX. Për shumë kohë ishte burg dhe sot është gjykatë, ndaj shihet nga jashtë.
+  - name: Pallati Veror i Lubomirski-ve
+    text: >-
+      Pallat barok me kopsht, pak minuta në këmbë nga sheshi, ku familja Lubomirski kalonte verën.
+      Brenda hapet rrallë, për koncerte dhe evente, por fasada dhe porta shihen lirisht.
+  - name: Monumenti i Aktit Revolucionar
+    text: >-
+      Një nga monumentet më të mëdha të kohës komuniste në Poloni, i ngritur në vitin 1974 pranë
+      kështjellës. Forma e çuditshme i ka dhënë një nofkë të paturpshme mes banorëve, dhe debati nëse
+      duhet hequr vazhdon prej vitesh.
+itinerary:
+  - "Rynek dhe Bashkia, pastaj Rruga Turistike Nëntokësore. Pasdite rruga 3 Maja dhe kisha Farna, në mbrëmje darkë në shesh."
+  - "Pallati Veror, Kështjella e Lubomirski-ve dhe Monumenti i Aktit Revolucionar. Pasdite shëtitje përgjatë lumit Wisłok."
+  - "Kështjella e Łańcut, rreth 20 minuta me tren, dhe kthim për darkë. Me më shumë ditë, skanseni i Sanok ose dy ditë në Bieszczady."
+areas:
+  - name: Rynek dhe Qyteti i Vjetër
+    text: Gjithçka në këmbë, me apartamente dhe hotele të vegjël. Rrugët pranë sheshit janë të zhurmshme në netët e fundjavës.
+  - name: Pranë Rzeszów Główny
+    text: "Zona më praktike: stacioni i trenave dhe ai i autobusëve janë ngjitur, sheshi rreth 15 minuta në këmbë."
+  - name: Pranë Kështjellës dhe lumit Wisłok
+    text: Më e qetë dhe pak më e lirë, me park buzë lumit, rreth 10 minuta në këmbë nga sheshi.
+food:
+  - name: Proziaki
+    text: Bukë e sheshtë me sodë, e pjekur në pllakë të nxehtë dhe e ngrënë me gjalpë me hudhër. Specialiteti i krahinës Podkarpacie.
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë (ruskie), mish, lakër ose fruta, i zier ose i skuqur.
+  - name: Fuczki
+    text: Petulla me lakër turshi, gatim i fshatrave të Bieszczady, në restorantet rajonale të qytetit.
+  - name: Bar mleczny
+    text: '"Baret e qumështit", mensat e lira nga koha komuniste, ku një drekë kushton rreth 20-30 PLN (rreth €5-7).'
+airports:
+  RZE: >-
+    Aeroporti Rzeszów-Jasionka është rreth 10 km në veri të qytetit. Treni arrin në Rzeszów Główny për rreth 20 minuta, me biletë rreth 5-10 PLN (rreth €1-2.5),
+    por nuk kalon shpesh: kontrollo oraret. Autobusët për në qendër bëjnë rreth 30-40 minuta, me
+    biletë rreth 4-6 PLN (rreth €1-1.5). Taksia ose Bolt bëjnë rreth 20 minuta dhe kushtojnë rreth
+    60-90 PLN (€14-21).
+transport: >-
+  Qendra përshkohet në këmbë; për më larg ka autobusë qyteti, por jo tramvaje. Biletat blihen me
+  kartë në makinat brenda autobusit ose në aplikacionin Jakdojade; një biletë kushton rreth 4 PLN
+  (rreth €1). Bolt dhe Uber janë të lirë. Trenat nisen nga Rzeszów Główny, autobusët për Sanok dhe
+  Bieszczady nga stacioni i autobusëve përballë.
+daytrips:
+  - name: Kështjella e Łańcut
+    text: >-
+      Një nga rezidencat fisnike më të bukura të Polonisë, me salla të mobiluara, park dhe një muze
+      të madh karrocash. Rreth 20 minuta me tren; bileta kushton rreth 50-70 PLN (rreth €12-17).
+  - name: Kraków
+    text: >-
+      Kryeqyteti i vjetër mbretëror, me Rynek Główny, Wawel dhe Kazimierz. Trenat bëjnë rreth 2-2.5
+      orë, me bileta rreth 40-80 PLN (rreth €10-19).
+  - name: Malet Bieszczady
+    text: >-
+      Malet më të egra të Polonisë, me livadhe të larta (połoniny) dhe liqenin Solina. Shtigjet
+      kryesore janë rreth 3 orë larg: më mirë me makinë me qira dhe një natë atje.
+  - name: Skanseni i Sanok
+    text: >-
+      Një nga muzetë më të mëdhenj në natyrë të Polonisë, me kisha prej druri dhe shtëpi fshati. Në
+      kështjellën e Sanok është galeria e piktorit Beksiński. Rreth 1.5 orë me autobus.
+budget: >-
+  Një birrë gjysmëlitërshe në qendër kushton rreth 10-15 PLN (€2.5-3.5), një pjatë pierogi rreth
+  25-35 PLN (€6-8), një kafe rreth 10-14 PLN (€2.5-3.5) dhe një biletë autobusi rreth 4 PLN (€1).
+when: >-
+  Fluturimet nga Tirana janë çartera sezonale, zakonisht në verë: kontrollo datat çdo vit.
+  Maji-shtatori ka ditë të gjata dhe tavolina jashtë; për Bieszczady më i miri është
+  qershori-tetori. Dimri është i ftohtë, shpesh nën 0°C.
+tips:
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Shumica e dyqaneve janë të mbyllura të dielën; restorantet dhe dyqanet Żabka zakonisht punojnë."
+  - "Për Bieszczady dhe Sanok një makinë me qira kursen shumë kohë: autobusët janë të rrallë jashtë verës."
+faq:
+  - q: "A ia vlen Rzeszów, apo më mirë direkt në Kraków?"
+    a: "Rzeszów ia vlen si bazë për juglindjen: Łańcut, Sanok dhe Bieszczady janë afër dhe çmimet më të ulëta. Kraków është rreth 2 orë me tren."
+  - q: "Si fluturoj për në Rzeszów nga Tirana?"
+    a: "Fluturimet direkte janë çartera sezonale, kryesisht në verë, dhe vendet nuk shiten gjithmonë veçmas. Ndryshe, fluturo për në Kraków dhe vazhdo me tren."
+  - q: "Sa para duhen në ditë në Rzeszów?"
+    a: "Pa fluturimin dhe fjetjen, rreth €30-50 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimet kryesore janë fjetja dhe udhëtimet ditore."

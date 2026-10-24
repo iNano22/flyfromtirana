@@ -1,0 +1,80 @@
+city: Amman
+slug: amman
+tagline: Colline, rovine romane e la porta verso Petra
+intro: >-
+  Amman è la capitale della Giordania, costruita su colline coperte di case di pietra color beige. Ha
+  una cittadella in cima a una collina, un teatro romano, souk rumorosi e cibo di strada economico e
+  gustoso. La maggior parte dei visitatori la usa come base per Petra, il Mar Morto e il Wadi Rum:
+  quattro-cinque giorni bastano per la città e due-tre gite. I voli diretti da Tirana sono charter
+  stagionali.
+sights:
+  - name: La Cittadella (Jabal al-Qal'a)
+    text: La collina più alta del centro, con il Tempio di Ercole e il Palazzo omayyade. L'ingresso costa circa 3 JOD (€3,60); la vista sulla città è più bella al tramonto.
+  - name: Il Teatro romano
+    text: Un teatro del II secolo scavato nel fianco della collina, con circa 6.000 posti. L'ingresso costa circa 2 JOD (€2,40).
+  - name: Rainbow Street
+    text: La via di Jabal Amman, con caffè, librerie e bar sulle terrazze. Da primavera ad autunno, il venerdì, lì vicino apre di solito il mercato Souk Jara.
+  - name: I souk del centro
+    text: Ad Al-Balad, intorno alla moschea Al-Husseini, il souk dell'oro, il mercato della verdura e botteghe di spezie e dolci. Contrattare è d'obbligo.
+  - name: Moschea di Re Abdullah I
+    text: La moschea dalla cupola blu ad Abdali, aperta ai visitatori fuori dagli orari di preghiera, con ingresso a circa 2 JOD. Alle donne viene data lì una abaya per coprirsi. Il venerdì non accoglie visitatori.
+itinerary:
+  - "La Cittadella al mattino, discesa a piedi fino al Teatro romano, poi i souk di Al-Balad. Pranzo da Hashem, knafeh da Habibah e la sera su Rainbow Street."
+  - "Jerash al mattino, prima del caldo. Nel pomeriggio la Moschea di Re Abdullah I e il Museo della Giordania (circa 5 JOD)."
+  - "Petra con l'autobus JETT del mattino e una notte a Wadi Musa, la cittadina accanto all'ingresso."
+  - "Di nuovo Petra all'alba, quando c'è meno gente, poi una notte nel Wadi Rum, oppure ritorno ad Amman e il Mar Morto."
+areas:
+  - name: Al-Balad (Downtown)
+    text: Vicino al Teatro romano e ai souk, con gli hotel più economici, ma rumorosa e con camere semplici.
+  - name: Jabal Amman
+    text: Intorno a Rainbow Street, più tranquilla, con hotel boutique e caffè, a 15 minuti a piedi dal centro.
+  - name: Abdali e Shmeisani
+    text: La zona moderna con hotel di catena e centri commerciali, un po' lontana dai souk, ma con taxi economici.
+food:
+  - name: Mansaf
+    text: Il piatto nazionale, agnello in salsa di yogurt secco (jameed) sul riso, circa 8-12 JOD (€10-14).
+  - name: Falafel da Hashem
+    text: Il locale popolare in un vicolo di Al-Balad, con falafel, hummus e ful. Un pasto completo costa circa 3-5 JOD.
+  - name: Knafeh
+    text: Un dolce caldo con formaggio fuso e sciroppo. La fila da Habibah scorre veloce; una porzione costa circa 1-1,5 JOD.
+airports:
+  AMM: >-
+    L'aeroporto Queen Alia è a circa 35 km a sud. L'autobus Airport Express parte ogni 30-60 minuti
+    davanti agli arrivi e arriva alla stazione Tabarbour (North Bus Station) in circa 45-60 minuti, per
+    circa 3,5 JOD (€4); da lì prosegui in taxi. I taxi dell'aeroporto hanno una tariffa fissa, circa
+    20-25 JOD (€24-30) fino al centro, di più di notte; Careem e Uber di solito costano un po' meno.
+    Preleva dinari in aeroporto: l'autobus e molti taxi vogliono contanti.
+transport: >-
+  Amman non ha la metro e si estende su colline, quindi a piedi si gira solo in centro e a Jabal
+  Amman. I taxi gialli hanno il tassametro (chiedi all'autista di accenderlo): una corsa in città
+  costa di solito 2-4 JOD. Careem e Uber mostrano il prezzo prima della partenza. Per Petra prendi gli
+  autobus JETT, con il posto prenotato online; l'autobus parte di solito verso le 6:30, ma controlla
+  la stazione quando compri il biglietto. I minibus per Jerash partono dalla stazione Tabarbour
+  quando si riempiono.
+daytrips:
+  - name: Petra
+    text: La città nabatea scavata nella roccia, a circa 3-4 ore a sud. In una lunga giornata vedi il Siq e il Tesoro; con una notte sul posto arrivi anche al Monastero. L'ingresso costa circa 50 JOD (€60), se dormi almeno una notte in Giordania.
+  - name: Jerash
+    text: Una delle città romane meglio conservate fuori dall'Italia, con strade colonnate, a circa 1 ora a nord in minibus. L'ingresso costa circa 10 JOD (€12).
+  - name: Mar Morto
+    text: Il punto più basso della Terra, dove galleggi senza sforzo, a circa 1 ora d'auto. Le spiagge pubbliche costano circa 20-25 JOD, l'ingresso giornaliero in un resort circa 40-60 JOD.
+  - name: Wadi Rum
+    text: Un deserto di rocce rosse, a circa 4 ore da Amman, quindi abbinalo a Petra. Un giro in jeep e una notte in un campo beduino costano circa 40-80 JOD a persona.
+budget: >-
+  Un dinaro (JOD) vale circa €1,2. Un panino con falafel costa circa 0,5-1 JOD, un pasto al ristorante
+  4-8 JOD (€5-10), una birra 5-7 JOD (€6-8,50). Un letto in ostello costa circa 10-20 JOD (€12-24), un
+  hotel semplice 35-60 JOD (€42-72) a notte. Il Jordan Pass, circa 70-80 JOD, include Petra, Jerash,
+  la Cittadella e decine di altri siti: conviene se vai a Petra.
+when: >-
+  Da marzo a maggio e da settembre a novembre, con 18-28°C. L'estate è calda e secca, ancora di più a
+  Petra e nel Wadi Rum. L'inverno è freddo, con notti intorno ai 5°C e a volte neve. Il Ramadan cambia
+  ogni anno (nel 2027 è previsto tra febbraio e marzo circa): di giorno molti ristoranti chiudono.
+tips:
+  - "Copri spalle e ginocchia, soprattutto in centro e nelle moschee. Le donne portano un foulard per le moschee."
+  - "Durante il Ramadan, di giorno non mangiare, non bere e non fumare in pubblico."
+  - "Il venerdì è il giorno di riposo: la mattina molti negozi sono chiusi. Usalo per Jerash o il Mar Morto."
+faq:
+  - q: "Ci sono voli diretti da Tirana?"
+    a: "Di solito solo charter stagionali, in alcuni mesi dell'anno. Altrimenti si vola con uno scalo, per esempio a Istanbul."
+  - q: "Quanto si spende al giorno ad Amman?"
+    a: "Volo e alloggio esclusi, circa €30-50 al giorno se mangi nei locali popolari. Petra e i tour fanno salire il conto in fretta."
