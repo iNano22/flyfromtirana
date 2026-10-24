@@ -1,0 +1,83 @@
+city: Luxembourg
+name: Lussemburgo
+slug: luxembourg
+tagline: Casematte, la valle del Grund e trasporti gratuiti
+intro: >-
+  Lussemburgo è la capitale di uno degli stati più piccoli e più ricchi d'Europa, costruita su
+  rocce sopra le valli dei fiumi Alzette e Pétrusse. La città vecchia e le sue fortificazioni sono
+  nella lista dell'UNESCO dal 1994. È cara, ma tutti i trasporti pubblici sono gratuiti e il
+  centro si visita a piedi in due giorni.
+sights:
+  - name: Casematte del Bock
+    text: Gallerie scavate nella roccia sotto il vecchio castello, parte di una rete che un tempo arrivava a 23 km, di cui oggi ne restano circa 17 km. L'ingresso costa circa €8; d'inverno possono essere chiuse.
+  - name: Chemin de la Corniche
+    text: La passeggiata sulle mura della città, chiamata «il balcone più bello d'Europa», con vista sul Grund e sul fiume Alzette. È gratuita e aperta a tutte le ore.
+  - name: Grund
+    text: La città bassa sulle rive dell'Alzette, con l'Abbazia di Neumünster. Si scende con l'ascensore gratuito dal Plateau du Saint-Esprit o a piedi dalla Corniche.
+  - name: Palazzo Granducale
+    text: La residenza ufficiale del Granduca nella città vecchia. L'interno si visita solo d'estate, con visite guidate che si prenotano all'ufficio del turismo.
+  - name: Kirchberg e MUDAM
+    text: L'altopiano moderno delle istituzioni europee. Il MUDAM, il museo d'arte moderna nell'edificio di I. M. Pei, costa circa €10 ed è gratuito per i giovani sotto i 26 anni; accanto c'è la fortezza Fort Thüngen.
+  - name: Ascensore panoramico del Pfaffenthal
+    text: Una cabina di vetro che scende gratis di 71 metri dalla città vecchia alla valle, con vista sul Ponte Rosso (Pont Grande-Duchesse Charlotte).
+airports:
+  LUX: >-
+    L'aeroporto di Luxembourg-Findel si trova a circa 6 km dal centro. Gli autobus 16 e 29 partono
+    davanti al terminal e ti portano in centro e alla stazione ferroviaria (Gare) in circa 20-30
+    minuti. Come tutti i trasporti pubblici del paese, sono gratuiti. Il taxi impiega circa 15
+    minuti e costa circa €30-40.
+budget: >-
+  Lussemburgo è tra le città più care d'Europa. Un caffè costa circa €3-4, una birra €5-7, il
+  piatto del giorno (plat du jour) a pranzo €15-20 e una cena al ristorante €25-40. Un letto in
+  ostello costa circa €40-55, una camera doppia in un hotel semplice circa €120-180 a notte. I
+  supermercati come Aldi e Lidl abbassano le spese per il cibo.
+when: >-
+  Da maggio a settembre c'è il tempo migliore, anche se piove tutto l'anno. Il 23 giugno è la
+  Festa Nazionale, con i fuochi d'artificio la notte del 22 giugno. Dalla fine di agosto all'inizio
+  di settembre si svolge la Schueberfouer, la grande fiera con le giostre che risale al 1340. A
+  dicembre ci sono i mercatini di Natale.
+tips:
+  - "Si parlano lussemburghese, francese e tedesco, ma l'inglese si capisce ovunque."
+  - "A pranzo chiedi il «plat du jour»: il piatto del giorno è il modo più economico per mangiare al ristorante."
+  - "L'acqua del rubinetto è potabile: riempi la borraccia e risparmia."
+itinerary:
+  - "Place Guillaume II, il Palazzo Granducale da fuori, la cattedrale e Place d'Armes. Nel pomeriggio il Chemin de la Corniche e le Casematte del Bock, poi la discesa nel Grund; la sera un drink nel Grund o a Clausen."
+  - "L'ascensore panoramico per il Pfaffenthal e la funicolare per il Kirchberg. Il MUDAM, il Fort Thüngen e la Philharmonie, poi il ritorno in centro in tram."
+  - "Gita in giornata al castello di Vianden o nel Mullerthal, con treno e autobus gratuiti. In alternativa, Treviri in Germania o i villaggi del vino lungo la Mosella."
+areas:
+  - name: Ville Haute (città vecchia)
+    text: Vicina a tutto e molto bella, ma con gli hotel più cari.
+  - name: Gare
+    text: La zona della stazione, con gli hotel più economici e il tram per il centro.
+  - name: Grund e Clausen
+    text: Quartieri tranquilli giù nella valle di giorno, pieni di bar la sera.
+  - name: Kirchberg
+    text: Hotel business che nel fine settimana sono spesso più economici, con il tram per il centro e l'autobus 16 per l'aeroporto.
+food:
+  - name: Judd mat Gaardebounen
+    text: Collo di maiale affumicato con fave e salsa alla panna, il piatto nazionale.
+  - name: Gromperekichelcher
+    text: Frittelle di patate e cipolla, circa €5 a porzione.
+  - name: Kachkéis
+    text: Un formaggio morbido cotto da spalmare sul pane, spesso con la senape.
+  - name: Vino e crémant della Mosella
+    text: Riesling e spumante dai vigneti nel sud del paese; un bicchiere costa circa €5-7.
+transport: >-
+  Dal 2020 tutti i trasporti pubblici in Lussemburgo sono gratuiti: autobus, tram e treni in
+  seconda classe, in tutto il paese. Non serve il biglietto; si paga solo la prima classe in treno.
+  Gli ascensori gratuiti del Grund e del Pfaffenthal ti risparmiano la salita. Per i viaggi oltre
+  il confine, come per Treviri, paghi solo il tratto fuori dal Lussemburgo.
+daytrips:
+  - name: Castello di Vianden
+    text: Un castello medievale sopra una cittadina nel nord, a circa 1 ora e 15 minuti di treno fino a Ettelbruck e poi in autobus. L'ingresso costa circa €12.
+  - name: Mullerthal
+    text: "La «Piccola Svizzera» del Lussemburgo: sentieri tra rocce e boschi, a circa 1 ora di autobus."
+  - name: Villaggi del vino lungo la Mosella
+    text: Remich, Grevenmacher e Schengen, dove nel 1985 fu firmato l'Accordo di Schengen. A circa 45 minuti di autobus.
+  - name: Treviri
+    text: La città più antica della Germania, con la porta romana Porta Nigra, a circa 50 minuti di treno. Il treno è gratuito fino al confine; per il tratto tedesco compri un biglietto, circa €5-10 a tratta.
+faq:
+  - q: "I trasporti pubblici sono davvero gratuiti?"
+    a: "Sì. Autobus, tram e treni in seconda classe sono gratuiti per tutti, anche per i turisti, senza biglietto. Vale anche per gli autobus 16 e 29 dall'aeroporto."
+  - q: "Quanto si spende al giorno a Lussemburgo?"
+    a: "Volo e alloggio esclusi, circa €50-80 al giorno. Risparmi con il piatto del giorno e con i supermercati. L'alloggio è la spesa più grande: alcuni viaggiatori dormono a Treviri, dove gli hotel costano meno."

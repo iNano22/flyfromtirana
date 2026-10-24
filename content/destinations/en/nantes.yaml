@@ -1,0 +1,75 @@
+city: Nantes
+slug: nantes
+tagline: A mechanical elephant, the dukes' castle and the Loire
+intro: >-
+  Nantes lies on the river Loire, about 50 km before the Atlantic. It was the capital of the dukes
+  of Brittany and a great trading port; today it is a lively student city, with art in the streets
+  and giant machines in the old shipyards. It is cheaper than Paris, and two or three days are
+  enough for the centre, the Île de Nantes and a day on the coast.
+sights:
+  - name: Les Machines de l'île and the Grand Éléphant
+    text: "In the old shipyards of the Île de Nantes, artists have built giant machines inspired by Jules Verne, who was born in Nantes. The star is the Grand Éléphant, a 12-metre-tall elephant that walks with about 45 passengers on its back. Watching it from outside is free; the ride and the Galerie des Machines cost about €9-10 each. It closes for a few weeks in winter: check the calendar."
+  - name: Château des ducs de Bretagne
+    text: The castle where Anne of Brittany was born in 1477. The courtyard and the walk on the ramparts are free; the city history museum inside costs about €9.
+  - name: Cathédrale Saint-Pierre-et-Saint-Paul
+    text: The Gothic cathedral was built from 1434 to 1891. The white stone makes it very bright inside, where you find the tomb of Duke François II, a Renaissance masterpiece. Entry is free.
+  - name: Passage Pommeraye
+    text: A covered shopping arcade from 1843, on three levels, with wooden stairs, statues and a glass roof.
+  - name: Le Voyage à Nantes and the green line
+    text: "A green line painted on the pavement, about 20 km long, leads you past the main sights and works of art: follow it and you need no map. In July and August the Le Voyage à Nantes festival adds new installations all over the city."
+airports:
+  NTE: >-
+    Nantes Atlantique airport is about 10 km south-west of the centre. The Navette Aéroport bus takes
+    you to Place du Commerce and the railway station in about 20-30 minutes; it runs every 20-30
+    minutes and a ticket costs about €9-10. A taxi takes about 20-25 minutes and costs about
+    €30-40.
+budget: >-
+  A coffee at the counter costs about €1.50-2.50, a galette complète about €10-14, a crêpe €4-8, a
+  formule lunch €15-18, a tram ticket about €2. A hostel bed costs from about €25-35, a double room
+  in a simple hotel from about €70-100 a night.
+when: >-
+  May to September has the best weather, rarely hot, but rain falls in every season. In July and
+  August Le Voyage à Nantes fills the city with free art. At the end of January the La Folle
+  Journée festival brings short classical concerts with cheap tickets.
+tips:
+  - "On Saturdays and Sundays the trams and buses are free, but the Navette Aéroport is not."
+  - "Tickets for the Grand Éléphant ride sell out fast: go early or buy them online, and check the walk times."
+  - "Many restaurants close on Sunday and Monday. The Talensac market opens every morning except Monday."
+itinerary:
+  - "The Château des ducs de Bretagne in the morning, then the cathedral and the lanes of Bouffay. In the afternoon, Passage Pommeraye and Place Graslin, and in the evening a galette and cidre in a crêperie."
+  - "Île de Nantes: Les Machines de l'île and the Grand Éléphant. In the afternoon, a walk along the Quai des Antilles, and in the evening the Navibus boat to Trentemoult, the fishing village with colourful houses."
+  - "The Talensac market in the morning, then the Jardin des Plantes and the Musée d'arts. In the afternoon, follow the green line to the Japanese garden on the Île de Versailles. Otherwise, a day in Clisson or Pornic."
+areas:
+  - name: Bouffay
+    text: The old town with timber-framed houses, lanes and bars. A lovely atmosphere, but noisy at night.
+  - name: Graslin and Commerce
+    text: The elegant 18th-century quarter, with the theatre, shops and brasseries. In the centre, with mid-range to high prices.
+  - name: Gare de Nantes
+    text: "The most practical area: the Navette Aéroport stops at the station, where the trains for day trips leave. Cheaper chain hotels, 10 minutes' walk from the castle."
+food:
+  - name: Galettes and crêpes
+    text: "The cooking of Brittany: a galette is a savoury buckwheat pancake, usually with cheese, ham and egg (complète), while a crêpe is sweet. They are drunk with cidre."
+  - name: Beurre blanc
+    text: A sauce of butter, white wine and shallots, born in the Nantes area and served with fish from the Loire.
+  - name: Muscadet
+    text: The dry white wine of the vineyards around Clisson, drunk with oysters. A glass costs about €4-6.
+  - name: Gâteau nantais
+    text: The city's cake, with almonds and rum. The Petit-Beurre LU biscuits were also born in Nantes.
+transport: >-
+  The centre is walkable, and the Naolib network has 3 tram lines, buses and the Navibus boats on
+  the Loire. A single ticket costs about €2 and is valid for 1 hour with transfers; a 24-hour ticket
+  about €6. On Saturdays and Sundays the whole network is free.
+daytrips:
+  - name: The Loire estuary and Saint-Nazaire
+    text: About 40 minutes by train. There you find the giant Second World War submarine base, with a free roof terrace, and the ocean liner museum Escal'Atlantic.
+  - name: Clisson
+    text: A small town with a ruined medieval castle and Italian-style villas, among the Muscadet vineyards. About 30 minutes by train.
+  - name: Pornic
+    text: A small port on the Atlantic, with a castle by the sea, beaches and a coastal path over the cliffs. About 1 hour by train.
+  - name: Mont-Saint-Michel
+    text: "The abbey on its rocky island, a long day: about 2.5-3 hours each way, by train to Rennes and then by bus, or by car."
+faq:
+  - q: "Navette Aéroport or a taxi?"
+    a: "For 1 or 2 people the Navette is cheaper: about €9-10 per person. For 3-4 people with suitcases, or late at night, a taxi at about €30-40 is reasonable."
+  - q: "How much money do you need per day in Nantes?"
+    a: "Excluding the flight and accommodation, allow €45-70 a day. You save with formule lunches, galettes and the free transport at weekends."

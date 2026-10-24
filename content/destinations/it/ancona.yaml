@@ -1,0 +1,80 @@
+city: Ancona
+slug: ancona
+tagline: Un porto antico, una cattedrale sul colle e il mare del Conero
+intro: >-
+  Ancona è il capoluogo delle Marche e uno dei porti principali dell'Adriatico. Il nome viene dal
+  greco "ankon", gomito, per la forma del promontorio dove la fondarono i Greci intorno al 387 a.C.
+  La città è collinare e poco turistica, mentre pochi chilometri a sud comincia la Riviera del
+  Conero, con alcune delle spiagge più belle d'Italia. Tre o quattro giorni bastano per la città,
+  il mare e Loreto o Urbino.
+sights:
+  - name: Cattedrale di San Ciriaco
+    text: La cattedrale romanica sul colle Guasco, costruita tra l'XI e il XIII secolo sul luogo di un antico tempio. Dal piazzale davanti si vede tutto il porto. L'ingresso è gratuito.
+  - name: Il Passetto
+    text: La scalinata bianca sotto il Monumento ai Caduti che scende fino agli scogli e al mare, con le piccole grotte scavate dai pescatori per le barche. D'estate gli anconetani fanno il bagno dagli scogli.
+  - name: Mole Vanvitelliana
+    text: Un edificio pentagonale su un'isola artificiale nel porto, iniziato nel 1733 da Luigi Vanvitelli come lazzaretto. Oggi ospita mostre, concerti estivi e il Museo Omero, dove le opere d'arte si toccano con le mani.
+  - name: Arco di Traiano
+    text: L'arco di marmo eretto intorno all'anno 115 in onore dell'imperatore Traiano, che ampliò il porto. È ancora in piedi sulla banchina.
+  - name: Riviera del Conero
+    text: La costa rocciosa a sud della città, dove il Monte Conero (572 m) scende a picco sul mare. Le spiagge sono di ciottoli; la più famosa, le Due Sorelle, si raggiunge solo in barca.
+itinerary:
+  - "Piazza Cavour, Corso Garibaldi e Piazza del Plebiscito, poi la salita alla Cattedrale di San Ciriaco. La discesa all'Arco di Traiano e al porto, la sera un aperitivo in centro."
+  - "La Mole Vanvitelliana e la Fontana del Calamo con le sue 13 cannelle. Nel pomeriggio fino al Passetto, un bagno dagli scogli d'estate e il tramonto sulla scalinata."
+  - "La Riviera del Conero: Portonovo la mattina, poi Sirolo e la barca per la spiaggia delle Due Sorelle. Più facile con un'auto a noleggio o con gli autobus estivi."
+  - "Loreto in treno, una giornata a Urbino o le grotte di Frasassi."
+areas:
+  - name: Centro Storico
+    text: Tra Piazza Cavour, Corso Garibaldi e il porto, con tutto a portata di piedi e i ristoranti migliori. Le strade sono in salita.
+  - name: Vicino ad Ancona Centrale
+    text: Gli alberghi più economici e più pratici per i treni, ma con poca atmosfera. Il centro è a circa 10-15 minuti di autobus.
+  - name: Riviera del Conero
+    text: Sirolo, Numana o Portonovo per una vacanza al mare, ma i prezzi salgono molto a luglio-agosto e senza auto è difficile spostarsi.
+food:
+  - name: Stoccafisso all'anconetana
+    text: Stoccafisso cotto lentamente con patate, pomodoro, olive e vino bianco, il piatto simbolo della città.
+  - name: Olive all'ascolana
+    text: Grandi olive ripiene di carne, impanate e fritte, vendute nei coni di carta come cibo di strada.
+  - name: Moscioli di Portonovo
+    text: Cozze selvatiche degli scogli del Conero, che di solito si mangiano da maggio a settembre.
+  - name: Brodetto all'anconetana
+    text: Una zuppa densa con tanti tipi di pesce dell'Adriatico, 13 secondo la tradizione, servita con pane tostato.
+airports:
+  AOI: >-
+    L'Aeroporto delle Marche è a Falconara Marittima, a circa 15 km a ovest della città. La stazione
+    di Castelferretti è a circa 5-10 minuti a piedi dal terminal (a volte c'è anche una navetta); da
+    lì il treno regionale arriva ad Ancona Centrale in circa 15-20 minuti (circa €2-3), ma parte più
+    o meno una volta all'ora. C'è anche un autobus Conerobus per il centro, circa 40-50 minuti. Il
+    taxi costa circa €35-45.
+transport: >-
+  Il centro si gira a piedi, ma la città è collinare. Ancona Centrale è a circa 2-3 km dal centro
+  ed è collegata dagli autobus Conerobus; compra il biglietto (circa €1,50) dal tabaccaio o con
+  l'app. Dalla stazione partono i treni per Loreto, Pesaro e Frasassi, mentre dal porto partono i
+  traghetti per la Croazia e la Grecia.
+daytrips:
+  - name: Monte Conero e Portonovo
+    text: A circa 12 km a sud, una baia di ghiaia sotto il monte, con una chiesa romanica dell'XI secolo e sentieri verso la cima. D'estate i parcheggi sono limitati, quindi parti presto.
+  - name: Sirolo
+    text: Un borgo medievale sulla rupe con vista sul mare, a circa 40 minuti di autobus. Da qui partono le barche per le Due Sorelle.
+  - name: Loreto
+    text: Uno dei principali luoghi di pellegrinaggio cattolico, con la Basilica della Santa Casa. Circa 20 minuti di treno, poi una breve salita dalla stazione.
+  - name: Urbino
+    text: La città di Raffaello, con il Palazzo Ducale rinascimentale, patrimonio UNESCO. In treno fino a Pesaro e poi in autobus, circa 2 ore in tutto.
+  - name: Grotte di Frasassi
+    text: Grotte enormi piene di stalattiti, a circa 1 ora di treno fino a Genga-San Vittore Terme. Il biglietto costa circa €18-20 e dentro ci sono circa 14 °C.
+budget: >-
+  Un espresso costa circa €1,20, un cono di olive all'ascolana circa €5-7, una pizza €7-10 e un
+  piatto di stoccafisso circa €18-25. Il biglietto dell'autobus costa circa €1,50, mentre un
+  ombrellone con due lettini al Conero costa circa €25-40 al giorno d'estate.
+when: >-
+  Maggio-giugno e settembre: il mare è caldo e le spiagge non sono affollate. A luglio-agosto
+  Portonovo e Sirolo si riempiono, soprattutto nel fine settimana. D'inverno la città è tranquilla,
+  ma è un buon momento per Loreto, Urbino e Frasassi.
+tips:
+  - "Le spiagge del Conero sono di ciottoli: porta le scarpette da scoglio e vai presto, perché i parcheggi si riempiono in fretta."
+  - "Con un'auto a noleggio non entrare nel centro storico: è zona ZTL e le multe arrivano per posta."
+faq:
+  - q: "Come si va dall'aeroporto al centro senza taxi?"
+    a: "A piedi fino alla stazione di Castelferretti e poi in treno fino ad Ancona Centrale, circa 15-20 minuti. Controlla gli orari in anticipo, perché i treni non sono frequenti."
+  - q: "Quanto si spende al giorno ad Ancona?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno, di più se mangi pesce al ristorante o prendi un ombrellone in spiaggia."

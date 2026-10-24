@@ -1,0 +1,102 @@
+city: Bodrum
+slug: bodrum
+tagline: A Crusader castle, blue bays and gulet boats
+intro: >-
+  Bodrum is the best-known town on the Turkish Aegean: white houses around two bays, a medieval
+  castle in the middle of the harbour and a peninsula full of beaches. Three or four days are enough
+  for the town, a day on a boat and the beaches.
+sights:
+  - name: Bodrum Castle and the Museum of Underwater Archaeology
+    text: >-
+      The Castle of St Peter was built by the Knights of Rhodes in the 15th century, with stones taken
+      from the Mausoleum. Inside is the Museum of Underwater Archaeology, with ships wrecked in the
+      Aegean, such as the Uluburun wreck, 3,300 years old. Entry costs about €15-20; allow 2-3 hours.
+  - name: The Mausoleum of Halicarnassus
+    text: >-
+      The tomb of King Mausolus, from around 350 BC, was one of the seven wonders of the ancient
+      world. Today only the foundations remain, but a small museum shows what it looked like. Entry
+      costs about €5-10.
+  - name: The ancient theatre
+    text: >-
+      The theatre of Halicarnassus, from the 4th century BC, is on the hill above the town. Its steps
+      give one of the best views over the castle and the bay.
+  - name: The marina and the promenade
+    text: >-
+      The seafront promenade links the marina of yachts and gulet boats with the castle and
+      Cumhuriyet Street, full of shops, restaurants and bars. In the evening it is the heart of the
+      town.
+  - name: The windmills
+    text: >-
+      Old stone windmills on the ridge between Bodrum and Gümbet, with a view over both bays at
+      sunset. From the centre they are about 30 minutes on foot, uphill.
+  - name: The beaches and bays
+    text: >-
+      Gümbet has sand and water sports, Bitez shallow water and Gümüşlük the most beautiful sunset.
+      Public beaches are free, while beach clubs charge for a sun lounger.
+airports:
+  BJV: >-
+    Milas-Bodrum airport is about 35 km from the town. Havaş and Muttaş buses leave after arrivals
+    and take you to the Bodrum bus station (otogar) in about 45-60 minutes, for about €6-8; from the
+    otogar, dolmuş minibuses go all over the peninsula. A taxi to the centre costs about €50-70. Many
+    hotels offer a transfer.
+budget: >-
+  The Turkish lira (TRY) loses value quickly, so prices here are given in euros. Bodrum is among the
+  most expensive places on the Turkish coast: a tea costs about €1, a pide or döner about €5-8, a
+  fish dinner about €30-50 and a sun lounger at a beach club about €10-30.
+when: >-
+  The season runs from May to October. June and September have a warm sea, fewer people and lower
+  prices. July and August are very hot, often above 35°C, and the most expensive. From November to
+  April many hotels and restaurants close.
+tips:
+  - "Pay in lira, not in euros: prices in euros are usually higher. At an ATM, decline the machine's conversion and choose to be charged in lira."
+  - "For a gulet trip, compare a few operators at the harbour the day before: the price usually includes lunch, but not drinks."
+itinerary:
+  - "The Castle and the Museum of Underwater Archaeology in the morning, then the Mausoleum. In the afternoon the beach or the marina, sunset at the windmills and dinner in town."
+  - "A full day on a gulet boat around the bays, with swimming stops. In the evening, Cumhuriyet Street and the promenade."
+  - "By dolmuş to Gümüşlük: the beach, the ruins of Myndos and a fish dinner at sunset."
+  - "A day on the island of Kos by ferry, or a long excursion to Ephesus."
+areas:
+  - name: Bodrum town
+    text: Close to the castle, the marina and the otogar, with everything on foot and a dolmuş to anywhere, but noisy in summer.
+  - name: Gümbet
+    text: About 3 km from the centre, with a sandy beach, bars and nightlife. The hotels are among the cheapest, but not for those looking for quiet.
+  - name: Bitez
+    text: A quiet bay with shallow water, ideal for families, about 15 minutes by dolmuş from the centre.
+  - name: Yalıkavak
+    text: In the north-west of the peninsula, with a luxury yacht marina and expensive restaurants.
+  - name: Türkbükü
+    text: The upmarket north coast, with beach clubs on wooden piers and prices among the highest in Turkey.
+food:
+  - name: Çökertme kebabı
+    text: Bodrum's speciality, thin strips of beef on fried matchstick potatoes, with yoghurt and tomato sauce.
+  - name: Fish and meze
+    text: >-
+      Dinner by the sea starts with meze of herbs, olive oil and yoghurt, then the fish of the day.
+      Ask for the price per kilo before you order.
+  - name: Bodrum mandarins
+    text: The peninsula's sweet mandarins, as fresh juice, jam or ice cream.
+  - name: Gözleme
+    text: Thin flatbread filled with cheese or spinach, cooked on a griddle (saç), a cheap lunch.
+transport: >-
+  The centre is easy to cover on foot. For the beaches and villages of the peninsula, take the
+  dolmuş minibuses from the otogar: in summer they leave every 10-20 minutes for Gümbet and Bitez
+  and cost about €1-2 per journey. To see many bays in a few days, a rental car costs about €30-50 a
+  day in summer.
+daytrips:
+  - name: Kos
+    text: >-
+      The Greek island opposite Bodrum. The ferry and the catamarans from the harbour take about 30-60
+      minutes, for about €30-50 return. On Kos you pay in euros.
+  - name: Ephesus
+    text: >-
+      The ancient city with the Library of Celsus is about 3 hours away by car: a long day, with an
+      early start. Entry alone costs about €40.
+  - name: A gulet boat trip
+    text: >-
+      The wooden boats leave the harbour at about 10:00 and return at about 17:00, with 3-4 swimming
+      stops, such as Kara Ada with its hot springs. With lunch it costs about €20-35.
+faq:
+  - q: "Where should I stay in Bodrum?"
+    a: "For a first visit without a car, stay in the centre or in Gümbet, close to the otogar and the dolmuş. For families choose Bitez, for luxury Yalıkavak or Türkbükü."
+  - q: "How much money do you need per day in Bodrum?"
+    a: "Excluding the flight and accommodation, plan on €40-70 a day for food, the dolmuş and one entry ticket or beach. With fish dinners and beach clubs the total rises quickly."

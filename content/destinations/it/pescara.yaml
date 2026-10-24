@@ -1,0 +1,82 @@
+city: Pescara
+slug: pescara
+tagline: La spiaggia, gli arrosticini e i trabocchi d'Abruzzo
+intro: >-
+  Pescara è la città più grande dell'Abruzzo, una città moderna sull'Adriatico con una lunga
+  spiaggia di sabbia e la casa dove nacque il poeta Gabriele D'Annunzio. Il suo vero valore è la
+  regione intorno: la costa dei trabocchi, i borghi sulle colline e le montagne del Gran Sasso e
+  della Majella. Tre o quattro giorni bastano per la città, il mare e una o due gite in giornata.
+sights:
+  - name: Il lungomare e le spiagge
+    text: Circa 16 km di sabbia fine e mare basso, divisi per lo più in stabilimenti privati numerati, con alcuni tratti liberi. Sul Lungomare Matteotti si trova la scultura-fontana La Nave di Cascella.
+  - name: Ponte del Mare
+    text: Il ponte bianco per pedoni e bici sulla foce del fiume Pescara, aperto nel 2009. Unisce le due metà del lungomare ed è il posto migliore per il tramonto.
+  - name: Pescara Vecchia
+    text: Il quartiere antico a sud del fiume, intorno a Corso Manthonè. La sera si riempie di locali e di giovani.
+  - name: Casa natale di Gabriele D'Annunzio
+    text: La casa in Corso Manthonè dove D'Annunzio nacque nel 1863, oggi museo con i mobili di famiglia e i ricordi del poeta. Il biglietto costa circa €5.
+  - name: Museo delle Genti d'Abruzzo
+    text: Il museo della vita tradizionale in Abruzzo, con attrezzi, costumi e mestieri, nell'ex carcere borbonico di Pescara Vecchia.
+  - name: Costa dei Trabocchi
+    text: La costa rocciosa a sud di Ortona, con i trabocchi, le piattaforme di legno dei pescatori con grandi reti sul mare. Alcuni oggi sono ristoranti di pesce.
+itinerary:
+  - "Corso Umberto I dalla stazione fino a Piazza Salotto, poi il Lungomare Matteotti e La Nave di Cascella. Nel pomeriggio la spiaggia, al tramonto il Ponte del Mare e la cena con gli arrosticini."
+  - "Pescara Vecchia la mattina: la casa di D'Annunzio e il Museo delle Genti d'Abruzzo. Nel pomeriggio la Pineta Dannunziana e le spiagge a sud, la sera un aperitivo in Corso Manthonè."
+  - "In treno a San Vito Chietino, in bici a noleggio lungo la Via Verde tra i trabocchi e un pranzo di pesce su un trabocco (su prenotazione)."
+  - "Chieti o Sulmona in autobus e treno, oppure in auto a noleggio sul Gran Sasso, fino a Campo Imperatore."
+areas:
+  - name: Centro
+    text: Tra la stazione di Pescara Centrale e il mare, intorno a Corso Umberto I. La zona più pratica, vicino all'autobus dell'aeroporto, ai treni e ai pullman per Roma.
+  - name: Pescara Vecchia e Porta Nuova
+    text: A sud del fiume, vicino alla vita notturna e ai pini della Pineta Dannunziana. Le sere del fine settimana è rumorosa.
+  - name: Lungomare Nord e Montesilvano
+    text: Alberghi sul mare a nord, spesso più economici, soprattutto a Montesilvano, ma più lontani dal centro.
+food:
+  - name: Arrosticini
+    text: Piccoli spiedini di carne di pecora alla brace, il simbolo dell'Abruzzo. Si ordinano a decine, con pane e olio d'oliva, a circa €1 l'uno.
+  - name: Spaghetti alla chitarra
+    text: Pasta a sezione quadrata tagliata con un attrezzo a corde simile a una chitarra, di solito con sugo di pomodoro e pallottine di carne.
+  - name: Pallotte cacio e ova
+    text: Polpette senza carne, di formaggio, uova e pane, cotte nel sugo di pomodoro.
+  - name: Brodetto di pesce
+    text: Una zuppa densa di pesce dell'Adriatico e pomodoro, da mangiare con il pane tostato.
+  - name: Parrozzo
+    text: Il dolce di Pescara alle mandorle, ricoperto di cioccolato, lodato dallo stesso D'Annunzio.
+airports:
+  PSR: >-
+    L'Aeroporto d'Abruzzo è a soli 4 km circa dal centro. L'autobus TUA 38 ti porta alla stazione di
+    Pescara Centrale e in centro in circa 15-20 minuti; il biglietto costa circa €1,50, di più se lo
+    compri dall'autista. Il taxi fino al centro costa circa €15-20. Alcuni pullman per Roma fermano
+    anche all'aeroporto.
+transport: >-
+  Il centro e il lungomare si girano facilmente a piedi o in bici, perché la città è pianeggiante.
+  Gli autobus TUA coprono la città e Chieti; compra il biglietto dal tabaccaio o con l'app. Da
+  Pescara Centrale i treni vanno lungo la costa verso Ortona e Vasto e nell'interno verso Sulmona.
+daytrips:
+  - name: Costa dei Trabocchi
+    text: I trabocchi e le spiagge di ciottoli tra Ortona e Vasto, con la Via Verde, una pista ciclabile di circa 40 km sulla vecchia ferrovia. San Vito Chietino è a circa 30 minuti di treno.
+  - name: Chieti
+    text: La città sulla collina con vista sulla Majella e sul mare, con il museo archeologico del Guerriero di Capestrano. Circa 40 minuti con l'autobus TUA.
+  - name: Sulmona
+    text: La città del poeta romano Ovidio, famosa per i confetti, a circa 1 ora di treno regionale (circa €6).
+  - name: Gran Sasso e Majella
+    text: Le montagne più alte degli Appennini, con l'altopiano di Campo Imperatore e borghi di pietra come Santo Stefano di Sessanio. Circa 1,5 ore in auto.
+  - name: Roma
+    text: Circa 2,5 ore in pullman fino a Roma Tiburtina (circa €10-20 a tratta). Una giornata lunga, ma fattibile.
+budget: >-
+  Un espresso costa circa €1,20, una pizza €7-10, una dozzina di arrosticini circa €12 e il
+  biglietto dell'autobus urbano circa €1,50.
+when: >-
+  Giugno e settembre per il mare, con prezzi più bassi che a luglio-agosto. Agosto, soprattutto
+  intorno a Ferragosto (15 agosto), è affollatissimo. Per le escursioni in montagna maggio-ottobre,
+  mentre d'inverno Campo Imperatore e Roccaraso diventano piste da sci.
+tips:
+  - "Per pranzare su un trabocco prenota qualche giorno prima: il menu fisso di pesce costa circa €50-70 a persona."
+  - "Per le montagne noleggia un'auto per un giorno: gli autobus sono rari, soprattutto la domenica."
+faq:
+  - q: "Come si va a Roma da Pescara?"
+    a: "In pullman, circa 2,5 ore e circa €10-20 a tratta, dal terminal accanto a Pescara Centrale o dall'aeroporto. Il treno è più lento, circa 3,5-4 ore."
+  - q: "Si può visitare l'Abruzzo senza auto?"
+    a: "In parte: la Costa dei Trabocchi, Chieti e Sulmona si raggiungono facilmente in treno o in autobus. Per le montagne serve un'auto a noleggio."
+  - q: "Quanti soldi servono al giorno a Pescara?"
+    a: "Esclusi volo e alloggio, €40-60 al giorno, di più se mangi su un trabocco o prendi l'ombrellone in spiaggia."

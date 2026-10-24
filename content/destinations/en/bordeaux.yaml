@@ -1,0 +1,74 @@
+city: Bordeaux
+slug: bordeaux
+tagline: Wine, canelés and the Water Mirror
+intro: >-
+  Bordeaux is the world capital of wine, with façades of golden stone along the Garonne river. Its
+  centre, the «Port of the Moon», has been on the UNESCO list since 2007 and most of it is
+  pedestrianised. Two or three days are enough for the city, and one more day for the vineyards or
+  the ocean.
+sights:
+  - name: Place de la Bourse and the Miroir d'eau
+    text: The 18th-century square on the river, with the classical palaces of the Stock Exchange. Opposite it is the Miroir d'eau (Water Mirror), the largest reflecting pool in the world, where the façades are reflected in a thin layer of water and every now and then a mist rises. It is free; from about November to March it is usually switched off.
+  - name: La Cité du Vin
+    text: The wine museum, in a curved, gold-coloured building in the Bacalan quarter. The ticket, about €22-25, includes a glass of wine on the 8th-floor terrace, with a view over the city. Tram B stops right outside.
+  - name: Cathédrale Saint-André
+    text: The Gothic cathedral where Eleanor of Aquitaine married the King of France in 1137. Entry is free. The separate bell tower, the Tour Pey-Berland, has about 230 steps, with a ticket of about €7-8.
+  - name: Rue Sainte-Catherine
+    text: One of the longest pedestrian shopping streets in Europe, about 1.2 km from Place de la Comédie and the Grand Théâtre to Place de la Victoire.
+  - name: Chartrons
+    text: The old quarter of the wine merchants, with warehouses on the river, antique shops and wine bars. On Sunday morning there is a market on the riverside.
+airports:
+  BOD: >-
+    Bordeaux-Mérignac airport is about 12 km west of the city. The cheapest option is tram line A,
+    which has reached the airport since 2023: with a regular ticket (about €2) you get to the centre
+    in about 40 minutes. The 30'Direct bus takes you to Gare Saint-Jean station in about 30 minutes,
+    for about €8-9. A taxi costs about €40-60.
+budget: >-
+  A coffee costs about €2-2.50, a canelé €1.50-3, a glass of wine €5-8, a dish of the day €13-18, a
+  tram ticket about €2. A hostel bed costs from about €30-45, a double room in a simple hotel from
+  about €80-120 a night.
+when: >-
+  May to June and September to October have the best weather; in September and October the grapes
+  are harvested. July and August are hot, good for the Atlantic beaches. Winter is mild, but rainy.
+tips:
+  - "From the centre, check that tram A shows the destination «Aéroport»: the others go elsewhere."
+  - "Wine châteaux mostly take visitors by appointment: book online a few days ahead."
+  - "On Sundays many shops are closed, while the Marché des Capucins is closed on Mondays."
+itinerary:
+  - "Place de la Bourse and the Miroir d'eau in the morning, then the lanes of Saint-Pierre and the Grosse Cloche. In the afternoon, Saint-André cathedral and the Tour Pey-Berland, and in the evening Rue Sainte-Catherine to the Grand Théâtre."
+  - "The Marché des Capucins in the morning, with oysters and white wine. In the afternoon, tram B to La Cité du Vin, and in the evening dinner in Chartrons."
+  - "A day out of the city: Saint-Émilion by train, or Arcachon and the Dune du Pilat. Otherwise, a tour of the Médoc châteaux."
+areas:
+  - name: Saint-Pierre and Quinconces
+    text: The historic centre, with everything within walking distance. The highest prices.
+  - name: Chartrons
+    text: A quiet neighbourhood on the river, with wine bars and tram B to the centre.
+  - name: Saint-Michel
+    text: A multicultural neighbourhood with cheap restaurants, about 15 minutes' walk from the centre.
+  - name: Gare Saint-Jean
+    text: "The most practical area for the 30'Direct and the trains. Cheaper hotels, but the streets around it are not pleasant at night."
+food:
+  - name: Canelés
+    text: Small rum and vanilla cakes with a caramelised crust and a soft inside, about €1.50-3 each. Baillardran and La Toque Cuivrée are the best-known addresses.
+  - name: Bordeaux wine
+    text: Red wine from merlot and cabernet sauvignon grapes. At the Bar à Vin of the Maison du Vin, near the Grand Théâtre, you can taste good wines for about €4-8 a glass.
+  - name: Entrecôte à la bordelaise
+    text: Grilled steak with a red wine and shallot sauce, served with chips.
+  - name: Arcachon oysters
+    text: Eaten fresh with lemon and white wine, especially at the Marché des Capucins. A dozen costs about €12-18.
+transport: >-
+  The centre is easy to walk. The TBM network has 4 tram lines, buses and the BatCub boats on the
+  river, all with the same tickets; there is no metro. A single ticket costs about €2 and is valid
+  for 1 hour with transfers; a day ticket about €5-6.
+daytrips:
+  - name: Saint-Émilion
+    text: A medieval village among the vineyards, on the UNESCO list, with a church carved into the rock. The train from Saint-Jean takes about 35-40 minutes, but it runs rarely and the station is about 2 km from the village.
+  - name: Arcachon and the Dune du Pilat
+    text: A seaside town on a bay full of oysters, about 50 minutes by train (about €11-12). From the station a bus takes you in about 30-40 minutes to the Dune du Pilat, the tallest dune in Europe, about 100 metres high.
+  - name: The Médoc châteaux
+    text: The château route north of the city, with names such as Margaux and Pauillac. Visits with a tasting cost about €20-40; without a car, the easiest way is a minibus tour, about €80-120 per person.
+faq:
+  - q: "Tram or 30'Direct from the airport?"
+    a: "Tram A is much cheaper, about €2, but takes about 40 minutes. The 30'Direct reaches Saint-Jean station in about 30 minutes for about €8-9. For 3-4 people with suitcases, a taxi is reasonable."
+  - q: "How much money do you need per day in Bordeaux?"
+    a: "Excluding the flight and accommodation, allow €50-80 a day. You save with the dish of the day at lunch and a picnic by the river."

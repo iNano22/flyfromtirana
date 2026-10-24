@@ -1,0 +1,83 @@
+city: Pescara
+slug: pescara
+tagline: Plazhi, arrosticini dhe trabokët e Abruzzo-s
+intro: >-
+  Pescara është qyteti më i madh i Abruzzo-s, një qytet modern buzë Adriatikut me plazh të gjatë
+  rëre dhe shtëpinë ku lindi poeti Gabriele D'Annunzio. Vlera e tij e vërtetë është rajoni
+  përreth: bregu i trabokëve, qytezat mbi kodra dhe malet e Gran Sasso-s dhe Majella-s. Tri-katër
+  ditë mjaftojnë për qytetin, detin dhe një-dy udhëtime ditore.
+sights:
+  - name: Lungomare dhe plazhet
+    text: Rreth 16 km rërë e imët dhe det i cekët, të ndara kryesisht në plazhe private me numra (stabilimenti), me disa pjesë falas. Në Lungomare Matteotti ndodhet skulptura-shatërvan La Nave di Cascella.
+  - name: Ponte del Mare
+    text: Ura e bardhë për këmbësorë dhe biçikleta mbi grykën e lumit Pescara, e hapur në vitin 2009. Lidh dy anët e bregdetit dhe është vendi më i mirë për perëndimin e diellit.
+  - name: Pescara Vecchia
+    text: Lagjja e vjetër në jug të lumit, rreth Corso Manthonè. Në mbrëmje mbushet me lokale dhe të rinj.
+  - name: Casa natale di Gabriele D'Annunzio
+    text: Shtëpia në Corso Manthonè ku lindi D'Annunzio në vitin 1863, sot muze me mobiljet e familjes dhe kujtime të poetit. Bileta kushton rreth €5.
+  - name: Museo delle Genti d'Abruzzo
+    text: Muzeu i jetës tradicionale në Abruzzo, me vegla, kostume dhe zanate, në ish-burgun e Bourbonëve në Pescara Vecchia.
+  - name: Costa dei Trabocchi
+    text: Bregu shkëmbor në jug të Ortona-s, me trabokët, platformat prej druri të peshkatarëve me rrjeta të mëdha mbi det. Disa sot janë restorante peshku.
+itinerary:
+  - "Corso Umberto I nga stacioni deri në Piazza Salotto, pastaj Lungomare Matteotti dhe La Nave di Cascella. Pasdite plazh, në perëndim Ponte del Mare dhe darkë me arrosticini."
+  - "Pescara Vecchia në mëngjes: shtëpia e D'Annunzio-s dhe Museo delle Genti d'Abruzzo. Pasdite Pineta Dannunziana dhe plazhet e jugut, në mbrëmje aperitiv në Corso Manthonè."
+  - "Me tren në San Vito Chietino, me biçikletë me qira përgjatë Via Verde mes trabokëve dhe drekë peshku në një trabok (me rezervim)."
+  - "Chieti ose Sulmona me autobus dhe tren, ose me makinë me qira në Gran Sasso, deri në Campo Imperatore."
+areas:
+  - name: Centro
+    text: Mes stacionit Pescara Centrale dhe detit, rreth Corso Umberto I. Zona më praktike, pranë autobusit të aeroportit, trenave dhe autobusëve për Rome.
+  - name: Pescara Vecchia dhe Porta Nuova
+    text: Në jug të lumit, pranë jetës së natës dhe pishave të Pineta Dannunziana. Ka zhurmë në mbrëmjet e fundjavës.
+  - name: Lungomare Nord dhe Montesilvano
+    text: Hotele buzë detit në veri, shpesh më të lira, sidomos në Montesilvano, por më larg qendrës.
+food:
+  - name: Arrosticini
+    text: Hellet e vogla me mish dashi në skarë, simboli i Abruzzo-s. Porositen me dhjetëra, me bukë me vaj ulliri, rreth €1 copa.
+  - name: Spaghetti alla chitarra
+    text: Makarona katrore të prera me një vegël me tela si kitarë, zakonisht me salcë domateje me qofte të vogla.
+  - name: Pallotte cacio e ova
+    text: Qofte pa mish, prej djathi, veze dhe buke, të gatuara në salcë domateje.
+  - name: Brodetto di pesce
+    text: Supë e trashë me peshq të Adriatikut dhe domate, që hahet me bukë të thekur.
+  - name: Parrozzo
+    text: Ëmbëlsira e Pescara-s me bajame, e veshur me çokollatë, e lavdëruar nga vetë D'Annunzio.
+airports:
+  PSR: >-
+    Aeroporti i Abruzzo-s është vetëm rreth 4 km nga qendra. Autobusi TUA 38 të çon te stacioni
+    Pescara Centrale dhe në qendër për rreth 15-20 minuta; bileta kushton rreth €1.50, më shumë
+    nëse e blen te shoferi. Taksia deri në qendër kushton rreth €15-20. Disa autobusë për në Rome
+    ndalojnë edhe te aeroporti.
+transport: >-
+  Qendra dhe bregdeti përshkohen lehtë në këmbë ose me biçikletë, sepse qyteti është i sheshtë.
+  Autobusët e TUA mbulojnë qytetin dhe Chieti-n; biletën blije në duhanshitore (tabacchi) ose me
+  aplikacion. Nga Pescara Centrale trenat shkojnë përgjatë bregut drejt Ortona-s dhe Vasto-s dhe
+  në brendësi drejt Sulmona-s.
+daytrips:
+  - name: Costa dei Trabocchi
+    text: Trabokët dhe plazhet me guralecë mes Ortona-s dhe Vasto-s, me Via Verde, rrugën e biçikletave rreth 40 km mbi hekurudhën e vjetër. San Vito Chietino është rreth 30 minuta me tren.
+  - name: Chieti
+    text: Qyteti mbi kodër me pamje nga Majella dhe deti, me muzeun arkeologjik të Luftëtarit të Capestrano-s. Rreth 40 minuta me autobusin TUA.
+  - name: Sulmona
+    text: Qyteti i poetit romak Ovidi, i njohur për konfetet me bajame, rreth 1 orë me tren rajonal (rreth €6).
+  - name: Gran Sasso dhe Majella
+    text: Malet më të larta të Apenineve, me rrafshnaltën Campo Imperatore dhe fshatra prej guri si Santo Stefano di Sessanio. Rreth 1.5 orë me makinë.
+  - name: Rome
+    text: Rreth 2.5 orë me autobus deri në Roma Tiburtina (rreth €10-20 në një drejtim). Ditë e gjatë, por e mundshme.
+budget: >-
+  Një espresso kushton rreth €1.20, një pica €7-10, një duzinë arrosticini rreth €12 dhe bileta e
+  autobusit të qytetit rreth €1.50.
+when: >-
+  Qershori dhe shtatori për detin, me çmime më të ulëta se në korrik-gusht. Gushti, sidomos rreth
+  Ferragosto (15 gusht), është i mbushur plot. Për ecje në male maji-tetori, ndërsa në dimër
+  Campo Imperatore dhe Roccaraso bëhen pista skish.
+tips:
+  - "Për drekë në një trabok rezervo disa ditë përpara: menyja fikse e peshkut kushton rreth €50-70 për person."
+  - "Për malet merr makinë me qira për një ditë: autobusët janë të rrallë, sidomos të dielave."
+faq:
+  - q: "Si shkohet në Rome nga Pescara?"
+    a: "Me autobus, rreth 2.5 orë dhe rreth €10-20 në një drejtim, nga terminali pranë Pescara Centrale ose nga aeroporti. Treni është më i ngadaltë, rreth 3.5-4 orë."
+  - q: "A mund ta shoh Abruzzo-n pa makinë?"
+    a: "Pjesërisht: Costa dei Trabocchi, Chieti dhe Sulmona arrihen lehtë me tren ose autobus. Për malet duhet makinë me qira."
+  - q: "Sa para duhen në ditë në Pescara?"
+    a: "Pa fluturimin dhe fjetjen, €40-60 në ditë, më shumë nëse ha në një trabok ose merr çadër në plazh."

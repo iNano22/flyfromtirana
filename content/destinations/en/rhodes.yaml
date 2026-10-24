@@ -1,0 +1,78 @@
+city: Rhodes
+slug: rhodes
+tagline: The city of the knights, Lindos and the beaches of the Dodecanese
+intro: >-
+  Rhodes is the largest island of the Dodecanese, close to the Turkish coast. Rhodes Town has one of
+  the best-preserved medieval centres in Europe, built by the Knights of St John, who ruled the
+  island from 1309 to 1522. Around it are the beaches of the east coast, Lindos with its acropolis
+  above the sea and small islands you reach by boat. Three days are enough for the town and the
+  main excursions.
+sights:
+  - name: Medieval Old Town
+    text: Inside the walls, about 4 km long, people still live among cobbled lanes, Ottoman mosques and squares with tavernas. It has been on the UNESCO list since 1988. The walk along the moat of the walls is free.
+  - name: Palace of the Grand Master
+    text: The knights' castle at the top of the Old Town. It was destroyed by an explosion in 1856 and the Italians rebuilt it in the 1930s, with Roman mosaics from the island of Kos. Tickets about €12 in summer.
+  - name: Street of the Knights
+    text: The cobbled street (Ippoton) that climbs to the palace, lined with the buildings where the knights lived according to the country they came from, such as France and Spain. Free; most beautiful early in the morning.
+  - name: Archaeological Museum
+    text: In the medieval Hospital of the Knights, at the end of the Street of the Knights, with ancient statues and mosaics. Tickets about €10.
+  - name: Mandraki harbour
+    text: Two deer statues on columns mark the spot where, according to legend, the Colossus of Rhodes stood, one of the seven wonders of the ancient world. On the mole are three windmills, and next to the harbour the Nea Agora market with cafés and gyros.
+  - name: Lindos and its acropolis
+    text: A village of white houses below a rock, about 50 km south of the town. At the top are the temple of Athena Lindia and the knights' walls, with a view over St Paul's Bay. Tickets about €20 in summer; the climb takes about 15-20 minutes, so go early.
+itinerary:
+  - "The Street of the Knights and the Palace of the Grand Master as soon as it opens, then the Archaeological Museum. In the afternoon the lanes around Sokratous Street and the moat of the walls, and in the evening a walk around Mandraki."
+  - "Lindos by KTEL bus early in the morning: the acropolis before the heat, then a swim in St Paul's Bay. With a car, stop at Anthony Quinn Bay on the way back."
+  - "The boat to Symi from Mandraki, or by car the Valley of the Butterflies and the ruins of Kamiros. Watch the sunset from Monte Smith hill, with the temple of Apollo."
+areas:
+  - name: Old Town
+    text: Guesthouses and small hotels in medieval buildings. Wheeled suitcases suffer on the cobbles.
+  - name: New Town and Elli beach
+    text: Near Mandraki and the bus stations, with cheaper hotels and the town beach. The most practical choice without a car.
+  - name: Faliraki
+    text: A resort with a long beach and nightlife, about 15 km south, with frequent buses to the town.
+food:
+  - name: Pitaroudia
+    text: Fried fritters of chickpeas or of tomato and onion, a typical meze of the island.
+  - name: Symi shrimp
+    text: Small red shrimp that are fried and eaten shell and all.
+  - name: Melekouni
+    text: A sesame and honey sweet that was once served at weddings.
+  - name: Souma
+    text: A local raki made from grape pomace, drunk after dinner.
+airports:
+  RHO: >-
+    Diagoras Airport is about 15 km southwest of the town. KTEL buses stop in front of the terminal
+    and take you to near Nea Agora in about 30 minutes, for about €2.50-3 (you buy the ticket from
+    the driver). A taxi costs about €30-35 and takes about 20 minutes. The car rental desks are in
+    the arrivals hall.
+transport: >-
+  The Old Town and the centre are easy to walk. KTEL buses leave from near Nea Agora, for the east
+  coast (Faliraki, Lindos) and for the west coast (the airport, Kamiros), with tickets for about
+  €2.50-6. For the Valley of the Butterflies and the southern beaches a rental car is more practical:
+  about €30-50 a day in summer.
+daytrips:
+  - name: Lindos
+    text: About 1-1.5 hours by KTEL bus (about €6). After the acropolis, swim in St Paul's Bay.
+  - name: Symi
+    text: The island with Gialos harbour and its colourful neoclassical houses. Excursion boats from Mandraki take about 1.5-2 hours and often stop at the monastery of Panormitis; the return trip costs about €30-40. Fast ferries take about 1 hour.
+  - name: Valley of the Butterflies
+    text: A shady valley with wooden bridges and a stream (Petaloudes), about 25 km from the town. In June-August it fills with thousands of moths; don't make noise. Entry about €5.
+  - name: Anthony Quinn Bay
+    text: "A small bay with emerald water, about 15 km south, near Faliraki, named after the actor who filmed «The Guns of Navarone» on Rhodes in 1961. It fills up fast: go before 10:00 and bring a snorkelling mask."
+budget: >-
+  A gyros in pita costs about €4-5, a freddo coffee about €3-4, a dinner in a taverna about €15-25
+  per person. A simple double room costs about €50-70 a night out of season and €90-140 in July and
+  August.
+when: >-
+  Direct flights from Tirana are usually seasonal, in summer; in the other months you have to change
+  planes, often in Athens. May to June and September to October have a warm sea and fewer tourists.
+  In July and August temperatures go above 30°C. From November to March many resort hotels close.
+tips:
+  - "The east coast (Faliraki, Lindos) has a calmer sea, while the west coast is often windy with waves."
+  - "A rental car usually needs a credit card for the deposit. Ask beforehand whether an Albanian driving licence is accepted."
+faq:
+  - q: "Do you need a rental car on Rhodes?"
+    a: "For the town, Lindos and Faliraki, no, the KTEL buses are enough. For the Valley of the Butterflies, Kamiros and the southern beaches, a car for one day saves you a lot of time."
+  - q: "How much money do you need per day on Rhodes?"
+    a: "Excluding the flight and accommodation, allow about €45-70 a day. The entry tickets and the boat to Symi cost the most."

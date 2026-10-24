@@ -1,0 +1,104 @@
+city: Vilnius
+slug: vilnius
+tagline: Kisha barok, Porta e Agimit dhe republika e artistëve në Užupis
+intro: >-
+  Vilnius është kryeqyteti i Lituanisë, i përmendur për herë të parë në vitin 1323. Qyteti i
+  vjetër, plot kisha barok dhe oborre të fshehura, është ndër më të mëdhenjtë në Evropën Lindore
+  dhe në listën e UNESCO-s. Dy-tri ditë mjaftojnë për qytetin, plus një ditë për kështjellën e
+  Trakai. Lituania është në eurozonë dhe në Shengen.
+sights:
+  - name: Qyteti i Vjetër (Senamiestis)
+    text: >-
+      Rrugica me kalldrëm, oborre dhe dhjetëra kisha, nga rruga Pilies deri te Bashkia. Mos e humb
+      Kishën e Shën Anës, gotike me tulla të kuqe. Përshkohet në këmbë për gjysmë dite.
+  - name: Porta e Agimit (Aušros Vartai)
+    text: >-
+      E vetmja portë e mureve të qytetit që ka mbijetuar. Sipër saj është një kapelë me ikonën e
+      Shën Mërisë, që tërheq pelegrinë nga gjithë rajoni. Hyrja është falas.
+  - name: Kulla e Gediminasit
+    text: >-
+      Kulla me tulla e kështjellës së sipërme, mbi kodrën pas katedrales, simboli i qytetit.
+      Ngjitja në këmbë bën rreth 10 minuta, ose merr funikularin. Nga lart ke pamjen më të mirë mbi
+      çatitë, sidomos në perëndim të diellit (bileta rreth €8).
+  - name: Užupis
+    text: >-
+      Lagjja e artistëve përtej lumit Vilnia, që më 1 prill 1997 u shpall «republikë» me
+      kushtetutën e vet, të shkruar në pllaka në dhjetëra gjuhë në rrugën Paupio. Ka murale,
+      galeri dhe statujën e Engjëllit në shesh.
+  - name: Katedralja e Vilniusit
+    text: >-
+      Katedralja me fasadë neoklasike dhe kambanore më vete, në sheshin kryesor. Në shesh kërko
+      pllakën «Stebuklas» (mrekulli), ku mbaroi zinxhiri njerëzor i vitit 1989 nga Tallinn deri në
+      Vilnius. Pas saj është Pallati i Dukëve të Mëdhenj, sot muze.
+  - name: Muzeu i Pushtimeve dhe Luftës për Liri
+    text: >-
+      Në ndërtesën e ish-KGB-së, me qelitë e burgut në bodrum. Tregon pushtimin sovjetik dhe
+      dëbimet në Siberi. Llogarit 1-2 orë.
+itinerary:
+  - "Porta e Agimit, Bashkia, rruga Pilies, Kisha e Shën Anës dhe Katedralja. Në mbrëmje ngjitje te Kulla e Gediminasit për perëndimin e diellit."
+  - "Užupis në mëngjes, pastaj Kodra e Tri Kryqeve për pamjen. Pasdite Muzeu i Pushtimeve, në mbrëmje darkë me cepelinai në qytetin e vjetër."
+  - "Me tren ose autobus në Trakai për kështjellën në liqen dhe kibinai për drekë. Në mbrëmje një shëtitje buzë lumit Neris."
+areas:
+  - name: Senamiestis (Qyteti i Vjetër)
+    text: Gjithçka në këmbë dhe atmosfera më e bukur, por me çmimet më të larta dhe zhurmë natën.
+  - name: Užupis
+    text: Lagje e qetë dhe artistike, 5 minuta në këmbë nga qyteti i vjetër, me apartamente me qira.
+  - name: Pranë stacionit të trenit
+    text: >-
+      Rreth 10 minuta në këmbë nga Porta e Agimit: praktike për trenin e aeroportit dhe udhëtimet
+      ditore, me hotele më të lira.
+food:
+  - name: Cepelinai
+    text: >-
+      Pjata kombëtare: petulla të mëdha patateje të mbushura me mish, me salcë kosi dhe pancetë të
+      skuqur. Janë të rënda: dy copë mjaftojnë për drekë.
+  - name: Šaltibarščiai
+    text: >-
+      Supë e ftohtë rozë me panxhar, kefir, kastravec dhe kopër, me patate të ziera të nxehta
+      anash. Pjata e verës.
+  - name: Kibinai
+    text: >-
+      Byrekë të vegjël të mbushur me mish qengji ose perime, tradita e karaimëve të Trakai. Më të
+      mirët janë pikërisht atje.
+  - name: Kepta duona
+    text: Shirita buke thekre të skuqura me hudhër, meze klasike me birrë.
+airports:
+  VNO: >-
+    Aeroporti i Vilniusit është rreth 6 km në jug të qendrës. Treni të çon në stacionin qendror të
+    trenit për rreth 8 minuta, me biletë rreth €1, por nuk niset shpesh: shiko orarin. Autobusët
+    1, 2 dhe 3G nisen para terminalit: 1 shkon te stacioni i trenit, 2 dhe 3G kalojnë nga qendra,
+    për rreth 15-25 minuta. Taksia ose Bolt bëjnë rreth 10-15 minuta dhe kushtojnë rreth €8-12.
+transport: >-
+  Qyteti i vjetër dhe Užupis përshkohen në këmbë; për pjesën tjetër ka autobusë dhe trolejbusë.
+  Bileta 30-minutëshe kushton rreth €1 dhe ajo 24-orëshe rreth €5, nga aplikacioni i transportit
+  ose kioskat; biletën e kalon te lexuesi sapo hip. Bolt është i lirë.
+daytrips:
+  - name: Kështjella e Trakai
+    text: >-
+      Kështjellë gotike me tulla të kuqe mbi një ishull në liqenin Galvė, rreth 30 km në perëndim.
+      Treni ose autobusi bëjnë rreth 30-40 minuta dhe kushtojnë rreth €2-3; bileta e muzeut rreth
+      €12.
+  - name: Kaunas
+    text: >-
+      Qyteti i dytë i Lituanisë, rreth 1 orë me tren, me biletë rreth €6-8. Ka qytet të vjetër,
+      kështjellë dhe ndërtesa moderniste të viteve 1920-1930, kur ishte kryeqytet.
+  - name: Kodra e Kryqeve
+    text: >-
+      Një kodër me më shumë se 100 mijë kryqe, rreth 12 km nga Šiauliai. Deri në Šiauliai janë
+      rreth 2-3 orë me tren ose autobus, pastaj autobus lokal ose taksi: është ditë e gjatë, ndaj
+      shumë njerëz zgjedhin një tur.
+budget: >-
+  Vilnius është ndër kryeqytetet më të lira në Bashkimin Evropian. Një kafe kushton rreth €2.5-3.5,
+  një birrë rreth €4-6, një drekë me cepelinai rreth €7-10 dhe një darkë rreth €15-25.
+when: >-
+  Maji-shtatori ka motin më të mirë, me rreth 20-25°C në verë dhe ditë të gjata. Më 24 qershor
+  është Joninės, festa e mesit të verës. Dimri është i ftohtë, shpesh nën zero, por dhjetori ka
+  pemën e Krishtlindjeve në sheshin e Katedrales.
+tips:
+  - "Kishat janë zakonisht falas: ia vlen edhe Kisha e Shën Pjetrit dhe Palit në Antakalnis, me rreth 2 mijë figura stuko."
+  - "Në fillim të marsit bëhet panairi Kaziukas, me zeje dhe ushqime në rrugët e qendrës."
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Treni bën rreth 8 minuta deri në stacionin qendror dhe kushton rreth €1, por niset rrallë. Autobusët 2 dhe 3G shkojnë në qendër për rreth 15-25 minuta; me Bolt ose taksi llogarit rreth €8-12."
+  - q: "Sa para duhen në ditë në Vilnius?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë për ushqim, transport dhe një muze. Vilnius është më i lirë se Riga dhe Tallinn."

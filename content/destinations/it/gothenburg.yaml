@@ -1,0 +1,108 @@
+city: Gothenburg
+name: Göteborg
+slug: gothenburg
+tagline: Canali, Haga e isole senza auto
+intro: >-
+  Göteborg è la seconda città della Svezia e il suo porto più grande, sulla costa occidentale. Fu
+  fondata nel 1621, con canali scavati da ingegneri olandesi. È più tranquilla e un po' meno cara
+  di Stoccolma: un centro che si gira a piedi, tram ovunque, frutti di mare e un arcipelago che si
+  raggiunge con il biglietto del tram. Tre giorni bastano, con un giorno in più per la costa del
+  Bohuslän.
+sights:
+  - name: Haga
+    text: >-
+      Il quartiere più antico fuori dal canale, con case di legno e di pietra del 1800 e la via
+      pedonale Haga Nygata, piena di caffè. Una lunga scalinata porta a Skansen Kronan, la torre
+      fortificata con vista sulla città.
+  - name: Liseberg
+    text: >-
+      Il più grande parco divertimenti della Scandinavia, aperto nel 1923. L'ingresso costa circa
+      150-200 SEK (circa €14-18), con le attrazioni illimitate circa 500-600 SEK (circa €45-55), a
+      seconda del giorno. Apre d'estate, per Halloween e per il mercatino di Natale.
+  - name: I canali e i battelli Paddan
+    text: >-
+      I battelli piatti Paddan partono da Kungsportsplatsen e in circa 50 minuti percorrono i canali,
+      sotto ponti così bassi che bisogna abbassare la testa, fino al porto. Il biglietto costa circa
+      200-250 SEK (circa €18-23), da aprile a ottobre.
+  - name: Feskekôrka
+    text: >-
+      La "chiesa del pesce", il mercato coperto del pesce del 1874 a forma di chiesa gotica, con banchi
+      di pesce e gamberi. Di solito chiuso la domenica e il lunedì.
+  - name: Slottsskogen
+    text: >-
+      Il grande parco della città, con laghetti e uno zoo gratuito con foche, pinguini e alci. Ai suoi
+      margini, il Museo di Storia Naturale ha una balenottera azzurra imbalsamata.
+  - name: L'arcipelago
+    text: >-
+      Decine di isole rocciose a sud del porto, molte senza auto, a circa 1 ora dal centro con il tram
+      11 fino a Saltholmen e poi in traghetto, con lo stesso biglietto Västtrafik.
+itinerary:
+  - "Paddan lungo i canali da Kungsportsplatsen, poi pranzo alla Feskekôrka. Nel pomeriggio Haga Nygata con la girella gigante di Café Husaren e Skansen Kronan. La sera bar in Linnégatan."
+  - "Slottsskogen con gli animali e il Museo di Storia Naturale, poi l'Avenyn fino alla piazza Götaplatsen. La sera Liseberg, quando è aperto."
+  - "L'arcipelago meridionale: tram 11 fino a Saltholmen e traghetto per Brännö o Styrsö, con cena a Majorna. In alternativa, mezza giornata a Marstrand."
+areas:
+  - name: Inom Vallgraven
+    text: Il centro storico dentro il canale, vicino alla stazione centrale e all'autobus dell'aeroporto, ma con i prezzi più alti.
+  - name: Lorensberg e Avenyn
+    text: Intorno al viale principale, Kungsportsavenyn, con ristoranti e bar, a piedi da Liseberg.
+  - name: Haga e Linné
+    text: "Caffè e bar in Linnégatan, vicino a Slottsskogen: la zona più piacevole dove dormire."
+  - name: Majorna
+    text: Il quartiere bohémien a ovest, con negozi dell'usato e prezzi più bassi, ben collegato dal tram.
+food:
+  - name: Frutti di mare
+    text: >-
+      La costa occidentale è famosa per i gamberi e le cozze. Il classico è il räksmörgås, un panino
+      aperto con i gamberi, circa 150-200 SEK (circa €14-18).
+  - name: Fika
+    text: La pausa caffè svedese con un kanelbulle, la girella alla cannella, circa 60-80 SEK (circa €6-7) in tutto.
+  - name: Hagabullen
+    text: >-
+      La girella alla cannella gigante di Café Husaren in Haga Nygata, grande come un piatto. Una basta
+      per due persone e costa circa 60-80 SEK.
+  - name: Dagens lunch
+    text: >-
+      Il pranzo del giorno nei giorni feriali, circa 11:00-14:00: un piatto caldo, insalata, pane e
+      caffè per circa 125-150 SEK (circa €11-14).
+airports:
+  GOT: >-
+    Landvetter è a circa 25 km a est della città e non ha il treno. Gli autobus Flygbussarna partono
+    ogni 15-20 minuti e arrivano a Nils Ericson Terminalen, accanto alla stazione centrale, in circa
+    30 minuti; il biglietto costa circa 120-140 SEK (circa €11-13), meno nell'app. Il taxi ha una
+    tariffa fissa di circa 500-650 SEK (circa €45-60).
+transport: >-
+  Tram, autobus e traghetti funzionano con i biglietti Västtrafik, che si comprano nell'app o alle
+  macchinette delle fermate, non in contanti. Il biglietto singolo costa circa 35-40 SEK (circa
+  €3-4) e vale 90 minuti, quello da 24 ore circa 120-140 SEK (circa €11-13). Entrambi valgono anche
+  sui traghetti dell'arcipelago meridionale.
+daytrips:
+  - name: L'arcipelago meridionale
+    text: >-
+      Da Saltholmen i traghetti vanno a Brännö in circa 20 minuti, a Styrsö in circa 30 e a Vrångö in
+      circa 50. Fuori stagione molti caffè sono chiusi.
+  - name: Marstrand
+    text: >-
+      Un'isola senza auto con case di legno e la fortezza di Carlsten sulla roccia, a circa 1 ora di
+      autobus dal centro e poi pochi minuti di traghetto.
+  - name: La costa del Bohuslän
+    text: >-
+      Scogli di granito e villaggi di pescatori come Smögen e Fjällbacka, a circa 2 ore di auto verso
+      nord; in treno e autobus 2,5-3 ore, quindi conviene un'auto a noleggio.
+budget: >-
+  Un caffè costa circa 40 SEK (circa €3,5), una birra al bar 75-90 SEK (circa €7-8), il pranzo del
+  giorno 125-150 SEK (circa €11-14), una cena 200-300 SEK (circa €18-27). €1 vale circa 11 SEK.
+when: >-
+  Maggio-settembre, quando le giornate sono lunghe e le isole danno il meglio. Ad agosto si tengono
+  il festival Way Out West e il Kulturkalaset, il festival gratuito della città. Da metà novembre
+  Liseberg diventa un mercatino di Natale.
+tips:
+  - "Göteborg è tra le città più piovose della Svezia: porta una giacca impermeabile, anche d'estate."
+  - "La Svezia è quasi senza contanti: basta la carta bancaria, non serve cambiare in corone."
+  - "Controlla il calendario di Liseberg prima di andare: il parco non apre tutti i giorni."
+faq:
+  - q: "Come arrivo da Landvetter al centro?"
+    a: "Con Flygbussarna, circa 30 minuti e circa 120-140 SEK. Il taxi conviene solo in tre o quattro persone insieme."
+  - q: "Si può andare nell'arcipelago senza auto?"
+    a: "Sì. Il tram 11 porta a Saltholmen e i traghetti sono compresi nel biglietto Västtrafik."
+  - q: "Quanto si spende al giorno a Göteborg?"
+    a: "Volo e alloggio esclusi, €60-90 al giorno. I parchi, lo zoo gratuito e l'arcipelago con il biglietto del tram rendono la giornata più economica."

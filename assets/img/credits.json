@@ -1748,5 +1748,245 @@
   "source_url": "https://unsplash.com/photos/G58T5XKHO14",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/vno.webp",
+  "slot": "VNO",
+  "title": "Cathedral bell tower, Vilnius",
+  "creator": "@petrokas",
+  "creator_url": "https://unsplash.com/@petrokas",
+  "source_url": "https://unsplash.com/photos/uWNj2YgT_-A",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/got.webp",
+  "slot": "GOT",
+  "title": "Haga, Gothenburg",
+  "creator": "@hansott",
+  "creator_url": "https://unsplash.com/@hansott",
+  "source_url": "https://unsplash.com/photos/WvlWbMWvG6I",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bod.webp",
+  "slot": "BOD",
+  "title": "Place de la Bourse and the Water Mirror, Bordeaux",
+  "creator": "@cabaye",
+  "creator_url": "https://unsplash.com/@cabaye",
+  "source_url": "https://unsplash.com/photos/8kHizwvoFQw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/nte.webp",
+  "slot": "NTE",
+  "title": "The Great Elephant, Nantes",
+  "creator": "@jor9en",
+  "creator_url": "https://unsplash.com/@jor9en",
+  "source_url": "https://unsplash.com/photos/8jGtaL9Kc6U",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/lux.webp",
+  "slot": "LUX",
+  "title": "The Grund and Neumünster Abbey, Luxembourg",
+  "creator": "@apraslova",
+  "creator_url": "https://unsplash.com/@apraslova",
+  "source_url": "https://unsplash.com/photos/hPWejkWhh3I",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/rho.webp",
+  "slot": "RHO",
+  "title": "Old Town street, Rhodes",
+  "creator": "@bpj2608",
+  "creator_url": "https://unsplash.com/@bpj2608",
+  "source_url": "https://unsplash.com/photos/Ad-Zb6nS4j8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bjv.webp",
+  "slot": "BJV",
+  "title": "Bodrum bay",
+  "creator": "@encal22",
+  "creator_url": "https://unsplash.com/@encal22",
+  "source_url": "https://unsplash.com/photos/k0CcWEPvZxU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/esb.webp",
+  "slot": "ESB",
+  "title": "Atakule, Ankara",
+  "creator": "@bedirdemir",
+  "creator_url": "https://unsplash.com/@bedirdemir",
+  "source_url": "https://unsplash.com/photos/VcGfDZmqYRE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/dlm.webp",
+  "slot": "DLM",
+  "title": "Paragliders over Ölüdeniz, near Fethiye",
+  "creator": "@hilmicantaskiran",
+  "creator_url": "https://unsplash.com/@hilmicantaskiran",
+  "source_url": "https://unsplash.com/photos/TM8GtGd1ebM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/aho.webp",
+  "slot": "AHO",
+  "title": "Old town lane at dusk, Alghero",
+  "creator": "@alpancell",
+  "creator_url": "https://unsplash.com/@alpancell",
+  "source_url": "https://unsplash.com/photos/Pg2CqbfI2G8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/psr.webp",
+  "slot": "PSR",
+  "title": "City centre street, Pescara",
+  "creator": "@dsvi",
+  "creator_url": "https://unsplash.com/@dsvi",
+  "source_url": "https://unsplash.com/photos/3baRKkTOTfU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/aoi.webp",
+  "slot": "AOI",
+  "title": "Passetto war memorial, Ancona",
+  "creator": "@paolaeffe",
+  "creator_url": "https://unsplash.com/@paolaeffe",
+  "source_url": "https://unsplash.com/photos/TZvXz_HA80Q",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/vilnius.webp",
+  "slot": "guide-vilnius",
+  "title": "Vilnius old town from above",
+  "creator": "@julkarrr",
+  "creator_url": "https://unsplash.com/@julkarrr",
+  "source_url": "https://unsplash.com/photos/HdofToH0dQg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/gothenburg.webp",
+  "slot": "guide-gothenburg",
+  "title": "Gothenburg harbour at dusk",
+  "creator": "@juho_aleksi_luomala",
+  "creator_url": "https://unsplash.com/@juho_aleksi_luomala",
+  "source_url": "https://unsplash.com/photos/yd6R1Z3vk-s",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/bordeaux.webp",
+  "slot": "guide-bordeaux",
+  "title": "Place de la Bourse at night, Bordeaux",
+  "creator": "@workby",
+  "creator_url": "https://unsplash.com/@workby",
+  "source_url": "https://unsplash.com/photos/rIrpkuiNkms",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/nantes.webp",
+  "slot": "guide-nantes",
+  "title": "Nantes Cathedral",
+  "creator": "@stevenrsl",
+  "creator_url": "https://unsplash.com/@stevenrsl",
+  "source_url": "https://unsplash.com/photos/ucWNYM_h7FY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/luxembourg.webp",
+  "slot": "guide-luxembourg",
+  "title": "The Grund, Luxembourg",
+  "creator": "@hbsun2013",
+  "creator_url": "https://unsplash.com/@hbsun2013",
+  "source_url": "https://unsplash.com/photos/DxjdQNbk96c",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/rhodes.webp",
+  "slot": "guide-rhodes",
+  "title": "St Paul's Bay, Lindos, Rhodes",
+  "creator": "@antonio_m89",
+  "creator_url": "https://unsplash.com/@antonio_m89",
+  "source_url": "https://unsplash.com/photos/mAOTatwrE_o",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/bodrum.webp",
+  "slot": "guide-bodrum",
+  "title": "Bodrum Castle",
+  "creator": "@sparrow24",
+  "creator_url": "https://unsplash.com/@sparrow24",
+  "source_url": "https://unsplash.com/photos/qrfg1IEuFdg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/ankara.webp",
+  "slot": "guide-ankara",
+  "title": "Anıtkabir, Ankara",
+  "creator": "@yusuflens",
+  "creator_url": "https://unsplash.com/@yusuflens",
+  "source_url": "https://unsplash.com/photos/F-J4SsgwHio",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/dalaman.webp",
+  "slot": "guide-dalaman",
+  "title": "Ölüdeniz lagoon, near Fethiye",
+  "creator": "@mertkahveci",
+  "creator_url": "https://unsplash.com/@mertkahveci",
+  "source_url": "https://unsplash.com/photos/sKUxh4OVkcE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/alghero.webp",
+  "slot": "guide-alghero",
+  "title": "Alghero's old town on the sea",
+  "creator": "@monijka",
+  "creator_url": "https://unsplash.com/@monijka",
+  "source_url": "https://unsplash.com/photos/NNu2FjSFNPQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/pescara.webp",
+  "slot": "guide-pescara",
+  "title": "A trabocco on the Abruzzo coast",
+  "creator": "@klaus20",
+  "creator_url": "https://unsplash.com/@klaus20",
+  "source_url": "https://unsplash.com/photos/5H7AVBBy_Qc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/ancona.webp",
+  "slot": "guide-ancona",
+  "title": "The Conero coast near Ancona",
+  "creator": "@alessiop",
+  "creator_url": "https://unsplash.com/@alessiop",
+  "source_url": "https://unsplash.com/photos/CcxyQJmISeQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

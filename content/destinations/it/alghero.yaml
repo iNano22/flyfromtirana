@@ -1,0 +1,75 @@
+city: Alghero
+slug: alghero
+tagline: Bastioni catalani, grotte marine e spiagge limpide
+intro: >-
+  Alghero è la città più bella della costa nord-occidentale della Sardegna: un centro antico con mura
+  e bastioni sul mare, vicoli lastricati e tramonti su Capo Caccia. Dopo il 1354 fu ripopolata da
+  catalani, per questo la chiamano la «Barceloneta» della Sardegna e alcuni abitanti parlano ancora un
+  dialetto catalano. Tre o quattro giorni bastano, meglio con un'auto a noleggio per i giorni fuori
+  città.
+sights:
+  - name: La città vecchia e i bastioni
+    text: Il centro dentro le mura, con le torri di Porta Terra, Sulis e Maddalena. I Bastioni Cristoforo Colombo e Marco Polo sono il posto per la passeggiata serale sul mare.
+  - name: L'eredità catalana
+    text: I cartelli stradali sono in italiano e in catalano (Alghero è «L'Alguer»). La Cattedrale di Santa Maria, la chiesa di San Francesco e la cupola di maioliche colorate di San Michele mostrano il gotico catalano.
+  - name: Grotta di Nettuno
+    text: La grotta con stalattiti e un lago interno, sotto le scogliere di Capo Caccia. Si raggiunge in barca dal porto oppure a piedi dall'alto, lungo l'Escala del Cabirol con i suoi 654 gradini. Il biglietto costa circa €16-18.
+  - name: Capo Caccia
+    text: Il promontorio di scogliere a picco a circa 24 km a ovest della città, sopra la baia di Porto Conte. Il belvedere vicino al faro è ideale al tramonto.
+  - name: Le Bombarde e Lazzaretto
+    text: "Due piccole spiagge di sabbia bianca e acqua limpida, a circa 10 km a ovest, dopo Fertilia. In estate si riempiono presto: vai di mattina."
+airports:
+  AHO: >-
+    L'aeroporto di Alghero-Fertilia è a circa 10 km a nord della città. Gli autobus dell'ARST partono
+    davanti al terminal più o meno ogni ora, più spesso in estate, e arrivano in centro in circa 20-30
+    minuti; il biglietto costa circa €2. Ci sono anche autobus per Sassari (circa 30-40 minuti) e, con
+    Logudoro Tours, per altre città. Il taxi costa circa €25-30 e impiega circa 15 minuti. Nel
+    terminal ci sono molti banchi di autonoleggio.
+budget: >-
+  Un espresso al banco costa circa €1,20-1,50, una pizza €8-12 e una cena di pesce circa €30-40. In
+  estate una camera doppia in B&B costa da circa €80-130 a notte, meno a maggio o a ottobre. Un'auto a
+  noleggio costa da circa €30-50 al giorno in stagione.
+when: >-
+  I voli da Tirana sono stagionali, soprattutto in estate: controlla gli orari. Giugno e settembre
+  sono il periodo migliore, con il mare caldo e meno gente. Luglio e agosto sono caldi, affollati e
+  più cari. Fuori stagione molti locali chiudono e gli autobus per le spiagge si diradano.
+tips:
+  - "Le barche per la Grotta di Nettuno non partono con il mare mosso: in quel caso vai a Capo Caccia in autobus o in auto e scendi dalla scalinata."
+  - "In stagione La Pelosa richiede una prenotazione e un ticket d'ingresso di circa €3,50: prenota qualche giorno prima."
+itinerary:
+  - "La città vecchia: la Cattedrale di Santa Maria, San Francesco e San Michele. Nel pomeriggio la spiaggia di San Giovanni, la sera il tramonto sui Bastioni Marco Polo."
+  - "La Grotta di Nettuno in barca dal porto o in autobus fino a Capo Caccia. Al ritorno una sosta al Nuraghe di Palmavera e a Porto Conte."
+  - "Una giornata di mare a Le Bombarde o al Lazzaretto, poi un aperitivo a Fertilia."
+  - "In auto, Stintino e la spiaggia della Pelosa, oppure la strada costiera fino a Bosa."
+areas:
+  - name: Centro storico
+    text: "Dentro le mura: tutto a piedi, con B&B in case antiche, ma in estate i vicoli sono rumorosi fino a tardi."
+  - name: Lungomare e Lido
+    text: Lungo la costa a nord del centro, con hotel e appartamenti vicino alla spiaggia, a circa 10-15 minuti a piedi dalla città vecchia.
+  - name: Fertilia
+    text: Una borgata tranquilla vicino all'aeroporto e alle spiagge di Le Bombarde e Lazzaretto, adatta a chi ha l'auto.
+food:
+  - name: Aragosta alla catalana
+    text: Aragosta bollita, servita fredda con pomodoro, cipolla fresca, olio d'oliva e limone. Si paga a peso, quindi chiedi il prezzo prima di ordinare.
+  - name: Seadas
+    text: Il dolce tipico sardo, una sfoglia ripiena di pecorino, fritta e ricoperta di miele.
+  - name: I vini sardi
+    text: Il Vermentino bianco e il Cannonau rosso sono i vini più noti dell'isola. Vicino alla città si produce anche il Torbato, un bianco che si trova di rado altrove.
+transport: >-
+  La città vecchia e il lungomare si girano a piedi, e in bici si percorre la costa fino a Fertilia.
+  Gli autobus dell'ARST arrivano alle spiagge e a Capo Caccia, ma fanno poche corse al giorno. Per
+  Stintino, Bosa e Castelsardo l'auto a noleggio è la soluzione più semplice.
+daytrips:
+  - name: Stintino e La Pelosa
+    text: Una delle spiagge più belle d'Italia, con acqua bassa e turchese davanti alla Torre della Pelosa. Circa 1 ora in auto; in stagione l'accesso è a numero chiuso.
+  - name: Bosa
+    text: Una cittadina di case colorate sul fiume Temo, sotto il castello dei Malaspina. La strada costiera da Alghero, circa 1 ora in auto, è tra le più belle dell'isola.
+  - name: Nuraghe di Palmavera
+    text: Un complesso nuragico dell'età del bronzo, con una torre di pietra e circa 50 capanne, a circa 10 km a ovest, sulla strada per Capo Caccia. Biglietto circa €6.
+  - name: Castelsardo
+    text: Un borgo medievale su una rupe sul mare, con il castello dei Doria e i cesti intrecciati a mano. Circa 1 ora in auto.
+faq:
+  - q: "Mi serve un'auto a noleggio ad Alghero?"
+    a: "Per la città no: si gira a piedi e l'autobus ti porta dall'aeroporto. Per La Pelosa, Bosa e Castelsardo sì, perché gli autobus sono rari e spesso passano da Sassari."
+  - q: "Quanto si spende al giorno ad Alghero?"
+    a: "Volo e alloggio esclusi, €50-70 al giorno, di più con l'auto o con la barca per la Grotta di Nettuno. Una cena con l'aragosta può costare quanto l'intera giornata."

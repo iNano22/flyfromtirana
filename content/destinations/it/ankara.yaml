@@ -1,0 +1,99 @@
+city: Ankara
+slug: ankara
+tagline: Anıtkabir, il castello e i musei dell'Anatolia
+intro: >-
+  Ankara è la capitale della Turchia: una città grande e moderna nel cuore dell'Anatolia, più
+  tranquilla ed economica di Istanbul. Ha il mausoleo di Atatürk, uno dei migliori musei
+  archeologici al mondo e un vecchio castello su una collina. Due o tre giorni bastano per la città,
+  e con un giorno in più arrivi anche in Cappadocia.
+sights:
+  - name: Anıtkabir
+    text: >-
+      Il mausoleo di Atatürk, fondatore della Repubblica, su una collina con un grande parco.
+      L'ingresso è gratuito; all'interno c'è anche un museo sulla storia del XX secolo. Calcola circa
+      2 ore e guarda il cambio della guardia.
+  - name: Museo delle Civiltà Anatoliche
+    text: >-
+      In un bedesten ottomano sotto il castello, con reperti di Çatalhöyük, degli Ittiti, dei Frigi e
+      degli Urartei. L'ingresso costa circa €12-15.
+  - name: Castello di Ankara e Hamamönü
+    text: >-
+      Il castello bizantino sulla collina di Ulus, con alte mura, vecchie case all'interno e la vista
+      migliore sulla città, gratis. Poco più a sud, Hamamönü ha case ottomane restaurate con caffè,
+      piccoli negozi e tè nei cortili.
+  - name: Moschea Kocatepe
+    text: >-
+      La moschea più grande della città, con quattro minareti e cupole in stile ottomano classico,
+      completata nel 1987. È vicino a Kızılay e si visita gratis fuori dagli orari di preghiera.
+  - name: Atakule
+    text: >-
+      La torre alta 125 metri nel quartiere di Çankaya, con una terrazza panoramica e un ristorante in
+      cima. Salire costa pochi euro e vale la pena la sera, quando si accendono le luci della città.
+airports:
+  ESB: >-
+    L'aeroporto di Esenboğa è a circa 30 km a nord-est del centro. Gli autobus Belko Air partono
+    regolarmente, anche di notte, e ti portano a Kızılay e alla stazione degli autobus AŞTİ in circa
+    45-60 minuti, per circa €4-5. L'autobus 442 dell'EGO va a Kızılay e ad AŞTİ per circa €2-3 e si
+    paga con la Ankarakart. Un taxi per il centro costa circa €25-30.
+budget: >-
+  La lira turca (TRY) perde valore in fretta, quindi qui i prezzi sono in euro. Ankara è più
+  economica di Istanbul: un tè costa meno di €1, un simit circa €0,50, un pasto semplice (döner,
+  pide, köfte) circa €5-8, una cena al ristorante circa €15-25 e una corsa in metro circa €0,70.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore per camminare. L'estate è calda e secca,
+  spesso intorno ai 30°C, ma le notti sono fresche. L'inverno è freddo, spesso sotto 0°C e con la
+  neve, quindi porta vestiti caldi da novembre a marzo.
+tips:
+  - "Paga in lire e non in euro. Quando prelevi al bancomat, rifiuta la conversione proposta dallo sportello e scegli l'addebito in lire."
+  - "Ankara è il punto di partenza migliore per la Cappadocia: gli autobus da AŞTİ partono tutto il giorno, anche di notte."
+  - "Con il treno ad alta velocità YHT dalla stazione Ankara Gar arrivi a Konya in circa 2 ore e a Istanbul in circa 4-5 ore."
+itinerary:
+  - "Anıtkabir al mattino, poi Kızılay e la Moschea Kocatepe. Nel pomeriggio via Tunalı Hilmi con i suoi caffè, la sera Atakule per la vista sulla città."
+  - "Il Museo delle Civiltà Anatoliche al mattino, poi la salita al Castello di Ankara. Nel pomeriggio Hamamönü, la Moschea Hacı Bayram e il Tempio di Augusto a Ulus."
+  - "Una giornata fuori città: Beypazarı con le sue case ottomane, oppure Hattusa, la capitale degli Ittiti. In alternativa, il Lago Tuz sulla strada per la Cappadocia."
+areas:
+  - name: Kızılay
+    text: "Il centro della città e il nodo della metro: tutto vicino, con hotel per ogni tasca e l'autobus dell'aeroporto a due passi."
+  - name: Ulus
+    text: Vicino al castello, al museo e a Hamamönü, con gli hotel più economici, ma più rumorosa e con meno locali aperti la sera.
+  - name: Kavaklıdere e Tunalı Hilmi
+    text: Un quartiere tranquillo con ristoranti, caffè e hotel migliori, a sud di Kızılay.
+food:
+  - name: Ankara tava
+    text: Agnello cotto lentamente su riso o pastina (arpa şehriye), il piatto tradizionale della città.
+  - name: Döner all'Aspava
+    text: >-
+      I locali Aspava sono una tradizione di Ankara: ordini un döner o un dürüm e ti portano gratis
+      insalata, meze, zuppa e tè.
+  - name: Simit di Ankara
+    text: Un anello di pane al sesamo, più sottile e croccante che altrove, per la colazione con il tè.
+  - name: Beypazarı kurusu
+    text: Biscotti secchi di Beypazarı, venduti ovunque in città e un buon regalo da portare a casa.
+transport: >-
+  Ankara ha quattro linee di metro e la metropolitana leggera Ankaray, che si incontrano a Kızılay e
+  collegano il centro con Ulus, AŞTİ e gli altri quartieri. La metro e gli autobus dell'EGO si
+  pagano con la Ankarakart, una carta che si ricarica ai distributori delle stazioni. Una corsa costa
+  circa €0,70.
+daytrips:
+  - name: Cappadocia
+    text: >-
+      Colline con camini di roccia, chiese rupestri e mongolfiere all'alba, a circa 3-4 ore di autobus
+      fino a Göreme. Vale la pena dormirci almeno una notte; un volo in mongolfiera costa circa
+      €150-250.
+  - name: Beypazarı
+    text: >-
+      Una cittadina con case ottomane in legno e mercati di carote, marmellate e biscotti, a circa 1,5
+      ore di autobus da AŞTİ.
+  - name: Hattusa
+    text: >-
+      Le rovine della capitale degli Ittiti vicino a Boğazkale, con la Porta dei Leoni e il santuario
+      di Yazılıkaya, a circa 2,5-3 ore di auto. Più semplice con un'auto a noleggio o un'escursione.
+  - name: Lago Tuz
+    text: >-
+      Il grande lago salato, a circa 2 ore a sud, dove si cammina sul sale bianco. È più bello in
+      estate e una buona sosta sulla strada per la Cappadocia.
+faq:
+  - q: "Come si va da Ankara in Cappadocia?"
+    a: "Gli autobus da AŞTİ vanno a Göreme o a Nevşehir in circa 3-4 ore e costano circa €10-15. Ci sono anche escursioni di un giorno, ma la giornata diventa molto lunga."
+  - q: "Quanto si spende al giorno ad Ankara?"
+    a: "Volo e alloggio esclusi, €30-50 al giorno per cibo, trasporti e un ingresso al museo. Ankara è una delle città più economiche da visitare in Turchia."

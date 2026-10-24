@@ -1,0 +1,100 @@
+city: Bodrum
+slug: bodrum
+tagline: Kalaja e kalorësve, gjire blu dhe varka gulet
+intro: >-
+  Bodrum është qyteti më i njohur i Egjeut turk: shtëpi të bardha rreth dy gjireve, një kala
+  mesjetare në mes të portit dhe një gadishull plot plazhe. Tri-katër ditë mjaftojnë
+  për qytetin, një ditë me varkë dhe plazhet.
+sights:
+  - name: Kalaja e Bodrumit dhe Muzeu i Arkeologjisë Nënujore
+    text: >-
+      Kalaja e Shën Pjetrit u ngrit nga kalorësit e Rodosit në shekullin XV, me gurë të marrë nga
+      Mauzoleumi. Brenda është Muzeu i Arkeologjisë Nënujore, me anije të mbytura në Egje, si ajo e
+      Uluburunit, 3.300 vjet e vjetër. Hyrja kushton rreth €15-20; llogarit 2-3 orë.
+  - name: Mauzoleumi i Halikarnasit
+    text: >-
+      Varri i mbretit Mausolos, rreth vitit 350 p.e.s., ishte një nga shtatë mrekullitë e botës
+      antike. Sot kanë mbetur vetëm themelet, por një muze i vogël tregon si dukej. Hyrja kushton
+      rreth €5-10.
+  - name: Teatri antik
+    text: >-
+      Teatri i Halikarnasit, i shekullit IV p.e.s., është në kodrën mbi qytet. Nga shkallët e tij ke një nga
+      pamjet më të mira mbi kalanë dhe gjirin.
+  - name: Marina dhe shëtitorja
+    text: >-
+      Shëtitorja buzë detit lidh marinën e jahteve dhe varkave gulet me kalanë dhe rrugën Cumhuriyet,
+      plot dyqane, restorante dhe bare. Në mbrëmje është zemra e qytetit.
+  - name: Mullinjtë e erës
+    text: >-
+      Mullinj të vjetër prej guri në kreshtën mes Bodrumit dhe Gümbetit, me pamje mbi të dy gjiret
+      në perëndim të diellit. Nga qendra janë rreth 30 minuta në këmbë, me të përpjetë.
+  - name: Plazhet dhe gjiret
+    text: >-
+      Gümbet ka rërë dhe sporte ujore, Bitez ujë të cekët dhe Gümüşlük perëndimin më të bukur. Plazhet
+      publike janë falas, ndërsa klubet e plazhit marrin pagesë për shezlongun.
+airports:
+  BJV: >-
+    Aeroporti Milas-Bodrum është rreth 35 km nga qyteti. Autobusët Havaş dhe Muttaş nisen pas
+    mbërritjeve dhe të çojnë në stacionin e autobusëve (otogar) të Bodrumit për rreth 45-60 minuta,
+    me rreth €6-8; nga otogari dolmuşët shkojnë në gjithë gadishullin. Një taksi deri në qendër
+    kushton rreth €50-70. Shumë hotele ofrojnë transferim.
+budget: >-
+  Lira turke (TRY) humbet vlerë shpejt, ndaj çmimet këtu janë në euro. Bodrum është ndër vendet më
+  të shtrenjta të bregdetit turk: një çaj kushton rreth €1, një pide ose döner rreth €5-8, një
+  darkë me peshk rreth €30-50 dhe një shezlong në klub plazhi rreth €10-30.
+when: >-
+  Sezoni zgjat nga maji deri në tetor. Qershori dhe shtatori kanë det të ngrohtë, më pak njerëz dhe
+  çmime më të ulëta. Korriku dhe gushti janë shumë të nxehtë, shpesh mbi 35°C, dhe më të shtrenjtët.
+  Nga nëntori deri në prill shumë hotele dhe restorante mbyllen.
+tips:
+  - "Paguaj në lira dhe jo në euro: çmimet në euro janë zakonisht më të larta. Në bankomat refuzo konvertimin e bankomatit dhe zgjidh pagesën në lira."
+  - "Për varkën gulet krahaso disa ofrues në port një ditë përpara: çmimi zakonisht përfshin drekën, por jo pijet."
+itinerary:
+  - "Kalaja dhe Muzeu i Arkeologjisë Nënujore në mëngjes, pastaj Mauzoleumi. Pasdite plazh ose marina, perëndimi te mullinjtë e erës dhe darka në qytet."
+  - "Një ditë e plotë me varkë gulet nëpër gjire, me ndalesa për not. Në mbrëmje rruga Cumhuriyet dhe shëtitorja."
+  - "Me dolmuş në Gümüşlük: plazhi, rrënojat e Myndos-it dhe darkë me peshk në perëndim."
+  - "Një ditë në ishullin Kos me traget, ose një ekskursion i gjatë në Efes."
+areas:
+  - name: Bodrum qendër
+    text: Pranë kalasë, marinës dhe otogarit, me gjithçka në këmbë dhe dolmuş për kudo, por me zhurmë në verë.
+  - name: Gümbet
+    text: Rreth 3 km nga qendra, me plazh me rërë, bare dhe jetë nate. Hotelet janë ndër më të lirët, por jo për ata që kërkojnë qetësi.
+  - name: Bitez
+    text: Gji i qetë me ujë të cekët, ideal për familjet, rreth 15 minuta me dolmuş nga qendra.
+  - name: Yalıkavak
+    text: Në veri-perëndim të gadishullit, me marinë luksoze jahtesh dhe restorante të shtrenjta.
+  - name: Türkbükü
+    text: Bregu verior i elitës, me klube plazhi mbi skela druri dhe çmime ndër më të lartat në Turqi.
+food:
+  - name: Çökertme kebabı
+    text: Specialiteti i Bodrumit, mish viçi në copa të holla mbi patate të skuqura shkopinj, me kos dhe salcë domatesh.
+  - name: Peshk dhe meze
+    text: >-
+      Darka buzë detit nis me meze me barishte, ulliri dhe kos, pastaj peshku i ditës. Pyet për
+      çmimin për kilogram para se të porosisësh.
+  - name: Mandarina e Bodrumit
+    text: Mandarinat e ëmbla të gadishullit, si lëng i freskët, reçel ose akullore.
+  - name: Gözleme
+    text: Petë e hollë e mbushur me djathë ose spinaq, e pjekur në saç, një drekë e lirë.
+transport: >-
+  Qendra përshkohet në këmbë. Për plazhet dhe fshatrat e gadishullit merr dolmuşët (minibusë) nga
+  otogari: në verë nisen çdo 10-20 minuta drejt Gümbetit dhe Bitez-it dhe kushtojnë rreth €1-2 për
+  udhëtim. Për shumë gjire në pak ditë, një makinë me qira kushton rreth €30-50 në ditë në verë.
+daytrips:
+  - name: Kos
+    text: >-
+      Ishulli grek përballë Bodrumit. Trageti dhe katamaranët nga porti bëjnë rreth 30-60 minuta, me
+      rreth €30-50 vajtje-ardhje. Në Kos paguhet me euro.
+  - name: Efes
+    text: >-
+      Qyteti antik me Bibliotekën e Celsusit është rreth 3 orë larg me makinë: një ditë e gjatë, me
+      nisje herët. Vetëm hyrja kushton rreth €40.
+  - name: Xhiro me varkë gulet
+    text: >-
+      Varkat e drurit nisen nga porti rreth orës 10:00 dhe kthehen rreth 17:00, me 3-4 ndalesa për not,
+      si në Kara Ada me burimet e ngrohta. Me drekë kushton rreth €20-35.
+faq:
+  - q: "Ku të fle në Bodrum?"
+    a: "Për vizitën e parë pa makinë fli në qendër ose në Gümbet, pranë otogarit dhe dolmuşëve. Për familje zgjidh Bitez-in, për luks Yalıkavak-un ose Türkbükü-në."
+  - q: "Sa para duhen në ditë në Bodrum?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-70 në ditë për ushqim, dolmuş dhe një hyrje ose plazh. Me darka me peshk dhe klube plazhi shuma rritet shpejt."

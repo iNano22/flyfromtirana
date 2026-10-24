@@ -1,0 +1,75 @@
+city: Nantes
+slug: nantes
+tagline: Elefanti mekanik, kështjella e dukëve dhe Loire
+intro: >-
+  Nantes shtrihet buzë lumit Loire, rreth 50 km para Atlantikut. Ishte kryeqyteti i dukëve të
+  Bretanjës dhe një port i madh tregtar; sot është një qytet studentor plot jetë, me art në rrugë dhe
+  makina gjigante në kantieret e vjetra detare. Është më i lirë se Parisi, dhe dy-tri ditë mjaftojnë
+  për qendrën, për Île de Nantes dhe për një ditë në bregdet.
+sights:
+  - name: Les Machines de l'île dhe Grand Éléphant
+    text: "Në kantieret e vjetra të Île de Nantes, artistët kanë ndërtuar makina gjigante të frymëzuara nga Jules Verne, që lindi në Nantes. Ylli është Grand Éléphant, një elefant 12 metra i lartë që ecën me rreth 45 udhëtarë mbi shpinë. Ta shohësh nga jashtë është falas; hipja dhe Galerie des Machines kushtojnë rreth €9-10 secila. Në dimër mbyllet disa javë: shiko kalendarin."
+  - name: Château des ducs de Bretagne
+    text: Kështjella ku lindi Anna e Bretanjës në 1477. Oborri dhe ecja mbi mure janë falas; muzeu i historisë së qytetit brenda kushton rreth €9.
+  - name: Cathédrale Saint-Pierre-et-Saint-Paul
+    text: Katedralja gotike u ndërtua nga 1434 deri në 1891. Guri i bardhë e bën shumë të ndritshme brenda, ku është varri i dukës François II, kryevepër e Rilindjes. Hyrja është falas.
+  - name: Passage Pommeraye
+    text: Pasazh tregtar i mbuluar i vitit 1843, në tri nivele, me shkallë druri, statuja dhe çati xhami.
+  - name: Le Voyage à Nantes dhe vija e gjelbër
+    text: "Një vijë e gjelbër e lyer në trotuar, rreth 20 km e gjatë, të çon nëpër vendet kryesore dhe veprat e artit: ndiqe dhe nuk të duhet hartë. Në korrik dhe gusht festivali Le Voyage à Nantes shton instalime të reja në gjithë qytetin."
+airports:
+  NTE: >-
+    Aeroporti Nantes Atlantique është rreth 10 km në jugperëndim të qendrës. Autobusi Navette
+    Aéroport të çon në Place du Commerce dhe në stacionin e trenit për rreth 20-30 minuta; niset çdo
+    20-30 minuta dhe bileta kushton rreth €9-10. Taksia bën rreth 20-25 minuta dhe kushton rreth
+    €30-40.
+budget: >-
+  Një kafe në banak kushton rreth €1.50-2.50, një galette complète rreth €10-14, një crêpe €4-8, një
+  drekë formule €15-18, bileta e tramvajit rreth €2. Një shtrat në hostel kushton nga rreth €25-35,
+  një dhomë dyshe në hotel të thjeshtë nga rreth €70-100 nata.
+when: >-
+  Maji-shtatori ka motin më të mirë, rrallë me vapë, por shiu bie në çdo stinë. Në korrik dhe gusht
+  Le Voyage à Nantes mbush qytetin me art falas. Në fund të janarit festivali La Folle Journée sjell
+  koncerte klasike të shkurtra me bileta të lira.
+tips:
+  - "Të shtunave dhe të dielave tramvajet dhe autobusët janë falas, por Navette Aéroport jo."
+  - "Biletat për hipjen te Grand Éléphant mbarojnë shpejt: shko herët ose bliji online, dhe kontrollo orarin e ecjeve."
+  - "Shumë restorante mbyllen të dielën dhe të hënën. Tregu Talensac hapet çdo mëngjes përveç së hënës."
+itinerary:
+  - "Château des ducs de Bretagne në mëngjes, pastaj katedralja dhe rrugicat e Bouffay. Pasdite Passage Pommeraye dhe Place Graslin, në mbrëmje galette dhe cidre në një crêperie."
+  - "Île de Nantes: Les Machines de l'île dhe Grand Éléphant. Pasdite ecje përgjatë Quai des Antilles, në mbrëmje me varkën Navibus në Trentemoult, fshatin e peshkatarëve me shtëpi shumëngjyrëshe."
+  - "Tregu Talensac në mëngjes, pastaj Jardin des Plantes dhe Musée d'arts. Pasdite ndiq vijën e gjelbër deri te kopshti japonez i Île de Versailles. Ndryshe, një ditë në Clisson ose në Pornic."
+areas:
+  - name: Bouffay
+    text: Qyteti i vjetër me shtëpi druri, rrugica dhe bare pranë kështjellës. Atmosferë e bukur, por i zhurmshëm natën.
+  - name: Graslin dhe Commerce
+    text: Lagjja elegante e shekullit XVIII, me teatrin, dyqane dhe brasserie. Në qendër, me çmime mesatare deri të larta.
+  - name: Gare de Nantes
+    text: "Zona më praktike: Navette Aéroport ndalon te stacioni, nga ku nisen trenat për ekskursionet. Hotele zinxhir më të lira, 10 minuta në këmbë nga kështjella."
+food:
+  - name: Galettes dhe crêpes
+    text: "Kuzhina e Bretanjës: galette është petull e kripur me hikërror, zakonisht me djathë, proshutë dhe vezë (complète), ndërsa crêpe është e ëmbël. Pihen me cidre."
+  - name: Beurre blanc
+    text: Salca me gjalpë, verë të bardhë dhe qepujka, e lindur në zonën e Nantes, që shërbehet me peshk të Loire.
+  - name: Muscadet
+    text: Vera e bardhë e thatë e vreshtave rreth Clisson, që pihet me goca deti. Një gotë kushton rreth €4-6.
+  - name: Gâteau nantais
+    text: Ëmbëlsira e qytetit me bajame dhe rum. Edhe biskotat Petit-Beurre LU lindën në Nantes.
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa rrjeti Naolib ka 3 linja tramvaji, autobusë dhe varkat Navibus
+  mbi Loire. Bileta e vetme kushton rreth €2 dhe vlen 1 orë me ndërrime; bileta 24 orëshe rreth €6.
+  Të shtunave dhe të dielave i gjithë rrjeti është falas.
+daytrips:
+  - name: Estuari i Loire dhe Saint-Nazaire
+    text: Rreth 40 minuta me tren. Aty është baza gjigante e nëndetëseve e Luftës së Dytë Botërore, me tarracë falas në çati, dhe muzeu i anijeve Escal'Atlantic.
+  - name: Clisson
+    text: Qytezë me kështjellë mesjetare në rrënoja dhe vila në stil italian, mes vreshtave të Muscadet. Rreth 30 minuta me tren.
+  - name: Pornic
+    text: Port i vogël në Atlantik, me kështjellë buzë detit, plazhe dhe shteg bregdetar mbi shkëmbinj. Rreth 1 orë me tren.
+  - name: Mont-Saint-Michel
+    text: "Abacia mbi ishullin shkëmbor, një ditë e gjatë: rreth 2.5-3 orë në një drejtim, me tren deri në Rennes dhe pastaj me autobus, ose me makinë."
+faq:
+  - q: "Navette Aéroport apo taksi?"
+    a: "Për 1 ose 2 persona Navette është më e lirë: rreth €9-10 për person. Për 3-4 persona me valixhe, ose natën vonë, taksia me rreth €30-40 del e arsyeshme."
+  - q: "Sa para duhen në ditë në Nantes?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-70 në ditë. Kursen me drekat formule, galettes dhe transportin falas në fundjavë."

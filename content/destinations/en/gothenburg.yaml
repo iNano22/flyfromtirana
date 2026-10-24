@@ -1,0 +1,106 @@
+city: Gothenburg
+slug: gothenburg
+tagline: Canals, Haga and car-free islands
+intro: >-
+  Gothenburg is Sweden's second city and its largest port, on the west coast. It was founded in
+  1621, with canals dug by Dutch engineers. It is calmer and a little cheaper than Stockholm: a
+  walkable centre, trams everywhere, seafood and an archipelago you reach with a tram ticket. Three
+  days are enough, with one more day for the Bohuslän coast.
+sights:
+  - name: Haga
+    text: >-
+      The oldest district outside the canal, with wooden and stone houses from the 1800s and the
+      pedestrian street Haga Nygata, full of cafés. A long staircase takes you up to Skansen Kronan,
+      the fortified tower with views over the city.
+  - name: Liseberg
+    text: >-
+      The largest amusement park in Scandinavia, opened in 1923. Entry costs about SEK 150-200
+      (about €14-18), with unlimited rides about SEK 500-600 (about €45-55), depending on the day.
+      It opens in summer, for Halloween and for the Christmas market.
+  - name: The canals and the Paddan boats
+    text: >-
+      The flat Paddan boats leave from Kungsportsplatsen and in about 50 minutes glide through the
+      canals, under bridges so low you have to duck, out to the harbour. A ticket is about SEK
+      200-250 (about €18-23), from April to October.
+  - name: Feskekôrka
+    text: >-
+      The "fish church", the fish market hall from 1874 shaped like a Gothic church, with fish and
+      shrimp stalls. Usually closed on Sundays and Mondays.
+  - name: Slottsskogen
+    text: >-
+      The city's big park, with ponds and a free zoo with seals, penguins and moose. At its edge, the
+      Natural History Museum has a stuffed blue whale.
+  - name: The archipelago
+    text: >-
+      Dozens of rocky islands south of the harbour, many of them car-free, about 1 hour from the
+      centre on tram 11 to Saltholmen and then by ferry, on the same Västtrafik ticket.
+itinerary:
+  - "Paddan through the canals from Kungsportsplatsen, then lunch at Feskekôrka. In the afternoon, Haga Nygata with the giant cinnamon bun at Café Husaren, and Skansen Kronan. In the evening, bars on Linnégatan."
+  - "Slottsskogen with its animals and the Natural History Museum, then Avenyn up to Götaplatsen square. In the evening, Liseberg, when it is open."
+  - "The southern archipelago: tram 11 to Saltholmen and the ferry to Brännö or Styrsö, with dinner in Majorna. Alternatively, half a day in Marstrand."
+areas:
+  - name: Inom Vallgraven
+    text: The old centre inside the canal, close to the central station and the airport bus, but with the highest prices.
+  - name: Lorensberg and Avenyn
+    text: Around the main boulevard, Kungsportsavenyn, with restaurants and bars, within walking distance of Liseberg.
+  - name: Haga and Linné
+    text: "Cafés and bars on Linnégatan, close to Slottsskogen: the most pleasant area to stay in."
+  - name: Majorna
+    text: The bohemian district to the west, with second-hand shops and lower prices, well connected by tram.
+food:
+  - name: Seafood
+    text: >-
+      The west coast is known for its shrimp and mussels. The classic is the räksmörgås, an
+      open-faced shrimp sandwich, about SEK 150-200 (about €14-18).
+  - name: Fika
+    text: The Swedish coffee break with a kanelbulle, a cinnamon bun, about SEK 60-80 (about €6-7) for both.
+  - name: Hagabullen
+    text: >-
+      The giant cinnamon bun of Café Husaren on Haga Nygata, the size of a plate. One is enough for
+      two people and costs about SEK 60-80.
+  - name: Dagens lunch
+    text: >-
+      The lunch of the day on weekdays, around 11:00-14:00: a hot dish, salad, bread and coffee for
+      about SEK 125-150 (about €11-14).
+airports:
+  GOT: >-
+    Landvetter is about 25 km east of the city and has no train. Flygbussarna buses leave every
+    15-20 minutes and reach Nils Ericson Terminalen, next to the central station, in about 30
+    minutes; a ticket is about SEK 120-140 (about €11-13), cheaper in the app. A taxi has a fixed
+    price of about SEK 500-650 (about €45-60).
+transport: >-
+  Trams, buses and ferries run on Västtrafik tickets, bought in the app or at the ticket machines
+  at the stops, not with cash. A single ticket costs about SEK 35-40 (about €3-4) and is valid for
+  90 minutes, a 24-hour one about SEK 120-140 (about €11-13). Both are also valid on the ferries of
+  the southern archipelago.
+daytrips:
+  - name: The southern archipelago
+    text: >-
+      From Saltholmen, ferries go to Brännö in about 20 minutes, to Styrsö in about 30 and to Vrångö
+      in about 50. Outside summer many cafés are closed.
+  - name: Marstrand
+    text: >-
+      A car-free island with wooden houses and the Carlsten fortress on the rock, about 1 hour by
+      bus from the centre and then a few minutes by ferry.
+  - name: The Bohuslän coast
+    text: >-
+      Granite rocks and fishing villages such as Smögen and Fjällbacka, about 2 hours north by car;
+      by train and bus 2.5-3 hours, so a rental car is worth it.
+budget: >-
+  A coffee costs about SEK 40 (about €3.5), a beer in a bar SEK 75-90 (about €7-8), the lunch of
+  the day SEK 125-150 (about €11-14), a dinner SEK 200-300 (about €18-27). €1 is about SEK 11.
+when: >-
+  May to September, when the days are long and the islands are at their best. In August the city
+  holds the Way Out West festival and Kulturkalaset, its free city festival. From mid-November
+  Liseberg turns into a Christmas market.
+tips:
+  - "Gothenburg is one of the rainiest cities in Sweden: bring a waterproof jacket, even in summer."
+  - "Sweden is almost cashless: a bank card is enough, so you do not need to change money into kronor."
+  - "Check the Liseberg calendar before you go: the park does not open every day."
+faq:
+  - q: "How do I get from Landvetter to the centre?"
+    a: "By Flygbussarna, about 30 minutes and about SEK 120-140. A taxi only pays off for three or four people together."
+  - q: "Can I get to the archipelago without a car?"
+    a: "Yes. Tram 11 takes you to Saltholmen and the ferries are included in the Västtrafik ticket."
+  - q: "How much money do you need per day in Gothenburg?"
+    a: "Excluding the flight and accommodation, plan on €60-90 a day. The parks, the free zoo and the archipelago on a tram ticket keep the day cheaper."

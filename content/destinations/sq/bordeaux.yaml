@@ -1,0 +1,74 @@
+city: Bordeaux
+slug: bordeaux
+tagline: Verë, canelés dhe Pasqyra e Ujit
+intro: >-
+  Bordeaux është kryeqyteti botëror i verës, me fasada prej guri të verdhë buzë lumit Garonne.
+  Qendra e tij, «Porti i Hënës», është në listën e UNESCO-s që nga viti 2007 dhe pjesa më e madhe e
+  saj është këmbësore. Dy-tri ditë mjaftojnë për qytetin, dhe një ditë më shumë për vreshtat ose
+  oqeanin.
+sights:
+  - name: Place de la Bourse dhe Miroir d'eau
+    text: Sheshi i shekullit XVIII buzë lumit, me pallatet klasike të Bursës. Përballë tij është Miroir d'eau (Pasqyra e Ujit), pellgu pasqyrues më i madh në botë, ku fasadat reflektohen në një shtresë të hollë uji dhe herë pas here del mjegull. Është falas; nga rreth nëntori deri në mars zakonisht është i fikur.
+  - name: La Cité du Vin
+    text: Muzeu i verës, në një ndërtesë të lakuar ngjyrë ari në lagjen Bacalan. Bileta, rreth €22-25, përfshin një gotë verë në tarracën e katit të 8, me pamje mbi qytetin. Tramvaji B ndalon para derës.
+  - name: Cathédrale Saint-André
+    text: Katedralja gotike ku Eleonora e Akuitanisë u martua me mbretin e Francës në vitin 1137. Hyrja është falas. Kambanorja më vete, Tour Pey-Berland, ka rreth 230 shkallë, me biletë rreth €7-8.
+  - name: Rue Sainte-Catherine
+    text: Ndër rrugët tregtare këmbësore më të gjata në Evropë, rreth 1.2 km nga Place de la Comédie dhe Grand Théâtre deri në Place de la Victoire.
+  - name: Chartrons
+    text: Lagjja e vjetër e tregtarëve të verës, me magazina buzë lumit, dyqane antikash dhe bare verërash. Të dielën në mëngjes ka treg buzë lumit.
+airports:
+  BOD: >-
+    Aeroporti Bordeaux-Mérignac është rreth 12 km në perëndim të qytetit. Më lirë është tramvaji A,
+    që nga viti 2023 arrin deri te aeroporti: me një biletë të zakonshme (rreth €2) arrin në qendër
+    për rreth 40 minuta. Autobusi 30'Direct të çon në stacionin Gare Saint-Jean për rreth 30
+    minuta, me rreth €8-9. Taksia kushton rreth €40-60.
+budget: >-
+  Një kafe kushton rreth €2-2.50, një canelé €1.50-3, një gotë verë €5-8, një pjatë dite €13-18,
+  bileta e tramvajit rreth €2. Një shtrat në hostel kushton nga rreth €30-45, një dhomë dyshe në
+  hotel të thjeshtë nga rreth €80-120 nata.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë motin më të mirë; në shtator dhe tetor vilet rrushi.
+  Korriku dhe gushti janë të nxehtë, mirë për plazhet e Atlantikut. Dimri është i butë, por me shi.
+tips:
+  - "Nga qendra kontrollo që tramvaji A të ketë destinacionin «Aéroport»: të tjerët shkojnë gjetiu."
+  - "Kështjellat e verës pranojnë vizitorë kryesisht me rezervim: rezervo online disa ditë përpara."
+  - "Të dielave shumë dyqane janë të mbyllura, ndërsa Marché des Capucins mbyllet të hënën."
+itinerary:
+  - "Place de la Bourse dhe Miroir d'eau në mëngjes, pastaj rrugicat e Saint-Pierre dhe Grosse Cloche. Pasdite katedralja Saint-André dhe Tour Pey-Berland, në mbrëmje Rue Sainte-Catherine deri te Grand Théâtre."
+  - "Marché des Capucins në mëngjes, me goca dhe verë të bardhë. Pasdite me tramvajin B në La Cité du Vin, në mbrëmje darkë në Chartrons."
+  - "Një ditë jashtë qytetit: Saint-Émilion me tren, ose Arcachon dhe Dune du Pilat. Ndryshe, një tur në kështjellat e Médoc."
+areas:
+  - name: Saint-Pierre dhe Quinconces
+    text: Qendra historike, me gjithçka në këmbë. Çmimet më të larta.
+  - name: Chartrons
+    text: Lagje e qetë buzë lumit, me bare verërash dhe tramvajin B deri në qendër.
+  - name: Saint-Michel
+    text: Lagje shumëkulturore me restorante të lira, rreth 15 minuta në këmbë nga qendra.
+  - name: Gare Saint-Jean
+    text: "Zona më praktike për 30'Direct dhe trenat. Hotele më të lira, por rrugët përreth natën nuk janë të këndshme."
+food:
+  - name: Canelés
+    text: Ëmbëlsira të vogla me rum dhe vanilje, me kore të karamelizuar dhe brendësi të butë, rreth €1.50-3 copa. Baillardran dhe La Toque Cuivrée janë adresat më të njohura.
+  - name: Verë e Bordeaux
+    text: Vera e kuqe nga rrushi merlot dhe cabernet sauvignon. Në Bar à Vin të Maison du Vin, pranë Grand Théâtre, provon verëra të mira për rreth €4-8 gota.
+  - name: Entrecôte à la bordelaise
+    text: Biftek në skarë me salcë me verë të kuqe dhe qepë të vogla, me patate të skuqura.
+  - name: Gocat e Arcachon
+    text: Hahen të freskëta me limon dhe verë të bardhë, sidomos në Marché des Capucins. Një duzinë kushton rreth €12-18.
+transport: >-
+  Qendra përshkohet lehtë në këmbë. Rrjeti TBM ka 4 linja tramvaji, autobusë dhe anijet BatCub në
+  lumë, me të njëjtat bileta; metro nuk ka. Bileta e vetme kushton rreth €2 dhe vlen 1 orë me
+  ndërrime; bileta ditore rreth €5-6.
+daytrips:
+  - name: Saint-Émilion
+    text: Fshat mesjetar mes vreshtave, në listën e UNESCO-s, me një kishë të gdhendur në shkëmb. Treni nga Saint-Jean bën rreth 35-40 minuta, por niset rrallë dhe stacioni është rreth 2 km nga fshati.
+  - name: Arcachon dhe Dune du Pilat
+    text: Qytet bregdetar me një gji me goca, rreth 50 minuta me tren (rreth €11-12). Nga stacioni autobusi të çon për rreth 30-40 minuta te Dune du Pilat, duna më e lartë në Evropë, rreth 100 metra.
+  - name: Kështjellat e Médoc
+    text: Rruga e kështjellave në veri të qytetit, me emra si Margaux dhe Pauillac. Vizitat me degustim kushtojnë rreth €20-40; pa makinë, më e lehtë është një tur me minibus, rreth €80-120 për person.
+faq:
+  - q: "Tramvaj apo 30'Direct nga aeroporti?"
+    a: "Tramvaji A është shumë më i lirë, rreth €2, por bën rreth 40 minuta. 30'Direct arrin te stacioni Saint-Jean për rreth 30 minuta dhe rreth €8-9. Për 3-4 persona me valixhe, taksia del e arsyeshme."
+  - q: "Sa para duhen në ditë në Bordeaux?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-80 në ditë. Kursen me pjatën e ditës në drekë dhe me piknik buzë lumit."

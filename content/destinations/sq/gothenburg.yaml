@@ -1,0 +1,106 @@
+city: Gothenburg
+slug: gothenburg
+tagline: Kanale, Haga dhe ishuj pa makina
+intro: >-
+  Gothenburg është qyteti i dytë i Suedisë dhe porti i saj më i madh, në bregun perëndimor. U
+  themelua në vitin 1621, me kanale të hapura nga inxhinierë holandezë. Është më i qetë dhe pak më
+  i lirë se Stockholm: qendër që përshkohet në këmbë, tramvaje kudo, fruta deti dhe një arkipelag
+  ku shkon me biletën e tramvajit. Tri ditë mjaftojnë, me një ditë më shumë për bregun e Bohuslän.
+sights:
+  - name: Haga
+    text: >-
+      Lagjja më e vjetër jashtë kanalit, me shtëpi prej druri dhe guri të viteve 1800 dhe rrugën
+      këmbësore Haga Nygata, plot kafene. Një shkallë e gjatë të çon te Skansen Kronan, kulla e
+      fortifikuar me pamje mbi qytet.
+  - name: Liseberg
+    text: >-
+      Parku më i madh i lojërave në Skandinavi, i hapur në vitin 1923. Hyrja kushton rreth 150-200
+      SEK (rreth €14-18), me lojërat pa limit rreth 500-600 SEK (rreth €45-55), sipas ditës. Hapet
+      në verë, për Halloween dhe për tregun e Krishtlindjeve.
+  - name: Kanalet dhe varkat Paddan
+    text: >-
+      Varkat e sheshta Paddan nisen nga Kungsportsplatsen dhe në rreth 50 minuta kalojnë nëpër
+      kanale, nën ura aq të ulëta sa duhet të ulësh kokën, deri në port. Bileta rreth 200-250 SEK
+      (rreth €18-23), nga prilli deri në tetor.
+  - name: Feskekôrka
+    text: >-
+      «Kisha e peshkut», halli i peshkut i vitit 1874 në formë kishe gotike, me tezga peshku dhe
+      karkalecash. Zakonisht e mbyllur të dielën dhe të hënën.
+  - name: Slottsskogen
+    text: >-
+      Parku i madh i qytetit, me liqene dhe një kopsht zoologjik falas me foka, pinguinë dhe dre
+      brilopatë. Në skaj të tij, Muzeu i Historisë Natyrore ka një balenë blu të balsamosur.
+  - name: Arkipelagu
+    text: >-
+      Dhjetëra ishuj shkëmborë në jug të portit, shumë pa makina, rreth 1 orë nga qendra me
+      tramvajin 11 deri në Saltholmen dhe pastaj me traget, me të njëjtën biletë të Västtrafik.
+itinerary:
+  - "Paddan nëpër kanale nga Kungsportsplatsen, pastaj drekë te Feskekôrka. Pasdite Haga Nygata me bukëzën gjigante të Café Husaren dhe Skansen Kronan. Në mbrëmje bare në Linnégatan."
+  - "Slottsskogen me kafshët dhe Muzeun e Historisë Natyrore, pastaj Avenyn deri te sheshi Götaplatsen. Në mbrëmje Liseberg, kur është i hapur."
+  - "Arkipelagu jugor: tramvaji 11 deri në Saltholmen dhe tragetin për Brännö ose Styrsö, me darkë në Majorna. Ndryshe, gjysmë dite në Marstrand."
+areas:
+  - name: Inom Vallgraven
+    text: Qendra e vjetër brenda kanalit, pranë stacionit qendror dhe autobusit të aeroportit, por me çmimet më të larta.
+  - name: Lorensberg dhe Avenyn
+    text: Rreth bulevardit Kungsportsavenyn, me restorante dhe bare, në këmbë nga Liseberg.
+  - name: Haga dhe Linné
+    text: "Kafene dhe bare në Linnégatan, pranë Slottsskogen: zona më e këndshme për të fjetur."
+  - name: Majorna
+    text: Lagjja bohemiane në perëndim, me dyqane të dorës së dytë dhe çmime më të ulëta, e lidhur mirë me tramvaj.
+food:
+  - name: Fruta deti
+    text: >-
+      Bregu perëndimor njihet për karkalecat dhe midhjet. Klasikja është räksmörgås, sanduiç i hapur
+      me karkaleca, rreth 150-200 SEK (rreth €14-18).
+  - name: Fika
+    text: Pushimi suedez me kafe dhe kanelbulle, bukëz me kanellë, rreth 60-80 SEK (rreth €6-7) bashkë.
+  - name: Hagabullen
+    text: >-
+      Bukëza gjigante me kanellë e Café Husaren në Haga Nygata, sa një pjatë. Një mjafton për dy veta
+      dhe kushton rreth 60-80 SEK.
+  - name: Dagens lunch
+    text: >-
+      Dreka e ditës në ditë pune, rreth 11:00-14:00: pjatë e ngrohtë, sallatë, bukë dhe kafe për rreth
+      125-150 SEK (rreth €11-14).
+airports:
+  GOT: >-
+    Landvetter është rreth 25 km në lindje të qytetit dhe nuk ka tren. Autobusët e Flygbussarna
+    nisen çdo 15-20 minuta dhe arrijnë te Nils Ericson Terminalen, pranë stacionit qendror, për
+    rreth 30 minuta; bileta rreth 120-140 SEK (rreth €11-13), më lirë në aplikacion. Taksia ka çmim
+    fiks rreth 500-650 SEK (rreth €45-60).
+transport: >-
+  Tramvajet, autobusët dhe tragetet punojnë me biletat e Västtrafik, që blihen në aplikacion ose
+  në automatet e stacioneve, jo me para në dorë. Bileta e vetme kushton rreth 35-40 SEK (rreth
+  €3-4) dhe vlen 90 minuta, ajo 24-orëshe rreth 120-140 SEK (rreth €11-13). Të dyja vlejnë edhe për
+  tragetet e arkipelagut jugor.
+daytrips:
+  - name: Arkipelagu jugor
+    text: >-
+      Nga Saltholmen tragetet shkojnë në Brännö për rreth 20 minuta, në Styrsö për rreth 30 dhe në
+      Vrångö për rreth 50. Jashtë verës shumë kafene janë të mbyllura.
+  - name: Marstrand
+    text: >-
+      Ishull pa makina me shtëpi prej druri dhe kështjellën Carlsten mbi shkëmb, rreth 1 orë me
+      autobus nga qendra dhe pastaj pak minuta me traget.
+  - name: Bregu i Bohuslän
+    text: >-
+      Shkëmbinj graniti dhe fshatra peshkatarësh si Smögen dhe Fjällbacka, rreth 2 orë me makinë në
+      veri; me tren dhe autobus 2.5-3 orë, ndaj ia vlen një makinë me qira.
+budget: >-
+  Një kafe kushton rreth 40 SEK (rreth €3.5), një birrë në bar 75-90 SEK (rreth €7-8), dreka e
+  ditës 125-150 SEK (rreth €11-14), një darkë 200-300 SEK (rreth €18-27). 1 € është rreth 11 SEK.
+when: >-
+  Maji-shtatori, kur ditët janë të gjata dhe ishujt në formën më të mirë. Në gusht mbahen festivali
+  Way Out West dhe Kulturkalaset, festivali falas i qytetit. Nga mesi i nëntorit Liseberg kthehet
+  në treg Krishtlindjesh.
+tips:
+  - "Gothenburg është ndër qytetet më me shi në Suedi: merr një xhaketë që nuk e lë ujin, edhe në verë."
+  - "Suedia është pothuajse pa para në dorë: mjafton karta bankare, nuk ke nevojë të këmbesh kurora."
+  - "Shiko kalendarin e Liseberg para se të nisesh: parku nuk hapet çdo ditë."
+faq:
+  - q: "Si shkoj nga Landvetter në qendër?"
+    a: "Me Flygbussarna, rreth 30 minuta dhe rreth 120-140 SEK. Taksia ia vlen vetëm për tre-katër veta bashkë."
+  - q: "A shkohet në arkipelag pa makinë?"
+    a: "Po. Tramvaji 11 të çon në Saltholmen dhe tragetet përfshihen në biletën e Västtrafik."
+  - q: "Sa para duhen në ditë në Gothenburg?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €60-90 në ditë. Parqet, kopshti zoologjik falas dhe arkipelagu me biletën e tramvajit e mbajnë ditën më të lirë."

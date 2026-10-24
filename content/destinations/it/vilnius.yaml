@@ -1,0 +1,107 @@
+city: Vilnius
+slug: vilnius
+tagline: Chiese barocche, la Porta dell'Aurora e la repubblica degli artisti di Užupis
+intro: >-
+  Vilnius è la capitale della Lituania, citata per la prima volta nel 1323. La città vecchia, piena
+  di chiese barocche e cortili nascosti, è tra le più grandi dell'Europa orientale ed è nella
+  lista dell'UNESCO. Due o tre giorni bastano per la città, più un giorno per il castello di
+  Trakai. La Lituania è nell'eurozona e nello spazio Schengen.
+sights:
+  - name: Città Vecchia (Senamiestis)
+    text: >-
+      Vicoli acciottolati, cortili e decine di chiese, dalla via Pilies fino al Municipio. Da non
+      perdere la Chiesa di Sant'Anna, gotica in mattoni rossi. Si gira tutta a piedi in mezza
+      giornata.
+  - name: Porta dell'Aurora (Aušros Vartai)
+    text: >-
+      L'unica porta delle mura cittadine giunta fino a noi. Sopra c'è una cappella con un'icona
+      della Madonna che attira pellegrini da tutta la regione. L'ingresso è gratuito.
+  - name: Torre di Gediminas
+    text: >-
+      La torre in mattoni del castello superiore, sulla collina dietro la cattedrale, simbolo della
+      città. La salita a piedi richiede circa 10 minuti, oppure prendi la funicolare. Dall'alto c'è
+      la vista migliore sui tetti, soprattutto al tramonto (biglietto circa €8).
+  - name: Užupis
+    text: >-
+      Il quartiere degli artisti oltre il fiume Vilnia, che il 1 aprile 1997 si è proclamato
+      «repubblica» con una propria costituzione, scritta su targhe in decine di lingue in via
+      Paupio. Ci sono murales, gallerie e la statua dell'Angelo nella piazza.
+  - name: Cattedrale di Vilnius
+    text: >-
+      La cattedrale con la facciata neoclassica e il campanile separato, sulla piazza principale.
+      Nella piazza cerca la piastrella «Stebuklas» (miracolo), dove finiva la catena umana del 1989
+      da Tallinn a Vilnius. Dietro c'è il Palazzo dei Granduchi, oggi museo.
+  - name: Museo delle Occupazioni e delle Lotte per la Libertà
+    text: >-
+      Nell'ex sede del KGB, con le celle della prigione nel seminterrato. Racconta l'occupazione
+      sovietica e le deportazioni in Siberia. Calcola 1-2 ore.
+itinerary:
+  - "La Porta dell'Aurora, il Municipio, via Pilies, la Chiesa di Sant'Anna e la Cattedrale. La sera salita alla Torre di Gediminas per il tramonto."
+  - "Užupis al mattino, poi la Collina delle Tre Croci per la vista. Il pomeriggio il Museo delle Occupazioni, la sera cena con i cepelinai in città vecchia."
+  - "In treno o in autobus a Trakai per il castello sul lago e i kibinai a pranzo. La sera una passeggiata lungo il fiume Neris."
+areas:
+  - name: Senamiestis (Città Vecchia)
+    text: Tutto a piedi e l'atmosfera più bella, ma con i prezzi più alti e rumore di notte.
+  - name: Užupis
+    text: Un quartiere tranquillo e artistico, a 5 minuti a piedi dalla città vecchia, con appartamenti in affitto.
+  - name: Vicino alla stazione ferroviaria
+    text: >-
+      A circa 10 minuti a piedi dalla Porta dell'Aurora: comoda per il treno dell'aeroporto e le
+      gite in giornata, con hotel più economici.
+food:
+  - name: Cepelinai
+    text: >-
+      Il piatto nazionale: grossi gnocchi di patate ripieni di carne, con panna acida e pancetta
+      fritta. Sono pesanti: due pezzi bastano per pranzo.
+  - name: Šaltibarščiai
+    text: >-
+      Una zuppa fredda rosa di barbabietola, kefir, cetriolo e aneto, con patate lesse calde a
+      parte. Il piatto dell'estate.
+  - name: Kibinai
+    text: >-
+      Piccoli fagottini ripieni di agnello o verdure, una tradizione dei caraiti di Trakai. I
+      migliori si trovano proprio lì.
+  - name: Kepta duona
+    text: Strisce di pane di segale fritte con aglio, lo spuntino classico con la birra.
+airports:
+  VNO: >-
+    L'aeroporto di Vilnius è a circa 6 km a sud del centro. Il treno ti porta alla stazione
+    ferroviaria centrale in circa 8 minuti, con un biglietto di circa €1, ma non parte spesso:
+    controlla l'orario. Gli autobus 1, 2 e 3G partono davanti al terminal: l'1 va alla stazione
+    ferroviaria, il 2 e il 3G passano per il centro, in circa 15-25 minuti. Un taxi o Bolt impiega
+    circa 10-15 minuti e costa circa €8-12.
+transport: >-
+  La città vecchia e Užupis si girano a piedi; per il resto ci sono autobus e filobus. Un
+  biglietto da 30 minuti costa circa €1 e quello da 24 ore circa €5, dall'app dei trasporti o dai
+  chioschi; il biglietto va passato sul lettore appena sali. Bolt è economico.
+daytrips:
+  - name: Castello di Trakai
+    text: >-
+      Un castello gotico in mattoni rossi su un'isola del lago Galvė, a circa 30 km a ovest. Il
+      treno o l'autobus impiegano circa 30-40 minuti e costano circa €2-3; il biglietto del museo
+      circa €12.
+  - name: Kaunas
+    text: >-
+      La seconda città della Lituania, a circa 1 ora di treno, con un biglietto di circa €6-8. Ha
+      una città vecchia, un castello ed edifici modernisti degli anni 1920-1930, quando era la
+      capitale.
+  - name: Collina delle Croci
+    text: >-
+      Una collina con più di 100.000 croci, a circa 12 km da Šiauliai. Per arrivare a Šiauliai
+      servono circa 2-3 ore di treno o autobus, poi un autobus locale o un taxi: è una giornata
+      lunga, quindi molti scelgono un tour.
+budget: >-
+  Vilnius è tra le capitali più economiche dell'Unione Europea. Un caffè costa circa €2,5-3,5, una
+  birra circa €4-6, un pranzo con i cepelinai circa €7-10 e una cena circa €15-25.
+when: >-
+  Maggio-settembre ha il tempo migliore, con circa 20-25°C in estate e giornate lunghe. Il 24
+  giugno si celebra Joninės, la festa di mezza estate. L'inverno è freddo, spesso sotto zero, ma a
+  dicembre c'è l'albero di Natale in piazza della Cattedrale.
+tips:
+  - "Le chiese sono di solito gratuite: merita anche la Chiesa dei Santi Pietro e Paolo ad Antakalnis, con circa 2.000 figure in stucco."
+  - "All'inizio di marzo si tiene la fiera di Kaziukas, con artigianato e cibo nelle vie del centro."
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "Il treno impiega circa 8 minuti fino alla stazione centrale e costa circa €1, ma passa di rado. Gli autobus 2 e 3G vanno in centro in circa 15-25 minuti; con Bolt o taxi calcola circa €8-12."
+  - q: "Quanto si spende al giorno a Vilnius?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno per cibo, trasporti e un museo. Vilnius è più economica di Riga e Tallinn."

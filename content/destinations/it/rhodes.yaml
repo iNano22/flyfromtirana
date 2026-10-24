@@ -1,0 +1,79 @@
+city: Rhodes
+name: Rodi
+slug: rhodes
+tagline: La città dei cavalieri, Lindos e le spiagge del Dodecaneso
+intro: >-
+  Rodi è l'isola più grande del Dodecaneso, vicina alla costa turca. La città di Rodi ha uno dei
+  centri medievali meglio conservati d'Europa, costruito dai Cavalieri di San Giovanni, che
+  governarono l'isola dal 1309 al 1522. Intorno ci sono le spiagge della costa orientale, Lindos con
+  la sua acropoli sul mare e piccole isole che si raggiungono in barca. Tre giorni bastano per la
+  città e le escursioni principali.
+sights:
+  - name: Città vecchia medievale
+    text: Dentro le mura, lunghe circa 4 km, si vive ancora tra vicoli acciottolati, moschee ottomane e piazze con taverne. È nella lista dell'UNESCO dal 1988. La passeggiata nel fossato delle mura è gratuita.
+  - name: Palazzo del Gran Maestro
+    text: Il castello dei cavalieri in cima alla città vecchia. Fu distrutto da un'esplosione nel 1856 e gli italiani lo ricostruirono negli anni 1930, con mosaici romani portati dall'isola di Kos. Biglietto circa €12 in estate.
+  - name: Via dei Cavalieri
+    text: La strada acciottolata (Ippoton) che sale verso il palazzo, con gli edifici dove abitavano i cavalieri secondo il paese da cui venivano, come la Francia e la Spagna. Gratuita; più bella al mattino presto.
+  - name: Museo Archeologico
+    text: Nell'Ospedale medievale dei Cavalieri, in fondo alla Via dei Cavalieri, con statue antiche e mosaici. Biglietto circa €10.
+  - name: Porto di Mandraki
+    text: Due statue di cervi su colonne segnano il punto dove, secondo la leggenda, sorgeva il Colosso di Rodi, una delle sette meraviglie del mondo antico. Sul molo ci sono tre mulini a vento, accanto al porto il mercato Nea Agora con caffè e gyros.
+  - name: Lindos e la sua acropoli
+    text: Un villaggio di case bianche sotto una rocca, a circa 50 km a sud della città. In cima ci sono il tempio di Atena Lindia e le mura dei cavalieri, con vista sulla baia di San Paolo. Biglietto circa €20 in estate; la salita richiede circa 15-20 minuti, quindi vai presto.
+itinerary:
+  - "La Via dei Cavalieri e il Palazzo del Gran Maestro all'apertura, poi il Museo Archeologico. Nel pomeriggio i vicoli intorno a via Sokratous e il fossato delle mura, la sera una passeggiata a Mandraki."
+  - "Lindos in autobus KTEL al mattino presto: l'acropoli prima del caldo, poi un bagno nella baia di San Paolo. In auto, al ritorno fermati alla baia di Anthony Quinn."
+  - "La barca per Symi da Mandraki, oppure in auto la Valle delle Farfalle e le rovine di Kamiros. Guarda il tramonto dalla collina di Monte Smith, con il tempio di Apollo."
+areas:
+  - name: Città vecchia
+    text: Pensioni e piccoli hotel in edifici medievali. Le valigie con le ruote soffrono sui ciottoli.
+  - name: Città nuova e spiaggia di Elli
+    text: Vicino a Mandraki e alle stazioni degli autobus, con hotel più economici e la spiaggia della città. La scelta più pratica senza auto.
+  - name: Faliraki
+    text: Un resort con una lunga spiaggia e vita notturna, a circa 15 km a sud, con autobus frequenti per la città.
+food:
+  - name: Pitaroudia
+    text: Frittelle di ceci oppure di pomodoro e cipolla, un meze tipico dell'isola.
+  - name: Gamberetti di Symi
+    text: Piccoli gamberetti rossi che si friggono e si mangiano con tutto il guscio.
+  - name: Melekouni
+    text: Un dolce di sesamo e miele che un tempo si serviva ai matrimoni.
+  - name: Souma
+    text: Un raki locale fatto con le vinacce, che si beve dopo cena.
+airports:
+  RHO: >-
+    L'aeroporto Diagoras è a circa 15 km a sud-ovest della città. Gli autobus KTEL fermano davanti al
+    terminal e ti portano vicino a Nea Agora in circa 30 minuti, per circa €2,50-3 (il biglietto si
+    compra dall'autista). Il taxi costa circa €30-35 e impiega circa 20 minuti. Gli sportelli del
+    noleggio auto sono nella sala arrivi.
+transport: >-
+  La città vecchia e il centro si girano a piedi. Gli autobus KTEL partono vicino a Nea Agora, per la
+  costa orientale (Faliraki, Lindos) e per la costa occidentale (l'aeroporto, Kamiros), con biglietti
+  da circa €2,50-6. Per la Valle delle Farfalle e le spiagge del sud l'auto a noleggio è più pratica:
+  circa €30-50 al giorno in estate.
+daytrips:
+  - name: Lindos
+    text: Circa 1-1,5 ore in autobus KTEL (circa €6). Dopo l'acropoli, fai il bagno nella baia di San Paolo.
+  - name: Symi
+    text: L'isola con il porto di Gialos e le sue case neoclassiche colorate. Le barche per escursioni da Mandraki impiegano circa 1,5-2 ore e spesso si fermano al monastero di Panormitis; andata e ritorno costano circa €30-40. I traghetti veloci impiegano circa 1 ora.
+  - name: Valle delle Farfalle
+    text: Una valle ombreggiata con ponticelli di legno e un ruscello (Petaloudes), a circa 25 km dalla città. Tra giugno e agosto si riempie di migliaia di falene; non fare rumore. Ingresso circa €5.
+  - name: Baia di Anthony Quinn
+    text: "Una piccola baia dall'acqua color smeraldo, a circa 15 km a sud, vicino a Faliraki, che porta il nome dell'attore che girò a Rodi «I cannoni di Navarone» nel 1961. Si riempie in fretta: vai prima delle 10:00 e porta una maschera per lo snorkeling."
+budget: >-
+  Un gyros nella pita costa circa €4-5, un caffè freddo circa €3-4, una cena in taverna circa €15-25
+  a persona. Una camera doppia semplice costa circa €50-70 a notte in bassa stagione e €90-140 a
+  luglio e agosto.
+when: >-
+  I voli diretti da Tirana sono di solito stagionali, d'estate; negli altri mesi bisogna cambiare
+  aereo, spesso ad Atene. Maggio-giugno e settembre-ottobre hanno il mare caldo e meno turisti. A
+  luglio e agosto le temperature superano i 30°C. Da novembre a marzo molti hotel nei resort chiudono.
+tips:
+  - "La costa orientale (Faliraki, Lindos) ha il mare più calmo, mentre la costa occidentale è spesso ventosa e con onde."
+  - "Per l'auto a noleggio di solito serve una carta di credito per il deposito. Chiedi prima se la patente albanese è accettata."
+faq:
+  - q: "Serve un'auto a noleggio a Rodi?"
+    a: "Per la città, Lindos e Faliraki no, bastano gli autobus KTEL. Per la Valle delle Farfalle, Kamiros e le spiagge del sud, un'auto per un giorno ti fa risparmiare molto tempo."
+  - q: "Quanto si spende al giorno a Rodi?"
+    a: "Volo e alloggio esclusi, calcola circa €45-70 al giorno. Le spese maggiori sono gli ingressi e la barca per Symi."

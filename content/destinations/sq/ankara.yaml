@@ -1,0 +1,97 @@
+city: Ankara
+slug: ankara
+tagline: Anıtkabir, kështjella dhe muzetë e Anadollit
+intro: >-
+  Ankara është kryeqyteti i Turqisë: një qytet i madh dhe modern në mes të Anadollit, më i qetë dhe
+  më i lirë se Istanbul. Ka mauzoleun e Atatürkut, një nga muzetë më të mirë arkeologjikë në botë
+  dhe një kështjellë të vjetër mbi kodër. Dy-tri ditë mjaftojnë për qytetin, ndërsa me një ditë
+  më shumë arrin edhe deri në Kapadoki.
+sights:
+  - name: Anıtkabir
+    text: >-
+      Mauzoleu i Atatürkut, themeluesit të Republikës, mbi një kodër me park të madh. Hyrja është
+      falas; brenda ka edhe një muze për historinë e shekullit XX. Llogarit rreth 2 orë dhe shiko
+      ndërrimin e rojes.
+  - name: Muzeu i Qytetërimeve Anadollake
+    text: >-
+      Në një bedesten osman poshtë kështjellës, me objekte nga Çatalhöyük, hititët, frigët dhe
+      urartët. Hyrja kushton rreth €12-15.
+  - name: Kështjella e Ankarasë dhe Hamamönü
+    text: >-
+      Kështjella bizantine mbi kodrën e Ulus, me mure të larta, shtëpi të vjetra brenda dhe pamjen më
+      të mirë mbi qytet, falas. Pak më në jug, Hamamönü ka shtëpi osmane të restauruara me kafene,
+      dyqane të vogla dhe çaj në oborre.
+  - name: Xhamia Kocatepe
+    text: >-
+      Xhamia më e madhe e qytetit, me katër minare dhe kube në stilin klasik osman, e përfunduar në
+      vitin 1987. Është pranë Kızılay dhe vizitohet falas jashtë kohës së faljes.
+  - name: Atakule
+    text: >-
+      Kulla 125 metra e lartë në lagjen Çankaya, me tarracë panoramike dhe restorant në majë.
+      Ngjitja kushton pak euro dhe ia vlen në mbrëmje, kur ndizen dritat e qytetit.
+airports:
+  ESB: >-
+    Aeroporti Esenboğa është rreth 30 km në verilindje të qendrës. Autobusët Belko Air nisen
+    rregullisht, edhe natën, dhe të çojnë në Kızılay dhe në stacionin e autobusëve AŞTİ për rreth
+    45-60 minuta, me rreth €4-5. Autobusi 442 i EGO-s shkon në Kızılay dhe AŞTİ për rreth €2-3 dhe paguhet me
+    Ankarakart. Një taksi deri në qendër kushton rreth €25-30.
+budget: >-
+  Lira turke (TRY) humbet vlerë shpejt, ndaj çmimet këtu janë në euro. Ankara është më e lirë se
+  Istanbul: një çaj kushton më pak se €1, një simit rreth €0.50, një vakt i thjeshtë (döner,
+  pide, qofte) rreth €5-8, një darkë në restorant rreth €15-25 dhe një udhëtim me metro rreth €0.70.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë për të ecur. Vera është e nxehtë dhe e
+  thatë, shpesh rreth 30°C, por netët janë të freskëta. Dimri është i ftohtë, shpesh nën 0°C dhe me
+  borë, ndaj merr rroba të ngrohta nga nëntori deri në mars.
+tips:
+  - "Paguaj në lira dhe jo në euro. Kur tërheq para në bankomat, refuzo konvertimin e bankomatit dhe zgjidh pagesën në lira."
+  - "Ankara është pika më e mirë për të nisur drejt Kapadokisë: autobusët nga AŞTİ nisen gjatë gjithë ditës, edhe natën."
+  - "Me trenin e shpejtë YHT nga stacioni Ankara Gar arrin në Konya për rreth 2 orë dhe në Istanbul për rreth 4-5 orë."
+itinerary:
+  - "Anıtkabir në mëngjes, pastaj Kızılay dhe Xhamia Kocatepe. Pasdite rruga Tunalı Hilmi me kafenetë e saj, në mbrëmje Atakule për pamjen mbi qytet."
+  - "Muzeu i Qytetërimeve Anadollake në mëngjes, pastaj ngjitja në Kështjellën e Ankarasë. Pasdite Hamamönü, Xhamia Hacı Bayram dhe Tempulli i Augustit në Ulus."
+  - "Një ditë jashtë qytetit: Beypazarı me shtëpitë osmane, ose Hattusa, kryeqyteti i hititëve. Ndryshe, Liqeni Tuz në rrugë për në Kapadoki."
+areas:
+  - name: Kızılay
+    text: "Qendra e qytetit dhe nyja e metrosë: gjithçka afër, me hotele për çdo xhep dhe autobusin e aeroportit pranë."
+  - name: Ulus
+    text: Pranë kështjellës, muzeut dhe Hamamönü, me hotelet më të lira, por më e zhurmshme dhe me më pak lokale në mbrëmje.
+  - name: Kavaklıdere dhe Tunalı Hilmi
+    text: Lagje e qetë me restorante, kafene dhe hotele më të mira, në jug të Kızılay.
+food:
+  - name: Ankara tava
+    text: Mish qengji i pjekur ngadalë mbi oriz ose makarona të vogla (arpa şehriye), pjata tradicionale e qytetit.
+  - name: Döner në Aspava
+    text: >-
+      Lokalet Aspava janë një traditë e Ankarasë: porosit një döner ose dürüm dhe të sjellin falas
+      sallatë, meze, supë dhe çaj.
+  - name: Simit i Ankarasë
+    text: Gjevrek i rrumbullakët me susam, më i hollë dhe më krokant se gjetkë, për mëngjes me çaj.
+  - name: Beypazarı kurusu
+    text: Biskota të thata nga Beypazarı, që shiten kudo në qytet dhe janë një dhuratë e mirë për në shtëpi.
+transport: >-
+  Ankara ka katër linja metroje dhe trenin e lehtë Ankaray, që takohen në Kızılay dhe lidhin qendrën
+  me Ulus, AŞTİ-n dhe lagjet e tjera. Metroja dhe autobusët e EGO-s paguhen me
+  Ankarakart, një kartë që rimbushet në makinat e stacioneve. Një udhëtim kushton rreth €0.70.
+daytrips:
+  - name: Kapadokia
+    text: >-
+      Kodrat me kulla shkëmbore, kishat në shpella dhe balonat në agim, rreth 3-4 orë me autobus deri
+      në Göreme. Ia vlen të flesh atje të paktën një natë; ngjitja me balonë kushton rreth €150-250.
+  - name: Beypazarı
+    text: >-
+      Qytet i vogël me shtëpi osmane prej druri dhe tregje me karota, reçel dhe biskota, rreth 1.5
+      orë me autobus nga AŞTİ.
+  - name: Hattusa
+    text: >-
+      Rrënojat e kryeqytetit të hititëve pranë Boğazkale, me Portën e Luanëve dhe shenjtëroren
+      Yazılıkaya, rreth 2.5-3 orë me makinë. Më lehtë me makinë me qira ose ekskursion.
+  - name: Liqeni Tuz
+    text: >-
+      Liqeni i madh i kripës, rreth 2 orë në jug, ku ecën mbi kripën e bardhë. Është më i bukur në verë
+      dhe ndalesë e mirë në rrugë për në Kapadoki.
+faq:
+  - q: "Si shkohet nga Ankara në Kapadoki?"
+    a: "Autobusët nga AŞTİ shkojnë në Göreme ose Nevşehir për rreth 3-4 orë dhe kushtojnë rreth €10-15. Ka edhe ekskursione njëditore, por dita bëhet shumë e gjatë."
+  - q: "Sa para duhen në ditë në Ankara?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €30-50 në ditë për ushqim, transport dhe një hyrje në muze. Ankara është ndër qytetet më të lira për t'u vizituar në Turqi."

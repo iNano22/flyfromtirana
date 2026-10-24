@@ -1,0 +1,82 @@
+city: Luxembourg
+slug: luxembourg
+tagline: Casemates, the Grund valley and free transport
+intro: >-
+  Luxembourg is the capital of one of Europe's smallest and richest countries, built on cliffs
+  above the valleys of the Alzette and Pétrusse rivers. The old town and its fortifications have
+  been on the UNESCO list since 1994. It's expensive, but all public transport is free and the
+  centre can be seen on foot in two days.
+sights:
+  - name: Bock Casemates
+    text: Tunnels carved into the rock beneath the old castle, part of a network that once ran to 23 km, of which about 17 km remain today. Entry costs about €8; they may be closed in winter.
+  - name: Chemin de la Corniche
+    text: The promenade along the city walls, called «the most beautiful balcony in Europe», with views over the Grund and the Alzette river. It's free and open at all times.
+  - name: Grund
+    text: The lower town on the banks of the Alzette, with Neumünster Abbey. Go down by the free lift from the Plateau du Saint-Esprit or on foot from the Corniche.
+  - name: Grand Ducal Palace
+    text: The official residence of the Grand Duke in the old town. The inside can only be visited in summer, on guided tours booked at the tourist office.
+  - name: Kirchberg and MUDAM
+    text: The modern plateau of the European institutions. MUDAM, the modern art museum in a building by I. M. Pei, costs about €10 and is free for young people under 26; next to it stands the Fort Thüngen fortress.
+  - name: Pfaffenthal panoramic lift
+    text: A glass cabin that takes you down 71 metres from the old town into the valley for free, with views of the Red Bridge (Pont Grande-Duchesse Charlotte).
+airports:
+  LUX: >-
+    Luxembourg-Findel airport is about 6 km from the centre. Buses 16 and 29 leave from outside the
+    terminal and take you to the centre and to the train station (Gare) in about 20-30 minutes.
+    Like all public transport in the country, they are free. A taxi takes about 15 minutes and
+    costs about €30-40.
+budget: >-
+  Luxembourg is one of the most expensive cities in Europe. A coffee costs about €3-4, a beer
+  €5-7, the dish of the day (plat du jour) at lunch €15-20 and a restaurant dinner €25-40. A hostel
+  bed costs about €40-55, a double room in a simple hotel about €120-180 a night. Supermarkets such
+  as Aldi and Lidl keep food costs down.
+when: >-
+  May to September has the best weather, although it rains all year round. 23 June is National
+  Day, with fireworks on the night of 22 June. From late August to early September the
+  Schueberfouer takes place, the big funfair that dates back to 1340. In December there are
+  Christmas markets.
+tips:
+  - "Luxembourgish, French and German are spoken, but English is understood everywhere."
+  - "At lunch, ask for the «plat du jour»: the dish of the day is the cheapest way to eat in a restaurant."
+  - "Tap water is safe to drink: fill your bottle and save money."
+itinerary:
+  - "Place Guillaume II, the Grand Ducal Palace from outside, the cathedral and Place d'Armes. In the afternoon, the Chemin de la Corniche and the Bock Casemates, then down to the Grund; in the evening, a drink in the Grund or in Clausen."
+  - "The panoramic lift down to Pfaffenthal and the funicular up to Kirchberg. MUDAM, Fort Thüngen and the Philharmonie, then back to the centre by tram."
+  - "A day trip to Vianden castle or to the Mullerthal, by free train and bus. Alternatively, Trier in Germany or the wine villages along the Moselle."
+areas:
+  - name: Ville Haute (old town)
+    text: Close to everything and very beautiful, but with the most expensive hotels.
+  - name: Gare
+    text: The station area, with the cheapest hotels and a tram to the centre.
+  - name: Grund and Clausen
+    text: Quiet neighbourhoods down in the valley by day, full of bars in the evening.
+  - name: Kirchberg
+    text: Business hotels that are often cheaper at weekends, with a tram to the centre and bus 16 to the airport.
+food:
+  - name: Judd mat Gaardebounen
+    text: Smoked pork collar with broad beans and a cream sauce, the national dish.
+  - name: Gromperekichelcher
+    text: Fried potato and onion fritters, about €5 a portion.
+  - name: Kachkéis
+    text: A soft cooked cheese spread on bread, often with mustard.
+  - name: Moselle wine and crémant
+    text: Riesling and sparkling wine from the vineyards in the south of the country; a glass costs about €5-7.
+transport: >-
+  Since 2020 all public transport in Luxembourg has been free: buses, the tram and second-class
+  trains, throughout the country. You don't need a ticket; only first class on trains is paid for.
+  The free lifts in the Grund and Pfaffenthal save you the climb. For trips across the border, such
+  as to Trier, you only pay for the section outside Luxembourg.
+daytrips:
+  - name: Vianden Castle
+    text: A medieval castle above a small town in the north, about 1 hour 15 minutes by train to Ettelbruck and then by bus. Entry costs about €12.
+  - name: Mullerthal
+    text: "Luxembourg's «Little Switzerland»: trails among rocks and forests, about 1 hour by bus."
+  - name: Moselle wine villages
+    text: Remich, Grevenmacher and Schengen, where the Schengen Agreement was signed in 1985. About 45 minutes by bus.
+  - name: Trier
+    text: Germany's oldest city, with the Roman gate Porta Nigra, about 50 minutes by train. The train is free up to the border; for the German section you buy a ticket, about €5-10 each way.
+faq:
+  - q: "Is public transport really free?"
+    a: "Yes. Buses, the tram and second-class trains are free for everyone, tourists included, with no ticket. This also applies to buses 16 and 29 from the airport."
+  - q: "How much money do you need per day in Luxembourg?"
+    a: "Excluding the flight and accommodation, about €50-80 a day. You save with the dish of the day and with supermarkets. Accommodation is the biggest expense: some travellers sleep in Trier, where hotels are cheaper."

@@ -1,0 +1,79 @@
+city: Rhodes
+slug: rhodes
+tagline: Qyteti i kalorësve, Lindos dhe plazhet e Dodekanezit
+intro: >-
+  Rhodes është ishulli më i madh i Dodekanezit, afër bregut turk.
+  Qyteti i Rhodes ka një nga qendrat mesjetare më të ruajtura në Evropë, të ndërtuar nga Kalorësit e
+  Shën Gjonit, që e sunduan ishullin nga 1309 deri në 1522. Rreth tij janë plazhet e bregut lindor,
+  Lindos me akropolin mbi det dhe ishuj të vegjël që arrihen me varkë. Tri ditë mjaftojnë për
+  qytetin dhe ekskursionet kryesore.
+sights:
+  - name: Qyteti i vjetër mesjetar
+    text: Brenda mureve, rreth 4 km të gjata, jetohet ende mes rrugicash me kalldrëm, xhamish osmane dhe sheshesh me taverna. Është në listën e UNESCO-s që nga viti 1988. Shëtitja në hendekun e mureve është falas.
+  - name: Pallati i Mjeshtrit të Madh
+    text: Kështjella e kalorësve në majë të qytetit të vjetër. U shkatërrua nga një shpërthim në 1856 dhe italianët e rindërtuan në vitet 1930, me mozaikë romakë nga ishulli Kos. Bileta rreth €12 në verë.
+  - name: Rruga e Kalorësve
+    text: Rruga me kalldrëm (Ippoton) që ngjitet drejt pallatit, me ndërtesat ku banonin kalorësit sipas vendit nga vinin, si Franca dhe Spanja. Falas; më e bukur herët në mëngjes.
+  - name: Muzeu Arkeologjik
+    text: Në Spitalin mesjetar të Kalorësve, në fund të Rrugës së Kalorësve, me statuja antike dhe mozaikë. Bileta rreth €10.
+  - name: Porti Mandraki
+    text: Dy statujat e drerëve mbi kolona shënojnë vendin ku sipas legjendës qëndronte Kolosi i Rhodes, një nga shtatë mrekullitë e botës antike. Në molo janë tre mullinj me erë, pranë portit tregu Nea Agora me kafene dhe gyros.
+  - name: Lindos dhe akropoli
+    text: Fshat me shtëpi të bardha nën një shkëmb, rreth 50 km në jug të qytetit. Në majë janë tempulli i Athinës Lindia dhe muret e kalorësve, me pamje mbi gjirin e Shën Palit. Bileta rreth €20 në verë; ngjitja bën rreth 15-20 minuta, ndaj shko herët.
+itinerary:
+  - "Rruga e Kalorësve dhe Pallati i Mjeshtrit të Madh sapo hapet, pastaj Muzeu Arkeologjik. Pasdite rrugicat rreth rrugës Sokratous dhe hendeku i mureve, në mbrëmje shëtitje në Mandraki."
+  - "Lindos me autobus KTEL herët në mëngjes: akropoli para vapës, pastaj not në gjirin e Shën Palit. Me makinë, gjatë kthimit ndal te gjiri Anthony Quinn."
+  - "Varka për Symi nga Mandraki, ose me makinë Lugina e Fluturave dhe rrënojat e Kamiros. Perëndimin e diellit shikoje nga kodra Monte Smith, me tempullin e Apollonit."
+areas:
+  - name: Qyteti i vjetër
+    text: Bujtina dhe hotele të vogla në ndërtesa mesjetare. Valixhet me rrota vuajnë në kalldrëm.
+  - name: Qyteti i ri dhe plazhi Elli
+    text: Pranë Mandraki dhe stacioneve të autobusëve, me hotele më të lira dhe plazhin e qytetit. Zgjidhja më praktike pa makinë.
+  - name: Faliraki
+    text: Resort me plazh të gjatë dhe jetë nate, rreth 15 km në jug, me autobusë të shpeshtë për në qytet.
+food:
+  - name: Pitaroudia
+    text: Qofte të skuqura me qiqra ose me domate dhe qepë, meze tipike e ishullit.
+  - name: Karkaleca të Symit
+    text: Karkaleca të vegjël të kuq që skuqen dhe hahen me gjithë lëvozhgë.
+  - name: Melekouni
+    text: Ëmbëlsirë me susam dhe mjaltë që dikur shërbehej në dasma.
+  - name: Souma
+    text: Raki vendase nga bërsitë e rrushit, që pihet pas darkës.
+airports:
+  RHO: >-
+    Aeroporti Diagoras është rreth 15 km në jugperëndim të qytetit. Autobusët KTEL ndalojnë para
+    terminalit dhe të çojnë pranë Nea Agora për rreth 30 minuta, me rreth €2.50-3 (biletën e blen te
+    shoferi). Taksia kushton rreth €30-35 dhe bën rreth 20 minuta. Agjencitë e makinave me qira janë
+    në sallën e mbërritjeve.
+transport: >-
+  Qyteti i vjetër dhe qendra përshkohen në këmbë. Autobusët KTEL nisen pranë Nea Agora, për bregun
+  lindor (Faliraki, Lindos) dhe për bregun perëndimor (aeroporti, Kamiros), me bileta rreth €2.50-6.
+  Për Luginën e Fluturave dhe plazhet e jugut, makina me qira është më praktike: rreth €30-50 në ditë
+  në verë.
+daytrips:
+  - name: Lindos
+    text: Rreth 1-1.5 orë me autobus KTEL (rreth €6). Pas akropolit, noto në gjirin e Shën Palit.
+  - name: Symi
+    text: Ishulli me portin Gialos dhe shtëpitë neoklasike me ngjyra. Varkat e ekskursionit nga Mandraki bëjnë rreth 1.5-2 orë dhe shpesh ndalojnë te manastiri i Panormitis; vajtje-ardhja rreth €30-40. Tragetet e shpejta bëjnë rreth 1 orë.
+  - name: Lugina e Fluturave
+    text: Luginë me hije, ura druri dhe përrua (Petaloudes), rreth 25 km nga qyteti. Në qershor-gusht mbushet me mijëra flutura nate; mos bëj zhurmë. Hyrja rreth €5.
+  - name: Gjiri Anthony Quinn
+    text: "Gji i vogël me ujë smerald, rreth 15 km në jug, pranë Faliraki, me emrin e aktorit që xhiroi në Rhodes filmin «Topat e Navaronës» në 1961. Mbushet shpejt: shko para orës 10:00 dhe merr maskë për snorkeling."
+budget: >-
+  Një gyros në pitë kushton rreth €4-5, një kafe freddo rreth €3-4, një darkë në tavernë rreth €15-25
+  për person. Një dhomë dyshe e thjeshtë kushton rreth €50-70 nata jashtë sezonit dhe €90-140 në
+  korrik e gusht.
+when: >-
+  Fluturimet direkte nga Tirana janë zakonisht sezonale, në verë; në muajt e tjerë duhet të ndërrosh
+  avion, shpesh në Athens. Maji-qershori dhe shtatori-tetori kanë det të ngrohtë dhe më pak turistë.
+  Në korrik e gusht temperaturat kalojnë 30°C. Nga nëntori deri në mars shumë hotele në resorte
+  mbyllen.
+tips:
+  - "Bregu lindor (Faliraki, Lindos) ka det më të qetë, ndërsa bregu perëndimor ka shpesh erë dhe dallgë."
+  - "Për makinën me qira zakonisht duhet kartë krediti për depozitën. Pyet përpara nëse pranohet patenta shqiptare."
+faq:
+  - q: "A duhet makinë me qira në Rhodes?"
+    a: "Për qytetin, Lindos dhe Faliraki jo, autobusët KTEL mjaftojnë. Për Luginën e Fluturave, Kamiros dhe plazhet e jugut, një makinë për një ditë të kursen shumë kohë."
+  - q: "Sa para duhen në ditë në Rhodes?"
+    a: "Pa fluturimin dhe fjetjen, llogarit rreth €45-70 në ditë. Më shumë kushtojnë hyrjet dhe varka për Symi."

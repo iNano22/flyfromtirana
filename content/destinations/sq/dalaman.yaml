@@ -1,0 +1,111 @@
+city: Dalaman
+slug: dalaman
+tagline: Ölüdeniz, Fethiye dhe gjiret e Bregut të Bruztë
+intro: >-
+  Dalaman është mbi të gjitha aeroporti i Bregut të Bruztë: vetë qyteti, i vogël dhe bujqësor, ka
+  pak për të parë, por brenda rreth një ore je në Fethiye, Ölüdeniz, Göcek ose Dalyan. Këtu malet
+  me pisha zbresin drejt detit, mes gjiresh të qeta dhe varresh likiane të gdhendura në shkëmb.
+  Katër-pesë ditë, me bazë në Fethiye ose Ölüdeniz, mjaftojnë për detin, një xhiro me varkë dhe
+  disa rrënoja antike.
+sights:
+  - name: Ölüdeniz dhe Laguna e Kaltër
+    text: >-
+      Gjiri me ujë të cekët e të kaltër, i mbrojtur nga një gjuhë rëre, brenda një parku natyror me
+      hyrje rreth €3-5. Plazhi Belcekız pranë tij është falas.
+  - name: Fluturimi me parashutë nga Babadağ
+    text: >-
+      Fluturimi tandem me instruktor nis nga rreth 1700-1900 m lartësi mbi Ölüdeniz, zgjat rreth
+      30-40 minuta dhe kushton rreth €100-150.
+  - name: Kayaköy
+    text: >-
+      Fshati grek i braktisur pas shkëmbimit të popullsive të vitit 1923, me qindra shtëpi prej guri
+      pa çati mbi një kodër, rreth 8 km nga Fethiye.
+  - name: Varret e Dalyan-it dhe plazhi İztuzu
+    text: >-
+      Përballë Dalyan-it, në shkëmbin mbi lumë, janë varret mbretërore të Kaunos-it, të gdhendura
+      në shekullin IV p.e.s. Varkat e lumit zbresin te İztuzu, plazh rreth 4.5 km i gjatë ku
+      breshkat Caretta caretta lëshojnë vezët.
+  - name: Kanioni Saklıkent
+    text: >-
+      Gryka rreth 18 km e gjatë dhe deri në 300 m e thellë, rreth 1 orë nga Fethiye. Ecën në ujë të
+      ftohtë mes mureve shkëmbore, ndaj merr këpucë që lagen.
+  - name: Gjiret e Göcek-ut
+    text: >-
+      Ishuj e gjire me pisha dhe ujë të kthjellët, që shihen me xhiron me varkë «12 Ishujt» nga
+      Göcek ose Fethiye.
+itinerary:
+  - "Nga aeroporti në Fethiye, rreth 1 orë: porti, varri i Amyntas-it i gdhendur në shkëmb dhe darkë në tregun e peshkut."
+  - "Ölüdeniz: parashuta nga Babadağ në mëngjes, kur era është më e qetë, pastaj not në Lagunën e Kaltër."
+  - "Xhiro me varkë nëpër gjiret e Göcek-ut ose «12 Ishujt» nga Fethiye."
+  - "Me makinë ose ekskursion: Kayaköy herët në mëngjes, pastaj Tlos dhe kanioni Saklıkent."
+  - "Dalyan: me varkë te varret e Kaunos-it dhe plazhi İztuzu. Fli aty, rreth 30 minuta nga aeroporti."
+areas:
+  - name: Fethiye
+    text: >-
+      Baza më praktike, me hotele më të lira, autobusë për gjithë bregun dhe varka nga porti.
+  - name: Ölüdeniz
+    text: >-
+      Buzë lagunës, me resorte dhe bare, por më i shtrenjtë. Hisarönü dhe Ovacık, pak më sipër, janë
+      më të lira.
+  - name: Göcek
+    text: >-
+      Fshat i qetë me marina, rreth 20 minuta nga aeroporti. Më i shtrenjtë, i mirë për natën e
+      parë ose të fundit.
+  - name: Dalyan
+    text: >-
+      Qytezë e qetë buzë lumit, rreth 30 minuta nga aeroporti, me bujtina familjare dhe varka për në
+      İztuzu.
+food:
+  - name: Peshku i tregut të Fethiye-s
+    text: >-
+      Blen peshkun në tregun e mbuluar dhe një restorant përreth ta gatuan për rreth €4-6 për
+      person, me sallatë e bukë.
+  - name: Gözleme
+    text: Petë e hollë me spinaq, djathë ose patate, e pjekur në saç.
+  - name: Çökertme kebabı
+    text: >-
+      Copa të holla mishi viçi mbi patate të skuqura, me kos dhe salcë domateje, pjatë tipike e
+      krahinës së Muğla-s.
+  - name: Kabak çiçeği dolması
+    text: Lule kungulli të mbushura me oriz dhe erëza, meze tipike e bregut të Egjeut.
+airports:
+  DLM: >-
+    Aeroporti është rreth 6 km nga qyteti Dalaman dhe rreth 50 km nga Fethiye. Autobusët Havaş dhe
+    Muttaş nisen pas mbërritjes së fluturimeve për Fethiye (rreth 1-1.5 orë, rreth €7-10) dhe
+    Marmaris (rreth 1.5 orë); për Ölüdeniz vazhdon me dolmuş nga Fethiye. Për Dalyan merr taksi
+    deri në qytetin Dalaman (rreth €10-15), pastaj dolmuş me ndërrim në Ortaca. Taksia direkt
+    kushton rreth €30-40 deri në Göcek ose Dalyan dhe rreth €50-70 deri në Fethiye. Shumë hotele
+    organizojnë transferim.
+transport: >-
+  Nga otogari i Fethiye-s nisen autobusë për Dalaman, Ortaca dhe Kaş, ndërsa dolmuşët për Ölüdeniz
+  kalojnë çdo 10-15 minuta në verë (rreth €1-2). Makina me qira (rreth €30-50 në ditë në verë)
+  ndihmon për Saklıkent, Tlos dhe Patara.
+daytrips:
+  - name: Lugina e Fluturave
+    text: >-
+      Gji i ngushtë mes shkëmbinjve, i arritshëm praktikisht vetëm me varkë nga Ölüdeniz, rreth 30
+      minuta larg (rreth €10-15 vajtje-ardhje).
+  - name: Tlos
+    text: >-
+      Rrënoja likiane me varre në shkëmb dhe një kështjellë mbi luginë, rreth 40 minuta nga Fethiye.
+  - name: Xanthos dhe Patara
+    text: >-
+      Rrënojat likiane të Xanthos-it, në listën e UNESCO-s, dhe plazhi rreth 18 km i gjatë i
+      Patara-s, rreth 1-1.5 orë nga Fethiye.
+budget: >-
+  Lira turke (TRY) humbet vlerë shpejt, ndaj çmimet këtu janë në euro. Një çaj kushton më pak se
+  €1, një gözleme rreth €3-5, një vakt i thjeshtë rreth €8-12 dhe një xhiro me varkë me drekë rreth
+  €25-40. Një dhomë dyshe në Fethiye kushton rreth €40-70 nata, në Ölüdeniz më shumë.
+when: >-
+  Sezoni zgjat nga maji deri në tetor. Qershori dhe shtatori janë më të mirët, me det të ngrohtë
+  dhe pa nxehtësinë e korrikut e gushtit, shpesh mbi 35°C. Nga nëntori deri në prill shumë hotele
+  në Ölüdeniz dhe Dalyan mbyllen.
+tips:
+  - "Paguaj në lira dhe jo në euro: çmimet në euro janë zakonisht më të larta. Në bankomat refuzo konvertimin e bankomatit."
+  - "Plazhi İztuzu mbyllet nga 20:00 deri në 08:00 gjatë sezonit të breshkave, nga maji deri në tetor. Mos i prek folet e shënuara."
+  - "Shtegu në këmbë nga Kayaköy në Ölüdeniz bëhet për rreth 2-3 orë: nis herët dhe merr shumë ujë."
+faq:
+  - q: "Fethiye apo Ölüdeniz: ku të fle?"
+    a: "Fethiye është më e lirë dhe ka autobusë kudo; Ölüdeniz është buzë lagunës, por më i shtrenjtë. Hisarönü është zgjidhja e mesme, rreth 10 minuta me dolmuş nga plazhi."
+  - q: "Sa para duhen në ditë?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-60 në ditë, më shumë me një xhiro me varkë ose parashutë."

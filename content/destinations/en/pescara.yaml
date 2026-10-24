@@ -1,0 +1,82 @@
+city: Pescara
+slug: pescara
+tagline: The beach, arrosticini and the trabocchi of Abruzzo
+intro: >-
+  Pescara is the largest city in Abruzzo, a modern town on the Adriatic with a long sandy beach and
+  the house where the poet Gabriele D'Annunzio was born. Its real value is the region around it:
+  the trabocchi coast, the hilltop towns and the mountains of the Gran Sasso and the Majella.
+  Three or four days are enough for the city, the sea and one or two day trips.
+sights:
+  - name: The seafront and the beaches
+    text: About 16 km of fine sand and shallow sea, mostly divided into numbered private beaches (stabilimenti), with a few free stretches. On Lungomare Matteotti stands the sculpture-fountain La Nave di Cascella.
+  - name: Ponte del Mare
+    text: The white bridge for pedestrians and bikes over the mouth of the Pescara river, opened in 2009. It joins the two halves of the seafront and is the best spot for the sunset.
+  - name: Pescara Vecchia
+    text: The old quarter south of the river, around Corso Manthonè. In the evening it fills up with bars and young people.
+  - name: Casa natale di Gabriele D'Annunzio
+    text: The house on Corso Manthonè where D'Annunzio was born in 1863, now a museum with the family's furniture and mementoes of the poet. A ticket costs about €5.
+  - name: Museo delle Genti d'Abruzzo
+    text: The museum of traditional life in Abruzzo, with tools, costumes and crafts, in the former Bourbon prison in Pescara Vecchia.
+  - name: Costa dei Trabocchi
+    text: The rocky coast south of Ortona, with the trabocchi, the fishermen's wooden platforms with large nets over the sea. Some are now seafood restaurants.
+itinerary:
+  - "Corso Umberto I from the station to Piazza Salotto, then Lungomare Matteotti and La Nave di Cascella. In the afternoon the beach, at sunset Ponte del Mare and dinner with arrosticini."
+  - "Pescara Vecchia in the morning: D'Annunzio's house and the Museo delle Genti d'Abruzzo. In the afternoon the Pineta Dannunziana and the southern beaches; in the evening an aperitivo on Corso Manthonè."
+  - "By train to San Vito Chietino, by rented bike along the Via Verde among the trabocchi, and a seafood lunch on a trabocco (book ahead)."
+  - "Chieti or Sulmona by bus and train, or by rental car to the Gran Sasso, up to Campo Imperatore."
+areas:
+  - name: Centro
+    text: Between Pescara Centrale station and the sea, around Corso Umberto I. The most practical area, close to the airport bus, the trains and the coaches to Rome.
+  - name: Pescara Vecchia and Porta Nuova
+    text: South of the river, close to the nightlife and the pines of the Pineta Dannunziana. It is noisy on weekend evenings.
+  - name: Lungomare Nord and Montesilvano
+    text: Seafront hotels to the north, often cheaper, especially in Montesilvano, but further from the centre.
+food:
+  - name: Arrosticini
+    text: Small skewers of mutton on the grill, the symbol of Abruzzo. They are ordered by the dozen, with bread and olive oil, at about €1 each.
+  - name: Spaghetti alla chitarra
+    text: Square-cut pasta made with a stringed tool like a guitar, usually with tomato sauce and tiny meatballs.
+  - name: Pallotte cacio e ova
+    text: Meatless balls of cheese, egg and bread, cooked in tomato sauce.
+  - name: Brodetto di pesce
+    text: A thick stew of Adriatic fish and tomato, eaten with toasted bread.
+  - name: Parrozzo
+    text: Pescara's almond cake, coated in chocolate, praised by D'Annunzio himself.
+airports:
+  PSR: >-
+    Abruzzo Airport is only about 4 km from the centre. TUA bus 38 takes you to Pescara Centrale
+    station and the centre in about 15-20 minutes; a ticket costs about €1.50, more if you buy it
+    from the driver. A taxi to the centre costs about €15-20. Some coaches to Rome also stop at the
+    airport.
+transport: >-
+  The centre and the seafront are easy to cover on foot or by bike, as the city is flat. TUA buses
+  serve the city and Chieti; buy tickets at a tobacconist (tabacchi) or in the app. From Pescara
+  Centrale trains run along the coast towards Ortona and Vasto and inland towards Sulmona.
+daytrips:
+  - name: Costa dei Trabocchi
+    text: The trabocchi and pebble beaches between Ortona and Vasto, with the Via Verde, a cycle path of about 40 km on the old railway. San Vito Chietino is about 30 minutes by train.
+  - name: Chieti
+    text: The hilltop town with views of the Majella and the sea, with the archaeological museum of the Warrior of Capestrano. About 40 minutes by TUA bus.
+  - name: Sulmona
+    text: The town of the Roman poet Ovid, known for its sugared almonds (confetti), about 1 hour by regional train (about €6).
+  - name: Gran Sasso and Majella
+    text: The highest mountains of the Apennines, with the Campo Imperatore plateau and stone villages such as Santo Stefano di Sessanio. About 1.5 hours by car.
+  - name: Rome
+    text: About 2.5 hours by coach to Roma Tiburtina (about €10-20 one way). A long day, but doable.
+budget: >-
+  An espresso costs about €1.20, a pizza €7-10, a dozen arrosticini about €12 and a city bus ticket
+  about €1.50.
+when: >-
+  June and September for the sea, with lower prices than in July-August. August, especially around
+  Ferragosto (15 August), is packed. For mountain walks May-October, while in winter Campo
+  Imperatore and Roccaraso become ski slopes.
+tips:
+  - "For lunch on a trabocco, book a few days ahead: the fixed seafood menu costs about €50-70 per person."
+  - "For the mountains, rent a car for a day: buses are rare, especially on Sundays."
+faq:
+  - q: "How do you get to Rome from Pescara?"
+    a: "By coach, about 2.5 hours and about €10-20 one way, from the terminal next to Pescara Centrale or from the airport. The train is slower, about 3.5-4 hours."
+  - q: "Can I see Abruzzo without a car?"
+    a: "Partly: the Costa dei Trabocchi, Chieti and Sulmona are easy to reach by train or bus. For the mountains you need a rental car."
+  - q: "How much money do you need per day in Pescara?"
+    a: "Leaving out the flight and accommodation, €40-60 a day, more if you eat on a trabocco or rent a beach umbrella."

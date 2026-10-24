@@ -1,0 +1,112 @@
+city: Dalaman
+slug: dalaman
+tagline: Ölüdeniz, Fethiye and the bays of the Turquoise Coast
+intro: >-
+  Dalaman is above all the airport of the Turquoise Coast: the town itself, small and agricultural,
+  has little to see, but within about an hour you are in Fethiye, Ölüdeniz, Göcek or Dalyan. Here
+  pine-covered mountains run down to the sea, among quiet bays and Lycian tombs carved into the
+  rock. Four or five days, based in Fethiye or Ölüdeniz, are enough for the sea, a boat trip and a
+  few ancient ruins.
+sights:
+  - name: Ölüdeniz and the Blue Lagoon
+    text: >-
+      A bay of shallow, turquoise water, sheltered by a spit of sand, inside a nature park with an
+      entry fee of about €3-5. Belcekız beach next to it is free.
+  - name: Paragliding from Babadağ
+    text: >-
+      The tandem flight with an instructor takes off from about 1700-1900 m above Ölüdeniz, lasts
+      about 30-40 minutes and costs about €100-150.
+  - name: Kayaköy
+    text: >-
+      The Greek village abandoned after the population exchange of 1923, with hundreds of roofless
+      stone houses on a hillside, about 8 km from Fethiye.
+  - name: Dalyan's tombs and İztuzu beach
+    text: >-
+      Opposite Dalyan, in the cliff above the river, are the royal tombs of Kaunos, carved in the
+      4th century BC. River boats go down to İztuzu, a beach about 4.5 km long where Caretta
+      caretta turtles lay their eggs.
+  - name: Saklıkent gorge
+    text: >-
+      A gorge about 18 km long and up to 300 m deep, about 1 hour from Fethiye. You walk through
+      cold water between the rock walls, so bring shoes that can get wet.
+  - name: The bays of Göcek
+    text: >-
+      Islands and bays with pines and clear water, best seen on the "12 Islands" boat trip from
+      Göcek or Fethiye.
+itinerary:
+  - "From the airport to Fethiye, about 1 hour: the harbour, the rock-cut tomb of Amyntas and dinner at the fish market."
+  - "Ölüdeniz: paragliding from Babadağ in the morning, when the wind is calmest, then a swim in the Blue Lagoon."
+  - "A boat trip around the bays of Göcek or the \"12 Islands\" from Fethiye."
+  - "By car or on a tour: Kayaköy early in the morning, then Tlos and the Saklıkent gorge."
+  - "Dalyan: by boat to the tombs of Kaunos and İztuzu beach. Sleep there, about 30 minutes from the airport."
+areas:
+  - name: Fethiye
+    text: >-
+      The most practical base, with cheaper hotels, buses along the whole coast and boats from the
+      harbour.
+  - name: Ölüdeniz
+    text: >-
+      By the lagoon, with resorts and bars, but more expensive. Hisarönü and Ovacık, a little higher
+      up, are cheaper.
+  - name: Göcek
+    text: >-
+      A quiet village with marinas, about 20 minutes from the airport. More expensive, good for the
+      first or last night.
+  - name: Dalyan
+    text: >-
+      A quiet riverside town, about 30 minutes from the airport, with family-run guesthouses and
+      boats to İztuzu.
+food:
+  - name: Fish from the Fethiye market
+    text: >-
+      You buy the fish at the covered market and a restaurant nearby cooks it for about €4-6 per
+      person, with salad and bread.
+  - name: Gözleme
+    text: A thin flatbread filled with spinach, cheese or potato, cooked on a griddle.
+  - name: Çökertme kebabı
+    text: >-
+      Thin strips of beef over fried potatoes, with yoghurt and tomato sauce, a typical dish of the
+      Muğla region.
+  - name: Kabak çiçeği dolması
+    text: Courgette flowers stuffed with rice and herbs, a typical meze of the Aegean coast.
+airports:
+  DLM: >-
+    The airport is about 6 km from the town of Dalaman and about 50 km from Fethiye. Havaş and
+    Muttaş buses leave after flight arrivals for Fethiye (about 1-1.5 hours, about €7-10) and
+    Marmaris (about 1.5 hours); for Ölüdeniz you continue by dolmuş from Fethiye. For Dalyan, take a
+    taxi to the town of Dalaman (about €10-15), then a dolmuş with a change in Ortaca. A direct taxi
+    costs about €30-40 to Göcek or Dalyan and about €50-70 to Fethiye. Many hotels arrange
+    transfers.
+transport: >-
+  From Fethiye's otogar, buses leave for Dalaman, Ortaca and Kaş, while the dolmuş minibuses to
+  Ölüdeniz run every 10-15 minutes in summer (about €1-2). A rental car (about €30-50 a day in
+  summer) helps for Saklıkent, Tlos and Patara.
+daytrips:
+  - name: Butterfly Valley
+    text: >-
+      A narrow cove between cliffs, reachable in practice only by boat from Ölüdeniz, about 30
+      minutes away (about €10-15 return).
+  - name: Tlos
+    text: >-
+      Lycian ruins with rock tombs and a castle above the valley, about 40 minutes from Fethiye.
+  - name: Xanthos and Patara
+    text: >-
+      The Lycian ruins of Xanthos, on the UNESCO list, and Patara's beach, about 18 km long, about
+      1-1.5 hours from Fethiye.
+budget: >-
+  The Turkish lira (TRY) loses value quickly, so prices here are in euros. A tea costs less than
+  €1, a gözleme about €3-5, a simple meal about €8-12 and a boat trip with lunch about €25-40. A
+  double room in Fethiye costs about €40-70 a night, more in Ölüdeniz.
+when: >-
+  The season runs from May to October. June and September are the best, with a warm sea and
+  without the heat of July and August, often over 35°C. From November to April many hotels in
+  Ölüdeniz and Dalyan close.
+tips:
+  - "Pay in lira, not in euros: prices in euros are usually higher. At ATMs, refuse the machine's own currency conversion."
+  - "İztuzu beach closes from 20:00 to 08:00 during the turtle season, from May to October. Do not touch the marked nests."
+  - "The walking trail from Kayaköy to Ölüdeniz takes about 2-3 hours: start early and take plenty of water."
+faq:
+  - q: "Fethiye or Ölüdeniz: where should I stay?"
+    a: "Fethiye is cheaper and has buses everywhere; Ölüdeniz is by the lagoon, but more expensive. Hisarönü is the middle ground, about 10 minutes by dolmuş from the beach."
+  - q: "How much money do you need per day?"
+    a: "Excluding the flight and accommodation, about €35-60 a day, more with a boat trip or paragliding."

@@ -378,6 +378,18 @@ links:
       Antalya:      https://www.tiqets.com/en/antalya-attractions-c78987/
       Riga:         https://www.tiqets.com/en/riga-attractions-c73383/
       Tallinn:      https://www.tiqets.com/en/tallinn-attractions-c65702/
+      Vilnius:      https://www.tiqets.com/en/vilnius-attractions-c73352/
+      Gothenburg:   https://www.tiqets.com/en/gothenburg-attractions-c78108/
+      Bordeaux:     https://www.tiqets.com/en/bordeaux-attractions-c67101/
+      Nantes:       https://www.tiqets.com/en/nantes-attractions-c66776/
+      Luxembourg:   https://www.tiqets.com/en/
+      Rhodes:       https://www.tiqets.com/en/rhodes-attractions-c264570/
+      Bodrum:       https://www.tiqets.com/en/bodrum-attractions-c78967/
+      Ankara:       https://www.tiqets.com/en/
+      Dalaman:      https://www.tiqets.com/en/
+      Alghero:      https://www.tiqets.com/en/
+      Pescara:      https://www.tiqets.com/en/
+      Ancona:       https://www.tiqets.com/en/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -454,6 +466,18 @@ links:
       Antalya:      https://www.getyourguide.com/antalya-l172/
       Riga:         https://www.getyourguide.com/riga-l213/
       Tallinn:      https://www.getyourguide.com/tallinn-l394/
+      Vilnius:      https://www.getyourguide.com/vilnius-l245/
+      Gothenburg:   https://www.getyourguide.com/gothenburg-l479/
+      Bordeaux:     https://www.getyourguide.com/bordeaux-l287/
+      Nantes:       https://www.getyourguide.com/nantes-l296/
+      Luxembourg:   https://www.getyourguide.com/luxembourg-l430/
+      Rhodes:       https://www.getyourguide.com/rhodes-l409/
+      Bodrum:       https://www.getyourguide.com/bodrum-l846/
+      Ankara:       https://www.getyourguide.com/ankara-l1235/
+      Dalaman:      https://www.getyourguide.com/fethiye-l1386/
+      Alghero:      https://www.getyourguide.com/alghero-l2783/
+      Pescara:      https://www.getyourguide.com/pescara-l1176/
+      Ancona:       https://www.getyourguide.com/ancona-l1519/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -530,6 +554,18 @@ links:
       Antalya:      https://www.welcomepickups.com/antalya/
       Riga:         https://www.welcomepickups.com/riga/
       Tallinn:      https://www.welcomepickups.com/tallinn/
+      Vilnius:      https://www.welcomepickups.com/vilnius/
+      Gothenburg:   https://www.welcomepickups.com/gothenburg/
+      Bordeaux:     https://www.welcomepickups.com/bordeaux/
+      Nantes:       https://www.welcomepickups.com/nantes/
+      Luxembourg:   https://www.welcomepickups.com/luxembourg/
+      Rhodes:       https://www.welcomepickups.com/rhodes/
+      Bodrum:       https://www.welcomepickups.com/bodrum/
+      Ankara:       https://www.welcomepickups.com/ankara/
+      Dalaman:      https://www.welcomepickups.com/dalaman/
+      Alghero:      https://www.welcomepickups.com/
+      Pescara:      https://www.welcomepickups.com/
+      Ancona:       https://www.welcomepickups.com/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -606,6 +642,18 @@ links:
       Antalya:      https://radicalstorage.com/luggage-storage/antalya
       Riga:         https://radicalstorage.com/luggage-storage/riga
       Tallinn:      https://radicalstorage.com/luggage-storage/tallinn
+      Vilnius:      https://radicalstorage.com/luggage-storage/vilnius
+      Gothenburg:   https://radicalstorage.com/luggage-storage/gothenburg
+      Bordeaux:     https://radicalstorage.com/luggage-storage/bordeaux
+      Nantes:       https://radicalstorage.com/luggage-storage/nantes
+      Luxembourg:   https://radicalstorage.com/
+      Rhodes:       https://radicalstorage.com/luggage-storage/rhodes
+      Bodrum:       https://radicalstorage.com/
+      Ankara:       https://radicalstorage.com/luggage-storage/ankara
+      Dalaman:      https://radicalstorage.com/
+      Alghero:      https://radicalstorage.com/luggage-storage/alghero
+      Pescara:      https://radicalstorage.com/luggage-storage/pescara
+      Ancona:       https://radicalstorage.com/luggage-storage/ancona
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

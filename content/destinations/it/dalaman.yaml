@@ -1,0 +1,111 @@
+city: Dalaman
+slug: dalaman
+tagline: Ölüdeniz, Fethiye e le baie della Costa Turchese
+intro: >-
+  Dalaman è soprattutto l'aeroporto della Costa Turchese: la città, piccola e agricola, ha poco da
+  vedere, ma in circa un'ora sei a Fethiye, Ölüdeniz, Göcek o Dalyan. Qui le montagne coperte di
+  pini scendono verso il mare, tra baie tranquille e tombe licie scavate nella roccia. Quattro o
+  cinque giorni, con base a Fethiye o a Ölüdeniz, bastano per il mare, una gita in barca e qualche
+  rovina antica.
+sights:
+  - name: Ölüdeniz e la Laguna Blu
+    text: >-
+      Una baia dall'acqua bassa e turchese, protetta da una lingua di sabbia, dentro un parco
+      naturale con ingresso a circa €3-5. La spiaggia di Belcekız accanto è gratuita.
+  - name: Parapendio dal Babadağ
+    text: >-
+      Il volo in tandem con istruttore parte da circa 1700-1900 m di quota sopra Ölüdeniz, dura
+      circa 30-40 minuti e costa circa €100-150.
+  - name: Kayaköy
+    text: >-
+      Il villaggio greco abbandonato dopo lo scambio di popolazioni del 1923, con centinaia di case
+      in pietra senza tetto su una collina, a circa 8 km da Fethiye.
+  - name: Le tombe di Dalyan e la spiaggia di İztuzu
+    text: >-
+      Di fronte a Dalyan, nella rupe sopra il fiume, ci sono le tombe reali di Kaunos, scavate nel
+      IV secolo a.C. Le barche sul fiume scendono fino a İztuzu, una spiaggia lunga circa 4,5 km dove
+      le tartarughe Caretta caretta depongono le uova.
+  - name: Canyon di Saklıkent
+    text: >-
+      Una gola lunga circa 18 km e profonda fino a 300 m, a circa 1 ora da Fethiye. Si cammina
+      nell'acqua fredda tra le pareti di roccia, quindi porta scarpe che si possano bagnare.
+  - name: Le baie di Göcek
+    text: >-
+      Isole e baie con pini e acqua limpida, da vedere con la gita in barca delle «12 Isole» da
+      Göcek o da Fethiye.
+itinerary:
+  - "Dall'aeroporto a Fethiye, circa 1 ora: il porto, la tomba rupestre di Amyntas e la cena al mercato del pesce."
+  - "Ölüdeniz: parapendio dal Babadağ la mattina, quando il vento è più calmo, poi un bagno nella Laguna Blu."
+  - "Gita in barca tra le baie di Göcek o alle «12 Isole» da Fethiye."
+  - "In auto o in escursione: Kayaköy la mattina presto, poi Tlos e il canyon di Saklıkent."
+  - "Dalyan: in barca alle tombe di Kaunos e alla spiaggia di İztuzu. Dormi lì, a circa 30 minuti dall'aeroporto."
+areas:
+  - name: Fethiye
+    text: >-
+      La base più pratica, con hotel più economici, autobus per tutta la costa e barche dal porto.
+  - name: Ölüdeniz
+    text: >-
+      Sulla laguna, con resort e bar, ma più cara. Hisarönü e Ovacık, poco più in alto, sono più
+      economiche.
+  - name: Göcek
+    text: >-
+      Un paese tranquillo con porticcioli turistici, a circa 20 minuti dall'aeroporto. Più caro,
+      buono per la prima o l'ultima notte.
+  - name: Dalyan
+    text: >-
+      Una cittadina tranquilla sul fiume, a circa 30 minuti dall'aeroporto, con pensioni familiari e
+      barche per İztuzu.
+food:
+  - name: Il pesce del mercato di Fethiye
+    text: >-
+      Compri il pesce al mercato coperto e un ristorante lì vicino te lo cucina per circa €4-6 a
+      persona, con insalata e pane.
+  - name: Gözleme
+    text: Una sfoglia sottile ripiena di spinaci, formaggio o patate, cotta sulla piastra.
+  - name: Çökertme kebabı
+    text: >-
+      Striscioline di manzo su patate fritte, con yogurt e salsa di pomodoro, piatto tipico della
+      regione di Muğla.
+  - name: Kabak çiçeği dolması
+    text: Fiori di zucca ripieni di riso ed erbe, un meze tipico della costa egea.
+airports:
+  DLM: >-
+    L'aeroporto è a circa 6 km dalla città di Dalaman e a circa 50 km da Fethiye. Gli autobus Havaş
+    e Muttaş partono dopo l'arrivo dei voli per Fethiye (circa 1-1,5 ore, circa €7-10) e Marmaris
+    (circa 1,5 ore); per Ölüdeniz prosegui in dolmuş da Fethiye. Per Dalyan prendi un taxi fino
+    alla città di Dalaman (circa €10-15), poi un dolmuş con cambio a Ortaca. Un taxi diretto costa
+    circa €30-40 fino a Göcek o Dalyan e circa €50-70 fino a Fethiye. Molti hotel organizzano il
+    transfer.
+transport: >-
+  Dall'otogar di Fethiye partono autobus per Dalaman, Ortaca e Kaş, mentre i dolmuş per Ölüdeniz
+  passano ogni 10-15 minuti d'estate (circa €1-2). L'auto a noleggio (circa €30-50 al giorno
+  d'estate) aiuta per Saklıkent, Tlos e Patara.
+daytrips:
+  - name: La Valle delle Farfalle
+    text: >-
+      Una caletta stretta tra le scogliere, raggiungibile in pratica solo in barca da Ölüdeniz, a
+      circa 30 minuti (circa €10-15 andata e ritorno).
+  - name: Tlos
+    text: >-
+      Rovine licie con tombe rupestri e un castello sopra la valle, a circa 40 minuti da Fethiye.
+  - name: Xanthos e Patara
+    text: >-
+      Le rovine licie di Xanthos, patrimonio UNESCO, e la spiaggia di Patara, lunga circa 18 km, a
+      circa 1-1,5 ore da Fethiye.
+budget: >-
+  La lira turca (TRY) perde valore in fretta, quindi qui i prezzi sono in euro. Un tè costa meno di
+  €1, una gözleme circa €3-5, un pasto semplice circa €8-12 e una gita in barca con pranzo circa
+  €25-40. Una camera doppia a Fethiye costa circa €40-70 a notte, di più a Ölüdeniz.
+when: >-
+  La stagione va da maggio a ottobre. Giugno e settembre sono i mesi migliori, con il mare caldo e
+  senza il caldo di luglio e agosto, spesso oltre 35°C. Da novembre ad aprile molti hotel di
+  Ölüdeniz e Dalyan chiudono.
+tips:
+  - "Paga in lire e non in euro: i prezzi in euro sono di solito più alti. Al bancomat rifiuta la conversione proposta dallo sportello."
+  - "La spiaggia di İztuzu chiude dalle 20:00 alle 08:00 durante la stagione delle tartarughe, da maggio a ottobre. Non toccare i nidi segnalati."
+  - "Il sentiero a piedi da Kayaköy a Ölüdeniz richiede circa 2-3 ore: parti presto e porta molta acqua."
+faq:
+  - q: "Fethiye o Ölüdeniz: dove dormire?"
+    a: "Fethiye è più economica e ha autobus per ogni direzione; Ölüdeniz è sulla laguna, ma più cara. Hisarönü è la via di mezzo, a circa 10 minuti di dolmuş dalla spiaggia."
+  - q: "Quanto si spende al giorno?"
+    a: "Volo e alloggio esclusi, circa €35-60 al giorno, di più con una gita in barca o il parapendio."

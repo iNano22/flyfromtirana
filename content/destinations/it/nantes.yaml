@@ -1,0 +1,75 @@
+city: Nantes
+slug: nantes
+tagline: L'elefante meccanico, il castello dei duchi e la Loira
+intro: >-
+  Nantes si trova sulla Loira, a circa 50 km dall'Atlantico. Era la capitale dei duchi di Bretagna
+  e un grande porto commerciale; oggi è una città universitaria piena di vita, con arte nelle strade
+  e macchine giganti nei vecchi cantieri navali. È più economica di Parigi, e due o tre giorni
+  bastano per il centro, l'Île de Nantes e una giornata sulla costa.
+sights:
+  - name: Les Machines de l'île e il Grand Éléphant
+    text: "Nei vecchi cantieri dell'Île de Nantes, alcuni artisti hanno costruito macchine giganti ispirate a Jules Verne, nato a Nantes. La star è il Grand Éléphant, un elefante alto 12 metri che cammina con circa 45 passeggeri sulla schiena. Guardarlo da fuori è gratuito; il giro e la Galerie des Machines costano circa €9-10 ciascuno. In inverno chiude per qualche settimana: controlla il calendario."
+  - name: Château des ducs de Bretagne
+    text: Il castello dove nacque Anna di Bretagna nel 1477. Il cortile e la passeggiata sulle mura sono gratuiti; il museo di storia della città all'interno costa circa €9.
+  - name: Cathédrale Saint-Pierre-et-Saint-Paul
+    text: La cattedrale gotica fu costruita dal 1434 al 1891. La pietra bianca la rende molto luminosa all'interno, dove si trova la tomba del duca François II, capolavoro del Rinascimento. L'ingresso è gratuito.
+  - name: Passage Pommeraye
+    text: Una galleria commerciale coperta del 1843, su tre livelli, con scale di legno, statue e un tetto di vetro.
+  - name: Le Voyage à Nantes e la linea verde
+    text: "Una linea verde dipinta sul marciapiede, lunga circa 20 km, ti guida tra i luoghi principali e le opere d'arte: seguila e non ti serve la mappa. A luglio e agosto il festival Le Voyage à Nantes aggiunge nuove installazioni in tutta la città."
+airports:
+  NTE: >-
+    L'aeroporto Nantes Atlantique è a circa 10 km a sud-ovest del centro. L'autobus Navette Aéroport
+    ti porta in Place du Commerce e alla stazione ferroviaria in circa 20-30 minuti; parte ogni
+    20-30 minuti e il biglietto costa circa €9-10. Il taxi impiega circa 20-25 minuti e costa circa
+    €30-40.
+budget: >-
+  Un caffè al banco costa circa €1,50-2,50, una galette complète circa €10-14, una crêpe €4-8, un
+  pranzo formule €15-18, un biglietto del tram circa €2. Un letto in ostello costa da circa €25-35,
+  una camera doppia in un hotel semplice da circa €70-100 a notte.
+when: >-
+  Da maggio a settembre il clima è migliore, raramente caldo, ma la pioggia cade in ogni stagione. A
+  luglio e agosto Le Voyage à Nantes riempie la città di arte gratuita. A fine gennaio il festival
+  La Folle Journée porta brevi concerti di musica classica con biglietti economici.
+tips:
+  - "Il sabato e la domenica tram e autobus sono gratuiti, ma la Navette Aéroport no."
+  - "I biglietti per il giro sul Grand Éléphant finiscono presto: vai presto o comprali online, e controlla gli orari delle passeggiate."
+  - "Molti ristoranti chiudono la domenica e il lunedì. Il mercato di Talensac apre ogni mattina tranne il lunedì."
+itinerary:
+  - "Lo Château des ducs de Bretagne al mattino, poi la cattedrale e i vicoli di Bouffay. Nel pomeriggio Passage Pommeraye e Place Graslin, la sera una galette e il cidre in una crêperie."
+  - "Île de Nantes: Les Machines de l'île e il Grand Éléphant. Nel pomeriggio una passeggiata lungo il Quai des Antilles, la sera il battello Navibus fino a Trentemoult, il villaggio di pescatori con le case colorate."
+  - "Il mercato di Talensac al mattino, poi il Jardin des Plantes e il Musée d'arts. Nel pomeriggio segui la linea verde fino al giardino giapponese dell'Île de Versailles. In alternativa, una giornata a Clisson o a Pornic."
+areas:
+  - name: Bouffay
+    text: La città vecchia con case a graticcio, vicoli e bar. Un'atmosfera bellissima, ma rumorosa la notte.
+  - name: Graslin e Commerce
+    text: L'elegante quartiere del XVIII secolo, con il teatro, negozi e brasserie. In centro, con prezzi medi o alti.
+  - name: Gare de Nantes
+    text: "La zona più pratica: la Navette Aéroport ferma alla stazione, da cui partono i treni per le gite. Hotel di catena più economici, a 10 minuti a piedi dal castello."
+food:
+  - name: Galettes e crêpes
+    text: "La cucina della Bretagna: la galette è una crespella salata di grano saraceno, di solito con formaggio, prosciutto e uovo (complète), mentre la crêpe è dolce. Si accompagnano con il cidre."
+  - name: Beurre blanc
+    text: Una salsa di burro, vino bianco e scalogno, nata nella zona di Nantes e servita con il pesce della Loira.
+  - name: Muscadet
+    text: Il vino bianco secco dei vigneti intorno a Clisson, da bere con le ostriche. Un bicchiere costa circa €4-6.
+  - name: Gâteau nantais
+    text: Il dolce della città, con mandorle e rum. Anche i biscotti Petit-Beurre LU sono nati a Nantes.
+transport: >-
+  Il centro si gira a piedi, mentre la rete Naolib ha 3 linee di tram, autobus e i battelli Navibus
+  sulla Loira. Il biglietto singolo costa circa €2 e vale 1 ora con i cambi; il biglietto da 24 ore
+  circa €6. Il sabato e la domenica tutta la rete è gratuita.
+daytrips:
+  - name: L'estuario della Loira e Saint-Nazaire
+    text: Circa 40 minuti di treno. Lì si trova la gigantesca base sottomarina della Seconda guerra mondiale, con una terrazza gratuita sul tetto, e il museo dei transatlantici Escal'Atlantic.
+  - name: Clisson
+    text: Una cittadina con un castello medievale in rovina e ville in stile italiano, tra i vigneti del Muscadet. Circa 30 minuti di treno.
+  - name: Pornic
+    text: Un piccolo porto sull'Atlantico, con un castello sul mare, spiagge e un sentiero costiero sulle scogliere. Circa 1 ora di treno.
+  - name: Mont-Saint-Michel
+    text: "L'abbazia sulla sua isola rocciosa, una giornata lunga: circa 2,5-3 ore a tratta, in treno fino a Rennes e poi in autobus, o in auto."
+faq:
+  - q: "Navette Aéroport o taxi?"
+    a: "Per 1 o 2 persone la Navette è più economica: circa €9-10 a persona. Per 3-4 persone con le valigie, o a tarda notte, il taxi a circa €30-40 è ragionevole."
+  - q: "Quanto si spende al giorno a Nantes?"
+    a: "Volo e alloggio esclusi, calcola €45-70 al giorno. Risparmi con i pranzi formule, le galettes e i trasporti gratuiti nel fine settimana."

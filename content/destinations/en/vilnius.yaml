@@ -1,0 +1,104 @@
+city: Vilnius
+slug: vilnius
+tagline: Baroque churches, the Gate of Dawn and the artists' republic of Užupis
+intro: >-
+  Vilnius is the capital of Lithuania, first mentioned in 1323. Its old town, full of baroque
+  churches and hidden courtyards, is one of the largest in Eastern Europe and on the UNESCO list.
+  Two or three days are enough for the city, plus a day for Trakai castle. Lithuania is in the
+  eurozone and in Schengen.
+sights:
+  - name: Old Town (Senamiestis)
+    text: >-
+      Cobbled lanes, courtyards and dozens of churches, from Pilies street to the Town Hall. Don't
+      miss St. Anne's Church, Gothic in red brick. You can walk it all in half a day.
+  - name: Gate of Dawn (Aušros Vartai)
+    text: >-
+      The only city wall gate that has survived. Above it is a chapel with an icon of the Virgin
+      Mary that draws pilgrims from the whole region. Entry is free.
+  - name: Gediminas Tower
+    text: >-
+      The brick tower of the upper castle, on the hill behind the cathedral, the symbol of the city.
+      The walk up takes about 10 minutes, or take the funicular. From the top you get the best view
+      over the rooftops, especially at sunset (ticket about €8).
+  - name: Užupis
+    text: >-
+      The artists' district across the Vilnia river, which on 1 April 1997 declared itself a
+      "republic" with its own constitution, written on plaques in dozens of languages on Paupio
+      street. It has murals, galleries and the Angel statue on its square.
+  - name: Vilnius Cathedral
+    text: >-
+      The cathedral with a neoclassical façade and a separate bell tower, on the main square. On the
+      square look for the "Stebuklas" (miracle) tile, where the 1989 human chain from Tallinn to
+      Vilnius ended. Behind it is the Palace of the Grand Dukes, now a museum.
+  - name: Museum of Occupations and Freedom Fights
+    text: >-
+      In the former KGB building, with the prison cells in the basement. It tells of the Soviet
+      occupation and the deportations to Siberia. Allow 1-2 hours.
+itinerary:
+  - "The Gate of Dawn, the Town Hall, Pilies street, St. Anne's Church and the Cathedral. In the evening, climb to Gediminas Tower for the sunset."
+  - "Užupis in the morning, then the Hill of Three Crosses for the view. In the afternoon the Museum of Occupations, in the evening dinner with cepelinai in the old town."
+  - "Take the train or bus to Trakai for the castle on the lake and kibinai for lunch. In the evening a walk along the Neris river."
+areas:
+  - name: Senamiestis (Old Town)
+    text: Everything on foot and the best atmosphere, but with the highest prices and noise at night.
+  - name: Užupis
+    text: A quiet, artistic district, 5 minutes on foot from the old town, with rental apartments.
+  - name: Near the train station
+    text: >-
+      About 10 minutes on foot from the Gate of Dawn: handy for the airport train and day trips,
+      with cheaper hotels.
+food:
+  - name: Cepelinai
+    text: >-
+      The national dish: large potato dumplings stuffed with meat, with sour cream and fried bacon.
+      They are heavy: two pieces are enough for lunch.
+  - name: Šaltibarščiai
+    text: >-
+      A cold pink soup of beetroot, kefir, cucumber and dill, with hot boiled potatoes on the side.
+      The dish of summer.
+  - name: Kibinai
+    text: >-
+      Small pastries filled with lamb or vegetables, a tradition of the Karaim people of Trakai. The
+      best ones are found right there.
+  - name: Kepta duona
+    text: Strips of rye bread fried with garlic, the classic snack with beer.
+airports:
+  VNO: >-
+    Vilnius Airport is about 6 km south of the centre. The train takes you to the central train
+    station in about 8 minutes, with a ticket of about €1, but it does not run often: check the
+    timetable. Buses 1, 2 and 3G leave from in front of the terminal: 1 goes to the train station,
+    2 and 3G pass through the centre, in about 15-25 minutes. A taxi or Bolt takes about 10-15
+    minutes and costs about €8-12.
+transport: >-
+  The old town and Užupis are walkable; for the rest there are buses and trolleybuses. A
+  30-minute ticket costs about €1 and a 24-hour one about €5, from the transport app or kiosks;
+  tap your ticket on the reader as soon as you board. Bolt is cheap.
+daytrips:
+  - name: Trakai castle
+    text: >-
+      A Gothic red-brick castle on an island in Lake Galvė, about 30 km to the west. The train or
+      bus takes about 30-40 minutes and costs about €2-3; the museum ticket is about €12.
+  - name: Kaunas
+    text: >-
+      Lithuania's second city, about 1 hour by train, with a ticket of about €6-8. It has an old
+      town, a castle and modernist buildings from the 1920-1930s, when it was the capital.
+  - name: Hill of Crosses
+    text: >-
+      A hill with more than 100,000 crosses, about 12 km from Šiauliai. Reaching Šiauliai takes
+      about 2-3 hours by train or bus, then a local bus or taxi: it is a long day, so many people
+      choose a tour.
+budget: >-
+  Vilnius is one of the cheapest capitals in the European Union. A coffee costs about €2.5-3.5, a
+  beer about €4-6, a lunch of cepelinai about €7-10 and a dinner about €15-25.
+when: >-
+  May-September has the best weather, with about 20-25°C in summer and long days. On 24 June it is
+  Joninės, the midsummer festival. Winter is cold, often below zero, but December has the
+  Christmas tree on Cathedral Square.
+tips:
+  - "Churches are usually free: also worth it is the Church of St. Peter and St. Paul in Antakalnis, with about 2,000 stucco figures."
+  - "In early March the Kaziukas fair fills the streets of the centre with crafts and food."
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "The train takes about 8 minutes to the central station and costs about €1, but it runs rarely. Buses 2 and 3G go to the centre in about 15-25 minutes; by Bolt or taxi allow about €8-12."
+  - q: "How much money do I need per day in Vilnius?"
+    a: "Excluding the flight and accommodation, about €35-55 a day for food, transport and a museum. Vilnius is cheaper than Riga and Tallinn."

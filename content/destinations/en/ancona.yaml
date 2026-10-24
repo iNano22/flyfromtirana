@@ -1,0 +1,80 @@
+city: Ancona
+slug: ancona
+tagline: An old port, a hilltop cathedral and the Conero sea
+intro: >-
+  Ancona is the capital of the Marche region and one of the main ports of the Adriatic. Its name
+  comes from the Greek "ankon", elbow, after the shape of the headland where the Greeks founded it
+  around 387 BC. The city is hilly and sees few tourists, while a few kilometres to the south the
+  Conero Riviera begins, with some of the most beautiful beaches in Italy. Three or four days are
+  enough for the city, the sea and Loreto or Urbino.
+sights:
+  - name: Cattedrale di San Ciriaco
+    text: The Romanesque cathedral on the Guasco hill, built between the 11th and 13th centuries on the site of an ancient temple. From the square in front of it you can see the whole port. Entry is free.
+  - name: Il Passetto
+    text: The white steps below the War Memorial that lead down to the rocks and the sea, with the small caves the fishermen carved out for their boats. In summer locals swim from the rocks.
+  - name: Mole Vanvitelliana
+    text: A pentagonal building on an artificial island in the port, begun in 1733 by Luigi Vanvitelli as a quarantine station. Today it hosts exhibitions, summer concerts and the Museo Omero, where works of art are meant to be touched.
+  - name: Arco di Traiano
+    text: The marble arch raised around the year 115 in honour of the Emperor Trajan, who enlarged the port. It still stands on the quayside.
+  - name: Riviera del Conero
+    text: The rocky coast south of the city, where Monte Conero (572 m) drops straight into the sea. The beaches are pebbly; the most famous, Due Sorelle, can only be reached by boat.
+itinerary:
+  - "Piazza Cavour, Corso Garibaldi and Piazza del Plebiscito, then the climb to the Cathedral of San Ciriaco. Down to the Arco di Traiano and the port, and an aperitivo in the centre in the evening."
+  - "The Mole Vanvitelliana and the Fontana del Calamo with its 13 spouts. In the afternoon on to the Passetto, a swim from the rocks in summer and the sunset over the steps."
+  - "The Conero Riviera: Portonovo in the morning, then Sirolo and the boat to the Due Sorelle beach. Easiest with a rental car or the summer buses."
+  - "Loreto by train, a day in Urbino or the Frasassi caves."
+areas:
+  - name: Centro Storico
+    text: Between Piazza Cavour, Corso Garibaldi and the port, with everything within walking distance and the best restaurants. The streets are steep.
+  - name: Near Ancona Centrale
+    text: The cheapest and most practical hotels for the trains, but with little atmosphere. The centre is about 10-15 minutes away by bus.
+  - name: Riviera del Conero
+    text: Sirolo, Numana or Portonovo for a beach holiday, but prices rise sharply in July-August and getting around without a car is hard.
+food:
+  - name: Stoccafisso all'anconetana
+    text: Dried stockfish slow-cooked with potatoes, tomatoes, olives and white wine, the city's signature dish.
+  - name: Olive all'ascolana
+    text: Large olives stuffed with meat, breaded and fried, sold in paper cones as street food.
+  - name: Moscioli di Portonovo
+    text: Wild mussels from the Conero rocks, usually eaten from May to September.
+  - name: Brodetto all'anconetana
+    text: A thick soup with many kinds of Adriatic fish, 13 by tradition, served with toasted bread.
+airports:
+  AOI: >-
+    Marche Airport is in Falconara Marittima, about 15 km west of the city. Castelferretti station
+    is about 5-10 minutes on foot from the terminal (sometimes there is also a shuttle); from there
+    the regional train reaches Ancona Centrale in about 15-20 minutes (about €2-3), but it runs
+    roughly once an hour. There is also a Conerobus bus to the centre, about 40-50 minutes. A taxi
+    costs about €35-45.
+transport: >-
+  The centre can be seen on foot, but the city is hilly. Ancona Centrale is about 2-3 km from the
+  centre and is linked to it by Conerobus buses; buy your ticket (about €1.50) at a tobacconist
+  (tabacchi) or with the app. Trains leave the station for Loreto, Pesaro and Frasassi, while
+  ferries leave the port for Croatia and Greece.
+daytrips:
+  - name: Monte Conero and Portonovo
+    text: About 12 km to the south, a pebbly bay below the mountain, with an 11th-century Romanesque church and trails up the mountain. In summer parking is limited, so set off early.
+  - name: Sirolo
+    text: A medieval village on a cliff with sea views, about 40 minutes by bus. Boats to Due Sorelle leave from here.
+  - name: Loreto
+    text: One of the main Catholic pilgrimage sites, with the Basilica of the Holy House. About 20 minutes by train, then a short climb from the station.
+  - name: Urbino
+    text: Raphael's town, with the Renaissance Ducal Palace, a UNESCO World Heritage Site. By train to Pesaro and by bus from there, about 2 hours in all.
+  - name: Frasassi caves
+    text: Huge caves full of stalactites, about 1 hour by train to Genga-San Vittore Terme. A ticket costs about €18-20 and it is about 14 °C inside.
+budget: >-
+  An espresso costs about €1.20, a cone of olive all'ascolana about €5-7, a pizza €7-10 and a plate
+  of stoccafisso about €18-25. A bus ticket costs about €1.50, while an umbrella with two sun
+  loungers on the Conero costs about €25-40 a day in summer.
+when: >-
+  May to June and September: the sea is warm and the beaches are not crowded. In July-August
+  Portonovo and Sirolo fill up, especially at weekends. In winter the city is quiet, but good for
+  Loreto, Urbino and Frasassi.
+tips:
+  - "The Conero beaches are pebbly: bring water shoes and go early, because the car parks fill up fast."
+  - "With a rental car, don't drive into the historic centre: it is a ZTL zone and the fines arrive by post."
+faq:
+  - q: "How do you get from the airport to the centre without a taxi?"
+    a: "Walk to Castelferretti station and take the train to Ancona Centrale, about 15-20 minutes. Check the timetable in advance, because trains are not frequent."
+  - q: "How much money do you need per day in Ancona?"
+    a: "Excluding the flight and accommodation, about €40-60 a day, more if you eat fish in restaurants or rent an umbrella on the beach."

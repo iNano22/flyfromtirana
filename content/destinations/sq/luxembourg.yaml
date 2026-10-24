@@ -1,0 +1,82 @@
+city: Luxembourg
+slug: luxembourg
+tagline: Kazamate, lugina e Grund-it dhe transport falas
+intro: >-
+  Luxembourg është kryeqyteti i një prej shteteve më të vogla dhe më të pasura të Evropës, i
+  ngritur mbi shkëmbinj, mbi luginat e lumenjve Alzette dhe Pétrusse. Qyteti i vjetër dhe
+  fortifikimet e tij janë në listën e UNESCO-s që nga viti 1994. Është i shtrenjtë, por i gjithë
+  transporti publik është falas dhe qendra shihet në këmbë për dy ditë.
+sights:
+  - name: Kazamatet e Bock-ut
+    text: Tunele të gdhendura në shkëmb nën kështjellën e vjetër, pjesë e një rrjeti që dikur arrinte 23 km, nga të cilët sot mbeten rreth 17 km. Hyrja kushton rreth €8; në dimër mund të jenë të mbyllura.
+  - name: Chemin de la Corniche
+    text: Shëtitorja mbi muret e qytetit, e quajtur «ballkoni më i bukur i Evropës», me pamje mbi Grund-in dhe lumin Alzette. Është falas dhe e hapur gjithë kohën.
+  - name: Grund
+    text: Lagjja e poshtme buzë lumit Alzette, me Abacinë Neumünster. Zbret me ashensorin falas nga Plateau du Saint-Esprit ose në këmbë nga Corniche.
+  - name: Pallati i Dukës së Madhe
+    text: Rezidenca zyrtare e Dukës së Madhe në qytetin e vjetër. Brenda vizitohet vetëm në verë, me turne me guidë që blihen te zyra e turizmit.
+  - name: Kirchberg dhe MUDAM
+    text: Pllaja moderne e institucioneve evropiane. MUDAM, muzeu i artit modern në ndërtesën e I. M. Pei-t, kushton rreth €10 dhe është falas për të rinjtë nën 26 vjeç; ngjitur është kalaja Fort Thüngen.
+  - name: Ashensori panoramik i Pfaffenthal-it
+    text: Një kabinë me xham që zbret falas 71 metra nga qyteti i vjetër në luginë, me pamje drejt Urës së Kuqe (Pont Grande-Duchesse Charlotte).
+airports:
+  LUX: >-
+    Aeroporti Luxembourg-Findel ndodhet rreth 6 km nga qendra. Autobusët 16 dhe 29 nisen para
+    terminalit dhe të çojnë në qendër dhe në stacionin e trenit (Gare) për rreth 20-30 minuta. Si
+    i gjithë transporti publik në vend, janë falas. Taksia bën rreth 15 minuta dhe kushton rreth
+    €30-40.
+budget: >-
+  Luxembourg është ndër qytetet më të shtrenjta në Evropë. Një kafe kushton rreth €3-4, një birrë
+  €5-7, pjata e ditës (plat du jour) në drekë €15-20 dhe një darkë në restorant €25-40. Një shtrat
+  në hostel kushton rreth €40-55, një dhomë dyshe në hotel të thjeshtë rreth €120-180 nata.
+  Supermarketet si Aldi dhe Lidl ulin shpenzimet për ushqimin.
+when: >-
+  Maji-shtatori ka motin më të mirë, edhe pse shiu bie gjatë gjithë vitit. Më 23 qershor është
+  Festa Kombëtare, me fishekzjarre natën e 22 qershorit. Nga fundi i gushtit deri në fillim të
+  shtatorit zhvillohet Schueberfouer, panairi i madh me lojëra që daton nga viti 1340. Në dhjetor
+  ka tregje të Krishtlindjeve.
+tips:
+  - "Flitet luksemburgisht, frëngjisht dhe gjermanisht, por anglishtja kuptohet kudo."
+  - "Për drekë kërko «plat du jour»: pjata e ditës është mënyra më e lirë për të ngrënë në restorant."
+  - "Uji i rubinetit është i pijshëm: mbush shishen dhe kurse."
+itinerary:
+  - "Place Guillaume II, Pallati i Dukës së Madhe nga jashtë, katedralja dhe Place d'Armes. Pasdite Chemin de la Corniche dhe Kazamatet e Bock-ut, pastaj zbritje në Grund; në mbrëmje një pije në Grund ose në Clausen."
+  - "Ashensori panoramik për në Pfaffenthal dhe teleferiku për në Kirchberg. MUDAM, Fort Thüngen dhe Philharmonie, pastaj kthim me tramvaj në qendër."
+  - "Udhëtim ditor në kështjellën e Vianden-it ose në Mullerthal, me tren dhe autobus falas. Ndryshe, Trier në Gjermani ose fshatrat e verës buzë lumit Moselle."
+areas:
+  - name: Ville Haute (qyteti i vjetër)
+    text: Pranë gjithçkaje dhe shumë e bukur, por me hotelet më të shtrenjta.
+  - name: Gare
+    text: Zona e stacionit, me hotelet më të lira dhe tramvaj për në qendër.
+  - name: Grund dhe Clausen
+    text: Lagje të qeta poshtë në luginë gjatë ditës, plot bare në mbrëmje.
+  - name: Kirchberg
+    text: Hotele biznesi që shpesh janë më të lira në fundjavë, me tramvaj për në qendër dhe autobusin 16 për në aeroport.
+food:
+  - name: Judd mat Gaardebounen
+    text: Qafë derri e tymosur me bathë dhe salcë kremi, pjata kombëtare.
+  - name: Gromperekichelcher
+    text: Petulla të skuqura me patate dhe qepë, rreth €5 porcioni.
+  - name: Kachkéis
+    text: Djathë i butë i gatuar që lyhet mbi bukë, shpesh me mustardë.
+  - name: Vera dhe crémant e Moselle-s
+    text: Rizling dhe verë me shkumë nga vreshtat në jug të vendit; një gotë kushton rreth €5-7.
+transport: >-
+  Që nga viti 2020 i gjithë transporti publik në Luxembourg është falas: autobusët, tramvaji dhe
+  trenat në klasin e dytë, në të gjithë vendin. Nuk ke nevojë për biletë; paguhet vetëm klasi i
+  parë në tren. Ashensorët falas të Grund-it dhe të Pfaffenthal-it ta kursejnë ngjitjen. Për
+  udhëtimet përtej kufirit, si për në Trier, paguan vetëm pjesën jashtë Luxembourg-ut.
+daytrips:
+  - name: Kështjella e Vianden-it
+    text: Kështjella mesjetare mbi një qytezë në veri, rreth 1 orë e 15 minuta me tren deri në Ettelbruck dhe pastaj me autobus. Hyrja kushton rreth €12.
+  - name: Mullerthal
+    text: "«Zvicra e Vogël» e Luxembourg-ut: shtigje mes shkëmbinjve dhe pyjeve, rreth 1 orë me autobus."
+  - name: Fshatrat e verës buzë Moselle-s
+    text: Remich, Grevenmacher dhe Schengen, ku u nënshkrua marrëveshja e Shengenit në vitin 1985. Rreth 45 minuta me autobus.
+  - name: Trier
+    text: Qyteti më i vjetër i Gjermanisë, me portën romake Porta Nigra, rreth 50 minuta me tren. Treni është falas deri në kufi; për pjesën gjermane blen biletë, rreth €5-10 për drejtim.
+faq:
+  - q: "A është vërtet falas transporti publik?"
+    a: "Po. Autobusët, tramvaji dhe trenat në klasin e dytë janë falas për të gjithë, edhe për turistët, pa biletë. Kjo vlen edhe për autobusët 16 dhe 29 nga aeroporti."
+  - q: "Sa para duhen në ditë në Luxembourg?"
+    a: "Pa fluturimin dhe fjetjen, rreth €50-80 në ditë. Kursen me pjatën e ditës dhe me supermarketet. Fjetja është shpenzimi më i madh: disa udhëtarë flenë në Trier, ku hotelet janë më të lira."

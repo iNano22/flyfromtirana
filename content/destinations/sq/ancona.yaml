@@ -1,0 +1,80 @@
+city: Ancona
+slug: ancona
+tagline: Port i vjetër, katedrale mbi kodër dhe deti i Conero-s
+intro: >-
+  Ancona është kryeqyteti i rajonit Marche dhe një nga portet kryesore të Adriatikut. Emri vjen nga
+  greqishtja «ankon», bërryl, sipas formës së kepit ku e themeluan grekët rreth vitit 387 p.e.s.
+  Qyteti është me kodra dhe pak turistik, ndërsa pak kilometra në jug nis Riviera e Conero-s, me
+  disa nga plazhet më të bukura të Italisë. Tri-katër ditë mjaftojnë për qytetin, detin dhe
+  Loreto-n ose Urbino-n.
+sights:
+  - name: Cattedrale di San Ciriaco
+    text: Katedralja romanike mbi kodrën Guasco, e ndërtuar ndërmjet shekujve XI dhe XIII mbi vendin e një tempulli antik. Nga sheshi para saj sheh gjithë portin. Hyrja është falas.
+  - name: Il Passetto
+    text: Shkallët e bardha poshtë Monumentit të të Rënëve, që zbresin te shkëmbinjtë dhe deti, me shpellat e vogla që peshkatarët kanë gdhendur për varkat. Në verë vendasit lahen nga shkëmbinjtë.
+  - name: Mole Vanvitelliana
+    text: Ndërtesë pesëkëndëshe mbi një ishull artificial në port, e nisur në vitin 1733 nga Luigi Vanvitelli si karantinë. Sot mban ekspozita, koncerte verore dhe Muzeun Omero, ku veprat e artit preken me dorë.
+  - name: Arco di Traiano
+    text: Harku prej mermeri i ngritur rreth vitit 115 në nder të perandorit Trajan, që zgjeroi portin. Qëndron ende buzë molit.
+  - name: Riviera del Conero
+    text: Bregdeti shkëmbor në jug të qytetit, ku mali Conero (572 m) zbret drejt e në det. Plazhet janë me guralecë; më i famshmi, Due Sorelle, arrihet vetëm me varkë.
+itinerary:
+  - "Piazza Cavour, Corso Garibaldi dhe Piazza del Plebiscito, pastaj ngjitja te Katedralja San Ciriaco. Zbritja te Arco di Traiano dhe porti, në mbrëmje aperitiv në qendër."
+  - "Mole Vanvitelliana dhe Fontana del Calamo me 13 gojat e saj. Pasdite deri te Passetto, banjë nga shkëmbinjtë në verë dhe perëndimi i diellit mbi shkallët."
+  - "Riviera e Conero-s: Portonovo në mëngjes, pastaj Sirolo dhe varka për plazhin Due Sorelle. Më lehtë me makinë me qira ose me autobusët e verës."
+  - "Loreto me tren, një ditë në Urbino ose shpellat e Frasassit."
+areas:
+  - name: Centro Storico
+    text: Mes Piazza Cavour, Corso Garibaldi dhe portit, me gjithçka në këmbë dhe restorantet më të mira. Rrugët janë me të përpjeta.
+  - name: Pranë Ancona Centrale
+    text: Hotelet më të lira dhe më praktike për trenat, por me pak atmosferë. Qendra është rreth 10-15 minuta me autobus.
+  - name: Riviera del Conero
+    text: Sirolo, Numana ose Portonovo për pushime në det, por çmimet rriten shumë në korrik-gusht dhe pa makinë lëviz me vështirësi.
+food:
+  - name: Stoccafisso all'anconetana
+    text: Bakalar i tharë i gatuar ngadalë me patate, domate, ullinj dhe verë të bardhë, pjata simbol e qytetit.
+  - name: Olive all'ascolana
+    text: Ullinj të mëdhenj të mbushur me mish, të pane dhe të skuqur, që shiten në kone letre si ushqim rruge.
+  - name: Moscioli di Portonovo
+    text: Midhje të egra nga shkëmbinjtë e Conero-s, që zakonisht hahen nga maji deri në shtator.
+  - name: Brodetto all'anconetana
+    text: Supë e trashë me shumë lloje peshku të Adriatikut, sipas traditës 13, me bukë të thekur.
+airports:
+  AOI: >-
+    Aeroporti i Marche-s është në Falconara Marittima, rreth 15 km në perëndim të qytetit. Stacioni
+    Castelferretti është rreth 5-10 minuta në këmbë nga terminali (ndonjëherë ka edhe navetë);
+    prej andej treni rajonal arrin në Ancona Centrale për rreth 15-20 minuta (rreth €2-3), por
+    nis afërsisht një herë në orë. Ka edhe autobus të Conerobus deri në qendër, rreth 40-50
+    minuta. Taksia kushton rreth €35-45.
+transport: >-
+  Qendra shihet në këmbë, por qyteti është me kodra. Ancona Centrale është rreth 2-3 km nga qendra
+  dhe lidhet me autobusët e Conerobus; biletën (rreth €1.50) blije në duhanshitore (tabacchi) ose
+  me aplikacion. Nga stacioni nisen trenat për Loreto, Pesaro dhe Frasassi, ndërsa nga porti
+  tragetet për Kroaci dhe Greqi.
+daytrips:
+  - name: Monte Conero dhe Portonovo
+    text: Rreth 12 km në jug, një gji me zhavorr nën mal, me një kishë romanike të shekullit XI dhe shtigje për në mal. Në verë parkimi është i kufizuar, ndaj nisu herët.
+  - name: Sirolo
+    text: Fshat mesjetar mbi shkëmb me pamje nga deti, rreth 40 minuta me autobus. Nga këtu nisen varkat për Due Sorelle.
+  - name: Loreto
+    text: Një nga vendet kryesore të pelegrinazhit katolik, me bazilikën e Shtëpisë së Shenjtë. Rreth 20 minuta me tren, pastaj ngjitje e shkurtër nga stacioni.
+  - name: Urbino
+    text: Qyteti i Rafaelit, me Pallatin Dukal të Rilindjes, në listën e UNESCO-s. Me tren deri në Pesaro dhe me autobus prej andej, gjithsej rreth 2 orë.
+  - name: Shpellat e Frasassit
+    text: Shpella gjigante me stalaktite, rreth 1 orë me tren deri në Genga-San Vittore Terme. Bileta kushton rreth €18-20 dhe brenda janë rreth 14 °C.
+budget: >-
+  Një espresso kushton rreth €1.20, një kon me olive all'ascolana rreth €5-7, një pica €7-10 dhe
+  një pjatë stoccafisso rreth €18-25. Bileta e autobusit kushton rreth €1.50, ndërsa një çadër
+  me dy shezlongë në Conero rreth €25-40 në ditë në verë.
+when: >-
+  Maji-qershori dhe shtatori: deti është i ngrohtë dhe plazhet nuk janë plot. Në korrik-gusht
+  Portonovo dhe Sirolo mbushen, sidomos në fundjavë. Në dimër qyteti është i qetë, por i mirë
+  për Loreto, Urbino dhe Frasassi.
+tips:
+  - "Plazhet e Conero-s janë me guralecë: merr këpucë uji dhe shko herët, sepse parkimet mbushen shpejt."
+  - "Me makinë me qira mos hyr në qendrën historike: është zonë ZTL dhe gjobat vijnë me postë."
+faq:
+  - q: "Si shkohet nga aeroporti në qendër pa taksi?"
+    a: "Ec deri në stacionin Castelferretti dhe merr trenin për Ancona Centrale, rreth 15-20 minuta. Kontrollo oraret përpara, sepse trenat nuk janë të shpeshtë."
+  - q: "Sa para duhen në ditë në Ancona?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë, më shumë nëse ha peshk në restorant ose merr çadër në plazh."

@@ -1,0 +1,74 @@
+city: Alghero
+slug: alghero
+tagline: Bastione katalanase, shpella dhe plazhe të kthjellëta
+intro: >-
+  Alghero është qyteti më i bukur i bregut veriperëndimor të Sardenjës: një qytet i vjetër me mure e
+  bastione mbi det, rrugica me gurë dhe perëndime dielli mbi Capo Caccia. Pas vitit 1354 u popullua
+  me katalanas, prandaj e quajnë «Barceloneta» e Sardenjës dhe disa banorë flasin ende një dialekt
+  katalanas. Tri-katër ditë mjaftojnë, mundësisht me makinë me qira për ditët jashtë qytetit.
+sights:
+  - name: Qyteti i vjetër dhe bastionet
+    text: Qendra brenda mureve, me kullat Porta Terra, Sulis dhe Maddalena. Bastioni Cristoforo Colombo dhe Bastioni Marco Polo janë vendi për shëtitjen e mbrëmjes buzë detit.
+  - name: Trashëgimia katalanase
+    text: Tabelat e rrugëve janë në italisht dhe në katalanisht (Alghero quhet «L'Alguer»). Katedralja e Santa Maria, kisha e San Francesco dhe kupola me pllaka me ngjyra e San Michele tregojnë gotikun katalanas.
+  - name: Grotta di Nettuno
+    text: Shpella e Neptunit, me stalaktite dhe një liqen të brendshëm, nën shkëmbinjtë e Capo Caccia. Arrihet me varkë nga porti ose në këmbë nga lart, përmes Escala del Cabirol me 654 shkallë. Bileta kushton rreth €16-18.
+  - name: Capo Caccia
+    text: Kepi me shkëmbinj të thikët rreth 24 km në perëndim të qytetit, mbi gjirin e Porto Conte. Pika e shikimit pranë fanarit është ideale në perëndim të diellit.
+  - name: Le Bombarde dhe Lazzaretto
+    text: "Dy plazhe të vogla me rërë të bardhë dhe ujë të kthjellët, rreth 10 km në perëndim, pas Fertilias. Në verë mbushen shpejt: shko herët."
+airports:
+  AHO: >-
+    Aeroporti Alghero-Fertilia është rreth 10 km në veri të qytetit. Autobusët e ARST nisen para
+    terminalit afërsisht çdo orë, më shpesh në verë, dhe arrijnë në qendër për rreth 20-30 minuta;
+    bileta kushton rreth €2. Ka edhe autobusë për në Sassari (rreth 30-40 minuta) dhe, me
+    Logudoro Tours, për qytete të tjera. Taksia kushton rreth €25-30 dhe bën rreth 15
+    minuta. Në terminal ka shumë zyra makinash me qira.
+budget: >-
+  Një espresso në banak kushton rreth €1.20-1.50, një pica €8-12 dhe një darkë me peshk rreth
+  €30-40. Në verë një dhomë dyshe në B&B kushton nga rreth €80-130 nata, në maj ose në tetor më pak.
+  Makina me qira kushton nga rreth €30-50 në ditë në sezon.
+when: >-
+  Fluturimet nga Tirana janë sezonale, kryesisht në verë: kontrollo oraret. Qershori dhe shtatori
+  janë periudha më e mirë, me det të ngrohtë dhe më pak njerëz. Korriku dhe gushti janë të nxehtë,
+  plot dhe më të shtrenjtë. Jashtë sezonit shumë lokale mbyllen dhe autobusët për plazhet rrallohen.
+tips:
+  - "Varkat për në Grotta di Nettuno nuk nisen kur deti është i trazuar: atëherë shko me autobus ose makinë në Capo Caccia dhe zbrit nga shkallët."
+  - "Për La Pelosa në sezon duhet rezervim dhe një tarifë hyrjeje prej rreth €3.50: rezervoje disa ditë përpara."
+itinerary:
+  - "Qyteti i vjetër: Katedralja e Santa Maria, San Francesco dhe San Michele. Pasdite plazhi i San Giovanni, në mbrëmje perëndimi i diellit mbi Bastioni Marco Polo."
+  - "Grotta di Nettuno me varkë nga porti ose me autobus deri në Capo Caccia. Në kthim ndalesë te Nuraghe di Palmavera dhe në Porto Conte."
+  - "Një ditë plazhi te Le Bombarde ose Lazzaretto, pastaj aperitiv në Fertilia."
+  - "Me makinë, Stintino dhe plazhi La Pelosa, ose rruga bregdetare deri në Bosa."
+areas:
+  - name: Centro storico
+    text: "Brenda mureve: gjithçka në këmbë, me B&B në shtëpi të vjetra, por në verë rrugicat janë të zhurmshme deri vonë."
+  - name: Lungomare dhe Lido
+    text: Përgjatë bregut në veri të qendrës, me hotele dhe apartamente pranë plazhit, rreth 10-15 minuta në këmbë nga qyteti i vjetër.
+  - name: Fertilia
+    text: Fshat i qetë pranë aeroportit dhe plazheve Le Bombarde e Lazzaretto, i mirë për ata që kanë makinë.
+food:
+  - name: Aragosta alla catalana
+    text: Aragosta e zier, e servirur e ftohtë me domate, qepë të freskët, vaj ulliri dhe limon. Paguhet sipas peshës, prandaj pyet çmimin para se ta porosisësh.
+  - name: Seadas
+    text: Ëmbëlsira tipike sarde, një petë brumi e mbushur me djathë pecorino, e skuqur dhe e mbuluar me mjaltë.
+  - name: Verërat sarde
+    text: Vermentino e bardhë dhe Cannonau e kuqe janë verërat më të njohura të ishullit. Afër qytetit prodhohet edhe Torbato, një e bardhë që gjendet rrallë gjetkë.
+transport: >-
+  Qyteti i vjetër dhe lungomare shihen në këmbë, dhe me biçikletë shkon përgjatë bregut deri në
+  Fertilia. Autobusët e ARST arrijnë te plazhet dhe në Capo Caccia, por bëjnë pak udhëtime në ditë.
+  Për Stintino, Bosa dhe Castelsardo makina me qira është zgjidhja më e thjeshtë.
+daytrips:
+  - name: Stintino dhe La Pelosa
+    text: Një nga plazhet më të bukura të Italisë, me ujë të cekët e të kaltër përballë kullës Torre della Pelosa. Rreth 1 orë me makinë; në sezon hyrja është me numër të kufizuar.
+  - name: Bosa
+    text: Qytet me shtëpi me ngjyra buzë lumit Temo, nën kështjellën e Malaspinës. Rruga bregdetare nga Alghero, rreth 1 orë me makinë, është ndër më të bukurat e ishullit.
+  - name: Nuraghe di Palmavera
+    text: Kompleks nuragjik nga epoka e bronzit, me një kullë guri dhe rreth 50 kasolle, rreth 10 km në perëndim, në rrugën për në Capo Caccia. Bileta rreth €6.
+  - name: Castelsardo
+    text: Fshat mesjetar mbi një shkëmb buzë detit, me kështjellën e Dorias dhe shporta të thurura me dorë. Rreth 1 orë me makinë.
+faq:
+  - q: "A më duhet makinë me qira në Alghero?"
+    a: "Për qytetin jo: shihet në këmbë dhe autobusi të çon nga aeroporti. Për La Pelosa, Bosa dhe Castelsardo po, sepse autobusët janë të rrallë dhe shpesh kalojnë nga Sassari."
+  - q: "Sa para duhen në ditë në Alghero?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-70 në ditë, më shumë me makinë ose me varkën për në Grotta di Nettuno. Një darkë me aragosta mund të kushtojë sa e gjithë dita."
