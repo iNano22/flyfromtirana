@@ -24,8 +24,10 @@ airports:
   IST: >-
     Dall'Aeroporto di Istanbul (IST) la metro M11 ti porta a Gayrettepe, dove cambi per la linea
     M2 verso Taksim. Gli autobus Havaist vanno diretti a Taksim e a Sultanahmet in 60-90 minuti.
-    Se il volo atterra a Sabiha Gökçen (SAW), sulla sponda asiatica, prendi gli autobus Havabus
-    per Taksim o Kadıköy.
+  SAW: >-
+    Sabiha Gökçen è sulla sponda asiatica, a circa 45 km da Taksim. Gli autobus Havabus vanno a
+    Taksim (circa 1,5 ore) e a Kadıköy (circa 1 ora) per pochi euro. La metro M4 ti porta a
+    Kadıköy, da dove il traghetto attraversa fino a Eminönü, vicino a Sultanahmet.
 budget: >-
   I prezzi in lire cambiano spesso. Un pasto semplice (kebab, pide) costa l'equivalente di €6-10
   e un tè meno di €1.

@@ -59,13 +59,31 @@ def run_bot(config, *updates):
 
 
 def test_start_shows_a_button_per_city(config):
-    session = run_bot(config, message("/start"))
-    sent, = calls(session, "sendMessage")
+    # A short list of cities fits in one message: a button for each.
+    few = replace(config, routes=config.routes[:10])
+    sent, = calls(run_bot(few, message("/start")), "sendMessage")
     assert sent["chat_id"] == str(PERSON) and "Përshëndetje" in sent["text"]
-    cities = list(dict.fromkeys(route.city for route in config.routes))
+    cities = list(dict.fromkeys(route.city for route in few.routes))
     assert actions(sent)[:len(cities)] == [f"c|{city}" for city in cities]
     assert labels(sent)[-1] == [BUTTONS["mine"]]
     assert all(len(row) <= 3 for row in labels(sent))
+
+
+def test_with_many_cities_start_shows_the_countries_first(config):
+    sent, = calls(run_bot(config, message("/start")), "sendMessage")
+    assert actions(sent)[:3] == ["k|it", "k|gr", "k|gb"]                   # in the order of the routes
+    assert labels(sent)[0][0] == "🇮🇹 Italy" and labels(sent)[-1] == [BUTTONS["mine"]]
+    assert sum(len(row) for row in labels(sent)) <= 100                     # Telegram's limit
+
+    # A country: its cities, and the way back to the countries.
+    edited, = calls(run_bot(config, button("k|it")), "editMessageText")
+    assert actions(edited)[:3] == ["c|Milan", "c|Rome", "c|Bologna"] and "s" in actions(edited)
+    # A city: the prices, and back to its country.
+    edited, = calls(run_bot(config, button("c|Bari")), "editMessageText")
+    assert actions(edited)[-1] == "k|it"
+    # A country with one city goes straight to its prices.
+    edited, = calls(run_bot(config, button("k|mt")), "editMessageText")
+    assert actions(edited)[0] == "p|Malta|20" and actions(edited)[-1] == "s"
 
 
 def test_link_under_a_post_opens_that_citys_prices(config):
@@ -73,7 +91,7 @@ def test_link_under_a_post_opens_that_citys_prices(config):
     sent, = calls(run_bot(config, message("/start alert_BGY")), "sendMessage")
     assert "Tirana → Milan" in sent["text"]
     assert actions(sent) == ["p|Milan|20", "p|Milan|30", "p|Milan|40", "p|Milan|50", "p|Milan|70", "p|Milan|100",
-                             "p|Milan|0", "s"]
+                             "p|Milan|0", "k|it"]
 
 
 def test_a_price_saves_the_alert_and_shows_the_cheapest_flight_now(config):

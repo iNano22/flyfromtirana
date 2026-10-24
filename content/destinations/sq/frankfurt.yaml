@@ -22,6 +22,10 @@ airports:
   FRA: >-
     Trenat S8 dhe S9 arrijnë në stacionin qendror (Hauptbahnhof) për 11-15 minuta, me biletë
     rreth €6. Stacioni është brenda Terminalit 1.
+  HHN: >-
+    Aeroporti Hahn është rreth 120 km nga Frankfurti. Autobusët direkt (Flibco) arrijnë në Frankfurt
+    Hauptbahnhof për rreth 1 orë e 45 minuta, nga rreth €15-20: shiko orarin para nisjes, sepse
+    ndjekin fluturimet.
 budget: >-
   Një gotë Apfelwein kushton €3-4, një pjatë tradicionale €12-18, një biletë e vetme në qytet rreth €4.
 when: >-

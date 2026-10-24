@@ -13,6 +13,7 @@ from src.links import LinkBuilder
 from src.storage import Storage
 from src.formatter import load_template
 from src.growth import join_link
+from src.guides import load_guides
 from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
                          render_privacy, render_site)
@@ -477,9 +478,10 @@ def test_every_city_has_its_own_partner_pages():
     # config.yaml: a route whose city is missing here would send its links to the partner's homepage.
     config = load_config()
     cities = {route.city for route in config.routes}
+    with_page = set(load_guides())          # a city with its own page needs all four; the others open the partner's homepage
     assert config.website.links.city_pages == config.links.city_pages      # one list, for the posts and the site
     for name in ("tickets", "transfer", "luggage", "tours"):
-        assert set(config.links.city_pages[name]) == cities
+        assert with_page <= set(config.links.city_pages[name]) <= cities
     # GetYourGuide's widget reads the city's number from the end of its page's address (rome-l33/).
     assert all(re.search(r"-l\d+/$", url) for url in config.links.city_pages["tours"].values())
 

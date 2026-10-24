@@ -16,7 +16,8 @@ full_run_every_minutes: 15         # scan, post to the free channel and rebuild 
                                    # Must fit a day evenly (15, 30, 60, 180...). The site's wording follows it.
 currency: eur
 market: null                       # optional Travelpayouts "market" (which price cache to read); null = API default
-request_delay_seconds: 0.5         # pause between API calls, to stay well inside rate limits
+request_delay_seconds: 0.15        # pause between API calls: ~750 a run for 126 routes, about 130 a minute
+                                   # (the limit for prices_for_dates is 600 a minute), so a run takes ~6 minutes
 max_price_age_days: 2              # the API's prices are what Aviasales users found, up to a week ago, and
                                    # cheap seats sell out fast: skip prices found more than this many days
                                    # ago (posts, site, alerts, trip watches). 0 = today only, null = any age.
@@ -413,6 +414,34 @@ airlines:
   LO: LOT
   AF: Air France
   KL: KLM
+  BT: airBaltic
+  SM: Air Cairo
+  4O: Air Montenegro
+  TS: Air Transat
+  IZ: Arkia
+  RR: Buzz
+  GM: Chair Airlines
+  DS: easyJet
+  E4: Enter Air
+  AY: Finnair
+  FZ: flydubai
+  XY: flynas
+  3F: FlyOne Armenia
+  FH: Freebird Airlines
+  6H: Israir
+  R5: Jordan Aviation
+  LG: Luxair
+  DY: Norwegian
+  D8: Norwegian
+  SK: SAS
+  PQ: SkyUp
+  QS: Smartwings
+  XQ: SunExpress
+  RO: TAROM
+  HV: Transavia
+  TO: Transavia
+  TB: TUI fly
+  OR: TUI fly
   # Quote codes YAML might misread as true/false, e.g. "NO": Neos
 
 # --- Routes (from origin) ----------------------------------------------------
@@ -428,22 +457,126 @@ routes:
   - { iata: FCO, city: Rome,         flag: "🇮🇹", airport: Fiumicino, absolute_threshold_eur: 15 }
   - { iata: CIA, city: Rome,         flag: "🇮🇹", airport: Ciampino,  absolute_threshold_eur: 12 }
   - { iata: BLQ, city: Bologna,      flag: "🇮🇹", absolute_threshold_eur: 15 }
-  - { iata: VCE, city: Venice,       flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: VCE, city: Venice,       flag: "🇮🇹", airport: Marco Polo, absolute_threshold_eur: 15 }
+  - { iata: TSF, city: Venice, flag: "🇮🇹", airport: Treviso, absolute_threshold_eur: 12 }
   - { iata: NAP, city: Naples,       flag: "🇮🇹", absolute_threshold_eur: 15 }
   - { iata: ATH, city: Athens,       flag: "🇬🇷", absolute_threshold_eur: 40 }
   - { iata: SKG, city: Thessaloniki, flag: "🇬🇷", absolute_threshold_eur: 40 }
   - { iata: LHR, city: London,       flag: "🇬🇧", airport: Heathrow,  absolute_threshold_eur: 60 }
   - { iata: STN, city: London,       flag: "🇬🇧", airport: Stansted,  absolute_threshold_eur: 35 }
   - { iata: LTN, city: London,       flag: "🇬🇧", airport: Luton,     absolute_threshold_eur: 35 }
+  - { iata: LGW, city: London, flag: "🇬🇧", airport: Gatwick, absolute_threshold_eur: 35 }
   - { iata: MUC, city: Munich,       flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: FMM, city: Munich, flag: "🇩🇪", airport: Memmingen, absolute_threshold_eur: 25 }
   - { iata: FRA, city: Frankfurt,    flag: "🇩🇪", absolute_threshold_eur: 50 }
+  - { iata: HHN, city: Frankfurt, flag: "🇩🇪", airport: Hahn, absolute_threshold_eur: 25 }
   - { iata: STR, city: Stuttgart,    flag: "🇩🇪", absolute_threshold_eur: 40 }
   - { iata: DUS, city: Düsseldorf,   flag: "🇩🇪", absolute_threshold_eur: 40 }
+  - { iata: NRN, city: Düsseldorf, flag: "🇩🇪", airport: Weeze, absolute_threshold_eur: 25 }
   - { iata: VIE, city: Vienna,       flag: "🇦🇹", absolute_threshold_eur: 35 }
   - { iata: ZRH, city: Zurich,       flag: "🇨🇭", absolute_threshold_eur: 50 }
   - { iata: BCN, city: Barcelona,    flag: "🇪🇸", absolute_threshold_eur: 45 }
   - { iata: MAD, city: Madrid,       flag: "🇪🇸", absolute_threshold_eur: 50 }
   - { iata: IST, city: Istanbul,     flag: "🇹🇷", absolute_threshold_eur: 50 }
+  - { iata: SAW, city: Istanbul, flag: "🇹🇷", airport: Sabiha Gökçen, absolute_threshold_eur: 40 }
   - { iata: BER, city: Berlin,       flag: "🇩🇪", absolute_threshold_eur: 40 }
   - { iata: BRU, city: Brussels,     flag: "🇧🇪", absolute_threshold_eur: 40 }
   - { iata: CRL, city: Brussels,     flag: "🇧🇪", airport: Charleroi, absolute_threshold_eur: 30 }
+  # Every other airport with flights from Tirana (Wikipedia's list, October 2026): seasonal and
+  # charter routes too, and those that start later. A city gets its own page once it has a guide.
+  - { iata: BRI, city: Bari, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: CTA, city: Catania, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: PMO, city: Palermo, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: CIY, city: Comiso, flag: "🇮🇹", absolute_threshold_eur: 20 }
+  - { iata: SUF, city: Lamezia Terme, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: QSR, city: Salerno, flag: "🇮🇹", absolute_threshold_eur: 20 }
+  - { iata: PSR, city: Pescara, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: AOI, city: Ancona, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: PEG, city: Perugia, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: RMI, city: Rimini, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: PSA, city: Pisa, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: GOA, city: Genoa, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: TRN, city: Turin, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: VRN, city: Verona, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: TRS, city: Trieste, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: PMF, city: Parma, flag: "🇮🇹", absolute_threshold_eur: 15 }
+  - { iata: AHO, city: Alghero, flag: "🇮🇹", absolute_threshold_eur: 20 }
+  - { iata: HER, city: Heraklion, flag: "🇬🇷", absolute_threshold_eur: 40 }
+  - { iata: RHO, city: Rhodes, flag: "🇬🇷", absolute_threshold_eur: 45 }
+  - { iata: ESB, city: Ankara, flag: "🇹🇷", absolute_threshold_eur: 60 }
+  - { iata: AYT, city: Antalya, flag: "🇹🇷", absolute_threshold_eur: 60 }
+  - { iata: BJV, city: Bodrum, flag: "🇹🇷", absolute_threshold_eur: 60 }
+  - { iata: DLM, city: Dalaman, flag: "🇹🇷", absolute_threshold_eur: 60 }
+  - { iata: CDG, city: Paris, flag: "🇫🇷", airport: Charles de Gaulle, absolute_threshold_eur: 50 }
+  - { iata: ORY, city: Paris, flag: "🇫🇷", airport: Orly, absolute_threshold_eur: 40 }
+  - { iata: BVA, city: Paris, flag: "🇫🇷", airport: Beauvais, absolute_threshold_eur: 30 }
+  - { iata: LYS, city: Lyon, flag: "🇫🇷", absolute_threshold_eur: 30 }
+  - { iata: MRS, city: Marseille, flag: "🇫🇷", absolute_threshold_eur: 30 }
+  - { iata: NCE, city: Nice, flag: "🇫🇷", absolute_threshold_eur: 35 }
+  - { iata: BOD, city: Bordeaux, flag: "🇫🇷", absolute_threshold_eur: 40 }
+  - { iata: NTE, city: Nantes, flag: "🇫🇷", absolute_threshold_eur: 40 }
+  - { iata: BSL, city: Basel, flag: "🇨🇭", absolute_threshold_eur: 30 }
+  - { iata: GVA, city: Geneva, flag: "🇨🇭", absolute_threshold_eur: 40 }
+  - { iata: LUX, city: Luxembourg, flag: "🇱🇺", absolute_threshold_eur: 50 }
+  - { iata: AMS, city: Amsterdam, flag: "🇳🇱", absolute_threshold_eur: 50 }
+  - { iata: EIN, city: Eindhoven, flag: "🇳🇱", absolute_threshold_eur: 20 }
+  - { iata: CGN, city: Cologne, flag: "🇩🇪", absolute_threshold_eur: 25 }
+  - { iata: DTM, city: Dortmund, flag: "🇩🇪", absolute_threshold_eur: 25 }
+  - { iata: HAM, city: Hamburg, flag: "🇩🇪", absolute_threshold_eur: 30 }
+  - { iata: NUE, city: Nuremberg, flag: "🇩🇪", absolute_threshold_eur: 25 }
+  - { iata: FKB, city: Karlsruhe, flag: "🇩🇪", airport: Baden-Baden, absolute_threshold_eur: 20 }
+  - { iata: MAN, city: Manchester, flag: "🇬🇧", absolute_threshold_eur: 35 }
+  - { iata: BHX, city: Birmingham, flag: "🇬🇧", absolute_threshold_eur: 35 }
+  - { iata: LPL, city: Liverpool, flag: "🇬🇧", absolute_threshold_eur: 35 }
+  - { iata: LBA, city: Leeds, flag: "🇬🇧", absolute_threshold_eur: 35 }
+  - { iata: EDI, city: Edinburgh, flag: "🇬🇧", absolute_threshold_eur: 35 }
+  - { iata: DUB, city: Dublin, flag: "🇮🇪", absolute_threshold_eur: 35 }
+  - { iata: AGP, city: Málaga, flag: "🇪🇸", absolute_threshold_eur: 35 }
+  - { iata: VLC, city: Valencia, flag: "🇪🇸", absolute_threshold_eur: 35 }
+  - { iata: PMI, city: Palma de Mallorca, flag: "🇪🇸", absolute_threshold_eur: 40 }
+  - { iata: SDR, city: Santander, flag: "🇪🇸", absolute_threshold_eur: 35 }
+  - { iata: LIS, city: Lisbon, flag: "🇵🇹", absolute_threshold_eur: 50 }
+  - { iata: OPO, city: Porto, flag: "🇵🇹", absolute_threshold_eur: 50 }
+  - { iata: MLA, city: Malta, flag: "🇲🇹", absolute_threshold_eur: 20 }
+  - { iata: BTS, city: Bratislava, flag: "🇸🇰", absolute_threshold_eur: 15 }
+  - { iata: PRG, city: Prague, flag: "🇨🇿", absolute_threshold_eur: 20 }
+  - { iata: BRQ, city: Brno, flag: "🇨🇿", absolute_threshold_eur: 30 }
+  - { iata: OSR, city: Ostrava, flag: "🇨🇿", absolute_threshold_eur: 30 }
+  - { iata: PED, city: Pardubice, flag: "🇨🇿", absolute_threshold_eur: 30 }
+  - { iata: JCL, city: České Budějovice, flag: "🇨🇿", absolute_threshold_eur: 30 }
+  - { iata: BUD, city: Budapest, flag: "🇭🇺", absolute_threshold_eur: 20 }
+  - { iata: DEB, city: Debrecen, flag: "🇭🇺", absolute_threshold_eur: 30 }
+  - { iata: WAW, city: Warsaw, flag: "🇵🇱", airport: Chopin, absolute_threshold_eur: 25 }
+  - { iata: WMI, city: Warsaw, flag: "🇵🇱", airport: Modlin, absolute_threshold_eur: 20 }
+  - { iata: RDO, city: Warsaw, flag: "🇵🇱", airport: Radom, absolute_threshold_eur: 20 }
+  - { iata: KRK, city: Kraków, flag: "🇵🇱", absolute_threshold_eur: 20 }
+  - { iata: KTW, city: Katowice, flag: "🇵🇱", absolute_threshold_eur: 20 }
+  - { iata: GDN, city: Gdańsk, flag: "🇵🇱", absolute_threshold_eur: 25 }
+  - { iata: POZ, city: Poznań, flag: "🇵🇱", absolute_threshold_eur: 20 }
+  - { iata: WRO, city: Wrocław, flag: "🇵🇱", absolute_threshold_eur: 20 }
+  - { iata: LCJ, city: Łódź, flag: "🇵🇱", absolute_threshold_eur: 30 }
+  - { iata: RZE, city: Rzeszów, flag: "🇵🇱", absolute_threshold_eur: 30 }
+  - { iata: SZY, city: Olsztyn, flag: "🇵🇱", absolute_threshold_eur: 30 }
+  - { iata: IEG, city: Zielona Góra, flag: "🇵🇱", absolute_threshold_eur: 30 }
+  - { iata: OTP, city: Bucharest, flag: "🇷🇴", absolute_threshold_eur: 25 }
+  - { iata: CLJ, city: Cluj-Napoca, flag: "🇷🇴", absolute_threshold_eur: 30 }
+  - { iata: RMO, city: Chișinău, flag: "🇲🇩", absolute_threshold_eur: 40 }
+  - { iata: BEG, city: Belgrade, flag: "🇷🇸", absolute_threshold_eur: 40 }
+  - { iata: CPH, city: Copenhagen, flag: "🇩🇰", absolute_threshold_eur: 50 }
+  - { iata: BLL, city: Billund, flag: "🇩🇰", absolute_threshold_eur: 30 }
+  - { iata: ARN, city: Stockholm, flag: "🇸🇪", absolute_threshold_eur: 40 }
+  - { iata: GOT, city: Gothenburg, flag: "🇸🇪", absolute_threshold_eur: 50 }
+  - { iata: MMX, city: Malmö, flag: "🇸🇪", absolute_threshold_eur: 30 }
+  - { iata: OSL, city: Oslo, flag: "🇳🇴", airport: Gardermoen, absolute_threshold_eur: 60 }
+  - { iata: TRF, city: Oslo, flag: "🇳🇴", airport: Torp, absolute_threshold_eur: 35 }
+  - { iata: HEL, city: Helsinki, flag: "🇫🇮", absolute_threshold_eur: 60 }
+  - { iata: TLL, city: Tallinn, flag: "🇪🇪", absolute_threshold_eur: 40 }
+  - { iata: RIX, city: Riga, flag: "🇱🇻", absolute_threshold_eur: 40 }
+  - { iata: VNO, city: Vilnius, flag: "🇱🇹", absolute_threshold_eur: 35 }
+  - { iata: TLV, city: Tel Aviv, flag: "🇮🇱", absolute_threshold_eur: 80 }
+  - { iata: AMM, city: Amman, flag: "🇯🇴", absolute_threshold_eur: 120 }
+  - { iata: CAI, city: Cairo, flag: "🇪🇬", absolute_threshold_eur: 120 }
+  - { iata: DXB, city: Dubai, flag: "🇦🇪", absolute_threshold_eur: 150 }
+  - { iata: RUH, city: Riyadh, flag: "🇸🇦", absolute_threshold_eur: 150 }
+  - { iata: EVN, city: Yerevan, flag: "🇦🇲", absolute_threshold_eur: 100 }
+  - { iata: YYZ, city: Toronto, flag: "🇨🇦", absolute_threshold_eur: 350 }

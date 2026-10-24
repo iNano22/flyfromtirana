@@ -60,6 +60,16 @@
   "license_url": "https://unsplash.com/license"
  },
  {
+  "file": "img/dest/tsf.webp",
+  "slot": "TSF",
+  "title": "Rialto Bridge, Venice",
+  "creator": "@damiano_baschiera",
+  "creator_url": "https://unsplash.com/@damiano_baschiera",
+  "source_url": "https://unsplash.com/photos/hFXZ5cNfkOk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
   "file": "img/dest/nap.webp",
   "slot": "NAP",
   "title": "Castel dell'Ovo, Naples",
@@ -100,6 +110,16 @@
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
  },
  {
+  "file": "img/dest/lgw.webp",
+  "slot": "LGW",
+  "title": "Tower Bridge, London",
+  "creator": "Pierre Blaché",
+  "creator_url": "https://www.flickr.com/photos/141783395@N02",
+  "source_url": "https://www.flickr.com/photos/141783395@N02/48682460911",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ {
   "file": "img/dest/stn.webp",
   "slot": "STN",
   "title": "Big Ben and a red phone box, London",
@@ -130,8 +150,28 @@
   "license_url": "https://unsplash.com/license"
  },
  {
+  "file": "img/dest/fmm.webp",
+  "slot": "FMM",
+  "title": "New Town Hall, Munich",
+  "creator": "@lnandofelipe",
+  "creator_url": "https://unsplash.com/@lnandofelipe",
+  "source_url": "https://unsplash.com/photos/nwFo3T_i9mQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
   "file": "img/dest/fra.webp",
   "slot": "FRA",
+  "title": "Frankfurt skyline and the Main",
+  "creator": "@seasoulvisuals",
+  "creator_url": "https://unsplash.com/@seasoulvisuals",
+  "source_url": "https://unsplash.com/photos/gZnxUoDFKyA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/hhn.webp",
+  "slot": "HHN",
   "title": "Frankfurt skyline and the Main",
   "creator": "@seasoulvisuals",
   "creator_url": "https://unsplash.com/@seasoulvisuals",
@@ -152,6 +192,16 @@
  {
   "file": "img/dest/dus.webp",
   "slot": "DUS",
+  "title": "Medienhafen and Rhine Tower, Düsseldorf",
+  "creator": "@25colours",
+  "creator_url": "https://unsplash.com/@25colours",
+  "source_url": "https://unsplash.com/photos/LDMcwmdwvy4",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/nrn.webp",
+  "slot": "NRN",
   "title": "Medienhafen and Rhine Tower, Düsseldorf",
   "creator": "@25colours",
   "creator_url": "https://unsplash.com/@25colours",
@@ -202,6 +252,16 @@
  {
   "file": "img/dest/ist.webp",
   "slot": "IST",
+  "title": "Blue Mosque, Istanbul",
+  "creator": "@fatihyurur",
+  "creator_url": "https://unsplash.com/@fatihyurur",
+  "source_url": "https://unsplash.com/photos/kNSREmtaGOE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/saw.webp",
+  "slot": "SAW",
   "title": "Blue Mosque, Istanbul",
   "creator": "@fatihyurur",
   "creator_url": "https://unsplash.com/@fatihyurur",

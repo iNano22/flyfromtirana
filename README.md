@@ -297,7 +297,9 @@ the code people know, while its folder and its code for browsers stay `sq`.
 
 ### City pages
 
-Every city has a page of its own (`/milan/`, `/rome/`, ... on the site): the
+Every city with a guide has a page of its own (`/milan/`, `/rome/`, ... on the site; since
+2026-10-24 every airport with flights from Tirana is a route, and the newer cities get
+their guide, and so their page, in batches): the
 current cheapest price for each of its airports on top, then a full guide of
 roughly 1,000 words: what to see, a three-day plan, where to stay, what to eat,
 how to get from each airport to the centre, getting around, day trips, typical
@@ -324,7 +326,9 @@ The text of a guide is one file per language, `content/destinations/<language>/<
   in that city's file (a test fails until every airport of a city is covered).
 - **New city**: add a file. `city` must be exactly the route's `city` in
   config.yaml, and `slug` (lowercase letters, digits, hyphens) becomes the address.
-  Until a city has a file it simply has no page.
+  Until a city has a file it simply has no page: its tickets, posts and alerts work
+  as usual. A city with a page also needs its country's entry rules and its partner
+  pages (tests check both).
 - **Its photo**: a wide photo of the city, `assets/img/guides/<slug>.webp`
   (960×600), is used on its tile and at the top of its page. It is a different
   picture from the route's tall card photo. Without one, the tile has a
@@ -603,9 +607,9 @@ becomes a `{NAME_LINK}` placeholder, so you can add e.g. `car_rental` and use
 Milan page, link to the partner's Milan page; the site's main page, which is about
 no one city, links to the partner's `url`. For this to be counted, the partner's
 `wrapper` is its Travelpayouts short link with `?u={url}` added, which opens the
-given page instead of the homepage. A new route needs its city added to each
-partner in that list (a test checks that none is missing); until then its links
-open the partner's homepage.
+given page instead of the homepage. A city with a guide needs its city added to each
+partner in that list (a test checks that none is missing); a city without one (or
+not yet in the list) opens the partner's homepage.
 
 **GetYourGuide (`tours`) is not a Travelpayouts program.** It is GetYourGuide's own
 partner program (partner.getyourguide.com), and it has no short link: a link is

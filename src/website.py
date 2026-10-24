@@ -85,7 +85,10 @@ COUNTRY_NAMES = {
     "ch": "Switzerland", "es": "Spain", "tr": "Turkey", "be": "Belgium", "fr": "France",
     "nl": "Netherlands", "pt": "Portugal", "hr": "Croatia", "hu": "Hungary", "pl": "Poland",
     "cz": "Czechia", "dk": "Denmark", "se": "Sweden", "no": "Norway", "ie": "Ireland",
-    "mt": "Malta", "cy": "Cyprus", "ae": "United Arab Emirates",
+    "mt": "Malta", "cy": "Cyprus", "ae": "United Arab Emirates", "sk": "Slovakia", "ro": "Romania",
+    "md": "Moldova", "rs": "Serbia", "lv": "Latvia", "ee": "Estonia", "lt": "Lithuania", "fi": "Finland",
+    "lu": "Luxembourg", "il": "Israel", "sa": "Saudi Arabia", "am": "Armenia", "jo": "Jordan",
+    "eg": "Egypt", "ca": "Canada",
 }
 
 # What the credits list calls the service photos.

@@ -36,13 +36,16 @@ from src.formatter import WORDS, format_dates, format_price
 from src.growth import channel_chats, join_link, record_member_update
 from src.storage import Alert, Storage
 from src.telegram import Buttons, TelegramClient, TelegramError
-from src.website import build_offers
+from src.website import COUNTRY_NAMES, build_offers, country_code
 
 log = logging.getLogger("flyfromtirana.bot")
 
 WAIT_SECONDS = 50       # how long one request waits for news (Telegram allows up to 50)
 RETRY_SECONDS = 30      # after Telegram couldn't be reached
 CITIES_PER_ROW = 3
+# Telegram allows 100 buttons under a message. With more cities than this, /start shows
+# the countries first and a country its cities.
+CITIES_PER_MENU = 30
 
 # The bot's words (Albanian, like the posts). {city} etc. are filled in; HTML is allowed.
 TEXTS = {
@@ -70,6 +73,7 @@ TEXTS = {
 BUTTONS = {
     "any": "🔥 Çdo ofertë",
     "back": "⬅️ Qytetet",
+    "countries": "⬅️ Shtetet",
     "add": "➕ Shto një qytet",
     "mine": "📋 Njoftimet e mia",
     "delete": "❌ {city}",
@@ -97,6 +101,15 @@ class Bot:
         self.session = session or requests.Session()
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.cities = list(dict.fromkeys(route.city for route in config.routes))   # each once, in order
+        # The cities of each country, countries in the order of their first route: {"it": ["Milan", ...]}
+        self.countries: dict[str, list[str]] = {}
+        self.flags: dict[str, str] = {}
+        for route in config.routes:
+            code = country_code(route.flag) or ""
+            self.flags.setdefault(code, route.flag)
+            if route.city not in self.countries.setdefault(code, []):
+                self.countries[code].append(route.city)
+        self.country_of = {city: code for code, cities in self.countries.items() for city in cities}
         self.city_of = {route.iata: route.city for route in config.routes}
 
     def client(self, chat_id: int | str = "") -> TelegramClient:
@@ -179,8 +192,12 @@ class Bot:
         action, *parts = (query.get("data") or "").split("|")
         client = self.client(chat_id)
         note = None
-        if action == "s":                                            # the cities
+        if action == "s":                                            # the cities (or the countries)
             client.edit_message(message_id, *self.city_menu(TEXTS["choose"]))
+        elif action == "k" and parts and parts[0] in self.countries:  # a country: its cities
+            cities = self.countries[parts[0]]
+            menu = self.price_menu(cities[0]) if len(cities) == 1 else self.city_menu(TEXTS["choose"], parts[0])
+            client.edit_message(message_id, *menu)
         elif action == "c" and parts and parts[0] in self.cities:    # a city: its prices
             client.edit_message(message_id, *self.price_menu(parts[0]))
         elif action == "p" and len(parts) == 2 and parts[0] in self.cities and parts[1].isdigit():
@@ -204,10 +221,24 @@ class Bot:
 
     # --- the bot's messages ----------------------------------------------------------------
 
-    def city_menu(self, intro: str) -> tuple[str, Buttons]:
-        """A message with a button per city, and one for the person's alerts."""
-        buttons = [(city, f"c|{city}") for city in self.cities]
+    def grouped(self) -> bool:
+        """Too many cities for one message: pick a country first."""
+        return len(self.cities) > CITIES_PER_MENU
+
+    def city_menu(self, intro: str, country: str | None = None) -> tuple[str, Buttons]:
+        """A message with a button per city, and one for the person's alerts.
+
+        With many cities: a button per country ("🇮🇹 Italy"), or, for `country`, its cities.
+        """
+        if self.grouped() and country is None:
+            buttons = [(f"{self.flags[code]} {COUNTRY_NAMES.get(code, code.upper())}", f"k|{code}")
+                       for code in self.countries]
+        else:
+            cities = self.countries[country] if country else self.cities
+            buttons = [(city, f"c|{city}") for city in cities]
         rows = [buttons[i:i + CITIES_PER_ROW] for i in range(0, len(buttons), CITIES_PER_ROW)]
+        if country:
+            rows.append([(BUTTONS["countries"], "s")])
         rows.append([(BUTTONS["mine"], "l")])
         return intro, rows
 
@@ -216,7 +247,11 @@ class Bot:
         prices = [(f"€{price}", f"p|{city}|{price}") for price in self.config.alerts.prices]
         rows = [prices[i:i + 3] for i in range(0, len(prices), 3)]
         rows.append([(BUTTONS["any"], f"p|{city}|0")])
-        rows.append([(BUTTONS["back"], "s")])
+        country = self.country_of[city]
+        if self.grouped() and len(self.countries[country]) > 1:
+            rows.append([(BUTTONS["back"], f"k|{country}")])   # back to that country's cities
+        else:
+            rows.append([(BUTTONS["countries"] if self.grouped() else BUTTONS["back"], "s")])
         return TEXTS["pick_price"].format(city=html.escape(city)), rows
 
     def saved_text(self, city: str, price: int | None, storage: Storage) -> str:

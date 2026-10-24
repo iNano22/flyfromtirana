@@ -23,8 +23,11 @@ airports:
   IST: >-
     Nga Aeroporti i Istanbulit (IST) metroja M11 të çon në Gayrettepe, ku ndërron për linjën M2
     drejt Taksimit. Autobusët Havaist shkojnë direkt në Taksim dhe Sultanahmet për 60-90 minuta.
-    Nëse fluturimi zbret në Sabiha Gökçen (SAW), në anën aziatike, merr autobusët Havabus për në
-    Taksim ose Kadıköy.
+   
+  SAW: >-
+    Sabiha Gökçen është në anën aziatike, rreth 45 km nga Taksimi. Autobusët Havabus shkojnë në
+    Taksim (rreth 1.5 orë) dhe në Kadıköy (rreth 1 orë), me pak euro. Metroja M4 të çon në Kadıköy,
+    nga ku trageti kalon në Eminönü, afër Sultanahmetit.
 budget: >-
   Çmimet në lira ndryshojnë shpesh. Një vakt i thjeshtë (qebap, pide) kushton sa €6-10 dhe një
   çaj më pak se €1.

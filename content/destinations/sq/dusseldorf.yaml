@@ -22,6 +22,10 @@ airports:
     Treni S11 lidh terminalin me stacionin qendror (Hauptbahnhof) për rreth 12 minuta, me biletë
     rreth €3.50. Trenat rajonalë për Këln, Duisburg dhe Essen nisen nga stacioni i aeroportit, ku
     të çon SkyTrain falas.
+  NRN: >-
+    Aeroporti i Weezes është rreth 80 km nga Dyseldorfi. Autobusi direkt për në Düsseldorf
+    Hauptbahnhof bën rreth 1 orë e 15 minuta (nga rreth €15). Ose merr autobusin për në stacionin e
+    Weezes dhe trenin rajonal për në Dyseldorf (gjithsej rreth 1.5 orë).
 budget: >-
   Një gotë Altbier kushton rreth €3, një pjatë në birrari €13-18, një biletë e vetme në qytet rreth €3.50.
 when: >-
