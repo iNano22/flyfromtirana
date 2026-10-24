@@ -1,0 +1,103 @@
+city: Oslo
+slug: oslo
+tagline: The fjord, the Opera and the Bygdøy museums
+intro: >-
+  Oslo, the capital of Norway, lies at the head of the Oslofjord, between forests and hills. The
+  centre is easy to get around on foot, while the islands of the fjord are a few minutes away by
+  ferry. The currency is the Norwegian krone (NOK): €1 is about 11.5 NOK. It is among the most
+  expensive cities in Europe: three days are enough.
+sights:
+  - name: The Opera House
+    text: >-
+      The white marble building, from 2008, rises from the water like an iceberg. Walk for free over
+      its sloping roof for the view over the fjord.
+  - name: Munch Museum
+    text: >-
+      The 13-storey museum next to the Opera, opened in 2021, with the works of Edvard Munch,
+      including «The Scream». Tickets about 180-200 NOK (about €16-17).
+  - name: Aker Brygge
+    text: >-
+      A former shipyard, today the liveliest promenade by the water, with restaurants and the Astrup
+      Fearnley museum in Tjuvholmen. The ferries to the islands leave from here.
+  - name: Vigeland Park
+    text: >-
+      Inside Frogner Park, more than 200 sculptures by Gustav Vigeland, including the 14-metre-high
+      Monolith. Free entry, open all day.
+  - name: The Bygdøy museums
+    text: >-
+      The museum peninsula, about 15 minutes by bus 30: the open-air Norwegian Folk Museum, the
+      polar ship Fram and the Kon-Tiki raft. The Viking ship museum is expected to reopen around
+      2027.
+  - name: Holmenkollen
+    text: >-
+      The famous ski jump above the city, with the Ski Museum and a view over the fjord (about 200
+      NOK). Metro line 1 takes about 25 minutes, then a 15-minute walk uphill.
+itinerary:
+  - "The Opera House and the Munch Museum. In the afternoon Akershus Fortress and Aker Brygge, in the evening Karl Johans gate."
+  - "Bygdøy: the Norwegian Folk Museum, then the Fram and Kon-Tiki museums. At sunset, Vigeland Park."
+  - "Holmenkollen in the morning, then the Grünerløkka district and the Mathallen food hall. Or a day on the islands of the fjord."
+areas:
+  - name: Sentrum and Oslo S
+    text: Around the central station, the most practical area for the trains and buses of both airports.
+  - name: Grünerløkka
+    text: The liveliest district, with cafés, bars and vintage shops, 10-15 minutes by tram from the centre.
+  - name: Frogner and Majorstuen
+    text: Elegant, quiet districts near Vigeland Park, with the metro to Holmenkollen.
+  - name: Grønland
+    text: The multicultural district next to Oslo S, with cheaper hotels and restaurants.
+food:
+  - name: Pølse
+    text: >-
+      A hot sausage in a bun or a potato flatbread (lompe), the cheapest meal: about 40-60 NOK
+      (about €4-5) at 7-Eleven or Narvesen.
+  - name: Fiskesuppe
+    text: A creamy fish soup with salmon and prawns, about 200-250 NOK (about €17-22).
+  - name: Brunost
+    text: A sweet brown cheese made from whey, sliced thin on bread or waffles.
+  - name: Kanelbolle
+    text: A cinnamon bun; with a coffee, about 80-100 NOK (about €7-9) in the city's bakeries.
+airports:
+  OSL: >-
+    Gardermoen is about 50 km to the north. Flytoget reaches Oslo S in about 20 minutes, for about
+    230-250 NOK (about €20-22). The Vy regional train takes about 25 minutes, for about 140 NOK
+    (about €12), and can also be bought in the Ruter app. Flybussen buses take about 45 minutes,
+    for about 200 NOK (about €17). Taxis have fixed fares of about 800-1000 NOK (about €70-87).
+  TRF: >-
+    Torp is about 110 km to the south, near Sandefjord. The Torp-Ekspressen bus goes direct to the
+    Oslo bus terminal in about 1 hour 45 minutes, for about 250-320 NOK (about €22-28). Or take
+    the shuttle to Torp station (about 5 minutes) and the Vy train to Oslo S, also about 1 hour 45
+    minutes, for about 150-300 NOK (about €13-26), cheaper online.
+transport: >-
+  The centre is easy to walk; the metro (T-bane), trams, buses and the island ferries all run on
+  the Ruter ticket. A single ticket costs about 45 NOK (about €4) and is valid for 60 minutes, the
+  24-hour one about 130 NOK (about €11). Buy them in the Ruter app or at the machines.
+daytrips:
+  - name: The Oslofjord islands
+    text: >-
+      Hovedøya, with the ruins of a monastery from 1147, Gressholmen or Lindøya, with small
+      beaches. The ferries leave from Aker Brygge, about 10-20 minutes, on the Ruter ticket.
+  - name: Drøbak
+    text: >-
+      A small town of wooden houses on the fjord, with the Oscarsborg fortress opposite, about 1
+      hour by bus 500 or by boat in summer.
+  - name: Fredrikstad
+    text: Gamlebyen, the walled old town with canals, among the best preserved in Scandinavia, about 1 hour by train.
+budget: >-
+  Very expensive. A coffee costs about 45-55 NOK (about €4-5), a beer 100-130 NOK (about €9-11), a
+  restaurant main course 250-350 NOK (about €22-30). Without the flight and accommodation, allow
+  €80-120 a day; the Rema 1000 and Kiwi supermarkets keep spending down.
+when: >-
+  May-September, when the days are long; at the end of June there are about 19 hours of daylight.
+  On 17 May, the national day, the city fills with parades. In December there are only about 6
+  hours of daylight, but the ski season begins.
+tips:
+  - "Alcohol over 4.7% is sold only in the state-run Vinmonopolet shops. Beer is sold in supermarkets until 20:00 on weekdays, until 18:00 on Saturdays and not at all on Sundays."
+  - "Bank cards and phones are accepted everywhere: there is no need to change money into kroner."
+  - "Tap water is excellent: fill up your bottle instead of buying water."
+faq:
+  - q: "Gardermoen or Torp: which airport is better?"
+    a: "Gardermoen is closer: with Flytoget you are in the centre in about 20 minutes. Torp often has cheaper tickets, but allow about 1 hour 45 minutes and about €13-28 to Oslo."
+  - q: "Flytoget or the Vy train: which should I take?"
+    a: "Flytoget leaves every 10-20 minutes and costs about 230-250 NOK. The Vy train takes only about 5 minutes longer and costs about 140 NOK: the best choice on a budget."
+  - q: "How much money do I need per day in Oslo?"
+    a: "Without the flight and accommodation, €80-120 a day. The supermarket, the 24-hour Ruter ticket and free places such as the Opera roof keep spending down."

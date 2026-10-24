@@ -1,0 +1,99 @@
+city: Riga
+slug: riga
+tagline: Art Nouveau, Gothic spires and a market in zeppelin hangars
+intro: >-
+  Riga is the capital of Latvia and the largest city in the Baltic states, founded in 1201 on the
+  Daugava river. The old town and the Art Nouveau district are on the UNESCO list. Two or three
+  days are enough for the city, plus a day for the beaches of Jūrmala. Latvia is in the eurozone
+  and in Schengen.
+sights:
+  - name: Vecrīga (Old Town)
+    text: >-
+      Cobbled lanes between the Cathedral, the Three Brothers (three medieval houses side by side),
+      the Swedish Gate and the Cat House. You can walk it all in half a day.
+  - name: House of the Blackheads
+    text: >-
+      An ornate building on Town Hall Square, first built in 1334 for the guild of unmarried
+      merchants. It was destroyed in 1941 and faithfully rebuilt in 1995-1999.
+  - name: Art Nouveau district
+    text: >-
+      About a third of the buildings in the centre are Art Nouveau, more than anywhere else in
+      Europe. Alberta iela and Elizabetes iela have the most striking façades, with faces, lions and
+      mythical figures, many of them by Mikhail Eisenstein.
+  - name: Central Market
+    text: >-
+      One of the largest markets in Europe, in German zeppelin hangars from the First World War,
+      opened in 1930. Each pavilion has its own goods: meat, fish, dairy, vegetables. Ideal for
+      smoked fish and a cheap lunch.
+  - name: St. Peter's Church
+    text: >-
+      A Gothic church with a 123-metre tower, the symbol of the city. A lift takes you up to the
+      platform at 72 metres, with the best view over the rooftops and the Daugava (ticket about
+      €10).
+itinerary:
+  - "Town Hall Square with the House of the Blackheads, the tower of St. Peter's Church, the Cathedral, the Three Brothers and the Swedish Gate. In the evening the Freedom Monument and the park along the canal."
+  - "The Central Market in the morning, with lunch in the pavilions, then the panoramic terrace of the Academy of Sciences. In the afternoon the Art Nouveau district on Alberta iela and Elizabetes iela."
+  - "Take the train to Jūrmala for the beach and the pedestrian Jomas street. In bad weather, choose Sigulda or Rundāle Palace instead."
+areas:
+  - name: Vecrīga
+    text: The old town, everything on foot, but with the highest prices and noise from the bars at night.
+  - name: Klusais centrs (Quiet Centre)
+    text: The Art Nouveau district, with quiet streets and good cafés, about 15 minutes on foot from the old town.
+  - name: Near the Central Station
+    text: >-
+      Between the train and bus stations and the Central Market: handy for bus 22 and day trips,
+      with cheaper hotels.
+food:
+  - name: Riga Black Balsam
+    text: >-
+      A black herbal liqueur, about 45 per cent, from a recipe dating to 1752. Drink it in small
+      glasses, in coffee or with blackcurrant juice.
+  - name: Pelēkie zirņi (grey peas)
+    text: >-
+      Grey peas with fried bacon and onion, Latvia's traditional dish, often with a glass of kefir.
+      You also find it in the cheap Lido self-service restaurants.
+  - name: Rupjmaize
+    text: Dark rye bread, slightly sweet. Try it as a dessert too, with cream and jam.
+  - name: Šprotes
+    text: Small smoked sprats, best fresh from the Central Market, on rye bread.
+airports:
+  RIX: >-
+    Riga International Airport is about 10 km from the centre. Bus 22 leaves from in front of the
+    terminal every 10-30 minutes and reaches the centre in about 30 minutes. A ticket costs about
+    €1.5 from the machine or the app, a little more from the driver. A taxi or Bolt takes 15-25
+    minutes and costs about €12-20. The Rail Baltica train to the airport is still under
+    construction.
+transport: >-
+  The old town and the Art Nouveau district are walkable; for the rest there are trams, buses and
+  trolleybuses. A 90-minute ticket costs about €1.5 and a 24-hour one about €5, from the machines,
+  Narvesen kiosks or the app; from the driver it costs more. Tap your ticket on the reader as soon
+  as you board. Bolt is cheap.
+daytrips:
+  - name: Jūrmala
+    text: >-
+      The beach town, with about 30 km of sand and wooden villas. The train to Majori takes about 30
+      minutes and costs about €2.
+  - name: Sigulda
+    text: >-
+      In Gauja National Park, about 1 hour 15 minutes by train. Turaida Castle, caves and trails
+      above the valley; autumn is the most beautiful time.
+  - name: Rundāle Palace
+    text: >-
+      The baroque palace of the Duke of Courland, by Rastrelli, the architect of the Winter Palace,
+      about 80 km to the south. Reach it by bus to Bauska and then by taxi, or more simply on a
+      tour. Tickets about €15-20.
+budget: >-
+  A coffee costs about €3-4, a beer in the old town about €5-7 and a lunch at Lido about €8-12.
+  The restaurants on the old town squares are the most expensive.
+when: >-
+  May-September, with long days and about 20-25°C in summer. On 23-24 June it is Jāņi, the
+  midsummer festival, when many shops close. Winter is cold and dark, but December has the
+  Christmas market.
+tips:
+  - "Beware of bars that unknown women invite you to: it is a well-known scam, with bills of hundreds of euros."
+  - "Take Bolt rather than street taxis, which often charge far more."
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "Bus 22 takes about 30 minutes and costs about €1.5. By Bolt or taxi allow 15-25 minutes and about €12-20."
+  - q: "How much money do I need per day in Riga?"
+    a: "Excluding the flight and accommodation, about €40-60 a day. Riga is cheaper than Western Europe, but in the old town prices come close."

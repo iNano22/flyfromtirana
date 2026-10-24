@@ -1,0 +1,84 @@
+city: Amsterdam
+slug: amsterdam
+tagline: Canali, musei e biciclette ovunque
+intro: >-
+  Amsterdam è la capitale dei Paesi Bassi, costruita sui canali del XVII secolo, con case strette,
+  ponti fioriti e più biciclette che abitanti. Ha alcuni dei migliori musei d'Europa e il centro si
+  gira facilmente a piedi. Tre o quattro giorni bastano per la città e una gita in giornata.
+  Dormire qui è tra le cose più care d'Europa: prenota presto.
+sights:
+  - name: Rijksmuseum
+    text: Il museo nazionale, con «La ronda di notte» di Rembrandt e le opere di Vermeer. Biglietto circa €25; sotto i 18 anni l'ingresso è gratuito.
+  - name: Museo Van Gogh
+    text: La più grande collezione al mondo di opere di Van Gogh, sul Museumplein. Si entra solo con una fascia oraria prenotata online, circa €22-25.
+  - name: Casa di Anna Frank
+    text: Il nascondiglio segreto dove Anna Frank scrisse il suo diario durante la seconda guerra mondiale. I biglietti (circa €16) si vendono solo online.
+  - name: I canali e il Jordaan
+    text: L'anello dei canali, patrimonio UNESCO, e il quartiere Jordaan con viuzze, gallerie e caffè. Un giro in barca dura circa 1 ora e costa circa €18-22.
+  - name: Piazza Dam e il Begijnhof
+    text: Il cuore della città vecchia, con il Palazzo Reale. Poco più a sud, il Begijnhof è un cortile nascosto e tranquillo con case antiche, a ingresso gratuito.
+  - name: Vondelpark
+    text: Il parco più amato della città, accanto al Museumplein, ideale per un picnic.
+  - name: Noord e A'DAM Lookout
+    text: Il traghetto gratuito dietro Centraal ti porta a Noord in circa 5 minuti. Lì trovi la torre A'DAM Lookout con la vista sulla città (da circa €17) e l'ex cantiere navale NDSM, pieno di street art.
+airports:
+  AMS: >-
+    Il treno dalla stazione sotto il terminal ti porta ad Amsterdam Centraal in circa 15-20 minuti,
+    ogni pochi minuti, di notte una volta all'ora. Paghi con OVpay: avvicini la carta bancaria
+    contactless o il telefono al tornello quando entri e quando esci; la corsa costa circa €6-7.
+    L'autobus 397 va al Museumplein e a Leidseplein in circa 25-30 minuti (circa €7). Il taxi
+    impiega circa 20-30 minuti e costa circa €45-60.
+budget: >-
+  Un caffè costa circa €3,50-4,50, un'aringa €3-5, una birra €5-7 e una cena semplice €20-30. Un
+  letto in ostello costa circa €40-70, una camera doppia in un hotel semplice circa €150-250 a
+  notte, di più d'estate.
+when: >-
+  Aprile e maggio sono i mesi dei tulipani, ma anche dell'affollamento; il 27 aprile il Giorno del
+  Re riempie la città di arancione e gli hotel di gente. Da giugno a settembre il clima è più caldo
+  e i prezzi più alti. Autunno e inverno costano meno, con pioggia e vento.
+tips:
+  - "Prenota i musei online in anticipo: la Casa di Anna Frank mette in vendita i biglietti 6 settimane prima, ogni martedì, e finiscono in fretta."
+  - "Le corsie rosse sono per le biciclette: non camminarci sopra e guarda da entrambi i lati prima di attraversare. Chiudi sempre con il lucchetto la bici a noleggio."
+  - "A De Wallen (il quartiere a luci rosse) è vietato fotografare le vetrine e fumare cannabis per strada."
+itinerary:
+  - "Piazza Dam e il Begijnhof al mattino. Nel pomeriggio le Nine Streets e il Jordaan, poi un giro in barca sui canali."
+  - "Museumplein: il Rijksmuseum al mattino e il Museo Van Gogh nel pomeriggio, entrambi prenotati. Una pausa nel Vondelpark, cena a De Pijp."
+  - "La Casa di Anna Frank al mattino (con prenotazione). Nel pomeriggio il traghetto gratuito per Noord, A'DAM Lookout e NDSM."
+  - "Una giornata fuori città: Zaanse Schans al mattino e Haarlem nel pomeriggio."
+areas:
+  - name: Centro e Jordaan
+    text: Tutto a piedi lungo i canali, ma con i prezzi più alti. Vicino a De Wallen c'è rumore di notte.
+  - name: De Pijp
+    text: Un quartiere vivace con il mercato Albert Cuyp e ristoranti più economici, vicino al Museumplein, con la metro per Centraal.
+  - name: Oost
+    text: Più tranquillo e un po' più economico, intorno all'Oosterpark, a 10-15 minuti di tram dal centro.
+  - name: Noord
+    text: Hotel moderni e più economici al di là del fiume IJ, con traghetti gratuiti e la metro per Centraal.
+food:
+  - name: Haring
+    text: Aringa leggermente salata, che si mangia cruda con cipolla e sottaceti, dai chioschi per strada.
+  - name: Bitterballen
+    text: Polpette fritte di carne e sugo denso, da mangiare con la senape accanto a una birra.
+  - name: Stroopwafel
+    text: Due cialde sottili con sciroppo di caramello in mezzo; le migliori sono quelle fresche del mercato Albert Cuyp.
+  - name: Appeltaart
+    text: Una torta alta di mele e cannella, con panna montata.
+transport: >-
+  Il centro si gira a piedi. Tram, metro e autobus della GVB ti portano ovunque: paghi con OVpay,
+  avvicinando la carta o il telefono quando sali e quando scendi, oppure compri un biglietto da 1
+  ora (circa €3,50) o da 24 ore (circa €10). I traghetti per Noord sono gratuiti. Il noleggio di una
+  bici costa circa €12-18 al giorno.
+daytrips:
+  - name: Zaanse Schans
+    text: Mulini a vento e case di legno verdi, a circa 20 minuti di treno fino a Zaandijk Zaanse Schans, poi 10 minuti a piedi.
+  - name: Haarlem
+    text: Una cittadina bella con la piazza Grote Markt, a soli 15 minuti circa di treno (circa €5).
+  - name: Utrecht
+    text: Canali con terrazze sull'acqua e la torre del Duomo, a circa 25-30 minuti di treno (circa €9).
+  - name: Keukenhof
+    text: Il famoso giardino dei tulipani, aperto più o meno da metà marzo a metà maggio. Circa 30 minuti di autobus da Schiphol; ingresso circa €20-25.
+faq:
+  - q: "Come arrivo da Schiphol al centro?"
+    a: "Con il treno diretto per Amsterdam Centraal: circa 15-20 minuti e circa €6-7, pagando con la carta bancaria contactless."
+  - q: "Quanto si spende al giorno ad Amsterdam?"
+    a: "Volo e alloggio esclusi, €60-90 al giorno con un museo. Risparmi con il traghetto gratuito per Noord e un picnic nel Vondelpark."

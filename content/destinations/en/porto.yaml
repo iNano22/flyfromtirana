@@ -1,0 +1,100 @@
+city: Porto
+slug: porto
+tagline: Port wine, an iron bridge and blue tiles on the Douro
+intro: >-
+  Porto is Portugal's second city, built on steep hills along the Douro river, close to the
+  Atlantic. Cobbled lanes, churches covered in blue tiles (azulejos) and the port wine cellars make
+  it one of the most beautiful and cheapest cities in Western Europe. Three days are enough for the
+  city, but it is worth adding a day for the Douro Valley.
+sights:
+  - name: Ribeira
+    text: >-
+      The old riverside quarter, a UNESCO World Heritage site, with colourful houses, restaurants on
+      the quay and rabelo boats that once carried the wine barrels. Most beautiful in the evening.
+  - name: Ponte Dom Luís I
+    text: >-
+      The two-deck iron bridge, completed in 1886 by Théophile Seyrig, a former partner of Eiffel.
+      The upper deck, about 45 m above the river, is for pedestrians and metro line D. Crossing it is
+      free.
+  - name: Port cellars in Vila Nova de Gaia
+    text: >-
+      On the opposite bank, cellars such as Sandeman, Taylor's, Graham's and Cálem offer tours with a
+      tasting of 2-3 wines for about €20-35. Book online, especially at weekends.
+  - name: Livraria Lello
+    text: >-
+      A neo-Gothic bookshop from 1906 with a red wooden staircase. A ticket costs about €10-15 and is
+      deducted from the price if you buy a book; book your time slot online.
+  - name: São Bento Station
+    text: >-
+      The station hall is covered with about 20,000 azulejo tiles showing the history of Portugal.
+      Entry is free; trains to Braga, Guimarães and the Douro leave from here.
+  - name: Torre dos Clérigos
+    text: >-
+      An 18th-century baroque tower, about 75 m tall, with about 240 steps to the top. Entry about
+      €8-10, with the best view over the city.
+airports:
+  OPO: >-
+    Metro line E (violet) leaves from Francisco Sá Carneiro airport and reaches Trindade, in the
+    centre, in about 30-35 minutes. A Z4 ticket costs about €2-3, plus about €0.60 for the Andante
+    card, sold at the station machines. A taxi or Uber to the centre costs about €20-30 and takes
+    about 20-25 minutes.
+budget: >-
+  A coffee (cimbalino) costs about €1, a pastel de nata about €1.30, a dish of the day (prato do
+  dia) €9-12 and a small beer about €2. Porto is cheaper than Lisbon.
+when: >-
+  May-June and September-October have mild weather and less rain. Summer is warm (about 25°C),
+  while from November to March it often rains. For the night of São João (23-24 June), the city's
+  biggest festival, book your accommodation early.
+tips:
+  - "The bread, olives and butter placed on your table (couvert) are not free: if you do not want them, ask the waiter to take them away."
+  - "To save yourself the climbs, take the Funicular dos Guindais (about €4-5) from Ribeira up to Batalha."
+itinerary:
+  - "São Bento and the Sé in the morning, then walk down to Ribeira. In the afternoon, cross the Dom Luís I bridge, visit a port cellar in Gaia and climb up to Jardim do Morro for sunset."
+  - "Livraria Lello at opening time, then Torre dos Clérigos and Rua das Flores. In the afternoon, the Bolhão market and Rua de Santa Catarina with the Capela das Almas; a francesinha for dinner."
+  - "Historic tram 1 along the river to Foz do Douro, where the river meets the ocean, then on to Matosinhos for grilled fish. Alternatively, a day in the Douro Valley."
+areas:
+  - name: Ribeira and Sé
+    text: "By the river and in the heart of the city: beautiful views, but steep streets, noise in the evening and higher prices."
+  - name: Baixa and Aliados
+    text: The practical centre, with most sights within walking distance and Trindade station, where the metro from the airport arrives.
+  - name: Bolhão
+    text: A district of shops, cafés and the city market, a little cheaper and close to the metro.
+  - name: Vila Nova de Gaia
+    text: On the opposite bank, close to the cellars, often cheaper and with views over Porto, 10 minutes on foot from Ribeira.
+food:
+  - name: Francesinha
+    text: >-
+      The city's sandwich: bread with ham, sausage and steak, covered in melted cheese and a beer and
+      tomato sauce, often with an egg and chips. About €10-14.
+  - name: Vinho do Porto
+    text: >-
+      The sweet fortified wine aged in Gaia: tawny, ruby, or white port with tonic as an aperitif. A
+      glass about €3-5.
+  - name: Sandes de pernil
+    text: A slow-roasted pork sandwich, famous at Casa Guedes, about €5-7.
+  - name: Pastel de nata
+    text: A custard tart in flaky pastry, about €1.20-1.50 each, best warm with cinnamon.
+transport: >-
+  The centre can be covered on foot, but the streets are steep and cobbled. Metro and bus tickets are
+  loaded onto the Andante card (about €0.60, reusable); a journey within the city costs about €1.50.
+  Historic tram 1 costs about €6-7, while Uber and Bolt are cheap for short distances.
+daytrips:
+  - name: Douro Valley
+    text: >-
+      The terraced vineyards where port wine is made, a UNESCO World Heritage site. The train from São
+      Bento reaches Pinhão in about 2.5 hours (about €10-15 one way), with views over the river.
+  - name: Braga
+    text: >-
+      The city of churches, about 1 hour by urban train from São Bento (about €3-4). Do not miss Bom
+      Jesus do Monte, with its baroque staircase and the water-powered funicular from 1882.
+  - name: Guimarães
+    text: >-
+      «The cradle of Portugal», with its medieval castle and the Palace of the Dukes, about 1 hour and
+      15 minutes by urban train (about €3-4).
+  - name: Aveiro
+    text: The canals with moliceiro boats and the striped houses of Costa Nova, about 1 hour by train.
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "By metro line E to Trindade, in about 30-35 minutes and for about €2-3. Late at night, take a taxi or Uber."
+  - q: "How much money do you need per day in Porto?"
+    a: "Excluding the flight and accommodation, plan on €40-60 a day for food, transport and one or two entry tickets. Local taverns are among the cheapest in Western Europe."

@@ -1,0 +1,103 @@
+city: Oslo
+slug: oslo
+tagline: Il fiordo, l'Opera e i musei di Bygdøy
+intro: >-
+  Oslo, la capitale della Norvegia, si trova in fondo all'Oslofjord, tra boschi e colline. Il
+  centro si gira a piedi, mentre le isole del fiordo sono a pochi minuti di traghetto. La moneta è
+  la corona norvegese (NOK): €1 vale circa 11,5 NOK. È tra le città più care d'Europa: tre giorni
+  bastano.
+sights:
+  - name: Il Teatro dell'Opera
+    text: >-
+      L'edificio di marmo bianco, del 2008, emerge dall'acqua come un iceberg. Si cammina gratis sul
+      tetto inclinato per la vista sul fiordo.
+  - name: Museo Munch
+    text: >-
+      Il museo di 13 piani accanto all'Opera, aperto nel 2021, con le opere di Edvard Munch, tra cui
+      «L'urlo». Biglietto circa 180-200 NOK (circa €16-17).
+  - name: Aker Brygge
+    text: >-
+      Un ex cantiere navale, oggi la passeggiata più vivace sull'acqua, con ristoranti e il museo
+      Astrup Fearnley a Tjuvholmen. Da qui partono i traghetti per le isole.
+  - name: Parco Vigeland
+    text: >-
+      Dentro il parco Frogner, più di 200 sculture di Gustav Vigeland, tra cui il Monolito alto 14
+      metri. Ingresso gratuito, aperto tutto il giorno.
+  - name: I musei di Bygdøy
+    text: >-
+      La penisola dei musei, a circa 15 minuti con l'autobus 30: il Museo del Folklore Norvegese
+      all'aperto, la nave polare Fram e la zattera Kon-Tiki. Il museo delle navi vichinghe dovrebbe
+      riaprire intorno al 2027.
+  - name: Holmenkollen
+    text: >-
+      Il famoso trampolino da sci sopra la città, con il Museo dello Sci e la vista sul fiordo
+      (circa 200 NOK). La metro 1 impiega circa 25 minuti, poi 15 minuti a piedi in salita.
+itinerary:
+  - "Il Teatro dell'Opera e il Museo Munch. Nel pomeriggio la Fortezza di Akershus e Aker Brygge, la sera Karl Johans gate."
+  - "Bygdøy: il Museo del Folklore Norvegese, poi i musei Fram e Kon-Tiki. Al tramonto, il Parco Vigeland."
+  - "Holmenkollen al mattino, poi il quartiere di Grünerløkka e il mercato coperto Mathallen. Oppure una giornata sulle isole del fiordo."
+areas:
+  - name: Sentrum e Oslo S
+    text: Intorno alla stazione centrale, la zona più pratica per i treni e i bus di entrambi gli aeroporti.
+  - name: Grünerløkka
+    text: Il quartiere più vivace, con caffè, bar e negozi vintage, a 10-15 minuti di tram dal centro.
+  - name: Frogner e Majorstuen
+    text: Quartieri eleganti e tranquilli vicino al Parco Vigeland, con la metro per Holmenkollen.
+  - name: Grønland
+    text: Il quartiere multiculturale accanto a Oslo S, con hotel e ristoranti più economici.
+food:
+  - name: Pølse
+    text: >-
+      Una salsiccia calda nel panino o in una piadina di patate (lompe), il pasto più economico:
+      circa 40-60 NOK (circa €4-5) da 7-Eleven o Narvesen.
+  - name: Fiskesuppe
+    text: Una zuppa di pesce cremosa con salmone e gamberetti, circa 200-250 NOK (circa €17-22).
+  - name: Brunost
+    text: Un formaggio marrone dolce ricavato dal siero del latte, tagliato sottile sul pane o sui waffle.
+  - name: Kanelbolle
+    text: La girella alla cannella; con un caffè, circa 80-100 NOK (circa €7-9) nei forni della città.
+airports:
+  OSL: >-
+    Gardermoen è a circa 50 km a nord. Il Flytoget arriva a Oslo S in circa 20 minuti, per circa
+    230-250 NOK (circa €20-22). Il treno regionale Vy impiega circa 25 minuti, per circa 140 NOK
+    (circa €12), e si compra anche nell'app Ruter. I bus Flybussen impiegano circa 45 minuti, per
+    circa 200 NOK (circa €17). Il taxi ha tariffe fisse di circa 800-1000 NOK (circa €70-87).
+  TRF: >-
+    Torp è a circa 110 km a sud, vicino a Sandefjord. Il bus Torp-Ekspressen va diretto al
+    terminal dei bus di Oslo in circa 1 ora e 45 minuti, per circa 250-320 NOK (circa €22-28).
+    Oppure prendi la navetta fino alla stazione di Torp (circa 5 minuti) e il treno Vy per Oslo S,
+    anche questo circa 1 ora e 45 minuti, per circa 150-300 NOK (circa €13-26), meno caro online.
+transport: >-
+  Il centro si gira a piedi; metro (T-bane), tram, autobus e traghetti per le isole funzionano
+  tutti con il biglietto Ruter. Il singolo costa circa 45 NOK (circa €4) e vale 60 minuti, quello
+  da 24 ore circa 130 NOK (circa €11). Compralo nell'app Ruter o alle macchinette.
+daytrips:
+  - name: Le isole dell'Oslofjord
+    text: >-
+      Hovedøya, con le rovine di un monastero del 1147, Gressholmen o Lindøya, con piccole spiagge.
+      I traghetti partono da Aker Brygge, circa 10-20 minuti, con il biglietto Ruter.
+  - name: Drøbak
+    text: >-
+      Una cittadina di case di legno sul fiordo, con la fortezza di Oscarsborg di fronte, a circa 1
+      ora con l'autobus 500 o in battello d'estate.
+  - name: Fredrikstad
+    text: Gamlebyen, la città vecchia murata con i canali, tra le meglio conservate della Scandinavia, a circa 1 ora di treno.
+budget: >-
+  Carissima. Un caffè costa circa 45-55 NOK (circa €4-5), una birra 100-130 NOK (circa €9-11), un
+  piatto al ristorante 250-350 NOK (circa €22-30). Volo e alloggio esclusi, calcola €80-120 al
+  giorno; i supermercati Rema 1000 e Kiwi tengono bassa la spesa.
+when: >-
+  Maggio-settembre, quando le giornate sono lunghe; a fine giugno ci sono circa 19 ore di luce. Il
+  17 maggio, festa nazionale, la città si riempie di parate. A dicembre ci sono solo circa 6 ore di
+  luce, ma inizia la stagione dello sci.
+tips:
+  - "Gli alcolici sopra il 4,7% si vendono solo nei negozi statali Vinmonopolet. La birra si vende al supermercato fino alle 20:00 nei giorni feriali, fino alle 18:00 il sabato e mai la domenica."
+  - "Carte e telefono sono accettati ovunque: non serve cambiare soldi in corone."
+  - "L'acqua del rubinetto è ottima: riempi la borraccia invece di comprare l'acqua."
+faq:
+  - q: "Gardermoen o Torp: quale aeroporto è meglio?"
+    a: "Gardermoen è più vicino: con il Flytoget sei in centro in circa 20 minuti. Torp ha spesso biglietti più economici, ma calcola circa 1 ora e 45 minuti e circa €13-28 fino a Oslo."
+  - q: "Flytoget o il treno Vy: quale prendo?"
+    a: "Il Flytoget parte ogni 10-20 minuti e costa circa 230-250 NOK. Il treno Vy impiega solo circa 5 minuti in più e costa circa 140 NOK: la scelta migliore per chi ha un budget limitato."
+  - q: "Quanto si spende al giorno a Oslo?"
+    a: "Volo e alloggio esclusi, €80-120 al giorno. Il supermercato, il biglietto Ruter da 24 ore e i posti gratuiti come il tetto dell'Opera tengono bassa la spesa."

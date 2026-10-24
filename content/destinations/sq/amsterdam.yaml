@@ -1,0 +1,84 @@
+city: Amsterdam
+slug: amsterdam
+tagline: Kanale, muze dhe biçikleta kudo
+intro: >-
+  Amsterdam është kryeqyteti i Holandës, i ndërtuar mbi kanale të shekullit XVII, me shtëpi të
+  ngushta, ura me lule dhe më shumë biçikleta se banorë. Ka disa nga muzetë më të mirë të Evropës
+  dhe qendra përshkohet lehtë në këmbë. Tri-katër ditë mjaftojnë për qytetin dhe një udhëtim ditor.
+  Fjetja është ndër më të shtrenjtat në Evropë: rezervo herët.
+sights:
+  - name: Rijksmuseum
+    text: Muzeu kombëtar, me «Roja e Natës» të Rembrandt-it dhe veprat e Vermeer-it. Bileta rreth €25; nën 18 vjeç hyrja është falas.
+  - name: Muzeu Van Gogh
+    text: Koleksioni më i madh në botë i veprave të Van Gogh-ut, në Museumplein. Hyrja vetëm me orar të rezervuar online, rreth €22-25.
+  - name: Shtëpia e Anne Frank
+    text: Strehimi i fshehtë ku Anne Frank shkroi ditarin gjatë Luftës së Dytë Botërore. Biletat (rreth €16) shiten vetëm online.
+  - name: Kanalet dhe Jordaan
+    text: Unaza e kanaleve, në listën e UNESCO-s, dhe lagjja Jordaan me rrugica, galeri dhe kafene. Një tur me varkë zgjat rreth 1 orë dhe kushton rreth €18-22.
+  - name: Sheshi Dam dhe Begijnhof
+    text: Zemra e qytetit të vjetër, me Pallatin Mbretëror. Pak më në jug, Begijnhof është një oborr i fshehur e i qetë me shtëpi të vjetra, me hyrje falas.
+  - name: Vondelpark
+    text: Parku më i dashur i qytetit, ngjitur me Museumplein, ideal për piknik.
+  - name: Noord dhe A'DAM Lookout
+    text: Trageti falas pas Centraal të çon në Noord për rreth 5 minuta. Atje është kulla A'DAM Lookout me pamje mbi qytetin (nga rreth €17) dhe ish-kantieri NDSM, plot art rruge.
+airports:
+  AMS: >-
+    Treni nga stacioni nën terminal të çon në Amsterdam Centraal për rreth 15-20 minuta, çdo disa
+    minuta, natën një herë në orë. Paguan me OVpay: kalon kartën bankare pa kontakt ose telefonin te
+    porta kur hyn dhe kur del; udhëtimi kushton rreth €6-7. Autobusi 397 shkon te Museumplein dhe
+    Leidseplein për rreth 25-30 minuta (rreth €7). Taksia bën rreth 20-30 minuta dhe kushton rreth
+    €45-60.
+budget: >-
+  Një kafe kushton rreth €3.50-4.50, një haring €3-5, një birrë €5-7 dhe një darkë e thjeshtë
+  €20-30. Një shtrat në hostel kushton rreth €40-70, një dhomë dyshe në hotel të thjeshtë rreth
+  €150-250 nata, më shumë në verë.
+when: >-
+  Prilli dhe maji janë muajt e tulipanëve, por edhe të turmave; më 27 prill Dita e Mbretit e mbush
+  qytetin me portokalli dhe hotelet me njerëz. Qershori-shtatori ka motin më të ngrohtë dhe çmimet
+  më të larta. Vjeshta dhe dimri janë më të lira, me shi e erë.
+tips:
+  - "Rezervo muzetë online përpara: Shtëpia e Anne Frank i hap biletat 6 javë më parë, çdo të martë, dhe ato mbarojnë shpejt."
+  - "Shtigjet e kuqe janë për biçikletat: mos ec mbi to dhe shiko në të dyja anët para se të kalosh. Biçikletën me qira kyçe gjithmonë."
+  - "Në De Wallen (Red Light District) ndalohet fotografimi i vitrinave dhe pirja e kanabisit në rrugë."
+itinerary:
+  - "Sheshi Dam dhe Begijnhof në mëngjes. Pasdite Nine Streets dhe Jordaan, pastaj një tur me varkë në kanale."
+  - "Museumplein: Rijksmuseum në mëngjes dhe Muzeu Van Gogh pasdite, të dyja me rezervim. Pushim në Vondelpark, darka në De Pijp."
+  - "Shtëpia e Anne Frank në mëngjes (me rezervim). Pasdite trageti falas për Noord, A'DAM Lookout dhe NDSM."
+  - "Një ditë jashtë qytetit: Zaanse Schans në mëngjes dhe Haarlem pasdite."
+areas:
+  - name: Qendra dhe Jordaan
+    text: Gjithçka në këmbë buzë kanaleve, por me çmimet më të larta. Pranë De Wallen ka zhurmë natën.
+  - name: De Pijp
+    text: Lagje e gjallë me tregun Albert Cuyp dhe restorante më të lira, pranë Museumplein, me metro për Centraal.
+  - name: Oost
+    text: Më e qetë dhe pak më e lirë, rreth Oosterpark, 10-15 minuta me tramvaj nga qendra.
+  - name: Noord
+    text: Hotele moderne dhe më të lira matanë lumit IJ, me tragete falas dhe metro për Centraal.
+food:
+  - name: Haring
+    text: Peshk i kripur lehtë, që hahet i papjekur me qepë dhe turshi, nga tezgat në rrugë.
+  - name: Bitterballen
+    text: Topa të skuqur me mish dhe salcë të trashë, që hahen me mustardë pranë një birre.
+  - name: Stroopwafel
+    text: Dy vafle të holla me shurup karameli në mes; më të mirat janë të freskëta në tregun Albert Cuyp.
+  - name: Appeltaart
+    text: Ëmbëlsirë e lartë me mollë dhe kanellë, me krem të rrahur.
+transport: >-
+  Qendra përshkohet në këmbë. Tramvajet, metroja dhe autobusët e GVB-së të çojnë kudo: paguan me
+  OVpay, duke kaluar kartën ose telefonin kur hyn dhe kur del, ose blen biletë për 1 orë (rreth
+  €3.50) ose për 24 orë (rreth €10). Tragetet për Noord janë falas. Qiraja e një biçiklete kushton
+  rreth €12-18 në ditë.
+daytrips:
+  - name: Zaanse Schans
+    text: Mullinj ere dhe shtëpi të gjelbra prej druri, rreth 20 minuta me tren deri në Zaandijk Zaanse Schans, pastaj 10 minuta në këmbë.
+  - name: Haarlem
+    text: Qytet i vogël e i bukur me sheshin Grote Markt, rreth 15 minuta me tren (rreth €5).
+  - name: Utrecht
+    text: Kanale me tarraca buzë ujit dhe kulla Dom, rreth 25-30 minuta me tren (rreth €9).
+  - name: Keukenhof
+    text: Kopshti i famshëm i tulipanëve, i hapur afërsisht nga mesi i marsit deri në mesin e majit. Rreth 30 minuta me autobus nga Schiphol; hyrja rreth €20-25.
+faq:
+  - q: "Si shkoj nga Schiphol në qendër?"
+    a: "Me tren direkt për Amsterdam Centraal: rreth 15-20 minuta dhe rreth €6-7, duke paguar me kartën bankare pa kontakt."
+  - q: "Sa para duhen në ditë në Amsterdam?"
+    a: "Pa fluturimin dhe fjetjen, €60-90 në ditë me një muze. Kursen me tragetin falas për Noord dhe me piknik në Vondelpark."

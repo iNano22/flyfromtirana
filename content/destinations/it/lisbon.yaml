@@ -1,0 +1,105 @@
+city: Lisbon
+name: Lisbona
+slug: lisbon
+tagline: Colline, tram gialli e pastel de nata
+intro: >-
+  Lisbona, la capitale del Portogallo, sorge su colline sulle rive del fiume Tago: vicoli lastricati
+  di pietra bianca, tram gialli, un panorama da ogni collina e prezzi più bassi che nella maggior
+  parte delle capitali occidentali. Tre giorni bastano, ma ne vale la pena un quarto per Sintra.
+sights:
+  - name: Alfama
+    text: >-
+      Il quartiere più antico, con vicoli stretti e scalinate verso il fiume. La sera dai locali si
+      sente il fado, la musica tradizionale portoghese.
+  - name: Castelo de São Jorge
+    text: >-
+      Il castello moresco in cima alla collina sopra l'Alfama, con il panorama più ampio sulla città.
+      Ingresso circa €15.
+  - name: Belém
+    text: >-
+      Il quartiere delle grandi scoperte geografiche, a circa 6 km a ovest: il Monastero dei
+      Jerónimos (circa €18), la Torre di Belém e il monumento Padrão dos Descobrimentos.
+  - name: Tram 28
+    text: >-
+      Il tram giallo degli anni 1930 che attraversa Graça, Alfama, Baixa e Chiado. Il biglietto a
+      bordo costa circa €3,30, con la carta Navegante meno.
+  - name: Miradouros (belvedere)
+    text: >-
+      Senhora do Monte e Graça per il tramonto, Santa Luzia e Portas do Sol sopra l'Alfama, São
+      Pedro de Alcântara sopra la Baixa. Tutti gratuiti.
+  - name: Baixa e Praça do Comércio
+    text: >-
+      Il centro ricostruito dopo il terremoto del 1755, con l'arco di Rua Augusta e la grande piazza
+      sul fiume.
+  - name: LX Factory
+    text: >-
+      Una vecchia fabbrica ad Alcântara, oggi con ristoranti, negozi e la libreria Ler Devagar. La
+      domenica di solito c'è un mercato.
+airports:
+  LIS: >-
+    L'aeroporto Humberto Delgado è a soli 7 km circa dal centro. La linea rossa della metro parte
+    dal Terminal 1 e arriva a Saldanha in circa 15 minuti; per la Baixa cambia ad Alameda sulla
+    linea verde (circa 25-30 minuti in tutto). Il biglietto costa circa €1,85, più circa €0,50 per
+    la carta Navegante. L'Aerobus ti porta a Rossio, Praça do Comércio e Cais do Sodré in circa
+    30-40 minuti (circa €4-5). Un taxi o un Uber per il centro costa circa €12-20. Dal Terminal 2,
+    dove atterrano molte compagnie low cost, prendi la navetta gratuita per il Terminal 1.
+budget: >-
+  Un espresso (bica) costa circa €1, un pastel de nata circa €1,50, il piatto del giorno (prato do
+  dia) €10-14, una birra piccola circa €2-3. Dormire in centro è diventato molto caro.
+when: >-
+  Marzo-maggio e settembre-ottobre sono caldi e meno affollati. Luglio e agosto sono torridi (spesso
+  circa 30°C) e pieni, mentre l'inverno è mite (circa 15°C di giorno) ma piovoso. A giugno la festa
+  di Santo António riempie l'Alfama di sardine alla griglia, ma gli alloggi rincarano.
+tips:
+  - "Il pane, le olive e il burro portati in tavola (couvert) si pagano se li mangi. Se non li vuoi, chiedi al cameriere di portarli via."
+  - "Il tram 28 ha lunghe code e borseggiatori. Sali la mattina presto alla prima fermata, Martim Moniz."
+  - "Metti scarpe con suola antiscivolo: i marciapiedi di pietra diventano scivolosi quando piove."
+itinerary:
+  - "Baixa, Praça do Comércio e Rossio, poi il Castelo de São Jorge. Nel pomeriggio il tram 28 e l'Alfama a piedi, il tramonto da Senhora do Monte, cena con il fado."
+  - "Belém: il Monastero dei Jerónimos, la Torre di Belém e un pastel de nata. Nel pomeriggio LX Factory, la sera Chiado e Bairro Alto."
+  - "Una gita in giornata a Sintra, partendo presto da Rossio. In alternativa, il Parque das Nações con l'Oceanário e il traghetto per Cacilhas al crepuscolo."
+areas:
+  - name: Baixa e Chiado
+    text: "In centro e in piano, vicino alla metro: la più pratica per pochi giorni, ma non la più economica."
+  - name: Alfama
+    text: "L'atmosfera più bella, con scalinate e vicoli ripidi: faticosa con la valigia."
+  - name: Bairro Alto e Príncipe Real
+    text: "Il quartiere della vita notturna, con locali aperti fino a tardi: rumoroso fino a dopo mezzanotte nel fine settimana."
+  - name: Saldanha e Avenidas Novas
+    text: "Più economica e tranquilla, sulla linea rossa della metro: circa 15 minuti diretti dall'aeroporto."
+food:
+  - name: Pastel de nata
+    text: >-
+      Tortina di crema all'uovo in pasta sfoglia, con cannella sopra, circa €1,30-1,60. La più
+      famosa si sforna da Pastéis de Belém dal 1837.
+  - name: Bacalhau
+    text: Baccalà cucinato in centinaia di modi. Prova il bacalhau à brás, con uova e patate sottili.
+  - name: Bifana
+    text: Panino con carne di maiale marinata all'aglio, circa €3-4.
+  - name: Sardinhas assadas
+    text: Sardine alla griglia, le migliori a giugno, durante la festa di Santo António.
+transport: >-
+  Il centro si visita a piedi, ma le colline sono ripide. La metro ha quattro linee e funziona dalle
+  6:30 all'1:00. Sulla carta Navegante carichi biglietti singoli, credito «zapping» (più economico a
+  corsa) o il biglietto 24 ore per metro, autobus e tram, circa €7. Per Belém prendi il tram 15E da
+  Praça da Figueira.
+daytrips:
+  - name: Sintra
+    text: >-
+      Palazzi da fiaba nel bosco, come il Palácio da Pena e la Quinta da Regaleira, a circa 40
+      minuti di treno da Rossio (circa €2,50). Prenota i biglietti dei palazzi online.
+  - name: Cascais
+    text: >-
+      Cittadina di mare con spiagge, a circa 40 minuti di treno da Cais do Sodré lungo la costa. A
+      piedi arrivi alle scogliere della Boca do Inferno.
+  - name: Évora
+    text: >-
+      La città vecchia dell'Alentejo dentro le mura, con il tempio romano e la Capela dos Ossos (la
+      cappella delle ossa), a circa 1,5 ore in treno o in autobus.
+faq:
+  - q: "Conviene la Lisboa Card?"
+    a: "Solo se visiti molti monumenti. La carta da 24 ore costa circa €27-30 e comprende i trasporti, i treni per Sintra e Cascais e il Monastero dei Jerónimos. Con 1-2 ingressi al giorno conviene il biglietto giornaliero."
+  - q: "Quanto si spende al giorno a Lisbona?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno per cibo, trasporti e uno o due ingressi. Il pranzo con il prato do dia è economico, una cena con il fado costa di più."
+  - q: "Come si arriva dall'aeroporto di notte?"
+    a: "La metro funziona fino all'1:00 circa. Più tardi prendi un Uber o un taxi dalla fila ufficiale agli arrivi, circa €15-20 per il centro."

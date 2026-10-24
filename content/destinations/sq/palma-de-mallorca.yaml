@@ -1,0 +1,96 @@
+city: Palma de Mallorca
+slug: palma-de-mallorca
+tagline: Katedrale buzë detit, fshatra malore dhe gjire të kaltra
+intro: >-
+  Palma është kryeqyteti i Mallorca-s, ishulli më i madh i Baleareve: një qytet i vjetër me rrugica
+  dhe oborre të fshehura, një katedrale gotike mbi det dhe plazhe pak minuta nga qendra. Dy ditë
+  mjaftojnë për qytetin, por ia vlen të shtosh një-dy ditë për malet dhe gjiret e ishullit.
+sights:
+  - name: Katedralja La Seu
+    text: >-
+      Katedralja gotike buzë detit, e nisur në vitin 1229, me një nga rozetat më të mëdha në botë
+      dhe punime të Gaudít brenda. Hyrja kushton rreth €10; nga jashtë shihet falas.
+  - name: Palau de l'Almudaina
+    text: >-
+      Kalaja maure ngjitur me katedralen, sot pallat mbretëror për ceremonitë zyrtare, me salla
+      gotike dhe sixhade. Hyrja rreth €7-10.
+  - name: Castell de Bellver
+    text: >-
+      Kështjella e rrumbullakët e shekullit XIV mbi një kodër me pisha, rreth 3 km nga qendra, me
+      pamjen më të mirë mbi gjirin. Hyrja rreth €4, të dielave zakonisht falas.
+  - name: Qyteti i vjetër
+    text: >-
+      Rrugica të ngushta mes Plaça Major dhe katedrales, me oborre pallatesh (patis), Banjat Arabe
+      të shekullit X dhe Bazilikën e Sant Francesc.
+  - name: Passeig des Born dhe Santa Catalina
+    text: Bulevardi me pemë në zemër të qytetit dhe, pak më në perëndim, tregu dhe lokalet e lagjes Santa Catalina.
+  - name: Plazhet e qytetit
+    text: >-
+      Can Pere Antoni është 10 minuta në këmbë nga katedralja. Për rërë më të gjerë merr autobusin
+      deri në Platja de Palma (rreth 30 minuta) ose në Cala Major.
+airports:
+  PMI: >-
+    Aeroporti është rreth 8 km nga qendra. Autobusi A1 niset çdo 10-20 minuta, ndalon në Plaça
+    d'Espanya dhe vazhdon deri te porti, për rreth 15-25 minuta dhe rreth €5 (paguhet me kartë
+    bankare pa kontakt). Një taksi deri në qendër kushton rreth €20-30 dhe bën rreth 15 minuta.
+budget: >-
+  Një kafe kushton rreth €1.50-2, një menú del día €13-18, një birrë e vogël (caña) rreth €2.50-3.50,
+  një udhëtim me autobus rreth €2. Palma është më e shtrenjtë se Málaga, sidomos për fjetjen në verë.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë det të ngrohtë dhe më pak turistë. Korriku dhe gushti janë
+  të nxehtë (shpesh mbi 30°C), plot dhe të shtrenjtë. Në dimër ditën bën rreth 15°C, por shumë
+  hotele buzë plazhit mbyllen.
+tips:
+  - "Për gjiret e lindjes merr një makinë me qira për një-dy ditë: rezervoje herët për verën dhe kontrollo sigurimin dhe rregullin e karburantit. Në qytet nuk të duhet, parkimi është i vështirë dhe në zonat blu paguhet."
+  - "Ishulli ka taksë turistike prej disa euro për person në natë, që paguhet te hoteli dhe nuk përfshihet gjithmonë në çmimin online."
+  - "Më 2 shkurt dhe 11 nëntor, rreth orës 8:00, dielli kalon nga rozeta e katedrales dhe vizaton një rozetë të dytë në murin përballë."
+itinerary:
+  - "Katedralja La Seu dhe Palau de l'Almudaina në mëngjes, pastaj qyteti i vjetër dhe Plaça Major. Pasdite Passeig des Born, darka me tapas në Santa Catalina."
+  - "Treni i vjetër për në Sóller, pastaj tramvaji deri në Port de Sóller për drekë buzë detit. Në mbrëmje, shëtitorja e portit të Palma-s."
+  - "Castell de Bellver në mëngjes dhe plazhi në Cala Major pasdite. Ndryshe, me makinë me qira: Shpellat e Drach-it dhe not në Cala Mondragó."
+areas:
+  - name: Casc Antic
+    text: "Qyteti i vjetër rreth katedrales: gjithçka në këmbë, por hotelet janë të shtrenjta."
+  - name: Santa Catalina
+    text: Lagjja e tregut dhe e restoranteve, 10-15 minuta në këmbë nga qendra.
+  - name: Plaça d'Espanya
+    text: "Zona më praktike: këtu ndalon autobusi A1 dhe nisen treni i Sóller-it dhe autobusët për ishullin."
+  - name: Platja de Palma
+    text: Plazh i gjatë pranë aeroportit, me hotele më të lira në pranverë dhe vjeshtë, por i zhurmshëm në verë.
+food:
+  - name: Ensaïmada
+    text: >-
+      Ëmbëlsira spirale me brumë të butë dhe pluhur sheqeri, simboli i ishullit. Provoje me çokollatë
+      të ngrohtë në Can Joan de s'Aigo, një nga kafenetë më të vjetra të qytetit.
+  - name: Sobrassada
+    text: Suxhuk i butë me spec të kuq që lyhet mbi bukë, shpesh me pak mjaltë.
+  - name: Pa amb oli
+    text: Bukë me vaj ulliri, domate dhe djathë ose proshutë, një drekë e lirë mallorkine.
+  - name: Tumbet
+    text: Patëllxhan, patate dhe speca të skuqur me salcë domateje, si një musaka pa mish.
+transport: >-
+  Qyteti i vjetër, porti dhe Santa Catalina përshkohen lehtë në këmbë. Autobusët e kuq të EMT-së
+  kushtojnë rreth €2 për udhëtim dhe pranojnë kartë bankare pa kontakt. Autobusët e verdhë TIB për
+  pjesën tjetër të ishullit nisen nga stacioni nëntokësor në Plaça d'Espanya.
+daytrips:
+  - name: Sóller me trenin e vjetër
+    text: >-
+      Treni prej druri i vitit 1912 kalon malet e Tramuntana-s për rreth 1 orë, me biletë rreth €25
+      në një drejtim. Autobusi TIB kushton rreth €5. Nga Sóller një tramvaj të çon te porti.
+  - name: Valldemossa
+    text: >-
+      Fshati malor me shtëpi guri dhe manastirin ku Chopin kaloi dimrin e viteve 1838-1839, rreth 30
+      minuta me autobus TIB.
+  - name: Shpellat e Drach-it
+    text: >-
+      Shpella me stalaktite dhe një liqen nëntokësor në Porto Cristo, me një koncert të shkurtër mbi
+      ujë. Rreth 1 orë me makinë; bileta rreth €20-25 blihet online.
+  - name: Plazhet e lindjes
+    text: >-
+      Gjire të vogla me ujë të kaltër si Cala Mondragó, Caló des Moro dhe Cala Varques, rreth 1 orë
+      me makinë. Në gusht shko herët, parkimet mbushen shpejt.
+faq:
+  - q: "A më duhet makinë me qira në Mallorca?"
+    a: "Për Palma jo: qyteti, Sóller dhe Valldemossa arrihen me autobus ose tren. Makina ia vlen për një-dy ditë për gjiret e lindjes dhe Shpellat e Drach-it."
+  - q: "Sa para duhen në ditë në Palma?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-80 në ditë për ushqim, transport dhe një-dy hyrje. Një ditë me makinë me qira dhe karburant shton rreth €40-70."

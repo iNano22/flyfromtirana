@@ -1,0 +1,103 @@
+city: Oslo
+slug: oslo
+tagline: Fjordi, Opera dhe muzetë e Bygdøy
+intro: >-
+  Oslo, kryeqyteti i Norvegjisë, shtrihet në fund të fjordit Oslofjord, mes pyjeve dhe kodrave.
+  Qendra përshkohet në këmbë, ndërsa ishujt e fjordit janë disa minuta larg me traget. Monedha
+  është kurora norvegjeze (NOK): €1 është rreth 11.5 NOK. Është ndër qytetet më të shtrenjta në
+  Evropë: tri ditë mjaftojnë.
+sights:
+  - name: Shtëpia e Operas
+    text: >-
+      Ndërtesa prej mermeri të bardhë, e vitit 2008, del nga uji si një ajsberg. Ec falas mbi çatinë
+      e pjerrët për pamjen mbi fjordin.
+  - name: Muzeu Munch
+    text: >-
+      Muzeu 13-katësh pranë Operas, i hapur në vitin 2021, me veprat e Edvard Munch, mes tyre
+      «Britma». Bileta rreth 180-200 NOK (rreth €16-17).
+  - name: Aker Brygge
+    text: >-
+      Ish-kantieri detar, sot shëtitorja më e gjallë buzë ujit, me restorante dhe muzeun Astrup
+      Fearnley në Tjuvholmen. Nga këtu nisen tragetet për ishujt.
+  - name: Parku Vigeland
+    text: >-
+      Brenda parkut Frogner, mbi 200 skulptura të Gustav Vigeland, mes tyre Monoliti 14 metra i
+      lartë. Hyrja falas, i hapur gjithë ditën.
+  - name: Muzetë e Bygdøy
+    text: >-
+      Gadishulli i muzeve, rreth 15 minuta me autobusin 30: Muzeu Popullor Norvegjez në ajër të
+      hapur, anija polare Fram dhe trapi Kon-Tiki. Muzeu i anijeve vikinge pritet të rihapet rreth
+      vitit 2027.
+  - name: Holmenkollen
+    text: >-
+      Trampolina e famshme e skive mbi qytet, me Muzeun e Skive dhe pamje mbi fjordin (rreth 200
+      NOK). Metroja 1 bën rreth 25 minuta, pastaj 15 minuta në këmbë përpjetë.
+itinerary:
+  - "Shtëpia e Operas dhe Muzeu Munch. Pasdite Kalaja Akershus dhe Aker Brygge, në mbrëmje Karl Johans gate."
+  - "Bygdøy: Muzeu Popullor Norvegjez, pastaj muzetë Fram dhe Kon-Tiki. Në perëndim të diellit, Parku Vigeland."
+  - "Holmenkollen në mëngjes, pastaj lagjja Grünerløkka dhe tregu i mbuluar Mathallen. Ose një ditë në ishujt e fjordit."
+areas:
+  - name: Sentrum dhe Oslo S
+    text: Rreth stacionit qendror, zona më praktike për trenat dhe autobusët e të dy aeroporteve.
+  - name: Grünerløkka
+    text: Lagjja më e gjallë, me kafene, bare dhe dyqane vintage, 10-15 minuta me tramvaj nga qendra.
+  - name: Frogner dhe Majorstuen
+    text: Lagje elegante dhe e qetë pranë Parkut Vigeland, me metro për në Holmenkollen.
+  - name: Grønland
+    text: Lagjja shumëkulturore pranë Oslo S, me hotele dhe restorante më të lira.
+food:
+  - name: Pølse
+    text: >-
+      Salsiçe e nxehtë në bukë ose në petë patateje (lompe), vakti më i lirë: rreth 40-60 NOK (rreth
+      €4-5) në 7-Eleven ose Narvesen.
+  - name: Fiskesuppe
+    text: Supë kremoze peshku me salmon dhe karkaleca, rreth 200-250 NOK (rreth €17-22).
+  - name: Brunost
+    text: Djathë kafe e ëmbël nga hirra e qumështit, e prerë hollë mbi bukë ose vafla.
+  - name: Kanelbolle
+    text: Bukëz me kanellë; me një kafe, rreth 80-100 NOK (rreth €7-9) në furrat e qytetit.
+airports:
+  OSL: >-
+    Gardermoen është rreth 50 km në veri. Flytoget arrin në Oslo S për rreth 20 minuta, me rreth
+    230-250 NOK (rreth €20-22). Treni rajonal i Vy bën rreth 25 minuta, me rreth 140 NOK (rreth
+    €12), dhe blihet edhe në aplikacionin Ruter. Autobusët Flybussen bëjnë rreth 45 minuta, me
+    rreth 200 NOK (rreth €17). Taksia ka çmim fiks rreth 800-1000 NOK (rreth €70-87).
+  TRF: >-
+    Torp është rreth 110 km në jug, pranë Sandefjord. Autobusi Torp-Ekspressen shkon direkt në
+    stacionin e autobusëve të Oslos për rreth 1 orë e 45 minuta, me rreth 250-320 NOK (rreth
+    €22-28). Ose merr shuttle-in deri në stacionin Torp (rreth 5 minuta) dhe trenin e Vy për në
+    Oslo S, po rreth 1 orë e 45 minuta, me rreth 150-300 NOK (rreth €13-26), më lirë online.
+transport: >-
+  Qendra përshkohet në këmbë; metroja (T-bane), tramvajet, autobusët dhe tragetet e ishujve
+  punojnë me biletën e Ruter. Bileta e vetme kushton rreth 45 NOK (rreth €4) dhe vlen 60 minuta,
+  ajo 24-orëshe rreth 130 NOK (rreth €11). Blije në aplikacionin Ruter ose në automate.
+daytrips:
+  - name: Ishujt e Oslofjord
+    text: >-
+      Hovedøya, me rrënojat e një manastiri të vitit 1147, Gressholmen ose Lindøya, me plazhe të
+      vogla. Tragetet nisen nga Aker Brygge, rreth 10-20 minuta, me biletën e Ruter.
+  - name: Drøbak
+    text: >-
+      Qytezë me shtëpi druri buzë fjordit, me kështjellën Oscarsborg përballë, rreth 1 orë me
+      autobusin 500 ose me anije në verë.
+  - name: Fredrikstad
+    text: Gamlebyen, qyteti i vjetër me mure dhe kanale, ndër më të ruajturit në Skandinavi, rreth 1 orë me tren.
+budget: >-
+  Shumë e shtrenjtë. Një kafe kushton rreth 45-55 NOK (rreth €4-5), një birrë 100-130 NOK (rreth
+  €9-11), një pjatë në restorant 250-350 NOK (rreth €22-30). Pa fluturimin dhe fjetjen, llogarit
+  €80-120 në ditë; supermarketet Rema 1000 dhe Kiwi e ulin shpenzimin.
+when: >-
+  Maji-shtatori, kur ditët janë të gjata; në fund të qershorit ka rreth 19 orë dritë. Më 17 maj,
+  festa kombëtare, qyteti mbushet me parada. Në dhjetor ka vetëm rreth 6 orë dritë, por nis stina
+  e skive.
+tips:
+  - "Alkooli mbi 4.7% shitet vetëm në dyqanet shtetërore Vinmonopolet. Birra në supermarket shitet deri në 20:00 në ditë pune, deri në 18:00 të shtunën dhe aspak të dielën."
+  - "Karta bankare ose telefoni pranohen kudo: nuk ke nevojë të këmbesh kurora."
+  - "Uji i rubinetit është i shkëlqyer: mbush shishen në vend që të blesh ujë."
+faq:
+  - q: "Gardermoen apo Torp: cili aeroport është më i mirë?"
+    a: "Gardermoen është më afër: me Flytoget je në qendër për rreth 20 minuta. Torp shpesh ka bileta më të lira, por llogarit rreth 1 orë e 45 minuta dhe rreth €13-28 deri në Oslo."
+  - q: "Flytoget apo treni i Vy: cilin të marr?"
+    a: "Flytoget nis çdo 10-20 minuta dhe kushton rreth 230-250 NOK. Treni i Vy bën vetëm rreth 5 minuta më shumë dhe kushton rreth 140 NOK: zgjedhja më e mirë për buxhetin."
+  - q: "Sa para duhen në ditë në Oslo?"
+    a: "Pa fluturimin dhe fjetjen, €80-120 në ditë. Supermarketi, bileta 24-orëshe e Ruter dhe vendet falas, si çatia e Operas, e ulin shpenzimin."

@@ -1,0 +1,94 @@
+city: Valencia
+slug: valencia
+tagline: Paella, plazh dhe arkitekturë e së ardhmes
+intro: >-
+  Valencia është qyteti i tretë i Spanjës: një qendër e vjetër që përshkohet në këmbë, një park i
+  gjelbër 9 km aty ku dikur rridhte lumi, ndërtesat futuriste të Qytetit të Arteve dhe Shkencave
+  dhe plazhe të gjera 20 minuta nga qendra. Këtu ka lindur paella. Tri ditë mjaftojnë për qytetin
+  dhe një mbrëmje në Albufera.
+sights:
+  - name: Ciutat de les Arts i les Ciències
+    text: >-
+      Kompleksi i bardhë futurist i Santiago Calatravës, në fund të parkut Turia. Shëtitja mes
+      ndërtesave është falas; akuariumi Oceanogràfic, ndër më të mëdhenjtë në Evropë, kushton rreth
+      €40, Muzeu i Shkencave rreth €9.
+  - name: Qendra e vjetër dhe Katedralja
+    text: >-
+      Rrugica të ngushta rreth Plaza de la Virgen. Katedralja ruan një kupë që besohet të jetë Gralli
+      i Shenjtë (hyrja rreth €9), ndërsa nga kulla Micalet, pas 207 shkallëve, shihet gjithë qyteti
+      (rreth €3). Pranë është La Lonja, bursa gotike e mëndafshit.
+  - name: Mercado Central
+    text: >-
+      Një nga tregjet më të mëdha të Evropës, nën kube xhami dhe qeramike në stil modernist. Hapur nga
+      e hëna deri të shtunën, vetëm deri rreth orës 15:00.
+  - name: Jardín del Turia
+    text: >-
+      Parku që zuri shtratin e lumit Turia pas përmbytjes së vitit 1957: 9 km shtigje, ura të
+      vjetra dhe fusha sporti, më bukur për t'u përshkuar me biçikletë.
+  - name: Plazhi Malvarrosa
+    text: >-
+      Plazhi i gjerë me rërë i qytetit, bashkë me Las Arenas, me shëtitore dhe restorante paella-je
+      buzë detit. Pas tij është El Cabanyal, lagjja e peshkatarëve me shtëpi me pllaka shumëngjyrëshe.
+itinerary:
+  - "Plaza de la Virgen, Katedralja dhe Micalet në mëngjes, pastaj La Lonja dhe Mercado Central para se të mbyllet. Pasdite rrugicat e El Carmen, darka me tapas po aty."
+  - "Me biçikletë nëpër Jardín del Turia deri te Ciutat de les Arts i les Ciències, me Oceanogràfic ose Muzeun e Shkencave. Në mbrëmje lokalet e Ruzafa-s."
+  - "El Cabanyal dhe plazhi Malvarrosa, me drekë me paella buzë detit. Pasdite autobusi për në Albufera, me varkë në liqen në perëndim të diellit."
+areas:
+  - name: Ciutat Vella dhe El Carmen
+    text: "Qendra historike: gjithçka në këmbë, por me zhurmë natën në fundjavë."
+  - name: Ruzafa
+    text: Lagjja më e gjallë për të ngrënë dhe për jetën e natës, në jug të qendrës.
+  - name: El Cabanyal dhe Malvarrosa
+    text: Pranë detit dhe më e qetë, ideale në verë, rreth 20-30 minuta nga qendra.
+  - name: Xàtiva dhe Estació del Nord
+    text: "Rreth stacionit kryesor: praktike, me metro direkt për aeroportin dhe trena për udhëtimet ditore."
+food:
+  - name: Paella valenciana
+    text: >-
+      Paella e vërtetë bëhet me pulë, lepur dhe fasule, jo me fruta deti. Hahet në drekë dhe shpesh
+      porositet për të paktën 2 veta, rreth €15-20 për person.
+  - name: Horchata me fartons
+    text: >-
+      Pije e ftohtë dhe e ëmbël nga bajamet e tokës (chufa), me ëmbëlsira të gjata, fartons. Një gotë
+      kushton rreth €3.
+  - name: All i pebre
+    text: Gjellë me ngjala, patate, hudhër dhe piper, specialiteti i restoranteve të Albuferës.
+  - name: Agua de Valencia
+    text: Koktej me lëng portokalli, cava dhe pije të forta, që ndahet në kana.
+airports:
+  VLC: >-
+    Aeroporti i Manises është rreth 8 km në perëndim të qytetit. Linjat 3 dhe 5 të metrosë nisen nga
+    stacioni Aeroport rreth çdo 10 minuta dhe arrijnë në qendër (Xàtiva, Colón) për rreth 20-25
+    minuta, me biletë rreth €5. Një taksi deri në qendër kushton rreth €20-25 dhe bën rreth 20
+    minuta.
+transport: >-
+  Qendra e vjetër përshkohet në këmbë. Metroja, tramvajet dhe autobusët EMT të çojnë kudo, me
+  biletë rreth €1.50 për udhëtim; karta SUMA me 10 udhëtime del më lirë. Qyteti është i sheshtë dhe
+  plot korsi biçikletash, ndaj biçikletat publike Valenbisi janë zgjidhje e mirë për parkun dhe
+  plazhin.
+daytrips:
+  - name: Albufera dhe El Palmar
+    text: >-
+      Liqeni dhe fushat me oriz ku lindi paella, rreth 30-40 minuta me autobusin 25 nga qendra. Një
+      xhiro me varkë kushton rreth €5-8.
+  - name: Sagunto
+    text: Teatri romak dhe kështjella e gjatë mbi kodër, rreth 30 minuta me trenin Cercanías.
+  - name: Xàtiva
+    text: Qytezë me një kështjellë të madhe mbi kodër, rreth 1 orë me trenin Cercanías.
+budget: >-
+  Një kafe kushton rreth €1.50, një menú del día €12-15, një birrë e vogël (caña) rreth €2-3 dhe
+  një horchata rreth €3. Valencia është më e lirë se Barcelona dhe Madrid.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë mot të ngrohtë dhe det të mirë. Korriku dhe gushti janë
+  të nxehtë dhe me lagështi, ndërsa në dimër ditën bën rreth 16-17°C. Festa Las Fallas (15-19 mars)
+  sjell figura gjigante në rrugë, fishekzjarrë çdo ditë në orën 14:00 dhe djegien e tyre natën e 19
+  marsit, por fjetja shtrenjtohet shumë dhe duhet rezervuar muaj përpara.
+tips:
+  - "Të dielave shumë muze të bashkisë dhe La Lonja hyhen falas, ndërsa Mercado Central është i mbyllur."
+  - "Paella hahet rreth orës 14:00. Shmang restorantet me foto paella-je në vitrinë: të mirat e gatuajnë me porosi, për rreth 20-30 minuta."
+  - "Biletën për Oceanogràfic bleje online disa ditë përpara: zakonisht kushton më pak se në arkë."
+faq:
+  - q: "A ia vlen Valencia për pushime në plazh?"
+    a: "Po. Malvarrosa dhe Las Arenas janë plazhe të gjera me rërë, rreth 20-30 minuta nga qendra me tramvaj, dhe deti është i ngrohtë nga qershori deri në tetor."
+  - q: "Sa para duhen në ditë në Valencia?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-65 në ditë për ushqim, transport dhe një-dy hyrje. Shtrenjtë del vetëm Oceanogràfic; qendra e vjetër, parku Turia dhe plazhi janë falas."

@@ -1,0 +1,104 @@
+city: Lisbon
+slug: lisbon
+tagline: Kodra, tramvaje të verdha dhe pastel de nata
+intro: >-
+  Lisbon, kryeqyteti i Portugalisë, ngrihet mbi kodra buzë lumit Tejo: rrugica me gurë të bardhë,
+  tramvaje të verdha, pamje nga çdo kodër dhe çmime më të ulëta se në shumicën e
+  kryeqyteteve perëndimore. Tri ditë mjaftojnë, por ia vlen një e katërt për Sintra.
+sights:
+  - name: Alfama
+    text: >-
+      Lagjja më e vjetër, me rrugica të ngushta dhe shkallë drejt lumit. Në mbrëmje nga lokalet
+      dëgjohet fado, muzika tradicionale portugeze.
+  - name: Castelo de São Jorge
+    text: >-
+      Kështjella maure në majë të kodrës mbi Alfama, me pamjen më të gjerë mbi qytet. Hyrja rreth
+      €15.
+  - name: Belém
+    text: >-
+      Lagjja e zbulimeve gjeografike, rreth 6 km në perëndim: Manastiri i Jerónimos (rreth €18),
+      Kulla e Belém-it dhe monumenti Padrão dos Descobrimentos.
+  - name: Tramvaji 28
+    text: >-
+      Tramvaji i verdhë i viteve 1930 nëpër Graça, Alfama, Baixa dhe Chiado. Bileta në bord rreth
+      €3.30, me kartën Navegante më pak.
+  - name: Miradouros (pikat e pamjes)
+    text: >-
+      Senhora do Monte dhe Graça për perëndimin, Santa Luzia dhe Portas do Sol mbi Alfama, São
+      Pedro de Alcântara mbi Baixa. Të gjitha falas.
+  - name: Baixa dhe Praça do Comércio
+    text: >-
+      Qendra e rindërtuar pas tërmetit të vitit 1755, me harkun e Rua Augusta dhe sheshin e madh
+      buzë lumit.
+  - name: LX Factory
+    text: >-
+      Fabrikë e vjetër në Alcântara, sot me restorante, dyqane dhe librarinë Ler Devagar. Të
+      dielave zakonisht ka treg.
+airports:
+  LIS: >-
+    Aeroporti Humberto Delgado është vetëm rreth 7 km nga qendra. Linja e kuqe e metrosë niset nga
+    Terminali 1 dhe arrin në Saldanha për rreth 15 minuta; për Baixa ndërro në Alameda me linjën e
+    gjelbër (rreth 25-30 minuta gjithsej). Bileta kushton rreth €1.85, plus rreth €0.50 për kartën
+    Navegante. Aerobus të çon në Rossio, Praça do Comércio dhe Cais do Sodré për rreth 30-40
+    minuta (rreth €4-5). Taksi ose Uber deri në qendër rreth €12-20. Nga Terminali 2, ku ulen
+    shumë linja low-cost, merr autobusin falas për te Terminali 1.
+budget: >-
+  Një espresso (bica) kushton rreth €1, një pastel de nata rreth €1.50, pjata e ditës (prato do
+  dia) €10-14, një birrë e vogël rreth €2-3. Fjetja në qendër është shtrenjtuar shumë.
+when: >-
+  Marsi-maji dhe shtatori-tetori kanë mot të ngrohtë dhe më pak turistë. Korriku dhe gushti janë të
+  nxehtë (shpesh rreth 30°C) dhe të mbushur, dimri i butë (rreth 15°C ditën) por me shi. Në
+  qershor festa e Santo António mbush Alfama-n me sardele në skarë, por fjetja shtrenjtohet.
+tips:
+  - "Buka, ullinjtë dhe gjalpi që sjellin në tavolinë (couvert) paguhen nëse i ha. Nëse nuk i do, thuaji kamerierit t'i marrë."
+  - "Tramvaji 28 ka radhë të gjata dhe hajdutë xhepash. Hip herët në mëngjes te stacioni i parë, Martim Moniz."
+  - "Vish këpucë me shollë që nuk rrëshqet: gurët e trotuarit bëhen rrëshqitës kur bie shi."
+itinerary:
+  - "Baixa, Praça do Comércio dhe Rossio, pastaj Castelo de São Jorge. Pasdite tramvaji 28 dhe Alfama në këmbë, perëndimi nga Senhora do Monte, darka me fado."
+  - "Belém: Manastiri i Jerónimos, Kulla e Belém-it dhe pastel de nata. Pasdite LX Factory, në mbrëmje Chiado dhe Bairro Alto."
+  - "Udhëtim ditor në Sintra, me nisje herët nga Rossio. Ndryshe, Parque das Nações me Oceanário-n dhe trageti për në Cacilhas në muzg."
+areas:
+  - name: Baixa dhe Chiado
+    text: "Në qendër dhe në rrafsh, pranë metrosë: më praktikja për pak ditë, por jo më e lira."
+  - name: Alfama
+    text: "Atmosfera më e bukur, me shkallë dhe rrugica të pjerrëta: e vështirë me valixhe."
+  - name: Bairro Alto dhe Príncipe Real
+    text: "Lagjja e jetës së natës, me lokale të hapura deri vonë: zhurmë deri pas mesnate në fundjavë."
+  - name: Saldanha dhe Avenidas Novas
+    text: "Më e lirë dhe më e qetë, në linjën e kuqe të metrosë: rreth 15 minuta direkt nga aeroporti."
+food:
+  - name: Pastel de nata
+    text: >-
+      Ëmbëlsirë me krem veze në brumë petash, me kanellë sipër, rreth €1.30-1.60. Më e famshmja
+      piqet në Pastéis de Belém që nga viti 1837.
+  - name: Bacalhau
+    text: Bakalla (merluc i kripur) në qindra mënyra. Provo bacalhau à brás, me vezë dhe patate të holla.
+  - name: Bifana
+    text: Sanduiç me mish derri të marinuar në hudhër, rreth €3-4.
+  - name: Sardinhas assadas
+    text: Sardele të pjekura në skarë, më të mirat në qershor, gjatë festës së Santo António.
+transport: >-
+  Qendra shihet në këmbë, por kodrat janë të pjerrëta. Metroja ka katër linja dhe punon nga ora
+  6:30 deri në 1:00. Në kartën Navegante ngarkon bileta të veçanta, kredit «zapping» (më i lirë për
+  udhëtim) ose biletën 24-orëshe për metro, autobus dhe tramvaj, rreth €7. Për Belém merr tramvajin
+  15E nga Praça da Figueira.
+daytrips:
+  - name: Sintra
+    text: >-
+      Pallate përrallore mes pyllit, si Palácio da Pena dhe Quinta da Regaleira, rreth 40 minuta me
+      tren nga Rossio (rreth €2.50). Rezervo biletat online.
+  - name: Cascais
+    text: >-
+      Qytezë bregdetare me plazhe, rreth 40 minuta me tren nga Cais do Sodré përgjatë bregut. Në
+      këmbë arrin te shkëmbinjtë e Boca do Inferno.
+  - name: Évora
+    text: >-
+      Qyteti i vjetër i Alentejo-s brenda mureve, me tempullin romak dhe Capela dos Ossos (kapela e
+      kockave), rreth 1.5 orë me tren ose autobus.
+faq:
+  - q: "A ia vlen Lisboa Card?"
+    a: "Vetëm nëse viziton shumë monumente. Karta për 24 orë kushton rreth €27-30 dhe përfshin transportin, trenat për Sintra e Cascais dhe Manastirin e Jerónimos. Me 1-2 hyrje në ditë del më lirë me biletën ditore."
+  - q: "Sa para duhen në ditë në Lisbon?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-70 në ditë për ushqim, transport dhe një-dy hyrje. Dreka me prato do dia është e lirë, një darkë me fado kushton më shumë."
+  - q: "Si shkohet nga aeroporti natën?"
+    a: "Metroja punon deri rreth orës 1:00. Më vonë merr Uber ose taksi nga radha zyrtare te mbërritjet, rreth €15-20 deri në qendër."

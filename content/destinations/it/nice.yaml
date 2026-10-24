@@ -1,0 +1,80 @@
+city: Nice
+name: Nizza
+slug: nice
+tagline: La Promenade, Vieux Nice e la Costa Azzurra
+intro: >-
+  Nizza è la città principale della Costa Azzurra (Côte d'Azur), con una lunga baia di acqua blu, un
+  centro storico dai colori italiani e la luce che attirò Matisse e Chagall. Fino al 1860 apparteneva
+  ai Savoia, ed è per questo che la cucina ha ancora un sapore italiano. Tre o quattro giorni bastano
+  per la città e per Monaco, Èze o Antibes, tutte vicine in treno o in autobus.
+sights:
+  - name: Promenade des Anglais
+    text: La famosa passeggiata sul mare, lunga circa 7 km, con le sedie blu dove si siedono i nizzardi. Le spiagge sono di ciottoli e quelle pubbliche sono gratuite.
+  - name: Vieux Nice
+    text: Il centro storico, con vicoli stretti, case color ocra, chiese barocche e la cattedrale di Sainte-Réparate. Il posto migliore per la socca e il gelato.
+  - name: Collina del Castello (Colline du Château)
+    text: La collina sopra il centro storico, oggi un parco gratuito con una cascata e la vista più bella sulla baia e sul porto. Si sale a piedi per le scale o con l'ascensore gratuito accanto alla Tour Bellanda.
+  - name: Mercato del Cours Saleya
+    text: Il mercato dei fiori, della frutta e della verdura nel cuore di Vieux Nice, ogni mattina dal martedì alla domenica. Il lunedì ospita il mercato dell'antiquariato.
+  - name: Musée Matisse
+    text: Il museo di Matisse in una villa rossa sulla collina di Cimiez, tra ulivi e rovine romane. Il biglietto costa circa €10; il pass dei musei della città circa €15. Chiuso il martedì.
+  - name: Musée National Marc Chagall
+    text: Un museo nazionale con i grandi dipinti di Chagall sulla Bibbia. Il biglietto costa circa €10-12 e non è incluso nel pass della città. A circa 15 minuti a piedi dalla stazione di Nice-Ville, sulla strada per il Matisse.
+airports:
+  NCE: >-
+    L'aeroporto Nice Côte d'Azur è sul mare, a circa 7 km a ovest del centro. La linea 2 del tram parte
+    da entrambi i terminal e ti porta in centro (Jean Médecin, Port) in circa 25-30 minuti, ogni 8-10
+    minuti. Il biglietto singolo costa circa €1,70-2, ma in aeroporto viene spesso venduto un biglietto
+    andata e ritorno da circa €10: controlla alla macchinetta o nell'app Lignes d'Azur. I taxi hanno una
+    tariffa fissa per il centro, circa €35-40.
+budget: >-
+  Un caffè al banco costa circa €2-2,50, una porzione di socca circa €4-5, un piatto del giorno
+  €15-20. Un letto in ostello costa da circa €30-50, una camera doppia in un hotel semplice da circa
+  €80-130 a notte, molto di più a luglio e agosto.
+when: >-
+  Maggio-giugno e settembre-ottobre sono il periodo migliore: il mare è caldo e i prezzi più bassi.
+  Luglio e agosto sono caldi e pieni di turisti. L'inverno è mite e soleggiato; a febbraio si tiene il
+  Carnevale di Nizza.
+tips:
+  - "Le spiagge sono di ciottoli: porta le scarpette da scoglio. Le spiagge private con lettino costano circa €20-30 al giorno."
+  - "Il treno TER è più veloce dell'autobus per Monaco e Antibes, ma d'estate è pieno: parti presto."
+  - "Molti musei chiudono il martedì e sono gratuiti per i ragazzi sotto i 18 anni."
+itinerary:
+  - "La mattina al mercato del Cours Saleya e in Vieux Nice, con la socca a pranzo. Nel pomeriggio la Collina del Castello, poi la Promenade des Anglais fino al tramonto."
+  - "La collina di Cimiez con il Musée Matisse, poi il Musée Chagall scendendo. Nel pomeriggio Place Masséna, il parco Promenade du Paillon e un bagno in spiaggia."
+  - "In treno a Monaco: Monte Carlo, il casinò e il Palazzo del Principe. Ritorno in autobus passando per Èze, il borgo sulla roccia."
+  - "Una giornata ad Antibes o a Mentone, con un centro storico e una spiaggia. La sera, cena nel quartiere del porto."
+areas:
+  - name: Vieux Nice
+    text: Nel cuore di tutto e vicino al mare, ma rumoroso la sera e con molti palazzi senza ascensore.
+  - name: Jean Médecin e Nice-Ville
+    text: "La zona più pratica: il tram per l'aeroporto e i treni per la costa sono vicini. Hotel più economici, ma le strade dietro la stazione la sera non sono piacevoli."
+  - name: Le Port
+    text: Il quartiere del porto, a est della Collina del Castello, più tranquillo, con buoni ristoranti e un tram diretto per l'aeroporto.
+food:
+  - name: Socca
+    text: Una sottile torta di farina di ceci e olio d'oliva, cotta nel forno a legna e mangiata calda con il pepe.
+  - name: Salade niçoise
+    text: L'insalata della città, con pomodori, uova sode, tonno o acciughe e olive nere. La versione autentica non ha patate.
+  - name: Pan bagnat
+    text: Un'insalata nizzarda dentro un panino rotondo bagnato d'olio d'oliva, il pranzo ideale in spiaggia, circa €6-8.
+  - name: Pissaladière
+    text: Una focaccia con cipolle caramellate, acciughe e olive, venduta a tranci nei forni.
+transport: >-
+  Il centro si gira a piedi. La rete Lignes d'Azur ha 3 linee di tram e molti autobus; il biglietto
+  singolo costa circa €1,70-2 e vale 74 minuti, il biglietto giornaliero circa €7. Il treno TER dalla
+  stazione di Nice-Ville percorre la costa fino a Monaco, Mentone e Antibes.
+daytrips:
+  - name: Monaco
+    text: Il minuscolo principato con Monte Carlo, il casinò e il Palazzo del Principe. Circa 20-25 minuti in treno e circa €4-5.
+  - name: Èze
+    text: Un borgo medievale su una roccia a circa 400 metri sul mare, con un giardino esotico e una vista spettacolare. L'autobus 82 da Nizza impiega circa 30-35 minuti, circa €2.
+  - name: Antibes
+    text: Un centro storico con mura sul mare, un porto pieno di yacht e il Musée Picasso. Circa 20-25 minuti in treno.
+  - name: Mentone
+    text: La città dei limoni vicino al confine italiano, con case gialle e arancioni. Circa 35 minuti in treno, circa €6.
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "La linea 2 del tram è la più economica e la più semplice: circa 25-30 minuti fino a Jean Médecin. Il taxi costa circa €35-40 a tariffa fissa e conviene per 3-4 persone con le valigie."
+  - q: "Quanto si spende al giorno a Nizza?"
+    a: "Volo e alloggio esclusi, calcola €50-80 al giorno. Risparmi con la socca, il pan bagnat, un picnic in spiaggia e i treni TER."

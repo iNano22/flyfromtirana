@@ -1,0 +1,95 @@
+city: Valencia
+slug: valencia
+tagline: Paella, spiagge e architettura del futuro
+intro: >-
+  Valencia è la terza città della Spagna: un centro storico che si gira a piedi, un parco verde di 9
+  km dove un tempo scorreva il fiume, gli edifici futuristici della Città delle Arti e delle Scienze
+  e ampie spiagge a 20 minuti dal centro. Qui è nata la paella. Tre giorni bastano per la città e
+  per una serata all'Albufera.
+sights:
+  - name: Ciutat de les Arts i les Ciències
+    text: >-
+      Il complesso bianco e futuristico di Santiago Calatrava, in fondo al parco del Turia.
+      Passeggiare tra gli edifici è gratuito; l'acquario Oceanogràfic, tra i più grandi d'Europa,
+      costa circa €40, il Museo delle Scienze circa €9.
+  - name: Centro storico e Cattedrale
+    text: >-
+      Vicoli stretti intorno a Plaza de la Virgen. La cattedrale custodisce un calice ritenuto il
+      Santo Graal (ingresso circa €9), mentre dalla torre del Micalet, dopo 207 gradini, si vede
+      tutta la città (circa €3). Vicino c'è La Lonja, la borsa gotica della seta.
+  - name: Mercado Central
+    text: >-
+      Uno dei mercati più grandi d'Europa, sotto una cupola modernista di vetro e ceramica. Aperto dal
+      lunedì al sabato, solo fino alle 15:00 circa.
+  - name: Jardín del Turia
+    text: >-
+      Il parco nato nel letto del fiume Turia dopo l'alluvione del 1957: 9 km di sentieri, ponti
+      antichi e campi sportivi, da percorrere meglio in bicicletta.
+  - name: Spiaggia della Malvarrosa
+    text: >-
+      L'ampia spiaggia sabbiosa della città, insieme a Las Arenas, con lungomare e ristoranti di
+      paella sul mare. Alle sue spalle c'è El Cabanyal, il quartiere dei pescatori con case rivestite
+      di piastrelle colorate.
+itinerary:
+  - "Plaza de la Virgen, la cattedrale e il Micalet al mattino, poi La Lonja e il Mercado Central prima che chiuda. Nel pomeriggio i vicoli di El Carmen, con cena a base di tapas sul posto."
+  - "In bicicletta lungo il Jardín del Turia fino alla Ciutat de les Arts i les Ciències, con l'Oceanogràfic o il Museo delle Scienze. La sera, i locali di Ruzafa."
+  - "El Cabanyal e la spiaggia della Malvarrosa, con pranzo a base di paella sul mare. Nel pomeriggio l'autobus per l'Albufera, con un giro in barca sul lago al tramonto."
+areas:
+  - name: Ciutat Vella ed El Carmen
+    text: "Il centro storico: tutto a piedi, ma rumoroso di notte nel fine settimana."
+  - name: Ruzafa
+    text: Il quartiere più vivace per mangiare fuori e per la vita notturna, a sud del centro.
+  - name: El Cabanyal e Malvarrosa
+    text: Vicino al mare e più tranquilla, ideale d'estate, a circa 20-30 minuti dal centro.
+  - name: Xàtiva ed Estació del Nord
+    text: "Intorno alla stazione principale: pratica, con la metro diretta per l'aeroporto e i treni per le gite in giornata."
+food:
+  - name: Paella valenciana
+    text: >-
+      La vera paella si fa con pollo, coniglio e fagioli, non con i frutti di mare. Si mangia a pranzo
+      e spesso si ordina per almeno 2 persone, circa €15-20 a persona.
+  - name: Horchata con fartons
+    text: >-
+      Bevanda fredda e dolce a base di zigolo dolce (chufa), servita con lunghi dolci soffici, i
+      fartons. Un bicchiere costa circa €3.
+  - name: All i pebre
+    text: Stufato di anguilla, patate, aglio e peperoncino, la specialità dei ristoranti dell'Albufera.
+  - name: Agua de Valencia
+    text: Cocktail di succo d'arancia, cava e superalcolici, da dividere in caraffa.
+airports:
+  VLC: >-
+    L'aeroporto di Manises si trova a circa 8 km a ovest della città. Le linee 3 e 5 della metro
+    partono dalla stazione Aeroport circa ogni 10 minuti e arrivano in centro (Xàtiva, Colón) in
+    circa 20-25 minuti, con un biglietto da circa €5. Un taxi per il centro costa circa €20-25 e
+    impiega circa 20 minuti.
+transport: >-
+  Il centro storico si gira facilmente a piedi. Metro, tram e autobus EMT ti portano ovunque, con un
+  biglietto da circa €1,50 a corsa; la carta SUMA da 10 corse conviene di più. La città è piatta e
+  piena di piste ciclabili, quindi le bici pubbliche Valenbisi sono un'ottima scelta per il parco e
+  la spiaggia.
+daytrips:
+  - name: Albufera ed El Palmar
+    text: >-
+      Il lago e le risaie dove è nata la paella, a circa 30-40 minuti con l'autobus 25 dal centro. Un
+      giro in barca costa circa €5-8.
+  - name: Sagunto
+    text: Il teatro romano e il lungo castello sulla collina, a circa 30 minuti con il treno Cercanías.
+  - name: Xàtiva
+    text: Una cittadina con un grande castello su una collina, a circa 1 ora con il treno Cercanías.
+budget: >-
+  Un caffè costa circa €1,50, un menú del día €12-15, una birra piccola (caña) circa €2-3 e una
+  horchata circa €3. Valencia è più economica di Barcellona e Madrid.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno clima caldo e mare piacevole. Luglio e agosto sono caldi e
+  umidi, mentre d'inverno di giorno si arriva a circa 16-17°C. La festa delle Fallas (15-19 marzo)
+  porta in strada figure giganti, fuochi d'artificio ogni giorno alle 14:00 e il loro rogo la notte
+  del 19 marzo, ma l'alloggio diventa molto caro e va prenotato con mesi di anticipo.
+tips:
+  - "La domenica molti musei comunali e La Lonja sono gratuiti, mentre il Mercado Central è chiuso."
+  - "La paella si mangia verso le 14:00. Evita i ristoranti con le foto della paella in vetrina: quelli buoni la cucinano al momento, in circa 20-30 minuti."
+  - "Compra il biglietto dell'Oceanogràfic online qualche giorno prima: di solito costa meno che in biglietteria."
+faq:
+  - q: "Valencia vale la pena per una vacanza al mare?"
+    a: "Sì. La Malvarrosa e Las Arenas sono ampie spiagge sabbiose, a circa 20-30 minuti dal centro in tram, e il mare è caldo da giugno a ottobre."
+  - q: "Quanto si spende al giorno a Valencia?"
+    a: "Volo e alloggio esclusi, €40-65 al giorno per cibo, trasporti e uno o due ingressi. Solo l'Oceanogràfic è caro; il centro storico, il parco del Turia e la spiaggia sono gratuiti."

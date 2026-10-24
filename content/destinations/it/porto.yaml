@@ -1,0 +1,100 @@
+city: Porto
+slug: porto
+tagline: Vino porto, un ponte di ferro e piastrelle blu sul Douro
+intro: >-
+  Porto è la seconda città del Portogallo, costruita su colline ripide lungo il fiume Douro, vicino
+  all'Atlantico. Vicoli acciottolati, chiese rivestite di piastrelle blu (azulejos) e le cantine del
+  vino porto ne fanno una delle città più belle ed economiche dell'Europa occidentale. Tre giorni
+  bastano per la città, ma vale la pena aggiungere un giorno per la Valle del Douro.
+sights:
+  - name: Ribeira
+    text: >-
+      Il quartiere antico sul fiume, patrimonio UNESCO, con case colorate, ristoranti sulla banchina e
+      barche rabelo che un tempo trasportavano le botti di vino. Il momento più bello è la sera.
+  - name: Ponte Dom Luís I
+    text: >-
+      Il ponte di ferro a due piani, completato nel 1886 da Théophile Seyrig, ex socio di Eiffel. Il
+      piano superiore, a circa 45 m sopra il fiume, è per i pedoni e la linea D della metro.
+      Attraversarlo è gratuito.
+  - name: Cantine del porto a Vila Nova de Gaia
+    text: >-
+      Sulla riva opposta, cantine come Sandeman, Taylor's, Graham's e Cálem offrono visite con
+      degustazione di 2-3 vini per circa €20-35. Prenota online, soprattutto nel fine settimana.
+  - name: Livraria Lello
+    text: >-
+      Libreria neogotica del 1906, con una scala rossa di legno. Il biglietto costa circa €10-15 e
+      viene scalato dal prezzo se compri un libro; prenota la fascia oraria online.
+  - name: Stazione di São Bento
+    text: >-
+      L'atrio della stazione è rivestito da circa 20.000 piastrelle azulejo con la storia del
+      Portogallo. Ingresso gratuito; da qui partono i treni per Braga, Guimarães e il Douro.
+  - name: Torre dos Clérigos
+    text: >-
+      Torre barocca del XVIII secolo, alta circa 75 m, con circa 240 gradini fino in cima. Ingresso
+      circa €8-10, con la vista migliore sulla città.
+airports:
+  OPO: >-
+    La linea E (viola) della metro parte dall'aeroporto Francisco Sá Carneiro e arriva a Trindade,
+    in centro, in circa 30-35 minuti. Il biglietto Z4 costa circa €2-3, più circa €0,60 per la
+    carta Andante, in vendita alle macchinette della stazione. Un taxi o un Uber per il centro costa
+    circa €20-30 e impiega circa 20-25 minuti.
+budget: >-
+  Un caffè (cimbalino) costa circa €1, un pastel de nata circa €1,30, un piatto del giorno (prato do
+  dia) €9-12 e una birra piccola circa €2. Porto è più economica di Lisbona.
+when: >-
+  Maggio-giugno e settembre-ottobre hanno un clima mite e meno pioggia. L'estate è calda (circa
+  25°C), mentre da novembre a marzo piove spesso. Per la notte di São João (23-24 giugno), la festa
+  più grande della città, prenota l'alloggio per tempo.
+tips:
+  - "Il pane, le olive e il burro che ti portano al tavolo (couvert) si pagano: se non li vuoi, chiedi al cameriere di portarli via."
+  - "Per risparmiarti le salite, prendi la Funicular dos Guindais (circa €4-5) dalla Ribeira fino a Batalha."
+itinerary:
+  - "São Bento e la Sé al mattino, poi la discesa fino alla Ribeira. Nel pomeriggio attraversa il ponte Dom Luís I, visita una cantina di porto a Gaia e sali al Jardim do Morro per il tramonto."
+  - "Livraria Lello all'apertura, poi Torre dos Clérigos e Rua das Flores. Nel pomeriggio il mercato del Bolhão e Rua de Santa Catarina con la Capela das Almas; a cena una francesinha."
+  - "Il tram storico 1 lungo il fiume fino a Foz do Douro, dove il fiume incontra l'oceano, poi Matosinhos per il pesce alla griglia. In alternativa, una giornata nella Valle del Douro."
+areas:
+  - name: Ribeira e Sé
+    text: "Sul fiume e nel cuore della città: viste bellissime, ma strade ripide, rumore la sera e prezzi più alti."
+  - name: Baixa e Aliados
+    text: Il centro pratico, con la maggior parte delle attrazioni a piedi e la stazione Trindade, dove arriva la metro dall'aeroporto.
+  - name: Bolhão
+    text: Quartiere di negozi, caffè e del mercato cittadino, un po' più economico e vicino alla metro.
+  - name: Vila Nova de Gaia
+    text: Sulla riva opposta, vicino alle cantine, spesso più economica e con vista su Porto, a 10 minuti a piedi dalla Ribeira.
+food:
+  - name: Francesinha
+    text: >-
+      Il panino della città: pane con prosciutto, salsiccia e bistecca, coperto di formaggio fuso e di
+      una salsa di birra e pomodoro, spesso con un uovo e patatine fritte. Circa €10-14.
+  - name: Vinho do Porto
+    text: >-
+      Il vino dolce fortificato che invecchia a Gaia: tawny, ruby o porto bianco con acqua tonica come
+      aperitivo. Un bicchiere circa €3-5.
+  - name: Sandes de pernil
+    text: Panino con maiale arrosto cotto lentamente, famoso alla Casa Guedes, circa €5-7.
+  - name: Pastel de nata
+    text: Tortina di crema all'uovo in pasta sfoglia, circa €1,20-1,50 l'una, migliore calda con la cannella.
+transport: >-
+  Il centro si gira a piedi, ma le strade sono ripide e acciottolate. I biglietti di metro e autobus
+  si caricano sulla carta Andante (circa €0,60, riutilizzabile); una corsa in città costa circa
+  €1,50. Il tram storico 1 costa circa €6-7, mentre Uber e Bolt sono economici per le brevi distanze.
+daytrips:
+  - name: Valle del Douro
+    text: >-
+      I vigneti a terrazze dove nasce il vino porto, patrimonio UNESCO. Il treno da São Bento arriva a
+      Pinhão in circa 2,5 ore (circa €10-15 a tratta), con vista sul fiume.
+  - name: Braga
+    text: >-
+      La città delle chiese, a circa 1 ora di treno urbano da São Bento (circa €3-4). Da non perdere
+      Bom Jesus do Monte, con la scalinata barocca e la funicolare ad acqua del 1882.
+  - name: Guimarães
+    text: >-
+      «La culla del Portogallo», con il castello medievale e il Palazzo dei Duchi, a circa 1 ora e 15
+      minuti di treno urbano (circa €3-4).
+  - name: Aveiro
+    text: I canali con le barche moliceiro e le case a strisce di Costa Nova, a circa 1 ora di treno.
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "Con la linea E della metro fino a Trindade, in circa 30-35 minuti e per circa €2-3. A tarda notte prendi un taxi o un Uber."
+  - q: "Quanto si spende al giorno a Porto?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno per cibo, trasporti e uno o due ingressi. Le taverne locali sono tra le più economiche dell'Europa occidentale."

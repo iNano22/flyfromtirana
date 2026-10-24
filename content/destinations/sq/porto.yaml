@@ -1,0 +1,99 @@
+city: Porto
+slug: porto
+tagline: Verë porto, ura hekuri dhe pllaka blu buzë lumit Douro
+intro: >-
+  Porto është qyteti i dytë i Portugalisë, mbi kodra të pjerrëta buzë lumit Douro, pranë
+  Atlantikut. Rrugica me kalldrëm, kisha me pllaka blu (azulejos) dhe kantinat e verës
+  porto e bëjnë një nga qytetet më të bukura dhe më të lira të Evropës Perëndimore. Tri ditë
+  mjaftojnë për qytetin, por ia vlen të shtosh një ditë për Luginën e Douro-s.
+sights:
+  - name: Ribeira
+    text: >-
+      Lagjja e vjetër buzë lumit, pjesë e trashëgimisë UNESCO, me shtëpi shumëngjyrëshe, restorante
+      në breg dhe varka rabelo që dikur sillnin fuçitë e verës. Më e bukur në mbrëmje.
+  - name: Ponte Dom Luís I
+    text: >-
+      Ura e hekurt me dy kate, e përfunduar në vitin 1886 nga Théophile Seyrig, ish-bashkëpunëtor i
+      Eiffel-it. Kati i sipërm, rreth 45 m mbi lumë, është për këmbësorët dhe metronë D. Kalimi është
+      falas.
+  - name: Kantinat e portos në Vila Nova de Gaia
+    text: >-
+      Në bregun përballë, kantinat si Sandeman, Taylor's, Graham's dhe Cálem ofrojnë vizita me shije
+      të 2-3 verërave për rreth €20-35. Rezervo online, sidomos në fundjavë.
+  - name: Livraria Lello
+    text: >-
+      Libraria neogotike e vitit 1906, me shkallë të kuqe prej druri. Bileta kushton rreth €10-15 dhe
+      zbritet nga çmimi nëse blen një libër; rezervo orën online.
+  - name: Stacioni São Bento
+    text: >-
+      Holli i stacionit është i veshur me rreth 20.000 pllaka azulejo me historinë e Portugalisë.
+      Hyrja falas; nga këtu nisen trenat për Braga, Guimarães dhe Douro.
+  - name: Torre dos Clérigos
+    text: >-
+      Kulla barok e shekullit XVIII, rreth 75 m e lartë, me rreth 240 shkallë deri në majë. Hyrja
+      rreth €8-10, me pamjen më të mirë mbi qytet.
+airports:
+  OPO: >-
+    Metroja, linja E (vjollcë), niset nga aeroporti Francisco Sá Carneiro dhe arrin në Trindade, në
+    qendër, për rreth 30-35 minuta. Bileta Z4 kushton rreth €2-3, plus rreth €0.60 për kartën
+    Andante, që blihet në makinat e stacionit. Një taksi ose Uber deri në qendër kushton rreth €20-30
+    dhe bën rreth 20-25 minuta.
+budget: >-
+  Një kafe (cimbalino) kushton rreth €1, një pastel de nata rreth €1.30, një pjatë dite (prato do
+  dia) €9-12 dhe një birrë e vogël rreth €2. Porto është më e lirë se Lisbon.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë mot të butë dhe më pak shi. Vera është e ngrohtë (rreth
+  25°C), ndërsa nga nëntori deri në mars bie shpesh shi. Për natën e São João-s (23-24 qershor), festën më të madhe të qytetit, rezervo fjetjen herët.
+tips:
+  - "Bukën, ullinjtë dhe gjalpin që të vendosin në tavolinë (couvert) i paguan: nëse nuk i do, thuaj kamarierit t'i marrë."
+  - "Për t'u kursyer nga ngjitjet, merr Funicular dos Guindais (rreth €4-5) nga Ribeira deri në Batalha."
+itinerary:
+  - "São Bento dhe Sé në mëngjes, pastaj zbritje deri në Ribeira. Pasdite kalo urën Dom Luís I, vizito një kantinë porto në Gaia dhe ngjitu te Jardim do Morro për perëndimin."
+  - "Livraria Lello në orën e hapjes, pastaj Torre dos Clérigos dhe Rua das Flores. Pasdite tregu Bolhão dhe Rua de Santa Catarina me Capela das Almas; në darkë një francesinha."
+  - "Tramvaji historik 1 buzë lumit deri në Foz do Douro, ku lumi takon oqeanin, pastaj në Matosinhos për peshk të pjekur. Ndryshe, një ditë në Luginën e Douro-s."
+areas:
+  - name: Ribeira dhe Sé
+    text: "Buzë lumit dhe në zemër të qytetit: pamje të bukura, por rrugë të pjerrëta, zhurmë në mbrëmje dhe çmime më të larta."
+  - name: Baixa dhe Aliados
+    text: Qendra praktike, me shumicën e pikave në këmbë dhe stacionin Trindade, ku mbërrin metroja nga aeroporti.
+  - name: Bolhão
+    text: Lagje me dyqane, kafene dhe tregun e qytetit, pak më e lirë dhe pranë metrosë.
+  - name: Vila Nova de Gaia
+    text: Në bregun përballë, pranë kantinave, shpesh më e lirë dhe me pamje mbi Porto, 10 minuta në këmbë nga Ribeira.
+food:
+  - name: Francesinha
+    text: >-
+      Sanduiçi i qytetit: bukë me proshutë, sallam dhe biftek, e mbuluar me djathë të shkrirë dhe
+      salcë me birrë dhe domate, shpesh me vezë dhe patate të skuqura. Rreth €10-14.
+  - name: Vinho do Porto
+    text: >-
+      Vera e ëmbël e fortifikuar që piqet në Gaia: tawny, ruby ose porto e bardhë me tonik si
+      aperitiv. Një gotë rreth €3-5.
+  - name: Sandes de pernil
+    text: Sanduiç me mish derri të pjekur ngadalë, i njohur te Casa Guedes, rreth €5-7.
+  - name: Pastel de nata
+    text: Ëmbëlsirë me krem veze në brumë petash, rreth €1.20-1.50 copa, më e mira e ngrohtë me kanellë.
+transport: >-
+  Qendra përshkohet në këmbë, por rrugët janë të pjerrëta dhe me kalldrëm. Biletat e metrosë dhe
+  autobusëve ngarkohen në kartën Andante (rreth €0.60, e ripërdorshme); një udhëtim brenda qytetit
+  kushton rreth €1.50. Tramvaji historik 1 kushton rreth €6-7, ndërsa Uber dhe Bolt janë të lira për distanca të shkurtra.
+daytrips:
+  - name: Lugina e Douro-s
+    text: >-
+      Tarracat e vreshtave ku prodhohet vera porto, pjesë e UNESCO. Treni nga São Bento arrin në
+      Pinhão për rreth 2.5 orë (rreth €10-15 në një drejtim), me pamje mbi lumë.
+  - name: Braga
+    text: >-
+      Qyteti i kishave, rreth 1 orë me tren urban nga São Bento (rreth €3-4). Mos humb Bom Jesus do
+      Monte, me shkallët barok dhe funikularin me ujë të vitit 1882.
+  - name: Guimarães
+    text: >-
+      «Djepi i Portugalisë», me kështjellën mesjetare dhe Pallatin e Dukëve, rreth 1 orë e 15 minuta
+      me tren urban (rreth €3-4).
+  - name: Aveiro
+    text: Kanalet me varka moliceiro dhe shtëpitë me vija të Costa Nova, rreth 1 orë me tren.
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Me metronë e linjës E deri në Trindade, për rreth 30-35 minuta dhe rreth €2-3. Natën vonë merr taksi ose Uber."
+  - q: "Sa para duhen në ditë në Porto?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-60 në ditë për ushqim, transport dhe një-dy hyrje. Tavernat vendase janë ndër më të lirat në Evropën Perëndimore."

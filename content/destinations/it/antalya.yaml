@@ -1,0 +1,98 @@
+city: Antalya
+slug: antalya
+tagline: Città vecchia, lunghe spiagge e rovine romane
+intro: >-
+  Antalya è la capitale della Riviera turca: una città vecchia con le mura e un porto romano, due
+  lunghe spiagge ai lati del centro e i monti del Tauro che scendono verso il mare. Tre o quattro
+  giorni bastano per la città, la spiaggia e una gita alle rovine antiche dei dintorni.
+sights:
+  - name: Kaleiçi
+    text: >-
+      La città vecchia dentro le mura, con vicoli acciottolati, case ottomane e il piccolo porto
+      romano. Il Minareto Yivli del XIII secolo è il simbolo della città.
+  - name: Porta di Adriano
+    text: >-
+      L'arco romano a tre fornici, costruito nell'anno 130 per la visita dell'imperatore Adriano. È
+      l'ingresso principale di Kaleiçi e si visita gratis.
+  - name: Museo di Antalya
+    text: >-
+      Uno dei migliori musei archeologici della Turchia, con le statue romane ritrovate a Perge.
+      L'ingresso costa circa €15; calcola almeno 2 ore.
+  - name: Spiaggia di Konyaaltı
+    text: >-
+      Una spiaggia di ciottoli lunga circa 7 km, a ovest del centro, con le montagne alle spalle e un
+      lungo lungomare. All'estremità occidentale una funivia sale sulla collina di Tünektepe.
+  - name: Spiaggia di Lara
+    text: La spiaggia di sabbia a est della città, con grandi hotel e acqua bassa, ideale per i bambini.
+  - name: Cascate di Düden
+    text: >-
+      La Cascata Superiore è in un parco ombreggiato dove si passa anche dietro l'acqua, con un
+      ingresso di poche lire. La Cascata Inferiore cade direttamente in mare vicino a Lara e si vede
+      meglio dalle barche che partono dal porto vecchio.
+airports:
+  AYT: >-
+    L'aeroporto è a circa 13 km da Kaleiçi. Il tram AntRay ti porta in circa 30-40 minuti a Meydan,
+    dove cambi tram per il centro; gli autobus 600 e 800 collegano l'aeroporto con il centro e i
+    quartieri principali. Entrambi si pagano con la carta AntalyaKart, in vendita ai distributori
+    dell'aeroporto, e costano circa €1 a corsa. Gli autobus Havaş vanno in centro e a Kemer, Side e
+    Alanya. Un taxi per Kaleiçi costa circa €20-30. Molti resort organizzano direttamente il
+    trasferimento.
+budget: >-
+  La lira turca (TRY) perde valore in fretta, quindi qui i prezzi sono in euro. Un tè costa meno di
+  €1, un pasto semplice (kebab, pide, gözleme) circa €6-10, una cena di pesce circa €20-30 e un
+  lettino in spiaggia circa €5-10.
+when: >-
+  Maggio-giugno e settembre-ottobre sono caldi, con il mare buono per nuotare. Luglio e agosto sono
+  molto caldi, spesso oltre i 35°C. Il mare resta caldo fino all'inizio di novembre, mentre l'inverno
+  è mite, circa 15°C di giorno, ma piovoso.
+tips:
+  - "Paga in lire e non in euro: nelle zone turistiche i prezzi in euro sono di solito più alti. Quando prelevi al bancomat, rifiuta la conversione proposta dallo sportello e scegli l'addebito in lire."
+  - "Prima di salire su una barca al porto vecchio, confronta più operatori: un giro di circa 1 ora fino alla Cascata Inferiore di Düden costa di solito circa €10-15."
+itinerary:
+  - "La Porta di Adriano, poi Kaleiçi a piedi: il Minareto Yivli, i vicoli e il porto vecchio. Nel pomeriggio un giro in barca fino alla Cascata Inferiore di Düden, poi il tramonto alla Torre Hıdırlık e al parco Karaalioğlu."
+  - "Il Museo di Antalya al mattino, poi la spiaggia di Konyaaltı. Prima del tramonto prendi la funivia per Tünektepe per la vista sul golfo e sulle montagne."
+  - "Una giornata alle rovine di Perge e Aspendos, oppure la Cascata Superiore di Düden al mattino e il pomeriggio sulla spiaggia di Lara."
+areas:
+  - name: Kaleiçi
+    text: "Nella città vecchia, con piccoli hotel in case ottomane: tutto a piedi, ma con vicoli stretti e senza una grande spiaggia."
+  - name: Konyaaltı
+    text: Vicino alla spiaggia e al museo, con hotel più economici che a Kaleiçi.
+  - name: Lara
+    text: Grandi hotel all inclusive sulla spiaggia di sabbia, a circa 15 minuti di taxi dall'aeroporto.
+  - name: I resort dei dintorni
+    text: "Belek, Side e Kemer: ideali per una vacanza solo di mare, ma lontani dalla città, a circa 40-90 minuti dall'aeroporto."
+food:
+  - name: Piyaz di Antalya
+    text: Insalata di fagioli bianchi con tahina, servita insieme agli şiş köfte nei locali del posto.
+  - name: Şiş köfte
+    text: Polpette cotte allo spiedo sulla brace, il piatto classico della città.
+  - name: Gözleme
+    text: Sfoglia sottile ripiena di formaggio, spinaci o patate, cotta sulla piastra (saç), un pranzo economico.
+  - name: Hibeş
+    text: Un meze locale di tahina, limone, aglio e peperoncino rosso, da mangiare con il pane.
+transport: >-
+  Kaleiçi e il centro si girano a piedi. I tram AntRay collegano il centro con l'aeroporto e i
+  quartieri a est, mentre il tram nostalgico corre lungo il mare dal Museo fino vicino alla Porta di
+  Adriano. Per le spiagge e gli altri quartieri ci sono autobus e minibus (dolmuş). Tram e autobus si
+  pagano con la AntalyaKart.
+daytrips:
+  - name: Perge e Aspendos
+    text: >-
+      Perge, con lo stadio e la via colonnata, è a circa 20 km a est. Aspendos, a circa 45 km, ha uno
+      dei teatri romani meglio conservati al mondo. L'ingresso a ciascuno costa circa €10-20; si
+      visitano entrambi in un giorno con un'escursione o con un'auto a noleggio.
+  - name: Side
+    text: Il Tempio di Apollo sul mare, un teatro antico e la città vecchia, a circa 1,5 ore di autobus.
+  - name: Kemer
+    text: >-
+      Un porticciolo e spiagge di ciottoli ai piedi delle montagne, a circa 1 ora di autobus. Vicino
+      c'è la funivia che sale in cima al monte Tahtalı.
+  - name: Olympos
+    text: >-
+      Rovine antiche in mezzo al bosco, accanto a una lunga spiaggia, a circa 1,5-2 ore. La sera vai
+      alla Chimera (Yanartaş), fiamme naturali che escono dalla roccia.
+faq:
+  - q: "Kaleiçi o un resort: dove dormire?"
+    a: "Se vuoi la città, le rovine e i ristoranti, dormi a Kaleiçi o a Konyaaltı. Se vuoi solo piscina e spiaggia, un resort a Lara, Belek o Kemer con trasferimento dall'aeroporto è più semplice."
+  - q: "Quanto si spende al giorno ad Antalya?"
+    a: "Volo e alloggio esclusi, €35-60 al giorno per cibo, trasporti e un ingresso. Gli ingressi a musei e rovine per gli stranieri sono diventati cari."

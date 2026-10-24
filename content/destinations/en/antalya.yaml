@@ -1,0 +1,97 @@
+city: Antalya
+slug: antalya
+tagline: An old town, long beaches and Roman ruins
+intro: >-
+  Antalya is the capital of the Turkish Riviera: an old town with walls and a Roman harbour, two
+  long beaches on either side of the centre and the Taurus Mountains running down to the sea. Three
+  or four days are enough for the city, the beach and a trip to the ancient ruins nearby.
+sights:
+  - name: Kaleiçi
+    text: >-
+      The old town inside the walls, with cobbled lanes, Ottoman houses and the small Roman harbour.
+      The 13th-century Yivli Minaret is the symbol of the city.
+  - name: Hadrian's Gate
+    text: >-
+      The Roman arch with three passages, built in the year 130 for the visit of Emperor Hadrian. It
+      is the main entrance to Kaleiçi and is free to visit.
+  - name: Antalya Museum
+    text: >-
+      One of the best archaeological museums in Turkey, with the Roman statues found at Perge. Entry
+      costs about €15; allow at least 2 hours.
+  - name: Konyaaltı Beach
+    text: >-
+      A pebble beach about 7 km long, west of the centre, with the mountains behind it and a long
+      promenade. At its western end a cable car climbs Tünektepe hill.
+  - name: Lara Beach
+    text: The sandy beach east of the city, with large hotels and shallow water, ideal for children.
+  - name: Düden Waterfalls
+    text: >-
+      The Upper Falls are in a shady park where you can even walk behind the water, with entry for a
+      few lira. The Lower Falls drop straight into the sea near Lara and are best seen from the boats
+      that leave from the old harbour.
+airports:
+  AYT: >-
+    The airport is about 13 km from Kaleiçi. The AntRay tram takes you in about 30-40 minutes to
+    Meydan, where you change trams for the centre; buses 600 and 800 link the airport with the
+    centre and the main districts. Both are paid with the AntalyaKart, sold at the machines in the
+    airport, and cost about €1 per journey. Havaş buses go to the centre and to Kemer, Side and
+    Alanya. A taxi to Kaleiçi costs about €20-30. Many resorts arrange the transfer themselves.
+budget: >-
+  The Turkish lira (TRY) loses value quickly, so prices here are given in euros. A tea costs less
+  than €1, a simple meal (kebab, pide, gözleme) about €6-10, a fish dinner about €20-30 and a sun
+  lounger on the beach about €5-10.
+when: >-
+  May-June and September-October are warm, with a sea that is good for swimming. July and August
+  are very hot, often above 35°C. The sea stays warm until early November, while winter is mild,
+  about 15°C during the day, but rainy.
+tips:
+  - "Pay in lira, not in euros: prices in euros in the tourist areas are usually higher. When you withdraw cash from an ATM, decline the machine's conversion and choose to be charged in lira."
+  - "Before boarding a boat in the old harbour, compare a few operators: a trip of about 1 hour to the Lower Düden Falls usually costs about €10-15."
+itinerary:
+  - "Hadrian's Gate, then Kaleiçi on foot: the Yivli Minaret, the lanes and the old harbour. In the afternoon, a boat trip to the Lower Düden Falls, then sunset at the Hıdırlık Tower and Karaalioğlu Park."
+  - "The Antalya Museum in the morning, then Konyaaltı Beach. Before sunset, take the cable car up Tünektepe for the view over the bay and the mountains."
+  - "A day at the ruins of Perge and Aspendos, or the Upper Düden Falls in the morning and the afternoon on Lara Beach."
+areas:
+  - name: Kaleiçi
+    text: "In the old town, with small hotels in Ottoman houses: everything on foot, but with narrow lanes and no big beach."
+  - name: Konyaaltı
+    text: Close to the beach and the museum, with hotels cheaper than in Kaleiçi.
+  - name: Lara
+    text: Large all-inclusive hotels on the sandy beach, about 15 minutes by taxi from the airport.
+  - name: The nearby resorts
+    text: "Belek, Side and Kemer: ideal for a pure beach holiday, but far from the city, about 40-90 minutes from the airport."
+food:
+  - name: Antalya piyaz
+    text: A salad of white beans with tahini, served together with şiş köfte in local restaurants.
+  - name: Şiş köfte
+    text: Meatballs grilled on skewers over charcoal, the city's classic dish.
+  - name: Gözleme
+    text: Thin flatbread filled with cheese, spinach or potato, cooked on a griddle (saç), a cheap lunch.
+  - name: Hibeş
+    text: A local meze of tahini, lemon, garlic and red pepper, eaten with bread.
+transport: >-
+  Kaleiçi and the centre are easy to cover on foot. The AntRay trams link the centre with the
+  airport and the eastern districts, while the nostalgic tram runs along the sea from the Museum to
+  near Hadrian's Gate. For the beaches and other districts there are buses and minibuses (dolmuş).
+  Trams and buses are paid with the AntalyaKart.
+daytrips:
+  - name: Perge and Aspendos
+    text: >-
+      Perge, with its stadium and colonnaded street, is about 20 km to the east. Aspendos, about 45
+      km away, has one of the best-preserved Roman theatres in the world. Entry to each costs about
+      €10-20; both can be done in one day on an organised tour or with a rental car.
+  - name: Side
+    text: The Temple of Apollo by the sea, an ancient theatre and the old town, about 1.5 hours by bus.
+  - name: Kemer
+    text: >-
+      A marina and pebble beaches at the foot of the mountains, about 1 hour by bus. Nearby is the
+      cable car that climbs to the summit of Mount Tahtalı.
+  - name: Olympos
+    text: >-
+      Ancient ruins in the forest, next to a long beach, about 1.5-2 hours away. In the evening, go to
+      the Chimaera (Yanartaş), natural flames that come out of the rock.
+faq:
+  - q: "Kaleiçi or a resort: where should I stay?"
+    a: "If you want the city, the ruins and the restaurants, stay in Kaleiçi or Konyaaltı. If you only want a pool and a beach, a resort in Lara, Belek or Kemer with an airport transfer is simpler."
+  - q: "How much money do you need per day in Antalya?"
+    a: "Excluding the flight and accommodation, plan on €35-60 a day for food, transport and one entry ticket. Entry to museums and ruins has become expensive for foreigners."

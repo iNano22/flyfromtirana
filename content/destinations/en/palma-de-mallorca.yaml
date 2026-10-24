@@ -1,0 +1,96 @@
+city: Palma de Mallorca
+slug: palma-de-mallorca
+tagline: A cathedral by the sea, mountain villages and turquoise coves
+intro: >-
+  Palma is the capital of Mallorca, the largest of the Balearic Islands: an old town of lanes and
+  hidden courtyards, a Gothic cathedral above the sea and beaches a few minutes from the centre. Two
+  days are enough for the city, but it is worth adding a day or two for the island's mountains and
+  coves.
+sights:
+  - name: La Seu Cathedral
+    text: >-
+      The Gothic cathedral by the sea, begun in 1229, with one of the largest rose windows in the
+      world and work by Gaudí inside. Entry costs about €10; the outside can be seen for free.
+  - name: Palau de l'Almudaina
+    text: >-
+      The Moorish fortress next to the cathedral, now a royal palace used for official ceremonies,
+      with Gothic halls and tapestries. Entry about €7-10.
+  - name: Castell de Bellver
+    text: >-
+      The round 14th-century castle on a pine-covered hill, about 3 km from the centre, with the best
+      view over the bay. Entry about €4, usually free on Sundays.
+  - name: The old town
+    text: >-
+      Narrow lanes between Plaça Major and the cathedral, with palace courtyards (patis), the 10th-century
+      Arab Baths and the Basilica of Sant Francesc.
+  - name: Passeig des Born and Santa Catalina
+    text: The tree-lined boulevard in the heart of the city and, a little further west, the market and bars of the Santa Catalina district.
+  - name: The city beaches
+    text: >-
+      Can Pere Antoni is 10 minutes on foot from the cathedral. For wider sand, take the bus to Platja
+      de Palma (about 30 minutes) or to Cala Major.
+airports:
+  PMI: >-
+    The airport is about 8 km from the centre. Bus A1 leaves every 10-20 minutes, stops at Plaça
+    d'Espanya and carries on to the port, taking about 15-25 minutes for about €5 (paid with a
+    contactless bank card). A taxi to the centre costs about €20-30 and takes about 15 minutes.
+budget: >-
+  A coffee costs about €1.50-2, a menú del día €13-18, a small beer (caña) about €2.50-3.50, and a
+  bus journey about €2. Palma is more expensive than Málaga, especially for accommodation in summer.
+when: >-
+  May-June and September-October have a warm sea and fewer tourists. July and August are hot (often
+  above 30°C), crowded and expensive. In winter days reach about 15°C, but many beach hotels close.
+tips:
+  - "For the eastern coves, rent a car for a day or two: book early for the summer and check the insurance and the fuel policy. You do not need one in the city, where parking is hard and the blue zones are paid."
+  - "The island has a tourist tax of a few euros per person per night, paid at the hotel and not always included in the online price."
+  - "On 2 February and 11 November, at about 8:00, the sun shines through the cathedral's rose window and draws a second rose on the opposite wall."
+itinerary:
+  - "La Seu Cathedral and the Palau de l'Almudaina in the morning, then the old town and Plaça Major. In the afternoon Passeig des Born, then dinner with tapas in Santa Catalina."
+  - "The old train to Sóller, then the tram to Port de Sóller for lunch by the sea. In the evening, the promenade along Palma's port."
+  - "Castell de Bellver in the morning and the beach at Cala Major in the afternoon. Alternatively, with a rental car: the Caves of Drach and a swim at Cala Mondragó."
+areas:
+  - name: Casc Antic
+    text: "The old town around the cathedral: everything on foot, but hotels are expensive."
+  - name: Santa Catalina
+    text: The district of the market and the restaurants, 10-15 minutes on foot from the centre.
+  - name: Plaça d'Espanya
+    text: "The most practical area: bus A1 stops here, and the Sóller train and the buses around the island leave from here."
+  - name: Platja de Palma
+    text: A long beach near the airport, with cheaper hotels in spring and autumn, but noisy in summer.
+food:
+  - name: Ensaïmada
+    text: >-
+      A spiral pastry of soft dough dusted with sugar, the symbol of the island. Try it with hot
+      chocolate at Can Joan de s'Aigo, one of the oldest cafés in the city.
+  - name: Sobrassada
+    text: A soft sausage with red pepper that is spread on bread, often with a little honey.
+  - name: Pa amb oli
+    text: Bread with olive oil, tomato and cheese or ham, a cheap Mallorcan lunch.
+  - name: Tumbet
+    text: Fried aubergine, potatoes and peppers with tomato sauce, like a moussaka without meat.
+transport: >-
+  The old town, the port and Santa Catalina are easy to cover on foot. The red EMT buses cost about
+  €2 per journey and accept contactless bank cards. The yellow TIB buses to the rest of the island
+  leave from the underground station at Plaça d'Espanya.
+daytrips:
+  - name: Sóller by the old train
+    text: >-
+      The wooden train from 1912 crosses the Tramuntana mountains in about 1 hour, with a ticket of
+      about €25 one way. The TIB bus costs about €5. From Sóller a tram takes you to the port.
+  - name: Valldemossa
+    text: >-
+      The mountain village of stone houses and the monastery where Chopin spent the winter of
+      1838-1839, about 30 minutes by TIB bus.
+  - name: The Caves of Drach
+    text: >-
+      Caves with stalactites and an underground lake in Porto Cristo, with a short concert on the
+      water. About 1 hour by car; the ticket, about €20-25, is bought online.
+  - name: The beaches of the east
+    text: >-
+      Small coves with turquoise water such as Cala Mondragó, Caló des Moro and Cala Varques, about 1
+      hour by car. In August go early, as the car parks fill up fast.
+faq:
+  - q: "Do I need a rental car in Mallorca?"
+    a: "Not for Palma: the city, Sóller and Valldemossa can be reached by bus or train. A car is worth it for a day or two for the eastern coves and the Caves of Drach."
+  - q: "How much money do you need per day in Palma?"
+    a: "Excluding the flight and accommodation, plan on €50-80 a day for food, transport and one or two entry tickets. A day with a rental car and fuel adds about €40-70."

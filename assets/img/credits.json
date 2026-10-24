@@ -1498,5 +1498,255 @@
   "source_url": "https://unsplash.com/photos/pGto0t7Uu2g",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ams.webp",
+  "slot": "AMS",
+  "title": "Canal at dusk, Amsterdam",
+  "creator": "@matheo_jbt",
+  "creator_url": "https://unsplash.com/@matheo_jbt",
+  "source_url": "https://unsplash.com/photos/KraZK-NLCq0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/lis.webp",
+  "slot": "LIS",
+  "title": "Tram 28, Lisbon",
+  "creator": "@juliandik",
+  "creator_url": "https://unsplash.com/@juliandik",
+  "source_url": "https://unsplash.com/photos/WVVmRyJ98XY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/cph.webp",
+  "slot": "CPH",
+  "title": "Nyhavn, Copenhagen",
+  "creator": "@sabrinamazzeo",
+  "creator_url": "https://unsplash.com/@sabrinamazzeo",
+  "source_url": "https://unsplash.com/photos/khbyM0MQW4M",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/nce.webp",
+  "slot": "NCE",
+  "title": "Promenade des Anglais, Nice",
+  "creator": "@_johnjase",
+  "creator_url": "https://unsplash.com/@_johnjase",
+  "source_url": "https://unsplash.com/photos/mpVZVCClgac",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/vlc.webp",
+  "slot": "VLC",
+  "title": "Old town and the Micalet, Valencia",
+  "creator": "@photography_silvie",
+  "creator_url": "https://unsplash.com/@photography_silvie",
+  "source_url": "https://unsplash.com/photos/pClfTAPr68Q",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/pmi.webp",
+  "slot": "PMI",
+  "title": "La Seu cathedral, Palma",
+  "creator": "@lucas_02",
+  "creator_url": "https://unsplash.com/@lucas_02",
+  "source_url": "https://unsplash.com/photos/s4iXadqhVaw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/opo.webp",
+  "slot": "OPO",
+  "title": "The Ribeira and the Douro, Porto",
+  "creator": "@ebmuniz",
+  "creator_url": "https://unsplash.com/@ebmuniz",
+  "source_url": "https://unsplash.com/photos/-rZo_Dg-Xkc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/osl.webp",
+  "slot": "OSL",
+  "title": "Oslo at night",
+  "creator": "@yngvewi",
+  "creator_url": "https://unsplash.com/@yngvewi",
+  "source_url": "https://unsplash.com/photos/Y4X1vM4FVfA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/trf.webp",
+  "slot": "TRF",
+  "title": "Oslo city centre",
+  "creator": "@marcuschis",
+  "creator_url": "https://unsplash.com/@marcuschis",
+  "source_url": "https://unsplash.com/photos/z1LZ4-19xb8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/hel.webp",
+  "slot": "HEL",
+  "title": "Helsinki Cathedral",
+  "creator": "@denis96",
+  "creator_url": "https://unsplash.com/@denis96",
+  "source_url": "https://unsplash.com/photos/8c2GCjNF3PE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ayt.webp",
+  "slot": "AYT",
+  "title": "Kaleiçi on the cliffs, Antalya",
+  "creator": "@igorharrier",
+  "creator_url": "https://unsplash.com/@igorharrier",
+  "source_url": "https://unsplash.com/photos/cr1XmzQcvkY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/rix.webp",
+  "slot": "RIX",
+  "title": "St. Peter's Church and the old town, Riga",
+  "creator": "@marttisalmi",
+  "creator_url": "https://unsplash.com/@marttisalmi",
+  "source_url": "https://unsplash.com/photos/GaKqMPll3rA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/tll.webp",
+  "slot": "TLL",
+  "title": "Old town towers, Tallinn",
+  "creator": "@marttisalmi",
+  "creator_url": "https://unsplash.com/@marttisalmi",
+  "source_url": "https://unsplash.com/photos/aif0w4pmClo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/amsterdam.webp",
+  "slot": "guide-amsterdam",
+  "title": "Canal houses, Amsterdam",
+  "creator": "@dulhiier",
+  "creator_url": "https://unsplash.com/@dulhiier",
+  "source_url": "https://unsplash.com/photos/3Ze88tZX-p0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/lisbon.webp",
+  "slot": "guide-lisbon",
+  "title": "Rua Augusta Arch, Lisbon",
+  "creator": "@eduard199x",
+  "creator_url": "https://unsplash.com/@eduard199x",
+  "source_url": "https://unsplash.com/photos/ZJ_I9jZ8faY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/copenhagen.webp",
+  "slot": "guide-copenhagen",
+  "title": "Nyhavn, Copenhagen",
+  "creator": "@bobj245",
+  "creator_url": "https://unsplash.com/@bobj245",
+  "source_url": "https://unsplash.com/photos/rgoK-w86-RI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/nice.webp",
+  "slot": "guide-nice",
+  "title": "Promenade des Anglais from above, Nice",
+  "creator": "@kamillaisalieva",
+  "creator_url": "https://unsplash.com/@kamillaisalieva",
+  "source_url": "https://unsplash.com/photos/LcO36L3WZj0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/valencia.webp",
+  "slot": "guide-valencia",
+  "title": "City of Arts and Sciences, Valencia",
+  "creator": "@raulmermans",
+  "creator_url": "https://unsplash.com/@raulmermans",
+  "source_url": "https://unsplash.com/photos/XMDBd1shMeo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/palma-de-mallorca.webp",
+  "slot": "guide-palma-de-mallorca",
+  "title": "Palma Cathedral",
+  "creator": "@yvesalarie",
+  "creator_url": "https://unsplash.com/@yvesalarie",
+  "source_url": "https://unsplash.com/photos/O0xdBP5yCqo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/porto.webp",
+  "slot": "guide-porto",
+  "title": "Ribeira houses, Porto",
+  "creator": "@adelio_z",
+  "creator_url": "https://unsplash.com/@adelio_z",
+  "source_url": "https://unsplash.com/photos/KXFQhpYq7cU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/oslo.webp",
+  "slot": "guide-oslo",
+  "title": "Oslo Opera House at night",
+  "creator": "@pierre9x6",
+  "creator_url": "https://unsplash.com/@pierre9x6",
+  "source_url": "https://unsplash.com/photos/dYzIUBKs6eo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/helsinki.webp",
+  "slot": "guide-helsinki",
+  "title": "Helsinki Cathedral over the harbour",
+  "creator": "@tap5a",
+  "creator_url": "https://unsplash.com/@tap5a",
+  "source_url": "https://unsplash.com/photos/bpDJvls-h-0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/antalya.webp",
+  "slot": "guide-antalya",
+  "title": "Kaleiçi and the old harbour, Antalya",
+  "creator": "@rozetsky",
+  "creator_url": "https://unsplash.com/@rozetsky",
+  "source_url": "https://unsplash.com/photos/K6pcgoxD0yw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/riga.webp",
+  "slot": "guide-riga",
+  "title": "Riga old town from above",
+  "creator": "@tompodmore86",
+  "creator_url": "https://unsplash.com/@tompodmore86",
+  "source_url": "https://unsplash.com/photos/xoxx5PViEkE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/tallinn.webp",
+  "slot": "guide-tallinn",
+  "title": "Tallinn old town",
+  "creator": "@hbsun2013",
+  "creator_url": "https://unsplash.com/@hbsun2013",
+  "source_url": "https://unsplash.com/photos/G58T5XKHO14",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

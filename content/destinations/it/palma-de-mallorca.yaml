@@ -1,0 +1,97 @@
+city: Palma de Mallorca
+name: Palma di Maiorca
+slug: palma-de-mallorca
+tagline: Una cattedrale sul mare, villaggi di montagna e calette turchesi
+intro: >-
+  Palma è il capoluogo di Maiorca, la più grande delle Baleari: una città vecchia di vicoli e cortili
+  nascosti, una cattedrale gotica sul mare e spiagge a pochi minuti dal centro. Due giorni bastano
+  per la città, ma vale la pena aggiungere uno o due giorni per le montagne e le cale dell'isola.
+sights:
+  - name: Cattedrale La Seu
+    text: >-
+      La cattedrale gotica sul mare, iniziata nel 1229, con uno dei rosoni più grandi al mondo e
+      interventi di Gaudí all'interno. L'ingresso costa circa €10; dall'esterno si vede gratis.
+  - name: Palau de l'Almudaina
+    text: >-
+      La fortezza moresca accanto alla cattedrale, oggi palazzo reale per le cerimonie ufficiali,
+      con sale gotiche e arazzi. Ingresso circa €7-10.
+  - name: Castell de Bellver
+    text: >-
+      Il castello circolare del XIV secolo su una collina di pini, a circa 3 km dal centro, con la
+      vista migliore sulla baia. Ingresso circa €4, di solito gratuito la domenica.
+  - name: La città vecchia
+    text: >-
+      Vicoli stretti tra Plaça Major e la cattedrale, con cortili di palazzi (patis), i Bagni Arabi
+      del X secolo e la Basilica di Sant Francesc.
+  - name: Passeig des Born e Santa Catalina
+    text: Il viale alberato nel cuore della città e, poco più a ovest, il mercato e i locali del quartiere di Santa Catalina.
+  - name: Le spiagge della città
+    text: >-
+      Can Pere Antoni è a 10 minuti a piedi dalla cattedrale. Per una spiaggia più ampia prendi
+      l'autobus fino a Platja de Palma (circa 30 minuti) o a Cala Major.
+airports:
+  PMI: >-
+    L'aeroporto è a circa 8 km dal centro. L'autobus A1 parte ogni 10-20 minuti, ferma in Plaça
+    d'Espanya e prosegue fino al porto, in circa 15-25 minuti e per circa €5 (si paga con carta
+    bancaria contactless). Un taxi per il centro costa circa €20-30 e impiega circa 15 minuti.
+budget: >-
+  Un caffè costa circa €1,50-2, un menú del día €13-18, una birra piccola (caña) circa €2,50-3,50,
+  una corsa in autobus circa €2. Palma è più cara di Malaga, soprattutto per l'alloggio d'estate.
+when: >-
+  Maggio-giugno e settembre-ottobre hanno il mare caldo e meno turisti. Luglio e agosto sono torridi
+  (spesso oltre i 30°C), affollati e cari. D'inverno di giorno si arriva a circa 15°C, ma molti
+  hotel sulla spiaggia chiudono.
+tips:
+  - "Per le cale dell'est noleggia un'auto per uno o due giorni: prenotala presto per l'estate e controlla l'assicurazione e la politica del carburante. In città non serve: parcheggiare è difficile e le strisce blu si pagano."
+  - "L'isola ha una tassa di soggiorno di qualche euro a persona a notte, che si paga in hotel e non è sempre inclusa nel prezzo online."
+  - "Il 2 febbraio e l'11 novembre, verso le 8:00, il sole attraversa il rosone della cattedrale e disegna un secondo rosone sulla parete opposta."
+itinerary:
+  - "La Cattedrale La Seu e il Palau de l'Almudaina al mattino, poi la città vecchia e Plaça Major. Nel pomeriggio il Passeig des Born, cena a base di tapas a Santa Catalina."
+  - "Il treno storico per Sóller, poi il tram fino a Port de Sóller per pranzo sul mare. La sera, la passeggiata lungo il porto di Palma."
+  - "Il Castell de Bellver al mattino e la spiaggia di Cala Major nel pomeriggio. In alternativa, con un'auto a noleggio: le Grotte del Drach e un bagno a Cala Mondragó."
+areas:
+  - name: Casc Antic
+    text: "La città vecchia intorno alla cattedrale: tutto a piedi, ma gli hotel sono cari."
+  - name: Santa Catalina
+    text: Il quartiere del mercato e dei ristoranti, a 10-15 minuti a piedi dal centro.
+  - name: Plaça d'Espanya
+    text: "La zona più pratica: qui ferma l'autobus A1 e partono il treno di Sóller e gli autobus per l'isola."
+  - name: Platja de Palma
+    text: Una lunga spiaggia vicino all'aeroporto, con hotel più economici in primavera e in autunno, ma rumorosa d'estate.
+food:
+  - name: Ensaïmada
+    text: >-
+      Un dolce a spirale di pasta morbida spolverato di zucchero, il simbolo dell'isola. Provala con
+      una cioccolata calda da Can Joan de s'Aigo, uno dei caffè più antichi della città.
+  - name: Sobrassada
+    text: Un salume morbido al peperone rosso che si spalma sul pane, spesso con un po' di miele.
+  - name: Pa amb oli
+    text: Pane con olio d'oliva, pomodoro e formaggio o prosciutto, un pranzo maiorchino economico.
+  - name: Tumbet
+    text: Melanzane, patate e peperoni fritti con salsa di pomodoro, come una moussaka senza carne.
+transport: >-
+  La città vecchia, il porto e Santa Catalina si girano facilmente a piedi. Gli autobus rossi EMT
+  costano circa €2 a corsa e accettano le carte bancarie contactless. Gli autobus gialli TIB per il
+  resto dell'isola partono dalla stazione sotterranea di Plaça d'Espanya.
+daytrips:
+  - name: Sóller con il treno storico
+    text: >-
+      Il treno di legno del 1912 attraversa i monti della Tramuntana in circa 1 ora, con un biglietto
+      di circa €25 solo andata. L'autobus TIB costa circa €5. Da Sóller un tram ti porta al porto.
+  - name: Valldemossa
+    text: >-
+      Il villaggio di montagna con case di pietra e la certosa dove Chopin trascorse l'inverno del
+      1838-1839, a circa 30 minuti con l'autobus TIB.
+  - name: Le Grotte del Drach
+    text: >-
+      Grotte con stalattiti e un lago sotterraneo a Porto Cristo, con un breve concerto sull'acqua. A
+      circa 1 ora in auto; il biglietto, circa €20-25, si compra online.
+  - name: Le spiagge dell'est
+    text: >-
+      Piccole cale dall'acqua turchese come Cala Mondragó, Caló des Moro e Cala Varques, a circa 1 ora
+      in auto. Ad agosto vai presto, i parcheggi si riempiono in fretta.
+faq:
+  - q: "Mi serve un'auto a noleggio a Maiorca?"
+    a: "Per Palma no: la città, Sóller e Valldemossa si raggiungono in autobus o in treno. L'auto vale la pena per uno o due giorni per le cale dell'est e le Grotte del Drach."
+  - q: "Quanto si spende al giorno a Palma?"
+    a: "Volo e alloggio esclusi, €50-80 al giorno per cibo, trasporti e uno o due ingressi. Una giornata con auto a noleggio e carburante aggiunge circa €40-70."

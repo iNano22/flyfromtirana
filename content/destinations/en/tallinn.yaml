@@ -1,0 +1,99 @@
+city: Tallinn
+slug: tallinn
+tagline: A medieval town, cafés and the Baltic Sea
+intro: >-
+  Tallinn is the capital of Estonia on the Baltic Sea, with one of the best-preserved medieval old
+  towns in Europe: walls with towers, cobbled lanes and pointed roofs. Around it are districts of
+  wooden houses and factories turned into cafés. Two or three days are enough for the city, plus a
+  day for Helsinki by ferry. The currency is the euro.
+sights:
+  - name: The Old Town (Vanalinn)
+    text: >-
+      The medieval centre, on the UNESCO list, with most of its walls and towers still standing.
+      Enter through the Viru Gate and get lost in the lanes, up to the tower of St Olaf's Church
+      (the climb is about €5, April-October only).
+  - name: Town Hall Square (Raekoja plats)
+    text: >-
+      The heart of the old town, with the Gothic Town Hall and Raeapteek, the pharmacy that has been
+      open for about 600 years. In summer it fills with tables, in December with the Christmas
+      market.
+  - name: Toompea
+    text: >-
+      The hill above the old town, with the castle where Parliament sits and the Russian Alexander
+      Nevsky Cathedral. From the Kohtuotsa and Patkuli viewpoints you get the best-known view over
+      the red roofs.
+  - name: Kadriorg
+    text: >-
+      The park with the Baroque palace that Peter the Great built for his wife in 1718, now an art
+      museum, and KUMU, the museum of Estonian art. Reach it by tram 1 or 3 in about 10 minutes.
+  - name: Telliskivi
+    text: >-
+      Old factories next to Balti jaam station, now full of murals, shops and cafés. Next door are
+      the Balti Jaama Turg market and the Kalamaja district with its wooden houses.
+  - name: Seaplane Harbour (Lennusadam)
+    text: >-
+      Hangars with concrete domes from 1917, with the submarine Lembit, which you can visit inside,
+      and the icebreaker Suur Tõll outside. Tickets about €20-25; allow 2-3 hours.
+itinerary:
+  - "The Viru Gate, Town Hall Square and the lanes of the old town. Up to Toompea for the Alexander Nevsky Cathedral and the views from Kohtuotsa and Patkuli. In the afternoon the tower of St Olaf's, in the evening dinner away from the main square."
+  - "Kalamaja and Telliskivi in the morning, lunch at the Balti Jaama Turg market. In the afternoon the Seaplane Harbour, in the evening the bars of Telliskivi."
+  - "Kadriorg: the palace, the park and KUMU. In the afternoon Pirita beach or the modern Rotermann Quarter."
+areas:
+  - name: Vanalinn (Old Town)
+    text: Everything on foot and the most beautiful atmosphere, but with the highest prices.
+  - name: Rotermann and Viru
+    text: >-
+      The modern area between the old town and the port, 5 minutes on foot from the Viru Gate. Handy
+      for airport tram 4 and the ferries.
+  - name: Kalamaja
+    text: >-
+      A district of wooden houses and rental flats, next to Telliskivi, 10-15 minutes on foot from
+      the centre. Often cheaper.
+food:
+  - name: Kiluvõileib
+    text: Black rye bread with small sprats (kilu) and egg, a classic snack with beer.
+  - name: Leib
+    text: The black rye bread that is part of every meal.
+  - name: Verivorst and mulgikapsas
+    text: Blood sausage with sauerkraut, especially in winter and at Christmas.
+  - name: Vana Tallinn
+    text: A sweet liqueur with rum and spices, drunk neat or in coffee.
+airports:
+  TLL: >-
+    Lennart Meri Airport is only about 4 km from the centre. Tram 4 leaves in front of the terminal
+    and reaches the centre (Hobujaama stop, near the Viru Gate) in about 15-20 minutes, on a
+    regular city ticket. Bus 2 goes to the centre and to the ferry port. A taxi or Bolt takes about
+    10 minutes and costs about €8-12.
+transport: >-
+  The old town and Telliskivi are walkable; for Kadriorg, Pirita and Lennusadam there are trams and
+  buses. Pay by tapping a contactless bank card on the validator, in the app or with the Ühiskaart
+  card; a 1-hour ride costs about €1.5-2, a 24-hour ticket about €5-6. Bolt, born in Tallinn, is
+  cheap.
+daytrips:
+  - name: Helsinki
+    text: >-
+      The capital of Finland, about 2 hours by ferry from the Vanasadam port. A one-way ticket costs
+      about €20-40, more at weekends.
+  - name: Lahemaa National Park
+    text: >-
+      Forests, bogs and fishing villages about 1 hour's drive east, with the boardwalk across the
+      Viru bog and Palmse manor. Buses are rare: better a hire car or a tour.
+  - name: Pärnu
+    text: >-
+      Estonia's "summer capital", with a long sandy beach, about 2 hours by bus, with a ticket of
+      about €10-15.
+budget: >-
+  Tallinn is more expensive than Poland but cheaper than Helsinki. A coffee costs about €3-4, a
+  beer in the old town about €5-7, a lunch menu about €8-12 and a dinner about €15-25.
+when: >-
+  May-September has the best weather (about 18-22°C) and in June the sun sets after 22:00. Winter
+  is cold and dark, but from late November to early January Town Hall Square fills with the
+  Christmas market, one of the most beautiful in Europe.
+tips:
+  - "Don't eat on Town Hall Square: two streets away the same dinner costs much less."
+  - "Take your passport to Helsinki: although both countries are in Schengen, the ferry companies ask for it."
+faq:
+  - q: "How do I get from the airport to the old town?"
+    a: "Tram 4 takes you to the centre in about 15-20 minutes, for about €1.5-2. From the Hobujaama stop to Town Hall Square it is about 10 minutes on foot."
+  - q: "How much money do I need per day in Tallinn?"
+    a: "Excluding the flight and accommodation, allow about €50-70 a day for food, transport and one museum. Lunch menus help you save."

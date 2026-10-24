@@ -1,0 +1,100 @@
+city: Tallinn
+slug: tallinn
+tagline: Qytet mesjetar, kafene dhe deti Balltik
+intro: >-
+  Tallinn është kryeqyteti i Estonisë buzë Detit Balltik, me një nga qytetet e vjetra mesjetare
+  më të ruajtura në Evropë: mure me kulla, rrugica me kalldrëm dhe çati me majë. Përreth ka lagje
+  me shtëpi druri dhe fabrika të kthyera në kafene. Dy-tri ditë mjaftojnë për qytetin, plus një
+  ditë për Helsinki me traget. Monedha është euro.
+sights:
+  - name: Qyteti i Vjetër (Vanalinn)
+    text: >-
+      Qendra mesjetare, në listën e UNESCO-s, me pjesën më të madhe të mureve dhe kullave ende në
+      këmbë. Hyr nga Porta Viru dhe humbu nëpër rrugica, deri te kulla e Kishës së Shën Olafit
+      (ngjitja rreth €5, vetëm prill-tetor).
+  - name: Sheshi i Bashkisë (Raekoja plats)
+    text: >-
+      Zemra e qytetit të vjetër, me Bashkinë gotike dhe Raeapteek, farmacinë që punon prej rreth 600
+      vjetësh. Në verë mbushet me tavolina, në dhjetor me tregun e Krishtlindjeve.
+  - name: Toompea
+    text: >-
+      Kodra mbi qytetin e vjetër, me kështjellën ku mblidhet Parlamenti dhe Katedralen ruse
+      Alexander Nevsky. Nga pikat e shikimit Kohtuotsa dhe Patkuli ke pamjen më të njohur mbi
+      çatitë e kuqe.
+  - name: Kadriorg
+    text: >-
+      Parku me pallatin barok që Pjetri i Madh ndërtoi për gruan e tij në vitin 1718, sot muze arti,
+      dhe KUMU, muzeu i artit estonez. Arrihet me tramvajet 1 ose 3 për rreth 10 minuta.
+  - name: Telliskivi
+    text: >-
+      Fabrika të vjetra pranë stacionit Balti jaam, sot plot murale, dyqane dhe kafene. Ngjitur janë
+      tregu Balti Jaama Turg dhe lagjja Kalamaja me shtëpi druri.
+  - name: Muzeu Detar i Hidroplanëve (Lennusadam)
+    text: >-
+      Hangarë me kupola betoni nga viti 1917, me nëndetësen Lembit, që vizitohet brenda, dhe
+      akullthyesen Suur Tõll jashtë. Bileta rreth €20-25; llogarit 2-3 orë.
+itinerary:
+  - "Porta Viru, Sheshi i Bashkisë dhe rrugicat e qytetit të vjetër. Ngjitje në Toompea për Katedralen Alexander Nevsky dhe pamjet nga Kohtuotsa e Patkuli. Pasdite kulla e Shën Olafit, në mbrëmje darkë jashtë sheshit kryesor."
+  - "Kalamaja dhe Telliskivi në mëngjes, drekë te tregu Balti Jaama Turg. Pasdite Muzeu Detar i Hidroplanëve, në mbrëmje baret e Telliskivit."
+  - "Kadriorg: pallati, parku dhe KUMU. Pasdite plazhi i Pirita-s ose lagjja moderne Rotermann."
+areas:
+  - name: Vanalinn (Qyteti i Vjetër)
+    text: Gjithçka në këmbë dhe atmosfera më e bukur, por me çmimet më të larta.
+  - name: Rotermann dhe Viru
+    text: >-
+      Zona moderne mes qytetit të vjetër dhe portit, 5 minuta në këmbë nga Porta Viru. Praktike për
+      tramvajin 4 të aeroportit dhe tragetet.
+  - name: Kalamaja
+    text: >-
+      Lagje me shtëpi druri dhe apartamente me qira, ngjitur me Telliskivin, 10-15 minuta në këmbë
+      nga qendra. Shpesh më e lirë.
+food:
+  - name: Kiluvõileib
+    text: Bukë e zezë thekre me sardele të vogla (kilu) dhe vezë, meze klasike me birrë.
+  - name: Leib
+    text: Buka e zezë thekre, pjesë e çdo vakti.
+  - name: Verivorst dhe mulgikapsas
+    text: Salsiçe gjaku me lakër turshi, sidomos në dimër dhe për Krishtlindje.
+  - name: Vana Tallinn
+    text: Liker i ëmbël me rum dhe erëza, që pihet i pastër ose në kafe.
+airports:
+  TLL: >-
+    Aeroporti Lennart Meri është vetëm rreth 4 km nga qendra. Tramvaji 4 niset para terminalit dhe
+    arrin në qendër (stacioni Hobujaama, pranë Portës Viru) për rreth 15-20 minuta, me biletë të
+    zakonshme qyteti. Autobusi 2 shkon në qendër dhe në portin e trageteve. Taksia ose Bolt bëjnë
+    rreth 10 minuta dhe kushtojnë rreth €8-12.
+transport: >-
+  Qyteti i vjetër dhe Telliskivi përshkohen në këmbë; për Kadriorg, Pirita-n dhe Lennusadam ka
+  tramvaje dhe autobusë. Bileta blihet me kartën bankare pa kontakt në validator, në aplikacion
+  ose me kartën Ühiskaart; një udhëtim 1-orësh kushton rreth €1.5-2, bileta 24-orëshe rreth €5-6.
+  Bolt, i lindur në Tallinn, është i lirë.
+daytrips:
+  - name: Helsinki
+    text: >-
+      Kryeqyteti i Finlandës, rreth 2 orë me traget nga porti Vanasadam. Bileta vajtje rreth €20-40,
+      më shtrenjtë në fundjavë.
+  - name: Parku kombëtar Lahemaa
+    text: >-
+      Pyje, këneta dhe fshatra peshkatarësh rreth 1 orë me makinë në lindje, me shtegun prej druri
+      në kënetën Viru dhe pallatin e Palmse-s. Autobusët janë të rrallë: më mirë makinë me qira ose
+      turne.
+  - name: Pärnu
+    text: >-
+      «Kryeqyteti veror» i Estonisë, me plazh të gjatë rëre, rreth 2 orë me autobus, me biletë rreth
+      €10-15.
+budget: >-
+  Tallinn është më i shtrenjtë se Polonia, por më i lirë se Helsinki. Një kafe kushton rreth
+  €3-4, një birrë në qytetin e vjetër rreth €5-7, një menu dreke rreth €8-12 dhe një darkë rreth
+  €15-25.
+when: >-
+  Maji-shtatori ka motin më të mirë (rreth 18-22°C) dhe në qershor dielli perëndon pas orës 22:00.
+  Dimri është i ftohtë dhe i errët, por nga fundi i nëntorit deri në fillim të janarit Sheshi i
+  Bashkisë mbushet me tregun e Krishtlindjeve, ndër më të bukurit në Evropë.
+tips:
+  - "Mos ha në Sheshin e Bashkisë: dy rrugë më tej e njëjta darkë kushton shumë më pak."
+  - "Për Helsinki mbaj pasaportën me vete: edhe pse të dyja vendet janë në Schengen, kompanitë e trageteve e kërkojnë."
+faq:
+  - q: "Si shkoj nga aeroporti në qytetin e vjetër?"
+    a: "Tramvaji 4 të çon në qendër për rreth 15-20 minuta, me biletë rreth €1.5-2. Nga stacioni Hobujaama deri te Sheshi i Bashkisë janë rreth 10 minuta në këmbë."
+  - q: "Sa para duhen në ditë në Tallinn?"
+    a: "Pa fluturimin dhe fjetjen, llogarit rreth €50-70 në ditë për ushqim, transport dhe një muze. Kursen me menutë e drekës."

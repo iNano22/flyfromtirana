@@ -1,0 +1,100 @@
+city: Helsinki
+slug: helsinki
+tagline: Saunas, the sea and Nordic design
+intro: >-
+  Helsinki is the capital of Finland, spread over a peninsula and hundreds of islands on the Baltic
+  Sea: white cathedrals, markets by the harbour, design everywhere and saunas with sea views. The
+  centre is easy to walk and the currency is the euro. Three days are enough, with one more day
+  for Tallinn by ferry.
+sights:
+  - name: Senaatintori and the Cathedral
+    text: >-
+      The neoclassical Senate Square, with the statue of Tsar Alexander II in the middle. Above the
+      great steps rises the white Lutheran Cathedral, from 1852, the symbol of the city. A little
+      further east is the Orthodox Uspenski Cathedral, built of red brick.
+  - name: Suomenlinna
+    text: >-
+      The sea fortress built by the Swedes in 1748 on several islands off the harbour, on the
+      UNESCO list. The ferry from the Market Square takes about 15-20 minutes on a regular HSL
+      ticket. Allow half a day.
+  - name: Kauppatori, the Market Square
+    text: >-
+      The market by the harbour, with fish, wild berries and cheap lunches under the tents. Next to
+      it is Vanha kauppahalli, the covered market from 1889. Watch out for the seagulls, which
+      snatch your food.
+  - name: Temppeliaukio Church
+    text: >-
+      The church carved into a granite rock, from 1969, with a copper dome and daylight coming in
+      all around it. Entry about €5-8.
+  - name: Oodi Library
+    text: >-
+      The central library of wood and glass, opened in 2018 opposite Parliament. Entry is free, with
+      a terrace on the top floor, 3D printers and warm places to sit in winter.
+  - name: Public saunas
+    text: >-
+      Löyly, by the sea, costs about €25 for 2 hours, with a dip in the sea even in winter. Allas
+      Sea Pool, near the Market Square, has seawater pools, while Kotiharjun Sauna in Kallio,
+      wood-heated since 1928, costs about €15.
+itinerary:
+  - "Senaatintori and the Cathedral, the Uspenski Cathedral and the Market Square for lunch. In the afternoon, Esplanadi park and the Design District, in the evening a sauna at Löyly."
+  - "Suomenlinna in the morning, by ferry from the Market Square. In the afternoon, Temppeliaukio Church, Oodi Library and the Kiasma museum, in the evening the bars of Kallio."
+  - "A day in Tallinn by ferry or in Porvoo. Otherwise, the Sibelius Monument and a sauna at Allas Sea Pool at sunset."
+areas:
+  - name: Kamppi and Kluuvi
+    text: "The centre, around the central station: everything within walking distance and the airport train close by, but the highest prices."
+  - name: Kallio
+    text: The old working-class district north of the centre, with cheaper bars, cafés and hotels, about 5 minutes by metro.
+  - name: Punavuori
+    text: South of the centre, with design shops, restaurants and quiet streets near the sea.
+food:
+  - name: Lohikeitto
+    text: Creamy salmon soup with potatoes and dill, about €14-18 at the covered market.
+  - name: Karjalanpiirakka
+    text: A small Karelian pie of rye dough and rice, topped with egg butter, about €2-3 each.
+  - name: Korvapuusti
+    text: A cinnamon and cardamom bun, for an afternoon coffee, about €4-5.
+  - name: Lounas
+    text: >-
+      The lunch of the day on weekdays, about 11:00-14:00: a buffet with a hot dish, salad, bread
+      and coffee for about €12-15.
+airports:
+  HEL: >-
+    Helsinki-Vantaa Airport is about 18 km north of the centre. The I and P trains of the ring
+    line leave from the station below the terminal every 10 minutes, in opposite directions, and
+    both reach Helsinki Central in about 30 minutes. You need an HSL ticket for zones ABC, about
+    €4-5, from the machines at the station or in the HSL app. Bus 600 takes about 40 minutes to the
+    central station on the same ticket. A taxi costs about €40-55.
+transport: >-
+  Trams, the metro, buses, local trains and the ferry to Suomenlinna all run on the HSL ticket.
+  Zones AB are enough for the city: a single ticket costs about €3-3.50 and is valid for about 80
+  minutes, a day ticket about €9-11. Buy them in the HSL app or from the station machines.
+daytrips:
+  - name: Tallinn by ferry
+    text: >-
+      The capital of Estonia, with its medieval old town, about 2 hours by ferry from Länsisatama.
+      A ticket costs about €20-40 one way. Take your passport or ID card with you.
+  - name: Porvoo
+    text: >-
+      Finland's second-oldest town, with red wooden storehouses along the river, about 1 hour by bus
+      from Kamppi station. Try the Runeberg torte, made with almonds.
+  - name: Nuuksio National Park
+    text: >-
+      Forests and lakes about 1-1.5 hours from the centre: by train to Espoo, then bus 245 to
+      Haukkalampi. The trails are marked and free.
+budget: >-
+  A coffee costs about €3.50-4.50, a beer in a bar €8-10, the lunch of the day €12-15 and a dinner
+  in a restaurant €25-35. Excluding the flight and accommodation, plan on €60-90 a day.
+when: >-
+  June to August, with the white nights: at the end of June the sun sets close to 23:00 and the
+  sky never gets fully dark. May and September are quieter. Winter is cold, about -5 degrees and
+  with days down to -15, with only about 6 hours of daylight in December, but with snow and the
+  Christmas market on Senaatintori.
+tips:
+  - "In traditional saunas men and women are separate and go in without clothes; at Löyly and Allas Sea Pool the saunas are mixed, with swimsuits. Shower before the sauna."
+  - "Alcoholic drinks over 8% are sold only in the state-run Alko shops, which are closed on Sundays. Supermarkets do not sell alcohol after 21:00."
+  - "Bank cards are accepted everywhere, even at the market stalls: you do not need cash."
+faq:
+  - q: "Is a day in Tallinn worth it?"
+    a: "Yes, it is the favourite day trip. The first ferries leave at about 7:30 and the last ones return in the evening, so you get 6-8 hours in the old town, where prices are lower."
+  - q: "How much money do you need per day in Helsinki?"
+    a: "Excluding the flight and accommodation, €60-90 a day. The lunch of the day (lounas), the free Oodi and parks and the HSL day ticket keep spending down."

@@ -366,6 +366,18 @@ links:
       Perugia:      https://www.tiqets.com/en/perugia-attractions-c71679/
       Malmö:        https://www.tiqets.com/en/malmo-attractions-c78081/
       Billund:      https://www.tiqets.com/en/billund-attractions-c93558/
+      Amsterdam:    https://www.tiqets.com/en/amsterdam-attractions-c75061/
+      Lisbon:       https://www.tiqets.com/en/lisbon-attractions-c76528/
+      Copenhagen:   https://www.tiqets.com/en/copenhagen-attractions-c113/
+      Nice:         https://www.tiqets.com/en/nice-attractions-c66770/
+      Valencia:     https://www.tiqets.com/en/valencia-attractions-c65847/
+      Palma de Mallorca: https://www.tiqets.com/en/mallorca-attractions-c65915/
+      Porto:        https://www.tiqets.com/en/porto-attractions-c76573/
+      Oslo:         https://www.tiqets.com/en/oslo-attractions-c75084/
+      Helsinki:     https://www.tiqets.com/en/helsinki-attractions-c66544/
+      Antalya:      https://www.tiqets.com/en/antalya-attractions-c78987/
+      Riga:         https://www.tiqets.com/en/riga-attractions-c73383/
+      Tallinn:      https://www.tiqets.com/en/tallinn-attractions-c65702/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -430,6 +442,18 @@ links:
       Perugia:      https://www.getyourguide.com/perugia-l1507/
       Malmö:        https://www.getyourguide.com/malmo-l2647/
       Billund:      https://www.getyourguide.com/billund-l87275/
+      Amsterdam:    https://www.getyourguide.com/amsterdam-l36/
+      Lisbon:       https://www.getyourguide.com/lisbon-l42/
+      Copenhagen:   https://www.getyourguide.com/copenhagen-l12/
+      Nice:         https://www.getyourguide.com/nice-l314/
+      Valencia:     https://www.getyourguide.com/valencia-l49/
+      Palma de Mallorca: https://www.getyourguide.com/palma-de-mallorca-l1260/
+      Porto:        https://www.getyourguide.com/porto-l151/
+      Oslo:         https://www.getyourguide.com/oslo-l38/
+      Helsinki:     https://www.getyourguide.com/helsinki-l13/
+      Antalya:      https://www.getyourguide.com/antalya-l172/
+      Riga:         https://www.getyourguide.com/riga-l213/
+      Tallinn:      https://www.getyourguide.com/tallinn-l394/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -494,6 +518,18 @@ links:
       Perugia:      https://www.welcomepickups.com/
       Malmö:        https://www.welcomepickups.com/malmo/
       Billund:      https://www.welcomepickups.com/billund/
+      Amsterdam:    https://www.welcomepickups.com/amsterdam/
+      Lisbon:       https://www.welcomepickups.com/lisbon/
+      Copenhagen:   https://www.welcomepickups.com/copenhagen/
+      Nice:         https://www.welcomepickups.com/nice/
+      Valencia:     https://www.welcomepickups.com/valencia/
+      Palma de Mallorca: https://www.welcomepickups.com/mallorca/
+      Porto:        https://www.welcomepickups.com/porto/
+      Oslo:         https://www.welcomepickups.com/oslo/
+      Helsinki:     https://www.welcomepickups.com/helsinki/
+      Antalya:      https://www.welcomepickups.com/antalya/
+      Riga:         https://www.welcomepickups.com/riga/
+      Tallinn:      https://www.welcomepickups.com/tallinn/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -558,6 +594,18 @@ links:
       Perugia:      https://radicalstorage.com/luggage-storage/perugia
       Malmö:        https://radicalstorage.com/luggage-storage/malmo
       Billund:      https://radicalstorage.com/
+      Amsterdam:    https://radicalstorage.com/luggage-storage/amsterdam
+      Lisbon:       https://radicalstorage.com/luggage-storage/lisbon
+      Copenhagen:   https://radicalstorage.com/luggage-storage/copenhagen
+      Nice:         https://radicalstorage.com/luggage-storage/nice
+      Valencia:     https://radicalstorage.com/luggage-storage/valencia
+      Palma de Mallorca: https://radicalstorage.com/luggage-storage/mallorca
+      Porto:        https://radicalstorage.com/luggage-storage/porto
+      Oslo:         https://radicalstorage.com/luggage-storage/oslo
+      Helsinki:     https://radicalstorage.com/luggage-storage/helsinki
+      Antalya:      https://radicalstorage.com/luggage-storage/antalya
+      Riga:         https://radicalstorage.com/luggage-storage/riga
+      Tallinn:      https://radicalstorage.com/luggage-storage/tallinn
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

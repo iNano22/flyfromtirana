@@ -1,0 +1,79 @@
+city: Nice
+slug: nice
+tagline: The Promenade, Vieux Nice and the French Riviera
+intro: >-
+  Nice is the main city of the French Riviera (Côte d'Azur), with a long bay of blue water, an old
+  town in Italian colours and the light that drew Matisse and Chagall. Until 1860 it belonged to
+  Savoy, which is why the food still has an Italian taste. Three or four days are enough for the city
+  and for Monaco, Èze or Antibes, all close by train or bus.
+sights:
+  - name: Promenade des Anglais
+    text: The famous seafront promenade, about 7 km long, with the blue chairs where locals sit. The beaches are pebbly and the public ones are free.
+  - name: Vieux Nice
+    text: The old town, with narrow lanes, ochre houses, baroque churches and the Sainte-Réparate cathedral. The best place for socca and ice cream.
+  - name: Castle Hill (Colline du Château)
+    text: The hill above the old town, today a free park with a waterfall and the finest view over the bay and the port. Go up by the steps or by the free lift next to the Tour Bellanda.
+  - name: Cours Saleya market
+    text: The flower, fruit and vegetable market in the heart of Vieux Nice, every morning from Tuesday to Sunday. On Monday it hosts the antiques market.
+  - name: Musée Matisse
+    text: The Matisse museum in a red villa on the Cimiez hill, among olive trees and Roman ruins. A ticket costs about €10; the city museum pass about €15. Closed on Tuesdays.
+  - name: Musée National Marc Chagall
+    text: A national museum with Chagall's large paintings on the Bible. A ticket costs about €10-12 and is not included in the city pass. About 15 minutes' walk from Nice-Ville station, on the way to the Matisse.
+airports:
+  NCE: >-
+    Nice Côte d'Azur airport is by the sea, about 7 km west of the centre. Tram line 2 leaves from both
+    terminals and takes you to the centre (Jean Médecin, Port) in about 25-30 minutes, every 8-10
+    minutes. A single ticket costs about €1.70-2, but at the airport a return ticket of about €10 is
+    often sold: check at the machine or in the Lignes d'Azur app. Taxis have a fixed fare to the
+    centre, about €35-40.
+budget: >-
+  A coffee at the counter costs about €2-2.50, a portion of socca about €4-5, a dish of the day
+  €15-20. A hostel bed costs from about €30-50, a double room in a simple hotel from about €80-130 a
+  night, much more in July and August.
+when: >-
+  May to June and September to October are the best time: the sea is warm and prices are lower. July
+  and August are hot and crowded with tourists. Winter is mild and sunny; in February the Nice
+  Carnival takes place.
+tips:
+  - "The beaches are pebbly: bring water shoes. Private beaches with a sunbed cost about €20-30 a day."
+  - "The TER train is faster than the bus to Monaco and Antibes, but in summer it is packed: leave early."
+  - "Many museums close on Tuesdays and are free for young people under 18."
+itinerary:
+  - "The morning at the Cours Saleya market and in Vieux Nice, with socca for lunch. In the afternoon Castle Hill, then the Promenade des Anglais until sunset."
+  - "The Cimiez hill with the Musée Matisse, then the Musée Chagall on the way down. In the afternoon Place Masséna, the Promenade du Paillon park and a swim at the beach."
+  - "By train to Monaco: Monte Carlo, the casino and the Prince's Palace. Come back by bus through Èze, the village on the rock."
+  - "A day in Antibes or Menton, with an old town and a beach. In the evening, dinner in the port district."
+areas:
+  - name: Vieux Nice
+    text: At the heart of everything and close to the sea, but noisy at night and with many buildings without a lift.
+  - name: Jean Médecin and Nice-Ville
+    text: "The most practical area: the tram to the airport and the trains along the coast are nearby. Cheaper hotels, but the streets behind the station are not pleasant at night."
+  - name: Le Port
+    text: The port district, east of Castle Hill, quieter, with good restaurants and a direct tram to the airport.
+food:
+  - name: Socca
+    text: A thin pancake of chickpea flour and olive oil, baked in a wood-fired oven and eaten hot with pepper.
+  - name: Salade niçoise
+    text: The city's salad, with tomatoes, hard-boiled eggs, tuna or anchovies and black olives. The authentic version has no potatoes.
+  - name: Pan bagnat
+    text: A niçoise salad inside a round bread roll soaked in olive oil, the ideal beach lunch, about €6-8.
+  - name: Pissaladière
+    text: A flatbread with caramelised onions, anchovies and olives, sold by the slice in bakeries.
+transport: >-
+  The centre is walkable. The Lignes d'Azur network has 3 tram lines and many buses; a single ticket
+  costs about €1.70-2 and is valid for 74 minutes, a day ticket about €7. The TER train from Nice-Ville
+  station runs along the coast to Monaco, Menton and Antibes.
+daytrips:
+  - name: Monaco
+    text: The tiny principality with Monte Carlo, the casino and the Prince's Palace. About 20-25 minutes by train and about €4-5.
+  - name: Èze
+    text: A medieval village on a rock about 400 metres above the sea, with an exotic garden and stunning views. Bus 82 from Nice takes about 30-35 minutes, about €2.
+  - name: Antibes
+    text: An old town with sea walls, a port full of yachts and the Musée Picasso. About 20-25 minutes by train.
+  - name: Menton
+    text: The town of lemons near the Italian border, with yellow and orange houses. About 35 minutes by train, about €6.
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "Tram line 2 is the cheapest and simplest: about 25-30 minutes to Jean Médecin. A taxi costs about €35-40 at a fixed fare and is worth it for 3-4 people with suitcases."
+  - q: "How much money do you need per day in Nice?"
+    a: "Excluding the flight and accommodation, allow €50-80 a day. You save with socca, pan bagnat, a picnic on the beach and the TER trains."

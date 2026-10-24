@@ -1,0 +1,98 @@
+city: Riga
+slug: riga
+tagline: Art Nouveau, kulla gotike dhe tregu në hangarët e zepelinëve
+intro: >-
+  Riga është kryeqyteti i Letonisë dhe qyteti më i madh i vendeve baltike, i themeluar në vitin
+  1201 buzë lumit Daugava. Qyteti i vjetër dhe lagjja Art Nouveau janë në listën e UNESCO-s. Dy-tri
+  ditë mjaftojnë për qytetin, plus një ditë për plazhet e Jūrmala. Letonia është në eurozonë dhe në
+  Shengen.
+sights:
+  - name: Vecrīga (Qyteti i Vjetër)
+    text: >-
+      Rrugica me kalldrëm mes Katedrales, Tre Vëllezërve (tri shtëpi mesjetare ngjitur), Portës
+      Suedeze dhe Shtëpisë së Maces. Përshkohet në këmbë për gjysmë dite.
+  - name: Shtëpia e Kokave të Zeza
+    text: >-
+      Ndërtesa me fasadë të zbukuruar në sheshin e Bashkisë, e ngritur në vitin 1334 për vëllazërinë
+      e tregtarëve beqarë. U shkatërrua në vitin 1941 dhe u rindërtua besnikërisht në vitet
+      1995-1999.
+  - name: Lagjja Art Nouveau
+    text: >-
+      Rreth një e treta e ndërtesave në qendër janë Art Nouveau, më shumë se kudo në Evropë. Rrugët
+      Alberta iela dhe Elizabetes iela kanë fasadat më të habitshme, me fytyra, luanë dhe figura
+      mitike, shumë prej tyre nga Mikhail Eisenstein.
+  - name: Tregu Qendror
+    text: >-
+      Ndër tregjet më të mëdha në Evropë, në hangarët e zepelinëve gjermanë të Luftës së Parë
+      Botërore, i hapur në vitin 1930. Çdo pavijon ka mallin e vet: mish, peshk, bulmet, perime.
+      Ideal për peshk të tymosur dhe një drekë të lirë.
+  - name: Kisha e Shën Pjetrit
+    text: >-
+      Kisha gotike me kullën 123 metra, simboli i qytetit. Një ashensor të ngjit në platformën në 72
+      metra, me pamjen më të mirë mbi çatitë dhe lumin Daugava (bileta rreth €10).
+itinerary:
+  - "Sheshi i Bashkisë me Shtëpinë e Kokave të Zeza, kulla e Kishës së Shën Pjetrit, Katedralja, Tre Vëllezërit dhe Porta Suedeze. Në mbrëmje Monumenti i Lirisë dhe parku buzë kanalit."
+  - "Tregu Qendror në mëngjes, me drekë në pavijone, pastaj tarraca panoramike e Akademisë së Shkencave. Pasdite lagjja Art Nouveau në Alberta iela dhe Elizabetes iela."
+  - "Me tren në Jūrmala për plazhin dhe rrugën këmbësore Jomas. Me mot të keq, zgjidh Sigulda ose Pallatin Rundāle."
+areas:
+  - name: Vecrīga
+    text: Qyteti i vjetër, gjithçka në këmbë, por me çmimet më të larta dhe zhurmë nga baret natën.
+  - name: Klusais centrs (Qendra e Qetë)
+    text: Lagjja Art Nouveau, me rrugë të qeta dhe kafene të mira, rreth 15 minuta në këmbë nga qyteti i vjetër.
+  - name: Pranë Stacionit Qendror
+    text: >-
+      Mes stacioneve të trenit dhe të autobusëve dhe Tregut Qendror: praktike për autobusin 22 dhe
+      udhëtimet ditore, me hotele më të lira.
+food:
+  - name: Riga Black Balsam
+    text: >-
+      Liker i zi barishtor, rreth 45 gradë, me recetë të vitit 1752. Pihet në gota të vogla, në kafe
+      ose me lëng rrushi të zi.
+  - name: Pelēkie zirņi (bizele gri)
+    text: >-
+      Bizele gri me pancetë të skuqur dhe qepë, pjata tradicionale e Letonisë, shpesh me një gotë
+      kefir. Gjendet edhe në vetëshërbimet e lira Lido.
+  - name: Rupjmaize
+    text: Buka e zezë e thekrës, pak e ëmbël. Provoje edhe si ëmbëlsirë, me krem dhe reçel.
+  - name: Šprotes
+    text: Peshq të vegjël të tymosur, më të mirë të freskët nga Tregu Qendror, mbi bukë thekre.
+airports:
+  RIX: >-
+    Aeroporti Ndërkombëtar i Rigës është rreth 10 km nga qendra. Autobusi 22 niset para terminalit
+    çdo 10-30 minuta dhe arrin në qendër për rreth 30 minuta. Bileta kushton rreth €1.5 nga
+    automati ose aplikacioni, pak më shumë nga shoferi. Taksia ose Bolt bëjnë 15-25 minuta dhe
+    kushtojnë rreth €12-20. Treni Rail Baltica deri në aeroport është ende në ndërtim.
+transport: >-
+  Qyteti i vjetër dhe lagjja Art Nouveau përshkohen në këmbë; për pjesën tjetër ka tramvaje,
+  autobusë dhe trolejbusë. Bileta 90-minutëshe kushton rreth €1.5 dhe ajo 24-orëshe rreth €5, nga
+  automatet, kioskat Narvesen ose aplikacioni; nga shoferi kushton më shumë. Biletën e kalon te
+  lexuesi sapo hip. Bolt është i lirë.
+daytrips:
+  - name: Jūrmala
+    text: >-
+      Qyteti i plazheve, me rreth 30 km rërë dhe vila prej druri. Treni për në Majori bën rreth 30
+      minuta dhe kushton rreth €2.
+  - name: Sigulda
+    text: >-
+      Në Parkun Kombëtar Gauja, rreth 1 orë e 15 minuta me tren. Kështjella e Turaida, shpellat dhe
+      shtigjet mbi luginë; vjeshta është koha më e bukur.
+  - name: Pallati Rundāle
+    text: >-
+      Pallati barok i Dukës së Kurlandës, nga Rastrelli, arkitekti i Pallatit të Dimrit, rreth 80 km
+      në jug. Arrihet me autobus deri në Bauska dhe pastaj me taksi, ose më thjesht me tur. Bileta
+      rreth €15-20.
+budget: >-
+  Një kafe kushton rreth €3-4, një birrë në qytetin e vjetër rreth €5-7 dhe një drekë në Lido rreth
+  €8-12. Restorantet në sheshet e qytetit të vjetër janë më të shtrenjtat.
+when: >-
+  Maji-shtatori, me ditë të gjata dhe rreth 20-25°C në verë. Më 23-24 qershor është Jāņi, festa e
+  mesit të verës, kur shumë dyqane mbyllen. Dimri është i ftohtë dhe i errët, por dhjetori ka
+  tregun e Krishtlindjeve.
+tips:
+  - "Kujdes nga baret ku të ftojnë vajza të panjohura: është një mashtrim i njohur, me fatura qindra euro."
+  - "Merr Bolt në vend të taksive në rrugë, që shpesh kërkojnë shumë më tepër."
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Autobusi 22 bën rreth 30 minuta dhe kushton rreth €1.5. Me Bolt ose taksi llogarit 15-25 minuta dhe rreth €12-20."
+  - q: "Sa para duhen në ditë në Riga?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë. Riga është më e lirë se Evropa Perëndimore, por në qytetin e vjetër çmimet u afrohen atyre."

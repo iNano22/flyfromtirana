@@ -1,0 +1,96 @@
+city: Antalya
+slug: antalya
+tagline: Qyteti i vjetër, plazhe të gjata dhe rrënoja romake
+intro: >-
+  Antalya është kryeqyteti i Rivierës turke: një qytet i vjetër me mure dhe port romak, dy plazhe
+  të gjata në të dy anët e qendrës dhe malet Taurus që zbresin drejt detit. Tri-katër ditë mjaftojnë
+  për qytetin, plazhin dhe një udhëtim te rrënojat antike përreth.
+sights:
+  - name: Kaleiçi
+    text: >-
+      Qyteti i vjetër brenda mureve, me rrugica me kalldrëm, shtëpi osmane dhe portin e vogël romak.
+      Minarja Yivli e shekullit XIII është simboli i qytetit.
+  - name: Porta e Hadrianit
+    text: >-
+      Harku romak me tri kalime, i ngritur në vitin 130 për vizitën e perandorit Hadrian. Është hyrja
+      kryesore e Kaleiçi-t dhe vizitohet falas.
+  - name: Muzeu i Antalyas
+    text: >-
+      Një nga muzetë më të mirë arkeologjikë në Turqi, me statujat romake të gjetura në Perge. Hyrja
+      kushton rreth €15; llogarit të paktën 2 orë.
+  - name: Plazhi Konyaaltı
+    text: >-
+      Plazh me guralecë rreth 7 km i gjatë, në perëndim të qendrës, me malet pas tij dhe një
+      shëtitore të gjatë. Në fundin perëndimor teleferiku ngjitet në kodrën Tünektepe.
+  - name: Plazhi Lara
+    text: Plazhi me rërë në lindje të qytetit, me hotele të mëdha, ujë të cekët dhe ideal për fëmijë.
+  - name: Ujëvarat Düden
+    text: >-
+      Ujëvara e Sipërme është në një park me hije, ku ecën edhe pas ujit, me hyrje për pak lira. Ujëvara
+      e Poshtme bie drejt e në det pranë Larës dhe shihet më mirë nga varkat që nisen nga porti i vjetër.
+airports:
+  AYT: >-
+    Aeroporti është rreth 13 km nga Kaleiçi. Tramvaji AntRay të çon për rreth 30-40 minuta në
+    Meydan, ku ndërron tramvaj për në qendër; autobusët 600 dhe 800 lidhin aeroportin me qendrën dhe
+    lagjet kryesore. Të dyja paguhen me kartën AntalyaKart, që blihet në makinat e aeroportit, dhe
+    kushtojnë rreth €1 për udhëtim. Autobusët Havaş shkojnë në qendër dhe në Kemer, Side e Alanya.
+    Një taksi deri në Kaleiçi kushton rreth €20-30. Shumë resorte organizojnë vetë transferimin.
+budget: >-
+  Lira turke (TRY) humbet vlerë shpejt, ndaj çmimet këtu janë në euro. Një çaj kushton më pak se
+  €1, një vakt i thjeshtë (qebap, pide, gözleme) rreth €6-10, një darkë me peshk rreth €20-30 dhe
+  një shezlong në plazh rreth €5-10.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë mot të ngrohtë dhe det të mirë për not. Korriku dhe gushti
+  janë shumë të nxehtë, shpesh mbi 35°C. Deti mbetet i ngrohtë deri në fillim të nëntorit, ndërsa
+  dimri është i butë, rreth 15°C ditën, por me shi.
+tips:
+  - "Paguaj në lira dhe jo në euro: çmimet në euro në zonat turistike janë zakonisht më të larta. Kur tërheq para në bankomat, refuzo konvertimin e bankomatit dhe zgjidh pagesën në lira."
+  - "Para se të hipësh në varkë në portin e vjetër, krahaso disa ofruese: një xhiro rreth 1 orë deri te Ujëvara e Poshtme Düden kushton zakonisht rreth €10-15."
+itinerary:
+  - "Porta e Hadrianit, pastaj Kaleiçi në këmbë: Minarja Yivli, rrugicat dhe porti i vjetër. Pasdite një xhiro me varkë deri te Ujëvara e Poshtme Düden, perëndimi te Kulla Hıdırlık dhe parku Karaalioğlu."
+  - "Muzeu i Antalyas në mëngjes, pastaj plazhi Konyaaltı. Para perëndimit merr teleferikun në Tünektepe për pamjen mbi gjirin dhe malet."
+  - "Një ditë te rrënojat e Perge-s dhe Aspendos-it, ose Ujëvara e Sipërme Düden në mëngjes dhe pasditja në plazhin Lara."
+areas:
+  - name: Kaleiçi
+    text: "Në qytetin e vjetër, me hotele të vogla në shtëpi osmane: gjithçka në këmbë, por me rrugica të ngushta dhe pa plazh të madh."
+  - name: Konyaaltı
+    text: Pranë plazhit dhe muzeut, me hotele më të lira se në Kaleiçi.
+  - name: Lara
+    text: Hotele të mëdha all inclusive buzë plazhit me rërë, rreth 15 minuta me taksi nga aeroporti.
+  - name: Resortet përreth
+    text: "Belek, Side dhe Kemer: ideale për pushime vetëm në plazh, por larg qytetit, rreth 40-90 minuta nga aeroporti."
+food:
+  - name: Piyaz i Antalyas
+    text: Sallatë me fasule të bardha dhe tahini, që shërbehet bashkë me şiş köfte në lokalet vendase.
+  - name: Şiş köfte
+    text: Qofte të pjekura në hell mbi qymyr, pjata klasike e qytetit.
+  - name: Gözleme
+    text: Petë e hollë e mbushur me djathë, spinaq ose patate, e pjekur në saç, një drekë e lirë.
+  - name: Hibeş
+    text: Meze vendase me tahini, limon, hudhër dhe piper të kuq, që hahet me bukë.
+transport: >-
+  Kaleiçi dhe qendra përshkohen në këmbë. Tramvajet AntRay lidhin qendrën me aeroportin dhe lagjet
+  në lindje, ndërsa tramvaji nostalgjik kalon buzë detit nga Muzeu deri pranë Portës së Hadrianit.
+  Për plazhet dhe lagjet e tjera ka autobusë dhe minibusë (dolmuş). Tramvajet dhe autobusët
+  paguhen me AntalyaKart.
+daytrips:
+  - name: Perge dhe Aspendos
+    text: >-
+      Perge, me stadiumin dhe rrugën me kolona, është rreth 20 km në lindje. Aspendos, rreth 45 km,
+      ka një nga teatrot romakë më të ruajtur në botë. Hyrja në secilin kushton rreth €10-20; të dyja bëhen
+      në një ditë me ekskursion ose makinë me qira.
+  - name: Side
+    text: Tempulli i Apollonit buzë detit, një teatër antik dhe qyteti i vjetër, rreth 1.5 orë me autobus.
+  - name: Kemer
+    text: >-
+      Marina dhe plazhe me guralecë rrëzë maleve, rreth 1 orë me autobus. Afër është teleferiku që
+      ngjitet në majën e malit Tahtalı.
+  - name: Olympos
+    text: >-
+      Rrënoja antike mes pyllit, pranë një plazhi të gjatë, rreth 1.5-2 orë larg. Në mbrëmje shko
+      te Chimaera (Yanartaş), flakët natyrore që dalin nga shkëmbi.
+faq:
+  - q: "Kaleiçi apo resort: ku të fle?"
+    a: "Nëse do qytetin, rrënojat dhe restorantet, fli në Kaleiçi ose Konyaaltı. Nëse do vetëm pishinë dhe plazh, një resort në Lara, Belek ose Kemer me transferim nga aeroporti është më i thjeshtë."
+  - q: "Sa para duhen në ditë në Antalya?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €35-60 në ditë për ushqim, transport dhe një hyrje. Hyrjet në muze dhe rrënoja për të huajt janë shtrenjtuar."

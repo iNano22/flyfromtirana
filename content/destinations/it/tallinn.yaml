@@ -1,0 +1,99 @@
+city: Tallinn
+slug: tallinn
+tagline: Una città medievale, caffè e il Mar Baltico
+intro: >-
+  Tallinn è la capitale dell'Estonia sul Mar Baltico, con una delle città vecchie medievali meglio
+  conservate d'Europa: mura con torri, vicoli acciottolati e tetti a punta. Intorno ci sono
+  quartieri di case in legno e fabbriche trasformate in caffè. Due o tre giorni bastano per la
+  città, più un giorno per Helsinki in traghetto. La valuta è l'euro.
+sights:
+  - name: La Città Vecchia (Vanalinn)
+    text: >-
+      Il centro medievale, patrimonio UNESCO, con gran parte delle mura e delle torri ancora in
+      piedi. Entra dalla Porta Viru e perditi tra i vicoli, fino alla torre della chiesa di
+      Sant'Olaf (la salita costa circa €5, solo aprile-ottobre).
+  - name: Piazza del Municipio (Raekoja plats)
+    text: >-
+      Il cuore della città vecchia, con il Municipio gotico e la Raeapteek, la farmacia aperta da
+      circa 600 anni. D'estate si riempie di tavolini, a dicembre del mercatino di Natale.
+  - name: Toompea
+    text: >-
+      La collina sopra la città vecchia, con il castello dove si riunisce il Parlamento e la
+      cattedrale russa Alexander Nevsky. Dai belvedere Kohtuotsa e Patkuli si gode la vista più
+      famosa sui tetti rossi.
+  - name: Kadriorg
+    text: >-
+      Il parco con il palazzo barocco che Pietro il Grande costruì per la moglie nel 1718, oggi museo
+      d'arte, e il KUMU, il museo dell'arte estone. Si raggiunge con i tram 1 o 3 in circa 10 minuti.
+  - name: Telliskivi
+    text: >-
+      Vecchie fabbriche accanto alla stazione Balti jaam, oggi piene di murales, negozi e caffè.
+      Accanto ci sono il mercato Balti Jaama Turg e il quartiere Kalamaja con le sue case in legno.
+  - name: Porto degli Idrovolanti (Lennusadam)
+    text: >-
+      Hangar con cupole di cemento del 1917, con il sottomarino Lembit, visitabile all'interno, e il
+      rompighiaccio Suur Tõll all'esterno. Biglietto circa €20-25; calcola 2-3 ore.
+itinerary:
+  - "La Porta Viru, la Piazza del Municipio e i vicoli della città vecchia. Salita a Toompea per la cattedrale Alexander Nevsky e le viste da Kohtuotsa e Patkuli. Il pomeriggio la torre di Sant'Olaf, la sera cena lontano dalla piazza principale."
+  - "Kalamaja e Telliskivi al mattino, pranzo al mercato Balti Jaama Turg. Il pomeriggio il Porto degli Idrovolanti, la sera i locali di Telliskivi."
+  - "Kadriorg: il palazzo, il parco e il KUMU. Il pomeriggio la spiaggia di Pirita o il moderno quartiere Rotermann."
+areas:
+  - name: Vanalinn (Città Vecchia)
+    text: Tutto a piedi e l'atmosfera più bella, ma con i prezzi più alti.
+  - name: Rotermann e Viru
+    text: >-
+      La zona moderna tra la città vecchia e il porto, a 5 minuti a piedi dalla Porta Viru. Comoda
+      per il tram 4 dell'aeroporto e i traghetti.
+  - name: Kalamaja
+    text: >-
+      Un quartiere di case in legno e appartamenti in affitto, accanto a Telliskivi, a 10-15 minuti
+      a piedi dal centro. Spesso più economico.
+food:
+  - name: Kiluvõileib
+    text: Pane nero di segale con piccole spratte (kilu) e uovo, uno stuzzichino classico con la birra.
+  - name: Leib
+    text: Il pane nero di segale, presente a ogni pasto.
+  - name: Verivorst e mulgikapsas
+    text: Sanguinaccio con crauti, soprattutto d'inverno e a Natale.
+  - name: Vana Tallinn
+    text: Un liquore dolce al rum e spezie, da bere liscio o nel caffè.
+airports:
+  TLL: >-
+    L'aeroporto Lennart Meri è a soli 4 km circa dal centro. Il tram 4 parte davanti al terminal e
+    arriva in centro (fermata Hobujaama, vicino alla Porta Viru) in circa 15-20 minuti, con un
+    normale biglietto urbano. L'autobus 2 va in centro e al porto dei traghetti. Un taxi o Bolt
+    impiega circa 10 minuti e costa circa €8-12.
+transport: >-
+  La città vecchia e Telliskivi si girano a piedi; per Kadriorg, Pirita e Lennusadam ci sono tram e
+  autobus. Si paga avvicinando la carta bancaria contactless al validatore, nell'app o con la
+  tessera Ühiskaart; una corsa da 1 ora costa circa €1,5-2, il biglietto da 24 ore circa €5-6.
+  Bolt, nato a Tallinn, è economico.
+daytrips:
+  - name: Helsinki
+    text: >-
+      La capitale della Finlandia, a circa 2 ore di traghetto dal porto Vanasadam. Il biglietto di
+      sola andata costa circa €20-40, di più nel fine settimana.
+  - name: Parco nazionale di Lahemaa
+    text: >-
+      Foreste, torbiere e villaggi di pescatori a circa 1 ora di auto verso est, con la passerella
+      di legno sulla torbiera di Viru e la villa di Palmse. Gli autobus sono rari: meglio un'auto a
+      noleggio o un tour.
+  - name: Pärnu
+    text: >-
+      La «capitale estiva» dell'Estonia, con una lunga spiaggia di sabbia, a circa 2 ore di
+      autobus, con un biglietto da circa €10-15.
+budget: >-
+  Tallinn è più cara della Polonia ma più economica di Helsinki. Un caffè costa circa €3-4, una
+  birra nella città vecchia circa €5-7, un menù pranzo circa €8-12 e una cena circa €15-25.
+when: >-
+  Maggio-settembre ha il clima migliore (circa 18-22°C) e a giugno il sole tramonta dopo le 22:00.
+  L'inverno è freddo e buio, ma da fine novembre a inizio gennaio la Piazza del Municipio si
+  riempie del mercatino di Natale, tra i più belli d'Europa.
+tips:
+  - "Non mangiare in Piazza del Municipio: due strade più in là la stessa cena costa molto meno."
+  - "Per Helsinki porta il passaporto: anche se entrambi i paesi sono nell'area Schengen, le compagnie di traghetti lo chiedono."
+faq:
+  - q: "Come arrivo dall'aeroporto alla città vecchia?"
+    a: "Il tram 4 ti porta in centro in circa 15-20 minuti, per circa €1,5-2. Dalla fermata Hobujaama alla Piazza del Municipio sono circa 10 minuti a piedi."
+  - q: "Quanto si spende al giorno a Tallinn?"
+    a: "Volo e alloggio esclusi, calcola circa €50-70 al giorno per cibo, trasporti e un museo. I menù pranzo aiutano a risparmiare."

@@ -1,0 +1,109 @@
+city: Copenhagen
+slug: copenhagen
+tagline: Nyhavn, Tivoli and bicycles everywhere
+intro: >-
+  Copenhagen is the capital of Denmark, a city by the sea with canals, royal palaces and more
+  bicycles than cars. The centre is easy to get around on foot and the airport is 15 minutes away by
+  metro. It is among the most expensive cities in Europe: three days are enough, with one more day
+  for Malmö or Kronborg. The currency is the Danish krone (DKK): €1 is about 7.5 kroner.
+sights:
+  - name: Nyhavn
+    text: >-
+      The canal from 1673 with its colourful houses, where Hans Christian Andersen lived. Canal boat
+      tours leave from here, about 1 hour for about 100-150 DKK (about €13-20).
+  - name: Tivoli
+    text: >-
+      One of the oldest amusement parks in the world, opened in 1843, with gardens, lights and
+      concerts. Entry about 160-200 DKK (about €21-27), rides are paid separately. It opens by
+      season: summer, Halloween and Christmas.
+  - name: Christiansborg
+    text: >-
+      The palace on the island of Slotsholmen, home to the parliament, the prime minister's office
+      and the Supreme Court. The 106-metre tower is free and has one of the best views over the city.
+  - name: Rosenborg
+    text: >-
+      The castle of King Christian IV, built in 1606-1624, with the crown jewels in the basement.
+      Tickets about 140-150 DKK (about €19-20); the Kongens Have garden around it is free.
+  - name: The Little Mermaid
+    text: >-
+      The bronze statue from 1913, from Andersen's fairy tale, only 1.25 metres tall. Go early in the
+      morning and combine it with Kastellet, the star-shaped fortress, which is free.
+  - name: Christiania
+    text: >-
+      The freetown founded in 1971 in old army barracks, with murals and cafés. It is fine to visit
+      by day, but do not take photos where the signs forbid it.
+  - name: Rundetaarn
+    text: >-
+      The Round Tower from 1642, an observatory you climb by a spiral ramp with no stairs. Tickets
+      about 40-50 DKK (about €5-7).
+itinerary:
+  - "Rådhuspladsen and the pedestrian street Strøget, Rundetaarn and Nyhavn with a canal boat tour. In the evening Tivoli."
+  - "Rosenborg and Kongens Have in the morning, lunch at the Torvehallerne market. The changing of the guard at the Amalienborg royal palace at 12:00, then Kastellet and the Little Mermaid."
+  - "Christiansborg with its free tower, then Christianshavn and Christiania. In the evening street food at Reffen."
+areas:
+  - name: Indre By
+    text: The old centre, with most of the sights within walking distance, but with the highest prices.
+  - name: Vesterbro
+    text: Around the Central Station and Tivoli, with plenty of hostels and bars, practical for the airport train.
+  - name: Nørrebro
+    text: The liveliest and most multicultural district, with cheaper food and cafés, 10-15 minutes by bike from the centre.
+  - name: Amager and Ørestad
+    text: Between the centre and the airport, with large and cheaper hotels, linked by metro.
+food:
+  - name: Smørrebrød
+    text: >-
+      Rye bread topped with herring, salmon, roast beef or egg with shrimps, the classic Danish
+      lunch. One piece costs about 70-130 DKK (about €9-17).
+  - name: Pølse
+    text: The Danish hot dog from a stand (pølsevogn), with crispy onions and pickles, about 35-50 DKK (about €5-7).
+  - name: Wienerbrød and kanelsnegl
+    text: Flaky pastries with custard or cinnamon, for breakfast with coffee.
+  - name: Torvehallerne and Reffen
+    text: >-
+      Torvehallerne, near Nørreport, is the covered market of Danish food. Reffen, by the water, has
+      street food from spring to autumn, with dishes for about 90-150 DKK.
+airports:
+  CPH: >-
+    Kastrup is about 8 km from the centre. Metro M2 takes you to Kongens Nytorv, near Nyhavn, in
+    about 15 minutes, and runs 24 hours a day. The train goes to København H (the Central Station),
+    also in about 15 minutes. A ticket costs about 30-40 DKK (about €4-5). A taxi takes about 20
+    minutes and costs about 250-350 DKK (about €33-47).
+transport: >-
+  The metro, the S-tog trains and the buses all run on the same tickets. Buy them in the DOT
+  Billetter app or at the machines before you board: the metro has no gates, but checks are
+  frequent. The City Pass Small, which also covers the airport, costs about 80 DKK (about €11) for
+  24 hours and about 200 DKK (about €27) for 72 hours.
+daytrips:
+  - name: Malmö
+    text: >-
+      In Sweden, across the Øresund Bridge, about 35-40 minutes by train from København H, for about
+      90-110 DKK (about €12-15).
+  - name: Kronborg in Helsingør
+    text: >-
+      Hamlet's castle from Shakespeare, on the UNESCO list, about 45-50 minutes by train. Tickets
+      about 150-200 DKK (about €20-27), depending on the season.
+  - name: Louisiana Museum
+    text: >-
+      The museum of modern art by the sea in Humlebæk, about 35-40 minutes by train on the same line
+      as Helsingør. Tickets about 160-170 DKK (about €21-23).
+  - name: Roskilde
+    text: >-
+      The Viking Ship Museum and the cathedral where the Danish kings are buried, on the UNESCO
+      list, about 25 minutes by train.
+budget: >-
+  A coffee costs about 40-55 DKK (about €5-7), a beer 60-80 DKK (about €8-11) and a simple dinner
+  150-250 DKK (about €20-34). A hostel bed costs about 250-450 DKK (about €33-60) a night. Without
+  the flight and accommodation, allow about 550-800 DKK (about €75-107) a day.
+when: >-
+  May-September, when the city lives by the water and in June there are about 17 hours of daylight.
+  July has the most tourists. Winter is cold and windy, but in December Tivoli is lit up for
+  Christmas.
+tips:
+  - "Bank cards and phones are accepted almost everywhere: there is no need to change money into kroner."
+  - "Do not walk in the bike lanes: they are very fast and cyclists do not stop."
+  - "Tap water is excellent. Bottles and cans carry a deposit (pant), which you get back at the supermarket."
+faq:
+  - q: "Metro or train from the airport: which should I take?"
+    a: "Both take about 15 minutes and cost the same. Metro M2 is better for Nyhavn, Christianshavn and Nørreport; the train for the Central Station, Tivoli and Vesterbro."
+  - q: "Can I visit Sweden too?"
+    a: "Yes. Malmö is about 35-40 minutes by train across the Øresund Bridge. Both countries are in the Schengen area, but Sweden carries out border checks from time to time, so keep your passport with you."

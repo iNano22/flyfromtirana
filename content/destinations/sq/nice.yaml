@@ -1,0 +1,79 @@
+city: Nice
+slug: nice
+tagline: Promenade, Vieux Nice dhe Riviera franceze
+intro: >-
+  Nice është qyteti kryesor i Rivierës franceze (Côte d'Azur), me një gji të gjatë me ujë të kaltër,
+  një qytet të vjetër me ngjyra italiane dhe dritën që tërhoqi Matisse dhe Chagall. Deri në vitin 1860
+  i përkiste Savojës, prandaj ushqimi ka ende shije italiane. Tre-katër ditë mjaftojnë për qytetin dhe
+  për Monaco, Èze ose Antibes, të gjitha afër me tren ose autobus.
+sights:
+  - name: Promenade des Anglais
+    text: Shëtitorja e famshme buzë detit, rreth 7 km e gjatë, me karriget blu ku ulen vendasit. Plazhet janë me guralecë dhe ato publike janë falas.
+  - name: Vieux Nice
+    text: Qyteti i vjetër, me rrugica të ngushta, shtëpi në ngjyrë okër, kisha baroke dhe katedralen Sainte-Réparate. Vendi më i mirë për socca dhe akullore.
+  - name: Castle Hill (Colline du Château)
+    text: Kodra mbi qytetin e vjetër, sot park falas me një ujëvarë dhe pamjen më të bukur mbi gjirin dhe portin. Ngjitu me shkallë ose me ashensorin falas pranë Tour Bellanda.
+  - name: Tregu i Cours Saleya
+    text: Tregu i luleve, frutave dhe perimeve në zemër të Vieux Nice, çdo mëngjes nga e marta deri të dielën. Të hënën aty bëhet tregu i antikuarëve.
+  - name: Musée Matisse
+    text: Muzeu i Matisse-it në një vilë të kuqe në kodrën e Cimiez, mes ullinjve dhe rrënojave romake. Bileta rreth €10; pasi i muzeve të qytetit rreth €15. Mbyllur të martën.
+  - name: Musée National Marc Chagall
+    text: Muze kombëtar me pikturat e mëdha të Chagall-it mbi Biblën. Bileta rreth €10-12, nuk hyn në pasin e qytetit. Rreth 15 minuta në këmbë nga stacioni Nice-Ville, rrugës për te Matisse.
+airports:
+  NCE: >-
+    Aeroporti Nice Côte d'Azur është buzë detit, rreth 7 km në perëndim të qendrës. Tramvaji linja 2
+    niset nga të dy terminalet dhe të çon në qendër (Jean Médecin, Port) për rreth 25-30 minuta, çdo
+    8-10 minuta. Bileta e vetme kushton rreth €1.70-2, por në aeroport shpesh shitet bileta
+    vajtje-ardhje rreth €10: kontrollo në automat ose në aplikacionin Lignes d'Azur. Taksia ka çmim
+    fiks për në qendër, rreth €35-40.
+budget: >-
+  Një kafe në banak kushton rreth €2-2.50, një porcion socca rreth €4-5, një pjatë dite €15-20. Një
+  shtrat në hostel kushton nga rreth €30-50, një dhomë dyshe në hotel të thjeshtë nga rreth €80-130
+  nata, shumë më tepër në korrik dhe gusht.
+when: >-
+  Maji-qershori dhe shtatori-tetori janë koha më e mirë: deti është i ngrohtë dhe çmimet më të ulëta.
+  Korriku dhe gushti janë të nxehtë dhe plot turistë. Dimri është i butë dhe me diell; në shkurt bëhet
+  Karnavali i Nice.
+tips:
+  - "Plazhet janë me guralecë: merr sandale uji. Plazhet private me shezlong kushtojnë rreth €20-30 në ditë."
+  - "Treni TER është më i shpejtë se autobusi për Monaco dhe Antibes, por në verë është plot: nisu herët."
+  - "Shumë muze mbyllen të martën dhe janë falas për të rinjtë nën 18 vjeç."
+itinerary:
+  - "Mëngjesi në tregun e Cours Saleya dhe në Vieux Nice, me socca për drekë. Pasdite Castle Hill, pastaj Promenade des Anglais deri në perëndim të diellit."
+  - "Kodra e Cimiez me Musée Matisse, pastaj Musée Chagall rrugës për poshtë. Pasdite Place Masséna, parku Promenade du Paillon dhe një not në plazh."
+  - "Me tren për në Monaco: Monte Carlo, kazinoja dhe pallati princëror. Kthehu me autobus përmes Èze, fshatit mbi shkëmb."
+  - "Një ditë në Antibes ose Menton, me qytet të vjetër dhe plazh. Në mbrëmje darkë në lagjen e portit."
+areas:
+  - name: Vieux Nice
+    text: Në zemër të gjithçkaje dhe pranë detit, por i zhurmshëm natën dhe me shumë pallate pa ashensor.
+  - name: Jean Médecin dhe Nice-Ville
+    text: "Zona më praktike: tramvaji për aeroportin dhe trenat për bregdetin janë pranë. Hotele më të lira, por rrugët pas stacionit natën nuk janë të këndshme."
+  - name: Le Port
+    text: Lagjja e portit, në lindje të Castle Hill, më e qetë, me restorante të mira dhe tramvaj direkt për në aeroport.
+food:
+  - name: Socca
+    text: Petë e hollë me miell qiqrash dhe vaj ulliri, e pjekur në furrë me dru dhe e ngrënë e nxehtë me piper.
+  - name: Salade niçoise
+    text: Sallata e qytetit, me domate, vezë të ziera, ton ose açuge dhe ullinj të zinj. Në versionin e mirëfilltë nuk ka patate.
+  - name: Pan bagnat
+    text: Sallata niçoise brenda një buke të rrumbullakët me vaj ulliri, dreka ideale për plazh, rreth €6-8.
+  - name: Pissaladière
+    text: Petë me qepë të karamelizuara, açuge dhe ullinj, që shitet me copë në furra.
+transport: >-
+  Qendra përshkohet në këmbë. Rrjeti Lignes d'Azur ka 3 linja tramvaji dhe shumë autobusë; bileta e
+  vetme kushton rreth €1.70-2 dhe vlen 74 minuta, bileta ditore rreth €7. Treni TER nga stacioni
+  Nice-Ville të çon përgjatë bregut deri në Monaco, Menton dhe Antibes.
+daytrips:
+  - name: Monaco
+    text: Principata e vogël me Monte Carlo, kazinonë dhe pallatin princëror. Me tren rreth 20-25 minuta dhe rreth €4-5.
+  - name: Èze
+    text: Fshat mesjetar mbi një shkëmb rreth 400 metra mbi det, me kopsht ekzotik dhe pamje mahnitëse. Autobusi 82 nga Nice bën rreth 30-35 minuta, rreth €2.
+  - name: Antibes
+    text: Qytet i vjetër me mure buzë detit, port me jahte dhe Musée Picasso. Me tren rreth 20-25 minuta.
+  - name: Menton
+    text: Qyteti i limonëve pranë kufirit me Italinë, me shtëpi të verdha e portokalli. Me tren rreth 35 minuta, rreth €6.
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Tramvaji linja 2 është më i liri dhe më i thjeshti: rreth 25-30 minuta deri në Jean Médecin. Taksia kushton rreth €35-40 me çmim fiks dhe ia vlen për 3-4 persona me valixhe."
+  - q: "Sa para duhen në ditë në Nice?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-80 në ditë. Kursen me socca, pan bagnat, piknik në plazh dhe trenat TER."

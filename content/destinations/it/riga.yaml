@@ -1,0 +1,99 @@
+city: Riga
+slug: riga
+tagline: Art Nouveau, guglie gotiche e un mercato negli hangar degli zeppelin
+intro: >-
+  Riga è la capitale della Lettonia e la città più grande dei paesi baltici, fondata nel 1201 sul
+  fiume Daugava. La città vecchia e il quartiere Art Nouveau sono nella lista dell'UNESCO. Due o
+  tre giorni bastano per la città, più un giorno per le spiagge di Jūrmala. La Lettonia è
+  nell'eurozona e nello spazio Schengen.
+sights:
+  - name: Vecrīga (Città Vecchia)
+    text: >-
+      Vicoli acciottolati tra la Cattedrale, i Tre Fratelli (tre case medievali una accanto
+      all'altra), la Porta Svedese e la Casa del Gatto. Si gira tutta a piedi in mezza giornata.
+  - name: Casa delle Teste Nere
+    text: >-
+      Un edificio dalla facciata decorata nella piazza del Municipio, costruito nel 1334 per la
+      confraternita dei mercanti non sposati. Distrutto nel 1941, fu ricostruito fedelmente nel
+      1995-1999.
+  - name: Quartiere Art Nouveau
+    text: >-
+      Circa un terzo degli edifici del centro sono Art Nouveau, più che in qualsiasi altro luogo
+      d'Europa. Alberta iela ed Elizabetes iela hanno le facciate più sorprendenti, con volti, leoni
+      e figure mitiche, molte opera di Mikhail Eisenstein.
+  - name: Mercato Centrale
+    text: >-
+      Uno dei mercati più grandi d'Europa, negli hangar per zeppelin tedeschi della Prima guerra
+      mondiale, aperto nel 1930. Ogni padiglione ha la sua merce: carne, pesce, latticini, verdura.
+      Ideale per il pesce affumicato e un pranzo economico.
+  - name: Chiesa di San Pietro
+    text: >-
+      Chiesa gotica con una torre di 123 metri, simbolo della città. Un ascensore ti porta alla
+      piattaforma a 72 metri, con la vista migliore sui tetti e sulla Daugava (biglietto circa
+      €10).
+itinerary:
+  - "La piazza del Municipio con la Casa delle Teste Nere, la torre della Chiesa di San Pietro, la Cattedrale, i Tre Fratelli e la Porta Svedese. La sera il Monumento alla Libertà e il parco lungo il canale."
+  - "Il Mercato Centrale al mattino, con pranzo nei padiglioni, poi la terrazza panoramica dell'Accademia delle Scienze. Il pomeriggio il quartiere Art Nouveau in Alberta iela ed Elizabetes iela."
+  - "In treno a Jūrmala per la spiaggia e la via pedonale Jomas. Con il brutto tempo, scegli Sigulda o il Palazzo di Rundāle."
+areas:
+  - name: Vecrīga
+    text: La città vecchia, tutto a piedi, ma con i prezzi più alti e il rumore dei locali di notte.
+  - name: Klusais centrs (Centro Tranquillo)
+    text: Il quartiere Art Nouveau, con strade tranquille e buoni caffè, a circa 15 minuti a piedi dalla città vecchia.
+  - name: Vicino alla Stazione Centrale
+    text: >-
+      Tra le stazioni dei treni e degli autobus e il Mercato Centrale: comoda per l'autobus 22 e le
+      gite in giornata, con hotel più economici.
+food:
+  - name: Riga Black Balsam
+    text: >-
+      Un liquore nero alle erbe, circa 45 gradi, da una ricetta del 1752. Si beve in bicchierini,
+      nel caffè o con succo di ribes nero.
+  - name: Pelēkie zirņi (piselli grigi)
+    text: >-
+      Piselli grigi con pancetta fritta e cipolla, il piatto tradizionale della Lettonia, spesso con
+      un bicchiere di kefir. Si trovano anche nei self-service economici Lido.
+  - name: Rupjmaize
+    text: Pane nero di segale, leggermente dolce. Provalo anche come dolce, con panna e marmellata.
+  - name: Šprotes
+    text: Piccoli spratti affumicati, migliori freschi dal Mercato Centrale, su pane di segale.
+airports:
+  RIX: >-
+    L'aeroporto internazionale di Riga è a circa 10 km dal centro. L'autobus 22 parte davanti al
+    terminal ogni 10-30 minuti e arriva in centro in circa 30 minuti. Il biglietto costa circa €1,5
+    dalla macchinetta o dall'app, un po' di più dall'autista. Un taxi o Bolt impiega 15-25 minuti e
+    costa circa €12-20. Il treno Rail Baltica per l'aeroporto è ancora in costruzione.
+transport: >-
+  La città vecchia e il quartiere Art Nouveau si girano a piedi; per il resto ci sono tram,
+  autobus e filobus. Un biglietto da 90 minuti costa circa €1,5 e quello da 24 ore circa €5, dalle
+  macchinette, dai chioschi Narvesen o dall'app; dall'autista costa di più. Il biglietto va
+  passato sul lettore appena sali. Bolt è economico.
+daytrips:
+  - name: Jūrmala
+    text: >-
+      La città delle spiagge, con circa 30 km di sabbia e ville in legno. Il treno per Majori
+      impiega circa 30 minuti e costa circa €2.
+  - name: Sigulda
+    text: >-
+      Nel Parco Nazionale del Gauja, a circa 1 ora e 15 minuti di treno. Il castello di Turaida,
+      grotte e sentieri sopra la valle; l'autunno è il periodo più bello.
+  - name: Palazzo di Rundāle
+    text: >-
+      Il palazzo barocco del Duca di Curlandia, opera di Rastrelli, l'architetto del Palazzo
+      d'Inverno, a circa 80 km a sud. Si raggiunge in autobus fino a Bauska e poi in taxi, o più
+      semplicemente con un tour. Biglietto circa €15-20.
+budget: >-
+  Un caffè costa circa €3-4, una birra in città vecchia circa €5-7 e un pranzo da Lido circa
+  €8-12. I ristoranti nelle piazze della città vecchia sono i più cari.
+when: >-
+  Maggio-settembre, con giornate lunghe e circa 20-25°C in estate. Il 23-24 giugno si celebra
+  Jāņi, la festa di mezza estate, quando molti negozi chiudono. L'inverno è freddo e buio, ma a
+  dicembre c'è il mercatino di Natale.
+tips:
+  - "Attenzione ai locali dove ti invitano ragazze sconosciute: è una truffa nota, con conti da centinaia di euro."
+  - "Prendi Bolt invece dei taxi in strada, che spesso chiedono molto di più."
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "L'autobus 22 impiega circa 30 minuti e costa circa €1,5. Con Bolt o taxi calcola 15-25 minuti e circa €12-20."
+  - q: "Quanto si spende al giorno a Riga?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno. Riga è più economica dell'Europa occidentale, ma in città vecchia i prezzi si avvicinano."

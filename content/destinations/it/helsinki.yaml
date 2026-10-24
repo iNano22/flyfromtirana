@@ -1,0 +1,103 @@
+city: Helsinki
+slug: helsinki
+tagline: Saune, mare e design nordico
+intro: >-
+  Helsinki è la capitale della Finlandia, distesa su una penisola e centinaia di isole sul Mar
+  Baltico: cattedrali bianche, mercati sul porto, design ovunque e saune con vista sul mare. Il
+  centro si gira a piedi e la moneta è l'euro. Tre giorni bastano, con un giorno in più per
+  Tallinn in traghetto.
+sights:
+  - name: Senaatintori e la Cattedrale
+    text: >-
+      La neoclassica Piazza del Senato, con la statua dello zar Alessandro II al centro. In cima
+      alla grande scalinata si alza la bianca Cattedrale luterana, del 1852, simbolo della città.
+      Poco più a est c'è la Cattedrale ortodossa Uspenski, di mattoni rossi.
+  - name: Suomenlinna
+    text: >-
+      La fortezza marittima costruita dagli svedesi nel 1748 su alcune isole davanti al porto, nella
+      lista dell'UNESCO. Il traghetto dalla Piazza del Mercato impiega circa 15-20 minuti con il
+      normale biglietto HSL. Calcola mezza giornata.
+  - name: Kauppatori, la Piazza del Mercato
+    text: >-
+      Il mercato sul porto, con pesce, frutti di bosco e pranzi economici sotto le tende. Accanto
+      c'è Vanha kauppahalli, il mercato coperto del 1889. Attenzione ai gabbiani, che ti rubano il
+      cibo.
+  - name: Chiesa di Temppeliaukio
+    text: >-
+      La chiesa scavata in una roccia di granito, del 1969, con una cupola di rame e la luce che
+      entra tutto intorno. Ingresso circa €5-8.
+  - name: Biblioteca Oodi
+    text: >-
+      La biblioteca centrale di legno e vetro, aperta nel 2018 di fronte al Parlamento. L'ingresso è
+      gratuito, con una terrazza all'ultimo piano, stampanti 3D e posti caldi dove sedersi in
+      inverno.
+  - name: Saune pubbliche
+    text: >-
+      Löyly, sul mare, costa circa €25 per 2 ore, con un tuffo in mare anche d'inverno. Allas Sea
+      Pool, vicino alla Piazza del Mercato, ha piscine di acqua di mare, mentre la Kotiharjun Sauna
+      a Kallio, riscaldata a legna dal 1928, costa circa €15.
+itinerary:
+  - "Senaatintori e la Cattedrale, la Cattedrale Uspenski e la Piazza del Mercato per pranzo. Nel pomeriggio il parco Esplanadi e il Design District, la sera una sauna al Löyly."
+  - "Suomenlinna la mattina, in traghetto dalla Piazza del Mercato. Nel pomeriggio la Chiesa di Temppeliaukio, la Biblioteca Oodi e il museo Kiasma, la sera i bar di Kallio."
+  - "Una giornata a Tallinn in traghetto o a Porvoo. Altrimenti il Monumento a Sibelius e una sauna all'Allas Sea Pool al tramonto."
+areas:
+  - name: Kamppi e Kluuvi
+    text: "Il centro, intorno alla stazione centrale: tutto a piedi e il treno dell'aeroporto vicino, ma con i prezzi più alti."
+  - name: Kallio
+    text: L'ex quartiere operaio a nord del centro, con bar, caffè e hotel più economici, a circa 5 minuti di metro.
+  - name: Punavuori
+    text: A sud del centro, con negozi di design, ristoranti e strade tranquille vicino al mare.
+food:
+  - name: Lohikeitto
+    text: Zuppa di salmone con panna, patate e aneto, circa €14-18 al mercato coperto.
+  - name: Karjalanpiirakka
+    text: Piccolo tortino careliano di pasta di segale e riso, con burro all'uovo sopra, circa €2-3 l'uno.
+  - name: Korvapuusti
+    text: Panino dolce alla cannella e cardamomo, per il caffè del pomeriggio, circa €4-5.
+  - name: Lounas
+    text: >-
+      Il pranzo del giorno nei giorni feriali, circa 11:00-14:00: buffet con piatto caldo, insalata,
+      pane e caffè per circa €12-15.
+airports:
+  HEL: >-
+    L'aeroporto di Helsinki-Vantaa è a circa 18 km a nord del centro. I treni I e P della linea ad
+    anello partono dalla stazione sotto il terminal ogni 10 minuti, in direzioni opposte, ed
+    entrambi arrivano a Helsinki Central in circa 30 minuti. Serve il biglietto HSL per le zone
+    ABC, circa €4-5, alle macchinette della stazione o nell'app HSL. L'autobus 600 impiega circa 40
+    minuti fino alla stazione centrale con lo stesso biglietto. Il taxi costa circa €40-55.
+transport: >-
+  Tram, metro, autobus, treni locali e il traghetto per Suomenlinna funzionano tutti con il
+  biglietto HSL. Per la città bastano le zone AB: il biglietto singolo costa circa €3-3,50 e vale
+  circa 80 minuti, il giornaliero circa €9-11. Si comprano nell'app HSL o alle macchinette delle
+  stazioni.
+daytrips:
+  - name: Tallinn in traghetto
+    text: >-
+      La capitale dell'Estonia, con la sua città vecchia medievale, a circa 2 ore di traghetto da
+      Länsisatama. Il biglietto costa circa €20-40 a tratta. Porta con te il passaporto o la carta
+      d'identità.
+  - name: Porvoo
+    text: >-
+      La seconda città più antica della Finlandia, con i magazzini rossi di legno lungo il fiume, a
+      circa 1 ora di autobus dalla stazione di Kamppi. Assaggia la torta Runeberg, alle mandorle.
+  - name: Parco Nazionale di Nuuksio
+    text: >-
+      Boschi e laghi a circa 1-1,5 ore dal centro: in treno fino a Espoo, poi con l'autobus 245 fino
+      a Haukkalampi. I sentieri sono segnalati e gratuiti.
+budget: >-
+  Un caffè costa circa €3,50-4,50, una birra al bar €8-10, il pranzo del giorno €12-15 e una cena
+  al ristorante €25-35. Volo e alloggio esclusi, calcola €60-90 al giorno.
+when: >-
+  Giugno-agosto, con le notti bianche: a fine giugno il sole tramonta verso le 23:00 e il cielo
+  non diventa mai del tutto buio. Maggio e settembre sono più tranquilli. L'inverno è freddo,
+  circa -5 gradi e con giornate fino a -15, con solo circa 6 ore di luce a dicembre, ma con la
+  neve e il mercatino di Natale in Senaatintori.
+tips:
+  - "Nelle saune tradizionali uomini e donne sono separati e si entra senza vestiti; al Löyly e all'Allas Sea Pool le saune sono miste, con il costume. Prima della sauna si fa la doccia."
+  - "Gli alcolici oltre l'8% si vendono solo nei negozi statali Alko, chiusi la domenica. I supermercati non vendono alcolici dopo le 21:00."
+  - "La carta bancaria è accettata ovunque, anche alle bancarelle del mercato: non servono contanti."
+faq:
+  - q: "Vale la pena una giornata a Tallinn?"
+    a: "Sì, è la gita in giornata preferita. I primi traghetti partono verso le 7:30 e gli ultimi tornano la sera, quindi hai 6-8 ore nella città vecchia, dove i prezzi sono più bassi."
+  - q: "Quanto si spende al giorno a Helsinki?"
+    a: "Volo e alloggio esclusi, €60-90 al giorno. Il pranzo del giorno (lounas), la Oodi e i parchi gratuiti e il biglietto giornaliero HSL tengono bassa la spesa."

@@ -1,0 +1,101 @@
+city: Helsinki
+slug: helsinki
+tagline: Sauna, det dhe dizajn nordik
+intro: >-
+  Helsinki është kryeqyteti i Finlandës, mbi një gadishull dhe qindra ishuj buzë Detit Baltik:
+  katedrale të bardha, tregje buzë portit, dizajn kudo dhe sauna me pamje nga deti. Qendra
+  përshkohet në këmbë dhe monedha është euro. Tri ditë mjaftojnë, me një ditë më shumë për Tallinn
+  me traget.
+sights:
+  - name: Senaatintori dhe Katedralja
+    text: >-
+      Sheshi neoklasik i Senatit, me statujën e carit Aleksandri II në mes. Mbi shkallët e mëdha
+      ngrihet Katedralja e bardhë luterane, e vitit 1852, simboli i qytetit. Pak më në lindje është
+      Katedralja ortodokse Uspenski, prej tulle të kuqe.
+  - name: Suomenlinna
+    text: >-
+      Kështjella detare e ndërtuar nga suedezët në vitin 1748 mbi disa ishuj para portit, në listën
+      e UNESCO-s. Trageti nga Sheshi i Tregut bën rreth 15-20 minuta me biletën e zakonshme të
+      HSL-së. Llogarit gjysmë dite.
+  - name: Kauppatori, Sheshi i Tregut
+    text: >-
+      Tregu buzë portit, me peshk, fruta pyjore dhe drekë të lirë nën tenda. Ngjitur është Vanha
+      kauppahalli, tregu i mbuluar i vitit 1889. Kujdes nga pulëbardhat, që të rrëmbejnë ushqimin.
+  - name: Kisha Temppeliaukio
+    text: >-
+      Kisha e gdhendur brenda një shkëmbi graniti, e vitit 1969, me kube bakri dhe dritë që hyn
+      rreth saj. Hyrja rreth €5-8.
+  - name: Biblioteka Oodi
+    text: >-
+      Biblioteka qendrore prej druri dhe xhami, e hapur në vitin 2018 përballë Parlamentit. Hyrja
+      është falas, me tarracë në katin e sipërm, printera 3D dhe vende të ngrohta për t'u ulur në
+      dimër.
+  - name: Saunat publike
+    text: >-
+      Löyly, buzë detit, kushton rreth €25 për 2 orë, me zhytje në det edhe në dimër. Allas Sea
+      Pool, pranë Sheshit të Tregut, ka pishina me ujë deti, ndërsa Kotiharjun Sauna në Kallio, me
+      ngrohje me dru që nga viti 1928, kushton rreth €15.
+itinerary:
+  - "Senaatintori dhe Katedralja, Katedralja Uspenski dhe Sheshi i Tregut për drekë. Pasdite parku Esplanadi dhe Design District, në mbrëmje sauna në Löyly."
+  - "Suomenlinna në mëngjes, me traget nga Sheshi i Tregut. Pasdite Kisha Temppeliaukio, Biblioteka Oodi dhe muzeu Kiasma, në mbrëmje baret e Kallio-s."
+  - "Një ditë në Tallinn me traget ose në Porvoo. Ndryshe, Monumenti i Sibelius-it dhe sauna te Allas Sea Pool në perëndim të diellit."
+areas:
+  - name: Kamppi dhe Kluuvi
+    text: "Qendra, rreth stacionit qendror: gjithçka në këmbë dhe treni i aeroportit afër, por me çmimet më të larta."
+  - name: Kallio
+    text: Lagjja e dikurshme punëtore në veri të qendrës, me bare, kafene dhe hotele më të lira, rreth 5 minuta me metro.
+  - name: Punavuori
+    text: Në jug të qendrës, me dyqanet e dizajnit, restorante dhe rrugë të qeta pranë detit.
+food:
+  - name: Lohikeitto
+    text: Supë salmoni me krem, patate dhe kopër, rreth €14-18 në tregun e mbuluar.
+  - name: Karjalanpiirakka
+    text: Byrek i vogël karelian me brumë thekre dhe oriz, me gjalpë me vezë sipër, rreth €2-3 copa.
+  - name: Korvapuusti
+    text: Bukëz me kanellë dhe kardamom, për kafenë e pasdites, rreth €4-5.
+  - name: Lounas
+    text: >-
+      Dreka e ditës në ditë pune, rreth 11:00-14:00: bufe me pjatë të ngrohtë, sallatë, bukë dhe
+      kafe për rreth €12-15.
+airports:
+  HEL: >-
+    Aeroporti Helsinki-Vantaa është rreth 18 km në veri të qendrës. Trenat I dhe P të linjës
+    unazore nisen nga stacioni nën terminal çdo 10 minuta, në drejtime të kundërta, dhe të dy
+    arrijnë në Helsinki Central për rreth 30 minuta. Duhet bileta e HSL-së për zonat ABC, rreth
+    €4-5, nga makinat në stacion ose nga aplikacioni HSL. Autobusi 600 bën rreth 40 minuta deri te
+    stacioni qendror me të njëjtën biletë. Taksia kushton rreth €40-55.
+transport: >-
+  Tramvajet, metroja, autobusët, trenat lokalë dhe trageti për Suomenlinna punojnë me biletën e
+  HSL-së. Për qytetin mjaftojnë zonat AB: bileta e vetme kushton rreth €3-3.50 dhe vlen rreth 80
+  minuta, ajo ditore rreth €9-11. Blihen në aplikacionin HSL ose te makinat e stacioneve.
+daytrips:
+  - name: Tallinn me traget
+    text: >-
+      Kryeqyteti i Estonisë, me qytetin e vjetër mesjetar, është rreth 2 orë me traget nga
+      Länsisatama. Bileta kushton rreth €20-40 në një drejtim. Merr me vete pasaportën ose
+      letërnjoftimin.
+  - name: Porvoo
+    text: >-
+      Qyteti i dytë më i vjetër i Finlandës, me magazina të kuqe prej druri buzë lumit, rreth 1 orë
+      me autobus nga stacioni Kamppi. Provo tortën Runeberg, me bajame.
+  - name: Parku Kombëtar Nuuksio
+    text: >-
+      Pyje dhe liqene rreth 1-1.5 orë nga qendra: me tren deri në Espoo, pastaj me autobusin 245
+      deri te Haukkalampi. Shtigjet janë të shënuara dhe falas.
+budget: >-
+  Një kafe kushton rreth €3.50-4.50, një birrë në lokal €8-10, dreka e ditës €12-15 dhe një darkë
+  në restorant €25-35. Pa fluturimin dhe fjetjen, llogarit €60-90 në ditë.
+when: >-
+  Qershori-gushti, me netët e bardha: në fund të qershorit dielli perëndon afër orës 23:00 dhe
+  qielli nuk errësohet plotësisht. Maji dhe shtatori janë më të qetë. Dimri është i ftohtë, rreth
+  -5 gradë dhe me ditë deri në -15, me vetëm rreth 6 orë dritë në dhjetor, por me borë dhe tregun
+  e Krishtlindjeve në Senaatintori.
+tips:
+  - "Në saunat tradicionale burrat dhe gratë janë të ndarë dhe hyhet pa rroba; në Löyly dhe Allas Sea Pool saunat janë të përbashkëta, me rroba banje. Para saunës bëhet dush."
+  - "Pijet alkoolike mbi 8% shiten vetëm në dyqanet shtetërore Alko, të mbyllura të dielën. Supermarketet nuk shesin alkool pas orës 21:00."
+  - "Karta bankare pranohet kudo, edhe në tezgat e tregut: nuk ke nevojë për para në dorë."
+faq:
+  - q: "A ia vlen një ditë në Tallinn?"
+    a: "Po, është udhëtimi ditor më i dashur. Tragetet e para nisen rreth orës 7:30 dhe të fundit kthehen në mbrëmje, kështu që ke 6-8 orë në qytetin e vjetër, ku çmimet janë më të ulëta."
+  - q: "Sa para duhen në ditë në Helsinki?"
+    a: "Pa fluturimin dhe fjetjen, €60-90 në ditë. Dreka e ditës (lounas), Oodi dhe parqet falas dhe bileta ditore e HSL-së e mbajnë shpenzimin më poshtë."

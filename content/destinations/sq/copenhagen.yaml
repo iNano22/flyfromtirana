@@ -1,0 +1,108 @@
+city: Copenhagen
+slug: copenhagen
+tagline: Nyhavn, Tivoli dhe biçikleta kudo
+intro: >-
+  Copenhagen është kryeqyteti i Danimarkës, një qytet buzë detit me kanale, pallate mbretërore dhe
+  më shumë biçikleta se makina. Qendra përshkohet në këmbë dhe aeroporti është 15 minuta me metro.
+  Është ndër qytetet më të shtrenjta në Evropë: tri ditë mjaftojnë, me një ditë më shumë për Malmö
+  ose Kronborg. Monedha është korona daneze (DKK): €1 është rreth 7.5 korona.
+sights:
+  - name: Nyhavn
+    text: >-
+      Kanali i vitit 1673 me shtëpi me ngjyra, ku jetoi Hans Christian Andersen. Nga këtu nisen
+      turet me varkë nëpër kanale, rreth 1 orë për rreth 100-150 DKK (rreth €13-20).
+  - name: Tivoli
+    text: >-
+      Një nga parqet më të vjetra të lojërave në botë, i hapur në vitin 1843, me kopshte, drita dhe
+      koncerte. Hyrja rreth 160-200 DKK (rreth €21-27), lojërat paguhen veç. Hapet sipas stinëve:
+      verë, Halloween dhe Krishtlindje.
+  - name: Christiansborg
+    text: >-
+      Pallati në ishullin Slotsholmen, ku janë parlamenti, zyra e kryeministrit dhe Gjykata e
+      Lartë. Kulla 106 metra është falas dhe ka një nga pamjet më të mira mbi qytet.
+  - name: Rosenborg
+    text: >-
+      Kështjella e mbretit Christian IV, e ndërtuar në vitet 1606-1624, me xhevahirët e kurorës në
+      bodrum. Bileta rreth 140-150 DKK (rreth €19-20); kopshti Kongens Have rreth saj është falas.
+  - name: Sirena e Vogël
+    text: >-
+      Statuja prej bronzi e vitit 1913, nga përralla e Andersen-it, e lartë vetëm 1.25 metra. Shko
+      herët në mëngjes dhe bashkoje me Kastellet, kalanë në formë ylli, falas.
+  - name: Christiania
+    text: >-
+      Lagjja e lirë e themeluar në vitin 1971 në një kazermë të vjetër, me murale dhe kafene.
+      Vizitohet pa problem ditën, por mos bëj foto aty ku e ndalojnë tabelat.
+  - name: Rundetaarn
+    text: >-
+      Kulla e rrumbullakët e vitit 1642, një observator ku ngjitesh nëpër një rampë spirale pa
+      shkallë. Bileta rreth 40-50 DKK (rreth €5-7).
+itinerary:
+  - "Rådhuspladsen dhe rruga këmbësore Strøget, Rundetaarn dhe Nyhavn me një tur me varkë nëpër kanale. Në mbrëmje Tivoli."
+  - "Rosenborg dhe Kongens Have në mëngjes, drekë në tregun Torvehallerne. Ndërrimi i rojeve te pallati mbretëror Amalienborg në orën 12:00, pastaj Kastellet dhe Sirena e Vogël."
+  - "Christiansborg me kullën falas, pastaj Christianshavn dhe Christiania. Në mbrëmje ushqim rrugësh në Reffen."
+areas:
+  - name: Indre By
+    text: Qendra e vjetër, me shumicën e atraksioneve në këmbë, por me çmimet më të larta.
+  - name: Vesterbro
+    text: Rreth Stacionit Qendror dhe Tivolit, me shumë hostele dhe bare, praktike për trenin e aeroportit.
+  - name: Nørrebro
+    text: Lagjja më e gjallë dhe shumëkulturore, me ushqim më të lirë dhe kafene, 10-15 minuta me biçikletë nga qendra.
+  - name: Amager dhe Ørestad
+    text: Mes qendrës dhe aeroportit, me hotele të mëdha dhe më të lira, të lidhura me metro.
+food:
+  - name: Smørrebrød
+    text: >-
+      Bukë thekre me sipër harengë, salmon, rosbif ose vezë me karkaleca, dreka klasike daneze. Një
+      copë kushton rreth 70-130 DKK (rreth €9-17).
+  - name: Pølse
+    text: Hot dog danez nga kioska (pølsevogn), me qepë të skuqura dhe turshi, rreth 35-50 DKK (rreth €5-7).
+  - name: Wienerbrød dhe kanelsnegl
+    text: Ëmbëlsira me brumë petë, me krem ose kanellë, për mëngjes me kafe.
+  - name: Torvehallerne dhe Reffen
+    text: >-
+      Torvehallerne, pranë Nørreport, është tregu i mbuluar i ushqimit danez. Reffen, buzë ujit, ka
+      ushqim rrugësh nga pranvera në vjeshtë, me pjata rreth 90-150 DKK.
+airports:
+  CPH: >-
+    Kastrup është rreth 8 km nga qendra. Metroja M2 të çon në Kongens Nytorv, pranë Nyhavn, për
+    rreth 15 minuta, dhe punon 24 orë. Treni shkon në København H (Stacioni Qendror) po ashtu për
+    rreth 15 minuta. Bileta kushton rreth 30-40 DKK (rreth €4-5). Taksia bën rreth 20 minuta dhe
+    kushton rreth 250-350 DKK (rreth €33-47).
+transport: >-
+  Metroja, trenat S-tog dhe autobusët punojnë me të njëjtat bileta. Bliji në aplikacionin DOT
+  Billetter ose te makinat, para se të hipësh: metroja nuk ka porta, por kontrollet janë të
+  shpeshta. City Pass Small, edhe për aeroportin, kushton rreth 80 DKK (rreth €11) për 24 orë dhe
+  rreth 200 DKK (rreth €27) për 72 orë.
+daytrips:
+  - name: Malmö
+    text: >-
+      Në Suedi, mbi Urën e Øresund, rreth 35-40 minuta me tren nga København H, për rreth 90-110 DKK
+      (rreth €12-15).
+  - name: Kronborg në Helsingør
+    text: >-
+      Kështjella e Hamletit të Shekspirit, në listën e UNESCO-s, rreth 45-50 minuta me tren. Bileta
+      rreth 150-200 DKK (rreth €20-27), sipas stinës.
+  - name: Muzeu Louisiana
+    text: >-
+      Muzeu i artit modern buzë detit në Humlebæk, rreth 35-40 minuta me tren në të njëjtën linjë
+      me Helsingør. Bileta rreth 160-170 DKK (rreth €21-23).
+  - name: Roskilde
+    text: >-
+      Muzeu i Anijeve Vikinge dhe katedralja ku janë varrosur mbretërit danezë, në listën e
+      UNESCO-s, rreth 25 minuta me tren.
+budget: >-
+  Një kafe kushton rreth 40-55 DKK (rreth €5-7), një birrë 60-80 DKK (rreth €8-11) dhe një darkë
+  e thjeshtë 150-250 DKK (rreth €20-34). Një shtrat në hostel kushton rreth 250-450 DKK (rreth
+  €33-60) nata. Pa fluturimin dhe fjetjen, llogarit rreth 550-800 DKK (rreth €75-107) në ditë.
+when: >-
+  Maji-shtatori, kur qyteti jeton buzë ujit dhe në qershor ka rreth 17 orë dritë. Korriku ka më
+  shumë turistë. Dimri është i ftohtë dhe me erë, por në dhjetor Tivoli ndriçohet për Krishtlindje.
+tips:
+  - "Karta bankare ose telefoni pranohen pothuajse kudo: nuk ke nevojë të këmbesh korona."
+  - "Mos ec në korsitë e biçikletave: janë shumë të shpejta dhe çiklistët nuk ndalojnë."
+  - "Uji i rubinetit është shumë i mirë. Shishet dhe kanaçet kanë depozitë (pant), që ta kthejnë në supermarket."
+faq:
+  - q: "Metro apo tren nga aeroporti: cilin të marr?"
+    a: "Të dyja bëjnë rreth 15 minuta dhe kushtojnë njësoj. Metroja M2 është më e mirë për Nyhavn, Christianshavn dhe Nørreport; treni për Stacionin Qendror, Tivolin dhe Vesterbro."
+  - q: "A mund të vizitoj edhe Suedinë?"
+    a: "Po. Malmö është rreth 35-40 minuta me tren mbi Urën e Øresund. Të dy vendet janë në zonën Shengen, por Suedia bën herë pas here kontrolle në kufi, prandaj mbaje pasaportën me vete."
