@@ -1,0 +1,101 @@
+city: Nuremberg
+slug: nuremberg
+tagline: Kështjella, Bratwurst dhe tregu i Krishtlindjeve
+intro: >-
+  Nuremberg është qyteti i dytë i Bavarisë dhe zemra e Frankonisë: një qytet i vjetër brenda
+  mureve mesjetare, me kështjellën perandorake mbi shkëmb dhe lumin Pegnitz në mes. Këtu u mbajtën
+  tubimet e partisë naziste dhe, pas luftës, gjyqet e Nurembergut. Dy-tri ditë mjaftojnë për
+  qytetin, me një ditë më shumë për Bamberg ose Regensburg.
+sights:
+  - name: Kaiserburg
+    text: >-
+      Kështjella perandorake mbi shkëmbin në veri të qytetit të vjetër. Bileta e plotë (rreth €9)
+      përfshin pusin rreth 50 metra të thellë dhe kullën Sinwellturm, me pamjen më të mirë mbi
+      çatitë. Kopshtet dhe sheshi para kështjellës janë falas.
+  - name: Qyteti i vjetër
+    text: >-
+      Brenda mureve me kulla gjithçka përshkohet në këmbë. Në Hauptmarkt është Schöner Brunnen,
+      shatërvani gotik me unazën e artë që rrotullohet për fat, dhe në orën 12:00 në fasadën e
+      Frauenkirche lëvizin figurat e orës Männleinlaufen. Qyteti u shkatërrua pothuajse i tëri në
+      vitin 1945 dhe u rindërtua sipas planit të vjetër.
+  - name: Qendra e Dokumentimit dhe terrenet e tubimeve naziste
+    text: >-
+      Në Sallën e Kongresit, që nuk u përfundua kurrë, një ekspozitë shpjegon si e përdori nazizmi
+      Nurembergun për tubimet e viteve 1933-1938. Shëtitja rreth liqenit Dutzendteich deri te
+      tribuna e Zeppelinfeld është falas. Arrihet me tramvajin 8 nga Hauptbahnhof. Qendra është
+      rinovuar vitet e fundit: kontrollo online çfarë është e hapur.
+  - name: Germanisches Nationalmuseum
+    text: >-
+      Muzeu më i madh i historisë së kulturës gjermane, me piktura të Dürer-it, armatura dhe globin
+      më të vjetër që ruhet, i vitit 1492. Bileta rreth €8-10; të mërkurave në mbrëmje hyrja
+      zakonisht është falas. Të hënave është i mbyllur.
+  - name: Shtëpia e Dürer-it
+    text: >-
+      Shtëpia ku jetoi dhe punoi piktori Albrecht Dürer nga viti 1509 deri në vdekjen e tij më 1528,
+      poshtë kështjellës, pranë portës Tiergärtnertor. Bileta rreth €7-8.
+itinerary:
+  - "Nga Hauptbahnhof në Königstraße, kisha St. Lorenz dhe Hauptmarkt për Männleinlaufen në orën 12:00. Pasdite Kaiserburg dhe Shtëpia e Dürer-it, në mbrëmje Rostbratwurst pranë kishës St. Sebaldus."
+  - "Germanisches Nationalmuseum në mëngjes. Pasdite Qendra e Dokumentimit dhe shëtitja deri te Zeppelinfeld. Në mbrëmje ura Henkersteg buzë lumit Pegnitz."
+  - "Një udhëtim ditor në Bamberg ose Regensburg. Ndryshe, Memorium i Gjyqeve të Nurembergut, Salla 600 ku u gjykuan udhëheqësit nazistë (metroja U1 deri në Bärenschanze)."
+areas:
+  - name: Altstadt
+    text: Rreth kështjellës dhe Hauptmarkt, me rrugicat më të bukura dhe çmimet më të larta.
+  - name: Pranë Hauptbahnhof
+    text: >-
+      Zona më praktike: metroja U2 të çon direkt në aeroport dhe qyteti i vjetër nis përtej rrugës.
+      Hotelet janë më të lira, por rrugët pranë stacionit janë pak të rrëmujshme natën.
+  - name: Gostenhof
+    text: Lagje alternative në perëndim të mureve, me kafene, bare dhe çmime më të ulëta.
+food:
+  - name: Nürnberger Rostbratwurst
+    text: >-
+      Salsiçet e vogla, 7-9 cm, të pjekura në zjarr druri ahu. Shërbehen 6, 8 ose 12 në pjatë me lakër
+      turshi ose sallatë patatesh, ose tre në një panin, "Drei im Weggla", për rreth €4.
+  - name: Lebkuchen
+    text: >-
+      Biskota me erëza dhe mjaltë, simboli i qytetit. Më të mirat janë Elisenlebkuchen, me shumë arra
+      dhe pak miell.
+  - name: Schäufele
+    text: Shpatull derri e pjekur me lëkurë kërcitëse, me Kloß, qofte të mëdha patatesh.
+  - name: Birra frankone
+    text: Frankonia ka qindra birrari të vogla. Provo Rotbier, birrën e kuqe të qytetit.
+airports:
+  NUE: >-
+    Aeroporti është rreth 5 km në veri të qendrës. Metroja U2 niset nga terminali çdo 10 minuta dhe
+    arrin në Hauptbahnhof për rreth 13 minuta. Bileta e vetme kushton rreth €4 dhe blihet para
+    hipjes, në automat ose në aplikacionin e VGN-së. Taksia kushton rreth €20-25.
+transport: >-
+  Qyteti i vjetër përshkohet në këmbë: nga Hauptbahnhof deri te kështjella janë rreth 20 minuta.
+  Për më larg ka metro, tramvaje dhe autobusë, të gjitha me biletën e VGN-së. Bileta ditore
+  kushton rreth €9; nëse e blen të shtunën, vlen edhe të dielën. Për trenat rajonalë në Bavari ia
+  vlen Bayern-Ticket, rreth €30-35 për një person.
+daytrips:
+  - name: Bamberg
+    text: >-
+      Qytet në listën e UNESCO-s, me bashkinë mbi lumë dhe birrën e tymosur Rauchbier, rreth 40-60
+      minuta me tren.
+  - name: Rothenburg ob der Tauber
+    text: >-
+      Një nga qytetet mesjetare më të ruajtura të Gjermanisë, me mure që mund t'i përshkosh, rreth
+      1.5-2 orë me tren rajonal.
+  - name: Regensburg
+    text: Qytet romak dhe mesjetar buzë Danubit, me Urën e Gurtë të shekullit 12, rreth 1 orë me tren.
+budget: >-
+  "Drei im Weggla" kushton rreth €4, një birrë gjysmëlitërshe €4.50-5.50, një pjatë në restorant
+  €12-18, një biletë e vetme në qytet rreth €4.
+when: >-
+  Maji-shtatori për shëtitjet dhe kopshtet e birrës. Christkindlesmarkt, një nga tregjet e
+  Krishtlindjeve më të famshme në botë, mbahet në Hauptmarkt nga e premtja para së dielës së parë
+  të Adventit deri më 24 dhjetor; në vitin 2026 hapet më 27 nëntor. Në ato javë hotelet
+  shtrenjtohen shumë.
+tips:
+  - "Për Christkindlesmarkt rezervo fjetjen muaj përpara, ose fli në Fürth apo Erlangen, me tren 10-20 minuta larg."
+  - "Glühwein-i shërbehet në filxhan me depozitë (Pfand): ktheje dhe të japin paratë, ose mbaje si kujtim."
+  - "Dyqanet dhe supermarketet janë të mbyllura të dielave, përveç disa supermarketeve në Hauptbahnhof."
+faq:
+  - q: "Si shkohet nga aeroporti në qendër?"
+    a: "Me metronë U2, që arrin në Hauptbahnhof për rreth 13 minuta, me një biletë rreth €4. Nga stacioni qyteti i vjetër është përtej rrugës."
+  - q: "Sa kohë duhet për Qendrën e Dokumentimit?"
+    a: "Llogarit rreth 2 orë për ekspozitën dhe 1 orë tjetër për shëtitjen deri te Zeppelinfeld."
+  - q: "Sa para duhen në ditë në Nuremberg?"
+    a: "Pa fluturimin dhe fjetjen, €40-70 në ditë. Nuremberg është më i lirë se Munich, sidomos për ushqimin, por gjatë Christkindlesmarkt hotelet dyfishojnë çmimet."

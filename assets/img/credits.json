@@ -1258,5 +1258,245 @@
   "source_url": "https://unsplash.com/photos/sNEj2BxSms8",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bhx.webp",
+  "slot": "BHX",
+  "title": "Gas Street Basin, Birmingham",
+  "creator": "@bybas",
+  "creator_url": "https://unsplash.com/@bybas",
+  "source_url": "https://unsplash.com/photos/Tr4gC7viD4Q",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/lpl.webp",
+  "slot": "LPL",
+  "title": "Royal Liver Building, Liverpool",
+  "creator": "@anagoge",
+  "creator_url": "https://unsplash.com/@anagoge",
+  "source_url": "https://unsplash.com/photos/qWscMESnApA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/mrs.webp",
+  "slot": "MRS",
+  "title": "Vieux-Port and Notre-Dame de la Garde, Marseille",
+  "creator": "@laraschipperen",
+  "creator_url": "https://unsplash.com/@laraschipperen",
+  "source_url": "https://unsplash.com/photos/VXZF0vQaIlw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bsl.webp",
+  "slot": "BSL",
+  "title": "Basel Minster and the old town",
+  "creator": "@piotrmunk",
+  "creator_url": "https://unsplash.com/@piotrmunk",
+  "source_url": "https://unsplash.com/photos/N9ANH2YOebg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/nue.webp",
+  "slot": "NUE",
+  "title": "Half-timbered houses, Nuremberg",
+  "creator": "@mateokross",
+  "creator_url": "https://unsplash.com/@mateokross",
+  "source_url": "https://unsplash.com/photos/IoJfWHdqHCE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/dtm.webp",
+  "slot": "DTM",
+  "title": "The Dortmunder U at night",
+  "creator": "@nagarjun648",
+  "creator_url": "https://unsplash.com/@nagarjun648",
+  "source_url": "https://unsplash.com/photos/edBZ686ZZo0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/arn.webp",
+  "slot": "ARN",
+  "title": "Gamla Stan waterfront, Stockholm",
+  "creator": "@idbronskiy",
+  "creator_url": "https://unsplash.com/@idbronskiy",
+  "source_url": "https://unsplash.com/photos/9Ca1ZCEFKIQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/suf.webp",
+  "slot": "SUF",
+  "title": "Santa Maria dell'Isola, Tropea",
+  "creator": "@eugenioc11",
+  "creator_url": "https://unsplash.com/@eugenioc11",
+  "source_url": "https://unsplash.com/photos/6SCONXddv98",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/rmi.webp",
+  "slot": "RMI",
+  "title": "Tiberius Bridge, Rimini",
+  "creator": "@alemosmile",
+  "creator_url": "https://unsplash.com/@alemosmile",
+  "source_url": "https://unsplash.com/photos/3xx_z81eTFU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/peg.webp",
+  "slot": "PEG",
+  "title": "Palazzo dei Priori, Perugia",
+  "creator": "@atzoriveronica",
+  "creator_url": "https://unsplash.com/@atzoriveronica",
+  "source_url": "https://unsplash.com/photos/taWM99X3-EA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/mmx.webp",
+  "slot": "MMX",
+  "title": "Malmöhus Castle, Malmö",
+  "creator": "@darias_big_world",
+  "creator_url": "https://unsplash.com/@darias_big_world",
+  "source_url": "https://unsplash.com/photos/pjFkKPLG48c",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bll.webp",
+  "slot": "BLL",
+  "title": "LEGOLAND, Billund",
+  "creator": "@hampter",
+  "creator_url": "https://unsplash.com/@hampter",
+  "source_url": "https://unsplash.com/photos/eqE4jUnvlso",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/birmingham.webp",
+  "slot": "guide-birmingham",
+  "title": "Canal by the Mailbox, Birmingham",
+  "creator": "@chrisgrahamdack",
+  "creator_url": "https://unsplash.com/@chrisgrahamdack",
+  "source_url": "https://unsplash.com/photos/RJM1tGOyKH8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/liverpool.webp",
+  "slot": "guide-liverpool",
+  "title": "Royal Albert Dock, Liverpool",
+  "creator": "@chrismporter",
+  "creator_url": "https://unsplash.com/@chrismporter",
+  "source_url": "https://unsplash.com/photos/48-jQg1RuXU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/marseille.webp",
+  "slot": "guide-marseille",
+  "title": "Fort Saint-Jean, Marseille",
+  "creator": "@benjp",
+  "creator_url": "https://unsplash.com/@benjp",
+  "source_url": "https://unsplash.com/photos/8t1mMCUZ0g4",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/basel.webp",
+  "slot": "guide-basel",
+  "title": "The Rhine in Basel",
+  "creator": "@ccs935151",
+  "creator_url": "https://unsplash.com/@ccs935151",
+  "source_url": "https://unsplash.com/photos/ksf_e_XfRko",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/nuremberg.webp",
+  "slot": "guide-nuremberg",
+  "title": "Nuremberg old town and St. Lorenz",
+  "creator": "@svenmasuhr",
+  "creator_url": "https://unsplash.com/@svenmasuhr",
+  "source_url": "https://unsplash.com/photos/RM7sI75n7GU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/dortmund.webp",
+  "slot": "guide-dortmund",
+  "title": "Dortmund skyline at sunset",
+  "creator": "@evgenit",
+  "creator_url": "https://unsplash.com/@evgenit",
+  "source_url": "https://unsplash.com/photos/50FYkg8LK98",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/stockholm.webp",
+  "slot": "guide-stockholm",
+  "title": "Riddarholmen, Stockholm",
+  "creator": "@anabg1",
+  "creator_url": "https://unsplash.com/@anabg1",
+  "source_url": "https://unsplash.com/photos/uF4PfwZPOR8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/lamezia-terme.webp",
+  "slot": "guide-lamezia-terme",
+  "title": "Tropea's cliffs and beach, Calabria",
+  "creator": "@ananoelleeeee",
+  "creator_url": "https://unsplash.com/@ananoelleeeee",
+  "source_url": "https://unsplash.com/photos/Emjmmy2_uuo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/rimini.webp",
+  "slot": "guide-rimini",
+  "title": "The beach at Rimini",
+  "creator": "@azzurobudgie",
+  "creator_url": "https://unsplash.com/@azzurobudgie",
+  "source_url": "https://unsplash.com/photos/yR7hr7lBRnI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/perugia.webp",
+  "slot": "guide-perugia",
+  "title": "Perugia and the San Pietro bell tower",
+  "creator": "@moiranazzari",
+  "creator_url": "https://unsplash.com/@moiranazzari",
+  "source_url": "https://unsplash.com/photos/zoJgZydvpRA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/malmo.webp",
+  "slot": "guide-malmo",
+  "title": "Turning Torso across the water, Malmö",
+  "creator": "@nikolaikolosov",
+  "creator_url": "https://unsplash.com/@nikolaikolosov",
+  "source_url": "https://unsplash.com/photos/tbc0cgx76eg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/billund.webp",
+  "slot": "guide-billund",
+  "title": "Dunes on the west coast of Jutland",
+  "creator": "@chrigu",
+  "creator_url": "https://unsplash.com/@chrigu",
+  "source_url": "https://unsplash.com/photos/pGto0t7Uu2g",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

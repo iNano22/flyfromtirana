@@ -1,0 +1,100 @@
+city: Malmö
+slug: malmo
+tagline: La Turning Torso, una spiaggia in città e Copenaghen a due passi
+intro: >-
+  Malmö è la terza città della Svezia, collegata alla Danimarca dal Ponte di Øresund: una città
+  piatta e verde, con piazze antiche, parchi e una spiaggia dove gli abitanti nuotano anche
+  d'inverno. Copenaghen è a circa 35 minuti di treno, quindi con un solo volo si vedono due paesi.
+  Due o tre giorni bastano per Malmö, con un giorno in più per Copenaghen o Lund.
+sights:
+  - name: Turning Torso
+    text: >-
+      Il grattacielo di 190 metri che ruota di 90 gradi dalla base alla cima, progettato da Santiago
+      Calatrava e completato nel 2005. È un edificio residenziale e non si visita all'interno, ma si
+      vede da tutta la città.
+  - name: Castello di Malmöhus
+    text: >-
+      Costruito negli anni 1530-1540 dal re danese Cristiano III, quando questa regione faceva parte
+      della Danimarca. Oggi ospita i musei della città e un acquario; il biglietto costa circa 140
+      SEK (circa €13).
+  - name: Lilla Torg e Stortorget
+    text: >-
+      Lilla Torg è la piccola piazza acciottolata con case a graticcio, nata intorno al 1590. Accanto
+      c'è Stortorget, con il municipio del 1546.
+  - name: Spiaggia di Ribersborg e Kallbadhus
+    text: >-
+      La lunga spiaggia di sabbia, a 15 minuti a piedi dal centro. In fondo a un pontile di legno c'è
+      il Ribersborgs Kallbadhus, lo stabilimento di bagni freddi del 1898, con saune e tuffi in mare
+      tutto l'anno. L'ingresso costa circa 100 SEK (circa €9).
+  - name: Västra Hamnen
+    text: >-
+      L'ex cantiere navale, oggi un quartiere moderno intorno alla Turning Torso. Il lungomare ha
+      pedane di legno dove gli abitanti fanno il bagno, con vista sul Ponte di Øresund al tramonto.
+itinerary:
+  - "Stortorget, Lilla Torg e i vicoli della città vecchia, poi Malmöhus e i parchi Slottsparken e Kungsparken. La sera, cena in Lilla Torg."
+  - "Västra Hamnen e la Turning Torso, poi una passeggiata lungo la spiaggia di Ribersborg fino al Kallbadhus, per la sauna e un tuffo in mare. La sera falafel e bar a Möllevången."
+  - "Una giornata a Copenaghen con il treno sul Ponte di Øresund: Nyhavn, Tivoli e Christiania, con rientro la sera. In alternativa, mezza giornata a Lund."
+areas:
+  - name: Gamla Staden
+    text: >-
+      La città vecchia, intorno a Stortorget e Malmö C: tutto a piedi, vicino all'autobus
+      dell'aeroporto e al treno per Copenaghen, ma con i prezzi più alti.
+  - name: Davidshall e Triangeln
+    text: Strade tranquille con caffè, a 10 minuti a piedi dal centro, con la stazione ferroviaria di Triangeln.
+  - name: Möllevången
+    text: Il quartiere multiculturale, con il mercato in piazza, il cibo più economico e la vita notturna.
+  - name: Västra Hamnen
+    text: Moderno e tranquillo, sul mare, a circa 20 minuti a piedi da Malmö C.
+food:
+  - name: Falafel
+    text: >-
+      Malmö è detta la capitale svedese del falafel. Una pita costa circa 50-70 SEK (circa €5-6), il
+      pasto più economico della città.
+  - name: Fika
+    text: La pausa caffè svedese con un kanelbulle, la girella alla cannella, circa 60-70 SEK in tutto.
+  - name: Äggakaka
+    text: Una spessa frittella di uova della regione della Scania, con pancetta fritta e marmellata di mirtilli rossi.
+  - name: Spettekaka
+    text: Un dolce alto a forma di torre, fatto di uova e zucchero, cotto allo spiedo.
+airports:
+  MMX: >-
+    L'aeroporto di Malmö (Sturup) è a circa 30 km a est della città e non ha il treno. Gli autobus
+    Flygbussarna aspettano gli arrivi e raggiungono Malmö Central (Malmö C) in circa 40 minuti; il
+    biglietto costa circa 130-150 SEK (circa €12-14), meno nell'app. Il taxi ha una tariffa fissa
+    di circa 550-650 SEK (circa €50-60) e impiega circa 30 minuti.
+transport: >-
+  Il centro si gira a piedi e la città, piatta, è fatta per la bici. Autobus e treni locali
+  funzionano con i biglietti Skånetrafiken, che si comprano nell'app o con la carta, non in
+  contanti. Il biglietto singolo in città costa circa 30 SEK (circa €2,70), quello da 24 ore circa
+  80 SEK (circa €7). Il treno per Copenaghen parte da Malmö C ogni 20 minuti.
+daytrips:
+  - name: Copenaghen
+    text: >-
+      Circa 35 minuti di treno sul Ponte di Øresund fino a København H, con un biglietto di circa 120
+      SEK (circa €11) a tratta.
+  - name: Lund
+    text: >-
+      La città universitaria, a circa 15 minuti di treno, con la cattedrale romanica del 1145 e il
+      suo orologio astronomico.
+  - name: Ystad e Ales Stenar
+    text: >-
+      Ystad, cittadina di case a graticcio e ambientazione della serie Wallander, è a circa 50 minuti
+      di treno. Circa 20 km più a est, su una scogliera sul mare, ci sono le Ales Stenar: 59 pietre
+      erette a forma di nave, a circa 30 minuti di autobus da Ystad.
+budget: >-
+  Un caffè con un kanelbulle costa circa 60-70 SEK (circa €6), una birra al bar 75-90 SEK (circa
+  €7-8), il pranzo del giorno 125-150 SEK (circa €11-14), una cena 200-300 SEK (circa €18-27). €1
+  vale circa 11 SEK.
+when: >-
+  Maggio-settembre, quando le giornate sono lunghe e la spiaggia si riempie. Ad agosto si tiene il
+  Malmöfestivalen, il festival gratuito della città. L'inverno è buio e ventoso, ma le saune del
+  Kallbadhus sono aperte tutto l'anno.
+tips:
+  - "La Svezia è quasi senza contanti: molti locali non li accettano. Basta la carta bancaria, non serve cambiare in corone."
+  - "Nei giorni feriali molti ristoranti offrono il dagens lunch, circa 11:00-14:00: piatto principale, insalata, pane e caffè per circa 125-150 SEK."
+  - "Gli alcolici sopra il 3,5% si vendono solo nei negozi statali Systembolaget, chiusi la domenica."
+faq:
+  - q: "Posso volare a Malmö e visitare Copenaghen?"
+    a: "Sì. Il treno da Malmö C al centro di Copenaghen impiega circa 35 minuti e costa circa 120 SEK (circa €11). Entrambi i paesi sono nell'area Schengen, ma ogni tanto ci sono controlli alla frontiera, quindi tieni il passaporto con te."
+  - q: "Quanto si spende al giorno a Malmö?"
+    a: "Volo e alloggio esclusi, €60-90 al giorno. Il pranzo del giorno, il falafel e la spiaggia gratuita rendono la giornata più economica di quanto ci si aspetti in Svezia."

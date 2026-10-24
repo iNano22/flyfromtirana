@@ -1,0 +1,79 @@
+city: Basel
+name: Basilea
+slug: basel
+tagline: Il Reno, i musei e tre paesi in un giorno
+intro: >-
+  Basilea si trova sulle due rive del Reno, dove si incontrano Svizzera, Francia e Germania. È una
+  città d'arte, con circa 40 musei, e una città vecchia che si gira facilmente a piedi. È cara, ma
+  chi dorme in un hotel qui riceve gratis la BaselCard, con i trasporti pubblici gratuiti.
+sights:
+  - name: Altstadt e Münster
+    text: La città vecchia sopra il Reno, con il municipio rosso (Rathaus) sulla Marktplatz e la cattedrale di pietra rosa. Dalla terrazza Pfalz vedi il fiume; la salita sulle torri costa circa 6 franchi.
+  - name: Il Reno e i traghetti
+    text: Quattro traghetti di legno senza motore, spinti solo dalla corrente, attraversano il fiume per circa 2 franchi. La sera la gente del posto si siede sui gradini della riva di Kleinbasel.
+  - name: Kunstmuseum Basel
+    text: La più antica collezione d'arte pubblica al mondo, da Holbein a Picasso. L'ingresso costa circa 16-26 franchi; la collezione di solito è gratuita la prima domenica del mese.
+  - name: Fondation Beyeler
+    text: Il museo di Renzo Piano a Riehen, in mezzo a un parco, con Monet, Giacometti e grandi mostre. Circa 20 minuti con il tram 6; l'ingresso costa circa 30 franchi.
+  - name: Vitra a Weil am Rhein
+    text: Il campus del design con edifici di Frank Gehry, Zaha Hadid e Tadao Ando, appena oltre il confine tedesco, a circa 20 minuti con l'autobus 55 da Claraplatz. La passeggiata nel campus è gratuita, il museo costa circa €20.
+  - name: Museum Tinguely
+    text: Le macchine in movimento dello scultore Jean Tinguely, sul Reno. Vicino al teatro, la sua fontana con sculture che si muovono nell'acqua si vede gratis.
+airports:
+  BSL: >-
+    L'EuroAirport Basel-Mulhouse-Freiburg si trova in territorio francese, a circa 8 km dal centro.
+    Dopo il ritiro bagagli segui le indicazioni per l'uscita svizzera (Basel), non per quella
+    francese. L'autobus 50 parte ogni 7-15 minuti e ti porta alla stazione Basel SBB in circa 20
+    minuti; il biglietto costa circa 5 franchi (circa €5,30) e si compra al distributore prima
+    dell'uscita. Il taxi impiega circa 15-20 minuti e costa circa 40-50 franchi (circa €43-54).
+budget: >-
+  Un caffè costa circa 4,50-5,50 franchi, un kebab 10-15 franchi, un piatto al ristorante 25-40
+  franchi. Un letto in ostello costa circa 45-60 franchi, una camera doppia in un hotel semplice da
+  circa 140-200 franchi a notte. 1 franco vale circa €1,07. I supermercati di Weil am Rhein, in
+  Germania, sono molto più economici e si raggiungono con il tram 8.
+when: >-
+  Da giugno a settembre è il periodo migliore: a luglio e agosto l'acqua del Reno arriva a circa
+  20-24 gradi e la gente del posto nuota nel fiume, portata dalla corrente, con i vestiti in una
+  sacca impermeabile (Wickelfisch). La Fasnacht, il carnevale della città, inizia il lunedì dopo il
+  Mercoledì delle Ceneri alle 4:00 del mattino e dura 3 giorni con maschere, tamburi e pifferi; nel
+  2027 cade il 15-17 febbraio.
+tips:
+  - "La Svizzera usa il franco (CHF), non l'euro: paga con la carta. A Weil am Rhein e in Francia paghi in euro."
+  - "Evita la settimana di Art Basel a giugno: i prezzi degli hotel si moltiplicano."
+  - "Per nuotare nel Reno entra dalla riva di Kleinbasel, stai lontano dalle barche ed esci prima del ponte Dreirosenbrücke."
+itinerary:
+  - "La Marktplatz, la città vecchia, il Münster con la terrazza Pfalz e le torri. Nel pomeriggio una traversata in traghetto, la Mittlere Brücke e una passeggiata lungo il Reno; la sera cena a Kleinbasel."
+  - "Il Kunstmuseum al mattino. Nel pomeriggio il tram 6 per la Fondation Beyeler, la sera la fontana di Tinguely e un drink sul fiume."
+  - "Vitra a Weil am Rhein al mattino, poi la spesa nei supermercati tedeschi. In alternativa, una gita a Colmar, Friburgo o Lucerna."
+areas:
+  - name: Grossbasel e Altstadt
+    text: La città vecchia sulla riva sinistra, tranquilla, bella e cara, vicino ai musei.
+  - name: Kleinbasel
+    text: La riva destra, più vivace e un po' più economica, con bar e ristoranti da tutto il mondo.
+  - name: Vicino alla stazione Basel SBB
+    text: "La zona più pratica: qui arriva l'autobus 50 e partono i treni per le gite. Gli hotel sono più semplici e più economici."
+food:
+  - name: Basler Läckerli
+    text: Biscotti duri con miele, mandorle e spezie, il dolce della città. Una scatola piccola costa circa 8-10 franchi.
+  - name: Mehlsuppe e Zwiebelwähe
+    text: Zuppa di farina tostata e torta salata di cipolle, che si mangiano soprattutto durante la Fasnacht.
+  - name: Supermercati e picnic sul Reno
+    text: "Migros e Coop hanno piatti pronti da 8-12 franchi: prendine uno e mangialo sui gradini di Kleinbasel, come la gente del posto."
+transport: >-
+  Il centro si gira a piedi, e i tram verdi ti portano ovunque, anche in Germania (tram 8) e in
+  Francia (tram 3). Un biglietto costa circa 4,70 franchi (circa €5), il giornaliero circa 10
+  franchi (circa €11). Se dormi in un hotel, ostello o campeggio a Basilea, ricevi gratis la
+  BaselCard: trasporti pubblici gratuiti per tutto il soggiorno, compreso l'autobus 50 per
+  l'aeroporto, e sconti fino al 50% in molti musei. Chiedila alla reception se non te la danno.
+daytrips:
+  - name: Colmar
+    text: La cittadina francese dell'Alsazia con case a graticcio e canali, a circa 45 minuti di treno diretto.
+  - name: Friburgo
+    text: Città universitaria tedesca alle porte della Foresta Nera, con una cattedrale gotica, a circa 45 minuti di treno.
+  - name: Lucerna
+    text: Il ponte di legno della Cappella e il lago tra le montagne, a circa 1 ora di treno diretto.
+faq:
+  - q: "L'aeroporto è in Francia: devo entrare in Francia?"
+    a: "No. L'aeroporto ha due uscite, una francese e una svizzera. Segui le indicazioni per Basel ed esci dal lato svizzero, dove ti aspetta l'autobus 50 per la città."
+  - q: "Quanto si spende al giorno a Basilea?"
+    a: "Volo e alloggio esclusi, circa 70-110 franchi (circa €75-118) al giorno. Risparmi con la BaselCard, il cibo dei supermercati e le cose gratuite: il Reno, la città vecchia e il campus Vitra."

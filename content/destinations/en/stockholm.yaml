@@ -1,0 +1,102 @@
+city: Stockholm
+slug: stockholm
+tagline: The islands, Gamla Stan and cinnamon fika
+intro: >-
+  Stockholm is built on 14 islands, where Lake Mälaren meets the Baltic Sea: medieval lanes,
+  palaces by the water and parks in the middle of the city. The centre is easy to get around on
+  foot and by ferry, while the metro is an art gallery in itself. It is among the most expensive
+  cities in Europe: three days are enough, with one more day for the archipelago.
+sights:
+  - name: Gamla Stan
+    text: >-
+      The old town, with narrow lanes, colourful houses and the Stortorget square. Here you find the
+      Royal Palace, where the guard changes around midday, and the Nobel Prize Museum.
+  - name: Vasa Museum
+    text: >-
+      The warship Vasa sank in 1628 on its maiden voyage and was raised from the sea in 1961, almost
+      intact. Tickets cost about 200-230 SEK (about €18-21).
+  - name: Skansen
+    text: >-
+      The first open-air museum in the world, from 1891: farmhouses from all over Sweden and Nordic
+      animals such as bears and reindeer. Tickets about 200-300 SEK, depending on the season.
+  - name: Djurgården
+    text: >-
+      The green island of museums, with the Vasa, Skansen, ABBA The Museum and the Gröna Lund
+      amusement park. The waterside paths are free; take the ferry from Slussen.
+  - name: Stadshuset
+    text: >-
+      The brick City Hall by the water, from 1923, where the Nobel Prize banquet is held. It is
+      visited on guided tours (about 150-170 SEK); the 106-metre tower has the best view over Gamla
+      Stan.
+  - name: Metro art
+    text: >-
+      More than 90 metro stations have paintings, sculptures or painted caves cut into the rock, all
+      on an ordinary ticket. The finest: T-Centralen, Kungsträdgården, Stadion and Solna Centrum.
+itinerary:
+  - "Gamla Stan, Stortorget and the changing of the guard at the Royal Palace. In the afternoon Stadshuset, in the evening Södermalm and the view from Monteliusvägen."
+  - "Djurgården: the Vasa Museum as soon as it opens, then Skansen or ABBA The Museum. Back by ferry to Slussen."
+  - "The art stations of the metro, the Östermalms saluhall food hall and Moderna Museet, with a free collection. Or a day in the archipelago."
+areas:
+  - name: Norrmalm
+    text: Around Stockholm Central, the most practical area for the airport train and bus, with plenty of hotels and hostels.
+  - name: Gamla Stan
+    text: In the middle of everything and very pretty, but with small rooms and high prices.
+  - name: Södermalm
+    text: The liveliest district, with cafés, bars and vintage shops, a little cheaper than the centre.
+  - name: Östermalm
+    text: The elegant district of boulevards, quiet but among the most expensive.
+food:
+  - name: Fika
+    text: >-
+      The Swedish break for coffee and something sweet, above all a kanelbulle, a cinnamon bun.
+      Coffee and a bun about 60-80 SEK (about €5-7).
+  - name: Köttbullar
+    text: >-
+      Swedish meatballs with mashed potatoes, cream sauce and lingonberry jam, about 180-250 SEK in
+      a restaurant.
+  - name: Dagens lunch
+    text: >-
+      The weekday lunch of the day, around 11:00-14:00: a hot dish with salad, bread and coffee for
+      about 120-150 SEK (about €11-14). The cheapest way to eat well.
+  - name: Räksmörgås
+    text: An open sandwich with prawns, egg and mayonnaise, the classic of the seafood kitchen.
+airports:
+  ARN: >-
+    Arlanda is about 40 km north of the city. The Arlanda Express reaches Stockholm Central in about
+    20 minutes, for about 320-340 SEK (about €30); it is cheaper for two or more people together.
+    The SL commuter train (pendeltåg) takes about 40 minutes to Stockholm City, for about 200 SEK
+    (about €18) including the airport fee. Flygbussarna buses go to Cityterminalen in about 45
+    minutes, for about 130 SEK (about €12). Taxis have fixed fares of about 600-750 SEK (about
+    €55-70).
+transport: >-
+  The metro, commuter trains, trams, buses and the Djurgården ferries all run on the SL ticket. A
+  single ticket costs about 43 SEK (about €4) and is valid for 75 minutes; the 72-hour one about
+  350 SEK (about €32). Just tap a contactless bank card or your phone at the gates.
+daytrips:
+  - name: The archipelago and Vaxholm
+    text: >-
+      Thousands of islands east of the city. Vaxholm, with its fortress and wooden houses, is about 1
+      hour by boat from Strömkajen.
+  - name: Uppsala
+    text: The university city, with the largest cathedral in Scandinavia, about 40 minutes by train.
+  - name: Drottningholm
+    text: >-
+      The palace where the royal family lives, on the UNESCO list, about 1 hour by boat in summer or
+      30-40 minutes by metro and bus.
+budget: >-
+  A coffee costs about 40 SEK (about €3.5), a beer 80-100 SEK (about €7-9), a restaurant main
+  course 200-300 SEK (about €18-27). Without the flight and accommodation, allow €70-100 a day.
+when: >-
+  June-August, when the days are very long and the city lives by the water. May and September are
+  quieter. In December there are only about 6 hours of daylight, but there are Christmas markets.
+tips:
+  - "Sweden is almost cashless: many places accept only cards or phones. There is no need to change money into kronor."
+  - "Alcohol over 3.5% is sold only in the state-run Systembolaget shops, which are closed on Sundays."
+  - "Tap water is excellent: fill up your bottle instead of buying water, which costs about 25-30 SEK."
+faq:
+  - q: "Arlanda Express or the SL train: which should I take?"
+    a: "The Arlanda Express is the fastest, about 20 minutes, but costs about 320-340 SEK. The SL train takes about 40 minutes and costs about 200 SEK. If there are two or more of you, check the Arlanda Express group price."
+  - q: "Do I need cash?"
+    a: "Practically not. Bank cards and phones are accepted everywhere, including on public transport. Many places display «kontantfritt», which means they do not take cash."
+  - q: "How much money do I need per day in Stockholm?"
+    a: "Without the flight and accommodation, €70-100 a day. The lunch of the day (dagens lunch), museums with free collections and the 72-hour SL ticket keep spending down."

@@ -1,0 +1,78 @@
+city: Rimini
+slug: rimini
+tagline: A Roman bridge, the beach and piadina
+intro: >-
+  Rimini is known as the beach town of the Adriatic, but beyond the railway lies a Roman and
+  Renaissance centre that many tourists skip. It is also the city of Federico Fellini. Three or
+  four days are enough for the centre, the sea, San Marino and Ravenna.
+sights:
+  - name: Arco d'Augusto
+    text: The arch raised in 27 BC in honour of the emperor Augustus, among the oldest surviving Roman arches. It marked the end of the Via Flaminia, the road that came from Rome.
+  - name: Ponte di Tiberio
+    text: The stone bridge over the Marecchia river channel, begun under Augustus and finished under Tiberius in the year 21. It is still in use every day.
+  - name: Tempio Malatestiano
+    text: The city's cathedral, rebuilt in the 15th century for the ruler Sigismondo Malatesta, with an unfinished facade by Leon Battista Alberti. Inside is a crucifix by Giotto. Entry is usually free.
+  - name: Borgo San Giuliano
+    text: The old fishermen's quarter across the Tiberius Bridge, with small colourful houses and murals dedicated to Fellini's films.
+  - name: Castel Sismondo and Museo Fellini
+    text: The Malatesta castle in the centre, now part of the Fellini Museum together with the old Fulgor cinema. A ticket costs about €10-12.
+  - name: The beach
+    text: About 15 km of fine sand and shallow sea, divided into numbered private beaches (bagni), but there are also free stretches (spiaggia libera).
+itinerary:
+  - "Arco d'Augusto and Corso d'Augusto to Piazza Cavour. The Tempio Malatestiano, then Castel Sismondo and the Fellini Museum. At sunset the Tiberius Bridge and dinner in Borgo San Giuliano."
+  - "The morning on the beach. In the afternoon cycle along the seafront, from Parco Fellini and the Grand Hotel heading south; in the evening an aperitivo in Marina Centro."
+  - "A day trip to San Marino by bus: the towers on the rock and the view all the way to the sea. Back in Rimini, an evening in Piazza Cavour."
+  - "Ravenna by train for the Byzantine mosaics, or by rental car to San Leo and Santarcangelo di Romagna."
+areas:
+  - name: Centro Storico
+    text: B&Bs and apartments among the monuments, with the best restaurants. The beach is about 20 minutes on foot or 5 minutes by bike.
+  - name: Marina Centro
+    text: The seafront hotel district, between the station and the beach, the liveliest in summer.
+  - name: Bellariva, Rivazzurra and Miramare
+    text: Cheaper family hotels in the south, near the airport and linked to the station by the Metromare.
+food:
+  - name: Piadina romagnola
+    text: A thin flatbread cooked on a griddle, usually filled with prosciutto, soft squacquerone cheese and rocket. At the kiosks (piadinerie) it costs about €5-8.
+  - name: Cassoni
+    text: A piadina folded into a half-moon, filled with greens, potatoes or tomato and mozzarella.
+  - name: Passatelli
+    text: Thick strands of breadcrumbs, Parmigiano and egg, served in broth or with seafood.
+  - name: Grigliata di pesce
+    text: Small Adriatic fish on the grill, with sardines, prawns and squid.
+airports:
+  RMI: >-
+    Federico Fellini airport is in Miramare, about 8 km south of the centre. Bus 9 takes you to the
+    train station and the centre in about 20-30 minutes; a ticket costs about €1.50, more if you
+    buy it from the driver. A few minutes' walk away runs the Metromare, the trolleybus linking
+    Riccione with Rimini station. A taxi to the centre costs about €20-25.
+transport: >-
+  Rimini is flat and a bike is the best way around, with rental at about €10 a day. The historic
+  centre and the beach are separated by the railway, about 20 minutes apart on foot. The Metromare
+  and bus 11 run south along the coast to Riccione; buy tickets at a tobacconist (tabacchi) or in
+  the app. From the station trains leave for Ravenna, Bologna and Pesaro.
+daytrips:
+  - name: San Marino
+    text: The tiny republic on Mount Titano, about 50 minutes by direct bus from Rimini station (about €5-6 one way). It uses the euro.
+  - name: San Leo
+    text: A medieval village with a fortress on a rock, where the adventurer Cagliostro died a prisoner in 1795. About 40 minutes by car; by bus you have to change lines.
+  - name: Ravenna
+    text: The Byzantine mosaics of the 5th-6th centuries in San Vitale, the Mausoleum of Galla Placidia and Sant'Apollinare Nuovo, on the UNESCO list. About 1 hour by regional train (about €5); Dante's tomb is here too.
+budget: >-
+  A piadina costs about €5-8, an espresso about €1.30, a plate of passatelli about €12-15 and an
+  umbrella with two sunbeds about €20-30 a day in summer. The city tax, about €1-3 per person per
+  night, is paid at the hotel.
+when: >-
+  June and September: the sea is warm and prices are lower than in July-August. August, especially
+  around Ferragosto (15 August), is packed and hotels cost much more. In winter many seafront
+  hotels close, but the centre stays lively and calm.
+tips:
+  - "Many private beaches offer the umbrella for half a day at a lower price: ask for «mezza giornata» after 14:00."
+  - "Fellini was born and is buried in Rimini: his grave is in the city's monumental cemetery."
+  - "With a rental car, do not drive into the historic centre: it is a ZTL zone and the fines arrive by post."
+faq:
+  - q: "Is Rimini worth it outside the beach season?"
+    a: "Yes, for two or three days: the Roman centre, the Fellini Museum, San Marino and Ravenna can be visited all year and hotels cost much less. But many seafront venues close from November to March."
+  - q: "How do you get to San Marino from Rimini?"
+    a: "By the direct bus that leaves from the train station, about 50 minutes and about €5-6 one way. There is no border control."
+  - q: "How much money do you need per day in Rimini?"
+    a: "Leaving out the flight and accommodation, €40-60 a day, more in August if you rent a beach umbrella."

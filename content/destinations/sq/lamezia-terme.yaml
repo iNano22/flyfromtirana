@@ -1,0 +1,81 @@
+city: Lamezia Terme
+slug: lamezia-terme
+tagline: Tropea, Costa degli Dei dhe fshatrat arbëreshe
+intro: >-
+  Lamezia Terme është mbi të gjitha aeroporti i Calabria-s: për rreth një orë je në Tropea, në
+  Pizzo ose në plazhet e Costa degli Dei. Më në brendësi janë pyjet e Sila-s dhe fshatrat
+  arbëreshe, ku prej rreth pesë shekujsh flitet ende një shqipe e vjetër. Vetë qyteti, i krijuar
+  në 1968 nga bashkimi i Nicastro-s, Sambiase-s dhe Sant'Eufemia-s, shihet shpejt. Katër-pesë
+  ditë, mundësisht me makinë, mjaftojnë për bregun dhe një udhëtim në brendësi.
+sights:
+  - name: Qyteti i vjetër i Tropea-s
+    text: Rrugica dhe ballkone mbi një shkëmb, me plazhe me rërë të bardhë poshtë tij.
+  - name: Santa Maria dell'Isola
+    text: Kisha mbi shkëmbin përballë qytetit, simboli i Tropea-s, më e bukur në perëndim të diellit.
+  - name: Capo Vaticano
+    text: Kepi në jug të Tropea-s, me belveder mbi gjiret e Costa degli Dei dhe, në ditë të kthjellëta, pamje deri te vullkani Stromboli.
+  - name: Castello Murat
+    text: Kështjella aragoneze e shekullit XV mbi portin e Pizzo-s, ku në 1815 u pushkatua Joachim Murat, ish-mbreti i Napolit.
+  - name: Chiesa di Piedigrotta
+    text: Kishë e vogël e gdhendur në shkëmb buzë plazhit, rreth 1 km në veri të Pizzo-s, me statuja shenjtorësh prej guri.
+  - name: Nicastro
+    text: Pjesa e vjetër e Lamezia Terme-s, me rrënojat e kështjellës normane mbi qytet. Pranë, në Sambiase, janë banjat termale Terme Caronte.
+itinerary:
+  - "Nga aeroporti në Pizzo, rreth 30 minuta me makinë: Castello Murat, një tartufo në Piazza della Repubblica dhe kisha e Piedigrotta-s. Në mbrëmje në Tropea."
+  - "Tropea: qyteti i vjetër, Katedralja dhe Santa Maria dell'Isola në mëngjes, pastaj plazh poshtë shkëmbit. Perëndimin e diellit shihe nga belvederi."
+  - "Costa degli Dei: me varkë nga porti i Tropea-s ose me makinë deri në Capo Vaticano dhe plazhin e Grotticelle."
+  - "Drejt veriut: Sila ose fshatrat arbëreshe, rreth 1.5-2 orë me makinë. Fli në Cosenza, rreth 1 orë nga aeroporti."
+areas:
+  - name: Tropea
+    text: Baza më e njohur, me bujtina e plazhe në këmbë. Për gushtin rezervo herët.
+  - name: Pizzo
+    text: Më e vogël dhe më e lirë se Tropea, rreth 30 minuta nga aeroporti. E mirë për natën e parë ose të fundit.
+  - name: Lamezia Terme
+    text: Hotele më të lira pranë aeroportit, për një fluturim herët në mëngjes.
+food:
+  - name: "'Nduja"
+    text: Sallam derri i butë dhe shumë pikant nga Spilinga, që lyhet mbi bukë ose futet në makarona dhe pica.
+  - name: Cipolla rossa di Tropea
+    text: Qepa e kuqe e ëmbël e Tropea-s, që hahet e gjallë në sallatë, si marmelatë dhe madje si akullore.
+  - name: Tartufo di Pizzo
+    text: Akullore me lajthi dhe çokollatë, me zemër çokollate të lëngshme dhe kakao sipër, e shpikur në Pizzo në vitet 1950.
+  - name: Fileja
+    text: Makarona të dredhura me dorë, tipike për zonën e Vibo Valentia-s, me salcë 'nduja ose mishi.
+airports:
+  SUF: >-
+    Aeroporti kryesor i Calabria-s është rreth 3 km nga stacioni Lamezia Terme Centrale. Autobusi
+    shuttle të çon te stacioni për rreth 10 minuta (rreth €1.50-2); nga aty trenat rajonalë shkojnë
+    në Pizzo (rreth 20-30 minuta), Tropea (rreth 1 orë, rreth €5) dhe Cosenza (rreth 1-1.5 orë,
+    shpesh me ndërrim në Paola). Ka edhe autobusë rajonalë për Catanzaro, Cosenza dhe, në verë,
+    Tropea. Makinat me qira merren në aeroport, ndërsa taksia kushton rreth
+    €50-70 deri në Pizzo dhe rreth €100-150 deri në Tropea.
+transport: >-
+  Makina me qira ndihmon shumë: Capo Vaticano, Sila dhe fshatrat arbëreshe janë larg trenave. Pa
+  makinë, treni rajonal përgjatë bregut lidh Lamezia-n me Pizzo dhe Tropea, por kalon rrallë,
+  rreth një herë në 1-2 orë; në verë ka edhe varka përgjatë Costa degli Dei. Qendrat e Tropea-s
+  dhe Pizzo-s janë zona ZTL: lëre makinën në një parkim jashtë tyre (rreth €1-2 në orë).
+daytrips:
+  - name: Sila
+    text: Rrafshnalta malore me pyje pishe, liqenin Arvo dhe pishat shekullore «Giganti della Sila» pranë Camigliatello Silano, rreth 1.5 orë me makinë.
+  - name: Fshatrat arbëreshe
+    text: Në provincën e Cosenza-s, rreth 1.5-2 orë me makinë. Lungro (Ungra) ka katedralen e ritit bizantin, San Demetrio Corone (Shën Mitri) kolegjin ku studioi Jeronim De Rada, ndërsa Civita (Çifti) rri mbi grykën e Raganello-s.
+  - name: Cosenza
+    text: Qyteti i vjetër mbi kodër dhe muzeu në ajër të hapur MAB në Corso Mazzini, rreth 1 orë me tren.
+budget: >-
+  Një tartufo në Pizzo kushton rreth €4-5, një panino me 'nduja rreth €5, një pica €7-10 dhe një
+  espresso rreth €1-1.20. Makina me qira kushton rreth €30-50 në ditë në verë, më pak jashtë
+  sezonit. Një dhomë dyshe në Tropea kushton rreth €60-90 nata në qershor e shtator dhe shpesh
+  mbi €120 në gusht.
+when: >-
+  Qershori dhe shtatori janë më të mirët: deti është i ngrohtë dhe pa turmat e gushtit, kur çmimet
+  arrijnë kulmin rreth 15 gushtit (Ferragosto). Nga nëntori deri në mars shumë hotele buzë detit
+  mbyllen. Sila është e bukur në vjeshtë dhe me borë në dimër.
+tips:
+  - "Në fshatrat arbëreshe fol shqip: shumë banorë, sidomos të moshuarit, të kuptojnë. Në Civita dhe Frascineto, zakonisht të martën pas Pashkëve, mbahen vallet me kostume tradicionale."
+  - "Për plazhet poshtë Tropea-s zbret shkallë të gjata. Plazhet e lira (spiaggia libera) janë falas, por në gusht mbushen herët."
+  - "Pyet përpara nëse pranohet patenta shqiptare apo duhet edhe patentë ndërkombëtare; për depozitën e makinës zakonisht duhet kartë krediti."
+faq:
+  - q: "A mund ta vizitoj Calabria-n pa makinë?"
+    a: "Po, nëse qëndron në breg: shuttle-i dhe treni të çojnë në Tropea për rreth 1.5 orë gjithsej. Për Sila-n dhe fshatrat arbëreshe makina të kursen shumë kohë."
+  - q: "Sa para duhen në ditë në Calabria?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë, plus makinën. Calabria është ndër rajonet më të lira të Italisë, përveç gushtit."

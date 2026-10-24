@@ -1,0 +1,95 @@
+city: Dortmund
+slug: dortmund
+tagline: Futboll, birrë dhe zemra e Ruhrit
+intro: >-
+  Dortmund është qyteti më i madh i zonës së Ruhrit, dikur qendër minierash, çeliku dhe birrarish.
+  Sot njihet mbi të gjitha për Borussia Dortmundin dhe stadiumin e tij, por ka edhe muze të mirë,
+  liqen në vend të ish-fabrikës së çelikut dhe parqe të mëdha. Shumë shqiptarë kanë familje në
+  Ruhr: nga Dortmund, me tren arrin shpejt në Bochum, Essen dhe Duisburg, ndërsa Cologne dhe
+  Düsseldorf janë rreth një orë larg. Dy-tri ditë mjaftojnë për qytetin.
+sights:
+  - name: Signal Iduna Park
+    text: >-
+      Stadiumi i Borussia Dortmundit, më i madhi në Gjermani, me mbi 80.000 vende dhe tribunën e
+      famshme jugore, «Muri i Verdhë». Jashtë ditëve të ndeshjeve vizitohet me turne (rreth €20-25).
+  - name: Muzeu Gjerman i Futbollit
+    text: >-
+      Përballë stacionit qendror, historia e futbollit gjerman me kujtime nga Kupat e Botës dhe lojëra
+      interaktive. Bileta rreth €20.
+  - name: Dortmunder U
+    text: >-
+      Ish-birraria Union me një «U» të madhe të ndriçuar në çati, sot qendër arti me Museum Ostwall.
+      Në mbrëmje ekranet në kullë shfaqin imazhe lëvizëse. 5 minuta në këmbë nga stacioni.
+  - name: Phoenix-See
+    text: >-
+      Liqen artificial në vendin e një ish-fabrike çeliku në lagjen Hörde, me shëtitore rreth 3 km,
+      kafene dhe varka me vela. Me U41 rreth 15 minuta nga qendra.
+  - name: Westfalenpark
+    text: >-
+      Park i madh me lule, trëndafilishte dhe kullën televizive Florianturm, nga ku shihet gjithë
+      qyteti. Hyrja rreth €4, ngjitja në kullë paguhet veçmas.
+  - name: Zeche Zollern
+    text: >-
+      Minierë e vjetër me ndërtesa me tulla dhe një sallë makinerish Art Nouveau, sot muze i
+      industrisë. Hyrja e lirë, rreth €5.
+airports:
+  DTM: >-
+    Aeroporti i Dortmundit është rreth 10 km në lindje të qendrës. Autobusi AirportExpress të çon
+    direkt në Dortmund Hauptbahnhof për rreth 25 minuta, me biletë rreth €9-10. Më lirë: shuttle-i
+    deri në stacionin Holzwickede (rreth 5 minuta) dhe treni rajonal deri në Hauptbahnhof (rreth 15-20
+    minuta); treni mbulohet edhe nga Deutschlandticket. Taksia kushton rreth €30-40 dhe bën rreth 20
+    minuta.
+budget: >-
+  Një birrë 0.5 litra kushton rreth €4-5, një currywurst me patate të skuqura €6-8, një pjatë në
+  birrari €14-18 dhe një biletë e vetme në qytet rreth €3.50. Një shtrat në hostel kushton nga rreth
+  €25-40. Ditët e ndeshjeve të BVB-së dhe të panaireve hotelet shtrenjtohen.
+when: >-
+  Maji-shtatori për parqet dhe Phoenix-See. Sezoni i futbollit zgjat nga gushti deri në maj. Tregu
+  i Krishtlindjeve, nga fundi i nëntorit deri në fund të dhjetorit, ka një pemë Krishtlindjesh rreth
+  45 metra të lartë.
+tips:
+  - "Biletat për ndeshjet e BVB-së mbarojnë pothuajse gjithmonë: bliji vetëm në faqen zyrtare ose në tregun e saj zyrtar të rishitjes, kurrë nga shitës në rrugë."
+  - "Deutschlandticket është abonim mujor: anuloje në aplikacion para datës 10 të muajit, që të mos rinovohet automatikisht."
+  - "Nëse ke familje në Essen, Bochum ose Duisburg, Dortmund është bazë e mirë: trenat rajonalë nisen disa herë në orë dhe hotelet këtu shpesh janë më të lira."
+itinerary:
+  - "Muzeu Gjerman i Futbollit në mëngjes, pastaj Dortmunder U dhe rruga e dyqaneve Westenhellweg deri te Alter Markt dhe kisha Reinoldikirche. Në mbrëmje një birrë në Kreuzviertel."
+  - "Turi i Signal Iduna Park në mëngjes, pastaj Westfalenpark dhe kulla Florianturm. Pasdite shëtitje rreth Phoenix-See dhe darkë në Hörde."
+  - "Udhëtim ditor në Essen për Zollverein, në Münster ose në Cologne. Ndryshe, një ditë me familjen diku në Ruhr."
+areas:
+  - name: Qendra (Innenstadt)
+    text: "Rreth stacionit qendror dhe Westenhellweg: më praktikja, me trenat për aeroportin dhe për gjithë Ruhrin pranë."
+  - name: Kreuzviertel
+    text: Lagje me ndërtesa të vjetra, kafene dhe lokale studentësh, në këmbë deri te stadiumi.
+  - name: Hörde
+    text: Buzë Phoenix-See, më e qetë dhe moderne, rreth 15 minuta me U-Bahn nga qendra.
+food:
+  - name: Pfefferpotthast
+    text: Gjellë tradicionale me mish viçi, qepë dhe shumë piper, e shërbyer me patate dhe tranguj turshi.
+  - name: Currywurst
+    text: Salsiçe me salcë domate dhe kerri, zakonisht me patate të skuqura, vakti më i shpejtë i Ruhrit.
+  - name: Dortmunder Export
+    text: Birra e lehtë dhe e fortë e qytetit që e bëri Dortmundin qendër birre; provoje në një birrari vendase.
+  - name: Westfälischer Schinken
+    text: Proshutë e tymosur e Vestfalisë, me bukë të zezë pumpernickel.
+transport: >-
+  Qendra shihet në këmbë. U-Bahn, tramvajet dhe S-Bahn mbulojnë pjesën tjetër; biletat blihen në
+  makinat në stacion ose në aplikacion. Për një muaj, Deutschlandticket (rreth €63) vlen për
+  transportin lokal dhe trenat rajonalë në gjithë Gjermaninë, pra edhe për Bochum (rreth 10-15
+  minuta), Essen (rreth 25 minuta), Duisburg (rreth 40 minuta), Düsseldorf (rreth 1 orë) dhe
+  Cologne (rreth 1.5 orë). Trenat e shpejtë ICE nuk përfshihen.
+daytrips:
+  - name: Essen
+    text: Zeche Zollverein, miniera e kthyer në muze dhe trashëgimi botërore, rreth 25 minuta me tren dhe pak me tramvaj.
+  - name: Münster
+    text: Qytet universitar me biçikleta kudo, sheshin Prinzipalmarkt dhe bashkinë ku u nënshkrua Paqja e Vestfalisë, rreth 30-50 minuta me tren.
+  - name: Cologne
+    text: Katedralja gotike ngjitur me stacionin, rreth 1 orë e 15 minuta me ICE ose 1.5 orë me tren rajonal.
+  - name: Bochum
+    text: Muzeu Gjerman i Minierave, me një minierë provë nën tokë, rreth 10-15 minuta me tren.
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Me AirportExpress direkt deri në Dortmund Hauptbahnhof: rreth 25 minuta dhe rreth €9-10. Me Deutschlandticket, më lirë del shuttle-i deri në Holzwickede dhe treni rajonal."
+  - q: "A ia vlen të fle në Dortmund për të vizituar familjen në Ruhr?"
+    a: "Po: Bochum, Essen dhe Duisburg janë 10-40 minuta me tren, ndërsa Düsseldorf dhe Cologne rreth 1-1.5 orë. Me Deutschlandticket udhëton sa të duash me trenat rajonalë."
+  - q: "Sa para duhen në ditë në Dortmund?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-65 në ditë. Parqet, Phoenix-See dhe qendra janë falas, ndërsa ushqimi dhe birra kushtojnë më pak se në Düsseldorf ose Cologne."

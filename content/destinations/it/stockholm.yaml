@@ -1,0 +1,105 @@
+city: Stockholm
+name: Stoccolma
+slug: stockholm
+tagline: Le isole, Gamla Stan e la fika alla cannella
+intro: >-
+  Stoccolma è costruita su 14 isole, dove il lago Mälaren incontra il Mar Baltico: vicoli
+  medievali, palazzi sull'acqua e parchi in mezzo alla città. Il centro si gira a piedi e in
+  traghetto, mentre la metropolitana è di per sé una galleria d'arte. È tra le città più care
+  d'Europa: tre giorni bastano, con un giorno in più per l'arcipelago.
+sights:
+  - name: Gamla Stan
+    text: >-
+      La città vecchia, con vicoli stretti, case colorate e la piazza Stortorget. Qui ci sono il
+      Palazzo Reale, dove il cambio della guardia avviene verso mezzogiorno, e il Museo del Premio
+      Nobel.
+  - name: Museo Vasa
+    text: >-
+      La nave da guerra Vasa affondò nel 1628 durante il suo primo viaggio e fu recuperata dal mare
+      nel 1961, quasi intatta. Il biglietto costa circa 200-230 SEK (circa €18-21).
+  - name: Skansen
+    text: >-
+      Il primo museo all'aperto del mondo, del 1891: case contadine da tutta la Svezia e animali
+      nordici come orsi e renne. Biglietto circa 200-300 SEK, a seconda della stagione.
+  - name: Djurgården
+    text: >-
+      L'isola verde dei musei, con il Vasa, Skansen, l'ABBA The Museum e il luna park Gröna Lund. I
+      sentieri lungo l'acqua sono gratuiti; vai in traghetto da Slussen.
+  - name: Stadshuset
+    text: >-
+      Il municipio di mattoni sull'acqua, del 1923, dove si tiene il banchetto del Premio Nobel. Si
+      visita con visite guidate (circa 150-170 SEK); la torre di 106 metri ha la vista migliore su
+      Gamla Stan.
+  - name: L'arte della metropolitana
+    text: >-
+      Più di 90 stazioni della metro hanno dipinti, sculture o grotte dipinte scavate nella roccia,
+      con il biglietto normale. Le più belle: T-Centralen, Kungsträdgården, Stadion e Solna Centrum.
+itinerary:
+  - "Gamla Stan, Stortorget e il cambio della guardia al Palazzo Reale. Nel pomeriggio lo Stadshuset, la sera Södermalm e la vista da Monteliusvägen."
+  - "Djurgården: il Museo Vasa appena apre, poi Skansen o l'ABBA The Museum. Ritorno in traghetto a Slussen."
+  - "Le stazioni d'arte della metro, il mercato coperto Östermalms saluhall e il Moderna Museet, con la collezione gratuita. Oppure una giornata nell'arcipelago."
+areas:
+  - name: Norrmalm
+    text: Intorno a Stockholm Central, la zona più pratica per il treno e il bus dell'aeroporto, con molti hotel e ostelli.
+  - name: Gamla Stan
+    text: In mezzo a tutto e molto bella, ma con camere piccole e prezzi alti.
+  - name: Södermalm
+    text: Il quartiere più vivace, con caffè, bar e negozi vintage, un po' più economico del centro.
+  - name: Östermalm
+    text: Il quartiere elegante dei viali, tranquillo ma tra i più cari.
+food:
+  - name: Fika
+    text: >-
+      La pausa svedese per caffè e dolce, soprattutto il kanelbulle, la girella alla cannella. Caffè
+      e girella circa 60-80 SEK (circa €5-7).
+  - name: Köttbullar
+    text: >-
+      Polpette svedesi con purè di patate, salsa alla panna e marmellata di mirtilli rossi (lingon),
+      circa 180-250 SEK al ristorante.
+  - name: Dagens lunch
+    text: >-
+      Il pranzo del giorno nei giorni feriali, circa 11:00-14:00: un piatto caldo con insalata, pane
+      e caffè per circa 120-150 SEK (circa €11-14). Il modo più economico per mangiare bene.
+  - name: Räksmörgås
+    text: Il panino aperto con gamberetti, uovo e maionese, il classico della cucina di mare.
+airports:
+  ARN: >-
+    Arlanda è a circa 40 km a nord della città. L'Arlanda Express arriva a Stockholm Central in
+    circa 20 minuti, per circa 320-340 SEK (circa €30); in due o più persone insieme costa meno. Il
+    treno suburbano SL (pendeltåg) impiega circa 40 minuti fino a Stockholm City, per circa 200 SEK
+    (circa €18) compresa la tassa dell'aeroporto. I bus Flygbussarna vanno al Cityterminalen in
+    circa 45 minuti, per circa 130 SEK (circa €12). Il taxi ha tariffe fisse di circa 600-750 SEK
+    (circa €55-70).
+transport: >-
+  Metro, treni suburbani, tram, autobus e i traghetti di Djurgården funzionano tutti con il
+  biglietto SL. Il singolo costa circa 43 SEK (circa €4) e vale 75 minuti; quello da 72 ore circa
+  350 SEK (circa €32). Basta passare la carta contactless o il telefono ai tornelli.
+daytrips:
+  - name: L'arcipelago e Vaxholm
+    text: >-
+      Migliaia di isole a est della città. Vaxholm, con la fortezza e le case di legno, è a circa 1
+      ora di battello da Strömkajen.
+  - name: Uppsala
+    text: La città universitaria, con la cattedrale più grande della Scandinavia, a circa 40 minuti di treno.
+  - name: Drottningholm
+    text: >-
+      Il palazzo dove vive la famiglia reale, nella lista dell'UNESCO, a circa 1 ora di battello in
+      estate o 30-40 minuti tra metro e autobus.
+budget: >-
+  Un caffè costa circa 40 SEK (circa €3,5), una birra 80-100 SEK (circa €7-9), un piatto al
+  ristorante 200-300 SEK (circa €18-27). Volo e alloggio esclusi, calcola €70-100 al giorno.
+when: >-
+  Giugno-agosto, quando le giornate sono lunghissime e la città vive sull'acqua. Maggio e
+  settembre sono più tranquilli. A dicembre ci sono solo circa 6 ore di luce, ma anche i mercatini
+  di Natale.
+tips:
+  - "La Svezia è quasi senza contanti: molti locali accettano solo carta o telefono. Non serve cambiare soldi in corone."
+  - "Gli alcolici sopra il 3,5% si vendono solo nei negozi statali Systembolaget, chiusi la domenica."
+  - "L'acqua del rubinetto è ottima: riempi la borraccia invece di comprare l'acqua, che costa circa 25-30 SEK."
+faq:
+  - q: "Arlanda Express o il treno SL: quale prendo?"
+    a: "L'Arlanda Express è il più veloce, circa 20 minuti, ma costa circa 320-340 SEK. Il treno SL impiega circa 40 minuti e costa circa 200 SEK. Se siete in due o più, guarda il prezzo di gruppo dell'Arlanda Express."
+  - q: "Servono contanti?"
+    a: "Praticamente no. Carte e telefono sono accettati ovunque, anche sui mezzi pubblici. Molti posti espongono la scritta «kontantfritt», che vuol dire che non accettano contanti."
+  - q: "Quanto si spende al giorno a Stoccolma?"
+    a: "Volo e alloggio esclusi, €70-100 al giorno. Il pranzo del giorno (dagens lunch), i musei con collezioni gratuite e il biglietto SL da 72 ore tengono bassa la spesa."

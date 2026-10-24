@@ -354,6 +354,18 @@ links:
       Gdańsk:       https://www.tiqets.com/en/gdansk-attractions-c76392/
       Wrocław:      https://www.tiqets.com/en/
       Poznań:       https://www.tiqets.com/en/poznan-attractions-c76301/
+      Birmingham:   https://www.tiqets.com/en/birmingham-attractions-c67597/
+      Liverpool:    https://www.tiqets.com/en/liverpool-attractions-c67463/
+      Marseille:    https://www.tiqets.com/en/marseille-attractions-c66825/
+      Basel:        https://www.tiqets.com/en/
+      Nuremberg:    https://www.tiqets.com/en/
+      Dortmund:     https://www.tiqets.com/en/dortmund-attractions-c65045/
+      Stockholm:    https://www.tiqets.com/en/stockholm-attractions-c1638/
+      Lamezia Terme: https://www.tiqets.com/en/calabria-attractions-r2012/
+      Rimini:       https://www.tiqets.com/en/rimini-attractions-c71634/
+      Perugia:      https://www.tiqets.com/en/perugia-attractions-c71679/
+      Malmö:        https://www.tiqets.com/en/malmo-attractions-c78081/
+      Billund:      https://www.tiqets.com/en/billund-attractions-c93558/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -406,6 +418,18 @@ links:
       Gdańsk:       https://www.getyourguide.com/gdansk-l1960/
       Wrocław:      https://www.getyourguide.com/wroclaw-l2036/
       Poznań:       https://www.getyourguide.com/poznan-l1722/
+      Birmingham:   https://www.getyourguide.com/birmingham-l2525/
+      Liverpool:    https://www.getyourguide.com/liverpool-l210/
+      Marseille:    https://www.getyourguide.com/marseille-l292/
+      Basel:        https://www.getyourguide.com/basel-l51/
+      Nuremberg:    https://www.getyourguide.com/nuremberg-l127/
+      Dortmund:     https://www.getyourguide.com/dortmund-l136/
+      Stockholm:    https://www.getyourguide.com/stockholm-l50/
+      Lamezia Terme: https://www.getyourguide.com/lamezia-terme-l735/
+      Rimini:       https://www.getyourguide.com/rimini-l95357/
+      Perugia:      https://www.getyourguide.com/perugia-l1507/
+      Malmö:        https://www.getyourguide.com/malmo-l2647/
+      Billund:      https://www.getyourguide.com/billund-l87275/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -458,6 +482,18 @@ links:
       Gdańsk:       https://www.welcomepickups.com/gdansk/
       Wrocław:      https://www.welcomepickups.com/wroclaw/
       Poznań:       https://www.welcomepickups.com/poznan/
+      Birmingham:   https://www.welcomepickups.com/birmingham/
+      Liverpool:    https://www.welcomepickups.com/liverpool/
+      Marseille:    https://www.welcomepickups.com/marseille/
+      Basel:        https://www.welcomepickups.com/basel/
+      Nuremberg:    https://www.welcomepickups.com/nuremberg/
+      Dortmund:     https://www.welcomepickups.com/dortmund/
+      Stockholm:    https://www.welcomepickups.com/stockholm/
+      Lamezia Terme: https://www.welcomepickups.com/lamezia-terme/
+      Rimini:       https://www.welcomepickups.com/rimini/
+      Perugia:      https://www.welcomepickups.com/
+      Malmö:        https://www.welcomepickups.com/malmo/
+      Billund:      https://www.welcomepickups.com/billund/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -510,6 +546,18 @@ links:
       Gdańsk:       https://radicalstorage.com/luggage-storage/gdansk
       Wrocław:      https://radicalstorage.com/luggage-storage/wroclaw
       Poznań:       https://radicalstorage.com/luggage-storage/poznan
+      Birmingham:   https://radicalstorage.com/luggage-storage/birmingham
+      Liverpool:    https://radicalstorage.com/luggage-storage/liverpool
+      Marseille:    https://radicalstorage.com/luggage-storage/marseille
+      Basel:        https://radicalstorage.com/luggage-storage/basel
+      Nuremberg:    https://radicalstorage.com/luggage-storage/nuremberg
+      Dortmund:     https://radicalstorage.com/luggage-storage/dortmund
+      Stockholm:    https://radicalstorage.com/luggage-storage/stockholm
+      Lamezia Terme: https://radicalstorage.com/luggage-storage/lamezia-terme
+      Rimini:       https://radicalstorage.com/luggage-storage/rimini
+      Perugia:      https://radicalstorage.com/luggage-storage/perugia
+      Malmö:        https://radicalstorage.com/luggage-storage/malmo
+      Billund:      https://radicalstorage.com/
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

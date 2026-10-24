@@ -1,0 +1,81 @@
+city: Lamezia Terme
+slug: lamezia-terme
+tagline: Tropea, the Costa degli Dei and the Arbëreshë villages
+intro: >-
+  Lamezia Terme is above all Calabria's airport: in about an hour you are in Tropea, in Pizzo or
+  on the beaches of the Costa degli Dei. Further inland lie the forests of the Sila and the
+  Arbëreshë villages, where an old form of Albanian has been spoken for about five centuries. The
+  town itself, created in 1968 by merging Nicastro, Sambiase and Sant'Eufemia, is seen quickly.
+  Four or five days, ideally with a car, are enough for the coast and a trip inland.
+sights:
+  - name: Tropea old town
+    text: Alleys and balconies on top of a cliff, with white-sand beaches below it.
+  - name: Santa Maria dell'Isola
+    text: The church on the rock facing the town, the symbol of Tropea, at its most beautiful at sunset.
+  - name: Capo Vaticano
+    text: The headland south of Tropea, with a viewpoint over the coves of the Costa degli Dei and, on clear days, views as far as the Stromboli volcano.
+  - name: Castello Murat
+    text: The 15th-century Aragonese castle above Pizzo's harbour, where Joachim Murat, the former King of Naples, was executed by firing squad in 1815.
+  - name: Chiesa di Piedigrotta
+    text: A small church carved into the rock by the beach, about 1 km north of Pizzo, with stone statues of saints.
+  - name: Nicastro
+    text: The old part of Lamezia Terme, with the ruins of a Norman castle above the town. Nearby, in Sambiase, are the Terme Caronte thermal baths.
+itinerary:
+  - "From the airport to Pizzo, about 30 minutes by car: Castello Murat, a tartufo in Piazza della Repubblica and the Piedigrotta church. In the evening, on to Tropea."
+  - "Tropea: the old town, the cathedral and Santa Maria dell'Isola in the morning, then the beach below the cliff. Watch the sunset from the viewpoint."
+  - "The Costa degli Dei: by boat from Tropea's harbour or by car to Capo Vaticano and the Grotticelle beach."
+  - "Heading north: the Sila or the Arbëreshë villages, about 1.5-2 hours by car. Sleep in Cosenza, about 1 hour from the airport."
+areas:
+  - name: Tropea
+    text: The best-known base, with guesthouses and beaches within walking distance. Book early for August.
+  - name: Pizzo
+    text: Smaller and cheaper than Tropea, about 30 minutes from the airport. Good for the first or last night.
+  - name: Lamezia Terme
+    text: Cheaper hotels near the airport, for an early-morning flight.
+food:
+  - name: "'Nduja"
+    text: A soft and very spicy pork salami from Spilinga, spread on bread or added to pasta and pizza.
+  - name: Cipolla rossa di Tropea
+    text: Tropea's sweet red onion, eaten raw in salads, as a jam and even as ice cream.
+  - name: Tartufo di Pizzo
+    text: Hazelnut and chocolate ice cream with a liquid chocolate centre and cocoa on top, invented in Pizzo in the 1950s.
+  - name: Fileja
+    text: Hand-rolled twisted pasta, typical of the Vibo Valentia area, with a 'nduja or meat sauce.
+airports:
+  SUF: >-
+    Calabria's main airport is about 3 km from Lamezia Terme Centrale station. The shuttle bus
+    takes you to the station in about 10 minutes (about €1.50-2); from there regional trains run
+    to Pizzo (about 20-30 minutes), Tropea (about 1 hour, about €5) and Cosenza (about 1-1.5 hours,
+    often with a change in Paola). There are also regional buses to Catanzaro, Cosenza and, in
+    summer, Tropea. Rental cars are picked up at the airport, while a taxi costs about €50-70 to
+    Pizzo and about €100-150 to Tropea.
+transport: >-
+  A rental car helps a lot: Capo Vaticano, the Sila and the Arbëreshë villages are far from the
+  railway. Without a car, the regional train along the coast links Lamezia with Pizzo and Tropea,
+  but it runs rarely, about once every 1-2 hours; in summer there are also boats along the Costa
+  degli Dei. The centres of Tropea and Pizzo are ZTL zones: leave the car in a car park outside
+  them (about €1-2 an hour).
+daytrips:
+  - name: The Sila
+    text: A mountain plateau with pine forests, Lake Arvo and the centuries-old pines of the "Giganti della Sila" near Camigliatello Silano, about 1.5 hours by car.
+  - name: The Arbëreshë villages
+    text: In the province of Cosenza, about 1.5-2 hours by car. Lungro (Ungra) has its Byzantine-rite cathedral, San Demetrio Corone (Shën Mitri) the college where Jeronim De Rada studied, while Civita (Çifti) sits above the Raganello gorge.
+  - name: Cosenza
+    text: The old town on its hill and the MAB open-air museum on Corso Mazzini, about 1 hour by train.
+budget: >-
+  A tartufo in Pizzo costs about €4-5, a 'nduja panino about €5, a pizza €7-10 and an espresso
+  about €1-1.20. A rental car costs about €30-50 a day in summer, less out of season. A double room
+  in Tropea costs about €60-90 a night in June and September and often over €120 in August.
+when: >-
+  June and September are the best: the sea is warm and free of the August crowds, when prices peak
+  around 15 August (Ferragosto). From November to March many seaside hotels close. The Sila is
+  beautiful in autumn and snowy in winter.
+tips:
+  - "In the Arbëreshë villages, speak Albanian: many residents, especially the elderly, will understand you. In Civita and Frascineto, usually on the Tuesday after Easter, the traditional dances are held in costume."
+  - "To reach the beaches below Tropea you walk down long flights of steps. The free beaches (spiaggia libera) cost nothing, but in August they fill up early."
+  - "Ask in advance whether an Albanian driving licence is accepted or an International Driving Permit is also needed; the car's deposit usually requires a credit card."
+faq:
+  - q: "Can I visit Calabria without a car?"
+    a: "Yes, if you stay on the coast: the shuttle and the train take you to Tropea in about 1.5 hours in total. For the Sila and the Arbëreshë villages, a car saves a lot of time."
+  - q: "How much money do you need per day in Calabria?"
+    a: "Excluding the flight and accommodation, about €40-60 a day, plus the car. Calabria is one of the cheapest regions in Italy, except in August."

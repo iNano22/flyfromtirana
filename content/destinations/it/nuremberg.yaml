@@ -1,0 +1,104 @@
+city: Nuremberg
+name: Norimberga
+slug: nuremberg
+tagline: Il castello, i bratwurst e il mercatino di Natale
+intro: >-
+  Norimberga è la seconda città della Baviera e il cuore della Franconia: una città vecchia dentro
+  le mura medievali, con il castello imperiale sulla rupe e il fiume Pegnitz che la attraversa. Qui
+  si tennero i raduni del partito nazista e, dopo la guerra, il processo di Norimberga. Due o tre
+  giorni bastano per la città, con un giorno in più per Bamberga o Ratisbona.
+sights:
+  - name: Kaiserburg
+    text: >-
+      Il castello imperiale sulla rupe a nord della città vecchia. Il biglietto completo (circa €9)
+      comprende il pozzo, profondo circa 50 metri, e la torre Sinwellturm, con la vista migliore sui
+      tetti. I giardini e la piazza davanti al castello sono gratuiti.
+  - name: La città vecchia
+    text: >-
+      Dentro le mura turrite tutto si raggiunge a piedi. Sull'Hauptmarkt c'è lo Schöner Brunnen, la
+      fontana gotica con l'anello d'oro da girare per fortuna, e alle 12:00 sulla facciata della
+      Frauenkirche si muovono le figure dell'orologio Männleinlaufen. La città fu distrutta quasi del
+      tutto nel 1945 e ricostruita secondo la pianta antica.
+  - name: Centro di Documentazione e area dei raduni nazisti
+    text: >-
+      Nella Sala dei Congressi, mai completata, una mostra spiega come il nazismo usò Norimberga per
+      i raduni degli anni 1933-1938. La passeggiata intorno al lago Dutzendteich fino alla tribuna
+      dello Zeppelinfeld è gratuita. Si arriva con il tram 8 dalla Hauptbahnhof. Il centro è stato
+      rinnovato negli ultimi anni: controlla online che cosa è aperto.
+  - name: Germanisches Nationalmuseum
+    text: >-
+      Il più grande museo di storia della cultura tedesca, con dipinti di Dürer, armature e il globo
+      più antico che si conservi, del 1492. Il biglietto costa circa €8-10; il mercoledì sera
+      l'ingresso di solito è gratuito. Il lunedì è chiuso.
+  - name: Casa di Dürer
+    text: >-
+      La casa dove il pittore Albrecht Dürer visse e lavorò dal 1509 fino alla morte nel 1528, sotto
+      il castello, vicino alla porta Tiergärtnertor. Il biglietto costa circa €7-8.
+itinerary:
+  - "Dalla Hauptbahnhof lungo la Königstraße, la chiesa di St. Lorenz e l'Hauptmarkt per il Männleinlaufen alle 12:00. Nel pomeriggio la Kaiserburg e la Casa di Dürer, la sera Rostbratwurst vicino alla chiesa di St. Sebaldus."
+  - "Il Germanisches Nationalmuseum al mattino. Nel pomeriggio il Centro di Documentazione e la passeggiata fino allo Zeppelinfeld. La sera il ponte Henkersteg sul fiume Pegnitz."
+  - "Una gita in giornata a Bamberga o a Ratisbona. In alternativa il Memorium Processi di Norimberga, l'Aula 600 dove furono processati i capi nazisti (metro U1 fino a Bärenschanze)."
+areas:
+  - name: Altstadt
+    text: Intorno al castello e all'Hauptmarkt, con i vicoli più belli e i prezzi più alti.
+  - name: Vicino alla Hauptbahnhof
+    text: >-
+      La zona più pratica: la metro U2 porta direttamente all'aeroporto e la città vecchia comincia
+      dall'altra parte della strada. Gli hotel costano meno, ma le strade vicino alla stazione la
+      sera sono un po' degradate.
+  - name: Gostenhof
+    text: Un quartiere alternativo a ovest delle mura, con caffè, bar e prezzi più bassi.
+food:
+  - name: Nürnberger Rostbratwurst
+    text: >-
+      Salsicce piccole, lunghe 7-9 cm, cotte alla brace di legno di faggio. Si servono da 6, 8 o 12
+      nel piatto con crauti o insalata di patate, oppure tre in un panino, "Drei im Weggla", per circa
+      €4.
+  - name: Lebkuchen
+    text: >-
+      Biscotti speziati al miele, il simbolo della città. I migliori sono gli Elisenlebkuchen, con
+      molta frutta secca e poca farina.
+  - name: Schäufele
+    text: Spalla di maiale arrosto con la cotenna croccante, servita con i Kloß, grandi gnocchi di patate.
+  - name: Birra della Franconia
+    text: La Franconia ha centinaia di piccoli birrifici. Assaggia la Rotbier, la birra rossa della città.
+airports:
+  NUE: >-
+    L'aeroporto è a circa 5 km a nord del centro. La metro U2 parte dal terminal ogni 10 minuti e
+    arriva alla Hauptbahnhof in circa 13 minuti. Il biglietto singolo costa circa €4 e si compra
+    prima di salire, al distributore o nell'app della VGN. Il taxi costa circa €20-25.
+transport: >-
+  La città vecchia si gira a piedi: dalla Hauptbahnhof al castello ci sono circa 20 minuti. Per
+  spostarsi più lontano ci sono metro, tram e autobus, tutti con il biglietto della VGN. Il
+  biglietto giornaliero costa circa €9; se lo compri di sabato, vale anche la domenica. Per i treni
+  regionali in Baviera conviene il Bayern-Ticket, circa €30-35 per una persona.
+daytrips:
+  - name: Bamberga
+    text: >-
+      Una città patrimonio dell'UNESCO, con il municipio costruito sul fiume e la birra affumicata
+      Rauchbier, a circa 40-60 minuti di treno.
+  - name: Rothenburg ob der Tauber
+    text: >-
+      Una delle città medievali meglio conservate della Germania, con mura che si possono percorrere,
+      a circa 1,5-2 ore di treno regionale.
+  - name: Ratisbona
+    text: Città romana e medievale sul Danubio, con il Ponte di Pietra del 12° secolo, a circa 1 ora di treno.
+budget: >-
+  Un "Drei im Weggla" costa circa €4, una birra da mezzo litro €4,50-5,50, un piatto al ristorante
+  €12-18, un biglietto singolo in città circa €4.
+when: >-
+  Maggio-settembre per le passeggiate e i Biergarten. Il Christkindlesmarkt, uno dei mercatini di
+  Natale più famosi al mondo, si tiene sull'Hauptmarkt dal venerdì prima della prima domenica di
+  Avvento fino al 24 dicembre; nel 2026 apre il 27 novembre. In quelle settimane i prezzi degli
+  hotel salgono molto.
+tips:
+  - "Per il Christkindlesmarkt prenota l'alloggio con mesi di anticipo, oppure dormi a Fürth o a Erlangen, a 10-20 minuti di treno."
+  - "Il Glühwein si serve in una tazza con cauzione (Pfand): riportala e ti restituiscono i soldi, oppure tienila come ricordo."
+  - "Negozi e supermercati sono chiusi la domenica, tranne alcuni supermercati nella Hauptbahnhof."
+faq:
+  - q: "Come si va dall'aeroporto al centro?"
+    a: "Con la metro U2, che arriva alla Hauptbahnhof in circa 13 minuti, con un biglietto da circa €4. Dalla stazione la città vecchia è dall'altra parte della strada."
+  - q: "Quanto tempo serve per il Centro di Documentazione?"
+    a: "Calcola circa 2 ore per la mostra e 1 ora in più per la passeggiata fino allo Zeppelinfeld."
+  - q: "Quanto si spende al giorno a Norimberga?"
+    a: "Volo e alloggio esclusi, €40-70 al giorno. Norimberga è più economica di Monaco di Baviera, soprattutto per mangiare, ma durante il Christkindlesmarkt gli hotel raddoppiano i prezzi."

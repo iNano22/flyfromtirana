@@ -1,0 +1,78 @@
+city: Marseille
+slug: marseille
+tagline: Port i vjetër, Calanques dhe bouillabaisse
+intro: >-
+  Marseille është qyteti i dytë i Francës dhe porti i saj më i vjetër, i themeluar nga grekët rreth
+  2600 vjet më parë. Është qytet i zhurmshëm dhe shumëkulturor, me det të kaltër dhe shkëmbinj të
+  bardhë. Dy-tri ditë mjaftojnë për portin, Le Panier, bazilikën mbi kodër dhe një ditë në
+  Calanques.
+sights:
+  - name: Vieux-Port
+    text: Porti i vjetër, zemra e qytetit, me varka, kafene dhe dy kështjella në hyrje. Çdo mëngjes peshkatarët shesin peshkun e ditës në Quai des Belges.
+  - name: Notre-Dame de la Garde
+    text: Bazilika në majë të kodrës, rreth 150 metra mbi det, me statujën e artë të Marisë që vendasit e quajnë «Bonne Mère». Hyrja është falas dhe pamja mbi qytetin është mahnitëse. Ngjitu me autobusin 60 nga Vieux-Port ose në këmbë, rreth 30-40 minuta.
+  - name: Le Panier
+    text: Lagjja më e vjetër, me rrugica të ngushta, shtëpi me ngjyra dhe murale. Në mes të saj është Vieille Charité, një ish-strehë e të varfërve.
+  - name: MuCEM dhe Fort Saint-Jean
+    text: Muzeu i qytetërimeve të Mesdheut, në një kub me mure si dantellë betoni, i lidhur me një urë me kështjellën Fort Saint-Jean. Kështjella dhe kopshtet janë falas; ekspozitat kushtojnë rreth €11-13.
+  - name: Calanques
+    text: Gjiret e ngushta me shkëmbinj të bardhë dhe ujë të kaltër mes Marseille dhe Cassis, park kombëtar. Për Sugiton merr autobusin B1 deri në Luminy, pastaj rreth 1 orë ecje. Varkat nga Vieux-Port bëjnë turne prej rreth €30-45.
+  - name: Corniche Kennedy dhe Vallon des Auffes
+    text: Rruga panoramike buzë detit në jug të qendrës, me plazhe të vogla dhe Vallon des Auffes, një port i vogël peshkatarësh.
+airports:
+  MRS: >-
+    Aeroporti Marseille Provence është në Marignane, rreth 27 km nga qyteti. Autobusi (navette) të
+    çon në stacionin Saint-Charles për rreth 25-30 minuta; niset çdo 15-20 minuta dhe kushton rreth
+    €10. Më lirë: autobusi falas të çon për 5 minuta në stacionin Vitrolles Aéroport, prej ku treni
+    TER arrin në Saint-Charles për rreth 20 minuta, me rreth €5-6, por nuk niset shpesh. Taksia
+    kushton rreth €60-75.
+budget: >-
+  Një kafe në banak kushton rreth €1.50-2.50, një pica €10-14, një pjatë dite €13-18, bileta e
+  metrosë rreth €2. Një shtrat në hostel kushton nga rreth €25-40, një dhomë dyshe në hotel të
+  thjeshtë nga rreth €70-110 nata.
+when: >-
+  Maji-qershori dhe shtatori-tetori janë koha më e mirë: mot i ngrohtë, det për not dhe më pak turistë.
+  Korriku dhe gushti janë të nxehtë dhe në ditët me rrezik zjarri Calanques mbyllen. Dimri është i
+  butë, por era mistral mund të fryjë fort.
+tips:
+  - "Nga qershori deri në shtator Calanques mund të mbyllen kur rreziku i zjarrit është i lartë: kontrollo një ditë përpara në faqen zyrtare të parkut. Për Sugiton në verë rezervo hyrjen falas online."
+  - "Për Calanques merr këpucë të mira dhe të paktën 1.5 litra ujë për person: brenda nuk ka dyqane."
+  - "Ruaj telefonin dhe portofolin në Vieux-Port dhe në metro. Natën shmang rrugicat rreth Saint-Charles dhe Noailles."
+itinerary:
+  - "Vieux-Port me tregun e peshkut në mëngjes, pastaj Le Panier dhe Vieille Charité. Pasdite MuCEM dhe Fort Saint-Jean, deri në perëndim të diellit."
+  - "Një ditë në Calanques: autobusi B1 deri në Luminy dhe ecje deri në Sugiton, me not dhe piknik. Ndryshe, një tur me varkë. Në mbrëmje darkë rreth Cours Julien."
+  - "Notre-Dame de la Garde në mëngjes, pastaj zbrit në këmbë te Vallon des Auffes dhe Corniche Kennedy. Pasdite varka për në ishujt Frioul."
+areas:
+  - name: Vieux-Port
+    text: Në qendër, me gjithçka në këmbë dhe varkat pranë. Çmime mesatare deri të larta.
+  - name: Le Panier
+    text: Lagje me atmosferë dhe hotele të vogla, por me shumë shkallë për valixhet.
+  - name: Cours Julien
+    text: Lagjja alternative, me murale, bare dhe restorante të lira, rreth 15 minuta në këmbë nga porti.
+  - name: Saint-Charles
+    text: "Zona më praktike për aeroportin: autobusi dhe trenat nisen nga stacioni. Hotele më të lira, por rrugët përreth natën nuk janë të këndshme."
+food:
+  - name: Bouillabaisse
+    text: Supa e peshkatarëve, pjata më e famshme e qytetit, me lëng peshku, bukë të thekur me salcë rouille dhe disa lloje peshku. Një e mirëfilltë kushton rreth €60-80 për person; versionet e lira rrallë janë të mira.
+  - name: Panisse
+    text: Copa të skuqura me miell qiqrash, ushqim i thjeshtë rruge.
+  - name: Navettes
+    text: Biskota në formë varke me aromë luleje portokalli, nga furra Four des Navettes, e hapur në vitin 1781.
+  - name: Pastis
+    text: Pija me anason që pihet me ujë të ftohtë si aperitiv, në kafenetë rreth portit.
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa rrjeti RTM ka 2 linja metroje, 3 linja tramvaji dhe autobusë.
+  Bileta e vetme kushton rreth €2 dhe vlen 1 orë me ndërrime; bileta 24 orëshe rreth €5-6. Varka e
+  vogël Ferry Boat kalon portin nga një breg te tjetri.
+daytrips:
+  - name: Cassis
+    text: Port i vogël peshkatarësh me shtëpi me ngjyra, prej ku nisen varkat për gjiret më të bukura. Me autobus rreth 45 minuta; treni bën rreth 20 minuta, por stacioni është rreth 3 km nga porti.
+  - name: Aix-en-Provence
+    text: Qyteti elegant i Cézanne-it, me shatërvane, tregje dhe bulevardin Cours Mirabeau. Autobusi nga Saint-Charles bën rreth 30-40 minuta.
+  - name: Ishujt Frioul
+    text: Ishuj shkëmborë me plazhe të vogla, rreth 20-30 minuta me varkë nga Vieux-Port, me ndalesë te Château d'If, burgu i «Kontit të Monte Kristos». Varka vajtje-ardhje kushton rreth €11-17.
+faq:
+  - q: "Autobus apo tren nga aeroporti?"
+    a: "Autobusi direkt për në Saint-Charles është më i thjeshtë: rreth 25-30 minuta dhe rreth €10. Treni nga Vitrolles kushton rreth €5-6, por duhet të ndërrosh dhe të presësh. Për 3-4 persona me valixhe, taksia del e arsyeshme."
+  - q: "Sa para duhen në ditë në Marseille?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-75 në ditë. Kursen me pica, panisse dhe piknik në Calanques."

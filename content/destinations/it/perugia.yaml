@@ -1,0 +1,80 @@
+city: Perugia
+slug: perugia
+tagline: Una città medievale in collina, cioccolato e jazz
+intro: >-
+  Perugia è il capoluogo dell'Umbria, una città medievale in collina con vicoli di pietra, viste
+  sulla valle e una vivace vita studentesca grazie alle sue due università, tra cui l'Università per
+  Stranieri, conosciuta da molti studenti albanesi. Il centro si vede in un giorno, ma Perugia è la
+  base migliore per Assisi, il Lago Trasimeno e i borghi dell'Umbria.
+sights:
+  - name: Corso Vannucci
+    text: La via pedonale principale, da Piazza Italia a Piazza IV Novembre. La sera tutta la città esce qui a passeggiare.
+  - name: Fontana Maggiore
+    text: La fontana medievale di Piazza IV Novembre, completata nel 1278 da Nicola e Giovanni Pisano, con sculture che raffigurano i mesi dell'anno. Di fronte ci sono la Cattedrale di San Lorenzo e il Palazzo dei Priori.
+  - name: Rocca Paolina
+    text: La fortezza che papa Paolo III fece costruire negli anni 1540 sopra un intero quartiere medievale. Oggi le scale mobili attraversano le sue vie sotterranee, e l'ingresso è gratuito.
+  - name: Galleria Nazionale dell'Umbria
+    text: La principale galleria d'arte dell'Umbria, nel Palazzo dei Priori, con opere del Perugino, del Pinturicchio e di Piero della Francesca. Il biglietto costa circa €10.
+  - name: Minimetrò
+    text: Una piccola metropolitana automatica con le cabine rosse che sale dalla stazione ferroviaria di Fontivegge al centro in circa 10 minuti. Il biglietto costa circa €1,50.
+itinerary:
+  - "Corso Vannucci, la Fontana Maggiore, la Cattedrale e la Galleria Nazionale dell'Umbria. Nel pomeriggio la Rocca Paolina, al tramonto la vista dai Giardini Carducci."
+  - "Assisi in treno (circa 25 minuti): la Basilica di San Francesco, Piazza del Comune e la Rocca Maggiore. Al ritorno una sosta a Spello, circa 10 minuti più avanti sulla stessa linea."
+  - "Il Lago Trasimeno: treno fino a Passignano sul Trasimeno (circa 30 minuti), poi il traghetto per l'Isola Maggiore. La sera torta al testo e un bicchiere di vino in centro."
+areas:
+  - name: Centro storico
+    text: Intorno a Corso Vannucci, nel mezzo di tutto e con vista sulla valle, ma con pochi hotel e strade ripide.
+  - name: Corso Garibaldi e Porta Sant'Angelo
+    text: Il quartiere degli studenti a nord del centro, con B&B economici e piccoli locali, a 10 minuti a piedi dall'Arco Etrusco.
+  - name: Fontivegge
+    text: "La zona della stazione, ai piedi della collina: la più economica e pratica per i treni e per l'autobus dell'aeroporto, con il minimetrò per il centro."
+food:
+  - name: Cioccolato Perugina
+    text: Qui sono nati i Baci Perugina, i cioccolatini alla nocciola con un biglietto d'amore dentro. Alla Casa del Cioccolato, nel quartiere di San Sisto, ci sono un museo e una degustazione su prenotazione.
+  - name: Tartufo
+    text: Il tartufo nero umbro, sugli strangozzi (pasta lunga fatta in casa), nella frittata o sulla bruschetta. I piatti al tartufo costano circa €14-20.
+  - name: Torta al testo
+    text: Una focaccia farcita con prosciutto, formaggio o verdure; un pranzo economico per circa €6-8.
+  - name: Porchetta
+    text: Maiale intero arrosto con le erbe, tagliato sottile in un panino.
+airports:
+  PEG: >-
+    L'aeroporto San Francesco d'Assisi è a circa 12 km da Perugia e a circa 15 km da Assisi.
+    Autobus e navette coordinati con i voli portano alla stazione di Fontivegge e a Piazza
+    Partigiani a Perugia in circa 30 minuti, per circa €8-10; c'è anche una navetta per Assisi. Un
+    taxi fino al centro costa circa €30-40. Molti viaggiatori noleggiano un'auto in aeroporto per
+    visitare i borghi dell'Umbria.
+transport: >-
+  Il centro è in collina e si gira a piedi, ma le salite sono ripide. Dalla stazione di Fontivegge
+  prendi il minimetrò fino a Pincetto, oppure da Piazza Partigiani le scale mobili gratuite
+  attraverso la Rocca Paolina fino a Piazza Italia. Gli autobus urbani costano circa €1,50. In auto
+  attenzione alla ZTL, la zona a traffico limitato dove le multe arrivano per posta: parcheggia a
+  Pian di Massiano e prosegui con il minimetrò.
+daytrips:
+  - name: Assisi
+    text: La città di San Francesco, con la sua basilica patrimonio UNESCO. Circa 25 minuti di treno, per circa €3, poi l'autobus dalla stazione fino alla città.
+  - name: Lago Trasimeno
+    text: Il lago più grande dell'Italia centrale, con i traghetti per l'Isola Maggiore. Circa 30 minuti di treno fino a Passignano.
+  - name: Spello
+    text: Un borgo di pietra rosa e balconi fioriti, a circa 30 minuti di treno. A giugno, per l'Infiorata, le strade si coprono di tappeti di fiori.
+  - name: Gubbio
+    text: Una delle città medievali meglio conservate dell'Umbria, a circa 1 ora e 10 minuti di autobus, per circa €6.
+budget: >-
+  Un espresso al banco costa circa €1,10-1,30, una torta al testo circa €6-8, una pizza €7-10. Un
+  letto in ostello costa da circa €25-35, una camera doppia in un hotel semplice da circa €70-100 a
+  notte, più una tassa di soggiorno di qualche euro a persona per notte.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. A luglio Umbria Jazz riempie la città
+  di concerti, molti gratuiti nelle piazze, ma gli hotel rincarano. In autunno il festival
+  Eurochocolate porta le bancarelle di cioccolato lungo Corso Vannucci.
+tips:
+  - "Metti scarpe comode: Perugia è piena di scale e di strade ripide."
+  - "Per Gubbio, Spello e i borghi dell'Umbria un'auto a noleggio fa risparmiare molto tempo, ma non entrare nelle ZTL dei centri storici."
+  - "Prenota presto l'alloggio per Umbria Jazz ed Eurochocolate: i prezzi salgono molto e le camere finiscono in fretta."
+faq:
+  - q: "Come si va dall'aeroporto di Perugia ad Assisi?"
+    a: "Con la navetta dell'aeroporto coordinata con i voli, oppure in taxi, circa 20 minuti per circa €30-35. Altrimenti l'autobus per Perugia e il treno per Assisi, circa 25 minuti."
+  - q: "Serve l'auto in Umbria?"
+    a: "Non per Perugia, Assisi e Spello: bastano i treni. Per Gubbio e i piccoli borghi l'auto è più comoda, perché gli autobus sono rari."
+  - q: "Quanto si spende al giorno a Perugia?"
+    a: "Volo e alloggio esclusi, calcola circa €40-60 al giorno per cibo, trasporti e un ingresso al museo. Perugia costa meno di Firenze e Roma."

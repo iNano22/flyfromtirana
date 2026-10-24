@@ -1,0 +1,78 @@
+city: Basel
+slug: basel
+tagline: The Rhine, the museums and three countries in one day
+intro: >-
+  Basel lies on both banks of the Rhine, where Switzerland, France and Germany meet. It is a city
+  of art, with about 40 museums, and an old town that is easy to explore on foot. It is expensive,
+  but anyone who sleeps in a hotel here gets the BaselCard for free, with free public transport.
+sights:
+  - name: Altstadt and the Münster
+    text: The old town above the Rhine, with the red town hall (Rathaus) on the Marktplatz and the cathedral of pink stone. From the Pfalz terrace you see the river; the climb up the towers costs about 6 francs.
+  - name: The Rhine and its ferries
+    text: Four wooden ferries without engines, pushed only by the current, cross the river for about 2 francs. In the evening the locals sit on the steps of the Kleinbasel bank.
+  - name: Kunstmuseum Basel
+    text: The oldest public art collection in the world, from Holbein to Picasso. Entry costs about 16-26 francs; the collection is usually free on the first Sunday of the month.
+  - name: Fondation Beyeler
+    text: Renzo Piano's museum in Riehen, set in a park, with Monet, Giacometti and major exhibitions. About 20 minutes by tram 6; entry costs about 30 francs.
+  - name: Vitra in Weil am Rhein
+    text: The design campus with buildings by Frank Gehry, Zaha Hadid and Tadao Ando, just across the German border, about 20 minutes by bus 55 from Claraplatz. Walking around the campus is free, the museum costs about €20.
+  - name: Museum Tinguely
+    text: The moving machines of the sculptor Jean Tinguely, by the Rhine. Near the theatre, his fountain with sculptures that move in the water can be seen for free.
+airports:
+  BSL: >-
+    EuroAirport Basel-Mulhouse-Freiburg is on French soil, about 8 km from the centre. After
+    baggage claim follow the signs for the Swiss exit (Basel), not the French one. Bus 50 leaves
+    every 7-15 minutes and takes you to Basel SBB station in about 20 minutes; the ticket costs about
+    5 francs (about €5.30) and is bought from the machine before the exit. A taxi takes about 15-20
+    minutes and costs about 40-50 francs (about €43-54).
+budget: >-
+  A coffee costs about 4.50-5.50 francs, a kebab 10-15 francs, a dish in a restaurant 25-40 francs.
+  A hostel bed costs about 45-60 francs, a double room in a simple hotel from about 140-200 francs a
+  night. 1 franc is worth about €1.07. The supermarkets in Weil am Rhein, in Germany, are much
+  cheaper and can be reached by tram 8.
+when: >-
+  June to September is the best time: in July and August the Rhine water reaches about 20-24
+  degrees and the locals swim in the river, carried by the current, with their clothes in a
+  waterproof bag (Wickelfisch). Fasnacht, the city's carnival, starts on the Monday after Ash
+  Wednesday at 4:00 in the morning and lasts 3 days with masks, drums and fifes; in 2027 it falls on
+  15-17 February.
+tips:
+  - "Switzerland uses the franc (CHF), not the euro: pay by card. In Weil am Rhein and in France you pay in euros."
+  - "Avoid the Art Basel week in June: hotel prices multiply."
+  - "For a swim in the Rhine, get in from the Kleinbasel bank, keep away from the boats and get out before the Dreirosenbrücke bridge."
+itinerary:
+  - "The Marktplatz, the old town, the Münster with the Pfalz terrace and the towers. In the afternoon a ferry crossing, the Mittlere Brücke and a walk along the Rhine; dinner in Kleinbasel in the evening."
+  - "The Kunstmuseum in the morning. In the afternoon tram 6 to the Fondation Beyeler, in the evening the Tinguely fountain and a drink by the river."
+  - "Vitra in Weil am Rhein in the morning, then shopping in the German supermarkets. Otherwise, a day trip to Colmar, Freiburg or Lucerne."
+areas:
+  - name: Grossbasel and Altstadt
+    text: The old town on the left bank, quiet, beautiful and expensive, near the museums.
+  - name: Kleinbasel
+    text: The right bank, livelier and a little cheaper, with bars and restaurants from all over the world.
+  - name: Near Basel SBB station
+    text: "The most practical area: bus 50 arrives here and the trains for day trips leave from here. The hotels are simpler and cheaper."
+food:
+  - name: Basler Läckerli
+    text: Hard biscuits with honey, almonds and spices, the city's sweet. A small box costs about 8-10 francs.
+  - name: Mehlsuppe and Zwiebelwähe
+    text: Soup made with toasted flour and an onion tart, eaten above all during Fasnacht.
+  - name: Supermarkets and a picnic by the Rhine
+    text: "Migros and Coop have ready meals for 8-12 francs: take one and eat it on the Kleinbasel steps, like the locals."
+transport: >-
+  The centre is walkable, and the green trams take you everywhere, even to Germany (tram 8) and to
+  France (tram 3). A ticket costs about 4.70 francs (about €5), a day ticket about 10 francs (about
+  €11). If you stay in a hotel, hostel or campsite in Basel, you get the BaselCard for free: free
+  public transport for your whole stay, including bus 50 to the airport, and discounts of up to 50%
+  in many museums. Ask for it at reception if they don't give it to you.
+daytrips:
+  - name: Colmar
+    text: The French town of Alsace with half-timbered houses and canals, about 45 minutes by direct train.
+  - name: Freiburg
+    text: A German university city at the gateway to the Black Forest, with a Gothic cathedral, about 45 minutes by train.
+  - name: Lucerne
+    text: The wooden Chapel Bridge and the lake among the mountains, about 1 hour by direct train.
+faq:
+  - q: "The airport is in France: do I have to enter France?"
+    a: "No. The airport has two exits, a French one and a Swiss one. Follow the signs for Basel and leave on the Swiss side, where bus 50 to the city is waiting."
+  - q: "How much money do you need per day in Basel?"
+    a: "Excluding the flight and accommodation, about 70-110 francs (about €75-118) a day. You save with the BaselCard, food from supermarkets and the free things: the Rhine, the old town and the Vitra campus."

@@ -1,0 +1,79 @@
+city: Perugia
+slug: perugia
+tagline: Qytet mesjetar mbi kodër, çokollatë dhe xhaz
+intro: >-
+  Perugia është kryeqyteti i Umbrisë, një qytet mesjetar mbi kodër me rrugica guri, pamje mbi
+  luginë dhe një jetë studentore të gjallë falë dy universiteteve, mes tyre Università per
+  Stranieri, e njohur nga shumë studentë shqiptarë. Qendra shihet në një ditë, por Perugia
+  është baza më e mirë për Assisi, Liqenin Trasimeno dhe qytezat e Umbrisë.
+sights:
+  - name: Corso Vannucci
+    text: Rruga kryesore e këmbësorëve, nga Piazza Italia deri te Piazza IV Novembre. Në mbrëmje gjithë qyteti del këtu për shëtitje.
+  - name: Fontana Maggiore
+    text: Shatërvani mesjetar në Piazza IV Novembre, i përfunduar në vitin 1278 nga Nicola dhe Giovanni Pisano, me skulptura që tregojnë muajt e vitit. Përballë janë Katedralja e San Lorenzos dhe Palazzo dei Priori.
+  - name: Rocca Paolina
+    text: Kështjella që Papa Pali III ndërtoi në vitet 1540 mbi një lagje të tërë mesjetare. Sot shkallët lëvizëse kalojnë nëpër rrugët e saj nëntokësore, dhe hyrja është falas.
+  - name: Galleria Nazionale dell'Umbria
+    text: Galeria kryesore e Umbrisë, në Palazzo dei Priori, me vepra të Peruginos, Pinturicchios dhe Piero della Francescas. Bileta kushton rreth €10.
+  - name: Minimetrò
+    text: Metro e vogël automatike me vagonë të kuq, që ngjit nga stacioni i trenit Fontivegge deri në qendër për rreth 10 minuta. Bileta kushton rreth €1.50.
+itinerary:
+  - "Corso Vannucci, Fontana Maggiore, Katedralja dhe Galleria Nazionale dell'Umbria. Pasdite Rocca Paolina, në perëndim të diellit pamja nga Giardini Carducci."
+  - "Assisi me tren (rreth 25 minuta): Bazilika e San Françeskut, Piazza del Comune dhe Rocca Maggiore. Kthimi me një ndalesë në Spello, rreth 10 minuta më tej në të njëjtën linjë."
+  - "Liqeni Trasimeno: tren deri në Passignano sul Trasimeno (rreth 30 minuta), pastaj traget për Isola Maggiore. Në mbrëmje torta al testo dhe një gotë verë në qendër."
+areas:
+  - name: Centro storico
+    text: Rreth Corso Vannucci, në mes të gjithçkaje dhe me pamje mbi luginë, por me pak hotele dhe me rrugë të pjerrëta.
+  - name: Corso Garibaldi dhe Porta Sant'Angelo
+    text: Lagjja e studentëve në veri të qendrës, me bujtina të lira dhe lokale të vogla, 10 minuta në këmbë nga Arco Etrusco.
+  - name: Fontivegge
+    text: "Zona e stacionit, poshtë kodrës: më e lira dhe praktike për trenat dhe për autobusin e aeroportit, me minimetrò deri në qendër."
+food:
+  - name: Çokollata Perugina
+    text: Këtu lindën Baci Perugina, pralinat me lajthi dhe me një shënim dashurie brenda. Te Casa del Cioccolato, në lagjen San Sisto, ka muze dhe degustim me rezervim.
+  - name: Tartufi
+    text: Tartufi i zi i Umbrisë, mbi strangozzi (makarona të gjata të bëra në shtëpi), në omëletë ose në bruschetta. Pjatat me tartuf kushtojnë rreth €14-20.
+  - name: Torta al testo
+    text: Bukë e sheshtë e mbushur me proshutë, djathë ose barishte; drekë e lirë për rreth €6-8.
+  - name: Porchetta
+    text: Mish derri i pjekur i tërë me barishte, i prerë hollë në sanduiç.
+airports:
+  PEG: >-
+    Aeroporti San Francesco d'Assisi është rreth 12 km nga Perugia dhe rreth 15 km nga Assisi.
+    Autobusët dhe shuttle-at e lidhur me fluturimet të çojnë në stacionin Fontivegge dhe në Piazza
+    Partigiani të Perugias për rreth 30 minuta, me rreth €8-10; ka edhe shuttle për në Assisi.
+    Taksia deri në qendër kushton rreth €30-40. Shumë udhëtarë marrin makinë me qira në aeroport për të parë qytezat e Umbrisë.
+transport: >-
+  Qendra është mbi kodër dhe përshkohet në këmbë, por ngjitjet janë të forta. Nga stacioni
+  Fontivegge merr minimetrò-në deri në Pincetto, ose nga Piazza Partigiani shkallët lëvizëse falas
+  përmes Rocca Paolina deri në Piazza Italia. Autobusët e qytetit kushtojnë rreth €1.50. Me makinë
+  kujdes nga ZTL, zona e ndaluar ku gjobat vijnë me postë: parko në Pian di Massiano dhe vazhdo me
+  minimetrò.
+daytrips:
+  - name: Assisi
+    text: Qyteti i San Françeskut, me bazilikën e tij në listën e UNESCO-s. Rreth 25 minuta me tren, me rreth €3, pastaj autobusi nga stacioni deri në qytet.
+  - name: Liqeni Trasimeno
+    text: Liqeni më i madh në Italinë qendrore, me tragete për Isola Maggiore. Rreth 30 minuta me tren deri në Passignano.
+  - name: Spello
+    text: Qytezë me gurë ngjyrë rozë dhe ballkone me lule, rreth 30 minuta me tren. Në qershor, për Infiorata, rrugët mbulohen me qilima lulesh.
+  - name: Gubbio
+    text: Një nga qytetet mesjetare më të ruajtura të Umbrisë, rreth 1 orë e 10 minuta me autobus, me rreth €6.
+budget: >-
+  Një espresso në banak kushton rreth €1.10-1.30, një torta al testo rreth €6-8, një pica €7-10.
+  Një shtrat në hostel kushton nga rreth €25-35, një dhomë dyshe në hotel të thjeshtë nga rreth
+  €70-100 nata, plus taksa e qytetit prej disa eurosh për person në natë.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Në korrik Umbria Jazz mbush qytetin
+  me koncerte, shumë prej tyre falas në sheshe, por hotelet shtrenjtohen. Në vjeshtë festivali
+  Eurochocolate sjell tezga me çokollatë përgjatë Corso Vannucci.
+tips:
+  - "Mbath këpucë të rehatshme: Perugia është plot shkallë dhe rrugë të pjerrëta."
+  - "Për Gubbion, Spellon dhe fshatrat e Umbrisë një makinë me qira kursen shumë kohë, por mos hyr në ZTL të qendrave historike."
+  - "Rezervo herët fjetjen për Umbria Jazz dhe Eurochocolate: çmimet rriten shumë dhe dhomat mbarojnë shpejt."
+faq:
+  - q: "Si shkoj nga aeroporti i Perugias në Assisi?"
+    a: "Me shuttle-in e aeroportit që ndjek fluturimet, ose me taksi, rreth 20 minuta dhe rreth €30-35. Ndryshe autobusi për në Perugia dhe treni për Assisi, rreth 25 minuta."
+  - q: "A më duhet makinë në Umbria?"
+    a: "Jo për Perugian, Assisin dhe Spellon: trenat mjaftojnë. Për Gubbion dhe fshatrat e vegjël makina është më e lehtë, sepse autobusët janë të rrallë."
+  - q: "Sa para duhen në ditë në Perugia?"
+    a: "Pa fluturimin dhe fjetjen, llogarit rreth €40-60 në ditë për ushqim, transport dhe një hyrje në muze. Perugia është më e lirë se Florence dhe Rome."

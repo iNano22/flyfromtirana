@@ -1,0 +1,82 @@
+city: Lamezia Terme
+slug: lamezia-terme
+tagline: Tropea, la Costa degli Dei e i paesi arbëreshë
+intro: >-
+  Lamezia Terme è soprattutto l'aeroporto della Calabria: in circa un'ora sei a Tropea, a Pizzo o
+  sulle spiagge della Costa degli Dei. Più all'interno ci sono i boschi della Sila e i paesi
+  arbëreshë, dove da circa cinque secoli si parla ancora un albanese antico. La città, nata nel
+  1968 dall'unione di Nicastro, Sambiase e Sant'Eufemia, si visita in fretta. Quattro o cinque
+  giorni, meglio se in auto, bastano per la costa e una gita nell'entroterra.
+sights:
+  - name: Centro storico di Tropea
+    text: Vicoli e balconi in cima a una rupe, con spiagge di sabbia bianca ai suoi piedi.
+  - name: Santa Maria dell'Isola
+    text: La chiesa sullo scoglio di fronte al paese, simbolo di Tropea, più bella al tramonto.
+  - name: Capo Vaticano
+    text: Il promontorio a sud di Tropea, con un belvedere sulle calette della Costa degli Dei e, nelle giornate limpide, la vista fino al vulcano Stromboli.
+  - name: Castello Murat
+    text: Il castello aragonese del XV secolo sopra il porto di Pizzo, dove nel 1815 fu fucilato Gioacchino Murat, ex re di Napoli.
+  - name: Chiesa di Piedigrotta
+    text: Una piccola chiesa scavata nella roccia sulla spiaggia, a circa 1 km a nord di Pizzo, con statue di santi in pietra.
+  - name: Nicastro
+    text: La parte antica di Lamezia Terme, con i ruderi del castello normanno sopra la città. Vicino, a Sambiase, ci sono le Terme Caronte.
+itinerary:
+  - "Dall'aeroporto a Pizzo, circa 30 minuti in auto: Castello Murat, un tartufo in Piazza della Repubblica e la chiesa di Piedigrotta. La sera, a Tropea."
+  - "Tropea: il centro storico, la cattedrale e Santa Maria dell'Isola la mattina, poi spiaggia sotto la rupe. Il tramonto guardalo dal belvedere."
+  - "La Costa degli Dei: in barca dal porto di Tropea o in auto fino a Capo Vaticano e alla spiaggia di Grotticelle."
+  - "Verso nord: la Sila o i paesi arbëreshë, a circa 1,5-2 ore di auto. Dormi a Cosenza, a circa 1 ora dall'aeroporto."
+areas:
+  - name: Tropea
+    text: La base più conosciuta, con B&B e spiagge raggiungibili a piedi. Per agosto prenota presto.
+  - name: Pizzo
+    text: Più piccola ed economica di Tropea, a circa 30 minuti dall'aeroporto. Buona per la prima o l'ultima notte.
+  - name: Lamezia Terme
+    text: Hotel più economici vicino all'aeroporto, per un volo la mattina presto.
+food:
+  - name: "'Nduja"
+    text: Salame di maiale morbido e molto piccante di Spilinga, da spalmare sul pane o da aggiungere a pasta e pizza.
+  - name: Cipolla rossa di Tropea
+    text: La dolce cipolla rossa di Tropea, che si mangia cruda in insalata, come marmellata e perfino come gelato.
+  - name: Tartufo di Pizzo
+    text: Gelato alla nocciola e al cioccolato con un cuore di cioccolato fuso e cacao sopra, nato a Pizzo negli anni 1950.
+  - name: Fileja
+    text: Pasta attorcigliata fatta a mano, tipica della zona di Vibo Valentia, con sugo alla 'nduja o di carne.
+airports:
+  SUF: >-
+    Il principale aeroporto della Calabria è a circa 3 km dalla stazione di Lamezia Terme Centrale.
+    La navetta ti porta alla stazione in circa 10 minuti (circa €1,50-2); da lì i treni regionali
+    vanno a Pizzo (circa 20-30 minuti), Tropea (circa 1 ora, circa €5) e Cosenza (circa 1-1,5 ore,
+    spesso con cambio a Paola). Ci sono anche autobus regionali per Catanzaro, Cosenza e, d'estate,
+    Tropea. Le auto a noleggio si ritirano in aeroporto, mentre il taxi costa circa €50-70 fino a
+    Pizzo e circa €100-150 fino a Tropea.
+transport: >-
+  L'auto a noleggio aiuta molto: Capo Vaticano, la Sila e i paesi arbëreshë sono lontani dalla
+  ferrovia. Senza auto, il treno regionale lungo la costa collega Lamezia con Pizzo e Tropea, ma
+  passa di rado, circa una volta ogni 1-2 ore; d'estate ci sono anche barche lungo la Costa degli
+  Dei. I centri di Tropea e Pizzo sono zone ZTL: lascia l'auto in un parcheggio fuori (circa €1-2
+  all'ora).
+daytrips:
+  - name: La Sila
+    text: Un altopiano di montagna con boschi di pini, il lago Arvo e i pini secolari dei "Giganti della Sila" vicino a Camigliatello Silano, a circa 1,5 ore di auto.
+  - name: I paesi arbëreshë
+    text: In provincia di Cosenza, a circa 1,5-2 ore di auto. Lungro (Ungra) ha la sua cattedrale di rito bizantino, San Demetrio Corone (Shën Mitri) il collegio dove studiò Girolamo De Rada, mentre Civita (Çifti) sta sopra le gole del Raganello.
+  - name: Cosenza
+    text: Il centro storico sul colle e il museo all'aperto MAB su Corso Mazzini, a circa 1 ora di treno.
+budget: >-
+  Un tartufo a Pizzo costa circa €4-5, un panino con la 'nduja circa €5, una pizza €7-10 e un
+  espresso circa €1-1,20. L'auto a noleggio costa circa €30-50 al giorno d'estate, meno in bassa
+  stagione. Una camera doppia a Tropea costa circa €60-90 a notte a giugno e settembre e spesso
+  oltre €120 ad agosto.
+when: >-
+  Giugno e settembre sono i mesi migliori: il mare è caldo e senza la folla di agosto, quando i
+  prezzi toccano il massimo intorno al 15 agosto (Ferragosto). Da novembre a marzo molti hotel sul
+  mare chiudono. La Sila è bella in autunno e innevata d'inverno.
+tips:
+  - "Nei paesi arbëreshë parla albanese: molti abitanti, soprattutto gli anziani, ti capiranno. A Civita e Frascineto, di solito il martedì dopo Pasqua, si ballano le danze tradizionali in costume."
+  - "Per le spiagge sotto Tropea si scendono lunghe scalinate. Le spiagge libere sono gratuite, ma ad agosto si riempiono presto."
+  - "Chiedi prima se la patente albanese è accettata o se serve anche il permesso di guida internazionale; per il deposito dell'auto di solito serve una carta di credito."
+faq:
+  - q: "Si può visitare la Calabria senza auto?"
+    a: "Sì, se resti sulla costa: la navetta e il treno ti portano a Tropea in circa 1,5 ore in tutto. Per la Sila e i paesi arbëreshë l'auto fa risparmiare molto tempo."
+  - q: "Quanto si spende al giorno in Calabria?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno, più l'auto. La Calabria è tra le regioni più economiche d'Italia, tranne ad agosto."

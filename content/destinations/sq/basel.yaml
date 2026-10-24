@@ -1,0 +1,77 @@
+city: Basel
+slug: basel
+tagline: Rini, muzetë dhe tre shtete në një ditë
+intro: >-
+  Basel shtrihet në të dyja anët e Rinit, aty ku takohen Zvicra, Franca dhe Gjermania. Është qyteti
+  i artit, me rreth 40 muze, dhe një qytet i vjetër që përshkohet lehtë në këmbë. Është i
+  shtrenjtë, por kush fle në një hotel këtu merr falas BaselCard, me transport pa pagesë.
+sights:
+  - name: Altstadt dhe Münster
+    text: Qyteti i vjetër mbi Rin, me bashkinë e kuqe (Rathaus) në Marktplatz dhe katedralen prej guri rozë. Nga tarraca Pfalz sheh lumin; ngjitja në kulla kushton rreth 6 franga.
+  - name: Rini dhe tragetet
+    text: Katër tragete druri pa motor, të shtyra vetëm nga rryma, kalojnë lumin për rreth 2 franga. Në mbrëmje vendasit ulen në shkallët e bregut të Kleinbasel-it.
+  - name: Kunstmuseum Basel
+    text: Koleksioni më i vjetër publik i artit në botë, nga Holbein te Picasso. Hyrja kushton rreth 16-26 franga; koleksioni zakonisht është falas të dielën e parë të muajit.
+  - name: Fondation Beyeler
+    text: Muzeu i Renzo Piano-s në Riehen, mes një parku, me Monet, Giacometti dhe ekspozita të mëdha. Rreth 20 minuta me tramvajin 6; hyrja kushton rreth 30 franga.
+  - name: Vitra në Weil am Rhein
+    text: Kampusi i dizajnit me ndërtesa të Frank Gehry-t, Zaha Hadid-it dhe Tadao Ando-s, pak përtej kufirit gjerman, rreth 20 minuta me autobusin 55 nga Claraplatz. Shëtitja në kampus është falas, muzeu kushton rreth €20.
+  - name: Museum Tinguely
+    text: Makinat lëvizëse të skulptorit Jean Tinguely, buzë Rinit. Pranë teatrit, shatërvani i tij me skulptura që lëvizin në ujë shihet falas.
+airports:
+  BSL: >-
+    EuroAirport Basel-Mulhouse-Freiburg ndodhet në tokë franceze, rreth 8 km nga qendra. Pas
+    bagazheve ndiq shenjat për daljen zvicerane (Basel), jo për atë franceze. Autobusi 50 niset çdo
+    7-15 minuta dhe të çon në stacionin Basel SBB për rreth 20 minuta; bileta kushton rreth 5 franga
+    (rreth €5.30) dhe blihet te makina para daljes. Taksia bën rreth 15-20 minuta dhe kushton rreth
+    40-50 franga (rreth €43-54).
+budget: >-
+  Një kafe kushton rreth 4.50-5.50 franga, një kebab 10-15 franga, një pjatë në restorant 25-40
+  franga. Një shtrat në hostel kushton rreth 45-60 franga, një dhomë dyshe në hotel të thjeshtë nga
+  rreth 140-200 franga nata. 1 frang vlen rreth €1.07. Supermarketet në Weil am Rhein, në Gjermani,
+  janë shumë më të lira dhe arrihen me tramvajin 8.
+when: >-
+  Qershori-shtatori është koha më e mirë: në korrik dhe gusht uji i Rinit arrin rreth 20-24 gradë
+  dhe vendasit notojnë në lumë, të çuar nga rryma, me rrobat në një qese të papërshkueshme
+  (Wickelfisch). Fasnacht, karnavali i qytetit, nis të hënën pas të Mërkurës së Hirit në orën 4:00
+  të mëngjesit dhe zgjat 3 ditë me maska, daulle dhe fyej; në vitin 2027 bie më 15-17 shkurt.
+tips:
+  - "Zvicra përdor frangën (CHF), jo euron: paguaj me kartë. Në Weil am Rhein dhe në Francë paguan në euro."
+  - "Shmang javën e Art Basel në qershor: çmimet e hoteleve shumëfishohen."
+  - "Për notin në Rin hyr nga bregu i Kleinbasel-it, rri larg anijeve dhe dil para urës Dreirosenbrücke."
+itinerary:
+  - "Marktplatz, qyteti i vjetër, Münster me tarracën Pfalz dhe kullat. Pasdite një kalim me traget, Mittlere Brücke dhe shëtitja buzë Rinit; në mbrëmje darkë në Kleinbasel."
+  - "Kunstmuseum në mëngjes. Pasdite tramvaji 6 për te Fondation Beyeler, në mbrëmje shatërvani i Tinguely-t dhe një pije buzë lumit."
+  - "Vitra në Weil am Rhein në mëngjes, pastaj blerje në supermarketet gjermane. Ndryshe, një udhëtim ditor në Colmar, Freiburg ose Lucerne."
+areas:
+  - name: Grossbasel dhe Altstadt
+    text: Qyteti i vjetër në bregun e majtë, i qetë, i bukur dhe i shtrenjtë, pranë muzeve.
+  - name: Kleinbasel
+    text: Bregu i djathtë, më i gjallë dhe pak më i lirë, me bare dhe restorante nga e gjithë bota.
+  - name: Pranë stacionit Basel SBB
+    text: "Zona më praktike: këtu mbërrin autobusi 50 dhe nisen trenat për udhëtimet ditore. Hotelet janë më të thjeshta dhe më të lira."
+food:
+  - name: Basler Läckerli
+    text: Biskota të forta me mjaltë, bajame dhe erëza, ëmbëlsira e qytetit. Një kuti e vogël kushton rreth 8-10 franga.
+  - name: Mehlsuppe dhe Zwiebelwähe
+    text: Supa me miell të skuqur dhe byreku me qepë, që hahen sidomos gjatë Fasnacht-it.
+  - name: Supermarketet dhe piknik buzë Rinit
+    text: "Migros dhe Coop kanë ushqim të gatshëm për 8-12 franga: merre dhe ha në shkallët e Kleinbasel-it, si vendasit."
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa tramvajet e gjelbra të çojnë kudo, edhe në Gjermani (tramvaji
+  8) dhe në Francë (tramvaji 3). Një biletë kushton rreth 4.70 franga (rreth €5), bileta ditore
+  rreth 10 franga (rreth €11). Nëse fle në hotel, hostel ose kamping në Basel, merr falas BaselCard:
+  transport publik pa pagesë gjatë gjithë qëndrimit, përfshirë autobusin 50 për në aeroport, dhe
+  zbritje deri në 50% në shumë muze. Kërkoje në recepsion nëse nuk ta japin vetë.
+daytrips:
+  - name: Colmar
+    text: Qyteti francez i Alsace-s me shtëpi me trarë druri dhe kanale, rreth 45 minuta me tren direkt.
+  - name: Freiburg
+    text: Qytet universitar gjerman në portën e Pyllit të Zi, me katedrale gotike, rreth 45 minuta me tren.
+  - name: Lucerne
+    text: Ura e drunjtë e Kapelës dhe liqeni mes maleve, rreth 1 orë me tren direkt.
+faq:
+  - q: "Aeroporti është në Francë: a duhet të hyj në Francë?"
+    a: "Jo. Aeroporti ka dy dalje, një franceze dhe një zvicerane. Ndiq shenjat për Basel dhe dil nga ana zvicerane, ku të pret autobusi 50 për në qytet."
+  - q: "Sa para duhen në ditë në Basel?"
+    a: "Pa fluturimin dhe fjetjen, rreth 70-110 franga (rreth €75-118) në ditë. Kursen me BaselCard, me ushqimin nga supermarketet dhe me gjërat falas: Rini, qyteti i vjetër dhe kampusi i Vitra-s."

@@ -1,0 +1,78 @@
+city: Rimini
+slug: rimini
+tagline: Un ponte romano, la spiaggia e la piadina
+intro: >-
+  Rimini è conosciuta come la città delle spiagge dell'Adriatico, ma oltre la ferrovia si nasconde
+  un centro romano e rinascimentale che molti turisti trascurano. È anche la città di Federico
+  Fellini. Tre o quattro giorni bastano per il centro, il mare, San Marino e Ravenna.
+sights:
+  - name: Arco d'Augusto
+    text: L'arco eretto nel 27 a.C. in onore dell'imperatore Augusto, tra gli archi romani più antichi giunti fino a noi. Segnava la fine della Via Flaminia, la strada che arrivava da Roma.
+  - name: Ponte di Tiberio
+    text: Il ponte di pietra sul canale del fiume Marecchia, iniziato sotto Augusto e completato sotto Tiberio nell'anno 21. È ancora in uso ogni giorno.
+  - name: Tempio Malatestiano
+    text: La cattedrale della città, ricostruita nel XV secolo per il signore Sigismondo Malatesta, con la facciata incompiuta di Leon Battista Alberti. All'interno c'è un crocifisso di Giotto. L'ingresso di solito è gratuito.
+  - name: Borgo San Giuliano
+    text: Il vecchio borgo dei pescatori, oltre il Ponte di Tiberio, con piccole case colorate e murales dedicati ai film di Fellini.
+  - name: Castel Sismondo e Museo Fellini
+    text: Il castello dei Malatesta in centro, oggi parte del Museo Fellini insieme al vecchio cinema Fulgor. Il biglietto costa circa €10-12.
+  - name: La spiaggia
+    text: Circa 15 km di sabbia fine e mare basso, divisi in stabilimenti privati numerati (bagni), ma ci sono anche tratti liberi (spiaggia libera).
+itinerary:
+  - "L'Arco d'Augusto e Corso d'Augusto fino a Piazza Cavour. Il Tempio Malatestiano, poi Castel Sismondo e il Museo Fellini. Al tramonto il Ponte di Tiberio e la cena a Borgo San Giuliano."
+  - "La mattina in spiaggia. Nel pomeriggio in bici lungo il mare, dal Parco Fellini e dal Grand Hotel verso sud; la sera un aperitivo a Marina Centro."
+  - "Una gita a San Marino in autobus: le torri sulla rupe e la vista fino al mare. Al ritorno, la serata in Piazza Cavour."
+  - "Ravenna in treno per i mosaici bizantini, oppure in auto a noleggio a San Leo e Santarcangelo di Romagna."
+areas:
+  - name: Centro Storico
+    text: B&B e appartamenti tra i monumenti, con i ristoranti migliori. La spiaggia è a circa 20 minuti a piedi o 5 minuti in bici.
+  - name: Marina Centro
+    text: La zona degli alberghi sul mare, tra la stazione e la spiaggia, la più vivace d'estate.
+  - name: Bellariva, Rivazzurra e Miramare
+    text: Alberghi per famiglie più economici a sud, vicino all'aeroporto e collegati alla stazione dal Metromare.
+food:
+  - name: Piadina romagnola
+    text: Una sottile focaccia piatta cotta sulla teglia (testo), farcita di solito con prosciutto crudo, squacquerone morbido e rucola. Nei chioschi (piadinerie) costa circa €5-8.
+  - name: Cassoni
+    text: Una piadina chiusa a mezzaluna, ripiena di erbe, patate oppure pomodoro e mozzarella.
+  - name: Passatelli
+    text: Grossi cilindretti di pangrattato, Parmigiano e uova, serviti in brodo o con i frutti di mare.
+  - name: Grigliata di pesce
+    text: Pesce azzurro dell'Adriatico alla griglia, con sardine, gamberi e calamari.
+airports:
+  RMI: >-
+    L'aeroporto Federico Fellini è a Miramare, circa 8 km a sud del centro. L'autobus 9 ti porta
+    alla stazione e in centro in circa 20-30 minuti; il biglietto costa circa €1,50, di più se lo
+    compri dall'autista. A pochi minuti a piedi passa anche il Metromare, il filobus che collega
+    Riccione alla stazione di Rimini. Il taxi fino al centro costa circa €20-25.
+transport: >-
+  Rimini è pianeggiante e la bici è il mezzo migliore, a noleggio per circa €10 al giorno. Il
+  centro storico e la spiaggia sono separati dalla ferrovia, a circa 20 minuti a piedi. Il
+  Metromare e l'autobus 11 vanno lungo la costa verso sud, fino a Riccione; compra il biglietto dal
+  tabaccaio o con l'app. Dalla stazione partono i treni per Ravenna, Bologna e Pesaro.
+daytrips:
+  - name: San Marino
+    text: La piccola repubblica sul Monte Titano, a circa 50 minuti con l'autobus diretto dalla stazione di Rimini (circa €5-6 a tratta). Si paga in euro.
+  - name: San Leo
+    text: Un borgo medievale con una fortezza sulla rupe, dove l'avventuriero Cagliostro morì prigioniero nel 1795. Circa 40 minuti in auto; in autobus bisogna cambiare linea.
+  - name: Ravenna
+    text: I mosaici bizantini del V-VI secolo in San Vitale, nel Mausoleo di Galla Placidia e in Sant'Apollinare Nuovo, patrimonio UNESCO. Circa 1 ora in treno regionale (circa €5); qui c'è anche la tomba di Dante.
+budget: >-
+  Una piadina costa circa €5-8, un espresso circa €1,30, un piatto di passatelli circa €12-15 e un
+  ombrellone con due lettini circa €20-30 al giorno d'estate. L'imposta di soggiorno, circa €1-3 a
+  persona per notte, si paga in albergo.
+when: >-
+  Giugno e settembre: il mare è caldo e i prezzi sono più bassi che a luglio-agosto. Agosto,
+  soprattutto intorno a Ferragosto (15 agosto), è affollatissimo e gli alberghi costano molto di
+  più. D'inverno molti alberghi sul mare chiudono, ma il centro resta vivace e tranquillo.
+tips:
+  - "Molti stabilimenti offrono l'ombrellone per mezza giornata a un prezzo più basso: chiedi la «mezza giornata» dopo le 14:00."
+  - "Fellini è nato ed è sepolto a Rimini: la sua tomba è nel cimitero monumentale della città."
+  - "Con l'auto a noleggio non entrare nel centro storico: è zona ZTL e le multe arrivano per posta."
+faq:
+  - q: "Vale la pena visitare Rimini fuori stagione?"
+    a: "Sì, per due o tre giorni: il centro romano, il Museo Fellini, San Marino e Ravenna si visitano tutto l'anno e gli alberghi costano molto meno. Però molti locali sul mare chiudono da novembre a marzo."
+  - q: "Come si va a San Marino da Rimini?"
+    a: "Con l'autobus diretto che parte dalla stazione, circa 50 minuti e circa €5-6 a tratta. Non c'è controllo di frontiera."
+  - q: "Quanti soldi servono al giorno a Rimini?"
+    a: "Esclusi volo e alloggio, €40-60 al giorno, di più ad agosto se prendi l'ombrellone in spiaggia."

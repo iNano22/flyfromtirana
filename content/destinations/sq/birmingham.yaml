@@ -1,0 +1,80 @@
+city: Birmingham
+slug: birmingham
+tagline: Kanale, balti dhe çokollata e Cadbury
+intro: >-
+  Birmingham është qyteti i dytë më i madh i Anglisë dhe ish-zemra e revolucionit industrial. Sot
+  ka më shumë kanale se Venice, muze falas, qendra tregtare të mëdha dhe lagjen ku lindi balti,
+  kerri i famshëm i qytetit. Është më i lirë se London dhe një bazë e mirë për Stratford-upon-Avon,
+  Warwick dhe Oxford. Dy-tri ditë mjaftojnë për qytetin, plus një ditë për një udhëtim jashtë tij.
+sights:
+  - name: Kanalet dhe Gas Street Basin
+    text: Birmingham ka rreth 56 km kanale brenda qytetit. Nga Gas Street Basin shëtit buzë ujit deri në Brindleyplace dhe The Mailbox.
+  - name: Jewellery Quarter
+    text: Lagjja e argjendarëve, ku punohet ende një pjesë e madhe e stolive të Britanisë. Ka qindra dyqane, kafene dhe Museum of the Jewellery Quarter, një punishte e ruajtur ashtu siç u mbyll.
+  - name: Bullring dhe Grand Central
+    text: Qendra tregtare më e njohur e qytetit, me ndërtesën e Selfridges të mbuluar me disqe alumini. Pranë saj janë kisha St Martin's dhe tregjet e vjetra.
+  - name: Library of Birmingham
+    text: Biblioteka moderne në Centenary Square, e hapur në vitin 2013. Hyrja është falas dhe nga tarracat me kopsht duket gjithë qyteti.
+  - name: Birmingham Museum and Art Gallery
+    text: Muzeu kryesor i qytetit, me pikturat prerafaelite dhe thesarin anglo-sakson Staffordshire Hoard. Hyrja është falas, por disa salla mund të jenë të mbyllura për rinovim.
+  - name: Cadbury World
+    text: Muzeu i çokollatës Cadbury në Bournville, me provë çokollate falas. Bileta kushton rreth £20-25 dhe rezervohet online. Me tren nga New Street deri në Bournville bëhen rreth 10 minuta.
+  - name: Digbeth
+    text: Ish-lagjja industriale me grafiti, kompleksin Custard Factory, bare dhe tregje ushqimi në fundjavë.
+airports:
+  BHX: >-
+    Aeroporti është rreth 13 km në lindje të qendrës. Treni i vogël Air-Rail Link, falas, të çon
+    për 2 minuta në stacionin Birmingham International. Prej andej trenat për Birmingham New
+    Street nisen shpesh, bëjnë rreth 10-15 minuta dhe kushtojnë rreth £4-6. Taksia kushton rreth
+    £30-40 dhe bën 20-30 minuta, sipas trafikut.
+budget: >-
+  Një kafe kushton rreth £3.50, një vakt i thjeshtë £10-15 dhe një birrë (pint) rreth £5-6. Një
+  balti në Ladypool Road del rreth £10-15. Një shtrat në hostel kushton rreth £20-35 dhe hotelet
+  janë dukshëm më të lira se në London. Shumica e muzeve janë falas.
+when: >-
+  Maji-shtatori ka motin më të butë (rreth 15-22 gradë) dhe ditë të gjata, por shi bie gjatë
+  gjithë vitit. Nga mesi i nëntorit deri afër Krishtlindjeve qendra mbushet me Frankfurt
+  Christmas Market, tregun e madh gjerman të Krishtlindjeve.
+tips:
+  - "Biletat e trenit për Stratford-upon-Avon, Warwick dhe Oxford janë më të lira jashtë orëve të pikut (pas orës 09:30) dhe kur blihen online më përpara."
+  - "Të dielën dyqanet e mëdha hapen vetëm 6 orë, zakonisht 10:00-16:00 ose 11:00-17:00: planifiko blerjet për ditët e tjera."
+  - "Birmingham ka tre stacione kryesore treni (New Street, Moor Street dhe Snow Hill): kontrollo nga cili niset treni yt."
+itinerary:
+  - "Qendra në këmbë: Bullring dhe kisha St Martin's, pastaj Victoria Square, Birmingham Museum and Art Gallery dhe Library of Birmingham. Në mbrëmje shëtitje buzë kanaleve në Gas Street Basin dhe darkë në Brindleyplace."
+  - "Jewellery Quarter në mëngjes, me muzeun dhe dyqanet e argjendarëve. Pasdite Digbeth dhe Custard Factory, në mbrëmje balti në Balti Triangle."
+  - "Cadbury World në Bournville në mëngjes (me rezervim), pastaj shëtitje në fshatin e vjetër të punëtorëve të Cadbury. Pasdite blerje në Bullring."
+  - "Një ditë jashtë qytetit: Stratford-upon-Avon për Shakespeare, Warwick Castle ose Oxford me kolegjet e tij."
+areas:
+  - name: Qendra dhe New Street
+    text: "Zona më praktike: trenat nga aeroporti mbërrijnë këtu dhe gjithçka është në këmbë."
+  - name: Jewellery Quarter
+    text: Më e qetë dhe me karakter, me kafene dhe pube të vogla, 10-15 minuta në këmbë nga qendra.
+  - name: Brindleyplace dhe Broad Street
+    text: Buzë kanaleve, me restorante dhe bare. Broad Street është e zhurmshme natën në fundjavë.
+  - name: Digbeth
+    text: Për ata që duan bare, muzikë dhe jetë nate. Hotele më të lira, pranë stacioneve Moor Street dhe New Street.
+food:
+  - name: Balti
+    text: Kerri që lindi në Birmingham në vitet 1970, i shërbyer në tasin prej çeliku ku gatuhet. Provoje në Balti Triangle, rreth Ladypool Road.
+  - name: Tregjet e ushqimit
+    text: Digbeth Dining Club në fundjavë dhe Bullring Markets kanë tezga me ushqime nga e gjithë bota me çmime të mira.
+  - name: Pork scratchings
+    text: Lëkurë derri e skuqur dhe krokante, meze tradicionale e zonës për birrën në pub.
+  - name: Sunday roast
+    text: "Dreka e së dielës në pub: mish i pjekur, patate dhe Yorkshire pudding."
+transport: >-
+  Qendra është e vogël dhe përshkohet lehtë në këmbë. Tramvaji West Midlands Metro lidh New Street
+  me Jewellery Quarter, Edgbaston dhe Wolverhampton. Autobusët kushtojnë rreth £2-2.50 për udhëtim:
+  paguaj me kartë bankare pa kontakt dhe sistemi e kufizon vetë shpenzimin ditor.
+daytrips:
+  - name: Stratford-upon-Avon
+    text: Qyteti i lindjes së Shakespeare, me shtëpinë e tij dhe lumin Avon, rreth 1 orë me tren nga Moor Street ose Snow Hill.
+  - name: Warwick Castle
+    text: Kështjellë mesjetare e ruajtur shumë mirë, rreth 30-40 minuta me tren deri në Warwick dhe 15 minuta në këmbë.
+  - name: Oxford
+    text: Qyteti universitar me kolegje të vjetra, bibliotekën Bodleian dhe muze falas, rreth 1 orë e 10 minuta me tren nga New Street.
+faq:
+  - q: "A ia vlen Birmingham në vend të London?"
+    a: "Për një fundjavë po: hotelet dhe ushqimi janë më të lira, muzetë janë falas dhe qyteti është bazë e mirë për Stratford-upon-Avon, Warwick dhe Oxford. Nëse do të shohësh edhe London, treni nga New Street bën rreth 1.5 orë."
+  - q: "Sa para duhen në ditë në Birmingham?"
+    a: "Pa fluturimin dhe fjetjen, llogarit £45-70 në ditë për ushqim, transport dhe një atraksion me pagesë si Cadbury World."

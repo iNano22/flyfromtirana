@@ -1,0 +1,79 @@
+city: Liverpool
+slug: liverpool
+tagline: Beatles, calcio e il porto sul fiume Mersey
+intro: >-
+  Liverpool è la città dei Beatles e del calcio, un vecchio porto sul fiume Mersey con musei
+  gratuiti, due grandi cattedrali e una vita notturna vivace. Il centro si gira a piedi e i prezzi
+  sono più bassi che a Londra. Tre giorni bastano per la città, più un giorno per Chester o il
+  Galles del Nord.
+sights:
+  - name: The Beatles Story e il Cavern Club
+    text: Il museo dei Beatles al Royal Albert Dock costa circa £20-25. Il Cavern Club in Mathew Street, dove il gruppo suonò centinaia di volte, è stato ricostruito quasi nello stesso punto e ha musica dal vivo ogni giorno.
+  - name: Royal Albert Dock e Pier Head
+    text: I moli in mattoni rossi del 1846, con negozi, ristoranti e il Merseyside Maritime Museum (gratuito). A Pier Head si trovano le «Three Graces», gli edifici simbolo del porto, tra cui il Royal Liver Building.
+  - name: Le due cattedrali
+    text: La Liverpool Cathedral, anglicana, è la cattedrale più grande del Regno Unito, con una torre su cui si sale per circa £7-8. All'altra estremità di Hope Street si trova la Metropolitan Cathedral, cattolica e moderna, a forma di tenda. L'ingresso a entrambe è gratuito.
+  - name: Anfield
+    text: Lo stadio del Liverpool FC, con circa 61.000 posti. Il tour con il museo costa circa £25-35 e si prenota online. Dal centro ci arrivi con gli autobus 17 o 26 in circa 20 minuti.
+  - name: I musei gratuiti
+    text: Il Museum of Liverpool a Pier Head racconta la storia della città, l'International Slavery Museum all'Albert Dock il ruolo del porto nella tratta degli schiavi. Vicino a Lime Street ci sono il World Museum e la Walker Art Gallery, anch'essi gratuiti.
+  - name: Mersey Ferry
+    text: La crociera in traghetto sul fiume dura circa 50 minuti, costa circa £12-15 e offre la vista migliore sulla città.
+airports:
+  LPL: >-
+    L'aeroporto Liverpool John Lennon si trova a circa 12 km a sud-est del centro. L'autobus 500
+    parte ogni 30 minuti e arriva in centro (Liverpool ONE e Lime Street) in circa 30-40 minuti;
+    l'autobus 86 è più lento. Il biglietto costa circa £2-3. In alternativa, prendi l'autobus fino
+    alla stazione di Liverpool South Parkway e da lì il treno per il centro (circa 15 minuti). Il
+    taxi costa circa £25-35.
+budget: >-
+  Un caffè costa circa £3-3,50, un pasto semplice £10-15 e una birra (pint) circa £4,50-5,50. Un
+  letto in ostello costa circa £18-30, ma gli hotel diventano molto più cari nei giorni delle
+  partite e durante la corsa di cavalli Grand National ad aprile.
+when: >-
+  Maggio-settembre ha il clima più mite (circa 15-20 gradi), ma piove tutto l'anno. A fine agosto
+  il festival International Beatleweek porta concerti in tutta la città. La stagione calcistica va
+  da agosto a maggio.
+tips:
+  - "Prenota online il tour di Anfield e The Beatles Story, soprattutto d'estate."
+  - "I biglietti per le partite del Liverpool FC si vendono solo sul sito ufficiale del club, di solito ai soci. Non comprare da venditori sconosciuti, perché il biglietto può essere annullato."
+  - "Porta una giacca impermeabile: il vento dal fiume e la pioggia sono frequenti anche d'estate."
+itinerary:
+  - "Il Royal Albert Dock con The Beatles Story e il Maritime Museum, poi Pier Head e il Museum of Liverpool. Nel pomeriggio il Mersey Ferry, la sera Mathew Street e il Cavern Club."
+  - "Hope Street con le due cattedrali e la torre della Liverpool Cathedral. Nel pomeriggio Bold Street e Chinatown, la sera il Baltic Triangle."
+  - "Il tour di Anfield al mattino, poi il World Museum e la Walker Art Gallery. Nel pomeriggio l'autobus del Magical Mystery Tour per Penny Lane e Strawberry Field (circa £20-30)."
+  - "Una giornata fuori città: Chester con le mura romane, oppure il Galles del Nord per il castello di Conwy."
+areas:
+  - name: Centro e Liverpool ONE
+    text: Vicino a Lime Street, ai negozi e all'Albert Dock. Ideale per un soggiorno breve.
+  - name: Ropewalks e Bold Street
+    text: La zona dei bar e dei piccoli ristoranti. Vivace, ma rumorosa nel fine settimana.
+  - name: Baltic Triangle
+    text: Ex magazzini trasformati in bar e studi, a 10-15 minuti a piedi dall'Albert Dock, con hotel e appartamenti di solito più economici.
+  - name: Georgian Quarter
+    text: Strade tranquille con case antiche vicino alle cattedrali, con piccole pensioni e buoni prezzi.
+food:
+  - name: Scouse
+    text: Uno stufato locale di agnello o manzo, patate, carote e cipolle, che ha dato il nome anche agli abitanti, gli «Scousers». Si serve con cavolo rosso sottaceto e pane.
+  - name: Baltic Market
+    text: Il mercato gastronomico del Baltic Triangle, con decine di banchi di cibo da tutto il mondo.
+  - name: Bold Street
+    text: La via migliore per mangiare, con caffè e ristoranti libanesi, indiani e vegetariani per tutte le tasche.
+  - name: Chinatown
+    text: La comunità cinese più antica d'Europa, con il grande arco su Nelson Street e ristoranti a buoni prezzi.
+transport: >-
+  Il centro, l'Albert Dock e le cattedrali si raggiungono a piedi, a 15-20 minuti l'uno dall'altro.
+  I treni Merseyrail passano sotto il centro e ti portano a Chester e a Liverpool South Parkway. Gli
+  autobus costano circa £2 a corsa e il biglietto giornaliero circa £5.
+daytrips:
+  - name: Chester
+    text: Una città romana con le mura intorno al centro e le gallerie medievali di negozi di The Rows, a circa 45 minuti di treno da Liverpool Central.
+  - name: Manchester
+    text: La città del Manchester United e del Manchester City, a circa 35-50 minuti di treno da Lime Street.
+  - name: Galles del Nord
+    text: Il castello medievale di Conwy e la spiaggia di Llandudno, a circa 1,5-2 ore di treno, con cambio a Chester.
+faq:
+  - q: "Come vedere una partita del Liverpool FC?"
+    a: "I biglietti sono molto difficili da ottenere senza essere soci. Se non ne trovi, il tour di Anfield (circa £25-35) è l'alternativa più sicura. Dal 2025 l'Everton gioca nel nuovo Hill Dickinson Stadium sul fiume, dove i biglietti si trovano più facilmente."
+  - q: "Quanto si spende al giorno a Liverpool?"
+    a: "Volo e alloggio esclusi, calcola £45-75 al giorno per cibo, trasporti e un tour o un museo a pagamento. Liverpool è decisamente più economica di Londra."

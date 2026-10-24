@@ -1,0 +1,100 @@
+city: Billund
+slug: billund
+tagline: La casa della LEGO e la porta dello Jutland
+intro: >-
+  Billund è una piccola cittadina nel cuore dello Jutland, in Danimarca, ma conosciuta in tutto il
+  mondo: qui è nata la LEGO nel 1932, e qui si trovano il primo LEGOLAND e la LEGO House. La città
+  in sé ha poco altro, quindi calcola uno o due giorni per la LEGO e il resto per le gite a Vejle,
+  Aarhus, Ribe e sulla costa occidentale. La moneta è la corona danese (DKK): €1 vale circa 7,5
+  corone.
+sights:
+  - name: LEGO House
+    text: >-
+      Un edificio a forma di 21 mattoncini giganti, aperto nel 2017, con zone dove costruisci tu
+      stesso e la storia della LEGO. Biglietti da circa 170 DKK (circa €23); prenota online.
+  - name: LEGOLAND Billund
+    text: >-
+      Il primo LEGOLAND al mondo, aperto nel 1968, con attrazioni per tutte le età e Miniland, con
+      città costruite con milioni di mattoncini. Biglietti online da circa 349 DKK (circa €47).
+  - name: LEGO Square e le terrazze
+    text: >-
+      La piazza sotto la LEGO House e le terrazze colorate sul tetto sono gratuite. Lì c'è anche il
+      MINIFIG Café, dove il cibo te lo portano i robot.
+  - name: Lalandia Billund
+    text: Il parco acquatico coperto Aquadome, accanto al LEGOLAND, aperto tutto l'anno. Ottimo per una giornata di pioggia.
+  - name: Givskud Zoo
+    text: Un parco safari a circa 30 minuti in auto, dove vedi i leoni dalla tua macchina. Aperto dalla primavera all'autunno.
+itinerary:
+  - "Tutta la giornata al LEGOLAND: Miniland al mattino, quando c'è meno gente, poi le attrazioni."
+  - "La LEGO House con prenotazione e le terrazze sul tetto. Nel pomeriggio Lalandia o il Givskud Zoo, oppure una serata a Vejle."
+  - "Vejle e Jelling: le pietre runiche, poi il centro di Vejle e Bølgen sul fiordo."
+  - "Aarhus con ARoS, Den Gamle By e il Quartiere Latino. Oppure, con un'auto a noleggio, Ribe e la costa occidentale."
+areas:
+  - name: Centro di Billund
+    text: Vicino alla LEGO House; il LEGOLAND è a circa 25 minuti a piedi. Le serate sono molto tranquille.
+  - name: Vicino al LEGOLAND
+    text: Gli hotel del parco, le casette del LEGOLAND Holiday Village e le case vacanza di Lalandia. Ideale per le famiglie, ma la zona più cara.
+  - name: Vejle
+    text: >-
+      Una città sul fiordo, con più ristoranti e hotel più economici. Dalla stazione partono i treni
+      per le gite; l'autobus 43 va a Billund in circa 40 minuti.
+  - name: Aarhus
+    text: Per una grande città, a circa 1,5 ore con l'autobus diretto dall'aeroporto; la LEGO la fai come gita in giornata.
+food:
+  - name: Smørrebrød
+    text: >-
+      Pane di segale con sopra aringa, salmone, roast beef o uovo con gamberetti, il classico pranzo
+      danese. Un pezzo costa circa 60-110 DKK (circa €8-15).
+  - name: Pølse
+    text: L'hot dog danese del chiosco (pølsevogn), con cipolle croccanti e sottaceti, circa 35-50 DKK (circa €5-7).
+  - name: Stegt flæsk med persillesovs
+    text: Il piatto nazionale, pancetta di maiale croccante con patate e salsa al prezzemolo.
+  - name: Kanelsnegl e wienerbrød
+    text: Dolci di pasta sfoglia, alla cannella o alla crema, per colazione con il caffè.
+airports:
+  BLL: >-
+    L'aeroporto è proprio accanto al LEGOLAND: l'ingresso del parco è a circa 1 km, 15 minuti a
+    piedi. La LEGO House è a circa 5 minuti in taxi (circa 100-150 DKK, €13-20). L'autobus 43 va
+    alla stazione di Vejle in circa 40 minuti (circa 64 DKK, €8,5), mentre il 912X va diretto ad
+    Aarhus in circa 1,5 ore (circa 162 DKK, €22).
+transport: >-
+  Billund non ha il treno. Il centro, la LEGO House e il LEGOLAND sono collegati a piedi o in
+  autobus; gli orari si trovano su Rejseplanen. Per Ribe e la costa occidentale, un'auto a noleggio
+  fa risparmiare molto tempo.
+daytrips:
+  - name: Vejle e Jelling
+    text: >-
+      Circa 40 minuti con l'autobus 43 fino a Vejle, poi 15 minuti di treno fino alle pietre runiche
+      dei re vichinghi a Jelling, di circa l'anno 965, patrimonio UNESCO dal 1994. Il museo è gratuito.
+  - name: Aarhus
+    text: >-
+      La seconda città della Danimarca. Sul tetto dell'ARoS c'è Your rainbow panorama, una passerella
+      circolare di vetro nei colori dell'arcobaleno (circa 200 DKK, €27). Circa 1,5 ore con il 912X.
+  - name: Ribe
+    text: >-
+      La città più antica della Danimarca, con vicoli acciottolati e una cattedrale; nelle sere d'estate
+      il guardiano notturno guida una passeggiata gratuita. Circa 1 ora in auto, o 2 ore tra autobus e
+      treno.
+  - name: Esbjerg e la costa occidentale
+    text: >-
+      Circa 1 ora con l'autobus 180 (circa 84 DKK, €11). In riva al mare si trovano i Mennesket ved
+      Havet, quattro statue bianche alte 9 metri.
+budget: >-
+  La Danimarca è cara. Un caffè costa circa 40-50 DKK (circa €5-7), una birra 50-70 DKK (circa
+  €7-9) e una cena semplice 150-250 DKK (circa €20-34). Una camera doppia in un hotel semplice costa
+  circa 900-1500 DKK (circa €120-200) a notte. I supermercati abbassano molto la spesa.
+when: >-
+  Il LEGOLAND apre a fine marzo (nel 2026 il 28 marzo) e chiude a inizio novembre, ma in primavera
+  e in autunno non tutti i giorni: controlla il calendario. Luglio, con le vacanze scolastiche, è il
+  mese più affollato; maggio-giugno e settembre sono più tranquilli.
+tips:
+  - "Compra i biglietti del LEGOLAND online, fino a circa 170 DKK in meno. Il biglietto combinato LEGOLAND e LEGO House costa da circa 649 DKK (circa €87)."
+  - "Le carte sono accettate quasi ovunque, ma non sugli autobus Sydtrafik come il 43: tieni l'app Rejsebillet o un po' di contanti."
+  - "L'acqua del rubinetto è buona. Bottiglie e lattine hanno un deposito (pant), che ti restituiscono al supermercato."
+faq:
+  - q: "Billund merita anche senza bambini?"
+    a: "Sì, per un giorno: la LEGO House piace anche agli adulti. Poi Billund è la porta economica per lo Jutland, con base a Vejle o ad Aarhus."
+  - q: "Come arrivo da Billund a Copenhagen?"
+    a: "Con l'autobus 43 fino a Vejle, poi con il treno diretto per Copenhagen (circa 2 ore). In tutto circa 3 ore e circa 300-450 DKK (circa €40-60); il treno costa meno se lo compri presto."
+  - q: "Quanto si spende al giorno a Billund?"
+    a: "Volo, alloggio e biglietti dei parchi esclusi, circa 500-800 DKK (circa €67-107) al giorno per cibo e trasporti."

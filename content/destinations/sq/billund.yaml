@@ -1,0 +1,97 @@
+city: Billund
+slug: billund
+tagline: Shtëpia e LEGO-s dhe porta drejt Jutland-it
+intro: >-
+  Billund është një qytet i vogël në mes të Jutland-it, në Danimarkë, por i njohur në gjithë botën:
+  këtu lindi LEGO në vitin 1932 dhe këtu janë LEGOLAND i parë dhe LEGO House. Qyteti vetë ka pak
+  tjetër, ndaj llogarit një-dy ditë për LEGO-n dhe pjesën tjetër për udhëtime në Vejle, Aarhus,
+  Ribe dhe bregun perëndimor. Monedha është korona daneze (DKK): €1 është rreth 7.5 korona.
+sights:
+  - name: LEGO House
+    text: >-
+      Ndërtesa në formë të 21 tullave gjigante, e hapur në vitin 2017, me zona ku ndërton vetë dhe
+      historinë e LEGO-s. Bileta nga rreth 170 DKK (rreth €23); rezervo online.
+  - name: LEGOLAND Billund
+    text: >-
+      LEGOLAND i parë në botë, i hapur në vitin 1968, me lojëra për të gjitha moshat dhe Miniland, me
+      qytete të ndërtuara me miliona tulla. Bileta online nga rreth 349 DKK (rreth €47).
+  - name: LEGO Square dhe tarracat
+    text: >-
+      Sheshi poshtë LEGO House dhe tarracat me ngjyra mbi çati janë falas. Aty është edhe MINIFIG
+      Café, ku ushqimin ta sjellin robotë.
+  - name: Lalandia Billund
+    text: Parku ujor i mbyllur Aquadome, ngjitur me LEGOLAND, i hapur gjithë vitin. I mirë për një ditë me shi.
+  - name: Givskud Zoo
+    text: Park safari rreth 30 minuta me makinë, ku luanët i sheh nga makina jote. I hapur nga pranvera në vjeshtë.
+itinerary:
+  - "Gjithë dita në LEGOLAND: Miniland në mëngjes, kur ka më pak njerëz, pastaj lojërat."
+  - "LEGO House me rezervim dhe tarracat në çati. Pasdite Lalandia ose Givskud Zoo, ose një mbrëmje në Vejle."
+  - "Vejle dhe Jelling: gurët runikë, pastaj qendra e Vejle dhe Bølgen buzë fjordit."
+  - "Aarhus me ARoS, Den Gamle By dhe Lagjen Latine. Ose, me makinë me qira, Ribe dhe bregu perëndimor."
+areas:
+  - name: Qendra e Billund
+    text: Pranë LEGO House; LEGOLAND është rreth 25 minuta në këmbë. Mbrëmjet janë shumë të qeta.
+  - name: Pranë LEGOLAND
+    text: Hotelet e parkut, kabinat e LEGOLAND Holiday Village dhe shtëpitë e Lalandia. Ideale për familjet, por më të shtrenjtat.
+  - name: Vejle
+    text: >-
+      Qytet buzë fjordit, me më shumë restorante dhe hotele më të lira. Nga stacioni nisen trenat për
+      udhëtimet ditore; autobusi 43 shkon në Billund për rreth 40 minuta.
+  - name: Aarhus
+    text: Për qytet të madh, rreth 1.5 orë me autobus direkt nga aeroporti; LEGO-n e bën si udhëtim ditor.
+food:
+  - name: Smørrebrød
+    text: >-
+      Bukë thekre me sipër harengë, salmon, rosbif ose vezë me karkaleca, dreka klasike daneze. Një
+      copë kushton rreth 60-110 DKK (rreth €8-15).
+  - name: Pølse
+    text: Hot dog danez nga kioska (pølsevogn), me qepë të skuqura dhe turshi, rreth 35-50 DKK (rreth €5-7).
+  - name: Stegt flæsk med persillesovs
+    text: Pjata kombëtare, mish derri krokant me patate dhe salcë majdanozi.
+  - name: Kanelsnegl dhe wienerbrød
+    text: Ëmbëlsira me brumë petë, me kanellë ose krem, për mëngjes me kafe.
+airports:
+  BLL: >-
+    Aeroporti është ngjitur me LEGOLAND: hyrja e parkut është rreth 1 km, 15 minuta në këmbë. LEGO
+    House është rreth 5 minuta me taksi (rreth 100-150 DKK, €13-20). Autobusi 43 shkon në stacionin
+    e Vejle për rreth 40 minuta (rreth 64 DKK, €8.5), kurse 912X direkt në Aarhus për rreth 1.5 orë
+    (rreth 162 DKK, €22).
+transport: >-
+  Billund nuk ka tren. Qendra, LEGO House dhe LEGOLAND lidhen në këmbë ose me autobus; oraret
+  shihen në Rejseplanen. Për Ribe dhe bregun perëndimor, një makinë me qira kursen shumë kohë.
+daytrips:
+  - name: Vejle dhe Jelling
+    text: >-
+      Rreth 40 minuta me autobusin 43 deri në Vejle, pastaj 15 minuta me tren deri te gurët runikë të
+      mbretërve vikingë në Jelling, nga rreth viti 965, në UNESCO që nga viti 1994. Muzeu është falas.
+  - name: Aarhus
+    text: >-
+      Qyteti i dytë i Danimarkës. Në çatinë e ARoS është Your rainbow panorama, korridor rrethor me
+      xham në ngjyrat e ylberit (rreth 200 DKK, €27). Rreth 1.5 orë me 912X.
+  - name: Ribe
+    text: >-
+      Qyteti më i vjetër i Danimarkës, me rrugica me kalldrëm dhe katedrale; në mbrëmjet e verës roja i natës
+      bën një shëtitje falas. Rreth 1 orë me makinë, ose 2 orë me autobus dhe tren.
+  - name: Esbjerg dhe bregu perëndimor
+    text: >-
+      Rreth 1 orë me autobusin 180 (rreth 84 DKK, €11). Buzë detit janë Mennesket ved Havet, katër
+      statuja të bardha 9 metra të larta.
+budget: >-
+  Danimarka është e shtrenjtë. Një kafe kushton rreth 40-50 DKK (rreth €5-7), një birrë 50-70 DKK
+  (rreth €7-9) dhe një darkë e thjeshtë 150-250 DKK (rreth €20-34). Një dhomë dyshe në hotel të
+  thjeshtë kushton rreth 900-1500 DKK (rreth €120-200) nata. Supermarketet e ulin shumë koston.
+when: >-
+  LEGOLAND hapet në fund të marsit (në 2026 më 28 mars) dhe mbyllet në fillim të nëntorit, por në
+  pranverë dhe vjeshtë jo çdo ditë: shiko kalendarin. Korriku, me pushimet e shkollave, ka më shumë
+  njerëz; maji-qershori dhe shtatori janë më të qetë.
+tips:
+  - "Bliji biletat e LEGOLAND online, deri në rreth 170 DKK më lirë. Bileta e përbashkët LEGOLAND dhe LEGO House kushton nga rreth 649 DKK (rreth €87)."
+  - "Karta pranohet pothuajse kudo, por jo në autobusët e Sydtrafik, si 43: ki aplikacionin Rejsebillet ose pak para në dorë."
+  - "Uji i rubinetit është i mirë. Shishet dhe kanaçet kanë depozitë (pant), që ta kthejnë në supermarket."
+faq:
+  - q: "A ia vlen Billund pa fëmijë?"
+    a: "Po, për një ditë: LEGO House pëlqehet edhe nga të rriturit. Pastaj Billund është porta e lirë drejt Jutland-it, me bazë në Vejle ose Aarhus."
+  - q: "Si shkoj nga Billund në Copenhagen?"
+    a: "Me autobusin 43 deri në Vejle, pastaj me tren direkt për Copenhagen (rreth 2 orë). Gjithsej rreth 3 orë dhe rreth 300-450 DKK (rreth €40-60); treni është më i lirë kur blihet herët."
+  - q: "Sa para duhen në ditë në Billund?"
+    a: "Pa fluturimin, fjetjen dhe biletat e parqeve, rreth 500-800 DKK (rreth €67-107) në ditë për ushqim dhe transport."

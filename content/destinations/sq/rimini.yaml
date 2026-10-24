@@ -1,0 +1,78 @@
+city: Rimini
+slug: rimini
+tagline: Ura romake, plazhi dhe piadina
+intro: >-
+  Rimini njihet si qyteti i plazheve të Adriatikut, por matanë hekurudhës fshihet një qendër
+  romake dhe e Rilindjes që shumë turistë e anashkalojnë. Është edhe qyteti i Federico Fellinit.
+  Tri-katër ditë mjaftojnë për qendrën, detin, San Marinon dhe Ravennën.
+sights:
+  - name: Arco d'Augusto
+    text: Harku i ngritur në vitin 27 p.e.s. për nder të perandorit August, ndër harqet romake më të vjetra që kanë mbijetuar. Shënonte fundin e Via Flaminia, rrugës që vinte nga Roma.
+  - name: Ponte di Tiberio
+    text: Ura prej guri mbi kanalin e lumit Marecchia, e nisur nën August dhe e përfunduar nën Tiberin në vitin 21. Ende përdoret çdo ditë.
+  - name: Tempio Malatestiano
+    text: Katedralja e qytetit, e rindërtuar në shekullin XV për sundimtarin Sigismondo Malatesta, me fasadë të papërfunduar nga Leon Battista Alberti. Brenda ka një kryq të Giottos. Hyrja zakonisht është falas.
+  - name: Borgo San Giuliano
+    text: Lagjja e vjetër e peshkatarëve, matanë Urës së Tiberit, me shtëpi të vogla me ngjyra dhe murale kushtuar filmave të Fellinit.
+  - name: Castel Sismondo dhe Museo Fellini
+    text: Kështjella e Malatestëve në qendër, sot pjesë e Muzeut Fellini bashkë me kinemanë e vjetër Fulgor. Bileta kushton rreth €10-12.
+  - name: Plazhi
+    text: Rreth 15 km rërë e imët dhe det i cekët, i ndarë në plazhe private me numra (bagni), por ka edhe pjesë falas (spiaggia libera).
+itinerary:
+  - "Arco d'Augusto dhe Corso d'Augusto deri në Piazza Cavour. Tempio Malatestiano, pastaj Castel Sismondo dhe Muzeu Fellini. Në perëndim Ura e Tiberit dhe darkë në Borgo San Giuliano."
+  - "Mëngjesi në plazh. Pasdite me biçikletë përgjatë bregdetit, nga Parco Fellini dhe Grand Hotel drejt jugut, në mbrëmje aperitiv në Marina Centro."
+  - "Udhëtim ditor në San Marino me autobus: kullat mbi shkëmb dhe pamja deri te deti. Në kthim, mbrëmje në Piazza Cavour."
+  - "Ravenna me tren për mozaikët bizantinë, ose me makinë me qira në San Leo dhe Santarcangelo di Romagna."
+areas:
+  - name: Centro Storico
+    text: Bujtina dhe apartamente mes monumenteve, me restorantet më të mira. Plazhi është rreth 20 minuta në këmbë ose 5 minuta me biçikletë.
+  - name: Marina Centro
+    text: Zona e hoteleve buzë detit, mes stacionit dhe plazhit, më e gjalla në verë.
+  - name: Bellariva, Rivazzurra dhe Miramare
+    text: Hotele familjare më të lira në jug, pranë aeroportit dhe të lidhura me Metromare me stacionin.
+food:
+  - name: Piadina romagnola
+    text: Bukë e hollë e sheshtë e pjekur në saç, e mbushur zakonisht me proshutë, djathë të butë squacquerone dhe rukola. Te kioskat (piadinerie) kushton rreth €5-8.
+  - name: Cassoni
+    text: Piadina e mbyllur si gjysmëhënë, me barishte, patate ose domate e mocarelë.
+  - name: Passatelli
+    text: Fije të trasha prej buke të grirë, djathi parmixhano dhe veze, të shërbyera në lëng mishi ose me fruta deti.
+  - name: Grigliata di pesce
+    text: Peshk i vogël i Adriatikut në skarë, me sardele, karkaleca dhe kallamarë.
+airports:
+  RMI: >-
+    Aeroporti Federico Fellini është në Miramare, rreth 8 km në jug të qendrës. Autobusi 9 të çon
+    te stacioni i trenit dhe në qendër për rreth 20-30 minuta; bileta kushton rreth €1.50, më
+    shumë nëse e blen te shoferi. Pak minuta në këmbë kalon edhe Metromare, trolejbusi që lidh
+    Riccione me stacionin e Rimini-t. Taksia deri në qendër kushton rreth €20-25.
+transport: >-
+  Rimini është i sheshtë dhe biçikleta është mjeti më i mirë, me qira rreth €10 në ditë. Qendra
+  historike dhe plazhi ndahen nga hekurudha, rreth 20 minuta në këmbë. Metromare dhe autobusi 11
+  shkojnë përgjatë bregdetit drejt jugut, deri në Riccione; biletën blije në duhanshitore
+  (tabacchi) ose me aplikacion. Nga stacioni nisen trenat për Ravenna, Bologna dhe Pesaro.
+daytrips:
+  - name: San Marino
+    text: Republika e vogël mbi malin Titano, rreth 50 minuta me autobus direkt nga stacioni i Rimini-t (rreth €5-6 në një drejtim). Paguhet me euro.
+  - name: San Leo
+    text: Fshat mesjetar me një kështjellë mbi shkëmb, ku vdiq i burgosur aventurieri Cagliostro në vitin 1795. Rreth 40 minuta me makinë; me autobus duhet ndërruar linjë.
+  - name: Ravenna
+    text: Mozaikët bizantinë të shekujve V-VI në San Vitale, Mauzoleun e Galla Placidia-s dhe Sant'Apollinare Nuovo, në listën e UNESCO-s. Rreth 1 orë me tren rajonal (rreth €5); këtu është edhe varri i Dantes.
+budget: >-
+  Një piadina kushton rreth €5-8, një espresso rreth €1.30, një pjatë passatelli rreth €12-15 dhe
+  një çadër me dy shezlongë rreth €20-30 në ditë në verë. Taksa e qytetit, rreth €1-3 për person
+  për natë, paguhet në hotel.
+when: >-
+  Qershori dhe shtatori: deti është i ngrohtë dhe çmimet më të ulëta se në korrik-gusht. Gushti,
+  sidomos rreth Ferragosto (15 gusht), është i mbushur plot dhe hotelet kushtojnë shumë më shtrenjtë.
+  Në dimër shumë hotele buzë detit mbyllen, por qendra mbetet e gjallë dhe e qetë.
+tips:
+  - "Shumë plazhe private ofrojnë çadrën për gjysmë dite me çmim më të ulët: pyet për «mezza giornata» pas orës 14:00."
+  - "Fellini ka lindur dhe është varrosur në Rimini: varri i tij është në varrezat monumentale të qytetit."
+  - "Me makinë me qira mos hyr në qendrën historike: është zonë ZTL dhe gjobat vijnë me postë."
+faq:
+  - q: "A ia vlen Rimini jashtë sezonit të plazhit?"
+    a: "Po, për dy-tri ditë: qendra romake, Muzeu Fellini, San Marino dhe Ravenna vizitohen gjatë gjithë vitit dhe hotelet kushtojnë shumë më pak. Por shumë lokale buzë detit mbyllen nga nëntori deri në mars."
+  - q: "Si shkohet në San Marino nga Rimini?"
+    a: "Me autobusin direkt që niset nga stacioni i trenit, rreth 50 minuta dhe rreth €5-6 në një drejtim. Nuk ka kontroll kufitar."
+  - q: "Sa para duhen në ditë në Rimini?"
+    a: "Pa fluturimin dhe fjetjen, €40-60 në ditë, më shumë në gusht nëse merr çadër në plazh."

@@ -1,0 +1,96 @@
+city: Dortmund
+slug: dortmund
+tagline: Football, beer and the heart of the Ruhr
+intro: >-
+  Dortmund is the largest city in the Ruhr area, once a centre of mines, steel and breweries.
+  Today it is known above all for Borussia Dortmund and its stadium, but it also has good museums,
+  a lake where a steelworks used to be and large parks. Many Albanians have family in the Ruhr:
+  from Dortmund the train quickly takes you to Bochum, Essen and Duisburg, while Cologne and
+  Düsseldorf are about an hour away. Two or three days are enough for the city.
+sights:
+  - name: Signal Iduna Park
+    text: >-
+      Borussia Dortmund's stadium, the largest in Germany, with over 80,000 places and the famous
+      south stand, the “Yellow Wall”. Outside match days it can be visited on a tour (about €20-25).
+  - name: German Football Museum
+    text: >-
+      Opposite the main station, the history of German football with memorabilia from the World Cups
+      and interactive games. A ticket costs about €20.
+  - name: Dortmunder U
+    text: >-
+      The former Union brewery with a big illuminated “U” on its roof, now an arts centre with the
+      Museum Ostwall. In the evening the screens on the tower show moving images. 5 minutes on foot
+      from the station.
+  - name: Phoenix-See
+    text: >-
+      An artificial lake on the site of a former steelworks in the Hörde district, with a lakeside
+      path of about 3 km, cafés and sailing boats. About 15 minutes from the centre on the U41.
+  - name: Westfalenpark
+    text: >-
+      A large park with flowers, a rose garden and the Florianturm TV tower, from which you can see
+      the whole city. Entry costs about €4; going up the tower is paid separately.
+  - name: Zeche Zollern
+    text: >-
+      An old colliery with brick buildings and an Art Nouveau machine hall, now an industrial museum.
+      Entry is cheap, about €5.
+airports:
+  DTM: >-
+    Dortmund Airport is about 10 km east of the centre. The AirportExpress bus takes you straight to
+    Dortmund Hauptbahnhof in about 25 minutes, with a ticket of about €9-10. Cheaper: the shuttle to
+    Holzwickede station (about 5 minutes) and the regional train to the Hauptbahnhof (about 15-20
+    minutes); the train is also covered by the Deutschlandticket. A taxi costs about €30-40 and takes
+    about 20 minutes.
+budget: >-
+  A 0.5-litre beer costs about €4-5, a currywurst with chips €6-8, a dish in a brewery pub €14-18
+  and a single ticket in the city about €3.50. A hostel bed costs from about €25-40. On BVB match
+  days and during trade fairs hotels get more expensive.
+when: >-
+  May-September for the parks and Phoenix-See. The football season runs from August to May. The
+  Christmas market, from late November to the end of December, has a Christmas tree about 45 metres
+  tall.
+tips:
+  - "Tickets for BVB matches almost always sell out: buy them only on the official website or its official resale market, never from sellers in the street."
+  - "The Deutschlandticket is a monthly subscription: cancel it in the app before the 10th of the month so that it does not renew automatically."
+  - "If you have family in Essen, Bochum or Duisburg, Dortmund is a good base: regional trains leave several times an hour and hotels here are often cheaper."
+itinerary:
+  - "The German Football Museum in the morning, then the Dortmunder U and the Westenhellweg shopping street as far as the Alter Markt and the Reinoldikirche. In the evening a beer in the Kreuzviertel."
+  - "The Signal Iduna Park tour in the morning, then Westfalenpark and the Florianturm. In the afternoon a walk around Phoenix-See and dinner in Hörde."
+  - "A day trip to Essen for Zollverein, to Münster or to Cologne. Otherwise, a day with family somewhere in the Ruhr."
+areas:
+  - name: City centre (Innenstadt)
+    text: "Around the main station and Westenhellweg: the most practical, with the trains to the airport and the whole Ruhr close by."
+  - name: Kreuzviertel
+    text: A district of old buildings, cafés and student bars, within walking distance of the stadium.
+  - name: Hörde
+    text: On Phoenix-See, quieter and modern, about 15 minutes from the centre by U-Bahn.
+food:
+  - name: Pfefferpotthast
+    text: A traditional stew of beef, onions and plenty of pepper, served with potatoes and pickled gherkins.
+  - name: Currywurst
+    text: Sausage with tomato and curry sauce, usually with chips, the Ruhr's quickest meal.
+  - name: Dortmunder Export
+    text: The city's light, strong beer that made Dortmund a beer capital; try it in a local brewery pub.
+  - name: Westfälischer Schinken
+    text: Smoked Westphalian ham, with dark pumpernickel bread.
+transport: >-
+  The centre is easy to see on foot. The U-Bahn, trams and S-Bahn cover the rest; tickets are sold
+  at the machines in the stations or in the app. For a month, the Deutschlandticket (about €63)
+  covers local transport and regional trains all over Germany, so also to Bochum (about 10-15
+  minutes), Essen (about 25 minutes), Duisburg (about 40 minutes), Düsseldorf (about 1 hour) and
+  Cologne (about 1.5 hours). Fast ICE trains are not included.
+daytrips:
+  - name: Essen
+    text: Zeche Zollverein, the mine turned into a museum and World Heritage Site, about 25 minutes by train and a short tram ride.
+  - name: Münster
+    text: A university city with bicycles everywhere, the Prinzipalmarkt square and the town hall where the Peace of Westphalia was signed, about 30-50 minutes by train.
+  - name: Cologne
+    text: The Gothic cathedral next to the station, about 1 hour 15 minutes by ICE or 1.5 hours by regional train.
+  - name: Bochum
+    text: The German Mining Museum, with a show mine underground, about 10-15 minutes by train.
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "With the AirportExpress straight to Dortmund Hauptbahnhof: about 25 minutes and about €9-10. With a Deutschlandticket, the shuttle to Holzwickede and the regional train work out cheaper."
+  - q: "Is it worth staying in Dortmund to visit family in the Ruhr?"
+    a: "Yes: Bochum, Essen and Duisburg are 10-40 minutes away by train, and Düsseldorf and Cologne about 1-1.5 hours. With the Deutschlandticket you can ride the regional trains as much as you like."
+  - q: "How much money do you need per day in Dortmund?"
+    a: "Excluding the flight and accommodation, plan on €40-65 a day. The parks, Phoenix-See and the centre are free, while food and beer cost less than in Düsseldorf or Cologne."

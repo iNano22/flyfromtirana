@@ -1,0 +1,100 @@
+city: Malmö
+slug: malmo
+tagline: The Turning Torso, a city beach and Copenhagen next door
+intro: >-
+  Malmö is Sweden's third city, linked to Denmark by the Øresund Bridge: a flat, green city with
+  old squares, parks and a beach where locals swim even in winter. Copenhagen is about 35 minutes
+  away by train, so one flight gets you two countries. Two or three days are enough for Malmö,
+  with one more day for Copenhagen or Lund.
+sights:
+  - name: Turning Torso
+    text: >-
+      The 190-metre skyscraper that twists 90 degrees from its base to its top, designed by Santiago
+      Calatrava and finished in 2005. It is a residential building and cannot be visited inside, but
+      you can see it from all over the city.
+  - name: Malmöhus Castle
+    text: >-
+      Built in the 1530-1540s by the Danish king Christian III, when this region was part of
+      Denmark. Today it houses the city's museums and an aquarium; a ticket is about SEK 140 (about
+      €13).
+  - name: Lilla Torg and Stortorget
+    text: >-
+      Lilla Torg is the small cobbled square with half-timbered houses, laid out around 1590. Next
+      to it is Stortorget, with the town hall from 1546.
+  - name: Ribersborg beach and the Kallbadhus
+    text: >-
+      The long sandy beach, 15 minutes on foot from the centre. At the end of a wooden pier stands
+      the Ribersborgs Kallbadhus, the cold bath house from 1898, with saunas and dips in the sea all
+      year round. Entry costs about SEK 100 (about €9).
+  - name: Västra Hamnen
+    text: >-
+      The former shipyard, now a modern district around the Turning Torso. The seafront promenade
+      has wooden decks where locals swim, with views of the Øresund Bridge at sunset.
+itinerary:
+  - "Stortorget, Lilla Torg and the lanes of the old town, then Malmöhus and the Slottsparken and Kungsparken parks. In the evening, dinner on Lilla Torg."
+  - "Västra Hamnen and the Turning Torso, then a walk along Ribersborg beach to the Kallbadhus, for a sauna and a dip in the sea. In the evening, falafel and bars in Möllevången."
+  - "A day in Copenhagen on the train over the Øresund Bridge: Nyhavn, Tivoli and Christiania, back in the evening. Alternatively, half a day in Lund."
+areas:
+  - name: Gamla Staden
+    text: >-
+      The old town, around Stortorget and Malmö C: everything within walking distance, close to the
+      airport bus and the train to Copenhagen, but with the highest prices.
+  - name: Davidshall and Triangeln
+    text: Quiet streets with cafés, 10 minutes on foot from the centre, with Triangeln train station.
+  - name: Möllevången
+    text: The multicultural neighbourhood, with a market on the square, the cheapest food and the nightlife.
+  - name: Västra Hamnen
+    text: Modern and quiet, by the sea, about 20 minutes on foot from Malmö C.
+food:
+  - name: Falafel
+    text: >-
+      Malmö is called Sweden's falafel capital. A pita costs about SEK 50-70 (about €5-6), the
+      cheapest meal in the city.
+  - name: Fika
+    text: The Swedish coffee break with a kanelbulle, a cinnamon bun, about SEK 60-70 for both.
+  - name: Äggakaka
+    text: A thick egg pancake from the Skåne region, with fried bacon and lingonberry jam.
+  - name: Spettekaka
+    text: A tall, tower-shaped cake made of eggs and sugar, baked on a spit.
+airports:
+  MMX: >-
+    Malmö Airport (Sturup) is about 30 km east of the city and has no train. Flygbussarna buses
+    wait for arrivals and reach Malmö Central (Malmö C) in about 40 minutes; a ticket costs about
+    SEK 130-150 (about €12-14), cheaper in the app. A taxi has a fixed price of about SEK 550-650
+    (about €50-60) and takes about 30 minutes.
+transport: >-
+  The centre is walkable and the flat city is made for cycling. Buses and local trains run on
+  Skånetrafiken tickets, bought in the app or by card, not with cash. A single ticket in the city
+  costs about SEK 30 (about €2.70), a 24-hour one about SEK 80 (about €7). The train to Copenhagen
+  leaves Malmö C every 20 minutes.
+daytrips:
+  - name: Copenhagen
+    text: >-
+      About 35 minutes by train over the Øresund Bridge to København H, with a ticket of about SEK
+      120 (about €11) one way.
+  - name: Lund
+    text: >-
+      The university town, about 15 minutes by train, with its Romanesque cathedral from 1145 and
+      its astronomical clock.
+  - name: Ystad and Ales Stenar
+    text: >-
+      Ystad, a town of half-timbered houses and the setting of the Wallander series, is about 50
+      minutes by train. About 20 km further east, on a cliff above the sea, stand the Ales Stenar:
+      59 standing stones in the shape of a ship, about 30 minutes by bus from Ystad.
+budget: >-
+  A coffee with a kanelbulle costs about SEK 60-70 (about €6), a beer in a bar SEK 75-90 (about
+  €7-8), the lunch of the day SEK 125-150 (about €11-14), a dinner SEK 200-300 (about €18-27). €1
+  is about SEK 11.
+when: >-
+  May to September, when the days are long and the beach fills up. In August the city holds the
+  Malmöfestivalen, its free city festival. Winter is dark and windy, but the Kallbadhus saunas are
+  open all year round.
+tips:
+  - "Sweden is almost cashless: many places do not take cash. A bank card is enough, so you do not need to change money into kronor."
+  - "On weekdays many restaurants serve dagens lunch, around 11:00-14:00: a main course, salad, bread and coffee for about SEK 125-150."
+  - "Alcohol above 3.5% is sold only in the state-run Systembolaget shops, which are closed on Sundays."
+faq:
+  - q: "Can I fly to Malmö and visit Copenhagen?"
+    a: "Yes. The train from Malmö C to central Copenhagen takes about 35 minutes and costs about SEK 120 (about €11). Both countries are in the Schengen area, but there are occasional border checks, so keep your passport with you."
+  - q: "How much money do you need per day in Malmö?"
+    a: "Excluding the flight and accommodation, plan on €60-90 a day. The lunch of the day, falafel and the free beach keep the day cheaper than you would expect in Sweden."

@@ -1,0 +1,78 @@
+city: Marseille
+name: Marsiglia
+slug: marseille
+tagline: Porto vecchio, Calanques e bouillabaisse
+intro: >-
+  Marsiglia è la seconda città della Francia e il suo porto più antico, fondato dai greci circa 2600
+  anni fa. È una città rumorosa e multiculturale, con il mare blu e le scogliere bianche. Due o tre
+  giorni bastano per il porto, Le Panier, la basilica sulla collina e una giornata nelle Calanques.
+sights:
+  - name: Vieux-Port
+    text: Il porto vecchio, il cuore della città, con barche, caffè e due forti all'ingresso. Ogni mattina i pescatori vendono il pescato del giorno sul Quai des Belges.
+  - name: Notre-Dame de la Garde
+    text: La basilica in cima alla collina, a circa 150 metri sul mare, con la statua dorata della Madonna che i marsigliesi chiamano «Bonne Mère». L'ingresso è gratuito e la vista sulla città è spettacolare. Sali con l'autobus 60 dal Vieux-Port o a piedi, circa 30-40 minuti.
+  - name: Le Panier
+    text: Il quartiere più antico, con vicoli stretti, case colorate e murales. Al centro c'è la Vieille Charité, un antico ospizio per i poveri.
+  - name: MuCEM e Fort Saint-Jean
+    text: Il museo delle civiltà del Mediterraneo, in un cubo con pareti come un merletto di cemento, collegato da una passerella al Fort Saint-Jean. Il forte e i giardini sono gratuiti; le mostre costano circa €11-13.
+  - name: Calanques
+    text: Insenature strette con scogliere bianche e acqua blu tra Marsiglia e Cassis, parco nazionale. Per Sugiton prendi l'autobus B1 fino a Luminy, poi circa 1 ora a piedi. Le barche dal Vieux-Port fanno giri da circa €30-45.
+  - name: Corniche Kennedy e Vallon des Auffes
+    text: La strada panoramica sul mare a sud del centro, con piccole spiagge e il Vallon des Auffes, un minuscolo porto di pescatori.
+airports:
+  MRS: >-
+    L'aeroporto Marseille Provence è a Marignane, a circa 27 km dalla città. L'autobus navetta ti
+    porta alla stazione di Saint-Charles in circa 25-30 minuti; parte ogni 15-20 minuti e costa circa
+    €10. Più economico: una navetta gratuita ti porta in 5 minuti alla stazione Vitrolles Aéroport,
+    da dove il treno TER arriva a Saint-Charles in circa 20 minuti, per circa €5-6, ma non parte
+    spesso. Il taxi costa circa €60-75.
+budget: >-
+  Un caffè al banco costa circa €1,50-2,50, una pizza €10-14, un piatto del giorno €13-18, un
+  biglietto della metro circa €2. Un letto in ostello costa da circa €25-40, una camera doppia in un
+  hotel semplice da circa €70-110 a notte.
+when: >-
+  Maggio-giugno e settembre-ottobre sono il periodo migliore: clima caldo, mare per nuotare e meno
+  turisti. Luglio e agosto sono caldi e nei giorni a rischio incendi le Calanques chiudono. L'inverno
+  è mite, ma il vento di mistral può soffiare forte.
+tips:
+  - "Da giugno a settembre le Calanques possono chiudere quando il rischio incendi è alto: controlla il giorno prima sul sito ufficiale del parco. Per Sugiton d'estate prenota online l'ingresso gratuito."
+  - "Per le Calanques porta scarpe buone e almeno 1,5 litri d'acqua a persona: all'interno non ci sono negozi."
+  - "Tieni d'occhio telefono e portafoglio al Vieux-Port e in metro. La sera evita le stradine intorno a Saint-Charles e Noailles."
+itinerary:
+  - "Il Vieux-Port con il mercato del pesce al mattino, poi Le Panier e la Vieille Charité. Nel pomeriggio il MuCEM e il Fort Saint-Jean, fino al tramonto."
+  - "Una giornata nelle Calanques: autobus B1 fino a Luminy e camminata fino a Sugiton, con un bagno e un picnic. In alternativa, un giro in barca. La sera, cena intorno a Cours Julien."
+  - "Notre-Dame de la Garde al mattino, poi scendi a piedi al Vallon des Auffes e alla Corniche Kennedy. Nel pomeriggio la barca per le isole Frioul."
+areas:
+  - name: Vieux-Port
+    text: In centro, con tutto a piedi e le barche vicine. Prezzi medi o alti.
+  - name: Le Panier
+    text: Un quartiere con atmosfera e piccoli hotel, ma con molti gradini per le valigie.
+  - name: Cours Julien
+    text: Il quartiere alternativo, con murales, bar e ristoranti economici, a circa 15 minuti a piedi dal porto.
+  - name: Saint-Charles
+    text: "La zona più pratica per l'aeroporto: l'autobus e i treni partono dalla stazione. Hotel più economici, ma le strade intorno la sera non sono piacevoli."
+food:
+  - name: Bouillabaisse
+    text: La zuppa dei pescatori, il piatto più famoso della città, con brodo di pesce, pane tostato con salsa rouille e diversi tipi di pesce. Una vera costa circa €60-80 a persona; le versioni economiche raramente sono buone.
+  - name: Panisse
+    text: Bastoncini fritti di farina di ceci, un semplice cibo di strada.
+  - name: Navettes
+    text: Biscotti a forma di barca profumati ai fiori d'arancio, del forno Four des Navettes, aperto nel 1781.
+  - name: Pastis
+    text: Una bevanda all'anice che si beve con acqua fredda come aperitivo, nei caffè intorno al porto.
+transport: >-
+  Il centro si gira a piedi, mentre la rete RTM ha 2 linee di metro, 3 linee di tram e autobus. Il
+  biglietto singolo costa circa €2 e vale 1 ora con i cambi; il biglietto da 24 ore circa €5-6. Il
+  piccolo Ferry Boat attraversa il porto da una sponda all'altra.
+daytrips:
+  - name: Cassis
+    text: Un piccolo porto di pescatori con case colorate, da dove partono le barche per le insenature più belle. Circa 45 minuti in autobus; il treno impiega circa 20 minuti, ma la stazione è a circa 3 km dal porto.
+  - name: Aix-en-Provence
+    text: L'elegante città di Cézanne, con fontane, mercati e il viale Cours Mirabeau. L'autobus da Saint-Charles impiega circa 30-40 minuti.
+  - name: Isole Frioul
+    text: Isole rocciose con piccole spiagge, a circa 20-30 minuti di barca dal Vieux-Port, con una fermata al Château d'If, la prigione del «Conte di Montecristo». La barca andata e ritorno costa circa €11-17.
+faq:
+  - q: "Autobus o treno dall'aeroporto?"
+    a: "L'autobus diretto per Saint-Charles è più semplice: circa 25-30 minuti e circa €10. Il treno da Vitrolles costa circa €5-6, ma bisogna cambiare e aspettare. Per 3-4 persone con le valigie, il taxi è ragionevole."
+  - q: "Quanto si spende al giorno a Marsiglia?"
+    a: "Volo e alloggio esclusi, calcola €45-75 al giorno. Risparmi con la pizza, le panisse e un picnic nelle Calanques."

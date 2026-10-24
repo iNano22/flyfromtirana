@@ -1,0 +1,81 @@
+city: Birmingham
+slug: birmingham
+tagline: Canali, balti e il cioccolato Cadbury
+intro: >-
+  Birmingham è la seconda città più grande dell'Inghilterra e l'antico cuore della rivoluzione
+  industriale. Oggi ha più canali di Venezia, musei gratuiti, grandi centri commerciali e il
+  quartiere dove è nato il balti, il famoso curry della città. È più economica di Londra e una
+  buona base per Stratford-upon-Avon, Warwick e Oxford. Due o tre giorni bastano per la città, più
+  un giorno per una gita fuori porta.
+sights:
+  - name: I canali e Gas Street Basin
+    text: Birmingham ha circa 56 km di canali dentro la città. Da Gas Street Basin passeggia lungo l'acqua fino a Brindleyplace e The Mailbox.
+  - name: Jewellery Quarter
+    text: Il quartiere degli orafi, dove si produce ancora una gran parte dei gioielli della Gran Bretagna. Ha centinaia di negozi, caffè e il Museum of the Jewellery Quarter, un laboratorio conservato così com'era quando ha chiuso.
+  - name: Bullring e Grand Central
+    text: Il centro commerciale più noto della città, con l'edificio di Selfridges ricoperto di dischi di alluminio. Accanto ci sono la chiesa di St Martin's e i vecchi mercati.
+  - name: Library of Birmingham
+    text: La biblioteca moderna su Centenary Square, aperta nel 2013. L'ingresso è gratuito e dalle sue terrazze con giardino si vede tutta la città.
+  - name: Birmingham Museum and Art Gallery
+    text: Il museo principale della città, con i dipinti preraffaelliti e il tesoro anglosassone dello Staffordshire Hoard. L'ingresso è gratuito, ma alcune sale potrebbero essere chiuse per lavori.
+  - name: Cadbury World
+    text: Il museo del cioccolato Cadbury a Bournville, con assaggio di cioccolato gratuito. Il biglietto costa circa £20-25 e si prenota online. In treno da New Street a Bournville ci vogliono circa 10 minuti.
+  - name: Digbeth
+    text: L'ex quartiere industriale, con graffiti, il complesso Custard Factory, bar e mercati gastronomici nel fine settimana.
+airports:
+  BHX: >-
+    L'aeroporto si trova a circa 13 km a est del centro. Il trenino gratuito Air-Rail Link ti
+    porta in 2 minuti alla stazione di Birmingham International. Da lì i treni per Birmingham New
+    Street partono spesso, impiegano circa 10-15 minuti e costano circa £4-6. Il taxi costa circa
+    £30-40 e impiega 20-30 minuti, a seconda del traffico.
+budget: >-
+  Un caffè costa circa £3,50, un pasto semplice £10-15 e una birra (pint) circa £5-6. Un balti su
+  Ladypool Road costa circa £10-15. Un letto in ostello costa circa £20-35 e gli hotel sono
+  decisamente più economici che a Londra. La maggior parte dei musei è gratuita.
+when: >-
+  Maggio-settembre ha il clima più mite (circa 15-22 gradi) e giornate lunghe, ma piove tutto
+  l'anno. Da metà novembre fin quasi a Natale il centro si riempie del Frankfurt Christmas Market,
+  il grande mercatino di Natale tedesco.
+tips:
+  - "I biglietti del treno per Stratford-upon-Avon, Warwick e Oxford costano meno fuori dalle ore di punta (dopo le 09:30) e se comprati online in anticipo."
+  - "La domenica i grandi negozi aprono solo 6 ore, di solito 10:00-16:00 o 11:00-17:00: programma gli acquisti per gli altri giorni."
+  - "Birmingham ha tre stazioni ferroviarie principali (New Street, Moor Street e Snow Hill): controlla da quale parte il tuo treno."
+itinerary:
+  - "Il centro a piedi: il Bullring e la chiesa di St Martin's, poi Victoria Square, il Birmingham Museum and Art Gallery e la Library of Birmingham. La sera una passeggiata lungo i canali a Gas Street Basin e cena a Brindleyplace."
+  - "Il Jewellery Quarter al mattino, con il museo e i negozi degli orafi. Nel pomeriggio Digbeth e la Custard Factory, la sera un balti nel Balti Triangle."
+  - "Cadbury World a Bournville al mattino (con prenotazione), poi una passeggiata nel vecchio villaggio costruito per gli operai della Cadbury. Nel pomeriggio shopping al Bullring."
+  - "Una giornata fuori città: Stratford-upon-Avon per Shakespeare, il Warwick Castle oppure Oxford con i suoi college."
+areas:
+  - name: Centro e New Street
+    text: "La zona più pratica: qui arrivano i treni dall'aeroporto e tutto è raggiungibile a piedi."
+  - name: Jewellery Quarter
+    text: Più tranquilla e piena di carattere, con caffè e piccoli pub, a 10-15 minuti a piedi dal centro.
+  - name: Brindleyplace e Broad Street
+    text: Lungo i canali, con ristoranti e bar. Broad Street è rumorosa la notte nel fine settimana.
+  - name: Digbeth
+    text: Per chi vuole bar, musica e vita notturna. Hotel più economici, vicino alle stazioni di Moor Street e New Street.
+food:
+  - name: Balti
+    text: Il curry nato a Birmingham negli anni 1970, servito nella ciotola d'acciaio in cui viene cucinato. Assaggialo nel Balti Triangle, intorno a Ladypool Road.
+  - name: Mercati gastronomici
+    text: Il Digbeth Dining Club nel fine settimana e i Bullring Markets hanno banchi con cibo da tutto il mondo a buoni prezzi.
+  - name: Pork scratchings
+    text: Cotenna di maiale fritta e croccante, lo stuzzichino tradizionale della zona da accompagnare alla birra al pub.
+  - name: Sunday roast
+    text: "Il pranzo della domenica al pub: carne arrosto, patate e Yorkshire pudding."
+transport: >-
+  Il centro è piccolo e si gira facilmente a piedi. Il tram West Midlands Metro collega New Street
+  con il Jewellery Quarter, Edgbaston e Wolverhampton. Gli autobus costano circa £2-2,50 a corsa:
+  paga con la carta bancaria contactless e il sistema limita da solo la spesa giornaliera.
+daytrips:
+  - name: Stratford-upon-Avon
+    text: La città natale di Shakespeare, con la sua casa e il fiume Avon, a circa 1 ora di treno da Moor Street o Snow Hill.
+  - name: Warwick Castle
+    text: Un castello medievale conservato molto bene, a circa 30-40 minuti di treno fino a Warwick e poi 15 minuti a piedi.
+  - name: Oxford
+    text: La città universitaria con i suoi antichi college, la Bodleian Library e musei gratuiti, a circa 1 ora e 10 minuti di treno da New Street.
+faq:
+  - q: "Vale la pena scegliere Birmingham invece di Londra?"
+    a: "Per un fine settimana sì: hotel e cibo costano meno, i musei sono gratuiti e la città è una buona base per Stratford-upon-Avon, Warwick e Oxford. Se vuoi vedere anche Londra, il treno da New Street impiega circa 1,5 ore."
+  - q: "Quanto si spende al giorno a Birmingham?"
+    a: "Volo e alloggio esclusi, calcola £45-70 al giorno per cibo, trasporti e un'attrazione a pagamento come Cadbury World."

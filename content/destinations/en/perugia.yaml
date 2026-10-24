@@ -1,0 +1,79 @@
+city: Perugia
+slug: perugia
+tagline: A medieval hilltop town, chocolate and jazz
+intro: >-
+  Perugia is the capital of Umbria, a medieval hilltop town with stone lanes, views over the valley
+  and a lively student life thanks to its two universities, among them the Università per
+  Stranieri, known to many Albanian students. The centre can be seen in one day, but Perugia is the
+  best base for Assisi, Lake Trasimeno and the small towns of Umbria.
+sights:
+  - name: Corso Vannucci
+    text: The main pedestrian street, from Piazza Italia to Piazza IV Novembre. In the evening the whole town comes out here for a stroll.
+  - name: Fontana Maggiore
+    text: The medieval fountain on Piazza IV Novembre, finished in 1278 by Nicola and Giovanni Pisano, with sculptures showing the months of the year. Facing it are the Cathedral of San Lorenzo and the Palazzo dei Priori.
+  - name: Rocca Paolina
+    text: The fortress that Pope Paul III built in the 1540s on top of a whole medieval quarter. Today the escalators run through its underground streets, and entry is free.
+  - name: Galleria Nazionale dell'Umbria
+    text: Umbria's main art gallery, in the Palazzo dei Priori, with works by Perugino, Pinturicchio and Piero della Francesca. A ticket costs about €10.
+  - name: Minimetrò
+    text: A small automatic metro with red cars that climbs from Fontivegge railway station to the centre in about 10 minutes. A ticket costs about €1.50.
+itinerary:
+  - "Corso Vannucci, the Fontana Maggiore, the Cathedral and the Galleria Nazionale dell'Umbria. In the afternoon the Rocca Paolina, and at sunset the view from the Giardini Carducci."
+  - "Assisi by train (about 25 minutes): the Basilica of St Francis, Piazza del Comune and the Rocca Maggiore. On the way back, a stop in Spello, about 10 minutes further on the same line."
+  - "Lake Trasimeno: the train to Passignano sul Trasimeno (about 30 minutes), then the ferry to Isola Maggiore. In the evening, torta al testo and a glass of wine in the centre."
+areas:
+  - name: Centro storico
+    text: Around Corso Vannucci, in the middle of everything and with views over the valley, but with few hotels and steep streets.
+  - name: Corso Garibaldi and Porta Sant'Angelo
+    text: The student quarter north of the centre, with cheap guesthouses and small bars, 10 minutes on foot from the Arco Etrusco.
+  - name: Fontivegge
+    text: "The station area, below the hill: the cheapest, and practical for the trains and the airport bus, with the minimetrò to the centre."
+food:
+  - name: Perugina chocolate
+    text: Baci Perugina, the hazelnut chocolates with a love note inside, were born here. At the Casa del Cioccolato, in the San Sisto district, there is a museum and a tasting, by booking.
+  - name: Truffle
+    text: Umbria's black truffle, on strangozzi (long home-made pasta), in an omelette or on bruschetta. Truffle dishes cost about €14-20.
+  - name: Torta al testo
+    text: A flatbread filled with ham, cheese or greens; a cheap lunch for about €6-8.
+  - name: Porchetta
+    text: Whole pork roasted with herbs, sliced thin in a sandwich.
+airports:
+  PEG: >-
+    San Francesco d'Assisi airport is about 12 km from Perugia and about 15 km from Assisi. Buses
+    and shuttles timed to the flights take you to Fontivegge station and Piazza Partigiani in
+    Perugia in about 30 minutes, for about €8-10; there is also a shuttle to Assisi. A taxi to the
+    centre costs about €30-40. Many travellers rent a car at the airport to see the small towns of
+    Umbria.
+transport: >-
+  The centre sits on a hill and is walkable, but the climbs are steep. From Fontivegge station take
+  the minimetrò to Pincetto, or from Piazza Partigiani take the free escalators through the Rocca
+  Paolina up to Piazza Italia. City buses cost about €1.50. By car, watch out for the ZTL, the
+  restricted zone where fines arrive by post: park at Pian di Massiano and continue by minimetrò.
+daytrips:
+  - name: Assisi
+    text: The town of St Francis, whose basilica is a UNESCO site. About 25 minutes by train, for about €3, then the bus from the station up to the town.
+  - name: Lake Trasimeno
+    text: The largest lake in central Italy, with ferries to Isola Maggiore. About 30 minutes by train to Passignano.
+  - name: Spello
+    text: A small town of pink stone and balconies full of flowers, about 30 minutes by train. In June, for the Infiorata, the streets are covered with carpets of flowers.
+  - name: Gubbio
+    text: One of the best-preserved medieval towns in Umbria, about 1 hour 10 minutes by bus, for about €6.
+budget: >-
+  An espresso at the counter costs about €1.10-1.30, a torta al testo about €6-8, a pizza €7-10. A
+  hostel bed costs from about €25-35, a double room in a simple hotel from about €70-100 a night,
+  plus a city tax of a few euros per person per night.
+when: >-
+  April to June and September to October have the best weather. In July, Umbria Jazz fills the town
+  with concerts, many of them free in the squares, but hotels get more expensive. In autumn the
+  Eurochocolate festival brings chocolate stalls along Corso Vannucci.
+tips:
+  - "Wear comfortable shoes: Perugia is full of stairs and steep streets."
+  - "For Gubbio, Spello and the villages of Umbria a rental car saves a lot of time, but do not drive into the ZTL of the historic centres."
+  - "Book accommodation early for Umbria Jazz and Eurochocolate: prices rise a lot and rooms sell out fast."
+faq:
+  - q: "How do I get from Perugia airport to Assisi?"
+    a: "By the airport shuttle timed to the flights, or by taxi, about 20 minutes for about €30-35. Otherwise, the bus to Perugia and the train to Assisi, about 25 minutes."
+  - q: "Do I need a car in Umbria?"
+    a: "Not for Perugia, Assisi and Spello: the trains are enough. For Gubbio and the small villages a car is easier, because buses are infrequent."
+  - q: "How much money do you need per day in Perugia?"
+    a: "Excluding the flight and accommodation, allow about €40-60 a day for food, transport and one museum ticket. Perugia is cheaper than Florence and Rome."

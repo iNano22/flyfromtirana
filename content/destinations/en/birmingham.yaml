@@ -1,0 +1,81 @@
+city: Birmingham
+slug: birmingham
+tagline: Canals, balti and Cadbury chocolate
+intro: >-
+  Birmingham is England's second-largest city and the former heart of the Industrial Revolution.
+  Today it has more canals than Venice, free museums, big shopping centres and the neighbourhood
+  where balti, the city's famous curry, was born. It is cheaper than London and a good base for
+  Stratford-upon-Avon, Warwick and Oxford. Two or three days are enough for the city, plus one day
+  for a trip out of town.
+sights:
+  - name: The canals and Gas Street Basin
+    text: Birmingham has about 56 km of canals within the city. From Gas Street Basin, walk along the water to Brindleyplace and The Mailbox.
+  - name: Jewellery Quarter
+    text: The jewellers' quarter, where a large share of Britain's jewellery is still made. It has hundreds of shops, cafés and the Museum of the Jewellery Quarter, a workshop preserved just as it was when it closed.
+  - name: Bullring and Grand Central
+    text: The city's best-known shopping centre, with the Selfridges building covered in aluminium discs. Next to it are St Martin's church and the old markets.
+  - name: Library of Birmingham
+    text: The modern library on Centenary Square, opened in 2013. Entry is free and the city spreads out below you from its garden terraces.
+  - name: Birmingham Museum and Art Gallery
+    text: The city's main museum, with Pre-Raphaelite paintings and the Anglo-Saxon treasure of the Staffordshire Hoard. Entry is free, but some galleries may be closed for renovation.
+  - name: Cadbury World
+    text: The Cadbury chocolate museum in Bournville, with free chocolate tasting. A ticket costs about £20-25 and is booked online. The train from New Street to Bournville takes about 10 minutes.
+  - name: Digbeth
+    text: The former industrial district, with street art, the Custard Factory complex, bars and food markets at the weekend.
+airports:
+  BHX: >-
+    The airport is about 13 km east of the centre. The free Air-Rail Link shuttle takes you in 2
+    minutes to Birmingham International station. From there, trains to Birmingham New Street run
+    often, take about 10-15 minutes and cost about £4-6. A taxi costs about £30-40 and takes 20-30
+    minutes, depending on traffic.
+budget: >-
+  A coffee costs about £3.50, a simple meal £10-15 and a beer (pint) about £5-6. A balti on
+  Ladypool Road comes to about £10-15. A hostel bed costs about £20-35 and hotels are noticeably
+  cheaper than in London. Most museums are free.
+when: >-
+  May to September has the mildest weather (about 15-22 degrees) and long days, but it rains all
+  year round. From mid-November until just before Christmas the centre fills with the Frankfurt
+  Christmas Market, the big German Christmas market.
+tips:
+  - "Train tickets to Stratford-upon-Avon, Warwick and Oxford are cheaper off-peak (after 09:30) and when bought online in advance."
+  - "On Sundays large shops open for only 6 hours, usually 10:00-16:00 or 11:00-17:00: plan your shopping for the other days."
+  - "Birmingham has three main train stations (New Street, Moor Street and Snow Hill): check which one your train leaves from."
+itinerary:
+  - "The centre on foot: the Bullring and St Martin's church, then Victoria Square, the Birmingham Museum and Art Gallery and the Library of Birmingham. In the evening, a walk along the canals at Gas Street Basin and dinner at Brindleyplace."
+  - "The Jewellery Quarter in the morning, with the museum and the jewellers' shops. In the afternoon, Digbeth and the Custard Factory, in the evening a balti in the Balti Triangle."
+  - "Cadbury World in Bournville in the morning (booked ahead), then a walk around the old village built for Cadbury's workers. In the afternoon, shopping at the Bullring."
+  - "A day out of the city: Stratford-upon-Avon for Shakespeare, Warwick Castle or Oxford and its colleges."
+areas:
+  - name: City centre and New Street
+    text: "The most practical area: the trains from the airport arrive here and everything is within walking distance."
+  - name: Jewellery Quarter
+    text: Quieter and full of character, with cafés and small pubs, 10-15 minutes on foot from the centre.
+  - name: Brindleyplace and Broad Street
+    text: Along the canals, with restaurants and bars. Broad Street is noisy at night at the weekend.
+  - name: Digbeth
+    text: For those who want bars, music and nightlife. Cheaper hotels, close to Moor Street and New Street stations.
+food:
+  - name: Balti
+    text: The curry born in Birmingham in the 1970s, served in the steel bowl it is cooked in. Try it in the Balti Triangle, around Ladypool Road.
+  - name: Food markets
+    text: Digbeth Dining Club at the weekend and the Bullring Markets have stalls with food from all over the world at good prices.
+  - name: Pork scratchings
+    text: Crispy fried pork rind, the area's traditional pub snack to go with a beer.
+  - name: Sunday roast
+    text: "Sunday lunch at the pub: roast meat, potatoes and Yorkshire pudding."
+transport: >-
+  The centre is small and easy to walk. The West Midlands Metro tram links New Street with the
+  Jewellery Quarter, Edgbaston and Wolverhampton. Buses cost about £2-2.50 a journey: pay with a
+  contactless bank card and the system caps your daily spending by itself.
+daytrips:
+  - name: Stratford-upon-Avon
+    text: Shakespeare's birthplace, with his house and the River Avon, about 1 hour by train from Moor Street or Snow Hill.
+  - name: Warwick Castle
+    text: A very well preserved medieval castle, about 30-40 minutes by train to Warwick and then 15 minutes on foot.
+  - name: Oxford
+    text: The university city with old colleges, the Bodleian Library and free museums, about 1 hour 10 minutes by train from New Street.
+faq:
+  - q: "Is Birmingham worth it instead of London?"
+    a: "For a weekend, yes: hotels and food are cheaper, the museums are free and the city is a good base for Stratford-upon-Avon, Warwick and Oxford. If you want to see London too, the train from New Street takes about 1.5 hours."
+  - q: "How much money do you need per day in Birmingham?"
+    a: "Excluding the flight and accommodation, plan on £45-70 a day for food, transport and one paid attraction such as Cadbury World."

@@ -1,0 +1,98 @@
+city: Malmö
+slug: malmo
+tagline: Turning Torso, plazh në qytet dhe Copenhagen pranë
+intro: >-
+  Malmö është qyteti i tretë i Suedisë, i lidhur me Danimarkën nga Ura e Øresund: një qytet i
+  sheshtë dhe i gjelbër, me sheshe të vjetra, parqe dhe një plazh ku banorët notojnë edhe në
+  dimër. Copenhagen është rreth 35 minuta larg me tren, ndaj me një fluturim sheh dy vende. Dy-tri
+  ditë mjaftojnë për Malmö, me një ditë më shumë për Copenhagen ose Lund.
+sights:
+  - name: Turning Torso
+    text: >-
+      Rrokaqielli 190 metra i lartë që përdridhet 90 gradë nga baza deri në majë, vepër e Santiago
+      Calatrava e vitit 2005. Është ndërtesë banimi dhe nuk vizitohet brenda, por duket nga i gjithë
+      qyteti.
+  - name: Kështjella Malmöhus
+    text: >-
+      E ndërtuar në vitet 1530-1540 nga mbreti danez Christian III, kur kjo krahinë ishte pjesë e
+      Danimarkës. Sot strehon muzetë e qytetit dhe një akuarium; bileta rreth 140 SEK (rreth €13).
+  - name: Lilla Torg dhe Stortorget
+    text: >-
+      Lilla Torg është sheshi i vogël me kalldrëm dhe shtëpi me trarë druri, i krijuar rreth vitit
+      1590. Ngjitur është Stortorget, me Bashkinë e vitit 1546.
+  - name: Plazhi Ribersborg dhe Kallbadhus
+    text: >-
+      Plazhi i gjatë me rërë, 15 minuta në këmbë nga qendra. Në fund të një skele druri është
+      Ribersborgs Kallbadhus, banja e ftohtë e vitit 1898, me sauna dhe zhytje në det gjatë gjithë
+      vitit. Hyrja kushton rreth 100 SEK (rreth €9).
+  - name: Västra Hamnen
+    text: >-
+      Ish-kantieri detar, sot lagje moderne rreth Turning Torso. Shëtitorja buzë detit ka platforma
+      druri ku banorët notojnë, me pamje mbi Urën e Øresund në perëndim të diellit.
+itinerary:
+  - "Stortorget, Lilla Torg dhe rrugicat e qytetit të vjetër, pastaj Malmöhus dhe parqet Slottsparken e Kungsparken. Në mbrëmje darkë në Lilla Torg."
+  - "Västra Hamnen dhe Turning Torso, pastaj shëtitje përgjatë plazhit Ribersborg deri te Kallbadhus, për sauna dhe një zhytje në det. Në mbrëmje falafel dhe bare në Möllevången."
+  - "Një ditë në Copenhagen me trenin mbi Urën e Øresund: Nyhavn, Tivoli dhe Christiania, me kthim në mbrëmje. Ndryshe, gjysmë dite në Lund."
+areas:
+  - name: Gamla Staden
+    text: >-
+      Qyteti i vjetër, rreth Stortorget dhe Malmö C: gjithçka në këmbë, pranë autobusit të aeroportit
+      dhe trenit për Copenhagen, por me çmimet më të larta.
+  - name: Davidshall dhe Triangeln
+    text: Rrugë të qeta me kafene, 10 minuta në këmbë nga qendra, me stacionin e trenit Triangeln.
+  - name: Möllevången
+    text: Lagjja multikulturore, me treg në shesh, ushqimin më të lirë dhe jetën e natës.
+  - name: Västra Hamnen
+    text: Moderne dhe e qetë, buzë detit, rreth 20 minuta në këmbë nga Malmö C.
+food:
+  - name: Falafel
+    text: >-
+      Malmö quhet kryeqyteti suedez i falafelit. Një pita kushton rreth 50-70 SEK (rreth €5-6), vakti
+      më i lirë në qytet.
+  - name: Fika
+    text: Pushimi suedez me kafe dhe kanelbulle, ëmbëlsira me kanellë, rreth 60-70 SEK bashkë.
+  - name: Äggakaka
+    text: Petulla e trashë me vezë e krahinës Skåne, me proshutë të skuqur dhe reçel boronice të kuqe.
+  - name: Spettekaka
+    text: Ëmbëlsira e lartë si kullë, prej vezësh dhe sheqeri, e pjekur në hell.
+airports:
+  MMX: >-
+    Aeroporti i Malmö (Sturup) është rreth 30 km në lindje të qytetit dhe nuk ka tren. Autobusët
+    e Flygbussarna presin uljet dhe arrijnë në Malmö Central (Malmö C) për rreth 40 minuta; bileta
+    kushton rreth 130-150 SEK (rreth €12-14), më lirë në aplikacion. Taksia ka çmim fiks rreth
+    550-650 SEK (rreth €50-60) dhe bën rreth 30 minuta.
+transport: >-
+  Qendra përshkohet në këmbë dhe qyteti i sheshtë është i bërë për biçikletë. Autobusët dhe trenat
+  lokalë punojnë me biletat e Skånetrafiken, që blihen në aplikacion ose me kartë, jo me para në
+  dorë. Bileta e vetme në qytet kushton rreth 30 SEK (rreth €2.70), ajo 24-orëshe rreth 80 SEK
+  (rreth €7). Treni për Copenhagen niset nga Malmö C çdo 20 minuta.
+daytrips:
+  - name: Copenhagen
+    text: >-
+      Rreth 35 minuta me tren mbi Urën e Øresund deri në København H, me biletë rreth 120 SEK (rreth
+      €11) në një drejtim.
+  - name: Lund
+    text: >-
+      Qyteti universitar, rreth 15 minuta me tren, me katedralen romane të vitit 1145 dhe orën e saj
+      astronomike.
+  - name: Ystad dhe Ales Stenar
+    text: >-
+      Ystad, qytet me shtëpi me trarë druri dhe skena e serialit Wallander, është rreth 50 minuta me
+      tren. Rreth 20 km më në lindje, mbi një shkëmb buzë detit, janë Ales Stenar: 59 gurë të
+      ngritur në formë anijeje, rreth 30 minuta me autobus nga Ystad.
+budget: >-
+  Një kafe me kanelbulle kushton rreth 60-70 SEK (rreth €6), një birrë në bar 75-90 SEK (rreth
+  €7-8), dreka e ditës 125-150 SEK (rreth €11-14), një darkë 200-300 SEK (rreth €18-27). 1 € është rreth 11 SEK.
+when: >-
+  Maji-shtatori, kur ditët janë të gjata dhe plazhi mbushet. Në gusht mbahet Malmöfestivalen,
+  festivali falas i qytetit. Dimri është i errët dhe me erë, por saunat e Kallbadhus janë hapur
+  gjatë gjithë vitit.
+tips:
+  - "Suedia është pothuajse pa para në dorë: shumë lokale nuk pranojnë kesh. Mjafton karta bankare, nuk ke nevojë të këmbesh kurora."
+  - "Në ditët e punës, shumë restorante ofrojnë dagens lunch, rreth 11:00-14:00: pjatë kryesore, sallatë, bukë dhe kafe për rreth 125-150 SEK."
+  - "Alkooli mbi 3.5% shitet vetëm në dyqanet shtetërore Systembolaget, që të dielave janë të mbyllura."
+faq:
+  - q: "A mund të fluturoj në Malmö dhe të vizitoj Copenhagen?"
+    a: "Po. Treni nga Malmö C deri në qendër të Copenhagen bën rreth 35 minuta dhe kushton rreth 120 SEK (rreth €11). Të dy vendet janë në zonën Shengen, por herë pas here ka kontrolle në kufi, prandaj mbaje pasaportën me vete."
+  - q: "Sa para duhen në ditë në Malmö?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €60-90 në ditë. Dreka e ditës, falafeli dhe plazhi falas e mbajnë ditën më të lirë nga sa pritet në Suedi."

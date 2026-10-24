@@ -1,0 +1,101 @@
+city: Stockholm
+slug: stockholm
+tagline: Ishujt, Gamla Stan dhe fika me kanellë
+intro: >-
+  Stockholm është ndërtuar mbi 14 ishuj, aty ku liqeni Mälaren takon Detin Baltik: rrugica
+  mesjetare, pallate buzë ujit dhe parqe në mes të qytetit. Qendra përshkohet në këmbë dhe me
+  traget, ndërsa metroja është vetë një galeri arti. Është ndër qytetet më të shtrenjta në Evropë:
+  tri ditë mjaftojnë, me një ditë më shumë për arkipelagun.
+sights:
+  - name: Gamla Stan
+    text: >-
+      Qyteti i vjetër, me rrugica të ngushta, shtëpi me ngjyra dhe sheshin Stortorget. Këtu janë
+      Pallati Mbretëror, ku rojet ndërrohen rreth mesditës, dhe Muzeu i Çmimit Nobel.
+  - name: Muzeu Vasa
+    text: >-
+      Anija luftarake Vasa u fundos në vitin 1628 në udhëtimin e parë dhe u nxor nga deti në vitin
+      1961, pothuajse e plotë. Bileta kushton rreth 200-230 SEK (rreth €18-21).
+  - name: Skansen
+    text: >-
+      Muzeu i parë në ajër të hapur në botë, i vitit 1891: shtëpi fshatare nga e gjithë Suedia dhe
+      kafshë nordike si arinjtë dhe drerët. Bileta rreth 200-300 SEK, sipas stinës.
+  - name: Djurgården
+    text: >-
+      Ishulli i gjelbër i muzeve, me Vasa, Skansen, ABBA The Museum dhe parkun e lojërave Gröna
+      Lund. Shtigjet buzë ujit janë falas; shko me traget nga Slussen.
+  - name: Stadshuset
+    text: >-
+      Bashkia prej tulle buzë ujit, e vitit 1923, ku mbahet banketi i Çmimit Nobel. Vizitohet me
+      turne me guidë (rreth 150-170 SEK); kulla 106 metra ka pamjen më të mirë mbi Gamla Stan.
+  - name: Arti i metrosë
+    text: >-
+      Mbi 90 stacione metroje kanë piktura, skulptura ose shpella të pikturuara në shkëmb, me
+      biletën e zakonshme. Më të bukurat: T-Centralen, Kungsträdgården, Stadion dhe Solna Centrum.
+itinerary:
+  - "Gamla Stan, Stortorget dhe ndërrimi i rojeve te Pallati Mbretëror. Pasdite Stadshuset, në mbrëmje Södermalm dhe pamja nga Monteliusvägen."
+  - "Djurgården: Muzeu Vasa sapo hapet, pastaj Skansen ose ABBA The Museum. Kthimi me traget për në Slussen."
+  - "Stacionet e artit në metro, tregu i mbuluar Östermalms saluhall dhe Moderna Museet, me koleksion falas. Ose një ditë në arkipelag."
+areas:
+  - name: Norrmalm
+    text: Rreth Stockholm Central, zona më praktike për trenin dhe autobusin e aeroportit, me shumë hotele dhe hostele.
+  - name: Gamla Stan
+    text: Në mes të gjithçkaje dhe shumë e bukur, por me dhoma të vogla dhe çmime të larta.
+  - name: Södermalm
+    text: Lagjja më e gjallë, me kafene, bare dhe dyqane vintage, pak më e lirë se qendra.
+  - name: Östermalm
+    text: Lagjja elegante me bulevarde, e qetë por ndër më të shtrenjtat.
+food:
+  - name: Fika
+    text: >-
+      Pushimi suedez për kafe dhe ëmbëlsirë, sidomos kanelbulle, bukëz me kanellë. Kafe me bukëz
+      rreth 60-80 SEK (rreth €5-7).
+  - name: Köttbullar
+    text: >-
+      Qofte suedeze me pure patatesh, salcë kremi dhe reçel lingon (boronicë e kuqe), rreth
+      180-250 SEK në restorant.
+  - name: Dagens lunch
+    text: >-
+      Dreka e ditës në ditë pune, rreth 11:00-14:00: pjatë e ngrohtë me sallatë, bukë dhe kafe për
+      rreth 120-150 SEK (rreth €11-14). Mënyra më e lirë për të ngrënë mirë.
+  - name: Räksmörgås
+    text: Sanduiç i hapur me karkaleca, vezë dhe majonezë, klasiku i kuzhinës së detit.
+airports:
+  ARN: >-
+    Arlanda është rreth 40 km në veri të qytetit. Arlanda Express arrin në Stockholm Central për
+    rreth 20 minuta, me rreth 320-340 SEK (rreth €30); për dy ose më shumë persona bashkë del më
+    lirë. Treni periferik i SL-së (pendeltåg) bën rreth 40 minuta deri në Stockholm City, me rreth
+    200 SEK (rreth €18) bashkë me tarifën e aeroportit. Autobusët Flygbussarna shkojnë në
+    Cityterminalen për rreth 45 minuta, me rreth 130 SEK (rreth €12). Taksia ka çmim fiks rreth
+    600-750 SEK (rreth €55-70).
+transport: >-
+  Metroja, trenat periferikë, tramvajet, autobusët dhe tragetet e Djurgården punojnë me biletën e
+  SL-së. Bileta e vetme kushton rreth 43 SEK (rreth €4) dhe vlen 75 minuta; ajo 72 orëshe rreth
+  350 SEK (rreth €32). Mjafton të kalosh kartën bankare pa kontakt ose telefonin te portat.
+daytrips:
+  - name: Arkipelagu dhe Vaxholm
+    text: >-
+      Mijëra ishuj në lindje të qytetit. Vaxholm, me kështjellën dhe shtëpitë prej druri, është
+      rreth 1 orë me anije nga Strömkajen.
+  - name: Uppsala
+    text: Qyteti universitar, me katedralen më të madhe të Skandinavisë, rreth 40 minuta me tren.
+  - name: Drottningholm
+    text: >-
+      Pallati ku jeton familja mbretërore, në listën e UNESCO-s, rreth 1 orë me anije në verë ose
+      30-40 minuta me metro dhe autobus.
+budget: >-
+  Një kafe kushton rreth 40 SEK (rreth €3.5), një birrë 80-100 SEK (rreth €7-9), një pjatë në
+  restorant 200-300 SEK (rreth €18-27). Pa fluturimin dhe fjetjen, llogarit €70-100 në ditë.
+when: >-
+  Qershori-gushti, kur ditët janë shumë të gjata dhe qyteti jeton buzë ujit. Maji dhe shtatori
+  janë më të qetë. Në dhjetor ka vetëm rreth 6 orë dritë, por edhe tregje Krishtlindjesh.
+tips:
+  - "Suedia është pothuajse pa para në dorë: shumë lokale pranojnë vetëm kartë ose telefon. Nuk ke nevojë të këmbesh kurora."
+  - "Alkooli mbi 3.5% shitet vetëm në dyqanet shtetërore Systembolaget, të mbyllura të dielën."
+  - "Uji i rubinetit është shumë i mirë: mbush shishen në vend që të blesh ujë, që kushton rreth 25-30 SEK."
+faq:
+  - q: "Arlanda Express apo treni i SL-së: cilin të marr?"
+    a: "Arlanda Express është më i shpejti, rreth 20 minuta, por kushton rreth 320-340 SEK. Treni i SL-së bën rreth 40 minuta dhe kushton rreth 200 SEK. Nëse jeni dy ose më shumë, shiko çmimin e grupit të Arlanda Express."
+  - q: "A duhen para në dorë?"
+    a: "Praktikisht jo. Karta bankare ose telefoni pranohen kudo, edhe në transport. Shumë vende shkruajnë «kontantfritt», që do të thotë se nuk pranojnë para në dorë."
+  - q: "Sa para duhen në ditë në Stockholm?"
+    a: "Pa fluturimin dhe fjetjen, €70-100 në ditë. Dreka e ditës (dagens lunch), muzetë me koleksione falas dhe bileta 72 orëshe e SL-së e mbajnë shpenzimin më poshtë."

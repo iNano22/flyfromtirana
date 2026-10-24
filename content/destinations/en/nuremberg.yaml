@@ -1,0 +1,102 @@
+city: Nuremberg
+slug: nuremberg
+tagline: A castle, bratwurst and the Christmas market
+intro: >-
+  Nuremberg is Bavaria's second city and the heart of Franconia: an old town inside medieval
+  walls, with the imperial castle on its rock and the Pegnitz river through the middle. This is
+  where the Nazi Party held its rallies and where, after the war, the Nuremberg trials took place.
+  Two or three days are enough for the city, with one more day for Bamberg or Regensburg.
+sights:
+  - name: Kaiserburg
+    text: >-
+      The imperial castle on the rock at the north end of the old town. The full ticket (about €9)
+      includes the well, about 50 metres deep, and the Sinwell Tower, with the best view over the
+      rooftops. The gardens and the square in front of the castle are free.
+  - name: The old town
+    text: >-
+      Inside the towered walls everything is within walking distance. On the Hauptmarkt stands the
+      Schöner Brunnen, the Gothic fountain with the golden ring you turn for luck, and at 12:00 the
+      figures of the Männleinlaufen clock move on the front of the Frauenkirche. The city was almost
+      entirely destroyed in 1945 and rebuilt on its old plan.
+  - name: The Documentation Centre and the Nazi Party Rally Grounds
+    text: >-
+      In the Congress Hall, which was never finished, an exhibition explains how Nazism used
+      Nuremberg for its rallies of 1933-1938. The walk around the Dutzendteich lake to the
+      Zeppelinfeld grandstand is free. Tram 8 from the Hauptbahnhof takes you there. The centre has
+      been renovated in recent years: check online what is open.
+  - name: Germanisches Nationalmuseum
+    text: >-
+      The largest museum of German cultural history, with paintings by Dürer, armour and the oldest
+      surviving globe, from 1492. The ticket is about €8-10; on Wednesday evenings entry is usually
+      free. It is closed on Mondays.
+  - name: Dürer's House
+    text: >-
+      The house where the painter Albrecht Dürer lived and worked from 1509 until his death in 1528,
+      below the castle, by the Tiergärtnertor gate. The ticket is about €7-8.
+itinerary:
+  - "From the Hauptbahnhof along Königstraße, St. Lorenz church and the Hauptmarkt for the Männleinlaufen at 12:00. In the afternoon, the Kaiserburg and Dürer's House; in the evening, Rostbratwurst near St. Sebaldus church."
+  - "The Germanisches Nationalmuseum in the morning. In the afternoon, the Documentation Centre and the walk to the Zeppelinfeld. In the evening, the Henkersteg bridge on the Pegnitz river."
+  - "A day trip to Bamberg or Regensburg. Otherwise, the Memorium Nuremberg Trials, Courtroom 600 where the Nazi leaders were tried (U1 metro to Bärenschanze)."
+areas:
+  - name: Altstadt
+    text: Around the castle and the Hauptmarkt, with the prettiest lanes and the highest prices.
+  - name: Near the Hauptbahnhof
+    text: >-
+      The most practical area: the U2 metro takes you straight to the airport and the old town
+      starts across the street. Hotels are cheaper, but the streets by the station are a little
+      rough at night.
+  - name: Gostenhof
+    text: An alternative neighbourhood west of the walls, with cafés, bars and lower prices.
+food:
+  - name: Nürnberger Rostbratwurst
+    text: >-
+      Small sausages, 7-9 cm long, grilled over a beechwood fire. They come 6, 8 or 12 to a plate
+      with sauerkraut or potato salad, or three in a bread roll, "Drei im Weggla", for about €4.
+  - name: Lebkuchen
+    text: >-
+      Spiced honey biscuits, the symbol of the city. The best are Elisenlebkuchen, with lots of nuts
+      and little flour.
+  - name: Schäufele
+    text: Roast pork shoulder with crisp crackling, served with Kloß, big potato dumplings.
+  - name: Franconian beer
+    text: Franconia has hundreds of small breweries. Try Rotbier, the city's red beer.
+airports:
+  NUE: >-
+    The airport is about 5 km north of the centre. The U2 metro leaves from the terminal every 10
+    minutes and reaches the Hauptbahnhof in about 13 minutes. A single ticket costs about €4 and is
+    bought before boarding, from a machine or in the VGN app. A taxi costs about €20-25.
+transport: >-
+  The old town is walkable: from the Hauptbahnhof to the castle is about 20 minutes on foot. For
+  longer distances there are the metro, trams and buses, all on the same VGN ticket. A day ticket
+  costs about €9; if you buy it on a Saturday, it is valid on Sunday too. For regional trains
+  across Bavaria the Bayern-Ticket is worth it, about €30-35 for one person.
+daytrips:
+  - name: Bamberg
+    text: >-
+      A UNESCO-listed town, with its town hall built over the river and the smoked beer Rauchbier,
+      about 40-60 minutes by train.
+  - name: Rothenburg ob der Tauber
+    text: >-
+      One of the best-preserved medieval towns in Germany, with walls you can walk along, about 1.5-2
+      hours by regional train.
+  - name: Regensburg
+    text: A Roman and medieval city on the Danube, with its 12th-century Stone Bridge, about 1 hour by train.
+budget: >-
+  "Drei im Weggla" costs about €4, a half-litre of beer €4.50-5.50, a dish in a restaurant
+  €12-18, and a single ticket in the city about €4.
+when: >-
+  May to September for walks and beer gardens. The Christkindlesmarkt, one of the most famous
+  Christmas markets in the world, is held on the Hauptmarkt from the Friday before the first
+  Sunday of Advent until 24 December; in 2026 it opens on 27 November. In those weeks hotel prices
+  rise steeply.
+tips:
+  - "For the Christkindlesmarkt, book your accommodation months ahead, or stay in Fürth or Erlangen, 10-20 minutes away by train."
+  - "Glühwein is served in a mug with a deposit (Pfand): return it and you get the money back, or keep it as a souvenir."
+  - "Shops and supermarkets are closed on Sundays, except for a few supermarkets in the Hauptbahnhof."
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "By the U2 metro, which reaches the Hauptbahnhof in about 13 minutes, on a ticket of about €4. From the station the old town is across the street."
+  - q: "How much time does the Documentation Centre need?"
+    a: "Allow about 2 hours for the exhibition and 1 more hour for the walk to the Zeppelinfeld."
+  - q: "How much money do you need per day in Nuremberg?"
+    a: "Excluding the flight and accommodation, €40-70 a day. Nuremberg is cheaper than Munich, especially for food, but during the Christkindlesmarkt hotels double their prices."

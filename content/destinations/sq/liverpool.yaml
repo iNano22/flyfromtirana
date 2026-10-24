@@ -1,0 +1,79 @@
+city: Liverpool
+slug: liverpool
+tagline: Beatles, futboll dhe porti buzë lumit Mersey
+intro: >-
+  Liverpool është qyteti i Beatles dhe i futbollit, një port i vjetër buzë lumit Mersey me muze
+  falas, dy katedrale të mëdha dhe një jetë nate të gjallë. Qendra përshkohet në këmbë dhe çmimet
+  janë më të ulëta se në London. Tre ditë mjaftojnë për qytetin, plus një ditë për Chester ose
+  North Wales.
+sights:
+  - name: The Beatles Story dhe Cavern Club
+    text: Muzeu i Beatles në Royal Albert Dock kushton rreth £20-25. Cavern Club në Mathew Street, ku grupi luajti qindra herë, është rindërtuar pothuajse në të njëjtin vend dhe ka muzikë live çdo ditë.
+  - name: Royal Albert Dock dhe Pier Head
+    text: Doket me tulla të kuqe të vitit 1846, me dyqane, restorante dhe Merseyside Maritime Museum (falas). Te Pier Head qëndrojnë «Three Graces», ndërtesat simbol të portit, mes tyre Royal Liver Building.
+  - name: Dy katedralet
+    text: Liverpool Cathedral, anglikane, është katedralja më e madhe në Mbretërinë e Bashkuar, me një kullë që ngjitet për rreth £7-8. Në skajin tjetër të Hope Street qëndron Metropolitan Cathedral, katolike dhe moderne, në formë tende. Hyrja në të dyja është falas.
+  - name: Anfield
+    text: Stadiumi i Liverpool FC, me rreth 61.000 vende. Turi me muzeun kushton rreth £25-35 dhe rezervohet online. Nga qendra arrin me autobusët 17 ose 26 për rreth 20 minuta.
+  - name: Muzetë falas
+    text: Museum of Liverpool te Pier Head tregon historinë e qytetit, International Slavery Museum në Albert Dock rolin e portit në tregtinë e skllevërve. Pranë Lime Street janë World Museum dhe Walker Art Gallery, gjithashtu falas.
+  - name: Mersey Ferry
+    text: Lundrimi me traget mbi lumin zgjat rreth 50 minuta, kushton rreth £12-15 dhe të jep pamjen më të mirë të qytetit.
+airports:
+  LPL: >-
+    Aeroporti Liverpool John Lennon është rreth 12 km në juglindje të qendrës. Autobusi 500 nis
+    çdo 30 minuta dhe arrin në qendër (Liverpool ONE dhe Lime Street) për rreth 30-40 minuta;
+    autobusi 86 është më i ngadaltë. Bileta kushton rreth £2-3. Ndryshe, merr autobusin deri në
+    stacionin Liverpool South Parkway dhe prej andej trenin për në qendër (rreth 15 minuta).
+    Taksia kushton rreth £25-35.
+budget: >-
+  Një kafe kushton rreth £3-3.50, një vakt i thjeshtë £10-15 dhe një birrë (pint) rreth
+  £4.50-5.50. Një shtrat në hostel kushton rreth £18-30, por hotelet shtrenjtohen shumë në ditët e
+  ndeshjeve dhe gjatë garës me kuaj Grand National në prill.
+when: >-
+  Maji-shtatori ka motin më të butë (rreth 15-20 gradë), por shi bie gjatë
+  gjithë vitit. Në fund të gushtit festivali International Beatleweek sjell koncerte në gjithë
+  qytetin. Sezoni i futbollit zgjat nga gushti deri në maj.
+tips:
+  - "Rezervo online turin e Anfield dhe The Beatles Story, sidomos në verë."
+  - "Biletat për ndeshjet e Liverpool FC shiten vetëm në faqen zyrtare të klubit, zakonisht për anëtarët. Mos bli nga shitës të panjohur, sepse bileta mund të anulohet."
+  - "Merr me vete një xhaketë kundër shiut: era nga lumi dhe shiu janë të zakonshme edhe në verë."
+itinerary:
+  - "Royal Albert Dock me The Beatles Story dhe Maritime Museum, pastaj Pier Head dhe Museum of Liverpool. Pasdite Mersey Ferry, në mbrëmje Mathew Street dhe Cavern Club."
+  - "Hope Street me dy katedralet dhe kullën e Liverpool Cathedral. Pasdite Bold Street dhe Chinatown, në mbrëmje Baltic Triangle."
+  - "Turi i Anfield në mëngjes, pastaj World Museum dhe Walker Art Gallery. Pasdite autobusi Magical Mystery Tour për Penny Lane dhe Strawberry Field (rreth £20-30)."
+  - "Një ditë jashtë qytetit: Chester me muret romake, ose North Wales për kështjellën e Conwy."
+areas:
+  - name: Qendra dhe Liverpool ONE
+    text: Pranë Lime Street, dyqaneve dhe Albert Dock. Ideale për një qëndrim të shkurtër.
+  - name: Ropewalks dhe Bold Street
+    text: Zona e bareve dhe restoranteve të vogla. E gjallë, por e zhurmshme në fundjavë.
+  - name: Baltic Triangle
+    text: Ish-magazina të kthyera në bare dhe studio, 10-15 minuta në këmbë nga Albert Dock, me hotele e apartamente zakonisht më të lira.
+  - name: Georgian Quarter
+    text: Rrugë të qeta me shtëpi të vjetra pranë katedraleve, me bujtina të vogla dhe çmime të mira.
+food:
+  - name: Scouse
+    text: Gjellë e vendit me mish qengji ose viçi, patate, karota dhe qepë, që u ka dhënë emrin edhe banorëve, «Scousers». Shërbehet me lakër të kuqe turshi dhe bukë.
+  - name: Baltic Market
+    text: Salla e ushqimit në Baltic Triangle, me dhjetëra tezga me ushqime nga e gjithë bota.
+  - name: Bold Street
+    text: Rruga më e mirë për të ngrënë, me kafene dhe restorante libaneze, indiane e vegjetariane për të gjitha xhepat.
+  - name: Chinatown
+    text: Komuniteti kinez më i vjetër në Europë, me portën e madhe në Nelson Street dhe restorante me çmime të mira.
+transport: >-
+  Qendra, Albert Dock dhe katedralet janë në këmbë, 15-20 minuta larg njëra-tjetrës. Trenat
+  Merseyrail kalojnë nën qendër dhe të çojnë në Chester dhe Liverpool South Parkway. Autobusët
+  kushtojnë rreth £2 për udhëtim dhe bileta ditore rreth £5.
+daytrips:
+  - name: Chester
+    text: Qytet romak me mure rreth qendrës dhe galeritë mesjetare të dyqaneve The Rows, rreth 45 minuta me tren nga Liverpool Central.
+  - name: Manchester
+    text: Qyteti i Manchester United dhe Manchester City, rreth 35-50 minuta me tren nga Lime Street.
+  - name: North Wales
+    text: Kështjella mesjetare e Conwy dhe plazhi i Llandudno, rreth 1.5-2 orë me tren, me ndërrim në Chester.
+faq:
+  - q: "Si të shoh një ndeshje të Liverpool FC?"
+    a: "Biletat janë shumë të vështira pa anëtarësim. Nëse nuk gjen, turi i Anfield (rreth £25-35) është alternativa më e sigurt. Everton luan që nga viti 2025 në stadiumin e ri Hill Dickinson Stadium buzë lumit, ku biletat gjenden më lehtë."
+  - q: "Sa para duhen në ditë në Liverpool?"
+    a: "Pa fluturimin dhe fjetjen, llogarit £45-75 në ditë për ushqim, transport dhe një tur ose muze me pagesë. Liverpool është dukshëm më i lirë se London."
