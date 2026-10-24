@@ -4,7 +4,8 @@ from datetime import date
 import pytest
 import requests
 
-from src.scanner import PriceScanner, RouteFetchError, ScannerError, months_between
+from src.config import ConfigError, load_config
+from src.scanner import PriceScanner, RouteFetchError, ScannerError, found_on, months_between
 from tests.conftest import NOW, FakeResponse, FakeSession, api_row, travelpayouts_handler
 
 TODAY = date(2026, 10, 9)
@@ -40,6 +41,43 @@ def test_fetch_route_parses_and_keeps_cheapest_per_day():
     assert (first.airline, first.transfers, first.duration_min) == ("FR", 1, 200)
     assert first.link.startswith("/search/TIA2010BGY1")
     assert first.fetched_at == NOW
+
+
+def found(day: date) -> str:
+    """A link like the API's, with the day an Aviasales user found the price."""
+    return f"/search/TIA2010BGY1?t=x&search_date={day:%d%m%Y}&expected_price=17"
+
+
+def test_found_on_reads_the_search_date_in_the_link():
+    assert found_on({"link": found(date(2026, 10, 7))}) == date(2026, 10, 7)
+    assert found_on({"link": "/search/TIA2010BGY1?t=x"}) is None          # no date: age unknown
+    assert found_on({"link": "/search/TIA2010BGY1?search_date=31022026"}) is None   # no such day
+    assert found_on({}) is None
+
+
+def test_prices_found_too_long_ago_are_left_out():
+    rows = [
+        api_row("TIA", "BGY", date(2026, 10, 20), 9, link=found(date(2026, 10, 6))),    # 3 days old: out
+        api_row("TIA", "BGY", date(2026, 10, 20), 19, link=found(date(2026, 10, 7))),   # 2 days old: kept
+        api_row("TIA", "BGY", date(2026, 10, 21), 8, link=found(date(2026, 10, 1))),    # out, and the date with it
+        api_row("TIA", "BGY", date(2026, 10, 22), 25),                                  # no date: kept
+    ]
+    scanner = PriceScanner("secret-token", request_delay_seconds=0, max_price_age_days=2,
+                           session=FakeSession(travelpayouts_handler(rows)), sleep=lambda _: None,
+                           today=lambda: TODAY)
+    quotes = scanner.fetch_route("TIA", "BGY", TODAY, NOW)
+    assert [(q.depart_date, q.price) for q in quotes] == [(date(2026, 10, 20), 19), (date(2026, 10, 22), 25)]
+
+    # The same rule for return tickets (the trip watches).
+    rows = [api_row("TIA", "BGY", date(2026, 10, 20), 30, return_at="2026-10-23T09:00:00+02:00",
+                    link=found(date(2026, 10, 5)))]
+    scanner.session = FakeSession(travelpayouts_handler(rows))
+    assert scanner.fetch_return_fares("TIA", "BGY", date(2026, 10, 10), date(2026, 10, 31)) == []
+
+    # No limit: every price counts, however old.
+    scanner.max_price_age_days = None
+    scanner.session = FakeSession(travelpayouts_handler(rows))
+    assert len(scanner.fetch_return_fares("TIA", "BGY", date(2026, 10, 10), date(2026, 10, 31))) == 1
 
 
 def test_request_sends_token_in_header_not_url():
@@ -112,3 +150,18 @@ def test_network_errors_become_route_errors():
     scanner, _ = scanner_for(FakeSession(handler))
     with pytest.raises(RouteFetchError):
         scanner.fetch_route("TIA", "BGY", TODAY, NOW)
+
+
+def test_max_price_age_days_is_read_and_checked(tmp_path):
+    assert load_config().max_price_age_days == 2
+
+    def load(extra_yaml):
+        path = tmp_path / "config.yaml"
+        path.write_text(f"routes:\n  - {{ iata: BGY, city: Milan }}\n{extra_yaml}\n", encoding="utf-8")
+        return load_config(path)
+
+    assert load("").max_price_age_days == 2                              # not set = 2 days
+    assert load("max_price_age_days: 0").max_price_age_days == 0         # today's prices only
+    assert load("max_price_age_days: null").max_price_age_days is None   # any age
+    with pytest.raises(ConfigError, match="max_price_age_days"):
+        load("max_price_age_days: -1")

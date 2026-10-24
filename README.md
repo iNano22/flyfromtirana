@@ -2,7 +2,7 @@
 
 Scans cheap flights from Tirana (TIA), spots deals, and posts them to the
 Telegram channel [@flyfromtirana](https://t.me/flyfromtirana) with affiliate
-links. It runs every 3 hours in a Docker container on a small server. The same
+links. It runs every 15 minutes (`full_run_every_minutes`) in a Docker container on a small server. The same
 run also renders the **website**: a main page with the cheapest price to every
 destination, plus a page per city with its prices and a guide, in Albanian,
 English and Italian. A second container serves it. The paid premium channel gets its own quick scan every 15
@@ -34,6 +34,11 @@ src/scheduler.py (every 15 min in between, when premium is on)
 Prices come from the Travelpayouts **Data API** (`aviasales/v3/prices_for_dates`).
 These are *cached* prices that Aviasales users found recently, not live
 availability. That's fine for spotting deals: the booking link opens a live search.
+A price can be up to a week old, though, and cheap seats sell out in days, so the
+scanner skips prices found more than `max_price_age_days` (2) ago: each row's link
+carries the day it was found (`search_date=DDMMYYYY`). Posts, the site, alerts and
+trip watches only ever see the newer ones. The site also says, under "updated", that
+prices may have changed.
 
 ## Project layout
 
@@ -87,7 +92,7 @@ src/
   guides.py              loads the city guides from content/destinations/
   i18n.py                the website's languages: loads a language's wording into the templates
   scheduler.py           the server's loop: a scan, then the website, then the channel stats,
-                         every 3 hours, and quick premium scans in between
+                         every full_run_every_minutes, and quick premium scans in between
   http_client.py         shared retry/backoff for HTTP calls
 scripts/post_test.py     send one test message to the channel
 scripts/share_card.py    make the pictures in assets/img/share (from share_card.html, with Chrome)
@@ -149,8 +154,9 @@ median), but it never marks deals as posted.
 
 ### 4. Run it on a server
 
-`docker-compose.yml` runs two containers: `scanner` (the scheduler: a scan at
-minute 17 of every third hour UTC, then the website build, plus a quick premium
+`docker-compose.yml` runs two containers: `scanner` (the scheduler: a scan every
+`full_run_every_minutes`, counted from minute 17 past midnight UTC (15 = minutes 2,
+17, 32 and 47 of every hour; 180 = minute 17 of every third hour), then the website build, plus a quick premium
 scan every `premium.scan_every_minutes` in between) and `web` (serves the page:
 Caddy, set up in `web/Caddyfile`). With plain Docker:
 
@@ -629,7 +635,7 @@ opens that search instead of the homepage and counts the click under the site's 
 
 ## Data
 
-`data/prices.db` grows with every full run (8× a day). To keep it small: only the
+`data/prices.db` grows with every full run (96× a day at 15 minutes, 8× at 3 hours). To keep it small: only the
 cheapest price per route, direction, and date is stored per run, and rows older
 than `history_retention_days` (45) are deleted. The quick premium scans save no
 prices at all, so they don't make it grow. On the server the file lives in
@@ -638,11 +644,15 @@ volume, and the database local runs use.
 
 ## Premium channel (built, off by default)
 
+Off since 2026-10-24, while the channels grow: everyone gets every deal within 15
+minutes and the site says nothing about Premium. To bring it back: `premium.enabled:
+true`, `free_delay_hours: 6` and `full_run_every_minutes: 180` in config.yaml.
+
 A paid, private channel that gets deals **within minutes**, with looser rules (30%
 below the median instead of 40%) so it gets more of them. The free channel only
 posts a deal once premium has had it for `free_delay_hours` (0 for now, while the
-free channel grows: it then gets a deal at the next 3-hour run, and the site says
-premium is 3 hours ahead), and adds a line like "⚡ Anëtarët Premium e morën këtë
+free channel grows: it then gets a deal at the next full run, and the site says
+premium is that many hours ahead), and adds a line like "⚡ Anëtarët Premium e morën këtë
 ofertë 2 orë më parë · Bashkohu". The website waits the same way (see Website above).
 
 The wait is per price, not per date. When a date premium was already sent falls

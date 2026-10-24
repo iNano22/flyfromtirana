@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 
 from src import scheduler
-from src.config import load_config
+from src.config import ConfigError, load_config
 from src.scheduler import (Alerts, next_run, next_slot, premium_scan_interval, run_once, run_premium_scan,
                            seed_database)
 from src.telegram import TelegramClient, TelegramError
@@ -48,6 +48,33 @@ def test_premium_scans_fill_the_time_between_full_runs(last_start, expected):
 
 def test_without_premium_scans_every_run_is_a_full_one():
     assert next_run(utc(15, 17, 5), None) == (utc(18, 17), True)
+
+
+@pytest.mark.parametrize("now, expected", [
+    (utc(13, 5), utc(13, 17)),            # minutes 2, 17, 32 and 47 of every hour
+    (utc(13, 17), utc(13, 32)),
+    (utc(13, 50), utc(14, 2)),
+    (utc(0, 0), utc(0, 2)),
+    (utc(23, 50), utc(0, 2, day=11)),     # rolls over midnight without a gap
+])
+def test_full_runs_every_15_minutes(now, expected):
+    assert next_slot(now, QUARTER) == expected
+    assert next_run(now, None, QUARTER) == (expected, True)
+
+
+def test_full_run_every_minutes_is_read_and_checked(tmp_path):
+    assert load_config().full_run_every_minutes == 15
+
+    def load(extra_yaml):
+        path = tmp_path / "config.yaml"
+        path.write_text(f"routes:\n  - {{ iata: BGY, city: Milan }}\n{extra_yaml}\n", encoding="utf-8")
+        return load_config(path)
+
+    assert load("").full_run_every_minutes == 180                      # not set = every 3 hours, as before
+    assert load("full_run_every_minutes: 30").full_run_every_minutes == 30
+    for wrong in (0, 4, 7, 100):                                       # too often, or doesn't fit a day evenly
+        with pytest.raises(ConfigError, match="full_run_every_minutes"):
+            load(f"full_run_every_minutes: {wrong}")
 
 
 def test_premium_scan_interval_comes_from_the_config():

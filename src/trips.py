@@ -1,7 +1,7 @@
 """Trips only the owner hears about (trip_watches in config.yaml): "tell me when Tirana ⇄ Memmingen
 is cheap for 3-4 days before Christmas, with a weekend in it".
 
-After every full scan (main.run, every 3 hours) each watch looks at the cached prices for its
+After every full scan (main.run, every full_run_every_minutes) each watch looks at the cached prices for its
 dates, two ways:
 
   - a flight out and a flight back, each a one-way ticket (how Wizz Air and Ryanair sell them);
@@ -224,7 +224,8 @@ def main() -> int:
         print("No trip_watches in config.yaml")
         return 0
     scanner = PriceScanner(secrets.travelpayouts_token, currency=config.currency, market=config.market,
-                           request_delay_seconds=config.request_delay_seconds)
+                           request_delay_seconds=config.request_delay_seconds,
+                           max_price_age_days=config.max_price_age_days)
     now = datetime.now(timezone.utc)
     today = now.astimezone(ZoneInfo(config.timezone)).date()
     for watch in config.trip_watches:

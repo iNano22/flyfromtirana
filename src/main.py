@@ -149,6 +149,7 @@ def run(
         market=config.market,
         lookahead_days=config.lookahead_days,
         request_delay_seconds=config.request_delay_seconds,
+        max_price_age_days=config.max_price_age_days,
         session=session,
     )
     def telegram_for(chat_id: str) -> TelegramClient | None:
@@ -193,7 +194,7 @@ def run(
                                  telegram=telegram_for(secrets.telegram_premium_channel_id), **common)
         if premium_only:
             # Premium members' alerts straight away, from these (unsaved) prices. The quick scan
-            # keeps the posting times too: a full run only comes every 3 hours.
+            # keeps the posting times too: a full run only comes every full_run_every_minutes.
             exit_code |= alerts(premium_only=True, scanned=(outbound, inbound))
             return exit_code | social_post()
 

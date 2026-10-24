@@ -1,6 +1,6 @@
 """Runs the scan on a server, on the schedule GitHub Actions used to keep.
 
-    python -m src.scheduler            # run forever: scan + rebuild the site every 3 hours
+    python -m src.scheduler            # run forever: scan + rebuild the site every full_run_every_minutes
     python -m src.scheduler --once     # one scan + site build now, then exit
 
 Every slot does what the old workflow did: `python -m src.main`, then
@@ -17,7 +17,7 @@ Between those full runs, premium gets its own quick scan every
 premium.scan_every_minutes (config.yaml): `python -m src.main --premium-only`,
 which posts new deals to the premium channel, makes the Instagram/Facebook post
 whose time has come (social.post_times), and nothing else. The free channel and
-the website keep the 3-hour rhythm.
+the website keep the full runs' rhythm.
 
 The database no longer travels through git. On the server it lives in a Docker
 volume; the copy baked into the image (seed/prices.db) is only the starting
@@ -52,9 +52,9 @@ from src.telegram import TelegramClient, TelegramError
 
 log = logging.getLogger("flyfromtirana.scheduler")
 
-# Minute 17 of every third hour, UTC: the old cron ("17 */3 * * *"), which kept
-# off the top of the hour. Kept so the posting rhythm doesn't change.
-SLOT_HOURS = 3
+# Full runs start full_run_every_minutes apart (config.yaml), counted from minute 17
+# past midnight UTC: at 180 that is the old cron ("17 */3 * * *"), which kept off the
+# top of the hour; at 15 it is minutes 2, 17, 32 and 47 of every hour.
 SLOT_MINUTE = 17
 
 SCAN_TIMEOUT_SECONDS = 20 * 60   # the old workflow's timeout-minutes
@@ -74,14 +74,13 @@ EXIT_MEANING = {
 }
 
 
-def next_slot(after: datetime) -> datetime:
-    """The first slot strictly after `after`."""
+def next_slot(after: datetime, every: timedelta = timedelta(hours=3)) -> datetime:
+    """The first slot strictly after `after`, with slots `every` apart (a whole number of them in a day)."""
     after = after.astimezone(timezone.utc)
-    slot = after.replace(hour=after.hour - after.hour % SLOT_HOURS, minute=SLOT_MINUTE,
-                         second=0, microsecond=0)
-    while slot <= after:
-        slot += timedelta(hours=SLOT_HOURS)
-    return slot
+    midnight = after.replace(hour=0, minute=0, second=0, microsecond=0)
+    first = midnight + timedelta(minutes=SLOT_MINUTE) % every   # the day's first slot
+    passed = (after - first) // every                            # slots up to `after` (-1 before the first)
+    return first + (passed + 1) * every
 
 
 def premium_scan_interval(config: Config) -> timedelta | None:
@@ -92,14 +91,15 @@ def premium_scan_interval(config: Config) -> timedelta | None:
     return None
 
 
-def next_run(last_start: datetime, quick_every: timedelta | None) -> tuple[datetime, bool]:
+def next_run(last_start: datetime, quick_every: timedelta | None,
+             full_every: timedelta = timedelta(hours=3)) -> tuple[datetime, bool]:
     """When the next run is due after one that started at `last_start`, and whether it is a full run.
 
     Full runs keep their slots. In between, a quick premium scan is due
     `quick_every` after the last run; one that would land on the next slot
     (or past it) gives way to the full run, which posts to premium as well.
     """
-    full_at = next_slot(last_start)
+    full_at = next_slot(last_start, full_every)
     if quick_every is None or last_start + quick_every >= full_at:
         return full_at, True
     return last_start + quick_every, False
@@ -216,7 +216,7 @@ def run_premium_scan() -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Scan and rebuild the website every 3 hours.")
+    parser = argparse.ArgumentParser(description="Scan and rebuild the website every full_run_every_minutes.")
     parser.add_argument("--once", action="store_true", help="one scan + site build now, then exit")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-7s %(name)s: %(message)s")
@@ -248,13 +248,15 @@ def main(argv: list[str] | None = None) -> int:
     # So the page exists right after a deploy instead of at the next slot.
     alerts.report("website build", run_step("website build", "src.website", SITE_TIMEOUT_SECONDS))
 
+    full_every = timedelta(minutes=config.full_run_every_minutes)
+    log.info("A full run every %d minutes", config.full_run_every_minutes)
     quick_every = premium_scan_interval(config)
     if quick_every:
         log.info("Premium gets a quick scan every %g minutes between the full runs",
                  quick_every.total_seconds() / 60)
 
     def plan(last_start: datetime) -> tuple[datetime, bool]:
-        due, full = next_run(last_start, quick_every)
+        due, full = next_run(last_start, quick_every, full_every)
         log.info("Next %s at %s", "full run" if full else "premium scan", due.strftime("%Y-%m-%d %H:%M UTC"))
         return due, full
 

@@ -286,7 +286,8 @@ def test_premium_block_shows_only_while_there_is_a_premium_channel(config, stora
 
     # With a channel: what config.yaml says about it, and nothing more.
     premium = replace(with_premium(config).premium, join_link="https://t.me/+abc", scan_every_minutes=15)
-    config = replace(config, premium=premium, quiet_hours=(time(23, 0), time(8, 0)))
+    config = replace(config, premium=premium, quiet_hours=(time(23, 0), time(8, 0)),
+                     full_run_every_minutes=180)   # premium comes back together with the 3-hour runs
     page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
     assert '<section class="premium wrap" id="premium"' in page
     assert '<a class="btn-premium" href="https://t.me/+abc">' in page
@@ -297,13 +298,39 @@ def test_premium_block_shows_only_while_there_is_a_premium_channel(config, stora
     # No quick premium scans and no quiet hours: the sentences about them are left out.
     config = replace(config, premium=replace(premium, scan_every_minutes=0), quiet_hours=None)
     page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
-    assert 'id="premium"' in page and "minuta" not in page and "Natën" not in page
+    assert 'id="premium"' in page and "Kontroll çdo" not in page and "postohet menjëherë" not in page
+    assert "Natën" not in page
     assert not PLACEHOLDER.search(page)
 
     # No wait at all: the free channel and the page still get it at the next 3-hour run, never "0 hours".
     config = replace(config, premium=replace(premium, free_delay_hours=0))
     page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
     assert "i marrin 3 orë më vonë" in page and " 0 orë" not in page
+
+
+def test_pages_say_how_often_prices_are_checked(config, storage):
+    two_routes(storage)
+    links = LinkBuilder(config.links, "1")
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert "i kontrolluar çdo 15 minuta." in page and "Kontrollojmë çmimet çdo 15 minuta" in page
+    assert "çdo 3 orë" not in page
+
+    config = replace(config, full_run_every_minutes=180)
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert "i kontrolluar çdo 3 orë." in page and "minuta" not in page
+
+
+def test_pages_say_the_prices_may_have_changed(config, storage):
+    two_routes(storage)
+    links = LinkBuilder(config.links, "1")
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert ('<p class="price-note">Çmimet janë gjetur nga udhëtarë të tjerë në Aviasales në 2 ditët e fundit '
+            'dhe mund të kenë ndryshuar.') in page
+
+    # With no age limit the note leaves out the part about the days.
+    config = replace(config, max_price_age_days=None)
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert "të tjerë në Aviasales dhe mund të kenë ndryshuar." in page and "ditët e fundit" not in page
 
 
 def test_site_templates_lose_their_comments():

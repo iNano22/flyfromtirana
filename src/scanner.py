@@ -6,6 +6,9 @@ Docs:     https://support.travelpayouts.com/hc/en-us/articles/203956163-Aviasale
 The Data API returns *cached* prices that Aviasales users found in recent
 searches, not live availability, so some dates or routes can have gaps. That's
 fine for spotting deals: the booking link always opens a live search.
+A price can be up to a week old, though, and cheap seats sell out in days: rows
+found more than max_price_age_days ago (the search_date in their link) are left
+out, so the price on Aviasales matches the one we post more often.
 
 One call covers a whole month (departure_at=YYYY-MM), so a 60-day window is
 2-3 calls per route and direction.
@@ -13,6 +16,7 @@ One call covers a whole month (departure_at=YYYY-MM), so a 60-day window is
 from __future__ import annotations
 
 import logging
+import re
 import time
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
@@ -76,16 +80,20 @@ class PriceScanner:
         market: str | None = None,
         lookahead_days: int = 60,
         request_delay_seconds: float = 0.5,
+        max_price_age_days: int | None = None,
         session: requests.Session | None = None,
         sleep: Callable[[float], None] = time.sleep,
+        today: Callable[[], date] = date.today,
     ):
         self.token = token
         self.currency = currency
         self.market = market
         self.lookahead_days = lookahead_days
         self.request_delay_seconds = request_delay_seconds
+        self.max_price_age_days = max_price_age_days   # None = keep prices of any age
         self.session = session or requests.Session()
         self.sleep = sleep  # swapped out in tests so they don't actually wait
+        self.today = today  # the same, so tests can say which day it is
 
     def fetch_route(self, origin: str, destination: str, today: date, fetched_at: datetime) -> list[Quote]:
         """Cheapest one-way quote per departure date, from tomorrow to today + lookahead_days.
@@ -144,7 +152,18 @@ class PriceScanner:
                 failed_months.append(month)
         if len(failed_months) == len(months):
             raise RouteFetchError(f"{origin}→{destination}: all {len(months)} requests failed")
-        return rows
+        return self._drop_old(rows, origin, destination)
+
+    def _drop_old(self, rows: list[dict], origin: str, destination: str) -> list[dict]:
+        """Leave out the rows found more than max_price_age_days ago. A row with no date is kept."""
+        if self.max_price_age_days is None:
+            return rows
+        oldest = self.today() - timedelta(days=self.max_price_age_days)
+        fresh = [row for row in rows if (found_on(row) or oldest) >= oldest]
+        if len(fresh) < len(rows):
+            log.info("%s→%s: left out %d price(s) found before %s", origin, destination,
+                     len(rows) - len(fresh), oldest.isoformat())
+        return fresh
 
     def _fetch_month(self, origin: str, destination: str, month: str, *, one_way: bool = True) -> list[dict]:
         params = {
@@ -187,6 +206,18 @@ class PriceScanner:
         if not body.get("success", False):
             raise RouteFetchError(f"API error: {body.get('error') or body}")
         return body.get("data") or []
+
+
+def found_on(row: dict) -> date | None:
+    """The day an Aviasales user found this price: the link's search_date=DDMMYYYY, if it has one."""
+    match = re.search(r"[?&]search_date=(\d{2})(\d{2})(\d{4})", row.get("link") or "")
+    if not match:
+        return None
+    day, month, year = (int(part) for part in match.groups())
+    try:
+        return date(year, month, day)
+    except ValueError:
+        return None
 
 
 def parse_row(row: dict, origin: str, destination: str, fetched_at: datetime) -> Quote | None:

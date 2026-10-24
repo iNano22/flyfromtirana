@@ -5,7 +5,7 @@
      (and must stay on one line), and a line whose value is missing is left out, so a heading
      and its list stay on one line. Every HTML comment is removed before the page is written.
      Values: BRAND CHANNEL CITY COUNTRY_NAME INTRO
-     MIN_PRICE (cheapest price to the city now) UPDATED FARES (one ticket per airport, from
+     MIN_PRICE (cheapest price to the city now) UPDATED PRICE_AGE_DAYS (max_price_age_days) FARES (one ticket per airport, from
      site_dest_fare.html) NO_FARES (a sentence instead, when there is no price) and the guide's
      parts: SIGHTS ITINERARY DAYS (how many days the plan has) AREAS FOOD AIRPORTS TRANSPORT
      DAYTRIPS BUDGET WHEN TIPS FAQ ENTRY_RULES (the documents needed, from content/countries/<language>.yaml).
@@ -120,6 +120,7 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
 .from-price b { font-size: 30px; line-height: 1; font-weight: 800; font-stretch: 76%; font-variant-numeric: tabular-nums; }
 .updated { display: flex; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 13px; font-weight: 500; }
 .updated::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #0b7a3b; box-shadow: 0 0 0 2px var(--ink); flex: none; }
+.price-note { margin: 6px 0 0 17px; max-width: 46ch; font-size: 12px; line-height: 1.45; opacity: 0.75; }   /* lines up with the text after the green dot */
 .dphoto { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; background: var(--ink); box-shadow: 0 24px 40px -24px rgba(15, 17, 20, 0.6); }
 
 /* Sections */
@@ -320,6 +321,7 @@ h1 small { display: table; margin-bottom: 18px; padding: 7px 12px; border-radius
         <p class="lead">{INTRO}</p>
         <p class="from-price">{T_D_FROM_PRICE}</p>
         <p class="updated">{T_UPDATED_LINE}</p>
+        <p class="price-note">{T_PRICE_NOTE}</p>
       </div>
       <img class="dphoto wide" src="{GUIDE_PHOTO}" alt="{T_D_PHOTO_ALT}" width="960" height="600" decoding="async">
       <img class="dphoto" src="{PHOTO}" alt="{T_D_PHOTO_ALT}" width="600" height="840" decoding="async">

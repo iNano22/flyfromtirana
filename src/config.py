@@ -199,9 +199,11 @@ class Config:
     routes: list[Route]
     # scanning
     lookahead_days: int
+    full_run_every_minutes: int          # scan, free channel and site rebuild this often (src/scheduler.py)
     currency: str
     market: str | None
     request_delay_seconds: float
+    max_price_age_days: int | None      # leave out prices found longer ago than this; None = any age
     scan_return_flights: bool
     # deals + posting
     rules: DealRules
@@ -281,6 +283,14 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
     if quiet:
         quiet_hours = (time.fromisoformat(str(quiet["start"])), time.fromisoformat(str(quiet["end"])))
 
+    full_every = int(raw.get("full_run_every_minutes", 180))
+    if full_every < 5 or (24 * 60) % full_every:
+        raise ValueError(f"full_run_every_minutes must be 5 or more and fit a day evenly (15, 30, 60, 180...), "
+                         f"not {full_every}")
+    max_age = raw.get("max_price_age_days", 2)
+    if max_age is not None and int(max_age) < 0:
+        raise ValueError(f"max_price_age_days must be 0 or more (or null), not {max_age}")
+
     db_path = Path(raw.get("db_path", "data/prices.db"))
     if not db_path.is_absolute():
         db_path = base_dir / db_path
@@ -302,9 +312,11 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         timezone=str(raw.get("timezone", "Europe/Tirane")),
         routes=routes,
         lookahead_days=int(raw.get("lookahead_days", 60)),
+        full_run_every_minutes=full_every,
         currency=str(raw.get("currency", "eur")).lower(),
         market=raw.get("market") or None,
         request_delay_seconds=float(raw.get("request_delay_seconds", 0.5)),
+        max_price_age_days=None if max_age is None else int(max_age),
         scan_return_flights=bool(raw.get("scan_return_flights", True)),
         rules=rules,
         max_posts_per_run=int(raw.get("max_posts_per_run", 3)),

@@ -129,7 +129,8 @@ def main() -> int:
             else:
                 scanner = PriceScanner(env["TRAVELPAYOUTS_TOKEN"], currency=config.currency, market=config.market,
                                        lookahead_days=config.lookahead_days,
-                                       request_delay_seconds=config.request_delay_seconds)
+                                       request_delay_seconds=config.request_delay_seconds,
+                                       max_price_age_days=config.max_price_age_days)
                 print(f"Scanning {len(routes)} route(s) from {config.origin}...")
                 try:
                     outbound, inbound = scan_routes(scanner, storage, config, routes, local_now.date(), now)

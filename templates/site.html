@@ -3,7 +3,7 @@
      [[ ... ]] is optional (and must stay on one line), and a line whose value is missing is left
      out, so anything that should disappear together (a heading and its rows, say) stays on one line.
      This comment, and every other HTML comment, is removed before the page is written.
-     Values: BRAND CHANNEL LOOKAHEAD_DAYS UPDATED EMPTY MIN_PRICE DEAL_COUNT ROUTE_COUNT
+     Values: BRAND CHANNEL LOOKAHEAD_DAYS UPDATED PRICE_AGE_DAYS (max_price_age_days) EMPTY MIN_PRICE DEAL_COUNT ROUTE_COUNT
      DATE_MIN DATE_MAX DEAL_ROWS PRICE_ROWS (the lines of the price table, from site_row.html)
      HERO_ROWS (the lines of the black board at the top, from site_hero.html) DEST_CARDS (the
      photo cards, from site_card.html) PREMIUM (the block about the Premium channel, from
@@ -139,6 +139,7 @@ h1 span { display: block; }
 .stat-from { background: var(--ink); color: #ffffff; }
 .updated { display: flex; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 13px; font-weight: 500; }
 .updated::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #0b7a3b; box-shadow: 0 0 0 2px var(--ink); flex: none; }
+.price-note { margin: 6px 0 0 17px; max-width: 46ch; font-size: 12px; line-height: 1.45; opacity: 0.75; }   /* lines up with the text after the green dot */
 .empty { margin: 22px 0 0; padding: 16px; border: 2px solid var(--ink); border-radius: 6px; font-size: 17px; font-weight: 600; }
 /* The board: one line per route (templates/site_hero.html), like an airport's departures
    board. The parts are placed by column, so a line without a saving keeps its price on the right. */
@@ -493,6 +494,7 @@ h1 span { display: block; }
         <p class="lead">{T_LEAD}</p>
         <p class="stats"><span class="stat"><b data-count="{ROUTE_COUNT}">{ROUTE_COUNT}</b> {T_STAT_DESTINATIONS}</span>[[<span class="stat"><b data-count="{DEAL_COUNT}">{DEAL_COUNT}</b> {T_STAT_DEALS}</span>]][[<span class="stat stat-from">{T_FROM_PRICE}</span>]]</p>
         <p class="updated">{T_UPDATED_LINE}</p>
+        <p class="price-note">{T_PRICE_NOTE}</p>
         <p class="empty">{EMPTY}</p>
       </div>
       <div class="board"><div class="board-head"><h2>{T_BEST_TODAY}</h2><span>{T_ONE_WAY_PP}</span></div><ol>{HERO_ROWS}</ol><a class="board-more" href="#ofertat">{T_DISCOVER}<svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a></div>

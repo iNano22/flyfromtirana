@@ -11,9 +11,15 @@ timezone: Europe/Tirane            # used for "today" and quiet hours
 
 # --- Scanning ----------------------------------------------------------------
 lookahead_days: 60                 # scan departures from tomorrow up to 60 days ahead
+full_run_every_minutes: 15         # scan, post to the free channel and rebuild the site this often. 15 while the
+                                   # channels grow (with premium off); later 180 again, with premium back on.
+                                   # Must fit a day evenly (15, 30, 60, 180...). The site's wording follows it.
 currency: eur
 market: null                       # optional Travelpayouts "market" (which price cache to read); null = API default
 request_delay_seconds: 0.5         # pause between API calls, to stay well inside rate limits
+max_price_age_days: 2              # the API's prices are what Aviasales users found, up to a week ago, and
+                                   # cheap seats sell out fast: skip prices found more than this many days
+                                   # ago (posts, site, alerts, trip watches). 0 = today only, null = any age.
 scan_return_flights: true          # also scan DEST -> TIA so posts can show "Kthimi nga €X"
 
 # --- Deal detection ----------------------------------------------------------
@@ -34,7 +40,7 @@ return_min_days: 2                 # "Kthimi nga" = cheapest flight back 2..14 d
 return_max_days: 14
 
 # --- Posting -----------------------------------------------------------------
-max_posts_per_run: 2               # best deals first (5 posting runs a day -> up to 10 posts)
+max_posts_per_run: 1               # best deal first; with a run every 15 minutes that is up to 4 posts an hour
 max_dates_per_post: 4
 post_photos: true                  # send each post with the destination's photo (assets/telegram/<iata>.jpg).
                                    # false = text only, as before.
@@ -45,7 +51,7 @@ quiet_hours:                       # still scan at night, but don't post (local 
 # --- Premium channel (paid, private) -----------------------------------------
 # Premium gets deals within minutes and with looser rules; the free channel
 # only posts a deal after premium has had it for free_delay_hours (at its next
-# 3-hour run after that), with a "Premium members got this X hours earlier ·
+# full run after that), with a "Premium members got this X hours earlier ·
 # Join" line. The website waits the same way: it leaves a premium deal's price
 # out until the free channel may have it. The wait is per price: when a date's
 # price falls into a cheaper band (price_band_eur), premium gets the new price
@@ -53,12 +59,13 @@ quiet_hours:                       # still scan at night, but don't post (local 
 # To turn on: create the private channel, add the bot as admin, set the
 # TELEGRAM_PREMIUM_CHANNEL_ID secret, paste the paid invite link below, enabled: true.
 premium:
-  enabled: true
-  free_delay_hours: 0              # 0 while the free channel grows (aim: ~1,000 members, then 6):
-                                   # premium still gets a deal first, at its quick scan, and the free
-                                   # channel and site at the next 3-hour run. The site then says "3 hours".
+  enabled: false                   # off while the channels grow: everyone gets every deal within 15 minutes
+                                   # and the site shows nothing about premium. To bring it back (about 1,000
+                                   # members): enabled: true, free_delay_hours: 6, full_run_every_minutes: 180.
+  free_delay_hours: 0              # with 0, premium still gets a deal first, at its quick scan, and the free
+                                   # channel and site at the next full run; the site then says that run's hours.
   scan_every_minutes: 15           # premium checks prices this often and posts a new deal straight away
-                                   # (outside quiet hours). 0 = only with the full run every 3 hours.
+                                   # (outside quiet hours). 0 = only with the full runs.
   max_posts_per_run: 1             # per scan, so up to 4 an hour: the best new deal each time
   join_link: "https://t.me/+IwCW3S2em3c2Zjhk"   # paid subscription invite link
   deal_discount_pct: 30            # looser than the free channel's 40 -> more deals

@@ -68,10 +68,6 @@ STALE_AFTER = timedelta(days=2)
 # The privacy page's folder in every language: /privacy/, /en/privacy/, /it/privacy/.
 PRIVACY_SLUG = "privacy"
 
-# How often the full run posts to the free channel and rebuilds this page (SLOT_HOURS in
-# src/scheduler.py, which can't be imported here: it imports the bot, which imports this file).
-FULL_RUN_HOURS = 3
-
 # How many routes get a line on the black board at the top of the page ("Çmimet më të mira
 # sot"): the first ones of the page, so the deals, biggest saving first, then the cheapest.
 HERO_ROWS = 5
@@ -263,6 +259,8 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         "UPDATED": format_updated(updated_at, config, language) if updated_at else None,
         "EMPTY": strings.words["empty"] if not offers else None,
         "PREMIUM_HOURS": premium_hours(config) if premium_on else None,
+        "PRICE_AGE_DAYS": price_age_days(config),
+        "RUN_EVERY": run_every(config, strings),
         "YEAR": str(local_now.year),
         # For the headline ("Sot që nga €14") and the badges next to the section headings.
         "MIN_PRICE": format_price(min(o.best.price for o in offers)) if offers else None,
@@ -547,6 +545,8 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         "ENTRY_RULES": load_entry_rules(language).get(country or ""),
         "DAYS": str(len(guide.itinerary)) if guide.itinerary else None,
         "PREMIUM_HOURS": premium_hours(config) if premium_on else None,
+        "PRICE_AGE_DAYS": price_age_days(config),
+        "RUN_EVERY": run_every(config, strings),
         "YEAR": str(local_now.year),
         "GA_ON": "1" if config.website.google_analytics_id else None,
     }
@@ -696,6 +696,7 @@ def premium_html(config: Config, strings: Strings) -> str | None:
     return render(load_site_template("site_premium.html", strings), {
         "PREMIUM_LINK": html.escape(premium.join_link, quote=True),
         "PREMIUM_HOURS": premium_hours(config),
+        "RUN_EVERY": run_every(config, strings),
         "PREMIUM_MINUTES": f"{premium.scan_every_minutes:g}" if premium.scan_every_minutes else None,
         "CHANNEL": html.escape(config.channel_handle, quote=False),
         "QUIET_START": f"{quiet[0]:%H:%M}" if quiet else None,
@@ -833,9 +834,27 @@ def premium_hours(config: Config) -> str:
     """How many hours earlier premium gets a deal, as the page says it ("6", not "6.0").
 
     With free_delay_hours 0 there is still a head start: premium posts at its quick scan,
-    the free channel and this page only at the next full run, up to FULL_RUN_HOURS later.
+    the free channel and this page only at the next full run, up to full_run_every_minutes later.
     """
-    return f"{config.premium.free_delay_hours or FULL_RUN_HOURS:g}"
+    return f"{config.premium.free_delay_hours or config.full_run_every_minutes / 60:g}"
+
+
+def run_every(config: Config, strings: Strings) -> str:
+    """How often the prices are checked, in the page's language: "15 minuta", "3 orë"."""
+    minutes = config.full_run_every_minutes
+    if minutes > 60 and minutes % 60 == 0:
+        return strings.words["every_hours"].format(n=minutes // 60)
+    return strings.words["every_minutes"].format(n=minutes)
+
+
+def price_age_days(config: Config) -> str | None:
+    """"2" for the price note ("found in the last 2 days"), from max_price_age_days.
+
+    None leaves that part of the note out: with no limit there is nothing to say, and
+    0 or 1 day don't fit "the last N days".
+    """
+    days = config.max_price_age_days
+    return str(days) if days is not None and days >= 2 else None
 
 
 def format_updated(moment: datetime, config: Config, language: str | None = None) -> str:
