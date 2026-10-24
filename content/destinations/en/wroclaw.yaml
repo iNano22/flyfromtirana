@@ -1,0 +1,97 @@
+city: Wrocław
+slug: wroclaw
+tagline: Market square, islands and bronze dwarfs
+intro: >-
+  Wrocław is the main city of Lower Silesia, in western Poland: a rebuilt centre with colourful
+  houses, the Oder river with its islands and bridges, and lots of students. It is calmer than
+  Kraków and usually a little cheaper. Two or three days are enough for the city, plus a day for a
+  castle or the mountains. The currency is the Polish złoty (PLN): €1 is about 4.3 PLN.
+sights:
+  - name: Rynek and the Town Hall
+    text: >-
+      The market square, one of the largest in Europe, with colourful houses and the Gothic Town
+      Hall in the middle. In its cellar is Piwnica Świdnicka, one of the oldest restaurants in Europe.
+  - name: Ostrów Tumski
+    text: >-
+      The cathedral island, the oldest part of the city, with churches and cobbled streets. Every
+      evening a lamplighter in costume lights about 100 gas lamps by hand. The cathedral tower has a
+      lift and a view over the river.
+  - name: The dwarfs of Wrocław
+    text: >-
+      Hundreds of small bronze dwarfs (krasnale) around the city, over 600 by some counts. Hunting
+      for them is the visitors' favourite game.
+  - name: Racławice Panorama
+    text: >-
+      A circular painting 15 metres high and 114 metres long, of the Battle of Racławice in 1794,
+      inside a rotunda. Entry is at set times with an audio guide; a ticket costs about 45-50 PLN
+      (about €11-12) and is best booked ahead.
+  - name: Centennial Hall
+    text: >-
+      The large concrete hall from 1913, on the UNESCO list. Next to it are the multimedia fountain,
+      with music shows on summer evenings, and the Japanese Garden.
+itinerary:
+  - "Rynek, the Town Hall and Plac Solny, looking for dwarfs along the way. Then across the islands to Ostrów Tumski at dusk, for the lamplighter. Dinner in Rynek or in Nadodrze."
+  - "The Racławice Panorama in the morning (with a booked ticket). By tram to Centennial Hall and the Japanese Garden; in summer stay for the fountain in the evening."
+  - "Day trip: Książ Castle or the Church of Peace in Świdnica. In summer, as an alternative, the mountains of Karpacz."
+areas:
+  - name: Stare Miasto (Old Town)
+    text: Around the Rynek, everything on foot. The most expensive area, and the streets with bars are noisy at night.
+  - name: Nadodrze
+    text: An old district across the river, with murals, alternative cafés and lower prices, about 15 minutes on foot from the Rynek.
+  - name: Near Wrocław Główny
+    text: Around the central station, handy for the airport bus and the day-trip trains, 15 minutes on foot from the Rynek.
+  - name: Plac Grunwaldzki
+    text: A student area east of the centre, cheaper, with frequent trams to the Rynek and close to Centennial Hall.
+food:
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese (ruskie), meat, cabbage or fruit, boiled or fried.
+  - name: Żurek
+    text: A sour rye-flour soup with sausage and egg, often served inside a hollowed-out loaf.
+  - name: Placki ziemniaczane
+    text: Grated potato pancakes, with sour cream or topped with goulash.
+  - name: Craft beer
+    text: Plenty of craft beer bars and brewpubs that make their own, including on the Rynek.
+  - name: Bar mleczny
+    text: '"Milk bars", simple canteens from the communist era, where a lunch costs about €5-7.'
+airports:
+  WRO: >-
+    Copernicus Airport is about 10 km west of the centre. Bus 106 goes to the central station,
+    Wrocław Główny, in about 30-40 minutes, usually 2-3 times an hour, with a city ticket of about
+    5-7 PLN (about €1-1.5); at night bus 206 runs. A rail link to the airport is planned, but check
+    whether it runs before you count on it. A taxi or Bolt takes about 20-30 minutes and costs about
+    50-80 PLN (€12-19).
+transport: >-
+  The Old Town and Ostrów Tumski are walkable; for longer distances there is a large network of
+  trams and buses. Tickets are bought by card from the machines inside the vehicles or at stops, or
+  in the Jakdojade app. A day ticket costs about 15-18 PLN (about €4). Bolt and Uber are cheap.
+daytrips:
+  - name: Książ Castle
+    text: >-
+      One of the largest castles in Poland, above a wooded valley near Wałbrzych. About 1.5 hours by
+      train to Wałbrzych, then a local bus or a taxi; entry costs about 50-70 PLN (about €12-16).
+  - name: Churches of Peace
+    text: >-
+      Two large timber churches in Świdnica and Jawor, from the 1650s, on the UNESCO list. The one in
+      Świdnica is about 1 hour by train or bus and combines well with Książ.
+  - name: Karpacz
+    text: >-
+      A mountain town in the Karkonosze, about 2.5-3 hours by bus or train via Jelenia Góra. Hiking or
+      a chairlift towards the summit of Śnieżka (1603 m).
+budget: >-
+  A half-litre beer in the centre costs about 15-20 PLN (€3.5-5), a plate of pierogi about 30-45
+  PLN (€7-10), a coffee about 12-16 PLN (€3-4) and a tram ticket about 5-7 PLN (€1-1.5).
+when: >-
+  May-September for long days, outdoor tables and the fountain at Centennial Hall. December has the
+  Christmas market in the Rynek, one of the most beautiful in Poland, but winter is cold, often
+  below zero. April and October are quieter.
+tips:
+  - "Always pay in PLN: when the card machine or ATM offers euros, refuse, because the rate is worse."
+  - "Avoid Euronet ATMs and the exchange desks at the airport. Cards are accepted almost everywhere."
+  - "Most shops are closed on Sundays in Poland; small supermarkets and petrol stations usually stay open."
+faq:
+  - q: "Can I pay in euros in Wrocław?"
+    a: "Rarely: prices are in złoty. Cards are accepted almost everywhere, even for small amounts; for stalls keep a little cash from a bank ATM."
+  - q: "How many days do I need for Wrocław?"
+    a: "Two days are enough for the centre, Ostrów Tumski, the Panorama and Centennial Hall. With a third day you can go to Książ or Świdnica."
+  - q: "How much money do I need per day in Wrocław?"
+    a: "Excluding the flight and accommodation, about €40-60 a day. Food and transport are cheap; the main costs are accommodation and tickets for museums or day trips."

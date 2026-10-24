@@ -1,0 +1,84 @@
+city: Tel Aviv
+slug: tel-aviv
+tagline: Spiagge, edifici Bauhaus e il porto antico di Giaffa
+intro: >-
+  Tel Aviv è la città mediterranea di Israele: circa 14 km di spiaggia sabbiosa, un lungomare e
+  migliaia di edifici bianchi in stile Bauhaus. A sud c'è la vecchia Giaffa, con il porto e il
+  mercato delle pulci. Tre-quattro giorni bastano per la città e una gita a Gerusalemme. È cara,
+  quindi pianifica bene il budget e i giorni dello Shabbat.
+sights:
+  - name: Le spiagge e il lungomare
+    text: Il lungomare (Tayelet) corre per circa 5 km dal Porto di Tel Aviv fino a Giaffa. Le spiagge pubbliche come Gordon e Frishman sono gratuite, con docce e bagnini in stagione.
+  - name: La vecchia Giaffa e il porto
+    text: Vicoli di pietra sulla collina, la Torre dell'Orologio e il porto dei pescatori con i suoi ristoranti. Il mercato delle pulci (Shuk HaPishpeshim) è più animato al mattino.
+  - name: Mercato del Carmelo
+    text: Frutta, spezie, halva e cibo di strada. È aperto dalla domenica al venerdì, fino al pomeriggio. Accanto, il martedì e il venerdì, c'è il mercato dell'artigianato Nahalat Binyamin.
+  - name: La Città Bianca (White City)
+    text: Oltre 4.000 edifici Bauhaus degli anni 1930, patrimonio UNESCO dal 2003. Si vedono meglio in Rothschild Boulevard e intorno a piazza Dizengoff.
+  - name: Neve Tzedek
+    text: Il primo quartiere fuori Giaffa, del 1887, con case basse, boutique e caffè. Accanto c'è HaTachana, la vecchia stazione ferroviaria, oggi con negozi.
+  - name: Porto di Tel Aviv e parco Yarkon
+    text: Il vecchio porto (Namal) è oggi una passeggiata in legno con caffè. Dietro inizia il grande parco Yarkon, ideale per la bici.
+itinerary:
+  - "La Città Bianca: Rothschild Boulevard e piazza Dizengoff. Nel pomeriggio il Mercato del Carmelo e Nahalat Binyamin, poi il tramonto sulla spiaggia Gordon."
+  - "Cammina lungo il lungomare fino a Giaffa: la città vecchia, il porto e il mercato delle pulci. Nel pomeriggio Neve Tzedek, la sera i bar di Florentin."
+  - "Gerusalemme in treno (circa 30-40 minuti). Non programmarla il venerdì pomeriggio o il sabato, quando i treni non circolano."
+  - "Sarona Market al mattino, nel pomeriggio in bici nel parco Yarkon fino al Porto di Tel Aviv."
+areas:
+  - name: Vicino alla spiaggia
+    text: Le vie HaYarkon e Ben Yehuda, con hotel fronte mare. Care, soprattutto d'estate.
+  - name: Neve Tzedek e Rothschild
+    text: I quartieri più belli e centrali, con hotel boutique, ma con i prezzi più alti.
+  - name: Giaffa
+    text: Un'atmosfera speciale e ristoranti di pesce, un po' lontano dal centro ma collegata in autobus.
+  - name: Florentin
+    text: "Graffiti, ostelli e vita notturna: la scelta più economica, a circa 15 minuti a piedi da Neve Tzedek."
+food:
+  - name: Hummus
+    text: Con tahina e pita calda, si mangia anche a colazione. Abu Hassan a Giaffa è il più famoso e chiude quando finisce l'hummus.
+  - name: Falafel e sabich
+    text: "Il cibo di strada più economico: il sabich è una pita con melanzane fritte, uovo e tahina, circa 25-35 ILS (€7-9)."
+  - name: Shakshuka
+    text: Uova cotte in salsa di pomodoro e peperoni, il piatto classico della colazione israeliana.
+  - name: Bourekas
+    text: Sfoglie ripiene di formaggio o patate, simili al byrek albanese, che si trovano ovunque, soprattutto al Mercato del Carmelo.
+airports:
+  TLV: >-
+    La stazione delle Israel Railways è sotto il Terminal 3: i treni ti portano alle stazioni di Tel
+    Aviv (HaHagana, HaShalom, Savidor Center, University) in circa 15-20 minuti, per circa 14 ILS
+    (circa €3,50); il biglietto si compra alle macchinette della stazione, anche con carta bancaria.
+    I treni non circolano durante lo Shabbat, dal venerdì pomeriggio al sabato sera. In quel caso
+    resta il taxi dalla fila davanti agli arrivi, con tassametro, circa 150-200 ILS (€40-50) fino al
+    centro, con circa il 25% in più di notte e durante lo Shabbat.
+transport: >-
+  Il centro e le spiagge si girano a piedi o con le bici a noleggio Tel-O-Fun. Gli autobus e la
+  linea rossa del tram (Red Line) costano circa 6 ILS (€1,50) a corsa, con la tessera Rav-Kav o
+  l'app Moovit. Durante lo Shabbat, dal venerdì pomeriggio al sabato sera, treni, tram e gran parte
+  degli autobus si fermano; circolano solo alcune linee gratuite del comune e i taxi, più cari.
+daytrips:
+  - name: Gerusalemme
+    text: La Città Vecchia con il Muro Occidentale e la Basilica del Santo Sepolcro. Il treno veloce arriva alla stazione Yitzhak Navon in circa 30-40 minuti.
+  - name: Mar Morto
+    text: Il punto più basso della terra, oltre 430 m sotto il livello del mare, dove si galleggia senza sforzo. Circa 1,5-2 ore in auto, o con un tour che spesso include anche Masada.
+  - name: Cesarea
+    text: Il porto romano di Erode con il teatro e l'acquedotto sul mare, a circa 1 ora a nord. Meglio in auto o con un tour.
+  - name: Haifa
+    text: I Giardini Bahá'í a terrazze sopra la baia, con ingresso gratuito, a circa 1 ora di treno.
+budget: >-
+  Un euro vale circa 3,8-4 ILS. Un caffè costa circa 14-18 ILS (€3,50-4,50), un piatto al
+  ristorante 70-110 ILS (€18-28), una birra 30-40 ILS (€8-10). Un letto in ostello costa circa
+  150-250 ILS (€40-65), un hotel semplice circa 500-800 ILS (€130-210) a notte.
+when: >-
+  Aprile-giugno e settembre-novembre, con 22-30°C e il mare caldo. Luglio e agosto superano i 30°C,
+  con umidità. L'inverno è mite (circa 10-20°C), con pioggia da dicembre a febbraio. Durante le
+  festività ebraiche gli hotel rincarano; a Yom Kippur si ferma tutto il paese, aeroporto compreso.
+tips:
+  - "La settimana lavorativa inizia la domenica. Il venerdì pomeriggio e il sabato molti negozi e mercati chiudono, ma la maggior parte dei ristoranti e dei bar resta aperta."
+  - "Al ristorante la mancia è attesa, circa il 10-15%."
+  - "Al ritorno, arriva al Ben Gurion circa 3 ore prima del volo: le procedure di partenza richiedono tempo."
+  - "Prima di prenotare, controlla gli avvisi di viaggio aggiornati per Israele."
+faq:
+  - q: "Come vado dall'aeroporto in città durante lo Shabbat?"
+    a: "Senza treni, restano il taxi (circa 150-200 ILS) o un transfer prenotato in anticipo. Se puoi, scegli voli che arrivano tra la domenica e il giovedì."
+  - q: "Quanto si spende al giorno a Tel Aviv?"
+    a: "Volo e alloggio esclusi, circa €60-90 al giorno. Risparmi con i falafel del mercato, le spiagge gratuite e spostandoti a piedi."

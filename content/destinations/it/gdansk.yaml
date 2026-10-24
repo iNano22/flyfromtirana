@@ -1,0 +1,103 @@
+city: Gdańsk
+name: Danzica
+slug: gdansk
+tagline: Ambra, cantieri navali e spiagge del Baltico
+intro: >-
+  Danzica è la città portuale della Polonia sul Mar Baltico, con un centro pieno di case
+  colorate di mercanti, ricostruite dopo la Seconda guerra mondiale, iniziata proprio qui nel 1939.
+  Qui è nata anche Solidarność, il movimento che contribuì alla caduta del comunismo. Due o tre
+  giorni bastano per la città, più un giorno per Sopot o Malbork. La valuta è lo złoty polacco
+  (PLN): €1 vale circa 4,2 PLN.
+sights:
+  - name: Mercato Lungo e Fontana di Nettuno
+    text: >-
+      Via Długa e la piazza Długi Targ formano la Via Reale, dalla Porta d'Oro alla Porta Verde, con
+      facciate strette e decorate. Al centro si trova la Fontana di Nettuno (1633), simbolo della
+      città.
+  - name: Żuraw (la Gru)
+    text: >-
+      La gru portuale medievale in legno e mattoni sul fiume Motława, oggi parte del Museo
+      Marittimo. La passeggiata lungo il fiume è il posto più bello per una camminata serale.
+  - name: Basilica di Santa Maria
+    text: >-
+      Una delle chiese in mattoni più grandi del mondo. I circa 400 gradini della torre (circa 15-20
+      PLN, quasi €4-5) ti ripagano con la vista sui tetti. Dietro, via Mariacka con i negozi di
+      ambra.
+  - name: Centro Europeo della Solidarietà
+    text: >-
+      Un museo moderno al cancello dei cantieri navali dove, nell'agosto 1980, gli scioperi guidati
+      da Lech Wałęsa diedero vita al sindacato Solidarność. Biglietto circa 30-40 PLN; calcola 2
+      ore.
+  - name: Museo della Seconda guerra mondiale
+    text: >-
+      Uno dei musei sulla guerra più grandi al mondo, con la mostra sotterranea. Calcola 3-4 ore.
+      Biglietto circa 30-40 PLN; il martedì l'ingresso di solito è gratuito.
+  - name: Westerplatte
+    text: >-
+      La penisola dove il 1 settembre 1939 furono sparati i primi colpi della guerra. Oggi ci sono
+      rovine e un grande monumento. Si raggiunge con l'autobus 138 in circa 40 minuti oppure,
+      d'estate, in battello dalla Motława.
+itinerary:
+  - "La Porta d'Oro, via Długa e il Długi Targ con la Fontana di Nettuno. La torre della Basilica di Santa Maria, via Mariacka e la Gru sulla Motława. La sera cena sull'Isola dei Granai."
+  - "Il Museo della Seconda guerra mondiale al mattino, poi Westerplatte. Il pomeriggio il Centro Europeo della Solidarietà e i locali nei vecchi cantieri."
+  - "Con il treno SKM a Sopot per il molo e la spiaggia, poi a Gdynia. In alternativa, tutta la giornata al castello di Malbork."
+areas:
+  - name: Główne Miasto (Città Principale)
+    text: La città vecchia, tutto a piedi. La zona più cara e più affollata di turisti.
+  - name: Wyspa Spichrzów
+    text: L'Isola dei Granai di fronte alla Gru, con hotel nuovi, a 5 minuti a piedi dal Długi Targ.
+  - name: Vicino a Gdańsk Główny
+    text: Intorno alla stazione centrale, comoda per l'autobus 210 e i treni, a 10 minuti dal Długi Targ.
+  - name: Wrzeszcz
+    text: Un quartiere residenziale più economico sulla linea del treno dell'aeroporto, a circa 10 minuti di SKM dal centro.
+food:
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio, carne, cavolo o frutta, bolliti o fritti.
+  - name: Pesce del Baltico
+    text: Aringa (śledź) con cipolla, pesce affumicato o pesce fritto con patatine, soprattutto in riva al mare.
+  - name: Żurek
+    text: Zuppa acida di farina di segale con salsiccia e uovo.
+  - name: Goldwasser
+    text: Un liquore alle erbe con sottili scaglie d'oro, nato a Danzica secoli fa.
+airports:
+  GDN: >-
+    L'aeroporto Lech Wałęsa è a circa 12 km a ovest del centro. La stazione del treno PKM è accanto
+    al terminal: il treno arriva a Gdańsk Wrzeszcz in circa 20 minuti, dove si cambia con l'SKM per
+    Gdańsk Główny (altri 5-7 minuti); alcuni treni proseguono direttamente. Passano 1-2 volte
+    all'ora, con un biglietto da circa 5-7 PLN (circa €1,5). L'autobus 210 va alla stazione
+    centrale in circa 35-45 minuti con un biglietto urbano da circa 6 PLN; di notte passa
+    l'autobus N3. Un taxi o Bolt impiega 20-30 minuti e costa circa 60-90 PLN (€14-21).
+transport: >-
+  La città vecchia si gira a piedi; per i musei e Westerplatte ci sono tram e autobus. Un
+  biglietto da 75 minuti costa circa 6 PLN (€1,5), quello da 24 ore circa 22-26 PLN (€5-6), dalle
+  macchinette, con la carta a bordo o nell'app Jakdojade. I treni SKM collegano Danzica, Sopot e
+  Gdynia ogni 10-20 minuti, con un biglietto a parte. Il biglietto cartaceo va convalidato appena
+  sali. Bolt e Uber sono economici.
+daytrips:
+  - name: Sopot
+    text: >-
+      La cittadina balneare, a circa 20 minuti di SKM, con il molo in legno più lungo d'Europa e via
+      Monte Cassino.
+  - name: Gdynia
+    text: La moderna città portuale, a circa 35 minuti di SKM, con navi museo e un lungomare.
+  - name: Castello di Malbork
+    text: >-
+      Il castello dei Cavalieri Teutonici, il più grande castello in mattoni del mondo, a circa
+      30-50 minuti di treno. Il biglietto con audioguida costa circa 60-80 PLN (€14-19); calcola 3-4
+      ore.
+budget: >-
+  Una birra in centro costa circa 15-22 PLN (€3,5-5), un piatto di pierogi circa 35-50 PLN (€8-12)
+  e un caffè circa 12-16 PLN (€3-4). I ristoranti sul Długi Targ e lungo il fiume sono i più cari.
+when: >-
+  Giugno-agosto per le spiagge e le giornate lunghe, ma il mare resta freddo (circa 18-20°C). Da
+  fine luglio ad agosto si tiene la Fiera di San Domenico. Maggio e settembre sono più tranquilli;
+  l'inverno è freddo e ventoso, ma a dicembre c'è il mercatino di Natale.
+tips:
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "La domenica la maggior parte dei negozi è chiusa; aprono solo quelli piccoli come Żabka."
+  - "Compra l'ambra nei negozi certificati, non dalle bancarelle che la vendono a prezzi troppo bassi."
+faq:
+  - q: "Come arrivo dall'aeroporto alla città vecchia?"
+    a: "Il treno PKM e poi l'SKM fino a Gdańsk Główny impiegano circa 30 minuti in tutto, per circa 5-7 PLN. Dalla stazione al Długi Targ sono 10 minuti a piedi."
+  - q: "Quanto si spende al giorno a Danzica?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno. Cibo e trasporti sono economici; le spese principali sono l'alloggio d'estate e i biglietti dei musei."

@@ -1,0 +1,84 @@
+city: Eindhoven
+slug: eindhoven
+tagline: Dizajn, dritë dhe porta drejt jugut të Holandës
+intro: >-
+  Eindhoven është qyteti i dizajnit dhe i teknologjisë në jug të Holandës, aty ku lindi kompania
+  Philips. Ka fabrika të vjetra të kthyera në qendra krijuese, një muze të shkëlqyer arti modern
+  dhe rrugën më të gjatë me bare në vend. Qendra shihet për një-dy ditë; pjesën tjetër e
+  plotësojnë udhëtimet ditore me tren drejt 's-Hertogenbosch, Utrecht, Amsterdam dhe Antwerp.
+sights:
+  - name: Van Abbemuseum
+    text: Një nga muzetë më të mirë të artit modern dhe bashkëkohor në Holandë, me vepra të Picasso-s, Chagall-it dhe Kandinsky-t. Bileta kushton rreth €15.
+  - name: Strijp-S
+    text: Ish-zona industriale e Philips, sot lagjja e dizajnit, me studio, dyqane, restorante në hangare dhe mure me grafite. Klokgebouw, me kullën e orës, është zemra e Dutch Design Week.
+  - name: Philips Museum
+    text: Në fabrikën ku Philips nisi të prodhonte llamba në vitin 1891, në qendër të qytetit. Tregon si një punishte e vogël u bë kompani botërore. Bileta rreth €15.
+  - name: Stratumseind
+    text: Rruga më e gjatë me bare në Holandë, me dhjetëra lokale njëri pas tjetrit. Gjallërohet sidomos nga e enjtja te e shtuna në mbrëmje.
+  - name: Philips Stadion
+    text: Stadiumi i PSV, një nga tri klubet më të mëdha të Holandës, në këmbë nga qendra. Ka turne në stadium.
+  - name: 18 Septemberplein dhe De Witte Dame
+    text: Sheshi qendror, i quajtur sipas ditës së çlirimit në vitin 1944, me «Blob»-in prej xhami në formë flluske. Pranë është De Witte Dame, ish-fabrikë e Philips, sot bibliotekë.
+airports:
+  EIN: >-
+    Autobusët 400 dhe 401 të çojnë nga terminali te Eindhoven Centraal për rreth 20-25 minuta dhe
+    nisen disa herë në orë. Paguan duke kaluar kartën bankare pa kontakt (OVpay) te lexuesi kur
+    hyn dhe kur del; udhëtimi kushton rreth €3-5. Taksia bën rreth 15 minuta dhe kushton rreth
+    €25-35. Shumë udhëtarë vazhdojnë nga Centraal me tren direkt për Amsterdam, rreth 1 orë e 20
+    minuta dhe rreth €23.
+budget: >-
+  Një kafe kushton rreth €3-4, një worstenbrood €2-3, një birrë €4-6 dhe një darkë e thjeshtë
+  €15-25. Një dhomë dyshe në hotel të thjeshtë kushton rreth €80-120 nata, shumë më tepër gjatë
+  Dutch Design Week dhe GLOW.
+when: >-
+  Maji-shtatori ka motin më të mirë, por shi bie në çdo stinë. Në fund të tetorit, për rreth 9
+  ditë, Dutch Design Week mbush Strijp-S dhe gjithë qytetin me ekspozita dizajni. Në nëntor
+  festivali GLOW ndriçon qytetin me instalime drite përgjatë një itinerari në këmbë, falas. Në të
+  dyja rastet hotelet mbushen: rezervo herët.
+tips:
+  - "Me OVpay çdo person ka nevojë për kartën ose telefonin e vet. Dil me të njëjtën kartë me të cilën hyre, përndryshe paguan tarifën maksimale."
+  - "Shtigjet e kuqe janë për biçikletat: mos ec mbi to dhe shiko në të dyja anët para se të kalosh."
+  - "Shumë lokale dhe dyqane pranojnë vetëm kartë, jo para në dorë."
+itinerary:
+  - "Qendra në këmbë: 18 Septemberplein, De Witte Dame dhe Philips Museum. Pasdite Van Abbemuseum dhe lagjja Bergen me kafenetë e saj, në mbrëmje Stratumseind."
+  - "Strijp-S në mëngjes: Klokgebouw, dyqanet e dizajnit dhe grafitet. Pasdite turne në Philips Stadion ose me biçikletë në parqet Genneper."
+  - "Udhëtim ditor me tren: 's-Hertogenbosch për gjysmë dite, ose Amsterdam për gjithë ditën. Me më shumë kohë, Utrecht ose Antwerp."
+areas:
+  - name: Qendra
+    text: Rreth sheshit Markt, gjithçka në këmbë. Pranë Stratumseind ka zhurmë në fundjavë.
+  - name: Pranë Eindhoven Centraal
+    text: "Zona më praktike: autobusët e aeroportit ndalojnë këtu dhe nga stacioni nisen trenat për udhëtimet ditore. Qendra është 5 minuta në këmbë."
+  - name: Strijp-S
+    text: Hotele në ish-fabrika, me atmosferë krijuese. Rreth 20-25 minuta në këmbë nga qendra, ose një stacion me tren.
+  - name: Bergen
+    text: Lagjja e vjetër pranë Van Abbemuseum, me rrugica të qeta dhe restorante.
+food:
+  - name: Worstenbrood
+    text: Bukë e butë me salsiçe brenda, specialiteti i Brabantit. Gjendet në çdo furrë për rreth €2-3.
+  - name: Bitterballen
+    text: Topa të skuqur me mish dhe salcë të trashë, që hahen me mustardë pranë një birre.
+  - name: Stroopwafel
+    text: Dy vafle të holla me shurup karameli në mes; më të mirat janë të freskëta nga tregu.
+  - name: Patat
+    text: "Patate të skuqura të trasha me majonezë; «patatje oorlog» vjen edhe me salcë kikiriku dhe qepë."
+transport: >-
+  Qendra është e vogël dhe shihet në këmbë. Në trenat dhe autobusët holandezë paguan me OVpay:
+  kalon kartën bankare pa kontakt ose telefonin te lexuesi kur hyn dhe kur del, dhe çmimi
+  llogaritet sipas distancës. Biçikleta është mjeti më i shpejtë; qiraja kushton rreth €12-15 në
+  ditë.
+daytrips:
+  - name: "'s-Hertogenbosch"
+    text: Qyteti i Hieronymus Bosch, me katedralen e Shën Gjonit dhe ëmbëlsirën Bossche bol. Rreth 20 minuta me tren (rreth €7).
+  - name: Amsterdam
+    text: Kanalet, Rijksmuseum dhe Muzeu Van Gogh, rreth 1 orë e 20 minuta me tren direkt, rreth €23 për drejtim.
+  - name: Utrecht
+    text: Kanale me tarraca buzë ujit dhe kulla Dom. Rreth 50 minuta me tren (rreth €17).
+  - name: Antwerp
+    text: Në Belgjikë, me një nga stacionet më të bukura të Evropës. Rreth 1.5-2 orë me autobus direkt ose me tren me ndërrim në Breda.
+faq:
+  - q: "A ia vlen Eindhoven, apo është vetëm një aeroport për Amsterdam?"
+    a: "Ia vlen për një-dy ditë, sidomos për dizajnin, artin modern ose futbollin. Amsterdam, Utrecht dhe Antwerp janë brenda 2 orësh, ndaj Eindhoven është bazë e mirë, zakonisht më e lirë se Amsterdam për fjetje."
+  - q: "Si shkoj nga aeroporti i Eindhoven në Amsterdam?"
+    a: "Me autobusin 400 ose 401 deri te Eindhoven Centraal (rreth 20-25 minuta), pastaj me tren direkt për Amsterdam (rreth 1 orë e 20 minuta). Llogarit gjithsej rreth 2 orë dhe rreth €26-28."
+  - q: "Sa para duhen në ditë në Eindhoven?"
+    a: "Pa fluturimin dhe fjetjen, €45-70 në ditë për ushqim, transport dhe një muze. Një udhëtim ditor në Amsterdam shton rreth €46 vajtje-ardhje."

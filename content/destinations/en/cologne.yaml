@@ -1,0 +1,91 @@
+city: Cologne
+slug: cologne
+tagline: The cathedral, the Rhine and Kölsch
+intro: >-
+  Cologne is one of Germany's oldest cities, founded by the Romans on the Rhine. The Gothic
+  cathedral rises right next to the main station, and around it are the old town, good museums
+  and brewery pubs where people drink Kölsch. Two or three days are enough, plus a day for Bonn or
+  the Rhine valley.
+sights:
+  - name: Cathedral (Kölner Dom)
+    text: >-
+      The 157-metre Gothic cathedral, a World Heritage Site. Entry has been free; climbing the tower
+      (533 steps) costs about €6-8. Check the official website, as tickets may change.
+  - name: The Rhine and Hohenzollern Bridge
+    text: >-
+      The railway bridge covered in love locks. Walk across it to Deutz, on the other bank, for the
+      best-known view of the cathedral above the river.
+  - name: Altstadt
+    text: >-
+      The old town between the cathedral and the Rhine, with the Alter Markt square, the Groß St.
+      Martin church, colourful riverside houses and the oldest brewery pubs.
+  - name: Museum Ludwig
+    text: >-
+      Next to the cathedral, one of the best collections of modern art in Europe, with Picasso and
+      pop art. A ticket costs about €13-15.
+  - name: Chocolate Museum
+    text: >-
+      In the Rheinauhafen harbour, with the history of cocoa, a small working factory and a chocolate
+      fountain. A ticket costs about €15-18, more at weekends.
+  - name: KölnTriangle
+    text: >-
+      A tower in Deutz with a viewing terrace, for about €5: the best view of the cathedral and the
+      bridge.
+airports:
+  CGN: >-
+    Cologne Bonn Airport is about 15 km from the centre and has a train station under the terminal.
+    The S-Bahn S19 and regional trains reach Köln Hbf, next to the cathedral, in about 15-20
+    minutes, with a ticket of about €3.50-4. A taxi costs about €35-45 and takes about 20 minutes.
+budget: >-
+  A glass of Kölsch costs about €2.50-3, a dish in a brewery pub €14-20, a single ticket in the
+  city about €3.50 and a 24-hour ticket about €9-10. A hostel bed costs from about €30-45; during
+  trade fairs and Carnival hotels get much more expensive.
+when: >-
+  May-September for walks along the Rhine. Carnival starts on 11 November at 11:11, but the big
+  street party runs from the Thursday (Weiberfastnacht) to the Monday (Rosenmontag) before Ash
+  Wednesday: in 2027 about 4-8 February. The Christmas markets open from late November until just
+  before Christmas.
+tips:
+  - "In brewery pubs the waiter (Köbes) brings you a fresh Kölsch as soon as you finish your glass: put your beer mat on top of the glass when you have had enough."
+  - "Don't ask for Altbier in Cologne: the rivalry with Düsseldorf is old and only Kölsch is drunk here."
+  - "Shops are closed on Sundays; those in the main station are usually open."
+itinerary:
+  - "The cathedral and its tower in the morning, then Museum Ludwig. In the afternoon the Altstadt and the Rhine promenade; in the evening a Kölsch in an old brewery pub."
+  - "Along the Rhine to the Rheinauhafen and the Chocolate Museum. In the afternoon cross the Hohenzollern Bridge to Deutz and go up the KölnTriangle for the sunset."
+  - "Cafés and street art in the Belgisches Viertel and Ehrenfeld, or a day trip to Bonn, Aachen or the Rhine valley."
+areas:
+  - name: Altstadt
+    text: Everything on foot and the main station close by, but with the highest prices.
+  - name: Deutz
+    text: On the other bank, with slightly cheaper hotels, 10-15 minutes on foot from the cathedral.
+  - name: Belgisches Viertel
+    text: The district of cafés, small shops and nightlife, about 20 minutes on foot from the centre.
+  - name: Ehrenfeld
+    text: "An alternative district with street art, cheap restaurants and hostels, a little further from the centre."
+food:
+  - name: Kölsch
+    text: The city's light beer, served in slim 0.2-litre glasses (Stange) that keep being refilled.
+  - name: Halve Hahn
+    text: "The name means “half a chicken”, but it is a rye roll with a thick slice of cheese and mustard."
+  - name: Himmel un Ääd
+    text: "“Heaven and earth”: mashed potatoes with apples and fried black pudding."
+  - name: Reibekuchen
+    text: Fried potato pancakes with apple sauce, also at the Christmas markets.
+transport: >-
+  The centre is easy to see on foot. Trams and the U-Bahn cover the rest; tickets are sold at the
+  machines in the stations or in the app and must be validated before the journey. For a month,
+  the Deutschlandticket (about €63) covers local transport and regional trains all over Germany.
+daytrips:
+  - name: Bonn
+    text: The former capital of West Germany and the house where Beethoven was born, about 20-30 minutes by train.
+  - name: Düsseldorf
+    text: The city of Altbier and the Königsallee, about 25-30 minutes by train.
+  - name: Aachen
+    text: Charlemagne's cathedral, about 1 hour by train.
+  - name: The Rhine valley
+    text: By train to Koblenz (about 1 hour), then by boat past the castles, mainly April-October.
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "Take the S19 or a regional train to Köln Hbf: about 15-20 minutes and about €3.50-4. Buy the ticket at the airport station or in the DB app."
+  - q: "How much money do I need per day in Cologne?"
+    a: "Leaving out the flight and accommodation, count on €45-70 per day. The cathedral and the walks along the Rhine are free, while food in the brewery pubs stays reasonable."

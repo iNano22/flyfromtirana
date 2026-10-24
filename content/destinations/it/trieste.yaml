@@ -1,0 +1,80 @@
+city: Trieste
+slug: trieste
+tagline: Caffè storici, mare e bora
+intro: >-
+  Per secoli Trieste è stata il porto principale dell'Impero austro-ungarico, e si vede ovunque:
+  palazzi viennesi, caffè letterari e una grande piazza che si apre sul mare. Il centro si gira a
+  piedi, i prezzi sono più bassi che a Venezia e la Slovenia è a due passi. Due o tre giorni bastano.
+sights:
+  - name: Piazza Unità d'Italia
+    text: La piazza principale, tra le più grandi d'Europa affacciate sul mare. La sera cammina fino in fondo al Molo Audace, il molo di fronte alla piazza.
+  - name: Castello di Miramare
+    text: Il castello bianco sul mare che Massimiliano d'Asburgo fece costruire nel 1856-1860. Le sale si visitano con biglietto (circa €12-14), il parco è gratuito.
+  - name: San Giusto
+    text: Il colle sopra la città vecchia, con la cattedrale e il castello. Salendo passi accanto al Teatro Romano.
+  - name: Canal Grande
+    text: Il canale del Borgo Teresiano, con la chiesa serbo-ortodossa di San Spiridione lì vicino e la statua di James Joyce sul ponte Ponterosso.
+  - name: I caffè storici
+    text: Il Caffè San Marco (1914), il Caffè degli Specchi (1839) in Piazza Unità e il Caffè Tommaseo (1830), il più antico.
+  - name: Barcola
+    text: La passeggiata sul mare verso Miramare, dove d'estate i triestini fanno il bagno e prendono il sole gratis.
+  - name: Risiera di San Sabba
+    text: L'unico campo nazista in Italia con un forno crematorio, oggi museo e luogo della memoria a ingresso gratuito.
+airports:
+  TRS: >-
+    L'aeroporto è a Ronchi dei Legionari, a circa 35 km dalla città. Un ponte coperto ti porta alla
+    stazione Trieste Airport, da cui il treno regionale va a Trieste Centrale in circa 30-35 minuti
+    (circa €4-5), di solito 1-2 volte all'ora. L'autobus 51 dell'APT arriva vicino a Centrale in
+    circa 1 ora (circa €4-5). Il taxi costa circa €60-80 e impiega circa 35-40 minuti.
+budget: >-
+  Un caffè al banco costa circa €1,30, un piatto al buffet €12-18, il biglietto dell'autobus circa
+  €1,50. Una camera doppia in un hotel semplice costa da circa €80-120 a notte.
+when: >-
+  Maggio-giugno e settembre, con il mare per fare il bagno. Da novembre a marzo soffia spesso la
+  bora, un vento freddo che può superare i 100 km/h: porta una giacca antivento. La seconda domenica
+  di ottobre c'è la regata Barcolana e gli hotel si riempiono.
+tips:
+  - "Il caffè qui ha i suoi nomi: «un nero» è un espresso, «un capo» è un macchiato e «capo in b» è un macchiato nel bicchierino di vetro."
+  - "A pranzo prova un «buffet», un locale semplice con carne di maiale bollita, senape e kren. Il Buffet da Pepi è il più noto."
+  - "Sul Carso cerca le «osmize»: fattorie che per pochi giorni all'anno vendono il proprio vino e formaggio. Le riconosci dalla frasca verde appesa lungo la strada."
+  - "Quando soffia la bora, cammina sul lato riparato della strada e lascia l'ombrello in hotel: il vento lo rompe subito."
+itinerary:
+  - "Piazza Unità d'Italia e il Molo Audace, caffè al Caffè degli Specchi. Nel pomeriggio il Canal Grande e San Spiridione, la sera cena in Cavana."
+  - "San Giusto, con la cattedrale, il castello e il Teatro Romano. Nel pomeriggio il Caffè San Marco e la Risiera di San Sabba."
+  - "Lungo Barcola fino al Castello di Miramare (circa 1,5 ore a piedi, o l'autobus 6). Nel pomeriggio un bagno d'estate, oppure la Grotta Gigante."
+areas:
+  - name: Borgo Teresiano
+    text: Il quartiere intorno al Canal Grande, tra la stazione e Piazza Unità, a piedi da tutto.
+  - name: Città Vecchia e Cavana
+    text: La città vecchia sotto San Giusto, con bar e ristoranti, ma rumorosa la notte.
+  - name: Vicino alla Stazione Centrale
+    text: "La zona più pratica: qui arriva il treno dall'aeroporto. Hotel più economici, a 10-15 minuti a piedi dal centro."
+food:
+  - name: Buffet triestino
+    text: Carne di maiale bollita con crauti, senape e kren, un'eredità austriaca.
+  - name: Jota
+    text: Una minestra densa di fagioli, crauti e patate.
+  - name: Sardoni impanai
+    text: Alici impanate e fritte, uno spuntino classico con un bicchiere di vino.
+  - name: Presnitz
+    text: Un dolce di pasta ripiena di noci e uvetta.
+transport: >-
+  Il centro si gira a piedi. Gli autobus di Trieste Trasporti ti portano a Barcola, Miramare e
+  Opicina; il biglietto costa circa €1,50 e vale circa 60 minuti, mentre il giornaliero costa circa
+  €5. I battelli Delfino Verde vanno a Muggia in circa 30 minuti.
+daytrips:
+  - name: Grotta Gigante
+    text: Una grotta enorme sul Carso, con visita guidata di circa 1 ora (circa €15). Si raggiunge con l'autobus 42 in circa 30 minuti.
+  - name: Pirano
+    text: La cittadina veneziana sulla costa slovena, a circa 1-1,5 ore di autobus.
+  - name: Lubiana
+    text: La capitale della Slovenia, a circa 1,5-2 ore di autobus (circa €10-20).
+  - name: Venezia
+    text: Circa 2 ore di treno regionale (circa €13-14).
+faq:
+  - q: "Treno o autobus dall'aeroporto?"
+    a: "Il treno è più veloce, circa 30-35 minuti. L'autobus 51 costa uguale e impiega circa 1 ora, ma passa lungo la costa. Entrambi arrivano vicino alla stazione centrale."
+  - q: "Posso andare in Slovenia per un giorno?"
+    a: "Sì, Italia e Slovenia sono nell'area Schengen, e Pirano o Lubiana sono a 1-2 ore. Porta sempre il passaporto con te: ogni tanto al confine ci sono controlli."
+  - q: "Quanto si spende al giorno a Trieste?"
+    a: "Volo e alloggio esclusi, €40-70 al giorno. Il caffè e i buffet costano poco, mentre le piazze, Barcola e il parco di Miramare sono gratuiti."

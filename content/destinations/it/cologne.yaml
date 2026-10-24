@@ -1,0 +1,94 @@
+city: Cologne
+name: Colonia
+slug: cologne
+tagline: La cattedrale, il Reno e la Kölsch
+intro: >-
+  Colonia è una delle città più antiche della Germania, fondata dai Romani sul Reno. La cattedrale
+  gotica si alza proprio accanto alla stazione centrale, e intorno ci sono la città vecchia, ottimi
+  musei e birrerie dove si beve la Kölsch. Due o tre giorni bastano, più un giorno per Bonn o la
+  valle del Reno.
+sights:
+  - name: Cattedrale (Kölner Dom)
+    text: >-
+      La cattedrale gotica alta 157 metri, patrimonio dell'umanità. L'ingresso è stato gratuito;
+      la salita sulla torre (533 gradini) costa circa €6-8. Controlla il sito ufficiale, perché i
+      biglietti possono cambiare.
+  - name: Il Reno e il Ponte Hohenzollern
+    text: >-
+      Il ponte ferroviario pieno di lucchetti dell'amore. Attraversalo a piedi fino a Deutz,
+      sull'altra riva, per la vista più famosa della cattedrale sul fiume.
+  - name: Altstadt
+    text: >-
+      La città vecchia tra la cattedrale e il Reno, con la piazza Alter Markt, la chiesa di Groß St.
+      Martin, le case colorate sul fiume e le birrerie più antiche.
+  - name: Museum Ludwig
+    text: >-
+      Accanto alla cattedrale, una delle migliori collezioni d'arte moderna d'Europa, con Picasso e
+      la pop art. Il biglietto costa circa €13-15.
+  - name: Museo del Cioccolato
+    text: >-
+      Nel porto di Rheinauhafen, con la storia del cacao, una piccola fabbrica in funzione e una
+      fontana di cioccolato. Il biglietto costa circa €15-18, di più nel fine settimana.
+  - name: KölnTriangle
+    text: >-
+      Un grattacielo a Deutz con una terrazza panoramica, per circa €5: la vista migliore sulla
+      cattedrale e sul ponte.
+airports:
+  CGN: >-
+    L'aeroporto di Colonia/Bonn è a circa 15 km dal centro e ha una stazione ferroviaria sotto il
+    terminal. La S-Bahn S19 e i treni regionali arrivano a Köln Hbf, accanto alla cattedrale, in
+    circa 15-20 minuti, con un biglietto da circa €3,50-4. Il taxi costa circa €35-45 e impiega
+    circa 20 minuti.
+budget: >-
+  Un bicchiere di Kölsch costa circa €2,50-3, un piatto in birreria €14-20, un biglietto singolo
+  in città circa €3,50 e un biglietto da 24 ore circa €9-10. Un letto in ostello costa da circa
+  €30-45; durante le fiere e il Carnevale gli hotel diventano molto più cari.
+when: >-
+  Maggio-settembre per le passeggiate lungo il Reno. Il Carnevale comincia l'11 novembre alle
+  11:11, ma la grande festa in strada va dal giovedì (Weiberfastnacht) al lunedì (Rosenmontag)
+  prima del Mercoledì delle Ceneri: nel 2027 circa dal 4 all'8 febbraio. I mercatini di Natale
+  aprono da fine novembre fino a poco prima di Natale.
+tips:
+  - "Nelle birrerie il cameriere (Köbes) ti porta da solo una Kölsch nuova appena finisci il bicchiere: metti il sottobicchiere sopra il bicchiere quando non ne vuoi più."
+  - "Non chiedere una Altbier a Colonia: la rivalità con Düsseldorf è antica e qui si beve solo Kölsch."
+  - "I negozi sono chiusi la domenica; quelli nella stazione centrale di solito sono aperti."
+itinerary:
+  - "La cattedrale e la torre al mattino, poi il Museum Ludwig. Nel pomeriggio l'Altstadt e la passeggiata sul Reno; la sera una Kölsch in una vecchia birreria."
+  - "Lungo il Reno fino al Rheinauhafen e al Museo del Cioccolato. Nel pomeriggio attraversa il Ponte Hohenzollern verso Deutz e sali sul KölnTriangle per il tramonto."
+  - "Caffè e street art nel Belgisches Viertel e a Ehrenfeld, oppure una gita in giornata a Bonn, Aquisgrana o nella valle del Reno."
+areas:
+  - name: Altstadt
+    text: Tutto a piedi e la stazione centrale vicina, ma con i prezzi più alti.
+  - name: Deutz
+    text: Sull'altra riva, con hotel un po' più economici, a 10-15 minuti a piedi dalla cattedrale.
+  - name: Belgisches Viertel
+    text: Il quartiere dei caffè, dei piccoli negozi e della vita notturna, a circa 20 minuti a piedi dal centro.
+  - name: Ehrenfeld
+    text: "Un quartiere alternativo con street art, ristoranti economici e ostelli, un po' più lontano dal centro."
+food:
+  - name: Kölsch
+    text: La birra chiara e leggera della città, servita in bicchieri sottili da 0,2 litri (Stange) che vengono riempiti di continuo.
+  - name: Halve Hahn
+    text: "Il nome significa «mezzo pollo», ma è un panino di segale con una fetta spessa di formaggio e senape."
+  - name: Himmel un Ääd
+    text: "«Cielo e terra»: purè di patate con mele e sanguinaccio fritto."
+  - name: Reibekuchen
+    text: Frittelle di patate con salsa di mele, anche ai mercatini di Natale.
+transport: >-
+  Il centro si visita a piedi. Tram e U-Bahn coprono il resto; i biglietti si comprano alle
+  macchinette nelle stazioni o nell'app e vanno convalidati prima del viaggio. Per un mese, il
+  Deutschlandticket (circa €63) vale per i trasporti locali e i treni regionali in tutta la Germania.
+daytrips:
+  - name: Bonn
+    text: L'ex capitale della Germania Ovest e la casa natale di Beethoven, a circa 20-30 minuti di treno.
+  - name: Düsseldorf
+    text: La città dell'Altbier e della Königsallee, a circa 25-30 minuti di treno.
+  - name: Aquisgrana
+    text: La cattedrale di Carlo Magno, a circa 1 ora di treno.
+  - name: La valle del Reno
+    text: In treno fino a Coblenza (circa 1 ora), poi in battello tra i castelli, soprattutto da aprile a ottobre.
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "Con la S19 o un treno regionale fino a Köln Hbf: circa 15-20 minuti e circa €3,50-4. Il biglietto si compra alla stazione dell'aeroporto o nell'app della DB."
+  - q: "Quanto si spende al giorno a Colonia?"
+    a: "Volo e alloggio esclusi, calcola €45-70 al giorno. La cattedrale e le passeggiate lungo il Reno sono gratuite, mentre mangiare in birreria resta ragionevole."

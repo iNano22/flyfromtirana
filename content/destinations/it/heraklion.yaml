@@ -1,0 +1,80 @@
+city: Heraklion
+name: Candia
+slug: heraklion
+tagline: Cnosso, una fortezza veneziana e le spiagge di Creta
+intro: >-
+  Candia (Heraklion) è la città più grande di Creta e la porta dell'isola: qui ci sono il palazzo
+  minoico di Cnosso, uno dei musei archeologici più importanti d'Europa e un centro storico con mura
+  veneziane, fontane e taverne. Due giorni bastano per la città; con un'auto a noleggio scopri il
+  resto di Creta.
+sights:
+  - name: Palazzo di Cnosso
+    text: La città minoica vecchia di 3.500 anni, a circa 5 km a sud del centro, con affreschi e stanze ricostruite. Il biglietto costa circa €20 in estate; vai all'apertura, prima del caldo e dei pullman turistici.
+  - name: Museo Archeologico
+    text: La più grande collezione minoica al mondo, con gli affreschi originali di Cnosso e il Disco di Festo. Biglietto circa €12.
+  - name: Fortezza Koules
+    text: La fortezza veneziana all'ingresso del porto vecchio, con vista sul mare e sulla città dalla terrazza. Ingresso circa €4; la passeggiata sul molo fino al faro è gratuita.
+  - name: Centro storico e Piazza dei Leoni
+    text: La Fontana Morosini con i suoi quattro leoni, la Loggia veneziana e la chiesa di Agios Titos. La vicina via 1866 è il mercato di spezie, formaggi e miele.
+  - name: Mura veneziane
+    text: Le mura del XVI secolo circondano ancora il centro, circa 4 km in tutto. Sul bastione Martinengo c'è la tomba dello scrittore Nikos Kazantzakis, con vista sulla città.
+  - name: Cattedrale di Agios Minas
+    text: Una delle chiese più grandi della Grecia, con icone preziose nella piccola chiesa antica accanto.
+itinerary:
+  - "Cnosso al mattino presto, poi il Museo Archeologico. Nel pomeriggio Piazza dei Leoni e il mercato di via 1866, al tramonto una passeggiata sul molo fino alla Koules."
+  - "Una giornata a Rethymno: la città vecchia veneziana, la fortezza Fortezza e la lunga spiaggia accanto al centro. Ritorno in autobus KTEL la sera."
+  - "In auto o con un tour verso est: Agios Nikolaos, Elounda e la barca per Spinalonga. In alternativa, una giornata di mare a Matala, nel sud dell'isola."
+areas:
+  - name: Centro storico
+    text: Intorno a Piazza dei Leoni, a piedi dal museo, dal porto e dall'autobus per Cnosso. Tanti appartamenti e piccoli hotel.
+  - name: Vicino al porto
+    text: "Comodo se prosegui in traghetto o in autobus KTEL: la stazione principale è lì. Vista mare, ma un po' di rumore del traffico."
+  - name: Amoudara
+    text: Una lunga spiaggia a circa 6 km a ovest del centro, collegata dall'autobus urbano. Il mare senza i prezzi dei resort.
+  - name: Hersonissos
+    text: La zona dei resort e della vita notturna, a circa 25 km a est, con autobus KTEL diretti dall'aeroporto.
+food:
+  - name: Dakos
+    text: Una fetta biscottata d'orzo bagnata con pomodoro grattugiato, formaggio mizithra e olio d'oliva, il classico meze cretese.
+  - name: Bougatsa
+    text: Pasta sottile con crema o formaggio, da mangiare a colazione. I locali più noti sono vicino a Piazza dei Leoni.
+  - name: Kalitsounia
+    text: Piccoli tortini con formaggio fresco e menta, al forno o fritti.
+  - name: Raki (tsikoudia)
+    text: Acquavite d'uva che molte taverne ti offrono gratis a fine cena, spesso con frutta o un dolce.
+transport: >-
+  Il centro storico si gira a piedi. Gli autobus urbani blu ti portano a Cnosso, alla spiaggia di
+  Amoudara e all'aeroporto, con biglietti da circa €1,20-2 nei chioschi. Per il resto dell'isola ci
+  sono gli autobus KTEL, che partono dalla stazione vicino al porto per Rethymno, Chania, Agios
+  Nikolaos e Matala. Per spiagge e villaggi lontani dalle strade principali, l'auto a noleggio è la
+  scelta migliore.
+daytrips:
+  - name: Rethymno e Chania
+    text: Rethymno è a circa 1,5 ore in autobus KTEL (circa €9), Chania a circa 2,5-3 ore (circa €16). Chania merita di più con una notte sul posto.
+  - name: Spinalonga
+    text: L'isola-fortezza veneziana, ex lebbrosario. Da Elounda la barca impiega circa 15 minuti (circa €12-15), più il biglietto d'ingresso. Agios Nikolaos è a circa 1,5 ore di autobus.
+  - name: Matala e le spiagge del sud
+    text: La spiaggia con le grotte scavate nella roccia, a circa 2 ore di autobus verso sud, vicino alle rovine del palazzo di Festo.
+budget: >-
+  Un gyros nella pita costa circa €3,50-4,50, un caffè freddo circa €3, una cena in taverna €15-20 a
+  persona. Il biglietto dell'autobus urbano circa €1,20-2. Una camera doppia semplice costa da circa
+  €50-70 a notte in bassa stagione e €80-120 a luglio e agosto.
+when: >-
+  Maggio-giugno e settembre-ottobre hanno il mare caldo e meno turisti. A luglio e agosto le
+  temperature superano i 30°C e i prezzi sono al massimo. D'inverno la città resta vivace, ma molti
+  hotel sul mare e taverne nei resort chiudono.
+tips:
+  - "Un'auto a noleggio costa circa €25-40 al giorno in bassa stagione e di più d'estate. Prendi l'assicurazione completa, perché le strade di montagna sono strette. Chiedi prima se la patente albanese è accettata o serve anche quella internazionale; di solito per il deposito serve una carta di credito."
+  - "Il biglietto combinato per Cnosso e il Museo Archeologico fa risparmiare qualcosa; compralo online per evitare la coda."
+faq:
+  - q: "Serve un'auto a noleggio a Creta?"
+    a: "Per la città, Cnosso e Rethymno no, bastano gli autobus. Per le spiagge del sud, Elafonisi, Balos o i villaggi di montagna, l'auto ti fa risparmiare molto tempo e spesso costa meno dei tour organizzati."
+  - q: "Quanto si spende al giorno a Candia?"
+    a: "Volo e alloggio esclusi, calcola €40-60 al giorno. Le spese maggiori sono gli ingressi come Cnosso e l'auto a noleggio."
+airports:
+  HER: >-
+    L'aeroporto Nikos Kazantzakis è a circa 5 km a est del centro. Gli autobus urbani blu ti portano
+    in piazza Eleftherias, vicino a Piazza dei Leoni, e al porto in circa 15-20 minuti, per circa
+    €1,20-2 (meno al chiosco che dall'autista). Alcuni autobus KTEL fermano all'aeroporto per
+    Hersonissos e Malia. Il taxi per il centro costa circa €15-20 e impiega circa 15 minuti. Il nuovo
+    aeroporto di Kastelli è ancora in costruzione e non è aperto.

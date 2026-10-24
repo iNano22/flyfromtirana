@@ -1,0 +1,91 @@
+city: Cologne
+slug: cologne
+tagline: Katedralja, Rini dhe Kölsch
+intro: >-
+  Cologne është një nga qytetet më të vjetra të Gjermanisë, i themeluar nga romakët buzë Rinit.
+  Katedralja gotike ngrihet ngjitur me stacionin qendror, dhe rreth saj ka qytet të vjetër, muze
+  të mirë dhe birrari ku pihet Kölsch. Dy-tri ditë mjaftojnë, plus një ditë për Bonn ose luginën
+  e Rinit.
+sights:
+  - name: Katedralja (Kölner Dom)
+    text: >-
+      Katedralja gotike 157 metra e lartë, trashëgimi botërore. Hyrja ka qenë falas; ngjitja në
+      kullë (533 shkallë) kushton rreth €6-8. Kontrollo faqen zyrtare, sepse biletat mund të
+      ndryshojnë.
+  - name: Rini dhe Ura Hohenzollern
+    text: >-
+      Ura e trenave plot me dryna dashurie. Kaloje në këmbë për në Deutz, në bregun tjetër, për
+      pamjen më të njohur të katedrales mbi lumë.
+  - name: Altstadt
+    text: >-
+      Qyteti i vjetër mes katedrales dhe Rinit, me sheshin Alter Markt, kishën Groß St. Martin,
+      shtëpitë shumëngjyrëshe buzë lumit dhe birraritë më të vjetra.
+  - name: Museum Ludwig
+    text: >-
+      Ngjitur me katedralen, një nga koleksionet më të mira të artit modern në Europë, me Picasso
+      dhe pop art. Bileta rreth €13-15.
+  - name: Muzeu i Çokollatës
+    text: >-
+      Në portin Rheinauhafen, me historinë e kakaos, një fabrikë të vogël dhe një shatërvan
+      çokollate. Bileta rreth €15-18, më e shtrenjtë në fundjavë.
+  - name: KölnTriangle
+    text: >-
+      Rrokaqiell në Deutz me tarracë pamjeje, për rreth €5: pamja më e mirë mbi katedralen dhe urën.
+airports:
+  CGN: >-
+    Aeroporti Cologne Bonn është rreth 15 km nga qendra dhe ka stacion treni nën terminal. Treni
+    S-Bahn S19 dhe trenat rajonalë arrijnë në Köln Hbf, pranë katedrales, për rreth 15-20 minuta,
+    me biletë rreth €3.50-4. Taksia kushton rreth €35-45 dhe bën rreth 20 minuta.
+budget: >-
+  Një gotë Kölsch kushton rreth €2.50-3, një pjatë në birrari €14-20, një biletë e vetme në qytet
+  rreth €3.50 dhe bileta 24-orëshe rreth €9-10. Një shtrat në hostel kushton nga rreth €30-45;
+  gjatë panaireve dhe Karnavalit hotelet shtrenjtohen shumë.
+when: >-
+  Maji-shtatori për shëtitjet buzë Rinit. Karnavali nis më 11 nëntor në orën 11:11, por festa e
+  madhe në rrugë është nga e enjtja (Weiberfastnacht) deri të hënën (Rosenmontag) para të Mërkurës
+  së Hirit: në 2027 rreth 4-8 shkurt. Tregjet e Krishtlindjeve hapen nga fundi i nëntorit deri pak
+  para Krishtlindjeve.
+tips:
+  - "Në birrari kamerieri (Köbes) të sjell vetë një Kölsch të ri sapo mbaron gotën: vendos nënvendosësen mbi gotë kur nuk do më."
+  - "Mos kërko Altbier në Cologne: rivaliteti me Düsseldorf është i vjetër dhe këtu pihet vetëm Kölsch."
+  - "Dyqanet janë të mbyllura të dielave; ato në stacionin qendror zakonisht janë të hapura."
+itinerary:
+  - "Katedralja dhe kulla në mëngjes, pastaj Museum Ludwig. Pasdite Altstadt dhe shëtitorja e Rinit; në mbrëmje Kölsch në një birrari të vjetër."
+  - "Buzë Rinit deri në Rheinauhafen dhe Muzeun e Çokollatës. Pasdite kalo Urën Hohenzollern për në Deutz dhe ngjitu në KölnTriangle për perëndimin e diellit."
+  - "Kafene dhe grafite në Belgisches Viertel dhe Ehrenfeld, ose një udhëtim ditor në Bonn, Aachen apo luginën e Rinit."
+areas:
+  - name: Altstadt
+    text: Gjithçka në këmbë dhe stacioni qendror pranë, por me çmimet më të larta.
+  - name: Deutz
+    text: Në bregun tjetër, me hotele pak më të lira, 10-15 minuta në këmbë nga katedralja.
+  - name: Belgisches Viertel
+    text: Lagjja e kafeneve, dyqaneve të vogla dhe jetës së natës, rreth 20 minuta në këmbë nga qendra.
+  - name: Ehrenfeld
+    text: "Lagje alternative me street art, restorante të lira dhe hostele, pak më larg nga qendra."
+food:
+  - name: Kölsch
+    text: Birra e lehtë e qytetit, në gota të holla 0.2 litra (Stange) që mbushen pa pushim.
+  - name: Halve Hahn
+    text: "Emri do të thotë «gjysmë pule», por është bukë thekre me një fetë të trashë djathi dhe mustardë."
+  - name: Himmel un Ääd
+    text: "«Qiell dhe tokë»: pure patatesh me mollë dhe sallam gjaku të skuqur."
+  - name: Reibekuchen
+    text: Petulla patatesh të skuqura me salcë molle, edhe në tregjet e Krishtlindjeve.
+transport: >-
+  Qendra shihet në këmbë. Tramvajet dhe U-Bahn mbulojnë pjesën tjetër; biletat blihen në makinat
+  në stacion ose në aplikacion dhe vulosen para udhëtimit. Për një muaj, Deutschlandticket (rreth
+  €63) vlen për transportin lokal dhe trenat rajonalë në gjithë Gjermaninë.
+daytrips:
+  - name: Bonn
+    text: Ish-kryeqyteti i Gjermanisë Perëndimore dhe shtëpia ku lindi Beethoven, rreth 20-30 minuta me tren.
+  - name: Düsseldorf
+    text: Qyteti i Altbier-it dhe i Königsallee, rreth 25-30 minuta me tren.
+  - name: Aachen
+    text: Katedralja e Karlit të Madh, rreth 1 orë me tren.
+  - name: Lugina e Rinit
+    text: Me tren deri në Koblenz (rreth 1 orë), pastaj me anije mes kështjellave, kryesisht prill-tetor.
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Me S19 ose një tren rajonal deri në Köln Hbf: rreth 15-20 minuta dhe rreth €3.50-4. Biletën e blen në stacionin e aeroportit ose në aplikacionin e DB-së."
+  - q: "Sa para duhen në ditë në Cologne?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-70 në ditë. Katedralja dhe shëtitjet buzë Rinit janë falas, ndërsa ushqimi në birrari mbetet i arsyeshëm."

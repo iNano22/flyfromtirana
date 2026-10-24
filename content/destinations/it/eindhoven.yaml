@@ -1,0 +1,84 @@
+city: Eindhoven
+slug: eindhoven
+tagline: Design, luce e una porta verso il sud dei Paesi Bassi
+intro: >-
+  Eindhoven è la città del design e della tecnologia nel sud dei Paesi Bassi, dove è nata la
+  Philips. Ha vecchie fabbriche trasformate in centri creativi, un ottimo museo d'arte moderna e la
+  via dei bar più lunga del paese. Il centro si vede in uno o due giorni; il resto lo riempiono le
+  gite in treno a 's-Hertogenbosch, Utrecht, Amsterdam e Anversa.
+sights:
+  - name: Van Abbemuseum
+    text: Uno dei migliori musei d'arte moderna e contemporanea dei Paesi Bassi, con opere di Picasso, Chagall e Kandinsky. Il biglietto costa circa €15.
+  - name: Strijp-S
+    text: L'ex area industriale della Philips, oggi il quartiere del design, con studi, negozi, ristoranti negli hangar e muri di graffiti. Il Klokgebouw, con la sua torre dell'orologio, è il cuore della Dutch Design Week.
+  - name: Philips Museum
+    text: Nella fabbrica dove la Philips iniziò a produrre lampadine nel 1891, in centro. Racconta come una piccola officina sia diventata un'azienda mondiale. Biglietto circa €15.
+  - name: Stratumseind
+    text: La via dei bar più lunga dei Paesi Bassi, con decine di locali uno dopo l'altro. Si anima soprattutto dal giovedì al sabato sera.
+  - name: Philips Stadion
+    text: Lo stadio del PSV, uno dei tre club più grandi dei Paesi Bassi, a piedi dal centro. Si possono fare visite guidate dello stadio.
+  - name: 18 Septemberplein e De Witte Dame
+    text: La piazza centrale, che prende il nome dal giorno della liberazione nel 1944, con il «Blob» di vetro a forma di bolla. Accanto c'è De Witte Dame, ex fabbrica Philips, oggi biblioteca.
+airports:
+  EIN: >-
+    Gli autobus 400 e 401 ti portano dal terminal a Eindhoven Centraal in circa 20-25 minuti e
+    partono più volte all'ora. Paghi avvicinando la carta bancaria contactless (OVpay) al lettore
+    quando sali e quando scendi; la corsa costa circa €3-5. Il taxi impiega circa 15 minuti e costa
+    circa €25-35. Molti viaggiatori proseguono da Centraal con il treno diretto per Amsterdam, circa
+    1 ora e 20 minuti e circa €23.
+budget: >-
+  Un caffè costa circa €3-4, un worstenbrood €2-3, una birra €4-6 e una cena semplice €15-25. Una
+  camera doppia in un hotel semplice costa circa €80-120 a notte, molto di più durante la Dutch
+  Design Week e GLOW.
+when: >-
+  Da maggio a settembre il tempo è migliore, ma piove in ogni stagione. A fine ottobre, per circa 9
+  giorni, la Dutch Design Week riempie Strijp-S e tutta la città di mostre di design. A novembre il
+  festival GLOW illumina la città con installazioni luminose lungo un percorso a piedi gratuito. In
+  entrambi i casi gli hotel si riempiono: prenota presto.
+tips:
+  - "Con OVpay ogni persona ha bisogno della propria carta o del proprio telefono. Fai il check-out con la stessa carta del check-in, altrimenti paghi la tariffa massima."
+  - "Le corsie rosse sono per le biciclette: non camminarci sopra e guarda da entrambi i lati prima di attraversare."
+  - "Molti locali e negozi accettano solo carte, non contanti."
+itinerary:
+  - "Il centro a piedi: 18 Septemberplein, De Witte Dame e il Philips Museum. Nel pomeriggio il Van Abbemuseum e il quartiere Bergen con i suoi caffè, la sera Stratumseind."
+  - "Strijp-S al mattino: il Klokgebouw, i negozi di design e i graffiti. Nel pomeriggio una visita al Philips Stadion o un giro in bici nei parchi Genneper."
+  - "Gita in giornata in treno: 's-Hertogenbosch per mezza giornata, o Amsterdam per tutto il giorno. Con più tempo, Utrecht o Anversa."
+areas:
+  - name: Centro
+    text: Intorno alla piazza Markt, tutto a piedi. Vicino a Stratumseind c'è rumore nel fine settimana.
+  - name: Vicino a Eindhoven Centraal
+    text: "La zona più pratica: qui fermano gli autobus dell'aeroporto e dalla stazione partono i treni per le gite. Il centro è a 5 minuti a piedi."
+  - name: Strijp-S
+    text: Hotel in ex fabbriche, con un'atmosfera creativa. Circa 20-25 minuti a piedi dal centro, o una fermata di treno.
+  - name: Bergen
+    text: Il quartiere antico vicino al Van Abbemuseum, con stradine tranquille e ristoranti.
+food:
+  - name: Worstenbrood
+    text: Pane morbido con una salsiccia dentro, la specialità del Brabante. Si trova in ogni forno per circa €2-3.
+  - name: Bitterballen
+    text: Polpette fritte di carne e sugo denso, da mangiare con la senape accanto a una birra.
+  - name: Stroopwafel
+    text: Due cialde sottili con sciroppo di caramello in mezzo; le migliori sono quelle fresche del mercato.
+  - name: Patat
+    text: "Patatine fritte spesse con maionese; il «patatje oorlog» arriva anche con salsa di arachidi e cipolla."
+transport: >-
+  Il centro è piccolo e si visita a piedi. Su treni e autobus olandesi si paga con OVpay: avvicini
+  la carta bancaria contactless o il telefono al lettore quando sali e quando scendi, e il prezzo si
+  calcola in base alla distanza. La bici è il mezzo più veloce; il noleggio costa circa €12-15 al
+  giorno.
+daytrips:
+  - name: "'s-Hertogenbosch"
+    text: La città di Hieronymus Bosch, con la cattedrale di San Giovanni e il dolce Bossche bol. Circa 20 minuti di treno (circa €7).
+  - name: Amsterdam
+    text: I canali, il Rijksmuseum e il Museo Van Gogh, a circa 1 ora e 20 minuti con il treno diretto, circa €23 a tratta.
+  - name: Utrecht
+    text: Canali con terrazze sull'acqua e la torre del Duomo. Circa 50 minuti di treno (circa €17).
+  - name: Anversa
+    text: In Belgio, con una delle stazioni più belle d'Europa. Circa 1,5-2 ore con l'autobus diretto o in treno con cambio a Breda.
+faq:
+  - q: "Eindhoven merita, o è solo un aeroporto per Amsterdam?"
+    a: "Merita uno o due giorni, soprattutto per il design, l'arte moderna o il calcio. Amsterdam, Utrecht e Anversa sono tutte entro 2 ore, quindi Eindhoven è una buona base, di solito più economica di Amsterdam per dormire."
+  - q: "Come arrivo dall'aeroporto di Eindhoven ad Amsterdam?"
+    a: "Con l'autobus 400 o 401 fino a Eindhoven Centraal (circa 20-25 minuti), poi con il treno diretto per Amsterdam (circa 1 ora e 20 minuti). Calcola in tutto circa 2 ore e circa €26-28."
+  - q: "Quanto si spende al giorno a Eindhoven?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno per cibo, trasporti e un museo. Una gita in giornata ad Amsterdam aggiunge circa €46 andata e ritorno."

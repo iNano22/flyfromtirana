@@ -1,0 +1,97 @@
+city: Poznań
+slug: poznan
+tagline: Clock goats, croissants and Poland's oldest cathedral
+intro: >-
+  Poznań is one of the oldest cities in Poland, halfway between Berlin and Warsaw: a large square
+  with colourful houses, the island where the Polish state was born and a student city with low
+  prices. Two days are enough for the centre, plus one day for Kórnik, Gniezno or Toruń. The
+  currency is the Polish złoty (PLN): €1 is about 4.3 PLN.
+sights:
+  - name: Stary Rynek (Old Market Square)
+    text: >-
+      The heart of the city, with narrow colourful houses and the Renaissance Town Hall in the
+      middle. Every day at 12:00 two mechanical goats come out above the Town Hall clock and butt
+      horns 12 times: come a few minutes early, as the square fills up.
+  - name: Croissant Museum (Rogalowe Muzeum Poznania)
+    text: >-
+      Near the square, a show of about 1 hour where St. Martin's croissant is baked in front of you.
+      Tickets cost about 35-45 PLN (€8-10); the shows in English have their own times, so book
+      online.
+  - name: Ostrów Tumski
+    text: >-
+      The island in the Warta river where the Polish state was founded in the 10th century. The
+      cathedral is the oldest in Poland, with the tombs of the first kings. Across the bridge, the
+      Porta Posnania centre tells the country's history.
+  - name: Imperial Castle (Zamek Cesarski)
+    text: >-
+      The neo-Romanesque castle built in 1905-1910 for Kaiser Wilhelm II, when Poznań was part of
+      Prussia. Today it is a cultural centre with a cinema, exhibitions and cafés.
+  - name: Malta Lake
+    text: >-
+      An artificial lake about 2 km east of the centre, with a path of about 5 km for walking or
+      cycling. Nearby are the Termy Maltańskie pools and the new zoo.
+  - name: Stary Browar
+    text: A former red-brick brewery, now a shopping and art centre with a park behind it. Worth it for the architecture.
+itinerary:
+  - "Stary Rynek and the goats at 12:00, then the Croissant Museum. In the afternoon, the Imperial Castle and Stary Browar. In the evening, dinner around the square."
+  - "Ostrów Tumski with the cathedral and Porta Posnania, then coffee in the small Śródka district. In the afternoon, take the tram to Malta Lake for a walk around the lake."
+  - "Day trip: Kórnik for half a day, or Gniezno or Toruń for the whole day."
+areas:
+  - name: Stare Miasto (Old Town)
+    text: Around the square, everything on foot. The most expensive, and the bar streets are noisy at night.
+  - name: Centrum
+    text: Between the square and the station, around Święty Marcin street, with many hotels and trams in every direction.
+  - name: Near Poznań Główny
+    text: Around the central station, practical for trains and the airport bus, 15-20 minutes on foot from the square.
+  - name: Jeżyce
+    text: A district of old buildings and good cafés, quieter and a little cheaper, with trams to the centre.
+food:
+  - name: St. Martin's croissant (rogal świętomarciński)
+    text: >-
+      A large croissant filled with white poppy seeds and nuts, with icing on top. It has EU
+      protection; one costs about 10-15 PLN (€2.5-3.5).
+  - name: Pyry z gzikiem
+    text: Boiled potatoes with quark mixed with onion and sour cream, the region's simplest dish.
+  - name: Szare kluski
+    text: Boiled potato dumplings, served with meat gravy or pieces of pork.
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese, meat or cabbage, boiled or fried.
+airports:
+  POZ: >-
+    Poznań-Ławica airport is about 6 km west of the centre. Bus 159 takes about 25-30 minutes to
+    Rondo Kaponiera, near Poznań Główny station, and continues towards the centre, with a city
+    ticket of about 5-6 PLN (about €1.5), from the machine at the stop or by card on board; at
+    night a night bus runs. A taxi or Bolt takes 15-20 minutes and costs about 30-50 PLN (€7-12).
+transport: >-
+  The centre is walkable, and trams go everywhere, including Malta Lake. Tickets are time-based:
+  about 4-6 PLN (€1-1.5) for 15-90 minutes, about 14 PLN (€3.5) for 24 hours. Buy them from the
+  machines at the stops, by card on board or in the Jakdojade app; paper tickets are validated
+  when you board. Bolt and Uber are cheap.
+daytrips:
+  - name: Kórnik
+    text: >-
+      A neo-Gothic castle by a lake with a large arboretum, about 20 km to the south-east. About 40
+      minutes by bus.
+  - name: Gniezno
+    text: >-
+      The first capital of Poland, with the cathedral of the bronze doors from the 12th century.
+      About 30-45 minutes by train from Poznań Główny.
+  - name: Toruń
+    text: >-
+      Copernicus's medieval city, on the UNESCO list, known for its gingerbread (piernik). About
+      1.5-2 hours by train.
+budget: >-
+  A half-litre beer in the centre costs about 14-20 PLN (€3.5-5), a plate of pierogi about 30-45
+  PLN (€7-10), a coffee about 12-16 PLN (€3-4) and a tram ticket about 5 PLN (€1).
+when: >-
+  May to September for long days and tables outside. On 11 November the city celebrates St.
+  Martin's Day with a parade and croissants everywhere. Winter is cold, often below zero.
+tips:
+  - "Check the calendar of the Poznań trade fair (Międzynarodowe Targi Poznańskie): during big fairs hotels get much more expensive."
+  - "Always pay in PLN: when a card terminal or ATM offers euros, refuse. Avoid Euronet ATMs."
+  - "Most shops are closed on Sundays; only small shops such as Żabka open."
+faq:
+  - q: "Is Poznań worth a weekend?"
+    a: "Yes: the centre is compact, prices are low and 2 days are enough for the square, Ostrów Tumski and Malta Lake."
+  - q: "How much money do you need per day in Poznań?"
+    a: "Excluding the flight and accommodation, about €35-55 a day. Food and transport are cheap; the main expense is accommodation, especially on trade fair days."

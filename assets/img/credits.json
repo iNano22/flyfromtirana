@@ -1098,5 +1098,165 @@
   "source_url": "https://unsplash.com/photos/2D9qjPHazVk",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/her.webp",
+  "slot": "HER",
+  "title": "Palace of Knossos, Heraklion",
+  "creator": "@adriendlf",
+  "creator_url": "https://unsplash.com/@adriendlf",
+  "source_url": "https://unsplash.com/photos/NOMQLIuSuAs",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/tlv.webp",
+  "slot": "TLV",
+  "title": "Seafront promenade, Tel Aviv",
+  "creator": "@yoavaziz",
+  "creator_url": "https://unsplash.com/@yoavaziz",
+  "source_url": "https://unsplash.com/photos/VC5S2j-7Ubg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/cgn.webp",
+  "slot": "CGN",
+  "title": "Cologne Cathedral",
+  "creator": "@_pourya_",
+  "creator_url": "https://unsplash.com/@_pourya_",
+  "source_url": "https://unsplash.com/photos/0I2BD2PaCnY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/trs.webp",
+  "slot": "TRS",
+  "title": "Canal Grande, Trieste",
+  "creator": "@arnosenoner",
+  "creator_url": "https://unsplash.com/@arnosenoner",
+  "source_url": "https://unsplash.com/photos/DVsizqdN0Ls",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ein.webp",
+  "slot": "EIN",
+  "title": "Stratumseind at night, Eindhoven",
+  "creator": "@omarvellous14",
+  "creator_url": "https://unsplash.com/@omarvellous14",
+  "source_url": "https://unsplash.com/photos/RsTgMxSFppI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/gdn.webp",
+  "slot": "GDN",
+  "title": "Long Market, Gdańsk",
+  "creator": "@liliess",
+  "creator_url": "https://unsplash.com/@liliess",
+  "source_url": "https://unsplash.com/photos/Ps6zatZqBi0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/wro.webp",
+  "slot": "WRO",
+  "title": "Town Hall, Wrocław",
+  "creator": "@timelineofmyshots",
+  "creator_url": "https://unsplash.com/@timelineofmyshots",
+  "source_url": "https://unsplash.com/photos/kAiBOCBIjKU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/poz.webp",
+  "slot": "POZ",
+  "title": "Old Town lane, Poznań",
+  "creator": "@teodor__pl",
+  "creator_url": "https://unsplash.com/@teodor__pl",
+  "source_url": "https://unsplash.com/photos/HxfsbaiAcDQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/heraklion.webp",
+  "slot": "guide-heraklion",
+  "title": "Koules fortress, Heraklion",
+  "creator": "@clo_wd",
+  "creator_url": "https://unsplash.com/@clo_wd",
+  "source_url": "https://unsplash.com/photos/b5effaFdUWk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/tel-aviv.webp",
+  "slot": "guide-tel-aviv",
+  "title": "Beach and skyline, Tel Aviv",
+  "creator": "@adamjang",
+  "creator_url": "https://unsplash.com/@adamjang",
+  "source_url": "https://unsplash.com/photos/Molhe1qQRWI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/cologne.webp",
+  "slot": "guide-cologne",
+  "title": "Cathedral and Hohenzollern Bridge, Cologne",
+  "creator": "@jmfisher",
+  "creator_url": "https://unsplash.com/@jmfisher",
+  "source_url": "https://unsplash.com/photos/HSOBgIs9JGU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/trieste.webp",
+  "slot": "guide-trieste",
+  "title": "Miramare Castle, Trieste",
+  "creator": "@kristina001",
+  "creator_url": "https://unsplash.com/@kristina001",
+  "source_url": "https://unsplash.com/photos/S7B7QJDjZvg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/eindhoven.webp",
+  "slot": "guide-eindhoven",
+  "title": "The Philips building and the Blob, Eindhoven",
+  "creator": "@superx03",
+  "creator_url": "https://unsplash.com/@superx03",
+  "source_url": "https://unsplash.com/photos/yjIZrkDGMio",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/gdansk.webp",
+  "slot": "guide-gdansk",
+  "title": "The Crane on the Motława, Gdańsk",
+  "creator": "@kowalikus",
+  "creator_url": "https://unsplash.com/@kowalikus",
+  "source_url": "https://unsplash.com/photos/30n-XfFL7WU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/wroclaw.webp",
+  "slot": "guide-wroclaw",
+  "title": "Market Square, Wrocław",
+  "creator": "@bianca_fazacas",
+  "creator_url": "https://unsplash.com/@bianca_fazacas",
+  "source_url": "https://unsplash.com/photos/LMV1x7vuQpQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/poznan.webp",
+  "slot": "guide-poznan",
+  "title": "Old Market Square, Poznań",
+  "creator": "@f_v_l",
+  "creator_url": "https://unsplash.com/@f_v_l",
+  "source_url": "https://unsplash.com/photos/sNEj2BxSms8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

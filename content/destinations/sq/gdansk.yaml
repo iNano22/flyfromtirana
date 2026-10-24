@@ -1,0 +1,100 @@
+city: Gdańsk
+slug: gdansk
+tagline: Qelibar, kantiere dhe plazhet e Balltikut
+intro: >-
+  Gdańsk është qyteti portual i Polonisë buzë Detit Balltik, me një qendër plot shtëpi tregtarësh
+  shumëngjyrëshe, të rindërtuara pas Luftës së Dytë Botërore, e cila nisi pikërisht këtu në vitin
+  1939. Këtu lindi edhe Solidarność, lëvizja që ndihmoi në rënien e komunizmit. Dy-tri ditë
+  mjaftojnë për qytetin, plus një ditë për Sopot ose Malbork. Monedha është zloti polak (PLN): €1
+  është rreth 4.2 PLN.
+sights:
+  - name: Długi Targ dhe Shatërvani i Neptunit
+    text: >-
+      Rruga Długa dhe sheshi Długi Targ formojnë Rrugën Mbretërore, nga Porta e Artë te Porta e
+      Gjelbër, me fasada të ngushta e të zbukuruara. Në mes qëndron Shatërvani i Neptunit (1633),
+      simboli i qytetit.
+  - name: Żuraw (Vinçi)
+    text: >-
+      Vinçi mesjetar portual prej druri e tulle buzë lumit Motława, sot pjesë e Muzeut Detar.
+      Bulevardi përgjatë lumit është vendi më i bukur për shëtitje në mbrëmje.
+  - name: Bazilika e Shën Marisë
+    text: >-
+      Ndër kishat më të mëdha prej tulle në botë. Rreth 400 shkallët e kullës (rreth 15-20 PLN, afro
+      €4-5) të shpërblejnë me pamjen mbi çatitë. Pas saj, rruga Mariacka me dyqanet e qelibarit.
+  - name: Qendra Evropiane e Solidaritetit
+    text: >-
+      Muze modern te porta e kantierit detar, ku në gusht 1980 grevat e udhëhequra nga Lech Wałęsa
+      krijuan sindikatën Solidarność. Bileta rreth 30-40 PLN; llogarit 2 orë.
+  - name: Muzeu i Luftës së Dytë Botërore
+    text: >-
+      Një nga muzetë më të mëdhenj në botë për luftën, me ekspozitën nën tokë. Llogarit 3-4 orë.
+      Bileta rreth 30-40 PLN; të martave hyrja zakonisht është falas.
+  - name: Westerplatte
+    text: >-
+      Gadishulli ku më 1 shtator 1939 u qëlluan të shtënat e para të luftës. Sot ka rrënoja dhe një
+      monument të madh. Arrihet me autobusin 138 për rreth 40 minuta ose, në verë, me anije nga
+      Motława.
+itinerary:
+  - "Porta e Artë, rruga Długa dhe Długi Targ me Shatërvanin e Neptunit. Kulla e Bazilikës së Shën Marisë, rruga Mariacka dhe Vinçi buzë Motława-s. Në mbrëmje darkë në Ishullin e Granarëve."
+  - "Muzeu i Luftës së Dytë Botërore në mëngjes, pastaj Westerplatte. Pasdite Qendra Evropiane e Solidaritetit dhe baret në kantierin e vjetër."
+  - "Me trenin SKM në Sopot për skelën dhe plazhin, pastaj në Gdynia. Ndryshe, gjithë dita në kështjellën e Malbork-ut."
+areas:
+  - name: Główne Miasto (Qyteti Kryesor)
+    text: Qyteti i vjetër, çdo gjë në këmbë. Zona më e shtrenjtë dhe më e mbushur me turistë.
+  - name: Wyspa Spichrzów
+    text: Ishulli i granarëve përballë Vinçit, me hotele të reja, 5 minuta në këmbë nga Długi Targ.
+  - name: Pranë Gdańsk Główny
+    text: Rreth stacionit qendror, praktike për autobusin 210 dhe trenat, 10 minuta nga Długi Targ.
+  - name: Wrzeszcz
+    text: Lagje banimi më e lirë, në linjën e trenit të aeroportit, rreth 10 minuta me SKM nga qendra.
+food:
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë, mish, lakër ose fruta, i zier ose i skuqur.
+  - name: Peshk i Balltikut
+    text: Harengë (śledź) me qepë, peshk i tymosur ose i skuqur me patate, sidomos buzë detit.
+  - name: Żurek
+    text: Supë e thartë me miell thekre, salsiçe dhe vezë.
+  - name: Goldwasser
+    text: Liker barishtor me fletë të holla ari, i lindur në Gdańsk shekuj më parë.
+airports:
+  GDN: >-
+    Aeroporti Lech Wałęsa është rreth 12 km në perëndim të qendrës. Stacioni i trenit PKM është
+    ngjitur me terminalin: treni arrin në Gdańsk Wrzeszcz për rreth 20 minuta, ku ndërron me SKM
+    për në Gdańsk Główny (edhe 5-7 minuta); disa trena vazhdojnë direkt. Kalojnë 1-2 herë në orë,
+    me biletë rreth 5-7 PLN (rreth €1.5). Autobusi 210 shkon te stacioni qendror për rreth 35-45
+    minuta, me biletë qyteti rreth 6 PLN; natën kalon autobusi N3. Taksia ose Bolt bëjnë 20-30
+    minuta dhe kushtojnë rreth 60-90 PLN (€14-21).
+transport: >-
+  Qyteti i vjetër përshkohet në këmbë; për muzetë dhe Westerplatte ka tramvaje dhe autobusë. Një
+  biletë 75-minutëshe kushton rreth 6 PLN (€1.5), ajo 24-orëshe rreth 22-26 PLN (€5-6), nga
+  automatet, me kartë brenda mjetit ose në aplikacionin Jakdojade. Trenat SKM lidhin Gdańsk, Sopot
+  dhe Gdynia çdo 10-20 minuta, me biletë më vete. Bileta prej letre vuloset sapo hip. Bolt dhe Uber
+  janë të lirë.
+daytrips:
+  - name: Sopot
+    text: >-
+      Qyteti i plazheve, rreth 20 minuta me SKM, me skelën më të gjatë prej druri në Evropë dhe
+      rrugën Monte Cassino.
+  - name: Gdynia
+    text: Qyteti modern portual, rreth 35 minuta me SKM, me anije-muze dhe bulevard buzë detit.
+  - name: Kështjella e Malbork-ut
+    text: >-
+      Kështjella e Kalorësve Teutonë, më e madhja prej tulle në botë, rreth 30-50 minuta me tren.
+      Bileta me audioguidë rreth 60-80 PLN (€14-19); llogarit 3-4 orë.
+budget: >-
+  Një birrë në qendër kushton rreth 15-22 PLN (€3.5-5), një pjatë pierogi rreth 35-50 PLN (€8-12)
+  dhe një kafe rreth 12-16 PLN (€3-4). Restorantet në Długi Targ dhe buzë lumit janë më të
+  shtrenjtat.
+when: >-
+  Qershori-gushti për plazhet dhe ditët e gjata, por deti mbetet i ftohtë (rreth 18-20°C). Nga
+  fundi i korrikut deri në gusht mbahet Panairi i Shën Dominikut. Maji dhe shtatori janë më të
+  qetë; dimri është i ftohtë dhe me erë, por dhjetori ka tregun e Krishtlindjeve.
+tips:
+  - "Paguaj gjithmonë në PLN: kur terminali ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Të dielave shumica e dyqaneve janë të mbyllura; hapen vetëm të voglat si Żabka."
+  - "Qelibarin bleje në dyqane me certifikatë, jo nga tezgat që e shesin shumë lirë."
+faq:
+  - q: "Si shkoj nga aeroporti në qytetin e vjetër?"
+    a: "Treni PKM dhe pastaj SKM deri në Gdańsk Główny bëjnë rreth 30 minuta gjithsej, për rreth 5-7 PLN. Nga stacioni deri te Długi Targ janë 10 minuta në këmbë."
+  - q: "Sa para duhen në ditë në Gdańsk?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimet kryesore janë fjetja në verë dhe biletat e muzeve."

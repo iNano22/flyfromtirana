@@ -1,0 +1,101 @@
+city: Gdańsk
+slug: gdansk
+tagline: Amber, shipyards and Baltic beaches
+intro: >-
+  Gdańsk is Poland's port city on the Baltic Sea, with a centre full of colourful merchants'
+  houses, rebuilt after the Second World War, which began right here in 1939. It is also where
+  Solidarność was born, the movement that helped bring down communism. Two or three days are
+  enough for the city, plus a day for Sopot or Malbork. The currency is the Polish złoty (PLN): €1
+  is about 4.2 PLN.
+sights:
+  - name: Long Market and Neptune's Fountain
+    text: >-
+      Długa street and the Długi Targ square form the Royal Way, from the Golden Gate to the Green
+      Gate, lined with narrow, ornate façades. In the middle stands Neptune's Fountain (1633), the
+      symbol of the city.
+  - name: Żuraw (the Crane)
+    text: >-
+      The medieval port crane of wood and brick on the Motława river, today part of the Maritime
+      Museum. The promenade along the river is the most beautiful place for an evening walk.
+  - name: St Mary's Church
+    text: >-
+      One of the largest brick churches in the world. The tower's roughly 400 steps (about 15-20
+      PLN, around €4-5) reward you with the view over the rooftops. Behind it, Mariacka street with
+      its amber shops.
+  - name: European Solidarity Centre
+    text: >-
+      A modern museum at the shipyard gate where, in August 1980, the strikes led by Lech Wałęsa
+      created the Solidarność trade union. Tickets about 30-40 PLN; allow 2 hours.
+  - name: Museum of the Second World War
+    text: >-
+      One of the largest museums about the war in the world, with its exhibition underground. Allow
+      3-4 hours. Tickets about 30-40 PLN; on Tuesdays entry is usually free.
+  - name: Westerplatte
+    text: >-
+      The peninsula where the first shots of the war were fired on 1 September 1939. Today there
+      are ruins and a huge monument. Reach it by bus 138 in about 40 minutes or, in summer, by boat
+      from the Motława.
+itinerary:
+  - "The Golden Gate, Długa street and Długi Targ with Neptune's Fountain. The tower of St Mary's Church, Mariacka street and the Crane on the Motława. Dinner on Granary Island in the evening."
+  - "The Museum of the Second World War in the morning, then Westerplatte. In the afternoon the European Solidarity Centre and the bars in the old shipyard."
+  - "Take the SKM train to Sopot for the pier and the beach, then on to Gdynia. Or spend the whole day at Malbork Castle."
+areas:
+  - name: Główne Miasto (Main Town)
+    text: The old town, everything on foot. The most expensive area and the most crowded with tourists.
+  - name: Wyspa Spichrzów
+    text: Granary Island opposite the Crane, with new hotels, 5 minutes on foot from Długi Targ.
+  - name: Near Gdańsk Główny
+    text: Around the main station, handy for bus 210 and the trains, 10 minutes from Długi Targ.
+  - name: Wrzeszcz
+    text: A cheaper residential district on the airport train line, about 10 minutes by SKM from the centre.
+food:
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese, meat, cabbage or fruit, boiled or fried.
+  - name: Baltic fish
+    text: Herring (śledź) with onion, smoked fish or fried fish with chips, especially by the sea.
+  - name: Żurek
+    text: A sour rye soup with sausage and egg.
+  - name: Goldwasser
+    text: A herbal liqueur with thin flakes of gold, born in Gdańsk centuries ago.
+airports:
+  GDN: >-
+    Lech Wałęsa Airport is about 12 km west of the centre. The PKM train station is next to the
+    terminal: the train reaches Gdańsk Wrzeszcz in about 20 minutes, where you change to the SKM
+    for Gdańsk Główny (another 5-7 minutes); some trains run straight through. They run 1-2 times
+    an hour, with a ticket of about 5-7 PLN (about €1.5). Bus 210 goes to the main station in about
+    35-45 minutes on a city ticket of about 6 PLN; at night there is bus N3. A taxi or Bolt takes
+    20-30 minutes and costs about 60-90 PLN (€14-21).
+transport: >-
+  The old town is walkable; for the museums and Westerplatte there are trams and buses. A
+  75-minute ticket costs about 6 PLN (€1.5), a 24-hour one about 22-26 PLN (€5-6), from the
+  machines, by card on board or in the Jakdojade app. SKM trains link Gdańsk, Sopot and Gdynia
+  every 10-20 minutes, with a separate ticket. A paper ticket must be validated as soon as you
+  board. Bolt and Uber are cheap.
+daytrips:
+  - name: Sopot
+    text: >-
+      The beach town, about 20 minutes by SKM, with the longest wooden pier in Europe and Monte
+      Cassino street.
+  - name: Gdynia
+    text: The modern port city, about 35 minutes by SKM, with museum ships and a seafront promenade.
+  - name: Malbork Castle
+    text: >-
+      The castle of the Teutonic Knights, the largest brick castle in the world, about 30-50
+      minutes by train. A ticket with audio guide costs about 60-80 PLN (€14-19); allow 3-4 hours.
+budget: >-
+  A beer in the centre costs about 15-22 PLN (€3.5-5), a plate of pierogi about 35-50 PLN (€8-12)
+  and a coffee about 12-16 PLN (€3-4). The restaurants on Długi Targ and along the river are the
+  most expensive.
+when: >-
+  June-August for the beaches and long days, but the sea stays cold (about 18-20°C). From late July
+  into August the St Dominic's Fair takes place. May and September are quieter; winter is cold and
+  windy, but December has the Christmas market.
+tips:
+  - "Always pay in PLN: when a card terminal or ATM offers you euros, decline, because the rate is worse."
+  - "On Sundays most shops are closed; only small ones like Żabka open."
+  - "Buy amber in certified shops, not from stalls that sell it very cheaply."
+faq:
+  - q: "How do I get from the airport to the old town?"
+    a: "The PKM train and then the SKM to Gdańsk Główny take about 30 minutes in total, for about 5-7 PLN. From the station to Długi Targ it is 10 minutes on foot."
+  - q: "How much money do I need per day in Gdańsk?"
+    a: "Excluding the flight and accommodation, about €40-60 a day. Food and transport are cheap; the main costs are accommodation in summer and museum tickets."

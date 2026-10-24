@@ -1,0 +1,102 @@
+city: Wrocław
+name: Breslavia
+slug: wroclaw
+tagline: Piazza del mercato, isole e nani di bronzo
+intro: >-
+  Breslavia è la città principale della Bassa Slesia, nella Polonia occidentale: un centro
+  ricostruito con case colorate, il fiume Oder con le sue isole e i suoi ponti, e tanti studenti. È
+  più tranquilla di Cracovia e di solito un po' più economica. Due o tre giorni bastano per la città,
+  più un giorno per un castello o per le montagne. La valuta è lo złoty polacco (PLN): €1 vale circa
+  4,3 PLN.
+sights:
+  - name: Rynek e il Municipio
+    text: >-
+      La piazza del mercato, una delle più grandi d'Europa, con case colorate e il Municipio gotico al
+      centro. Nella sua cantina c'è la Piwnica Świdnicka, uno dei ristoranti più antichi d'Europa.
+  - name: Ostrów Tumski
+    text: >-
+      L'isola della cattedrale, la parte più antica della città, con chiese e strade acciottolate.
+      Ogni sera un lampionaio in costume accende a mano circa 100 lampioni a gas. La torre della
+      cattedrale ha un ascensore e una vista sul fiume.
+  - name: I nani di Breslavia
+    text: >-
+      Centinaia di piccoli nani di bronzo (krasnale) sparsi per la città, oltre 600 secondo alcuni
+      conteggi. Cercarli è il gioco preferito dei visitatori.
+  - name: Panorama di Racławice
+    text: >-
+      Un dipinto circolare alto 15 metri e lungo 114 metri, sulla battaglia di Racławice del 1794,
+      dentro una rotonda. L'ingresso è a orario con audioguida; il biglietto costa circa 45-50 PLN
+      (circa €11-12) ed è meglio prenotarlo prima.
+  - name: Sala del Centenario
+    text: >-
+      La grande sala in cemento del 1913, nella lista dell'UNESCO. Accanto ci sono la fontana
+      multimediale, con spettacoli musicali nelle sere d'estate, e il Giardino Giapponese.
+itinerary:
+  - "Rynek, il Municipio e Plac Solny, cercando i nani lungo la strada. Poi attraverso le isole fino a Ostrów Tumski al tramonto, per il lampionaio. Cena in Rynek o a Nadodrze."
+  - "La Panorama di Racławice al mattino (con il biglietto prenotato). In tram fino alla Sala del Centenario e al Giardino Giapponese; d'estate resta per la fontana la sera."
+  - "Gita in giornata: il castello di Książ o la Chiesa della Pace di Świdnica. D'estate, in alternativa, le montagne di Karpacz."
+areas:
+  - name: Stare Miasto (Città Vecchia)
+    text: Intorno al Rynek, tutto a piedi. La zona più cara, e le vie con i locali sono rumorose di notte.
+  - name: Nadodrze
+    text: Un vecchio quartiere oltre il fiume, con murales, caffè alternativi e prezzi più bassi, a circa 15 minuti a piedi dal Rynek.
+  - name: Vicino a Wrocław Główny
+    text: Intorno alla stazione centrale, comoda per l'autobus dell'aeroporto e i treni delle gite, a 15 minuti a piedi dal Rynek.
+  - name: Plac Grunwaldzki
+    text: Una zona universitaria a est del centro, più economica, con tram frequenti per il Rynek e vicina alla Sala del Centenario.
+food:
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio (ruskie), carne, cavolo o frutta, bolliti o fritti.
+  - name: Żurek
+    text: Zuppa acida di farina di segale con salsiccia e uovo, spesso servita dentro una pagnotta svuotata.
+  - name: Placki ziemniaczane
+    text: Frittelle di patate grattugiate, con panna acida o con il gulasch sopra.
+  - name: Birra artigianale
+    text: Tanti locali di birra artigianale e birrifici che la producono da sé, anche sul Rynek.
+  - name: Bar mleczny
+    text: '"Bar del latte", mense semplici dell''epoca comunista, dove un pranzo costa circa €5-7.'
+airports:
+  WRO: >-
+    L'aeroporto Copernico è a circa 10 km a ovest del centro. L'autobus 106 va alla stazione
+    centrale, Wrocław Główny, in circa 30-40 minuti, di solito 2-3 volte all'ora, con un biglietto
+    urbano da circa 5-7 PLN (circa €1-1,5); di notte passa l'autobus 206. Un collegamento
+    ferroviario con l'aeroporto è in programma, ma verifica se è attivo prima di contarci. Un taxi o
+    Bolt impiega circa 20-30 minuti e costa circa 50-80 PLN (€12-19).
+transport: >-
+  La Città Vecchia e Ostrów Tumski si girano a piedi; per distanze più lunghe c'è una grande rete
+  di tram e autobus. I biglietti si comprano con la carta alle macchinette a bordo o alle fermate,
+  oppure nell'app Jakdojade. Il biglietto giornaliero costa circa 15-18 PLN (circa €4). Bolt e Uber
+  sono economici.
+daytrips:
+  - name: Castello di Książ
+    text: >-
+      Uno dei castelli più grandi della Polonia, sopra una valle boscosa vicino a Wałbrzych. Circa
+      1,5 ore di treno fino a Wałbrzych, poi un autobus locale o un taxi; l'ingresso costa circa
+      50-70 PLN (circa €12-16).
+  - name: Chiese della Pace
+    text: >-
+      Due grandi chiese in legno a Świdnica e Jawor, degli anni 1650, nella lista dell'UNESCO. Quella
+      di Świdnica è a circa 1 ora di treno o autobus e si abbina bene con Książ.
+  - name: Karpacz
+    text: >-
+      Una cittadina di montagna nei Karkonosze, a circa 2,5-3 ore di autobus o treno via Jelenia Góra.
+      Escursioni o la seggiovia verso la cima dello Śnieżka (1603 m).
+budget: >-
+  Una birra da mezzo litro in centro costa circa 15-20 PLN (€3,5-5), un piatto di pierogi circa
+  30-45 PLN (€7-10), un caffè circa 12-16 PLN (€3-4) e un biglietto del tram circa 5-7 PLN
+  (€1-1,5).
+when: >-
+  Maggio-settembre per le giornate lunghe, i tavolini all'aperto e la fontana della Sala del
+  Centenario. A dicembre c'è il mercatino di Natale in Rynek, uno dei più belli della Polonia, ma
+  l'inverno è freddo, spesso sotto zero. Aprile e ottobre sono più tranquilli.
+tips:
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "Evita i bancomat Euronet e i cambi in aeroporto. Le carte sono accettate quasi ovunque."
+  - "In Polonia la maggior parte dei negozi è chiusa la domenica; i piccoli supermercati e i distributori di benzina di solito restano aperti."
+faq:
+  - q: "Posso pagare in euro a Breslavia?"
+    a: "Raramente: i prezzi sono in złoty. La carta è accettata quasi ovunque, anche per piccoli importi; per le bancarelle tieni un po' di contanti prelevati da un bancomat di una banca."
+  - q: "Quanti giorni servono per Breslavia?"
+    a: "Due giorni bastano per il centro, Ostrów Tumski, la Panorama e la Sala del Centenario. Con un terzo giorno puoi andare a Książ o a Świdnica."
+  - q: "Quanto si spende al giorno a Breslavia?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno. Cibo e trasporti sono economici; le spese principali sono l'alloggio e i biglietti per i musei o per le gite."

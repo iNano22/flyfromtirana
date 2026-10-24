@@ -1,0 +1,79 @@
+city: Heraklion
+slug: heraklion
+tagline: Knossos, kështjella veneciane dhe plazhet e Kretës
+intro: >-
+  Heraklion është qyteti më i madh i Kretës dhe porta e ishullit: këtu janë pallati minoik i Knossos,
+  një nga muzetë më të rëndësishëm arkeologjikë në Evropë dhe një qendër e vjetër me mure
+  veneciane, shatërvane dhe taverna. Dy ditë mjaftojnë për qytetin; me makinë me qira zbulon
+  pjesën tjetër të Kretës.
+sights:
+  - name: Pallati i Knossos
+    text: Qyteti minoik 3,500-vjeçar, rreth 5 km në jug të qendrës, me afreske dhe dhoma të rindërtuara. Bileta kushton rreth €20 në verë; shko kur hapet, para vapës dhe autobusëve turistikë.
+  - name: Muzeu Arkeologjik
+    text: Koleksioni më i madh minoik në botë, me afresket origjinale të Knossos dhe Diskun e Festit. Bileta rreth €12.
+  - name: Kështjella Koules
+    text: Fortesa veneciane në hyrje të portit të vjetër, me pamje nga deti dhe qyteti nga tarraca. Hyrja rreth €4; shëtitja në molo deri te fari është falas.
+  - name: Qyteti i vjetër dhe Sheshi i Luanëve
+    text: Shatërvani Morosini me katër luanë, Loxha veneciane dhe kisha e Agios Titos. Rruga 1866 aty pranë është tregu me erëza, djathë dhe mjaltë.
+  - name: Muret veneciane
+    text: Muret e shekullit XVI rrethojnë ende qendrën, rreth 4 km gjithsej. Te bastioni Martinengo është varri i shkrimtarit Nikos Kazantzakis, me pamje mbi qytet.
+  - name: Katedralja e Agios Minas
+    text: Një nga kishat më të mëdha të Greqisë, me ikona të çmuara në kishën e vogël të vjetër ngjitur me të.
+itinerary:
+  - "Knossos herët në mëngjes, pastaj Muzeu Arkeologjik. Pasdite Sheshi i Luanëve dhe tregu në rrugën 1866, në perëndim shëtitje në molo deri te Koules."
+  - "Një ditë në Rethymno: qyteti i vjetër venecian, fortesa Fortezza dhe plazhi i gjatë ngjitur me qendrën. Kthim me autobus KTEL në mbrëmje."
+  - "Me makinë ose turne drejt lindjes: Agios Nikolaos, Elounda dhe varka për Spinalonga. Ndryshe, një ditë plazhi në Matala, në jug të ishullit."
+areas:
+  - name: Qendra e vjetër
+    text: Rreth Sheshit të Luanëve, në këmbë deri te muzeu, porti dhe autobusi për Knossos. Ka shumë apartamente dhe hotele të vogla.
+  - name: Pranë portit
+    text: "Praktike nëse vazhdon me traget ose me autobus KTEL: stacioni kryesor është aty. Pamje nga deti, por pak zhurmë nga trafiku."
+  - name: Amoudara
+    text: Plazh i gjatë rreth 6 km në perëndim të qendrës, i lidhur me autobus qyteti. Det pa çmimet e resorteve.
+  - name: Hersonissos
+    text: Zona e resorteve dhe e jetës së natës, rreth 25 km në lindje, me autobus KTEL direkt nga aeroporti.
+food:
+  - name: Dakos
+    text: Paksimadh elbi i njomur me domate të grira, djathë mizithra dhe vaj ulliri, meze klasike kretase.
+  - name: Bugacë
+    text: Byrek i hollë me krem ose me djathë, që hahet në mëngjes. Lokalet e njohura janë pranë Sheshit të Luanëve.
+  - name: Kalitsounia
+    text: Byrekë të vegjël me djathë të freskët dhe nenexhik, të pjekur ose të skuqur.
+  - name: Raki (tsikoudia)
+    text: Raki rrushi që shumë taverna ta sjellin falas në fund të darkës, shpesh me fruta ose ëmbëlsirë.
+transport: >-
+  Qendra e vjetër përshkohet në këmbë. Autobusët blu të qytetit të çojnë te Knossos, në plazhin e
+  Amoudara dhe në aeroport, me biletë rreth €1.20-2 nga kioskat. Për pjesën tjetër të ishullit
+  përdoren autobusët KTEL, që nisen nga stacioni pranë portit për Rethymno, Chania, Agios Nikolaos
+  dhe Matala. Për plazhet dhe fshatrat larg rrugëve kryesore, makina me qira është zgjidhja më e
+  mirë.
+daytrips:
+  - name: Rethymno dhe Chania
+    text: Rethymno është rreth 1.5 orë me autobus KTEL (rreth €9), Chania rreth 2.5-3 orë (rreth €16). Chania ia vlen më shumë me një natë fjetje.
+  - name: Spinalonga
+    text: Ishulli-fortesë venecian, ish-koloni e të sëmurëve me lebër. Nga Elounda varka bën rreth 15 minuta (rreth €12-15), plus bileta e hyrjes. Agios Nikolaos është rreth 1.5 orë me autobus.
+  - name: Matala dhe plazhet e jugut
+    text: Plazhi me shpellat e gdhendura në shkëmb, rreth 2 orë me autobus në jug, pranë rrënojave të pallatit të Festit.
+budget: >-
+  Një gyros në pitë kushton rreth €3.50-4.50, një kafe freddo rreth €3, një darkë në tavernë €15-20
+  për person. Bileta e autobusit të qytetit rreth €1.20-2. Një dhomë dyshe e thjeshtë kushton nga
+  rreth €50-70 nata jashtë sezonit dhe €80-120 në korrik e gusht.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë det të ngrohtë dhe më pak turistë. Në korrik e gusht
+  temperaturat kalojnë 30°C dhe çmimet janë më të lartat. Në dimër qyteti mbetet i gjallë, por
+  shumë hotele plazhi dhe taverna në resorte mbyllen.
+tips:
+  - "Makina me qira kushton rreth €25-40 në ditë jashtë sezonit dhe më shumë në verë. Merr sigurim të plotë, se rrugët malore janë të ngushta. Pyet përpara nëse pranohet patenta shqiptare apo duhet edhe patentë ndërkombëtare; zakonisht duhet kartë krediti për depozitën."
+  - "Bileta e kombinuar për Knossos dhe Muzeun Arkeologjik kursen pak para; blije online për të shmangur radhën."
+faq:
+  - q: "A duhet makinë me qira në Kretë?"
+    a: "Për qytetin, Knossos dhe Rethymno jo, mjaftojnë autobusët. Për plazhet e jugut, Elafonisi, Balos ose fshatrat e maleve, makina të kursen shumë kohë dhe shpesh del më lirë se turnet e organizuara."
+  - q: "Sa para duhen në ditë në Heraklion?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-60 në ditë. Shpenzimet më të mëdha janë hyrjet si Knossos dhe makina me qira."
+airports:
+  HER: >-
+    Aeroporti Nikos Kazantzakis është rreth 5 km në lindje të qendrës. Autobusët blu të qytetit të
+    çojnë në sheshin Eleftherias, pranë Sheshit të Luanëve, dhe te porti për rreth 15-20 minuta, me
+    rreth €1.20-2 (më lirë nga kioska se te shoferi). Disa autobusë KTEL ndalojnë te aeroporti për
+    Hersonissos dhe Malia. Taksia deri në qendër kushton rreth €15-20 dhe bën rreth 15
+    minuta. Aeroporti i ri në Kastelli është ende në ndërtim, nuk është hapur.

@@ -1,0 +1,80 @@
+city: Trieste
+slug: trieste
+tagline: Kafene historike, det dhe era bora
+intro: >-
+  Trieste ishte për shekuj porti kryesor i Perandorisë Austro-Hungareze, dhe kjo duket kudo:
+  pallate vjeneze, kafene letrare dhe një shesh i madh që hapet mbi det. Qendra përshkohet në këmbë,
+  çmimet janë më të ulëta se në Venice, ndërsa Sllovenia është fare pranë. Dy-tri ditë mjaftojnë.
+sights:
+  - name: Piazza Unità d'Italia
+    text: Sheshi kryesor, ndër më të mëdhenjtë në Evropë që shohin nga deti. Në mbrëmje ec deri në fund të Molo Audace, skelës përballë sheshit.
+  - name: Kështjella e Miramare
+    text: Kështjella e bardhë buzë detit që Maksimiliani i Habsburgut ndërtoi në vitet 1856-1860. Dhomat vizitohen me biletë (rreth €12-14), parku është falas.
+  - name: San Giusto
+    text: Kodra mbi qytetin e vjetër, me katedralen dhe kështjellën. Në ngjitje kalon pranë Teatrit Romak.
+  - name: Canal Grande
+    text: Kanali i lagjes Borgo Teresiano, me kishën ortodokse serbe San Spiridione aty pranë dhe statujën e James Joyce-it mbi urën Ponterosso.
+  - name: Kafenetë historike
+    text: Caffè San Marco (1914), Caffè degli Specchi (1839) në Piazza Unità dhe Caffè Tommaseo (1830), më e vjetra.
+  - name: Barcola
+    text: Shëtitorja buzë detit drejt Miramares, ku në verë triestinët notojnë dhe bëjnë banjë dielli falas.
+  - name: Risiera di San Sabba
+    text: I vetmi kamp nazist në Itali me krematorium, sot muze përkujtimor me hyrje falas.
+airports:
+  TRS: >-
+    Aeroporti është në Ronchi dei Legionari, rreth 35 km nga qyteti. Një urë e mbuluar të çon në
+    stacionin Trieste Airport, nga ku treni rajonal shkon në Trieste Centrale për rreth 30-35 minuta
+    (rreth €4-5), zakonisht 1-2 herë në orë. Autobusi 51 i APT shkon pranë Centrale-s për rreth 1
+    orë (rreth €4-5). Taksia kushton rreth €60-80 dhe bën rreth 35-40 minuta.
+budget: >-
+  Një kafe në banak kushton rreth €1.30, një pjatë në buffet €12-18, bileta e autobusit rreth €1.50.
+  Një dhomë dyshe në hotel të thjeshtë kushton nga rreth €80-120 nata.
+when: >-
+  Maji-qershori dhe shtatori, me det për not. Nga nëntori deri në mars fryn shpesh bora, erë e ftohtë
+  që mund të kalojë 100 km/h: merr një xhaketë kundër erës. Të dielën e dytë të tetorit bëhet regata
+  Barcolana dhe hotelet mbushen.
+tips:
+  - "Kafeja ka emrat e vet: «un nero» është espresso, «un capo» është macchiato dhe «capo in b» është macchiato në gotë xhami."
+  - "Për drekë provo një «buffet», lokal i thjeshtë me mish derri të zier, mustardë dhe rrikë. Buffet da Pepi është më i njohuri."
+  - "Në Karst kërko «osmize»: ferma që për pak ditë në vit shesin verën dhe djathin e tyre. I njeh nga dega e gjelbër e varur te rruga."
+  - "Kur fryn bora, ec nga ana e mbrojtur e rrugës dhe lëre çadrën në hotel: era e thyen menjëherë."
+itinerary:
+  - "Piazza Unità d'Italia dhe Molo Audace, kafe në Caffè degli Specchi. Pasdite Canal Grande dhe San Spiridione, në mbrëmje darkë në Cavana."
+  - "San Giusto, me katedralen, kështjellën dhe Teatrin Romak. Pasdite Caffè San Marco dhe Risiera di San Sabba."
+  - "Përgjatë Barcolës deri te Kështjella e Miramare (rreth 1.5 orë në këmbë, ose autobusi 6). Pasdite not në verë, ose Grotta Gigante."
+areas:
+  - name: Borgo Teresiano
+    text: Lagjja rreth Canal Grande, mes stacionit dhe Piazza Unità, në këmbë deri te gjithçka.
+  - name: Città Vecchia dhe Cavana
+    text: Qyteti i vjetër nën San Giusto, me bare dhe restorante, por me zhurmë natën.
+  - name: Pranë Stazione Centrale
+    text: "Zona më praktike: këtu mbërrin treni nga aeroporti. Hotele më të lira, 10-15 minuta në këmbë nga qendra."
+food:
+  - name: Buffet triestino
+    text: Mish derri i zier me lakër turshi, mustardë dhe rrikë, trashëgimi austriake.
+  - name: Jota
+    text: Supë e trashë me fasule, lakër turshi dhe patate.
+  - name: Sardoni impanai
+    text: Açuge të paneruara dhe të skuqura, meze klasike me një gotë verë.
+  - name: Presnitz
+    text: Ëmbëlsirë me brumë të mbushur me arra dhe rrush të thatë.
+transport: >-
+  Qendra përshkohet në këmbë. Autobusët e Trieste Trasporti të çojnë në Barcola, Miramare dhe
+  Opicina; bileta kushton rreth €1.50 dhe vlen rreth 60 minuta, ndërsa bileta ditore rreth €5. Varkat
+  Delfino Verde shkojnë në Muggia për rreth 30 minuta.
+daytrips:
+  - name: Grotta Gigante
+    text: Shpellë gjigante në Karst, me vizitë me guidë rreth 1 orë (rreth €15). Arrihet me autobusin 42 për rreth 30 minuta.
+  - name: Piran
+    text: Qyteti venecian i bregdetit slloven, rreth 1-1.5 orë me autobus.
+  - name: Ljubljana
+    text: Kryeqyteti i Sllovenisë, rreth 1.5-2 orë me autobus (rreth €10-20).
+  - name: Venice
+    text: Rreth 2 orë me tren rajonal (rreth €13-14).
+faq:
+  - q: "Treni apo autobusi nga aeroporti?"
+    a: "Treni është më i shpejtë, rreth 30-35 minuta. Autobusi 51 kushton njësoj dhe bën rreth 1 orë, por kalon buzë detit. Të dy mbërrijnë pranë stacionit qendror."
+  - q: "A mund të shkoj në Slloveni për një ditë?"
+    a: "Po, Italia dhe Sllovenia janë në Shengen, dhe Piran apo Ljubljana janë 1-2 orë larg. Merr gjithmonë pasaportën me vete: herë pas here në kufi bëhen kontrolle."
+  - q: "Sa para duhen në ditë në Trieste?"
+    a: "Pa fluturimin dhe fjetjen, €40-70 në ditë. Kafeja dhe buffet-et janë të lira, ndërsa sheshet, Barcola dhe parku i Miramares janë falas."

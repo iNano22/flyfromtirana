@@ -1,0 +1,100 @@
+city: Wrocław
+slug: wroclaw
+tagline: Sheshi i tregut, ishuj dhe xhuxhë bronzi
+intro: >-
+  Wrocław është qyteti kryesor i Silesisë së Poshtme, në perëndim të Polonisë: një qendër e
+  rindërtuar me shtëpi shumëngjyrëshe, lumi Odra me ishuj e ura, dhe plot studentë. Është më i qetë
+  dhe zakonisht pak më i lirë se Kraków. Dy-tri ditë mjaftojnë për qytetin, plus një ditë për një
+  kështjellë ose për malet. Monedha është zloti polak (PLN): €1 është rreth 4.3 PLN.
+sights:
+  - name: Rynek dhe Bashkia
+    text: >-
+      Sheshi i tregut, një nga më të mëdhenjtë në Evropë, me shtëpi shumëngjyrëshe dhe Bashkinë
+      gotike në mes. Në bodrum është Piwnica Świdnicka, një nga restorantet më të vjetra në Evropë.
+  - name: Ostrów Tumski
+    text: >-
+      Ishulli i katedrales, pjesa më e vjetër e qytetit, me kisha dhe rrugë me kalldrëm. Çdo mbrëmje
+      një fenerxhi në kostum ndez me dorë rreth 100 fenerë me gaz. Kulla e katedrales ka ashensor
+      dhe pamje mbi lumë.
+  - name: Xhuxhët e Wrocław-it
+    text: >-
+      Qindra xhuxhë të vegjël bronzi (krasnale) nëpër qytet, sipas disa numërimeve mbi 600. Kërkimi
+      i tyre është loja e preferuar e vizitorëve.
+  - name: Panorama e Racławice-s
+    text: >-
+      Një pikturë rrethore 15 metra e lartë dhe 114 metra e gjatë, për betejën e Racławice-s të vitit
+      1794, brenda një rotonde. Hyrja është me orar dhe me audioguidë; bileta kushton rreth 45-50 PLN
+      (rreth €11-12) dhe është mirë të rezervohet përpara.
+  - name: Hala e Shekullit
+    text: >-
+      Salla e madhe prej betoni e vitit 1913, në listën e UNESCO-s. Ngjitur janë shatërvani
+      multimedial, me shfaqje me muzikë në mbrëmjet e verës, dhe Kopshti Japonez.
+itinerary:
+  - "Rynek, Bashkia dhe Plac Solny, duke kërkuar xhuxhët gjatë rrugës. Pastaj nëpër ishujt deri në Ostrów Tumski në muzg, për fenerxhiun. Darkë në Rynek ose në Nadodrze."
+  - "Panorama e Racławice-s në mëngjes (me biletë të rezervuar). Me tramvaj deri te Hala e Shekullit dhe Kopshti Japonez; në verë qëndro për shatërvanin në mbrëmje."
+  - "Udhëtim ditor: Kështjella Książ ose Kisha e Paqes në Świdnica. Në verë, si alternativë, malet e Karpacz-it."
+areas:
+  - name: Stare Miasto (Qyteti i Vjetër)
+    text: Rreth Rynek-ut, gjithçka në këmbë. Zona më e shtrenjtë, dhe rrugët me bare janë të zhurmshme natën.
+  - name: Nadodrze
+    text: Lagje e vjetër përtej lumit, me murale, kafene alternative dhe çmime më të ulëta, rreth 15 minuta në këmbë nga Rynek-u.
+  - name: Pranë Wrocław Główny
+    text: Rreth stacionit qendror, praktike për autobusin e aeroportit dhe trenat e udhëtimeve ditore, 15 minuta në këmbë nga Rynek-u.
+  - name: Plac Grunwaldzki
+    text: Zonë studentore në lindje të qendrës, më e lirë, me tramvaje të shpeshta për në Rynek dhe afër Halës së Shekullit.
+food:
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë (ruskie), mish, lakër ose fruta, i zier ose i skuqur.
+  - name: Żurek
+    text: Supë e thartë me miell thekre, salsiçe dhe vezë, shpesh brenda një buke të zbrazur.
+  - name: Placki ziemniaczane
+    text: Petulla me patate të grira, me salcë kosi ose me gulash sipër.
+  - name: Birra artizanale
+    text: Shumë bare me birrë artizanale dhe birrari që e prodhojnë vetë, edhe në Rynek.
+  - name: Bar mleczny
+    text: '"Baret e qumështit", mensat e thjeshta nga koha komuniste, ku një drekë kushton rreth €5-7.'
+airports:
+  WRO: >-
+    Aeroporti Nicolaus Copernicus është rreth 10 km në perëndim të qendrës. Autobusi 106 shkon te
+    stacioni qendror Wrocław Główny për rreth 30-40 minuta, zakonisht 2-3 herë në orë, me biletë
+    qyteti rreth 5-7 PLN (rreth €1-1.5); natën kalon autobusi 206. Një lidhje me tren për në
+    aeroport është në plan, por kontrollo nëse funksionon para se të llogarisësh mbi të. Taksia ose
+    Bolt bëjnë rreth 20-30 minuta dhe kushtojnë rreth 50-80 PLN (€12-19).
+transport: >-
+  Qyteti i Vjetër dhe Ostrów Tumski përshkohen në këmbë; për më larg ka një rrjet të madh
+  tramvajesh dhe autobusësh. Biletat blihen me kartë në makinat brenda mjeteve ose në stacione, ose
+  në aplikacionin Jakdojade. Bileta ditore kushton rreth 15-18 PLN (rreth €4). Bolt dhe Uber janë
+  të lirë.
+daytrips:
+  - name: Kështjella Książ
+    text: >-
+      Një nga kështjellat më të mëdha në Poloni, mbi një luginë me pyje pranë Wałbrzych. Rreth 1.5
+      orë me tren deri në Wałbrzych, pastaj autobus lokal ose taksi; hyrja kushton rreth 50-70 PLN
+      (rreth €12-16).
+  - name: Kishat e Paqes
+    text: >-
+      Dy kisha të mëdha prej druri në Świdnica dhe Jawor, nga vitet 1650, në listën e UNESCO-s. Ajo
+      e Świdnica-s është rreth 1 orë me tren ose autobus dhe kombinohet mirë me Książ-in.
+  - name: Karpacz
+    text: >-
+      Qytet malor në Karkonosze, rreth 2.5-3 orë me autobus ose tren përmes Jelenia Góra. Ecje në
+      mal ose teleferik drejt majës Śnieżka (1603 m).
+budget: >-
+  Një birrë gjysmëlitërshe në qendër kushton rreth 15-20 PLN (€3.5-5), një pjatë pierogi rreth
+  30-45 PLN (€7-10), një kafe rreth 12-16 PLN (€3-4) dhe një biletë tramvaji rreth 5-7 PLN
+  (€1-1.5).
+when: >-
+  Maji-shtatori për ditë të gjata, tavolina jashtë dhe shatërvanin te Hala e Shekullit. Dhjetori ka
+  tregun e Krishtlindjeve në Rynek, një nga më të bukurit në Poloni, por dimri është i ftohtë,
+  shpesh nën zero. Prilli dhe tetori janë më të qetë.
+tips:
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Shmang bankomatet Euronet dhe këmbimin në aeroport. Kartat pranohen pothuajse kudo."
+  - "Shumica e dyqaneve janë të mbyllura të dielën në Poloni; supermarketet e vogla dhe pikat e karburantit zakonisht punojnë."
+faq:
+  - q: "A mund të paguaj me euro në Wrocław?"
+    a: "Rrallë: çmimet janë në zlotë. Karta pranohet pothuajse kudo, edhe për shuma të vogla; për tezgat mbaj pak para në dorë nga një bankomat banke."
+  - q: "Sa ditë duhen për Wrocław?"
+    a: "Dy ditë mjaftojnë për qendrën, Ostrów Tumski, Panoramën dhe Halën e Shekullit. Me një ditë të tretë mund të shkosh në Książ ose në Świdnica."
+  - q: "Sa para duhen në ditë në Wrocław?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimet kryesore janë fjetja dhe biletat e muzeve ose të udhëtimeve ditore."

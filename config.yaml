@@ -346,6 +346,14 @@ links:
       Málaga:       https://www.tiqets.com/en/malaga-attractions-c32/
       Belgrade:     https://www.tiqets.com/en/belgrade-attractions-c76813/
       Bucharest:    https://www.tiqets.com/en/bucharest-attractions-c76753/
+      Heraklion:    https://www.tiqets.com/en/heraklion-attractions-c38/
+      Tel Aviv:     https://www.tiqets.com/en/tel-aviv-attractions-c68635/
+      Cologne:      https://www.tiqets.com/en/cologne-attractions-c64765/
+      Trieste:      https://www.tiqets.com/en/trieste-attractions-c71522/
+      Eindhoven:    https://www.tiqets.com/en/eindhoven-attractions-c75003/
+      Gdańsk:       https://www.tiqets.com/en/gdansk-attractions-c76392/
+      Wrocław:      https://www.tiqets.com/en/
+      Poznań:       https://www.tiqets.com/en/poznan-attractions-c76301/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -390,6 +398,14 @@ links:
       Málaga:       https://www.getyourguide.com/malaga-l402/
       Belgrade:     https://www.getyourguide.com/belgrade-l1688/
       Bucharest:    https://www.getyourguide.com/bucharest-l111/
+      Heraklion:    https://www.getyourguide.com/heraklion-l1806/
+      Tel Aviv:     https://www.getyourguide.com/tel-aviv-l487/
+      Cologne:      https://www.getyourguide.com/cologne-l19/
+      Trieste:      https://www.getyourguide.com/trieste-l1131/
+      Eindhoven:    https://www.getyourguide.com/eindhoven-l32277/
+      Gdańsk:       https://www.getyourguide.com/gdansk-l1960/
+      Wrocław:      https://www.getyourguide.com/wroclaw-l2036/
+      Poznań:       https://www.getyourguide.com/poznan-l1722/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -434,6 +450,14 @@ links:
       Málaga:       https://www.welcomepickups.com/malaga/
       Belgrade:     https://www.welcomepickups.com/belgrade/
       Bucharest:    https://www.welcomepickups.com/bucharest/
+      Heraklion:    https://www.welcomepickups.com/crete/
+      Tel Aviv:     https://www.welcomepickups.com/tel-aviv/
+      Cologne:      https://www.welcomepickups.com/cologne/
+      Trieste:      https://www.welcomepickups.com/
+      Eindhoven:    https://www.welcomepickups.com/eindhoven/
+      Gdańsk:       https://www.welcomepickups.com/gdansk/
+      Wrocław:      https://www.welcomepickups.com/wroclaw/
+      Poznań:       https://www.welcomepickups.com/poznan/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -478,6 +502,14 @@ links:
       Málaga:       https://radicalstorage.com/luggage-storage/malaga
       Belgrade:     https://radicalstorage.com/luggage-storage/belgrade
       Bucharest:    https://radicalstorage.com/luggage-storage/bucharest
+      Heraklion:    https://radicalstorage.com/luggage-storage/heraklion
+      Tel Aviv:     https://radicalstorage.com/luggage-storage/tel-aviv
+      Cologne:      https://radicalstorage.com/luggage-storage/cologne
+      Trieste:      https://radicalstorage.com/luggage-storage/trieste
+      Eindhoven:    https://radicalstorage.com/luggage-storage/eindhoven
+      Gdańsk:       https://radicalstorage.com/luggage-storage/gdansk
+      Wrocław:      https://radicalstorage.com/luggage-storage/wroclaw
+      Poznań:       https://radicalstorage.com/luggage-storage/poznan
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

@@ -1,0 +1,78 @@
+city: Heraklion
+slug: heraklion
+tagline: Knossos, a Venetian fortress and the beaches of Crete
+intro: >-
+  Heraklion is the largest city on Crete and the gateway to the island: here are the Minoan palace
+  of Knossos, one of the most important archaeological museums in Europe and an old centre with
+  Venetian walls, fountains and tavernas. Two days are enough for the city; with a rental car you
+  can discover the rest of Crete.
+sights:
+  - name: Palace of Knossos
+    text: The 3,500-year-old Minoan city, about 5 km south of the centre, with frescoes and reconstructed rooms. Tickets cost about €20 in summer; go when it opens, before the heat and the tour buses.
+  - name: Archaeological Museum
+    text: The largest Minoan collection in the world, with the original frescoes from Knossos and the Phaistos Disc. Tickets about €12.
+  - name: Koules Fortress
+    text: The Venetian fortress at the entrance to the old harbour, with views of the sea and the city from its terrace. Entry about €4; the walk along the breakwater to the lighthouse is free.
+  - name: Old town and Lions Square
+    text: The Morosini Fountain with its four lions, the Venetian Loggia and the church of Agios Titos. 1866 Street nearby is the market for spices, cheese and honey.
+  - name: Venetian walls
+    text: The 16th-century walls still surround the centre, about 4 km in all. On the Martinengo bastion is the grave of the writer Nikos Kazantzakis, with a view over the city.
+  - name: Agios Minas Cathedral
+    text: One of the largest churches in Greece, with precious icons in the small old church right next to it.
+itinerary:
+  - "Knossos early in the morning, then the Archaeological Museum. In the afternoon, Lions Square and the market on 1866 Street, and at sunset a walk along the breakwater to Koules."
+  - "A day in Rethymno: the old Venetian town, the Fortezza fortress and the long beach right next to the centre. Back by KTEL bus in the evening."
+  - "By car or on a tour to the east: Agios Nikolaos, Elounda and the boat to Spinalonga. Otherwise, a beach day in Matala, in the south of the island."
+areas:
+  - name: Old centre
+    text: Around Lions Square, within walking distance of the museum, the harbour and the bus to Knossos. Plenty of apartments and small hotels.
+  - name: Near the harbour
+    text: "Practical if you are going on by ferry or KTEL bus: the main bus station is there. Sea views, but some traffic noise."
+  - name: Amoudara
+    text: A long beach about 6 km west of the centre, linked by city bus. The sea without resort prices.
+  - name: Hersonissos
+    text: The resort and nightlife area, about 25 km east, with direct KTEL buses from the airport.
+food:
+  - name: Dakos
+    text: A barley rusk soaked with grated tomato, mizithra cheese and olive oil, the classic Cretan meze.
+  - name: Bougatsa
+    text: Thin pastry with custard or cheese, eaten for breakfast. The well-known places are near Lions Square.
+  - name: Kalitsounia
+    text: Small pies with fresh cheese and mint, baked or fried.
+  - name: Raki (tsikoudia)
+    text: Grape spirit that many tavernas bring you free at the end of dinner, often with fruit or a dessert.
+transport: >-
+  The old centre is easy to walk. The blue city buses take you to Knossos, to Amoudara beach and to
+  the airport, with tickets for about €1.20-2 from kiosks. For the rest of the island there are the
+  KTEL buses, which leave from the station near the harbour for Rethymno, Chania, Agios Nikolaos and
+  Matala. For beaches and villages away from the main roads, a rental car is the best option.
+daytrips:
+  - name: Rethymno and Chania
+    text: Rethymno is about 1.5 hours by KTEL bus (about €9), Chania about 2.5-3 hours (about €16). Chania is better with an overnight stay.
+  - name: Spinalonga
+    text: The Venetian island fortress, a former leper colony. From Elounda the boat takes about 15 minutes (about €12-15), plus the entry ticket. Agios Nikolaos is about 1.5 hours by bus.
+  - name: Matala and the southern beaches
+    text: The beach with caves carved into the cliff, about 2 hours by bus to the south, near the ruins of the palace of Phaistos.
+budget: >-
+  A gyros in pita costs about €3.50-4.50, a freddo coffee about €3, a dinner in a taverna €15-20 per
+  person. A city bus ticket is about €1.20-2. A simple double room costs from about €50-70 a night
+  out of season and €80-120 in July and August.
+when: >-
+  May to June and September to October have a warm sea and fewer tourists. In July and August
+  temperatures go above 30°C and prices are at their highest. In winter the city stays lively, but
+  many beach hotels and resort tavernas close.
+tips:
+  - "A rental car costs about €25-40 a day out of season and more in summer. Take full insurance, because the mountain roads are narrow. Ask beforehand whether an Albanian driving licence is accepted or an international one is also needed; a credit card is usually required for the deposit."
+  - "The combined ticket for Knossos and the Archaeological Museum saves a little money; buy it online to avoid the queue."
+faq:
+  - q: "Do you need a rental car on Crete?"
+    a: "For the city, Knossos and Rethymno, no, the buses are enough. For the southern beaches, Elafonisi, Balos or the mountain villages, a car saves you a lot of time and often works out cheaper than organised tours."
+  - q: "How much money do you need per day in Heraklion?"
+    a: "Excluding the flight and accommodation, allow €40-60 a day. The biggest costs are entry tickets such as Knossos and the rental car."
+airports:
+  HER: >-
+    Nikos Kazantzakis Airport is about 5 km east of the centre. The blue city buses take you to
+    Eleftherias Square, near Lions Square, and to the harbour in about 15-20 minutes, for about
+    €1.20-2 (cheaper from a kiosk than from the driver). Some KTEL buses stop at the airport for
+    Hersonissos and Malia. A taxi to the centre costs about €15-20 and takes about 15 minutes. The
+    new airport at Kastelli is still under construction and not open.

@@ -1,0 +1,99 @@
+city: Poznań
+name: Posnania
+slug: poznan
+tagline: Le capre dell'orologio, i croissant e la cattedrale più antica della Polonia
+intro: >-
+  Posnania è una delle città più antiche della Polonia, a metà strada tra Berlino e Varsavia: una
+  grande piazza con case colorate, l'isola dove è nato lo stato polacco e una città universitaria
+  con prezzi bassi. Due giorni bastano per il centro, più un giorno per Kórnik, Gniezno o Toruń. La
+  valuta è lo złoty polacco (PLN): €1 vale circa 4,3 PLN.
+sights:
+  - name: Stary Rynek (Piazza del Mercato Vecchio)
+    text: >-
+      Il cuore della città, con strette case colorate e il Municipio rinascimentale al centro. Ogni
+      giorno alle 12:00 due capre meccaniche escono sopra l'orologio del Municipio e si scontrano con
+      le corna 12 volte: arriva qualche minuto prima, perché la piazza si riempie.
+  - name: Museo del Croissant (Rogalowe Muzeum Poznania)
+    text: >-
+      Vicino alla piazza, uno spettacolo di circa 1 ora in cui il croissant di San Martino viene
+      preparato davanti a te. I biglietti costano circa 35-45 PLN (€8-10); gli spettacoli in
+      inglese hanno orari a parte, quindi prenota online.
+  - name: Ostrów Tumski
+    text: >-
+      L'isola sul fiume Warta dove nel 10° secolo fu fondato lo stato polacco. La cattedrale è la
+      più antica della Polonia, con le tombe dei primi re. Oltre il ponte, il centro Porta Posnania
+      racconta la storia del paese.
+  - name: Castello Imperiale (Zamek Cesarski)
+    text: >-
+      Il castello neoromanico costruito nel 1905-1910 per il kaiser Guglielmo II, quando Posnania
+      faceva parte della Prussia. Oggi è un centro culturale con cinema, mostre e caffè.
+  - name: Lago Malta
+    text: >-
+      Un lago artificiale circa 2 km a est del centro, con un percorso di circa 5 km a piedi o in
+      bicicletta. Lì vicino ci sono le piscine Termy Maltańskie e il nuovo zoo.
+  - name: Stary Browar
+    text: Un'ex birreria in mattoni rossi, oggi centro commerciale e d'arte con un parco dietro. Merita per l'architettura.
+itinerary:
+  - "Stary Rynek e le capre alle 12:00, poi il Museo del Croissant. Nel pomeriggio il Castello Imperiale e Stary Browar. La sera cena intorno alla piazza."
+  - "Ostrów Tumski con la cattedrale e Porta Posnania, poi un caffè nel piccolo quartiere di Śródka. Nel pomeriggio il tram fino al Lago Malta per una passeggiata intorno al lago."
+  - "Gita in giornata: Kórnik per mezza giornata, oppure Gniezno o Toruń per l'intera giornata."
+areas:
+  - name: Stare Miasto (Città Vecchia)
+    text: Intorno alla piazza, tutto a piedi. La zona più cara, e le vie dei locali sono rumorose di notte.
+  - name: Centrum
+    text: Tra la piazza e la stazione, intorno a via Święty Marcin, con molti hotel e tram in ogni direzione.
+  - name: Vicino a Poznań Główny
+    text: Intorno alla stazione centrale, comoda per i treni e l'autobus dell'aeroporto, a 15-20 minuti a piedi dalla piazza.
+  - name: Jeżyce
+    text: Un quartiere di vecchi palazzi e buoni caffè, più tranquillo e un po' più economico, con il tram per il centro.
+food:
+  - name: Croissant di San Martino (rogal świętomarciński)
+    text: >-
+      Un grande croissant ripieno di semi di papavero bianco e noci, glassato sopra. Ha la
+      protezione UE; uno costa circa 10-15 PLN (€2,5-3,5).
+  - name: Pyry z gzikiem
+    text: Patate lesse con quark mescolato a cipolla e panna acida, il piatto più semplice della regione.
+  - name: Szare kluski
+    text: Gnocchi di patate lessi, serviti con sugo di carne o pezzi di maiale.
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio, carne o cavolo, bolliti o fritti.
+airports:
+  POZ: >-
+    L'aeroporto di Poznań-Ławica è circa 6 km a ovest del centro. L'autobus 159 impiega circa 25-30
+    minuti fino a Rondo Kaponiera, vicino alla stazione Poznań Główny, e prosegue verso il centro,
+    con un biglietto urbano da circa 5-6 PLN (circa €1,5), dalla macchinetta alla fermata o con la
+    carta a bordo; di notte passa un autobus notturno. Un taxi o Bolt impiega 15-20 minuti e costa
+    circa 30-50 PLN (€7-12).
+transport: >-
+  Il centro si gira a piedi, e i tram arrivano ovunque, anche al Lago Malta. I biglietti sono a
+  tempo: circa 4-6 PLN (€1-1,5) per 15-90 minuti, circa 14 PLN (€3,5) per 24 ore. Si comprano alle
+  macchinette alle fermate, a bordo con la carta o nell'app Jakdojade; il biglietto cartaceo va
+  convalidato appena sali. Bolt e Uber sono economici.
+daytrips:
+  - name: Kórnik
+    text: >-
+      Un castello neogotico in riva a un lago con un grande arboreto, circa 20 km a sud-est. Circa
+      40 minuti di autobus.
+  - name: Gniezno
+    text: >-
+      La prima capitale della Polonia, con la cattedrale dalle porte di bronzo del 12° secolo. Circa
+      30-45 minuti di treno da Poznań Główny.
+  - name: Toruń
+    text: >-
+      La città medievale di Copernico, nella lista UNESCO, famosa per il pan di zenzero (piernik).
+      Circa 1,5-2 ore di treno.
+budget: >-
+  Una birra da mezzo litro in centro costa circa 14-20 PLN (€3,5-5), un piatto di pierogi circa
+  30-45 PLN (€7-10), un caffè circa 12-16 PLN (€3-4) e un biglietto del tram circa 5 PLN (€1).
+when: >-
+  Maggio-settembre per le giornate lunghe e i tavolini all'aperto. L'11 novembre la città festeggia
+  San Martino con una parata e croissant ovunque. L'inverno è freddo, spesso sotto zero.
+tips:
+  - "Controlla il calendario della fiera di Posnania (Międzynarodowe Targi Poznańskie): durante le grandi fiere gli hotel diventano molto più cari."
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone gli euro, rifiuta. Evita i bancomat Euronet."
+  - "La maggior parte dei negozi è chiusa la domenica; aprono solo i piccoli negozi come Żabka."
+faq:
+  - q: "Posnania vale un fine settimana?"
+    a: "Sì: il centro è compatto, i prezzi sono bassi e 2 giorni bastano per la piazza, Ostrów Tumski e il Lago Malta."
+  - q: "Quanto si spende al giorno a Posnania?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno. Cibo e trasporti sono economici; la spesa principale è l'alloggio, soprattutto nei giorni di fiera."

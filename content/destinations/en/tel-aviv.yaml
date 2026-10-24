@@ -1,0 +1,85 @@
+city: Tel Aviv
+slug: tel-aviv
+tagline: Beaches, Bauhaus buildings and the old port of Jaffa
+intro: >-
+  Tel Aviv is Israel's Mediterranean city: about 14 km of sandy beach, a seafront promenade and
+  thousands of white Bauhaus buildings. To the south is old Jaffa, with its port and flea market.
+  Three to four days are enough for the city and a trip to Jerusalem. It is expensive, so plan your
+  budget and the days of Shabbat carefully.
+sights:
+  - name: The beaches and the promenade
+    text: The promenade (Tayelet) runs about 5 km from Tel Aviv Port to Jaffa. Public beaches such as Gordon and Frishman are free, with showers and lifeguards in season.
+  - name: Old Jaffa and the port
+    text: Stone alleys on a hill, the Clock Tower and the fishing port with its restaurants. The flea market (Shuk HaPishpeshim) is liveliest in the morning.
+  - name: Carmel Market
+    text: Fruit, spices, halva and street food. It is open Sunday to Friday, until the afternoon. Next to it, on Tuesdays and Fridays, is the Nahalat Binyamin crafts market.
+  - name: The White City
+    text: Over 4,000 Bauhaus buildings from the 1930s, a UNESCO World Heritage site since 2003. They are best seen on Rothschild Boulevard and around Dizengoff Square.
+  - name: Neve Tzedek
+    text: The first neighbourhood outside Jaffa, from 1887, with low houses, boutiques and cafés. Next to it is HaTachana, the old railway station, now with shops.
+  - name: Tel Aviv Port and Yarkon Park
+    text: The old port (Namal) is now a wooden boardwalk with cafés. Behind it begins the large Yarkon Park, ideal for cycling.
+itinerary:
+  - "The White City: Rothschild Boulevard and Dizengoff Square. In the afternoon Carmel Market and Nahalat Binyamin, then sunset on Gordon Beach."
+  - "Walk along the promenade to Jaffa: the old city, the port and the flea market. In the afternoon Neve Tzedek, in the evening bars in Florentin."
+  - "Jerusalem by train (about 30-40 minutes). Don't plan it for Friday afternoon or Saturday, when the trains don't run."
+  - "Sarona Market in the morning, then in the afternoon cycle through Yarkon Park to Tel Aviv Port."
+areas:
+  - name: Near the beach
+    text: HaYarkon and Ben Yehuda streets, with hotels facing the sea. Expensive, especially in summer.
+  - name: Neve Tzedek and Rothschild
+    text: The most beautiful and central neighbourhoods, with boutique hotels, but with the highest prices.
+  - name: Jaffa
+    text: A special atmosphere and fish restaurants, a little away from the centre but connected by bus.
+  - name: Florentin
+    text: "Graffiti, hostels and nightlife: the cheapest choice, about 15 minutes on foot from Neve Tzedek."
+food:
+  - name: Hummus
+    text: With tahini and warm pita, eaten even for breakfast. Abu Hassan in Jaffa is the best known and closes when the hummus runs out.
+  - name: Falafel and sabich
+    text: "The cheapest street food: sabich is a pita with fried aubergine, egg and tahini, about 25-35 ILS (€7-9)."
+  - name: Shakshuka
+    text: Eggs cooked in a tomato and pepper sauce, the classic dish of an Israeli breakfast.
+  - name: Bourekas
+    text: Pastries filled with cheese or potato, much like Albanian byrek, found everywhere, especially at Carmel Market.
+airports:
+  TLV: >-
+    The Israel Railways station is beneath Terminal 3: trains take you to the Tel Aviv stations
+    (HaHagana, HaShalom, Savidor Center, University) in about 15-20 minutes, for about 14 ILS (about
+    €3.50); you buy the ticket from the station machines, which also take bank cards. Trains don't
+    run during Shabbat, from Friday afternoon to Saturday evening. Then the only option is a taxi
+    from the rank outside arrivals, on the meter, about 150-200 ILS (€40-50) to the centre, with
+    about 25% more at night and during Shabbat.
+transport: >-
+  The centre and the beaches can be covered on foot or with Tel-O-Fun rental bikes. Buses and the
+  Red Line light rail cost about 6 ILS (€1.50) per ride, with a Rav-Kav card or the Moovit app.
+  During Shabbat, from Friday afternoon to Saturday evening, the trains, the light rail and most
+  buses stop; only a few free municipal lines and taxis run, at higher fares.
+daytrips:
+  - name: Jerusalem
+    text: The Old City with the Western Wall and the Church of the Holy Sepulchre. The fast train reaches Yitzhak Navon station in about 30-40 minutes.
+  - name: The Dead Sea
+    text: The lowest point on earth, over 430 m below sea level, where you float without trying. About 1.5-2 hours by car, or on a tour that often includes Masada too.
+  - name: Caesarea
+    text: Herod's Roman port with its theatre and aqueduct by the sea, about 1 hour to the north. Best by car or on a tour.
+  - name: Haifa
+    text: The Bahá'í Gardens on terraces above the bay, free to enter, about 1 hour by train.
+budget: >-
+  One euro is about 3.8-4 ILS. A coffee costs about 14-18 ILS (€3.50-4.50), a main course in a
+  restaurant 70-110 ILS (€18-28), a beer 30-40 ILS (€8-10). A hostel bed costs about 150-250 ILS
+  (€40-65), a simple hotel about 500-800 ILS (€130-210) a night.
+when: >-
+  April to June and September to November, with 22-30°C and a warm sea. July and August go above
+  30°C, with humidity. Winter is mild (about 10-20°C), with rain from December to February. During
+  the Jewish holidays hotels get more expensive; on Yom Kippur the whole country stops, the airport
+  included.
+tips:
+  - "The working week starts on Sunday. On Friday afternoon and Saturday many shops and markets close, but most restaurants and bars stay open."
+  - "Tipping in restaurants is expected, about 10-15%."
+  - "On the way back, get to Ben Gurion about 3 hours before your flight: departure procedures take time."
+  - "Before booking, check the current travel advice for Israel."
+faq:
+  - q: "How do I get from the airport to the city during Shabbat?"
+    a: "With no trains, your options are a taxi (about 150-200 ILS) or a transfer booked in advance. If you can, choose flights that arrive between Sunday and Thursday."
+  - q: "How much money do you need per day in Tel Aviv?"
+    a: "Excluding the flight and accommodation, about €60-90 a day. You save with falafel from the market, the free beaches and getting around on foot."

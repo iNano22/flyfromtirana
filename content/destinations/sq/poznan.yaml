@@ -1,0 +1,97 @@
+city: Poznań
+slug: poznan
+tagline: Dhitë e sahatit, kroasanët dhe katedralja më e vjetër e Polonisë
+intro: >-
+  Poznań është një nga qytetet më të vjetra të Polonisë, në gjysmë të rrugës mes Berlinit dhe
+  Varshavës: një shesh i madh me shtëpi shumëngjyrëshe, ishulli ku lindi shteti polak dhe një qytet
+  studentësh me çmime të ulëta. Dy ditë mjaftojnë për qendrën, plus një ditë për Kórnik, Gniezno
+  ose Toruń. Monedha është zloti polak (PLN): €1 është rreth 4.3 PLN.
+sights:
+  - name: Stary Rynek (Sheshi i Vjetër i Tregut)
+    text: >-
+      Zemra e qytetit, me shtëpi të ngushta shumëngjyrëshe dhe Bashkinë e Rilindjes në mes. Çdo
+      ditë në orën 12:00 dy dhi mekanike dalin mbi sahatin e Bashkisë dhe përplasin brirët 12 herë:
+      eja disa minuta më herët, se sheshi mbushet.
+  - name: Muzeu i Kroasanit (Rogalowe Muzeum Poznania)
+    text: >-
+      Pranë sheshit, një shfaqje rreth 1 orë ku piqet para teje kroasani i Shën Martinit. Biletat
+      kushtojnë rreth 35-45 PLN (€8-10); shfaqjet në anglisht kanë orar më vete, ndaj rezervo online.
+  - name: Ostrów Tumski
+    text: >-
+      Ishulli në lumin Warta ku në shekullin e 10-të u themelua shteti polak. Katedralja është më e
+      vjetra në Poloni, me varret e mbretërve të parë. Përtej urës, qendra Porta Posnania tregon
+      historinë e vendit.
+  - name: Kështjella Perandorake (Zamek Cesarski)
+    text: >-
+      Kështjella neoromane e ndërtuar në 1905-1910 për kajzerin Wilhelm II, kur Poznań ishte pjesë e
+      Prusisë. Sot është qendër kulturore me kinema, ekspozita dhe kafene.
+  - name: Liqeni Malta
+    text: >-
+      Liqen artificial rreth 2 km në lindje të qendrës, me shteg rreth 5 km për ecje ose biçikletë.
+      Afër janë pishinat Termy Maltańskie dhe kopshti zoologjik i ri.
+  - name: Stary Browar
+    text: Ish-birrari me tulla të kuqe, sot qendër tregtare dhe arti me një park pas saj. Ia vlen për arkitekturën.
+itinerary:
+  - "Stary Rynek dhe dhitë në orën 12:00, pastaj Muzeu i Kroasanit. Pasdite Kështjella Perandorake dhe Stary Browar. Në mbrëmje darkë rreth sheshit."
+  - "Ostrów Tumski me katedralen dhe Porta Posnania, pastaj kafe në lagjen e vogël Śródka. Pasdite me tramvaj te Liqeni Malta për një xhiro rreth liqenit."
+  - "Udhëtim ditor: Kórnik për gjysmë dite, ose Gniezno ose Toruń për gjithë ditën."
+areas:
+  - name: Stare Miasto (Qyteti i Vjetër)
+    text: Rreth sheshit, çdo gjë në këmbë. Më i shtrenjti, dhe rrugët e bareve janë të zhurmshme natën.
+  - name: Centrum
+    text: Mes sheshit dhe stacionit, rreth rrugës Święty Marcin, me shumë hotele dhe tramvaje në çdo drejtim.
+  - name: Pranë Poznań Główny
+    text: Rreth stacionit qendror, praktike për trenat dhe autobusin e aeroportit, 15-20 minuta në këmbë nga sheshi.
+  - name: Jeżyce
+    text: Lagje me ndërtesa të vjetra dhe kafene të mira, më e qetë dhe pak më e lirë, me tramvaj për në qendër.
+food:
+  - name: Kroasani i Shën Martinit (rogal świętomarciński)
+    text: >-
+      Kroasan i madh me mbushje me lulëkuqe të bardhë dhe arra, me glazurë sipër. Ka mbrojtje të
+      BE-së; një copë kushton rreth 10-15 PLN (€2.5-3.5).
+  - name: Pyry z gzikiem
+    text: Patate të ziera me gjizë të përzier me qepë dhe kosë, pjata më e thjeshtë e rajonit.
+  - name: Szare kluski
+    text: Petulla patateje të ziera, që shërbehen me salcë mishi ose me copa derri.
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë, mish ose lakër, i zier ose i skuqur.
+airports:
+  POZ: >-
+    Aeroporti Poznań-Ławica është rreth 6 km në perëndim të qendrës. Autobusi 159 bën rreth 25-30
+    minuta deri te Rondo Kaponiera, pranë stacionit Poznań Główny, dhe vazhdon drejt qendrës, me
+    biletë qyteti rreth 5-6 PLN (rreth €1.5), nga makina në stacion ose me kartë brenda autobusit;
+    natën kalon një autobus nate. Taksia ose Bolt bëjnë 15-20 minuta dhe kushtojnë rreth 30-50 PLN
+    (€7-12).
+transport: >-
+  Qendra përshkohet në këmbë, dhe tramvajet arrijnë kudo, edhe te Liqeni Malta. Biletat kanë kohë:
+  rreth 4-6 PLN (€1-1.5) për 15-90 minuta, rreth 14 PLN (€3.5) për 24 orë. Blihen në makinat në
+  stacione, brenda mjetit me kartë ose në aplikacionin Jakdojade; bileta prej letre vuloset sapo
+  hip. Bolt dhe Uber janë të lira.
+daytrips:
+  - name: Kórnik
+    text: >-
+      Kështjellë neogotike buzë liqenit me një arboretum të madh, rreth 20 km në juglindje. Rreth 40
+      minuta me autobus.
+  - name: Gniezno
+    text: >-
+      Kryeqyteti i parë i Polonisë, me katedralen e dyerve prej bronzi të shekullit të 12-të. Rreth
+      30-45 minuta me tren nga Poznań Główny.
+  - name: Toruń
+    text: >-
+      Qyteti mesjetar i Kopernikut, në listën e UNESCO-s, i njohur për bukën me xhenxhefil
+      (piernik). Rreth 1.5-2 orë me tren.
+budget: >-
+  Një birrë gjysmëlitërshe në qendër kushton rreth 14-20 PLN (€3.5-5), një pjatë pierogi rreth
+  30-45 PLN (€7-10), një kafe rreth 12-16 PLN (€3-4) dhe një biletë tramvaji rreth 5 PLN (€1).
+when: >-
+  Maji-shtatori për ditë të gjata dhe tavolina jashtë. Më 11 nëntor qyteti feston Ditën e Shën
+  Martinit me paradë dhe kroasanë kudo. Dimri është i ftohtë, shpesh nën zero.
+tips:
+  - "Kontrollo kalendarin e panairit të Poznań (Międzynarodowe Targi Poznańskie): gjatë panaireve të mëdha hotelet shtrenjtohen shumë."
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje. Shmang bankomatet Euronet."
+  - "Shumica e dyqaneve janë mbyllur të dielën; hapen vetëm dyqanet e vogla si Żabka."
+faq:
+  - q: "A ia vlen Poznań për një fundjavë?"
+    a: "Po: qendra është kompakte, çmimet janë të ulëta dhe 2 ditë mjaftojnë për sheshin, Ostrów Tumski dhe Liqenin Malta."
+  - q: "Sa para duhen në ditë në Poznań?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimi kryesor është fjetja, sidomos në ditët e panairit."

@@ -1,0 +1,80 @@
+city: Trieste
+slug: trieste
+tagline: Historic cafés, the sea and the bora wind
+intro: >-
+  For centuries Trieste was the main port of the Austro-Hungarian Empire, and it shows everywhere:
+  Viennese palaces, literary cafés and a huge square that opens onto the sea. The centre is easy to
+  walk, prices are lower than in Venice, and Slovenia is right next door. Two or three days are enough.
+sights:
+  - name: Piazza Unità d'Italia
+    text: The main square, one of the largest in Europe facing the sea. In the evening walk to the end of Molo Audace, the pier opposite the square.
+  - name: Miramare Castle
+    text: The white castle by the sea that Maximilian of Habsburg built in 1856-1860. The rooms can be visited with a ticket (about €12-14); the park is free.
+  - name: San Giusto
+    text: The hill above the old town, with the cathedral and the castle. On the way up you pass the Roman Theatre.
+  - name: Canal Grande
+    text: The canal of the Borgo Teresiano district, with the Serbian Orthodox church of San Spiridione close by and the statue of James Joyce on the Ponterosso bridge.
+  - name: The historic cafés
+    text: Caffè San Marco (1914), Caffè degli Specchi (1839) on Piazza Unità and Caffè Tommaseo (1830), the oldest.
+  - name: Barcola
+    text: The seafront promenade towards Miramare, where in summer the locals swim and sunbathe for free.
+  - name: Risiera di San Sabba
+    text: The only Nazi camp in Italy with a crematorium, today a memorial museum with free entry.
+airports:
+  TRS: >-
+    The airport is in Ronchi dei Legionari, about 35 km from the city. A covered bridge takes you to
+    Trieste Airport station, from where the regional train goes to Trieste Centrale in about 30-35
+    minutes (about €4-5), usually 1-2 times an hour. APT bus 51 goes to near Centrale in about 1
+    hour (about €4-5). A taxi costs about €60-80 and takes about 35-40 minutes.
+budget: >-
+  A coffee at the bar costs about €1.30, a dish at a buffet €12-18, a bus ticket about €1.50. A
+  double room in a simple hotel costs from about €80-120 a night.
+when: >-
+  May to June and September, with the sea warm enough to swim. From November to March the bora often
+  blows, a cold wind that can exceed 100 km/h: bring a windproof jacket. On the second Sunday of
+  October the Barcolana regatta takes place and the hotels fill up.
+tips:
+  - "Coffee has its own names here: «un nero» is an espresso, «un capo» is a macchiato and «capo in b» is a macchiato in a glass."
+  - "For lunch try a «buffet», a simple eatery serving boiled pork, mustard and horseradish. Buffet da Pepi is the best known."
+  - "In the Karst look for «osmize»: farms that for a few days a year sell their own wine and cheese. You spot them by the green branch hung by the road."
+  - "When the bora blows, walk on the sheltered side of the street and leave your umbrella at the hotel: the wind breaks it at once."
+itinerary:
+  - "Piazza Unità d'Italia and Molo Audace, coffee at Caffè degli Specchi. In the afternoon the Canal Grande and San Spiridione, in the evening dinner in Cavana."
+  - "San Giusto, with the cathedral, the castle and the Roman Theatre. In the afternoon Caffè San Marco and the Risiera di San Sabba."
+  - "Along Barcola to Miramare Castle (about 1.5 hours on foot, or bus 6). In the afternoon a swim in summer, or the Grotta Gigante."
+areas:
+  - name: Borgo Teresiano
+    text: The district around the Canal Grande, between the station and Piazza Unità, within walking distance of everything.
+  - name: Città Vecchia and Cavana
+    text: The old town below San Giusto, with bars and restaurants, but noisy at night.
+  - name: Near Stazione Centrale
+    text: "The most practical area: the train from the airport arrives here. Cheaper hotels, 10-15 minutes on foot from the centre."
+food:
+  - name: Buffet triestino
+    text: Boiled pork with sauerkraut, mustard and horseradish, an Austrian legacy.
+  - name: Jota
+    text: A thick soup of beans, sauerkraut and potatoes.
+  - name: Sardoni impanai
+    text: Breaded and fried anchovies, a classic snack with a glass of wine.
+  - name: Presnitz
+    text: A pastry filled with walnuts and raisins.
+transport: >-
+  The centre is easy to walk. Trieste Trasporti buses take you to Barcola, Miramare and Opicina; a
+  ticket costs about €1.50 and is valid for about 60 minutes, while a day ticket costs about €5. The
+  Delfino Verde boats go to Muggia in about 30 minutes.
+daytrips:
+  - name: Grotta Gigante
+    text: A giant cave in the Karst, with a guided visit of about 1 hour (about €15). It can be reached by bus 42 in about 30 minutes.
+  - name: Piran
+    text: The Venetian town on the Slovenian coast, about 1-1.5 hours by bus.
+  - name: Ljubljana
+    text: The capital of Slovenia, about 1.5-2 hours by bus (about €10-20).
+  - name: Venice
+    text: About 2 hours by regional train (about €13-14).
+faq:
+  - q: "Train or bus from the airport?"
+    a: "The train is faster, about 30-35 minutes. Bus 51 costs the same and takes about 1 hour, but runs along the coast. Both arrive near the central station."
+  - q: "Can I go to Slovenia for a day?"
+    a: "Yes, Italy and Slovenia are in Schengen, and Piran or Ljubljana are 1-2 hours away. Always carry your passport: there are checks at the border from time to time."
+  - q: "How much money do you need per day in Trieste?"
+    a: "Excluding the flight and accommodation, €40-70 a day. Coffee and the buffets are cheap, while the squares, Barcola and the Miramare park are free."

@@ -1,0 +1,85 @@
+city: Tel Aviv
+slug: tel-aviv
+tagline: Plazhe, ndërtesa Bauhaus dhe porti i vjetër i Jaffa-s
+intro: >-
+  Tel Aviv është qyteti mesdhetar i Izraelit: rreth 14 km plazh me rërë, një shëtitore buzë detit
+  dhe mijëra ndërtesa të bardha Bauhaus. Në jug është Jaffa e vjetër, me portin dhe tregun e
+  antikave. Tri-katër ditë mjaftojnë për qytetin dhe një udhëtim në Jerusalem. Është i shtrenjtë,
+  ndaj llogarit mirë buxhetin dhe ditët e Shabatit.
+sights:
+  - name: Plazhet dhe shëtitorja
+    text: Shëtitorja (Tayelet) shkon rreth 5 km nga Porti i Tel Aviv-it deri në Jaffa. Plazhet publike si Gordon dhe Frishman janë falas, me dushe dhe roje bregdetare në sezon.
+  - name: Jaffa e vjetër dhe porti
+    text: Rrugica guri mbi kodër, Kulla e Sahatit dhe porti i peshkatarëve me restorante. Tregu i antikave (Shuk HaPishpeshim) është më i gjallë në mëngjes.
+  - name: Tregu Carmel
+    text: Fruta, erëza, hallvë dhe ushqim rruge. Hapet nga e diela në të premte, deri pasdite. Ngjitur, të martën dhe të premten, është tregu i artizanatit Nahalat Binyamin.
+  - name: Qyteti i Bardhë (White City)
+    text: Mbi 4.000 ndërtesa Bauhaus të viteve 1930, pasuri e UNESCO-s që nga viti 2003. Shihen më mirë në bulevardin Rothschild dhe rreth sheshit Dizengoff.
+  - name: Neve Tzedek
+    text: Lagjja e parë jashtë Jaffa-s, e vitit 1887, me shtëpi të ulëta, butikë dhe kafene. Pranë saj HaTachana, stacioni i vjetër i trenit, sot me dyqane.
+  - name: Porti i Tel Aviv-it dhe parku Yarkon
+    text: Porti i vjetër (Namal) është sot shëtitore druri me kafene. Pas tij nis parku i madh Yarkon, ideal për biçikletë.
+itinerary:
+  - "Qyteti i Bardhë: bulevardi Rothschild dhe sheshi Dizengoff. Pasdite Tregu Carmel dhe Nahalat Binyamin, perëndimi i diellit në plazhin Gordon."
+  - "Ec në shëtitore deri në Jaffa: qyteti i vjetër, porti dhe tregu i antikave. Pasdite Neve Tzedek, në mbrëmje bare në Florentin."
+  - "Jerusalem me tren (rreth 30-40 minuta). Mos e planifiko të premten pasdite ose të shtunën, kur trenat nuk punojnë."
+  - "Sarona Market në mëngjes, pasdite me biçikletë në parkun Yarkon deri te Porti i Tel Aviv-it."
+areas:
+  - name: Pranë plazhit
+    text: Rrugët HaYarkon dhe Ben Yehuda, me hotele përballë detit. Të shtrenjta, sidomos në verë.
+  - name: Neve Tzedek dhe Rothschild
+    text: Lagjet më të bukura dhe qendrore, me hotele butik, por me çmimet më të larta.
+  - name: Jaffa
+    text: Atmosferë e veçantë dhe restorante peshku, pak larg qendrës, por e lidhur me autobus.
+  - name: Florentin
+    text: "Grafite, hostele dhe jetë nate: zgjedhja më e lirë, rreth 15 minuta në këmbë nga Neve Tzedek."
+food:
+  - name: Humus
+    text: Me tahini dhe pita të ngrohtë, hahet edhe për mëngjes. Abu Hassan në Jaffa është më i njohuri dhe mbyll kur mbaron humusi.
+  - name: Falafel dhe sabich
+    text: "Ushqimi më i lirë i rrugës: sabich është pita me patëllxhan të skuqur, vezë dhe tahini, rreth 25-35 ILS (€7-9)."
+  - name: Shakshuka
+    text: Vezë të gatuara në salcë domatesh me speca, pjata klasike e mëngjesit izraelit.
+  - name: Bourekas
+    text: Byrekë me djathë ose patate, si tanët, që gjenden kudo, sidomos te Tregu Carmel.
+airports:
+  TLV: >-
+    Stacioni i trenit Israel Railways është nën Terminalin 3: trenat të çojnë në stacionet e Tel
+    Aviv-it (HaHagana, HaShalom, Savidor Center, University) për rreth 15-20 minuta, me rreth 14 ILS
+    (rreth €3.50); bileta blihet në makinat e stacionit, edhe me kartë bankare. Trenat nuk punojnë
+    gjatë Shabatit, nga e premtja pasdite deri të shtunën në mbrëmje. Atëherë mbetet taksia nga
+    radha para mbërritjeve, me taksimetër, rreth 150-200 ILS (€40-50) deri në qendër, me rreth 25%
+    më shumë natën dhe gjatë Shabatit.
+transport: >-
+  Qendra dhe plazhet përshkohen në këmbë ose me biçikletat me qira Tel-O-Fun. Autobusët dhe linja e
+  kuqe e tramvajit (Red Line) kushtojnë rreth 6 ILS (€1.50) për udhëtim, me kartën Rav-Kav ose me
+  aplikacionin Moovit. Gjatë Shabatit, nga e premtja pasdite deri të shtunën në mbrëmje, trenat,
+  tramvaji dhe shumica e autobusëve ndalojnë; punojnë vetëm disa linja falas të bashkisë dhe
+  taksitë, më shtrenjtë.
+daytrips:
+  - name: Jerusalem
+    text: Qyteti i Vjetër me Murin Perëndimor dhe Kishën e Varrit të Shenjtë. Treni i shpejtë arrin në stacionin Yitzhak Navon për rreth 30-40 minuta.
+  - name: Deti i Vdekur
+    text: Pika më e ulët në tokë, mbi 430 m nën nivelin e detit, ku pluskon pa u përpjekur. Rreth 1.5-2 orë me makinë, ose me tur që shpesh përfshin edhe Masadën.
+  - name: Caesarea
+    text: Porti romak i Herodit me teatrin dhe ujësjellësin buzë detit, rreth 1 orë në veri. Më mirë me makinë ose me tur.
+  - name: Haifa
+    text: Kopshtet Bahá'í në tarraca mbi gjirin, me hyrje falas, rreth 1 orë me tren.
+budget: >-
+  Një euro është rreth 3.8-4 ILS. Një kafe kushton rreth 14-18 ILS (€3.50-4.50), një pjatë në
+  restorant 70-110 ILS (€18-28), një birrë 30-40 ILS (€8-10). Një shtrat në hostel kushton rreth
+  150-250 ILS (€40-65), një hotel i thjeshtë rreth 500-800 ILS (€130-210) nata.
+when: >-
+  Prilli-qershori dhe shtatori-nëntori, me 22-30°C dhe det të ngrohtë. Korriku dhe gushti kalojnë
+  30°C, me lagështi. Dimri është i butë (rreth 10-20°C), me shi nga dhjetori në shkurt. Në festat
+  hebraike hotelet shtrenjtohen; në Yom Kippur ndalon gjithë vendi, edhe aeroporti.
+tips:
+  - "Java e punës nis të dielën. Të premten pasdite dhe të shtunën shumë dyqane e tregje mbyllen, por shumica e restoranteve dhe bareve mbeten të hapura."
+  - "Bakshishi në restorant pritet, rreth 10-15%."
+  - "Për kthim, arrij në Ben Gurion rreth 3 orë para fluturimit: procedurat e nisjes zgjasin."
+  - "Para se të rezervosh, shiko këshillat aktuale të udhëtimit për Izraelin."
+faq:
+  - q: "Si shkoj nga aeroporti në qytet gjatë Shabatit?"
+    a: "Pa trena, mbetet taksia (rreth 150-200 ILS) ose një transfertë e rezervuar përpara. Nëse mundesh, zgjidh fluturime që mbërrijnë nga e diela në të enjten."
+  - q: "Sa para duhen në ditë në Tel Aviv?"
+    a: "Pa fluturimin dhe fjetjen, rreth €60-90 në ditë. Kursen me falafel nga tregu, me plazhet falas dhe duke ecur në këmbë."
