@@ -154,13 +154,15 @@ class Scene:
                                       box=(left, top, left + crop_width, top + crop_height))
 
 
-def placed(layer: Layer, t: float) -> tuple[Image.Image, int, int, Image.Image] | None:
+def placed(layer: Layer, t: float, entrances: dict[str, tuple[float, str]] | None = None
+           ) -> tuple[Image.Image, int, int, Image.Image] | None:
     """How a layer shows at t: (picture, x, y, its see-through mask), or None before it comes in.
 
     The ways in: "fade" (appears), "slide" (from the left), "rise" (from a little lower),
     "pop" (from bigger, overshooting a little) and "slap" (like "pop", from much bigger).
+    entrances: when and how each layer comes in, by name (ENTRANCES when not given).
     """
-    start, how = ENTRANCES.get(layer.name, (0.0, "fade"))
+    start, how = (ENTRANCES if entrances is None else entrances).get(layer.name, (0.0, "fade"))
     progress = (t - start) / COME_IN
     if progress <= 0:
         return None
@@ -246,8 +248,9 @@ def closing_card(*, brand: str, address: str, telegram: str) -> Image.Image:
 # --- the video file --------------------------------------------------------------------------
 
 def encode(frames: Iterable[Image.Image], out: Path, *, ffmpeg: str, fps: int,
-           music: tuple[Path, float] | None) -> None:
-    """Hand the frames to ffmpeg, which writes them as an MP4 with the music (or silence) under them."""
+           music: tuple[Path, float] | None, seconds: float = SECONDS) -> None:
+    """Hand the frames to ffmpeg, which writes them as an MP4 with the music (or silence) under them.
+    seconds: how long the video is (the ads' video is longer than a deal's Reel)."""
     if music:
         track, start = music
         sound = ["-ss", f"{start:g}", "-i", str(track)]
@@ -263,9 +266,9 @@ def encode(frames: Iterable[Image.Image], out: Path, *, ffmpeg: str, fps: int,
         # index at the start of the file so it can be read while it downloads.
         "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-profile:v", "high",
         "-g", str(fps * 2),
-        "-af", f"afade=t=in:d=0.3,afade=t=out:st={SECONDS - 1.5:g}:d=1.5",
+        "-af", f"afade=t=in:d=0.3,afade=t=out:st={seconds - 1.5:g}:d=1.5",
         "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
-        "-t", f"{SECONDS:g}", "-movflags", "+faststart", str(out),
+        "-t", f"{seconds:g}", "-movflags", "+faststart", str(out),
     ]
     process = subprocess.Popen(command, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
     try:

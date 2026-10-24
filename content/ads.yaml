@@ -1,0 +1,149 @@
+# The paid Facebook/Instagram ads (scripts/ad_kit.py draws them and writes their texts and links).
+#
+# `campaign` becomes utm_campaign on every link: change it when you start a new campaign in
+# Ads Manager, so Google Analytics keeps the two apart. Each ad's `name` becomes utm_content
+# and the pictures' file names.
+#
+# Evergreen on purpose: no prices and no dates, on the pictures or in the texts, so an ad
+# never shows a price that is gone. These words are filled in from config.yaml, so they
+# stay true when the config changes: {CITIES} (how many cities we check), {ROUTES} (how
+# many routes), {RUN_EVERY} ("3 orë"), {LOOKAHEAD_DAYS} (how far ahead), {CHANNEL}
+# ("t.me/flyfromtirana").
+#
+# `card` names the picture's drawer in src/ad_cards.py (card: video is the 12-second video of
+# src/ad_video.py instead, its four scenes under hook, cities, steps and end); the other keys at the top are what
+# the picture shows (photos are airport codes: assets/telegram/<code>.jpg). A headline is
+# a list of lines. No emoji on the pictures (the fonts have none); in the texts, fine.
+# `page` is where the ad leads: "" is the Albanian main page, "milan" a city page.
+# `meta` is what goes in Ads Manager's boxes: primary_text (above the picture: keep the
+# first ~125 characters strong, the rest hides behind "...more"), headline (under the
+# picture, ~40 characters), description (under the headline, often hidden) and button.
+
+campaign: launch-2026-10
+
+ads:
+  - name: photo-cheap
+    card: photo
+    photo: MXP
+    kicker: "NGA RINASI"
+    headline: ["BILETA TË LIRA", "NGA TIRANA"]
+    sub: "Kontrollojmë çmimet për {CITIES} qytete çdo {RUN_EVERY}. Ti merr vetëm ofertat."
+    sticker: "FALAS"
+    page: ""
+    meta:
+      primary_text: |
+        ✈️ Mos e paguaj shtrenjtë fundjavën e radhës.
+
+        Çdo {RUN_EVERY} kontrollojmë çmimet e fluturimeve nga Tirana për {CITIES} qytete dhe postojmë vetëm ato që janë vërtet më të lira se zakonisht, me datat dhe linkun e rezervimit.
+
+        🔔 Falas, në faqe dhe në Telegram.
+      headline: "Fluturime të lira nga Tirana"
+      description: "Ofertat e ditës, falas"
+      button: "Learn more (Mëso më shumë)"
+
+  - name: mosaic-cities
+    card: mosaic
+    sticker: "{CITIES} QYTETE"
+    tiles:
+      - { photo: MXP, city: Milan }
+      - { photo: FCO, city: Rome }
+      - { photo: STN, city: London }
+      - { photo: CDG, city: Paris }
+      - { photo: BCN, city: Barcelona }
+      - { photo: VIE, city: Vienna }
+    headline: ["NGA TIRANA,", "KU TË DUASH"]
+    sub: "Çmimi më i lirë për çdo destinacion, i kontrolluar çdo {RUN_EVERY}."
+    page: ""
+    meta:
+      primary_text: |
+        Milano, Romë, Londër, Paris, Barcelonë, Vjenë… gjithsej {CITIES} qytete nga Rinasi. 🌍
+
+        Në një faqe sheh çmimin më të lirë për secilin, për {LOOKAHEAD_DAYS} ditët e ardhshme. Pa kërkuar faqe më faqe.
+      headline: "Çmimi më i lirë për çdo qytet"
+      description: "flyfromtirana.al"
+      button: "Learn more (Mëso më shumë)"
+
+  - name: steps-how
+    card: steps
+    photo: BCN
+    kicker: "SI FUNKSIONON"
+    headline: ["NE KËRKOJMË,", "TI UDHËTON"]
+    rows:
+      - { figure: "ÇDO {RUN_EVERY}", text: "kontrollojmë {ROUTES} linja nga Tirana, {LOOKAHEAD_DAYS} ditë përpara" }
+      - { figure: "NËN ÇMIMIN E ZAKONSHËM", text: "vetëm atëherë e quajmë ofertë dhe e postojmë" }
+      - { figure: "FALAS", text: "datat, kompania dhe linku i rezervimit, në Telegram" }
+    pill: "FALAS NË TELEGRAM"
+    page: ""
+    meta:
+      primary_text: |
+        Çmimet e lira të biletave zgjasin pak orë. 🕐
+
+        Ne i kontrollojmë çdo {RUN_EVERY} për {CITIES} qytete nga Tirana dhe të lajmërojmë kur një çmim bie nën të zakonshmin. Ti vetëm zgjidh ku do të shkosh.
+      headline: "Ne kërkojmë, ti udhëton"
+      description: "Ofertat falas në Telegram"
+      button: "Learn more (Mëso më shumë)"
+
+  - name: phone-telegram
+    card: phone
+    photo: VIE
+    kicker: "TELEGRAM  ·  FALAS"
+    headline: ["ÇDO OFERTË", "NË TELEFON"]
+    note: "Shembull postimi"
+    members: "kanal publik · falas"
+    sample:
+      photo: BGY
+      time: "08:17"
+      lines:
+        - "TIRANA → MILAN (Bergamo)"
+        - "nga €14 one way"
+        - "-35% · zakonisht ~€21"
+        - "Wizz Air · direkt · 1 orë 55 min"
+        - "Kthimi nga €14"
+        - "Rezervo tani →"
+    page: ""
+    meta:
+      primary_text: |
+        📲 Ofertat e fluturimeve nga Tirana, direkt në telefon.
+
+        Kanali ynë falas në Telegram poston çdo ofertë të re me datat, kompaninë dhe linkun e rezervimit. Hyr, shiko, rezervo. Pa spam.
+      headline: "Ofertat falas në Telegram"
+      description: "{CHANNEL}"
+      button: "Learn more (Mëso më shumë)"
+
+  - name: video-reel
+    card: video
+    music: upbeat-v4-bombinsound.m4a     # a track from assets/music (credits.json); empty = the first one
+    hook:
+      photo: MXP
+      kicker: "NGA RINASI"
+      headline: ["BILETA TË LIRA", "NGA TIRANA"]
+      sub: "Ofertat më të lira, çdo ditë, falas."
+    cities:
+      sticker: "{CITIES} QYTETE"
+      headline: ["NGA TIRANA,", "KU TË DUASH"]
+      tiles:
+        - { photo: MXP, city: Milan }
+        - { photo: FCO, city: Rome }
+        - { photo: STN, city: London }
+        - { photo: CDG, city: Paris }
+        - { photo: BCN, city: Barcelona }
+        - { photo: VIE, city: Vienna }
+    steps:
+      photo: BCN
+      rows:
+        - { figure: "ÇDO {RUN_EVERY}", text: "kontrollojmë çmimet e {ROUTES} linjave" }
+        - { figure: "NËN ÇMIMIN E ZAKONSHËM", text: "vetëm atëherë e quajmë ofertë" }
+        - { figure: "FALAS", text: "datat dhe linku i rezervimit, në Telegram" }
+    end:
+      headline: ["OFERTAT FALAS", "NË TELEGRAM"]
+      line: "Dhe të gjitha çmimet në faqe."
+      button: "SHIKO OFERTAT"
+    page: ""
+    meta:
+      primary_text: |
+        ✈️ Bileta të lira nga Tirana për {CITIES} qytete.
+
+        Kontrollojmë çmimet çdo {RUN_EVERY} dhe postojmë vetëm ofertat e vërteta, me datat dhe linkun e rezervimit. Falas, në faqe dhe në Telegram.
+      headline: "Fluturime të lira nga Tirana"
+      description: "Ofertat e ditës, falas"
+      button: "Learn more (Mëso më shumë)"

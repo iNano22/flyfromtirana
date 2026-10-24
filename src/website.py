@@ -48,6 +48,7 @@ from zoneinfo import ZoneInfo
 
 from dotenv import load_dotenv
 
+from src.ads import UTM_SOURCE
 from src.config import DEFAULT_CONFIG_PATH, PROJECT_ROOT, Config, ConfigError, Route, load_config
 from src.deals import Deal, cheapest_return, deal_reason, early_access_cutoff, is_premium_only
 from src.formatter import WORDS, build_values, format_dates, format_price, load_template, render
@@ -309,6 +310,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["HREFLANG"] = hreflang_links(config)
     values["JS_WORDS"] = script_words(strings)
     values["ANALYTICS"] = analytics_html(config, language, privacy_url(config, language, root))
+    values["ADS"] = ads_html(config)
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site.html", strings), values) + "\n"
 
@@ -600,6 +602,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values["LANG_LINKS"] = language_links(config, language, root, guide.slug)
     values["HREFLANG"] = hreflang_links(config, guide.slug)
     values["ANALYTICS"] = analytics_html(config, language, privacy_url(config, language, root))
+    values["ADS"] = ads_html(config)
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site_dest.html", strings), values) + "\n"
 
@@ -681,6 +684,7 @@ def render_privacy(config: Config, links: LinkBuilder, *, now: datetime, languag
     values["LANG_LINKS"] = language_links(config, language, root, PRIVACY_SLUG)
     values["HREFLANG"] = hreflang_links(config, PRIVACY_SLUG)
     values["ANALYTICS"] = analytics_html(config, language, "./")   # the cookie box's link: this same page
+    values["ADS"] = ads_html(config)
     return render(load_site_template("site_privacy.html", strings), values) + "\n"
 
 
@@ -721,6 +725,17 @@ def analytics_html(config: Config, language: str | None = None, privacy: str | N
               "PRIVACY_URL": html.escape(privacy, quote=True) if privacy else None}
     strings = load_strings(language or config.website.languages[0])
     return render(load_site_template("site_analytics.html", strings), values)
+
+
+def ads_html(config: Config) -> str | None:
+    """The switch to the ads' invite link (templates/site_ads.html), or None when
+    invite_links.meta_ads is not set."""
+    ads_link = config.invite_links.get("meta_ads")
+    if not ads_link:
+        return None
+    values = {"WEBSITE_TG": json.dumps(join_link(config, "website")), "ADS_TG": json.dumps(ads_link),
+              "ADS_SOURCE": json.dumps(UTM_SOURCE)}
+    return render(load_site_template("site_ads.html"), values)
 
 
 def drive_html(config: Config) -> str | None:

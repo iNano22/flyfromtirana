@@ -1,0 +1,21 @@
+<!-- Visitors who came from a paid Facebook/Instagram ad (src/ads.py). An ad's link ends with
+     ?utm_source=meta&...; this notes that in the browser for the rest of the visit
+     (sessionStorage "from-ad") and points the page's Telegram buttons at the ads' own invite
+     link, so the weekly report can count the members the ads brought. WEBSITE_TG and ADS_TG are
+     the website's and the ads' invite links, ADS_SOURCE the utm_source value, all three as JS
+     strings with their quotes. This block is only put on a page when invite_links.meta_ads is set.
+     Same rules as the other templates: never write an uppercase word in curly braces unless it
+     is a value, never two opening square brackets in a row, JS variable names lowercase. -->
+<script>
+(function () {
+  var websiteLink = {WEBSITE_TG}, adsLink = {ADS_TG}, source = {ADS_SOURCE};
+  var fromAd = new URLSearchParams(location.search).get('utm_source') === source;
+  try {
+    if (fromAd) { sessionStorage.setItem('from-ad', '1'); } else { fromAd = sessionStorage.getItem('from-ad') === '1'; }
+  } catch (e) { /* storage blocked: only the page the ad opened gets the ads' link */ }
+  if (!fromAd) { return; }
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    if (link.getAttribute('href') === websiteLink) { link.setAttribute('href', adsLink); }
+  });
+})();
+</script>

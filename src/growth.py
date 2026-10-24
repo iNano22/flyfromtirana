@@ -52,6 +52,7 @@ SOURCE_LABELS = {
     "facebook": "📘 Facebook",
     "website": "🌐 Faqja",
     "whatsapp": "💬 WhatsApp",
+    "meta_ads": "📣 Reklamat në Facebook/Instagram",
     "": "🔗 Pa linkun tonë (adresa publike, kërkimi, postime të përcjella)",
 }
 MEMBER_STATUSES = ("creator", "administrator", "member")

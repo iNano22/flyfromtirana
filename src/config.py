@@ -123,7 +123,8 @@ WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", 
 
 # The places that advertise the free channel, each with its own invite link (invite_links in
 # config.yaml), so the weekly report can say where the new members came from (src/growth.py).
-INVITE_SOURCES = ("instagram", "facebook", "website", "whatsapp", "bot")
+# meta_ads is for paid Facebook/Instagram ads: the site swaps it in for visitors who came from an ad (src/ads.py).
+INVITE_SOURCES = ("instagram", "facebook", "website", "whatsapp", "bot", "meta_ads")
 
 
 @dataclass(frozen=True)

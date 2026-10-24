@@ -114,6 +114,8 @@ invite_links:
   whatsapp: "https://t.me/+kW1zUnh8_n05Yjg0"    # the message the "Dërgoja një shoku në WhatsApp" links send
                                                 #   (the free channel's posts and the site's deals)
   bot: "https://t.me/+TPN1uet2WnM2YjQ0"         # the channel link in the price alerts and the bot's messages
+  meta_ads: "https://t.me/+g10nd-a029FhNDRk"    # paid Meta ads: the site's Telegram buttons use it for visitors
+                                                #   who came from an ad (?utm_source=meta; scripts/ad_kit.py)
 growth:
   report_day: monday               # your chat (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) gets
   report_time: "09:00"             #   the week's numbers at the first full run after this time (local;

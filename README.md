@@ -890,8 +890,9 @@ and the bot counts who joined through which one:
 | website | on every Telegram button of the site, in all three languages |
 | whatsapp | at the end of the message a "Dërgoja një shoku në WhatsApp" link opens: under each free-channel post (not premium's: those members pay to have the deals first) and on every deal on the site (photo card, table row, city page) |
 | bot | in the price alerts and the bot's messages |
+| meta_ads | on the site's Telegram buttons, for visitors who came from a paid ad (see "Paid ads on Facebook and Instagram") |
 
-The bot made the four links (`python scripts/invite_links.py` makes any missing one
+The bot made the links (`python scripts/invite_links.py` makes any missing one
 and prints it for config.yaml). They show in the Telegram app with their join counts:
 the channel → Manage channel → Invite links. A place left empty uses the public
 address.
@@ -903,6 +904,39 @@ run `python -m src.growth` notes both channels' member counts. On `growth.report
 the members of each channel and the change in 7 days, then where the free channel's
 new members came from. `python -m src.growth --report` sends it now; `--dry-run` prints
 it and saves nothing.
+
+## Paid ads on Facebook and Instagram
+
+The ads are made by hand in Meta Ads Manager; the repo makes what goes into them:
+
+```bash
+python scripts/ad_kit.py
+```
+
+It writes, into `ig_preview/ads/<campaign>/` (not committed), two pictures per ad
+(`<name>_feed.jpg` 1080 x 1350 for the feeds, `<name>_story.jpg` 1080 x 1920 for
+Stories and Reels) and `ads.txt`: per ad, the Website URL and the texts for Ads
+Manager's boxes (primary text, headline, description, button). The ads are in
+`content/ads.yaml` and the pictures are drawn by `src/ad_cards.py` (photo, mosaic,
+steps, phone). They are evergreen: no prices and no dates, so they never show a
+price that is gone. Numbers like {CITIES} and {RUN_EVERY} come from config.yaml.
+
+The ad with `card: video` is a 12-second video for Reels and Stories ads instead
+(`<name>.mp4` and its cover `<name>_cover.jpg`, drawn by `src/ad_video.py` and joined
+by ffmpeg like the deal Reels): a city photo with the headline in the first second,
+the six city photos with the "110 QYTETE" sticker, how it works, and a yellow end card
+with the button. Its words stay out of the top 14% and the bottom 35%, where Meta puts
+its name, the caption and the button, and it reads with the sound off. The music is
+`music:` from assets/music (Pixabay licence, fine for ads).
+
+**Counting what the ads bring.** Every ad link carries UTM tags
+(`?utm_source=meta&utm_medium=paid&utm_campaign=<campaign>&utm_content=<ad name>`,
+src/ads.py), so Google Analytics shows ad visitors apart (Reports → Acquisition →
+Traffic acquisition, session source "meta"). A visitor who arrives with
+`utm_source=meta` also gets the ads' own Telegram invite link (`invite_links.meta_ads`)
+on every Telegram button for the rest of the visit (templates/site_ads.html), so the
+weekly report lists the members the ads brought on their own line. Change `campaign`
+in content/ads.yaml when you start a new campaign.
 
 ## Exit codes
 
