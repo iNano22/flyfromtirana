@@ -1,0 +1,81 @@
+city: Bratislava
+slug: bratislava
+tagline: Kështjellë mbi Danub, qytet i vjetër dhe Vienna një orë larg
+intro: >-
+  Bratislava është kryeqyteti i Sllovakisë: i vogël, i qetë dhe i lirë, me një qytet të vjetër që
+  përshkohet në këmbë për pak orë dhe një kështjellë të bardhë mbi Danub. Vienna është vetëm rreth
+  60 km larg, prandaj shumë udhëtarë i kombinojnë të dy qytetet. Dy ditë mjaftojnë për Bratislava,
+  një e treta për Devín ose për verërat e Karpateve të Vogla. Sllovakia përdor euron.
+sights:
+  - name: Kështjella e Bratislavës
+    text: Kështjella e bardhë me katër kulla mbi Danub. Oborret dhe kopshtet janë falas, me pamjen më të mirë mbi qytet; muzeu brenda kushton rreth €10.
+  - name: Hlavné námestie
+    text: Sheshi kryesor i qytetit të vjetër, me Bashkinë e Vjetër, kafene dhe statuja bronzi nëpër rrugë, si Čumil, punëtori që del nga pusetat.
+  - name: Porta e Mihalit
+    text: E vetmja portë e mbetur nga muret mesjetare. Nga kulla sheh çatitë e qytetit të vjetër.
+  - name: Katedralja e Shën Martinit
+    text: Kisha gotike ku nga viti 1563 deri në 1830 u kurorëzuan mbretërit e Hungarisë.
+  - name: Kisha Blu
+    text: Kishë e vogël art nouveau, e gjitha blu, rreth 10 minuta në këmbë nga qendra. Brenda hapet zakonisht vetëm rreth meshës.
+  - name: Ura UFO (Most SNP)
+    text: Ura mbi Danub me një restorant në formë disku fluturues, rreth 95 metra lart. Platforma e vrojtimit kushton rreth €10-12.
+  - name: Slavín
+    text: Memoriali i Luftës së Dytë Botërore mbi një kodër në veri të Kështjellës, falas dhe me një nga pamjet më të bukura mbi qytet.
+airports:
+  BTS: >-
+    Aeroporti M. R. Štefánik është rreth 9 km nga qendra. Autobusi i qytetit 61 të çon në stacionin
+    kryesor të trenit (Hlavná stanica) për rreth 25-30 minuta; bileta kushton rreth €1-1.50 dhe
+    blihet në automat ose në aplikacionin IDS BK. Taksia ose Bolt kushton rreth €15-25 për rreth 20
+    minuta. Shumë udhëtarë e përdorin këtë aeroport për Vienna: autobusët direkt (FlixBus, RegioJet,
+    Slovak Lines) nisen para terminalit, bëjnë rreth 1 orë dhe kushtojnë rreth €5-15.
+budget: >-
+  Një birrë gjysmëlitërshe kushton rreth €2.50-3.50, një kafe rreth €2.50, një pjatë në restorant
+  €9-14. Një shtrat në hostel kushton nga rreth €20-30, një dhomë dyshe në hotel të thjeshtë nga
+  rreth €60-90 nata, dukshëm më pak se në Vienna.
+when: >-
+  Maji-shtatori për tarracat buzë Danubit dhe udhëtimet ditore; në shtator fshatrat e verës festojnë
+  vjeljen e rrushit. Nga fundi i nëntorit deri në Krishtlindje mbahen tregjet e Krishtlindjeve.
+  Dimri është i ftohtë, por më i lirë.
+tips:
+  - "Bileta prej letre duhet vulosur sapo hip: kontrollorët me rroba civile gjobisin edhe turistët."
+  - "Për drekë kërko menynë e ditës (denné menu): supë dhe pjatë kryesore për rreth €7-10, ditëve të punës."
+  - "Kartat pranohen pothuajse kudo, por mbaj pak euro në dorë për tregjet dhe tualetet."
+itinerary:
+  - "Qyteti i vjetër në këmbë: Porta e Mihalit, Hlavné námestie me Čumil dhe Katedralja e Shën Martinit. Pasdite ngjitu në Kështjellë për perëndimin e diellit."
+  - "Kisha Blu në mëngjes, pastaj ura UFO dhe një shëtitje buzë Danubit. Pasdite Slavín, në mbrëmje birrë në një birrari lokale."
+  - "Kështjella Devín me autobusin 29, ose një ditë në Vienna (rreth 1 orë me tren ose autobus)."
+areas:
+  - name: Staré Mesto
+    text: Qyteti i vjetër, gjithçka në këmbë, me shumë apartamente; natën ka zhurmë në rrugët me lokale.
+  - name: Pranë Hlavná stanica
+    text: Hotele më të lira dhe autobusi 61 për aeroportin; qendra është 15-20 minuta në këmbë.
+  - name: Nivy
+    text: Lagjja e re lindore, me stacionin e autobusëve, qendra tregtare dhe hotele moderne. E praktikshme për autobusët për Vienna.
+  - name: Petržalka
+    text: Përtej Danubit, me blloqe socialiste dhe apartamentet më të lira, 10-15 minuta me tramvaj nga qendra.
+food:
+  - name: Bryndzové halušky
+    text: Pjata kombëtare, petulla të vogla me patate, me djathë dele bryndza dhe proshutë të skuqur.
+  - name: Kapustnica
+    text: Supë me lakër turshi, salsiçe dhe kërpudha, sidomos në dimër.
+  - name: Bratislavské rožky
+    text: Rogaçe të vogla me arra ose lulekuqe, ëmbëlsira tradicionale e qytetit.
+  - name: Vera dhe Kofola
+    text: Vera e bardhë e Karpateve të Vogla dhe Kofola, pija e gazuar lokale, shpesh me fuçi.
+transport: >-
+  Qyteti i vjetër arrihet i tëri në këmbë. Për më larg ka tramvaje, autobusë dhe trolejbusë;
+  biletat blihen në automate ose në aplikacionin IDS BK, dhe bileta 24-orëshe kushton rreth
+  €4.50-5. Bolt është i lirë, rreth €5-8 brenda qytetit. Trenat për në Vienna nisen nga Hlavná
+  stanica dhe Petržalka, bëjnë rreth 1 orë dhe kushtojnë rreth €10-15.
+daytrips:
+  - name: Vienna
+    text: Kryeqyteti i Austrisë, rreth 1 orë me tren ose autobus, ose në verë rreth 1.5 orë me anije në Danub.
+  - name: Kështjella Devín
+    text: Rrënojat mbi shkëmbin ku Morava derdhet në Danub, në kufi me Austrinë. Rreth 25 minuta me autobusin 29 nga ura UFO; hyrja rreth €5-7.
+  - name: Karpatet e Vogla
+    text: Fshatrat e verës Svätý Jur, Pezinok dhe Modra, 20-60 minuta me tren rajonal ose autobus, me kantina ku shijon verën.
+faq:
+  - q: "A ia vlen të fluturosh në Bratislava për të shkuar në Vienna?"
+    a: "Shpesh po. Autobusët direkt nga aeroporti BTS bëjnë rreth 1 orë deri në Vienna, me rreth €5-15. Krahaso koston totale me fluturimin direkt dhe shiko orarin e autobusit të fundit nëse mbërrin natën."
+  - q: "Sa para duhen në ditë në Bratislava?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë. Ushqimi dhe birra kushtojnë shumë më pak se në Vienna, dhe disa nga pamjet më të bukura, si Kështjella dhe Slavín, janë falas."

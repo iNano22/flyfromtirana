@@ -1,0 +1,78 @@
+city: Dublin
+name: Dublino
+slug: dublin
+tagline: Pub con musica dal vivo, Guinness e scogliere sul mare
+intro: >-
+  Dublino è una capitale piccola e vivace, dove il centro si gira a piedi e nei pub si ascolta musica
+  dal vivo ogni sera. I musei nazionali sono gratuiti, mentre gli hotel sono tra i più cari d'Europa:
+  prenota l'alloggio presto. Tre giorni bastano per la città e una passeggiata sulla costa.
+sights:
+  - name: Trinity College e Book of Kells
+    text: La più antica università d'Irlanda, fondata nel 1592. Qui si conserva il Book of Kells, un manoscritto miniato di circa 1200 anni fa, e la famosa biblioteca Long Room. Biglietto circa €20-25; prenotalo online.
+  - name: Guinness Storehouse
+    text: Il museo della birra irlandese più famosa, nel birrificio di St James's Gate. Il biglietto, circa €26-30 online, include una pinta al Gravity Bar, con vista a 360 gradi sulla città.
+  - name: Kilmainham Gaol
+    text: Il carcere dove furono detenuti e giustiziati i leader della Rivolta di Pasqua del 1916. Si visita solo con guida (circa €8) e i biglietti finiscono spesso giorni prima.
+  - name: Temple Bar
+    text: Il quartiere acciottolato pieno di pub e musica dal vivo. Vale la pena per l'atmosfera, ma qui una pinta costa €8-9 e anche di più.
+  - name: Grafton Street e St Stephen's Green
+    text: La via principale dello shopping, con musicisti di strada, che finisce al parco St Stephen's Green, il posto ideale per una pausa.
+  - name: I musei gratuiti
+    text: "Il National Museum of Ireland (archeologia, con l'oro celtico e i «corpi delle torbiere»), la National Gallery e la Chester Beatty Library accanto al Dublin Castle: tutti a ingresso gratuito."
+itinerary:
+  - "Trinity College e il Book of Kells al mattino, poi Grafton Street e St Stephen's Green. Nel pomeriggio il National Museum o la National Gallery (gratuiti), la sera musica dal vivo in un pub."
+  - "Dublin Castle e la Chester Beatty Library, poi Christ Church e la St Patrick's Cathedral. Nel pomeriggio la Guinness Storehouse e il Kilmainham Gaol (con prenotazione), la sera i pub di Stoneybatter."
+  - "Con il treno DART a Howth per la passeggiata sulle scogliere e il fish and chips al porto. In alternativa, un'escursione di un giorno intero a Glendalough o alle Cliffs of Moher."
+areas:
+  - name: Temple Bar e il centro
+    text: Tutto a piedi, ma rumoroso fino a tarda notte e con i prezzi più alti.
+  - name: Smithfield e Stoneybatter
+    text: A nord del fiume Liffey, con pub di quartiere e il tram Luas Red che porta in centro in circa 10 minuti.
+  - name: Docklands e Grand Canal
+    text: Il quartiere moderno degli uffici, con hotel nuovi e tranquilli, vicino al treno DART.
+  - name: Drumcondra
+    text: Hotel e B&B un po' più economici a nord del centro, dove passano gli autobus 16 e 41 dall'aeroporto.
+food:
+  - name: Irish stew
+    text: Uno stufato di agnello o manzo, patate e carote, perfetto per le giornate di pioggia.
+  - name: Full Irish breakfast
+    text: La colazione completa con uova, bacon, salsicce, black e white pudding e pane alla soda (soda bread).
+  - name: Fish and chips
+    text: Pesce fritto con patatine da un «chipper», come Leo Burdock, per circa €12-15.
+  - name: Seafood chowder
+    text: Una zuppa cremosa di pesce e frutti di mare, servita con pane integrale in molti pub.
+airports:
+  DUB: >-
+    L'aeroporto è a circa 10 km a nord del centro e non ha il treno. I pullman Dublin Express e
+    Aircoach partono ogni 10-15 minuti e arrivano a O'Connell Street in 25-40 minuti, per circa €10-12 (meno online). Gli autobus urbani 16 e 41
+    costano circa €2 con la carta Leap o circa €3 in monete, ma impiegano 45-60 minuti. Il taxi costa
+    circa €30-40 e impiega 25-40 minuti, a seconda del traffico.
+transport: >-
+  Dublino non ha la metro: il centro si gira a piedi, mentre gli autobus, le due linee del tram Luas
+  (Red e Green) e il treno costiero DART ti portano ovunque. Compra la carta Leap nei negozi Spar o
+  Centra o in aeroporto: con questa, un viaggio entro 90 minuti costa circa €2. La Leap Visitor Card
+  offre viaggi illimitati per 24 ore (circa €8), 72 ore (circa €19,50) o 7 giorni (circa €40).
+daytrips:
+  - name: Howth
+    text: Un villaggio di pescatori su una penisola, a circa 30 minuti con il DART. La Cliff Walk sulle scogliere dura 2-3 ore, e al porto si vedono spesso le foche.
+  - name: Glendalough
+    text: Un monastero del VI secolo tra i laghi e i boschi dei monti Wicklow, a circa 1,5 ore con l'autobus St Kevin's o con un'escursione.
+  - name: Cliffs of Moher
+    text: Scogliere alte fino a 214 metri sull'Atlantico, sulla costa occidentale. Distano circa 3 ore per tratta, quindi di solito si va con un'escursione di un giorno da circa €60-75.
+budget: >-
+  Un caffè costa circa €3,50-4, una pinta di Guinness €6-7 (a Temple Bar €8-9 e anche di più), un pasto
+  semplice €15-20. L'alloggio è la voce più cara: un letto in ostello da circa €35-60, una camera doppia
+  in un hotel semplice circa €150-250 a notte, di più nei fine settimana e durante partite e concerti.
+when: >-
+  Da maggio a settembre le giornate sono più lunghe e le temperature intorno ai 15-20°C; a giugno fa
+  buio verso le 22:00. Può piovere in ogni stagione. Il 17 marzo, il giorno di San Patrizio porta
+  parate e feste in strada, ma anche i prezzi degli hotel più alti dell'anno.
+tips:
+  - "Porta sempre una giacca impermeabile e uno strato caldo: il tempo cambia più volte al giorno, anche d'estate."
+  - "Le prese hanno tre spinotti come nel Regno Unito (tipo G): porta un adattatore dall'Albania."
+  - "Per pinte più economiche e musica tradizionale, esci da Temple Bar: The Cobblestone a Smithfield ha musica irlandese quasi ogni sera."
+faq:
+  - q: "Quanto si spende al giorno a Dublino?"
+    a: "Volo e alloggio esclusi, calcola €60-90 al giorno per cibo, trasporti e un ingresso. I musei gratuiti, i parchi e le passeggiate sulla costa abbassano la spesa, mentre la Guinness Storehouse e il Book of Kells costano circa €20-30 ciascuno."
+  - q: "Vale la pena andare alle Cliffs of Moher da Dublino?"
+    a: "Sì, se hai almeno 4 giorni: è una giornata lunga, circa 12 ore con un'escursione. Con meno tempo, Howth e Glendalough sono più vicini e altrettanto belli."

@@ -1,0 +1,76 @@
+city: Turin
+name: Torino
+slug: turin
+tagline: Portici, Museo Egizio e bicerin
+intro: >-
+  Torino è stata la prima capitale dell'Italia unita: piazze barocche, circa 18 km di portici dove
+  si cammina anche quando piove, caffè storici e le Alpi all'orizzonte. È più tranquilla e più
+  economica di Milano, con un centro che si gira a piedi. Due o tre giorni bastano.
+sights:
+  - name: Mole Antonelliana
+    text: Il simbolo della città, alta circa 167 metri, con il Museo Nazionale del Cinema all'interno. L'ascensore panoramico ti porta sulla terrazza; il biglietto combinato costa circa €20 e conviene prenotarlo online.
+  - name: Museo Egizio
+    text: Il museo egizio più importante al mondo dopo quello del Cairo, con mummie, statue e papiri. Biglietto circa €18-20; calcola almeno 3 ore e prenota la fascia oraria online.
+  - name: Piazza Castello e Musei Reali
+    text: La piazza centrale con Palazzo Madama e il Palazzo Reale dei Savoia. I Musei Reali riuniscono il palazzo, l'armeria, la galleria d'arte e i giardini, con un biglietto di circa €15.
+  - name: Piazza San Carlo e Via Roma
+    text: La piazza barocca chiamata «il salotto di Torino», con le due chiese gemelle e i caffè storici sotto i portici. Via Roma collega la piazza alla stazione di Porta Nuova.
+  - name: Parco del Valentino
+    text: Il parco sulle rive del Po, con il Castello del Valentino e il Borgo Medievale, un villaggio medievale ricostruito per un'esposizione del 1884. L'ingresso al parco è gratuito.
+  - name: Basilica di Superga
+    text: Una basilica del XVIII secolo in cima a una collina, con vista sulla città e sulle Alpi. Lì vicino c'è il memoriale della tragedia aerea del Grande Torino del 1949. Ci si arriva con il tram 15 e la cremagliera da Sassi.
+itinerary:
+  - "Piazza Castello, i Musei Reali e il Duomo, dove è custodita la Sindone. Nel pomeriggio le viuzze del Quadrilatero Romano e un bicerin in un caffè storico, la sera un aperitivo in Piazza Vittorio Veneto."
+  - "Museo Egizio al mattino (con prenotazione), poi Piazza San Carlo e Via Roma. Nel pomeriggio la Mole Antonelliana con il Museo del Cinema, il tramonto al Monte dei Cappuccini e la cena a Vanchiglia."
+  - "Il mercato di Porta Palazzo al mattino, poi il Parco del Valentino lungo il Po. Nel pomeriggio la Basilica di Superga, oppure la Reggia di Venaria al suo posto."
+areas:
+  - name: Centro e Quadrilatero Romano
+    text: Intorno a Piazza Castello, con tutto a portata di piedi e viuzze piene di locali, ma con i prezzi più alti.
+  - name: San Salvario
+    text: Il quartiere dietro la stazione di Porta Nuova, con ristoranti economici e vita notturna. Hotel e appartamenti costano spesso meno; le sere del fine settimana sono rumorose.
+  - name: Vicino a Porta Susa
+    text: "La zona più pratica per chi arriva: qui fermano l'autobus dell'aeroporto, i treni veloci per Milano e la metro."
+food:
+  - name: Bicerin
+    text: La bevanda della città, con caffè, cioccolato e crema a strati, servita in un bicchierino. Costa circa €6-7 nei caffè storici.
+  - name: Agnolotti del plin
+    text: Piccoli ravioli ripieni di carne chiusi a mano («plin» vuol dire «pizzico»), con sugo d'arrosto o con burro e salvia.
+  - name: Vitello tonnato
+    text: Fettine sottili di vitello con salsa di tonno e capperi, l'antipasto classico piemontese.
+  - name: Aperitivo
+    text: "Torino è la città del vermut. Dalle 18:00 circa molti bar offrono un drink con buffet per circa €10-15."
+airports:
+  TRN: >-
+    L'aeroporto di Caselle è a circa 16 km a nord della città. L'autobus dell'aeroporto ti porta a
+    Porta Susa e Porta Nuova in circa 40-50 minuti, per circa €7-8; parte ogni 15-30 minuti. Un treno
+    regionale collega l'aeroporto alla stazione di Torino Dora in circa 20 minuti (circa €3), ma passa
+    più di rado, ogni 30-60 minuti, e da Dora serve un tram o un autobus per il centro. Il taxi impiega
+    circa 25-30 minuti e costa circa €35-45.
+transport: >-
+  Il centro si gira a piedi, sotto i portici. La metro ha solo 1 linea (M1), che passa da Porta Susa,
+  Porta Nuova e Lingotto, mentre tram e autobus GTT coprono il resto. Il biglietto urbano costa circa
+  €2 e vale 100 minuti; il giornaliero circa €4-5. In metro e sulla maggior parte dei mezzi puoi pagare
+  con la carta bancaria contactless.
+daytrips:
+  - name: Reggia di Venaria
+    text: La residenza di caccia dei Savoia, con grandi giardini, a circa 40 minuti di autobus dal centro.
+  - name: Sacra di San Michele
+    text: Un'abbazia medievale in cima a una rupe, a circa 30 minuti di treno fino a Sant'Ambrogio, poi circa 1,5 ore di salita a piedi.
+  - name: Langhe e Alba
+    text: Le colline dei vigneti del Barolo e la città del tartufo bianco, a circa 1-1,5 ore di treno o autobus. La fiera del tartufo si tiene a ottobre-novembre.
+budget: >-
+  Un caffè al banco costa circa €1,20-1,50, una pizza €8-12, un piatto di agnolotti in trattoria
+  €12-15, un biglietto dell'autobus circa €2. Un letto in ostello costa da circa €30-40, una camera
+  doppia in un hotel semplice da circa €80-120 a notte. In generale Torino è più economica di Milano.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. Ottobre e novembre sono la stagione del
+  tartufo ad Alba. Luglio e agosto sono caldi e ad agosto alcuni locali chiudono. L'inverno è freddo e
+  nebbioso, ma le piste da sci delle Alpi sono a circa 1,5-2 ore.
+tips:
+  - "Molti musei chiudono un giorno alla settimana: i Musei Reali il lunedì, la Mole Antonelliana il martedì."
+  - "La Torino+Piemonte Card include la maggior parte dei musei e conviene se visiti 2-3 musei al giorno."
+faq:
+  - q: "Posso vedere la Sindone?"
+    a: "La Sindone è custodita nel Duomo, ma viene esposta al pubblico solo di rado, in ostensioni speciali. La sua storia è raccontata al Museo della Sindone."
+  - q: "Quanto si spende al giorno a Torino?"
+    a: "Volo e alloggio esclusi, €45-70 al giorno per cibo, trasporti e un museo. Risparmi con l'aperitivo a buffet al posto della cena e con i parchi e le chiese gratuiti."

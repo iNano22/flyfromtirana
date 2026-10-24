@@ -1,0 +1,76 @@
+city: Genoa
+slug: genoa
+tagline: Rrugica mesjetare, port dhe pesto e vërtetë
+intro: >-
+  Genoa është qyteti portual i Ligurisë, i ngjeshur mes detit dhe kodrave. Ka një nga qendrat
+  historike mesjetare më të mëdha në Evropë, me rrugica të ngushta (caruggi), pallate fisnikësh dhe
+  një port të vjetër me akuarium dhe shëtitore. Është më e lirë se Milan apo Florence dhe një bazë e
+  mirë për Cinque Terre e Portofino. Dy-tri ditë mjaftojnë për qytetin, plus një ditë në bregdet.
+sights:
+  - name: Via Garibaldi dhe Palazzi dei Rolli
+    text: "Rruga e pallateve të fisnikëve, pjesë e trashëgimisë UNESCO. Tre prej tyre (Palazzo Rosso, Palazzo Bianco dhe Palazzo Tursi) janë Musei di Strada Nuova, me një biletë të përbashkët prej rreth €9."
+  - name: Qendra historike (caruggi)
+    text: Labirint rrugicash të ngushta mes Porto Antico dhe Piazza De Ferrari, plot furra focaccie, dyqane të vjetra dhe kisha.
+  - name: Porto Antico dhe Akuariumi
+    text: Porti i vjetër, i rinovuar nga arkitekti Renzo Piano. Akuariumi i Genoas është ndër më të mëdhenjtë në Evropë; bileta kushton rreth €30-35 dhe zakonisht është më e lirë online.
+  - name: Katedralja San Lorenzo
+    text: Katedralja me vija bardhë e zi. Brenda ruhet një predhë britanike e vitit 1941 që ra në kishë, por nuk shpërtheu. Hyrja është falas.
+  - name: Boccadasse
+    text: Fshat i vogël peshkatarësh me shtëpi shumëngjyrëshe brenda qytetit, rreth 30 minuta me autobus nga qendra. Ideal për perëndimin e diellit.
+  - name: Spianata Castelletto
+    text: Ballkon mbi çatitë dhe portin. Ngjitesh me ashensorin historik nga Piazza Portello, me biletën e zakonshme të autobusit.
+airports:
+  GOA: >-
+    Aeroporti Cristoforo Colombo është buzë detit, rreth 7 km në perëndim të qendrës. Autobusi
+    Volabus (linja 100) të çon në stacionin Principe për rreth 20 minuta dhe në Brignole për rreth
+    30 minuta, me disa ndalesa në qendër; bileta kushton rreth €10 dhe autobusi niset afërsisht çdo
+    30-60 minuta. Taksia deri në qendër kushton rreth €25-35 dhe bën rreth 20 minuta.
+budget: >-
+  Një kafe në banak kushton rreth €1.30, një copë focaccia €1.50-3, një pjatë trofie al pesto
+  €10-14, bileta e autobusit rreth €2. Një shtrat në hostel kushton nga rreth €30-45, një dhomë dyshe
+  në hotel të thjeshtë nga rreth €80-120 nata, më shumë në verë.
+when: >-
+  Maji-qershori dhe shtatori-tetori janë periudhat më të mira: mot i ngrohtë dhe det për not. Korriku
+  dhe gushti janë të nxehtë e me lagështi, ndërsa Cinque Terre është plot turistë. Dimri është i butë
+  (rreth 10-14°C ditën), por me shi, dhe çmimet janë më të ulëta.
+tips:
+  - "Bli focaccia herët në mëngjes, kur del e ngrohtë nga furra, dhe provoje si gjenovezët, me një cappuccino."
+  - "Për Cinque Terre nis herët dhe kontrollo orarin e trenave: në verë ka turma, dhe pas shirave disa shtigje mbyllen."
+  - "Në caruggi mbaje çantën përpara dhe natën shmang rrugicat bosh, sidomos rreth Via Prè dhe stacionit Principe."
+itinerary:
+  - "Piazza De Ferrari dhe Palazzo Ducale, Katedralja San Lorenzo, pastaj nëpër caruggi deri në Porto Antico. Pasdite Akuariumi ose një shëtitje në port, në mbrëmje aperitiv në Piazza delle Erbe."
+  - "Via Garibaldi me Musei di Strada Nuova, pastaj ashensori për në Spianata Castelletto. Pasdite autobusi për Boccadasse dhe shëtitja në Corso Italia buzë detit."
+  - "Një ditë në Cinque Terre, ose në Camogli dhe Portofino. Ndryshe, shëtitorja e Nervi-t dhe varrezat monumentale të Staglieno-s."
+areas:
+  - name: Qendra historike dhe Porto Antico
+    text: Në këmbë deri te gjithçka, me B&B dhe apartamente të lira, por disa rrugica janë të zhurmshme ose të errëta natën.
+  - name: Brignole dhe Via XX Settembre
+    text: "Zona më praktike: nga stacioni Brignole nisen trenat për Cinque Terre dhe Volabus-i për aeroportin. Rrugë të gjera, hotele të qeta, 15 minuta në këmbë nga qendra historike."
+  - name: Principe
+    text: Pranë stacionit Principe dhe Via Balbi, me hotele të lira dhe Volabus për aeroportin. Rreth stacionit natën duhet kujdes.
+food:
+  - name: Pesto genovese
+    text: Salca me borzilok, arra pishe, djathë, hudhër dhe vaj ulliri lindi këtu. Provoje me trofie ose trenette, rreth €10-14 pjata.
+  - name: Focaccia genovese
+    text: Focaccia e hollë me vaj ulliri dhe kripë, në çdo furrë, për rreth €1.50-3 copa. Gjenovezët e hanë edhe për mëngjes.
+  - name: Farinata
+    text: Petë e hollë me miell qiqrash, e pjekur në furrë druri, e lirë dhe e shpejtë.
+  - name: Focaccia di Recco
+    text: Dy fletë brumi shumë të holla me djathë të butë në mes, specialitet i qytezës Recco pranë Genoas.
+transport: >-
+  Qendra historike përshkohet në këmbë, por qyteti ka shumë të përpjeta. Bileta e AMT kushton rreth
+  €2, vlen rreth 100 minuta dhe përdoret në autobusë, në linjën e vetme të metrosë, në funikularë
+  dhe në ashensorët publikë që lidhin qendrën me kodrat. Trenat rajonalë ndalojnë në shumë stacione
+  brenda qytetit, nga Nervi deri në Pegli.
+daytrips:
+  - name: Cinque Terre
+    text: 5 fshatra shumëngjyrëshe mbi det, rreth 1-1.5 orë me tren nga Brignole deri në Monterosso, me rreth €8-10. Trenat mes fshatrave paguhen veç.
+  - name: Portofino
+    text: Treni deri në Santa Margherita Ligure (rreth 40 minuta), pastaj autobusi ose varka për në Portofino. Gjiri me jahte është i shtrenjtë për të ngrënë, por ia vlen një shëtitje.
+  - name: Camogli
+    text: Fshat peshkatarësh me shtëpi të larta shumëngjyrëshe, rreth 30 minuta me tren. Nga porti nisen varkat për në abacinë e San Fruttuoso.
+faq:
+  - q: "A ia vlen Genoa si bazë për Cinque Terre?"
+    a: "Po, nëse do të kursesh: fjetja në Genoa kushton shpesh më pak se në fshatrat e Cinque Terre, dhe treni nga Brignole bën rreth 1-1.5 orë. Nëse ke vetëm 1 ditë, zgjidh 2-3 fshatra në vend që të vraposh në të 5."
+  - q: "Sa para duhen në ditë në Genoa?"
+    a: "Pa fluturimin dhe fjetjen, €40-70 në ditë. Focaccia, farinata dhe pjatat me pesto janë të lira, dhe shumë kisha e sheshe vizitohen falas."

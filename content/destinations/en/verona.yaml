@@ -1,0 +1,79 @@
+city: Verona
+slug: verona
+tagline: A Roman arena, Juliet's balcony and opera under the stars
+intro: >-
+  Verona is the city of Romeo and Juliet, with a small, beautiful historic centre that you can
+  cross entirely on foot, inside a bend of the river Adige. Its Roman arena, about 2,000 years old,
+  still fills up with opera every summer. Two days are enough for the city, three if you add Lake
+  Garda or the wineries of Valpolicella.
+sights:
+  - name: Arena di Verona
+    text: The Roman amphitheatre on Piazza Bra, one of the best preserved in the world. Entry costs about €12; on opera days it closes earlier in the afternoon.
+  - name: Casa di Giulietta
+    text: The house with Juliet's balcony, near Via Mazzini. The courtyard is usually free, but on crowded days entry may be limited; the museum inside costs about €12.
+  - name: Piazza delle Erbe and Torre dei Lamberti
+    text: The old market square, with painted palaces and stalls. The Lamberti Tower, 84 metres tall, has a lift and the best view over the rooftops, for about €6-8.
+  - name: Piazza dei Signori
+    text: The elegant square with the statue of Dante, surrounded by the palaces of the Scaligeri family, the city's medieval rulers.
+  - name: Castelvecchio and Ponte Scaligero
+    text: The medieval castle by the river, with an art museum inside, and its bridge with brick battlements, which you can cross for free.
+  - name: Ponte Pietra and Castel San Pietro
+    text: The Roman bridge over the Adige and the hill opposite. Climb the steps (free) or take the funicular at sunset, for the most beautiful view of Verona.
+  - name: Basilica di San Zeno
+    text: A Romanesque church with a bronze door and a crypt, about 20 minutes on foot from the centre.
+airports:
+  VRN: >-
+    Verona Villafranca airport is about 12 km from the centre. The Aerobus takes you to Porta Nuova
+    railway station in about 15-20 minutes, departures are every 20-30 minutes and the ticket costs
+    about €6-7. From the station to the Arena it is about 20 minutes on foot. A taxi to the centre
+    costs about €30-40.
+budget: >-
+  A coffee at the counter costs about €1.20-1.50, a spritz €4-6, a pizza €8-12 and a lunch in an
+  osteria €15-25. A bus ticket costs about €1.50-2. A hostel bed costs from about €30-45, a double
+  room in a simple hotel from about €90-140 a night; on opera nights and during the Vinitaly wine
+  fair in April prices rise sharply.
+when: >-
+  April to June and September to October have the best weather for walking. The opera season at the
+  Arena runs from mid-June to early September: it is the main reason to come in summer, but July and
+  August are very hot and hotels get more expensive. In December there is a Christmas market in
+  Piazza dei Signori.
+tips:
+  - "The Verona Card (from about €27 for 24 hours) covers the Arena, Torre dei Lamberti, Casa di Giulietta, Castelvecchio, the main churches and the buses. It pays off for three or four visits a day."
+  - "For the opera at the Arena, seats on the stone steps are unnumbered: go early and take a cushion and water. Performances start at about 21:00 and end after midnight."
+  - "The churches of the Duomo, San Zeno, Sant'Anastasia and San Fermo share a combined ticket of about €8-10."
+itinerary:
+  - "The Arena in the morning, then Via Mazzini to Casa di Giulietta. In the afternoon, Piazza delle Erbe, Torre dei Lamberti and Piazza dei Signori, and a spritz in one of the squares in the evening."
+  - "Castelvecchio and Ponte Scaligero, then a walk along the river to the Basilica di San Zeno. In the afternoon, the Duomo and Ponte Pietra, and Castel San Pietro at sunset."
+  - "A day out of town, in Sirmione on Lake Garda or at the wineries of Valpolicella. In summer, an evening at the opera in the Arena."
+areas:
+  - name: Historic centre (Città Antica)
+    text: Inside the bend of the river, everything on foot, with the highest prices. Ideal for a weekend.
+  - name: Veronetta
+    text: Across the river, the students' neighbourhood, with cheaper hotels and restaurants, 10 minutes on foot from Piazza delle Erbe.
+  - name: Near Porta Nuova
+    text: "The most practical area: the Aerobus stops here and trains leave for Garda and Venice. Hotels are cheaper, the centre is 20 minutes on foot."
+food:
+  - name: Risotto all'Amarone
+    text: Risotto made with the red Amarone wine of Valpolicella, the city's best-known dish.
+  - name: Bigoli
+    text: Thick homemade pasta, often with duck sauce or with sardines.
+  - name: Pastissada de caval
+    text: A traditional stew of horse meat slowly cooked in red wine, usually served with polenta.
+  - name: Valpolicella wines
+    text: "Amarone, Ripasso and plain Valpolicella: in bars a glass costs about €4-7."
+transport: >-
+  The centre is small and most streets are pedestrian. ATV buses link Porta Nuova station with
+  Piazza Bra and the other neighbourhoods; a single ticket costs about €1.50-2 if you buy it in
+  advance at a tabaccheria or in the app, more on board.
+daytrips:
+  - name: Lake Garda
+    text: Peschiera del Garda is about 15 minutes by regional train (about €3-4). For Sirmione, with its castle and thermal waters, take the train to Desenzano and then the bus.
+  - name: Venice
+    text: About 1 hour 10 minutes by fast train or 1.5-2 hours by regional train, from about €11.
+  - name: Valpolicella
+    text: The Amarone wine area, about 20-30 minutes by car or bus. Tastings at the wineries cost about €15-30 and are booked in advance.
+faq:
+  - q: "How can I see an opera at the Arena?"
+    a: "The season runs from June to early September. Tickets are sold online on the Arena's official website: unnumbered seats on the stone steps start from about €30, while numbered seats in the stalls cost over €100. For weekends, book a few weeks ahead."
+  - q: "How much money do you need per day in Verona?"
+    a: "Excluding the flight and accommodation, allow €45-70 a day for food, buses and one or two entry tickets. You save with pizza or a panino for lunch and with the Verona Card."

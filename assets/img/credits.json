@@ -778,5 +778,165 @@
   "source_url": "https://unsplash.com/photos/xcPw1-5OHTk",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/psa.webp",
+  "slot": "PSA",
+  "title": "Leaning Tower of Pisa",
+  "creator": "@joebcn",
+  "creator_url": "https://unsplash.com/@joebcn",
+  "source_url": "https://unsplash.com/photos/5fPReWDqMAk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/trn.webp",
+  "slot": "TRN",
+  "title": "Mole Antonelliana over Turin",
+  "creator": "@lisaaxv",
+  "creator_url": "https://unsplash.com/@lisaaxv",
+  "source_url": "https://unsplash.com/photos/C7bu3_HEeYM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/vrn.webp",
+  "slot": "VRN",
+  "title": "Ponte Pietra, Verona",
+  "creator": "@julie_soul",
+  "creator_url": "https://unsplash.com/@julie_soul",
+  "source_url": "https://unsplash.com/photos/cV-yFzNAg6s",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/goa.webp",
+  "slot": "GOA",
+  "title": "Genoa from the sea",
+  "creator": "@androwv",
+  "creator_url": "https://unsplash.com/@androwv",
+  "source_url": "https://unsplash.com/photos/g-tfF0JNlPg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/pmo.webp",
+  "slot": "PMO",
+  "title": "Old town street, Palermo",
+  "creator": "@stepan_d",
+  "creator_url": "https://unsplash.com/@stepan_d",
+  "source_url": "https://unsplash.com/photos/WUiKoMONmoM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bts.webp",
+  "slot": "BTS",
+  "title": "Old Town street, Bratislava",
+  "creator": "@malyushev",
+  "creator_url": "https://unsplash.com/@malyushev",
+  "source_url": "https://unsplash.com/photos/OrqzcJ30Vms",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/dub.webp",
+  "slot": "DUB",
+  "title": "Temple Bar, Dublin",
+  "creator": "@bydostalova",
+  "creator_url": "https://unsplash.com/@bydostalova",
+  "source_url": "https://unsplash.com/photos/5r0jfcr-Yrk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/edi.webp",
+  "slot": "EDI",
+  "title": "Victoria Street, Edinburgh",
+  "creator": "@jimdivine",
+  "creator_url": "https://unsplash.com/@jimdivine",
+  "source_url": "https://unsplash.com/photos/qpQ7NQ2CXA4",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/pisa.webp",
+  "slot": "guide-pisa",
+  "title": "Piazza dei Miracoli, Pisa",
+  "creator": "@2renkov",
+  "creator_url": "https://unsplash.com/@2renkov",
+  "source_url": "https://unsplash.com/photos/AF36q06J8fQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/turin.webp",
+  "slot": "guide-turin",
+  "title": "Turin and the Alps",
+  "creator": "@fabiofistarol",
+  "creator_url": "https://unsplash.com/@fabiofistarol",
+  "source_url": "https://unsplash.com/photos/VjA_PSSsOHI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/verona.webp",
+  "slot": "guide-verona",
+  "title": "Arena di Verona",
+  "creator": "@albertobigoni",
+  "creator_url": "https://unsplash.com/@albertobigoni",
+  "source_url": "https://unsplash.com/photos/2AKqAnzPLfw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/genoa.webp",
+  "slot": "guide-genoa",
+  "title": "Boccadasse, Genoa",
+  "creator": "@bodevalley",
+  "creator_url": "https://unsplash.com/@bodevalley",
+  "source_url": "https://unsplash.com/photos/-pkckNDGs94",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/palermo.webp",
+  "slot": "guide-palermo",
+  "title": "Palermo Cathedral",
+  "creator": "@vincent_61",
+  "creator_url": "https://unsplash.com/@vincent_61",
+  "source_url": "https://unsplash.com/photos/6ZY2VD0ygH8",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/bratislava.webp",
+  "slot": "guide-bratislava",
+  "title": "Bratislava Castle",
+  "creator": "@thecarengineer",
+  "creator_url": "https://unsplash.com/@thecarengineer",
+  "source_url": "https://unsplash.com/photos/4Ss7iUixbCY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/dublin.webp",
+  "slot": "guide-dublin",
+  "title": "Ha'penny Bridge, Dublin",
+  "creator": "@sophiepopp",
+  "creator_url": "https://unsplash.com/@sophiepopp",
+  "source_url": "https://unsplash.com/photos/blDB0HbjB1k",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/edinburgh.webp",
+  "slot": "guide-edinburgh",
+  "title": "Edinburgh Castle",
+  "creator": "@joerga",
+  "creator_url": "https://unsplash.com/@joerga",
+  "source_url": "https://unsplash.com/photos/S56zN8cV5fk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

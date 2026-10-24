@@ -1,0 +1,75 @@
+city: Turin
+slug: turin
+tagline: Portikë, Museo Egizio dhe bicerin
+intro: >-
+  Turin është ish-kryeqyteti i parë i Italisë së bashkuar: sheshe barok, rreth 18 km portikë ku
+  ecën edhe kur bie shi, kafene historike dhe Alpet në horizont. Është më i qetë dhe më i lirë se
+  Milan, me një qendër që përshkohet në këmbë. Dy-tri ditë mjaftojnë.
+sights:
+  - name: Mole Antonelliana
+    text: Simboli i qytetit, rreth 167 metra i lartë, me Muzeun Kombëtar të Kinemasë brenda. Ashensori panoramik të ngjit në tarracë; bileta e përbashkët kushton rreth €20 dhe ia vlen ta rezervosh online.
+  - name: Museo Egizio
+    text: Muzeu egjiptian më i rëndësishëm në botë pas atij të Kajros, me mumie, statuja dhe papiruse. Bileta rreth €18-20; llogarit të paktën 3 orë dhe rezervo orarin online.
+  - name: Piazza Castello dhe Musei Reali
+    text: Sheshi qendror me Palazzo Madama dhe Pallatin Mbretëror të Savojave. Musei Reali bashkojnë pallatin, armaturat, galerinë e artit dhe kopshtet, me një biletë prej rreth €15.
+  - name: Piazza San Carlo dhe Via Roma
+    text: Sheshi barok që e quajnë «salloni i Turin-it», me dy kishat binjake dhe kafenetë historike nën portikë. Via Roma lidh sheshin me stacionin Porta Nuova.
+  - name: Parco del Valentino
+    text: Parku buzë lumit Po, me kështjellën Valentino dhe Borgo Medievale, një fshat mesjetar i rindërtuar për një ekspozitë të vitit 1884. Hyrja në park është falas.
+  - name: Basilica di Superga
+    text: Bazilika e shekullit XVIII mbi një kodër, me pamje mbi qytetin dhe Alpet. Aty pranë është memoriali i aksidentit ajror të skuadrës Grande Torino në vitin 1949. Shkohet me tramvajin 15 dhe trenin me dhëmbëzim nga Sassi.
+itinerary:
+  - "Piazza Castello, Musei Reali dhe Duomo, ku ruhet Qefini i Torinos. Pasdite rrugicat e Quadrilatero Romano dhe një bicerin në një kafene historike, në mbrëmje aperitiv te Piazza Vittorio Veneto."
+  - "Museo Egizio në mëngjes (me rezervim), pastaj Piazza San Carlo dhe Via Roma. Pasdite Mole Antonelliana me Muzeun e Kinemasë, perëndimi i diellit te Monte dei Cappuccini dhe darka në Vanchiglia."
+  - "Tregu Porta Palazzo në mëngjes, pastaj Parco del Valentino buzë lumit Po. Pasdite Basilica di Superga, ose Reggia di Venaria në vend të saj."
+areas:
+  - name: Centro dhe Quadrilatero Romano
+    text: Rreth Piazza Castello, me gjithçka në këmbë dhe rrugica plot lokale, por me çmimet më të larta.
+  - name: San Salvario
+    text: Lagjja pas stacionit Porta Nuova, me restorante të lira dhe jetë nate. Hotelet dhe apartamentet janë shpesh më të lira; mbrëmjet e fundjavës janë me zhurmë.
+  - name: Pranë Porta Susa
+    text: "Zona më praktike për mbërritje: këtu ndalojnë autobusi i aeroportit, trenat e shpejtë për Milan dhe metroja."
+food:
+  - name: Bicerin
+    text: Pija e qytetit, me kafe, çokollatë dhe krem në shtresa, që shërbehet në gotë të vogël. Kushton rreth €6-7 në kafenetë historike.
+  - name: Agnolotti del plin
+    text: Raviola të vogla të mbushura me mish, të shtrënguara me dorë («plin» do të thotë «pickim»), me salcë mishi ose me gjalpë dhe sherebelë.
+  - name: Vitello tonnato
+    text: Feta të holla viçi me salcë me ton dhe kaperi, antipasti klasik i Piemonte-s.
+  - name: Aperitivo
+    text: "Turin është qyteti i vermutit. Rreth orës 18:00 shumë bare ofrojnë një pije me bufe ushqimi për rreth €10-15."
+airports:
+  TRN: >-
+    Aeroporti i Caselle është rreth 16 km në veri të qytetit. Autobusi i aeroportit të çon në Porta
+    Susa dhe Porta Nuova për rreth 40-50 minuta, me rreth €7-8; niset çdo 15-30 minuta. Treni rajonal
+    lidh aeroportin me stacionin Torino Dora për rreth 20 minuta (rreth €3), por niset më rrallë, çdo
+    30-60 minuta, dhe nga Dora duhet tramvaj ose autobus për në qendër. Taksia bën rreth 25-30 minuta
+    dhe kushton rreth €35-45.
+transport: >-
+  Qendra përshkohet në këmbë, nën portikë. Metroja ka vetëm 1 linjë (M1), që kalon nga Porta Susa,
+  Porta Nuova dhe Lingotto, ndërsa tramvajet dhe autobusët e GTT mbulojnë pjesën tjetër. Bileta e
+  qytetit kushton rreth €2 dhe vlen 100 minuta; bileta ditore rreth €4-5. Në metro dhe në shumicën e
+  mjeteve mund të paguash me kartë bankare pa kontakt.
+daytrips:
+  - name: Reggia di Venaria
+    text: Pallati i gjuetisë i Savojave, me kopshte të mëdha, rreth 40 minuta me autobus nga qendra.
+  - name: Sacra di San Michele
+    text: Abacia mesjetare mbi një shkëmb, rreth 30 minuta me tren deri në Sant'Ambrogio, pastaj rreth 1.5 orë ngjitje në këmbë.
+  - name: Langhe dhe Alba
+    text: Kodrat e vreshtave të Barolo-s dhe qyteti i tartufit të bardhë, rreth 1-1.5 orë me tren ose autobus. Panairi i tartufit mbahet në tetor-nëntor.
+budget: >-
+  Një kafe në banak kushton rreth €1.20-1.50, një pica €8-12, një pjatë me agnolotti në trattoria
+  €12-15, bileta e autobusit rreth €2. Një shtrat në hostel kushton nga rreth €30-40, një dhomë
+  dyshe në hotel të thjeshtë nga rreth €80-120 nata. Në përgjithësi Turin është më i lirë se Milan.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Tetori dhe nëntori janë stina e
+  tartufit në Alba. Korriku dhe gushti janë të nxehtë dhe në gusht disa lokale mbyllen. Dimri është
+  i ftohtë dhe me mjegull, por pistat e skive të Alpeve janë rreth 1.5-2 orë larg.
+tips:
+  - "Shumë muze mbyllen një ditë në javë: Musei Reali të hënën, Mole Antonelliana të martën."
+  - "Torino+Piemonte Card përfshin shumicën e muzeve dhe ia vlen nëse viziton 2-3 muze në ditë."
+faq:
+  - q: "A mund ta shoh Qefinin e Torinos?"
+    a: "Qefini ruhet në Duomo, por shfaqet publikisht vetëm rrallë, në ekspozita të veçanta. Historia e tij tregohet në Museo della Sindone."
+  - q: "Sa para duhen në ditë në Turin?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-70 në ditë për ushqim, transport dhe një muze. Kursen me aperitivin me bufe në vend të darkës dhe me parqet e kishat falas."

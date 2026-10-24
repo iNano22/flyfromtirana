@@ -1,0 +1,83 @@
+city: Pisa
+slug: pisa
+tagline: The Leaning Tower and the gateway to Tuscany
+intro: >-
+  Pisa is known all over the world for the Leaning Tower, but it is also a small university town on
+  the river Arno, with arcaded lanes and no crowds once evening falls. One day is enough for the
+  town itself. The airport is only 5 minutes from the central station, which makes Pisa the easiest
+  base for Lucca, Florence, the Cinque Terre and the rest of Tuscany.
+sights:
+  - name: Leaning Tower
+    text: The cathedral's bell tower, about 56 metres tall, leaning ever since construction began in 1173. The climb is by time slot and costs about €20; book online, especially in summer. Children under 8 are not allowed to climb.
+  - name: Piazza dei Miracoli
+    text: The grassy square that holds the tower, the Duomo, the Baptistery and the monumental Camposanto cemetery, a UNESCO site. The square is free and lit up at night.
+  - name: Duomo and Baptistery
+    text: The white marble Romanesque cathedral is free to enter, with a timed ticket from the ticket office or online. The Baptistery and the Camposanto have separate tickets.
+  - name: Piazza dei Cavalieri
+    text: The town's second square, with the frescoed palace of the Scuola Normale Superiore, Pisa's elite university.
+  - name: Lungarni and Santa Maria della Spina
+    text: The banks of the Arno, the place for an evening aperitivo. Santa Maria della Spina is a small Gothic church right by the water.
+  - name: Tuttomondo
+    text: The large mural by Keith Haring, painted in 1989 on the wall of a church, 5 minutes on foot from Pisa Centrale.
+itinerary:
+  - "Pisa in one day: Piazza dei Miracoli early in the morning, the climb up the tower, the Duomo and the Baptistery. In the afternoon, Borgo Stretto, Piazza dei Cavalieri and the Lungarni, and an aperitivo by the Arno in the evening."
+  - "Lucca by train (about 30 minutes): a bike ride on top of the town walls, Piazza dell'Anfiteatro and the Guinigi Tower with trees on its top."
+  - "Florence by train (about 1 hour): the Duomo, the Ponte Vecchio and Piazzale Michelangelo at sunset."
+  - "The Cinque Terre: by train to La Spezia (about 1-1.5 hours), then the local trains between the five villages. Start early."
+areas:
+  - name: Near Piazza dei Miracoli
+    text: Walking distance to the tower and quiet at night, but with many tourist restaurants.
+  - name: Historic centre and Borgo Stretto
+    text: North of the Arno, between the tower and the station, with small guesthouses and student bars.
+  - name: Near Pisa Centrale
+    text: "The most practical and often the cheapest area: the PisaMover to the airport and the trains for day trips leave from here. The tower is about 25 minutes on foot."
+food:
+  - name: Cecina
+    text: A thin flatbread made with chickpea flour, baked in a wood-fired oven. Eaten hot.
+  - name: Schiacciata
+    text: Tuscan focaccia with olive oil, filled with ham and cheese; a cheap lunch for about €5-7.
+  - name: Ribollita
+    text: A thick Tuscan soup of beans, cabbage and bread.
+  - name: Torta coi bischeri
+    text: Pisa's traditional tart with rice, chocolate and dried fruit.
+airports:
+  PSA: >-
+    Galileo Galilei airport is only about 2 km from the centre. The automatic PisaMover train takes
+    you to Pisa Centrale station in about 5 minutes (about €5-6) and runs every few minutes. From
+    the station to the Leaning Tower it is about 25-30 minutes on foot along Corso Italia, or take
+    the LAM Rossa bus (about €2). A taxi to the tower costs about €15-20. From Pisa Centrale, trains
+    to Florence take about 1 hour (about €9); there are also direct buses from the airport, about 1
+    hour 10 minutes, for about €10-15.
+transport: >-
+  Pisa's centre is easy to walk: from the station to the tower is about 2 km. City buses cost about
+  €2 a ticket; buy it at a tobacconist (tabacchi). Regional trains leave Pisa Centrale for Lucca,
+  Florence, La Spezia and Viareggio. Pisa San Rossore station is about 10 minutes on foot from the
+  tower, handy when you come from Lucca.
+daytrips:
+  - name: Lucca
+    text: A small town inside 16th-century walls, ideal by bike. About 30 minutes by train, for about €4.
+  - name: Florence
+    text: The cradle of the Renaissance, with the Duomo and the Uffizi. About 1 hour by train, for about €9.
+  - name: Cinque Terre
+    text: Five villages of colourful houses above the sea, about 1-1.5 hours by train to La Spezia, then the local trains.
+  - name: Viareggio
+    text: Long beaches and a seafront promenade, about 20 minutes by train.
+budget: >-
+  An espresso at the counter costs about €1.20-1.50, a slice of cecina or pizza about €2-4, a whole
+  pizza €8-12. A hostel bed costs from about €30-45, a double room in a simple hotel from about
+  €80-120 a night, plus a city tax of a few euros per person per night.
+when: >-
+  April to June and September to October have the best weather. July and August are hot, often
+  above 30 degrees. On 16 June, for the Luminara festival, thousands of candles are lit along the
+  Arno.
+tips:
+  - "Go to the tower early in the morning or after 17:00: the coach groups arrive around midday."
+  - "On Piazza dei Miracoli, watch out for bracelet sellers and pickpockets."
+  - "To eat better and for less, move away from the square: around Borgo Stretto and Piazza delle Vettovaglie there are plenty of places where locals eat."
+faq:
+  - q: "Is one day enough for Pisa?"
+    a: "Yes, one day is enough for the tower, the square and the centre. Most travellers use Pisa as a base and take the train to Lucca, Florence or the Cinque Terre."
+  - q: "How do I get from Pisa airport to Florence?"
+    a: "Take the PisaMover to Pisa Centrale (about 5 minutes) and the train to Firenze Santa Maria Novella (about 1 hour, about €9). Or take the direct bus from the airport, about 1 hour 10 minutes, for about €10-15."
+  - q: "How much money do you need per day in Pisa?"
+    a: "Excluding the flight and accommodation, allow about €40-70 a day for food, transport and the tower climb. Pisa is cheaper than Florence, especially for accommodation."

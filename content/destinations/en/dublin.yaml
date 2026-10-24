@@ -1,0 +1,79 @@
+city: Dublin
+slug: dublin
+tagline: Pubs with live music, Guinness and sea cliffs
+intro: >-
+  Dublin is a small, lively capital where you can walk across the centre and hear live music in the
+  pubs every evening. The national museums are free, while the hotels are among the most expensive
+  in Europe: book your accommodation early. Three days is enough for the city and a walk along the
+  coast.
+sights:
+  - name: Trinity College and the Book of Kells
+    text: Ireland's oldest university, founded in 1592. It holds the Book of Kells, an illuminated manuscript about 1200 years old, and the famous Long Room library. Tickets about €20-25; book online.
+  - name: Guinness Storehouse
+    text: The museum of Ireland's best-known beer, at the St James's Gate brewery. The ticket, about €26-30 online, includes a pint in the Gravity Bar, with a 360-degree view over the city.
+  - name: Kilmainham Gaol
+    text: The prison where the leaders of the 1916 Easter Rising were held and executed. Visits are by guided tour only (about €8) and tickets often sell out days ahead.
+  - name: Temple Bar
+    text: The cobbled quarter full of pubs and live music. It's worth it for the atmosphere, but a pint here costs €8-9 or more.
+  - name: Grafton Street and St Stephen's Green
+    text: The main shopping street, with street musicians, which ends at St Stephen's Green park, the ideal spot for a break.
+  - name: The free museums
+    text: "The National Museum of Ireland (archaeology, with Celtic gold and the «bog bodies»), the National Gallery and the Chester Beatty Library next to Dublin Castle: all free to enter."
+itinerary:
+  - "Trinity College and the Book of Kells in the morning, then Grafton Street and St Stephen's Green. In the afternoon, the National Museum or the National Gallery (free); in the evening, live music in a pub."
+  - "Dublin Castle and the Chester Beatty Library, then Christ Church and St Patrick's Cathedral. In the afternoon, the Guinness Storehouse and Kilmainham Gaol (booking required); in the evening, the pubs of Stoneybatter."
+  - "Take the DART train to Howth for the cliff walk and fish and chips at the harbour. Alternatively, a full-day tour to Glendalough or the Cliffs of Moher."
+areas:
+  - name: Temple Bar and the centre
+    text: Everything is within walking distance, but it's noisy late into the night and prices are the highest.
+  - name: Smithfield and Stoneybatter
+    text: North of the River Liffey, with local pubs and the Luas Red line tram to the centre in about 10 minutes.
+  - name: Docklands and Grand Canal
+    text: The modern office district, with new, quiet hotels close to the DART train.
+  - name: Drumcondra
+    text: Slightly cheaper hotels and B&Bs north of the centre, on the route of buses 16 and 41 from the airport.
+food:
+  - name: Irish stew
+    text: A stew of lamb or beef, potatoes and carrots, just right for rainy days.
+  - name: Full Irish breakfast
+    text: The full breakfast with eggs, bacon, sausages, black and white pudding and soda bread.
+  - name: Fish and chips
+    text: Fried fish with chips from a «chipper» such as Leo Burdock, for about €12-15.
+  - name: Seafood chowder
+    text: A creamy soup of fish and seafood, served with brown bread in many pubs.
+airports:
+  DUB: >-
+    The airport is about 10 km north of the centre and has no train. Dublin Express and Aircoach
+    coaches leave every 10-15 minutes and reach
+    O'Connell Street in 25-40 minutes, for about €10-12 (cheaper online). City buses 16 and 41 cost
+    about €2 with a Leap card or about €3 in coins, but take 45-60 minutes. A taxi costs about €30-40
+    and takes 25-40 minutes, depending on traffic.
+transport: >-
+  Dublin has no metro: you can walk around the centre, while the buses, the two Luas tram lines (Red
+  and Green) and the DART coastal train take you everywhere. Buy a Leap card at Spar or Centra shops
+  or at the airport: with it, a journey within 90 minutes costs about €2. The Leap Visitor Card gives
+  unlimited travel for 24 hours (about €8), 72 hours (about €19.50) or 7 days (about €40).
+daytrips:
+  - name: Howth
+    text: A fishing village on a peninsula, about 30 minutes by DART. The Cliff Walk takes 2-3 hours, and you can often see seals in the harbour.
+  - name: Glendalough
+    text: A 6th-century monastery among the lakes and forests of the Wicklow Mountains, about 1.5 hours by the St Kevin's bus or on a tour.
+  - name: Cliffs of Moher
+    text: Cliffs rising up to 214 metres above the Atlantic, on the west coast. They are about 3 hours away each way, so most people go on a day tour for about €60-75.
+budget: >-
+  A coffee costs about €3.50-4, a pint of Guinness €6-7 (€8-9 or more in Temple Bar), a simple meal
+  €15-20. Accommodation is the most expensive part: a hostel bed from about €35-60, a double room in a
+  simple hotel about €150-250 a night, more at weekends and during matches and concerts.
+when: >-
+  May to September has the longest days and temperatures around 15-20°C; in June it gets dark around
+  22:00. It can rain in any season. On 17 March, St Patrick's Day brings parades and street parties,
+  but also the year's highest hotel prices.
+tips:
+  - "Always bring a rain jacket and a warm layer: the weather changes several times a day, even in summer."
+  - "Sockets have three pins as in the United Kingdom (type G): bring an adapter with you from Albania."
+  - "For cheaper pints and traditional music, get out of Temple Bar: The Cobblestone in Smithfield has Irish music almost every evening."
+faq:
+  - q: "How much money do you need per day in Dublin?"
+    a: "Excluding the flight and accommodation, plan on €60-90 a day for food, transport and one paid sight. The free museums, the parks and the coastal walks keep costs down, while the Guinness Storehouse and the Book of Kells cost about €20-30 each."
+  - q: "Are the Cliffs of Moher worth it as a trip from Dublin?"
+    a: "Yes, if you have at least 4 days: it's a long day, about 12 hours on a tour. With less time, Howth and Glendalough are closer and just as beautiful."

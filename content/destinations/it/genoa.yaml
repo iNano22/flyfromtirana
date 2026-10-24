@@ -1,0 +1,77 @@
+city: Genoa
+name: Genova
+slug: genoa
+tagline: Vicoli medievali, porto e pesto vero
+intro: >-
+  Genova è la città portuale della Liguria, stretta tra il mare e le colline. Ha uno dei centri
+  storici medievali più grandi d'Europa, con vicoli stretti (i caruggi), palazzi nobiliari e un
+  porto antico con l'acquario e la passeggiata. È più economica di Milano o Firenze e una buona base
+  per le Cinque Terre e Portofino. Due o tre giorni bastano per la città, più un giorno sulla costa.
+sights:
+  - name: Via Garibaldi e i Palazzi dei Rolli
+    text: "La strada dei palazzi delle famiglie nobili, patrimonio UNESCO. Tre di loro (Palazzo Rosso, Palazzo Bianco e Palazzo Tursi) formano i Musei di Strada Nuova, con un biglietto unico da circa €9."
+  - name: Il centro storico (caruggi)
+    text: Un labirinto di vicoli stretti tra il Porto Antico e Piazza De Ferrari, pieno di panifici di focaccia, botteghe storiche e chiese.
+  - name: Porto Antico e Acquario
+    text: Il porto vecchio, ridisegnato dall'architetto Renzo Piano. L'Acquario di Genova è tra i più grandi d'Europa; il biglietto costa circa €30-35 ed è di solito più economico online.
+  - name: Cattedrale di San Lorenzo
+    text: La cattedrale a strisce bianche e nere. All'interno si conserva una granata britannica del 1941 che cadde nella chiesa senza esplodere. L'ingresso è gratuito.
+  - name: Boccadasse
+    text: Un piccolo borgo di pescatori con case colorate dentro la città, a circa 30 minuti di autobus dal centro. Ideale per il tramonto.
+  - name: Spianata Castelletto
+    text: Un balcone sui tetti e sul porto. Si sale con l'ascensore storico da Piazza Portello, con il normale biglietto dell'autobus.
+airports:
+  GOA: >-
+    L'aeroporto Cristoforo Colombo è sul mare, a circa 7 km a ovest del centro. Il Volabus (linea
+    100) ti porta alla stazione Principe in circa 20 minuti e a Brignole in circa 30 minuti, con
+    alcune fermate in centro; il biglietto costa circa €10 e l'autobus parte all'incirca ogni 30-60
+    minuti. Il taxi per il centro costa circa €25-35 e impiega circa 20 minuti.
+budget: >-
+  Un caffè al banco costa circa €1,30, un pezzo di focaccia €1,50-3, un piatto di trofie al pesto
+  €10-14, il biglietto dell'autobus circa €2. Un letto in ostello costa da circa €30-45, una camera
+  doppia in un hotel semplice da circa €80-120 a notte, di più in estate.
+when: >-
+  Maggio-giugno e settembre-ottobre sono i periodi migliori: clima caldo e mare per nuotare. Luglio
+  e agosto sono caldi e umidi, e le Cinque Terre sono piene di turisti. L'inverno è mite (circa
+  10-14°C di giorno) ma piovoso, e i prezzi sono più bassi.
+tips:
+  - "Compra la focaccia di prima mattina, quando esce calda dal forno, e provala come i genovesi, con un cappuccino."
+  - "Per le Cinque Terre parti presto e controlla gli orari dei treni: d'estate c'è folla, e dopo la pioggia alcuni sentieri chiudono."
+  - "Nei caruggi tieni la borsa davanti e la sera evita i vicoli deserti, soprattutto intorno a Via Prè e alla stazione Principe."
+itinerary:
+  - "Piazza De Ferrari e Palazzo Ducale, la Cattedrale di San Lorenzo, poi attraverso i caruggi fino al Porto Antico. Nel pomeriggio l'Acquario o una passeggiata al porto, la sera un aperitivo in Piazza delle Erbe."
+  - "Via Garibaldi con i Musei di Strada Nuova, poi l'ascensore per la Spianata Castelletto. Nel pomeriggio l'autobus per Boccadasse e una passeggiata lungo Corso Italia sul mare."
+  - "Una giornata alle Cinque Terre, oppure a Camogli e Portofino. In alternativa, la passeggiata di Nervi e il cimitero monumentale di Staglieno."
+areas:
+  - name: Centro storico e Porto Antico
+    text: A piedi da tutto, con B&B e appartamenti economici, ma alcuni vicoli sono rumorosi o bui la sera.
+  - name: Brignole e Via XX Settembre
+    text: "La zona più pratica: dalla stazione Brignole partono i treni per le Cinque Terre e il Volabus per l'aeroporto. Strade larghe, hotel tranquilli, a 15 minuti a piedi dal centro storico."
+  - name: Principe
+    text: Vicino alla stazione Principe e a Via Balbi, con hotel economici e il Volabus per l'aeroporto. Intorno alla stazione la sera serve attenzione.
+food:
+  - name: Pesto genovese
+    text: La salsa di basilico, pinoli, formaggio, aglio e olio d'oliva è nata qui. Provala con le trofie o le trenette, circa €10-14 al piatto.
+  - name: Focaccia genovese
+    text: La focaccia bassa con olio d'oliva e sale, in ogni panificio, per circa €1,50-3 al pezzo. I genovesi la mangiano anche a colazione.
+  - name: Farinata
+    text: Una sfoglia sottile di farina di ceci cotta nel forno a legna, economica e veloce.
+  - name: Focaccia di Recco
+    text: Due sfoglie di pasta sottilissime con formaggio morbido in mezzo, specialità della cittadina di Recco vicino a Genova.
+transport: >-
+  Il centro storico si gira a piedi, ma la città ha molte salite. Il biglietto AMT costa circa €2,
+  vale circa 100 minuti e si usa su autobus, sull'unica linea della metro, sulle funicolari e sugli
+  ascensori pubblici che collegano il centro alle colline. I treni regionali fermano in molte
+  stazioni dentro la città, da Nervi a Pegli.
+daytrips:
+  - name: Cinque Terre
+    text: 5 borghi colorati sul mare, a circa 1-1,5 ore di treno da Brignole a Monterosso, per circa €8-10. I treni tra i borghi si pagano a parte.
+  - name: Portofino
+    text: Il treno fino a Santa Margherita Ligure (circa 40 minuti), poi l'autobus o il battello per Portofino. La baia con gli yacht è cara per mangiare, ma merita una passeggiata.
+  - name: Camogli
+    text: Un borgo di pescatori con case alte e colorate, a circa 30 minuti di treno. Dal porto partono i battelli per l'abbazia di San Fruttuoso.
+faq:
+  - q: "Genova conviene come base per le Cinque Terre?"
+    a: "Sì, se vuoi risparmiare: dormire a Genova costa spesso meno che nei borghi delle Cinque Terre, e il treno da Brignole impiega circa 1-1,5 ore. Se hai solo 1 giorno, scegli 2-3 borghi invece di correre per tutti e 5."
+  - q: "Quanto si spende al giorno a Genova?"
+    a: "Volo e alloggio esclusi, €40-70 al giorno. Focaccia, farinata e piatti al pesto sono economici, e molte chiese e piazze si visitano gratis."

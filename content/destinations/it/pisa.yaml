@@ -1,0 +1,82 @@
+city: Pisa
+slug: pisa
+tagline: La Torre Pendente e la porta della Toscana
+intro: >-
+  Pisa è famosa in tutto il mondo per la Torre Pendente, ma è anche una piccola città universitaria
+  sull'Arno, con vicoli porticati e niente folla dopo il tramonto. Per la città in sé basta un
+  giorno. L'aeroporto è a soli 5 minuti dalla stazione centrale, e questo fa di Pisa la base più
+  comoda per Lucca, Firenze, le Cinque Terre e tutta la Toscana.
+sights:
+  - name: Torre Pendente
+    text: Il campanile del Duomo, alto circa 56 metri, inclinato fin dall'inizio della costruzione nel 1173. La salita è a orario prefissato e costa circa €20; prenota online, soprattutto d'estate. I bambini sotto gli 8 anni non possono salire.
+  - name: Piazza dei Miracoli
+    text: Il prato su cui sorgono la torre, il Duomo, il Battistero e il Camposanto monumentale, patrimonio UNESCO. La piazza è gratuita e di notte è illuminata.
+  - name: Duomo e Battistero
+    text: La cattedrale romanica in marmo bianco è a ingresso gratuito, con un biglietto a orario da ritirare in biglietteria o online. Il Battistero e il Camposanto hanno un biglietto a parte.
+  - name: Piazza dei Cavalieri
+    text: La seconda piazza della città, con il palazzo affrescato della Scuola Normale Superiore, l'università d'eccellenza di Pisa.
+  - name: Lungarni e Santa Maria della Spina
+    text: Le rive dell'Arno, il posto dell'aperitivo serale. Santa Maria della Spina è una piccola chiesa gotica proprio sull'acqua.
+  - name: Tuttomondo
+    text: Il grande murale di Keith Haring, dipinto nel 1989 sul muro di una chiesa, a 5 minuti a piedi da Pisa Centrale.
+itinerary:
+  - "Pisa in un giorno: Piazza dei Miracoli di mattina presto, la salita sulla torre, il Duomo e il Battistero. Nel pomeriggio Borgo Stretto, Piazza dei Cavalieri e i Lungarni, la sera un aperitivo sull'Arno."
+  - "Lucca in treno (circa 30 minuti): un giro in bici sulle mura, Piazza dell'Anfiteatro e la Torre Guinigi con gli alberi in cima."
+  - "Firenze in treno (circa 1 ora): il Duomo, Ponte Vecchio e Piazzale Michelangelo al tramonto."
+  - "Le Cinque Terre: in treno fino a La Spezia (circa 1-1,5 ore), poi i treni locali tra i cinque borghi. Parti presto."
+areas:
+  - name: Vicino a Piazza dei Miracoli
+    text: A piedi dalla torre e tranquilla di notte, ma con molti ristoranti turistici.
+  - name: Centro storico e Borgo Stretto
+    text: A nord dell'Arno, tra la torre e la stazione, con piccoli B&B e i locali degli studenti.
+  - name: Vicino a Pisa Centrale
+    text: "La zona più pratica e spesso la più economica: da qui partono il PisaMover per l'aeroporto e i treni per le gite. La torre è a circa 25 minuti a piedi."
+food:
+  - name: Cecina
+    text: Una torta sottile di farina di ceci, cotta nel forno a legna. Si mangia calda.
+  - name: Schiacciata
+    text: La focaccia toscana all'olio d'oliva, farcita con prosciutto e formaggio; un pranzo economico per circa €5-7.
+  - name: Ribollita
+    text: Una zuppa toscana densa di fagioli, cavolo nero e pane.
+  - name: Torta coi bischeri
+    text: La torta tipica pisana con riso, cioccolato e frutta secca.
+airports:
+  PSA: >-
+    L'aeroporto Galileo Galilei è a soli 2 km circa dal centro. Il treno automatico PisaMover ti
+    porta alla stazione di Pisa Centrale in circa 5 minuti (circa €5-6) e passa ogni pochi minuti.
+    Dalla stazione alla Torre Pendente ci sono circa 25-30 minuti a piedi lungo Corso Italia, oppure
+    c'è l'autobus LAM Rossa (circa €2). Un taxi fino alla torre costa circa €15-20. Da Pisa Centrale
+    i treni per Firenze impiegano circa 1 ora (circa €9); ci sono anche autobus diretti
+    dall'aeroporto, circa 1 ora e 10 minuti, per circa €10-15.
+transport: >-
+  Il centro di Pisa si gira facilmente a piedi: dalla stazione alla torre ci sono circa 2 km. Gli
+  autobus urbani costano circa €2 a biglietto; compralo dal tabaccaio. I treni regionali partono da
+  Pisa Centrale per Lucca, Firenze, La Spezia e Viareggio. La stazione di Pisa San Rossore è a circa
+  10 minuti a piedi dalla torre, comoda se arrivi da Lucca.
+daytrips:
+  - name: Lucca
+    text: Una piccola città dentro mura del XVI secolo, ideale in bici. Circa 30 minuti di treno, per circa €4.
+  - name: Firenze
+    text: La culla del Rinascimento, con il Duomo e gli Uffizi. Circa 1 ora di treno, per circa €9.
+  - name: Cinque Terre
+    text: Cinque borghi di case colorate sul mare, a circa 1-1,5 ore di treno fino a La Spezia, poi i treni locali.
+  - name: Viareggio
+    text: Spiagge lunghe e una passeggiata sul mare, a circa 20 minuti di treno.
+budget: >-
+  Un espresso al banco costa circa €1,20-1,50, un trancio di cecina o di pizza circa €2-4, una pizza
+  intera €8-12. Un letto in ostello costa da circa €30-45, una camera doppia in un hotel semplice da
+  circa €80-120 a notte, più una tassa di soggiorno di qualche euro a persona per notte.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. Luglio e agosto sono caldi, spesso oltre
+  i 30 gradi. Il 16 giugno, per la Luminara, migliaia di candele si accendono lungo l'Arno.
+tips:
+  - "Vai alla torre di mattina presto o dopo le 17:00: i gruppi in pullman arrivano verso mezzogiorno."
+  - "In Piazza dei Miracoli attenzione ai venditori di braccialetti e ai borseggiatori."
+  - "Per mangiare meglio e spendere meno allontanati dalla piazza: intorno a Borgo Stretto e Piazza delle Vettovaglie ci sono tanti locali frequentati dai pisani."
+faq:
+  - q: "Basta un giorno per Pisa?"
+    a: "Sì, per la torre, la piazza e il centro basta un giorno. La maggior parte dei viaggiatori usa Pisa come base e va in treno a Lucca, Firenze o alle Cinque Terre."
+  - q: "Come si va dall'aeroporto di Pisa a Firenze?"
+    a: "Prendi il PisaMover fino a Pisa Centrale (circa 5 minuti) e il treno per Firenze Santa Maria Novella (circa 1 ora, circa €9). Oppure l'autobus diretto dall'aeroporto, circa 1 ora e 10 minuti, per circa €10-15."
+  - q: "Quanto si spende al giorno a Pisa?"
+    a: "Volo e alloggio esclusi, calcola circa €40-70 al giorno per cibo, trasporti e la salita sulla torre. Pisa costa meno di Firenze, soprattutto per dormire."

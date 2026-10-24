@@ -1,0 +1,84 @@
+city: Palermo
+slug: palermo
+tagline: Mercati, mosaici d'oro e cibo di strada
+intro: >-
+  Palermo è il capoluogo della Sicilia e una delle città più antiche del Mediterraneo: fenici,
+  arabi, normanni e spagnoli hanno lasciato il segno nelle sue chiese, nei palazzi e nei mercati.
+  Il centro storico è grande e molto vivace, con il cibo di strada più famoso
+  d'Italia. Tre o quattro giorni bastano per la città, per Monreale e per una giornata di mare.
+sights:
+  - name: Palazzo dei Normanni e Cappella Palatina
+    text: Il palazzo dei re normanni, con la Cappella Palatina, la cappella del XII secolo ricoperta di mosaici d'oro. Il biglietto costa circa €15-19 a seconda del giorno.
+  - name: Cattedrale di Palermo
+    text: Un edificio in cui si mescolano stile normanno, gotico e barocco. L'ingresso in chiesa è gratuito; le terrazze sul tetto si pagano a parte.
+  - name: Quattro Canti e Fontana Pretoria
+    text: L'incrocio barocco nel cuore del centro. A due passi c'è la Fontana Pretoria, che per le sue statue nude i palermitani chiamavano un tempo «piazza della vergogna».
+  - name: Teatro Massimo
+    text: Il più grande teatro d'opera d'Italia, che si visita con tour guidati di circa 30 minuti (circa €10-12).
+  - name: Mercato di Ballarò
+    text: Il mercato più antico della città, con banchi di frutta, pesce e fritture. Vai al mattino, quando è più animato.
+  - name: Catacombe dei Cappuccini
+    text: Circa 8.000 corpi mummificati e vestiti, allineati lungo le pareti. Biglietto circa €5.
+airports:
+  PMO: >-
+    L'aeroporto Falcone-Borsellino (Punta Raisi) è a circa 35 km a ovest della città. L'autobus
+    Prestia e Comandè parte all'incirca ogni 30 minuti, ferma al Politeama e al Teatro Massimo e
+    arriva alla Stazione Centrale in circa 50 minuti; il biglietto costa circa €6,50, andata e
+    ritorno circa €11. Il treno Trinacria Express va a Palermo Centrale in circa 1 ora, per circa
+    €6, ma parte meno spesso e a volte è sostituito da un autobus per lavori: controlla gli orari.
+    Il taxi ha una tariffa fissa di circa €45-50 e impiega circa 40 minuti.
+budget: >-
+  Un espresso al banco costa circa €1-1,20, un'arancina €2-3, un panino con le panelle circa €2-3
+  e una pizza €7-10. Un letto in ostello costa da circa €25-40, una camera doppia in B&B da circa
+  €70-110 a notte.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore.
+  Luglio e agosto sono molto caldi, oltre 35°C quando soffia lo scirocco. Il Festino di Santa
+  Rosalia, patrona della città, culmina la notte del 14 luglio con la processione e i fuochi
+  d'artificio.
+tips:
+  - "Attenzione ai borseggiatori nei mercati e sugli autobus affollati."
+  - "In cattedrale e a Monreale tieni spalle e ginocchia coperte: all'ingresso possono fermarti."
+  - "Molti negozi e chiese chiudono più o meno dalle 13:00 alle 16:00: organizza le visite al mattino e nel tardo pomeriggio."
+itinerary:
+  - "Quattro Canti, Fontana Pretoria e la chiesa della Martorana, poi la Cattedrale e il Palazzo dei Normanni. La sera una passeggiata in Via Maqueda e cena alla Kalsa."
+  - "Il mercato di Ballarò al mattino, con panelle e arancine. Nel pomeriggio il Teatro Massimo o le Catacombe dei Cappuccini, la sera la Vucciria."
+  - "Monreale al mattino, poi nel pomeriggio il mare a Mondello."
+  - "Una giornata a Cefalù in treno, oppure a Piana degli Albanesi."
+areas:
+  - name: Centro storico
+    text: "Intorno ai Quattro Canti: tutto a piedi, con molti B&B in palazzi antichi e prezzi ragionevoli."
+  - name: Kalsa
+    text: Il quartiere antico vicino al mare, con locali e vita notturna; animato la sera, ma alcune viuzze di notte sono deserte.
+  - name: Politeama e Via Libertà
+    text: La parte più moderna ed elegante, con negozi e caffè. Qui ferma l'autobus dell'aeroporto.
+  - name: Vicino alla Stazione Centrale
+    text: La zona più economica e più pratica per il treno e l'autobus dell'aeroporto, ma meno piacevole la sera.
+food:
+  - name: Arancina
+    text: Una palla di riso fritta, ripiena di ragù oppure di burro e prosciutto. A Palermo è tonda e si chiama «arancina», al femminile.
+  - name: Panelle e crocchè
+    text: "Frittelle di farina di ceci e crocchette di patate, dentro un panino: uno dei pasti più economici della città."
+  - name: Pani ca' meusa
+    text: Panino con milza e polmone di vitello cotti nello strutto, con limone oppure con formaggio. Il cibo di strada più tipico, per chi ha coraggio.
+  - name: Sfincione
+    text: Una pizza alta e soffice con pomodoro, cipolla, acciughe e formaggio, venduta nei panifici e dai carretti per strada.
+transport: >-
+  Il centro storico si visita meglio a piedi: gran parte di Via Maqueda e di Corso Vittorio
+  Emanuele è pedonale. Gli autobus AMAT coprono il resto della città, ma spesso sono in ritardo per
+  il traffico; il biglietto costa circa €1,40 per 90 minuti e si compra dal tabaccaio o con l'app.
+  Non noleggiare un'auto: il traffico è caotico.
+daytrips:
+  - name: Monreale
+    text: Il duomo normanno del XII secolo, con uno dei cicli di mosaici più grandi al mondo. Circa 30-40 minuti con l'autobus AMAT 389 da Piazza Indipendenza.
+  - name: Cefalù
+    text: Una cittadina di mare con il duomo normanno, una spiaggia di sabbia e la Rocca che la sovrasta. Circa 1 ora di treno regionale, per circa €6.
+  - name: Mondello
+    text: La spiaggia dei palermitani, con acqua limpida, a circa 30-40 minuti con l'autobus 806 dal Politeama. Ad agosto è affollatissima.
+  - name: Piana degli Albanesi
+    text: Hora e Arbëreshëvet, a circa 25 km a sud, in montagna, fondata da albanesi in fuga dai Balcani alla fine del XV secolo. Si parla ancora l'arbëreshë, i cartelli sono bilingui e la messa si celebra in rito bizantino. Circa 1 ora di autobus; vale la pena soprattutto a Pasqua, quando le donne indossano i costumi tradizionali, e per i cannoli.
+faq:
+  - q: "A Piana degli Albanesi si parla ancora albanese?"
+    a: "Sì, molti abitanti parlano l'arbëreshë, un albanese meridionale antico, separato dall'Albania da oltre 500 anni. Con l'albanese standard ti capiscono in parte. Tutti parlano anche italiano."
+  - q: "Quanto si spende al giorno a Palermo?"
+    a: "Volo e alloggio esclusi, calcola €40-60 al giorno. Il Palazzo dei Normanni è l'ingresso più caro."

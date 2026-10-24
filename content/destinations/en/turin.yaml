@@ -1,0 +1,75 @@
+city: Turin
+slug: turin
+tagline: Arcades, the Museo Egizio and bicerin
+intro: >-
+  Turin was the first capital of united Italy: baroque squares, about 18 km of arcades where you can
+  walk even when it rains, historic cafés and the Alps on the horizon. It is calmer and cheaper than
+  Milan, with a centre you can cover on foot. Two or three days are enough.
+sights:
+  - name: Mole Antonelliana
+    text: The symbol of the city, about 167 metres tall, with the National Museum of Cinema inside. The panoramic lift takes you up to the terrace; the combined ticket costs about €20 and is worth booking online.
+  - name: Museo Egizio
+    text: The most important Egyptian museum in the world after the one in Cairo, with mummies, statues and papyri. Tickets cost about €18-20; allow at least 3 hours and book a time slot online.
+  - name: Piazza Castello and the Musei Reali
+    text: The central square with Palazzo Madama and the Royal Palace of the House of Savoy. The Musei Reali bring together the palace, the armoury, the art gallery and the gardens, on one ticket of about €15.
+  - name: Piazza San Carlo and Via Roma
+    text: The baroque square known as "Turin's drawing room", with its twin churches and historic cafés under the arcades. Via Roma links the square to Porta Nuova station.
+  - name: Parco del Valentino
+    text: The park on the banks of the Po, with the Valentino castle and the Borgo Medievale, a medieval village rebuilt for an exhibition in 1884. Entry to the park is free.
+  - name: Basilica di Superga
+    text: An 18th-century basilica on a hilltop, with views over the city and the Alps. Nearby is the memorial to the 1949 air crash of the Grande Torino team. You get there by tram 15 and the rack railway from Sassi.
+itinerary:
+  - "Piazza Castello, the Musei Reali and the Duomo, where the Shroud of Turin is kept. In the afternoon, the lanes of the Quadrilatero Romano and a bicerin in a historic café, and in the evening an aperitivo on Piazza Vittorio Veneto."
+  - "The Museo Egizio in the morning (booked ahead), then Piazza San Carlo and Via Roma. In the afternoon, the Mole Antonelliana with the Cinema Museum, sunset at Monte dei Cappuccini and dinner in Vanchiglia."
+  - "The Porta Palazzo market in the morning, then the Parco del Valentino along the Po. In the afternoon, the Basilica di Superga, or the Reggia di Venaria instead."
+areas:
+  - name: Centro and the Quadrilatero Romano
+    text: Around Piazza Castello, with everything within walking distance and lanes full of bars, but with the highest prices.
+  - name: San Salvario
+    text: The neighbourhood behind Porta Nuova station, with cheap restaurants and nightlife. Hotels and apartments are often cheaper; weekend evenings are noisy.
+  - name: Near Porta Susa
+    text: "The most practical area for arriving: the airport bus, the fast trains to Milan and the metro all stop here."
+food:
+  - name: Bicerin
+    text: The city's drink, with coffee, chocolate and cream in layers, served in a small glass. It costs about €6-7 in the historic cafés.
+  - name: Agnolotti del plin
+    text: Small meat-filled ravioli pinched by hand ("plin" means "pinch"), with meat sauce or with butter and sage.
+  - name: Vitello tonnato
+    text: Thin slices of veal with a tuna and caper sauce, the classic Piedmontese antipasto.
+  - name: Aperitivo
+    text: "Turin is the city of vermouth. From around 18:00 many bars offer a drink with a food buffet for about €10-15."
+airports:
+  TRN: >-
+    Caselle airport is about 16 km north of the city. The airport bus takes you to Porta Susa and
+    Porta Nuova in about 40-50 minutes, for about €7-8; it leaves every 15-30 minutes. A regional
+    train links the airport to Torino Dora station in about 20 minutes (about €3), but it runs less
+    often, every 30-60 minutes, and from Dora you need a tram or bus to the centre. A taxi takes about
+    25-30 minutes and costs about €35-45.
+transport: >-
+  The centre is walkable, under the arcades. The metro has only 1 line (M1), which runs through Porta
+  Susa, Porta Nuova and Lingotto, while GTT trams and buses cover the rest. A city ticket costs about
+  €2 and is valid for 100 minutes; a day ticket about €4-5. On the metro and on most vehicles you can
+  pay with a contactless bank card.
+daytrips:
+  - name: Reggia di Venaria
+    text: The hunting palace of the House of Savoy, with large gardens, about 40 minutes by bus from the centre.
+  - name: Sacra di San Michele
+    text: A medieval abbey on top of a rock, about 30 minutes by train to Sant'Ambrogio, then about 1.5 hours' climb on foot.
+  - name: Langhe and Alba
+    text: The Barolo vineyard hills and the town of the white truffle, about 1-1.5 hours by train or bus. The truffle fair runs in October-November.
+budget: >-
+  An espresso at the counter costs about €1.20-1.50, a pizza €8-12, a plate of agnolotti in a
+  trattoria €12-15, and a bus ticket about €2. A hostel bed costs from about €30-40, a double room in
+  a simple hotel from about €80-120 a night. On the whole Turin is cheaper than Milan.
+when: >-
+  April to June and September to October have the best weather. October and November are truffle
+  season in Alba. July and August are hot, and in August some places close. Winter is cold and foggy,
+  but the Alpine ski slopes are about 1.5-2 hours away.
+tips:
+  - "Many museums close one day a week: the Musei Reali on Mondays, the Mole Antonelliana on Tuesdays."
+  - "The Torino+Piemonte Card covers most museums and is worth it if you visit 2-3 museums a day."
+faq:
+  - q: "Can I see the Shroud of Turin?"
+    a: "The Shroud is kept in the Duomo, but it is shown to the public only rarely, at special exhibitions. Its history is told at the Museo della Sindone."
+  - q: "How much money do you need per day in Turin?"
+    a: "Excluding the flight and accommodation, plan on €45-70 a day for food, transport and one museum. You save with an aperitivo buffet instead of dinner and with the free parks and churches."

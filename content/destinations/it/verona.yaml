@@ -1,0 +1,79 @@
+city: Verona
+slug: verona
+tagline: Un'arena romana, il balcone di Giulietta e l'opera sotto le stelle
+intro: >-
+  Verona è la città di Romeo e Giulietta, con un centro storico piccolo e bellissimo che si
+  attraversa tutto a piedi, dentro un'ansa del fiume Adige. L'arena romana, vecchia di circa 2.000
+  anni, si riempie ancora d'opera ogni estate. Due giorni bastano per la città, tre se aggiungi il
+  Lago di Garda o le cantine della Valpolicella.
+sights:
+  - name: Arena di Verona
+    text: L'anfiteatro romano in Piazza Bra, tra i meglio conservati al mondo. L'ingresso costa circa €12; nei giorni d'opera chiude prima, nel pomeriggio.
+  - name: Casa di Giulietta
+    text: La casa con il balcone di Giulietta, vicino a Via Mazzini. Il cortile di solito è gratuito, ma nei giorni affollati l'accesso può essere limitato; il museo all'interno costa circa €12.
+  - name: Piazza delle Erbe e Torre dei Lamberti
+    text: La piazza del vecchio mercato, con palazzi affrescati e bancarelle. La Torre dei Lamberti, alta 84 metri, ha l'ascensore e la vista migliore sui tetti, per circa €6-8.
+  - name: Piazza dei Signori
+    text: L'elegante piazza con la statua di Dante, circondata dai palazzi degli Scaligeri, i signori medievali della città.
+  - name: Castelvecchio e Ponte Scaligero
+    text: Il castello medievale sul fiume, con un museo d'arte all'interno, e il suo ponte merlato in mattoni, che si attraversa gratis.
+  - name: Ponte Pietra e Castel San Pietro
+    text: Il ponte romano sull'Adige e la collina di fronte. Sali a piedi per la scalinata (gratis) o con la funicolare al tramonto, per la vista più bella di Verona.
+  - name: Basilica di San Zeno
+    text: Una chiesa romanica con un portale in bronzo e una cripta, a circa 20 minuti a piedi dal centro.
+airports:
+  VRN: >-
+    L'aeroporto di Verona Villafranca si trova a circa 12 km dal centro. L'Aerobus ti porta alla
+    stazione ferroviaria di Porta Nuova in circa 15-20 minuti, le partenze sono ogni 20-30 minuti e il
+    biglietto costa circa €6-7. Dalla stazione all'Arena ci sono circa 20 minuti a piedi. Il taxi fino
+    al centro costa circa €30-40.
+budget: >-
+  Un caffè al banco costa circa €1,20-1,50, uno spritz €4-6, una pizza €8-12 e un pranzo in osteria
+  €15-25. Il biglietto dell'autobus costa circa €1,50-2. Un letto in ostello costa da circa €30-45,
+  una camera doppia in un hotel semplice da circa €90-140 a notte; nelle sere d'opera e durante la
+  fiera Vinitaly ad aprile i prezzi salgono molto.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore per camminare. La stagione lirica
+  all'Arena va da metà giugno a inizio settembre: è il motivo principale per venire d'estate, ma
+  luglio e agosto sono molto caldi e gli hotel rincarano. A dicembre c'è il mercatino di Natale in
+  Piazza dei Signori.
+tips:
+  - "La Verona Card (da circa €27 per 24 ore) copre l'Arena, la Torre dei Lamberti, la Casa di Giulietta, Castelvecchio, le chiese principali e gli autobus. Conviene con tre o quattro visite al giorno."
+  - "Per l'opera all'Arena, i posti sulle gradinate in pietra non sono numerati: arriva presto, porta un cuscino e dell'acqua. Gli spettacoli iniziano verso le 21:00 e finiscono dopo mezzanotte."
+  - "Le chiese del Duomo, San Zeno, Sant'Anastasia e San Fermo hanno un biglietto cumulativo di circa €8-10."
+itinerary:
+  - "L'Arena al mattino, poi Via Mazzini fino alla Casa di Giulietta. Nel pomeriggio Piazza delle Erbe, la Torre dei Lamberti e Piazza dei Signori, la sera uno spritz in una delle piazze."
+  - "Castelvecchio e Ponte Scaligero, poi a piedi lungo il fiume fino alla Basilica di San Zeno. Nel pomeriggio il Duomo e Ponte Pietra, al tramonto Castel San Pietro."
+  - "Una giornata fuori città, a Sirmione sul Lago di Garda o nelle cantine della Valpolicella. D'estate, la sera all'opera in Arena."
+areas:
+  - name: Centro storico (Città Antica)
+    text: Dentro l'ansa del fiume, tutto a piedi, con i prezzi più alti. Ideale per un fine settimana.
+  - name: Veronetta
+    text: Oltre il fiume, il quartiere degli studenti, con hotel e ristoranti più economici, a 10 minuti a piedi da Piazza delle Erbe.
+  - name: Vicino a Porta Nuova
+    text: "La zona più pratica: qui ferma l'Aerobus e partono i treni per il Garda e Venezia. Gli hotel sono più economici, il centro è a 20 minuti a piedi."
+food:
+  - name: Risotto all'Amarone
+    text: Risotto con il vino rosso Amarone della Valpolicella, il piatto più famoso della città.
+  - name: Bigoli
+    text: Pasta spessa fatta in casa, spesso con il ragù d'anatra o con le sarde.
+  - name: Pastissada de caval
+    text: Uno stufato tradizionale di carne di cavallo cotta a lungo nel vino rosso, di solito con la polenta.
+  - name: Vini della Valpolicella
+    text: "Amarone, Ripasso e Valpolicella classico: nei locali un calice costa circa €4-7."
+transport: >-
+  Il centro è piccolo e la maggior parte delle strade è pedonale. Gli autobus ATV collegano la
+  stazione di Porta Nuova con Piazza Bra e gli altri quartieri; il biglietto singolo costa circa
+  €1,50-2 se lo compri prima in tabaccheria o nell'app, di più a bordo.
+daytrips:
+  - name: Lago di Garda
+    text: Peschiera del Garda è a circa 15 minuti di treno regionale (circa €3-4). Per Sirmione, con il suo castello e le acque termali, prendi il treno fino a Desenzano e poi l'autobus.
+  - name: Venezia
+    text: Circa 1 ora e 10 minuti con il treno veloce o 1,5-2 ore con il regionale, da circa €11.
+  - name: Valpolicella
+    text: La zona del vino Amarone, a circa 20-30 minuti in auto o in autobus. Le degustazioni in cantina costano circa €15-30 e si prenotano in anticipo.
+faq:
+  - q: "Come posso vedere un'opera all'Arena?"
+    a: "La stagione va da giugno a inizio settembre. I biglietti si comprano online sul sito ufficiale dell'Arena: i posti non numerati sulle gradinate in pietra partono da circa €30, mentre quelli numerati in platea costano oltre €100. Per i fine settimana prenota qualche settimana prima."
+  - q: "Quanto si spende al giorno a Verona?"
+    a: "Volo e alloggio esclusi, calcola €45-70 al giorno per cibo, autobus e uno o due ingressi. Risparmi con una pizza o un panino a pranzo e con la Verona Card."

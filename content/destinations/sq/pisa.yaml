@@ -1,0 +1,82 @@
+city: Pisa
+slug: pisa
+tagline: Kulla e Pjerrët dhe porta e Toskanës
+intro: >-
+  Pisa njihet në gjithë botën për Kullën e Pjerrët, por është edhe një qytet i vogël studentor buzë
+  lumit Arno, me rrugica me harqe dhe pa turma pasi bie mbrëmja. Për vetë qytetin mjafton një ditë.
+  Aeroporti është vetëm 5 minuta nga stacioni qendror, prandaj Pisa është baza më e lehtë për
+  Lucca, Florence, Cinque Terre dhe gjithë Toskanën.
+sights:
+  - name: Kulla e Pjerrët
+    text: Kambanorja e katedrales, rreth 56 metra e lartë, e anuar që kur nisi ndërtimi në vitin 1173. Ngjitja bëhet me orar të caktuar dhe kushton rreth €20; rezervoje online, sidomos në verë. Fëmijët nën 8 vjeç nuk lejohen të ngjiten.
+  - name: Piazza dei Miracoli
+    text: Sheshi me bar ku qëndrojnë kulla, Duomo, Baptisteri dhe varrezat monumentale Camposanto, në listën e UNESCO-s. Sheshi është falas dhe natën ndriçohet.
+  - name: Duomo dhe Baptisteri
+    text: Katedralja romanike prej mermeri të bardhë hyhet falas, me një biletë me orar nga arka ose online. Baptisteri dhe Camposanto kanë biletë më vete.
+  - name: Piazza dei Cavalieri
+    text: Sheshi i dytë i qytetit, me pallatin me afreske të Scuola Normale Superiore, universitetit elitar të Pisës.
+  - name: Lungarni dhe Santa Maria della Spina
+    text: Bregu i lumit Arno, vendi i aperitivit në mbrëmje. Santa Maria della Spina është një kishë e vogël gotike buzë ujit.
+  - name: Tuttomondo
+    text: Murali i madh i Keith Haring, pikturuar në vitin 1989 në murin e një kishe, 5 minuta në këmbë nga Pisa Centrale.
+itinerary:
+  - "Pisa në një ditë: Piazza dei Miracoli herët në mëngjes, ngjitja në kullë, Duomo dhe Baptisteri. Pasdite Borgo Stretto, Piazza dei Cavalieri dhe Lungarni, në mbrëmje aperitiv buzë lumit Arno."
+  - "Lucca me tren (rreth 30 minuta): një xhiro me biçikletë mbi muret e qytetit, Piazza dell'Anfiteatro dhe Kulla Guinigi me pemët në majë."
+  - "Florence me tren (rreth 1 orë): Duomo, Ponte Vecchio dhe Piazzale Michelangelo në perëndim të diellit."
+  - "Cinque Terre: me tren deri në La Spezia (rreth 1-1.5 orë), pastaj trenat lokalë mes pesë fshatrave. Nisu herët."
+areas:
+  - name: Pranë Piazza dei Miracoli
+    text: Në këmbë deri te kulla dhe e qetë natën, por me shumë restorante turistike.
+  - name: Qendra historike dhe Borgo Stretto
+    text: Në veri të lumit Arno, mes kullës dhe stacionit, me bujtina të vogla dhe lokalet e studentëve.
+  - name: Pranë Pisa Centrale
+    text: "Zona më praktike dhe shpesh më e lira: PisaMover për aeroportin dhe trenat për udhëtimet ditore nisen nga këtu. Kulla është rreth 25 minuta në këmbë."
+food:
+  - name: Cecina
+    text: Byrek i hollë me miell qiqrash, i pjekur në furrë druri. Hahet i nxehtë.
+  - name: Schiacciata
+    text: Fokaçja toskane me vaj ulliri, e mbushur me proshutë dhe djathë; drekë e lirë për rreth €5-7.
+  - name: Ribollita
+    text: Supë e trashë toskane me fasule, lakër jeshile dhe bukë.
+  - name: Torta coi bischeri
+    text: Tartë tipike e Pisës me oriz, çokollatë dhe fruta të thata.
+airports:
+  PSA: >-
+    Aeroporti Galileo Galilei është vetëm rreth 2 km nga qendra. Treni automatik PisaMover të çon në
+    stacionin Pisa Centrale për rreth 5 minuta (rreth €5-6) dhe niset çdo disa minuta. Nga stacioni
+    deri te Kulla e Pjerrët ke rreth 25-30 minuta në këmbë përmes Corso Italia, ose autobusin LAM
+    Rossa (rreth €2). Taksia deri te kulla kushton rreth €15-20. Nga Pisa Centrale trenat për në
+    Florence bëjnë rreth 1 orë (rreth €9); ka edhe autobusë direkt nga aeroporti, rreth 1 orë e 10
+    minuta, me rreth €10-15.
+transport: >-
+  Qendra e Pisës përshkohet lehtë në këmbë: nga stacioni deri te kulla janë rreth 2 km. Autobusët e
+  qytetit kushtojnë rreth €2 për biletë; blije në duhanshitore (tabacchi). Trenat rajonalë nisen
+  nga Pisa Centrale për Lucca, Florence, La Spezia dhe Viareggio. Stacioni Pisa San Rossore është
+  rreth 10 minuta në këmbë nga kulla, i dobishëm kur vjen nga Lucca.
+daytrips:
+  - name: Lucca
+    text: Qytet i vogël brenda mureve të shekullit XVI, ideal me biçikletë. Rreth 30 minuta me tren, me rreth €4.
+  - name: Florence
+    text: Djepi i Rilindjes, me Duomon dhe Uffizi-n. Rreth 1 orë me tren, me rreth €9.
+  - name: Cinque Terre
+    text: Pesë fshatra me shtëpi shumëngjyrëshe mbi det, rreth 1-1.5 orë me tren deri në La Spezia, pastaj trenat lokalë.
+  - name: Viareggio
+    text: Plazhe të gjata dhe shëtitore buzë detit, rreth 20 minuta me tren.
+budget: >-
+  Një espresso në banak kushton rreth €1.20-1.50, një fetë cecina ose pica rreth €2-4, një pica e
+  plotë €8-12. Një shtrat në hostel kushton nga rreth €30-45, një dhomë dyshe në hotel të thjeshtë
+  nga rreth €80-120 nata, plus taksa e qytetit prej disa eurosh për person në natë.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Korriku dhe gushti janë të nxehtë, shpesh
+  mbi 30 gradë. Më 16 qershor, për festën Luminara, mijëra qirinj ndizen përgjatë lumit Arno.
+tips:
+  - "Shko te kulla herët në mëngjes ose pas orës 17:00: grupet me autobusë vijnë rreth mesditës."
+  - "Në Piazza dei Miracoli kujdes nga shitësit me byzylykë dhe nga xhepistët."
+  - "Për të ngrënë më mirë e më lirë largohu nga sheshi: rreth Borgo Stretto dhe Piazza delle Vettovaglie ka plot lokale të vendasve."
+faq:
+  - q: "A mjafton një ditë për Pisan?"
+    a: "Po, për kullën, sheshin dhe qendrën mjafton një ditë. Shumica e udhëtarëve e përdorin Pisan si bazë dhe shkojnë me tren në Lucca, Florence ose Cinque Terre."
+  - q: "Si shkoj nga aeroporti i Pisës në Florence?"
+    a: "Merr PisaMover deri në Pisa Centrale (rreth 5 minuta) dhe trenin për Firenze Santa Maria Novella (rreth 1 orë, rreth €9). Ose autobusin direkt nga aeroporti, rreth 1 orë e 10 minuta, me rreth €10-15."
+  - q: "Sa para duhen në ditë në Pisa?"
+    a: "Pa fluturimin dhe fjetjen, llogarit rreth €40-70 në ditë për ushqim, transport dhe ngjitjen në kullë. Pisa është më e lirë se Florence, sidomos për fjetjen."

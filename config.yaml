@@ -330,6 +330,14 @@ links:
       Malta:        https://www.tiqets.com/en/valletta-attractions-c73787/
       Kraków:       https://www.tiqets.com/en/krakow-attractions-c46/
       Warsaw:       https://www.tiqets.com/en/warsaw-attractions-c485/
+      Pisa:         https://www.tiqets.com/en/pisa-attractions-c260935/
+      Turin:        https://www.tiqets.com/en/turin-attractions-c71534/
+      Verona:       https://www.tiqets.com/en/verona-attractions-c71506/
+      Genoa:        https://www.tiqets.com/en/genoa-attractions-c71831/
+      Palermo:      https://www.tiqets.com/en/palermo-attractions-c71428/
+      Bratislava:   https://www.tiqets.com/en/bratislava-attractions-c78187/
+      Dublin:       https://www.tiqets.com/en/dublin-attractions-c68616/
+      Edinburgh:    https://www.tiqets.com/en/edinburgh-attractions-c21/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -358,6 +366,14 @@ links:
       Malta:        https://www.getyourguide.com/malta-l90/
       Kraków:       https://www.getyourguide.com/krakow-l40/
       Warsaw:       https://www.getyourguide.com/warsaw-l41/
+      Pisa:         https://www.getyourguide.com/pisa-l157/
+      Turin:        https://www.getyourguide.com/turin-l390/
+      Verona:       https://www.getyourguide.com/verona-l389/
+      Genoa:        https://www.getyourguide.com/genoa-l1009/
+      Palermo:      https://www.getyourguide.com/palermo-l387/
+      Bratislava:   https://www.getyourguide.com/bratislava-l765/
+      Dublin:       https://www.getyourguide.com/dublin-l31/
+      Edinburgh:    https://www.getyourguide.com/edinburgh-l44/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -386,6 +402,14 @@ links:
       Malta:        https://www.welcomepickups.com/malta/
       Kraków:       https://www.welcomepickups.com/krakow/
       Warsaw:       https://www.welcomepickups.com/warsaw/
+      Pisa:         https://www.welcomepickups.com/pisa/
+      Turin:        https://www.welcomepickups.com/turin/
+      Verona:       https://www.welcomepickups.com/verona/
+      Genoa:        https://www.welcomepickups.com/genoa/
+      Palermo:      https://www.welcomepickups.com/palermo/
+      Bratislava:   https://www.welcomepickups.com/bratislava/
+      Dublin:       https://www.welcomepickups.com/dublin/
+      Edinburgh:    https://www.welcomepickups.com/edinburgh/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -414,6 +438,14 @@ links:
       Malta:        https://radicalstorage.com/luggage-storage/malta
       Kraków:       https://radicalstorage.com/luggage-storage/krakow
       Warsaw:       https://radicalstorage.com/luggage-storage/warsaw
+      Pisa:         https://radicalstorage.com/luggage-storage/pisa
+      Turin:        https://radicalstorage.com/luggage-storage/turin
+      Verona:       https://radicalstorage.com/luggage-storage/verona
+      Genoa:        https://radicalstorage.com/luggage-storage/genoa
+      Palermo:      https://radicalstorage.com/luggage-storage/palermo
+      Bratislava:   https://radicalstorage.com/luggage-storage/bratislava
+      Dublin:       https://radicalstorage.com/luggage-storage/dublin
+      Edinburgh:    https://radicalstorage.com/luggage-storage/edinburgh
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

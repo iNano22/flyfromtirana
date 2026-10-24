@@ -1,0 +1,82 @@
+city: Palermo
+slug: palermo
+tagline: Markets, golden mosaics and street food
+intro: >-
+  Palermo is the capital of Sicily and one of the oldest cities in the Mediterranean: the
+  Phoenicians, Arabs, Normans and Spanish all left their mark on its churches, palaces and markets.
+  The historic centre is large and very lively, with the most famous street food
+  in Italy. Three or four days are enough for the city, for Monreale and for a beach day.
+sights:
+  - name: Palazzo dei Normanni and the Cappella Palatina
+    text: The palace of the Norman kings, with the Cappella Palatina, the 12th-century chapel covered in golden mosaics. Tickets cost about €15-19 depending on the day.
+  - name: Palermo Cathedral
+    text: A building where Norman, Gothic and Baroque styles mix. Entry to the church is free; the rooftop terraces are paid separately.
+  - name: Quattro Canti and Fontana Pretoria
+    text: The Baroque crossroads at the heart of the centre. A few steps away is the Fontana Pretoria, whose nude statues once earned it the nickname «the square of shame» among the people of Palermo.
+  - name: Teatro Massimo
+    text: The largest opera house in Italy, which can be visited on guided tours of about 30 minutes (about €10-12).
+  - name: Mercato di Ballarò
+    text: The oldest market in the city, with stalls of fruit, fish and fried food. Go in the morning, when it is at its liveliest.
+  - name: Catacombe dei Cappuccini
+    text: About 8,000 mummified and clothed bodies, lined up along the walls. Tickets about €5.
+airports:
+  PMO: >-
+    Falcone-Borsellino airport (Punta Raisi) is about 35 km west of the city. The Prestia e Comandè
+    bus leaves roughly every 30 minutes, stops at Politeama and Teatro Massimo and reaches Stazione
+    Centrale in about 50 minutes; a ticket costs about €6.50, a return about €11. The Trinacria
+    Express train goes to Palermo Centrale in about 1 hour, for about €6, but it runs less often
+    and is sometimes replaced by a bus because of engineering works: check the timetable. Taxis
+    have a fixed fare of about €45-50 and take about 40 minutes.
+budget: >-
+  An espresso at the counter costs about €1-1.20, an arancina €2-3, a roll with panelle about €2-3
+  and a pizza €7-10. A hostel bed costs from about €25-40, a double room in a B&B from about
+  €70-110 a night.
+when: >-
+  April to June and September to October have the best weather. July and August are very hot, over 35°C when the scirocco blows. The feast of Saint
+  Rosalia, the city's patron saint, peaks on the night of 14 July with a procession and fireworks.
+tips:
+  - "Watch out for pickpockets in the markets and on crowded buses."
+  - "In the cathedral and in Monreale keep your shoulders and knees covered: you may be stopped at the entrance."
+  - "Many shops and churches close from about 13:00 to 16:00: plan your visits for the morning and late afternoon."
+itinerary:
+  - "Quattro Canti, the Fontana Pretoria and the church of La Martorana, then the Cathedral and the Palazzo dei Normanni. In the evening, a stroll along Via Maqueda and dinner in the Kalsa."
+  - "Ballarò market in the morning, with panelle and arancine. In the afternoon, Teatro Massimo or the Catacombe dei Cappuccini, and the Vucciria in the evening."
+  - "Monreale in the morning, then the beach at Mondello in the afternoon."
+  - "A day in Cefalù by train, or in Piana degli Albanesi."
+areas:
+  - name: Centro storico
+    text: "Around Quattro Canti: everything is within walking distance, with many B&Bs in old palazzi and reasonable prices."
+  - name: Kalsa
+    text: The old quarter near the sea, with bars and nightlife; lively in the evening, but some lanes are quiet at night.
+  - name: Politeama and Via Libertà
+    text: The most modern and elegant part, with shops and cafés. The airport bus stops here.
+  - name: Near Stazione Centrale
+    text: The cheapest and most practical area for the airport train and bus, but less pleasant at night.
+food:
+  - name: Arancina
+    text: A fried rice ball, filled with ragù or with butter and ham. In Palermo it is round and called «arancina», in the feminine.
+  - name: Panelle and crocchè
+    text: "Fried chickpea-flour fritters and potato croquettes, inside a bread roll: one of the cheapest meals in the city."
+  - name: Pani ca' meusa
+    text: A bread roll with veal spleen and lung cooked in lard, with lemon or with cheese. The most typical street food, for those who dare.
+  - name: Sfincione
+    text: A thick, soft pizza with tomato, onion, anchovies and cheese, sold in bakeries and from carts in the street.
+transport: >-
+  The historic centre is best seen on foot: most of Via Maqueda and Corso Vittorio Emanuele are
+  pedestrianised. AMAT buses cover the rest of the city, but are often delayed in traffic; a ticket
+  costs about €1.40 for 90 minutes and is sold in tobacconists (tabacchi) or through an app. Don't
+  rent a car: the traffic is chaotic.
+daytrips:
+  - name: Monreale
+    text: The 12th-century Norman cathedral, with one of the largest mosaic cycles in the world. About 30-40 minutes on AMAT bus 389 from Piazza Indipendenza.
+  - name: Cefalù
+    text: A seaside town with a Norman cathedral, a sandy beach and the La Rocca cliff above it. About 1 hour by regional train, for about €6.
+  - name: Mondello
+    text: The beach of the people of Palermo, with clear water, about 30-40 minutes on bus 806 from Politeama. In August it is packed.
+  - name: Piana degli Albanesi
+    text: Hora e Arbëreshëvet, about 25 km to the south, in the mountains, founded by Albanians fleeing the Balkans at the end of the 15th century. Arbërisht is still spoken, the signs are bilingual and Mass is celebrated in the Byzantine rite. About 1 hour by bus; it is especially worth it at Easter, when the women wear traditional costumes, and for its cannoli.
+faq:
+  - q: "Is Albanian still spoken in Piana degli Albanesi?"
+    a: "Yes, many residents speak Arbërisht, an old southern Albanian, separated from Albania for over 500 years. With standard Albanian you will be partly understood. Everyone also speaks Italian."
+  - q: "How much money do you need per day in Palermo?"
+    a: "Excluding the flight and accommodation, allow €40-60 a day. The Palazzo dei Normanni is the most expensive entry."

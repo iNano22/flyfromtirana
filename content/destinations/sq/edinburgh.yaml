@@ -1,0 +1,80 @@
+city: Edinburgh
+slug: edinburgh
+tagline: Kështjella, Royal Mile dhe festivalet e gushtit
+intro: >-
+  Edinburgh, kryeqyteti i Skocisë, është ndër qytetet më të bukura të Europës: një qytet i vjetër
+  mesjetar me rrugica të ngushta nën kështjellë, një qytet "i ri" i shekullit të 18-të me rrugë
+  të gjera, dhe një vullkan i shuar në mes të qytetit. Tre ditë mjaftojnë për qytetin, plus një
+  ditë për Highlands.
+sights:
+  - name: Edinburgh Castle
+    text: Kështjella mbi shkëmbin vullkanik, me xhevahiret e Kurorës skoceze dhe pamjen mbi gjithë qytetin. Bileta kushton rreth £21-23 dhe del më lirë kur blihet online.
+  - name: Royal Mile
+    text: Rruga kryesore e qytetit të vjetër, nga kështjella deri te pallati Holyrood. Gjatë saj janë katedralja St Giles' dhe dhjetëra rrugica të ngushta (closes).
+  - name: Arthur's Seat
+    text: Vullkani i shuar në parkun Holyrood, 251 metra i lartë. Ngjitja zgjat rreth 45-60 minuta, është falas dhe nga maja shikon qytetin dhe detin.
+  - name: Calton Hill
+    text: Kodra me monumente në stil grek, vetëm 10 minuta në këmbë nga Princes Street. Vendi më i mirë për perëndimin e diellit.
+  - name: National Museum of Scotland
+    text: Muzeu me historinë e Skocisë, nga dinosaurët deri te delja Dolly. Hyrja është falas.
+  - name: Dean Village
+    text: Një fshat i vogël buzë lumit Water of Leith, 15 minuta në këmbë nga qendra, por që duket larg qytetit.
+airports:
+  EDI: >-
+    Aeroporti është rreth 13 km në perëndim të qendrës. Tramvaji nis çdo 7-10 minuta dhe arrin në
+    Princes Street për rreth 35 minuta dhe në York Place për rreth 40 minuta (rreth £7.50). Autobusi
+    Airlink 100 shkon në Waverley Bridge, pranë stacionit të trenit, për rreth 30 minuta (rreth
+    £5.50-6) dhe qarkullon edhe natën. Taksia kushton rreth £25-35 dhe bën 20-30 minuta.
+budget: >-
+  Një kafe kushton rreth £3.50, një vakt në pub £14-20 dhe një birrë (pint) rreth £6. Një shtrat
+  në hostel kushton nga rreth £25-40 jashtë sezonit, por në gusht çmimet dyfishohen ose
+  trefishohen. Për fjetjen paguhet edhe një taksë turistike prej 5% për natë, për deri në 5 netë.
+when: >-
+  Maji-shtatori ka motin më të butë (rreth 15-20 gradë) dhe ditë shumë të gjata. Në gusht qyteti
+  mbushet për festivalet (Edinburgh Festival Fringe, International Festival dhe Military Tattoo):
+  atmosferë e jashtëzakonshme, por hotele shumë të shtrenjta, ndaj rezervo muaj përpara. Dimri
+  është i ftohtë dhe errësohet rreth orës 16:00, por dhjetori ka tregun e Krishtlindjeve dhe
+  festën e Vitit të Ri (Hogmanay).
+tips:
+  - "Merr me vete xhaketë kundër shiut dhe shtresa të ngrohta edhe në verë: moti ndryshon disa herë në ditë dhe era fryn fort."
+  - "Bankat skoceze shtypin kartëmonedhat e tyre në paund. Janë të vlefshme, por jashtë Skocisë ndonjëherë nuk pranohen: paguaj me kartë kur mundesh."
+  - "Shumë muze (National Museum, Scottish National Gallery, Portrait Gallery) janë falas."
+itinerary:
+  - "Edinburgh Castle në mëngjes, pastaj poshtë Royal Mile me katedralen St Giles'. Pasdite Victoria Street, Grassmarket dhe National Museum of Scotland, në mbrëmje Calton Hill."
+  - "Ngjitje në Arthur's Seat në mëngjes, pastaj pallati Holyrood. Pasdite qyteti i ri: Princes Street Gardens, Scott Monument dhe Scottish National Gallery."
+  - "Shëtitje përgjatë Water of Leith nga Dean Village në Stockbridge, pastaj në Leith për jahtin mbretëror Britannia dhe peshk buzë portit."
+  - "Një ditë me turne në Highlands dhe Loch Ness, ose me tren në Stirling ose Glasgow."
+areas:
+  - name: Old Town
+    text: Rreth Royal Mile, pranë kështjellës dhe pubeve, por me çmimet më të larta dhe rrugë plot turistë.
+  - name: New Town
+    text: Rrugë elegante georgjiane rreth Princes Street, me tramvajin e aeroportit dhe stacionin Waverley në këmbë.
+  - name: Haymarket
+    text: "Praktike dhe pak më e lirë: tramvaji i aeroportit ndalon këtu dhe deri te Princes Street janë 15 minuta në këmbë."
+  - name: Leith dhe Southside
+    text: "Lagje më të qeta dhe më të lira: Leith buzë portit, me restorante peshku, dhe Southside, lagjja e studentëve pranë parkut Holyrood."
+food:
+  - name: Haggis, neeps and tatties
+    text: "Pjata kombëtare: mish i grirë dele me tërshërë dhe erëza, me pure rrepe dhe patatesh."
+  - name: Full Scottish breakfast
+    text: Mëngjesi i plotë me vezë, proshutë, salsiçe, fasule dhe shpesh një fetë haggis.
+  - name: Cullen skink
+    text: Supë e trashë me peshk të tymosur, patate dhe qumësht, ideale për ditët me shi.
+  - name: Whisky dhe shortbread
+    text: Uiski skocez në barët e shumtë të qytetit dhe biskotat me gjalpë, suveniri klasik.
+transport: >-
+  Qendra është kompakte dhe përshkohet në këmbë, por ka shumë të përpjeta e shkallë. Autobusët
+  Lothian dhe tramvaji të çojnë kudo: një biletë kushton rreth £2.20 dhe bileta ditore rreth
+  £5.50. Mund të paguash me kartë bankare pa kontakt në hyrje, ose me aplikacionin Lothian Buses.
+daytrips:
+  - name: Highlands dhe Loch Ness
+    text: Turnet ditore me autobus nisen në mëngjes dhe kthehen në mbrëmje (rreth 12 orë), me ndalesa në Glencoe dhe buzë liqenit, për rreth £55-75.
+  - name: Stirling
+    text: Kështjella ku u kurorëzuan mbretërit skocezë dhe monumenti i William Wallace, rreth 50 minuta me tren.
+  - name: Glasgow
+    text: Qyteti më i madh i Skocisë, me muze falas dhe jetë nate, rreth 50 minuta me tren (rreth £15-17 vajtje-ardhje).
+faq:
+  - q: "Tramvaj apo autobus nga aeroporti?"
+    a: "Autobusi Airlink 100 është pak më i lirë dhe më i shpejtë deri te stacioni Waverley. Tramvaji është më i rehatshëm dhe më i mirë nëse fle te Haymarket, Princes Street ose York Place."
+  - q: "Sa para duhen në ditë në Edinburgh?"
+    a: "Pa fluturimin dhe fjetjen, llogarit £50-80 në ditë. Muzetë falas dhe ecja në këmbë e ulin koston, ndërsa kështjella dhe pallati Holyrood kushtojnë rreth £20 secili."

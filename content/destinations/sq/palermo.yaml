@@ -1,0 +1,82 @@
+city: Palermo
+slug: palermo
+tagline: Tregje, mozaikë të artë dhe ushqim rruge
+intro: >-
+  Palermo është kryeqyteti i Sicilisë dhe një nga qytetet më të vjetra të Mesdheut: fenikasit,
+  arabët, normanët dhe spanjollët lanë gjurmë në kishat, pallatet dhe tregjet e tij. Qendra
+  historike është e madhe dhe shumë e gjallë, me ushqimin e rrugës më të famshëm
+  të Italisë. Tri-katër ditë mjaftojnë për qytetin, për Monreale dhe për një ditë plazhi.
+sights:
+  - name: Palazzo dei Normanni dhe Cappella Palatina
+    text: Pallati i mbretërve normanë, me Cappella Palatina, kishëzën e shekullit XII të mbuluar me mozaikë të artë. Bileta kushton rreth €15-19 sipas ditës.
+  - name: Katedralja e Palermos
+    text: Një ndërtesë ku përzihen stilet norman, gotik dhe barok. Hyrja në kishë është falas; tarracat në çati paguhen veç.
+  - name: Quattro Canti dhe Fontana Pretoria
+    text: Kryqëzimi barok në zemër të qendrës. Dy hapa më tej është Fontana Pretoria, me statujat lakuriq që palermitanët e quajtën dikur «sheshi i turpit».
+  - name: Teatro Massimo
+    text: Teatri më i madh i operës në Itali, që vizitohet me turne me guidë prej rreth 30 minutash (rreth €10-12).
+  - name: Mercato di Ballarò
+    text: Tregu më i vjetër i qytetit, me tezga frutash, peshku dhe ushqimi të skuqur. Shko në mëngjes, kur është më i gjallë.
+  - name: Catacombe dei Cappuccini
+    text: Rreth 8.000 trupa të mumifikuar dhe të veshur, të rreshtuar përgjatë mureve. Bileta rreth €5.
+airports:
+  PMO: >-
+    Aeroporti Falcone-Borsellino (Punta Raisi) është rreth 35 km në perëndim të qytetit. Autobusi
+    Prestia e Comandè niset afërsisht çdo 30 minuta, ndalon te Politeama dhe Teatro Massimo dhe
+    arrin te Stazione Centrale për rreth 50 minuta; bileta kushton rreth €6.50, vajtje-ardhje rreth
+    €11. Treni Trinacria Express shkon në Palermo Centrale për rreth 1 orë, me rreth €6, por niset
+    më rrallë dhe ndonjëherë zëvendësohet me autobus për shkak të punimeve: kontrollo oraret.
+    Taksia ka tarifë fikse prej rreth €45-50 dhe bën rreth 40 minuta.
+budget: >-
+  Një espresso në banak kushton rreth €1-1.20, një arancina €2-3, një simite me panelle rreth €2-3
+  dhe një pica €7-10. Një shtrat në hostel kushton nga rreth €25-40, një dhomë dyshe në B&B nga
+  rreth €70-110 nata.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Korriku dhe gushti janë shumë të nxehtë, mbi 35°C kur fryn shiroku. Festa e Shën Rozalisë,
+  mbrojtëses së qytetit, kulmon natën e 14 korrikut me procesion dhe fishekzjarre.
+tips:
+  - "Kujdes nga xhepistët në tregje dhe në autobusët e mbushur."
+  - "Në katedrale dhe në Monreale mbaj shpatullat dhe gjunjët të mbuluar: në hyrje mund të të ndalojnë."
+  - "Shumë dyqane dhe kisha mbyllen rreth orës 13:00-16:00: planifiko vizitat në mëngjes dhe pasdite vonë."
+itinerary:
+  - "Quattro Canti, Fontana Pretoria dhe kisha La Martorana, pastaj Katedralja dhe Palazzo dei Normanni. Në mbrëmje shëtitje në Via Maqueda dhe darkë në Kalsa."
+  - "Tregu Ballarò në mëngjes, me panelle dhe arancina. Pasdite Teatro Massimo ose Catacombe dei Cappuccini, në mbrëmje Vucciria."
+  - "Monreale në mëngjes, pastaj pasdite plazh në Mondello."
+  - "Një ditë në Cefalù me tren, ose në Piana degli Albanesi."
+areas:
+  - name: Centro storico
+    text: "Rreth Quattro Canti: gjithçka në këmbë, me shumë B&B në pallate të vjetra dhe me çmime të arsyeshme."
+  - name: Kalsa
+    text: Lagjja e vjetër pranë detit, me lokale dhe jetë nate; e gjallë në mbrëmje, por disa rrugica janë të qeta natën.
+  - name: Politeama dhe Via Libertà
+    text: Pjesa më moderne dhe elegante, me dyqane e kafene. Autobusi i aeroportit ndalon këtu.
+  - name: Pranë Stazione Centrale
+    text: Zona më e lirë dhe më praktike për trenin dhe autobusin e aeroportit, por më pak e këndshme natën.
+food:
+  - name: Arancina
+    text: Top orizi i skuqur, i mbushur me ragù ose me gjalpë dhe proshutë. Në Palermo është e rrumbullakët dhe quhet «arancina», në femërore.
+  - name: Panelle dhe crocchè
+    text: "Petë të skuqura me miell qiqrash dhe kroketa patatesh, brenda një simiteje: ndër vaktet më të lira të qytetit."
+  - name: Pani ca' meusa
+    text: Simite me shpretkë dhe mushkëri viçi të gatuara në dhjamë, me limon ose me djathë. Ushqimi më tipik i rrugës, për ata që guxojnë.
+  - name: Sfincione
+    text: Pica e trashë dhe e butë me domate, qepë, açuge dhe djathë, që shitet në furra dhe nga karrocat në rrugë.
+transport: >-
+  Qendra historike shihet më mirë në këmbë: pjesa më e madhe e Via Maqueda dhe e Corso Vittorio
+  Emanuele është për këmbësorë. Autobusët e AMAT mbulojnë pjesën tjetër të qytetit, por shpesh
+  vonohen në trafik; bileta kushton rreth €1.40 për 90 minuta dhe blihet në duhanshitore (tabacchi)
+  ose me aplikacion. Mos merr makinë me qira: trafiku është kaotik.
+daytrips:
+  - name: Monreale
+    text: Katedralja normane e shekullit XII, me një nga ciklet më të mëdha të mozaikëve në botë. Rreth 30-40 minuta me autobusin AMAT 389 nga Piazza Indipendenza.
+  - name: Cefalù
+    text: Qytet bregdetar me katedrale normane, plazh me rërë dhe shkëmbin La Rocca mbi të. Rreth 1 orë me tren rajonal, me rreth €6.
+  - name: Mondello
+    text: Plazhi i palermitanëve, me ujë të kthjellët, rreth 30-40 minuta me autobusin 806 nga Politeama. Në gusht mbushet plot.
+  - name: Piana degli Albanesi
+    text: Hora e Arbëreshëvet, rreth 25 km në jug, në male, e themeluar nga shqiptarë të ikur nga Ballkani në fund të shekullit XV. Ende flitet arbërisht, tabelat janë dygjuhëshe dhe meshat bëhen në ritin bizantin. Rreth 1 orë me autobus; ia vlen sidomos në Pashkë, kur gratë veshin kostumet tradicionale, dhe për kanolat.
+faq:
+  - q: "A flitet ende shqip në Piana degli Albanesi?"
+    a: "Po, shumë banorë flasin arbërisht, një shqipe e vjetër e jugut, e ndarë nga Shqipëria për mbi 500 vjet. Me shqipen standarde kuptohesh pjesërisht. Të gjithë flasin edhe italisht."
+  - q: "Sa para duhen në ditë në Palermo?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-60 në ditë. Palazzo dei Normanni është hyrja më e shtrenjtë."

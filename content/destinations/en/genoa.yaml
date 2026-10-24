@@ -1,0 +1,76 @@
+city: Genoa
+slug: genoa
+tagline: Medieval lanes, a port and real pesto
+intro: >-
+  Genoa is the port city of Liguria, squeezed between the sea and the hills. It has one of the
+  largest medieval old towns in Europe, with narrow lanes (caruggi), noble palaces and an old port
+  with an aquarium and a promenade. It is cheaper than Milan or Florence and a good base for the
+  Cinque Terre and Portofino. Two or three days are enough for the city, plus a day on the coast.
+sights:
+  - name: Via Garibaldi and the Palazzi dei Rolli
+    text: "The street of the noble families' palaces, part of a UNESCO World Heritage site. Three of them (Palazzo Rosso, Palazzo Bianco and Palazzo Tursi) form the Musei di Strada Nuova, with a combined ticket of about €9."
+  - name: The old town (caruggi)
+    text: A maze of narrow lanes between Porto Antico and Piazza De Ferrari, full of focaccia bakeries, old shops and churches.
+  - name: Porto Antico and the Aquarium
+    text: The old port, redesigned by the architect Renzo Piano. The Genoa Aquarium is one of the largest in Europe; tickets cost about €30-35 and are usually cheaper online.
+  - name: San Lorenzo Cathedral
+    text: The cathedral with black and white stripes. Inside is a British shell from 1941 that fell into the church but did not explode. Entry is free.
+  - name: Boccadasse
+    text: A small fishing village with colourful houses inside the city, about 30 minutes by bus from the centre. Ideal for the sunset.
+  - name: Spianata Castelletto
+    text: A balcony over the rooftops and the port. You go up with the historic lift from Piazza Portello, on an ordinary bus ticket.
+airports:
+  GOA: >-
+    Cristoforo Colombo airport is by the sea, about 7 km west of the centre. The Volabus (line 100)
+    takes you to Principe station in about 20 minutes and to Brignole in about 30 minutes, with a
+    few stops in the centre; the ticket costs about €10 and the bus leaves roughly every 30-60
+    minutes. A taxi to the centre costs about €25-35 and takes about 20 minutes.
+budget: >-
+  A coffee at the counter costs about €1.30, a slice of focaccia €1.50-3, a plate of trofie al
+  pesto €10-14, a bus ticket about €2. A hostel bed costs from about €30-45, a double room in a
+  simple hotel from about €80-120 a night, more in summer.
+when: >-
+  May to June and September to October are the best times: warm weather and a sea for swimming.
+  July and August are hot and humid, and the Cinque Terre is full of tourists. Winter is mild
+  (about 10-14°C by day) but rainy, and prices are lower.
+tips:
+  - "Buy focaccia early in the morning, when it comes out of the oven warm, and try it the Genoese way, with a cappuccino."
+  - "For the Cinque Terre, set off early and check the train times: in summer there are crowds, and after rain some trails close."
+  - "In the caruggi keep your bag in front of you and at night avoid empty lanes, especially around Via Prè and Principe station."
+itinerary:
+  - "Piazza De Ferrari and Palazzo Ducale, San Lorenzo Cathedral, then through the caruggi to Porto Antico. In the afternoon, the Aquarium or a walk around the port, and an aperitivo in Piazza delle Erbe in the evening."
+  - "Via Garibaldi with the Musei di Strada Nuova, then the lift up to Spianata Castelletto. In the afternoon, the bus to Boccadasse and a walk along Corso Italia by the sea."
+  - "A day in the Cinque Terre, or in Camogli and Portofino. Otherwise, the Nervi promenade and the monumental Staglieno cemetery."
+areas:
+  - name: Old town and Porto Antico
+    text: Walking distance to everything, with cheap B&Bs and apartments, but some lanes are noisy or dark at night.
+  - name: Brignole and Via XX Settembre
+    text: "The most practical area: trains for the Cinque Terre and the Volabus to the airport leave from Brignole station. Wide streets, quiet hotels, 15 minutes on foot from the old town."
+  - name: Principe
+    text: Near Principe station and Via Balbi, with cheap hotels and the Volabus to the airport. Take care around the station at night.
+food:
+  - name: Pesto genovese
+    text: The sauce of basil, pine nuts, cheese, garlic and olive oil was born here. Try it with trofie or trenette, about €10-14 a plate.
+  - name: Focaccia genovese
+    text: Thin focaccia with olive oil and salt, in every bakery, for about €1.50-3 a slice. The Genoese eat it for breakfast too.
+  - name: Farinata
+    text: A thin chickpea-flour flatbread baked in a wood-fired oven, cheap and quick.
+  - name: Focaccia di Recco
+    text: Two very thin sheets of dough with soft cheese in between, a speciality of the small town of Recco near Genoa.
+transport: >-
+  The old town is walkable, but the city has many steep climbs. The AMT ticket costs about €2, is
+  valid for about 100 minutes and works on buses, the single metro line, the funiculars and the
+  public lifts that link the centre with the hills. Regional trains stop at many stations within
+  the city, from Nervi to Pegli.
+daytrips:
+  - name: Cinque Terre
+    text: 5 colourful villages above the sea, about 1-1.5 hours by train from Brignole to Monterosso, for about €8-10. Trains between the villages are paid separately.
+  - name: Portofino
+    text: The train to Santa Margherita Ligure (about 40 minutes), then the bus or a boat to Portofino. The bay full of yachts is expensive for eating, but worth a walk.
+  - name: Camogli
+    text: A fishing village with tall, colourful houses, about 30 minutes by train. Boats leave from its harbour for the abbey of San Fruttuoso.
+faq:
+  - q: "Is Genoa worth it as a base for the Cinque Terre?"
+    a: "Yes, if you want to save: accommodation in Genoa often costs less than in the Cinque Terre villages, and the train from Brignole takes about 1-1.5 hours. If you only have 1 day, pick 2-3 villages instead of rushing through all 5."
+  - q: "How much money do you need per day in Genoa?"
+    a: "Excluding the flight and accommodation, €40-70 a day. Focaccia, farinata and pesto dishes are cheap, and many churches and squares are free to visit."

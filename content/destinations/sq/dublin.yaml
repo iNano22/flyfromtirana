@@ -1,0 +1,79 @@
+city: Dublin
+slug: dublin
+tagline: Pub-e me muzikë live, Guinness dhe shkëmbinj buzë detit
+intro: >-
+  Dublin është një kryeqytet i vogël dhe i gjallë, ku qendra përshkohet në këmbë dhe muzika live
+  dëgjohet në pub-e çdo mbrëmje. Muzetë kombëtarë janë falas, kurse hotelet janë ndër më të
+  shtrenjtat në Evropë: rezervo fjetjen herët. Tri ditë mjaftojnë për qytetin dhe një shëtitje në
+  bregdet.
+sights:
+  - name: Trinity College dhe Book of Kells
+    text: Universiteti më i vjetër i Irlandës, i themeluar më 1592. Këtu ruhet Book of Kells, një dorëshkrim i ilustruar rreth 1200 vjet i vjetër, dhe biblioteka e famshme Long Room. Bileta rreth €20-25; rezervoje online.
+  - name: Guinness Storehouse
+    text: Muzeu i birrës më të njohur irlandeze, në fabrikën e St James's Gate. Bileta, rreth €26-30 online, përfshin një pint në Gravity Bar, me pamje 360 gradë mbi qytetin.
+  - name: Kilmainham Gaol
+    text: Burgu ku u mbajtën dhe u ekzekutuan udhëheqësit e Kryengritjes së Pashkëve të vitit 1916. Vizitohet vetëm me guidë (rreth €8) dhe biletat mbarojnë shpesh ditë përpara.
+  - name: Temple Bar
+    text: Lagjja me kalldrëm plot pub-e dhe muzikë live. Ia vlen për atmosferën, por një pint këtu kushton €8-9 e më shumë.
+  - name: Grafton Street dhe St Stephen's Green
+    text: Rruga kryesore e dyqaneve, me muzikantë rruge, që përfundon te parku St Stephen's Green, vendi ideal për një pushim.
+  - name: Muzetë falas
+    text: "National Museum of Ireland (arkeologji, me ar kelt dhe «trupat e kënetës»), National Gallery dhe Chester Beatty Library pranë Dublin Castle: të gjithë me hyrje falas."
+itinerary:
+  - "Trinity College dhe Book of Kells në mëngjes, pastaj Grafton Street dhe St Stephen's Green. Pasdite National Museum ose National Gallery (falas), në mbrëmje muzikë live në një pub."
+  - "Dublin Castle dhe Chester Beatty Library, pastaj Christ Church dhe St Patrick's Cathedral. Pasdite Guinness Storehouse dhe Kilmainham Gaol (me rezervim), në mbrëmje pub-et e Stoneybatter."
+  - "Me trenin DART në Howth për shëtitjen mbi shkëmbinj dhe fish and chips në port. Ndryshe, një ditë e plotë me ekskursion në Glendalough ose në Cliffs of Moher."
+areas:
+  - name: Temple Bar dhe qendra
+    text: Në këmbë kudo, por me zhurmë deri vonë natën dhe çmimet më të larta.
+  - name: Smithfield dhe Stoneybatter
+    text: Në veri të lumit Liffey, me pub-e lokale dhe tramvajin Luas Red që të çon në qendër për rreth 10 minuta.
+  - name: Docklands dhe Grand Canal
+    text: Lagjja moderne e zyrave, me hotele të reja e të qeta, pranë trenit DART.
+  - name: Drumcondra
+    text: Hotele dhe B&B pak më të lira në veri të qendrës, ku kalojnë autobusët 16 dhe 41 nga aeroporti.
+food:
+  - name: Irish stew
+    text: Gjellë me mish qengji ose viçi, patate dhe karota, e mirë për ditët me shi.
+  - name: Full Irish breakfast
+    text: Mëngjesi i plotë me vezë, proshutë, salsiçe, puding të zi e të bardhë dhe bukë me sodë (soda bread).
+  - name: Fish and chips
+    text: Peshk i skuqur me patate nga një «chipper», si Leo Burdock, për rreth €12-15.
+  - name: Seafood chowder
+    text: Supë kremoze me peshk dhe fruta deti, që shërbehet me bukë të zezë në shumë pub-e.
+airports:
+  DUB: >-
+    Aeroporti është rreth 10 km në veri të qendrës dhe nuk ka tren. Autobusët Dublin Express dhe
+    Aircoach nisen çdo 10-15 minuta dhe arrijnë në O'Connell Street për 25-40 minuta, me rreth €10-12 (më lirë online). Autobusët e qytetit 16 dhe
+    41 kushtojnë rreth €2 me kartën Leap ose rreth €3 me monedha, por bëjnë 45-60 minuta. Taksia
+    kushton rreth €30-40 dhe bën 25-40 minuta, sipas trafikut.
+transport: >-
+  Dublin nuk ka metro: qendra përshkohet në këmbë, ndërsa autobusët, dy linjat e tramvajit Luas
+  (Red dhe Green) dhe treni bregdetar DART të çojnë kudo. Bli kartën Leap në dyqanet Spar ose Centra
+  apo në aeroport: me të, një udhëtim brenda 90 minutave kushton rreth €2. Leap Visitor Card jep
+  udhëtime pa limit për 24 orë (rreth €8), 72 orë (rreth €19.50) ose 7 ditë (rreth €40).
+daytrips:
+  - name: Howth
+    text: Fshat peshkatarësh në një gadishull, rreth 30 minuta me DART. Shëtitja mbi shkëmbinj (Cliff Walk) zgjat 2-3 orë, dhe në port shpesh shihen foka.
+  - name: Glendalough
+    text: Manastir i shekullit VI mes liqeneve dhe pyjeve të maleve Wicklow, rreth 1.5 orë me autobusin St Kevin's ose me ekskursion.
+  - name: Cliffs of Moher
+    text: Shkëmbinj deri në 214 metra mbi Atlantik, në bregun perëndimor. Janë rreth 3 orë larg në çdo drejtim, ndaj zakonisht shkohet me ekskursion një-ditor prej rreth €60-75.
+budget: >-
+  Një kafe kushton rreth €3.50-4, një pint Guinness €6-7 (në Temple Bar €8-9 e më shumë), një vakt i
+  thjeshtë €15-20. Fjetja është pjesa më e shtrenjtë: një shtrat në hostel nga rreth €35-60, një
+  dhomë dyshe në hotel të thjeshtë rreth €150-250 nata, më shumë në fundjavë dhe gjatë ndeshjeve e
+  koncerteve.
+when: >-
+  Maji-shtatori ka ditët më të gjata dhe temperatura rreth 15-20°C; në qershor errësohet rreth orës
+  22:00. Shi mund të bjerë në çdo stinë. Më 17 mars, Dita e Shën Patrikut sjell parada dhe festë në
+  rrugë, por edhe hotelet më të shtrenjta të vitit.
+tips:
+  - "Merr gjithmonë një xhaketë kundër shiut dhe një shtresë të ngrohtë: moti ndryshon disa herë në ditë, edhe në verë."
+  - "Prizat janë me tri kunja si në Mbretërinë e Bashkuar (tipi G): merr një përshtatës me vete nga Shqipëria."
+  - "Për pinta më të lira dhe muzikë tradicionale, dil nga Temple Bar: The Cobblestone në Smithfield ka muzikë irlandeze pothuajse çdo mbrëmje."
+faq:
+  - q: "Sa para duhen në ditë në Dublin?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €60-90 në ditë për ushqim, transport dhe një hyrje. Muzetë falas, parqet dhe shëtitjet në bregdet e ulin koston, ndërsa Guinness Storehouse dhe Book of Kells kushtojnë rreth €20-30 secila."
+  - q: "A ia vlen Cliffs of Moher si udhëtim nga Dublin?"
+    a: "Po, nëse ke të paktën 4 ditë: është një ditë e gjatë, rreth 12 orë me ekskursion. Me më pak kohë, Howth dhe Glendalough janë më afër dhe po aq të bukura."

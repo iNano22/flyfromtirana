@@ -1,0 +1,79 @@
+city: Verona
+slug: verona
+tagline: Arena romake, ballkoni i Zhulietës dhe opera nën yje
+intro: >-
+  Verona është qyteti i Romeos dhe Zhulietës, me një qendër historike të vogël e të bukur që
+  përshkohet e gjitha në këmbë, brenda një kthese të lumit Adige. Arena romake rreth 2.000-vjeçare
+  ende mbushet çdo verë me opera. Dy ditë mjaftojnë për qytetin, tri nëse shton Liqenin Garda ose
+  kantinat e Valpolicella-s.
+sights:
+  - name: Arena di Verona
+    text: Amfiteatri romak në sheshin Piazza Bra, ndër më të ruajturit në botë. Hyrja kushton rreth €12; në ditët me opera mbyllet më herët pasdite.
+  - name: Casa di Giulietta
+    text: Shtëpia me ballkonin e Zhulietës, pranë Via Mazzini. Oborri zakonisht është falas, por në ditët me shumë njerëz hyrja mund të kufizohet; muzeu brenda kushton rreth €12.
+  - name: Piazza delle Erbe dhe Torre dei Lamberti
+    text: Sheshi i tregut të vjetër, me pallate të pikturuara dhe tezga. Kulla Lamberti, 84 metra e lartë, ka ashensor dhe pamjen më të mirë mbi çatitë, me rreth €6-8.
+  - name: Piazza dei Signori
+    text: Sheshi elegant me statujën e Dantes, i rrethuar nga pallatet e familjes Scaligeri, sundimtarët mesjetarë të qytetit.
+  - name: Castelvecchio dhe Ponte Scaligero
+    text: Kështjella mesjetare buzë lumit, me muze arti brenda, dhe ura e saj me kreshta prej tulle, që kalohet falas.
+  - name: Ponte Pietra dhe Castel San Pietro
+    text: Ura romake mbi Adige dhe kodra përballë. Ngjitu me shkallë (falas) ose me funikular në perëndim të diellit, për pamjen më të bukur të Veronës.
+  - name: Basilica di San Zeno
+    text: Kishë romane me portë bronzi dhe kripta, rreth 20 minuta në këmbë nga qendra.
+airports:
+  VRN: >-
+    Aeroporti Verona Villafranca është rreth 12 km nga qendra. Autobusi Aerobus të çon në stacionin
+    e trenit Porta Nuova për rreth 15-20 minuta, nisjet janë çdo 20-30 minuta dhe bileta kushton rreth
+    €6-7. Nga stacioni deri te Arena janë rreth 20 minuta në këmbë. Taksia deri në qendër kushton
+    rreth €30-40.
+budget: >-
+  Një kafe në banak kushton rreth €1.20-1.50, një spritz €4-6, një pica €8-12 dhe një drekë në
+  osteria €15-25. Bileta e autobusit kushton rreth €1.50-2. Një shtrat në hostel kushton nga rreth
+  €30-45, një dhomë dyshe në hotel të thjeshtë nga rreth €90-140 nata; në netët me opera dhe gjatë
+  panairit Vinitaly në prill çmimet rriten shumë.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë për të ecur. Sezoni i operës në Arena
+  zgjat nga mesi i qershorit deri në fillim të shtatorit: është arsyeja kryesore për të ardhur në
+  verë, por korriku dhe gushti janë shumë të nxehtë dhe hotelet shtrenjtohen. Në dhjetor ka treg
+  Krishtlindjesh në Piazza dei Signori.
+tips:
+  - "Verona Card (nga rreth €27 për 24 orë) mbulon Arenën, Torre dei Lamberti, Casa di Giulietta, Castelvecchio, kishat kryesore dhe autobusët. Ia vlen për tri-katër vizita në ditë."
+  - "Për operën në Arena, vendet në shkallët e gurta nuk kanë numër: shko herët, merr një jastëk dhe ujë. Shfaqjet nisin rreth orës 21:00 dhe mbarojnë pas mesnatës."
+  - "Kishat Duomo, San Zeno, Sant'Anastasia dhe San Fermo kanë një biletë të përbashkët prej rreth €8-10."
+itinerary:
+  - "Arena në mëngjes, pastaj Via Mazzini deri te Casa di Giulietta. Pasdite Piazza delle Erbe, Torre dei Lamberti dhe Piazza dei Signori, në mbrëmje një spritz në një nga sheshet."
+  - "Castelvecchio dhe Ponte Scaligero, pastaj në këmbë buzë lumit deri te Basilica di San Zeno. Pasdite Duomo dhe Ponte Pietra, në perëndim të diellit Castel San Pietro."
+  - "Një ditë jashtë qytetit, në Sirmione buzë Liqenit Garda ose në kantinat e Valpolicella-s. Në verë, mbrëmja me një operë në Arena."
+areas:
+  - name: Qendra historike (Città Antica)
+    text: Brenda kthesës së lumit, gjithçka në këmbë, me çmimet më të larta. Ideale për një fundjavë.
+  - name: Veronetta
+    text: Përtej lumit, lagjja e studentëve, me hotele dhe restorante më të lira, 10 minuta në këmbë nga Piazza delle Erbe.
+  - name: Pranë Porta Nuova
+    text: "Zona më praktike: këtu ndalon Aerobus dhe nisen trenat për Garda e Venice. Hotelet janë më të lira, qendra 20 minuta në këmbë."
+food:
+  - name: Risotto all'Amarone
+    text: Rizoto me verën e kuqe Amarone të Valpolicella-s, pjata më e njohur e qytetit.
+  - name: Bigoli
+    text: Makarona të trasha të bëra në shtëpi, shpesh me salcë rosë ose me sardele.
+  - name: Pastissada de caval
+    text: Gjellë tradicionale me mish kali të zier gjatë në verë të kuqe, zakonisht me polenta.
+  - name: Verërat e Valpolicella-s
+    text: "Amarone, Ripasso dhe Valpolicella e thjeshtë: në lokale një gotë kushton rreth €4-7."
+transport: >-
+  Qendra është e vogël dhe shumica e rrugëve janë për këmbësorë. Autobusët e ATV lidhin stacionin
+  Porta Nuova me Piazza Bra dhe lagjet e tjera; bileta e vetme kushton rreth €1.50-2 nëse e blen
+  përpara në tabaccheria ose në aplikacion, më shumë në bord.
+daytrips:
+  - name: Liqeni Garda
+    text: Peschiera del Garda është rreth 15 minuta me tren rajonal (rreth €3-4). Për Sirmione, me kështjellën dhe ujërat termale, merr trenin deri në Desenzano dhe pastaj autobusin.
+  - name: Venice
+    text: Rreth 1 orë e 10 minuta me tren të shpejtë ose 1.5-2 orë me tren rajonal, nga rreth €11.
+  - name: Valpolicella
+    text: Zona e verës Amarone, rreth 20-30 minuta me makinë ose me autobus. Degustimet në kantina kushtojnë rreth €15-30 dhe rezervohen përpara.
+faq:
+  - q: "Si mund të shoh një operë në Arena?"
+    a: "Sezoni zgjat nga qershori deri në fillim të shtatorit. Biletat blihen online në faqen zyrtare të Arenës: vendet në shkallët e gurta pa numër nisin nga rreth €30, ndërsa ato me numër në parter kushtojnë mbi €100. Për fundjavat rezervo disa javë përpara."
+  - q: "Sa para duhen në ditë në Verona?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-70 në ditë për ushqim, autobus dhe një-dy hyrje. Kursen me picë ose panino për drekë dhe me Verona Card."

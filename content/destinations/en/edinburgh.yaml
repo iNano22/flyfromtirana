@@ -1,0 +1,80 @@
+city: Edinburgh
+slug: edinburgh
+tagline: The castle, the Royal Mile and the August festivals
+intro: >-
+  Edinburgh, the capital of Scotland, is one of the most beautiful cities in Europe: a medieval
+  Old Town of narrow lanes below the castle, an 18th-century "New Town" of wide streets, and an
+  extinct volcano in the middle of the city. Three days are enough for the city, plus one day
+  for the Highlands.
+sights:
+  - name: Edinburgh Castle
+    text: The castle on its volcanic rock, with the Scottish Crown Jewels and a view over the whole city. A ticket costs about £21-23 and is cheaper when bought online.
+  - name: Royal Mile
+    text: The main street of the Old Town, from the castle down to the Palace of Holyrood. Along it stand St Giles' Cathedral and dozens of narrow alleys (closes).
+  - name: Arthur's Seat
+    text: The extinct volcano in Holyrood Park, 251 metres high. The climb takes about 45-60 minutes, is free, and from the top you see the city and the sea.
+  - name: Calton Hill
+    text: The hill with Greek-style monuments, just 10 minutes on foot from Princes Street. The best place for the sunset.
+  - name: National Museum of Scotland
+    text: The museum of Scotland's history, from dinosaurs to Dolly the sheep. Entry is free.
+  - name: Dean Village
+    text: A small village on the Water of Leith, 15 minutes on foot from the centre, yet it feels far from the city.
+airports:
+  EDI: >-
+    The airport is about 13 km west of the centre. The tram leaves every 7-10 minutes and reaches
+    Princes Street in about 35 minutes and York Place in about 40 minutes (about £7.50). The
+    Airlink 100 bus goes to Waverley Bridge, next to the railway station, in about 30 minutes
+    (about £5.50-6) and also runs at night. A taxi costs about £25-35 and takes 20-30 minutes.
+budget: >-
+  A coffee costs about £3.50, a pub meal £14-20 and a beer (a pint) about £6. A hostel bed costs
+  from about £25-40 outside the high season, but in August prices double or triple. On top of
+  the accommodation there is also a tourist tax of 5% per night, for up to 5 nights.
+when: >-
+  May to September has the mildest weather (about 15-20 degrees) and very long days. In August
+  the city fills up for the festivals (the Edinburgh Festival Fringe, the International Festival
+  and the Military Tattoo): an extraordinary atmosphere, but very expensive hotels, so book
+  months ahead. Winter is cold and it gets dark around 16:00, but December has the Christmas
+  market and the New Year celebrations (Hogmanay).
+tips:
+  - "Bring a rain jacket and warm layers even in summer: the weather changes several times a day and the wind is strong."
+  - "Scottish banks print their own pound banknotes. They are legal, but outside Scotland they are sometimes refused: pay by card when you can."
+  - "Many museums (the National Museum, the Scottish National Gallery, the Portrait Gallery) are free."
+itinerary:
+  - "Edinburgh Castle in the morning, then down the Royal Mile with St Giles' Cathedral. In the afternoon Victoria Street, the Grassmarket and the National Museum of Scotland, and Calton Hill in the evening."
+  - "Climb Arthur's Seat in the morning, then the Palace of Holyrood. In the afternoon the New Town: Princes Street Gardens, the Scott Monument and the Scottish National Gallery."
+  - "A walk along the Water of Leith from Dean Village to Stockbridge, then on to Leith for the Royal Yacht Britannia and fish by the harbour."
+  - "A day tour to the Highlands and Loch Ness, or the train to Stirling or Glasgow."
+areas:
+  - name: Old Town
+    text: Around the Royal Mile, close to the castle and the pubs, but with the highest prices and streets full of tourists.
+  - name: New Town
+    text: Elegant Georgian streets around Princes Street, with the airport tram and Waverley station within walking distance.
+  - name: Haymarket
+    text: "Practical and a little cheaper: the airport tram stops here and Princes Street is 15 minutes away on foot."
+  - name: Leith and Southside
+    text: "Quieter and cheaper neighbourhoods: Leith by the harbour, with seafood restaurants, and Southside, the student area next to Holyrood Park."
+food:
+  - name: Haggis, neeps and tatties
+    text: "The national dish: minced lamb offal with oats and spices, with mashed swede and potatoes."
+  - name: Full Scottish breakfast
+    text: The full breakfast with eggs, bacon, sausages, beans and often a slice of haggis.
+  - name: Cullen skink
+    text: A thick soup of smoked fish, potatoes and milk, ideal for rainy days.
+  - name: Whisky and shortbread
+    text: Scotch whisky in the city's many bars and the butter biscuits, the classic souvenir.
+transport: >-
+  The centre is compact and walkable, but has lots of hills and steps. Lothian buses and the tram
+  take you everywhere: a single ticket costs about £2.20 and a day ticket about £5.50. You can pay
+  with a contactless bank card when you board, or with the Lothian Buses app.
+daytrips:
+  - name: Highlands and Loch Ness
+    text: Day tours by coach leave in the morning and return in the evening (about 12 hours), with stops in Glencoe and by the loch, for about £55-75.
+  - name: Stirling
+    text: The castle where Scottish kings were crowned and the William Wallace monument, about 50 minutes by train.
+  - name: Glasgow
+    text: Scotland's largest city, with free museums and nightlife, about 50 minutes by train (about £15-17 return).
+faq:
+  - q: "Tram or bus from the airport?"
+    a: "The Airlink 100 bus is a little cheaper and quicker to Waverley station. The tram is more comfortable and better if you are staying near Haymarket, Princes Street or York Place."
+  - q: "How much money do you need per day in Edinburgh?"
+    a: "Excluding the flight and accommodation, plan on £50-80 a day. The free museums and walking keep costs down, while the castle and the Palace of Holyrood cost about £20 each."

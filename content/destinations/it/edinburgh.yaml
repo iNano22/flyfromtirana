@@ -1,0 +1,81 @@
+city: Edinburgh
+name: Edimburgo
+slug: edinburgh
+tagline: Il castello, il Royal Mile e i festival di agosto
+intro: >-
+  Edimburgo, la capitale della Scozia, è tra le città più belle d'Europa: una città vecchia
+  medievale di vicoli stretti sotto il castello, una "città nuova" del 18° secolo con strade
+  ampie e un vulcano spento in mezzo alla città. Tre giorni bastano per la città, più un giorno
+  per le Highlands.
+sights:
+  - name: Castello di Edimburgo
+    text: Il castello sulla roccia vulcanica, con i gioielli della Corona scozzese e la vista su tutta la città. Il biglietto costa circa £21-23 ed è più economico se comprato online.
+  - name: Royal Mile
+    text: La via principale della città vecchia, dal castello fino al palazzo di Holyrood. Lungo la strada ci sono la cattedrale di St Giles' e decine di vicoli stretti (closes).
+  - name: Arthur's Seat
+    text: Il vulcano spento nel parco di Holyrood, alto 251 metri. La salita dura circa 45-60 minuti, è gratuita e dalla cima vedi la città e il mare.
+  - name: Calton Hill
+    text: La collina con monumenti in stile greco, a soli 10 minuti a piedi da Princes Street. Il posto migliore per il tramonto.
+  - name: National Museum of Scotland
+    text: Il museo della storia scozzese, dai dinosauri alla pecora Dolly. L'ingresso è gratuito.
+  - name: Dean Village
+    text: Un piccolo villaggio sul fiume Water of Leith, a 15 minuti a piedi dal centro, ma sembra lontano dalla città.
+airports:
+  EDI: >-
+    L'aeroporto si trova a circa 13 km a ovest del centro. Il tram parte ogni 7-10 minuti e arriva a
+    Princes Street in circa 35 minuti e a York Place in circa 40 minuti (circa £7,50). L'autobus
+    Airlink 100 va a Waverley Bridge, accanto alla stazione ferroviaria, in circa 30 minuti (circa
+    £5,50-6) e circola anche di notte. Il taxi costa circa £25-35 e impiega 20-30 minuti.
+budget: >-
+  Un caffè costa circa £3,50, un pasto al pub £14-20 e una birra (una pint) circa £6. Un letto in
+  ostello costa da circa £25-40 fuori stagione, ma ad agosto i prezzi raddoppiano o triplicano.
+  Sull'alloggio si paga anche una tassa di soggiorno del 5% a notte, per un massimo di 5 notti.
+when: >-
+  Da maggio a settembre il clima è più mite (circa 15-20 gradi) e le giornate sono lunghissime. Ad
+  agosto la città si riempie per i festival (Edinburgh Festival Fringe, International Festival e
+  Military Tattoo): un'atmosfera straordinaria, ma hotel carissimi, quindi prenota mesi prima.
+  L'inverno è freddo e fa buio verso le 16:00, ma dicembre ha il mercatino di Natale e la festa di
+  Capodanno (Hogmanay).
+tips:
+  - "Porta una giacca impermeabile e strati caldi anche d'estate: il tempo cambia più volte al giorno e il vento è forte."
+  - "Le banche scozzesi stampano le proprie banconote in sterline. Sono valide, ma fuori dalla Scozia a volte vengono rifiutate: paga con la carta quando puoi."
+  - "Molti musei (National Museum, Scottish National Gallery, Portrait Gallery) sono gratuiti."
+itinerary:
+  - "Il castello al mattino, poi giù per il Royal Mile con la cattedrale di St Giles'. Nel pomeriggio Victoria Street, il Grassmarket e il National Museum of Scotland, la sera Calton Hill."
+  - "Salita ad Arthur's Seat al mattino, poi il palazzo di Holyrood. Nel pomeriggio la città nuova: Princes Street Gardens, lo Scott Monument e la Scottish National Gallery."
+  - "Una passeggiata lungo il Water of Leith da Dean Village a Stockbridge, poi a Leith per il panfilo reale Britannia e il pesce sul porto."
+  - "Un giorno in tour nelle Highlands e a Loch Ness, oppure in treno a Stirling o Glasgow."
+areas:
+  - name: Old Town
+    text: Intorno al Royal Mile, vicino al castello e ai pub, ma con i prezzi più alti e strade piene di turisti.
+  - name: New Town
+    text: Eleganti strade georgiane intorno a Princes Street, con il tram dell'aeroporto e la stazione Waverley a piedi.
+  - name: Haymarket
+    text: "Pratica e un po' più economica: il tram dell'aeroporto si ferma qui e Princes Street è a 15 minuti a piedi."
+  - name: Leith e Southside
+    text: "Quartieri più tranquilli ed economici: Leith sul porto, con ristoranti di pesce, e Southside, il quartiere degli studenti vicino al parco di Holyrood."
+food:
+  - name: Haggis, neeps and tatties
+    text: "Il piatto nazionale: frattaglie di agnello tritate con avena e spezie, con purè di rapa e di patate."
+  - name: Full Scottish breakfast
+    text: La colazione completa con uova, bacon, salsicce, fagioli e spesso una fetta di haggis.
+  - name: Cullen skink
+    text: Una zuppa densa di pesce affumicato, patate e latte, ideale per i giorni di pioggia.
+  - name: Whisky e shortbread
+    text: Il whisky scozzese nei tanti bar della città e i biscotti al burro, il souvenir classico.
+transport: >-
+  Il centro è compatto e si gira a piedi, ma ci sono molte salite e scale. Gli autobus Lothian e il
+  tram ti portano ovunque: una corsa costa circa £2,20 e il biglietto giornaliero circa £5,50. Puoi
+  pagare con la carta contactless quando sali, oppure con l'app Lothian Buses.
+daytrips:
+  - name: Highlands e Loch Ness
+    text: I tour di un giorno in pullman partono al mattino e tornano la sera (circa 12 ore), con soste a Glencoe e sul lago, per circa £55-75.
+  - name: Stirling
+    text: Il castello dove venivano incoronati i re scozzesi e il monumento a William Wallace, a circa 50 minuti di treno.
+  - name: Glasgow
+    text: La città più grande della Scozia, con musei gratuiti e vita notturna, a circa 50 minuti di treno (circa £15-17 andata e ritorno).
+faq:
+  - q: "Tram o autobus dall'aeroporto?"
+    a: "L'autobus Airlink 100 è un po' più economico e più veloce fino alla stazione Waverley. Il tram è più comodo e conviene se dormi vicino a Haymarket, Princes Street o York Place."
+  - q: "Quanti soldi servono al giorno a Edimburgo?"
+    a: "Escludendo volo e alloggio, calcola £50-80 al giorno. I musei gratuiti e gli spostamenti a piedi riducono la spesa, mentre il castello e il palazzo di Holyrood costano circa £20 ciascuno."

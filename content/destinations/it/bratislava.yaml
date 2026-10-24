@@ -1,0 +1,82 @@
+city: Bratislava
+slug: bratislava
+tagline: Un castello sul Danubio, un centro storico e Vienna a un'ora
+intro: >-
+  Bratislava è la capitale della Slovacchia: piccola, tranquilla ed economica, con un centro storico
+  che si gira a piedi in poche ore e un castello bianco sopra il Danubio. Vienna è a circa 60 km,
+  per questo molti viaggiatori uniscono le due città. Due giorni bastano per Bratislava, un terzo
+  per Devín o per i vini dei Piccoli Carpazi. La Slovacchia usa l'euro.
+sights:
+  - name: Castello di Bratislava
+    text: Il castello bianco con quattro torri sopra il Danubio. I cortili e i giardini sono gratuiti, con la vista migliore sulla città; il museo all'interno costa circa €10.
+  - name: Hlavné námestie
+    text: La piazza principale del centro storico, con il Municipio Vecchio, caffè e statue di bronzo per le strade, come Čumil, l'operaio che sbuca da un tombino.
+  - name: Porta di San Michele
+    text: L'unica porta rimasta delle mura medievali. Dalla torre si vedono i tetti del centro storico.
+  - name: Cattedrale di San Martino
+    text: La chiesa gotica dove dal 1563 al 1830 furono incoronati i re d'Ungheria.
+  - name: Chiesa Blu
+    text: Una piccola chiesa liberty, tutta azzurra, a circa 10 minuti a piedi dal centro. L'interno di solito è aperto solo intorno alla messa.
+  - name: Ponte UFO (Most SNP)
+    text: Il ponte sul Danubio con un ristorante a forma di disco volante a circa 95 metri d'altezza. La terrazza panoramica costa circa €10-12.
+  - name: Slavín
+    text: Il memoriale della Seconda guerra mondiale su una collina a nord del castello, gratuito e con una delle viste più belle sulla città.
+airports:
+  BTS: >-
+    L'aeroporto M. R. Štefánik è a circa 9 km dal centro. L'autobus urbano 61 ti porta alla
+    stazione ferroviaria principale (Hlavná stanica) in circa 25-30 minuti; il biglietto costa circa
+    €1-1,50 e si compra al distributore o nell'app IDS BK. Un taxi o un Bolt costa circa €15-25 e
+    impiega circa 20 minuti. Molti viaggiatori usano questo aeroporto per Vienna: gli autobus diretti
+    (FlixBus, RegioJet, Slovak Lines) partono davanti al terminal, impiegano circa 1 ora e costano
+    circa €5-15.
+budget: >-
+  Una birra da mezzo litro costa circa €2,50-3,50, un caffè circa €2,50, un piatto al ristorante
+  €9-14. Un letto in ostello costa da circa €20-30, una camera doppia in un hotel semplice da circa
+  €60-90 a notte, molto meno che a Vienna.
+when: >-
+  Maggio-settembre per le terrazze lungo il Danubio e le gite; a settembre i villaggi del vino
+  festeggiano la vendemmia. Da fine novembre fino a Natale ci sono i mercatini di Natale. L'inverno
+  è freddo, ma più economico.
+tips:
+  - "I biglietti cartacei vanno timbrati appena sali: i controllori in borghese multano anche i turisti."
+  - "A pranzo chiedi il menù del giorno (denné menu): zuppa e piatto principale per circa €7-10, nei giorni feriali."
+  - "Le carte sono accettate quasi ovunque, ma tieni qualche euro in contanti per i mercati e i bagni."
+itinerary:
+  - "Il centro storico a piedi: Porta di San Michele, Hlavné námestie con Čumil e la Cattedrale di San Martino. Nel pomeriggio sali al castello per il tramonto."
+  - "La Chiesa Blu al mattino, poi il Ponte UFO e una passeggiata lungo il Danubio. Nel pomeriggio Slavín, la sera una birra in un birrificio locale."
+  - "Il Castello di Devín con l'autobus 29, oppure una giornata a Vienna (circa 1 ora in treno o in autobus)."
+areas:
+  - name: Staré Mesto
+    text: Il centro storico, tutto a piedi, con molti appartamenti; di notte le strade con i locali sono rumorose.
+  - name: Vicino alla Hlavná stanica
+    text: Hotel più economici e l'autobus 61 per l'aeroporto; il centro è a 15-20 minuti a piedi.
+  - name: Nivy
+    text: Il nuovo quartiere a est del centro, con la stazione degli autobus, centri commerciali e hotel moderni. Pratico per gli autobus per Vienna.
+  - name: Petržalka
+    text: Al di là del Danubio, con i palazzoni dell'epoca socialista e gli appartamenti più economici, a 10-15 minuti di tram dal centro.
+food:
+  - name: Bryndzové halušky
+    text: Il piatto nazionale, piccoli gnocchi di patate con il formaggio di pecora bryndza e pancetta fritta.
+  - name: Kapustnica
+    text: Zuppa di crauti con salsiccia e funghi, soprattutto d'inverno.
+  - name: Bratislavské rožky
+    text: Piccoli cornetti ripieni di noci o semi di papavero, il dolce tradizionale della città.
+  - name: Vino e Kofola
+    text: Il vino bianco dei Piccoli Carpazi e la Kofola, la bibita gassata locale, spesso alla spina.
+transport: >-
+  Il centro storico si gira tutto a piedi. Per le distanze più lunghe ci sono tram, autobus e
+  filobus; i biglietti si comprano ai distributori o nell'app IDS BK, e il biglietto da 24 ore costa
+  circa €4,50-5. Bolt è economico, circa €5-8 in città. I treni per Vienna partono da Hlavná
+  stanica e da Petržalka, impiegano circa 1 ora e costano circa €10-15.
+daytrips:
+  - name: Vienna
+    text: La capitale dell'Austria, a circa 1 ora in treno o in autobus, oppure d'estate a circa 1,5 ore in battello sul Danubio.
+  - name: Castello di Devín
+    text: Le rovine sulla rupe dove la Morava si getta nel Danubio, al confine con l'Austria. Circa 25 minuti con l'autobus 29 dal Ponte UFO; ingresso circa €5-7.
+  - name: Piccoli Carpazi
+    text: I villaggi del vino di Svätý Jur, Pezinok e Modra, a 20-60 minuti in treno regionale o in autobus, con cantine dove assaggiare il vino.
+faq:
+  - q: "Conviene volare a Bratislava per andare a Vienna?"
+    a: "Spesso sì. Gli autobus diretti dall'aeroporto BTS impiegano circa 1 ora fino a Vienna, per circa €5-15. Confronta il costo totale con il volo diretto e controlla l'orario dell'ultimo autobus se atterri di notte."
+  - q: "Quanto si spende al giorno a Bratislava?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno. Cibo e birra costano molto meno che a Vienna, e alcune delle viste più belle, come il castello e Slavín, sono gratuite."
