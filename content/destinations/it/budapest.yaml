@@ -1,0 +1,84 @@
+city: Budapest
+slug: budapest
+tagline: Il Danubio, le terme e i ruin bar
+intro: >-
+  Budapest è la capitale dell'Ungheria, divisa dal Danubio in Buda, con le colline e il castello, e
+  Pest, con i viali e la vita notturna. La moneta è il fiorino (HUF): €1 vale circa 400 fiorini.
+  Tre giorni bastano per il centro, le terme e il quartiere ebraico.
+sights:
+  - name: Parlamento (Országház)
+    text: >-
+      L'edificio neogotico sul Danubio, simbolo della città. All'interno si entra solo con visite
+      guidate prenotate online; per i cittadini extra UE il biglietto costa circa il doppio. Da
+      fuori, soprattutto di sera quando è illuminato, è gratis.
+  - name: Castello di Buda e Bastione dei Pescatori
+    text: >-
+      Il Palazzo Reale, la Chiesa di Mattia e le terrazze del Bastione, con la vista più bella sul
+      Parlamento. Gran parte della collina si visita gratis.
+  - name: Ponte delle Catene (Széchenyi Lánchíd)
+    text: Il ponte più famoso sul Danubio, che unisce Pest a Buda. Attraversalo a piedi al tramonto.
+  - name: Terme Széchenyi
+    text: Le terme più grandi della città, con piscine esterne calde anche d'inverno. Il biglietto costa circa €30-40.
+  - name: Basilica di Santo Stefano
+    text: La chiesa più grande della città, con una vista a 360 gradi su Pest dalla cupola.
+  - name: Sinagoga di via Dohány
+    text: La sinagoga più grande d'Europa, nel cuore del quartiere ebraico.
+  - name: Grande Mercato Coperto (Nagy Vásárcsarnok)
+    text: Il mercato coperto vicino al Ponte della Libertà, con paprika, salame e lángos al piano superiore. La domenica è chiuso.
+itinerary:
+  - "Il Parlamento, il memoriale delle Scarpe sulla riva del Danubio, la Basilica e il Ponte delle Catene. La sera il quartiere ebraico, con la sinagoga e un ruin bar come lo Szimpla Kert."
+  - "La Collina del Castello (autobus 16 da Deák Ferenc tér), il Bastione dei Pescatori e la Chiesa di Mattia. Nel pomeriggio la Collina Gellért per il panorama, la sera il tram 2 lungo il Danubio."
+  - "Andrássy út con la metro M1 fino alla Piazza degli Eroi, poi qualche ora alle Terme Széchenyi. Oppure una gita in giornata a Szentendre."
+areas:
+  - name: Distretto V (Belváros)
+    text: Il centro storico, vicino a Deák Ferenc tér dove si ferma l'autobus dell'aeroporto. Tutto a piedi, con i prezzi più alti.
+  - name: Distretto VII (quartiere ebraico)
+    text: Il quartiere dei ruin bar, con molti ostelli e appartamenti economici. Rumoroso di notte, soprattutto nel fine settimana.
+  - name: Distretto VIII (Palotanegyed)
+    text: Dietro il Museo Nazionale, più tranquillo e un po' più economico, ma sempre a piedi dal centro.
+food:
+  - name: Gulyás
+    text: Una zuppa di manzo, patate e paprika. Circa €6-9 al ristorante.
+  - name: Lángos
+    text: Pasta fritta con panna acida e formaggio, il cibo di strada più economico.
+  - name: Paprikás csirke
+    text: Pollo in salsa di paprika e panna acida, con i nokedli, piccoli gnocchetti ungheresi.
+  - name: Kürtőskalács
+    text: Il dolce a forma di camino, cotto allo spiedo, con zucchero e cannella.
+airports:
+  BUD: >-
+    L'aeroporto Ferenc Liszt è a circa 16 km dal centro. L'autobus 100E ti porta direttamente a Deák
+    Ferenc tér in circa 35-40 minuti; parte ogni 10-20 minuti e ha un biglietto suo, circa 2200
+    fiorini (circa €5,5), dalla macchinetta alla fermata o nell'app BudapestGO. Più economico:
+    l'autobus 200E fino a Kőbánya-Kispest (circa 25 minuti) e la metro M3 per il centro (circa 20
+    minuti), circa €2-3 con due biglietti singoli. Il taxi ufficiale (Főtaxi) impiega circa 30
+    minuti e costa circa €25-35.
+transport: >-
+  Il centro di Pest si gira a piedi. Ci sono 4 linee di metro, tram e autobus. Il biglietto singolo
+  costa circa 450 fiorini (circa €1,2) e vale per un viaggio senza cambi; il biglietto da 24 ore
+  (circa €6-7) o da 72 ore (circa €14) conviene se ti sposti spesso. I biglietti cartacei vanno
+  convalidati prima di salire e i controlli sono frequenti: l'app BudapestGO è più comoda. Il tram
+  2 lungo il Danubio e i tram 4 e 6 sul Grande Viale sono i più utili.
+daytrips:
+  - name: Szentendre
+    text: Il paese dei pittori sul Danubio, a circa 40 minuti con il treno suburbano HÉV H5 da Batthyány tér.
+  - name: Visegrád
+    text: Il castello sopra l'Ansa del Danubio, a circa 1 ora in treno o autobus, d'estate anche in battello.
+  - name: Lago Balaton
+    text: Il lago più grande dell'Europa centrale, per una giornata di spiaggia d'estate, a circa 1,5-2,5 ore di treno.
+budget: >-
+  Una birra in un locale costa circa €3-5, un piatto al ristorante €10-15, un lángos €3-5. Volo e
+  alloggio esclusi, calcola €40-60 al giorno; un letto in ostello parte da circa €20.
+when: >-
+  Da aprile a giugno e da settembre a ottobre. Luglio e agosto sono caldi (spesso oltre 30 gradi), e
+  durante il festival Sziget ad agosto i prezzi salgono. Da metà novembre a fine anno ci sono i
+  mercatini di Natale in piazza Vörösmarty e davanti alla Basilica.
+tips:
+  - "Paga in fiorini, con carta o con contanti dai bancomat delle banche. Evita gli uffici di cambio in aeroporto e i bancomat Euronet, e quando il terminale lo chiede, scegli sempre il pagamento in HUF, non in euro."
+  - "Uber non opera a Budapest: prendi solo i taxi ufficiali gialli o usa Bolt e Főtaxi."
+  - "Controlla il conto: spesso include un costo di servizio (szervizdíj) di circa il 10-15%, e allora la mancia non serve."
+faq:
+  - q: "Posso pagare in euro a Budapest?"
+    a: "Alcuni posti turistici li accettano, ma a un cambio sfavorevole e danno il resto in fiorini. Meglio pagare con carta in fiorini."
+  - q: "Quali terme scegliere?"
+    a: "Széchenyi per le grandi piscine all'aperto, Rudas per il bagno turco del XVI secolo e la piscina sul tetto con vista sul Danubio. Porta asciugamano e ciabatte e vai presto la mattina in un giorno feriale: nel fine settimana il biglietto costa di più."

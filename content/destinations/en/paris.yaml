@@ -1,0 +1,86 @@
+city: Paris
+slug: paris
+tagline: The Eiffel Tower, museums and cafés by the Seine
+intro: >-
+  Paris is the city of light: wide boulevards, some of the greatest museums in the world and cafés
+  with tables on the pavement. The metro takes you everywhere, but the main sights need three or
+  four days. It is one of the most expensive cities in Europe: book your accommodation and museums
+  in advance.
+sights:
+  - name: Eiffel Tower
+    text: The symbol of the city, 330 metres tall. Buy your ticket online; the stairs to the second floor cost less than the lift. The best photos are taken from the Trocadéro.
+  - name: Louvre
+    text: The most visited museum in the world, home to the Mona Lisa. Entry is by a time slot booked online; for visitors from outside the EU the ticket costs about €32.
+  - name: Notre-Dame
+    text: The Gothic cathedral on the Île de la Cité, reopened in December 2024 after the fire of 2019. Entry is free; go early to avoid the queue.
+  - name: Montmartre and Sacré-Cœur
+    text: The painters' hill, with cobbled lanes and the white basilica at the top. Entry is free and from its steps you can see the whole of Paris.
+  - name: Musée d'Orsay
+    text: "A former railway station on the Seine, with the best-known Impressionists: Monet, Van Gogh, Renoir. Tickets about €16."
+  - name: Champs-Élysées and the Arc de Triomphe
+    text: The most famous boulevard in the city. From the terrace of the Arc you see the 12 avenues that radiate from it like the points of a star.
+airports:
+  CDG: >-
+    The RER B train takes you to Gare du Nord and Châtelet in about 35-50 minutes; the airport
+    ticket costs about €13-14. The Roissybus goes to Opéra in about 1 hour (about €17). Taxis have
+    a fixed fare, about €56-65 depending on the bank of the Seine.
+  ORY: >-
+    Since 2024 metro line 14 has linked the airport with Châtelet in about 25-30 minutes, with the
+    same airport ticket of about €13-14. Taxis have a fixed fare of about €36-44.
+  BVA: >-
+    The Ryanair and Wizz Air airport, about 85 km from Paris. The shuttle bus (navette) takes you to
+    Porte Maillot in about 1 hour 15 minutes (up to 1.5 hours in traffic), for about €17-19. It
+    leaves after every arriving flight; for the return, it leaves Porte Maillot about 3 hours before
+    the flight. From there metro line 1 takes you to the centre.
+budget: >-
+  An espresso at the counter costs about €2-3, a croissant about €1.50, a set lunch in a bistro
+  €15-20, a metro ticket about €2.50. A hostel bed costs from about €35-50, a double room in a
+  simple hotel from about €100-150 a night.
+when: >-
+  April to June and September to October have the best weather. July and August are hot and full of
+  tourists, and in August some restaurants close. Winter is cold, but cheaper.
+tips:
+  - "Watch out for pickpockets on the metro, at the Eiffel Tower and in Montmartre. Don't stop for «petitions» or bracelets on the street."
+  - "Many museums close one day a week: the Louvre on Tuesdays, the Musée d'Orsay and Versailles on Mondays."
+  - "In restaurants ask for «une carafe d'eau»: tap water is free and safe to drink."
+itinerary:
+  - "The Eiffel Tower in the morning, then the Trocadéro and a boat on the Seine (about 1 hour). In the afternoon, the Arc de Triomphe and the Champs-Élysées down to Place de la Concorde."
+  - "The Louvre in the morning (booked ahead) and the Tuileries Garden. In the afternoon, Notre-Dame and the Sainte-Chapelle, and the Latin Quarter in the evening."
+  - "Montmartre early in the morning, before the crowds. In the afternoon, the Musée d'Orsay, and the evening in Le Marais."
+  - "Versailles or Disneyland Paris. Otherwise, the Luxembourg Gardens and Père-Lachaise cemetery."
+areas:
+  - name: Le Marais
+    text: In the centre, within walking distance of Notre-Dame and the Louvre, with some of the highest prices.
+  - name: Latin Quarter
+    text: The students' neighbourhood on the Left Bank, with small hotels and cheap restaurants.
+  - name: Montmartre
+    text: A village atmosphere and slightly cheaper hotels; around Pigalle it is noisy at night.
+  - name: Near Gare du Nord
+    text: "The most practical area for CDG, because the RER B train stops here. Cheaper hotels, but take care at night."
+food:
+  - name: Croissant and baguette
+    text: In every boulangerie (bakery) you'll find fresh croissants and baguette sandwiches for a cheap lunch.
+  - name: Steak-frites
+    text: Steak with chips, the classic bistro dish.
+  - name: Crêpes
+    text: Sweet ones with Nutella from street stalls, or a galette, the savoury crêpe with cheese, ham and egg.
+  - name: Menu du jour
+    text: "The cheapest way to eat well: a lunch of two or three courses costs about €15-20."
+transport: >-
+  The metro has 16 lines and stations very close together. A single ticket for the metro and RER
+  costs about €2.50; load it onto a Navigo Easy card (about €2) or onto your phone. For a week from
+  Monday to Sunday, the Navigo pass (about €32, plus €5 for the card and a photo) covers everything,
+  including the CDG and Orly airports. The metro runs until just after 1:00, and until after 2:00
+  on Fridays and Saturdays.
+daytrips:
+  - name: Versailles
+    text: The palace of Louis XIV with its huge gardens, about 40 minutes by RER C.
+  - name: Disneyland Paris
+    text: The theme park, about 40 minutes by RER A to Marne-la-Vallée.
+  - name: Giverny
+    text: Monet's garden, about 45 minutes by train to Vernon, then a bus. Open April to October.
+faq:
+  - q: "CDG, Orly or Beauvais: which airport is best?"
+    a: "CDG and Orly are linked to the centre in under 1 hour, for about €13-14. Flights to Beauvais are often cheaper, but add about €17-19 and over 1 hour by bus each way."
+  - q: "How much money do you need per day in Paris?"
+    a: "Excluding the flight and accommodation, €60-90 a day. You save with menu du jour lunches, a picnic by the Seine and free churches such as Notre-Dame and Sacré-Cœur."

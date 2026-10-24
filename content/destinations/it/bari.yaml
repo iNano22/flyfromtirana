@@ -1,0 +1,78 @@
+city: Bari
+slug: bari
+tagline: Bari Vecchia, il mare e la Puglia
+intro: >-
+  Molti albanesi conoscono Bari solo dal porto dei traghetti, ma la città merita più di un
+  passaggio di corsa. Bari Vecchia si visita in un giorno, mentre i treni locali ti portano a
+  Polignano a Mare, Alberobello e Matera. Tre o quattro giorni bastano per la città e la Puglia
+  intorno.
+sights:
+  - name: Bari Vecchia
+    text: Il centro storico, un labirinto di vicoli tra il porto e il mare. In Strada Arco Basso le donne del quartiere fanno e vendono le orecchiette a mano.
+  - name: Basilica di San Nicola
+    text: La basilica romanica dove riposano le reliquie di San Nicola, sacra sia per i cattolici sia per gli ortodossi. L'ingresso è gratuito.
+  - name: Cattedrale di San Sabino
+    text: La cattedrale romanica del XII secolo, a pochi passi dalla basilica, con una cripta barocca.
+  - name: Castello Normanno-Svevo
+    text: Il castello dei Normanni, ricostruito dall'imperatore Federico II, al margine del centro storico.
+  - name: Lungomare Nazario Sauro
+    text: La lunga passeggiata sul mare, dove i baresi escono per la passeggiata serale.
+  - name: Molo San Nicola
+    text: I banchi dei pescatori, dove i baresi mangiano frutti di mare crudi con una birra Peroni. Vai la mattina o nel fine settimana.
+itinerary:
+  - "Bari Vecchia: Basilica di San Nicola, Cattedrale di San Sabino e Strada Arco Basso. Nel pomeriggio il Castello Normanno-Svevo, la sera il Lungomare e un aperitivo in Piazza Mercantile."
+  - "In treno a Polignano a Mare (circa 30 minuti) per la spiaggia di Lama Monachile. Nel pomeriggio Monopoli e il suo porto vecchio."
+  - "Alberobello e i suoi trulli, a circa 1,5 ore con i treni FSE, con una sosta a Locorotondo al ritorno."
+  - "Una giornata a Matera con il treno FAL, oppure la città con calma: Molo San Nicola, Via Sparano e la spiaggia di Pane e Pomodoro."
+areas:
+  - name: Bari Vecchia
+    text: B&B in case antiche, pieni di atmosfera, ma rumorosi la sera e difficili da raggiungere in auto.
+  - name: Murattiano
+    text: Il centro ottocentesco (XIX secolo) con i negozi di Via Sparano, tra la stazione e il centro storico.
+  - name: Vicino a Bari Centrale
+    text: La zona più pratica per il treno dell'aeroporto e le gite in giornata, spesso la più economica. Bari Vecchia è a circa 20 minuti a piedi.
+food:
+  - name: Orecchiette alle cime di rapa
+    text: La pasta "a forma di orecchio" della città, con cime di rapa, aglio e acciughe.
+  - name: Focaccia barese
+    text: Focaccia morbida con pomodorini e olive, venduta a tranci nei forni della città.
+  - name: Panzerotti
+    text: Pasta fritta ripiena di pomodoro e mozzarella, da mangiare calda per strada.
+  - name: Sgagliozze
+    text: Fette di polenta fritta, vendute dalle donne nei vicoli di Bari Vecchia.
+airports:
+  BRI: >-
+    L'aeroporto Karol Wojtyła è a circa 8 km dal centro. Il treno Ferrotramviaria parte accanto al
+    terminal e arriva a Bari Centrale in circa 20 minuti (circa €5). La navetta Tempesta va alla
+    stazione centrale in circa 30 minuti (circa €4). L'autobus urbano AMTAB 16 è il più economico
+    (circa €1-1,50), ma impiega circa 40-50 minuti. Il taxi costa circa €25-30.
+transport: >-
+  Il centro si gira a piedi, mentre gli autobus AMTAB coprono il resto della città; compra il
+  biglietto dal tabaccaio. Da Bari Centrale i treni Trenitalia vanno verso Polignano a Mare e
+  Monopoli, i treni FSE verso Alberobello e quelli FAL verso Matera. I biglietti cartacei vanno
+  convalidati prima di salire.
+daytrips:
+  - name: Polignano a Mare
+    text: Il paese sulla scogliera con la spiaggia di Lama Monachile, a circa 30 minuti di treno (circa €3).
+  - name: Alberobello
+    text: I trulli con i tetti a cono di pietra, patrimonio UNESCO, a circa 1,5 ore di treno.
+  - name: Matera
+    text: La città dei Sassi, nella vicina Basilicata, a circa 1,5 ore con il treno FAL.
+  - name: Monopoli
+    text: Un porto vecchio con barche blu e un centro storico sul mare, a circa 40 minuti di treno.
+budget: >-
+  Un trancio di focaccia costa €2-3, un piatto di orecchiette €9-12, un espresso circa €1-1,20 e il
+  biglietto dell'autobus urbano circa €1.
+when: >-
+  Maggio-giugno e settembre-ottobre, senza il caldo di agosto. La Festa di San Nicola si tiene il
+  7-9 maggio.
+tips:
+  - "Il porto, da cui partono i traghetti per Durazzo, è vicino a Bari Vecchia: vale la pena passare un giorno in città prima o dopo il traghetto."
+  - "Molti negozi chiudono dopo pranzo, più o meno 13:00-16:30: fai acquisti la mattina o la sera."
+  - "Con un'auto a noleggio non entrare a Bari Vecchia: è zona ZTL e le multe arrivano per posta."
+  - "La domenica i treni FSE sono pochi o sostituiti da autobus: controlla gli orari in anticipo."
+faq:
+  - q: "Come si arriva a Matera da Bari?"
+    a: "Con il treno FAL dalla sua stazione accanto a Bari Centrale, circa 1,5 ore e circa €5, a volte con cambio ad Altamura. Calcola una giornata intera."
+  - q: "Quanto si spende al giorno a Bari?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno. Il cibo di strada è economico e ottimo, e i treni per le gite costano pochi euro."

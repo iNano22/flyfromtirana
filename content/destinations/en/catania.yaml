@@ -1,0 +1,78 @@
+city: Catania
+slug: catania
+tagline: Etna, baroque and granita
+intro: >-
+  Catania is Sicily's second city, built of black lava stone at the foot of Etna, the highest active
+  volcano in Europe. After the earthquake of 1693 it was rebuilt in baroque style, and today its
+  centre is a UNESCO World Heritage site. It is lively, cheap and an excellent base for Etna, Taormina
+  and Syracuse. Three days are enough for the city and one or two day trips.
+sights:
+  - name: Piazza del Duomo
+    text: The main square, with the Fontana dell'Elefante (the lava-stone elephant, symbol of the city) and the Cathedral of Saint Agatha, Catania's patron saint.
+  - name: La Pescheria
+    text: The fish market behind the Duomo, loud and theatrical. Go in the morning, Monday to Saturday.
+  - name: Via Etnea
+    text: The main street, running from the Duomo towards Etna, full of shops and cafés, with the Villa Bellini gardens along the way.
+  - name: Monastero dei Benedettini
+    text: One of the largest Benedictine monasteries in Europe, now part of the university. It can be visited on guided tours.
+  - name: Teatro Romano
+    text: The Greek-Roman theatre hidden among the houses of the historic centre.
+  - name: Castello Ursino
+    text: The 13th-century castle of Frederick II, now the city museum. The lava of 1669 reached all the way to its walls.
+airports:
+  CTA: >-
+    Fontanarossa airport is only about 5 km from the centre. The AMTS Alibus leaves from in front of
+    the terminal every 20-30 minutes and runs via the Stazione Centrale and the historic centre in
+    about 20-30 minutes; the ticket costs about €4 and can also be bought on the bus. From Catania
+    Aeroporto Fontanarossa station, a few hundred metres from the terminal, regional trains reach
+    Catania Centrale in about 10 minutes, but they don't run often. A taxi costs about €25-30 and
+    takes 15-20 minutes.
+budget: >-
+  An espresso at the bar costs about €1-1.20, an arancino €2-3, granita with brioche about €4 and a
+  pizza €6-10. A city bus ticket costs about €1.50. Catania is much cheaper than Milan or Rome.
+when: >-
+  April to June and September to October have the best weather. July and August are very hot, often
+  above 35°C. The Feast of Saint Agatha, from 3 to 5 February, is one of the largest religious
+  festivals in the world: the city fills up and hotel prices rise.
+tips:
+  - "Bring a jacket and closed shoes for Etna: above 2,000 metres it is cold even in July."
+  - "When Etna erupts, the ash can close the airport for a few hours: check your flight status before you set off."
+  - "There are direct buses to Taormina and Syracuse from the airport too: you don't need to go through the centre."
+itinerary:
+  - "Piazza del Duomo, the Cathedral and the La Pescheria market in the morning. In the afternoon, Via dei Crociferi, the Teatro Romano and the Monastero dei Benedettini; in the evening, an arancino and a drink around the Teatro Massimo Bellini."
+  - "Etna: the AST bus leaves early in the morning for Rifugio Sapienza. Walk to the Silvestri craters and, if the weather allows, go higher by cable car."
+  - "A day in Taormina, or in Syracuse and on the island of Ortigia."
+areas:
+  - name: Centro storico
+    text: "Around Piazza del Duomo and Via Etnea: everything within walking distance, with plenty of reasonably priced B&Bs."
+  - name: Teatro Massimo and Piazza Bellini
+    text: The area of bars and nightlife, lively until late but noisy at weekends.
+  - name: Near the Stazione Centrale
+    text: The cheapest and most practical area for the Alibus and the buses to Etna, Taormina and Syracuse, but not very pleasant in the evening.
+food:
+  - name: Arancino
+    text: A cone-shaped fried rice ball, filled with ragù or pistachio. In Catania it's called «arancino», not «arancina» as in Palermo.
+  - name: Pasta alla Norma
+    text: Pasta with tomato, fried aubergine and salted ricotta, named after the opera «Norma» by Bellini, the composer born in Catania.
+  - name: Granita with brioche
+    text: "Catania's summer breakfast: almond, pistachio or lemon granita, with a soft brioche for dipping."
+  - name: Cannolo
+    text: A crisp pastry tube filled with sweet ricotta, often with pistachio from Bronte, a town on the slopes of Etna.
+transport: >-
+  The historic centre is small and easy to see on foot. AMTS buses cover the rest of the city (a
+  ticket costs about €1.50 for 90 minutes), and there is also a metro line that tourists rarely use.
+  Buses to Etna, Taormina and Syracuse leave from the area around the Stazione Centrale.
+daytrips:
+  - name: Etna
+    text: About 2 hours by AST bus to Rifugio Sapienza, at about 1,900 metres. The cable car and jeeps take you higher, but they are expensive (about €50 and up).
+  - name: Taormina
+    text: The town above the sea with its ancient Greek theatre and views of Etna, about 1 hour 15 minutes by bus.
+  - name: Syracuse and Ortigia
+    text: The old island of Ortigia and the Neapolis archaeological park, about 1-1.5 hours by train or bus.
+  - name: Aci Trezza
+    text: A fishing village with the Cyclops rocks in the sea, about 30 minutes by bus.
+faq:
+  - q: "Can I go up Etna without a guide?"
+    a: "Yes, around Rifugio Sapienza and to the Silvestri craters. For the summit craters you need an authorised guide, and the trails close when the volcano is active."
+  - q: "How much money do you need per day in Catania?"
+    a: "Excluding the flight and accommodation, plan on €40-60 a day. Catania is one of the cheapest cities in Italy for eating: an arancino and a granita will keep you going until lunch."

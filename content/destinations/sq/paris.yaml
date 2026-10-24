@@ -1,0 +1,84 @@
+city: Paris
+slug: paris
+tagline: Kulla Eiffel, muze dhe kafene buzë Senës
+intro: >-
+  Paris është qyteti i dritave: bulevarde të gjera, muze nga më të mëdhenjtë në botë dhe kafene me
+  tavolina në trotuar. Metroja të çon kudo, por për monumentet kryesore duhen tri-katër ditë. Është
+  ndër qytetet më të shtrenjta të Evropës: rezervo përpara fjetjen dhe muzetë.
+sights:
+  - name: Kulla Eiffel
+    text: Simboli i qytetit, 330 metra e lartë. Bli biletën online; shkallët deri në katin e dytë kushtojnë më pak se ashensori. Fotot më të bukura i bën nga Trocadéro.
+  - name: Louvre
+    text: Muzeu më i vizituar në botë, me Mona Lizën. Hyrja bëhet me orar të rezervuar online; për vizitorët nga jashtë BE-së bileta kushton rreth €32.
+  - name: Notre-Dame
+    text: Katedralja gotike në Île de la Cité, e rihapur në dhjetor 2024 pas zjarrit të vitit 2019. Hyrja është falas; shko herët për të shmangur radhën.
+  - name: Montmartre dhe Sacré-Cœur
+    text: Kodra e piktorëve, me rrugica me kalldrëm dhe bazilikën e bardhë në majë. Hyrja është falas dhe nga shkallët sheh gjithë Parisin.
+  - name: Musée d'Orsay
+    text: "Ish-stacion treni buzë Senës, me impresionistët më të njohur: Monet, Van Gogh, Renoir. Bileta rreth €16."
+  - name: Champs-Élysées dhe Harku i Triumfit
+    text: Bulevardi më i famshëm i qytetit. Nga tarraca e Harkut sheh 12 rrugët që nisen prej tij si rrezet e një ylli.
+airports:
+  CDG: >-
+    Treni RER B të çon në Gare du Nord dhe Châtelet për rreth 35-50 minuta; bileta e aeroportit
+    kushton rreth €13-14. Autobusi Roissybus shkon në Opéra për rreth 1 orë (rreth €17). Taksia ka
+    tarifë fikse, rreth €56-65 sipas bregut të Senës.
+  ORY: >-
+    Që nga viti 2024 linja 14 e metrosë lidh aeroportin me Châtelet për rreth 25-30 minuta, me të
+    njëjtën biletë aeroporti prej rreth €13-14. Taksia ka tarifë fikse prej rreth €36-44.
+  BVA: >-
+    Aeroporti i Ryanair dhe Wizz Air, rreth 85 km nga Parisi. Autobusi (navette) të çon në Porte
+    Maillot për rreth 1 orë e 15 minuta (deri në 1.5 orë me trafik), me rreth €17-19. Niset pas çdo
+    fluturimi që mbërrin; për kthim, nga Porte Maillot rreth 3 orë para fluturimit. Prej aty linja 1
+    e metrosë të çon në qendër.
+budget: >-
+  Një espresso në banak kushton rreth €2-3, një kruasan rreth €1.50, një drekë menu në bistro €15-20,
+  bileta e metrosë rreth €2.50. Një shtrat në hostel kushton nga rreth €35-50, një dhomë dyshe në
+  hotel të thjeshtë nga rreth €100-150 nata.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Korriku dhe gushti janë të nxehtë e plot
+  turistë, dhe në gusht disa lokale mbyllen. Dimri është i ftohtë, por më i lirë.
+tips:
+  - "Kujdes nga xhepistët në metro, te Kulla Eiffel dhe në Montmartre. Mos u ndal për «peticione» apo byzylykë në rrugë."
+  - "Shumë muze mbyllen një ditë në javë: Louvre të martën, Musée d'Orsay dhe Versailles të hënën."
+  - "Në restorant kërko «une carafe d'eau»: uji i rubinetit është falas dhe i pijshëm."
+itinerary:
+  - "Kulla Eiffel në mëngjes, pastaj Trocadéro dhe një varkë në Senë (rreth 1 orë). Pasdite Harku i Triumfit dhe Champs-Élysées deri në sheshin Concorde."
+  - "Louvre në mëngjes (me rezervim) dhe kopshti Tuileries. Pasdite Notre-Dame dhe Sainte-Chapelle, në mbrëmje Lagjja Latine."
+  - "Montmartre herët në mëngjes, para turmave. Pasdite Musée d'Orsay, mbrëmja në Le Marais."
+  - "Versailles ose Disneyland Paris. Ndryshe, kopshti i Luxembourg-ut dhe varrezat Père-Lachaise."
+areas:
+  - name: Le Marais
+    text: Në qendër, në këmbë deri te Notre-Dame dhe Louvre, me çmimet ndër më të lartat.
+  - name: Lagjja Latine
+    text: Lagjja e studentëve në bregun e majtë, me hotele të vogla dhe restorante të lira.
+  - name: Montmartre
+    text: Atmosferë fshati dhe hotele pak më të lira; rreth Pigalle është zhurmë natën.
+  - name: Pranë Gare du Nord
+    text: "Zona më praktike për CDG, sepse treni RER B ndalon këtu. Hotele më të lira, por natën duhet kujdes."
+food:
+  - name: Kruasan dhe baguette
+    text: Në çdo boulangerie (furrë) gjen kruasan të freskët dhe sanduiçe me baguette për një drekë të lirë.
+  - name: Steak-frites
+    text: Biftek me patate të skuqura, pjata klasike e bistrove.
+  - name: Krepa
+    text: Të ëmbla me Nutella nga tezgat në rrugë, ose galette, krepa e kripur me djathë, proshutë dhe vezë.
+  - name: Menu du jour
+    text: "Mënyra më e lirë për të ngrënë mirë: dreka me dy ose tre pjata kushton rreth €15-20."
+transport: >-
+  Metroja ka 16 linja dhe stacione shumë të afërta. Bileta e vetme për metro dhe RER kushton rreth
+  €2.50; ngarkoje në kartën Navigo Easy (rreth €2) ose në telefon. Për një javë nga e hëna në të
+  dielën, karta Navigo (rreth €32, plus €5 për kartën dhe një foto) mbulon gjithçka, edhe aeroportet
+  CDG dhe Orly. Metroja punon deri pak pas orës 1:00, të premteve dhe të shtunave deri pas 2:00.
+daytrips:
+  - name: Versailles
+    text: Pallati i Luigjit XIV me kopshtet e mëdha, rreth 40 minuta me RER C.
+  - name: Disneyland Paris
+    text: Parku i argëtimit, rreth 40 minuta me RER A deri në Marne-la-Vallée.
+  - name: Giverny
+    text: Kopshti i Monet-së, rreth 45 minuta me tren deri në Vernon, pastaj autobus. Hapet prill-tetor.
+faq:
+  - q: "CDG, Orly apo Beauvais: cili aeroport është më i mirë?"
+    a: "CDG dhe Orly lidhen me qendrën për më pak se 1 orë, me rreth €13-14. Për Beauvais biletat janë shpesh më të lira, por shto rreth €17-19 dhe mbi 1 orë autobus në secilin drejtim."
+  - q: "Sa para duhen në ditë në Paris?"
+    a: "Pa fluturimin dhe fjetjen, €60-90 në ditë. Kursen me drekat menu du jour, me piknik buzë Senës dhe me kishat falas si Notre-Dame dhe Sacré-Cœur."

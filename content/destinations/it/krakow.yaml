@@ -1,0 +1,104 @@
+city: Kraków
+name: Cracovia
+slug: krakow
+tagline: Castelli, piazze e pierogi
+intro: >-
+  Cracovia è l'antica capitale reale della Polonia: un centro medievale uscito quasi intatto dalla
+  Seconda guerra mondiale, piccolo, economico e da girare a piedi. Due o tre giorni bastano per la
+  città, più un giorno per la miniera di sale o per Auschwitz. La valuta è lo złoty polacco (PLN):
+  €1 vale circa 4,3 PLN.
+sights:
+  - name: Rynek Główny
+    text: >-
+      La piazza principale, una delle piazze medievali più grandi d'Europa, con caffè e musicisti
+      di strada. Sotto si trova il museo sotterraneo Rynek Underground.
+  - name: Basilica di Santa Maria
+    text: >-
+      La chiesa dalle due torri diverse all'angolo della piazza. Ogni ora dalla torre più alta
+      suona la tromba (l'hejnał), che si interrompe a metà della melodia.
+  - name: Sukiennice
+    text: >-
+      Il mercato coperto dei tessuti al centro della piazza, oggi con bancarelle di souvenir (ambra,
+      oggetti in legno) e una galleria d'arte polacca al piano superiore.
+  - name: Wawel
+    text: >-
+      Il castello reale e la cattedrale sulla collina in riva alla Vistola. Il cortile si visita
+      gratis, le sale hanno biglietti a parte. Ai piedi della collina, la statua del drago sputa
+      fuoco ogni pochi minuti.
+  - name: Kazimierz
+    text: >-
+      L'antico quartiere ebraico, con sinagoghe, vicoli pieni di murales, locali alternativi e la
+      piazza Plac Nowy, il posto più vivace della città di sera.
+  - name: Fabbrica di Schindler
+    text: >-
+      Il museo nella fabbrica di Oskar Schindler racconta la vita a Cracovia sotto l'occupazione
+      nazista, 1939-1945. I biglietti a orario finiscono presto: prenotali online.
+itinerary:
+  - "Rynek Główny, Sukiennice e la Basilica di Santa Maria (aspetta la tromba allo scoccare dell'ora). La Porta di San Floriano, poi attraverso il parco Planty fino al Wawel. La sera cena a Kazimierz."
+  - "Kazimierz con le sinagoghe e una zapiekanka in Plac Nowy. Attraversa la passerella pedonale sulla Vistola fino a Podgórze e alla Fabbrica di Schindler. Il tramonto sul fiume."
+  - "Gita in giornata: la miniera di sale di Wieliczka (mezza giornata) oppure il memoriale di Auschwitz-Birkenau (una giornata intera). Non fare entrambe nello stesso giorno."
+areas:
+  - name: Stare Miasto (Città Vecchia)
+    text: Dentro il parco Planty, tutto a piedi. La zona più cara, e le vie intorno alla piazza sono rumorose di notte.
+  - name: Kazimierz
+    text: Un'atmosfera particolare e prezzi un po' più bassi, a 15 minuti a piedi dalla piazza.
+  - name: Vicino a Kraków Główny
+    text: Intorno alla stazione centrale, comoda per il treno dell'aeroporto, a 10 minuti dalla piazza.
+  - name: Podgórze
+    text: Oltre il fiume, più tranquilla ed economica, con un tram veloce per il centro.
+food:
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio (ruskie), carne, cavolo o frutta, bolliti o fritti.
+  - name: Żurek
+    text: Zuppa acida di farina di segale con salsiccia e uovo, spesso servita dentro una pagnotta svuotata.
+  - name: Obwarzanek
+    text: Il pane ad anello di Cracovia, con sesamo o sale, venduto dai carretti a ogni angolo.
+  - name: Zapiekanka
+    text: Mezza baguette gratinata con funghi e formaggio. Le più famose sono in Plac Nowy.
+  - name: Bar mleczny
+    text: '"Bar del latte", mense semplici dell''epoca comunista, dove un pranzo costa circa €5-7.'
+airports:
+  KRK: >-
+    L'aeroporto Giovanni Paolo II è a Balice, circa 15 km a ovest del centro. Il treno è la scelta
+    migliore: la stazione è accanto al terminal e il treno arriva a Kraków Główny in circa 20
+    minuti, di solito 2 volte all'ora, con un biglietto da circa 12-17 PLN (circa €3-4). L'autobus
+    208 va alla stazione centrale in circa 40 minuti con un biglietto urbano da circa 6 PLN (circa
+    €1,5); di notte passa l'autobus 902. Un taxi o Bolt impiega 20-30 minuti e costa circa 60-100
+    PLN (€14-23).
+transport: >-
+  La Città Vecchia e Kazimierz si girano a piedi; per distanze più lunghe ci sono tram e autobus
+  frequenti. I biglietti si comprano alle macchinette alle fermate o a bordo del tram con la carta,
+  oppure nell'app Jakdojade. Il biglietto cartaceo va convalidato appena sali: i controlli sono
+  frequenti. Il biglietto giornaliero costa circa 17 PLN (circa €4). Bolt e Uber sono economici.
+daytrips:
+  - name: Miniera di sale di Wieliczka
+    text: >-
+      Gallerie e cappelle scolpite nel sale, fino a 135 metri sottoterra. Circa 20 minuti di treno
+      da Kraków Główny; la visita dura circa 2-3 ore e costa circa €35-40.
+  - name: Auschwitz-Birkenau
+    text: >-
+      Il memoriale del campo nazista a Oświęcim, a circa 1,5 ore di autobus o treno. L'ingresso è
+      gratuito ma va prenotato online con orario; le visite guidate sono a pagamento.
+  - name: Zakopane
+    text: >-
+      La cittadina di montagna ai piedi dei Tatra, a circa 2-2,5 ore di autobus o treno. Passeggiate
+      in montagna, la funivia per il Kasprowy Wierch e il formaggio oscypek.
+budget: >-
+  Una birra da mezzo litro in centro costa circa 15-20 PLN (€3,5-5), un piatto di pierogi circa
+  30-45 PLN (€7-10), un obwarzanek circa 3 PLN (meno di €1) e un biglietto del tram circa 6 PLN
+  (€1,5).
+when: >-
+  Maggio-settembre per le giornate lunghe e i tavolini all'aperto. A dicembre c'è il mercatino di
+  Natale in Rynek Główny, ma l'inverno è freddo, spesso sotto zero. Aprile e ottobre sono più
+  tranquilli.
+tips:
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "Evita i bancomat Euronet e i cambi in aeroporto. Le carte sono accettate quasi ovunque."
+  - "Prenota online Auschwitz, la Fabbrica di Schindler e Wieliczka qualche giorno prima, soprattutto d'estate."
+faq:
+  - q: "Posso pagare in euro a Cracovia?"
+    a: "Raramente: i prezzi sono in złoty. La carta è accettata quasi ovunque, anche per piccoli importi; per le bancarelle tieni un po' di contanti prelevati da un bancomat di una banca."
+  - q: "Come arrivo ad Auschwitz-Birkenau?"
+    a: "Gli autobus partono dalla stazione accanto a Kraków Główny e impiegano circa 1,5 ore; ci sono anche treni per Oświęcim. Prenota l'ingresso online, porta il passaporto e calcola l'intera giornata."
+  - q: "Quanto si spende al giorno a Cracovia?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno. Cibo e trasporti sono economici; le spese principali sono l'alloggio e i biglietti per Wieliczka o per le visite guidate."

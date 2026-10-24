@@ -1,0 +1,86 @@
+city: Paris
+name: Parigi
+slug: paris
+tagline: Torre Eiffel, musei e caffè sulla Senna
+intro: >-
+  Parigi è la città delle luci: grandi boulevard, alcuni dei musei più importanti del mondo e caffè
+  con i tavolini sul marciapiede. La metro ti porta ovunque, ma per i monumenti principali servono
+  tre o quattro giorni. È tra le città più care d'Europa: prenota in anticipo alloggio e musei.
+sights:
+  - name: Torre Eiffel
+    text: Il simbolo della città, alta 330 metri. Compra il biglietto online; le scale fino al secondo piano costano meno dell'ascensore. Le foto più belle si scattano dal Trocadéro.
+  - name: Louvre
+    text: Il museo più visitato al mondo, con la Gioconda. Si entra con una fascia oraria prenotata online; per i visitatori extra-UE il biglietto costa circa €32.
+  - name: Notre-Dame
+    text: La cattedrale gotica sull'Île de la Cité, riaperta a dicembre 2024 dopo l'incendio del 2019. L'ingresso è gratuito; vai presto per evitare la coda.
+  - name: Montmartre e Sacré-Cœur
+    text: La collina dei pittori, con viuzze acciottolate e la basilica bianca in cima. L'ingresso è gratuito e dalla scalinata si vede tutta Parigi.
+  - name: Musée d'Orsay
+    text: "Un'ex stazione ferroviaria sulla Senna, con gli impressionisti più famosi: Monet, Van Gogh, Renoir. Biglietto circa €16."
+  - name: Champs-Élysées e Arco di Trionfo
+    text: Il viale più famoso della città. Dalla terrazza dell'Arco vedi le 12 strade che partono da lì come i raggi di una stella.
+airports:
+  CDG: >-
+    Il treno RER B ti porta a Gare du Nord e Châtelet in circa 35-50 minuti; il biglietto aeroporto
+    costa circa €13-14. Il Roissybus va all'Opéra in circa 1 ora (circa €17). Il taxi ha una tariffa
+    fissa, circa €56-65 a seconda della riva della Senna.
+  ORY: >-
+    Dal 2024 la linea 14 della metro collega l'aeroporto a Châtelet in circa 25-30 minuti, con lo
+    stesso biglietto aeroporto da circa €13-14. Il taxi ha una tariffa fissa di circa €36-44.
+  BVA: >-
+    L'aeroporto di Ryanair e Wizz Air, a circa 85 km da Parigi. La navetta ti porta a Porte Maillot in
+    circa 1 ora e 15 minuti (fino a 1,5 ore con il traffico), per circa €17-19. Parte dopo ogni volo
+    in arrivo; per il ritorno, parte da Porte Maillot circa 3 ore prima del volo. Da lì la linea 1
+    della metro ti porta in centro.
+budget: >-
+  Un espresso al banco costa circa €2-3, un croissant circa €1,50, un pranzo a menu in bistrot
+  €15-20, un biglietto della metro circa €2,50. Un letto in ostello costa da circa €35-50, una
+  camera doppia in un hotel semplice da circa €100-150 a notte.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. Luglio e agosto sono caldi e pieni di
+  turisti, e ad agosto alcuni locali chiudono. L'inverno è freddo, ma più economico.
+tips:
+  - "Attenzione ai borseggiatori in metro, alla Torre Eiffel e a Montmartre. Non fermarti per «petizioni» o braccialetti per strada."
+  - "Molti musei chiudono un giorno alla settimana: il Louvre il martedì, il Musée d'Orsay e Versailles il lunedì."
+  - "Al ristorante chiedi «une carafe d'eau»: l'acqua del rubinetto è gratuita e potabile."
+itinerary:
+  - "Torre Eiffel al mattino, poi il Trocadéro e un giro in battello sulla Senna (circa 1 ora). Nel pomeriggio l'Arco di Trionfo e gli Champs-Élysées fino a Place de la Concorde."
+  - "Louvre al mattino (con prenotazione) e il Giardino delle Tuileries. Nel pomeriggio Notre-Dame e la Sainte-Chapelle, la sera il Quartiere Latino."
+  - "Montmartre di prima mattina, prima della folla. Nel pomeriggio il Musée d'Orsay, la sera nel Marais."
+  - "Versailles o Disneyland Paris. In alternativa, i Giardini del Lussemburgo e il cimitero di Père-Lachaise."
+areas:
+  - name: Le Marais
+    text: In centro, a piedi da Notre-Dame e dal Louvre, con prezzi tra i più alti.
+  - name: Quartiere Latino
+    text: Il quartiere degli studenti sulla Rive Gauche, con piccoli hotel e ristoranti economici.
+  - name: Montmartre
+    text: Atmosfera da paese e hotel un po' più economici; intorno a Pigalle la notte è rumorosa.
+  - name: Vicino a Gare du Nord
+    text: "La zona più pratica per CDG, perché qui ferma il treno RER B. Hotel più economici, ma la sera serve attenzione."
+food:
+  - name: Croissant e baguette
+    text: In ogni boulangerie (panetteria) trovi croissant freschi e panini con la baguette per un pranzo economico.
+  - name: Steak-frites
+    text: Bistecca con patatine fritte, il piatto classico dei bistrot.
+  - name: Crêpes
+    text: Dolci con la Nutella dai chioschi per strada, oppure la galette, la crêpe salata con formaggio, prosciutto e uovo.
+  - name: Menu du jour
+    text: "Il modo più economico per mangiare bene: un pranzo con due o tre portate costa circa €15-20."
+transport: >-
+  La metro ha 16 linee e fermate molto vicine tra loro. Il biglietto singolo per metro e RER costa
+  circa €2,50; caricalo sulla carta Navigo Easy (circa €2) o sul telefono. Per una settimana dal
+  lunedì alla domenica, l'abbonamento Navigo (circa €32, più €5 per la carta e una foto) copre
+  tutto, anche gli aeroporti CDG e Orly. La metro funziona fino a poco dopo l'1:00, il venerdì e il
+  sabato fino a dopo le 2:00.
+daytrips:
+  - name: Versailles
+    text: La reggia di Luigi XIV con i suoi grandi giardini, a circa 40 minuti con la RER C.
+  - name: Disneyland Paris
+    text: Il parco divertimenti, a circa 40 minuti con la RER A fino a Marne-la-Vallée.
+  - name: Giverny
+    text: Il giardino di Monet, a circa 45 minuti di treno fino a Vernon, poi in autobus. Aperto da aprile a ottobre.
+faq:
+  - q: "CDG, Orly o Beauvais: quale aeroporto conviene?"
+    a: "CDG e Orly sono collegati al centro in meno di 1 ora, con circa €13-14. Per Beauvais i voli costano spesso meno, ma aggiungi circa €17-19 e oltre 1 ora di autobus per tratta."
+  - q: "Quanto si spende al giorno a Parigi?"
+    a: "Volo e alloggio esclusi, €60-90 al giorno. Risparmi con i pranzi a menu du jour, un picnic sulla Senna e le chiese gratuite come Notre-Dame e il Sacré-Cœur."

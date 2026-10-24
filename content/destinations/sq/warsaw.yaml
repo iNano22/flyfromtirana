@@ -1,0 +1,91 @@
+city: Warsaw
+slug: warsaw
+tagline: Qyteti i Vjetër, Chopin dhe pierogi
+intro: >-
+  Warsaw është kryeqyteti i Polonisë: u shkatërrua pothuajse i tëri në Luftën e Dytë Botërore dhe
+  u rindërtua nga e para. Sot ka muze të shkëlqyer, parqe të mëdha dhe çmime më të ulëta se në
+  Evropën Perëndimore. Monedha është zloti polak (PLN, zł): €1 është rreth 4.2 zł. Dy-tri ditë
+  mjaftojnë për qytetin.
+sights:
+  - name: Stare Miasto (Qyteti i Vjetër)
+    text: >-
+      Sheshi i Tregut me shtëpitë shumëngjyrëshe dhe statujën e Sirenës, simbolit të qytetit. U
+      rindërtua pas vitit 1945 sipas pikturave të vjetra dhe sot është në listën e UNESCO-s.
+  - name: Kalaja Mbretërore
+    text: Rezidenca e mbretërve polakë, e rindërtuar në vitet 1971-1984, në krye të Rrugës Mbretërore.
+  - name: Muzeu i Kryengritjes së Warsaw
+    text: Muzeu më prekës i qytetit, për 63 ditët e kryengritjes kundër nazistëve në vitin 1944. Llogarit 2 orë.
+  - name: Parku Łazienki
+    text: >-
+      Parku më i bukur i qytetit, me Pallatin mbi Ujë dhe monumentin e Chopinit, ku të dielave në
+      verë mbahen koncerte falas.
+  - name: Pallati i Kulturës dhe Shkencës
+    text: >-
+      Rrokaqielli stalinist prej 237 metrash, i ndërtuar në vitet 1952-1955. Nga tarraca në katin e
+      30-të shihet i gjithë qyteti.
+  - name: Muzeu POLIN
+    text: Muzeu i historisë së hebrenjve polakë, në lagjen Muranów, aty ku dikur ishte getoja.
+itinerary:
+  - "Qyteti i Vjetër dhe Kalaja Mbretërore, pastaj në këmbë përgjatë Rrugës Mbretërore (Krakowskie Przedmieście dhe Nowy Świat). Në mbrëmje pierogi dhe një shëtitje buzë Vistulës."
+  - "Muzeu i Kryengritjes në mëngjes, pastaj Muzeu POLIN. Në perëndim të diellit, tarraca e Pallatit të Kulturës."
+  - "Parku Łazienki dhe Pallati i Wilanów (rreth 30-40 minuta me autobusët 116 ose 180). Në mbrëmje, baret e lagjes Praga."
+areas:
+  - name: Śródmieście
+    text: Qendra rreth stacionit Warszawa Centralna, zona më praktike për të tri aeroportet.
+  - name: Stare Miasto
+    text: E bukur dhe e qetë në mbrëmje, por me çmimet më të larta.
+  - name: Powiśle
+    text: Mes qendrës dhe lumit, me bare, kafene dhe bulevardet e Vistulës.
+  - name: Praga
+    text: Përtej lumit, lagje e vjetër punëtore me bare alternative dhe apartamente më të lira, me metronë M2 deri në qendër.
+food:
+  - name: Pierogi
+    text: Brumë i zier ose i skuqur, i mbushur me patate e djathë, mish, lakër ose fruta pylli.
+  - name: Żurek
+    text: Supë e thartë me miell thekre, salsiçe dhe vezë, shpesh brenda një buke.
+  - name: Bar mleczny
+    text: "Mensat e lira të kohës komuniste: një drekë e plotë kushton rreth 25-35 zł (€6-8)."
+  - name: Pączki
+    text: Krofne të mbushura me reçel trëndafili ose krem.
+airports:
+  WAW: >-
+    Chopin është rreth 10 km nga qendra. Trenat SKM S2 dhe S3 arrijnë në Warszawa Śródmieście ose
+    Warszawa Centralna për rreth 20-25 minuta, ndërsa autobusi 175 kalon nga Centralna deri në Plac
+    Piłsudskiego, afër Qytetit të Vjetër, për rreth 30 minuta. Mjafton bileta e zakonshme e
+    qytetit, rreth 5 zł (rreth €1), nga automatet e aeroportit. Taksia ose Bolt kushton rreth
+    40-70 zł (€10-16).
+  WMI: >-
+    Modlin, aeroporti i Ryanair-it, është rreth 40 km në veri. Autobusi direkt Modlin Bus arrin
+    pranë Pallatit të Kulturës për rreth 45-60 minuta, për rreth 20-40 zł (€5-9), më lirë online.
+    Ose merr autobusin e Koleje Mazowieckie deri në stacionin Modlin (rreth 10 minuta) dhe trenin
+    për në Warszawa Centralna (rreth 40 minuta): bileta e përbashkët kushton rreth 20 zł (€5).
+  RDO: >-
+    Aeroporti i Radomit është rreth 100 km në jug. Merr autobusin e qytetit ose taksi deri në
+    stacionin Radom Główny (rreth 15 minuta), pastaj trenin për në Warszawa Centralna: rreth 1.5
+    orë, për rreth 25-50 zł (€6-12) sipas trenit. Llogarit gjithsej rreth 2 orë.
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa dy linjat e metrosë (M1 dhe M2), tramvajet dhe autobusët të
+  çojnë kudo. Një biletë 75-minutëshe kushton rreth 5 zł (€1), ajo 24-orëshe rreth 15 zł
+  (€3.50). Automatet pranojnë kartën bankare pa kontakt; bileta prej letre vuloset kur hipën.
+  Bolt dhe Uber janë të lirë.
+daytrips:
+  - name: Kraków
+    text: Qyteti mbretëror me kështjellën Wawel, rreth 2.5 orë me tren të shpejtë. Ia vlen me një natë fjetje.
+  - name: Żelazowa Wola
+    text: Shtëpia ku lindi Chopin, rreth 55 km në perëndim, rreth 1 orë me makinë.
+  - name: Łódź
+    text: Qyteti i ish-fabrikave të tekstilit, me rrugën Piotrkowska, rreth 1.5 orë me tren.
+budget: >-
+  Një pjatë në restorant kushton 45-65 zł (€11-15), një birrë 15-20 zł (€3.50-5), një kafe rreth
+  15 zł (€3.50).
+when: >-
+  Maji-shtatori për motin dhe koncertet në Łazienki. Dimri është i ftohtë, shpesh nën 0°C, por në
+  dhjetor Qyteti i Vjetër ka tregun e Krishtlindjeve.
+tips:
+  - "Shumica e dyqaneve janë të mbyllura të dielave: hapen vetëm dyqanet e vogla si Żabka."
+  - "Kur terminali ose bankomati të pyet, zgjidh pagesën në zlotë, jo në euro. Mos i këmbe paratë në aeroport."
+faq:
+  - q: "Chopin, Modlin apo Radom: cili aeroport është më i mirë?"
+    a: "Chopin është më afër dhe lidhet me qendrën për rreth €1. Modlin dhe Radom shpesh kanë bileta më të lira, por llogarit 1-2 orë deri në qendër dhe €5-12."
+  - q: "Sa para duhen në ditë në Warsaw?"
+    a: "Pa fluturimin dhe fjetjen, €35-60 në ditë. Warsaw është më e lirë se shumica e kryeqyteteve të BE-së, edhe për hotelet."

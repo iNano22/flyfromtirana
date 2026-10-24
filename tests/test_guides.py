@@ -196,9 +196,9 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert "../img/dest/" not in page                                        # ...instead of a route's photo
     assert '<meta property="og:image" content="https://flyfromtirana.al/img/guides/milan.webp">' in page
     assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
-    # "Destinacione të tjera": a photo tile for each of the 18 other cities.
+    # "Destinacione të tjera": a photo tile for each of the other cities with a guide.
     others = page[page.index('<ul class="gtiles"'):page.index("</ul>", page.index('<ul class="gtiles"'))]
-    assert others.count('<li class="gtile') == 18 and 'href="../milan/"' not in others
+    assert others.count('<li class="gtile') == len(site_guides(config)) - 1 and 'href="../milan/"' not in others
     assert '<a href="../rome/">' in others and '<img src="../img/guides/rome.webp"' in others
     assert "Koloseu, Vatikani dhe pasta" in others and '<use href="#i-right"/>' in others
     assert '<symbol id="i-right"' in page                                    # the tiles' arrow is drawn on this page too
@@ -218,12 +218,12 @@ def test_build_writes_a_page_per_city_and_a_sitemap(config):
     build_site(config, "12345", now=NOW)
     out = config.website.output_dir
     cities = site_guides(config)
-    assert len(cities) == 19
+    assert len(cities) == len(load_guides()) >= 19          # every city with a guide has a page
     for guide in cities.values():
         assert (out / guide.slug / "index.html").exists(), guide.slug
     sitemap = (out / "sitemap.xml").read_text(encoding="utf-8")
     # The main page, every city and the privacy page, once per language of the site.
-    assert sitemap.count("<url>") == 21 * len(config.website.languages)
+    assert sitemap.count("<url>") == (len(cities) + 2) * len(config.website.languages)
     assert "<loc>https://flyfromtirana.al/</loc>" in sitemap
     assert "<loc>https://flyfromtirana.al/milan/</loc><lastmod>2026-10-09</lastmod>" in sitemap
     assert "Sitemap: https://flyfromtirana.al/sitemap.xml" in (out / "robots.txt").read_text()
@@ -243,9 +243,10 @@ def test_main_page_links_to_the_city_pages(config, storage):
     guides = site_guides(config)
     page = render_site(build_offers(config, storage, NOW), config, LinkBuilder(config.website.links, "1"),
                        updated_at=NOW, now=NOW, guides=guides)
-    assert 'id="udhezues"' in page and '<span class="count">19</span>' in page
+    count = len(guides)
+    assert 'id="udhezues"' in page and f'<span class="count">{count}</span>' in page
     tiles = page[page.index('<ul class="strip gtiles"'):page.index("</ul>", page.index('<ul class="strip gtiles"'))]
-    assert tiles.count('<li class="gtile') == 19
+    assert tiles.count('<li class="gtile') == count
     milan = tiles[tiles.index('<a href="milan/">'):tiles.index('<a href="rome/">')]
     assert '<img src="./img/guides/milan.webp"' in milan                      # its wide photo
     assert "<small>nga</small> €19" in milan                                  # the city's cheapest price
@@ -253,7 +254,7 @@ def test_main_page_links_to_the_city_pages(config, storage):
     rome = tiles[tiles.index('<a href="rome/">'):tiles.index('<a href="bologna/">')]
     assert "gprice" not in rome and "Rome</b>" in rome                        # no price yet: no sticker
     assert '<a href="milan/">Udhëzues për Milan</a>' in page                  # on Milan's tickets
-    assert "Udhëzues për 19 qytete" in page                                   # footer
+    assert f"Udhëzues për {count} qytete" in page                             # footer
     assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
     without = render_site([], config, LinkBuilder(config.website.links, "1"), updated_at=NOW, now=NOW)
     assert 'id="udhezues"' not in without and "Udhëzues" not in without

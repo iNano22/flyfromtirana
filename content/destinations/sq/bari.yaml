@@ -1,0 +1,76 @@
+city: Bari
+slug: bari
+tagline: Bari Vecchia, deti dhe Puglia
+intro: >-
+  Shumë shqiptarë e njohin Bari vetëm nga porti i tragetit, por qyteti meriton më shumë se një
+  kalim me nxitim. Bari Vecchia shihet në një ditë, ndërsa trenat lokalë të çojnë në Polignano a
+  Mare, Alberobello dhe Matera. Tri-katër ditë mjaftojnë për qytetin dhe Puglia-n përreth.
+sights:
+  - name: Bari Vecchia
+    text: Qyteti i vjetër, një labirint rrugicash mes portit dhe detit. Në Strada Arco Basso gratë e lagjes bëjnë dhe shesin orecchiette me dorë.
+  - name: Basilica di San Nicola
+    text: Bazilika romanike ku prehen eshtrat e Shën Nikollës, e shenjtë për katolikët dhe ortodoksët. Hyrja është falas.
+  - name: Cattedrale di San Sabino
+    text: Katedralja romanike e shekullit XII, pak hapa nga bazilika, me një kriptë barok.
+  - name: Castello Normanno-Svevo
+    text: Kështjella e normanëve, e rindërtuar nga perandori Frederiku II, në skaj të qytetit të vjetër.
+  - name: Lungomare Nazario Sauro
+    text: Shëtitorja e gjatë buzë detit, ku vendasit dalin për xhiron e mbrëmjes.
+  - name: Molo San Nicola
+    text: Tezgat e peshkatarëve, ku vendasit hanë fruta deti të papjekura me një birrë Peroni. Shko në mëngjes ose në fundjavë.
+itinerary:
+  - "Bari Vecchia: Basilica di San Nicola, Cattedrale di San Sabino dhe Strada Arco Basso. Pasdite Castello Normanno-Svevo, në mbrëmje Lungomare dhe aperitiv në Piazza Mercantile."
+  - "Me tren në Polignano a Mare (rreth 30 minuta) për plazhin Lama Monachile. Pasdite Monopoli dhe porti i tij i vjetër."
+  - "Alberobello me shtëpitë trulli, rreth 1.5 orë me trenat e FSE, me një ndalesë në Locorotondo në kthim."
+  - "Një ditë në Matera me trenin FAL, ose qyteti me qetësi: Molo San Nicola, Via Sparano dhe plazhi Pane e Pomodoro."
+areas:
+  - name: Bari Vecchia
+    text: Bujtina në shtëpi të vjetra, me atmosferë, por me zhurmë në mbrëmje dhe pa hyrje të lehtë me makinë.
+  - name: Murattiano
+    text: Qendra e shekullit XIX me dyqanet e Via Sparano, mes stacionit dhe qytetit të vjetër.
+  - name: Pranë Bari Centrale
+    text: Zona më praktike për trenin e aeroportit dhe udhëtimet ditore, shpesh më e lira. Bari Vecchia është rreth 20 minuta në këmbë.
+food:
+  - name: Orecchiette alle cime di rapa
+    text: Makaronat «veshë të vegjël» të qytetit, me gjethe rrepe, hudhër dhe açuge.
+  - name: Focaccia barese
+    text: Fokaçe e butë me domate qershi dhe ullinj, që shitet me feta në furrat e qytetit.
+  - name: Panzerotti
+    text: Brumë i skuqur i mbushur me domate dhe mocarelë, që hahet i nxehtë në këmbë.
+  - name: Sgagliozze
+    text: Feta polente të skuqura, që i shesin gratë nëpër rrugicat e Bari Vecchia.
+airports:
+  BRI: >-
+    Aeroporti Karol Wojtyła është rreth 8 km nga qendra. Treni i Ferrotramviaria nis ngjitur me
+    terminalin dhe arrin në Bari Centrale për rreth 20 minuta (rreth €5). Autobusi shuttle i
+    Tempesta shkon te stacioni qendror për rreth 30 minuta (rreth €4). Autobusi i qytetit AMTAB 16
+    është më i liri (rreth €1-1.50), por bën rreth 40-50 minuta. Taksia kushton rreth €25-30.
+transport: >-
+  Qendra shihet në këmbë, ndërsa autobusët e AMTAB mbulojnë pjesën tjetër të qytetit; biletën blije
+  në duhanshitore (tabacchi). Nga Bari Centrale trenat e Trenitalia shkojnë drejt Polignano a Mare
+  dhe Monopoli, trenat e FSE drejt Alberobello dhe ata të FAL drejt Matera. Biletat prej letre
+  vulosen para hipjes.
+daytrips:
+  - name: Polignano a Mare
+    text: Qyteti mbi shkëmbinj me plazhin Lama Monachile, rreth 30 minuta me tren (rreth €3).
+  - name: Alberobello
+    text: Shtëpitë trulli me çati koni prej guri, në listën e UNESCO-s, rreth 1.5 orë me tren.
+  - name: Matera
+    text: Qyteti i shpellave Sassi, në rajonin fqinj të Basilicata, rreth 1.5 orë me trenin FAL.
+  - name: Monopoli
+    text: Port i vjetër me varka blu dhe qendër historike buzë detit, rreth 40 minuta me tren.
+budget: >-
+  Një fetë focaccia kushton €2-3, një pjatë orecchiette €9-12, një espresso rreth €1-1.20, ndërsa
+  bileta e autobusit të qytetit rreth €1.
+when: >-
+  Maji-qershori dhe shtatori-tetori, pa vapën e gushtit. Festa e Shën Nikollës mbahet më 7-9 maj.
+tips:
+  - "Porti, nga ku nisen tragetet për Durrës, është pranë Bari Vecchia: një ditë në qytet para ose pas tragetit ia vlen."
+  - "Shumë dyqane mbyllen pas dreke, afërsisht 13:00-16:30: bëj pazaret në mëngjes ose në mbrëmje."
+  - "Me makinë me qira mos hyr në Bari Vecchia: është zonë ZTL dhe gjobat vijnë me postë."
+  - "Të dielave trenat e FSE janë të pakët ose zëvendësohen me autobus: kontrollo oraret përpara."
+faq:
+  - q: "Si shkohet në Matera nga Bari?"
+    a: "Me trenin FAL nga stacioni i tyre pranë Bari Centrale, rreth 1.5 orë dhe rreth €5, ndonjëherë me ndërrim në Altamura. Lëri një ditë të plotë."
+  - q: "Sa para duhen në ditë në Bari?"
+    a: "Pa fluturimin dhe fjetjen, €40-60 në ditë. Ushqimi i rrugës është i lirë dhe i shkëlqyer, ndërsa trenat për udhëtimet ditore kushtojnë pak euro."

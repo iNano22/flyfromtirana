@@ -44,3 +44,99 @@ gb: >-
 tr: >-
   Shtetasit shqiptarë hyjnë në Turqi pa vizë, për qëndrime deri në 90 ditë. Mjafton pasaporta,
   që këshillohet të jetë e vlefshme të paktën 6 muaj pas datës së hyrjes.
+fr: >-
+  Franca është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+cz: >-
+  Çekia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+hu: >-
+  Hungaria është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+pl: >-
+  Polonia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+mt: >-
+  Malta është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+sk: >-
+  Sllovakia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+nl: >-
+  Holanda është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+lu: >-
+  Luksemburgu është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë,
+  për qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën
+  3 muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+dk: >-
+  Danimarka është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+se: >-
+  Suedia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+"no": >-   # quoted: YAML reads a bare no as false
+  Norvegjia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+fi: >-
+  Finlanda është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+ee: >-
+  Estonia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+lv: >-
+  Letonia është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+lt: >-
+  Lituania është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.
+ro: >-
+  Rumania është në zonën Shengen. Shtetasit shqiptarë me pasaportë biometrike hyjnë pa vizë, për
+  qëndrime deri në 90 ditë brenda çdo 180 ditëve. Pasaporta duhet të jetë e vlefshme të paktën 3
+  muaj pas datës së kthimit. Në kufi regjistrohen të dhënat biometrike (sistemi EES), ndërsa
+  autorizimi online ETIAS pritet të bëhet i detyrueshëm: kontrollo para nisjes nëse ka hyrë në
+  fuqi.

@@ -1,0 +1,93 @@
+city: Warsaw
+name: Varsavia
+slug: warsaw
+tagline: Città Vecchia, Chopin e pierogi
+intro: >-
+  Varsavia è la capitale della Polonia: fu distrutta quasi interamente nella Seconda guerra
+  mondiale e ricostruita da zero. Oggi ha musei eccellenti, grandi parchi e prezzi più bassi
+  dell'Europa occidentale. La valuta è lo złoty polacco (PLN, zł): €1 vale circa 4,2 zł. Due o tre
+  giorni bastano per la città.
+sights:
+  - name: Stare Miasto (Città Vecchia)
+    text: >-
+      La Piazza del Mercato con le sue case colorate e la statua della Sirenetta, simbolo della
+      città. Fu ricostruita dopo il 1945 sulla base di antichi dipinti e oggi è patrimonio UNESCO.
+  - name: Castello Reale
+    text: La residenza dei re polacchi, ricostruita nel 1971-1984, all'inizio della Via Reale.
+  - name: Museo dell'Insurrezione di Varsavia
+    text: Il museo più toccante della città, sui 63 giorni dell'insurrezione contro i nazisti nel 1944. Calcola 2 ore.
+  - name: Parco Łazienki
+    text: >-
+      Il parco più bello della città, con il Palazzo sull'Acqua e il monumento a Chopin, dove la
+      domenica d'estate si tengono concerti gratuiti.
+  - name: Palazzo della Cultura e della Scienza
+    text: >-
+      Il grattacielo stalinista di 237 metri, costruito nel 1952-1955. Dalla terrazza al 30º piano
+      si vede tutta la città.
+  - name: Museo POLIN
+    text: Il museo della storia degli ebrei polacchi, nel quartiere di Muranów, dove un tempo sorgeva il ghetto.
+itinerary:
+  - "La Città Vecchia e il Castello Reale, poi a piedi lungo la Via Reale (Krakowskie Przedmieście e Nowy Świat). La sera pierogi e una passeggiata lungo la Vistola."
+  - "Il Museo dell'Insurrezione al mattino, poi il Museo POLIN. Al tramonto, la terrazza del Palazzo della Cultura."
+  - "Il Parco Łazienki e il Palazzo di Wilanów (circa 30-40 minuti con gli autobus 116 o 180). La sera, i locali del quartiere Praga."
+areas:
+  - name: Śródmieście
+    text: Il centro intorno alla stazione Warszawa Centralna, la zona più pratica per tutti e tre gli aeroporti.
+  - name: Stare Miasto
+    text: Bella e tranquilla la sera, ma con i prezzi più alti.
+  - name: Powiśle
+    text: Tra il centro e il fiume, con bar, caffè e i lungofiume della Vistola.
+  - name: Praga
+    text: Oltre il fiume, un vecchio quartiere operaio con locali alternativi e appartamenti più economici, con la metro M2 fino al centro.
+food:
+  - name: Pierogi
+    text: Ravioli bolliti o fritti, ripieni di patate e formaggio, carne, cavolo o frutti di bosco.
+  - name: Żurek
+    text: Zuppa acida a base di farina di segale, con salsiccia e uovo, spesso servita dentro una pagnotta.
+  - name: Bar mleczny
+    text: "Le mense economiche dell'epoca comunista: un pranzo completo costa circa 25-35 zł (€6-8)."
+  - name: Pączki
+    text: Bomboloni ripieni di marmellata di rose o di crema.
+airports:
+  WAW: >-
+    Il Chopin è a circa 10 km dal centro. I treni SKM S2 e S3 arrivano a Warszawa Śródmieście o
+    Warszawa Centralna in circa 20-25 minuti, mentre l'autobus 175 passa per Centralna fino a Plac
+    Piłsudskiego, vicino alla Città Vecchia, in circa 30 minuti. Basta il normale biglietto urbano,
+    circa 5 zł (circa €1), dalle macchinette dell'aeroporto. Un taxi o Bolt costa circa 40-70 zł
+    (€10-16).
+  WMI: >-
+    Modlin, l'aeroporto di Ryanair, è a circa 40 km a nord. L'autobus diretto Modlin Bus arriva
+    vicino al Palazzo della Cultura in circa 45-60 minuti, per circa 20-40 zł (€5-9), meno se lo
+    compri online. Oppure prendi l'autobus di Koleje Mazowieckie fino alla stazione di Modlin (circa
+    10 minuti) e il treno per Warszawa Centralna (circa 40 minuti): il biglietto combinato costa
+    circa 20 zł (€5).
+  RDO: >-
+    L'aeroporto di Radom è a circa 100 km a sud. Prendi l'autobus urbano o un taxi fino alla
+    stazione Radom Główny (circa 15 minuti), poi il treno per Warszawa Centralna: circa 1,5 ore, per
+    circa 25-50 zł (€6-12) a seconda del treno. Calcola in tutto circa 2 ore.
+transport: >-
+  Il centro si gira a piedi, mentre le due linee della metro (M1 e M2), i tram e gli autobus ti
+  portano ovunque. Un biglietto da 75 minuti costa circa 5 zł (€1), quello da 24 ore circa 15 zł
+  (€3,50). Le macchinette accettano le carte bancarie contactless; i biglietti cartacei si
+  convalidano quando sali. Bolt e Uber sono economici.
+daytrips:
+  - name: Cracovia
+    text: La città dei re con il Castello del Wawel, a circa 2,5 ore di treno veloce. Conviene con una notte sul posto.
+  - name: Żelazowa Wola
+    text: La casa natale di Chopin, a circa 55 km a ovest, a circa 1 ora di auto.
+  - name: Łódź
+    text: La città delle ex fabbriche tessili, con via Piotrkowska, a circa 1,5 ore di treno.
+budget: >-
+  Un piatto al ristorante costa 45-65 zł (€11-15), una birra 15-20 zł (€3,50-5), un caffè circa
+  15 zł (€3,50).
+when: >-
+  Da maggio a settembre per il clima e i concerti al Łazienki. L'inverno è freddo, spesso sotto
+  0°C, ma a dicembre la Città Vecchia ha il suo mercatino di Natale.
+tips:
+  - "La maggior parte dei negozi è chiusa la domenica: aprono solo i piccoli negozi come Żabka."
+  - "Quando il terminale o il bancomat te lo chiede, scegli di pagare in złoty, non in euro. Non cambiare soldi in aeroporto."
+faq:
+  - q: "Chopin, Modlin o Radom: qual è l'aeroporto migliore?"
+    a: "Il Chopin è il più vicino ed è collegato al centro per circa €1. Modlin e Radom hanno spesso biglietti più economici, ma calcola 1-2 ore fino al centro e €5-12."
+  - q: "Quanto si spende al giorno a Varsavia?"
+    a: "Volo e alloggio esclusi, €35-60 al giorno. Varsavia è più economica della maggior parte delle capitali dell'UE, anche per gli hotel."

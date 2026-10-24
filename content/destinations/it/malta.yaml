@@ -1,0 +1,80 @@
+city: Malta
+slug: malta
+tagline: Fortezze, mare blu e Gozo
+intro: >-
+  Malta è una piccola isola nel cuore del Mediterraneo, con un mare limpido e fortezze di pietra
+  dorata. La capitale, La Valletta, costruita dai Cavalieri di San Giovanni, si gira a piedi.
+  L'inglese è lingua ufficiale insieme al maltese, quindi ci si fa capire facilmente. Tre o quattro
+  giorni bastano per La Valletta, Mdina e una giornata a Gozo o a Comino.
+sights:
+  - name: Concattedrale di San Giovanni
+    text: La cattedrale dei Cavalieri a La Valletta, sobria fuori e ricoperta d'oro dentro, con due dipinti di Caravaggio. Ingresso circa €15.
+  - name: Upper Barrakka Gardens
+    text: Il giardino sopra il Grand Harbour, con la vista più bella di Malta. Sotto, alla Saluting Battery, il cannone spara ogni giorno alle 12:00.
+  - name: Tre Città
+    text: "Birgu, Senglea e Cospicua, le città fortificate di fronte a La Valletta: più tranquille, con vicoli stretti. Si raggiungono con un piccolo traghetto in 10 minuti."
+  - name: Mdina
+    text: La «Città silenziosa», l'antica capitale su una collina, con mura medievali. Accanto c'è Rabat, con le catacombe di San Paolo.
+  - name: Forte Sant'Elmo
+    text: La fortezza a forma di stella sulla punta di La Valletta, con il Museo Nazionale della Guerra, dall'assedio del 1565 alla Seconda guerra mondiale.
+  - name: Ipogeo di Ħal Saflieni
+    text: Un luogo di sepoltura sotterraneo preistorico, di oltre 5.000 anni. Entrano pochi visitatori all'ora, quindi i biglietti (circa €35) si prenotano settimane prima.
+  - name: Blue Grotto
+    text: Le grotte marine nel sud, dove piccole barche ti portano dentro per circa 20 minuti (circa €10), quando il mare è calmo.
+itinerary:
+  - "La Valletta a piedi: Concattedrale di San Giovanni, Palazzo del Gran Maestro e Upper Barrakka Gardens per il cannone delle 12:00. Nel pomeriggio Forte Sant'Elmo, la sera Sliema in traghetto."
+  - "In traghetto alle Tre Città, Birgu e Senglea. Nel pomeriggio Marsaxlokk con le sue barche colorate e una cena di pesce."
+  - "Mdina e Rabat al mattino. Nel pomeriggio le scogliere di Dingli o la spiaggia di Golden Bay per il tramonto."
+  - "Una giornata intera a Gozo, oppure a Comino per la Blue Lagoon."
+areas:
+  - name: La Valletta
+    text: Tutto a piedi e la vista sul porto, ma gli hotel sono piccoli e cari.
+  - name: Sliema
+    text: "La scelta più pratica: lungomare, molti hotel e il traghetto per La Valletta in circa 10 minuti."
+  - name: St Julian's
+    text: Accanto a Sliema, con Paceville, la zona della vita notturna. Ideale per i giovani, ma rumorosa.
+  - name: Bugibba
+    text: Gli alloggi più economici, sul mare a nord, ma in autobus servono circa 45-60 minuti per La Valletta.
+food:
+  - name: Pastizzi
+    text: Piccoli sfogliati ripieni di ricotta o piselli, il cibo di strada dei maltesi, circa €1 l'uno.
+  - name: Ftira
+    text: Un pane rotondo farcito con tonno, pomodoro, olive e capperi, un pranzo economico per la spiaggia.
+  - name: Stuffat tal-fenek
+    text: Coniglio cotto lentamente con vino e aglio, il piatto nazionale di Malta.
+  - name: Kinnie e Cisk
+    text: Il Kinnie è una bibita gassata alle arance amare, la Cisk la birra locale.
+airports:
+  MLA: >-
+    Il Malta International Airport si trova a Luqa, a circa 8 km da La Valletta. L'autobus X4 ti
+    porta al capolinea di La Valletta in circa 25 minuti, con un biglietto di circa €3 dall'autista;
+    l'X2 va a Sliema e St Julian's (circa 45 minuti). Un taxi a tariffa fissa dal banco agli arrivi
+    costa circa €20 per La Valletta, mentre con Bolt o Uber circa €12-20.
+transport: >-
+  Gli autobus di Malta Public Transport coprono tutta l'isola e la maggior parte parte dal capolinea
+  vicino a City Gate, a La Valletta. Il biglietto si compra dall'autista (circa €2,50-3) e vale 2
+  ore; per una settimana conviene la carta Explore (circa €25). Il traffico è intenso, quindi
+  calcola tempo in più. Bolt e Uber hanno prezzi ragionevoli. Si guida a sinistra, come in
+  Inghilterra.
+daytrips:
+  - name: Gozo
+    text: "L'isola sorella, più verde e più tranquilla: la Cittadella di Victoria, i templi di Ġgantija e la spiaggia di Ramla. I traghetti da Ċirkewwa impiegano circa 25 minuti, quelli veloci da La Valletta circa 45."
+  - name: Comino e la Blue Lagoon
+    text: La piccola isola con l'acqua più blu del Mediterraneo. Le barche da Ċirkewwa o da Sliema costano circa €15-25 andata e ritorno. In estate vai presto.
+  - name: Marsaxlokk
+    text: Il villaggio di pescatori con le barche colorate e il mercato della domenica, a circa 30 minuti con l'autobus 81 da La Valletta.
+budget: >-
+  Un pastizz costa circa €1, un piatto al ristorante €15-25, una birra €3-5. Un letto in ostello
+  parte da circa €25, un hotel fuori stagione da circa €70.
+when: >-
+  Maggio-giugno e settembre-ottobre sono i mesi migliori. Luglio e agosto superano i 30°C e hanno i
+  prezzi più alti. L'inverno è mite (circa 15°C) ed economico, ma il mare è freddo.
+tips:
+  - "Le prese sono come in Inghilterra, a 3 poli: porta un adattatore."
+  - "Il traghetto per Gozo da Ċirkewwa si paga solo al ritorno (circa €5 a piedi)."
+  - "L'acqua del rubinetto è sicura, ma molti bevono acqua in bottiglia per via del sapore."
+faq:
+  - q: "Vale la pena Gozo per un giorno?"
+    a: "Sì. In autobus fino a Ċirkewwa e poi il traghetto, o con il traghetto veloce da La Valletta, arrivi al mattino e torni la sera."
+  - q: "Quanto si spende al giorno a Malta?"
+    a: "Volo e alloggio esclusi, €40-70 al giorno. Malta è più economica della maggior parte dell'Europa occidentale."

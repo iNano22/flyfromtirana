@@ -1,0 +1,85 @@
+city: Prague
+slug: prague
+tagline: Kështjella, ura dhe birrë e lirë
+intro: >-
+  Prague është kryeqyteti i Çekisë, me një qendër mesjetare që i shpëtoi luftërave pothuajse e
+  paprekur: kulla gotike, Ura e Karlit dhe Kështjella mbi lumin Vltava. Është ndër kryeqytetet
+  më të lira të Evropës Qendrore për të ngrënë e për të pirë. Dy-tri ditë mjaftojnë për qytetin.
+  Monedha është korona çeke (CZK): 1 euro është rreth 25 korona.
+sights:
+  - name: Kështjella e Pragës
+    text: >-
+      Kompleksi i madh i kështjellës, me Katedralen e Shën Vitit dhe Rrugicën e Artë. Oborret
+      janë falas; për brendësinë blen një biletë të kombinuar.
+  - name: Ura e Karlit
+    text: >-
+      Ura gurore e shekullit XIV me 30 statuja, mes Qytetit të Vjetër dhe Malá Strana. Herët në
+      mëngjes është pothuajse bosh.
+  - name: Sheshi i Qytetit të Vjetër
+    text: >-
+      Zemra e qytetit, me kishën Týn dhe Orën Astronomike (Orloj), ku figurat lëvizin çdo orë të
+      plotë. Ngjitu në kullën e Bashkisë së Vjetër për pamjen mbi çatitë.
+  - name: Josefov
+    text: Lagjja e vjetër hebraike, me sinagoga historike dhe varrezat e vjetra, me një biletë të përbashkët të Muzeut Hebraik.
+  - name: Malá Strana
+    text: Lagjja barok nën Kështjellë, me kishën e Shën Nikollës, rrugica me kalldrëm dhe murin e Lennonit.
+  - name: Petřín
+    text: Kodra e gjelbër mbi Malá Strana, me një kullë vrojtimi si një Kullë Eifel e vogël. Teleferiku pranon biletën e zakonshme të transportit.
+  - name: Vyšehrad
+    text: Kështjella e vjetër mbi lumë, në jug të qendrës, me pamje mbi Vltava dhe pa turmat e Qytetit të Vjetër.
+airports:
+  PRG: >-
+    Aeroporti Václav Havel është rreth 17 km nga qendra. Më e lira: autobusi 119 deri në Nádraží
+    Veleslavín (rreth 15 minuta) dhe metroja A deri në Můstek, gjithsej rreth 40 minuta me një
+    biletë 90-minutëshe (rreth 50 CZK, afro €2). Autobusi Airport Express (AE) të çon direkt në
+    stacionin kryesor të trenave, Hlavní nádraží, për rreth 35 minuta, me rreth 100 CZK (rreth €4).
+    Një taksi zyrtare para terminalit, ose një Uber apo Bolt, kushton rreth 600-800 CZK (€25-32)
+    dhe bën 25-30 minuta.
+budget: >-
+  Një birrë gjysmëlitërshe në një pijetore të zakonshme kushton rreth 60-80 CZK (€2.50-3), një
+  pjatë tradicionale €10-15, bileta 24-orëshe e transportit rreth 150 CZK (€6).
+when: >-
+  Maji-qershori dhe shtatori kanë motin më të mirë dhe më pak turma se vera. Nga fundi i nëntorit
+  deri në fillim të janarit hapen tregjet e Krishtlindjeve; dimri është i ftohtë.
+tips:
+  - "Mos ndërro para në zyrat e këmbimit që shkruajnë «0% komision»: kursi është shpesh shumë i keq. Paguaj me kartë ose tërhiq korona nga bankomatet e bankave."
+  - "Kur pos-i ose bankomati të pyet euro apo korona, zgjidh gjithmonë koronat (CZK): konvertimi në euro kushton më shumë."
+  - "Biletat prej letre duhen vulosur në hyrje të metrosë ose në tramvaj: gjoba është rreth 1500 CZK (€60)."
+  - "Restorantet në Sheshin e Qytetit të Vjetër janë shumë më të shtrenjta: mjafton të ecësh 2-3 rrugë më tej."
+itinerary:
+  - "Sheshi i Qytetit të Vjetër me Orën Astronomike, pastaj Josefov. Pasdite Sheshi i Venceslasit dhe Shtëpia që Kërcen, në mbrëmje një birrë në një pijetore çeke."
+  - "Ura e Karlit herët në mëngjes, ngjitje te Kështjella dhe Katedralja e Shën Vitit. Pasdite Malá Strana, pastaj kodra Petřín për perëndimin e diellit."
+  - "Vyšehrad në mëngjes, pastaj kafenetë e Vinohrady ose Karlín. Ndryshe, një udhëtim ditor në Kutná Hora."
+areas:
+  - name: Staré Město dhe Nové Město
+    text: Qyteti i Vjetër dhe i Ri, gjithçka në këmbë, me çmimet më të larta.
+  - name: Vinohrady
+    text: Lagje e qetë dhe e bukur, plot kafene, 10 minuta me metro ose tramvaj nga qendra.
+  - name: Žižkov dhe Karlín
+    text: "Zonat më të lira: Žižkov ka pijetore të shumta, Karlín është moderne dhe e lidhur mirë me metronë B."
+food:
+  - name: Svíčková
+    text: Mish viçi me salcë kremoze perimesh, me knedlík (bukë e zier në feta) dhe boronica.
+  - name: Vepřo knedlo zelo
+    text: Mish derri i pjekur me knedlík dhe lakër, pjata kombëtare çeke.
+  - name: Smažený sýr
+    text: Djathë i pane dhe i skuqur, me patate dhe salcë tartare.
+  - name: Birra çeke
+    text: "Pilsner Urquell dhe birrat lokale, të freskëta nga fuçia: shpesh kushton më pak se uji."
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa tri linjat e metrosë (A, B, C) dhe tramvajet të çojnë kudo.
+  E njëjta biletë vlen për metro, tramvaj, autobus dhe teleferikun e Petřínit: 30-minutëshe,
+  90-minutëshe, 24-orëshe ose 72-orëshe. Blihet në automatet e stacioneve ose në aplikacionin PID
+  Lítačka. Tramvaji 22 kalon pranë shumë pikave kryesore dhe ngjitet deri te Kështjella.
+daytrips:
+  - name: Kutná Hora
+    text: Qyteti i vjetër i argjendit, me kishën e kockave në Sedlec, rreth 1 orë me tren.
+  - name: Český Krumlov
+    text: Qytet i vogël mesjetar me kështjellë mbi lumë, rreth 3 orë me autobus; më mirë me një natë fjetje.
+  - name: Karlovy Vary
+    text: Qyteti i llixhave me burime të nxehta, rreth 2 orë me autobus.
+faq:
+  - q: "A pranohen eurot në Prague?"
+    a: "Rrallë, dhe me kurs të keq. Karta bankare pranohet pothuajse kudo, edhe për shuma të vogla, ndaj mjaftojnë pak korona në dorë."
+  - q: "Sa para duhen në ditë në Prague?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-70 në ditë për ushqim, transport dhe një hyrje në muze. Ushqimi dhe birra janë më të lira se në Vienna ose Munich, por qendra turistike është e shtrenjtë."

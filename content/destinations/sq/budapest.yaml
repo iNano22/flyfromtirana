@@ -1,0 +1,83 @@
+city: Budapest
+slug: budapest
+tagline: Danubi, banjat termale dhe ruin bar-et
+intro: >-
+  Budapest është kryeqyteti i Hungarisë, i ndarë nga Danubi në Buda me kodrat dhe kështjellën, dhe
+  Pest me bulevardet dhe jetën e natës. Monedha është forinti (HUF): €1 është rreth 400 forint.
+  Tri ditë mjaftojnë për qendrën, banjat termale dhe lagjen hebraike.
+sights:
+  - name: Parlamenti (Országház)
+    text: >-
+      Ndërtesa neogotike buzë Danubit, simboli i qytetit. Brenda hyhet me turne me guidë që
+      rezervohen online; për qytetarët jashtë BE-së bileta kushton rreth dyfishin. Nga jashtë,
+      sidomos natën kur ndriçohet, është falas.
+  - name: Kështjella e Budës dhe Bastioni i Peshkatarëve
+    text: >-
+      Pallati Mbretëror, Kisha e Matias dhe terracat e Bastionit, me pamjen më të bukur të
+      Parlamentit. Pjesa më e madhe e kodrës vizitohet falas.
+  - name: Ura e Zinxhirëve (Széchenyi Lánchíd)
+    text: Ura më e njohur mbi Danub, që lidh Pestin me Budën. Kaloje në këmbë në perëndim të diellit.
+  - name: Banja Széchenyi
+    text: Banja termale më e madhe e qytetit, me pishina të jashtme të ngrohta edhe në dimër. Bileta rreth €30-40.
+  - name: Bazilika e Shën Stefanit
+    text: Kisha më e madhe e qytetit, me një pamje 360 gradë mbi Pestin nga kupola.
+  - name: Sinagoga e rrugës Dohány
+    text: Sinagoga më e madhe në Evropë, në zemër të lagjes hebraike.
+  - name: Tregu i Madh (Nagy Vásárcsarnok)
+    text: Tregu i mbuluar pranë Urës së Lirisë, me paprikë, sallam dhe lángos në katin e sipërm. Të dielave është i mbyllur.
+itinerary:
+  - "Parlamenti, memoriali i Këpucëve buzë Danubit, Bazilika dhe Ura e Zinxhirëve. Në mbrëmje lagjja hebraike, me sinagogën dhe një ruin bar si Szimpla Kert."
+  - "Kodra e Kështjellës (autobusi 16 nga Deák Ferenc tér), Bastioni i Peshkatarëve dhe Kisha e Matias. Pasdite Kodra Gellért për pamjen, në mbrëmje tramvaji 2 buzë Danubit."
+  - "Andrássy út me metronë M1 deri te Sheshi i Heronjve, pastaj disa orë në Banjën Széchenyi. Ose një udhëtim ditor në Szentendre."
+areas:
+  - name: Distrikti V (Belváros)
+    text: Qendra historike, afër Deák Ferenc tér ku ndalon autobusi i aeroportit. Gjithçka në këmbë, me çmimet më të larta.
+  - name: Distrikti VII (lagjja hebraike)
+    text: Lagjja e ruin bar-eve, me shumë hostele dhe apartamente të lira. E zhurmshme natën, sidomos në fundjavë.
+  - name: Distrikti VIII (Palotanegyed)
+    text: Pas Muzeut Kombëtar, më e qetë dhe pak më e lirë, por ende në këmbë nga qendra.
+food:
+  - name: Gulyás
+    text: Supë me mish viçi, patate dhe paprikë. Rreth €6-9 në restorant.
+  - name: Lángos
+    text: Brumë i skuqur me salcë kosi dhe djathë, ushqimi më i lirë i rrugës.
+  - name: Paprikás csirke
+    text: Pulë me salcë paprike dhe kosi, me nokedli, galushka të vogla hungareze.
+  - name: Kürtőskalács
+    text: Ëmbëlsira në formë oxhaku, e pjekur në hell, me sheqer dhe kanellë.
+airports:
+  BUD: >-
+    Aeroporti Ferenc Liszt është rreth 16 km nga qendra. Autobusi 100E të çon direkt në Deák Ferenc
+    tér për rreth 35-40 minuta; nis çdo 10-20 minuta dhe ka biletën e vet, rreth 2200 forint (rreth
+    €5.5), në automatin e stacionit ose në aplikacionin BudapestGO. Më lirë: autobusi 200E deri te
+    Kőbánya-Kispest (rreth 25 minuta) dhe metroja M3 për në qendër (rreth 20 minuta), me dy bileta
+    të thjeshta rreth €2-3. Taksia zyrtare (Főtaxi) bën rreth 30 minuta dhe kushton rreth €25-35.
+transport: >-
+  Qendra e Pestit përshkohet në këmbë. Ka 4 linja metroje, tramvaje dhe autobusë. Bileta e thjeshtë
+  kushton rreth 450 forint (rreth €1.2) dhe vlen për një udhëtim pa ndërrime; bileta 24 orëshe
+  (rreth €6-7) ose 72 orëshe (rreth €14) ia vlen nëse lëviz shpesh. Biletat prej letre vulosen
+  para hipjes dhe kontrollet janë të shpeshta: më e lehtë është aplikacioni BudapestGO. Tramvaji 2
+  buzë Danubit dhe tramvajet 4 dhe 6 në bulevardin e madh janë më të dobishmit.
+daytrips:
+  - name: Szentendre
+    text: Qytezë piktorësh buzë Danubit, rreth 40 minuta me trenin periferik HÉV H5 nga Batthyány tér.
+  - name: Visegrád
+    text: Kështjella mbi kthesën e Danubit, rreth 1 orë me tren ose autobus, në verë edhe me anije.
+  - name: Liqeni Balaton
+    text: Liqeni më i madh në Evropën Qendrore, për një ditë plazhi në verë, rreth 1.5-2.5 orë me tren.
+budget: >-
+  Një birrë në lokal kushton rreth €3-5, një gjellë në restorant €10-15, një lángos €3-5. Pa
+  fluturimin dhe fjetjen, llogarit €40-60 në ditë; një shtrat në hostel nis nga rreth €20.
+when: >-
+  Prilli-qershori dhe shtatori-tetori. Korriku dhe gushti janë të nxehtë (shpesh mbi 30 gradë),
+  dhe gjatë festivalit Sziget në gusht çmimet rriten. Nga mesi i nëntorit deri në fund të vitit ka
+  tregje Krishtlindjesh te sheshi Vörösmarty dhe para Bazilikës.
+tips:
+  - "Paguaj në forint, me kartë ose me para nga bankomatet e bankave. Shmang zyrat e këmbimit në aeroport dhe bankomatet Euronet, dhe kur pajisja pyet, zgjidh pagesën në HUF, jo në euro."
+  - "Uber nuk punon në Budapest: merr vetëm taksi zyrtare të verdha ose përdor Bolt dhe Főtaxi."
+  - "Kontrollo faturën: shpesh përfshin tarifë shërbimi (szervizdíj) rreth 10-15%, dhe atëherë bakshishi nuk duhet."
+faq:
+  - q: "A mund të paguaj me euro në Budapest?"
+    a: "Disa vende turistike i pranojnë, por me kurs të keq dhe kusurin ta kthejnë në forint. Më mirë paguaj me kartë në forint."
+  - q: "Cilën banjë termale të zgjedh?"
+    a: "Széchenyi për pishinat e mëdha të jashtme, Rudas për banjën turke të shekullit XVI dhe pishinën në çati me pamje nga Danubi. Merr me vete peshqir dhe papuçe dhe shko herët në mëngjes, në ditë jave: në fundjavë bileta është më e shtrenjtë."

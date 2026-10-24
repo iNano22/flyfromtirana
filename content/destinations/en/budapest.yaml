@@ -1,0 +1,84 @@
+city: Budapest
+slug: budapest
+tagline: The Danube, thermal baths and ruin bars
+intro: >-
+  Budapest is the capital of Hungary, split by the Danube into Buda, with its hills and castle, and
+  Pest, with its boulevards and nightlife. The currency is the forint (HUF): €1 is about 400
+  forints. Three days are enough for the centre, the thermal baths and the Jewish Quarter.
+sights:
+  - name: Parliament (Országház)
+    text: >-
+      The neo-Gothic building on the Danube, the symbol of the city. Inside you can only go on
+      guided tours booked online; for citizens from outside the EU the ticket costs about double.
+      From outside, especially at night when it is lit up, it is free.
+  - name: Buda Castle and Fisherman's Bastion
+    text: >-
+      The Royal Palace, Matthias Church and the terraces of the Bastion, with the best view of the
+      Parliament. Most of the hill can be visited for free.
+  - name: Chain Bridge (Széchenyi Lánchíd)
+    text: The best-known bridge over the Danube, linking Pest with Buda. Walk across it at sunset.
+  - name: Széchenyi Baths
+    text: The city's largest thermal bath, with warm outdoor pools even in winter. A ticket is about €30-40.
+  - name: St Stephen's Basilica
+    text: The city's largest church, with a 360-degree view over Pest from the dome.
+  - name: Dohány Street Synagogue
+    text: The largest synagogue in Europe, in the heart of the Jewish Quarter.
+  - name: Great Market Hall (Nagy Vásárcsarnok)
+    text: The covered market next to Liberty Bridge, with paprika, salami and lángos on the upper floor. It is closed on Sundays.
+itinerary:
+  - "The Parliament, the Shoes on the Danube Bank memorial, the Basilica and the Chain Bridge. In the evening the Jewish Quarter, with the synagogue and a ruin bar such as Szimpla Kert."
+  - "Castle Hill (bus 16 from Deák Ferenc tér), Fisherman's Bastion and Matthias Church. In the afternoon Gellért Hill for the view, in the evening tram 2 along the Danube."
+  - "Andrássy út on the M1 metro to Heroes' Square, then a few hours at the Széchenyi Baths. Or a day trip to Szentendre."
+areas:
+  - name: District V (Belváros)
+    text: The historic centre, near Deák Ferenc tér where the airport bus stops. Everything within walking distance, with the highest prices.
+  - name: District VII (Jewish Quarter)
+    text: The ruin bar neighbourhood, with lots of hostels and cheap apartments. Noisy at night, especially at weekends.
+  - name: District VIII (Palotanegyed)
+    text: Behind the National Museum, quieter and a little cheaper, but still walking distance from the centre.
+food:
+  - name: Gulyás
+    text: A soup of beef, potatoes and paprika. About €6-9 in a restaurant.
+  - name: Lángos
+    text: Fried dough with sour cream and cheese, the cheapest street food.
+  - name: Paprikás csirke
+    text: Chicken in a paprika and sour cream sauce, with nokedli, small Hungarian dumplings.
+  - name: Kürtőskalács
+    text: The chimney cake, baked on a spit, with sugar and cinnamon.
+airports:
+  BUD: >-
+    Ferenc Liszt Airport is about 16 km from the centre. Bus 100E takes you directly to Deák Ferenc
+    tér in about 35-40 minutes; it leaves every 10-20 minutes and has its own ticket, about 2200
+    forints (about €5.5), from the machine at the stop or in the BudapestGO app. Cheaper: bus 200E
+    to Kőbánya-Kispest (about 25 minutes) and the M3 metro to the centre (about 20 minutes), about
+    €2-3 with two single tickets. The official taxi (Főtaxi) takes about 30 minutes and costs about
+    €25-35.
+transport: >-
+  The centre of Pest is walkable. There are 4 metro lines, trams and buses. A single ticket costs
+  about 450 forints (about €1.2) and is valid for one journey without changes; the 24-hour ticket
+  (about €6-7) or the 72-hour one (about €14) is worth it if you move around a lot. Paper tickets
+  must be validated before boarding and inspections are frequent: the BudapestGO app is easier.
+  Tram 2 along the Danube and trams 4 and 6 on the Grand Boulevard are the most useful.
+daytrips:
+  - name: Szentendre
+    text: A painters' town on the Danube, about 40 minutes on the HÉV H5 suburban train from Batthyány tér.
+  - name: Visegrád
+    text: The castle above the Danube Bend, about 1 hour by train or bus, and by boat in summer.
+  - name: Lake Balaton
+    text: The largest lake in Central Europe, for a beach day in summer, about 1.5-2.5 hours by train.
+budget: >-
+  A beer in a bar costs about €3-5, a main course in a restaurant €10-15, a lángos €3-5. Excluding
+  the flight and accommodation, plan on €40-60 a day; a hostel bed starts from about €20.
+when: >-
+  April to June and September to October. July and August are hot (often over 30 degrees), and
+  prices rise during the Sziget festival in August. From mid-November to the end of the year there
+  are Christmas markets on Vörösmarty Square and in front of the Basilica.
+tips:
+  - "Pay in forints, by card or with cash from bank ATMs. Avoid the exchange offices at the airport and Euronet ATMs, and when the machine asks, always choose to pay in HUF, not in euros."
+  - "Uber doesn't operate in Budapest: only take official yellow taxis or use Bolt and Főtaxi."
+  - "Check the bill: it often includes a service charge (szervizdíj) of about 10-15%, and then no tip is needed."
+faq:
+  - q: "Can I pay in euros in Budapest?"
+    a: "Some tourist places accept them, but at a poor rate and they give the change in forints. It is better to pay by card in forints."
+  - q: "Which thermal bath should I choose?"
+    a: "Széchenyi for the big outdoor pools, Rudas for its 16th-century Turkish bath and the rooftop pool with a view of the Danube. Bring a towel and flip-flops and go early in the morning on a weekday: at weekends the ticket is more expensive."

@@ -1,0 +1,91 @@
+city: Warsaw
+slug: warsaw
+tagline: Old Town, Chopin and pierogi
+intro: >-
+  Warsaw is the capital of Poland: it was almost entirely destroyed in the Second World War and
+  rebuilt from scratch. Today it has excellent museums, large parks and lower prices than Western
+  Europe. The currency is the Polish złoty (PLN, zł): €1 is about 4.2 zł. Two or three days are
+  enough for the city.
+sights:
+  - name: Stare Miasto (Old Town)
+    text: >-
+      The Market Square with its colourful houses and the statue of the Mermaid, the city's symbol.
+      It was rebuilt after 1945 from old paintings and is now on the UNESCO list.
+  - name: Royal Castle
+    text: The residence of the Polish kings, rebuilt in 1971-1984, at the top of the Royal Route.
+  - name: Warsaw Uprising Museum
+    text: The city's most moving museum, about the 63 days of the uprising against the Nazis in 1944. Allow 2 hours.
+  - name: Łazienki Park
+    text: >-
+      The city's most beautiful park, with the Palace on the Isle and the Chopin monument, where free
+      concerts are held on Sundays in summer.
+  - name: Palace of Culture and Science
+    text: >-
+      The 237-metre Stalinist skyscraper, built in 1952-1955. From the terrace on the 30th floor you
+      can see the whole city.
+  - name: POLIN Museum
+    text: The museum of the history of Polish Jews, in the Muranów district, where the ghetto once stood.
+itinerary:
+  - "The Old Town and the Royal Castle, then a walk along the Royal Route (Krakowskie Przedmieście and Nowy Świat). In the evening, pierogi and a stroll by the Vistula."
+  - "The Uprising Museum in the morning, then the POLIN Museum. At sunset, the terrace of the Palace of Culture."
+  - "Łazienki Park and Wilanów Palace (about 30-40 minutes on buses 116 or 180). In the evening, the bars of the Praga district."
+areas:
+  - name: Śródmieście
+    text: The centre around Warszawa Centralna station, the most practical area for all three airports.
+  - name: Stare Miasto
+    text: Beautiful and quiet in the evening, but with the highest prices.
+  - name: Powiśle
+    text: Between the centre and the river, with bars, cafés and the Vistula boulevards.
+  - name: Praga
+    text: Across the river, an old working-class district with alternative bars and cheaper apartments, with the M2 metro to the centre.
+food:
+  - name: Pierogi
+    text: Boiled or fried dumplings, filled with potato and cheese, meat, cabbage or forest berries.
+  - name: Żurek
+    text: A sour soup made with rye flour, with sausage and egg, often served inside a loaf of bread.
+  - name: Bar mleczny
+    text: "The cheap canteens of the communist era: a full lunch costs about 25-35 zł (€6-8)."
+  - name: Pączki
+    text: Doughnuts filled with rose jam or custard.
+airports:
+  WAW: >-
+    Chopin is about 10 km from the centre. The SKM trains S2 and S3 reach Warszawa Śródmieście or
+    Warszawa Centralna in about 20-25 minutes, while bus 175 runs via Centralna to Plac
+    Piłsudskiego, near the Old Town, in about 30 minutes. The ordinary city ticket is enough, about
+    5 zł (about €1), from the machines at the airport. A taxi or Bolt costs about 40-70 zł
+    (€10-16).
+  WMI: >-
+    Modlin, the Ryanair airport, is about 40 km to the north. The direct Modlin Bus reaches the area
+    by the Palace of Culture in about 45-60 minutes, for about 20-40 zł (€5-9), cheaper online. Or
+    take the Koleje Mazowieckie bus to Modlin station (about 10 minutes) and the train to Warszawa
+    Centralna (about 40 minutes): the combined ticket costs about 20 zł (€5).
+  RDO: >-
+    Radom airport is about 100 km to the south. Take the city bus or a taxi to Radom Główny station
+    (about 15 minutes), then the train to Warszawa Centralna: about 1.5 hours, for about 25-50 zł
+    (€6-12) depending on the train. Allow about 2 hours in total.
+transport: >-
+  The centre is walkable, while the two metro lines (M1 and M2), trams and buses take you
+  everywhere. A 75-minute ticket costs about 5 zł (€1), a 24-hour one about 15 zł (€3.50). The
+  machines accept contactless bank cards; paper tickets are validated when you board. Bolt and
+  Uber are cheap.
+daytrips:
+  - name: Kraków
+    text: The royal city with Wawel Castle, about 2.5 hours by fast train. Worth it with an overnight stay.
+  - name: Żelazowa Wola
+    text: The house where Chopin was born, about 55 km to the west, about 1 hour by car.
+  - name: Łódź
+    text: The city of former textile factories, with Piotrkowska Street, about 1.5 hours by train.
+budget: >-
+  A dish in a restaurant costs 45-65 zł (€11-15), a beer 15-20 zł (€3.50-5), and a coffee about
+  15 zł (€3.50).
+when: >-
+  May to September for the weather and the concerts in Łazienki. Winter is cold, often below 0°C,
+  but in December the Old Town has its Christmas market.
+tips:
+  - "Most shops are closed on Sundays: only small shops such as Żabka open."
+  - "When a card terminal or ATM asks, choose to pay in złoty, not in euros. Don't change money at the airport."
+faq:
+  - q: "Chopin, Modlin or Radom: which airport is best?"
+    a: "Chopin is the closest and is connected to the centre for about €1. Modlin and Radom often have cheaper tickets, but allow 1-2 hours to the centre and €5-12."
+  - q: "How much money do you need per day in Warsaw?"
+    a: "Excluding the flight and accommodation, €35-60 a day. Warsaw is cheaper than most EU capitals, hotels included."

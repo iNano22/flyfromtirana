@@ -578,5 +578,205 @@
   "source_url": "https://unsplash.com/photos/SXcA2DfasvM",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/cdg.webp",
+  "slot": "CDG",
+  "title": "Eiffel Tower over the Seine, Paris",
+  "creator": "@bananablackcat",
+  "creator_url": "https://unsplash.com/@bananablackcat",
+  "source_url": "https://unsplash.com/photos/m-sVLnrjFxY",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ory.webp",
+  "slot": "ORY",
+  "title": "Louvre Pyramid, Paris",
+  "creator": "@sliceisop",
+  "creator_url": "https://unsplash.com/@sliceisop",
+  "source_url": "https://unsplash.com/photos/zoK6WhRlTQo",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bva.webp",
+  "slot": "BVA",
+  "title": "Sacré-Cœur, Montmartre, Paris",
+  "creator": "@jojotulipe",
+  "creator_url": "https://unsplash.com/@jojotulipe",
+  "source_url": "https://unsplash.com/photos/KvGmBvf_6Bs",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/prg.webp",
+  "slot": "PRG",
+  "title": "Old Town spires, Prague",
+  "creator": "@kelseycurtis",
+  "creator_url": "https://unsplash.com/@kelseycurtis",
+  "source_url": "https://unsplash.com/photos/oK0PIhO2RPg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bud.webp",
+  "slot": "BUD",
+  "title": "Hungarian Parliament, Budapest",
+  "creator": "@nesir",
+  "creator_url": "https://unsplash.com/@nesir",
+  "source_url": "https://unsplash.com/photos/HevZDxRjEdE",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/bri.webp",
+  "slot": "BRI",
+  "title": "Basilica di San Nicola, Bari",
+  "creator": "@krzysztof_h",
+  "creator_url": "https://unsplash.com/@krzysztof_h",
+  "source_url": "https://unsplash.com/photos/ttPDTiVfQ0w",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/cta.webp",
+  "slot": "CTA",
+  "title": "Domes of the old town, Catania",
+  "creator": "@puszkins",
+  "creator_url": "https://unsplash.com/@puszkins",
+  "source_url": "https://unsplash.com/photos/cEYzWTU8PmQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/mla.webp",
+  "slot": "MLA",
+  "title": "Stepped street in Valletta, Malta",
+  "creator": "@refar",
+  "creator_url": "https://unsplash.com/@refar",
+  "source_url": "https://unsplash.com/photos/lgo364o6HAc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/krk.webp",
+  "slot": "KRK",
+  "title": "St Mary's Basilica, Kraków",
+  "creator": "@bianca_fazacas",
+  "creator_url": "https://unsplash.com/@bianca_fazacas",
+  "source_url": "https://unsplash.com/photos/KkbCggtxZyA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/waw.webp",
+  "slot": "WAW",
+  "title": "Old Town Market Square, Warsaw",
+  "creator": "@tzielonka",
+  "creator_url": "https://unsplash.com/@tzielonka",
+  "source_url": "https://unsplash.com/photos/93RPCxiz2Js",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/wmi.webp",
+  "slot": "WMI",
+  "title": "Palace of Culture and Science, Warsaw",
+  "creator": "@assuncaocharles",
+  "creator_url": "https://unsplash.com/@assuncaocharles",
+  "source_url": "https://unsplash.com/photos/SzTC_HtFztU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/rdo.webp",
+  "slot": "RDO",
+  "title": "Royal Castle tower, Warsaw",
+  "creator": "@valik_chern",
+  "creator_url": "https://unsplash.com/@valik_chern",
+  "source_url": "https://unsplash.com/photos/4HUVeMZCnOU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/paris.webp",
+  "slot": "guide-paris",
+  "title": "Pont Alexandre III at night, Paris",
+  "creator": "@ettocl",
+  "creator_url": "https://unsplash.com/@ettocl",
+  "source_url": "https://unsplash.com/photos/R5scocnOOdM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/prague.webp",
+  "slot": "guide-prague",
+  "title": "Charles Bridge, Prague",
+  "creator": "@martinkrchnacek",
+  "creator_url": "https://unsplash.com/@martinkrchnacek",
+  "source_url": "https://unsplash.com/photos/OyoaCpMCR0U",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/budapest.webp",
+  "slot": "guide-budapest",
+  "title": "Chain Bridge and Buda Castle, Budapest",
+  "creator": "@andresgarcia",
+  "creator_url": "https://unsplash.com/@andresgarcia",
+  "source_url": "https://unsplash.com/photos/iZJQ1Jsm9Ns",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/bari.webp",
+  "slot": "guide-bari",
+  "title": "Fishing boats in the harbour, Bari",
+  "creator": "@sarahs_captured_moments",
+  "creator_url": "https://unsplash.com/@sarahs_captured_moments",
+  "source_url": "https://unsplash.com/photos/pcq3sXN7UtU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/catania.webp",
+  "slot": "guide-catania",
+  "title": "Piazza del Duomo, Catania",
+  "creator": "@samirkharrat",
+  "creator_url": "https://unsplash.com/@samirkharrat",
+  "source_url": "https://unsplash.com/photos/yhV1RqI4K50",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/malta.webp",
+  "slot": "guide-malta",
+  "title": "Valletta skyline, Malta",
+  "creator": "@mparente",
+  "creator_url": "https://unsplash.com/@mparente",
+  "source_url": "https://unsplash.com/photos/-Jd2XVXLQ0U",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/krakow.webp",
+  "slot": "guide-krakow",
+  "title": "Cloth Hall, Main Square, Kraków",
+  "creator": "@mugabo_library",
+  "creator_url": "https://unsplash.com/@mugabo_library",
+  "source_url": "https://unsplash.com/photos/iLr6iT9buiQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/warsaw.webp",
+  "slot": "guide-warsaw",
+  "title": "City centre at night, Warsaw",
+  "creator": "@gliwik",
+  "creator_url": "https://unsplash.com/@gliwik",
+  "source_url": "https://unsplash.com/photos/xcPw1-5OHTk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

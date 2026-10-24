@@ -1,0 +1,77 @@
+city: Bari
+slug: bari
+tagline: Bari Vecchia, the sea and Puglia
+intro: >-
+  Many Albanians know Bari only from the ferry port, but the city deserves more than a hurried
+  stopover. Bari Vecchia can be seen in a day, while local trains take you to Polignano a Mare,
+  Alberobello and Matera. Three or four days are enough for the city and the Puglia around it.
+sights:
+  - name: Bari Vecchia
+    text: The old town, a maze of alleys between the port and the sea. On Strada Arco Basso the women of the neighbourhood make and sell orecchiette by hand.
+  - name: Basilica di San Nicola
+    text: The Romanesque basilica where the relics of Saint Nicholas rest, sacred to both Catholics and Orthodox Christians. Entry is free.
+  - name: Cattedrale di San Sabino
+    text: The 12th-century Romanesque cathedral, a few steps from the basilica, with a Baroque crypt.
+  - name: Castello Normanno-Svevo
+    text: The Normans' castle, rebuilt by the Emperor Frederick II, on the edge of the old town.
+  - name: Lungomare Nazario Sauro
+    text: The long seafront promenade, where locals come out for their evening stroll.
+  - name: Molo San Nicola
+    text: The fishermen's stalls, where locals eat raw seafood with a Peroni beer. Go in the morning or at the weekend.
+itinerary:
+  - "Bari Vecchia: the Basilica di San Nicola, the Cattedrale di San Sabino and Strada Arco Basso. In the afternoon the Castello Normanno-Svevo, in the evening the Lungomare and an aperitivo in Piazza Mercantile."
+  - "By train to Polignano a Mare (about 30 minutes) for the Lama Monachile beach. In the afternoon Monopoli and its old port."
+  - "Alberobello and its trulli houses, about 1.5 hours on the FSE trains, with a stop in Locorotondo on the way back."
+  - "A day in Matera on the FAL train, or the city at a slower pace: Molo San Nicola, Via Sparano and the Pane e Pomodoro beach."
+areas:
+  - name: Bari Vecchia
+    text: Guesthouses in old houses, full of atmosphere, but noisy in the evening and hard to reach by car.
+  - name: Murattiano
+    text: The 19th-century centre with the shops of Via Sparano, between the station and the old town.
+  - name: Near Bari Centrale
+    text: The most practical area for the airport train and day trips, and often the cheapest. Bari Vecchia is about 20 minutes away on foot.
+food:
+  - name: Orecchiette alle cime di rapa
+    text: The city's "little ears" pasta, with turnip greens, garlic and anchovies.
+  - name: Focaccia barese
+    text: Soft focaccia with cherry tomatoes and olives, sold by the slice in the city's bakeries.
+  - name: Panzerotti
+    text: Fried dough filled with tomato and mozzarella, eaten hot on the go.
+  - name: Sgagliozze
+    text: Fried slices of polenta, sold by the women in the alleys of Bari Vecchia.
+airports:
+  BRI: >-
+    Karol Wojtyła Airport is about 8 km from the centre. The Ferrotramviaria train leaves from next
+    to the terminal and reaches Bari Centrale in about 20 minutes (about €5). The Tempesta shuttle
+    bus goes to the central station in about 30 minutes (about €4). City bus AMTAB 16 is the
+    cheapest (about €1-1.50), but takes about 40-50 minutes. A taxi costs about €25-30.
+transport: >-
+  The centre can be seen on foot, while AMTAB buses cover the rest of the city; buy your ticket at
+  a tobacconist (tabacchi). From Bari Centrale, Trenitalia trains run towards Polignano a Mare and
+  Monopoli, FSE trains towards Alberobello and FAL trains towards Matera. Paper tickets must be
+  validated before boarding.
+daytrips:
+  - name: Polignano a Mare
+    text: The clifftop town with the Lama Monachile beach, about 30 minutes by train (about €3).
+  - name: Alberobello
+    text: The trulli houses with conical stone roofs, a UNESCO World Heritage Site, about 1.5 hours by train.
+  - name: Matera
+    text: The city of the Sassi cave dwellings, in the neighbouring region of Basilicata, about 1.5 hours on the FAL train.
+  - name: Monopoli
+    text: An old port with blue boats and a historic centre by the sea, about 40 minutes by train.
+budget: >-
+  A slice of focaccia costs €2-3, a plate of orecchiette €9-12, an espresso about €1-1.20, and a
+  city bus ticket about €1.
+when: >-
+  May to June and September to October, without the August heat. The Feast of Saint Nicholas is
+  held on 7-9 May.
+tips:
+  - "The port, where the ferries to Durrës leave from, is next to Bari Vecchia: a day in the city before or after the ferry is worth it."
+  - "Many shops close after lunch, roughly 13:00-16:30: do your shopping in the morning or the evening."
+  - "With a rental car, don't drive into Bari Vecchia: it is a ZTL zone and the fines arrive by post."
+  - "On Sundays FSE trains are few or replaced by buses: check the timetables in advance."
+faq:
+  - q: "How do you get to Matera from Bari?"
+    a: "By FAL train from its own station next to Bari Centrale, about 1.5 hours and about €5, sometimes with a change in Altamura. Allow a full day."
+  - q: "How much money do you need per day in Bari?"
+    a: "Excluding the flight and accommodation, €40-60 a day. Street food is cheap and excellent, and the trains for day trips cost just a few euros."

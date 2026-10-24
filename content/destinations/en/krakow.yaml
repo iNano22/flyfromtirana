@@ -1,0 +1,101 @@
+city: Kraków
+slug: krakow
+tagline: Castles, squares and pierogi
+intro: >-
+  Kraków is the old royal capital of Poland: a medieval centre that came through the Second World
+  War almost untouched, small, cheap and easy to explore on foot. Two or three days are enough for
+  the city, plus a day for the salt mine or for Auschwitz. The currency is the Polish złoty (PLN):
+  €1 is about 4.3 PLN.
+sights:
+  - name: Rynek Główny
+    text: >-
+      The main square, one of the largest medieval squares in Europe, with cafés and street
+      musicians. Beneath it is the Rynek Underground museum.
+  - name: St Mary's Basilica
+    text: >-
+      The church with two mismatched towers on the corner of the square. Every hour a trumpet call
+      (the hejnał) is played from the taller tower, breaking off in the middle of the melody.
+  - name: Sukiennice
+    text: >-
+      The Cloth Hall in the middle of the square, today with souvenir stalls (amber, woodwork) and
+      a gallery of Polish art on the upper floor.
+  - name: Wawel
+    text: >-
+      The royal castle and cathedral on the hill by the Vistula river. The courtyard is free to
+      visit, the state rooms have separate tickets. Below the hill, the dragon statue breathes fire
+      every few minutes.
+  - name: Kazimierz
+    text: >-
+      The old Jewish quarter, with synagogues, lanes full of murals, alternative bars and the Plac
+      Nowy square, the liveliest place in the city at night.
+  - name: Schindler's Factory
+    text: >-
+      The museum in Oskar Schindler's factory tells the story of life in Kraków under Nazi
+      occupation, 1939-1945. Timed tickets sell out fast: book them online.
+itinerary:
+  - "Rynek Główny, Sukiennice and St Mary's Basilica (wait for the trumpet on the hour). St Florian's Gate, then through the Planty park to Wawel. Dinner in Kazimierz in the evening."
+  - "Kazimierz with its synagogues and a zapiekanka on Plac Nowy. Cross the footbridge over the Vistula to Podgórze and Schindler's Factory. Sunset by the river."
+  - "Day trip: the Wieliczka salt mine (half a day) or the Auschwitz-Birkenau memorial (a full day). Don't do both on the same day."
+areas:
+  - name: Stare Miasto (Old Town)
+    text: Inside the Planty park, everything on foot. The most expensive area, and the streets around the square are noisy at night.
+  - name: Kazimierz
+    text: A special atmosphere and slightly lower prices, 15 minutes on foot from the square.
+  - name: Near Kraków Główny
+    text: Around the main station, handy for the airport train, 10 minutes from the square.
+  - name: Podgórze
+    text: Across the river, quieter and cheaper, with a quick tram into the centre.
+food:
+  - name: Pierogi
+    text: Dumplings filled with potato and cheese (ruskie), meat, cabbage or fruit, boiled or fried.
+  - name: Żurek
+    text: A sour rye soup with sausage and egg, often served inside a hollowed-out loaf.
+  - name: Obwarzanek
+    text: Kraków's ring-shaped bread, with sesame or salt, sold from carts on every corner.
+  - name: Zapiekanka
+    text: Half a baguette baked with mushrooms and cheese. The best known are on Plac Nowy.
+  - name: Bar mleczny
+    text: '"Milk bars", simple canteens from the communist era, where a lunch costs about €5-7.'
+airports:
+  KRK: >-
+    John Paul II Airport is in Balice, about 15 km west of the centre. The train is the best
+    option: the station is next to the terminal and the train reaches Kraków Główny in about 20
+    minutes, usually 2 times an hour, with a ticket of about 12-17 PLN (about €3-4). Bus 208 goes
+    to the main station in about 40 minutes on a city ticket of about 6 PLN (about €1.5); at night
+    there is bus 902. A taxi or Bolt takes 20-30 minutes and costs about 60-100 PLN (€14-23).
+transport: >-
+  The Old Town and Kazimierz are walkable; for longer distances there are frequent trams and buses.
+  Tickets are sold at machines at the stops or on board the tram by card, or in the Jakdojade app.
+  A paper ticket must be validated as soon as you board: checks are frequent. A day ticket costs
+  about 17 PLN (about €4). Bolt and Uber are cheap.
+daytrips:
+  - name: Wieliczka Salt Mine
+    text: >-
+      Galleries and chapels carved out of salt, down to 135 metres underground. About 20 minutes by
+      train from Kraków Główny; the tour lasts about 2-3 hours and costs about €35-40.
+  - name: Auschwitz-Birkenau
+    text: >-
+      The memorial of the Nazi camp in Oświęcim, about 1.5 hours by bus or train. Entry is free but
+      must be booked online for a time slot; guided tours are paid.
+  - name: Zakopane
+    text: >-
+      The mountain town at the foot of the Tatras, about 2-2.5 hours by bus or train. Mountain
+      walks, the cable car up Kasprowy Wierch and oscypek cheese.
+budget: >-
+  A half-litre of beer in the centre costs about 15-20 PLN (€3.5-5), a plate of pierogi about
+  30-45 PLN (€7-10), an obwarzanek about 3 PLN (less than €1) and a tram ticket about 6 PLN
+  (€1.5).
+when: >-
+  May-September for long days and tables outside. December has the Christmas market on Rynek
+  Główny, but winter is cold, often below zero. April and October are quieter.
+tips:
+  - "Always pay in PLN: when a card terminal or ATM offers you euros, decline, because the rate is worse."
+  - "Avoid Euronet ATMs and the exchange desks at the airport. Cards are accepted almost everywhere."
+  - "Book Auschwitz, Schindler's Factory and Wieliczka online a few days ahead, especially in summer."
+faq:
+  - q: "Can I pay in euros in Kraków?"
+    a: "Rarely: prices are in złoty. Cards are accepted almost everywhere, even for small amounts; for stalls, keep a little cash from a bank ATM."
+  - q: "How do I get to Auschwitz-Birkenau?"
+    a: "Buses leave from the station next to Kraków Główny and take about 1.5 hours; there are also trains to Oświęcim. Book your entry online, bring your passport and allow the whole day."
+  - q: "How much money do I need per day in Kraków?"
+    a: "Excluding the flight and accommodation, about €40-60 a day. Food and transport are cheap; the main costs are accommodation and the tickets for Wieliczka or tours."

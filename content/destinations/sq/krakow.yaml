@@ -1,0 +1,100 @@
+city: Kraków
+slug: krakow
+tagline: Kështjella, sheshe dhe pierogi
+intro: >-
+  Kraków është kryeqyteti i vjetër mbretëror i Polonisë: një qendër mesjetare që i shpëtoi Luftës
+  së Dytë Botërore pothuajse e paprekur, e vogël, e lirë dhe që përshkohet në këmbë. Dy-tri ditë
+  mjaftojnë për qytetin, plus një ditë për minierën e kripës ose për Auschwitz-in. Monedha është
+  zloti polak (PLN): €1 është rreth 4.3 PLN.
+sights:
+  - name: Rynek Główny
+    text: >-
+      Sheshi kryesor, një nga sheshet mesjetare më të mëdha në Evropë, me kafene dhe muzikantë
+      rrugësh. Nën të është muzeu nëntokësor Rynek Underground.
+  - name: Bazilika e Shën Marisë
+    text: >-
+      Kisha me dy kulla të ndryshme në cep të sheshit. Çdo orë nga kulla më e lartë bie trumbeta
+      (hejnał), që ndërpritet në mes të melodisë.
+  - name: Sukiennice
+    text: >-
+      Tregu i mbuluar në mes të sheshit, sot me tezga suveniresh (qelibar, punime druri) dhe një
+      galeri arti polak në katin e sipërm.
+  - name: Wawel
+    text: >-
+      Kështjella mbretërore dhe katedralja mbi kodrën buzë lumit Vistula. Oborri vizitohet falas,
+      sallat kanë bileta më vete. Poshtë kodrës, statuja e dragoit nxjerr zjarr çdo disa minuta.
+  - name: Kazimierz
+    text: >-
+      Lagjja e vjetër hebraike, me sinagoga, rrugica me grafite, bare alternative dhe sheshin Plac
+      Nowy, vendi më i gjallë i qytetit natën.
+  - name: Fabrika e Schindlerit
+    text: >-
+      Muzeu në fabrikën e Oskar Schindlerit tregon jetën në Kraków nën pushtimin nazist 1939-1945.
+      Biletat me orar mbarojnë shpejt: rezervoji online.
+itinerary:
+  - "Rynek Główny, Sukiennice dhe Bazilika e Shën Marisë (prit trumbetën në krye të orës). Porta e Shën Florianit, pastaj nëpër parkun Planty deri te Wawel. Në mbrëmje darkë në Kazimierz."
+  - "Kazimierz me sinagogat dhe një zapiekanka në Plac Nowy. Kalo urën e këmbësorëve mbi Vistula për në Podgórze dhe Fabrikën e Schindlerit. Perëndimi i diellit buzë lumit."
+  - "Udhëtim ditor: miniera e kripës në Wieliczka (gjysmë dite) ose memoriali i Auschwitz-Birkenau (gjithë dita). Mos i bëj të dyja në të njëjtën ditë."
+areas:
+  - name: Stare Miasto (Qyteti i Vjetër)
+    text: Brenda parkut Planty, çdo gjë në këmbë. Zona më e shtrenjtë, dhe rrugët rreth sheshit janë të zhurmshme natën.
+  - name: Kazimierz
+    text: Atmosferë e veçantë dhe çmime pak më të ulëta, 15 minuta në këmbë nga sheshi.
+  - name: Pranë Kraków Główny
+    text: Rreth stacionit qendror, praktike për trenin e aeroportit, 10 minuta nga sheshi.
+  - name: Podgórze
+    text: Përtej lumit, më e qetë dhe më e lirë, me tramvaj të shpejtë për në qendër.
+food:
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë (ruskie), mish, lakër ose fruta, i zier ose i skuqur.
+  - name: Żurek
+    text: Supë e thartë me miell thekre, salsiçe dhe vezë, shpesh brenda një buke të zbrazur.
+  - name: Obwarzanek
+    text: Simiti i Kraków-it në formë rrethi, me susam ose kripë, nga karrocat në çdo cep.
+  - name: Zapiekanka
+    text: Gjysmë baguete me kërpudha dhe djathë e pjekur në furrë. Më të njohurat janë në Plac Nowy.
+  - name: Bar mleczny
+    text: '"Baret e qumështit", mensat e thjeshta nga koha komuniste, ku një drekë kushton rreth €5-7.'
+airports:
+  KRK: >-
+    Aeroporti Gjon Pali II është në Balice, rreth 15 km në perëndim të qendrës. Më i miri është
+    treni: stacioni është ngjitur me terminalin dhe treni arrin në Kraków Główny për rreth 20
+    minuta, zakonisht 2 herë në orë, me biletë rreth 12-17 PLN (rreth €3-4). Autobusi 208 shkon te
+    stacioni qendror për rreth 40 minuta, me biletë qyteti rreth 6 PLN (rreth €1.5); natën kalon
+    autobusi 902. Taksia ose Bolt bëjnë 20-30 minuta dhe kushtojnë rreth 60-100 PLN (€14-23).
+transport: >-
+  Qyteti i Vjetër dhe Kazimierz përshkohen në këmbë; për më larg ka tramvaje dhe autobusë të
+  shpeshtë. Biletat blihen në makinat në stacione ose brenda tramvajit me kartë, ose në
+  aplikacionin Jakdojade. Bileta prej letre vuloset sapo hip: kontrollet janë të shpeshta. Bileta
+  ditore kushton rreth 17 PLN (rreth €4). Bolt dhe Uber janë të lira.
+daytrips:
+  - name: Miniera e kripës Wieliczka
+    text: >-
+      Galeri dhe kapela të gdhendura në kripë, deri në 135 metra nën tokë. Rreth 20 minuta me tren
+      nga Kraków Główny; turi zgjat rreth 2-3 orë dhe kushton rreth €35-40.
+  - name: Auschwitz-Birkenau
+    text: >-
+      Memoriali i kampit nazist në Oświęcim, rreth 1.5 orë me autobus ose tren. Hyrja është falas
+      por rezervohet online me orar; turet me guidë paguhen.
+  - name: Zakopane
+    text: >-
+      Qyteti malor në këmbët e Tatrave, rreth 2-2.5 orë me autobus ose tren. Ecje në mal, teleferik
+      për në Kasprowy Wierch dhe djathë oscypek.
+budget: >-
+  Një birrë gjysmëlitërshe në qendër kushton rreth 15-20 PLN (€3.5-5), një pjatë pierogi rreth
+  30-45 PLN (€7-10), një obwarzanek rreth 3 PLN (më pak se €1) dhe një biletë tramvaji rreth 6 PLN
+  (€1.5).
+when: >-
+  Maji-shtatori për ditë të gjata dhe tavolina jashtë. Dhjetori ka tregun e Krishtlindjeve në Rynek
+  Główny, por dimri është i ftohtë, shpesh nën zero. Prilli dhe tetori janë më të qetë.
+tips:
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Shmang bankomatet Euronet dhe këmbimin në aeroport. Kartat pranohen pothuajse kudo."
+  - "Auschwitz-in, Fabrikën e Schindlerit dhe Wieliczkën rezervoji online disa ditë përpara, sidomos në verë."
+faq:
+  - q: "A mund të paguaj me euro në Kraków?"
+    a: "Rrallë: çmimet janë në zlotë. Karta pranohet pothuajse kudo, edhe për shuma të vogla; për tezgat mbaj pak para në dorë nga një bankomat banke."
+  - q: "Si shkoj në Auschwitz-Birkenau?"
+    a: "Autobusët nisen nga stacioni pranë Kraków Główny dhe bëjnë rreth 1.5 orë; ka edhe trena për në Oświęcim. Rezervo hyrjen online, mbaj pasaportën dhe llogarit gjithë ditën."
+  - q: "Sa para duhen në ditë në Kraków?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimet kryesore janë fjetja dhe biletat e Wieliczkës ose të tureve."

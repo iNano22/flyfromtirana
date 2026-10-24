@@ -1,0 +1,79 @@
+city: Malta
+slug: malta
+tagline: Fortresses, blue sea and Gozo
+intro: >-
+  Malta is a small island in the middle of the Mediterranean, with clear sea and fortresses of
+  golden stone. The capital, Valletta, built by the Knights of St John, is easy to explore on foot.
+  English is an official language alongside Maltese, so getting by is easy. Three or four days are
+  enough for Valletta, Mdina and a day on Gozo or Comino.
+sights:
+  - name: St John's Co-Cathedral
+    text: The Knights' cathedral in Valletta, plain on the outside and covered in gold inside, with two paintings by Caravaggio. Entry about €15.
+  - name: Upper Barrakka Gardens
+    text: The garden above the Grand Harbour, with the finest view in Malta. Below it, at the Saluting Battery, the cannon is fired every day at 12:00.
+  - name: Three Cities
+    text: "Birgu, Senglea and Cospicua, the fortified towns facing Valletta: quieter, with narrow lanes. You reach them by small ferry in 10 minutes."
+  - name: Mdina
+    text: The "Silent City", the old capital on a hill, with medieval walls. Next to it is Rabat, with St Paul's Catacombs.
+  - name: Fort St Elmo
+    text: The star-shaped fortress at the tip of Valletta, home to the National War Museum, from the siege of 1565 to the Second World War.
+  - name: Ħal Saflieni Hypogeum
+    text: A prehistoric underground burial site, more than 5,000 years old. Only a few visitors go in each hour, so tickets (about €35) are booked weeks ahead.
+  - name: Blue Grotto
+    text: The sea caves in the south, where small boats take you inside for about 20 minutes (about €10), when the sea is calm.
+itinerary:
+  - "Valletta on foot: St John's Co-Cathedral, the Grand Master's Palace and the Upper Barrakka Gardens for the 12:00 cannon. In the afternoon Fort St Elmo, in the evening Sliema by ferry."
+  - "By ferry to the Three Cities, Birgu and Senglea. In the afternoon Marsaxlokk with its colourful boats and a fish dinner."
+  - "Mdina and Rabat in the morning. In the afternoon the Dingli Cliffs or Golden Bay beach for the sunset."
+  - "A full day on Gozo, or on Comino for the Blue Lagoon."
+areas:
+  - name: Valletta
+    text: Everything within walking distance and the view over the harbour, but the hotels are small and expensive.
+  - name: Sliema
+    text: "The most practical choice: a seafront promenade, lots of hotels and a ferry to Valletta in about 10 minutes."
+  - name: St Julian's
+    text: Next to Sliema, with Paceville, the nightlife area. Good for young people, but noisy.
+  - name: Bugibba
+    text: The cheapest places to stay, by the sea in the north, but the bus to Valletta takes about 45-60 minutes.
+food:
+  - name: Pastizzi
+    text: Small flaky pastries filled with ricotta or peas, the Maltese street food, about €1 each.
+  - name: Ftira
+    text: A round loaf filled with tuna, tomato, olives and capers, a cheap lunch for the beach.
+  - name: Stuffat tal-fenek
+    text: Rabbit slow-cooked with wine and garlic, Malta's national dish.
+  - name: Kinnie and Cisk
+    text: Kinnie is a fizzy drink made with bitter oranges, Cisk the local beer.
+airports:
+  MLA: >-
+    Malta International Airport is in Luqa, about 8 km from Valletta. Bus X4 takes you to the
+    Valletta terminus in about 25 minutes, with a ticket of about €3 from the driver; X2 goes to
+    Sliema and St Julian's (about 45 minutes). A fixed-fare taxi from the desk in arrivals costs about
+    €20 to Valletta, while Bolt or Uber costs about €12-20.
+transport: >-
+  Malta Public Transport buses cover the whole island and most leave from the terminus by City Gate
+  in Valletta. You buy the ticket from the driver (about €2.50-3) and it is valid for 2 hours; for a
+  week the Explore card (about €25) is worth it. Traffic is heavy, so allow extra time. Bolt and Uber
+  are reasonably priced. Cars drive on the left, as in England.
+daytrips:
+  - name: Gozo
+    text: "The sister island, greener and quieter: the Citadel in Victoria, the Ġgantija temples and Ramla beach. Ferries from Ċirkewwa take about 25 minutes, the fast ferries from Valletta about 45."
+  - name: Comino and the Blue Lagoon
+    text: The small island with the bluest water in the Mediterranean. Boats from Ċirkewwa or Sliema cost about €15-25 return. In summer go early.
+  - name: Marsaxlokk
+    text: The fishing village with its colourful boats and Sunday market, about 30 minutes on bus 81 from Valletta.
+budget: >-
+  A pastizz costs about €1, a dish in a restaurant €15-25, a beer €3-5. A hostel bed starts at
+  about €25, a hotel outside the season at about €70.
+when: >-
+  May-June and September-October are the best. July and August are above 30°C and have the highest
+  prices. Winter is mild (about 15°C) and cheap, but the sea is cold.
+tips:
+  - "Sockets are the same as in England, with 3 pins: bring an adapter."
+  - "On the Gozo ferry from Ċirkewwa you pay only on the way back (about €5 for a foot passenger)."
+  - "Tap water is safe, but many people drink bottled water because of the taste."
+faq:
+  - q: "Is Gozo worth it for a day?"
+    a: "Yes. By bus to Ċirkewwa and the ferry, or by the fast ferry from Valletta, you arrive in the morning and come back in the evening."
+  - q: "How much money do you need per day in Malta?"
+    a: "Excluding the flight and accommodation, €40-70 a day. Malta is cheaper than most of Western Europe."

@@ -1,0 +1,86 @@
+city: Prague
+name: Praga
+slug: prague
+tagline: Castelli, ponti e birra economica
+intro: >-
+  Praga è la capitale della Repubblica Ceca, con un centro medievale uscito dalle guerre quasi
+  intatto: torri gotiche, il Ponte Carlo e il Castello sopra la Moldava. È una delle capitali più
+  economiche dell'Europa centrale per mangiare e bere. Due o tre giorni bastano per la città. La
+  valuta è la corona ceca (CZK): 1 euro vale circa 25 corone.
+sights:
+  - name: Castello di Praga
+    text: >-
+      Il grande complesso del castello, con la Cattedrale di San Vito e il Vicolo d'Oro. I cortili
+      sono gratuiti; per gli interni si compra un biglietto cumulativo.
+  - name: Ponte Carlo
+    text: >-
+      Il ponte di pietra del XIV secolo con 30 statue, tra la Città Vecchia e Malá Strana. Di
+      prima mattina è quasi deserto.
+  - name: Piazza della Città Vecchia
+    text: >-
+      Il cuore della città, con la chiesa di Týn e l'Orologio Astronomico (Orloj), le cui figure si
+      muovono allo scoccare di ogni ora. Sali sulla torre del Municipio Vecchio per la vista sui tetti.
+  - name: Josefov
+    text: L'antico quartiere ebraico, con sinagoghe storiche e il vecchio cimitero, con un unico biglietto del Museo Ebraico.
+  - name: Malá Strana
+    text: Il quartiere barocco sotto il Castello, con la chiesa di San Nicola, vicoli acciottolati e il Muro di Lennon.
+  - name: Petřín
+    text: La collina verde sopra Malá Strana, con una torre panoramica simile a una piccola Torre Eiffel. La funicolare accetta il normale biglietto dei trasporti.
+  - name: Vyšehrad
+    text: L'antica fortezza sul fiume, a sud del centro, con vista sulla Moldava e senza la folla della Città Vecchia.
+airports:
+  PRG: >-
+    L'aeroporto Václav Havel è a circa 17 km dal centro. La soluzione più economica: l'autobus 119
+    fino a Nádraží Veleslavín (circa 15 minuti) e la metro A fino a Můstek, in tutto circa 40
+    minuti con un biglietto da 90 minuti (circa 50 CZK, quasi €2). L'autobus Airport Express (AE)
+    ti porta direttamente alla stazione ferroviaria principale, Hlavní nádraží, in circa 35
+    minuti, per circa 100 CZK (circa €4). Un taxi ufficiale davanti al terminal, oppure un Uber o
+    un Bolt, costa circa 600-800 CZK (€25-32) e impiega 25-30 minuti.
+budget: >-
+  Una birra da mezzo litro in una birreria normale costa circa 60-80 CZK (€2,50-3), un piatto
+  tradizionale €10-15, il biglietto dei trasporti da 24 ore circa 150 CZK (€6).
+when: >-
+  Maggio-giugno e settembre hanno il clima migliore e meno folla dell'estate. Da fine novembre a
+  inizio gennaio ci sono i mercatini di Natale; l'inverno è freddo.
+tips:
+  - "Non cambiare soldi negli uffici di cambio che scrivono «0% di commissione»: il tasso è spesso pessimo. Paga con la carta o preleva corone dai bancomat delle banche."
+  - "Quando il POS o il bancomat ti chiede euro o corone, scegli sempre le corone (CZK): la conversione in euro costa di più."
+  - "I biglietti cartacei vanno convalidati all'ingresso della metro o sul tram: la multa è di circa 1500 CZK (€60)."
+  - "I ristoranti nella Piazza della Città Vecchia sono molto più cari: basta allontanarsi di 2-3 strade."
+itinerary:
+  - "Piazza della Città Vecchia con l'Orologio Astronomico, poi Josefov. Nel pomeriggio Piazza San Venceslao e la Casa Danzante, la sera una birra in una birreria ceca."
+  - "Ponte Carlo di prima mattina, poi su al Castello e alla Cattedrale di San Vito. Nel pomeriggio Malá Strana, poi la collina di Petřín per il tramonto."
+  - "Vyšehrad la mattina, poi i caffè di Vinohrady o Karlín. Oppure una gita in giornata a Kutná Hora."
+areas:
+  - name: Staré Město e Nové Město
+    text: La Città Vecchia e la Città Nuova, tutto a piedi, con i prezzi più alti.
+  - name: Vinohrady
+    text: Un quartiere tranquillo e bello, pieno di caffè, a 10 minuti di metro o tram dal centro.
+  - name: Žižkov e Karlín
+    text: "Le zone più economiche: Žižkov ha tantissime birrerie, Karlín è moderno e ben collegato con la metro B."
+food:
+  - name: Svíčková
+    text: Manzo in salsa cremosa di verdure, con knedlík (canederli di pane al vapore a fette) e mirtilli rossi.
+  - name: Vepřo knedlo zelo
+    text: Maiale arrosto con knedlík e cavolo, il piatto nazionale ceco.
+  - name: Smažený sýr
+    text: Formaggio impanato e fritto, con patate e salsa tartara.
+  - name: Birra ceca
+    text: "Pilsner Urquell e le birre locali, fresche alla spina: spesso costano meno dell'acqua."
+transport: >-
+  Il centro si gira a piedi, mentre le tre linee della metro (A, B, C) e i tram ti portano
+  ovunque. Lo stesso biglietto vale per metro, tram, autobus e la funicolare di Petřín: da 30
+  minuti, 90 minuti, 24 ore o 72 ore. Si compra alle macchinette delle fermate o nell'app PID
+  Lítačka. Il tram 22 passa vicino a molte delle attrazioni principali e sale fino al Castello.
+daytrips:
+  - name: Kutná Hora
+    text: L'antica città dell'argento, con la chiesa delle ossa a Sedlec, a circa 1 ora di treno.
+  - name: Český Krumlov
+    text: Una piccola città medievale con un castello sul fiume, a circa 3 ore di autobus; meglio con una notte sul posto.
+  - name: Karlovy Vary
+    text: La città termale con le sorgenti calde, a circa 2 ore di autobus.
+faq:
+  - q: "A Praga si accettano gli euro?"
+    a: "Raramente, e con un cambio sfavorevole. Le carte bancarie sono accettate quasi ovunque, anche per piccole somme, quindi bastano poche corone in contanti."
+  - q: "Quanto si spende al giorno a Praga?"
+    a: "Volo e alloggio esclusi, calcola €40-70 al giorno per cibo, trasporti e un ingresso al museo. Cibo e birra costano meno che a Vienna o a Monaco di Baviera, ma il centro turistico è caro."

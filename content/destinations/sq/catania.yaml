@@ -1,0 +1,78 @@
+city: Catania
+slug: catania
+tagline: Etna, barok dhe granita
+intro: >-
+  Catania është qyteti i dytë i Sicilisë, i ndërtuar me gur të zi llave në këmbët e Etnës, vullkanit
+  aktiv më të lartë në Evropë. Pas tërmetit të vitit 1693 u rindërtua në stil barok dhe sot qendra e
+  saj është pjesë e trashëgimisë UNESCO. Është e gjallë, e lirë dhe një bazë e shkëlqyer për Etnën,
+  Taorminën dhe Sirakuzën. Tri ditë mjaftojnë për qytetin dhe një-dy udhëtime ditore.
+sights:
+  - name: Piazza del Duomo
+    text: Sheshi kryesor, me Fontana dell'Elefante (elefanti prej llave, simboli i qytetit) dhe Katedralen e Shën Agatës, mbrojtëses së Catanias.
+  - name: La Pescheria
+    text: Tregu i peshkut pas Duomos, i zhurmshëm dhe teatral. Shko në mëngjes, nga e hëna në të shtunën.
+  - name: Via Etnea
+    text: Rruga kryesore, që nis nga Duomo drejt Etnës, plot dyqane e kafene, me kopshtin Villa Bellini përgjatë saj.
+  - name: Monastero dei Benedettini
+    text: Një nga manastiret benediktine më të mëdha në Evropë, sot pjesë e universitetit. Vizitohet me turne me guidë.
+  - name: Teatro Romano
+    text: Teatri greko-romak i fshehur mes shtëpive të qendrës historike.
+  - name: Castello Ursino
+    text: Kështjella e shekullit XIII e Frederikut II, sot muzeu i qytetit. Llava e vitit 1669 arriti deri te muret e saj.
+airports:
+  CTA: >-
+    Aeroporti Fontanarossa është vetëm rreth 5 km nga qendra. Autobusi Alibus i AMTS niset para
+    terminalit çdo 20-30 minuta dhe kalon nga Stazione Centrale dhe qendra historike për rreth 20-30
+    minuta; bileta kushton rreth €4 dhe blihet edhe në autobus. Nga stacioni Catania Aeroporto
+    Fontanarossa, pak qindra metra nga terminali, trenat rajonalë arrijnë te Catania Centrale për
+    rreth 10 minuta, por nuk nisen shpesh. Taksia kushton rreth €25-30 dhe bën 15-20 minuta.
+budget: >-
+  Një espresso në banak kushton rreth €1-1.20, një arancino €2-3, granita me brioche rreth €4 dhe një
+  pica €6-10. Bileta e autobusit në qytet kushton rreth €1.50. Catania është shumë më e lirë se
+  Milani apo Roma.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Korriku dhe gushti janë shumë të nxehtë,
+  shpesh mbi 35°C. Festa e Shën Agatës, nga 3 deri në 5 shkurt, është ndër festat fetare më të mëdha
+  në botë: qyteti mbushet plot dhe hotelet shtrenjtohen.
+tips:
+  - "Merr me vete xhaketë dhe këpucë të mbyllura për Etnën: mbi 2.000 metra bën ftohtë edhe në korrik."
+  - "Kur Etna shpërthen, hiri mund ta mbyllë aeroportin për disa orë: kontrollo statusin e fluturimit para se të nisesh."
+  - "Për Taorminën dhe Sirakuzën ka autobusë direkt edhe nga aeroporti: nuk ke nevojë të kalosh nga qendra."
+itinerary:
+  - "Piazza del Duomo, Katedralja dhe tregu La Pescheria në mëngjes. Pasdite Via dei Crociferi, Teatro Romano dhe Monastero dei Benedettini; në mbrëmje arancino dhe një pije rreth Teatro Massimo Bellini."
+  - "Etna: autobusi AST niset herët në mëngjes për në Rifugio Sapienza. Ec te kraterët Silvestri dhe, nëse moti lejon, ngjitu më lart me teleferik."
+  - "Një ditë në Taormina, ose në Sirakuzë dhe në ishullin Ortigia."
+areas:
+  - name: Centro storico
+    text: "Rreth Piazza del Duomo dhe Via Etnea: gjithçka në këmbë, me shumë B&B me çmime të arsyeshme."
+  - name: Teatro Massimo dhe Piazza Bellini
+    text: Zona e lokaleve dhe e jetës së natës, e gjallë deri vonë, por e zhurmshme në fundjavë.
+  - name: Pranë Stazione Centrale
+    text: Më e lira dhe më praktike për Alibusin dhe autobusët për Etnën, Taorminën dhe Sirakuzën, por jo shumë e këndshme në mbrëmje.
+food:
+  - name: Arancino
+    text: Top orizi i skuqur në formë koni, i mbushur me ragù ose me fëstëk. Në Catania quhet «arancino», jo «arancina» si në Palermo.
+  - name: Pasta alla Norma
+    text: Pasta me domate, patëllxhanë të skuqur dhe rikotë të kripur, e quajtur sipas operës «Norma» të Bellinit, kompozitorit të lindur në Catania.
+  - name: Granita me brioche
+    text: "Mëngjesi i verës në Catania: granita me bajame, fëstëk ose limon, me një brioche të butë për ta ngjyer."
+  - name: Cannolo
+    text: Tub brumi kërcitës i mbushur me rikotë të ëmbël, shpesh me fëstëk nga Bronte, një fshat në shpatet e Etnës.
+transport: >-
+  Qendra historike është e vogël dhe shihet në këmbë. Autobusët e AMTS mbulojnë pjesën tjetër të
+  qytetit (bileta rreth €1.50 për 90 minuta) dhe ka edhe një linjë metroje, që turistët e përdorin
+  pak. Autobusët për Etnën, Taorminën dhe Sirakuzën nisen nga zona e Stazione Centrale.
+daytrips:
+  - name: Etna
+    text: Rreth 2 orë me autobusin AST deri në Rifugio Sapienza, në rreth 1.900 metra lartësi. Teleferiku dhe xhipat të çojnë më lart, por kushtojnë shtrenjt (rreth €50 e më shumë).
+  - name: Taormina
+    text: Qyteti mbi det me Teatrin Antik grek dhe pamjen nga Etna, rreth 1 orë e 15 minuta me autobus.
+  - name: Sirakuza dhe Ortigia
+    text: Ishulli i vjetër i Ortigias dhe parku arkeologjik Neapolis, rreth 1-1.5 orë me tren ose autobus.
+  - name: Aci Trezza
+    text: Fshat peshkatarësh me shkëmbinjtë e Ciklopëve në det, rreth 30 minuta me autobus.
+faq:
+  - q: "A mund të ngjitem në Etna pa guidë?"
+    a: "Po, në zonën e Rifugio Sapienza dhe te kraterët Silvestri. Për kraterët e majës duhet një guidë e autorizuar, dhe shtigjet mbyllen kur vullkani është aktiv."
+  - q: "Sa para duhen në ditë në Catania?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-60 në ditë. Catania është ndër qytetet më të lira të Italisë për të ngrënë: një arancino dhe një granita të mbajnë deri në drekë."

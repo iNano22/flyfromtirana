@@ -1,0 +1,79 @@
+city: Malta
+slug: malta
+tagline: Kështjella, det i kaltër dhe Gozo
+intro: >-
+  Malta është një ishull i vogël në mes të Mesdheut, me det të kthjellët dhe kështjella prej guri
+  të verdhë. Kryeqyteti Valletta, i ndërtuar nga Kalorësit e Shën Gjonit, përshkohet në këmbë.
+  Anglishtja është gjuhë zyrtare krahas maltezes, ndaj komunikohet lehtë. Tri-katër ditë
+  mjaftojnë për Valletta-n, Mdina-n dhe një ditë në Gozo ose Comino.
+sights:
+  - name: St John's Co-Cathedral
+    text: Katedralja e Kalorësve në Valletta, e thjeshtë nga jashtë dhe e mbuluar me ar nga brenda, me dy piktura të Caravaggio-s. Hyrja rreth €15.
+  - name: Upper Barrakka Gardens
+    text: Kopshti mbi Portin e Madh, me pamjen më të bukur të Maltës. Poshtë tij, te Saluting Battery, qëllon topi çdo ditë në orën 12:00.
+  - name: Three Cities
+    text: "Birgu, Senglea dhe Cospicua, qytetet e fortifikuara përballë Valletta-s: më të qeta, me rrugica të ngushta. Arrihen me traget të vogël për 10 minuta."
+  - name: Mdina
+    text: «Qyteti i heshtur», kryeqyteti i vjetër mbi kodër, me mure mesjetare. Ngjitur është Rabat, me katakombet e Shën Palit.
+  - name: Fort St Elmo
+    text: Kështjella në formë ylli në majë të Valletta-s, me Muzeun Kombëtar të Luftës, nga rrethimi i vitit 1565 deri te Lufta e Dytë Botërore.
+  - name: Ħal Saflieni Hypogeum
+    text: Varreza nëntokësore parahistorike, mbi 5.000 vjeçare. Hyjnë pak vizitorë në orë, ndaj biletat (rreth €35) rezervohen javë përpara.
+  - name: Blue Grotto
+    text: Shpellat detare në jug, ku varkat e vogla të çojnë brenda për rreth 20 minuta (rreth €10), kur deti është i qetë.
+itinerary:
+  - "Valletta në këmbë: St John's Co-Cathedral, Pallati i Mjeshtrit të Madh dhe Upper Barrakka Gardens për topin e orës 12:00. Pasdite Fort St Elmo, në mbrëmje Sliema me traget."
+  - "Me traget te Three Cities, në Birgu dhe Senglea. Pasdite Marsaxlokk me varkat me ngjyra dhe darkë me peshk."
+  - "Mdina dhe Rabat në mëngjes. Pasdite shkëmbinjtë e Dingli-t ose plazhi Golden Bay për perëndimin e diellit."
+  - "Një ditë e plotë në Gozo, ose në Comino për Blue Lagoon."
+areas:
+  - name: Valletta
+    text: Gjithçka në këmbë dhe pamja mbi port, por hotelet janë të vogla dhe të shtrenjta.
+  - name: Sliema
+    text: "Zgjedhja më praktike: shëtitore buzë detit, shumë hotele dhe traget për në Valletta për rreth 10 minuta."
+  - name: St Julian's
+    text: Ngjitur me Sliema-n, me Paceville, zonën e jetës së natës. E mirë për të rinjtë, por e zhurmshme.
+  - name: Bugibba
+    text: Fjetjet më të lira, buzë detit në veri, por me autobus duhen rreth 45-60 minuta për në Valletta.
+food:
+  - name: Pastizzi
+    text: Byrekë të vegjël me rikota ose bizele, ushqimi i rrugës i maltezëve, rreth €1 copa.
+  - name: Ftira
+    text: Bukë e rrumbullakët me ton, domate, ullinj dhe kaperi, drekë e lirë për plazh.
+  - name: Stuffat tal-fenek
+    text: Lepur i gatuar ngadalë me verë dhe hudhër, pjata kombëtare e Maltës.
+  - name: Kinnie dhe Cisk
+    text: Kinnie është pije e gazuar me portokall të hidhur, Cisk birra vendase.
+airports:
+  MLA: >-
+    Malta International Airport ndodhet në Luqa, rreth 8 km nga Valletta. Autobusi X4 të çon në
+    terminalin e Valletta-s për rreth 25 minuta, me biletë rreth €3 te shoferi; X2 shkon në Sliema
+    dhe St Julian's (rreth 45 minuta). Një taksi me çmim fiks nga sporteli në dalje kushton rreth
+    €20 për Valletta-n, ndërsa me Bolt ose Uber rreth €12-20.
+transport: >-
+  Autobusët e Malta Public Transport mbulojnë gjithë ishullin dhe shumica nisen nga terminali
+  pranë City Gate në Valletta. Bileta blihet te shoferi (rreth €2.50-3) dhe vlen 2 orë; për një
+  javë ia vlen karta Explore (rreth €25). Trafiku është i rënduar, ndaj llogarit kohë shtesë.
+  Bolt dhe Uber janë të arsyeshme. Makinat ecin në anën e majtë, si në Angli.
+daytrips:
+  - name: Gozo
+    text: "Ishulli motër, më i gjelbër dhe më i qetë: Citadella në Victoria, tempujt e Ġgantija dhe plazhi Ramla. Tragetet nga Ċirkewwa bëjnë rreth 25 minuta, ato të shpejtat nga Valletta rreth 45."
+  - name: Comino dhe Blue Lagoon
+    text: Ishulli i vogël me ujin më të kaltër të Mesdheut. Varkat nga Ċirkewwa ose Sliema kushtojnë rreth €15-25 vajtje-ardhje. Në verë shko herët.
+  - name: Marsaxlokk
+    text: Fshati i peshkatarëve me varkat me ngjyra dhe tregun e së dielës, rreth 30 minuta me autobusin 81 nga Valletta.
+budget: >-
+  Një pastizz kushton rreth €1, një pjatë në restorant €15-25, një birrë €3-5. Një shtrat në
+  hostel nis nga rreth €25, një hotel jashtë sezonit nga rreth €70.
+when: >-
+  Maji-qershori dhe shtatori-tetori janë më të mirat. Korriku dhe gushti kanë mbi 30°C dhe
+  çmimet më të larta. Dimri është i butë (rreth 15°C) dhe i lirë, por deti është i ftohtë.
+tips:
+  - "Prizat janë si në Angli, me 3 kunja: merr me vete një përshtatës."
+  - "Tragetin e Gozo-s nga Ċirkewwa e paguan vetëm në kthim (rreth €5 për këmbësor)."
+  - "Uji i rubinetit është i sigurt, por shumë njerëz pinë ujë në shishe për shkak të shijes."
+faq:
+  - q: "A ia vlen Gozo për një ditë?"
+    a: "Po. Me autobus deri në Ċirkewwa dhe traget, ose me tragetin e shpejtë nga Valletta, arrin në mëngjes dhe kthehesh në mbrëmje."
+  - q: "Sa para duhen në ditë në Malta?"
+    a: "Pa fluturimin dhe fjetjen, €40-70 në ditë. Malta është më e lirë se shumica e Evropës Perëndimore."

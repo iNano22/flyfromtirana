@@ -1,0 +1,85 @@
+city: Prague
+slug: prague
+tagline: Castles, bridges and cheap beer
+intro: >-
+  Prague is the capital of Czechia, with a medieval centre that came through the wars almost
+  untouched: Gothic towers, Charles Bridge and the Castle above the Vltava river. It is one of the
+  cheapest capitals in Central Europe for eating and drinking. Two or three days are enough for the
+  city. The currency is the Czech koruna (CZK): 1 euro is about 25 koruna.
+sights:
+  - name: Prague Castle
+    text: >-
+      The vast castle complex, with St. Vitus Cathedral and Golden Lane. The courtyards are free;
+      for the interiors you buy a combined ticket.
+  - name: Charles Bridge
+    text: >-
+      The 14th-century stone bridge with 30 statues, between the Old Town and Malá Strana.
+      Early in the morning it is almost empty.
+  - name: Old Town Square
+    text: >-
+      The heart of the city, with the Týn Church and the Astronomical Clock (Orloj), whose figures
+      move every hour on the hour. Climb the Old Town Hall tower for the view over the rooftops.
+  - name: Josefov
+    text: The old Jewish quarter, with historic synagogues and the old cemetery, on one shared Jewish Museum ticket.
+  - name: Malá Strana
+    text: The Baroque quarter below the Castle, with St. Nicholas Church, cobbled lanes and the Lennon Wall.
+  - name: Petřín
+    text: The green hill above Malá Strana, with a lookout tower like a small Eiffel Tower. The funicular accepts the ordinary public transport ticket.
+  - name: Vyšehrad
+    text: The old fortress above the river, south of the centre, with views over the Vltava and none of the Old Town crowds.
+airports:
+  PRG: >-
+    Václav Havel Airport is about 17 km from the centre. Cheapest: bus 119 to Nádraží Veleslavín
+    (about 15 minutes) and metro line A to Můstek, about 40 minutes in all on one 90-minute ticket
+    (about 50 CZK, roughly €2). The Airport Express (AE) bus takes you straight to the main
+    railway station, Hlavní nádraží, in about 35 minutes, for about 100 CZK (about €4). An
+    official taxi in front of the terminal, or an Uber or Bolt, costs about 600-800 CZK (€25-32)
+    and takes 25-30 minutes.
+budget: >-
+  A half-litre of beer in an ordinary pub costs about 60-80 CZK (€2.50-3), a traditional dish
+  €10-15, and the 24-hour transport ticket about 150 CZK (€6).
+when: >-
+  May-June and September have the best weather and fewer crowds than summer. From late November to
+  early January the Christmas markets are open; winter is cold.
+tips:
+  - "Don't change money at exchange offices advertising \"0% commission\": the rate is often very bad. Pay by card or withdraw koruna from bank ATMs."
+  - "When a card terminal or ATM asks euro or koruna, always choose koruna (CZK): converting to euro costs more."
+  - "Paper tickets must be validated at the metro entrance or on the tram: the fine is about 1500 CZK (€60)."
+  - "Restaurants on Old Town Square are much more expensive: walk just 2-3 streets further."
+itinerary:
+  - "Old Town Square with the Astronomical Clock, then Josefov. In the afternoon Wenceslas Square and the Dancing House, in the evening a beer in a Czech pub."
+  - "Charles Bridge early in the morning, then up to the Castle and St. Vitus Cathedral. In the afternoon Malá Strana, then Petřín hill for the sunset."
+  - "Vyšehrad in the morning, then the cafés of Vinohrady or Karlín. Or a day trip to Kutná Hora."
+areas:
+  - name: Staré Město and Nové Město
+    text: The Old and New Town, everything on foot, with the highest prices.
+  - name: Vinohrady
+    text: A quiet, attractive neighbourhood full of cafés, 10 minutes by metro or tram from the centre.
+  - name: Žižkov and Karlín
+    text: "The cheapest areas: Žižkov has plenty of pubs, Karlín is modern and well connected by metro line B."
+food:
+  - name: Svíčková
+    text: Beef in a creamy vegetable sauce, with knedlík (sliced steamed bread dumplings) and cranberries.
+  - name: Vepřo knedlo zelo
+    text: Roast pork with knedlík and cabbage, the Czech national dish.
+  - name: Smažený sýr
+    text: Breaded fried cheese, with potatoes and tartar sauce.
+  - name: Czech beer
+    text: "Pilsner Urquell and local beers, fresh from the tap: it often costs less than water."
+transport: >-
+  The centre is walkable, while the three metro lines (A, B, C) and the trams take you everywhere.
+  The same ticket is valid on the metro, trams, buses and the Petřín funicular: 30-minute,
+  90-minute, 24-hour or 72-hour. Buy it from the machines at the stops or in the PID Lítačka app.
+  Tram 22 passes many of the main sights and climbs up to the Castle.
+daytrips:
+  - name: Kutná Hora
+    text: The old silver town, with the bone church in Sedlec, about 1 hour by train.
+  - name: Český Krumlov
+    text: A small medieval town with a castle above the river, about 3 hours by bus; better with an overnight stay.
+  - name: Karlovy Vary
+    text: The spa town with hot springs, about 2 hours by bus.
+faq:
+  - q: "Are euros accepted in Prague?"
+    a: "Rarely, and at a bad rate. Bank cards are accepted almost everywhere, even for small amounts, so a little koruna in cash is enough."
+  - q: "How much money do I need per day in Prague?"
+    a: "Excluding the flight and accommodation, allow €40-70 per day for food, transport and one museum entry. Food and beer are cheaper than in Vienna or Munich, but the tourist centre is expensive."

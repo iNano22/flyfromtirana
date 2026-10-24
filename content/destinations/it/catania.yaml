@@ -1,0 +1,80 @@
+city: Catania
+slug: catania
+tagline: Etna, barocco e granita
+intro: >-
+  Catania è la seconda città della Sicilia, costruita in pietra lavica nera ai piedi dell'Etna, il
+  vulcano attivo più alto d'Europa. Dopo il terremoto del 1693 fu ricostruita in stile barocco e oggi
+  il suo centro è patrimonio UNESCO. È vivace, economica e un'ottima base per l'Etna, Taormina e
+  Siracusa. Tre giorni bastano per la città e per una o due gite in giornata.
+sights:
+  - name: Piazza del Duomo
+    text: La piazza principale, con la Fontana dell'Elefante (l'elefante di pietra lavica, simbolo della città) e la Cattedrale di Sant'Agata, patrona di Catania.
+  - name: La Pescheria
+    text: Il mercato del pesce dietro il Duomo, rumoroso e teatrale. Vai al mattino, dal lunedì al sabato.
+  - name: Via Etnea
+    text: La via principale, che parte dal Duomo in direzione dell'Etna, piena di negozi e caffè, con il giardino di Villa Bellini lungo il percorso.
+  - name: Monastero dei Benedettini
+    text: Uno dei più grandi monasteri benedettini d'Europa, oggi parte dell'università. Si visita con tour guidati.
+  - name: Teatro Romano
+    text: Il teatro greco-romano nascosto tra le case del centro storico.
+  - name: Castello Ursino
+    text: Il castello del XIII secolo di Federico II, oggi museo civico. La lava del 1669 arrivò fino alle sue mura.
+airports:
+  CTA: >-
+    L'aeroporto di Fontanarossa è a circa 5 km dal centro. L'Alibus dell'AMTS parte davanti al
+    terminal ogni 20-30 minuti e passa per la Stazione Centrale e il centro storico in circa 20-30
+    minuti; il biglietto costa circa €4 e si può comprare anche a bordo. Dalla stazione Catania
+    Aeroporto Fontanarossa, a poche centinaia di metri dal terminal, i treni regionali arrivano a
+    Catania Centrale in circa 10 minuti, ma non sono frequenti. Il taxi costa circa €25-30 e impiega
+    15-20 minuti.
+budget: >-
+  Un espresso al banco costa circa €1-1,20, un arancino €2-3, granita e brioche circa €4 e una pizza
+  €6-10. Un biglietto dell'autobus in città costa circa €1,50. Catania è molto più economica di
+  Milano o Roma.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. Luglio e agosto sono molto caldi, spesso
+  oltre i 35°C. La Festa di Sant'Agata, dal 3 al 5 febbraio, è tra le feste religiose più grandi del
+  mondo: la città si riempie e gli hotel rincarano.
+tips:
+  - "Porta una giacca e scarpe chiuse per l'Etna: sopra i 2.000 metri fa freddo anche a luglio."
+  - "Quando l'Etna erutta, la cenere può chiudere l'aeroporto per qualche ora: controlla lo stato del volo prima di partire."
+  - "Per Taormina e Siracusa ci sono autobus diretti anche dall'aeroporto: non serve passare dal centro."
+itinerary:
+  - "Piazza del Duomo, la Cattedrale e il mercato della Pescheria al mattino. Nel pomeriggio Via dei Crociferi, il Teatro Romano e il Monastero dei Benedettini; la sera un arancino e un drink intorno al Teatro Massimo Bellini."
+  - "Etna: l'autobus AST parte di prima mattina per il Rifugio Sapienza. Cammina fino ai Crateri Silvestri e, se il tempo lo permette, sali più in alto con la funivia."
+  - "Una giornata a Taormina, oppure a Siracusa e sull'isola di Ortigia."
+areas:
+  - name: Centro storico
+    text: "Intorno a Piazza del Duomo e Via Etnea: tutto a piedi, con molti B&B a prezzi ragionevoli."
+  - name: Teatro Massimo e Piazza Bellini
+    text: La zona dei locali e della vita notturna, animata fino a tardi ma rumorosa nel fine settimana.
+  - name: Vicino alla Stazione Centrale
+    text: La più economica e la più pratica per l'Alibus e gli autobus per l'Etna, Taormina e Siracusa, ma non molto piacevole la sera.
+food:
+  - name: Arancino
+    text: Una palla di riso fritta a forma di cono, ripiena di ragù o di pistacchio. A Catania si chiama «arancino», non «arancina» come a Palermo.
+  - name: Pasta alla Norma
+    text: Pasta con pomodoro, melanzane fritte e ricotta salata, chiamata così dall'opera «Norma» di Bellini, il compositore nato a Catania.
+  - name: Granita con brioche
+    text: "La colazione estiva di Catania: granita alla mandorla, al pistacchio o al limone, con una brioche morbida da intingere."
+  - name: Cannolo
+    text: Un cilindro di pasta croccante ripieno di ricotta dolce, spesso con il pistacchio di Bronte, un paese sulle pendici dell'Etna.
+transport: >-
+  Il centro storico è piccolo e si gira a piedi. Gli autobus dell'AMTS coprono il resto della città
+  (il biglietto costa circa €1,50 per 90 minuti) e c'è anche una linea di metropolitana, poco usata
+  dai turisti. Gli autobus per l'Etna, Taormina e Siracusa partono dalla zona della Stazione
+  Centrale.
+daytrips:
+  - name: Etna
+    text: Circa 2 ore con l'autobus AST fino al Rifugio Sapienza, a circa 1.900 metri di altitudine. La funivia e le jeep portano più in alto, ma sono care (circa €50 e oltre).
+  - name: Taormina
+    text: La cittadina sul mare con il Teatro Antico greco e la vista sull'Etna, a circa 1 ora e 15 minuti di autobus.
+  - name: Siracusa e Ortigia
+    text: L'antica isola di Ortigia e il parco archeologico della Neapolis, a circa 1-1,5 ore di treno o di autobus.
+  - name: Aci Trezza
+    text: Un borgo di pescatori con i faraglioni dei Ciclopi nel mare, a circa 30 minuti di autobus.
+faq:
+  - q: "Posso salire sull'Etna senza guida?"
+    a: "Sì, nella zona del Rifugio Sapienza e fino ai Crateri Silvestri. Per i crateri sommitali serve una guida autorizzata, e i sentieri chiudono quando il vulcano è attivo."
+  - q: "Quanto si spende al giorno a Catania?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno. Catania è tra le città più economiche d'Italia per mangiare: un arancino e una granita ti bastano fino a pranzo."

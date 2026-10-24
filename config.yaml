@@ -322,6 +322,14 @@ links:
       Istanbul:     https://www.tiqets.com/en/istanbul-attractions-c79079/
       Berlin:       https://www.tiqets.com/en/berlin-attractions-c65144/
       Brussels:     https://www.tiqets.com/en/brussels-attractions-c60843/
+      Paris:        https://www.tiqets.com/en/paris-attractions-c66746/
+      Prague:       https://www.tiqets.com/en/prague-attractions-c64162/
+      Budapest:     https://www.tiqets.com/en/things-to-do-in-budapest-c68199/
+      Bari:         https://www.tiqets.com/en/bari-attractions-c210005/
+      Catania:      https://www.tiqets.com/en/catania-attractions-c71461/
+      Malta:        https://www.tiqets.com/en/valletta-attractions-c73787/
+      Kraków:       https://www.tiqets.com/en/krakow-attractions-c46/
+      Warsaw:       https://www.tiqets.com/en/warsaw-attractions-c485/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -342,6 +350,14 @@ links:
       Istanbul:     https://www.getyourguide.com/istanbul-l56/
       Berlin:       https://www.getyourguide.com/berlin-l17/
       Brussels:     https://www.getyourguide.com/brussels-l8/
+      Paris:        https://www.getyourguide.com/paris-l16/
+      Prague:       https://www.getyourguide.com/prague-l10/
+      Budapest:     https://www.getyourguide.com/budapest-l29/
+      Bari:         https://www.getyourguide.com/bari-l721/
+      Catania:      https://www.getyourguide.com/catania-l258/
+      Malta:        https://www.getyourguide.com/malta-l90/
+      Kraków:       https://www.getyourguide.com/krakow-l40/
+      Warsaw:       https://www.getyourguide.com/warsaw-l41/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -362,6 +378,14 @@ links:
       Istanbul:     https://www.welcomepickups.com/istanbul/
       Berlin:       https://www.welcomepickups.com/berlin/
       Brussels:     https://www.welcomepickups.com/brussels/
+      Paris:        https://www.welcomepickups.com/paris/
+      Prague:       https://www.welcomepickups.com/prague/
+      Budapest:     https://www.welcomepickups.com/budapest/
+      Bari:         https://www.welcomepickups.com/bari/
+      Catania:      https://www.welcomepickups.com/catania/
+      Malta:        https://www.welcomepickups.com/malta/
+      Kraków:       https://www.welcomepickups.com/krakow/
+      Warsaw:       https://www.welcomepickups.com/warsaw/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -382,6 +406,14 @@ links:
       Istanbul:     https://radicalstorage.com/luggage-storage/istanbul
       Berlin:       https://radicalstorage.com/luggage-storage/berlin
       Brussels:     https://radicalstorage.com/luggage-storage/brussels
+      Paris:        https://radicalstorage.com/luggage-storage/paris
+      Prague:       https://radicalstorage.com/luggage-storage/prague
+      Budapest:     https://radicalstorage.com/luggage-storage/budapest
+      Bari:         https://radicalstorage.com/luggage-storage/bari
+      Catania:      https://radicalstorage.com/luggage-storage/catania
+      Malta:        https://radicalstorage.com/luggage-storage/malta
+      Kraków:       https://radicalstorage.com/luggage-storage/krakow
+      Warsaw:       https://radicalstorage.com/luggage-storage/warsaw
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:
