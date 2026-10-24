@@ -640,9 +640,10 @@ volume, and the database local runs use.
 
 A paid, private channel that gets deals **within minutes**, with looser rules (30%
 below the median instead of 40%) so it gets more of them. The free channel only
-posts a deal once premium has had it for `free_delay_hours` (6), and adds a line
-like "⚡ Anëtarët Premium e morën këtë ofertë 6 orë më parë · Bashkohu". The
-website waits the same way (see Website above).
+posts a deal once premium has had it for `free_delay_hours` (0 for now, while the
+free channel grows: it then gets a deal at the next 3-hour run, and the site says
+premium is 3 hours ahead), and adds a line like "⚡ Anëtarët Premium e morën këtë
+ofertë 2 orë më parë · Bashkohu". The website waits the same way (see Website above).
 
 The wait is per price, not per date. When a date premium was already sent falls
 into a cheaper price band (`price_band_eur`), premium gets the new price first, and

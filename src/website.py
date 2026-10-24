@@ -68,6 +68,10 @@ STALE_AFTER = timedelta(days=2)
 # The privacy page's folder in every language: /privacy/, /en/privacy/, /it/privacy/.
 PRIVACY_SLUG = "privacy"
 
+# How often the full run posts to the free channel and rebuilds this page (SLOT_HOURS in
+# src/scheduler.py, which can't be imported here: it imports the bot, which imports this file).
+FULL_RUN_HOURS = 3
+
 # How many routes get a line on the black board at the top of the page ("Çmimet më të mira
 # sot"): the first ones of the page, so the deals, biggest saving first, then the cheapest.
 HERO_ROWS = 5
@@ -258,7 +262,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         "LANG": language,
         "UPDATED": format_updated(updated_at, config, language) if updated_at else None,
         "EMPTY": strings.words["empty"] if not offers else None,
-        "PREMIUM_HOURS": f"{premium.free_delay_hours:g}" if premium_on else None,  # :g turns 6.0 into "6"
+        "PREMIUM_HOURS": premium_hours(config) if premium_on else None,
         "YEAR": str(local_now.year),
         # For the headline ("Sot që nga €14") and the badges next to the section headings.
         "MIN_PRICE": format_price(min(o.best.price for o in offers)) if offers else None,
@@ -542,7 +546,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
         "WHEN": guide.when or None,
         "ENTRY_RULES": load_entry_rules(language).get(country or ""),
         "DAYS": str(len(guide.itinerary)) if guide.itinerary else None,
-        "PREMIUM_HOURS": f"{premium.free_delay_hours:g}" if premium_on else None,
+        "PREMIUM_HOURS": premium_hours(config) if premium_on else None,
         "YEAR": str(local_now.year),
         "GA_ON": "1" if config.website.google_analytics_id else None,
     }
@@ -691,7 +695,7 @@ def premium_html(config: Config, strings: Strings) -> str | None:
     quiet = config.quiet_hours   # (start, end) or None
     return render(load_site_template("site_premium.html", strings), {
         "PREMIUM_LINK": html.escape(premium.join_link, quote=True),
-        "PREMIUM_HOURS": f"{premium.free_delay_hours:g}",   # :g turns 6.0 into "6"
+        "PREMIUM_HOURS": premium_hours(config),
         "PREMIUM_MINUTES": f"{premium.scan_every_minutes:g}" if premium.scan_every_minutes else None,
         "CHANNEL": html.escape(config.channel_handle, quote=False),
         "QUIET_START": f"{quiet[0]:%H:%M}" if quiet else None,
@@ -823,6 +827,15 @@ def country_code(flag: str) -> str | None:
     """'🇮🇹' -> 'it'. A flag emoji is two "regional indicator" letters; anything else gives None."""
     letters = [chr(ord(ch) - 0x1F1E6 + ord("a")) for ch in flag if 0x1F1E6 <= ord(ch) <= 0x1F1FF]
     return "".join(letters) if len(letters) == 2 else None
+
+
+def premium_hours(config: Config) -> str:
+    """How many hours earlier premium gets a deal, as the page says it ("6", not "6.0").
+
+    With free_delay_hours 0 there is still a head start: premium posts at its quick scan,
+    the free channel and this page only at the next full run, up to FULL_RUN_HOURS later.
+    """
+    return f"{config.premium.free_delay_hours or FULL_RUN_HOURS:g}"
 
 
 def format_updated(moment: datetime, config: Config, language: str | None = None) -> str:

@@ -300,6 +300,11 @@ def test_premium_block_shows_only_while_there_is_a_premium_channel(config, stora
     assert 'id="premium"' in page and "minuta" not in page and "Natën" not in page
     assert not PLACEHOLDER.search(page)
 
+    # No wait at all: the free channel and the page still get it at the next 3-hour run, never "0 hours".
+    config = replace(config, premium=replace(premium, free_delay_hours=0))
+    page = render_site(build_offers(config, storage, NOW), config, links, updated_at=NOW, now=NOW)
+    assert "i marrin 3 orë më vonë" in page and " 0 orë" not in page
+
 
 def test_site_templates_lose_their_comments():
     assert "<!--" in load_template("site_row.html")        # the note for editors is in the file...

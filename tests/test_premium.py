@@ -98,7 +98,8 @@ def test_premium_template(route):
 def config(tmp_path):
     base = load_config()
     return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
-                   premium=replace(base.premium, enabled=True, join_link="https://t.me/+abc"))
+                   premium=replace(base.premium, enabled=True, join_link="https://t.me/+abc",
+                                   free_delay_hours=6))   # the tests below count on a 6-hour wait
 
 
 def sent_to(session, chat_id):

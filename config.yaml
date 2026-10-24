@@ -54,7 +54,9 @@ quiet_hours:                       # still scan at night, but don't post (local 
 # TELEGRAM_PREMIUM_CHANNEL_ID secret, paste the paid invite link below, enabled: true.
 premium:
   enabled: true
-  free_delay_hours: 6
+  free_delay_hours: 0              # 0 while the free channel grows (aim: ~1,000 members, then 6):
+                                   # premium still gets a deal first, at its quick scan, and the free
+                                   # channel and site at the next 3-hour run. The site then says "3 hours".
   scan_every_minutes: 15           # premium checks prices this often and posts a new deal straight away
                                    # (outside quiet hours). 0 = only with the full run every 3 hours.
   max_posts_per_run: 1             # per scan, so up to 4 an hour: the best new deal each time
