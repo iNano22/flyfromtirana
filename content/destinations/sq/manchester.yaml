@@ -1,0 +1,81 @@
+city: Manchester
+slug: manchester
+tagline: Futboll, muzika dhe pubet e Northern Quarter
+intro: >-
+  Manchester është qyteti i futbollit: këtu luajnë Manchester United në Old Trafford dhe
+  Manchester City në Etihad. Por qyteti ka edhe muze falas, ndërtesa industriale prej tullash të
+  kuqe të kthyera në bare e restorante, dhe një jetë nate të gjallë. Tre ditë mjaftojnë për
+  qytetin dhe stadiumet, plus një ditë për Liverpool ose Peak District.
+sights:
+  - name: Old Trafford
+    text: Stadiumi i Manchester United, me rreth 74.000 vende. Turi i stadiumit me muzeun kushton rreth £30-35 dhe rezervohet online. Me tramvaj zbret në stacionin Wharfside ose Old Trafford.
+  - name: Etihad Stadium
+    text: Stadiumi i Manchester City, në lindje të qendrës. Turi kushton rreth £25-30 dhe tramvaji ndalon te stacioni Etihad Campus, pranë stadiumit.
+  - name: National Football Museum
+    text: Muzeu kombëtar i futbollit, në ndërtesën me xham pranë Manchester Cathedral. Hyrja kushton rreth £12-15.
+  - name: John Rylands Library
+    text: Bibliotekë neogotike e vitit 1900 në Deansgate, me një sallë leximi që të kujton Harry Potter. Hyrja është falas.
+  - name: Science and Industry Museum
+    text: Muzeu i revolucionit industrial në Castlefield, në stacionin më të vjetër të trenave për pasagjerë në botë. Hyrja është falas, por disa salla mund të jenë të mbyllura për rinovim.
+  - name: Northern Quarter
+    text: Lagjja e grafitive, dyqaneve vintage, dyqaneve të pllakave muzikore dhe bareve të vogla. Mbrëmja më e mirë në qytet nis këtu.
+  - name: Salford Quays
+    text: Ish-portet buzë kanalit, me teatrin The Lowry dhe muzeun e luftës IWM North (falas), rreth 15 minuta në këmbë nga Old Trafford.
+airports:
+  MAN: >-
+    Aeroporti është rreth 15 km në jug të qendrës. Trenat nisen nga stacioni brenda aeroportit
+    disa herë në orë dhe arrijnë në Manchester Piccadilly për 15-20 minuta, me rreth £5-7. Tramvaji
+    Metrolink është më i ngadaltë (rreth 50 minuta deri në qendër), por ndalon në më shumë vende
+    dhe kushton rreth £4-5. Taksia kushton rreth £25-40 dhe bën 20-30 minuta, sipas trafikut.
+budget: >-
+  Një kafe kushton rreth £3.50, një vakt i thjeshtë £12-18 dhe një birrë (pint) rreth £5-6. Një
+  shtrat në hostel kushton rreth £20-35, ndërsa hotelet shtrenjtohen shumë në ditët e ndeshjeve
+  dhe të koncerteve të mëdha. Shumë muze janë falas.
+when: >-
+  Maji-shtatori ka motin më të butë (rreth 15-20 gradë) dhe ditë të gjata, por shi bie gjatë
+  gjithë vitit. Sezoni i futbollit zgjat nga gushti deri në maj. Nga mesi i nëntorit deri afër
+  Krishtlindjeve qendra mbushet me tregjet e Krishtlindjeve.
+tips:
+  - "Bileta për ndeshjet e Premier League nuk gjenden lehtë: blihen vetëm nga faqet zyrtare të klubeve, shpesh vetëm për anëtarët. Mos bli nga shitës të panjohur, sepse bileta mund të anulohet."
+  - "Merr me vete një xhaketë kundër shiut: në Manchester bie shi shpesh, edhe në verë."
+  - "Paguaj tramvajin me kartë bankare pa kontakt dhe mos harro ta prekësh lexuesin si në hyrje, ashtu edhe në dalje."
+itinerary:
+  - "Qendra në këmbë: Manchester Cathedral, National Football Museum dhe John Rylands Library. Pasdite Manchester Art Gallery (falas) dhe dyqanet e Market Street, në mbrëmje Northern Quarter."
+  - "Dita e futbollit: turi i Old Trafford në mëngjes, pastaj Salford Quays me IWM North. Pasdite me tramvaj për në Etihad Stadium, për turin ose për një ndeshje."
+  - "Castlefield me Science and Industry Museum dhe kanalet, pastaj Ancoats dhe salla e ushqimit Mackie Mayor. Në mbrëmje darkë indiane në Curry Mile."
+  - "Një ditë jashtë qytetit: Liverpool për Beatles dhe Anfield, ose Peak District për një shëtitje në natyrë."
+areas:
+  - name: Piccadilly
+    text: "Zona më praktike: trenat nga aeroporti mbërrijnë këtu dhe gjithçka është në këmbë, por rrugët rreth stacionit nuk janë më të bukurat."
+  - name: Northern Quarter dhe Ancoats
+    text: Për ata që duan bare, kafene dhe jetë nate pranë derës. Mund të jetë e zhurmshme në fundjavë.
+  - name: Deansgate dhe Castlefield
+    text: Më e qetë, buzë kanaleve, me tramvaj për Old Trafford dhe Salford Quays.
+  - name: Salford Quays
+    text: "Hotele më të lira dhe më të reja, 15-20 minuta me tramvaj nga qendra: e mirë nëse vjen për Manchester United."
+food:
+  - name: Curry Mile
+    text: Rruga Wilmslow Road në Rusholme, plot restorante indiane, pakistaneze dhe të Lindjes së Mesme, me çmime të mira.
+  - name: Sallat e ushqimit
+    text: Mackie Mayor në Northern Quarter dhe tregu i Altrincham kanë dhjetëra tezga me pica, burgera dhe ushqime nga e gjithë bota.
+  - name: Lancashire hotpot
+    text: Gjellë e vendit me mish qengji dhe qepë, e mbuluar me feta patatesh të pjekura në furrë.
+  - name: Sunday roast
+    text: "Dreka e së dielës në pub: mish i pjekur, patate dhe Yorkshire pudding."
+transport: >-
+  Qendra është e vogël dhe përshkohet lehtë në këmbë. Tramvajet Metrolink të çojnë te stadiumet,
+  në Salford Quays dhe në aeroport: paguaj me kartë bankare pa kontakt dhe sistemi e kufizon vetë
+  shpenzimin ditor. Autobusët e rrjetit Bee Network kushtojnë rreth £2 për udhëtim, pavarësisht
+  distancës.
+daytrips:
+  - name: Liverpool
+    text: Qyteti i Beatles dhe i stadiumit Anfield, rreth 35-50 minuta me tren nga Piccadilly ose Oxford Road.
+  - name: Peak District
+    text: Parku kombëtar me kodra e fshatra guri, rreth 1 orë me tren deri në Edale ose Hope për shëtitje në natyrë.
+  - name: York
+    text: Qytet mesjetar me mure, katedralen York Minster dhe rrugën The Shambles, rreth 1.5 orë me tren.
+faq:
+  - q: "Si të shoh një ndeshje të Manchester United ose Manchester City?"
+    a: "Bileta blihen nga faqet zyrtare të klubeve. Për United janë shumë të vështira pa anëtarësim, ndërsa për City ndonjëherë gjenden edhe për publikun. Nëse nuk gjen bileta, turi i stadiumit (rreth £25-35) është alternativa më e sigurt."
+  - q: "Sa para duhen në ditë në Manchester?"
+    a: "Pa fluturimin dhe fjetjen, llogarit £50-80 në ditë për ushqim, transport dhe një tur stadiumi ose një muze me pagesë. Manchester është dukshëm më i lirë se London."

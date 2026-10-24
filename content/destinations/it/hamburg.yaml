@@ -1,0 +1,112 @@
+city: Hamburg
+name: Amburgo
+slug: hamburg
+tagline: Il porto, i canali e l'Elbphilharmonie
+intro: >-
+  Amburgo è la seconda città della Germania e il suo porto più grande: magazzini di mattoni sui
+  canali, navi che arrivano dal fiume Elba e due laghi in mezzo alla città. Si dice che abbia più
+  ponti di Venezia e Amsterdam messe insieme. Due o tre giorni bastano per la città, con un giorno
+  in più per Lubecca o la costa del Mar Baltico.
+sights:
+  - name: Elbphilharmonie
+    text: >-
+      La sala da concerti costruita sopra un vecchio magazzino del porto, aperta nel 2017. La Plaza,
+      la terrazza panoramica a 37 metri, si visita gratis con un biglietto che si ritira
+      all'ingresso.
+  - name: Speicherstadt
+    text: >-
+      Il quartiere dei magazzini di mattoni rossi sui canali, costruito dal 1883 in poi su pali di
+      legno. Insieme al Kontorhausviertel è nella lista dell'UNESCO dal 2015. È più bello la sera,
+      quando si accendono le luci.
+  - name: Miniatur Wunderland
+    text: >-
+      Il plastico ferroviario più grande del mondo, dentro la Speicherstadt, con un piccolo aeroporto
+      dove gli aerei decollano e atterrano. Il biglietto costa circa €20-25; prenota la fascia oraria
+      online, perché le code sono lunghe.
+  - name: Landungsbrücken e il porto
+    text: >-
+      I pontili di St. Pauli da cui partono i giri del porto (circa 1 ora, circa €20-25). Lì vicino
+      c'è il Vecchio Tunnel dell'Elba, del 1911, che si percorre gratis a piedi sotto il fiume.
+  - name: St. Pauli e la Reeperbahn
+    text: >-
+      Il quartiere della vita notturna, con bar, teatri e locali, dove i Beatles suonarono agli
+      inizi. La domenica all'alba, lungo il fiume, si tiene il Fischmarkt, il mercato del pesce.
+  - name: Rathaus e l'Alster
+    text: >-
+      Il municipio neorinascimentale con 647 stanze e, alle sue spalle, i laghi Binnenalster e
+      Außenalster, con il lungolago Jungfernstieg.
+  - name: Chiesa di St. Michaelis
+    text: >-
+      Il "Michel", simbolo della città. La torre ha una terrazza panoramica a circa 106 metri
+      (biglietto circa €8), con vista sul porto.
+itinerary:
+  - "Rathaus, Jungfernstieg e una passeggiata lungo l'Alster, poi la Chiesa di St. Michaelis. Nel pomeriggio la Speicherstadt e HafenCity, con la Plaza dell'Elbphilharmonie al tramonto."
+  - "Landungsbrücken e il Vecchio Tunnel dell'Elba, poi il traghetto 62 fino alla spiaggia di Övelgönne. La sera lo Sternschanze o la Reeperbahn a St. Pauli."
+  - "Se è domenica, il Fischmarkt di prima mattina. Poi il Miniatur Wunderland o il parco Planten un Blomen, oppure una gita in giornata a Lubecca."
+areas:
+  - name: St. Georg
+    text: >-
+      Accanto alla Hauptbahnhof, la zona più pratica per il treno dell'aeroporto, con gli hotel più
+      economici e la Lange Reihe piena di caffè. Le strade subito accanto alla stazione sono un po'
+      malfamate di notte.
+  - name: Altstadt e Neustadt
+    text: Intorno al Rathaus e all'Alster, tutto a piedi, ma con i prezzi più alti.
+  - name: St. Pauli e Sternschanze
+    text: I quartieri della vita notturna e dei bar alternativi, rumorosi nel fine settimana.
+  - name: Altona e Ottensen
+    text: Più tranquilli, con caffè e piccoli negozi, vicino al fiume e alla spiaggia di Övelgönne.
+food:
+  - name: Fischbrötchen
+    text: Panino con aringa, salmone o gamberetti, il cibo di strada del porto, circa €4-7.
+  - name: Franzbrötchen
+    text: Dolce schiacciato con cannella e zucchero, per colazione con un caffè.
+  - name: Labskaus
+    text: >-
+      Il piatto dei marinai: carne in scatola schiacciata con patate e barbabietola, con un uovo
+      sopra e aringa a parte.
+  - name: Pannfisch
+    text: Filetti di pesce fritti in padella, con patate e salsa alla senape.
+airports:
+  HAM: >-
+    L'aeroporto è a circa 9 km a nord del centro. Il treno S-Bahn S1 parte dalla stazione sotto i
+    terminal ogni 10 minuti e arriva alla Hauptbahnhof in circa 25 minuti. Il biglietto singolo per
+    la città costa circa €4 e si compra prima di salire, alle macchinette o nell'app HVV. Il taxi
+    costa circa €30-40 e impiega 20-30 minuti.
+transport: >-
+  U-Bahn, S-Bahn, autobus e traghetti del porto funzionano tutti con lo stesso biglietto HVV. Il
+  giornaliero costa circa €8-9 e conviene dal terzo viaggio; quello valido dopo le 9:00 costa
+  meno. La Hamburg Card (da circa €12 per 1 giorno) aggiunge sconti su musei e tour. Il centro si
+  gira bene a piedi o con le bici cittadine StadtRAD.
+daytrips:
+  - name: Lubecca
+    text: >-
+      L'antica città anseatica, con la porta Holstentor e il marzapane di Niederegger, a circa 45
+      minuti di treno regionale.
+  - name: Travemünde e il Mar Baltico
+    text: >-
+      La spiaggia del Baltico più vicina, a circa 1-1,5 ore di treno passando per Lubecca. D'estate
+      merita anche Timmendorfer Strand.
+  - name: Lüneburg
+    text: La piccola città del sale, con case di mattoni inclinate, a circa 30-50 minuti di treno.
+  - name: Altes Land
+    text: >-
+      I frutteti di mele lungo l'Elba, che fioriscono ad aprile-maggio, a circa 1 ora tra traghetto
+      e autobus da Landungsbrücken.
+budget: >-
+  Un Fischbrötchen costa €4-7, una birra €4,50-6, un piatto al ristorante €15-22, un biglietto
+  singolo in città circa €4.
+when: >-
+  Maggio-settembre, quando le giornate sono lunghe e la vita si sposta sull'acqua. Piove tutto
+  l'anno, quindi porta una giacca impermeabile. A maggio la città festeggia l'Hafengeburtstag, il
+  compleanno del porto, mentre a dicembre ci sono i mercatini di Natale.
+tips:
+  - "Il traghetto 62 da Landungsbrücken a Finkenwerder è un giro del porto economico: basta il normale biglietto HVV."
+  - "Il biglietto gratuito per la Plaza dell'Elbphilharmonie si ritira all'ingresso; nel fine settimana prenotalo online (circa €3) per evitare la coda."
+  - "Negozi e supermercati sono chiusi la domenica. Bottiglie e lattine hanno una cauzione (Pfand) fino a €0,25, che ti restituiscono al supermercato."
+faq:
+  - q: "Posso visitare l'Elbphilharmonie senza andare a un concerto?"
+    a: "Sì. La Plaza, la terrazza che gira intorno all'edificio a 37 metri, è aperta tutti i giorni e l'ingresso è gratuito. I biglietti per i concerti partono da circa €15-25, ma si esauriscono in fretta: guarda il calendario settimane prima."
+  - q: "Quando si tiene il Fischmarkt?"
+    a: "Ogni domenica di primo mattino: circa 5:00-9:30 da aprile a ottobre e circa 7:00-9:30 in inverno. Molti ci arrivano direttamente dopo una notte sulla Reeperbahn."
+  - q: "Quanto si spende al giorno ad Amburgo?"
+    a: "Volo e alloggio esclusi, €50-75 al giorno. Gli hotel di Amburgo sono tra i più cari della Germania, mentre il cibo di strada e i traghetti del porto mantengono bassa la spesa giornaliera."

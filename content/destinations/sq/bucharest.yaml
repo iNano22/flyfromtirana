@@ -1,0 +1,94 @@
+city: Bucharest
+slug: bucharest
+tagline: Pallate të mëdha, Qyteti i Vjetër dhe parqe me liqene
+intro: >-
+  Bucharest është kryeqyteti i Rumanisë, një qytet me kontraste: bulevarde elegante, blloqe të
+  epokës komuniste dhe Pallati gjigant i Parlamentit. Është ndër kryeqytetet më të lira të BE-së.
+  Monedha është leu rumun (RON): €1 është rreth 5 lei. Tri ditë mjaftojnë për pjesët kryesore.
+sights:
+  - name: Pallati i Parlamentit
+    text: >-
+      Ndërtesa e nisur nga Ceaușescu në vitin 1984, me mbi 1000 dhoma. Vizitohet vetëm me turne me
+      guidë, rreth 60-80 lei; rezervo online përpara dhe merr me vete pasaportën.
+  - name: Qyteti i Vjetër (Lipscani)
+    text: >-
+      Rrugicat me kalldrëm rreth rrugës Lipscani, plot lokale dhe bare. Mos humb Manastirin
+      Stavropoleos të vitit 1724, Hanul lui Manuc dhe librarinë Cărturești Carusel.
+  - name: Ateneu Rumun
+    text: >-
+      Salla e koncerteve me kupolë, e vitit 1888, shtëpia e Filarmonisë George Enescu. Për ta parë
+      nga brenda, merr biletë për një koncert: zakonisht kushton më pak se në Perëndim.
+  - name: Calea Victoriei
+    text: >-
+      Rruga më elegante e qytetit, me Pallatin CEC, Muzeun Kombëtar të Artit në ish-Pallatin
+      Mbretëror dhe Sheshin e Revolucionit, ku Ceaușescu mbajti fjalimin e fundit në dhjetor 1989.
+  - name: Parku Herăstrău (Mbreti Mihai I)
+    text: >-
+      Parku më i madh i qytetit, rreth një liqeni ku në verë merren me qira varka. Pranë hyrjes
+      jugore është Harku i Triumfit.
+  - name: Muzeu i Fshatit
+    text: >-
+      Muze në ajër të hapur buzë liqenit, i vitit 1936, me shtëpi, mullinj dhe kisha druri nga e
+      gjithë Rumania. Bileta rreth 30 lei.
+itinerary:
+  - "Turneu i Pallatit të Parlamentit në mëngjes, pastaj Bulevardi Unirii. Pasdite Qyteti i Vjetër me Stavropoleos dhe Cărturești Carusel, darka në Caru' cu Bere, birraria e vitit 1879."
+  - "Një shëtitje në Calea Victoriei: Pallati CEC, Sheshi i Revolucionit, Muzeu Kombëtar i Artit dhe Ateneu Rumun. Pasdite kopshti Cișmigiu, në mbrëmje një koncert në Ateneu."
+  - "Me metro deri në Piața Victoriei, pastaj Harku i Triumfit, Parku Herăstrău dhe Muzeu i Fshatit. Në mbrëmje lagjja Floreasca ose një darkë me mici dhe birrë."
+areas:
+  - name: Qyteti i Vjetër dhe Universitate
+    text: Në qendër të gjithçkaje, afër metrosë dhe autobusit të aeroportit, por e zhurmshme natën.
+  - name: Piața Romană dhe Calea Victoriei
+    text: Më e qetë, me hotele dhe apartamente të mira, në këmbë nga Ateneu dhe Qyteti i Vjetër.
+  - name: Gara de Nord
+    text: "Më e lirë dhe praktike për trenin e aeroportit dhe ata për Brașov e Sinaia, por më pak e këndshme në mbrëmje."
+food:
+  - name: Sarmale
+    text: Dolma me lakër turshi dhe mish të grirë, me mămăligă (polentë) dhe salcë kosi.
+  - name: Mici
+    text: Qofte të zgjatura në skarë, me mustardë dhe birrë. Një porcion kushton rreth 20-30 lei.
+  - name: Ciorbă
+    text: Supat e tharta rumune; ciorbă de burtă, supa me plëndës, është ilaçi klasik pas një nate të gjatë.
+  - name: Papanași
+    text: Petulla me gjizë, të skuqura, me salcë kosi dhe reçel qershie. Ëmbëlsira më e njohur e vendit.
+airports:
+  OTP: >-
+    Aeroporti Henri Coandă në Otopeni është rreth 17 km në veri të qendrës. Treni të çon në Gara de
+    Nord për rreth 20-25 minuta, me biletë rreth 7 lei (rreth €1.5); nis çdo 40-60 minuta. Autobusi
+    ekspres 100 (dikur 783) punon 24 orë dhe shkon deri në Piața Unirii përmes Piața Victoriei dhe
+    Piața Romană, për rreth 45-60 minuta; bileta rreth 5 lei (€1), me kartë bankare pa kontakt në
+    validator. Taksinë porosite në ekranet me prekje në sallën e mbërritjeve: rreth 80-120 lei
+    (€16-24) deri në qendër.
+transport: >-
+  Metroja ka 5 linja dhe shmang trafikun e rëndë. Një udhëtim kushton rreth 5 lei (€1), dhe në
+  metro, autobusë e tramvaje mund të paguash me kartë bankare pa kontakt. Bolt dhe Uber janë të
+  lirë: një xhiro brenda qendrës kushton rreth 20-35 lei (€4-7).
+daytrips:
+  - name: Brașov dhe Bran
+    text: >-
+      Qyteti mesjetar në Karpate, rreth 2.5-3 orë me tren. Nga Brașov një autobus prej rreth 45
+      minutash të çon te Kështjella e Branit, e lidhur me legjendën e Drakulës. Si ditë e vetme është
+      e gjatë: më mirë fli një natë në Brașov.
+  - name: Sinaia dhe Peleș
+    text: >-
+      Kështjella Peleș, rezidenca verore e mbretërve të Rumanisë, rreth 1.5-2 orë me tren.
+      Zakonisht është e mbyllur të hënën.
+  - name: Snagov
+    text: >-
+      Manastiri në një ishull të liqenit Snagov, ku sipas traditës është varrosur Vlad Tepesh,
+      rreth 40 km në veri. Transporti publik është i dobët: më mirë me makinë ose Bolt.
+budget: >-
+  Një kafe kushton rreth 12-18 lei (€2.5-3.5), një birrë në lokal 15-20 lei (€3-4), një drekë në
+  restorant rreth 50-80 lei (€10-16). Pa fluturimin dhe fjetjen, llogarit €35-55 në ditë. Një
+  shtrat në hostel nis nga rreth €15-20, një dhomë dyshe në hotel të thjeshtë rreth €50-80.
+when: >-
+  Prilli-qershori dhe shtatori-tetori. Vera është e nxehtë, shpesh mbi 30 gradë, dimri i ftohtë.
+  Nga fundi i nëntorit, para Pallatit të Parlamentit zakonisht hapet tregu i Krishtlindjeve.
+tips:
+  - "Paguaj në lei, me kartë pothuajse kudo. Kur pajisja pyet, zgjidh pagesën në RON, jo në euro."
+  - "Në aeroport mos prano oferta taksie nga njerëz në sallë: përdor ekranet zyrtare, Bolt ose Uber."
+  - "Therme București, ndër qendrat termale më të mëdha në Evropë, është afër aeroportit: mund ta lidhësh me ditën e fluturimit."
+faq:
+  - q: "Tren, autobus apo taksi nga aeroporti?"
+    a: "Treni është më i shpejti, rreth 7 lei deri në Gara de Nord. Autobusi 100 të lë në qendër për rreth 5 lei, edhe natën. Taksia kushton rreth 80-120 lei."
+  - q: "A flitet anglisht në Bucharest?"
+    a: "Po, sidomos nga të rinjtë dhe në lokale. Rumanishtja është gjuhë latine, ndaj kush flet italisht kupton shpesh mbishkrimet dhe menytë."

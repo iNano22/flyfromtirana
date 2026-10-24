@@ -1,0 +1,79 @@
+city: Geneva
+slug: geneva
+tagline: The lake, the Jet d'Eau and the Alps on the horizon
+intro: >-
+  Geneva lies at the southern tip of Lake Léman, with the Alps and Mont Blanc on the horizon. It is
+  the city of the UN, the Red Cross and the banks, but also a small city you can explore on foot. It
+  is one of the most expensive cities in the world, but public transport is free for tourists who
+  stay the night here.
+sights:
+  - name: Jet d'Eau
+    text: The fountain that symbolises the city, shooting water 140 metres up from the lake. You can see it for free from the promenade. It stops when there is a strong wind or frost.
+  - name: Vieille Ville and St Pierre Cathedral
+    text: The old town on the hill, with cobbled lanes, small squares and cafés. Entry to the cathedral is free; for the towers, with views over the lake and the rooftops, you pay about 7 francs.
+  - name: Palais des Nations
+    text: The UN's European headquarters. Guided tours last about 1 hour and cost about 20 francs; book online and bring your passport. On the square in front stands Broken Chair, the giant chair with one broken leg.
+  - name: Jardin Anglais and the Flower Clock
+    text: The park by the lake, with the large clock made of flowers that changes with the seasons. The sightseeing boats on the lake also leave from here.
+  - name: Reformation Wall
+    text: In the Parc des Bastions, a stone wall about 100 metres long with statues of Calvin and the other reformers. 
+  - name: CERN
+    text: The physics laboratory where the World Wide Web was invented. The Science Gateway visitor centre is free, with interactive exhibitions; it takes about 25 minutes by tram 18 from Cornavin. It is usually closed on Mondays.
+airports:
+  GVA: >-
+    The airport is only about 4 km from the centre. In the baggage hall, before you go out, take a
+    free public transport ticket from the machine, valid for 80 minutes. With it the train takes you
+    to Cornavin station in about 7 minutes, leaving every 10-15 minutes; buses 5 and 10 go to the
+    centre in about 20-25 minutes. A taxi takes about 15 minutes and costs about 35-45 francs (about
+    €37-48).
+budget: >-
+  Geneva is one of the most expensive cities in the world. A coffee costs about 4.50-5.50 francs, a
+  sandwich or kebab 10-15 francs, a dish in a restaurant 25-40 francs. A hostel bed costs about
+  50-70 francs, a double room in a simple hotel from about 150-220 francs a night. 1 franc is worth
+  a little more than 1 euro (about €1.07).
+when: >-
+  May to September is the best time: you can swim in the lake and the evenings are long. In
+  December the city celebrates the Escalade, with a costumed procession and chocolate cauldrons.
+  Winter is cold and often foggy, but the ski slopes are about 1 hour away.
+tips:
+  - "Switzerland uses the franc (CHF), not the euro: pay by card, which is accepted everywhere."
+  - "Swiss sockets are different, but the thin two-pin plug of phone chargers fits without a problem. For thick plugs (Schuko) you need an adapter."
+  - "On Sundays most shops are closed; the supermarkets at Cornavin station and at the airport are open."
+itinerary:
+  - "The old town, St Pierre Cathedral with a climb up the towers, and the Reformation Wall in the Parc des Bastions. In the afternoon, the Jardin Anglais, the Jet d'Eau and a walk along the lake, and dinner in Pâquis in the evening."
+  - "The Palais des Nations in the morning (booked ahead) and Broken Chair. In the afternoon, CERN or the Red Cross Museum, then a swim or a coffee at the Bains des Pâquis. In the evening, Carouge."
+  - "Day trip: Lausanne and Montreux by train, or Chamonix for Mont Blanc. Otherwise, Annecy in France."
+areas:
+  - name: Pâquis
+    text: Near Cornavin station and the lake, with the cheapest hotels in the centre and restaurants from all over the world. Some streets are noisy at night.
+  - name: Vieille Ville and Eaux-Vives
+    text: The old town and the lakeside neighbourhood on the left bank, quiet, beautiful and expensive.
+  - name: Carouge
+    text: A small town with Italian architecture, about 15 minutes by tram from the centre, with cafés and small shops.
+food:
+  - name: Fondue and raclette
+    text: Melted cheese with bread or potatoes. A fondue in a restaurant costs about 30-35 francs per person.
+  - name: Filets de perche
+    text: Fillets of small lake fish, fried in butter and served with chips. Beware, the fish often comes not from the lake but from abroad.
+  - name: Supermarkets and chocolate
+    text: "Migros and Coop have ready meals for 8-12 francs, the locals' choice for lunch. You'll find Swiss chocolate there cheaper than in the tourist shops."
+transport: >-
+  The centre is walkable. Trams, buses, local trains and the yellow Mouettes boats that cross the
+  lake all use the same tickets: about 3 francs (about €3.20) for 1 hour and about 10 francs (about
+  €11) for the whole day. If you stay in a hotel, hostel or campsite in Geneva, you get the Geneva
+  Transport Card for free, with unlimited transport for your whole stay. Ask for it at reception if
+  they don't give it to you.
+daytrips:
+  - name: Lausanne
+    text: The city of the Olympic Committee, with a Gothic cathedral on the hill and the Olympic Museum by the lake, about 35-50 minutes by train.
+  - name: Montreux and Chillon Castle
+    text: The lakeside promenade with palm trees and the medieval castle on the water, about 1 hour 10 minutes by direct train. Entry to the castle costs about 15 francs.
+  - name: Annecy
+    text: A French town with canals and a lake of blue water, about 45-60 minutes by bus.
+  - name: Chamonix
+    text: The town below Mont Blanc, about 1 hour 15 minutes by bus. The Aiguille du Midi cable car (3842 metres) costs about €80 return; only go on a clear day.
+faq:
+  - q: "Can I pay in euros in Geneva?"
+    a: "Often yes, especially in hotels and tourist shops, but you get your change in francs and at a poor rate. It is better to pay by card or withdraw a few francs from an ATM."
+  - q: "How much money do you need per day in Geneva?"
+    a: "Excluding the flight and accommodation, about 80-120 francs (about €85-130) a day. You save with food from supermarkets, the free transport card and the free things: the lake, the old town and CERN."

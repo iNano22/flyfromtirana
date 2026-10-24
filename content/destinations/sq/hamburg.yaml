@@ -1,0 +1,109 @@
+city: Hamburg
+slug: hamburg
+tagline: Porti, kanalet dhe Elbphilharmonie
+intro: >-
+  Hamburg është qyteti i dytë i Gjermanisë dhe porti i saj më i madh: magazina prej tulle mbi
+  kanale, anije që hyjnë nga lumi Elbë dhe dy liqene në mes të qytetit. Thuhet se ka më shumë ura
+  se Venice dhe Amsterdam bashkë. Dy-tri ditë mjaftojnë për qytetin, me një ditë më shumë për
+  Lübeck ose bregun e Detit Baltik.
+sights:
+  - name: Elbphilharmonie
+    text: >-
+      Salla e koncerteve e ndërtuar mbi një magazinë të vjetër porti, e hapur në vitin 2017. Plaza,
+      tarraca panoramike në 37 metra, vizitohet falas me biletë që merret në hyrje.
+  - name: Speicherstadt
+    text: >-
+      Lagjja e magazinave prej tulle të kuqe mbi kanale, e ndërtuar që nga viti 1883 mbi shtylla
+      druri. Bashkë me Kontorhausviertel është në listën e UNESCO-s që nga viti 2015. Është më e
+      bukur në mbrëmje, kur ndizen dritat.
+  - name: Miniatur Wunderland
+    text: >-
+      Hekurudha në miniaturë më e madhe në botë, brenda Speicherstadt, me një aeroport të vogël ku
+      ngrihen e ulen avionë. Bileta kushton rreth €20-25; rezervo orarin online, se radhët janë të
+      gjata.
+  - name: Landungsbrücken dhe porti
+    text: >-
+      Kalatat e anijeve në St. Pauli, nga nisen turet e portit (rreth 1 orë, rreth €20-25). Pranë
+      është Tuneli i Vjetër i Elbës, i vitit 1911, që përshkohet falas në këmbë nën lumë.
+  - name: St. Pauli dhe Reeperbahn
+    text: >-
+      Lagjja e jetës së natës, me bare, teatro dhe klube, ku The Beatles luajtën në fillimet e tyre.
+      Të dielave herët në mëngjes, buzë lumit mbahet Fischmarkt, tregu i peshkut.
+  - name: Rathaus dhe Alster
+    text: >-
+      Bashkia neo-rilindase me 647 dhoma dhe, pas saj, liqenet Binnenalster dhe Außenalster, me
+      shëtitoren Jungfernstieg.
+  - name: Kisha St. Michaelis
+    text: >-
+      "Michel", simboli i qytetit. Kulla ka një platformë panoramike në rreth 106 metra (bileta
+      rreth €8), me pamje mbi portin.
+itinerary:
+  - "Rathaus, Jungfernstieg dhe një shëtitje buzë Alster, pastaj Kisha St. Michaelis. Pasdite Speicherstadt dhe HafenCity, me Plaza e Elbphilharmonie në perëndim të diellit."
+  - "Landungsbrücken dhe Tuneli i Vjetër i Elbës, pastaj trageti 62 deri te plazhi i Övelgönne. Në mbrëmje Sternschanze ose Reeperbahn në St. Pauli."
+  - "Nëse është e diel, Fischmarkt herët në mëngjes. Pastaj Miniatur Wunderland ose parku Planten un Blomen, ose një udhëtim ditor në Lübeck."
+areas:
+  - name: St. Georg
+    text: >-
+      Pranë Hauptbahnhof, zona më praktike për trenin e aeroportit, me hotelet më të lira dhe rrugën
+      Lange Reihe plot kafene. Rrugët ngjitur me stacionin janë pak të rrëmujshme natën.
+  - name: Altstadt dhe Neustadt
+    text: Rreth Rathaus dhe Alster, me gjithçka në këmbë, por me çmimet më të larta.
+  - name: St. Pauli dhe Sternschanze
+    text: Lagjet e jetës së natës dhe të bareve alternative, të zhurmshme në fundjavë.
+  - name: Altona dhe Ottensen
+    text: Më të qeta, me kafene dhe dyqane të vogla, pranë lumit dhe plazhit të Övelgönne.
+food:
+  - name: Fischbrötchen
+    text: Panin me harengë, salmon ose karkaleca, ushqimi i rrugës së portit, rreth €4-7.
+  - name: Franzbrötchen
+    text: Pastë e shtypur me kanellë dhe sheqer, për mëngjes me kafe.
+  - name: Labskaus
+    text: >-
+      Pjata e detarëve: mish i konservuar i shtypur me patate dhe panxhar, me vezë sipër dhe harengë
+      anash.
+  - name: Pannfisch
+    text: Fileto peshku të skuqura në tigan, me patate dhe salcë mustarde.
+airports:
+  HAM: >-
+    Aeroporti është rreth 9 km në veri të qendrës. Treni S-Bahn S1 niset nga stacioni poshtë
+    terminaleve çdo 10 minuta dhe arrin në Hauptbahnhof për rreth 25 minuta. Bileta e vetme për
+    qytetin kushton rreth €4 dhe blihet para hipjes, në automat ose në aplikacionin e HVV-së.
+    Taksia kushton rreth €30-40 dhe bën 20-30 minuta.
+transport: >-
+  U-Bahn, S-Bahn, autobusët dhe tragetet e portit punojnë me të njëjtën biletë të HVV-së. Bileta
+  ditore kushton rreth €8-9 dhe ia vlen nga udhëtimi i tretë; ajo që vlen pas orës 9:00 është më
+  e lirë. Hamburg Card (nga rreth €12 për 1 ditë) shton zbritje në muze dhe ture. Qendra
+  përshkohet mirë në këmbë ose me biçikletat e qytetit StadtRAD.
+daytrips:
+  - name: Lübeck
+    text: >-
+      Qyteti i vjetër i Hanzës, me portën Holstentor dhe marzapanin e Niederegger, rreth 45 minuta me
+      tren rajonal.
+  - name: Travemünde dhe Deti Baltik
+    text: >-
+      Plazhi më i afërt i Detit Baltik, rreth 1-1.5 orë me tren nëpërmjet Lübeck. Në verë ia vlen
+      edhe Timmendorfer Strand.
+  - name: Lüneburg
+    text: Qyteti i vogël i kripës, me shtëpi të pjerrëta prej tulle, rreth 30-50 minuta me tren.
+  - name: Altes Land
+    text: >-
+      Pemëtoret e mollëve përgjatë Elbës, që lulëzojnë në prill-maj, rreth 1 orë me traget dhe
+      autobus nga Landungsbrücken.
+budget: >-
+  Një Fischbrötchen kushton €4-7, një birrë €4.50-6, një pjatë në restorant €15-22, një biletë e
+  vetme në qytet rreth €4.
+when: >-
+  Maji-shtatori, kur ditët janë të gjata dhe jeta zhvendoset buzë ujit. Shiu bie gjatë gjithë
+  vitit, prandaj merr me vete një xhaketë shiu. Në maj qyteti feston Hafengeburtstag,
+  ditëlindjen e portit, ndërsa në dhjetor ka tregje Krishtlindjesh.
+tips:
+  - "Trageti 62 nga Landungsbrücken për në Finkenwerder është një tur i lirë i portit: mjafton bileta e zakonshme e HVV-së."
+  - "Bileta falas për Plaza e Elbphilharmonie merret në hyrje; në fundjavë rezervoje online (rreth €3) për të shmangur radhën."
+  - "Dyqanet dhe supermarketet janë të mbyllura të dielave. Shishet dhe kanaçet kanë depozitë (Pfand) deri në €0.25, që ta kthejnë në supermarket."
+faq:
+  - q: "A mund ta vizitoj Elbphilharmonie pa shkuar në koncert?"
+    a: "Po. Plaza, tarraca që rrethon ndërtesën në 37 metra, është e hapur çdo ditë dhe hyrja është falas. Biletat për koncerte nisin nga rreth €15-25, por shiten shpejt: shiko kalendarin javë përpara."
+  - q: "Kur mbahet Fischmarkt?"
+    a: "Çdo të diel herët në mëngjes: rreth 5:00-9:30 nga prilli në tetor dhe rreth 7:00-9:30 në dimër. Shumë vijnë drejt e pas një nate në Reeperbahn."
+  - q: "Sa para duhen në ditë në Hamburg?"
+    a: "Pa fluturimin dhe fjetjen, €50-75 në ditë. Hotelet në Hamburg janë ndër më të shtrenjtat në Gjermani, ndërsa ushqimi i rrugës dhe tragetet e portit e mbajnë ditën të lirë."

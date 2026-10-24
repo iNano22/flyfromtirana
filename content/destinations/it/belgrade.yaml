@@ -1,0 +1,91 @@
+city: Belgrade
+name: Belgrado
+slug: belgrade
+tagline: Kalemegdan, kafane e vita notturna sui fiumi
+intro: >-
+  Belgrado è la capitale della Serbia, dove la Sava si getta nel Danubio. È una città vivace e dai
+  prezzi ragionevoli, con kafane con musica dal vivo e locali sull'acqua. La moneta è il dinaro serbo
+  (RSD): €1 vale circa 117 dinari. Due o tre giorni bastano per il centro, la fortezza e Zemun.
+sights:
+  - name: Kalemegdan
+    text: >-
+      La fortezza sopra la confluenza della Sava con il Danubio, oggi un grande parco a ingresso
+      gratuito. Guarda il tramonto dalle mura vicino alla statua del Pobednik (il Vincitore).
+  - name: Knez Mihailova
+    text: La via pedonale principale, da Kalemegdan a piazza della Repubblica, con palazzi del XIX secolo, negozi e caffè.
+  - name: Skadarlija
+    text: La via acciottolata dei bohémien, con vecchie kafane dove i musicisti suonano tra i tavoli. Ideale per cena, ma un po' più cara.
+  - name: Tempio di San Sava
+    text: Una delle chiese ortodosse più grandi al mondo, nel quartiere di Vračar. L'ingresso è gratuito; non perdere la cripta con i mosaici dorati.
+  - name: Zemun
+    text: Un tempo città a sé, con viuzze tranquille, la Torre Gardoš con vista sul Danubio e ristoranti di pesce lungo il fiume.
+  - name: Museo Nikola Tesla
+    text: Un piccolo museo dedicato all'inventore, con dimostrazioni dei suoi esperimenti. Si visita con guida, con un biglietto di circa 1000 dinari (circa €8,5).
+itinerary:
+  - "Kalemegdan al mattino, poi Knez Mihailova fino a piazza della Repubblica. La sera, cena con musica dal vivo a Skadarlija."
+  - "Il Tempio di San Sava e il Museo Nikola Tesla. Nel pomeriggio Ada Ciganlija, il lago con le spiagge sulla Sava, oppure una passeggiata lungo il fiume. La sera Dorćol o un locale sull'acqua."
+  - "Zemun: a piedi lungo il Danubio da Novi Beograd (circa 1 ora) o in autobus, la Torre Gardoš e un pranzo di pesce. In alternativa, una giornata a Novi Sad e Sremski Karlovci."
+areas:
+  - name: Stari Grad
+    text: "La città vecchia, intorno a Knez Mihailova e Skadarlija: tutto a piedi, con i prezzi più alti."
+  - name: Dorćol
+    text: Il quartiere antico sotto la fortezza verso il Danubio, con bar, caffè e appartamenti a buon prezzo.
+  - name: Vračar
+    text: Un quartiere residenziale più tranquillo intorno al Tempio di San Sava, vicino a piazza Slavija, dove ferma il minibus A1.
+  - name: Zemun
+    text: A circa 20-30 minuti di autobus dal centro, tranquillo, sul Danubio e con prezzi più bassi.
+food:
+  - name: Ćevapi e pljeskavica
+    text: >-
+      Spiedini di carne alla griglia e un grande burger di carne macinata, con cipolla, kajmak e pane
+      lepinja. Spesso contengono anche maiale: chiedi se per te è importante.
+  - name: Karađorđeva šnicla
+    text: Una cotoletta arrotolata intorno al kajmak, impanata e fritta, con salsa tartara. Un piatto quasi per due.
+  - name: Burek con yogurt
+    text: "La colazione classica: burek con carne, formaggio o spinaci dal forno (pekara), con un bicchiere di yogurt."
+  - name: Kajmak, ajvar e rakija
+    text: >-
+      Il kajmak (una crema di latte salata) e l'ajvar (una salsa di peperoni arrostiti) accompagnano
+      quasi ogni pasto. Dopo cena si assaggia la rakija di prugne, la šljivovica.
+airports:
+  BEG: >-
+    L'aeroporto Nikola Tesla è a circa 18 km dal centro. Il minibus A1 ti porta a piazza Slavija in
+    circa 30-40 minuti; parte all'incirca ogni 20 minuti e il biglietto, circa 400-500 dinari (circa
+    €3,5-4,5), si paga all'autista. Più economico: l'autobus urbano 72 va fino a Zeleni Venac, vicino a
+    Knez Mihailova, in circa 45-60 minuti ed è gratuito, come tutto il trasporto pubblico della città.
+    Per il taxi, prendi un buono (taxi voucher) allo sportello dei taxi nella sala arrivi: il prezzo
+    è fisso a seconda della zona, circa 2000-2800 dinari (circa €17-24) per il centro, per circa
+    20-30 minuti. Non accettare offerte dagli autisti che ti avvicinano dentro la sala.
+transport: >-
+  Il centro si gira a piedi, anche se ci sono alcune salite. Non c'è la metro: ci si muove con
+  autobus, tram e filobus. Dal 1 gennaio 2025 il trasporto pubblico della città è gratuito per tutti,
+  senza biglietto (verifica che valga ancora); il minibus A1 non rientra in questo sistema. I taxi
+  costano poco, circa €5-8 in centro: usa un'app come CarGo invece di fermare le auto per strada.
+daytrips:
+  - name: Novi Sad
+    text: >-
+      La seconda città della Serbia, con un centro austro-ungarico e la Fortezza di Petrovaradin sopra
+      il Danubio. Circa 40 minuti con il treno veloce Soko dalla stazione Beograd Centar, oppure 1-1,5
+      ore in autobus.
+  - name: Sremski Karlovci
+    text: Una cittadina barocca con cantine di vino, a circa 10 km da Novi Sad. Assaggia il bermet, il vino dolce locale.
+  - name: Smederevo
+    text: Una grande fortezza medievale sul Danubio, a circa 1 ora di autobus.
+budget: >-
+  Un caffè costa circa 250-350 dinari (circa €2-3), una pljeskavica circa 500-700 dinari (circa
+  €4-6), una cena in kafana circa 1500-2500 dinari (circa €13-21). Volo e alloggio esclusi, calcola
+  €35-55 al giorno; un letto in ostello parte da circa €15, una camera doppia in un hotel semplice da
+  circa €50-70.
+when: >-
+  Aprile-giugno e settembre-ottobre hanno il clima migliore. Luglio e agosto sono molto caldi (spesso
+  sopra i 35 gradi), ma la vita si sposta lungo i fiumi e ad Ada Ciganlija. L'inverno è freddo, con
+  il forte vento košava, ma gli hotel costano meno.
+tips:
+  - "Paga in dinari. La carta è accettata quasi ovunque; quando il bancomat o il POS lo chiede, scegli di pagare in RSD, non in euro. Gli uffici di cambio (menjačnica) in città hanno tassi migliori di quelli in aeroporto."
+  - "Le scritte sono spesso in cirillico, anche se l'alfabeto latino è molto diffuso. Impara qualche lettera per i nomi delle fermate."
+  - "In molti caffè e kafane si fuma ancora al chiuso: se ti dà fastidio, chiedi un tavolo all'aperto."
+faq:
+  - q: "Posso pagare in euro a Belgrado?"
+    a: "Alcuni hotel e negozi turistici li accettano, ma con un cambio sfavorevole. Preleva dinari dal bancomat di una banca o paga con la carta."
+  - q: "Quanto si spende al giorno a Belgrado?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno. Cibo e trasporti costano poco, mentre gli hotel in centro sono rincarati negli ultimi anni: prenota presto per i fine settimana."

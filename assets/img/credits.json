@@ -938,5 +938,165 @@
   "source_url": "https://unsplash.com/photos/S56zN8cV5fk",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/man.webp",
+  "slot": "MAN",
+  "title": "Castlefield canals, Manchester",
+  "creator": "@chriscurry92",
+  "creator_url": "https://unsplash.com/@chriscurry92",
+  "source_url": "https://unsplash.com/photos/8FXfFLJ0n0k",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/dxb.webp",
+  "slot": "DXB",
+  "title": "Burj Khalifa and Downtown Dubai",
+  "creator": "@ahmedaldaie",
+  "creator_url": "https://unsplash.com/@ahmedaldaie",
+  "source_url": "https://unsplash.com/photos/j-nRfGUHswQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/gva.webp",
+  "slot": "GVA",
+  "title": "Jet d'Eau, Geneva",
+  "creator": "@jeton7",
+  "creator_url": "https://unsplash.com/@jeton7",
+  "source_url": "https://unsplash.com/photos/OaNY2v_rXig",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ham.webp",
+  "slot": "HAM",
+  "title": "Speicherstadt, Hamburg",
+  "creator": "@danielsessler",
+  "creator_url": "https://unsplash.com/@danielsessler",
+  "source_url": "https://unsplash.com/photos/Med-4gJPP-A",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/lys.webp",
+  "slot": "LYS",
+  "title": "Saint-Georges, Vieux Lyon",
+  "creator": "@jonasvandermeiren",
+  "creator_url": "https://unsplash.com/@jonasvandermeiren",
+  "source_url": "https://unsplash.com/photos/RMiiCAC7ZK0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/agp.webp",
+  "slot": "AGP",
+  "title": "Málaga Cathedral",
+  "creator": "@jesperados",
+  "creator_url": "https://unsplash.com/@jesperados",
+  "source_url": "https://unsplash.com/photos/yDAJqn-D4-c",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/beg.webp",
+  "slot": "BEG",
+  "title": "Temple of Saint Sava, Belgrade",
+  "creator": "@vlajic_92",
+  "creator_url": "https://unsplash.com/@vlajic_92",
+  "source_url": "https://unsplash.com/photos/oBCYNm4ukrk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/otp.webp",
+  "slot": "OTP",
+  "title": "Arcul de Triumf, Bucharest",
+  "creator": "@nicolebaster",
+  "creator_url": "https://unsplash.com/@nicolebaster",
+  "source_url": "https://unsplash.com/photos/jpKHStpvT1E",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/manchester.webp",
+  "slot": "guide-manchester",
+  "title": "City centre, Manchester",
+  "creator": "@mrwilliamo",
+  "creator_url": "https://unsplash.com/@mrwilliamo",
+  "source_url": "https://unsplash.com/photos/1jZbU_XuyvU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/dubai.webp",
+  "slot": "guide-dubai",
+  "title": "Downtown Dubai skyline",
+  "creator": "@david__r",
+  "creator_url": "https://unsplash.com/@david__r",
+  "source_url": "https://unsplash.com/photos/Fr6zexbmjmc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/geneva.webp",
+  "slot": "guide-geneva",
+  "title": "Lakefront, Geneva",
+  "creator": "@gavin_leee",
+  "creator_url": "https://unsplash.com/@gavin_leee",
+  "source_url": "https://unsplash.com/photos/DXcg-ALQWtQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/hamburg.webp",
+  "slot": "guide-hamburg",
+  "title": "Elbphilharmonie, Hamburg",
+  "creator": "@jonastebbe",
+  "creator_url": "https://unsplash.com/@jonastebbe",
+  "source_url": "https://unsplash.com/photos/j22K61_1peg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/lyon.webp",
+  "slot": "guide-lyon",
+  "title": "The Saône and Fourvière, Lyon",
+  "creator": "@godefroyboutet",
+  "creator_url": "https://unsplash.com/@godefroyboutet",
+  "source_url": "https://unsplash.com/photos/7l8WwAp414U",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/malaga.webp",
+  "slot": "guide-malaga",
+  "title": "Port of Málaga at sunset",
+  "creator": "@willianjusten",
+  "creator_url": "https://unsplash.com/@willianjusten",
+  "source_url": "https://unsplash.com/photos/7vKP5BAm8wg",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/belgrade.webp",
+  "slot": "guide-belgrade",
+  "title": "The Victor monument over the Sava and Danube, Belgrade",
+  "creator": "@dimitrije_milenkovic",
+  "creator_url": "https://unsplash.com/@dimitrije_milenkovic",
+  "source_url": "https://unsplash.com/photos/YqkQBgxll5w",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/bucharest.webp",
+  "slot": "guide-bucharest",
+  "title": "Palace of the Parliament, Bucharest",
+  "creator": "@winstontjia",
+  "creator_url": "https://unsplash.com/@winstontjia",
+  "source_url": "https://unsplash.com/photos/2D9qjPHazVk",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

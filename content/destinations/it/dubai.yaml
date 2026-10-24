@@ -1,0 +1,81 @@
+city: Dubai
+slug: dubai
+tagline: Grattacieli, souk e spiagge ai margini del deserto
+intro: >-
+  Dubai è la città dei record: l'edificio più alto del mondo, centri commerciali giganteschi e
+  spiagge di sabbia bianca ai margini del deserto. Dietro lo sfarzo c'è anche una Dubai antica, con i
+  souk delle spezie e le barche di legno sul Creek. Quattro giorni bastano per la città e un'uscita
+  nel deserto. Non è economica, ma con la metro, il cibo indiano e le spiagge pubbliche gratuite
+  risparmi molto.
+sights:
+  - name: Burj Khalifa
+    text: L'edificio più alto del mondo, 828 metri. La piattaforma At the Top (piani 124-125) costa circa 170-200 AED (€40-47) di giorno, di più al tramonto. Compra il biglietto online.
+  - name: Dubai Mall e Dubai Fountain
+    text: "Uno dei centri commerciali più grandi del mondo, con un acquario. Gli spettacoli della fontana con acqua, luci e musica sono gratuiti, ogni 30 minuti da circa le 18:00."
+  - name: Al Fahidi e Dubai Creek
+    text: Il quartiere storico con case di pietra e corallo e torri del vento. La traversata del Creek in abra, la tradizionale barca di legno, costa circa 1 AED.
+  - name: Souk dell'Oro e Souk delle Spezie
+    text: "A Deira, oltre il Creek: vetrine piene d'oro, sacchi di zafferano, cardamomo e datteri. Contrattare è d'obbligo."
+  - name: Museum of the Future
+    text: L'edificio ovale ricoperto di scritte arabe. Il biglietto costa circa 149 AED (€35), con una fascia oraria prenotata online.
+  - name: Dubai Marina e JBR
+    text: Un canale tra i grattacieli, una passeggiata sul lungomare e la spiaggia pubblica gratuita di JBR. La sera è la zona più vivace della città.
+airports:
+  DXB: >-
+    La Linea Rossa (Red Line) della metro parte dai Terminal 1 e 3 e arriva a Burj Khalifa/Dubai Mall
+    in circa 30 minuti, a Dubai Marina in circa 1 ora, per circa 5-8 AED (€1,20-1,90). In stazione
+    compra la carta Nol Silver (25 AED, con 19 AED di credito); di solito sono ammessi solo 2 bagagli a
+    persona. Alcuni voli flydubai arrivano al Terminal 2, senza metro: da lì prendi gli autobus RTA,
+    che viaggiano anche di notte, o un taxi. Il taxi parte da circa 25 AED e costa circa 70-90 AED
+    (€16-21) fino a Downtown, 120-150 AED (€28-35) fino alla Marina.
+budget: >-
+  Un euro vale circa 4,3 AED. Uno shawarma costa 10-15 AED (€2,50-3,50), un pasto in un ristorante
+  indiano 25-40 AED (€6-9), una birra al bar 40-60 AED (€9-14). Un letto in ostello parte da circa
+  60-100 AED (€14-23), un hotel semplice a Deira circa 250-400 AED (€58-93) a notte, più una tassa
+  turistica di circa 7-20 AED a notte.
+when: >-
+  Da novembre a marzo è la stagione migliore, con 20-30°C. Da giugno a settembre si superano i 40°C
+  con umidità alta: all'aperto si sta solo la mattina presto o dopo il tramonto, ma gli hotel costano
+  molto meno. Il Ramadan cambia ogni anno (nel 2027 è previsto tra febbraio e marzo circa): di giorno
+  la città è più tranquilla.
+tips:
+  - "Nei centri commerciali e nei luoghi pubblici copri spalle e ginocchia; il costume da bagno solo in spiaggia e in piscina. Nelle moschee le donne coprono testa e braccia."
+  - "Durante il Ramadan, di giorno non mangiare, non bere e non fumare in pubblico, per rispetto di chi digiuna."
+  - "L'alcol si serve solo nei locali con licenza, soprattutto negli hotel, ed è caro. Essere ubriachi in pubblico è punito. Non fotografare le persone senza permesso."
+itinerary:
+  - "Dubai antica: Al Fahidi, la traversata in abra, poi il Souk delle Spezie e il Souk dell'Oro a Deira. Cena indiana a Karama."
+  - "Il Museum of the Future al mattino, il Dubai Mall nel pomeriggio per sfuggire al caldo e il Burj Khalifa al tramonto, con gli spettacoli della Dubai Fountain."
+  - "Spiaggia a Kite Beach con vista sul Burj Al Arab, poi il Souk Madinat Jumeirah. La sera Dubai Marina e JBR."
+  - "Un safari nel deserto nel pomeriggio, o una giornata ad Abu Dhabi."
+areas:
+  - name: Deira e Bur Dubai
+    text: "La Dubai antica, vicino all'aeroporto e alla metro: hotel e cibo più economici, ma meno sfarzo."
+  - name: Downtown e Business Bay
+    text: Vicino al Burj Khalifa e al Dubai Mall, con hotel moderni e prezzi alti.
+  - name: Dubai Marina e JBR
+    text: Spiaggia, lungomare e ristoranti, ma a circa 1 ora di metro dall'aeroporto.
+food:
+  - name: Shawarma
+    text: In ogni quartiere, circa 10-15 AED; i migliori sono spesso nei locali semplici di Deira.
+  - name: Biryani e cucina indiana
+    text: La maggior parte degli abitanti viene dall'Asia meridionale, quindi a Karama e Bur Dubai si mangia bene spendendo poco.
+  - name: Luqaimat e tè karak
+    text: Palline di pasta fritta con sciroppo di datteri, con un tè dolce speziato al latte.
+transport: >-
+  La metro senza conducente, con la Linea Rossa e la Verde, collega l'aeroporto, Deira, Downtown e la
+  Marina; di solito funziona dalle 5:00 fino a dopo mezzanotte. Si paga con la carta Nol, valida anche
+  sugli autobus, circa 3-8 AED a corsa. Una carrozza è riservata a donne e bambini, e a bordo è
+  vietato mangiare o bere. I taxi hanno il tassametro; funzionano anche Careem e Uber. Le distanze
+  sono grandi e d'estate camminare all'aperto è sfiancante.
+daytrips:
+  - name: Abu Dhabi
+    text: Circa 2 ore con l'autobus E100 o E101 (circa 25-35 AED). La Grande Moschea Sheikh Zayed si visita gratis con prenotazione online, con braccia e gambe coperte.
+  - name: Safari nel deserto
+    text: Un giro in fuoristrada sulle dune, il tramonto e la cena in un campo, circa 150-300 AED (€35-70) con ritiro in hotel.
+  - name: Sharjah
+    text: "L'emirato vicino, con il Museo della Civiltà Islamica, a 30-60 minuti di autobus a seconda del traffico. Le regole sono più severe: l'alcol è del tutto vietato."
+faq:
+  - q: "Quanto si spende al giorno a Dubai?"
+    a: "Volo e alloggio esclusi, €50-90 al giorno se mangi nei locali indiani e ti sposti in metro. Il Burj Khalifa, un safari e l'alcol fanno salire il conto in fretta."
+  - q: "Metro o taxi?"
+    a: "La metro è la più economica ed evita il traffico. Dal Terminal 2, a tarda notte o per 3-4 persone con le valigie, il taxi spesso conviene."

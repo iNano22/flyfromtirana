@@ -338,6 +338,14 @@ links:
       Bratislava:   https://www.tiqets.com/en/bratislava-attractions-c78187/
       Dublin:       https://www.tiqets.com/en/dublin-attractions-c68616/
       Edinburgh:    https://www.tiqets.com/en/edinburgh-attractions-c21/
+      Manchester:   https://www.tiqets.com/en/manchester-attractions-c67441/
+      Dubai:        https://www.tiqets.com/en/dubai-attractions-c60005/
+      Geneva:       https://www.tiqets.com/en/geneva-attractions-c62678/
+      Hamburg:      https://www.tiqets.com/en/hamburg-attractions-c64886/
+      Lyon:         https://www.tiqets.com/en/lyon-attractions-c66838/
+      Málaga:       https://www.tiqets.com/en/malaga-attractions-c32/
+      Belgrade:     https://www.tiqets.com/en/belgrade-attractions-c76813/
+      Bucharest:    https://www.tiqets.com/en/bucharest-attractions-c76753/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -374,6 +382,14 @@ links:
       Bratislava:   https://www.getyourguide.com/bratislava-l765/
       Dublin:       https://www.getyourguide.com/dublin-l31/
       Edinburgh:    https://www.getyourguide.com/edinburgh-l44/
+      Manchester:   https://www.getyourguide.com/manchester-l1128/
+      Dubai:        https://www.getyourguide.com/dubai-l173/
+      Geneva:       https://www.getyourguide.com/geneva-l54/
+      Hamburg:      https://www.getyourguide.com/hamburg-l23/
+      Lyon:         https://www.getyourguide.com/lyon-l295/
+      Málaga:       https://www.getyourguide.com/malaga-l402/
+      Belgrade:     https://www.getyourguide.com/belgrade-l1688/
+      Bucharest:    https://www.getyourguide.com/bucharest-l111/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -410,6 +426,14 @@ links:
       Bratislava:   https://www.welcomepickups.com/bratislava/
       Dublin:       https://www.welcomepickups.com/dublin/
       Edinburgh:    https://www.welcomepickups.com/edinburgh/
+      Manchester:   https://www.welcomepickups.com/manchester/
+      Dubai:        https://www.welcomepickups.com/dubai/
+      Geneva:       https://www.welcomepickups.com/geneva/
+      Hamburg:      https://www.welcomepickups.com/hamburg/
+      Lyon:         https://www.welcomepickups.com/lyon/
+      Málaga:       https://www.welcomepickups.com/malaga/
+      Belgrade:     https://www.welcomepickups.com/belgrade/
+      Bucharest:    https://www.welcomepickups.com/bucharest/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -446,6 +470,14 @@ links:
       Bratislava:   https://radicalstorage.com/luggage-storage/bratislava
       Dublin:       https://radicalstorage.com/luggage-storage/dublin
       Edinburgh:    https://radicalstorage.com/luggage-storage/edinburgh
+      Manchester:   https://radicalstorage.com/luggage-storage/manchester
+      Dubai:        https://radicalstorage.com/luggage-storage/dubai
+      Geneva:       https://radicalstorage.com/luggage-storage/geneva
+      Hamburg:      https://radicalstorage.com/luggage-storage/hamburg
+      Lyon:         https://radicalstorage.com/luggage-storage/lyon
+      Málaga:       https://radicalstorage.com/luggage-storage/malaga
+      Belgrade:     https://radicalstorage.com/luggage-storage/belgrade
+      Bucharest:    https://radicalstorage.com/luggage-storage/bucharest
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

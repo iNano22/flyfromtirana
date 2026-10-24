@@ -1,0 +1,80 @@
+city: Geneva
+name: Ginevra
+slug: geneva
+tagline: Il lago, il Jet d'Eau e le Alpi all'orizzonte
+intro: >-
+  Ginevra si trova all'estremità meridionale del lago Lemano, con le Alpi e il Monte Bianco
+  all'orizzonte. È la città dell'ONU, della Croce Rossa e delle banche, ma anche una città piccola
+  che si gira a piedi. È tra le città più care al mondo, ma i trasporti sono gratuiti per i turisti
+  che dormono qui.
+sights:
+  - name: Jet d'Eau
+    text: La fontana simbolo della città, che lancia l'acqua a 140 metri d'altezza dal lago. Si vede gratis dal lungolago. Si ferma quando c'è vento forte o gelo.
+  - name: Vieille Ville e Cattedrale di Saint-Pierre
+    text: La città vecchia sulla collina, con viuzze acciottolate, piccole piazze e caffè. L'ingresso in cattedrale è gratuito; per le torri, da cui vedi il lago e i tetti, paghi circa 7 franchi.
+  - name: Palais des Nations
+    text: La sede europea dell'ONU. Le visite guidate durano circa 1 ora e costano circa 20 franchi; prenota online e porta il passaporto. Nella piazza davanti c'è Broken Chair, la sedia gigante con una gamba rotta.
+  - name: Jardin Anglais e Orologio fiorito
+    text: Il parco sul lago, con il grande orologio fatto di fiori che cambia con le stagioni. Da qui partono anche i battelli turistici sul lago.
+  - name: Muro dei Riformatori
+    text: Nel Parc des Bastions, un muro di pietra lungo circa 100 metri con le statue di Calvino e degli altri riformatori. 
+  - name: CERN
+    text: Il laboratorio di fisica dove è nato il World Wide Web. Il centro visitatori Science Gateway è gratuito, con mostre interattive; si raggiunge in circa 25 minuti con il tram 18 da Cornavin. Di solito è chiuso il lunedì.
+airports:
+  GVA: >-
+    L'aeroporto è a soli 4 km circa dal centro. Nella sala ritiro bagagli, prima di uscire, prendi
+    dal distributore il biglietto gratuito dei trasporti pubblici, valido 80 minuti. Con questo il
+    treno ti porta alla stazione di Cornavin in circa 7 minuti, con partenze ogni 10-15 minuti; gli
+    autobus 5 e 10 vanno in centro in circa 20-25 minuti. Il taxi impiega circa 15 minuti e costa
+    circa 35-45 franchi (circa €37-48).
+budget: >-
+  Ginevra è tra le città più care al mondo. Un caffè costa circa 4,50-5,50 franchi, un panino o un
+  kebab 10-15 franchi, un piatto al ristorante 25-40 franchi. Un letto in ostello costa circa 50-70
+  franchi, una camera doppia in un hotel semplice da circa 150-220 franchi a notte. 1 franco vale
+  poco più di 1 euro (circa €1,07).
+when: >-
+  Da maggio a settembre è il periodo migliore: si nuota nel lago e le serate sono lunghe. A
+  dicembre la città festeggia l'Escalade, con un corteo in costume e pentoloni di cioccolato.
+  L'inverno è freddo e spesso nebbioso, ma le piste da sci sono a circa 1 ora.
+tips:
+  - "La Svizzera usa il franco (CHF), non l'euro: paga con la carta, accettata ovunque."
+  - "Le prese svizzere sono diverse, ma la spina sottile a due poli dei caricabatterie del telefono entra senza problemi. Per le spine grosse (Schuko) serve un adattatore."
+  - "La domenica quasi tutti i negozi sono chiusi; i supermercati della stazione di Cornavin e dell'aeroporto sono aperti."
+itinerary:
+  - "La città vecchia, la Cattedrale di Saint-Pierre con la salita sulle torri e il Muro dei Riformatori nel Parc des Bastions. Nel pomeriggio il Jardin Anglais, il Jet d'Eau e una passeggiata sul lago, la sera cena a Pâquis."
+  - "Il Palais des Nations al mattino (con prenotazione) e Broken Chair. Nel pomeriggio il CERN o il Museo della Croce Rossa, poi un bagno o un caffè ai Bains des Pâquis. La sera a Carouge."
+  - "Gita di un giorno: Losanna e Montreux in treno, oppure Chamonix per il Monte Bianco. In alternativa, Annecy in Francia."
+areas:
+  - name: Pâquis
+    text: Vicino alla stazione di Cornavin e al lago, con gli hotel più economici del centro e ristoranti da tutto il mondo. Alcune strade sono rumorose la notte.
+  - name: Vieille Ville ed Eaux-Vives
+    text: La città vecchia e il quartiere sul lago sulla riva sinistra, tranquilli, belli e cari.
+  - name: Carouge
+    text: Una piccola cittadina con architettura italiana, a circa 15 minuti di tram dal centro, con caffè e piccoli negozi.
+food:
+  - name: Fondue e raclette
+    text: Formaggio fuso con pane o patate. Una fondue al ristorante costa circa 30-35 franchi a persona.
+  - name: Filets de perche
+    text: Filetti di piccolo pesce di lago, fritti nel burro e serviti con patatine. Attenzione, spesso il pesce non viene dal lago ma dall'estero.
+  - name: Supermercati e cioccolato
+    text: "Migros e Coop hanno piatti pronti da 8-12 franchi, la scelta della gente del posto per pranzo. Lì trovi il cioccolato svizzero a meno che nei negozi turistici."
+transport: >-
+  Il centro si gira a piedi. Tram, autobus, treni locali e i battelli gialli Mouettes che
+  attraversano il lago usano gli stessi biglietti: circa 3 franchi (circa €3,20) per 1 ora e circa
+  10 franchi (circa €11) per tutto il giorno. Se dormi in un hotel, ostello o campeggio a Ginevra,
+  ricevi gratis la Geneva Transport Card, con trasporti illimitati per tutto il soggiorno. Chiedila
+  alla reception se non te la danno.
+daytrips:
+  - name: Losanna
+    text: La città del Comitato Olimpico, con una cattedrale gotica sulla collina e il Museo Olimpico sul lago, a circa 35-50 minuti di treno.
+  - name: Montreux e Castello di Chillon
+    text: Il lungolago con le palme e il castello medievale sull'acqua, a circa 1 ora e 10 minuti con il treno diretto. L'ingresso al castello costa circa 15 franchi.
+  - name: Annecy
+    text: Una cittadina francese con canali e un lago dall'acqua azzurra, a circa 45-60 minuti di autobus.
+  - name: Chamonix
+    text: La cittadina ai piedi del Monte Bianco, a circa 1 ora e 15 minuti di autobus. La funivia dell'Aiguille du Midi (3842 metri) costa circa €80 andata e ritorno; vai solo in una giornata limpida.
+faq:
+  - q: "Posso pagare in euro a Ginevra?"
+    a: "Spesso sì, soprattutto in hotel e nei negozi turistici, ma il resto lo ricevi in franchi e con un cambio sfavorevole. Meglio pagare con la carta o prelevare qualche franco al bancomat."
+  - q: "Quanto si spende al giorno a Ginevra?"
+    a: "Volo e alloggio esclusi, circa 80-120 franchi (circa €85-130) al giorno. Risparmi con il cibo dei supermercati, la carta gratuita dei trasporti e le cose gratuite: il lago, la città vecchia e il CERN."

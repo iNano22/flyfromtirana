@@ -1,0 +1,89 @@
+city: Belgrade
+slug: belgrade
+tagline: Kalemegdan, kafana dhe jeta e natës buzë lumenjve
+intro: >-
+  Belgrade është kryeqyteti i Serbisë, aty ku lumi Sava derdhet në Danub. Është një qytet i gjallë
+  dhe me çmime të arsyeshme, me kafana me muzikë live dhe klube mbi ujë. Monedha është dinari serb
+  (RSD): €1 është rreth 117 dinarë. Dy-tri ditë mjaftojnë për qendrën, kalanë dhe Zemunin.
+sights:
+  - name: Kalemegdan
+    text: >-
+      Kalaja mbi bashkimin e Savës me Danubin, sot një park i madh që vizitohet falas. Shiko
+      perëndimin e diellit nga muret pranë statujës Pobednik (Fitimtari).
+  - name: Knez Mihailova
+    text: Rruga kryesore e këmbësorëve, nga Kalemegdani deri te Sheshi i Republikës, me ndërtesa të shekullit XIX, dyqane dhe kafene.
+  - name: Skadarlija
+    text: Rruga me kalldrëm e bohemëve, me kafana të vjetra ku muzikantët luajnë mes tavolinave. Ideale për darkë, por pak më e shtrenjtë.
+  - name: Tempulli i Shën Savës
+    text: Një nga kishat ortodokse më të mëdha në botë, në lagjen Vračar. Hyrja është falas; mos e humb kriptën me mozaikë të artë.
+  - name: Zemun
+    text: Dikur qytet më vete, me rrugica të qeta, Kullën Gardoš me pamje mbi Danub dhe restorante peshku buzë lumit.
+  - name: Muzeu Nikola Tesla
+    text: Muze i vogël për shpikësin, me demonstrime të eksperimenteve të tij. Vizitohet me guidë, me biletë rreth 1000 dinarë (rreth €8.5).
+itinerary:
+  - "Kalemegdan në mëngjes, pastaj Knez Mihailova deri te Sheshi i Republikës. Në mbrëmje darkë me muzikë live në Skadarlija."
+  - "Tempulli i Shën Savës dhe Muzeu Nikola Tesla. Pasdite Ada Ciganlija, liqeni me plazhe buzë Savës, ose një shëtitje buzë lumit. Në mbrëmje Dorćol ose një klub mbi ujë."
+  - "Zemun: në këmbë buzë Danubit nga Novi Beograd (rreth 1 orë) ose me autobus, Kulla Gardoš dhe drekë me peshk. Ndryshe, një ditë në Novi Sad dhe Sremski Karlovci."
+areas:
+  - name: Stari Grad
+    text: "Qyteti i vjetër, rreth Knez Mihailova dhe Skadarlija: gjithçka në këmbë, me çmimet më të larta."
+  - name: Dorćol
+    text: Lagjja e vjetër poshtë kalasë drejt Danubit, me bare, kafene dhe apartamente me çmime të mira.
+  - name: Vračar
+    text: Lagje banimi më e qetë rreth Tempullit të Shën Savës, afër Sheshit Slavija, ku ndalon minibusi A1.
+  - name: Zemun
+    text: Rreth 20-30 minuta me autobus nga qendra, e qetë, buzë Danubit dhe me çmime më të ulëta.
+food:
+  - name: Ćevapi dhe pljeskavica
+    text: >-
+      Qebapë dhe një qofte e madhe si hamburger, me qepë, kajmak dhe bukë lepinja. Shpesh kanë edhe
+      mish derri: pyet nëse të intereson.
+  - name: Karađorđeva šnicla
+    text: Shnicel i mbështjellë me kajmak, i pane dhe i skuqur, me salcë tartare. Një pjatë gati për dy veta.
+  - name: Burek me kos
+    text: "Mëngjesi klasik: byrek me mish, djathë ose spinaq nga furra (pekara), me një gotë kos."
+  - name: Kajmak, ajvar dhe rakija
+    text: >-
+      Kajmaku (krem i kripur qumështi) dhe ajvari (salcë me speca të pjekur) shoqërojnë pothuajse çdo
+      vakt. Pas darke provohet rakija me kumbulla, šljivovica.
+airports:
+  BEG: >-
+    Aeroporti Nikola Tesla është rreth 18 km nga qendra. Minibusi A1 të çon deri te Sheshi Slavija
+    për rreth 30-40 minuta; nis afërsisht çdo 20 minuta dhe bileta, rreth 400-500 dinarë (rreth
+    €3.5-4.5), paguhet te shoferi. Më lirë: autobusi i qytetit 72 shkon deri te Zeleni Venac, pranë
+    Knez Mihailova, për rreth 45-60 minuta dhe është falas, si gjithë transporti publik i qytetit.
+    Për taksi, merr një kupon (taxi voucher) në sportelin e taksive në sallën e mbërritjeve: çmimi
+    është fiks sipas zonës, rreth 2000-2800 dinarë (rreth €17-24) për në qendër, për rreth 20-30
+    minuta. Mos prano oferta nga shoferët që të afrohen brenda sallës.
+transport: >-
+  Qendra përshkohet në këmbë, edhe pse ka të përpjeta. Nuk ka metro: lëvizet me autobusë, tramvaje
+  dhe trolejbusë. Që nga 1 janari 2025 transporti publik i qytetit është falas për të gjithë, pa
+  biletë (verifiko nëse vlen ende); minibusi A1 nuk hyn në këtë skemë. Taksitë janë të lira, rreth
+  €5-8 brenda qendrës: përdor një aplikacion si CarGo në vend që të ndalosh makina në rrugë.
+daytrips:
+  - name: Novi Sad
+    text: >-
+      Qyteti i dytë i Serbisë, me qendër austro-hungareze dhe Kalanë e Petrovaradinit mbi Danub. Rreth
+      40 minuta me trenin e shpejtë Soko nga stacioni Beograd Centar, ose 1-1.5 orë me autobus.
+  - name: Sremski Karlovci
+    text: Qytezë baroke me kantina vere, rreth 10 km nga Novi Sad. Provo bermetin, verën e ëmbël vendase.
+  - name: Smederevo
+    text: Kala e madhe mesjetare buzë Danubit, rreth 1 orë me autobus.
+budget: >-
+  Një kafe kushton rreth 250-350 dinarë (rreth €2-3), një pljeskavica rreth 500-700 dinarë (rreth
+  €4-6), një darkë në kafana rreth 1500-2500 dinarë (rreth €13-21). Pa fluturimin dhe fjetjen,
+  llogarit €35-55 në ditë; një shtrat në hostel nis nga rreth €15, një dhomë dyshe në hotel të
+  thjeshtë nga rreth €50-70.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Korriku dhe gushti janë shumë të nxehtë
+  (shpesh mbi 35 gradë), por jeta zhvendoset buzë lumenjve dhe në Ada Ciganlija. Dimri është i
+  ftohtë, me erën e fortë košava, por hotelet janë më të lira.
+tips:
+  - "Paguaj në dinarë. Karta pranohet pothuajse kudo; kur bankomati ose pajisja pyet, zgjidh pagesën në RSD, jo në euro. Zyrat e këmbimit (menjačnica) në qytet kanë kurs më të mirë se ato në aeroport."
+  - "Mbishkrimet janë shpesh në cirilik, edhe pse përdoret gjerësisht edhe alfabeti latin. Mëso disa shkronja për emrat e stacioneve."
+  - "Në shumë kafene dhe kafana ende pihet duhan brenda: nëse të shqetëson, kërko tavolinë jashtë."
+faq:
+  - q: "A mund të paguaj me euro në Belgrade?"
+    a: "Disa hotele dhe dyqane turistike i pranojnë, por me kurs të keq. Merr dinarë nga bankomati i një banke ose paguaj me kartë."
+  - q: "Sa para duhen në ditë në Belgrade?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë. Ushqimi dhe transporti janë të lirë, ndërsa hotelet në qendër janë shtrenjtuar vitet e fundit: rezervo herët për fundjavat."

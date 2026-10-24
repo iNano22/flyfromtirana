@@ -1,0 +1,81 @@
+city: Lyon
+slug: lyon
+tagline: Bouchons, traboules and two rivers
+intro: >-
+  Lyon is the third city of France and is often called the capital of French gastronomy. It lies
+  between two rivers, the Rhône and the Saône, with a Renaissance quarter on the UNESCO list and the
+  hill of Fourvière above it. It is calmer and cheaper than Paris, and two or three days are enough
+  to see it on foot and by metro.
+sights:
+  - name: Basilique Notre-Dame de Fourvière
+    text: The white basilica at the top of the hill, with rich mosaics inside. Entry is free and from the terrace you see the whole city, and on clear days even Mont Blanc. Next to it are the two Roman theatres of Lugdunum.
+  - name: Vieux Lyon and the traboules
+    text: "The Renaissance quarter on the Saône, with cobblestones, Saint-Jean cathedral and the traboules: hidden passages that run through the courtyards of buildings from one street to the next. The best known is the Longue Traboule, at 54 Rue Saint-Jean. They are open only in the daytime; keep your voice down, because people live there."
+  - name: Presqu'île
+    text: The peninsula between the two rivers, the commercial heart of the city. Place Bellecour is one of the largest squares in Europe, while Place des Terreaux has the city hall and the Musée des Beaux-Arts.
+  - name: Croix-Rousse
+    text: The hill of the silk workers (canuts), with long stairways, traboules and the Mur des Canuts, a giant mural that tricks the eye.
+  - name: Parc de la Tête d'Or
+    text: The city's big park, with a lake, a botanical garden and a zoo, all free.
+  - name: Musée des Confluences
+    text: A science and anthropology museum in a futuristic glass-and-steel building, where the two rivers meet. Tickets about €9-12.
+airports:
+  LYS: >-
+    Saint-Exupéry airport is about 25 km east of the city. The Rhônexpress tram takes you to
+    Part-Dieu station in about 30 minutes; it runs every 15 minutes during the day and every 30
+    minutes early in the morning and late in the evening. A ticket costs about €17-19 one way, a
+    little less online and for a return; regular city (TCL) tickets are not valid. From Part-Dieu
+    metro line B takes you to the centre. A taxi takes about 30-40 minutes and costs about €60-75,
+    more at night.
+budget: >-
+  A coffee at the counter costs about €2-2.50, a two-course formule lunch €15-20, a set dinner in a
+  bouchon €25-35, a metro ticket about €2.10. A hostel bed costs from about €30-45, a double room in
+  a simple hotel from about €80-120 a night.
+when: >-
+  April to June and September to October have the best weather; summer is hot. Around 8 December,
+  for 4 nights, the Fête des Lumières (Festival of Lights) lights up the façades of the whole city:
+  it is free and spectacular, but accommodation must be booked months in advance and prices rise a
+  lot.
+tips:
+  - "Book a table at a bouchon, especially at weekends. The «Les Bouchons Lyonnais» label marks the traditional places."
+  - "On Sundays many shops and some restaurants are closed. Les Halles Paul Bocuse opens on Sunday morning, but is closed on Mondays."
+  - "The funicular from Vieux Lyon up to Fourvière uses the same ticket as the metro."
+itinerary:
+  - "Vieux Lyon in the morning: Rue Saint-Jean, the cathedral and the traboules. Take the funicular up to Fourvière and the Roman theatres. In the evening, dinner at a bouchon."
+  - "Presqu'île: Place Bellecour, Rue de la République and Place des Terreaux. In the afternoon, Croix-Rousse and the Mur des Canuts, and in the evening a drink by the Saône."
+  - "Les Halles Paul Bocuse in the morning, then the Parc de la Tête d'Or. In the afternoon, the Musée des Confluences, where the two rivers meet. Otherwise, a day in Pérouges or Annecy."
+areas:
+  - name: Presqu'île
+    text: In the centre, around Bellecour and Cordeliers, with everything within walking distance. Mid-range to high prices.
+  - name: Vieux Lyon
+    text: A lovely atmosphere with cobblestones and bouchons, but hotels are few and the streets fill up with tourists.
+  - name: Part-Dieu
+    text: "The most practical area for the airport: the Rhônexpress and the trains leave from the station. Cheaper chain hotels, but not much atmosphere."
+  - name: Croix-Rousse
+    text: A neighbourhood with a village feel, a morning market and small bars, slightly cheaper, with metro line C to the centre.
+food:
+  - name: Bouchon lyonnais
+    text: The city's traditional restaurant, with checked tablecloths and hearty, meat-heavy cooking. A three-course menu costs about €25-35.
+  - name: Quenelle de brochet
+    text: A soft pike dumpling in Nantua sauce made with crayfish, the classic bouchon dish.
+  - name: Salade lyonnaise
+    text: A salad of frisée leaves, pieces of fried bacon (lardons), croutons and a poached egg.
+  - name: Saucisson brioché
+    text: Sausage baked inside brioche dough, sold in bakeries and at Les Halles.
+transport: >-
+  The centre is walkable, and the TCL network has 4 metro lines, trams, buses and 2 funiculars up
+  the hill of Fourvière. A single ticket costs about €2.10 and is valid for 1 hour with transfers;
+  a 24-hour ticket about €6.50. The metro runs from about 5:00 until just after midnight (about
+  0:30).
+daytrips:
+  - name: Pérouges
+    text: A walled medieval village with cobblestones and its galette, a sugar tart. About 35 minutes by train to Meximieux, then about 20 minutes' walk uphill.
+  - name: Annecy
+    text: The town of canals and a blue lake in the Alps, about 2 hours by train (often with a change) or by bus.
+  - name: Beaujolais
+    text: The vineyard hills and the villages of golden stone (Pierres Dorées) north of the city. The train to Villefranche-sur-Saône takes about 30 minutes, but for the villages and wineries you need a car or a tour.
+faq:
+  - q: "Rhônexpress or a taxi from the airport?"
+    a: "For 1 or 2 people the Rhônexpress is cheaper and never gets stuck in traffic: about 30 minutes and about €17-19 per person. For 3-4 people with suitcases, or late at night, a taxi at about €60-75 is reasonable."
+  - q: "How much money do you need per day in Lyon?"
+    a: "Excluding the flight and accommodation, allow €50-80 a day. You save with formule lunches and a picnic from Les Halles or the markets."

@@ -1,0 +1,79 @@
+city: Dubai
+slug: dubai
+tagline: Qiellgërvishtës, souk-e dhe plazhe buzë shkretëtirës
+intro: >-
+  Dubai është qyteti i rekordeve: ndërtesa më e lartë në botë, qendra tregtare gjigante dhe plazhe
+  me rërë të bardhë buzë shkretëtirës. Pas shkëlqimit ka edhe një Dubai të vjetër, me souk-e erëzash
+  dhe varka druri në Creek. Katër ditë mjaftojnë për qytetin dhe një dalje në shkretëtirë. Nuk është i
+  lirë, por me metro, ushqim indian dhe plazhe publike falas kursen shumë.
+sights:
+  - name: Burj Khalifa
+    text: Ndërtesa më e lartë në botë, 828 metra. Platforma At the Top (katet 124-125) kushton rreth 170-200 AED (€40-47) ditën, më shumë në perëndim të diellit. Bli biletën online.
+  - name: Dubai Mall dhe Dubai Fountain
+    text: "Një nga qendrat tregtare më të mëdha në botë, me akuarium. Shfaqjet e shatërvanit me ujë, drita e muzikë janë falas, çdo 30 minuta nga rreth ora 18:00."
+  - name: Al Fahidi dhe Dubai Creek
+    text: Lagjja historike me shtëpi prej guri e koralesh dhe kulla ere. Kalimi i Creek me abra, varkën tradicionale prej druri, kushton rreth 1 AED.
+  - name: Souk-u i Arit dhe Souk-u i Erëzave
+    text: "Në Deira, matanë Creek: vitrina plot ar, thasë me shafran, kardamom dhe hurma. Pazarllëku pritet."
+  - name: Museum of the Future
+    text: Ndërtesa ovale e mbuluar me shkrim arab. Bileta kushton rreth 149 AED (€35), me orar të rezervuar online.
+  - name: Dubai Marina dhe JBR
+    text: Kanal mes qiellgërvishtësve, shëtitore buzë ujit dhe plazhi publik i JBR, falas. Në mbrëmje është zona më e gjallë e qytetit.
+airports:
+  DXB: >-
+    Metroja, Linja e Kuqe (Red Line), niset nga Terminalet 1 dhe 3 dhe arrin te Burj Khalifa/Dubai
+    Mall për rreth 30 minuta, në Dubai Marina për rreth 1 orë, me rreth 5-8 AED (€1.20-1.90). Bli në
+    stacion kartën Nol Silver (25 AED, me 19 AED kredit brenda); zakonisht lejohen vetëm 2 copë
+    bagazhi për person. Disa fluturime të flydubai mbërrijnë në Terminalin 2, pa metro: andej merr
+    autobusët e RTA, që punojnë edhe natën, ose taksi. Taksia nis me rreth 25 AED dhe kushton rreth
+    70-90 AED (€16-21) deri në Downtown, 120-150 AED (€28-35) deri në Marina.
+budget: >-
+  Një euro është rreth 4.3 AED. Një shawarma kushton 10-15 AED (€2.50-3.50), një vakt në restorant
+  indian 25-40 AED (€6-9), një birrë në bar 40-60 AED (€9-14). Një shtrat në hostel nis nga rreth
+  60-100 AED (€14-23), një hotel i thjeshtë në Deira rreth 250-400 AED (€58-93) nata, plus një taksë
+  turistike prej rreth 7-20 AED nata.
+when: >-
+  Nëntori-marsi është sezoni më i mirë, me 20-30°C. Qershori-shtatori kalon 40°C me lagështi të
+  lartë: jashtë rri dot vetëm herët në mëngjes ose pas perëndimit, por hotelet janë shumë më të lira.
+  Ramazani lëviz çdo vit (në 2027 pritet rreth shkurt-mars): ditën qyteti është më i qetë.
+tips:
+  - "Në qendrat tregtare dhe në vendet publike mbulo supet dhe gjunjët; rrobat e banjës vetëm në plazh e pishinë. Në xhami gratë mbulojnë kokën dhe krahët."
+  - "Gjatë Ramazanit, ditën mos ha, mos pi dhe mos pi duhan në publik, nga respekti për ata që agjërojnë."
+  - "Alkooli shërbehet vetëm në vende me licencë, kryesisht në hotele, dhe është i shtrenjtë. Të jesh i dehur në publik ndëshkohet. Mos fotografo njerëz pa leje."
+itinerary:
+  - "Dubai i vjetër: Al Fahidi, kalimi me abra, pastaj Souk-u i Erëzave dhe i Arit në Deira. Darkë indiane në Karama."
+  - "Museum of the Future në mëngjes, Dubai Mall pasdite për t'i shpëtuar vapës dhe Burj Khalifa në perëndim të diellit, me shfaqjet e Dubai Fountain."
+  - "Plazh në Kite Beach me pamje nga Burj Al Arab, pastaj Souk Madinat Jumeirah. Në mbrëmje Dubai Marina dhe JBR."
+  - "Safari në shkretëtirë pasdite, ose një ditë në Abu Dhabi."
+areas:
+  - name: Deira dhe Bur Dubai
+    text: "Dubai i vjetër, pranë aeroportit dhe metrosë: hotelet dhe ushqimi më i lirë, por më pak shkëlqim."
+  - name: Downtown dhe Business Bay
+    text: Pranë Burj Khalifa dhe Dubai Mall, me hotele moderne dhe çmime të larta.
+  - name: Dubai Marina dhe JBR
+    text: Plazh, shëtitore dhe restorante, por rreth 1 orë me metro nga aeroporti.
+food:
+  - name: Shawarma
+    text: Në çdo lagje, rreth 10-15 AED; më të mirat shpesh në lokalet e thjeshta të Deirës.
+  - name: Biryani dhe kuzhina indiane
+    text: Shumica e banorëve vijnë nga Azia Jugore, ndaj në Karama dhe Bur Dubai ha mirë me pak para.
+  - name: Luqaimat dhe çaj karak
+    text: Topa brumi të skuqur me shurup hurme, me çaj të ëmbël me qumësht dhe erëza.
+transport: >-
+  Metroja pa shofer, me Linjën e Kuqe dhe të Gjelbër, lidh aeroportin, Deirën, Downtown dhe Marinën;
+  punon zakonisht nga ora 5:00 deri pas mesnatës. Paguhet me kartën Nol, e vlefshme edhe në autobus,
+  rreth 3-8 AED udhëtimi. Një vagon është vetëm për gra dhe fëmijë, dhe brenda ndalohet të hash ose
+  të pish. Taksitë kanë taksametër; funksionojnë edhe Careem dhe Uber. Distancat janë të mëdha dhe në
+  verë ecja jashtë lodh shumë.
+daytrips:
+  - name: Abu Dhabi
+    text: Rreth 2 orë me autobusin E100 ose E101 (rreth 25-35 AED). Xhamia e Madhe Sheikh Zayed vizitohet falas me rezervim online, me krahë e këmbë të mbuluara.
+  - name: Safari në shkretëtirë
+    text: Xhiro me fuoristradë mbi duna, perëndimi i diellit dhe darkë në kamp, rreth 150-300 AED (€35-70) me marrje nga hoteli.
+  - name: Sharjah
+    text: "Emirati fqinj, me Muzeun e Qytetërimit Islam, 30-60 minuta me autobus sipas trafikut. Rregullat janë më të rrepta: alkooli ndalohet fare."
+faq:
+  - q: "Sa para duhen në ditë në Dubai?"
+    a: "Pa fluturimin dhe fjetjen, €50-90 në ditë, nëse ha në lokale indiane dhe lëviz me metro. Burj Khalifa, safari dhe alkooli e rrisin shpejt shumën."
+  - q: "Metro apo taksi?"
+    a: "Metroja është më e lira dhe i shmang trafikut. Nga Terminali 2, natën vonë ose për 3-4 veta me valixhe, taksia shpesh ia vlen."

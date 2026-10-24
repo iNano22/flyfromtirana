@@ -1,0 +1,80 @@
+city: Dubai
+slug: dubai
+tagline: Skyscrapers, souks and beaches on the edge of the desert
+intro: >-
+  Dubai is a city of records: the tallest building in the world, giant shopping malls and white-sand
+  beaches on the edge of the desert. Behind the glitter there is also an old Dubai, with spice souks
+  and wooden boats on the Creek. Four days are enough for the city and a trip into the desert. It
+  isn't cheap, but with the metro, Indian food and free public beaches you save a lot.
+sights:
+  - name: Burj Khalifa
+    text: The tallest building in the world, 828 metres. The At the Top platform (floors 124-125) costs about 170-200 AED (€40-47) during the day, more at sunset. Buy your ticket online.
+  - name: Dubai Mall and Dubai Fountain
+    text: "One of the largest shopping malls in the world, with an aquarium. The fountain's shows of water, light and music are free, every 30 minutes from about 18:00."
+  - name: Al Fahidi and Dubai Creek
+    text: The historic district of stone and coral houses with wind towers. Crossing the Creek on an abra, the traditional wooden boat, costs about 1 AED.
+  - name: Gold Souk and Spice Souk
+    text: "In Deira, across the Creek: windows full of gold, sacks of saffron, cardamom and dates. Haggling is expected."
+  - name: Museum of the Future
+    text: The oval building covered in Arabic script. A ticket costs about 149 AED (€35), with a time slot booked online.
+  - name: Dubai Marina and JBR
+    text: A canal among skyscrapers, a waterfront promenade and the free public beach at JBR. In the evening it's the liveliest part of the city.
+airports:
+  DXB: >-
+    The metro's Red Line leaves from Terminals 1 and 3 and reaches Burj Khalifa/Dubai Mall in about
+    30 minutes, Dubai Marina in about 1 hour, for about 5-8 AED (€1.20-1.90). Buy a Nol Silver card
+    at the station (25 AED, with 19 AED of credit on it); usually only 2 pieces of luggage per person
+    are allowed. Some flydubai flights arrive at Terminal 2, which has no metro: from there take the
+    RTA buses, which also run at night, or a taxi. A taxi starts at about 25 AED and costs about 70-90
+    AED (€16-21) to Downtown, 120-150 AED (€28-35) to the Marina.
+budget: >-
+  One euro is about 4.3 AED. A shawarma costs 10-15 AED (€2.50-3.50), a meal in an Indian restaurant
+  25-40 AED (€6-9), a beer in a bar 40-60 AED (€9-14). A hostel bed starts at about 60-100 AED
+  (€14-23), a simple hotel in Deira about 250-400 AED (€58-93) a night, plus a tourist tax of about
+  7-20 AED a night.
+when: >-
+  November to March is the best season, with 20-30°C. June to September goes above 40°C with high
+  humidity: you can only stay outdoors early in the morning or after sunset, but hotels are much
+  cheaper. Ramadan moves every year (in 2027 it is expected around February-March): by day the city
+  is quieter.
+tips:
+  - "In shopping malls and public places cover your shoulders and knees; swimwear only on the beach and by the pool. In mosques women cover their heads and arms."
+  - "During Ramadan, don't eat, drink or smoke in public during the day, out of respect for those who are fasting."
+  - "Alcohol is served only in licensed venues, mostly in hotels, and it's expensive. Being drunk in public is punished. Don't photograph people without permission."
+itinerary:
+  - "Old Dubai: Al Fahidi, an abra crossing, then the Spice Souk and the Gold Souk in Deira. An Indian dinner in Karama."
+  - "The Museum of the Future in the morning, Dubai Mall in the afternoon to escape the heat and Burj Khalifa at sunset, with the Dubai Fountain shows."
+  - "The beach at Kite Beach with views of Burj Al Arab, then Souk Madinat Jumeirah. In the evening, Dubai Marina and JBR."
+  - "A desert safari in the afternoon, or a day in Abu Dhabi."
+areas:
+  - name: Deira and Bur Dubai
+    text: "Old Dubai, close to the airport and the metro: the cheapest hotels and food, but less glamour."
+  - name: Downtown and Business Bay
+    text: Close to Burj Khalifa and Dubai Mall, with modern hotels and high prices.
+  - name: Dubai Marina and JBR
+    text: Beach, promenade and restaurants, but about 1 hour by metro from the airport.
+food:
+  - name: Shawarma
+    text: In every neighbourhood, about 10-15 AED; the best are often in the simple eateries of Deira.
+  - name: Biryani and Indian food
+    text: Most residents come from South Asia, so in Karama and Bur Dubai you eat well for little money.
+  - name: Luqaimat and karak tea
+    text: Fried dough balls with date syrup, with sweet spiced tea with milk.
+transport: >-
+  The driverless metro, with the Red and Green Lines, links the airport, Deira, Downtown and the
+  Marina; it usually runs from 5:00 until after midnight. You pay with the Nol card, also valid on
+  buses, about 3-8 AED a trip. One carriage is for women and children only, and eating or drinking
+  on board is forbidden. Taxis are metered; Careem and Uber work too. Distances are long and in
+  summer walking outdoors is exhausting.
+daytrips:
+  - name: Abu Dhabi
+    text: About 2 hours on the E100 or E101 bus (about 25-35 AED). The Sheikh Zayed Grand Mosque can be visited for free with an online booking, with arms and legs covered.
+  - name: Desert safari
+    text: A 4x4 ride over the dunes, the sunset and dinner at a camp, about 150-300 AED (€35-70) with hotel pickup.
+  - name: Sharjah
+    text: "The neighbouring emirate, with the Museum of Islamic Civilization, 30-60 minutes by bus depending on traffic. The rules are stricter: alcohol is banned entirely."
+faq:
+  - q: "How much money do you need per day in Dubai?"
+    a: "Excluding the flight and accommodation, €50-90 a day if you eat in Indian eateries and get around by metro. Burj Khalifa, a safari and alcohol push the total up quickly."
+  - q: "Metro or taxi?"
+    a: "The metro is the cheapest and avoids the traffic. From Terminal 2, late at night or for 3-4 people with suitcases, a taxi is often worth it."

@@ -1,0 +1,94 @@
+city: Málaga
+slug: malaga
+tagline: Picasso, Moorish castles and a beach in town
+intro: >-
+  Málaga is the gateway to the Costa del Sol in southern Spain: sunshine almost all year, a beach
+  within walking distance of the centre, Moorish castles and the house where Picasso was born. Two
+  or three days are enough for the city, but it is worth adding a day for Granada and the Alhambra.
+sights:
+  - name: Alcazaba
+    text: >-
+      An 11th-century Moorish fortress-palace with courtyards, fountains and gardens. Entry costs
+      about €3.50, or about €5.50 together with Gibralfaro.
+  - name: Castillo de Gibralfaro
+    text: >-
+      The castle on top of the hill, linked to the Alcazaba by walls. The walk up takes about 20-30
+      minutes, but the view over the port and the sea is the best in the city.
+  - name: Museo Picasso Málaga
+    text: >-
+      Hundreds of works by Picasso in a 16th-century palace, a few steps from the house where he
+      was born. Entry about €10-14, depending on the exhibitions.
+  - name: Cathedral
+    text: >-
+      Nicknamed «La Manquita» (the one-armed lady), because its second tower was never finished.
+      Entry about €10; the guided climb onto the roof is paid separately.
+  - name: Roman Theatre
+    text: The ruins of the Roman theatre at the foot of the Alcazaba, free and visible from the street too.
+  - name: La Malagueta Beach
+    text: The city beach, about 15 minutes on foot from the cathedral, with seaside bars (chiringuitos).
+  - name: Muelle Uno
+    text: The port promenade with restaurants, and the colourful cube of the Centre Pompidou at its end.
+airports:
+  AGP: >-
+    The Cercanías C1 train leaves from the station next to Terminal 3 about every 20 minutes and
+    reaches María Zambrano in about 12 minutes and Centro-Alameda in about 15 minutes, with a ticket
+    of about €2. The A Express bus (Línea A) takes you to Alameda Principal and Paseo del Parque in
+    about 20-30 minutes (about €4). A taxi to the centre costs about €25-30 and takes about 15-20
+    minutes.
+budget: >-
+  A coffee costs about €1.50-2, a menú del día €12-15, a small beer (caña) about €2-3, and a bus
+  journey about €1.40. Málaga is cheaper than Barcelona and Madrid.
+when: >-
+  April-June and September-October are warm without the heatwaves. July and August are hot (often
+  above 30°C) and full of tourists, while in winter days reach about 17°C. For Holy Week (Semana
+  Santa) and the August Feria, book your accommodation very early.
+tips:
+  - "On Sundays from 14:00, entry to the Alcazaba and Gibralfaro is free. The Museo Picasso is usually free for the last 2 hours on Sundays as well."
+  - "Climb up to Gibralfaro in the morning or before sunset: the path is steep and has no shade. Alternatively, take bus 35 to the top and walk down."
+  - "Coffee has its own names: «solo» is an espresso, «mitad» half coffee and half milk, «nube» a little coffee with lots of milk."
+itinerary:
+  - "The cathedral and Calle Larios in the morning, then the Roman Theatre and the Alcazaba. In the afternoon, climb to Gibralfaro for sunset, then dinner with tapas around Plaza de la Merced."
+  - "The Museo Picasso and the house where the painter was born. In the afternoon, the Atarazanas market and a walk along Muelle Uno to La Malagueta beach, with grilled sardines for dinner."
+  - "A day trip to Granada for the Alhambra (with a booked ticket) or to Nerja. Alternatively, the Soho district with its murals and Pedregalejo by the sea."
+areas:
+  - name: Centro Histórico
+    text: "Around the cathedral and Calle Larios: everything on foot, but noisy until late at weekends."
+  - name: Soho
+    text: The street-art district between the centre and the port, a little cheaper and close to Centro-Alameda station.
+  - name: La Malagueta
+    text: Close to the beach and 10 minutes on foot from the centre, ideal in summer.
+  - name: María Zambrano
+    text: "Around the main station: cheaper and practical for the airport and day trips."
+food:
+  - name: Espetos de sardinas
+    text: Sardines on skewers, grilled over a wood fire in sand-filled boats on the beach, about €4-5 a skewer.
+  - name: Pescaíto frito
+    text: Small fried fish, such as boquerones (anchovies) and squid, eaten with lemon.
+  - name: Ajoblanco
+    text: A cold soup of almonds, garlic and bread, served with grapes.
+  - name: Vino dulce de Málaga
+    text: The local sweet wine, best at the Antigua Casa de Guardia bodega, open since 1840.
+transport: >-
+  The historic centre, the port and the beach are easy to cover on foot. EMT buses cost about €1.40
+  per journey and also accept contactless bank cards. For the beaches of Torremolinos and
+  Benalmádena, take the C1 train towards the airport and carry on beyond it.
+daytrips:
+  - name: Granada and the Alhambra
+    text: >-
+      The most famous Moorish palace in Europe, about 1.5 hours by bus or train. An Alhambra ticket
+      costs about €20 and must be booked weeks ahead on the official website.
+  - name: Ronda
+    text: The town above a gorge with the Puente Nuevo bridge, about 2 hours by train or bus.
+  - name: Nerja
+    text: The Balcón de Europa, small beaches and the Nerja caves, about 1 hour by bus.
+  - name: Caminito del Rey
+    text: >-
+      The walkway hanging above a deep gorge, about 45 minutes by train to El Chorro. Timed tickets
+      are sold online (about €10-12) and sell out fast in spring.
+faq:
+  - q: "Is Málaga worth it for a beach holiday?"
+    a: "Yes. La Malagueta is 10 minutes on foot from the centre, while the C1 train takes you in about 20-30 minutes to the wider beaches of Torremolinos and Benalmádena. The sea is warm from June to October."
+  - q: "How much money do you need per day in Málaga?"
+    a: "Excluding the flight and accommodation, plan on €40-65 a day for food, transport and one or two entry tickets. Entry to the monuments is cheap, and tapas with a drink cost less than in Barcelona."
+  - q: "Do I need a rental car?"
+    a: "Not for the city. Granada, Ronda and Nerja can be reached by bus or train; a car only helps for the white villages (pueblos blancos) in the mountains."

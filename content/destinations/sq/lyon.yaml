@@ -1,0 +1,79 @@
+city: Lyon
+slug: lyon
+tagline: Bouchons, traboules dhe dy lumenj
+intro: >-
+  Lyon është qyteti i tretë i Francës dhe shpesh quhet kryeqyteti i gastronomisë franceze. Shtrihet
+  mes dy lumenjve, Rhône dhe Saône, me një lagje të Rilindjes në listën e UNESCO-s dhe kodrën e
+  Fourvière sipër saj. Është më i qetë dhe më i lirë se Parisi, dhe dy-tri ditë mjaftojnë për ta parë
+  në këmbë dhe me metro.
+sights:
+  - name: Basilique Notre-Dame de Fourvière
+    text: Bazilika e bardhë në majë të kodrës, me mozaikë të pasur brenda. Hyrja është falas dhe nga tarraca sheh gjithë qytetin, në ditë të kthjellëta edhe Mont Blanc. Pranë saj janë dy teatrot romake të Lugdunum.
+  - name: Vieux Lyon dhe traboules
+    text: "Lagjja e Rilindjes buzë Saône, me kalldrëm, katedralen Saint-Jean dhe traboules: pasazhe të fshehta që kalojnë nëpër oborret e pallateve nga një rrugë te tjetra. Më e njohura është Longue Traboule, në Rue Saint-Jean 54. Hapen vetëm ditën; fol me zë të ulët, sepse aty jetojnë njerëz."
+  - name: Presqu'île
+    text: Gadishulli mes dy lumenjve, zemra tregtare e qytetit. Place Bellecour është ndër sheshet më të mëdha të Evropës, ndërsa Place des Terreaux ka bashkinë dhe Musée des Beaux-Arts.
+  - name: Croix-Rousse
+    text: Kodra e punëtorëve të mëndafshit (canuts), me shkallë të gjata, traboules dhe Mur des Canuts, një mural gjigant që të mashtron syrin.
+  - name: Parc de la Tête d'Or
+    text: Parku i madh i qytetit, me liqen, kopsht botanik dhe kopsht zoologjik, të gjitha falas.
+  - name: Musée des Confluences
+    text: Muze shkence dhe antropologjie në një ndërtesë futuriste prej xhami dhe çeliku, aty ku bashkohen dy lumenjtë. Bileta rreth €9-12.
+airports:
+  LYS: >-
+    Aeroporti Saint-Exupéry është rreth 25 km në lindje të qytetit. Tramvaji Rhônexpress të çon në
+    stacionin Part-Dieu për rreth 30 minuta; niset çdo 15 minuta gjatë ditës dhe çdo 30 minuta herët
+    në mëngjes e vonë në mbrëmje. Bileta kushton rreth €17-19 në një drejtim, pak më lirë online dhe
+    vajtje-ardhje; biletat e qytetit (TCL) nuk vlejnë. Nga Part-Dieu metroja B të çon në qendër.
+    Taksia bën rreth 30-40 minuta dhe kushton rreth €60-75, më shumë natën.
+budget: >-
+  Një kafe në banak kushton rreth €2-2.50, një drekë formule me dy pjata €15-20, një darkë menu në
+  bouchon €25-35, bileta e metrosë rreth €2.10. Një shtrat në hostel kushton nga rreth €30-45, një
+  dhomë dyshe në hotel të thjeshtë nga rreth €80-120 nata.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë; vera është e nxehtë. Rreth 8 dhjetorit,
+  për 4 net, Fête des Lumières (Festa e Dritave) ndriçon fasadat e gjithë qytetit: është falas dhe
+  spektakolare, por fjetja duhet rezervuar me muaj përpara dhe çmimet ngrihen shumë.
+tips:
+  - "Rezervo tavolinë në bouchon, sidomos në fundjavë. Etiketa «Les Bouchons Lyonnais» shënon lokalet tradicionale."
+  - "Të dielave shumë dyqane dhe disa restorante janë të mbyllura. Les Halles Paul Bocuse hapet të dielën në mëngjes, por mbyllet të hënën."
+  - "Funikulari nga Vieux Lyon për në Fourvière përdor të njëjtën biletë si metroja."
+itinerary:
+  - "Vieux Lyon në mëngjes: Rue Saint-Jean, katedralja dhe traboules. Me funikularin ngjitu në Fourvière dhe te teatrot romake. Në mbrëmje darkë në një bouchon."
+  - "Presqu'île: Place Bellecour, Rue de la République dhe Place des Terreaux. Pasdite Croix-Rousse dhe Mur des Canuts, në mbrëmje një pije buzë Saône."
+  - "Les Halles Paul Bocuse në mëngjes, pastaj Parc de la Tête d'Or. Pasdite Musée des Confluences, ku takohen dy lumenjtë. Ndryshe, një ditë në Pérouges ose Annecy."
+areas:
+  - name: Presqu'île
+    text: Në qendër, rreth Bellecour dhe Cordeliers, me gjithçka në këmbë. Çmime mesatare deri të larta.
+  - name: Vieux Lyon
+    text: Atmosferë e bukur me kalldrëm dhe bouchons, por hotelet janë të pakta dhe rrugët mbushen me turistë.
+  - name: Part-Dieu
+    text: "Zona më praktike për aeroportin: Rhônexpress dhe trenat nisen nga stacioni. Hotele zinxhir më të lira, por pa shumë atmosferë."
+  - name: Croix-Rousse
+    text: Lagje me atmosferë fshati, treg në mëngjes dhe bare të vogla, pak më e lirë, me metro C deri në qendër.
+food:
+  - name: Bouchon lyonnais
+    text: Restoranti tradicional i qytetit, me mbulesa me kuadrate dhe kuzhinë të rëndë mishi. Menuja me tri pjata kushton rreth €25-35.
+  - name: Quenelle de brochet
+    text: Petull e butë me peshk mlysh në salcë Nantua me karavidhe lumi, pjata klasike e bouchons.
+  - name: Salade lyonnaise
+    text: Sallatë me gjethe frisée, copa proshute të skuqur (lardons), kruton dhe një vezë poshé.
+  - name: Saucisson brioché
+    text: Suxhuk i pjekur brenda brumit brioche, që shitet në furra dhe në Les Halles.
+transport: >-
+  Qendra përshkohet në këmbë, ndërsa rrjeti TCL ka 4 linja metroje, tramvaje, autobusë dhe 2
+  funikularë për në kodrën e Fourvière. Bileta e vetme kushton rreth €2.10 dhe vlen 1 orë me
+  ndërrime; bileta 24 orëshe rreth €6.50. Metroja punon nga rreth 5:00 deri pak pas mesnatës
+  (rreth 0:30).
+daytrips:
+  - name: Pérouges
+    text: Fshat mesjetar me mure, kalldrëm dhe galette, tartën e tij me sheqer. Rreth 35 minuta me tren deri në Meximieux, pastaj rreth 20 minuta ecje përpjetë.
+  - name: Annecy
+    text: Qyteti me kanale dhe liqen të kaltër në Alpe, rreth 2 orë me tren (shpesh me ndërrim) ose me autobus.
+  - name: Beaujolais
+    text: Kodrat e vreshtave dhe fshatrat me gur të verdhë (Pierres Dorées) në veri të qytetit. Treni deri në Villefranche-sur-Saône bën rreth 30 minuta, por për fshatrat dhe kantinat duhet makinë ose një tur.
+faq:
+  - q: "Rhônexpress apo taksi nga aeroporti?"
+    a: "Për 1 ose 2 persona Rhônexpress është më i lirë dhe nuk ngec në trafik: rreth 30 minuta dhe rreth €17-19 për person. Për 3-4 persona me valixhe, ose natën vonë, taksia me rreth €60-75 del e arsyeshme."
+  - q: "Sa para duhen në ditë në Lyon?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €50-80 në ditë. Kursen me drekat formule dhe me piknik nga Les Halles ose tregjet."

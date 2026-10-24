@@ -1,0 +1,95 @@
+city: Málaga
+name: Malaga
+slug: malaga
+tagline: Picasso, castelli moreschi e spiaggia in città
+intro: >-
+  Malaga è la porta della Costa del Sol nel sud della Spagna: sole quasi tutto l'anno, una spiaggia
+  raggiungibile a piedi dal centro, castelli moreschi e la casa dove nacque Picasso. Due o tre
+  giorni bastano per la città, ma vale la pena aggiungere un giorno per Granada e l'Alhambra.
+sights:
+  - name: Alcazaba
+    text: >-
+      Fortezza-palazzo moresca dell'XI secolo, con cortili, fontane e giardini. L'ingresso costa
+      circa €3,50, oppure circa €5,50 insieme al Gibralfaro.
+  - name: Castillo de Gibralfaro
+    text: >-
+      Il castello in cima alla collina, collegato all'Alcazaba da mura. La salita a piedi richiede
+      circa 20-30 minuti, ma la vista sul porto e sul mare è la migliore della città.
+  - name: Museo Picasso Málaga
+    text: >-
+      Centinaia di opere di Picasso in un palazzo del XVI secolo, a pochi passi dalla casa dove
+      nacque. Ingresso circa €10-14, a seconda delle mostre.
+  - name: Cattedrale
+    text: >-
+      Soprannominata «La Manquita» (la monca), perché la seconda torre non fu mai completata.
+      Ingresso circa €10; la salita guidata sul tetto si paga a parte.
+  - name: Teatro Romano
+    text: Le rovine del teatro romano ai piedi dell'Alcazaba, gratuite e visibili anche dalla strada.
+  - name: Spiaggia della Malagueta
+    text: La spiaggia cittadina, a circa 15 minuti a piedi dalla cattedrale, con locali sul mare (chiringuitos).
+  - name: Muelle Uno
+    text: La passeggiata del porto con ristoranti, e in fondo il cubo colorato del Centre Pompidou.
+airports:
+  AGP: >-
+    Il treno Cercanías C1 parte dalla stazione accanto al Terminal 3 circa ogni 20 minuti e arriva
+    a María Zambrano in circa 12 minuti e a Centro-Alameda in circa 15 minuti, con un biglietto da
+    circa €2. L'autobus A Express (Línea A) ti porta in Alameda Principal e al Paseo del Parque in
+    circa 20-30 minuti (circa €4). Un taxi per il centro costa circa €25-30 e impiega circa 15-20
+    minuti.
+budget: >-
+  Un caffè costa circa €1,50-2, un menú del día €12-15, una birra piccola (caña) circa €2-3, una
+  corsa in autobus circa €1,40. Malaga è più economica di Barcellona e Madrid.
+when: >-
+  Aprile-giugno e settembre-ottobre sono caldi senza afa. Luglio e agosto sono torridi (spesso oltre
+  i 30°C) e pieni di turisti, mentre d'inverno di giorno si arriva a circa 17°C. Per la Settimana
+  Santa (Semana Santa) e la Feria di agosto prenota l'alloggio con molto anticipo.
+tips:
+  - "La domenica dalle 14:00 l'ingresso all'Alcazaba e al Gibralfaro è gratuito. Anche il Museo Picasso di solito è gratuito nelle ultime 2 ore della domenica."
+  - "Sali al Gibralfaro al mattino o prima del tramonto: la strada è ripida e senza ombra. In alternativa prendi l'autobus 35 fino in cima e scendi a piedi."
+  - "Il caffè ha i suoi nomi: «solo» è un espresso, «mitad» metà caffè e metà latte, «nube» poco caffè con tanto latte."
+itinerary:
+  - "Cattedrale e Calle Larios al mattino, poi il Teatro Romano e l'Alcazaba. Nel pomeriggio salita al Gibralfaro per il tramonto, cena a base di tapas intorno a Plaza de la Merced."
+  - "Il Museo Picasso e la casa natale del pittore. Nel pomeriggio il mercato di Atarazanas e una passeggiata sul Muelle Uno fino alla spiaggia della Malagueta, con sardine allo spiedo per cena."
+  - "Una gita in giornata a Granada per l'Alhambra (con biglietto prenotato) o a Nerja. In alternativa, il quartiere Soho con i suoi murales e Pedregalejo sul mare."
+areas:
+  - name: Centro Histórico
+    text: "Intorno alla cattedrale e a Calle Larios: tutto a piedi, ma rumoroso fino a tardi nel fine settimana."
+  - name: Soho
+    text: Il quartiere della street art tra il centro e il porto, un po' più economico e vicino alla stazione Centro-Alameda.
+  - name: La Malagueta
+    text: Vicino alla spiaggia e a 10 minuti a piedi dal centro, ideale d'estate.
+  - name: María Zambrano
+    text: "Intorno alla stazione principale: più economica e pratica per l'aeroporto e le gite in giornata."
+food:
+  - name: Espetos de sardinas
+    text: Sardine allo spiedo, cotte sul fuoco di legna in barche piene di sabbia sulla spiaggia, circa €4-5 a spiedo.
+  - name: Pescaíto frito
+    text: Pesciolini fritti, come i boquerones (acciughe) e i calamari, da mangiare con il limone.
+  - name: Ajoblanco
+    text: Zuppa fredda di mandorle, aglio e pane, servita con l'uva.
+  - name: Vino dulce de Málaga
+    text: Il vino dolce locale, il migliore alla bodega Antigua Casa de Guardia, aperta dal 1840.
+transport: >-
+  Il centro storico, il porto e la spiaggia si girano facilmente a piedi. Gli autobus EMT costano
+  circa €1,40 a corsa e accettano anche le carte bancarie contactless. Per le spiagge di Torremolinos
+  e Benalmádena prendi il treno C1 in direzione aeroporto e prosegui oltre.
+daytrips:
+  - name: Granada e l'Alhambra
+    text: >-
+      Il palazzo moresco più famoso d'Europa, a circa 1,5 ore in autobus o in treno. Il biglietto
+      dell'Alhambra costa circa €20 e va prenotato settimane prima sul sito ufficiale.
+  - name: Ronda
+    text: La città sopra una gola con il ponte Puente Nuevo, a circa 2 ore in treno o in autobus.
+  - name: Nerja
+    text: Il Balcón de Europa, piccole spiagge e le grotte di Nerja, a circa 1 ora in autobus.
+  - name: Caminito del Rey
+    text: >-
+      Il sentiero sospeso sopra una gola profonda, a circa 45 minuti di treno fino a El Chorro. I
+      biglietti a orario si comprano online (circa €10-12) e in primavera finiscono presto.
+faq:
+  - q: "Malaga vale la pena per una vacanza al mare?"
+    a: "Sì. La Malagueta è a 10 minuti a piedi dal centro, mentre il treno C1 ti porta in circa 20-30 minuti alle spiagge più ampie di Torremolinos e Benalmádena. Il mare è caldo da giugno a ottobre."
+  - q: "Quanto si spende al giorno a Malaga?"
+    a: "Volo e alloggio esclusi, €40-65 al giorno per cibo, trasporti e uno o due ingressi. Gli ingressi ai monumenti sono economici, e le tapas con una bevanda costano meno che a Barcellona."
+  - q: "Mi serve un'auto a noleggio?"
+    a: "Per la città no. Granada, Ronda e Nerja si raggiungono in autobus o in treno; l'auto serve solo per i villaggi bianchi (pueblos blancos) in montagna."

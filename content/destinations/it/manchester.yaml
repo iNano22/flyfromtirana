@@ -1,0 +1,81 @@
+city: Manchester
+slug: manchester
+tagline: Calcio, musica e i pub del Northern Quarter
+intro: >-
+  Manchester è la città del calcio: qui giocano il Manchester United all'Old Trafford e il
+  Manchester City all'Etihad. Ma la città ha anche musei gratuiti, edifici industriali in mattoni
+  rossi trasformati in bar e ristoranti, e una vita notturna vivace. Tre giorni bastano per la
+  città e gli stadi, più un giorno per Liverpool o il Peak District.
+sights:
+  - name: Old Trafford
+    text: Lo stadio del Manchester United, con circa 74.000 posti. Il tour dello stadio con il museo costa circa £30-35 e si prenota online. In tram scendi alla fermata Wharfside o Old Trafford.
+  - name: Etihad Stadium
+    text: Lo stadio del Manchester City, a est del centro. Il tour costa circa £25-30 e il tram ferma a Etihad Campus, accanto allo stadio.
+  - name: National Football Museum
+    text: Il museo nazionale del calcio, nell'edificio di vetro accanto alla Manchester Cathedral. L'ingresso costa circa £12-15.
+  - name: John Rylands Library
+    text: Una biblioteca neogotica del 1900 su Deansgate, con una sala di lettura che ricorda Harry Potter. L'ingresso è gratuito.
+  - name: Science and Industry Museum
+    text: Il museo della rivoluzione industriale a Castlefield, nella più antica stazione ferroviaria passeggeri del mondo. L'ingresso è gratuito, ma alcune sale potrebbero essere chiuse per lavori.
+  - name: Northern Quarter
+    text: Il quartiere dei graffiti, dei negozi vintage, dei negozi di dischi e dei piccoli bar. La serata migliore in città comincia qui.
+  - name: Salford Quays
+    text: Gli ex moli lungo il canale, con il teatro The Lowry e il museo della guerra IWM North (gratuito), a circa 15 minuti a piedi dall'Old Trafford.
+airports:
+  MAN: >-
+    L'aeroporto si trova a circa 15 km a sud del centro. I treni partono dalla stazione dentro
+    l'aeroporto più volte all'ora e arrivano a Manchester Piccadilly in 15-20 minuti, per circa
+    £5-7. Il tram Metrolink è più lento (circa 50 minuti fino al centro), ma ferma in più posti e
+    costa circa £4-5. Il taxi costa circa £25-40 e impiega 20-30 minuti, a seconda del traffico.
+budget: >-
+  Un caffè costa circa £3,50, un pasto semplice £12-18 e una birra (pint) circa £5-6. Un letto in
+  ostello costa circa £20-35, mentre gli hotel diventano molto più cari nei giorni delle partite e
+  dei grandi concerti. Molti musei sono gratuiti.
+when: >-
+  Maggio-settembre ha il clima più mite (circa 15-20 gradi) e giornate lunghe, ma piove tutto
+  l'anno. La stagione calcistica va da agosto a maggio. Da metà novembre fin quasi a Natale il
+  centro si riempie dei mercatini di Natale.
+tips:
+  - "I biglietti per le partite di Premier League non sono facili da trovare: si vendono solo sui siti ufficiali dei club, spesso solo ai soci. Non comprare da venditori sconosciuti, perché il biglietto può essere annullato."
+  - "Porta una giacca impermeabile: a Manchester piove spesso, anche d'estate."
+  - "Paga il tram con la carta bancaria contactless e ricorda di avvicinarla al lettore sia quando sali sia quando scendi."
+itinerary:
+  - "Il centro a piedi: Manchester Cathedral, National Football Museum e John Rylands Library. Nel pomeriggio la Manchester Art Gallery (gratuita) e i negozi di Market Street, la sera il Northern Quarter."
+  - "La giornata del calcio: il tour dell'Old Trafford al mattino, poi Salford Quays con l'IWM North. Nel pomeriggio in tram all'Etihad Stadium, per il tour o per una partita."
+  - "Castlefield con il Science and Industry Museum e i canali, poi Ancoats e il mercato gastronomico Mackie Mayor. La sera una cena indiana sulla Curry Mile."
+  - "Una giornata fuori città: Liverpool per i Beatles e Anfield, oppure il Peak District per una camminata nella natura."
+areas:
+  - name: Piccadilly
+    text: "La zona più pratica: qui arrivano i treni dall'aeroporto e tutto è raggiungibile a piedi, anche se le strade intorno alla stazione non sono le più belle."
+  - name: Northern Quarter e Ancoats
+    text: Per chi vuole bar, caffè e vita notturna sotto casa. Può essere rumorosa nel fine settimana.
+  - name: Deansgate e Castlefield
+    text: Più tranquilla, lungo i canali, con il tram per l'Old Trafford e Salford Quays.
+  - name: Salford Quays
+    text: "Hotel più economici e più nuovi, a 15-20 minuti di tram dal centro: una buona scelta se vieni per il Manchester United."
+food:
+  - name: Curry Mile
+    text: Wilmslow Road a Rusholme, piena di ristoranti indiani, pakistani e mediorientali, a buoni prezzi.
+  - name: Mercati gastronomici
+    text: Mackie Mayor nel Northern Quarter e l'Altrincham Market hanno decine di banchi con pizza, hamburger e cibo da tutto il mondo.
+  - name: Lancashire hotpot
+    text: Uno stufato locale di agnello e cipolle, coperto di fette di patate cotte al forno.
+  - name: Sunday roast
+    text: "Il pranzo della domenica al pub: carne arrosto, patate e Yorkshire pudding."
+transport: >-
+  Il centro è piccolo e si gira facilmente a piedi. I tram Metrolink ti portano agli stadi, a
+  Salford Quays e all'aeroporto: paga con la carta bancaria contactless e il sistema limita da solo
+  la spesa giornaliera. Gli autobus della rete Bee Network costano circa £2 a corsa, a prescindere
+  dalla distanza.
+daytrips:
+  - name: Liverpool
+    text: La città dei Beatles e dello stadio di Anfield, a circa 35-50 minuti di treno da Piccadilly o Oxford Road.
+  - name: Peak District
+    text: Il parco nazionale di colline e villaggi di pietra, a circa 1 ora di treno fino a Edale o Hope per camminare nella natura.
+  - name: York
+    text: Una città medievale cinta da mura, con la cattedrale York Minster e la via The Shambles, a circa 1,5 ore di treno.
+faq:
+  - q: "Come vedere una partita del Manchester United o del Manchester City?"
+    a: "I biglietti si comprano sui siti ufficiali dei club. Per lo United sono molto difficili da ottenere senza essere soci, mentre per il City a volte sono disponibili anche per il pubblico. Se non trovi biglietti, il tour dello stadio (circa £25-35) è l'alternativa più sicura."
+  - q: "Quanto si spende al giorno a Manchester?"
+    a: "Volo e alloggio esclusi, calcola £50-80 al giorno per cibo, trasporti e un tour dello stadio o un museo a pagamento. Manchester è decisamente più economica di Londra."

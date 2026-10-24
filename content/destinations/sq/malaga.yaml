@@ -1,0 +1,93 @@
+city: Málaga
+slug: malaga
+tagline: Picasso, kështjella maure dhe plazh në qytet
+intro: >-
+  Málaga është porta e Costa del Sol në jug të Spanjës: diell gati gjithë vitin, plazh në këmbë
+  nga qendra, kështjella maure dhe shtëpia ku lindi Picasso. Dy-tri ditë mjaftojnë për qytetin, por
+  ia vlen të shtosh një ditë për Granada dhe Alhambrën.
+sights:
+  - name: Alcazaba
+    text: >-
+      Kalaja-pallat maure e shekullit XI, me oborre, shatërvanë dhe kopshte. Hyrja kushton rreth
+      €3.50, ose rreth €5.50 bashkë me Gibralfaro.
+  - name: Castillo de Gibralfaro
+    text: >-
+      Kështjella në majë të kodrës, e lidhur me Alcazaba me mure. Ngjitja në këmbë zgjat rreth 20-30
+      minuta, por pamja mbi port dhe det është më e mira në qytet.
+  - name: Museo Picasso Málaga
+    text: >-
+      Qindra vepra të Picassos në një pallat të shekullit XVI, pak hapa nga shtëpia ku lindi. Hyrja
+      rreth €10-14, sipas ekspozitave.
+  - name: Katedralja
+    text: >-
+      E quajtur «La Manquita» (gruaja me një krah), sepse kulla e dytë nuk u përfundua kurrë. Hyrja
+      rreth €10; ngjitja në çati, me guidë, paguhet veçmas.
+  - name: Teatri Romak
+    text: Rrënojat e teatrit romak në rrëzë të Alcazaba-s, falas dhe të dukshme edhe nga rruga.
+  - name: Plazhi La Malagueta
+    text: Plazhi i qytetit, rreth 15 minuta në këmbë nga katedralja, me lokale buzë detit (chiringuitos).
+  - name: Muelle Uno
+    text: Shëtitorja e portit me restorante, me kubin shumëngjyrësh të Centre Pompidou në fund.
+airports:
+  AGP: >-
+    Treni Cercanías C1 niset nga stacioni pranë Terminalit 3 rreth çdo 20 minuta dhe arrin në
+    María Zambrano për rreth 12 minuta dhe në Centro-Alameda për rreth 15 minuta, me biletë rreth €2.
+    Autobusi A Express (Línea A) të çon në Alameda Principal dhe Paseo del Parque për rreth 20-30
+    minuta (rreth €4). Një taksi deri në qendër kushton rreth €25-30 dhe bën rreth 15-20 minuta.
+budget: >-
+  Një kafe kushton rreth €1.50-2, një menú del día €12-15, një birrë e vogël (caña) rreth €2-3,
+  një udhëtim me autobus rreth €1.40. Málaga është më e lirë se Barcelona dhe Madrid.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë mot të ngrohtë pa vapë. Korriku dhe gushti janë të
+  nxehtë (shpesh mbi 30°C) dhe plot turistë, ndërsa në dimër ditën bën rreth 17°C. Për Javën e
+  Shenjtë (Semana Santa) dhe Ferian e gushtit rezervo fjetjen shumë herët.
+tips:
+  - "Të dielave nga ora 14:00 hyrja në Alcazaba dhe Gibralfaro është falas. Edhe Museo Picasso zakonisht hyhet falas në 2 orët e fundit të së dielës."
+  - "Ngjitu në Gibralfaro në mëngjes ose para perëndimit: rruga është e pjerrët dhe pa hije. Ndryshe, merr autobusin 35 deri lart dhe zbrit në këmbë."
+  - "Kafeja ka emrat e vet: «solo» është espresso, «mitad» gjysmë kafe e gjysmë qumësht, «nube» pak kafe me shumë qumësht."
+itinerary:
+  - "Katedralja dhe Calle Larios në mëngjes, pastaj Teatri Romak dhe Alcazaba. Pasdite ngjitje në Gibralfaro për perëndimin, darka me tapas rreth Plaza de la Merced."
+  - "Museo Picasso dhe shtëpia ku lindi piktori. Pasdite tregu Atarazanas, shëtitje në Muelle Uno deri te plazhi La Malagueta, me sardele në hell për darkë."
+  - "Një udhëtim ditor në Granada për Alhambrën (me biletë të rezervuar) ose në Nerja. Ndryshe, lagjja Soho me muralet e saj dhe Pedregalejo buzë detit."
+areas:
+  - name: Centro Histórico
+    text: "Rreth katedrales dhe Calle Larios: gjithçka në këmbë, por me zhurmë deri vonë në fundjavë."
+  - name: Soho
+    text: Lagjja e artit urban mes qendrës dhe portit, pak më e lirë dhe pranë stacionit Centro-Alameda.
+  - name: La Malagueta
+    text: Pranë plazhit dhe 10 minuta në këmbë nga qendra, ideale në verë.
+  - name: María Zambrano
+    text: "Rreth stacionit kryesor: më e lirë dhe praktike për aeroportin dhe udhëtimet ditore."
+food:
+  - name: Espetos de sardinas
+    text: Sardele në hell, të pjekura mbi zjarr druri në varka me rërë buzë plazhit, rreth €4-5 hella.
+  - name: Pescaíto frito
+    text: Peshk i vogël i skuqur, si boquerones (açuge) dhe kallamar, që hahet me limon.
+  - name: Ajoblanco
+    text: Supë e ftohtë me bajame, hudhër dhe bukë, e shërbyer me rrush.
+  - name: Vino dulce de Málaga
+    text: Vera e ëmbël vendase, më e mira në bodegën Antigua Casa de Guardia, e hapur që nga viti 1840.
+transport: >-
+  Qendra historike, porti dhe plazhi përshkohen lehtë në këmbë. Autobusët e EMT kushtojnë rreth
+  €1.40 për udhëtim dhe paguhen edhe me kartë bankare pa kontakt. Për plazhet e Torremolinos dhe
+  Benalmádena merr trenin C1 në drejtimin e aeroportit dhe vazhdo më tej.
+daytrips:
+  - name: Granada dhe Alhambra
+    text: >-
+      Pallati maur më i famshëm në Evropë, rreth 1.5 orë me autobus ose tren. Bileta e Alhambrës
+      kushton rreth €20 dhe duhet rezervuar javë përpara në faqen zyrtare.
+  - name: Ronda
+    text: Qyteti mbi grykë me urën Puente Nuevo, rreth 2 orë me tren ose autobus.
+  - name: Nerja
+    text: Balcón de Europa, plazhe të vogla dhe shpellat e Nerja-s, rreth 1 orë me autobus.
+  - name: Caminito del Rey
+    text: >-
+      Shtegu i varur mbi një grykë të thellë, rreth 45 minuta me tren deri në El Chorro. Biletat me
+      orar blihen online (rreth €10-12) dhe mbarojnë shpejt në pranverë.
+faq:
+  - q: "A ia vlen Málaga për pushime në plazh?"
+    a: "Po. La Malagueta është 10 minuta në këmbë nga qendra, ndërsa treni C1 të çon për rreth 20-30 minuta te plazhet më të gjera të Torremolinos dhe Benalmádena. Deti është i ngrohtë nga qershori deri në tetor."
+  - q: "Sa para duhen në ditë në Málaga?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-65 në ditë për ushqim, transport dhe një-dy hyrje. Hyrjet në monumente janë të lira, ndërsa tapas me një pije kushtojnë më pak se në Barcelona."
+  - q: "A më duhet makinë me qira?"
+    a: "Për qytetin jo. Granada, Ronda dhe Nerja arrihen me autobus ose tren; makina ndihmon vetëm për fshatrat e bardhë (pueblos blancos) në male."

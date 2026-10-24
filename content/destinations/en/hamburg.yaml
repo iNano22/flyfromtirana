@@ -1,0 +1,110 @@
+city: Hamburg
+slug: hamburg
+tagline: The harbour, the canals and the Elbphilharmonie
+intro: >-
+  Hamburg is Germany's second city and its biggest port: brick warehouses on canals, ships coming
+  in from the river Elbe and two lakes in the middle of the city. It is said to have more bridges
+  than Venice and Amsterdam combined. Two or three days are enough for the city, with one more day
+  for Lübeck or the Baltic coast.
+sights:
+  - name: Elbphilharmonie
+    text: >-
+      The concert hall built on top of an old harbour warehouse, opened in 2017. The Plaza, the
+      viewing terrace at 37 metres, can be visited free with a ticket you pick up at the entrance.
+  - name: Speicherstadt
+    text: >-
+      The district of red-brick warehouses on canals, built from 1883 onwards on wooden piles.
+      Together with the Kontorhausviertel it has been on the UNESCO list since 2015. It is at its
+      most beautiful in the evening, when the lights come on.
+  - name: Miniatur Wunderland
+    text: >-
+      The largest model railway in the world, inside the Speicherstadt, with a small airport where
+      planes take off and land. A ticket costs about €20-25; book a time slot online, as the queues
+      are long.
+  - name: Landungsbrücken and the harbour
+    text: >-
+      The piers in St. Pauli where the harbour tours start (about 1 hour, about €20-25). Nearby is
+      the Old Elbe Tunnel, from 1911, which you can walk through under the river for free.
+  - name: St. Pauli and the Reeperbahn
+    text: >-
+      The nightlife district, with bars, theatres and clubs, where The Beatles played in their early
+      days. Early on Sunday mornings the Fischmarkt, the fish market, is held by the river.
+  - name: Rathaus and the Alster
+    text: >-
+      The neo-Renaissance town hall with 647 rooms and, behind it, the Binnenalster and Außenalster
+      lakes, with the Jungfernstieg promenade.
+  - name: St. Michaelis Church
+    text: >-
+      The "Michel", the symbol of the city. The tower has a viewing platform at about 106 metres
+      (ticket about €8), with views over the harbour.
+itinerary:
+  - "The Rathaus, the Jungfernstieg and a walk along the Alster, then St. Michaelis Church. In the afternoon, the Speicherstadt and HafenCity, with the Elbphilharmonie Plaza at sunset."
+  - "Landungsbrücken and the Old Elbe Tunnel, then ferry 62 to the beach at Övelgönne. In the evening, the Sternschanze or the Reeperbahn in St. Pauli."
+  - "If it's a Sunday, the Fischmarkt early in the morning. Then Miniatur Wunderland or the Planten un Blomen park, or a day trip to Lübeck."
+areas:
+  - name: St. Georg
+    text: >-
+      Next to the Hauptbahnhof, the most practical area for the airport train, with the cheapest
+      hotels and the café-lined Lange Reihe. The streets right by the station are a bit rough at
+      night.
+  - name: Altstadt and Neustadt
+    text: Around the Rathaus and the Alster, with everything within walking distance, but the highest prices.
+  - name: St. Pauli and Sternschanze
+    text: The neighbourhoods of nightlife and alternative bars, noisy at weekends.
+  - name: Altona and Ottensen
+    text: Quieter, with cafés and small shops, close to the river and the beach at Övelgönne.
+food:
+  - name: Fischbrötchen
+    text: A bread roll with herring, salmon or shrimp, the street food of the harbour, about €4-7.
+  - name: Franzbrötchen
+    text: A flattened pastry with cinnamon and sugar, for breakfast with a coffee.
+  - name: Labskaus
+    text: >-
+      The sailors' dish: corned beef mashed with potatoes and beetroot, with an egg on top and
+      herring on the side.
+  - name: Pannfisch
+    text: Pan-fried fish fillets, with potatoes and mustard sauce.
+airports:
+  HAM: >-
+    The airport is about 9 km north of the centre. The S-Bahn train S1 leaves from the station
+    below the terminals every 10 minutes and reaches the Hauptbahnhof in about 25 minutes. A single
+    ticket for the city costs about €4 and is bought before boarding, from a machine or in the HVV
+    app. A taxi costs about €30-40 and takes 20-30 minutes.
+transport: >-
+  The U-Bahn, S-Bahn, buses and harbour ferries all run on the same HVV ticket. The day ticket
+  costs about €8-9 and is worth it from the third trip; the one valid after 9:00 is cheaper. The
+  Hamburg Card (from about €12 for 1 day) adds discounts on museums and tours. The centre is easy
+  to get around on foot or on the city's StadtRAD bikes.
+daytrips:
+  - name: Lübeck
+    text: >-
+      The old Hanseatic city, with the Holstentor gate and Niederegger marzipan, about 45 minutes by
+      regional train.
+  - name: Travemünde and the Baltic Sea
+    text: >-
+      The nearest Baltic beach, about 1-1.5 hours by train via Lübeck. In summer Timmendorfer Strand
+      is also worth it.
+  - name: Lüneburg
+    text: The small salt town, with leaning brick houses, about 30-50 minutes by train.
+  - name: Altes Land
+    text: >-
+      The apple orchards along the Elbe, which blossom in April-May, about 1 hour by ferry and bus
+      from Landungsbrücken.
+budget: >-
+  A Fischbrötchen costs €4-7, a beer €4.50-6, a dish in a restaurant €15-22, and a single ticket
+  in the city about €4.
+when: >-
+  May to September, when the days are long and life moves to the waterfront. It rains all year
+  round, so bring a rain jacket. In May the city celebrates the Hafengeburtstag, the harbour's
+  birthday, and in December there are Christmas markets.
+tips:
+  - "Ferry 62 from Landungsbrücken to Finkenwerder is a cheap harbour tour: a regular HVV ticket is enough."
+  - "The free ticket for the Elbphilharmonie Plaza is picked up at the entrance; at weekends book it online (about €3) to skip the queue."
+  - "Shops and supermarkets are closed on Sundays. Bottles and cans carry a deposit (Pfand) of up to €0.25, which you get back at the supermarket."
+faq:
+  - q: "Can I visit the Elbphilharmonie without going to a concert?"
+    a: "Yes. The Plaza, the terrace that runs around the building at 37 metres, is open every day and entry is free. Concert tickets start from about €15-25, but they sell fast: check the calendar weeks ahead."
+  - q: "When is the Fischmarkt held?"
+    a: "Every Sunday early in the morning: about 5:00-9:30 from April to October and about 7:00-9:30 in winter. Many people come straight from a night on the Reeperbahn."
+  - q: "How much money do you need per day in Hamburg?"
+    a: "Excluding the flight and accommodation, plan on €50-75 a day. Hamburg's hotels are among the most expensive in Germany, while street food and the harbour ferries keep the day cheap."

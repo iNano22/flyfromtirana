@@ -1,0 +1,95 @@
+city: Bucharest
+name: Bucarest
+slug: bucharest
+tagline: Grandi palazzi, la Città Vecchia e parchi sul lago
+intro: >-
+  Bucarest è la capitale della Romania, una città di contrasti: viali eleganti, palazzoni dell'epoca
+  comunista e il gigantesco Palazzo del Parlamento. È tra le capitali più economiche dell'UE. La
+  valuta è il leu rumeno (RON): €1 vale circa 5 lei. Tre giorni bastano per le cose principali.
+sights:
+  - name: Palazzo del Parlamento
+    text: >-
+      L'edificio voluto da Ceaușescu e iniziato nel 1984, con oltre 1000 stanze. Si visita solo con
+      tour guidato, circa 60-80 lei; prenota online in anticipo e porta con te il passaporto.
+  - name: Città Vecchia (Lipscani)
+    text: >-
+      Le viuzze acciottolate intorno a via Lipscani, piene di locali e bar. Da non perdere il
+      Monastero Stavropoleos del 1724, Hanul lui Manuc e la libreria Cărturești Carusel.
+  - name: Ateneo Rumeno
+    text: >-
+      La sala da concerto con la cupola, del 1888, sede della Filarmonica George Enescu. Per vederla
+      dentro, prendi un biglietto per un concerto: di solito costa meno che in Occidente.
+  - name: Calea Victoriei
+    text: >-
+      La via più elegante della città, con il Palazzo CEC, il Museo Nazionale d'Arte nell'ex Palazzo
+      Reale e Piazza della Rivoluzione, dove Ceaușescu tenne il suo ultimo discorso nel dicembre 1989.
+  - name: Parco Herăstrău (Re Michele I)
+    text: >-
+      Il parco più grande della città, intorno a un lago dove d'estate si noleggiano barche. Vicino
+      all'ingresso sud c'è l'Arco di Trionfo.
+  - name: Museo del Villaggio
+    text: >-
+      Un museo all'aperto sul lago, del 1936, con case, mulini e chiese in legno da tutta la Romania.
+      Il biglietto costa circa 30 lei.
+itinerary:
+  - "Tour del Palazzo del Parlamento al mattino, poi il Bulevardul Unirii. Nel pomeriggio la Città Vecchia con Stavropoleos e Cărturești Carusel, cena da Caru' cu Bere, la birreria del 1879."
+  - "Una passeggiata lungo Calea Victoriei: il Palazzo CEC, Piazza della Rivoluzione, il Museo Nazionale d'Arte e l'Ateneo Rumeno. Nel pomeriggio i giardini Cișmigiu, la sera un concerto all'Ateneo."
+  - "In metro fino a Piața Victoriei, poi l'Arco di Trionfo, il Parco Herăstrău e il Museo del Villaggio. La sera il quartiere Floreasca o una cena a base di mici e birra."
+areas:
+  - name: Città Vecchia e Universitate
+    text: Al centro di tutto, vicino alla metro e all'autobus dell'aeroporto, ma rumorosa la notte.
+  - name: Piața Romană e Calea Victoriei
+    text: Più tranquilla, con buoni hotel e appartamenti, a piedi dall'Ateneo e dalla Città Vecchia.
+  - name: Gara de Nord
+    text: "Più economica e pratica per il treno dell'aeroporto e quelli per Brașov e Sinaia, ma meno piacevole la sera."
+food:
+  - name: Sarmale
+    text: Involtini di cavolo in salamoia e carne macinata, con mămăligă (polenta) e panna acida.
+  - name: Mici
+    text: Salsicce di carne macinata senza budello alla griglia, con senape e birra. Una porzione costa circa 20-30 lei.
+  - name: Ciorbă
+    text: Le zuppe acide rumene; la ciorbă de burtă, zuppa di trippa, è il rimedio classico dopo una lunga notte.
+  - name: Papanași
+    text: Frittelle di formaggio fritte con panna acida e marmellata di ciliegie. Il dolce più famoso del paese.
+airports:
+  OTP: >-
+    L'aeroporto Henri Coandă di Otopeni si trova a circa 17 km a nord del centro. Il treno ti porta a
+    Gara de Nord in circa 20-25 minuti, con un biglietto di circa 7 lei (circa €1,5); parte ogni
+    40-60 minuti. L'autobus espresso 100 (ex 783) funziona 24 ore su 24 e arriva a Piața Unirii
+    passando per Piața Victoriei e Piața Romană, in circa 45-60 minuti; il biglietto costa circa 5 lei
+    (€1), con carta bancaria contactless al validatore. Il taxi si prenota agli schermi touch nella
+    sala arrivi: circa 80-120 lei (€16-24) fino al centro.
+transport: >-
+  La metro ha 5 linee ed evita il traffico intenso. Una corsa costa circa 5 lei (€1), e su metro,
+  autobus e tram puoi pagare con carta bancaria contactless. Bolt e Uber sono economici: una corsa in
+  centro costa circa 20-35 lei (€4-7).
+daytrips:
+  - name: Brașov e Bran
+    text: >-
+      La città medievale nei Carpazi, a circa 2,5-3 ore di treno. Da Brașov un autobus di circa 45
+      minuti ti porta al Castello di Bran, legato alla leggenda di Dracula. In un solo giorno è lunga:
+      meglio dormire una notte a Brașov.
+  - name: Sinaia e Peleș
+    text: >-
+      Il Castello di Peleș, residenza estiva dei re di Romania, a circa 1,5-2 ore di treno. Di solito è
+      chiuso il lunedì.
+  - name: Snagov
+    text: >-
+      Il monastero su un'isola del lago Snagov, dove secondo la tradizione è sepolto Vlad l'Impalatore,
+      a circa 40 km a nord. I mezzi pubblici sono scarsi: meglio in auto o con Bolt.
+budget: >-
+  Un caffè costa circa 12-18 lei (€2,5-3,5), una birra al bar 15-20 lei (€3-4), un pranzo al
+  ristorante circa 50-80 lei (€10-16). Volo e alloggio esclusi, calcola €35-55 al giorno. Un letto in
+  ostello costa da circa €15-20, una camera doppia in un hotel semplice circa €50-80.
+when: >-
+  Aprile-giugno e settembre-ottobre. L'estate è calda, spesso sopra i 30 gradi, l'inverno è freddo.
+  Da fine novembre, davanti al Palazzo del Parlamento di solito apre il mercatino di Natale.
+tips:
+  - "Paga in lei, con la carta quasi ovunque. Quando il terminale lo chiede, scegli il pagamento in RON, non in euro."
+  - "In aeroporto non accettare offerte di taxi da persone nella sala: usa gli schermi ufficiali, Bolt o Uber."
+  - "Therme București, tra i centri termali più grandi d'Europa, è vicino all'aeroporto: puoi abbinarlo al giorno del volo."
+faq:
+  - q: "Treno, autobus o taxi dall'aeroporto?"
+    a: "Il treno è il più veloce, circa 7 lei fino a Gara de Nord. L'autobus 100 ti lascia in centro per circa 5 lei, anche di notte. Il taxi costa circa 80-120 lei."
+  - q: "A Bucarest si parla inglese?"
+    a: "Sì, soprattutto i giovani e nei locali. Il rumeno è una lingua latina, quindi chi parla italiano spesso capisce cartelli e menu."

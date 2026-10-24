@@ -1,0 +1,80 @@
+city: Manchester
+slug: manchester
+tagline: Football, music and the pubs of the Northern Quarter
+intro: >-
+  Manchester is a football city: Manchester United play here at Old Trafford and Manchester City
+  at the Etihad. But the city also has free museums, red-brick industrial buildings turned into
+  bars and restaurants, and a lively nightlife. Three days are enough for the city and the
+  stadiums, plus one day for Liverpool or the Peak District.
+sights:
+  - name: Old Trafford
+    text: Manchester United's stadium, with about 74,000 seats. The stadium tour with the museum costs about £30-35 and is booked online. By tram, get off at Wharfside or Old Trafford.
+  - name: Etihad Stadium
+    text: Manchester City's stadium, east of the centre. The tour costs about £25-30 and the tram stops at Etihad Campus, next to the stadium.
+  - name: National Football Museum
+    text: The national museum of football, in the glass building next to Manchester Cathedral. Entry costs about £12-15.
+  - name: John Rylands Library
+    text: A neo-Gothic library from 1900 on Deansgate, with a reading room that will remind you of Harry Potter. Entry is free.
+  - name: Science and Industry Museum
+    text: The museum of the Industrial Revolution in Castlefield, at the oldest passenger railway station in the world. Entry is free, but some galleries may be closed for renovation.
+  - name: Northern Quarter
+    text: The neighbourhood of street art, vintage shops, record shops and small bars. The best night out in the city starts here.
+  - name: Salford Quays
+    text: The former docks along the canal, with The Lowry theatre and the IWM North war museum (free), about 15 minutes on foot from Old Trafford.
+airports:
+  MAN: >-
+    The airport is about 15 km south of the centre. Trains leave from the station inside the
+    airport several times an hour and reach Manchester Piccadilly in 15-20 minutes, for about
+    £5-7. The Metrolink tram is slower (about 50 minutes to the centre), but stops in more places
+    and costs about £4-5. A taxi costs about £25-40 and takes 20-30 minutes, depending on traffic.
+budget: >-
+  A coffee costs about £3.50, a simple meal £12-18 and a beer (pint) about £5-6. A hostel bed costs
+  about £20-35, while hotels get much more expensive on match days and during big concerts. Many
+  museums are free.
+when: >-
+  May to September has the mildest weather (about 15-20 degrees) and long days, but it rains all
+  year round. The football season runs from August to May. From mid-November until just before
+  Christmas the centre fills with the Christmas markets.
+tips:
+  - "Premier League match tickets are not easy to find: they are sold only on the clubs' official websites, often only to members. Don't buy from unknown sellers, because the ticket can be cancelled."
+  - "Bring a rain jacket: it rains often in Manchester, even in summer."
+  - "Pay for the tram with a contactless bank card and remember to tap the reader both when you get on and when you get off."
+itinerary:
+  - "The centre on foot: Manchester Cathedral, the National Football Museum and the John Rylands Library. In the afternoon, Manchester Art Gallery (free) and the shops on Market Street, in the evening the Northern Quarter."
+  - "Football day: the Old Trafford tour in the morning, then Salford Quays with IWM North. In the afternoon, the tram to the Etihad Stadium, for the tour or a match."
+  - "Castlefield with the Science and Industry Museum and the canals, then Ancoats and the Mackie Mayor food hall. In the evening, an Indian dinner on the Curry Mile."
+  - "A day out of the city: Liverpool for the Beatles and Anfield, or the Peak District for a walk in nature."
+areas:
+  - name: Piccadilly
+    text: "The most practical area: the trains from the airport arrive here and everything is within walking distance, though the streets around the station are not the prettiest."
+  - name: Northern Quarter and Ancoats
+    text: For those who want bars, cafés and nightlife on their doorstep. It can be noisy at weekends.
+  - name: Deansgate and Castlefield
+    text: Quieter, along the canals, with trams to Old Trafford and Salford Quays.
+  - name: Salford Quays
+    text: "Cheaper and newer hotels, 15-20 minutes by tram from the centre: a good choice if you are coming for Manchester United."
+food:
+  - name: Curry Mile
+    text: Wilmslow Road in Rusholme, full of Indian, Pakistani and Middle Eastern restaurants, at good prices.
+  - name: Food halls
+    text: Mackie Mayor in the Northern Quarter and Altrincham Market have dozens of stalls with pizza, burgers and food from all over the world.
+  - name: Lancashire hotpot
+    text: A local stew of lamb and onions, topped with sliced potatoes baked in the oven.
+  - name: Sunday roast
+    text: "Sunday lunch at the pub: roast meat, potatoes and Yorkshire pudding."
+transport: >-
+  The centre is small and easy to walk. Metrolink trams take you to the stadiums, Salford Quays and
+  the airport: pay with a contactless bank card and the system caps your daily spending by itself.
+  Bee Network buses cost about £2 a journey, whatever the distance.
+daytrips:
+  - name: Liverpool
+    text: The city of the Beatles and Anfield stadium, about 35-50 minutes by train from Piccadilly or Oxford Road.
+  - name: Peak District
+    text: The national park of hills and stone villages, about 1 hour by train to Edale or Hope for walks in nature.
+  - name: York
+    text: A walled medieval city with York Minster cathedral and The Shambles, about 1.5 hours by train.
+faq:
+  - q: "How can I see a Manchester United or Manchester City match?"
+    a: "Tickets are sold on the clubs' official websites. For United they are very hard to get without a membership, while for City they are sometimes available to the general public too. If you can't find tickets, the stadium tour (about £25-35) is the safest alternative."
+  - q: "How much money do you need per day in Manchester?"
+    a: "Excluding the flight and accommodation, plan on £50-80 a day for food, transport and a stadium tour or a paid museum. Manchester is noticeably cheaper than London."

@@ -1,0 +1,78 @@
+city: Geneva
+slug: geneva
+tagline: Liqeni, Jet d'Eau dhe Alpet në horizont
+intro: >-
+  Geneva shtrihet në skajin jugor të liqenit Léman, me Alpet dhe Mont Blanc në horizont. Është
+  qyteti i OKB-së, i Kryqit të Kuq dhe i bankave, por edhe një qytet i vogël që përshkohet në këmbë.
+  Është ndër qytetet më të shtrenjta në botë, por transporti për turistët që flenë këtu është falas.
+sights:
+  - name: Jet d'Eau
+    text: Shatërvani simbol i qytetit, që hedh ujin 140 metra lart nga liqeni. Shihet falas nga shëtitorja. Ndalet kur fryn erë e fortë ose bën ngricë.
+  - name: Vieille Ville dhe Katedralja Saint-Pierre
+    text: Qyteti i vjetër mbi kodër, me rrugica me kalldrëm, sheshe të vogla dhe kafene. Hyrja në katedrale është falas; për kullat, nga ku sheh liqenin dhe çatitë, paguan rreth 7 franga.
+  - name: Palais des Nations
+    text: Selia evropiane e OKB-së. Turnet me guidë zgjasin rreth 1 orë dhe kushtojnë rreth 20 franga; rezervo online dhe merr pasaportën me vete. Në sheshin përpara është Broken Chair, karrigia gjigante me një këmbë të thyer.
+  - name: Jardin Anglais dhe Ora me lule
+    text: Parku buzë liqenit, me orën e madhe prej lulesh që ndryshon me stinët. Nga këtu nisen edhe varkat turistike në liqen.
+  - name: Muri i Reformacionit
+    text: Në parkun des Bastions, një mur guri rreth 100 metra i gjatë me statujat e Kalvinit dhe të reformatorëve të tjerë. 
+  - name: CERN
+    text: Laboratori i fizikës ku u shpik World Wide Web. Qendra e vizitorëve Science Gateway është falas, me ekspozita interaktive; arrihet për rreth 25 minuta me tramvajin 18 nga Cornavin. Zakonisht mbyllet të hënën.
+airports:
+  GVA: >-
+    Aeroporti është vetëm rreth 4 km nga qendra. Në sallën e bagazheve, para se të dalësh, merr
+    nga makina biletën falas të transportit publik, e vlefshme 80 minuta. Me të treni të çon në
+    stacionin Cornavin për rreth 7 minuta, me nisje çdo 10-15 minuta; autobusët 5 dhe 10 shkojnë
+    në qendër për rreth 20-25 minuta. Taksia bën rreth 15 minuta dhe kushton rreth 35-45 franga
+    (rreth €37-48).
+budget: >-
+  Geneva është ndër qytetet më të shtrenjta në botë. Një kafe kushton rreth 4.50-5.50 franga, një
+  sanduiç ose kebab 10-15 franga, një pjatë në restorant 25-40 franga. Një shtrat në hostel kushton
+  rreth 50-70 franga, një dhomë dyshe në hotel të thjeshtë nga rreth 150-220 franga nata. 1 frang
+  vlen pak më shumë se 1 euro (rreth €1.07).
+when: >-
+  Maji-shtatori është koha më e mirë: notohet në liqen dhe mbrëmjet janë të gjata. Në dhjetor
+  qyteti feston Escalade, me kortezh në kostume dhe kazanë prej çokollate. Dimri është i ftohtë
+  dhe shpesh me mjegull, por pistat e skive janë rreth 1 orë larg.
+tips:
+  - "Zvicra përdor frangën (CHF), jo euron: paguaj me kartë, që pranohet kudo."
+  - "Prizat zvicerane janë ndryshe, por spina e hollë me dy kunja e karikuesve të telefonit futet pa problem. Për spinat e trasha (Schuko) duhet një përshtatës."
+  - "Të dielën shumica e dyqaneve janë mbyllur; supermarketet në stacionin Cornavin dhe në aeroport janë hapur."
+itinerary:
+  - "Qyteti i vjetër, Katedralja Saint-Pierre me ngjitje në kulla dhe Muri i Reformacionit në parkun des Bastions. Pasdite Jardin Anglais, Jet d'Eau dhe shëtitja buzë liqenit, në mbrëmje darkë në Pâquis."
+  - "Palais des Nations në mëngjes (me rezervim) dhe Broken Chair. Pasdite CERN ose Muzeu i Kryqit të Kuq, pastaj një not ose një kafe te Bains des Pâquis. Në mbrëmje Carouge."
+  - "Udhëtim ditor: Lausanne dhe Montreux me tren, ose Chamonix për Mont Blanc. Ndryshe, Annecy në Francë."
+areas:
+  - name: Pâquis
+    text: Pranë stacionit Cornavin dhe liqenit, me hotelet më të lira të qendrës dhe restorante nga e gjithë bota. Disa rrugë janë të zhurmshme natën.
+  - name: Vieille Ville dhe Eaux-Vives
+    text: Qyteti i vjetër dhe lagjja buzë liqenit në bregun e majtë, të qeta, të bukura dhe të shtrenjta.
+  - name: Carouge
+    text: Qytezë e vogël me arkitekturë italiane, rreth 15 minuta me tramvaj nga qendra, me kafene dhe dyqane të vogla.
+food:
+  - name: Fondue dhe raclette
+    text: Djathë i shkrirë me bukë ose patate. Një fondue në restorant kushton rreth 30-35 franga për person.
+  - name: Filets de perche
+    text: Fileto peshku të vogël liqeni, të skuqura në gjalpë dhe të shërbyera me patate. Kujdes, shpesh peshku nuk vjen nga liqeni, por nga jashtë.
+  - name: Supermarketet dhe çokollata
+    text: "Migros dhe Coop kanë ushqim të gatshëm për 8-12 franga, zgjidhja e vendasve për drekë. Çokollatat zvicerane i gjen aty më lirë se në dyqanet turistike."
+transport: >-
+  Qendra përshkohet në këmbë. Tramvajet, autobusët, trenat e qytetit dhe varkat e verdha Mouettes
+  që kalojnë liqenin përdorin të njëjtat bileta: rreth 3 franga (rreth €3.20) për 1 orë dhe rreth
+  10 franga (rreth €11) për gjithë ditën. Nëse fle në hotel, hostel ose kamping në Geneva, merr
+  falas Geneva Transport Card, me transport pa limit gjatë gjithë qëndrimit. Kërkoje në recepsion
+  nëse nuk ta japin vetë.
+daytrips:
+  - name: Lausanne
+    text: Qyteti i Komitetit Olimpik, me katedrale gotike mbi kodër dhe Muzeun Olimpik buzë liqenit, rreth 35-50 minuta me tren.
+  - name: Montreux dhe Kalaja Chillon
+    text: Shëtitorja me palma buzë liqenit dhe kalaja mesjetare mbi ujë, rreth 1 orë e 10 minuta me tren direkt. Hyrja në kala kushton rreth 15 franga.
+  - name: Annecy
+    text: Qytet francez me kanale dhe një liqen me ujë të kaltër, rreth 45-60 minuta me autobus.
+  - name: Chamonix
+    text: Qyteza nën Mont Blanc, rreth 1 orë e 15 minuta me autobus. Teleferiku Aiguille du Midi (3842 metra) kushton rreth €80 vajtje-ardhje; shko vetëm në ditë të kthjellët.
+faq:
+  - q: "A mund të paguaj me euro në Geneva?"
+    a: "Shpesh po, sidomos në hotele dhe dyqane turistike, por kusurin e merr në franga dhe me kurs të keq. Më mirë paguaj me kartë ose tërhiq pak franga nga bankomati."
+  - q: "Sa para duhen në ditë në Geneva?"
+    a: "Pa fluturimin dhe fjetjen, rreth 80-120 franga (rreth €85-130) në ditë. Kursen me ushqimin nga supermarketet, me kartën falas të transportit dhe me gjërat falas: liqeni, qyteti i vjetër dhe CERN."

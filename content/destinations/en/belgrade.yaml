@@ -1,0 +1,92 @@
+city: Belgrade
+slug: belgrade
+tagline: Kalemegdan, kafanas and nightlife by the rivers
+intro: >-
+  Belgrade is the capital of Serbia, where the Sava river flows into the Danube. It is a lively city
+  with reasonable prices, kafanas with live music and clubs on the water. The currency is the Serbian
+  dinar (RSD): €1 is about 117 dinars. Two or three days are enough for the centre, the fortress and
+  Zemun.
+sights:
+  - name: Kalemegdan
+    text: >-
+      The fortress above the meeting of the Sava and the Danube, today a large park that is free to
+      visit. Watch the sunset from the walls near the Pobednik (Victor) statue.
+  - name: Knez Mihailova
+    text: The main pedestrian street, from Kalemegdan to Republic Square, with 19th-century buildings, shops and cafés.
+  - name: Skadarlija
+    text: The bohemian cobbled street, with old kafanas where musicians play between the tables. Ideal for dinner, but a little more expensive.
+  - name: Temple of Saint Sava
+    text: One of the largest Orthodox churches in the world, in the Vračar neighbourhood. Entry is free; don't miss the crypt with its golden mosaics.
+  - name: Zemun
+    text: Once a town of its own, with quiet lanes, the Gardoš Tower with views over the Danube and fish restaurants by the river.
+  - name: Nikola Tesla Museum
+    text: A small museum about the inventor, with demonstrations of his experiments. Visits are guided, with a ticket of about 1000 dinars (about €8.5).
+itinerary:
+  - "Kalemegdan in the morning, then Knez Mihailova to Republic Square. In the evening, dinner with live music in Skadarlija."
+  - "The Temple of Saint Sava and the Nikola Tesla Museum. In the afternoon, Ada Ciganlija, the lake with beaches by the Sava, or a walk along the river. In the evening, Dorćol or a club on the water."
+  - "Zemun: on foot along the Danube from Novi Beograd (about 1 hour) or by bus, the Gardoš Tower and a fish lunch. Alternatively, a day in Novi Sad and Sremski Karlovci."
+areas:
+  - name: Stari Grad
+    text: "The old town, around Knez Mihailova and Skadarlija: everything within walking distance, with the highest prices."
+  - name: Dorćol
+    text: The old neighbourhood below the fortress towards the Danube, with bars, cafés and well-priced apartments.
+  - name: Vračar
+    text: A quieter residential neighbourhood around the Temple of Saint Sava, near Slavija Square, where the A1 minibus stops.
+  - name: Zemun
+    text: About 20-30 minutes by bus from the centre, quiet, on the Danube and with lower prices.
+food:
+  - name: Ćevapi and pljeskavica
+    text: >-
+      Grilled kebabs and a big patty like a hamburger, with onion, kajmak and lepinja bread. They
+      often contain pork too: ask if it matters to you.
+  - name: Karađorđeva šnicla
+    text: A schnitzel rolled around kajmak, breaded and fried, with tartar sauce. A dish almost big enough for two.
+  - name: Burek with yoghurt
+    text: "The classic breakfast: burek with meat, cheese or spinach from the bakery (pekara), with a glass of yoghurt."
+  - name: Kajmak, ajvar and rakija
+    text: >-
+      Kajmak (a salty milk cream) and ajvar (a roasted pepper relish) come with almost every meal.
+      After dinner, try plum rakija, šljivovica.
+airports:
+  BEG: >-
+    Nikola Tesla Airport is about 18 km from the centre. The A1 minibus takes you to Slavija Square
+    in about 30-40 minutes; it leaves roughly every 20 minutes and the ticket, about 400-500 dinars
+    (about €3.5-4.5), is paid to the driver. Cheaper: city bus 72 goes to Zeleni Venac, near Knez
+    Mihailova, in about 45-60 minutes and is free, like all the city's public transport. For a taxi,
+    get a voucher (taxi voucher) at the taxi desk in the arrivals hall: the price is fixed by zone,
+    about 2000-2800 dinars (about €17-24) to the centre, for about 20-30 minutes. Don't accept offers
+    from drivers who approach you inside the hall.
+transport: >-
+  The centre is walkable, although there are some climbs. There is no metro: you get around by bus,
+  tram and trolleybus. Since 1 January 2025 the city's public transport has been free for everyone,
+  with no ticket (check that this still applies); the A1 minibus is not part of the scheme. Taxis are
+  cheap, about €5-8 within the centre: use an app such as CarGo rather than flagging cars down in
+  the street.
+daytrips:
+  - name: Novi Sad
+    text: >-
+      Serbia's second city, with an Austro-Hungarian centre and the Petrovaradin Fortress above the
+      Danube. About 40 minutes on the fast Soko train from Beograd Centar station, or 1-1.5 hours by
+      bus.
+  - name: Sremski Karlovci
+    text: A Baroque town with wine cellars, about 10 km from Novi Sad. Try bermet, the local sweet wine.
+  - name: Smederevo
+    text: A large medieval fortress on the Danube, about 1 hour by bus.
+budget: >-
+  A coffee costs about 250-350 dinars (about €2-3), a pljeskavica about 500-700 dinars (about €4-6),
+  and dinner in a kafana about 1500-2500 dinars (about €13-21). Excluding the flight and
+  accommodation, plan on €35-55 a day; a hostel bed starts at about €15, and a double room in a
+  simple hotel at about €50-70.
+when: >-
+  April to June and September to October have the best weather. July and August are very hot (often
+  above 35 degrees), but life moves to the riversides and Ada Ciganlija. Winter is cold, with the
+  strong košava wind, but hotels are cheaper.
+tips:
+  - "Pay in dinars. Cards are accepted almost everywhere; when the ATM or card machine asks, choose to pay in RSD, not in euros. Exchange offices (menjačnica) in town have better rates than those at the airport."
+  - "Signs are often in Cyrillic, although the Latin alphabet is also widely used. Learn a few letters for station names."
+  - "In many cafés and kafanas people still smoke indoors: if it bothers you, ask for a table outside."
+faq:
+  - q: "Can I pay in euros in Belgrade?"
+    a: "Some hotels and tourist shops accept them, but at a poor rate. Take dinars out of a bank's ATM or pay by card."
+  - q: "How much money do you need per day in Belgrade?"
+    a: "Excluding the flight and accommodation, about €35-55 a day. Food and transport are cheap, while hotels in the centre have become more expensive in recent years: book early for weekends."
