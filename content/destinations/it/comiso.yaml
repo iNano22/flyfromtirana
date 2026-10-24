@@ -1,0 +1,83 @@
+city: Comiso
+slug: comiso
+tagline: La porta del barocco del Val di Noto e del mare della Sicilia sud-orientale
+intro: >-
+  Comiso è soprattutto l'aeroporto della Sicilia sud-orientale: in circa 30-45 minuti sei a Ragusa
+  Ibla o a Modica, due delle città barocche del Val di Noto, ricostruite dopo il terremoto del 1693
+  e oggi patrimonio UNESCO. Poco più in là ci sono Noto, Scicli e le spiagge di Marina di Ragusa.
+  Comiso è una cittadina piccola e tranquilla. Quattro o cinque giorni in auto bastano per le città
+  barocche e qualche giorno di mare.
+sights:
+  - name: Ragusa Ibla
+    text: Il centro antico sul colle, con vicoli di pietra e il Duomo di San Giorgio, la chiesa barocca con cupola del XVIII secolo. In fondo c'è il Giardino Ibleo.
+  - name: Duomo di San Giorgio a Modica
+    text: Una facciata barocca sopra una scalinata monumentale, simbolo di Modica.
+  - name: Cattedrale di Noto
+    text: La cattedrale di San Nicolò, sopra un'ampia scalinata su Corso Vittorio Emanuele. La cupola crollò nel 1996 e la chiesa riaprì nel 2007; tutta la città è costruita in pietra dorata.
+  - name: Via Mormino Penna a Scicli
+    text: La via più bella di Scicli, piena di chiese e palazzi barocchi. Il municipio è il commissariato della serie "Il commissario Montalbano".
+  - name: Punta Secca
+    text: Un borgo di pescatori vicino a Marina di Ragusa, con la casa di Montalbano sulla spiaggia e un piccolo faro.
+  - name: Il centro di Comiso
+    text: Piazza Fonte di Diana con la sua fontana, la Chiesa Madre e la casa natale dello scrittore Gesualdo Bufalino.
+itinerary:
+  - "Dall'aeroporto a Ragusa, circa 30 minuti in auto. Scendi le scale da Ragusa Superiore a Ibla, visita il Duomo di San Giorgio e il Giardino Ibleo, cena a Ibla."
+  - "Modica la mattina: il Duomo di San Giorgio e una degustazione di cioccolato su Corso Umberto I. Il pomeriggio a Scicli, per Via Mormino Penna e la chiesa di San Matteo."
+  - "Noto la mattina, prima del caldo, poi la riserva di Vendicari e la spiaggia di Calamosche. Il tramonto guardalo a Marzamemi."
+  - "Giornata di mare a Marina di Ragusa e Punta Secca. Andando all'aeroporto, fermati nel centro di Comiso."
+areas:
+  - name: Ragusa Ibla
+    text: La base più bella, con B&B in palazzi antichi. A Ibla non si entra in auto (ZTL), quindi scegli un posto con parcheggio vicino.
+  - name: Modica
+    text: In mezzo a tutto, a circa 40 minuti dall'aeroporto e vicina a Scicli e Noto.
+  - name: Marina di Ragusa
+    text: La costa, con un lungomare, spiagge di sabbia e vita notturna d'estate. A circa 30 minuti dall'aeroporto; per agosto prenota presto.
+food:
+  - name: Cioccolato di Modica
+    text: Cioccolato lavorato a freddo secondo un'antica ricetta, che resta granuloso. Si trova con spezie come cannella, vaniglia o peperoncino.
+  - name: Arancino
+    text: Una palla di riso fritta, ripiena di ragù, formaggio o pistacchio. Nella Sicilia orientale si chiama "arancino".
+  - name: Cannolo
+    text: Un cilindro di pasta croccante ripieno di ricotta di pecora dolce.
+  - name: Scaccia ragusana
+    text: Pasta sottile ripiegata più volte, ripiena di pomodoro, formaggio o melanzane. Un tipico cibo di strada.
+airports:
+  CIY: >-
+    L'aeroporto Pio La Torre è a circa 5 km da Comiso e a circa 20 km da Ragusa. Ci sono autobus per
+    Comiso e Ragusa (circa 30 minuti, circa €4), ma sono pochi e non coincidono con tutti i voli:
+    controlla l'orario prima di partire. L'auto a noleggio è vivamente consigliata: prenotala prima e
+    ritirala in aeroporto. Il taxi costa circa €40-50 fino a Ragusa e va prenotato prima, perché
+    fuori dal terminal ce ne sono pochi.
+transport: >-
+  L'auto a noleggio è la soluzione più semplice: le città barocche distano 20-60 minuti l'una
+  dall'altra e gli autobus AST e Interbus passano di rado, soprattutto la domenica. Il treno collega
+  Ragusa, Modica, Scicli e Noto, ma passa di rado. I centri di Ibla, Noto e Modica sono zone ZTL:
+  lascia l'auto nei parcheggi fuori (circa €1-1,50 all'ora).
+daytrips:
+  - name: Noto
+    text: Il capolavoro del barocco siciliano, con la cattedrale, Palazzo Nicolaci e i suoi balconi con figure di pietra. A circa 1 ora di auto da Comiso.
+  - name: Siracusa e Ortigia
+    text: L'antica isola di Ortigia, con il Duomo costruito sopra un tempio greco e la Fonte Aretusa. A circa 1,5 ore di auto.
+  - name: La riserva di Vendicari
+    text: Una costa protetta tra Noto e Marzamemi, con pantani dove in autunno e in inverno sostano i fenicotteri, i ruderi di una tonnara e spiagge selvagge.
+  - name: Marzamemi
+    text: Un borgo di pescatori intorno a una piccola piazza, noto per il tonno. A circa 1 ora e 15 minuti di auto.
+budget: >-
+  Un espresso costa circa €1-1,20, un arancino €2-3, un cannolo €2,50-4 e una tavoletta di
+  cioccolato di Modica circa €3-5. Una pizza costa €6-10. L'auto a noleggio costa circa €25-45 al
+  giorno fuori da agosto e il doppio ad agosto. Una camera doppia a Ibla o a Modica costa circa
+  €60-90 a notte.
+when: >-
+  I voli da Tirana sono stagionali, di solito in primavera e d'estate: controlla le date ogni anno.
+  Maggio, giugno e settembre sono i mesi migliori, con il mare caldo e senza la folla di agosto. Ad
+  agosto la temperatura supera spesso i 35°C. A maggio Noto celebra l'Infiorata, quando Via Nicolaci
+  si copre di quadri fatti di fiori.
+tips:
+  - "Le chiese e molti negozi di solito chiudono dalle 13:00 alle 16:00: visita la mattina e la sera."
+  - "Chiedi prima se la patente albanese è accettata o se serve anche il permesso di guida internazionale; per il deposito dell'auto di solito serve una carta di credito."
+  - "A Modica molte cioccolaterie ti fanno assaggiare gratis prima di comprare."
+faq:
+  - q: "Si può visitare la zona senza auto?"
+    a: "Sì, con pazienza: l'autobus dall'aeroporto ti porta a Ragusa, e da lì autobus e treno collegano Modica, Scicli e Noto. Per Vendicari, Marzamemi e le spiagge l'auto fa risparmiare molto tempo."
+  - q: "Quanto si spende al giorno?"
+    a: "Volo e alloggio esclusi, circa €40-60 al giorno, più l'auto e il carburante. La Sicilia sud-orientale è più economica di Taormina o Palermo."

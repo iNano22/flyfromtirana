@@ -1,0 +1,98 @@
+city: Chișinău
+slug: chisinau
+tagline: Parchi verdi, plăcinte e cantine di vino sotterranee
+intro: >-
+  Chișinău è la capitale della Moldavia, una città tranquilla con ampi viali, molti parchi ed edifici
+  dell'epoca zarista e sovietica. È molto economica ed è la porta d'accesso alle famose cantine di
+  vino dei dintorni. La valuta è il leu moldavo (MDL): €1 vale circa 20 lei. Due o tre giorni
+  bastano per la città e una giornata alle cantine.
+sights:
+  - name: Parco e Viale Ștefan cel Mare
+    text: >-
+      Il viale principale attraversa tutto il centro. All'ingresso del parco più antico della città si
+      trova la statua del principe Ștefan cel Mare del 1928; all'interno ci sono panchine, fontane e
+      giocatori di scacchi.
+  - name: Cattedrale della Natività e Arco di Trionfo
+    text: >-
+      La cattedrale ortodossa del 1836, in mezzo a un parco in centro, con il campanile ricostruito nel
+      1997. Di fronte c'è l'Arco di Trionfo, del 1840, e la piazza principale della città.
+  - name: Mercato Centrale
+    text: >-
+      Il grande mercato della città (Piața Centrală), pieno di frutta, verdura, formaggi e miele. Vai
+      al mattino e porta contanti.
+  - name: Museo Nazionale di Storia
+    text: >-
+      Il museo principale del paese, dalla preistoria al XX secolo, con una copia della lupa romana
+      davanti all'ingresso. Il biglietto è economico, circa 50 lei (circa €2,5); di solito è chiuso il
+      lunedì.
+  - name: Parco Valea Morilor
+    text: >-
+      Un grande parco intorno a un lago, con la lunga scalinata della Cascata che scende dalla strada
+      fino all'acqua. D'estate si noleggiano barche e ci sono caffè sul lago.
+itinerary:
+  - "Il Viale Ștefan cel Mare, il parco e la statua, poi la Cattedrale della Natività e l'Arco di Trionfo. Nel pomeriggio il Museo Nazionale di Storia, la sera una cena con plăcinte e vino locale."
+  - "Il Mercato Centrale al mattino, poi un caffè sul viale. Nel pomeriggio il Parco Valea Morilor con la scalinata della Cascata e una passeggiata sul lago."
+  - "Una giornata alle cantine di vino: Cricova o Mileștii Mici, con un tour prenotato in anticipo. In alternativa, una giornata a Orheiul Vechi per il monastero nella roccia."
+areas:
+  - name: Centro (Centru)
+    text: "Intorno al Viale Ștefan cel Mare: tutto a piedi, con la maggior parte degli hotel e dei ristoranti."
+  - name: Vicino al Mercato Centrale
+    text: "Più economica e pratica per i minibus verso Orheiul Vechi e Soroca, ma rumorosa e meno piacevole la sera."
+  - name: Valea Morilor e Buiucani
+    text: Una zona più tranquilla e verde vicino al parco, con appartamenti a buon prezzo, a 15-20 minuti a piedi dal centro.
+food:
+  - name: Plăcinte
+    text: >-
+      Torte salate sottili ripiene di formaggio, cavolo, patate, zucca o amarene, il pasto veloce
+      preferito del paese. Una costa circa 30-50 lei (€1,5-2,5).
+  - name: Mămăligă
+    text: Polenta di mais, servita con formaggio di capra o di pecora, panna acida e spesso con carne di maiale o pesce.
+  - name: Zeamă
+    text: Zuppa di pollo con tagliatelle fatte in casa ed erbe, leggermente acida. Il classico primo piatto moldavo.
+  - name: Vino moldavo
+    text: >-
+      Prova i vini locali come Fetească Neagră e Rară Neagră; un bicchiere in un locale costa circa
+      40-70 lei (€2-3,5).
+airports:
+  RMO: >-
+    L'aeroporto internazionale di Chișinău si trova a circa 13 km a sud-est del centro. Il filobus 30
+    ti porta in centro in circa 30-40 minuti, con un biglietto di circa 6 lei (€0,3) da pagare a
+    bordo. Il minibus 165 è un po' più veloce e costa circa 8 lei; porta spiccioli. Con Yandex Go o
+    Bolt la corsa fino al centro costa circa 100-150 lei (€5-7,5); i taxi nella sala arrivi di solito
+    sono più cari.
+transport: >-
+  Il centro si gira facilmente a piedi. I filobus costano circa 6 lei (€0,3) a corsa, i minibus
+  (rutiere) circa 8 lei, e coprono tutta la città. I taxi con app sono molto economici: una corsa in
+  città costa circa 50-80 lei (€2,5-4).
+daytrips:
+  - name: Cantine Cricova e Mileștii Mici
+    text: >-
+      Due tra le cantine di vino più grandi del mondo, con decine di chilometri di gallerie
+      sotterranee. Cricova si trova a circa 15 km a nord, Mileștii Mici a circa 20 km a sud. Si
+      visitano solo con tour prenotati in anticipo, da circa 400 lei (€20) con degustazione; vai in
+      taxi.
+  - name: Orheiul Vechi
+    text: >-
+      Il monastero scavato nella roccia sopra la valle del fiume Răut, a circa 60 km a nord, con il
+      villaggio di Butuceni e le sue case tradizionali. I minibus dal centro impiegano circa 1,5 ore.
+  - name: Soroca
+    text: >-
+      La fortezza rotonda del 1543 sul fiume Nistro, a circa 160 km a nord, circa 3 ore di autobus.
+      Parti presto al mattino.
+budget: >-
+  Un caffè costa circa 30-40 lei (€1,5-2), una birra al bar 35-50 lei (€2-2,5), un pranzo al
+  ristorante circa 150-250 lei (€7,5-12,5). Volo e alloggio esclusi, calcola €25-40 al giorno. Un
+  letto in ostello costa da circa €10-15, una camera doppia in un hotel semplice circa €35-60.
+when: >-
+  Maggio-giugno e settembre-ottobre. L'estate è calda, l'inverno freddo e con neve. Nel primo fine
+  settimana di ottobre la città festeggia la Giornata Nazionale del Vino, con fiere nella piazza
+  principale.
+tips:
+  - "Paga in lei. In centro la carta è accettata quasi ovunque, ma al mercato, sui minibus e sui filobus servono contanti."
+  - "Il rumeno è una lingua latina, quindi chi parla italiano spesso capisce i cartelli; molte persone parlano anche russo."
+  - "Prima di partire, controlla gli avvisi ufficiali di viaggio per la Moldavia, come per qualsiasi destinazione."
+faq:
+  - q: "Come arrivo dall'aeroporto al centro?"
+    a: "Il filobus 30 costa circa 6 lei, il minibus 165 circa 8 lei. Con Yandex Go o Bolt costa circa 100-150 lei fino al centro."
+  - q: "Vale la pena visitare le cantine di vino?"
+    a: "Sì, sono il motivo principale per venire. Prenota il tour qualche giorno prima, soprattutto per il fine settimana, e porta una giacca: sottoterra la temperatura è di circa 12-14 gradi tutto l'anno."

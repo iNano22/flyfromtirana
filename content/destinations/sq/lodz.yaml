@@ -1,0 +1,99 @@
+city: Łódź
+slug: lodz
+tagline: Fabrika të vjetra, kinema dhe rruga Piotrkowska
+intro: >-
+  Łódź është qyteti i tretë më i madh i Polonisë, rreth 130 km në jugperëndim të Warsaw. Në
+  shekullin XIX u rrit me fabrikat e tekstilit dhe u quajt "Manchester-i polak"; sot ato fabrika
+  prej tulle të kuqe janë muze, qendra tregtare, hotele dhe bare. Këtu është edhe shkolla e famshme
+  e filmit, ku studiuan Polański dhe Kieślowski. Ka më pak turistë dhe çmime më të ulëta se Kraków
+  apo Warsaw. Monedha është zloti polak (PLN): €1 është rreth 4.2 PLN.
+sights:
+  - name: Rruga Piotrkowska
+    text: >-
+      Rruga kryesore, rreth 4 km e gjatë, me pallate fabrikantësh, bare dhe restorante, kryesisht
+      për këmbësorë. Gjatë saj ka statuja bronzi, si stoli i poetit Tuwim dhe pianoja e
+      Rubinstein-it, dhe yjet e kinemasë polake në trotuar.
+  - name: Manufaktura
+    text: >-
+      Fabrika e madhe e Izrael Poznański-t, e kthyer në vitin 2006 në qendër tregtare me restorante,
+      kinema dhe muze. Në sheshin e brendshëm ka koncerte në verë dhe pistë patinazhi në dimër.
+  - name: Pallati i Poznański-t
+    text: >-
+      Pallati i fabrikantit më të pasur të qytetit, ngjitur me Manufakturën, me salla plot ar dhe
+      dru. Sot është Muzeu i Qytetit; bileta kushton rreth 20-25 PLN (rreth €5-6).
+  - name: Muzeu i Artit (ms1 dhe ms2)
+    text: >-
+      Që nga viti 1931 ka një nga koleksionet e para të artit të avangardës në botë. ms1 është në një
+      pallat fabrikanti në rrugën Więckowskiego, ms2 në Manufakturë, me art modern dhe bashkëkohor.
+      Bileta kushton rreth 15-20 PLN (rreth €4-5).
+  - name: Księży Młyn
+    text: >-
+      Lagjja punëtore e fabrikantit Karl Scheibler nga shekulli XIX, me shtëpi prej tulle të kuqe,
+      një fabrikë të kthyer në lofte dhe Pallatin Herbst, një vilë me mobiliet e kohës.
+  - name: Muzeu i Kinematografisë
+    text: >-
+      Në Pallatin Scheibler, në Plac Zwycięstwa, me kamera të vjetra, afishe dhe një fotoplastikon
+      me fotografi tredimensionale nga fillimi i shekullit XX. Bileta kushton rreth 15-20 PLN (rreth
+      €3.5-5).
+itinerary:
+  - "Rruga Piotrkowska në këmbë nga Plac Wolności drejt jugut, me statujat e bronzit dhe muralet. Në mbrëmje darkë dhe birrë në OFF Piotrkowska."
+  - "Pallati i Poznański-t në mëngjes, pastaj Manufaktura dhe ms2. Në mbrëmje, restorantet rreth sheshit të Manufakturës."
+  - "Księży Młyn dhe Pallati Herbst, pastaj Muzeu i Kinematografisë. Pasdite ms1 ose EC1, ish-termocentrali me planetarium pranë stacionit Łódź Fabryczna."
+areas:
+  - name: Piotrkowska dhe qendra
+    text: Gjithçka në këmbë. Rrugët anësore janë më të qeta dhe më të lira se vetë Piotrkowska, e zhurmshme në netët e fundjavës.
+  - name: Pranë Manufakturës
+    text: Hotele në ndërtesat e vjetra të fabrikës, rreth 15 minuta në këmbë nga Plac Wolności.
+  - name: Pranë Łódź Fabryczna
+    text: Rreth stacionit nëntokësor, praktike për trenat për në Warsaw, rreth 10 minuta në këmbë nga Piotrkowska.
+food:
+  - name: Zalewajka
+    text: Supë e thartë me miell thekre dhe patate, gatimi i punëtorëve të qytetit, shpesh me salsiçe.
+  - name: Pierogi
+    text: Brumë i mbushur me patate e djathë (ruskie), mish, lakër ose fruta, i zier ose i skuqur.
+  - name: Bar mleczny
+    text: '"Baret e qumështit", mensat e lira nga koha komuniste, ku një drekë kushton rreth 20-30 PLN (rreth €5-7).'
+  - name: OFF Piotrkowska
+    text: Oborri i një ish-fabrike me kamionë ushqimi, bare me birrë artizanale dhe restorante.
+airports:
+  LCJ: >-
+    Aeroporti Władysław Reymont është rreth 6 km në jugperëndim të qendrës. Autobusi 65 të çon te
+    stacioni Łódź Kaliska dhe në qendër për rreth 20-30 minuta, me biletë qyteti rreth 4-6 PLN
+    (rreth €1-1.5), që blihet me kartë në makinën brenda autobusit. Taksia ose Bolt bëjnë rreth
+    15-20 minuta dhe kushtojnë rreth 40-60 PLN (€10-14). Trenat për në Warsaw bëjnë rreth 1.5 orë.
+transport: >-
+  Qendra përshkohet në këmbë; tramvajet dhe autobusët të çojnë kudo tjetër. Biletat blihen me
+  kartë në makinat brenda mjeteve ose në aplikacionin Jakdojade; bileta 24-orëshe kushton rreth
+  15-18 PLN (rreth €4). Bolt dhe Uber janë të lirë. Qyteti ka dy stacione kryesore: Łódź
+  Fabryczna, në qendër, dhe Łódź Kaliska, në perëndim.
+daytrips:
+  - name: Warsaw
+    text: >-
+      Kryeqyteti, me Qytetin e Vjetër të rindërtuar dhe Muzeun e Kryengritjes. Trenat nga Łódź
+      Fabryczna bëjnë rreth 1.5 orë, me bileta rreth 30-60 PLN (rreth €7-14).
+  - name: Arkadia dhe Nieborów
+    text: >-
+      Pallati barok i familjes Radziwiłł në Nieborów dhe parku romantik i Arkadia-s, me tempuj dhe
+      rrënoja artificiale të shekullit XVIII. Janë pranë Łowicz, me autobus ose taksi; hyrja kushton
+      rreth 20-40 PLN (rreth €5-10).
+  - name: Łowicz
+    text: >-
+      Qytet i vogël i njohur për veshjet popullore me vija shumëngjyrëshe dhe prerjet me letër
+      (wycinanki), rreth 1 orë me tren. Kombinohet mirë me Nieborów-in në të njëjtën ditë.
+budget: >-
+  Një birrë gjysmëlitërshe në qendër kushton rreth 12-18 PLN (€3-4), një pjatë pierogi rreth
+  25-40 PLN (€6-10), një kafe rreth 10-15 PLN (€2.5-3.5) dhe një biletë autobusi rreth 4-6 PLN
+  (€1-1.5).
+when: >-
+  Maji-shtatori për ditë të gjata dhe tavolina jashtë në Piotrkowska. Në fillim të vjeshtës
+  zakonisht mbahet Light Move Festival, me projeksione drite mbi fasada. Dimri është i ftohtë,
+  shpesh nën 0°C.
+tips:
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Shumica e dyqaneve janë të mbyllura të dielën, edhe ato në Manufakturë; restorantet dhe dyqanet Żabka zakonisht punojnë."
+  - "Shumë muze janë të mbyllur të hënën: kontrollo orarin para se të shkosh."
+faq:
+  - q: "A ia vlen Łódź, apo më mirë direkt në Warsaw?"
+    a: "Łódź ia vlen për dy ditë: më pak turistë, çmime më të ulëta dhe arkitekturë industriale që nuk e gjen gjetkë. Warsaw është rreth 1.5 orë me tren, ndaj mund t'i kombinosh."
+  - q: "Sa para duhen në ditë në Łódź?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimet kryesore janë fjetja dhe muzetë."

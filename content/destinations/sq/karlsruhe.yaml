@@ -1,0 +1,81 @@
+city: Karlsruhe
+slug: karlsruhe
+tagline: Qyteti si freskore dhe banjat termale të Baden-Baden
+intro: >-
+  Karlsruhe është një qytet i ri, i ndërtuar në vitin 1715 rreth një pallati, me rrugë që hapen prej
+  tij si një freskore. Është qytet studentësh, i sheshtë dhe më i lirë se Stuttgart ose Munich.
+  Aeroporti është pranë Baden-Baden, qytetit të banjave termale buzë Pyllit të Zi, prandaj ia vlen
+  t'i bashkosh të dy në një udhëtim, ndoshta me një ditë në Strasbourg.
+sights:
+  - name: Pallati i Karlsruhe dhe rrugët si freskore
+    text: Pallati i verdhë është pika nga e cila nisen rreth 30 rrugë si rrezet e një freskoreje. Brenda është Badisches Landesmuseum, me hyrje rreth €8-10; nga kulla sheh më mirë planin e qytetit.
+  - name: Schlossgarten
+    text: Parku i madh pas pallatit, falas, me lëndina, një liqen të vogël dhe kopsht botanik.
+  - name: ZKM
+    text: Qendra për Artin dhe Mediat, një nga muzetë më të mëdhenj në botë për artin dixhital, në një ish-fabrikë municionesh. Hyrja kushton rreth €8-10; e mbyllur të hënën dhe të martën.
+  - name: Marktplatz dhe piramida
+    text: Sheshi kryesor me piramidën prej guri të kuq, ku prehet themeluesi i qytetit. Nga këtu nis Kaiserstraße, rruga tregtare, ku tramvajet tani kalojnë nën tokë.
+  - name: Banjat termale të Baden-Baden
+    text: Friedrichsbad është një banjë romako-irlandeze e vitit 1877, ku hyhet pa rroba, rreth €35-40 për 3 orë. Caracalla Therme është më moderne, me pishina të brendshme dhe të jashtme dhe me rroba banje, nga rreth €20 për 2 orë.
+  - name: Lichtentaler Allee dhe Kurhaus
+    text: Shëtitore e gjelbër rreth 2 km buzë lumit Oos, nga Kurhaus deri te manastiri Lichtental. Kurhaus është ndërtesa e bardhë me kolona ku ndodhet kazinoja e famshme.
+airports:
+  FKB: >-
+    Aeroporti Karlsruhe/Baden-Baden ndodhet në Söllingen, rreth 15 km nga Baden-Baden dhe 40 km nga
+    Karlsruhe. Autobusi 205 të çon në stacionin e Baden-Baden për rreth 25-30 minuta, zakonisht çdo
+    30-60 minuta; nga atje trenat për Karlsruhe Hauptbahnhof bëjnë 15-25 minuta. Një biletë KVV për
+    gjithë rrugën kushton rreth €7-9 dhe udhëtimi zgjat rreth 1 orë. Ka edhe autobusë shuttle direkt
+    për Karlsruhe, Strasbourg dhe Stuttgart sipas orareve të fluturimeve: rezervoji përpara. Taksia
+    kushton rreth €35-45 deri në Baden-Baden dhe €80-100 deri në Karlsruhe.
+transport: >-
+  Karlsruhe është krejt i sheshtë dhe përshkohet lehtë në këmbë ose me biçikletë. Tramvajet e KVV të
+  çojnë kudo dhe, si tramvaj-trena, vazhdojnë deri në qytetet përreth. Një biletë e vetme kushton
+  rreth €3, bileta ditore rreth €7-9; blije në makinë ose në aplikacionin KVV para se të hipësh. Në
+  Baden-Baden stacioni është rreth 4 km nga qendra: autobusi 201 të çon në Leopoldsplatz për rreth 15
+  minuta.
+daytrips:
+  - name: Strasbourg
+    text: Katedralja gotike dhe lagjja Petite France me kanale. Rreth 40 minuta me TGV nga Karlsruhe, ose rreth 1.5 orë më lirë me trena rajonalë përmes Offenburg-ut.
+  - name: Heidelberg
+    text: Kështjella e kuqe mbi lumin Neckar, Ura e Vjetër dhe universiteti më i vjetër i Gjermanisë, rreth 35-60 minuta me tren.
+  - name: Pylli i Zi
+    text: Fillon menjëherë pas Baden-Baden-it. Tramvaj-treni nga Karlsruhe përshkon luginën e Murg-ut deri në Freudenstadt për rreth 2 orë; rruga malore Schwarzwaldhochstraße bëhet më lehtë me makinë me qira.
+budget: >-
+  Një kafe kushton rreth €3-3.50, një döner rreth €7-8, një birrë rreth €4.50-5.50 dhe një pjatë në
+  restorant €14-22. Një shtrat në hostel kushton rreth €30-40, një dhomë dyshe në hotel të thjeshtë
+  rreth €80-120 nata. Baden-Baden është më i shtrenjtë: fli në Karlsruhe dhe shko atje me tren.
+when: >-
+  Maji-shtatori ka motin më të mirë. Në korrik mbahet Das Fest, festival i madh muzikor pothuajse
+  falas, ndërsa në gusht-shtator Schlosslichtspiele ndriçon fasadën e pallatit me projeksione falas.
+  Në dhjetor ka tregje Krishtlindjesh në të dy qytetet.
+tips:
+  - "Në Friedrichsbad hyhet pa rroba banje dhe disa ditë janë të përbashkëta për burra dhe gra. Nëse nuk të përshtatet, zgjidh Caracalla Therme."
+  - "Të dielën dyqanet dhe supermarketet janë të mbyllura: bëj blerjet të shtunën."
+  - "Për lojërat në kazino burrat duhet të veshin xhaketë; turet e mëngjesit nuk kanë rregulla veshjeje."
+itinerary:
+  - "Pallati i Karlsruhe me ngjitje në kullë, Schlossgarten dhe kopshti botanik. Pasdite Marktplatz dhe Kaiserstraße; në mbrëmje darkë në Südstadt."
+  - "Baden-Baden: Lichtentaler Allee në mëngjes, pastaj Kurhaus dhe qyteti i vjetër. Pasdite 2-3 orë në Friedrichsbad ose Caracalla Therme."
+  - "ZKM në mëngjes, pasdite qyteti i vjetër i Durlach-ut dhe kodra Turmberg. Ndryshe, një ditë në Strasbourg ose Heidelberg."
+areas:
+  - name: Innenstadt
+    text: Qendra rreth Marktplatz dhe Kaiserstraße, pranë pallatit.
+  - name: Südstadt dhe Hauptbahnhof
+    text: "Zona më praktike dhe më e lirë: nga këtu nisen trenat për Baden-Baden dhe udhëtimet ditore."
+  - name: Durlach
+    text: Qyteti i vjetër në lindje, i qetë dhe me karakter, rreth 15 minuta me tramvaj nga qendra.
+  - name: Baden-Baden
+    text: Për kë vjen kryesisht për banjat termale. Më i shtrenjtë, por më pranë aeroportit.
+food:
+  - name: Schäufele me Brägele
+    text: Shpatull derri e tymosur, me patate të skuqura në tigan, pjatë tipike e Baden-it.
+  - name: Flammkuchen
+    text: Brumë shumë i hollë me krem, qepë dhe proshutë, nga Alsace fqinje. Kushton rreth €9-13.
+  - name: Schwarzwälder Kirschtorte
+    text: Torta e Pyllit të Zi me çokollatë, qershi dhe krem, më e mira në kafenetë e Baden-Baden-it.
+  - name: Verërat e Baden-it
+    text: Riesling dhe Spätburgunder nga vreshtat përreth. Nga prilli në qershor mos humb shpargujt e bardhë (Spargel).
+faq:
+  - q: "Ku të fle: në Karlsruhe apo në Baden-Baden?"
+    a: "Për buxhet të kufizuar dhe udhëtime ditore, në Karlsruhe, pranë Hauptbahnhof. Për pushim në banjat termale, Baden-Baden është më i qetë dhe më pranë aeroportit, por më i shtrenjtë."
+  - q: "Sa para duhen në ditë në Karlsruhe?"
+    a: "Pa fluturimin dhe fjetjen, rreth €45-70 në ditë. Një ditë në Baden-Baden me banjat termale kushton rreth €20-40 më shumë."

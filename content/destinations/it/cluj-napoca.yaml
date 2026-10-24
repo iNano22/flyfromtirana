@@ -1,0 +1,98 @@
+city: Cluj-Napoca
+slug: cluj-napoca
+tagline: Il cuore della Transilvania, città di studenti e festival
+intro: >-
+  Cluj-Napoca è la seconda città più grande della Romania e la capitale non ufficiale della
+  Transilvania, una città universitaria piena di studenti, caffè e festival, con un centro storico
+  che si gira a piedi. La valuta è il leu rumeno (RON): €1 vale circa 5 lei. Due giorni bastano per
+  la città, più un giorno per la Miniera di Sale di Turda.
+sights:
+  - name: Piazza Unirii e Chiesa di San Michele
+    text: >-
+      La piazza principale della città, con la chiesa gotica di San Michele, costruita tra il 1350 e il
+      1487, con un campanile di circa 80 metri. Davanti si trova la statua equestre del re Mattia
+      Corvino, nato a Cluj nel 1443. L'ingresso in chiesa è gratuito.
+  - name: Palazzo Bánffy
+    text: >-
+      Il palazzo barocco sul lato est della piazza, costruito nel 1774-1785. Oggi ospita il Museo
+      Nazionale d'Arte; il biglietto costa circa 20-30 lei.
+  - name: Orto Botanico
+    text: >-
+      L'Orto Botanico Alexandru Borza, circa 14 ettari, a 15 minuti a piedi dal centro, con serre
+      tropicali e un giardino giapponese. Il biglietto costa circa 15-25 lei; è più bello in primavera.
+  - name: Collina Cetățuia
+    text: >-
+      La collina sopra il fiume Someș, con i resti della fortezza austriaca del 1715. Le scale dal
+      centro si salgono in circa 15 minuti, e la vista sulla città al tramonto è gratuita.
+  - name: Parco Centrale
+    text: >-
+      Il vecchio parco della città, con un lago dove d'estate si noleggiano barche e l'edificio del
+      Casinò del 1897. Accanto c'è la Cluj Arena, lo stadio dove si tiene il festival Untold.
+itinerary:
+  - "Piazza Unirii con la Chiesa di San Michele e il Palazzo Bánffy, poi la casa natale di Mattia Corvino. Nel pomeriggio il Parco Centrale, al tramonto la salita sulla Collina Cetățuia."
+  - "Piazza Avram Iancu con la Cattedrale Ortodossa e il Teatro Nazionale, poi l'Orto Botanico. La sera cena con varză a la Cluj nel centro storico."
+  - "Una giornata a Turda: la Miniera di Sale al mattino, le Gole di Turda nel pomeriggio. Chi ha più tempo aggiunge una notte a Sighișoara o un giorno ad Alba Iulia."
+areas:
+  - name: Centro storico (Piazza Unirii)
+    text: Tutto a piedi, con hotel, appartamenti e locali, ma con i prezzi più alti.
+  - name: Mărăști
+    text: Un quartiere residenziale tra il centro e l'aeroporto, con appartamenti più economici e autobus frequenti.
+  - name: Zona della stazione
+    text: >-
+      Più economica e pratica per i treni verso Sighișoara e Alba Iulia, a circa 20-25 minuti a piedi
+      da Piazza Unirii, ma meno piacevole la sera.
+food:
+  - name: Varză a la Cluj
+    text: >-
+      Cavolo tritato cotto al forno a strati con carne di maiale, riso e panna acida. Il piatto simbolo
+      della città, circa 35-50 lei.
+  - name: Papanași
+    text: Frittelle di formaggio fritte con panna acida e marmellata di ciliegie. Circa 25-35 lei.
+  - name: Ciorbă
+    text: Le zuppe acide rumene, con verdure, carne o trippa, circa 20-30 lei; spesso bastano per pranzo.
+airports:
+  CLJ: >-
+    L'aeroporto internazionale Avram Iancu si trova a circa 9 km a est del centro. L'autobus 8 ti porta
+    a Piața Mihai Viteazul, in centro, in circa 30-40 minuti, mentre altre linee, come la 5, vanno alla
+    stazione dei treni. Il biglietto costa circa 3-4 lei (€0,6-0,8), con carta bancaria contactless al
+    validatore sull'autobus. Il taxi o Bolt impiega circa 20-30 minuti e costa circa 40-60 lei (€8-12).
+transport: >-
+  Il centro storico si gira a piedi. Per le distanze più lunghe ci sono autobus, filobus e tram; una
+  corsa costa circa 3-4 lei, con carta contactless. Bolt e Uber sono economici: una corsa in città
+  costa circa 15-30 lei (€3-6).
+daytrips:
+  - name: Miniera di Sale di Turda
+    text: >-
+      Salina Turda, una vecchia miniera di sale trasformata in parco sotterraneo, con una ruota
+      panoramica e barche su un lago sotterraneo. Circa 1 ora di autobus; il biglietto costa circa 50-70
+      lei. Dentro ci sono circa 10-12 gradi, quindi porta una giacca.
+  - name: Gole di Turda
+    text: >-
+      Un canyon calcareo con un sentiero di circa 2-3 km tra le rocce, a circa 10 km da Turda. Si abbina
+      facilmente alla miniera nello stesso giorno, con Bolt o taxi da Turda.
+  - name: Sighișoara
+    text: >-
+      La cittadella medievale, patrimonio UNESCO, dove secondo la tradizione nacque Vlad l'Impalatore.
+      Circa 3-4 ore di treno o autobus, quindi meglio dormire una notte lì.
+  - name: Alba Iulia
+    text: >-
+      La fortezza a stella Alba Carolina, costruita nel 1715-1738, dove nel 1918 fu proclamata l'unione
+      della Transilvania con la Romania. Circa 1,5-2 ore di treno o autobus.
+budget: >-
+  Un caffè costa circa 12-18 lei (€2,5-3,5), una birra al bar 12-20 lei (€2,5-4), un pranzo al
+  ristorante circa 45-70 lei (€9-14). Volo e alloggio esclusi, calcola €30-50 al giorno. Un letto in
+  ostello costa da circa €15, una camera doppia in un hotel semplice circa €45-70.
+when: >-
+  Maggio-giugno e settembre-ottobre. A giugno si tiene il TIFF, il festival del cinema Transilvania,
+  con proiezioni anche all'aperto. All'inizio di agosto arriva il festival Untold: i prezzi degli
+  alloggi si moltiplicano, quindi prenota con molto anticipo o evita quei giorni. L'inverno è freddo,
+  spesso sotto zero.
+tips:
+  - "Paga in lei, con la carta quasi ovunque. Quando il terminale lo chiede, scegli il pagamento in RON, non in euro."
+  - "Vai alla Miniera di Sale al mattino presto o in un giorno feriale: nel fine settimana le code sono lunghe."
+  - "Molti musei sono chiusi il lunedì: tieni per quel giorno le chiese, i parchi e la Collina Cetățuia."
+faq:
+  - q: "Quanti giorni servono per Cluj-Napoca?"
+    a: "Due giorni bastano per il centro, l'Orto Botanico e Cetățuia. Aggiungi un giorno per Turda, e uno o due in più per Sighișoara o Alba Iulia."
+  - q: "A Cluj si parla inglese?"
+    a: "Sì, soprattutto i giovani: Cluj ha la più grande università della Romania. Quasi il 15% degli abitanti è ungherese, quindi molte scritte sono anche in ungherese, dove la città si chiama Kolozsvár."

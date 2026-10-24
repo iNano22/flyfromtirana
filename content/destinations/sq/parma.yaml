@@ -1,0 +1,79 @@
+city: Parma
+slug: parma
+tagline: Parmigiano, proshutë dhe opera e Verdit
+intro: >-
+  Parma është një qytet i vogël, elegant dhe i pasur i Emilia-Romagna-s, i njohur në gjithë botën
+  për djathin Parmigiano Reggiano dhe proshutën e Parmës. Qendra, me katedralen romane, teatrin e
+  operës dhe pallatet e familjes Farnese, përshkohet lehtë në këmbë ose me biçikletë. Dy ditë
+  mjaftojnë për qytetin, tri nëse shton një vizitë në një fabrikë djathi ose në kështjellat e
+  kodrave.
+sights:
+  - name: Duomo dhe Baptisteri
+    text: Katedralja romane, me kupolën e pikturuar nga Correggio, dhe Baptisteri tetëkëndësh prej mermeri rozë përballë saj. Duomo është falas; Baptisteri ka biletë, rreth €10-12 bashkë me Muzeun Dioqezan.
+  - name: Teatro Regio
+    text: Teatri i operës, i hapur në vitin 1829, ku Verdi është pothuajse i shenjtë. Vizitohet me guidë për rreth €8-10; në shtator-tetor këtu zhvillohet Festivali Verdi.
+  - name: Palazzo della Pilotta
+    text: Kompleksi i madh prej tulle i familjes Farnese, me Teatrin Farnese prej druri dhe Galerinë Kombëtare me vepra të Correggio-s, Parmigianino-s dhe Leonardo-s. Bileta e përbashkët kushton rreth €18-20.
+  - name: Parco Ducale
+    text: Parku i dukëve, përtej përroit të Parmës, me shtigje nën pemë, një liqen të vogël dhe pallatin e dukës. Hyrja është falas.
+  - name: Camera di San Paolo
+    text: Një dhomë e vogël në një manastir të vjetër, me tavanin e pikturuar nga Correggio në vitin 1519. Zakonisht përfshihet në biletën e Pilotta-s; kontrollo oraret përpara, sepse nuk hapet çdo ditë.
+  - name: Piazza Garibaldi
+    text: Sheshi kryesor i qytetit, me Pallatin e Guvernatorit dhe kafene ku banorët takohen para darkës.
+airports:
+  PMF: >-
+    Aeroporti Giuseppe Verdi është rreth 3 km nga qendra. Autobusi i qytetit të çon në stacionin e
+    trenit dhe në qendër për rreth 15 minuta, me biletë rreth €2. Taksia deri në qendër kushton
+    rreth €15-20.
+budget: >-
+  Një kafe në banak kushton rreth €1.20-1.50, një pjatë anolini €10-14 dhe një pjatë me torta
+  fritta e proshutë për dy veta rreth €15-20. Bileta e autobusit kushton rreth €2. Një dhomë dyshe
+  në hotel të thjeshtë ose B&B kushton nga rreth €80-120 nata; gjatë Festivalit Verdi dhe
+  panaireve çmimet rriten.
+when: >-
+  Prilli-qershori dhe shtatori-tetori kanë motin më të mirë. Në shtator ka festivalin e proshutës
+  dhe nis Festivali Verdi, që zgjat deri në tetor. Korriku dhe gushti janë të nxehtë, ndërsa
+  dimri është i ftohtë dhe shpesh me mjegull.
+tips:
+  - "Djathi Parmigiano bëhet herët në mëngjes: vizitat në fabrika nisin rreth orës 8:00-9:00 dhe rezervohen disa ditë përpara."
+  - "Parma është qytet biçikletash: shumë hotele dhe B&B japin biçikleta falas ose me pak euro në ditë."
+  - "Nga stacioni i Parmës, Bologna dhe Milan janë rreth 1 orë me tren. Mund ta kombinosh Parmën me njërin prej tyre në të njëjtin udhëtim."
+itinerary:
+  - "Duomo, Baptisteri dhe San Giovanni Evangelista në mëngjes. Pasdite Piazza Garibaldi dhe vizita me guidë në Teatro Regio, në mbrëmje aperitiv në Via Farini."
+  - "Palazzo della Pilotta me Teatrin Farnese dhe Galerinë Kombëtare, pastaj Camera di San Paolo. Pasdite kalo urën për në Parco Ducale dhe darko në lagjen Oltretorrente."
+  - "Një ditë jashtë qytetit: në mëngjes një fabrikë djathi Parmigiano, drekë me proshutë në Langhirano dhe pasdite kështjella e Torrechiara-s. Ndryshe, Busseto dhe vendet e Verdit."
+areas:
+  - name: Qendra historike
+    text: Rreth Duomos dhe Piazza Garibaldi, gjithçka në këmbë, me çmimet më të larta. Ideale për një fundjavë.
+  - name: Oltretorrente
+    text: Lagjja popullore përtej përroit, pranë Parco Ducale, me restorante më të lira dhe atmosferë të vërtetë parmixhane, 10 minuta në këmbë nga qendra.
+  - name: Pranë stacionit
+    text: "Zona më praktike për trenat dhe autobusin e aeroportit, me hotele më të lira. Qendra është 10-15 minuta në këmbë."
+food:
+  - name: Parmigiano Reggiano
+    text: Djathi i fortë që piqet të paktën 12 muaj, shpesh 24 ose 36. Këtu hahet copa-copa me një gotë verë.
+  - name: Prosciutto di Parma
+    text: Proshuta e thatë, vetëm mish derri dhe kripë, e prerë shumë hollë. Provoje me torta fritta, brumë i skuqur i ngrohtë.
+  - name: Anolini in brodo
+    text: Makarona të vogla të rrumbullakëta, të mbushura me mish viçi të zier gjatë dhe Parmigiano, në lëng mishi.
+  - name: Tortelli d'erbetta
+    text: Makarona të mëdha të mbushura me barishte dhe ricotta, me gjalpë dhe Parmigiano sipër.
+transport: >-
+  Qendra është e vogël dhe shumë rrugë janë të mbyllura për makinat, ndaj ecja dhe biçikleta janë
+  mënyra më e mirë për t'u lëvizur. Autobusët e TEP lidhin stacionin, aeroportin dhe lagjet; bileta
+  e vetme kushton rreth €2 dhe është më e shtrenjtë nëse e blen në bord. Për kështjellat dhe
+  fabrikat e djathit duhet makinë ose një tur i organizuar.
+daytrips:
+  - name: Fabrikë djathi ose proshute
+    text: Vizitat në fabrikat e Parmigiano-s rreth qytetit kushtojnë rreth €15-25 me degustim. Për proshutën shko në Langhirano, rreth 20 km në jug, me autobus ose makinë.
+  - name: Busseto dhe vendet e Verdit
+    text: Rreth 35 km larg, me shtëpinë ku lindi Verdi në Roncole Verdi dhe teatrin e vogël që mban emrin e tij. Rreth 1 orë me tren rajonal, zakonisht me ndërrim në Fidenza.
+  - name: Modena
+    text: Rreth 30 minuta me tren rajonal, për katedralen, uthullën balsamike dhe muzeun Enzo Ferrari.
+  - name: Kështjellat e kodrave të Parmës
+    text: Torrechiara, mbi vreshtat në jug të qytetit, dhe Fontanellato, me hendek me ujë dhe afreske të Parmigianino-s. Më lehtë me makinë, hyrja rreth €6-10.
+faq:
+  - q: "A mjafton një ditë për Parma?"
+    a: "Qendra shihet në një ditë, por dy ditë të lejojnë të vizitosh me qetësi Pilotta-n dhe Teatro Regio. Me një ditë të tretë bën një udhëtim te djathi, proshuta ose kështjellat."
+  - q: "Sa para duhen në ditë në Parma?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €45-70 në ditë për ushqim, autobus dhe një-dy hyrje. Parma është më e lirë se Milan."

@@ -1,0 +1,96 @@
+city: Santander
+slug: santander
+tagline: Pallat mbretëror, plazhe me rërë dhe rabas me një caña
+intro: >-
+  Santander është kryeqyteti i Kantabrisë, në bregun verior të Spanjës: një qytet elegant mbi një gji
+  të madh, me plazhe me rërë brenda qytetit, pallatin mbretëror të Magdalenës dhe Centro Botín të
+  Renzo Pianos. Dy-tri ditë mjaftojnë për qytetin, por ia vlen të shtosh një ditë për Santillana
+  del Mar, Comillas ose Picos de Europa.
+sights:
+  - name: Palacio de la Magdalena dhe gadishulli
+    text: >-
+      Pallati i bardhë, i ndërtuar në vitet 1909-1912 si rezidencë vere e mbretit Alfonso XIII, në
+      majë të një gadishulli me pishë. Parku është falas, me plazhe të vogla, foka dhe pinguinë në
+      një kopsht të vogël detar dhe pamje mbi gjirin; vizita me guidë brenda pallatit kushton rreth
+      €3-5.
+  - name: Plazhi El Sardinero
+    text: >-
+      Dy plazhet e gjera me rërë të qytetit (Primera dhe Segunda Playa), me kazinonë e vitit 1916
+      dhe vila të epokës Belle Époque. Arrihet me autobusët 1 ose 2 nga qendra për rreth 15 minuta.
+  - name: Centro Botín
+    text: >-
+      Qendra e artit e projektuar nga Renzo Piano, e hapur në vitin 2017, si e varur mbi det ngjitur
+      me Jardines de Pereda. Tarracat dhe pamja janë falas; ekspozitat kushtojnë rreth €8-10.
+  - name: Katedralja
+    text: >-
+      Katedralja gotike mbi kodrën e vogël pranë portit, me kishën e Kryqit (Cristo) poshtë saj, ku
+      nën një dysheme xhami duken rrënoja romake. Hyrja zakonisht është falas.
+  - name: Paseo de Pereda
+    text: >-
+      Shëtitorja kryesore buzë gjirit, me ndërtesa të shekullit XIX, kafene dhe kopshtet Jardines de
+      Pereda. Vazhdon drejt Puertochico dhe, pas rreth 40 minutash në këmbë, deri te Magdalena.
+itinerary:
+  - "Mercado de la Esperanza në mëngjes, pastaj Katedralja me kishën e Cristo-s. Pasdite Paseo de Pereda, Jardines de Pereda dhe Centro Botín; në mbrëmje rabas dhe tapas rreth Plaza de Cañadío."
+  - "Shëtitje buzë gjirit nga Puertochico deri te gadishulli i Magdalenës dhe pallati. Pasdite plazhi El Sardinero dhe, para perëndimit, fari i Cabo Mayor mbi shkëmbinj."
+  - "Një udhëtim ditor në Santillana del Mar dhe muzeun e Altamirës, me ndalesë në Comillas nëse ke makinë. Ndryshe, varka nëpër gji deri në plazhin e Somo-s."
+areas:
+  - name: Centro dhe Paseo de Pereda
+    text: "Pranë gjithçkaje, me restorante dhe bare në këmbë, por me hotelet më të shtrenjta."
+  - name: Puertochico
+    text: Lagjja e portit të vogël mes qendrës dhe Magdalenës, plot bare tapas dhe e gjallë në mbrëmje.
+  - name: El Sardinero
+    text: Pranë plazhit dhe më e qetë, ideale në verë, rreth 15 minuta me autobus nga qendra.
+  - name: Rreth stacioneve
+    text: "Zona e stacionit të autobusëve dhe të trenave: më e lirë dhe praktike për aeroportin dhe udhëtimet ditore."
+food:
+  - name: Anchoas de Santoña
+    text: Açuget e Santoñës, të kripura dhe të ruajtura në vaj, ndër më të famshmet në Spanjë.
+  - name: Rabas
+    text: >-
+      Rripa kallamari të skuqur, meze tipike e qytetit me një birrë të vogël (caña). Një racion
+      kushton rreth €8-12 dhe ndahet lehtë mes dy vetave.
+  - name: Quesada pasiega
+    text: Ëmbëlsirë e butë me gjizë, gjalpë dhe limon nga luginat Pasiegas, e ngjashme me një tortë djathi.
+  - name: Cocido montañés
+    text: Gjellë e nxehtë me fasule, lakër, chorizo dhe morcilla.
+airports:
+  SDR: >-
+    Aeroporti Seve Ballesteros-Santander është rreth 5 km në jug të qytetit. Autobusi i aeroportit të
+    çon në qendër dhe në stacionin e autobusëve për rreth 15 minuta, me biletë rreth €3. Një taksi
+    deri në qendër kushton rreth €15-20. Nga aeroporti nisen edhe autobusë direkt për në Bilbao.
+transport: >-
+  Qendra, porti dhe Paseo de Pereda përshkohen në këmbë. Autobusët urbanë TUS të çojnë te Magdalena
+  dhe El Sardinero, me biletë rreth €1.30 për udhëtim. Varkat Los Reginas nisen nga Paseo de Pereda
+  dhe kalojnë gjirin për në Somo dhe Pedreña. Për Picos de Europa dhe Comillas një makinë me qira
+  të kursen shumë kohë.
+daytrips:
+  - name: Santillana del Mar dhe Altamira
+    text: >-
+      Fshati mesjetar me rrugica me gurë, rreth 40 minuta me autobus. Pranë tij, muzeu i Altamirës
+      ka një kopje të saktë të shpellës me pikturat parahistorike, me hyrje rreth €3.
+  - name: Comillas
+    text: >-
+      Qytezë buzë detit me El Capricho të Gaudít (rreth €8) dhe pallate moderniste, rreth 1 orë me
+      autobus.
+  - name: Picos de Europa
+    text: >-
+      Malet e larta mbi Potes, rreth 2.5 orë me makinë. Teleferiku i Fuente Dé ngjitet 753 metra për
+      pak minuta, me biletë vajtje-ardhje rreth €20.
+  - name: Bilbao
+    text: Muzeu Guggenheim dhe qyteti i vjetër, rreth 1.5 orë me autobus ALSA, me biletë rreth €10-15.
+budget: >-
+  Një kafe kushton rreth €1.50, një menú del día €12-15, një caña rreth €2-3 dhe një racion rabas
+  rreth €8-12. Santander është më i lirë se Bilbao dhe San Sebastián.
+when: >-
+  Qershori-shtatori kanë motin më të mirë, me ditë rreth 22-25°C dhe pa vapë, por deti mbetet i
+  freskët (rreth 20°C në gusht). Bie shi gjatë gjithë vitit. Në dimër ditën bën rreth 12-14°C. Në
+  korrik, gjatë festës Semana Grande, qyteti mbushet plot dhe fjetja duhet rezervuar herët.
+tips:
+  - "Merr gjithmonë një xhaketë kundër shiut, edhe në verë: moti në bregun verior ndryshon shpejt."
+  - "Dreka hahet rreth orës 14:00 dhe darka pas orës 21:00, por baret rreth Plaza de Cañadío shërbejnë rabas që herët në mbrëmje."
+  - "Për Picos de Europa autobusët janë të rrallë: për një ditë të vetme, makina me qira është zgjidhja më e mirë."
+faq:
+  - q: "A ia vlen Santander për pushime në plazh?"
+    a: "Po. El Sardinero dhe plazhet e Magdalenës janë brenda qytetit, ndërsa Somo arrihet me varkë. Deti është më i freskët se në Mesdhe, rreth 20°C."
+  - q: "Sa para duhen në ditë në Santander?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €40-60 në ditë për ushqim, transport dhe një-dy hyrje. Shëtitoret, plazhet, parku i Magdalenës dhe katedralja janë falas."

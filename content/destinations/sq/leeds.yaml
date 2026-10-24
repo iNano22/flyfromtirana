@@ -1,0 +1,80 @@
+city: Leeds
+slug: leeds
+tagline: Pasazhe viktoriane, tregje dhe porta për në Yorkshire
+intro: >-
+  Leeds është qyteti më i madh i Yorkshire, me pasazhe viktoriane me çati xhami, një nga tregjet
+  më të mëdha të mbuluara në Europë dhe muze falas. Qendra përshkohet në këmbë, çmimet janë më të
+  ulëta se në London dhe trenat të çojnë shpejt në York dhe Yorkshire Dales. Tre ditë mjaftojnë për
+  qytetin, plus një ditë jashtë tij.
+sights:
+  - name: Pasazhet viktoriane dhe Kirkgate Market
+    text: Victoria Quarter dhe County Arcade kanë çati xhami, mozaikë dhe dyqane të bukura. Pranë tyre është Kirkgate Market, i hapur në vitin 1857, ku në vitin 1884 nisi tezga e parë e Marks & Spencer. Tregu është i mbyllur të dielave.
+  - name: Royal Armouries Museum
+    text: Muzeu kombëtar i armëve dhe i armaturave, te Leeds Dock buzë lumit Aire, rreth 15 minuta në këmbë nga stacioni. Hyrja është falas.
+  - name: Roundhay Park
+    text: Një nga parqet më të mëdha të qytetit në Europë, me liqene dhe pyje, rreth 20-30 minuta me autobus nga qendra. Brenda është kopshti tropikal Tropical World, me pagesë.
+  - name: Leeds Art Gallery
+    text: Galeria e artit pranë bashkisë, me vepra të Henry Moore dhe Barbara Hepworth. Hyrja është falas, ashtu si në Leeds City Museum.
+  - name: Kirkstall Abbey
+    text: Rrënojat e një abacie të themeluar në vitin 1152, rreth 5 km në perëndim të qendrës. Parku përreth është falas, ndërsa hyrja në rrënoja kushton rreth £5-7 për vizitorët nga jashtë qytetit.
+airports:
+  LBA: >-
+    Aeroporti Leeds Bradford është rreth 11 km në veriperëndim të qendrës, mbi një kodër. Autobusi
+    A1 Flyer nis çdo 20-30 minuta dhe arrin te stacioni i trenave Leeds për rreth 35-45 minuta, me
+    rreth £2-3. Ndryshe, merr autobusin deri në stacionin Horsforth dhe prej andej trenin për në
+    Leeds (rreth 10-15 minuta). Taksia kushton rreth £25-35 dhe bën 20-30 minuta, sipas trafikut.
+budget: >-
+  Një kafe kushton rreth £3-3.50, një vakt i thjeshtë £10-15 dhe një birrë (pint) rreth £4-5.50.
+  Hotelet e thjeshta kushtojnë rreth £60-90 natën, por shtrenjtohen shumë gjatë Leeds Festival.
+  Muzetë kryesorë janë falas.
+when: >-
+  Maji-shtatori ka motin më të butë (rreth 15-20 gradë) dhe ditë të gjata, por shi bie gjatë
+  gjithë vitit. Në fund të gushtit qyteti ka festivalin muzikor Leeds Festival dhe karnavalin Leeds
+  West Indian Carnival, që nga viti 1967.
+tips:
+  - "Shumë tezga të Kirkgate Market mbyllen herët pasdite: shko në mëngjes ose në drekë."
+  - "Aeroporti është mbi një kodër dhe ndonjëherë mjegulla vonon fluturimet: lër kohë rezervë pas mbërritjes."
+  - "Merr me vete një xhaketë kundër shiut: në Yorkshire bie shi shpesh, edhe në verë."
+itinerary:
+  - "Qendra në këmbë: Victoria Quarter dhe pasazhet, drekë në Kirkgate Market, pastaj Corn Exchange. Pasdite Leeds Art Gallery dhe Leeds City Museum (falas), në mbrëmje baret e Call Lane."
+  - "Royal Armouries Museum në mëngjes, pastaj shëtitje buzë lumit Aire dhe kanalit deri te Granary Wharf. Pasdite Kirkstall Abbey, në mbrëmje pubet e Headingley."
+  - "Roundhay Park me Tropical World në mëngjes. Pasdite stadiumi Elland Road i Leeds United ose dyqanet e Briggate."
+  - "Një ditë jashtë qytetit: York për katedralen dhe muret mesjetare, ose Haworth për shtëpinë e motrave Brontë."
+areas:
+  - name: Qendra dhe stacioni
+    text: "Zona më praktike: autobusi nga aeroporti dhe trenat për York e Harrogate nisen këtu, dhe gjithçka është në këmbë."
+  - name: Call Lane dhe Exchange Quarter
+    text: Për ata që duan bare, restorante dhe jetë nate pranë derës. Mund të jetë e zhurmshme në fundjavë.
+  - name: Leeds Dock dhe Granary Wharf
+    text: Hotele dhe apartamente të reja buzë ujit, më të qeta, pranë Royal Armouries dhe stacionit.
+  - name: Headingley
+    text: Lagjja e studentëve, rreth 15 minuta me autobus nga qendra, me pube, bujtina më të lira dhe stadiumin e kriketit.
+food:
+  - name: Yorkshire pudding
+    text: Brumë i fryrë i pjekur në furrë, që shërbehet me mish të pjekur dhe salcë në drekën e së dielës, Sunday roast.
+  - name: Fish and chips
+    text: Peshk i skuqur me patate. Bryan's në Headingley është i njohur prej dekadash, por pothuajse çdo lagje ka dyqanin e saj.
+  - name: Kirkgate Market
+    text: Tezga me ushqime nga e gjithë bota dhe kafene të lira, ideale për një drekë të shpejtë.
+  - name: Trinity Kitchen
+    text: Salla e ushqimit në qendrën tregtare Trinity Leeds, me tezga ushqimi rruge që ndërrohen shpesh.
+transport: >-
+  Qendra është e vogël dhe përshkohet lehtë në këmbë. Leeds nuk ka metro as tramvaj, por autobusët
+  të çojnë kudo: paguaj me kartë bankare pa kontakt, rreth £2-3 për udhëtim. Nga stacioni Leeds
+  nisen trena të shpeshtë për gjithë Yorkshire.
+daytrips:
+  - name: York
+    text: Qytet mesjetar me mure, katedralen York Minster dhe rrugën The Shambles, rreth 25 minuta me tren.
+  - name: Harrogate
+    text: Qytet i vjetër banjash termale, me kopshte dhe çajtore, rreth 35-40 minuta me tren.
+  - name: Yorkshire Dales
+    text: Parku kombëtar me kodra të gjelbra dhe fshatra guri. Treni për Skipton bën rreth 40 minuta, ndërsa linja Settle-Carlisle kalon mbi urën Ribblehead Viaduct.
+  - name: Haworth
+    text: Fshati i motrave Brontë, me shtëpinë e tyre të kthyer në muze. Merr trenin për Keighley (rreth 20-25 minuta), pastaj autobusin ose trenin e vjetër me avull.
+faq:
+  - q: "Si shkohet nga aeroporti në qendër të Leeds?"
+    a: "Më i liri është autobusi A1 Flyer, rreth £2-3 dhe 35-45 minuta deri te stacioni Leeds. Taksia kushton rreth £25-35. Nëse mbërrin vonë natën, kontrollo përpara orarin e autobusit të fundit."
+  - q: "A mund ta vizitoj York nga Leeds pa fjetur atje?"
+    a: "Po. Trenat nisen disa herë në orë dhe udhëtimi zgjat rreth 25 minuta. Bileta e blerë online disa ditë përpara zakonisht kushton më pak."
+  - q: "Sa para duhen në ditë në Leeds?"
+    a: "Pa fluturimin dhe fjetjen, llogarit £40-70 në ditë për ushqim, transport dhe një hyrje me pagesë. Shumë muze janë falas dhe Leeds është dukshëm më i lirë se London."

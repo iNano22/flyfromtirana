@@ -1,0 +1,98 @@
+city: Chișinău
+slug: chisinau
+tagline: Green parks, plăcinte and underground wine cellars
+intro: >-
+  Chișinău is the capital of Moldova, a calm city with wide boulevards, plenty of parks and
+  buildings from the tsarist and Soviet eras. It is very cheap and it is the gateway to the famous
+  wine cellars nearby. The currency is the Moldovan leu (MDL): €1 is about 20 lei. Two or three days
+  are enough for the city and a day at the cellars.
+sights:
+  - name: Ștefan cel Mare Park and Boulevard
+    text: >-
+      The main boulevard runs through the whole centre. At the head of the city's oldest park stands
+      the statue of Prince Ștefan cel Mare from 1928; inside there are benches, fountains and chess
+      players.
+  - name: Nativity Cathedral and the Arc de Triomphe
+    text: >-
+      The Orthodox cathedral from 1836, in the middle of a park in the centre, with its bell tower
+      rebuilt in 1997. Opposite it stands the Arc de Triomphe, from 1840, and the city's main square.
+  - name: Central Market
+    text: >-
+      The city's big market (Piața Centrală), full of fruit, vegetables, cheeses and honey. Go in the
+      morning and bring cash.
+  - name: National Museum of History
+    text: >-
+      The country's main museum, from prehistory to the 20th century, with a copy of the Roman
+      she-wolf in front of the entrance. The ticket is cheap, about 50 lei (about €2.5); it is usually
+      closed on Mondays.
+  - name: Valea Morilor Park
+    text: >-
+      A large park around a lake, with the long steps of the Cascade running down from the street to
+      the water. In summer you can rent boats and there are cafés by the lake.
+itinerary:
+  - "Ștefan cel Mare Boulevard, the park and the statue, then the Nativity Cathedral and the Arc de Triomphe. In the afternoon, the National Museum of History; in the evening, a dinner of plăcinte and local wine."
+  - "The Central Market in the morning, then a coffee on the boulevard. In the afternoon, Valea Morilor Park with the Cascade steps and a walk by the lake."
+  - "A day at the wine cellars: Cricova or Mileștii Mici, with a tour booked in advance. Alternatively, a day in Orheiul Vechi for the monastery in the rock."
+areas:
+  - name: Centre (Centru)
+    text: "Around Ștefan cel Mare Boulevard: everything within walking distance, with most of the hotels and restaurants."
+  - name: Near the Central Market
+    text: "Cheaper and practical for the minibuses to Orheiul Vechi and Soroca, but noisy and less pleasant in the evening."
+  - name: Valea Morilor and Buiucani
+    text: A quieter, green area near the park, with well-priced apartments, 15-20 minutes on foot from the centre.
+food:
+  - name: Plăcinte
+    text: >-
+      Thin pies filled with cheese, cabbage, potato, pumpkin or sour cherries, the country's
+      favourite quick meal. One costs about 30-50 lei (€1.5-2.5).
+  - name: Mămăligă
+    text: Maize polenta, served with goat's or sheep's cheese, sour cream and often with pork or fish.
+  - name: Zeamă
+    text: Chicken soup with homemade noodles and herbs, slightly sour. The classic Moldovan first course.
+  - name: Moldovan wine
+    text: >-
+      Try local wines such as Fetească Neagră and Rară Neagră; a glass in a bar costs about 40-70 lei
+      (€2-3.5).
+airports:
+  RMO: >-
+    Chișinău International Airport is about 13 km south-east of the centre. Trolleybus 30 takes you to
+    the centre in about 30-40 minutes, with a ticket of about 6 lei (€0.3) paid on board. Minibus 165
+    is a little faster and costs about 8 lei; bring small change. With Yandex Go or Bolt the ride to
+    the centre costs about 100-150 lei (€5-7.5); the taxis in the arrivals hall are usually more
+    expensive.
+transport: >-
+  The centre is easy to walk around. Trolleybuses cost about 6 lei (€0.3) per trip, minibuses
+  (rutiere) about 8 lei, and they cover the whole city. App taxis are very cheap: a ride within the
+  city costs about 50-80 lei (€2.5-4).
+daytrips:
+  - name: Cricova and Mileștii Mici cellars
+    text: >-
+      Two of the largest wine cellars in the world, with dozens of kilometres of underground galleries.
+      Cricova is about 15 km to the north, Mileștii Mici about 20 km to the south. They can only be
+      visited on tours booked in advance, starting from about 400 lei (€20) with a wine tasting; go by
+      taxi.
+  - name: Orheiul Vechi
+    text: >-
+      The monastery carved into the cliff above the valley of the Răut river, about 60 km to the north,
+      with the village of Butuceni and its traditional houses. Minibuses from the centre take about
+      1.5 hours.
+  - name: Soroca
+    text: >-
+      The round fortress from 1543 on the Dniester river, about 160 km to the north, about 3 hours by
+      bus. Leave early in the morning.
+budget: >-
+  A coffee costs about 30-40 lei (€1.5-2), a beer in a bar 35-50 lei (€2-2.5), a lunch in a
+  restaurant about 150-250 lei (€7.5-12.5). Excluding the flight and accommodation, plan on €25-40 a
+  day. A hostel bed starts from about €10-15, a double room in a simple hotel about €35-60.
+when: >-
+  May to June and September to October. Summer is hot, winter cold with snow. On the first weekend of
+  October the city celebrates National Wine Day, with fairs in the main square.
+tips:
+  - "Pay in lei. In the centre cards are accepted almost everywhere, but at the market, on minibuses and trolleybuses you need cash."
+  - "Romanian is a Latin language, so if you speak Italian you can often understand signs; many people also speak Russian."
+  - "Before you leave, check the official travel advice for Moldova, as for any destination."
+faq:
+  - q: "How do I get from the airport to the centre?"
+    a: "Trolleybus 30 costs about 6 lei, minibus 165 about 8 lei. With Yandex Go or Bolt it costs about 100-150 lei to the centre."
+  - q: "Are the wine cellars worth visiting?"
+    a: "Yes, they are the main reason to come. Book the tour a few days in advance, especially for the weekend, and bring a jacket: underground the temperature is about 12-14 degrees all year round."

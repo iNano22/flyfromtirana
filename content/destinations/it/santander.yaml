@@ -1,0 +1,98 @@
+city: Santander
+slug: santander
+tagline: Un palazzo reale, spiagge di sabbia e rabas con una caña
+intro: >-
+  Santander è il capoluogo della Cantabria, sulla costa nord della Spagna: una città elegante su una
+  grande baia, con spiagge di sabbia in città, il Palazzo reale della Magdalena e il Centro Botín di
+  Renzo Piano. Due o tre giorni bastano per la città, ma vale la pena aggiungere un giorno per
+  Santillana del Mar, Comillas o i Picos de Europa.
+sights:
+  - name: Palacio de la Magdalena e la penisola
+    text: >-
+      Il palazzo bianco, costruito nel 1909-1912 come residenza estiva del re Alfonso XIII, in cima a
+      una penisola coperta di pini. Il parco è gratuito, con piccole spiagge, foche e pinguini in un
+      piccolo giardino marino e la vista sulla baia; la visita guidata all'interno del palazzo costa
+      circa €3-5.
+  - name: Spiaggia di El Sardinero
+    text: >-
+      Le due ampie spiagge di sabbia della città (Primera e Segunda Playa), con il casinò del 1916 e
+      le ville della Belle Époque. Si raggiungono con gli autobus 1 o 2 dal centro in circa 15 minuti.
+  - name: Centro Botín
+    text: >-
+      Il centro d'arte progettato da Renzo Piano, aperto nel 2017, quasi sospeso sul mare accanto ai
+      Jardines de Pereda. Le terrazze e la vista sono gratuite; le mostre costano circa €8-10.
+  - name: Cattedrale
+    text: >-
+      La cattedrale gotica sulla piccola collina vicino al porto, con sotto la chiesa del Cristo, dove
+      sotto un pavimento di vetro si vedono resti romani. L'ingresso di solito è gratuito.
+  - name: Paseo de Pereda
+    text: >-
+      Il lungomare principale sulla baia, con edifici del XIX secolo, caffè e i giardini Jardines de
+      Pereda. Prosegue verso Puertochico e, dopo circa 40 minuti a piedi, fino alla Magdalena.
+itinerary:
+  - "Il Mercado de la Esperanza al mattino, poi la cattedrale con la chiesa del Cristo. Nel pomeriggio Paseo de Pereda, i Jardines de Pereda e il Centro Botín; la sera rabas e tapas intorno a Plaza de Cañadío."
+  - "Una passeggiata lungo la baia da Puertochico fino alla penisola della Magdalena e al palazzo. Nel pomeriggio la spiaggia di El Sardinero e, prima del tramonto, il faro di Cabo Mayor sulle scogliere."
+  - "Una gita a Santillana del Mar e al museo di Altamira, con una sosta a Comillas se hai l'auto. In alternativa, la barca attraverso la baia fino alla spiaggia di Somo."
+areas:
+  - name: Centro e Paseo de Pereda
+    text: "Vicino a tutto, con ristoranti e bar a piedi, ma con gli hotel più cari."
+  - name: Puertochico
+    text: Il quartiere del porticciolo tra il centro e la Magdalena, pieno di bar di tapas e vivace la sera.
+  - name: El Sardinero
+    text: Vicino alla spiaggia e più tranquilla, ideale d'estate, a circa 15 minuti di autobus dal centro.
+  - name: Intorno alle stazioni
+    text: "La zona della stazione degli autobus e dei treni: più economica e pratica per l'aeroporto e le gite in giornata."
+food:
+  - name: Anchoas de Santoña
+    text: Le acciughe di Santoña, salate e conservate sott'olio, tra le più famose della Spagna.
+  - name: Rabas
+    text: >-
+      Strisce di calamaro fritte, lo spuntino tipico della città con una birra piccola (caña). Una
+      porzione costa circa €8-12 e si divide facilmente in due.
+  - name: Quesada pasiega
+    text: Un dolce morbido con cagliata, burro e limone delle valli Pasiegos, simile a una cheesecake.
+  - name: Cocido montañés
+    text: Uno stufato caldo di fagioli, cavolo, chorizo e morcilla.
+airports:
+  SDR: >-
+    L'aeroporto Seve Ballesteros-Santander si trova a circa 5 km a sud della città. L'autobus
+    dell'aeroporto ti porta in centro e alla stazione degli autobus in circa 15 minuti, con un
+    biglietto da circa €3. Un taxi per il centro costa circa €15-20. Dall'aeroporto partono anche
+    autobus diretti per Bilbao.
+transport: >-
+  Il centro, il porto e Paseo de Pereda si girano a piedi. Gli autobus urbani TUS ti portano alla
+  Magdalena e a El Sardinero, con un biglietto da circa €1,30 a corsa. Le barche Los Reginas partono
+  da Paseo de Pereda e attraversano la baia per Somo e Pedreña. Per i Picos de Europa e Comillas
+  un'auto a noleggio fa risparmiare molto tempo.
+daytrips:
+  - name: Santillana del Mar e Altamira
+    text: >-
+      Il borgo medievale con vicoli in pietra, a circa 40 minuti di autobus. Accanto, il museo di
+      Altamira ha una copia esatta della grotta con le pitture preistoriche, con ingresso da circa €3.
+  - name: Comillas
+    text: >-
+      Una cittadina sul mare con El Capricho di Gaudí (circa €8) e palazzi modernisti, a circa 1 ora
+      di autobus.
+  - name: Picos de Europa
+    text: >-
+      Le alte montagne sopra Potes, a circa 2,5 ore di auto. La funivia di Fuente Dé sale di 753 metri
+      in pochi minuti, con un biglietto di andata e ritorno da circa €20.
+  - name: Bilbao
+    text: Il Museo Guggenheim e la città vecchia, a circa 1,5 ore con l'autobus ALSA, con un biglietto da circa €10-15.
+budget: >-
+  Un caffè costa circa €1,50, un menú del día €12-15, una caña circa €2-3 e una porzione di rabas
+  circa €8-12. Santander è più economica di Bilbao e San Sebastián.
+when: >-
+  Giugno-settembre ha il clima migliore, con giornate intorno ai 22-25°C e senza caldo eccessivo, ma
+  il mare resta fresco (circa 20°C ad agosto). Piove tutto l'anno. D'inverno di giorno si arriva a
+  circa 12-14°C. A luglio, durante la festa della Semana Grande, la città si riempie e l'alloggio va
+  prenotato presto.
+tips:
+  - "Porta sempre una giacca antipioggia, anche d'estate: il tempo sulla costa nord cambia in fretta."
+  - "Si pranza verso le 14:00 e si cena dopo le 21:00, ma i bar intorno a Plaza de Cañadío servono rabas già dal tardo pomeriggio."
+  - "Gli autobus per i Picos de Europa sono rari: per una sola giornata, l'auto a noleggio è la scelta migliore."
+faq:
+  - q: "Santander vale la pena per una vacanza al mare?"
+    a: "Sì. El Sardinero e le spiagge della Magdalena sono in città, mentre Somo si raggiunge in barca. Il mare è più fresco che nel Mediterraneo, circa 20°C."
+  - q: "Quanto si spende al giorno a Santander?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno per cibo, trasporti e uno o due ingressi. I lungomare, le spiagge, il parco della Magdalena e la cattedrale sono gratuiti."

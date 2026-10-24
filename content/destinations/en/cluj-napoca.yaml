@@ -1,0 +1,98 @@
+city: Cluj-Napoca
+slug: cluj-napoca
+tagline: The heart of Transylvania, a city of students and festivals
+intro: >-
+  Cluj-Napoca is Romania's second-largest city and the unofficial capital of Transylvania, a
+  university town full of students, cafés and festivals, with an old centre you can walk around.
+  The currency is the Romanian leu (RON): €1 is about 5 lei. Two days are enough for the city, plus
+  one day for the Salt Mine in Turda.
+sights:
+  - name: Unirii Square and St Michael's Church
+    text: >-
+      The city's main square, with the Gothic St Michael's Church, built between 1350 and 1487, and
+      its tower of about 80 metres. In front of it stands the equestrian statue of King Matthias
+      Corvinus, born in Cluj in 1443. Entry to the church is free.
+  - name: Bánffy Palace
+    text: >-
+      The Baroque palace on the east side of the square, built in 1774-1785. Today it houses the
+      National Museum of Art; the ticket costs about 20-30 lei.
+  - name: Botanical Garden
+    text: >-
+      The Alexandru Borza Botanical Garden, about 14 hectares, a 15-minute walk from the centre, with
+      tropical greenhouses and a Japanese garden. The ticket costs about 15-25 lei; it is at its most
+      beautiful in spring.
+  - name: Cetățuia Hill
+    text: >-
+      The hill above the Someș river, with the remains of the Austrian fortress from 1715. The steps
+      from the centre take about 15 minutes to climb, and the view over the city at sunset is free.
+  - name: Central Park
+    text: >-
+      The city's old park, with a lake where you can rent boats in summer and the Casino building from
+      1897. Next to it is Cluj Arena, the stadium where the Untold festival is held.
+itinerary:
+  - "Unirii Square with St Michael's Church and the Bánffy Palace, then the house where Matthias Corvinus was born. In the afternoon, Central Park; at sunset, the climb up Cetățuia Hill."
+  - "Avram Iancu Square with the Orthodox Cathedral and the National Theatre, then the Botanical Garden. In the evening, dinner with varză a la Cluj in the old centre."
+  - "A day in Turda: the Salt Mine in the morning, Turda Gorge in the afternoon. If you have more time, add a night in Sighișoara or a day in Alba Iulia."
+areas:
+  - name: Old centre (Unirii Square)
+    text: Everything within walking distance, with hotels, apartments and restaurants, but with the highest prices.
+  - name: Mărăști
+    text: A residential area between the centre and the airport, with cheaper apartments and frequent buses.
+  - name: Train station area
+    text: >-
+      Cheaper and practical for the trains to Sighișoara and Alba Iulia, about a 20-25 minute walk from
+      Unirii Square, but less pleasant in the evening.
+food:
+  - name: Varză a la Cluj
+    text: >-
+      Chopped cabbage baked in layers with pork, rice and sour cream. The city's signature dish, about
+      35-50 lei.
+  - name: Papanași
+    text: Fried cheese doughnuts with sour cream and cherry jam. About 25-35 lei.
+  - name: Ciorbă
+    text: The sour Romanian soups, with vegetables, meat or tripe, about 20-30 lei; often enough for lunch.
+airports:
+  CLJ: >-
+    Avram Iancu International Airport is about 9 km east of the centre. Bus 8 takes you to Piața Mihai
+    Viteazul in the centre in about 30-40 minutes, while other lines, such as 5, go to the train
+    station. The ticket costs about 3-4 lei (€0.6-0.8), paid with a contactless bank card at the
+    validator on the bus. A taxi or Bolt takes about 20-30 minutes and costs about 40-60 lei (€8-12).
+transport: >-
+  The old centre is easy to walk. For longer distances there are buses, trolleybuses and trams; a
+  single trip costs about 3-4 lei, paid by contactless card. Bolt and Uber are cheap: a ride within
+  the city costs about 15-30 lei (€3-6).
+daytrips:
+  - name: Turda Salt Mine
+    text: >-
+      Salina Turda, an old salt mine turned into an underground park, with a Ferris wheel and boats on
+      an underground lake. About 1 hour by bus; the ticket costs about 50-70 lei. Inside it is about
+      10-12 degrees, so bring a jacket.
+  - name: Turda Gorge
+    text: >-
+      A limestone canyon with a trail of about 2-3 km between the cliffs, about 10 km from Turda. It is
+      easy to combine with the mine on the same day, by Bolt or taxi from Turda.
+  - name: Sighișoara
+    text: >-
+      The medieval citadel town, on the UNESCO list, where tradition says Vlad the Impaler was born.
+      About 3-4 hours by train or bus, so better to spend a night there.
+  - name: Alba Iulia
+    text: >-
+      The star-shaped Alba Carolina fortress, built in 1715-1738, where the union of Transylvania with
+      Romania was proclaimed in 1918. About 1.5-2 hours by train or bus.
+budget: >-
+  A coffee costs about 12-18 lei (€2.5-3.5), a beer in a bar 12-20 lei (€2.5-4), a lunch in a
+  restaurant about 45-70 lei (€9-14). Excluding the flight and accommodation, plan on €30-50 a day. A
+  hostel bed starts from about €15, a double room in a simple hotel about €45-70.
+when: >-
+  May to June and September to October. In June the city hosts TIFF, the Transilvania film
+  festival, with open-air screenings too. In early August comes the Untold festival: accommodation
+  prices multiply, so book very early or avoid those days. Winter is cold, often below zero.
+tips:
+  - "Pay in lei, by card almost everywhere. When the terminal asks, choose payment in RON, not in euros."
+  - "Go to the Salt Mine early in the morning or on a weekday: at weekends the queues are long."
+  - "Many museums are closed on Mondays: save the churches, the parks and Cetățuia Hill for that day."
+faq:
+  - q: "How many days do you need for Cluj-Napoca?"
+    a: "Two days are enough for the centre, the Botanical Garden and Cetățuia. Add a day for Turda, and one or two more for Sighișoara or Alba Iulia."
+  - q: "Is English spoken in Cluj?"
+    a: "Yes, especially by young people: Cluj has Romania's largest university. Almost 15% of the residents are Hungarian, so many signs are also in Hungarian, where the city is called Kolozsvár."

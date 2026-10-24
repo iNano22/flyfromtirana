@@ -1,0 +1,96 @@
+city: Debrecen
+slug: debrecen
+tagline: Kisha e Madhe, banja termale dhe stepa e Hortobágy
+intro: >-
+  Debrecen është qyteti i dytë më i madh i Hungarisë, rreth 220 km në lindje të Budapest, i njohur
+  si «Roma kalviniste» për Kishën e Madhe dhe Kolegjin e Reformuar. Qendra është e vogël, e qetë dhe
+  më e lirë se Budapest, me një park pylli me banja termale. Monedha është forinti (HUF): €1 është
+  rreth 400 forint. Dy ditë mjaftojnë për qytetin, një e treta për stepën e Hortobágy ose për
+  banjat e Hajdúszoboszló.
+sights:
+  - name: Kisha e Madhe e Reformuar (Nagytemplom)
+    text: >-
+      Kisha e verdhë me dy kulla në krye të Sheshit Kossuth, kisha protestante më e madhe në
+      Hungari. Këtu Lajos Kossuth shpalli në vitin 1849 pavarësinë e Hungarisë nga Habsburgët.
+      Bileta me ngjitjen në kullën perëndimore kushton rreth 1500-2500 forint (rreth €4-6).
+  - name: Sheshi Kossuth (Kossuth tér)
+    text: >-
+      Sheshi kryesor i qytetit, para Kishës së Madhe, me shatërvanë, kafene dhe tramvajin 1 që kalon
+      në mes. Në dhjetor këtu mbahet tregu i Krishtlindjeve.
+  - name: Muzeu Déri
+    text: >-
+      Muzeu kryesor i qytetit. Salla më e njohur ka trilogjinë e madhe të Krishtit të piktorit
+      Mihály Munkácsy. Bileta rreth 2000-3000 forint (rreth €5-8); zakonisht i mbyllur të hënave.
+  - name: Nagyerdő dhe Aquaticum
+    text: >-
+      Nagyerdő, «Pylli i Madh», është parku i qytetit në veri të qendrës, me liqen, kopsht
+      zoologjik dhe ndërtesën e Universitetit. Aty është edhe Aquaticum, me pishina termale,
+      tobogane dhe sauna; bileta ditore rreth 5000-7000 forint (rreth €13-18).
+  - name: Kolegji i Reformuar (Református Kollégium)
+    text: >-
+      Shkolla protestante e themeluar në vitin 1538, pas Kishës së Madhe. Ka një bibliotekë të
+      vjetër, një muze për historinë e shkollës dhe oratorin ku u mblodh Parlamenti hungarez në
+      vitin 1849.
+itinerary:
+  - "Sheshi Kossuth dhe Kisha e Madhe me ngjitje në kullë, pastaj Kolegji i Reformuar pas saj. Pasdite Muzeu Déri, në mbrëmje darkë në Piac utca."
+  - "Tramvaji 1 për në Nagyerdő: shëtitje në park dhe ndërtesa e Universitetit. Pasdite disa orë në Aquaticum ose në banjën termale ngjitur."
+  - "Një ditë në Parkun Kombëtar Hortobágy, me Urën me Nëntë Harqe dhe kaubojët e stepës. Ndryshe, gjysmë dite në banjat e Hajdúszoboszló."
+areas:
+  - name: Belváros (qendra)
+    text: "Rreth Sheshit Kossuth dhe Piac utca, gjithçka në këmbë. Hotelet janë të pakta: rezervo herët."
+  - name: Nagyerdő
+    text: E gjelbër dhe e qetë, pranë banjave termale dhe parkut, me disa hotele spa. Qendra është rreth 10-15 minuta me tramvajin 1.
+  - name: Pranë stacionit të trenit (Nagyállomás)
+    text: Hotele dhe dhoma më të lira, praktike për trenat. Sheshi Kossuth është rreth 15 minuta në këmbë.
+food:
+  - name: Salsiçja e Debrecen (debreceni kolbász)
+    text: Salsiçe derri e tymosur me paprikë, e famshme në gjithë Hungarinë. Hahet e pjekur, me mustardë.
+  - name: Lángos
+    text: Brumë i skuqur me hudhër, salcë kosi dhe djathë, ushqimi më i lirë i rrugës, rreth 1000-1800 forint (rreth €3-4.5).
+  - name: Hortobágyi palacsinta
+    text: Petulla të holla të mbushura me mish të grirë, me salcë paprike dhe kosi sipër.
+  - name: Mézeskalács
+    text: Ëmbëlsirat me mjaltë dhe erëza, një traditë e vjetër e qytetit dhe suvenir i mirë.
+airports:
+  DEB: >-
+    Aeroporti Ndërkombëtar i Debrecen është rreth 5-6 km në jug të qendrës. Autobusi i qytetit (DKV)
+    lidh aeroportin me stacionin e trenit dhe qendrën për rreth 20 minuta, por nuk nis shpesh:
+    kontrollo orarin para se të mbërrish. Bileta kushton rreth 500 forint (rreth €1.3). Taksia bën
+    rreth 15 minuta deri në qendër dhe kushton rreth 4000-6000 forint (rreth €10-15).
+transport: >-
+  Qendra përshkohet në këmbë. Tramvaji 1 është linja më e dobishme: nga stacioni i trenit
+  (Nagyállomás) kalon nëpër Piac utca dhe Sheshin Kossuth deri në Nagyerdő. Ka edhe autobusë dhe
+  trolejbusë të kompanisë DKV; bileta e thjeshtë kushton rreth 500 forint (rreth €1.3), më
+  shtrenjtë nëse e blen te shoferi. Trenat InterCity për në Budapest bëjnë rreth 2.5-3 orë.
+daytrips:
+  - name: Parku Kombëtar Hortobágy
+    text: >-
+      Stepa e madhe hungareze (puszta), në listën e UNESCO-s, rreth 40 km në perëndim, rreth 40-60
+      minuta me tren ose autobus. Shiko Urën me Nëntë Harqe, lopët gri hungareze dhe shfaqjet me
+      kuaj; në verë ka shumë mushkonja.
+  - name: Tokaj
+    text: >-
+      Qyteza e verës së ëmbël Tokaji Aszú, me kantina nën tokë ku shijon verën. Rreth 1.5-2 orë me
+      tren, me ndërrim në Nyíregyháza.
+  - name: Banjat e Hajdúszoboszló
+    text: >-
+      Një nga kompleksët termalë më të mëdhenj në Evropë, rreth 20 km larg, rreth 20 minuta me tren
+      ose autobus. Bileta ditore rreth 6000-9000 forint (rreth €15-23).
+budget: >-
+  Një birrë kushton rreth 800-1200 forint (rreth €2-3), një kafe rreth 600-900 forint, një gjellë
+  në restorant rreth 3500-5500 forint (rreth €9-14). Një dhomë dyshe në hotel të thjeshtë kushton
+  nga rreth 20000-35000 forint (rreth €50-90) nata. Pa fluturimin dhe fjetjen, llogarit rreth
+  €30-45 në ditë.
+when: >-
+  Maji-qershori dhe shtatori-tetori kanë motin më të mirë. Ngjarja më e madhe është Karnavali i
+  Luleve, rreth 20 gushtit, me një paradë karrocash të mbuluara me lule: atë javë hotelet mbushen
+  dhe çmimet rriten. Dimri është i ftohtë, me tregun e Krishtlindjeve në dhjetor.
+tips:
+  - "Paguaj në forint, me kartë ose me para nga bankomatet e bankave. Kur pajisja pyet, zgjidh pagesën në HUF, jo në euro."
+  - "Shumë muze janë të mbyllur të hënave: planifiko Muzeun Déri dhe Kolegjin e Reformuar në ditë të tjera."
+  - "Për Aquaticum dhe Hajdúszoboszló merr me vete peshqir dhe papuçe: me qira kushtojnë shtesë."
+faq:
+  - q: "A mund të shkoj nga Debrecen në Budapest?"
+    a: "Po. Trenat InterCity nisen nga Nagyállomás pothuajse çdo orë, bëjnë rreth 2.5-3 orë dhe kushtojnë rreth 5000-7000 forint (rreth €13-18)."
+  - q: "A ia vlen Debrecen për një fundjavë?"
+    a: "Po, nëse do një qytet të qetë dhe të lirë, me banja termale dhe një ditë në stepë. Për jetë nate, Budapest ofron më shumë."

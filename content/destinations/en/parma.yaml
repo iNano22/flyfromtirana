@@ -1,0 +1,79 @@
+city: Parma
+slug: parma
+tagline: Parmigiano, prosciutto and Verdi's opera
+intro: >-
+  Parma is a small, elegant and wealthy city in Emilia-Romagna, known all over the world for
+  Parmigiano Reggiano cheese and Parma ham. The centre, with its Romanesque cathedral, its opera
+  house and the palaces of the Farnese family, is easy to get around on foot or by bike. Two days
+  are enough for the city, three if you add a visit to a cheese dairy or to the castles in the
+  hills.
+sights:
+  - name: Duomo and Baptistery
+    text: The Romanesque cathedral, with its dome painted by Correggio, and the octagonal Baptistery in pink marble opposite it. The Duomo is free; the Baptistery has a ticket, about €10-12 together with the Diocesan Museum.
+  - name: Teatro Regio
+    text: The opera house, opened in 1829, where Verdi is almost sacred. Guided tours cost about €8-10; in September-October it hosts the Verdi Festival.
+  - name: Palazzo della Pilotta
+    text: The huge brick complex of the Farnese family, with the wooden Teatro Farnese and the National Gallery, with works by Correggio, Parmigianino and Leonardo. The combined ticket costs about €18-20.
+  - name: Parco Ducale
+    text: The dukes' park, across the Parma stream, with tree-lined paths, a small lake and the ducal palace. Entry is free.
+  - name: Camera di San Paolo
+    text: A small room in an old convent, with a ceiling painted by Correggio in 1519. It is usually included in the Pilotta ticket; check the opening hours in advance, because it is not open every day.
+  - name: Piazza Garibaldi
+    text: The city's main square, with the Governor's Palace and cafés where locals meet before dinner.
+airports:
+  PMF: >-
+    Giuseppe Verdi airport is about 3 km from the centre. The city bus takes you to the railway
+    station and the centre in about 15 minutes, with a ticket of about €2. A taxi to the centre
+    costs about €15-20.
+budget: >-
+  A coffee at the counter costs about €1.20-1.50, a plate of anolini €10-14 and a platter of torta
+  fritta with prosciutto for two about €15-20. A bus ticket costs about €2. A double room in a
+  simple hotel or B&B costs from about €80-120 a night; during the Verdi Festival and trade fairs
+  prices go up.
+when: >-
+  April to June and September to October have the best weather. In September there is the Parma
+  ham festival and the Verdi Festival begins, running until October. July and August are hot,
+  while winter is cold and often foggy.
+tips:
+  - "Parmigiano is made early in the morning: dairy visits start at about 8:00-9:00 and are booked a few days ahead."
+  - "Parma is a cycling city: many hotels and B&Bs lend bikes for free or for a few euros a day."
+  - "From Parma station, Bologna and Milan are about 1 hour by train. You can combine Parma with either of them on the same trip."
+itinerary:
+  - "The Duomo, the Baptistery and San Giovanni Evangelista in the morning. In the afternoon, Piazza Garibaldi and a guided tour of the Teatro Regio, and an aperitivo on Via Farini in the evening."
+  - "Palazzo della Pilotta with the Teatro Farnese and the National Gallery, then the Camera di San Paolo. In the afternoon, cross the bridge to the Parco Ducale and have dinner in the Oltretorrente neighbourhood."
+  - "A day out of town: a Parmigiano dairy in the morning, lunch with prosciutto in Langhirano and the castle of Torrechiara in the afternoon. Alternatively, Busseto and Verdi's places."
+areas:
+  - name: Historic centre
+    text: Around the Duomo and Piazza Garibaldi, everything on foot, with the highest prices. Ideal for a weekend.
+  - name: Oltretorrente
+    text: The working-class neighbourhood across the stream, near the Parco Ducale, with cheaper restaurants and a genuine local atmosphere, 10 minutes on foot from the centre.
+  - name: Near the station
+    text: "The most practical area for trains and the airport bus, with cheaper hotels. The centre is 10-15 minutes on foot."
+food:
+  - name: Parmigiano Reggiano
+    text: The hard cheese aged for at least 12 months, often 24 or 36. Here it is eaten in chunks with a glass of wine.
+  - name: Prosciutto di Parma
+    text: The cured ham, made only from pork and salt, sliced very thin. Try it with torta fritta, warm fried dough.
+  - name: Anolini in brodo
+    text: Small round pasta filled with slow-cooked beef and Parmigiano, served in meat broth.
+  - name: Tortelli d'erbetta
+    text: Large pasta parcels filled with greens and ricotta, topped with butter and Parmigiano.
+transport: >-
+  The centre is small and many streets are closed to cars, so walking and cycling are the best ways
+  to get around. TEP buses link the station, the airport and the neighbourhoods; a single ticket
+  costs about €2 and is more expensive if you buy it on board. For the castles and the cheese
+  dairies you need a car or an organised tour.
+daytrips:
+  - name: Cheese or ham producer
+    text: Visits to Parmigiano dairies around the city cost about €15-25 with a tasting. For the ham, go to Langhirano, about 20 km south, by bus or car.
+  - name: Busseto and Verdi's places
+    text: About 35 km away, with the house where Verdi was born in Roncole Verdi and the small theatre that bears his name. About 1 hour by regional train, usually with a change in Fidenza.
+  - name: Modena
+    text: About 30 minutes by regional train, for the cathedral, balsamic vinegar and the Enzo Ferrari museum.
+  - name: Castles of the Parma hills
+    text: Torrechiara, above the vineyards south of the city, and Fontanellato, with a moat and frescoes by Parmigianino. Easiest by car, entry about €6-10.
+faq:
+  - q: "Is one day enough for Parma?"
+    a: "The centre can be seen in a day, but two days let you visit the Pilotta and the Teatro Regio at a relaxed pace. With a third day you can make a trip to the cheese, the ham or the castles."
+  - q: "How much money do you need per day in Parma?"
+    a: "Excluding the flight and accommodation, allow €45-70 a day for food, buses and one or two entry tickets. Parma is cheaper than Milan."

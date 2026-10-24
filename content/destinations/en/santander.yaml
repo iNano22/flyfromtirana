@@ -1,0 +1,95 @@
+city: Santander
+slug: santander
+tagline: A royal palace, sandy beaches and rabas with a caña
+intro: >-
+  Santander is the capital of Cantabria, on the north coast of Spain: an elegant city on a large
+  bay, with sandy beaches inside the city, the royal Magdalena Palace and Renzo Piano's Centro
+  Botín. Two or three days are enough for the city, but it is worth adding a day for Santillana del
+  Mar, Comillas or the Picos de Europa.
+sights:
+  - name: Palacio de la Magdalena and the peninsula
+    text: >-
+      The white palace, built in 1909-1912 as the summer residence of King Alfonso XIII, at the top
+      of a peninsula covered in pines. The park is free, with small beaches, seals and penguins in a
+      small marine garden and views over the bay; a guided visit inside the palace costs about €3-5.
+  - name: El Sardinero Beach
+    text: >-
+      The city's two wide sandy beaches (Primera and Segunda Playa), with the 1916 casino and Belle
+      Époque villas. Reached by bus 1 or 2 from the centre in about 15 minutes.
+  - name: Centro Botín
+    text: >-
+      The arts centre designed by Renzo Piano, opened in 2017, seemingly suspended over the sea next
+      to the Jardines de Pereda. The terraces and the view are free; the exhibitions cost about €8-10.
+  - name: Cathedral
+    text: >-
+      The Gothic cathedral on the small hill by the port, with the Church of Christ (Cristo) beneath
+      it, where Roman remains can be seen under a glass floor. Entry is usually free.
+  - name: Paseo de Pereda
+    text: >-
+      The main promenade along the bay, with 19th-century buildings, cafés and the Jardines de Pereda
+      gardens. It continues towards Puertochico and, after about 40 minutes on foot, to the Magdalena.
+itinerary:
+  - "The Mercado de la Esperanza in the morning, then the cathedral with the Church of Cristo. In the afternoon, Paseo de Pereda, the Jardines de Pereda and the Centro Botín; in the evening, rabas and tapas around Plaza de Cañadío."
+  - "A walk along the bay from Puertochico to the Magdalena peninsula and the palace. In the afternoon, El Sardinero beach and, before sunset, the Cabo Mayor lighthouse on the cliffs."
+  - "A day trip to Santillana del Mar and the Altamira museum, with a stop in Comillas if you have a car. Alternatively, the boat across the bay to Somo beach."
+areas:
+  - name: Centro and Paseo de Pereda
+    text: "Close to everything, with restaurants and bars on foot, but with the most expensive hotels."
+  - name: Puertochico
+    text: The small-harbour district between the centre and the Magdalena, full of tapas bars and lively in the evening.
+  - name: El Sardinero
+    text: Close to the beach and quieter, ideal in summer, about 15 minutes by bus from the centre.
+  - name: Around the stations
+    text: "The area of the bus and train stations: cheaper and practical for the airport and day trips."
+food:
+  - name: Anchoas de Santoña
+    text: The anchovies of Santoña, salted and preserved in oil, among the most famous in Spain.
+  - name: Rabas
+    text: >-
+      Strips of fried squid, the city's typical snack with a small beer (caña). A portion costs
+      about €8-12 and is easily shared between two.
+  - name: Quesada pasiega
+    text: A soft dessert of curd cheese, butter and lemon from the Pasiegos valleys, similar to a cheesecake.
+  - name: Cocido montañés
+    text: A hot stew of beans, cabbage, chorizo and morcilla.
+airports:
+  SDR: >-
+    Seve Ballesteros-Santander airport is about 5 km south of the city. The airport bus takes you to
+    the centre and the bus station in about 15 minutes, with a ticket of about €3. A taxi to the
+    centre costs about €15-20. Direct buses to Bilbao also leave from the airport.
+transport: >-
+  The centre, the port and Paseo de Pereda are easy to cover on foot. The TUS city buses take you to
+  the Magdalena and El Sardinero, with a ticket of about €1.30 per journey. The Los Reginas boats
+  leave from Paseo de Pereda and cross the bay to Somo and Pedreña. For the Picos de Europa and
+  Comillas, a rental car saves a lot of time.
+daytrips:
+  - name: Santillana del Mar and Altamira
+    text: >-
+      The medieval village with cobbled lanes, about 40 minutes by bus. Next to it, the Altamira
+      museum has an exact replica of the cave with its prehistoric paintings, with entry about €3.
+  - name: Comillas
+    text: >-
+      A seaside town with Gaudí's El Capricho (about €8) and modernist palaces, about 1 hour by bus.
+  - name: Picos de Europa
+    text: >-
+      The high mountains above Potes, about 2.5 hours by car. The Fuente Dé cable car climbs 753
+      metres in a few minutes, with a return ticket of about €20.
+  - name: Bilbao
+    text: The Guggenheim Museum and the old town, about 1.5 hours by ALSA bus, with a ticket of about €10-15.
+budget: >-
+  A coffee costs about €1.50, a menú del día €12-15, a caña about €2-3 and a portion of rabas about
+  €8-12. Santander is cheaper than Bilbao and San Sebastián.
+when: >-
+  June-September has the best weather, with days of about 22-25°C and no heatwaves, but the sea
+  stays cool (about 20°C in August). It rains all year round. In winter days reach about 12-14°C.
+  In July, during the Semana Grande festival, the city fills up and accommodation must be booked
+  early.
+tips:
+  - "Always bring a rain jacket, even in summer: the weather on the north coast changes quickly."
+  - "Lunch is eaten at about 14:00 and dinner after 21:00, but the bars around Plaza de Cañadío serve rabas from early evening."
+  - "Buses to the Picos de Europa are rare: for a single day, a rental car is the best option."
+faq:
+  - q: "Is Santander worth it for a beach holiday?"
+    a: "Yes. El Sardinero and the Magdalena beaches are inside the city, while Somo is reached by boat. The sea is cooler than in the Mediterranean, about 20°C."
+  - q: "How much money do you need per day in Santander?"
+    a: "Excluding the flight and accommodation, plan on €40-60 a day for food, transport and one or two entry tickets. The promenades, the beaches, the Magdalena park and the cathedral are free."

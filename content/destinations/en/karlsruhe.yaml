@@ -1,0 +1,81 @@
+city: Karlsruhe
+slug: karlsruhe
+tagline: The fan-shaped city and the thermal baths of Baden-Baden
+intro: >-
+  Karlsruhe is a young city, built in 1715 around a palace, with streets that open out from it like
+  a fan. It is a student city, flat and cheaper than Stuttgart or Munich. The airport is near
+  Baden-Baden, the spa town on the edge of the Black Forest, so it is worth combining the two in one
+  trip, perhaps with a day in Strasbourg.
+sights:
+  - name: Karlsruhe Palace and the fan-shaped streets
+    text: The yellow palace is the point from which about 30 streets spread out like the ribs of a fan. Inside is the Badisches Landesmuseum, with entry at about €8-10; from the tower you get the best view of the city's plan.
+  - name: Schlossgarten
+    text: The large park behind the palace, free, with lawns, a small lake and a botanical garden.
+  - name: ZKM
+    text: The Centre for Art and Media, one of the largest museums in the world for digital art, in a former munitions factory. Entry costs about €8-10; closed on Mondays and Tuesdays.
+  - name: Marktplatz and the pyramid
+    text: The main square with the red sandstone pyramid where the city's founder is buried. From here starts Kaiserstraße, the shopping street, where the trams now run underground.
+  - name: The thermal baths of Baden-Baden
+    text: Friedrichsbad is a Roman-Irish bath from 1877, where you go in without clothes, about €35-40 for 3 hours. Caracalla Therme is more modern, with indoor and outdoor pools and swimsuits on, from about €20 for 2 hours.
+  - name: Lichtentaler Allee and the Kurhaus
+    text: A green promenade of about 2 km along the river Oos, from the Kurhaus to Lichtental Abbey. The Kurhaus is the white building with columns that houses the famous casino.
+airports:
+  FKB: >-
+    Karlsruhe/Baden-Baden airport is in Söllingen, about 15 km from Baden-Baden and 40 km from
+    Karlsruhe. Bus 205 takes you to Baden-Baden station in about 25-30 minutes, usually every 30-60
+    minutes; from there trains to Karlsruhe Hauptbahnhof take 15-25 minutes. A KVV ticket for the
+    whole journey costs about €7-9 and the trip takes about 1 hour. There are also direct shuttle
+    buses to Karlsruhe, Strasbourg and Stuttgart timed to the flights: book them in advance. A taxi
+    costs about €35-45 to Baden-Baden and €80-100 to Karlsruhe.
+transport: >-
+  Karlsruhe is completely flat and easy to get around on foot or by bike. The KVV trams take you
+  everywhere and, as tram-trains, carry on to the surrounding towns. A single ticket costs about €3,
+  a day ticket about €7-9; buy it from the machine or in the KVV app before you board. In
+  Baden-Baden the station is about 4 km from the centre: bus 201 takes you to Leopoldsplatz in about
+  15 minutes.
+daytrips:
+  - name: Strasbourg
+    text: The Gothic cathedral and the Petite France quarter with its canals. About 40 minutes by TGV from Karlsruhe, or about 1.5 hours and cheaper by regional trains via Offenburg.
+  - name: Heidelberg
+    text: The red castle above the river Neckar, the Old Bridge and Germany's oldest university, about 35-60 minutes by train.
+  - name: The Black Forest
+    text: It begins right after Baden-Baden. The tram-train from Karlsruhe runs through the Murg valley to Freudenstadt in about 2 hours; the Schwarzwaldhochstraße mountain road is easier by hire car.
+budget: >-
+  A coffee costs about €3-3.50, a döner about €7-8, a beer about €4.50-5.50 and a dish in a
+  restaurant €14-22. A hostel bed costs about €30-40, a double room in a simple hotel about €80-120
+  a night. Baden-Baden is more expensive: sleep in Karlsruhe and go there by train.
+when: >-
+  May to September has the best weather. In July Das Fest is held, a big music festival that is
+  almost free, while in August-September the Schlosslichtspiele light up the palace facade with free
+  projections. In December there are Christmas markets in both towns.
+tips:
+  - "In Friedrichsbad you go in without a swimsuit, and some days are shared by men and women. If that doesn't suit you, choose Caracalla Therme."
+  - "On Sundays shops and supermarkets are closed: do your shopping on Saturday."
+  - "For the games in the casino men must wear a jacket; the morning tours have no dress code."
+itinerary:
+  - "Karlsruhe Palace with a climb up the tower, the Schlossgarten and the botanical garden. In the afternoon the Marktplatz and Kaiserstraße; dinner in the Südstadt in the evening."
+  - "Baden-Baden: Lichtentaler Allee in the morning, then the Kurhaus and the old town. In the afternoon 2-3 hours in Friedrichsbad or Caracalla Therme."
+  - "The ZKM in the morning, in the afternoon the old town of Durlach and the Turmberg hill. Otherwise, a day in Strasbourg or Heidelberg."
+areas:
+  - name: Innenstadt
+    text: The centre around the Marktplatz and Kaiserstraße, near the palace.
+  - name: Südstadt and Hauptbahnhof
+    text: "The most practical and cheapest area: the trains to Baden-Baden and for day trips leave from here."
+  - name: Durlach
+    text: The old town to the east, quiet and full of character, about 15 minutes by tram from the centre.
+  - name: Baden-Baden
+    text: For those who come mainly for the thermal baths. More expensive, but closer to the airport.
+food:
+  - name: Schäufele with Brägele
+    text: Smoked pork shoulder with pan-fried potatoes, a typical dish of Baden.
+  - name: Flammkuchen
+    text: A very thin base with cream, onions and bacon, from neighbouring Alsace. It costs about €9-13.
+  - name: Schwarzwälder Kirschtorte
+    text: Black Forest cake with chocolate, cherries and cream, best in the cafés of Baden-Baden.
+  - name: The wines of Baden
+    text: Riesling and Spätburgunder from the nearby vineyards. From April to June don't miss the white asparagus (Spargel).
+faq:
+  - q: "Where to sleep: in Karlsruhe or in Baden-Baden?"
+    a: "On a tight budget and for day trips, in Karlsruhe, near the Hauptbahnhof. For a break in the thermal baths, Baden-Baden is quieter and closer to the airport, but more expensive."
+  - q: "How much money do you need per day in Karlsruhe?"
+    a: "Excluding the flight and accommodation, about €45-70 a day. A day in Baden-Baden with the thermal baths costs about €20-40 more."

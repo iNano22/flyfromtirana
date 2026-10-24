@@ -1,0 +1,93 @@
+city: Brno
+slug: brno
+tagline: Il castello dello Špilberk, una villa modernista e vino moravo
+intro: >-
+  Brno è la seconda città della Repubblica Ceca e il capoluogo della Moravia, con circa 400.000
+  abitanti e tanti studenti. È più tranquilla ed economica di Praga, con un centro che si gira a
+  piedi, un castello su una collina e cantine sotto le strade. Due giorni bastano per la città, un
+  terzo per le grotte o per i vini della Moravia. La valuta è la corona ceca (CZK): 1 euro vale circa
+  25 corone.
+sights:
+  - name: Castello dello Špilberk
+    text: >-
+      Il castello sulla collina che sotto gli Asburgo divenne una delle prigioni più dure
+      dell'impero. Il parco e le mura sono gratuiti, con vista sulla città; le casematte costano circa
+      150 CZK (€6).
+  - name: Cattedrale dei Santi Pietro e Paolo
+    text: >-
+      La cattedrale con due guglie gotiche sulla collina di Petrov, che compare anche sulla moneta da
+      10 corone. Le campane di mezzogiorno suonano alle 11:00, in ricordo dell'assedio svedese del 1645.
+  - name: Villa Tugendhat
+    text: >-
+      La villa di Mies van der Rohe (1929-1930), patrimonio UNESCO, con una parete di onice. Si visita
+      solo con una visita guidata prenotata, circa 350-450 CZK (€14-18), a 15 minuti di tram dal centro.
+  - name: L'ossario e Brno sotterranea
+    text: >-
+      Sotto la chiesa di San Giacomo si trova il secondo ossario più grande d'Europa dopo quello di
+      Parigi, con le ossa di circa 50.000 persone. Sotto la piazza Zelný trh si visita il Labirinto, una
+      rete di cantine medievali. Ogni biglietto costa circa 150-250 CZK (€6-10).
+  - name: Piazza della Libertà e l'orologio astronomico
+    text: >-
+      Náměstí Svobody è la piazza principale. L'orologio di granito nero rilascia ogni giorno alle
+      11:00 una biglia di vetro che i visitatori cercano di prendere. Lì vicino, nel Municipio Vecchio,
+      è appeso il «drago», un coccodrillo imbalsamato.
+airports:
+  BRQ: >-
+    L'aeroporto di Brno-Tuřany è a circa 8 km dal centro. L'autobus E76 ti porta alla stazione
+    ferroviaria principale, Hlavní nádraží, in circa 20 minuti; passa di solito ogni 30 minuti, fino
+    alle 23:00 circa. Il biglietto costa circa 30-35 CZK (circa €1,30) e si compra al distributore o
+    con la carta bancaria contactless a bordo. Un taxi o un Bolt costa circa 300-450 CZK (€12-18).
+budget: >-
+  Una birra da mezzo litro costa circa 55-75 CZK (€2,20-3), un bicchiere di vino circa 60-100 CZK
+  (€2,50-4), un piatto al ristorante 250-350 CZK (€10-14). Una camera doppia in un hotel semplice
+  costa da circa 1.500-2.500 CZK (€60-100) a notte.
+when: >-
+  Maggio-giugno e settembre hanno il clima migliore. A settembre e ottobre i villaggi della Moravia
+  festeggiano la vendemmia con il burčák, un vino giovane ancora in fermentazione. Da fine novembre
+  fino a Natale ci sono i mercatini di Natale.
+tips:
+  - "Prenota la visita di Villa Tugendhat qualche settimana prima: i posti sono pochi."
+  - "A pranzo chiedi il menù del giorno (polední menu): zuppa e piatto principale per circa 160-220 CZK (€6,50-9), nei giorni feriali."
+  - "Quando il POS ti chiede euro o corone, scegli sempre le corone (CZK): la conversione in euro costa di più."
+itinerary:
+  - "Náměstí Svobody con l'orologio astronomico alle 11:00, il Municipio Vecchio e il Labirinto sotto Zelný trh. Nel pomeriggio la Cattedrale dei Santi Pietro e Paolo, la sera lo Špilberk per il tramonto."
+  - "Villa Tugendhat la mattina (con prenotazione), poi l'ossario di San Giacomo. Nel pomeriggio il museo di Gregor Mendel, la sera un bicchiere di vino moravo."
+  - "Una giornata fuori città: le grotte del Carso Moravo, oppure Lednice-Valtice e Mikulov tra i vigneti."
+areas:
+  - name: Il centro storico
+    text: Tutto a piedi, con hotel e appartamenti; i prezzi sono più bassi che a Praga.
+  - name: Vicino alla Hlavní nádraží
+    text: "La zona più pratica: da qui partono l'autobus E76 per l'aeroporto e i treni per le gite."
+  - name: Veveří
+    text: Un quartiere studentesco a nord del centro, con caffè, bar e appartamenti più economici, a 10 minuti di tram.
+food:
+  - name: Vino moravo
+    text: >-
+      Circa il 90% del vino ceco si produce nella Moravia del Sud. Prova i bianchi Ryzlink vlašský e
+      Pálava in una vinárna, un locale del vino.
+  - name: Moravský vrabec
+    text: Pezzi di maiale arrostiti con l'aglio, con knedlík (canederli di pane al vapore a fette) e cavolo.
+  - name: Birra Starobrno
+    text: La birra della città, economica e fresca alla spina.
+transport: >-
+  Il centro si gira a piedi. Per le distanze più lunghe ci sono tram, autobus e filobus, tutti con lo
+  stesso biglietto. I biglietti si comprano ai distributori o con la carta bancaria contactless a
+  bordo; il biglietto da 24 ore costa circa 110-130 CZK (€4,50-5). Bolt costa circa 120-200 CZK
+  (€5-8) in città.
+daytrips:
+  - name: Carso Moravo
+    text: >-
+      Le grotte di Punkva, con un giro in barca sul fiume sotterraneo, e l'abisso di Macocha, profondo
+      138 metri. Circa 30 minuti di treno fino a Blansko, poi un autobus; d'estate prenota i biglietti
+      online.
+  - name: Lednice-Valtice
+    text: Due castelli e un grande parco tra i vigneti, patrimonio UNESCO. Circa 1 ora di treno fino a Břeclav, poi un autobus.
+  - name: Mikulov
+    text: Una piccola città del vino con un castello su una rupe, a circa 1 ora in autobus o in treno.
+  - name: Vienna
+    text: La capitale dell'Austria, a circa 1,5 ore in treno diretto, da circa €10-20 se compri il biglietto in anticipo.
+faq:
+  - q: "Vale la pena Brno, o è meglio andare direttamente a Praga?"
+    a: "Brno ha meno turisti e prezzi più bassi, ed è vicina ai vini della Moravia e a Vienna. Praga è a 2,5 ore di treno, quindi puoi unire le due città."
+  - q: "Quanto si spende al giorno a Brno?"
+    a: "Volo e alloggio esclusi, calcola €35-55 al giorno per cibo, trasporti e un ingresso. Le viste dallo Špilberk e da Petrov sono gratuite."

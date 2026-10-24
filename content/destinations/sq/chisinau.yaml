@@ -1,0 +1,94 @@
+city: Chișinău
+slug: chisinau
+tagline: Parqe të gjelbra, plăcinte dhe kantina vere nën tokë
+intro: >-
+  Chișinău është kryeqyteti i Moldavisë, një qytet i qetë me bulevarde të gjera, shumë parqe dhe
+  ndërtesa nga epoka cariste e sovjetike. Është shumë i lirë dhe është porta për kantinat e famshme
+  të verës përreth. Monedha është leu moldav (MDL): €1 është rreth 20 lei. Dy-tri ditë mjaftojnë
+  për qytetin dhe një ditë te kantinat.
+sights:
+  - name: Parku dhe Bulevardi Ștefan cel Mare
+    text: >-
+      Bulevardi kryesor përshkon gjithë qendrën. Në krye të parkut më të vjetër të qytetit qëndron
+      statuja e princit Ștefan cel Mare e vitit 1928; brenda ka stola, shatërvanë dhe lojtarë shahu.
+  - name: Katedralja e Lindjes së Krishtit dhe Harku i Triumfit
+    text: >-
+      Katedralja ortodokse e vitit 1836, në mes të një parku në qendër, me kambanoren e rindërtuar në
+      vitin 1997. Përballë saj është Harku i Triumfit, i vitit 1840, dhe sheshi kryesor i qytetit.
+  - name: Tregu Qendror
+    text: >-
+      Tregu i madh i qytetit (Piața Centrală), plot fruta, perime, djathëra e mjaltë. Shko në
+      mëngjes dhe ki me vete para në dorë.
+  - name: Muzeu Kombëtar i Historisë
+    text: >-
+      Muzeu kryesor i vendit, nga parahistoria deri në shekullin XX, me një kopje të ujkonjës romake
+      para hyrjes. Bileta është e lirë, rreth 50 lei (rreth €2.5); zakonisht mbyllet të hënën.
+  - name: Parku Valea Morilor
+    text: >-
+      Park i madh rreth një liqeni, me shkallët e gjata të Kaskadës që zbresin nga rruga deri te
+      uji. Në verë merren me qira varka dhe ka kafene buzë liqenit.
+itinerary:
+  - "Bulevardi Ștefan cel Mare, parku dhe statuja, pastaj Katedralja e Lindjes së Krishtit dhe Harku i Triumfit. Pasdite Muzeu Kombëtar i Historisë, në mbrëmje darkë me plăcinte dhe verë vendase."
+  - "Tregu Qendror në mëngjes, pastaj një kafe në bulevard. Pasdite parku Valea Morilor me shkallët e Kaskadës dhe një shëtitje buzë liqenit."
+  - "Një ditë te kantinat e verës: Cricova ose Mileștii Mici, me turne të rezervuar përpara. Ndryshe, një ditë në Orheiul Vechi për manastirin në shkëmb."
+areas:
+  - name: Qendra (Centru)
+    text: "Rreth Bulevardit Ștefan cel Mare: gjithçka në këmbë, me shumicën e hoteleve dhe restoranteve."
+  - name: Afër Tregut Qendror
+    text: "Më e lirë dhe praktike për minibusët drejt Orheiul Vechi dhe Soroca, por e zhurmshme dhe më pak e këndshme në mbrëmje."
+  - name: Valea Morilor dhe Buiucani
+    text: Zonë më e qetë dhe e gjelbër pranë parkut, me apartamente me çmime të mira, 15-20 minuta në këmbë nga qendra.
+food:
+  - name: Plăcinte
+    text: >-
+      Byrekë të hollë me djathë, lakër, patate, kungull ose vishnje, vakti i shpejtë më i dashur i
+      vendit. Një copë kushton rreth 30-50 lei (€1.5-2.5).
+  - name: Mămăligă
+    text: Polenta e misrit, e shërbyer me djathë dhie ose dele, salcë kosi dhe shpesh me mish derri ose peshk.
+  - name: Zeamă
+    text: Supë pule me makarona të bëra në shtëpi dhe zarzavate, pak e thartë. Pjata e parë klasike moldave.
+  - name: Vera moldave
+    text: >-
+      Provo verërat vendase si Fetească Neagră dhe Rară Neagră; një gotë në lokal kushton rreth
+      40-70 lei (€2-3.5).
+airports:
+  RMO: >-
+    Aeroporti Ndërkombëtar i Chișinău është rreth 13 km në juglindje të qendrës. Trolejbusi 30 të
+    çon në qendër për rreth 30-40 minuta, me biletë rreth 6 lei (€0.3) që e paguan në bord.
+    Minibusi 165 është pak më i shpejtë dhe kushton rreth 8 lei; ki me vete para të vogla. Me
+    Yandex Go ose Bolt udhëtimi deri në qendër kushton rreth 100-150 lei (€5-7.5); taksitë e sallës
+    së mbërritjeve janë zakonisht më të shtrenjta.
+transport: >-
+  Qendra përshkohet lehtë në këmbë. Trolejbusët kushtojnë rreth 6 lei (€0.3) për udhëtim, minibusët
+  (rutiere) rreth 8 lei, dhe mbulojnë gjithë qytetin. Taksitë me aplikacion janë shumë të lira: një
+  xhiro brenda qytetit kushton rreth 50-80 lei (€2.5-4).
+daytrips:
+  - name: Kantinat Cricova dhe Mileștii Mici
+    text: >-
+      Dy nga kantinat e verës më të mëdha në botë, me dhjetëra kilometra galeri nën tokë. Cricova
+      është rreth 15 km në veri, Mileștii Mici rreth 20 km në jug. Vizitohen vetëm me turne të
+      rezervuar përpara, që nisin nga rreth 400 lei (€20) me shije vere; shko me taksi.
+  - name: Orheiul Vechi
+    text: >-
+      Manastiri i gdhendur në shkëmbin mbi luginën e lumit Răut, rreth 60 km në veri, me fshatin
+      Butuceni dhe shtëpitë e tij tradicionale. Minibusët nga qendra bëjnë rreth 1.5 orë.
+  - name: Soroca
+    text: >-
+      Kështjella e rrumbullakët e vitit 1543 buzë lumit Nistru, rreth 160 km në veri, rreth 3 orë me
+      autobus. Nis herët në mëngjes.
+budget: >-
+  Një kafe kushton rreth 30-40 lei (€1.5-2), një birrë në lokal 35-50 lei (€2-2.5), një drekë në
+  restorant rreth 150-250 lei (€7.5-12.5). Pa fluturimin dhe fjetjen, llogarit €25-40 në ditë. Një
+  shtrat në hostel nis nga rreth €10-15, një dhomë dyshe në hotel të thjeshtë rreth €35-60.
+when: >-
+  Maji-qershori dhe shtatori-tetori. Vera është e nxehtë, dimri i ftohtë me borë. Në fundjavën e
+  parë të tetorit qyteti feston Ditën Kombëtare të Verës, me panaire në sheshin kryesor.
+tips:
+  - "Paguaj në lei. Në qendër karta pranohet pothuajse kudo, por në treg, në minibusë dhe trolejbusë duhen para në dorë."
+  - "Rumanishtja është gjuhë latine, ndaj kush flet italisht kupton shpesh mbishkrimet; shumë njerëz flasin edhe rusisht."
+  - "Para nisjes, kontrollo këshillat zyrtare të udhëtimit për Moldavinë, si për çdo destinacion."
+faq:
+  - q: "Si shkoj nga aeroporti në qendër?"
+    a: "Trolejbusi 30 kushton rreth 6 lei, minibusi 165 rreth 8 lei. Me Yandex Go ose Bolt kushton rreth 100-150 lei deri në qendër."
+  - q: "A ia vlen të vizitosh kantinat e verës?"
+    a: "Po, janë arsyeja kryesore për të ardhur. Rezervo turneun disa ditë përpara, sidomos për fundjavën, dhe merr një xhaketë: nën tokë temperatura është rreth 12-14 gradë gjithë vitin."

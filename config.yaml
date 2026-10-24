@@ -390,6 +390,18 @@ links:
       Alghero:      https://www.tiqets.com/en/
       Pescara:      https://www.tiqets.com/en/
       Ancona:       https://www.tiqets.com/en/
+      Parma:        https://www.tiqets.com/en/parma-attractions-c71683/
+      Karlsruhe:    https://www.tiqets.com/en/
+      Leeds:        https://www.tiqets.com/en/
+      Santander:    https://www.tiqets.com/en/santander-attractions-c66168/
+      Salerno:      https://www.tiqets.com/en/salerno-attractions-c71620/
+      Comiso:       https://www.tiqets.com/en/
+      Katowice:     https://www.tiqets.com/en/
+      Brno:         https://www.tiqets.com/en/
+      Debrecen:     https://www.tiqets.com/en/
+      Cluj-Napoca:  https://www.tiqets.com/en/
+      Chișinău:     https://www.tiqets.com/en/
+      Łódź:         https://www.tiqets.com/en/
     tours:               # GetYourGuide. The number after "-l" is the city's number there: the widget uses it
       Milan:        https://www.getyourguide.com/milan-l139/
       Rome:         https://www.getyourguide.com/rome-l33/
@@ -478,6 +490,18 @@ links:
       Alghero:      https://www.getyourguide.com/alghero-l2783/
       Pescara:      https://www.getyourguide.com/pescara-l1176/
       Ancona:       https://www.getyourguide.com/ancona-l1519/
+      Parma:        https://www.getyourguide.com/parma-l2480/
+      Karlsruhe:    https://www.getyourguide.com/karlsruhe-l144/
+      Leeds:        https://www.getyourguide.com/leeds-l1023/
+      Santander:    https://www.getyourguide.com/santander-l95/
+      Salerno:      https://www.getyourguide.com/salerno-l711/
+      Comiso:       https://www.getyourguide.com/ragusa-l32425/
+      Katowice:     https://www.getyourguide.com/katowice-l89846/
+      Brno:         https://www.getyourguide.com/brno-l1424/
+      Debrecen:     https://www.getyourguide.com/debrecen-l100146/
+      Cluj-Napoca:  https://www.getyourguide.com/cluj-napoca-l2393/
+      Chișinău:     https://www.getyourguide.com/chisinau-l1008/
+      Łódź:         https://www.getyourguide.com/lodz-l2044/
     transfer:            # Welcome Pickups
       Milan:        https://www.welcomepickups.com/milan/
       Rome:         https://www.welcomepickups.com/rome/
@@ -566,6 +590,18 @@ links:
       Alghero:      https://www.welcomepickups.com/
       Pescara:      https://www.welcomepickups.com/
       Ancona:       https://www.welcomepickups.com/
+      Parma:        https://www.welcomepickups.com/
+      Karlsruhe:    https://www.welcomepickups.com/
+      Leeds:        https://www.welcomepickups.com/leeds/
+      Santander:    https://www.welcomepickups.com/santander/
+      Salerno:      https://www.welcomepickups.com/
+      Comiso:       https://www.welcomepickups.com/
+      Katowice:     https://www.welcomepickups.com/katowice/
+      Brno:         https://www.welcomepickups.com/brno/
+      Debrecen:     https://www.welcomepickups.com/debrecen/
+      Cluj-Napoca:  https://www.welcomepickups.com/cluj/
+      Chișinău:     https://www.welcomepickups.com/chisinau/
+      Łódź:         https://www.welcomepickups.com/
     luggage:             # Radical Storage
       Milan:        https://radicalstorage.com/luggage-storage/milan
       Rome:         https://radicalstorage.com/luggage-storage/rome
@@ -654,6 +690,18 @@ links:
       Alghero:      https://radicalstorage.com/luggage-storage/alghero
       Pescara:      https://radicalstorage.com/luggage-storage/pescara
       Ancona:       https://radicalstorage.com/luggage-storage/ancona
+      Parma:        https://radicalstorage.com/luggage-storage/parma
+      Karlsruhe:    https://radicalstorage.com/luggage-storage/karlsruhe
+      Leeds:        https://radicalstorage.com/luggage-storage/leeds
+      Santander:    https://radicalstorage.com/luggage-storage/santander
+      Salerno:      https://radicalstorage.com/luggage-storage/salerno
+      Comiso:       https://radicalstorage.com/luggage-storage/ragusa
+      Katowice:     https://radicalstorage.com/
+      Brno:         https://radicalstorage.com/luggage-storage/brno
+      Debrecen:     https://radicalstorage.com/
+      Cluj-Napoca:  https://radicalstorage.com/luggage-storage/cluj-napoca
+      Chișinău:     https://radicalstorage.com/
+      Łódź:         https://radicalstorage.com/luggage-storage/lodz
 
 # --- Airline names (API gives IATA codes; unknown codes are shown as-is) -----
 airlines:

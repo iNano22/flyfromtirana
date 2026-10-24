@@ -1,0 +1,81 @@
+city: Salerno
+slug: salerno
+tagline: Lungomare, Duomo dhe porta e Bregut të Amalfit
+intro: >-
+  Salerno është një qytet port në Campania, rreth 50 km në jug të Naples, me një qendër mesjetare,
+  një shëtitore të gjatë buzë detit dhe çmime më të ulëta se fshatrat e Bregut të Amalfit. Nga
+  porti nisen tragetet për Amalfi dhe Positano, ndërsa treni të çon te tempujt grekë të Paestum-it
+  dhe në Cilento. Tri-katër ditë mjaftojnë për qytetin dhe disa udhëtime ditore.
+sights:
+  - name: Duomo di Salerno
+    text: Katedralja romanike e Shën Mateut, e shuguruar në vitin 1084, me oborr me harqe dhe kambanore të shekullit XII. Në kriptën barok prehen eshtrat e apostullit Mate. Hyrja është falas.
+  - name: Lungomare Trieste
+    text: Shëtitorja me palma buzë detit, ku vendasit dalin për xhiron e mbrëmjes. Në ditë të kthjellëta duket Bregu i Amalfit.
+  - name: Castello di Arechi
+    text: Kështjella mesjetare rreth 300 m mbi qytet, me pamjen më të bukur mbi gji në perëndim të diellit. Hyrja kushton rreth €4. Ngjitu me autobus ose taksi, sepse rruga është shumë e pjerrët.
+  - name: Giardino della Minerva
+    text: Kopsht botanik mesjetar në tarraca, ku mjekët e Shkollës Mjekësore të Salernos rritnin bimët shëruese. Hyrja kushton rreth €4.
+  - name: Centro Storico
+    text: Rrugicat mesjetare me dyqane, furra dhe bare, nga Via dei Mercanti deri te Largo Campo. Këtu lindi Schola Medica Salernitana, ndër shkollat e para të mjekësisë në Evropë.
+itinerary:
+  - "Qyteti i vjetër: Duomo, Via dei Mercanti dhe Giardino della Minerva. Pasdite Castello di Arechi për perëndimin e diellit, në mbrëmje xhiro në Lungomare."
+  - "Trageti i mëngjesit për Amalfi dhe autobusi për Ravello. Pasdite trageti për Positano dhe kthimi në Salerno me varkën e fundit."
+  - "Paestum me tren: tempujt grekë dhe muzeu. Drekë me mocarelë buallice në një fermë pranë parkut."
+  - "Pompei me trenin rajonal në mëngjes. Pasdite Vietri sul Mare për qeramikën dhe një banjë deti."
+areas:
+  - name: Centro Storico
+    text: Bujtina në rrugicat mesjetare, pranë Duomos dhe lokaleve të mbrëmjes, por me zhurmë në fundjavë.
+  - name: Corso Vittorio Emanuele dhe stacioni
+    text: Zona më praktike për trenat, autobusin e aeroportit dhe tragetet e Piazza della Concordia.
+  - name: Torrione dhe Pastena
+    text: Lagje banimi në lindje të qendrës, me plazhe dhe çmime më të ulëta, të lidhura me autobus.
+food:
+  - name: Mozzarella di bufala
+    text: Mocarelë e butë nga qumështi i buallicës, e bërë në fermat mes Battipaglia-s dhe Paestum-it. Hahet e freskët, në ditën kur bëhet.
+  - name: Limoncello
+    text: Likeri i limonëve të mëdhenj të Bregut të Amalfit, që pihet i ftohtë pas darkës.
+  - name: Colatura di alici di Cetara
+    text: Lëng i kulluar açugesh nga fshati peshkatar Cetara, mbi spageti me hudhër dhe vaj ulliri.
+  - name: Scialatielli ai frutti di mare
+    text: Makarona të freskëta e të trasha, me midhje, karkaleca dhe domate qershi.
+airports:
+  QSR: >-
+    Aeroporti Salerno Costa d'Amalfi është në Pontecagnano, rreth 20 km nga qyteti, dhe u rihap për
+    fluturimet e rregullta vetëm në vitin 2024. Autobusët lidhin terminalin me qendrën dhe stacionin
+    e Salernos për rreth 30-40 minuta (rreth €2-4); në verë zakonisht ka edhe autobusë direkt për
+    Bregun e Amalfit dhe Cilento-n. Taksia kushton rreth €40-50. Lidhjet ndryshojnë ende, ndaj
+    kontrollo oraret aktuale para nisjes.
+transport: >-
+  Qendra shihet në këmbë. Nga Piazza della Concordia nisen tragetet e Travelmar përgjatë Bregut të
+  Amalfit, afërsisht prill-tetor: rreth 35 minuta deri në Amalfi (rreth €10-12) dhe rreth 1 orë e
+  10 minuta deri në Positano. Autobusët SITA bëjnë rrugën bregdetare gjithë vitin, por në verë
+  ngecin në trafik. Nga stacioni nisen trenat për Naples, Pompei dhe Paestum; biletat prej letre
+  vulosen para hipjes.
+daytrips:
+  - name: Amalfi dhe Positano
+    text: Me traget nga porti, rreth 35 minuta deri në Amalfi dhe rreth 1 orë e 10 minuta deri në Positano. Nga Amalfi autobusi të ngjit në Ravello.
+  - name: Paestum
+    text: Tre tempuj grekë të shekujve VI-V p.e.s., ndër më të ruajturit në botë, rreth 30-40 minuta me tren rajonal. Bileta e parkut dhe muzeut kushton rreth €15.
+  - name: Vietri sul Mare
+    text: Fshati i parë i Bregut të Amalfit, i njohur për qeramikën me ngjyra, rreth 10 minuta me tren ose autobus.
+  - name: Pompei
+    text: Qyteti romak nën hirin e Vezuvit, rreth 30-40 minuta me trenin rajonal deri në stacionin Pompei, pastaj 10-15 minuta në këmbë.
+  - name: Cilento
+    text: Kështjella e Agropoli-t dhe plazhet e Castellabate-s, në Parkun Kombëtar të Cilento-s, rreth 40-50 minuta me tren.
+budget: >-
+  Një pica kushton rreth €6-9, një espresso rreth €1.20, bileta e autobusit të qytetit rreth €1.50.
+  Fjetja në Salerno kushton shpesh sa gjysma e asaj në Amalfi ose Positano.
+when: >-
+  Maji-qershori dhe shtatori-tetori, kur tragetet punojnë dhe deti është i ngrohtë. Në korrik-gusht
+  bregu mbushet plot. Nga nëntori deri në janar qyteti ndriçohet nga dritat e Luci d'Artista.
+tips:
+  - "Në verë zgjidh tragetin në vend të autobusit për Amalfi dhe Positano: rruga bregdetare është e ngushtë dhe me trafik."
+  - "Për Paestum nisu herët dhe merr ujë e kapelë: tempujt janë në fushë të hapur, pa hije."
+  - "Kontrollo oraret e tragetit një ditë përpara: me det të trazuar udhëtimet anulohen."
+faq:
+  - q: "Si shkohet në Amalfi dhe Positano nga Salerno?"
+    a: "Nga prilli deri në tetor me tragetin nga Piazza della Concordia, rreth 35 minuta deri në Amalfi. Gjatë gjithë vitit ka autobusë SITA, më të lirë por më të ngadaltë."
+  - q: "A ia vlen të flesh në Salerno në vend të Bregut të Amalfit?"
+    a: "Po, nëse do të kursesh: hotelet janë shumë më të lira dhe ka tren për Pompei e Paestum dhe tragete për bregun."
+  - q: "Sa para duhen në ditë në Salerno?"
+    a: "Pa fluturimin dhe fjetjen, €40-60 në ditë, plus rreth €20-30 për tragetet dhe biletat e udhëtimeve ditore."

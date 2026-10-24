@@ -1,0 +1,82 @@
+city: Comiso
+slug: comiso
+tagline: Gateway to the Baroque of the Val di Noto and the sea of south-east Sicily
+intro: >-
+  Comiso is above all the airport of south-east Sicily: in about 30-45 minutes you are in Ragusa
+  Ibla or in Modica, two of the Baroque towns of the Val di Noto, rebuilt after the earthquake of
+  1693 and today a UNESCO World Heritage Site. A little further are Noto, Scicli and the beaches of
+  Marina di Ragusa. Comiso itself is a small, quiet town. Four or five days with a car are enough
+  for the Baroque towns and a few days by the sea.
+sights:
+  - name: Ragusa Ibla
+    text: The old town on its hill, with stone alleys and the Duomo di San Giorgio, the domed 18th-century Baroque church. At its far end is the Giardino Ibleo garden.
+  - name: Duomo di San Giorgio in Modica
+    text: A Baroque façade above a monumental staircase, the symbol of Modica.
+  - name: Cattedrale di Noto
+    text: The cathedral of San Nicolò, above a wide staircase on Corso Vittorio Emanuele. Its dome collapsed in 1996 and it reopened in 2007; the whole town is built of golden stone.
+  - name: Via Mormino Penna in Scicli
+    text: The most beautiful street in Scicli, lined with Baroque churches and palaces. The town hall is the police station of the TV series "Inspector Montalbano".
+  - name: Punta Secca
+    text: A fishing village near Marina di Ragusa, with Montalbano's house on the beach and a small lighthouse.
+  - name: Comiso town centre
+    text: Piazza Fonte di Diana with its fountain, the Chiesa Madre and the house where the writer Gesualdo Bufalino was born.
+itinerary:
+  - "From the airport to Ragusa, about 30 minutes by car. Walk down the steps from Ragusa Superiore to Ibla, see the Duomo di San Giorgio and the Giardino Ibleo, and have dinner in Ibla."
+  - "Modica in the morning: the Duomo di San Giorgio and a chocolate tasting on Corso Umberto I. In the afternoon, Scicli for Via Mormino Penna and the church of San Matteo."
+  - "Noto in the morning, before the heat, then the Vendicari reserve and Calamosche beach. Watch the sunset in Marzamemi."
+  - "A beach day in Marina di Ragusa and Punta Secca. On the way to the airport, stop in the centre of Comiso."
+areas:
+  - name: Ragusa Ibla
+    text: The most beautiful base, with B&Bs in old palaces. Cars cannot enter Ibla (ZTL), so pick a place with parking nearby.
+  - name: Modica
+    text: In the middle of everything, about 40 minutes from the airport and close to Scicli and Noto.
+  - name: Marina di Ragusa
+    text: The coast, with a seafront promenade, sandy beaches and nightlife in summer. About 30 minutes from the airport; book early for August.
+food:
+  - name: Cioccolato di Modica
+    text: Chocolate worked cold following an old recipe, so it stays grainy. It comes with spices such as cinnamon, vanilla or chilli.
+  - name: Arancino
+    text: A fried rice ball filled with ragù, cheese or pistachio. In eastern Sicily it is called "arancino".
+  - name: Cannolo
+    text: A crunchy pastry tube filled with sweet sheep's-milk ricotta.
+  - name: Scaccia ragusana
+    text: Thin dough folded several times, filled with tomato, cheese or aubergine. A typical street food.
+airports:
+  CIY: >-
+    Pio La Torre airport is about 5 km from Comiso and about 20 km from Ragusa. There are buses to
+    Comiso and Ragusa (about 30 minutes, about €4), but they are few and do not meet every flight:
+    check the timetable before you travel. A rental car is strongly advised: book it in advance and
+    pick it up at the airport. A taxi costs about €40-50 to Ragusa and should be booked in advance,
+    as there are few outside the terminal.
+transport: >-
+  A rental car is the simplest option: the Baroque towns are 20-60 minutes apart and the AST and
+  Interbus buses run rarely, especially on Sundays. The train links Ragusa, Modica, Scicli and
+  Noto, but it runs rarely. The centres of Ibla, Noto and Modica are ZTL zones: leave the car in
+  the car parks outside them (about €1-1.50 an hour).
+daytrips:
+  - name: Noto
+    text: The masterpiece of Sicilian Baroque, with its cathedral, Palazzo Nicolaci and its balconies with stone figures. About 1 hour by car from Comiso.
+  - name: Syracuse and Ortigia
+    text: The old island of Ortigia, with its cathedral built on top of a Greek temple and the Fonte Aretusa. About 1.5 hours by car.
+  - name: The Vendicari reserve
+    text: A protected coast between Noto and Marzamemi, with marshes where flamingos stop in autumn and winter, the ruins of a tonnara (tuna fishery) and wild beaches.
+  - name: Marzamemi
+    text: A fishing village around a small square, known for its tuna. About 1 hour and 15 minutes by car.
+budget: >-
+  An espresso costs about €1-1.20, an arancino €2-3, a cannolo €2.50-4 and a bar of Modica chocolate
+  about €3-5. A pizza costs €6-10. A rental car costs about €25-45 a day outside August and double
+  that in August. A double room in Ibla or Modica costs about €60-90 a night.
+when: >-
+  Flights from Tirana are seasonal, usually in spring and summer: check the dates every year. May,
+  June and September are the best, with a warm sea and without the August crowds. In August the
+  temperature often goes above 35°C. In May Noto holds the Infiorata, when Via Nicolaci is covered
+  with pictures made of flowers.
+tips:
+  - "Churches and many shops usually close from 13:00 to 16:00: visit in the morning and the evening."
+  - "Ask in advance whether an Albanian driving licence is accepted or an International Driving Permit is also needed; the car's deposit usually requires a credit card."
+  - "In Modica many chocolate shops let you taste for free before you buy."
+faq:
+  - q: "Can I visit the area without a car?"
+    a: "Yes, with patience: the bus from the airport takes you to Ragusa, and from there buses and the train link Modica, Scicli and Noto. For Vendicari, Marzamemi and the beaches, a car saves a lot of time."
+  - q: "How much money do you need per day?"
+    a: "Excluding the flight and accommodation, about €40-60 a day, plus the car and fuel. South-east Sicily is cheaper than Taormina or Palermo."

@@ -1,0 +1,99 @@
+city: Katowice
+slug: katowice
+tagline: Mines, concrete and music in the heart of Silesia
+intro: >-
+  Katowice is the main city of Upper Silesia, in southern Poland: a former coal-mining city that has
+  turned its industrial heritage into museums, concert halls and red-brick neighbourhoods. It is
+  cheaper and quieter than Kraków, which is only about 1 hour away. Two days are enough for the
+  city, plus one or two for day trips. The currency is the Polish złoty (PLN): €1 is about 4.3 PLN.
+sights:
+  - name: Silesian Museum
+    text: >-
+      The museum on the site of the former Katowice coal mine, with its halls underground beneath
+      glass cubes: the history of Silesia and Polish art. Climb the old mine shaft tower for the view
+      over the city. A ticket costs about 30-40 PLN (about €7-9); one day a week the permanent
+      exhibitions are usually free.
+  - name: Spodek
+    text: >-
+      The sports and concert arena shaped like a flying saucer, from 1971, the symbol of the city.
+      Next to it, the International Congress Centre has a grass roof you can walk on freely.
+  - name: Nikiszowiec
+    text: >-
+      The miners' estate built in 1908-1918, with red-brick blocks and St Anne's church in the
+      middle. It is about 20-25 minutes by bus from the centre, with cafés and the Szyb Wilson
+      gallery.
+  - name: NOSPR concert hall
+    text: >-
+      The home of the Polish National Radio Symphony Orchestra, opened in 2014, with some of the best
+      acoustics in Europe. Tickets start at about 30-50 PLN (about €7-12).
+  - name: Guido mine in Zabrze
+    text: >-
+      A real coal mine in the neighbouring city of Zabrze, where a lift takes you down to 170 or 320
+      metres underground, with a guide. The tour takes about 2-3 hours and costs about 60-90 PLN
+      (about €14-21). Zabrze is about 30 minutes away by train or bus.
+itinerary:
+  - "The Rynek and Mariacka street, then the Culture Zone: the Silesian Museum and its tower, Spodek and the roof of the Congress Centre. In the evening, a concert at NOSPR."
+  - "Nikiszowiec in the morning, with a coffee on the estate's square. In the afternoon, the Guido mine in Zabrze."
+  - "Day trip: Kraków or the Auschwitz-Birkenau memorial (a full day). Don't do both on the same day."
+areas:
+  - name: Śródmieście (Centre)
+    text: Around the Rynek and Mariacka street, everything on foot. The streets with bars are noisy on weekend nights.
+  - name: Near Katowice station
+    text: The most practical area, close to the trains and the airport buses, with plenty of well-priced hotels.
+  - name: Koszutka and the Culture Zone
+    text: North of the centre, close to Spodek and the museums, quieter and with frequent trams.
+food:
+  - name: Kluski śląskie
+    text: Small potato dumplings with a dimple in the middle for the gravy, part of the Silesian Sunday lunch.
+  - name: Rolada śląska
+    text: Beef roulade with bacon, onion and pickled gherkin, with gravy, kluski and red cabbage.
+  - name: Żur śląski
+    text: Sour rye soup, in the Silesian version with potatoes and sausage.
+  - name: Krupnioki
+    text: Sausage with buckwheat groats, fried with onion, simple miners' food.
+airports:
+  KTW: >-
+    Katowice Airport is in Pyrzowice, about 30 km to the north. Airport shuttle buses (e.g. those of
+    Matuszek, signed Lotnisko) go to the station in the centre in about 45-60 minutes and cost about
+    25-35 PLN (about €6-8). There are also direct buses to Kraków, about 1.5-2 hours, for about
+    50-70 PLN (about €12-16). A taxi or Bolt costs about 120-200 PLN (about €28-47).
+transport: >-
+  The centre and the Culture Zone are walkable. Further out there are trams and buses of the
+  metropolitan network (GZM): buy a ticket with your card on board or in the Jakdojade app, about
+  4-6 PLN (about €1-1.5), while a day ticket is about 16-20 PLN (about €4-5). Trains to Zabrze,
+  Kraków and Częstochowa leave from Katowice station.
+daytrips:
+  - name: Kraków
+    text: >-
+      The former royal capital, with its great square, Wawel and Kazimierz. About 1 hour by train or
+      bus, for about 20-40 PLN (about €5-9).
+  - name: Auschwitz-Birkenau
+    text: >-
+      The memorial of the Nazi camp in Oświęcim, about 1-1.5 hours by train or bus. Entry is free but
+      must be booked online for a time slot; guided tours are paid.
+  - name: Tarnowskie Góry silver mine
+    text: >-
+      The historic silver mine, on the UNESCO list, with part of the tour by boat underground. About
+      40-50 minutes by train; a ticket is about 50-60 PLN (about €12-14).
+  - name: Częstochowa
+    text: >-
+      The Jasna Góra monastery with the icon of the Black Madonna, the main pilgrimage site in
+      Poland. About 1-1.5 hours by train; entry is free.
+budget: >-
+  A half-litre beer costs about 12-18 PLN (€3-4), a Silesian lunch with roulade about 40-55 PLN
+  (€9-13), a coffee about 10-15 PLN (€2-3.5) and a tram ticket about 4-6 PLN (€1-1.5).
+when: >-
+  May-September for long days and outdoor tables; in August there are music festivals. December has
+  the Christmas market, but winter is cold, often below zero. The mines are the same in every
+  season.
+tips:
+  - "Always pay in PLN: when the card machine or ATM offers euros, decline, because the rate is worse."
+  - "Underground it is about 10-16 °C all year: bring a jacket for the mines."
+  - "Most shops are closed on Sundays in Poland; small supermarkets are usually open."
+faq:
+  - q: "Can I pay in euros in Katowice?"
+    a: "Rarely: prices are in złoty. Cards are accepted almost everywhere; for stalls keep a little cash from a bank ATM."
+  - q: "Is Katowice worth it, or should I go straight to Kraków?"
+    a: "Katowice is worth it for its industrial museums and lower prices. If you mainly want Kraków, take the direct bus from the airport."
+  - q: "How much money do I need per day in Katowice?"
+    a: "Excluding the flight and accommodation, about €35-55 a day. Food and transport are cheap; the main costs are accommodation and the mine tickets."

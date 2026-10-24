@@ -1,0 +1,78 @@
+city: Parma
+slug: parma
+tagline: Parmigiano, prosciutto e l'opera di Verdi
+intro: >-
+  Parma è una città piccola, elegante e ricca dell'Emilia-Romagna, conosciuta in tutto il mondo per
+  il Parmigiano Reggiano e il prosciutto di Parma. Il centro, con la cattedrale romanica, il teatro
+  dell'opera e i palazzi dei Farnese, si gira facilmente a piedi o in bicicletta. Due giorni bastano
+  per la città, tre se aggiungi la visita a un caseificio o ai castelli delle colline.
+sights:
+  - name: Duomo e Battistero
+    text: La cattedrale romanica, con la cupola affrescata dal Correggio, e il Battistero ottagonale in marmo rosa di fronte. Il Duomo è gratuito; il Battistero ha un biglietto, circa €10-12 insieme al Museo Diocesano.
+  - name: Teatro Regio
+    text: Il teatro dell'opera, inaugurato nel 1829, dove Verdi è quasi sacro. Si visita con guida per circa €8-10; a settembre-ottobre ospita il Festival Verdi.
+  - name: Palazzo della Pilotta
+    text: Il grande complesso in mattoni dei Farnese, con il Teatro Farnese in legno e la Galleria Nazionale, con opere di Correggio, Parmigianino e Leonardo. Il biglietto unico costa circa €18-20.
+  - name: Parco Ducale
+    text: Il parco dei duchi, oltre il torrente Parma, con viali alberati, un laghetto e il Palazzo Ducale. L'ingresso è gratuito.
+  - name: Camera di San Paolo
+    text: Una piccola stanza in un antico monastero, con la volta affrescata dal Correggio nel 1519. Di solito è compresa nel biglietto della Pilotta; controlla gli orari prima, perché non è aperta tutti i giorni.
+  - name: Piazza Garibaldi
+    text: La piazza principale della città, con il Palazzo del Governatore e i caffè dove i parmigiani si incontrano prima di cena.
+airports:
+  PMF: >-
+    L'aeroporto Giuseppe Verdi è a circa 3 km dal centro. L'autobus urbano ti porta alla stazione
+    ferroviaria e in centro in circa 15 minuti, con un biglietto di circa €2. Il taxi per il centro
+    costa circa €15-20.
+budget: >-
+  Un caffè al banco costa circa €1,20-1,50, un piatto di anolini €10-14 e un tagliere di torta
+  fritta e prosciutto per due circa €15-20. Il biglietto dell'autobus costa circa €2. Una camera
+  doppia in un hotel semplice o in un B&B costa da circa €80-120 a notte; durante il Festival Verdi
+  e le fiere i prezzi salgono.
+when: >-
+  Da aprile a giugno e da settembre a ottobre c'è il tempo migliore. A settembre c'è il festival del
+  prosciutto di Parma e comincia il Festival Verdi, che dura fino a ottobre. Luglio e agosto sono
+  caldi, mentre l'inverno è freddo e spesso nebbioso.
+tips:
+  - "Il Parmigiano si fa di prima mattina: le visite ai caseifici cominciano verso le 8:00-9:00 e si prenotano qualche giorno prima."
+  - "Parma è una città di biciclette: molti hotel e B&B le prestano gratis o per pochi euro al giorno."
+  - "Dalla stazione di Parma, Bologna e Milano sono a circa 1 ora di treno. Puoi abbinare Parma a una delle due nello stesso viaggio."
+itinerary:
+  - "Il Duomo, il Battistero e San Giovanni Evangelista al mattino. Nel pomeriggio Piazza Garibaldi e la visita guidata al Teatro Regio, la sera aperitivo in Via Farini."
+  - "Palazzo della Pilotta con il Teatro Farnese e la Galleria Nazionale, poi la Camera di San Paolo. Nel pomeriggio attraversa il ponte verso il Parco Ducale e cena nel quartiere Oltretorrente."
+  - "Una giornata fuori città: al mattino un caseificio di Parmigiano, pranzo con il prosciutto a Langhirano e nel pomeriggio il castello di Torrechiara. In alternativa, Busseto e i luoghi di Verdi."
+areas:
+  - name: Centro storico
+    text: Intorno al Duomo e a Piazza Garibaldi, tutto a piedi, con i prezzi più alti. Ideale per un fine settimana.
+  - name: Oltretorrente
+    text: Il quartiere popolare oltre il torrente, vicino al Parco Ducale, con ristoranti più economici e un'atmosfera parmigiana autentica, a 10 minuti a piedi dal centro.
+  - name: Vicino alla stazione
+    text: "La zona più pratica per i treni e l'autobus dell'aeroporto, con hotel più economici. Il centro è a 10-15 minuti a piedi."
+food:
+  - name: Parmigiano Reggiano
+    text: Il formaggio a pasta dura stagionato almeno 12 mesi, spesso 24 o 36. Qui si mangia a scaglie con un bicchiere di vino.
+  - name: Prosciutto di Parma
+    text: Il prosciutto crudo, fatto solo di carne di maiale e sale, tagliato sottilissimo. Provalo con la torta fritta, pasta fritta calda.
+  - name: Anolini in brodo
+    text: Piccola pasta rotonda ripiena di stracotto di manzo e Parmigiano, servita nel brodo di carne.
+  - name: Tortelli d'erbetta
+    text: Grandi tortelli ripieni di erbette e ricotta, con burro e Parmigiano sopra.
+transport: >-
+  Il centro è piccolo e molte strade sono chiuse alle auto, quindi a piedi e in bicicletta sono i
+  modi migliori per muoversi. Gli autobus TEP collegano la stazione, l'aeroporto e i quartieri; il
+  biglietto singolo costa circa €2 ed è più caro se lo compri a bordo. Per i castelli e i caseifici
+  serve un'auto o un tour organizzato.
+daytrips:
+  - name: Caseificio o prosciuttificio
+    text: Le visite ai caseifici di Parmigiano intorno alla città costano circa €15-25 con degustazione. Per il prosciutto vai a Langhirano, circa 20 km a sud, in autobus o in auto.
+  - name: Busseto e i luoghi di Verdi
+    text: A circa 35 km, con la casa natale di Verdi a Roncole Verdi e il piccolo teatro che porta il suo nome. Circa 1 ora di treno regionale, di solito con cambio a Fidenza.
+  - name: Modena
+    text: Circa 30 minuti di treno regionale, per il duomo, l'aceto balsamico e il museo Enzo Ferrari.
+  - name: Castelli delle colline parmensi
+    text: Torrechiara, sopra le vigne a sud della città, e Fontanellato, con il fossato e gli affreschi del Parmigianino. Più comodi in auto, ingresso circa €6-10.
+faq:
+  - q: "Basta un giorno per Parma?"
+    a: "Il centro si vede in un giorno, ma con due giorni visiti con calma la Pilotta e il Teatro Regio. Con un terzo giorno fai una gita al formaggio, al prosciutto o ai castelli."
+  - q: "Quanto si spende al giorno a Parma?"
+    a: "Volo e alloggio esclusi, calcola €45-70 al giorno per cibo, autobus e uno o due ingressi. Parma è più economica di Milano."

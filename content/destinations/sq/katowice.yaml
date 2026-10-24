@@ -1,0 +1,102 @@
+city: Katowice
+slug: katowice
+tagline: Miniera, beton dhe muzikë në zemër të Silesisë
+intro: >-
+  Katowice është qyteti kryesor i Silesisë së Epërme, në jug të Polonisë: një ish-qytet minierash
+  qymyri që e ka kthyer trashëgiminë industriale në muze, salla koncertesh dhe lagje me tulla të
+  kuqe. Është më i lirë dhe më i qetë se Kraków, i cili është vetëm rreth 1 orë larg. Dy ditë
+  mjaftojnë për qytetin, plus një ose dy për udhëtimet. Monedha është zloti polak (PLN): €1 është
+  rreth 4.3 PLN.
+sights:
+  - name: Muzeu i Silesisë
+    text: >-
+      Muzeu mbi ish-minierën e qymyrit Katowice, me sallat nën tokë, poshtë kubeve prej xhami:
+      historia e Silesisë dhe arti polak. Ngjitu në kullën e vjetër të pusit për pamjen mbi qytet.
+      Bileta kushton rreth 30-40 PLN (rreth €7-9); një ditë në javë ekspozitat e përhershme zakonisht
+      janë falas.
+  - name: Spodek
+    text: >-
+      Salla e sporteve dhe e koncerteve në formë disku fluturues, nga viti 1971, simboli i qytetit.
+      Ngjitur, Qendra Ndërkombëtare e Kongreseve ka një çati me bar ku mund të ecësh lirisht.
+  - name: Nikiszowiec
+    text: >-
+      Lagjja e minatorëve e ndërtuar në vitet 1908-1918, me blloqe me tulla të kuqe dhe kishën e
+      Shën Anës në mes. Është rreth 20-25 minuta me autobus nga qendra, me kafene dhe galerinë Szyb
+      Wilson.
+  - name: Salla e koncerteve NOSPR
+    text: >-
+      Selia e Orkestrës Simfonike Kombëtare të Radios Polake, e hapur në vitin 2014, me një nga
+      akustikat më të mira në Evropë. Biletat nisin nga rreth 30-50 PLN (rreth €7-12).
+  - name: Miniera Guido në Zabrze
+    text: >-
+      Një minierë qymyri e vërtetë në qytetin fqinj Zabrze, ku zbret me ashensor deri në 170 ose 320
+      metra thellësi, me guidë. Turi bën rreth 2-3 orë dhe kushton rreth 60-90 PLN (rreth €14-21).
+      Zabrze është rreth 30 minuta me tren ose autobus.
+itinerary:
+  - "Rynek dhe rruga Mariacka, pastaj Zona e Kulturës: Muzeu i Silesisë me kullën, Spodek dhe çatia e Qendrës së Kongreseve. Në mbrëmje një koncert në NOSPR."
+  - "Në mëngjes Nikiszowiec, me një kafe në sheshin e lagjes. Pasdite Miniera Guido në Zabrze."
+  - "Udhëtim ditor: Kraków ose memoriali i Auschwitz-Birkenau (gjithë dita). Mos i bëj të dyja në të njëjtën ditë."
+areas:
+  - name: Śródmieście (Qendra)
+    text: Rreth Rynek-ut dhe rrugës Mariacka, gjithçka në këmbë. Rrugët me bare janë të zhurmshme natën e fundjavës.
+  - name: Pranë stacionit Katowice
+    text: Zona më praktike, pranë trenave dhe autobusëve të aeroportit, me shumë hotele me çmime të mira.
+  - name: Koszutka dhe Zona e Kulturës
+    text: Në veri të qendrës, afër Spodek-ut dhe muzeve, më e qetë dhe me tramvaje të shpeshta.
+food:
+  - name: Kluski śląskie
+    text: Petulla të vogla me patate, me një gropëz në mes për salcën, pjesë e drekës silesiane të së dielës.
+  - name: Rolada śląska
+    text: Rulada e viçit me proshutë, qepë dhe tranguj turshi, me salcë, kluski dhe lakër të kuqe.
+  - name: Żur śląski
+    text: Supa e thartë me thekër, në versionin silesian me patate dhe salsiçe.
+  - name: Krupnioki
+    text: Salsiçe me hikërror, e skuqur me qepë, ushqim i thjeshtë i minatorëve.
+airports:
+  KTW: >-
+    Aeroporti i Katowice-s është në Pyrzowice, rreth 30 km në veri. Autobusët shuttle të aeroportit
+    (p.sh. ata të Matuszek-ut, me shenjën Lotnisko) shkojnë te stacioni në qendër për rreth 45-60
+    minuta dhe kushtojnë rreth 25-35 PLN (rreth €6-8). Ka edhe autobusë direkt për në Kraków, rreth
+    1.5-2 orë, për rreth 50-70 PLN (rreth €12-16). Taksia ose Bolt kushtojnë rreth 120-200 PLN
+    (rreth €28-47).
+transport: >-
+  Qendra dhe Zona e Kulturës përshkohen në këmbë. Për më larg ka tramvaje dhe autobusë të rrjetit
+  metropolitan (GZM): bileta blihet me kartë brenda mjetit ose në aplikacionin Jakdojade, rreth 4-6
+  PLN (rreth €1-1.5), ndërsa bileta ditore rreth 16-20 PLN (rreth €4-5). Trenat për Zabrze, Kraków
+  dhe Częstochowa nisen nga stacioni Katowice.
+daytrips:
+  - name: Kraków
+    text: >-
+      Ish-kryeqyteti mbretëror, me sheshin e madh, Wawel-in dhe Kazimierz-in. Rreth 1 orë me tren
+      ose autobus, për rreth 20-40 PLN (rreth €5-9).
+  - name: Auschwitz-Birkenau
+    text: >-
+      Memoriali i kampit nazist në Oświęcim, rreth 1-1.5 orë me tren ose autobus. Hyrja është falas
+      por rezervohet online me orar; turet me guidë paguhen.
+  - name: Miniera e argjendit në Tarnowskie Góry
+    text: >-
+      Miniera historike e argjendit, në listën e UNESCO-s, me një pjesë të turit me varkë nën tokë.
+      Rreth 40-50 minuta me tren; bileta rreth 50-60 PLN (rreth €12-14).
+  - name: Częstochowa
+    text: >-
+      Manastiri i Jasna Góra me ikonën e Zonjës së Zezë, vendi kryesor i pelegrinazhit në Poloni.
+      Rreth 1-1.5 orë me tren; hyrja është falas.
+budget: >-
+  Një birrë gjysmëlitërshe kushton rreth 12-18 PLN (€3-4), një drekë silesiane me roladë rreth
+  40-55 PLN (€9-13), një kafe rreth 10-15 PLN (€2-3.5) dhe një biletë tramvaji rreth 4-6 PLN
+  (€1-1.5).
+when: >-
+  Maji-shtatori për ditë të gjata dhe tavolina jashtë; në gusht ka festivale muzikore. Dhjetori ka
+  tregun e Krishtlindjeve, por dimri është i ftohtë, shpesh nën zero. Minierat vizitohen njësoj në
+  çdo stinë.
+tips:
+  - "Paguaj gjithmonë në PLN: kur karta ose bankomati të ofron euro, refuzoje, se kursi është më i keq."
+  - "Nën tokë temperatura është rreth 10-16 °C gjithë vitin: merr një xhaketë për minierat."
+  - "Shumica e dyqaneve janë të mbyllura të dielën në Poloni; supermarketet e vogla zakonisht punojnë."
+faq:
+  - q: "A mund të paguaj me euro në Katowice?"
+    a: "Rrallë: çmimet janë në zlotë. Karta pranohet pothuajse kudo; për tezgat mbaj pak para në dorë nga një bankomat banke."
+  - q: "A ia vlen Katowice, apo më mirë direkt në Kraków?"
+    a: "Katowice ia vlen për muzetë industriale dhe çmimet më të ulëta. Nëse do kryesisht Kraków-in, merr autobusin direkt nga aeroporti."
+  - q: "Sa para duhen në ditë në Katowice?"
+    a: "Pa fluturimin dhe fjetjen, rreth €35-55 në ditë. Ushqimi dhe transporti janë të lirë; shpenzimet kryesore janë fjetja dhe biletat e minierave."

@@ -1,0 +1,82 @@
+city: Salerno
+slug: salerno
+tagline: Il Lungomare, il Duomo e la porta della Costiera Amalfitana
+intro: >-
+  Salerno è una città di porto in Campania, a circa 50 km a sud di Napoli, con un centro medievale,
+  un lungo lungomare e prezzi più bassi dei paesi della Costiera Amalfitana. Dal porto partono i
+  traghetti per Amalfi e Positano, mentre il treno ti porta ai templi greci di Paestum e nel
+  Cilento. Tre o quattro giorni bastano per la città e qualche gita in giornata.
+sights:
+  - name: Duomo di Salerno
+    text: La cattedrale romanica di San Matteo, consacrata nel 1084, con un quadriportico ad archi e un campanile del XII secolo. Nella cripta barocca riposano le reliquie dell'apostolo Matteo. L'ingresso è gratuito.
+  - name: Lungomare Trieste
+    text: La passeggiata sul mare con le palme, dove i salernitani escono per la passeggiata serale. Nelle giornate limpide si vede la Costiera Amalfitana.
+  - name: Castello di Arechi
+    text: Il castello medievale a circa 300 m sopra la città, con la vista più bella sul golfo al tramonto. L'ingresso costa circa €4. Sali in autobus o in taxi, perché la strada è molto ripida.
+  - name: Giardino della Minerva
+    text: Un orto botanico medievale a terrazze, dove i medici della Scuola Medica Salernitana coltivavano le piante curative. L'ingresso costa circa €4.
+  - name: Centro Storico
+    text: Vicoli medievali con botteghe, forni e bar, da Via dei Mercanti a Largo Campo. Qui nacque la Schola Medica Salernitana, una delle prime scuole di medicina d'Europa.
+itinerary:
+  - "Il centro storico: il Duomo, Via dei Mercanti e il Giardino della Minerva. Nel pomeriggio il Castello di Arechi per il tramonto, la sera una passeggiata sul Lungomare."
+  - "Il traghetto del mattino per Amalfi e l'autobus per Ravello. Nel pomeriggio il traghetto per Positano e il ritorno a Salerno con l'ultima corsa."
+  - "Paestum in treno: i templi greci e il museo. Pranzo con mozzarella di bufala in un caseificio vicino al parco."
+  - "Pompei con il treno regionale al mattino. Nel pomeriggio Vietri sul Mare per le ceramiche e un bagno in mare."
+areas:
+  - name: Centro Storico
+    text: B&B nei vicoli medievali, vicino al Duomo e ai locali serali, ma rumorosi nel fine settimana.
+  - name: Corso Vittorio Emanuele e la stazione
+    text: La zona più pratica per i treni, l'autobus dell'aeroporto e i traghetti di Piazza della Concordia.
+  - name: Torrione e Pastena
+    text: Quartieri residenziali a est del centro, con spiagge e prezzi più bassi, collegati in autobus.
+food:
+  - name: Mozzarella di bufala
+    text: Mozzarella morbida di latte di bufala, prodotta nei caseifici tra Battipaglia e Paestum. Si mangia fresca, il giorno stesso in cui viene fatta.
+  - name: Limoncello
+    text: Il liquore dei grandi limoni della Costiera Amalfitana, da bere ghiacciato dopo cena.
+  - name: Colatura di alici di Cetara
+    text: Un liquido limpido ricavato dalle acciughe nel borgo di pescatori di Cetara, versato sugli spaghetti con aglio e olio d'oliva.
+  - name: Scialatielli ai frutti di mare
+    text: Pasta fresca e spessa con cozze, gamberi e pomodorini.
+airports:
+  QSR: >-
+    L'aeroporto Salerno Costa d'Amalfi si trova a Pontecagnano, a circa 20 km dalla città, ed è
+    stato riaperto ai voli di linea solo nel 2024. Gli autobus collegano il terminal al centro e
+    alla stazione di Salerno in circa 30-40 minuti (circa €2-4); d'estate di solito ci sono anche
+    autobus diretti per la Costiera Amalfitana e il Cilento. Il taxi costa circa €40-50. I
+    collegamenti cambiano ancora, quindi controlla gli orari aggiornati prima di partire.
+transport: >-
+  Il centro si visita a piedi. Da Piazza della Concordia partono i traghetti Travelmar lungo la
+  Costiera Amalfitana, più o meno da aprile a ottobre: circa 35 minuti fino ad Amalfi (circa
+  €10-12) e circa 1 ora e 10 minuti fino a Positano. Gli autobus SITA percorrono la strada costiera
+  tutto l'anno, ma d'estate restano bloccati nel traffico. Dalla stazione partono i treni per
+  Napoli, Pompei e Paestum; i biglietti cartacei vanno convalidati prima di salire.
+daytrips:
+  - name: Amalfi e Positano
+    text: In traghetto dal porto, circa 35 minuti fino ad Amalfi e circa 1 ora e 10 minuti fino a Positano. Da Amalfi l'autobus ti porta su a Ravello.
+  - name: Paestum
+    text: Tre templi greci dei secoli VI-V a.C., tra i meglio conservati al mondo, a circa 30-40 minuti di treno regionale. Il biglietto per parco e museo costa circa €15.
+  - name: Vietri sul Mare
+    text: Il primo paese della Costiera Amalfitana, famoso per le ceramiche colorate, a circa 10 minuti di treno o di autobus.
+  - name: Pompei
+    text: La città romana sotto la cenere del Vesuvio, a circa 30-40 minuti con il treno regionale fino alla stazione di Pompei, poi 10-15 minuti a piedi.
+  - name: Cilento
+    text: Il castello di Agropoli e le spiagge di Castellabate, nel Parco Nazionale del Cilento, a circa 40-50 minuti di treno.
+budget: >-
+  Una pizza costa circa €6-9, un espresso circa €1,20 e il biglietto dell'autobus urbano circa
+  €1,50. Dormire a Salerno costa spesso la metà che ad Amalfi o a Positano.
+when: >-
+  Maggio-giugno e settembre-ottobre, quando i traghetti sono in servizio e il mare è caldo. A
+  luglio-agosto la Costiera è affollatissima. Da novembre a gennaio la città si illumina con le
+  Luci d'Artista.
+tips:
+  - "D'estate scegli il traghetto invece dell'autobus per Amalfi e Positano: la strada costiera è stretta e trafficata."
+  - "Per Paestum parti presto e porta acqua e cappello: i templi sono in aperta campagna, senza ombra."
+  - "Controlla gli orari dei traghetti il giorno prima: con il mare mosso le corse vengono cancellate."
+faq:
+  - q: "Come si arriva ad Amalfi e a Positano da Salerno?"
+    a: "Da aprile a ottobre in traghetto da Piazza della Concordia, circa 35 minuti fino ad Amalfi. Tutto l'anno ci sono gli autobus SITA, più economici ma più lenti."
+  - q: "Conviene dormire a Salerno invece che in Costiera?"
+    a: "Sì, se vuoi risparmiare: gli hotel costano molto meno e ci sono treni per Pompei e Paestum e traghetti per la Costiera."
+  - q: "Quanto si spende al giorno a Salerno?"
+    a: "Volo e alloggio esclusi, €40-60 al giorno, più circa €20-30 per traghetti e biglietti delle gite."

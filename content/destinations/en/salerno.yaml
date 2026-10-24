@@ -1,0 +1,82 @@
+city: Salerno
+slug: salerno
+tagline: The Lungomare, the Duomo and the gateway to the Amalfi Coast
+intro: >-
+  Salerno is a port city in Campania, about 50 km south of Naples, with a medieval centre, a long
+  seafront promenade and lower prices than the villages of the Amalfi Coast. Ferries to Amalfi and
+  Positano leave from its port, while the train takes you to the Greek temples of Paestum and on
+  into the Cilento. Three or four days are enough for the city and a few day trips.
+sights:
+  - name: Duomo di Salerno
+    text: The Romanesque Cathedral of St Matthew, consecrated in 1084, with an arcaded courtyard and a 12th-century bell tower. The relics of the apostle Matthew rest in the Baroque crypt. Entry is free.
+  - name: Lungomare Trieste
+    text: The palm-lined seafront promenade, where locals come out for their evening stroll. On clear days you can see the Amalfi Coast.
+  - name: Castello di Arechi
+    text: The medieval castle about 300 m above the city, with the best view over the gulf at sunset. Entry costs about €4. Go up by bus or taxi, as the road is very steep.
+  - name: Giardino della Minerva
+    text: A medieval botanical garden on terraces, where the doctors of the Salerno Medical School grew their healing plants. Entry costs about €4.
+  - name: Centro Storico
+    text: Medieval lanes with shops, bakeries and bars, from Via dei Mercanti to Largo Campo. This is where the Schola Medica Salernitana was born, one of the first medical schools in Europe.
+itinerary:
+  - "The old town: the Duomo, Via dei Mercanti and the Giardino della Minerva. In the afternoon, Castello di Arechi for the sunset, and in the evening a stroll on the Lungomare."
+  - "The morning ferry to Amalfi and the bus up to Ravello. In the afternoon, the ferry to Positano and back to Salerno on the last boat."
+  - "Paestum by train: the Greek temples and the museum. Lunch with buffalo mozzarella at a farm near the park."
+  - "Pompeii on the regional train in the morning. In the afternoon, Vietri sul Mare for its ceramics and a swim."
+areas:
+  - name: Centro Storico
+    text: B&Bs in the medieval lanes, close to the Duomo and the evening bars, but noisy at weekends.
+  - name: Corso Vittorio Emanuele and the station
+    text: The most practical area for the trains, the airport bus and the ferries from Piazza della Concordia.
+  - name: Torrione and Pastena
+    text: Residential districts east of the centre, with beaches and lower prices, linked by bus.
+food:
+  - name: Mozzarella di bufala
+    text: Soft mozzarella made from buffalo milk on the farms between Battipaglia and Paestum. It is eaten fresh, on the day it is made.
+  - name: Limoncello
+    text: The liqueur made from the large lemons of the Amalfi Coast, drunk ice-cold after dinner.
+  - name: Colatura di alici di Cetara
+    text: A clear anchovy sauce from the fishing village of Cetara, poured over spaghetti with garlic and olive oil.
+  - name: Scialatielli ai frutti di mare
+    text: Thick fresh pasta with mussels, prawns and cherry tomatoes.
+airports:
+  QSR: >-
+    Salerno Costa d'Amalfi airport is in Pontecagnano, about 20 km from the city, and only reopened
+    to scheduled flights in 2024. Buses link the terminal with the centre and Salerno station in
+    about 30-40 minutes (about €2-4); in summer there are usually also direct buses to the Amalfi
+    Coast and the Cilento. A taxi costs about €40-50. Connections are still changing, so check the
+    current timetables before you travel.
+transport: >-
+  The centre can be seen on foot. Travelmar ferries along the Amalfi Coast leave from Piazza della
+  Concordia, roughly April to October: about 35 minutes to Amalfi (about €10-12) and about 1 hour
+  10 minutes to Positano. SITA buses run along the coast road all year, but in summer they get
+  stuck in traffic. Trains to Naples, Pompeii and Paestum leave from the station; paper tickets
+  must be validated before boarding.
+daytrips:
+  - name: Amalfi and Positano
+    text: By ferry from the port, about 35 minutes to Amalfi and about 1 hour 10 minutes to Positano. From Amalfi a bus takes you up to Ravello.
+  - name: Paestum
+    text: Three Greek temples from the 6th-5th centuries BC, among the best preserved in the world, about 30-40 minutes by regional train. A ticket for the park and museum costs about €15.
+  - name: Vietri sul Mare
+    text: The first village of the Amalfi Coast, known for its colourful ceramics, about 10 minutes by train or bus.
+  - name: Pompeii
+    text: The Roman city under the ash of Vesuvius, about 30-40 minutes on the regional train to Pompei station, then 10-15 minutes on foot.
+  - name: Cilento
+    text: The castle of Agropoli and the beaches of Castellabate, in the Cilento National Park, about 40-50 minutes by train.
+budget: >-
+  A pizza costs about €6-9, an espresso about €1.20 and a city bus ticket about €1.50. A night in
+  Salerno often costs half of what it does in Amalfi or Positano.
+when: >-
+  May to June and September to October, when the ferries are running and the sea is warm. In July
+  and August the coast is packed. From November to January the city is lit up by the Luci
+  d'Artista light festival.
+tips:
+  - "In summer, take the ferry rather than the bus to Amalfi and Positano: the coast road is narrow and full of traffic."
+  - "For Paestum, set off early and bring water and a hat: the temples stand in open fields, with no shade."
+  - "Check the ferry timetable the day before: in rough seas, crossings are cancelled."
+faq:
+  - q: "How do you get to Amalfi and Positano from Salerno?"
+    a: "From April to October by ferry from Piazza della Concordia, about 35 minutes to Amalfi. SITA buses run all year, cheaper but slower."
+  - q: "Is it worth staying in Salerno instead of on the Amalfi Coast?"
+    a: "Yes, if you want to save money: hotels are much cheaper, and there are trains to Pompeii and Paestum and ferries to the coast."
+  - q: "How much money do you need per day in Salerno?"
+    a: "Excluding the flight and accommodation, €40-60 a day, plus about €20-30 for ferries and day-trip tickets."

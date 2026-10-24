@@ -1,0 +1,103 @@
+city: Katowice
+slug: katowice
+tagline: Miniere, cemento e musica nel cuore della Slesia
+intro: >-
+  Katowice è la città principale dell'Alta Slesia, nella Polonia meridionale: un'ex città di miniere
+  di carbone che ha trasformato il suo patrimonio industriale in musei, sale da concerto e quartieri
+  di mattoni rossi. È più economica e più tranquilla di Cracovia, che è a circa 1 ora. Due giorni
+  bastano per la città, più uno o due per le gite. La valuta è lo złoty polacco (PLN): €1 vale circa
+  4,3 PLN.
+sights:
+  - name: Museo della Slesia
+    text: >-
+      Il museo sul sito dell'ex miniera di carbone Katowice, con le sale sottoterra sotto cubi di
+      vetro: la storia della Slesia e l'arte polacca. Sali sulla vecchia torre del pozzo per la vista
+      sulla città. Il biglietto costa circa 30-40 PLN (circa €7-9); un giorno alla settimana le
+      mostre permanenti di solito sono gratuite.
+  - name: Spodek
+    text: >-
+      Il palazzetto dello sport e dei concerti a forma di disco volante, del 1971, simbolo della
+      città. Accanto, il Centro Congressi Internazionale ha un tetto d'erba su cui si cammina
+      liberamente.
+  - name: Nikiszowiec
+    text: >-
+      Il quartiere dei minatori costruito nel 1908-1918, con blocchi di mattoni rossi e la chiesa di
+      Sant'Anna al centro. È a circa 20-25 minuti di autobus dal centro, con caffè e la galleria Szyb
+      Wilson.
+  - name: Sala da concerto NOSPR
+    text: >-
+      La sede dell'Orchestra Sinfonica Nazionale della Radio Polacca, inaugurata nel 2014, con una
+      delle migliori acustiche d'Europa. I biglietti partono da circa 30-50 PLN (circa €7-12).
+  - name: Miniera Guido a Zabrze
+    text: >-
+      Una vera miniera di carbone nella vicina città di Zabrze, dove un ascensore ti porta a 170 o
+      320 metri di profondità, con una guida. La visita dura circa 2-3 ore e costa circa 60-90 PLN
+      (circa €14-21). Zabrze è a circa 30 minuti di treno o autobus.
+itinerary:
+  - "Il Rynek e via Mariacka, poi la Zona della Cultura: il Museo della Slesia con la torre, lo Spodek e il tetto del Centro Congressi. La sera, un concerto al NOSPR."
+  - "Nikiszowiec al mattino, con un caffè sulla piazza del quartiere. Il pomeriggio, la miniera Guido a Zabrze."
+  - "Gita in giornata: Cracovia o il memoriale di Auschwitz-Birkenau (una giornata intera). Non farle tutte e due lo stesso giorno."
+areas:
+  - name: Śródmieście (Centro)
+    text: Intorno al Rynek e a via Mariacka, tutto a piedi. Le vie con i locali sono rumorose nelle notti del fine settimana.
+  - name: Vicino alla stazione di Katowice
+    text: La zona più comoda, vicina ai treni e agli autobus dell'aeroporto, con molti hotel a buon prezzo.
+  - name: Koszutka e la Zona della Cultura
+    text: A nord del centro, vicino allo Spodek e ai musei, più tranquilla e con tram frequenti.
+food:
+  - name: Kluski śląskie
+    text: Piccoli gnocchi di patate con una fossetta al centro per il sugo, parte del pranzo slesiano della domenica.
+  - name: Rolada śląska
+    text: Involtino di manzo con pancetta, cipolla e cetriolino sottaceto, con sugo, kluski e cavolo rosso.
+  - name: Żur śląski
+    text: Zuppa acida di segale, nella versione slesiana con patate e salsiccia.
+  - name: Krupnioki
+    text: Salsiccia con grano saraceno, fritta con la cipolla, cibo semplice dei minatori.
+airports:
+  KTW: >-
+    L'aeroporto di Katowice è a Pyrzowice, a circa 30 km a nord. Le navette dell'aeroporto (per
+    esempio quelle di Matuszek, con la scritta Lotnisko) arrivano alla stazione in centro in circa
+    45-60 minuti e costano circa 25-35 PLN (circa €6-8). Ci sono anche autobus diretti per Cracovia,
+    circa 1,5-2 ore, per circa 50-70 PLN (circa €12-16). Un taxi o Bolt costa circa 120-200 PLN
+    (circa €28-47).
+transport: >-
+  Il centro e la Zona della Cultura si girano a piedi. Più lontano ci sono tram e autobus della rete
+  metropolitana (GZM): il biglietto si compra con la carta a bordo o nell'app Jakdojade, circa 4-6
+  PLN (circa €1-1,5), mentre il giornaliero costa circa 16-20 PLN (circa €4-5). I treni per Zabrze,
+  Cracovia e Częstochowa partono dalla stazione di Katowice.
+daytrips:
+  - name: Cracovia
+    text: >-
+      L'antica capitale reale, con la sua grande piazza, il Wawel e Kazimierz. Circa 1 ora di treno o
+      autobus, per circa 20-40 PLN (circa €5-9).
+  - name: Auschwitz-Birkenau
+    text: >-
+      Il memoriale del campo nazista a Oświęcim, a circa 1-1,5 ore di treno o autobus. L'ingresso è
+      gratuito ma va prenotato online a orario; le visite guidate sono a pagamento.
+  - name: Miniera d'argento di Tarnowskie Góry
+    text: >-
+      La storica miniera d'argento, nella lista dell'UNESCO, con una parte della visita in barca
+      sottoterra. Circa 40-50 minuti di treno; il biglietto costa circa 50-60 PLN (circa €12-14).
+  - name: Częstochowa
+    text: >-
+      Il santuario di Jasna Góra con l'icona della Madonna Nera, il principale luogo di pellegrinaggio
+      della Polonia. Circa 1-1,5 ore di treno; l'ingresso è gratuito.
+budget: >-
+  Una birra da mezzo litro costa circa 12-18 PLN (€3-4), un pranzo slesiano con involtino circa
+  40-55 PLN (€9-13), un caffè circa 10-15 PLN (€2-3,5) e un biglietto del tram circa 4-6 PLN
+  (€1-1,5).
+when: >-
+  Maggio-settembre per le giornate lunghe e i tavolini all'aperto; ad agosto ci sono festival
+  musicali. A dicembre c'è il mercatino di Natale, ma l'inverno è freddo, spesso sotto zero. Le
+  miniere si visitano allo stesso modo in ogni stagione.
+tips:
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "Sottoterra ci sono circa 10-16 °C tutto l'anno: porta una giacca per le miniere."
+  - "In Polonia la maggior parte dei negozi è chiusa la domenica; i piccoli supermercati di solito restano aperti."
+faq:
+  - q: "Posso pagare in euro a Katowice?"
+    a: "Raramente: i prezzi sono in złoty. La carta è accettata quasi ovunque; per le bancarelle tieni un po' di contanti prelevati da un bancomat di una banca."
+  - q: "Vale la pena Katowice, o meglio andare direttamente a Cracovia?"
+    a: "Katowice vale la pena per i musei industriali e i prezzi più bassi. Se ti interessa soprattutto Cracovia, prendi l'autobus diretto dall'aeroporto."
+  - q: "Quanto si spende al giorno a Katowice?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno. Cibo e trasporti sono economici; le spese principali sono l'alloggio e i biglietti delle miniere."

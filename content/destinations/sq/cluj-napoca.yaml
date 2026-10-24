@@ -1,0 +1,98 @@
+city: Cluj-Napoca
+slug: cluj-napoca
+tagline: Zemra e Transilvanisë, qytet studentësh dhe festivalesh
+intro: >-
+  Cluj-Napoca është qyteti i dytë më i madh i Rumanisë dhe kryeqyteti jozyrtar i Transilvanisë, një
+  qytet universitar plot studentë, kafene dhe festivale, me një qendër të vjetër që përshkohet në
+  këmbë. Monedha është leu rumun (RON): €1 është rreth 5 lei. Dy ditë mjaftojnë për qytetin, plus një
+  ditë për Minierën e Kripës në Turda.
+sights:
+  - name: Sheshi Unirii dhe Kisha e Shën Mihailit
+    text: >-
+      Sheshi kryesor i qytetit, me kishën gotike të Shën Mihailit, të ndërtuar mes viteve 1350 dhe
+      1487, me kullë rreth 80 metra. Para saj qëndron statuja me kalë e mbretit Matthias Corvinus, i
+      lindur në Cluj në vitin 1443. Hyrja në kishë është falas.
+  - name: Pallati Bánffy
+    text: >-
+      Pallati barok në anën lindore të sheshit, i ndërtuar në vitet 1774-1785. Sot strehon Muzeun
+      Kombëtar të Artit; bileta kushton rreth 20-30 lei.
+  - name: Kopshti Botanik
+    text: >-
+      Kopshti Botanik Alexandru Borza, rreth 14 hektarë, 15 minuta në këmbë nga qendra, me serra
+      tropikale dhe një kopsht japonez. Bileta rreth 15-25 lei; më i bukur është në pranverë.
+  - name: Kodra Cetățuia
+    text: >-
+      Kodra mbi lumin Someș, me mbetjet e kështjellës austriake të vitit 1715. Shkallët nga qendra
+      ngjiten për rreth 15 minuta, dhe pamja mbi qytet në perëndim të diellit është falas.
+  - name: Parku Qendror
+    text: >-
+      Parku i vjetër i qytetit, me një liqen ku në verë merren me qira varka dhe ndërtesën e Kazinosë
+      të vitit 1897. Ngjitur është Cluj Arena, stadiumi ku mbahet festivali Untold.
+itinerary:
+  - "Sheshi Unirii me Kishën e Shën Mihailit dhe Pallatin Bánffy, pastaj shtëpia ku lindi Matthias Corvinus. Pasdite Parku Qendror, në perëndim të diellit ngjitja në Kodrën Cetățuia."
+  - "Sheshi Avram Iancu me Katedralen Ortodokse dhe Teatrin Kombëtar, pastaj Kopshti Botanik. Në mbrëmje darkë me varză a la Cluj në qendrën e vjetër."
+  - "Një ditë në Turda: Miniera e Kripës në mëngjes, Grykat e Turdës pasdite. Kush ka më shumë kohë, shton një natë në Sighișoara ose një ditë në Alba Iulia."
+areas:
+  - name: Qendra e vjetër (Sheshi Unirii)
+    text: Gjithçka në këmbë, me hotele, apartamente dhe lokale, por me çmimet më të larta.
+  - name: Mărăști
+    text: Lagje banimi midis qendrës dhe aeroportit, me apartamente më të lira dhe autobusë të shpeshtë.
+  - name: Zona e stacionit të trenit
+    text: >-
+      Më e lirë dhe praktike për trenat drejt Sighișoara dhe Alba Iulia, rreth 20-25 minuta në këmbë
+      nga Sheshi Unirii, por më pak e këndshme në mbrëmje.
+food:
+  - name: Varză a la Cluj
+    text: >-
+      Lakër e grirë, e pjekur në furrë në shtresa me mish derri, oriz dhe salcë kosi. Pjata simbol e
+      qytetit, rreth 35-50 lei.
+  - name: Papanași
+    text: Petulla me gjizë, të skuqura, me salcë kosi dhe reçel qershie. Rreth 25-35 lei.
+  - name: Ciorbă
+    text: Supat e tharta rumune, me perime, mish ose plëndës, rreth 20-30 lei; shpesh mjaftojnë për drekë.
+airports:
+  CLJ: >-
+    Aeroporti Ndërkombëtar Avram Iancu është rreth 9 km në lindje të qendrës. Autobusi 8 të çon te
+    Piața Mihai Viteazul në qendër për rreth 30-40 minuta, ndërsa linja të tjera, si 5, shkojnë te
+    stacioni i trenit. Bileta kushton rreth 3-4 lei (€0.6-0.8), me kartë bankare pa kontakt në
+    validatorin e autobusit. Taksia ose Bolt bën rreth 20-30 minuta dhe kushton rreth 40-60 lei
+    (€8-12).
+transport: >-
+  Qendra e vjetër përshkohet në këmbë. Për largësitë më të mëdha ka autobusë, trolejbusë dhe
+  tramvaje; një udhëtim kushton rreth 3-4 lei, me kartë pa kontakt. Bolt dhe Uber janë të lirë: një
+  xhiro brenda qytetit kushton rreth 15-30 lei (€3-6).
+daytrips:
+  - name: Miniera e Kripës në Turda
+    text: >-
+      Salina Turda, një minierë e vjetër kripe e kthyer në park nëntokësor, me rrotë panoramike dhe
+      varka në një liqen nën tokë. Rreth 1 orë me autobus; bileta rreth 50-70 lei. Brenda janë rreth
+      10-12 gradë, ndaj merr një xhaketë.
+  - name: Grykat e Turdës
+    text: >-
+      Kanion gëlqeror me një shteg rreth 2-3 km mes shkëmbinjve, rreth 10 km nga Turda. Bashkohet lehtë
+      me minierën në të njëjtën ditë, me Bolt ose taksi nga Turda.
+  - name: Sighișoara
+    text: >-
+      Qyteti mesjetar me kala, në listën e UNESCO-s, ku sipas traditës lindi Vlad Tepesh. Rreth 3-4 orë
+      me tren ose autobus, ndaj më mirë fli një natë atje.
+  - name: Alba Iulia
+    text: >-
+      Kalaja në formë ylli Alba Carolina, e ndërtuar në vitet 1715-1738, ku në vitin 1918 u shpall
+      bashkimi i Transilvanisë me Rumaninë. Rreth 1.5-2 orë me tren ose autobus.
+budget: >-
+  Një kafe kushton rreth 12-18 lei (€2.5-3.5), një birrë në lokal 12-20 lei (€2.5-4), një drekë në
+  restorant rreth 45-70 lei (€9-14). Pa fluturimin dhe fjetjen, llogarit €30-50 në ditë. Një shtrat
+  në hostel nis nga rreth €15, një dhomë dyshe në hotel të thjeshtë rreth €45-70.
+when: >-
+  Maji-qershori dhe shtatori-tetori. Në qershor mbahet TIFF, festivali i filmit Transilvania, me
+  shfaqje edhe në ajër të hapur. Në fillim të gushtit vjen festivali Untold: çmimet e fjetjes
+  shumëfishohen, ndaj rezervo shumë herët ose shmangi ato ditë. Dimri është i ftohtë, shpesh nën zero.
+tips:
+  - "Paguaj në lei, me kartë pothuajse kudo. Kur pajisja pyet, zgjidh pagesën në RON, jo në euro."
+  - "Shko në Minierën e Kripës herët në mëngjes ose në ditë jave: në fundjavë radhët janë të gjata."
+  - "Shumë muze janë të mbyllur të hënën: lëri për atë ditë kishat, parqet dhe Kodrën Cetățuia."
+faq:
+  - q: "Sa ditë duhen për Cluj-Napoca?"
+    a: "Dy ditë mjaftojnë për qendrën, Kopshtin Botanik dhe Cetățuia. Shto një ditë për Turdën, dhe një ose dy të tjera për Sighișoara ose Alba Iulia."
+  - q: "A flitet anglisht në Cluj?"
+    a: "Po, sidomos nga të rinjtë: Cluj ka universitetin më të madh të Rumanisë. Afro 15% e banorëve janë hungarezë, ndaj shumë mbishkrime janë edhe hungarisht, ku qyteti quhet Kolozsvár."

@@ -1,0 +1,81 @@
+city: Leeds
+slug: leeds
+tagline: Gallerie vittoriane, mercati e una porta sullo Yorkshire
+intro: >-
+  Leeds è la città più grande dello Yorkshire, con gallerie vittoriane dai tetti di vetro, uno dei
+  mercati coperti più grandi d'Europa e musei gratuiti. Il centro si gira a piedi, i prezzi sono
+  più bassi che a Londra e i treni ti portano in fretta a York e nelle Yorkshire Dales. Tre giorni
+  bastano per la città, più un giorno fuori.
+sights:
+  - name: Le gallerie vittoriane e il Kirkgate Market
+    text: Il Victoria Quarter e la County Arcade hanno tetti di vetro, mosaici e bei negozi. Accanto c'è il Kirkgate Market, aperto nel 1857, dove nel 1884 nacque il primo banco di Marks & Spencer. Il mercato è chiuso la domenica.
+  - name: Royal Armouries Museum
+    text: Il museo nazionale delle armi e delle armature, a Leeds Dock sul fiume Aire, a circa 15 minuti a piedi dalla stazione. L'ingresso è gratuito.
+  - name: Roundhay Park
+    text: Uno dei parchi cittadini più grandi d'Europa, con laghi e boschi, a circa 20-30 minuti di autobus dal centro. All'interno c'è il giardino tropicale Tropical World, a pagamento.
+  - name: Leeds Art Gallery
+    text: La galleria d'arte accanto al municipio, con opere di Henry Moore e Barbara Hepworth. L'ingresso è gratuito, come al Leeds City Museum.
+  - name: Kirkstall Abbey
+    text: Le rovine di un'abbazia fondata nel 1152, a circa 5 km a ovest del centro. Il parco intorno è gratuito, mentre l'ingresso alle rovine costa circa £5-7 per chi non abita in città.
+airports:
+  LBA: >-
+    L'aeroporto di Leeds Bradford si trova a circa 11 km a nord-ovest del centro, su una collina.
+    L'autobus A1 Flyer parte ogni 20-30 minuti e arriva alla stazione ferroviaria di Leeds in circa
+    35-45 minuti, per circa £2-3. In alternativa, prendi l'autobus fino alla stazione di Horsforth e
+    da lì il treno per Leeds (circa 10-15 minuti). Il taxi costa circa £25-35 e impiega 20-30
+    minuti, a seconda del traffico.
+budget: >-
+  Un caffè costa circa £3-3,50, un pasto semplice £10-15 e una birra (pint) circa £4-5,50. Gli hotel
+  semplici costano circa £60-90 a notte, ma diventano molto più cari durante il Leeds Festival. I
+  musei principali sono gratuiti.
+when: >-
+  Maggio-settembre ha il clima più mite (circa 15-20 gradi) e giornate lunghe, ma piove tutto
+  l'anno. A fine agosto la città ospita il festival musicale Leeds Festival e il carnevale Leeds
+  West Indian Carnival, che si tiene dal 1967.
+tips:
+  - "Molti banchi del Kirkgate Market chiudono presto nel pomeriggio: vai al mattino o all'ora di pranzo."
+  - "L'aeroporto è su una collina e a volte la nebbia ritarda i voli: lascia un po' di tempo di riserva dopo l'arrivo."
+  - "Porta una giacca impermeabile: nello Yorkshire piove spesso, anche d'estate."
+itinerary:
+  - "Il centro a piedi: il Victoria Quarter e le gallerie, pranzo al Kirkgate Market, poi il Corn Exchange. Nel pomeriggio la Leeds Art Gallery e il Leeds City Museum (gratuiti), la sera i bar di Call Lane."
+  - "Il Royal Armouries Museum al mattino, poi una passeggiata lungo il fiume Aire e il canale fino a Granary Wharf. Nel pomeriggio Kirkstall Abbey, la sera i pub di Headingley."
+  - "Roundhay Park con Tropical World al mattino. Nel pomeriggio lo stadio Elland Road del Leeds United o i negozi di Briggate."
+  - "Una giornata fuori città: York per la cattedrale e le mura medievali, oppure Haworth per la casa delle sorelle Brontë."
+areas:
+  - name: Il centro e la stazione
+    text: "La zona più pratica: da qui partono l'autobus per l'aeroporto e i treni per York e Harrogate, e tutto è raggiungibile a piedi."
+  - name: Call Lane ed Exchange Quarter
+    text: Per chi vuole bar, ristoranti e vita notturna sotto casa. Può essere rumorosa nel fine settimana.
+  - name: Leeds Dock e Granary Wharf
+    text: Hotel e appartamenti nuovi sull'acqua, più tranquilli, vicino al Royal Armouries e alla stazione.
+  - name: Headingley
+    text: Il quartiere degli studenti, a circa 15 minuti di autobus dal centro, con pub, pensioni più economiche e lo stadio del cricket.
+food:
+  - name: Yorkshire pudding
+    text: Una pastella gonfia cotta al forno, servita con carne arrosto e sugo nel pranzo della domenica, il Sunday roast.
+  - name: Fish and chips
+    text: Pesce fritto con patatine. Bryan's a Headingley è famoso da decenni, ma quasi ogni quartiere ha il suo negozio.
+  - name: Kirkgate Market
+    text: Banchi con cibo da tutto il mondo e caffè economici, ideali per un pranzo veloce.
+  - name: Trinity Kitchen
+    text: Il mercato gastronomico nel centro commerciale Trinity Leeds, con banchi di street food che cambiano spesso.
+transport: >-
+  Il centro è piccolo e si gira facilmente a piedi. Leeds non ha né metropolitana né tram, ma gli
+  autobus ti portano ovunque: paga con la carta bancaria contactless, circa £2-3 a corsa. Dalla
+  stazione di Leeds partono treni frequenti per tutto lo Yorkshire.
+daytrips:
+  - name: York
+    text: Una città medievale cinta da mura, con la cattedrale York Minster e la via The Shambles, a circa 25 minuti di treno.
+  - name: Harrogate
+    text: Un'antica città termale con giardini e sale da tè, a circa 35-40 minuti di treno.
+  - name: Yorkshire Dales
+    text: Il parco nazionale di colline verdi e villaggi di pietra. Il treno per Skipton impiega circa 40 minuti, mentre la linea Settle-Carlisle passa sul viadotto Ribblehead Viaduct.
+  - name: Haworth
+    text: Il villaggio delle sorelle Brontë, la cui casa è oggi un museo. Prendi il treno per Keighley (circa 20-25 minuti), poi l'autobus o il vecchio treno a vapore.
+faq:
+  - q: "Come si va dall'aeroporto al centro di Leeds?"
+    a: "Il modo più economico è l'autobus A1 Flyer, circa £2-3 e 35-45 minuti fino alla stazione di Leeds. Il taxi costa circa £25-35. Se arrivi a tarda notte, controlla prima l'orario dell'ultimo autobus."
+  - q: "Posso visitare York da Leeds senza dormire lì?"
+    a: "Sì. I treni partono più volte all'ora e il viaggio dura circa 25 minuti. Il biglietto comprato online qualche giorno prima di solito costa meno."
+  - q: "Quanto si spende al giorno a Leeds?"
+    a: "Volo e alloggio esclusi, calcola £40-70 al giorno per cibo, trasporti e un ingresso a pagamento. Molti musei sono gratuiti e Leeds è decisamente più economica di Londra."

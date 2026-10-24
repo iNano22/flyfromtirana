@@ -1,0 +1,97 @@
+city: Debrecen
+slug: debrecen
+tagline: La Grande Chiesa, le terme e la steppa di Hortobágy
+intro: >-
+  Debrecen è la seconda città dell'Ungheria, a circa 220 km a est di Budapest, nota come la «Roma
+  calvinista» per la Grande Chiesa e il Collegio Riformato. Il centro è piccolo, tranquillo e più
+  economico di Budapest, con un parco-bosco pieno di terme. La moneta è il fiorino (HUF): €1 vale
+  circa 400 fiorini. Due giorni bastano per la città, un terzo per la steppa di Hortobágy o per le
+  terme di Hajdúszoboszló.
+sights:
+  - name: Grande Chiesa Riformata (Nagytemplom)
+    text: >-
+      La chiesa gialla con due torri in cima a piazza Kossuth, la più grande chiesa protestante
+      d'Ungheria. Qui nel 1849 Lajos Kossuth proclamò l'indipendenza dell'Ungheria dagli Asburgo. Il
+      biglietto con la salita alla torre ovest costa circa 1500-2500 fiorini (circa €4-6).
+  - name: Piazza Kossuth (Kossuth tér)
+    text: >-
+      La piazza principale della città, davanti alla Grande Chiesa, con fontane, caffè e il tram 1
+      che passa nel mezzo. A dicembre ospita il mercatino di Natale.
+  - name: Museo Déri
+    text: >-
+      Il museo principale della città. La sala più famosa ospita la grande trilogia di Cristo del
+      pittore Mihály Munkácsy. Il biglietto costa circa 2000-3000 fiorini (circa €5-8); di solito è
+      chiuso il lunedì.
+  - name: Nagyerdő e Aquaticum
+    text: >-
+      Nagyerdő, il «Grande Bosco», è il parco cittadino a nord del centro, con un lago, uno zoo e
+      l'edificio principale dell'Università. Qui c'è anche l'Aquaticum, con piscine termali,
+      scivoli e saune; il biglietto giornaliero costa circa 5000-7000 fiorini (circa €13-18).
+  - name: Collegio Riformato (Református Kollégium)
+    text: >-
+      La scuola protestante fondata nel 1538, dietro la Grande Chiesa. Ha un'antica biblioteca, un
+      museo sulla storia della scuola e l'oratorio dove nel 1849 si riunì il Parlamento ungherese.
+itinerary:
+  - "Piazza Kossuth e la Grande Chiesa con la salita alla torre, poi il Collegio Riformato lì dietro. Nel pomeriggio il Museo Déri, la sera cena in Piac utca."
+  - "Il tram 1 fino a Nagyerdő: una passeggiata nel parco e l'edificio dell'Università. Nel pomeriggio qualche ora all'Aquaticum o alle terme accanto."
+  - "Una giornata nel Parco nazionale di Hortobágy, con il Ponte dai Nove Archi e i cowboy della steppa. In alternativa, mezza giornata alle terme di Hajdúszoboszló."
+areas:
+  - name: Belváros (centro)
+    text: "Intorno a piazza Kossuth e Piac utca, tutto a piedi. Gli hotel sono pochi: prenota presto."
+  - name: Nagyerdő
+    text: Verde e tranquillo, vicino alle terme e al parco, con alcuni hotel termali. Il centro è a circa 10-15 minuti con il tram 1.
+  - name: Vicino alla stazione (Nagyállomás)
+    text: Hotel e camere più economici, comodi per i treni. Piazza Kossuth è a circa 15 minuti a piedi.
+food:
+  - name: Salsiccia di Debrecen (debreceni kolbász)
+    text: Salsiccia di maiale affumicata con paprika, famosa in tutta l'Ungheria. Si mangia alla griglia, con la senape.
+  - name: Lángos
+    text: Pasta fritta con aglio, panna acida e formaggio, il cibo di strada più economico, circa 1000-1800 fiorini (circa €3-4,5).
+  - name: Hortobágyi palacsinta
+    text: Crêpe sottili ripiene di carne macinata, con sopra una salsa di paprika e panna acida.
+  - name: Mézeskalács
+    text: Pan di zenzero al miele e spezie, un'antica tradizione della città e un buon souvenir.
+airports:
+  DEB: >-
+    L'aeroporto internazionale di Debrecen è a circa 5-6 km a sud del centro. Un autobus urbano
+    (DKV) collega l'aeroporto con la stazione ferroviaria e il centro in circa 20 minuti, ma non
+    passa spesso: controlla l'orario prima di arrivare. Il biglietto costa circa 500 fiorini (circa
+    €1,3). Un taxi impiega circa 15 minuti fino al centro e costa circa 4000-6000 fiorini (circa
+    €10-15).
+transport: >-
+  Il centro si gira a piedi. Il tram 1 è la linea più utile: dalla stazione ferroviaria
+  (Nagyállomás) percorre Piac utca e attraversa piazza Kossuth fino a Nagyerdő. Ci sono anche
+  autobus e filobus della DKV; il biglietto singolo costa circa 500 fiorini (circa €1,3), di più se
+  lo compri dall'autista. I treni InterCity per Budapest impiegano circa 2,5-3 ore.
+daytrips:
+  - name: Parco nazionale di Hortobágy
+    text: >-
+      La grande steppa ungherese (puszta), patrimonio UNESCO, a circa 40 km a ovest, a circa 40-60
+      minuti in treno o in autobus. Da vedere il Ponte dai Nove Archi, i bovini grigi ungheresi e gli
+      spettacoli a cavallo; d'estate ci sono molte zanzare.
+  - name: Tokaj
+    text: >-
+      La cittadina del vino dolce Tokaji Aszú, con cantine sotterranee dove assaggiarlo. Circa 1,5-2
+      ore in treno, con cambio a Nyíregyháza.
+  - name: Terme di Hajdúszoboszló
+    text: >-
+      Uno dei complessi termali più grandi d'Europa, a circa 20 km, circa 20 minuti in treno o in
+      autobus. Il biglietto giornaliero costa circa 6000-9000 fiorini (circa €15-23).
+budget: >-
+  Una birra costa circa 800-1200 fiorini (circa €2-3), un caffè circa 600-900 fiorini, un piatto al
+  ristorante circa 3500-5500 fiorini (circa €9-14). Una camera doppia in un hotel semplice costa da
+  circa 20000-35000 fiorini (circa €50-90) a notte. Volo e alloggio esclusi, calcola circa €30-45 al
+  giorno.
+when: >-
+  Maggio-giugno e settembre-ottobre hanno il clima migliore. L'evento più grande è il Carnevale dei
+  Fiori, intorno al 20 agosto, con una sfilata di carri ricoperti di fiori: quella settimana gli
+  hotel si riempiono e i prezzi salgono. L'inverno è freddo, con il mercatino di Natale a dicembre.
+tips:
+  - "Paga in fiorini, con la carta o in contanti dai bancomat delle banche. Quando il terminale lo chiede, scegli di pagare in HUF, non in euro."
+  - "Molti musei sono chiusi il lunedì: programma il Museo Déri e il Collegio Riformato in altri giorni."
+  - "Per l'Aquaticum e Hajdúszoboszló porta asciugamano e ciabatte: noleggiarli costa in più."
+faq:
+  - q: "Posso andare da Debrecen a Budapest?"
+    a: "Sì. I treni InterCity partono da Nagyállomás quasi ogni ora, impiegano circa 2,5-3 ore e costano circa 5000-7000 fiorini (circa €13-18)."
+  - q: "Debrecen vale un fine settimana?"
+    a: "Sì, se cerchi una città tranquilla ed economica, con le terme e una giornata nella steppa. Per la vita notturna, Budapest offre di più."

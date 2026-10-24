@@ -1,0 +1,102 @@
+city: Łódź
+slug: lodz
+tagline: Vecchie fabbriche, cinema e via Piotrkowska
+intro: >-
+  Łódź è la terza città della Polonia, a circa 130 km a sud-ovest di Varsavia. Nel XIX secolo
+  crebbe con le fabbriche tessili e fu chiamata la "Manchester polacca"; oggi quelle fabbriche di
+  mattoni rossi sono musei, centri commerciali, hotel e locali. Qui c'è anche la famosa scuola di
+  cinema dove studiarono Polański e Kieślowski. Ha meno turisti e prezzi più bassi di Cracovia o
+  Varsavia. La valuta è lo złoty polacco (PLN): €1 vale circa 4,2 PLN.
+sights:
+  - name: Via Piotrkowska
+    text: >-
+      La via principale, lunga circa 4 km, con palazzi di industriali, locali e ristoranti, in gran
+      parte pedonale. Lungo la via ci sono statue di bronzo, come la panchina del poeta Tuwim e il
+      pianoforte di Rubinstein, e le stelle del cinema polacco sul marciapiede.
+  - name: Manufaktura
+    text: >-
+      L'enorme fabbrica di Izrael Poznański, trasformata nel 2006 in un centro commerciale con
+      ristoranti, cinema e musei. Nella piazza interna ci sono concerti d'estate e una pista di
+      pattinaggio d'inverno.
+  - name: Palazzo Poznański
+    text: >-
+      Il palazzo dell'industriale più ricco della città, accanto a Manufaktura, con sale piene di oro
+      e legno. Oggi ospita il Museo della Città; il biglietto costa circa 20-25 PLN (circa €5-6).
+  - name: Museo d'Arte (ms1 e ms2)
+    text: >-
+      Dal 1931 custodisce una delle prime collezioni di arte d'avanguardia al mondo. ms1 è in un
+      palazzo di industriali in via Więckowskiego, ms2 a Manufaktura, con arte moderna e
+      contemporanea. Il biglietto costa circa 15-20 PLN (circa €4-5).
+  - name: Księży Młyn
+    text: >-
+      Il quartiere operaio costruito dall'industriale Karl Scheibler nel XIX secolo, con case di
+      mattoni rossi, una fabbrica trasformata in loft e il Palazzo Herbst, una villa con i mobili
+      d'epoca.
+  - name: Museo della Cinematografia
+    text: >-
+      Nel Palazzo Scheibler, in Plac Zwycięstwa, con vecchie cineprese, manifesti e un
+      fotoplastikon con fotografie tridimensionali dell'inizio del XX secolo. Il biglietto costa
+      circa 15-20 PLN (circa €3,5-5).
+itinerary:
+  - "Via Piotrkowska a piedi da Plac Wolności verso sud, con le statue di bronzo e i murales. La sera cena e birra all'OFF Piotrkowska."
+  - "Palazzo Poznański al mattino, poi Manufaktura e ms2. La sera, i ristoranti intorno alla piazza di Manufaktura."
+  - "Księży Młyn e il Palazzo Herbst, poi il Museo della Cinematografia. Nel pomeriggio ms1 o EC1, l'ex centrale elettrica con il planetario vicino alla stazione Łódź Fabryczna."
+areas:
+  - name: Piotrkowska e il centro
+    text: Tutto a piedi. Le vie laterali sono più tranquille ed economiche della Piotrkowska stessa, rumorosa nelle notti del fine settimana.
+  - name: Vicino a Manufaktura
+    text: Hotel nei vecchi edifici della fabbrica, a circa 15 minuti a piedi da Plac Wolności.
+  - name: Vicino a Łódź Fabryczna
+    text: Intorno alla stazione sotterranea, comoda per i treni per Varsavia, a circa 10 minuti a piedi dalla Piotrkowska.
+food:
+  - name: Zalewajka
+    text: Zuppa acida di farina di segale e patate, il piatto degli operai della città, spesso con salsiccia.
+  - name: Pierogi
+    text: Ravioli ripieni di patate e formaggio (ruskie), carne, cavolo o frutta, bolliti o fritti.
+  - name: Bar mleczny
+    text: '"Bar del latte", mense economiche dell''epoca comunista, dove un pranzo costa circa 20-30 PLN (circa €5-7).'
+  - name: OFF Piotrkowska
+    text: Il cortile di un'ex fabbrica con food truck, locali di birra artigianale e ristoranti.
+airports:
+  LCJ: >-
+    L'aeroporto Władysław Reymont è a circa 6 km a sud-ovest del centro. L'autobus 65 porta alla
+    stazione Łódź Kaliska e in centro in circa 20-30 minuti, con un biglietto urbano da circa 4-6
+    PLN (circa €1-1,5), che si compra con la carta alla macchinetta a bordo. Un taxi o Bolt impiega
+    circa 15-20 minuti e costa circa 40-60 PLN (€10-14). I treni per Varsavia impiegano circa 1,5
+    ore.
+transport: >-
+  Il centro si gira a piedi; tram e autobus portano ovunque. I biglietti si comprano con la carta
+  alle macchinette a bordo o nell'app Jakdojade; il biglietto da 24 ore costa circa 15-18 PLN
+  (circa €4). Bolt e Uber sono economici. La città ha due stazioni principali: Łódź Fabryczna, in
+  centro, e Łódź Kaliska, a ovest.
+daytrips:
+  - name: Varsavia
+    text: >-
+      La capitale, con la Città Vecchia ricostruita e il Museo dell'Insurrezione. I treni da Łódź
+      Fabryczna impiegano circa 1,5 ore, con biglietti da circa 30-60 PLN (circa €7-14).
+  - name: Arkadia e Nieborów
+    text: >-
+      Il palazzo barocco della famiglia Radziwiłł a Nieborów e il parco romantico di Arkadia, con
+      templi e rovine artificiali del XVIII secolo. Sono vicini a Łowicz, in autobus o taxi;
+      l'ingresso costa circa 20-40 PLN (circa €5-10).
+  - name: Łowicz
+    text: >-
+      Una cittadina nota per i costumi popolari a righe colorate e i ritagli di carta (wycinanki), a
+      circa 1 ora di treno. Si abbina bene con Nieborów nella stessa giornata.
+budget: >-
+  Una birra da mezzo litro in centro costa circa 12-18 PLN (€3-4), un piatto di pierogi circa 25-40
+  PLN (€6-10), un caffè circa 10-15 PLN (€2,5-3,5) e un biglietto dell'autobus circa 4-6 PLN
+  (€1-1,5).
+when: >-
+  Maggio-settembre per le giornate lunghe e i tavolini all'aperto sulla Piotrkowska. All'inizio
+  dell'autunno di solito si tiene il Light Move Festival, con proiezioni di luce sulle facciate.
+  L'inverno è freddo, spesso sotto 0°C.
+tips:
+  - "Paga sempre in PLN: quando il POS o il bancomat ti propone di pagare in euro, rifiuta, perché il cambio è peggiore."
+  - "La maggior parte dei negozi è chiusa la domenica, anche quelli di Manufaktura; i ristoranti e i negozi Żabka di solito sono aperti."
+  - "Molti musei sono chiusi il lunedì: controlla gli orari prima di andare."
+faq:
+  - q: "Vale la pena visitare Łódź, o è meglio andare direttamente a Varsavia?"
+    a: "Łódź vale due giorni: meno turisti, prezzi più bassi e un'architettura industriale che non trovi altrove. Varsavia è a circa 1,5 ore di treno, quindi puoi combinarle."
+  - q: "Quanto si spende al giorno a Łódź?"
+    a: "Volo e alloggio esclusi, circa €35-55 al giorno. Cibo e trasporti sono economici; le spese principali sono l'alloggio e i musei."

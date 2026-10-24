@@ -1,0 +1,89 @@
+city: Brno
+slug: brno
+tagline: Kështjella Špilberk, një vilë moderniste dhe verë moraviane
+intro: >-
+  Brno është qyteti i dytë i Çekisë dhe kryeqendra e Moravisë, me rreth 400.000 banorë dhe shumë
+  studentë. Është më i qetë dhe më i lirë se Prague, me një qendër që përshkohet në këmbë, një
+  kështjellë mbi kodër dhe bodrume nën rrugë. Dy ditë mjaftojnë për qytetin, një e treta për shpellat
+  ose për verërat e Moravisë. Monedha është korona çeke (CZK): 1 euro është rreth 25 korona.
+sights:
+  - name: Kështjella Špilberk
+    text: >-
+      Kështjella mbi kodër, që nën Habsburgët u bë një nga burgjet më të ashpra të perandorisë. Parku
+      dhe muret janë falas, me pamje mbi qytetin; kazamatet kushtojnë rreth 150 CZK (€6).
+  - name: Katedralja e Shën Pjetrit dhe Palit
+    text: >-
+      Katedralja me dy kulla gotike mbi kodrën Petrov, që del edhe në monedhën 10 korona. Kambanat e
+      mesditës bien në orën 11:00, në kujtim të rrethimit suedez të vitit 1645.
+  - name: Villa Tugendhat
+    text: >-
+      Vila e Mies van der Rohe (1929-1930), pjesë e UNESCO-s, me një mur prej oniksi. Vizitohet vetëm
+      me turne me rezervim, rreth 350-450 CZK (€14-18), 15 minuta me tramvaj nga qendra.
+  - name: Osuari dhe Brno nëntokësor
+    text: >-
+      Nën kishën e Shën Jakobit ndodhet osuari i dytë më i madh në Evropë pas atij të Parisit, me kockat
+      e rreth 50.000 njerëzve. Nën sheshin Zelný trh vizitohet Labirinti, një rrjet bodrumesh
+      mesjetare. Secila biletë kushton rreth 150-250 CZK (€6-10).
+  - name: Sheshi i Lirisë dhe ora astronomike
+    text: >-
+      Náměstí Svobody është sheshi kryesor. Ora prej graniti të zi lëshon çdo ditë në orën 11:00 një
+      rruazë qelqi që vizitorët përpiqen ta kapin. Pranë, në Bashkinë e Vjetër, varet «dragoi», një
+      krokodil i balsamosur.
+airports:
+  BRQ: >-
+    Aeroporti Brno-Tuřany është rreth 8 km nga qendra. Autobusi E76 të çon në stacionin kryesor të
+    trenave, Hlavní nádraží, për rreth 20 minuta; kalon zakonisht çdo 30 minuta, deri rreth orës 23:00.
+    Bileta kushton rreth 30-35 CZK (rreth €1.30) dhe blihet në automat ose me kartë bankare pa kontakt
+    brenda autobusit. Një taksi ose Bolt kushton rreth 300-450 CZK (€12-18).
+budget: >-
+  Një birrë gjysmëlitërshe kushton rreth 55-75 CZK (€2.20-3), një gotë verë rreth 60-100 CZK
+  (€2.50-4), një pjatë në restorant 250-350 CZK (€10-14). Një dhomë dyshe në hotel të thjeshtë kushton
+  nga rreth 1.500-2.500 CZK (€60-100) nata.
+when: >-
+  Maji-qershori dhe shtatori kanë motin më të mirë. Në shtator dhe tetor fshatrat e Moravisë festojnë
+  vjeljen e rrushit me burčák, verë e re që ende fermenton. Nga fundi i nëntorit deri në Krishtlindje
+  hapen tregjet e Krishtlindjeve.
+tips:
+  - "Rezervo turin e Villa Tugendhat disa javë përpara: vendet janë të pakta."
+  - "Për drekë kërko menynë e ditës (polední menu): supë dhe pjatë kryesore për rreth 160-220 CZK (€6.50-9), ditëve të punës."
+  - "Kur pos-i të pyet euro apo korona, zgjidh gjithmonë koronat (CZK): konvertimi në euro kushton më shumë."
+itinerary:
+  - "Náměstí Svobody me orën astronomike në orën 11:00, Bashkia e Vjetër dhe Labirinti nën Zelný trh. Pasdite Katedralja e Shën Pjetrit dhe Palit, në mbrëmje Špilberk për perëndimin e diellit."
+  - "Villa Tugendhat në mëngjes (me rezervim), pastaj osuari i Shën Jakobit. Pasdite muzeu i Gregor Mendel, në mbrëmje një gotë verë moraviane."
+  - "Një ditë jashtë qytetit: shpellat e Karstit Moravian, ose Lednice-Valtice dhe Mikulov mes vreshtave."
+areas:
+  - name: Qendra historike
+    text: Gjithçka në këmbë, me hotele dhe apartamente; çmimet janë më të ulëta se në Prague.
+  - name: Pranë Hlavní nádraží
+    text: "Zona më praktike: autobusi E76 për aeroportin dhe trenat për udhëtimet ditore nisen këtu."
+  - name: Veveří
+    text: Lagje studentore në veri të qendrës, me kafene, bare dhe apartamente më të lira, 10 minuta me tramvaj.
+food:
+  - name: Vera moraviane
+    text: >-
+      Rreth 90% e verës çeke prodhohet në Moravinë e Jugut. Provo verërat e bardha Ryzlink vlašský
+      dhe Pálava në një vinárna, një lokal vere.
+  - name: Moravský vrabec
+    text: Copa derri të pjekura me hudhër, me knedlík (bukë e zier në feta) dhe lakër.
+  - name: Birra Starobrno
+    text: Birra e qytetit, e lirë dhe e freskët nga fuçia.
+transport: >-
+  Qendra përshkohet në këmbë. Për më larg ka tramvaje, autobusë dhe trolejbusë, me të njëjtën biletë.
+  Biletat blihen në automate ose me kartë bankare pa kontakt brenda mjeteve; bileta 24-orëshe kushton
+  rreth 110-130 CZK (€4.50-5). Bolt kushton rreth 120-200 CZK (€5-8) brenda qytetit.
+daytrips:
+  - name: Karsti Moravian
+    text: >-
+      Shpellat Punkevní, me varkë në lumin nëntokësor, dhe humnera Macocha, 138 metra e thellë. Rreth
+      30 minuta me tren deri në Blansko, pastaj autobus; në verë rezervo biletat online.
+  - name: Lednice-Valtice
+    text: Dy kështjella dhe një park i madh mes vreshtave, pjesë e UNESCO-s. Rreth 1 orë me tren deri në Břeclav, pastaj autobus.
+  - name: Mikulov
+    text: Qytet i vogël vere me kështjellë mbi shkëmb, rreth 1 orë me autobus ose tren.
+  - name: Vienna
+    text: Kryeqyteti i Austrisë, rreth 1.5 orë me tren direkt, nga rreth €10-20 nëse e blen biletën herët.
+faq:
+  - q: "A ia vlen Brno, apo më mirë direkt Prague?"
+    a: "Brno ka më pak turistë dhe çmime më të ulëta, dhe është afër verërave të Moravisë dhe Vienna. Prague është 2.5 orë me tren, ndaj mund t'i kombinosh."
+  - q: "Sa para duhen në ditë në Brno?"
+    a: "Pa fluturimin dhe fjetjen, llogarit €35-55 në ditë për ushqim, transport dhe një hyrje. Pamjet nga Špilberk dhe Petrov janë falas."

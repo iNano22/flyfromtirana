@@ -1,0 +1,96 @@
+city: Debrecen
+slug: debrecen
+tagline: The Great Church, thermal baths and the Hortobágy steppe
+intro: >-
+  Debrecen is Hungary's second-largest city, about 220 km east of Budapest, known as the "Calvinist
+  Rome" for its Great Church and Reformed College. The centre is small, quiet and cheaper than
+  Budapest, with a forest park full of thermal baths. The currency is the forint (HUF): €1 is about
+  400 forints. Two days are enough for the city, a third for the Hortobágy steppe or the baths of
+  Hajdúszoboszló.
+sights:
+  - name: Great Reformed Church (Nagytemplom)
+    text: >-
+      The yellow twin-towered church at the head of Kossuth Square, the largest Protestant church in
+      Hungary. Here in 1849 Lajos Kossuth declared Hungary's independence from the Habsburgs. A
+      ticket including the climb up the west tower costs about 1500-2500 forints (about €4-6).
+  - name: Kossuth Square (Kossuth tér)
+    text: >-
+      The city's main square, in front of the Great Church, with fountains, cafés and tram 1 running
+      through the middle. In December it hosts the Christmas market.
+  - name: Déri Museum
+    text: >-
+      The city's main museum. Its best-known hall holds the great Christ trilogy by the painter
+      Mihály Munkácsy. A ticket is about 2000-3000 forints (about €5-8); it is usually closed on
+      Mondays.
+  - name: Nagyerdő and Aquaticum
+    text: >-
+      Nagyerdő, the "Great Forest", is the city park north of the centre, with a lake, a zoo and the
+      main building of the University. It is also home to Aquaticum, with thermal pools, water slides
+      and saunas; a day ticket is about 5000-7000 forints (about €13-18).
+  - name: Reformed College (Református Kollégium)
+    text: >-
+      The Protestant school founded in 1538, behind the Great Church. It has an old library, a museum
+      on the school's history and the oratory where the Hungarian Parliament met in 1849.
+itinerary:
+  - "Kossuth Square and the Great Church with the tower climb, then the Reformed College behind it. In the afternoon the Déri Museum, in the evening dinner on Piac utca."
+  - "Tram 1 to Nagyerdő: a walk in the park and the University building. In the afternoon a few hours at Aquaticum or the thermal bath next door."
+  - "A day in Hortobágy National Park, with the Nine-Arch Bridge and the cowboys of the steppe. Otherwise, half a day at the baths of Hajdúszoboszló."
+areas:
+  - name: Belváros (city centre)
+    text: "Around Kossuth Square and Piac utca, everything within walking distance. Hotels are few: book early."
+  - name: Nagyerdő
+    text: Green and quiet, close to the thermal baths and the park, with a few spa hotels. The centre is about 10-15 minutes away on tram 1.
+  - name: Near the railway station (Nagyállomás)
+    text: Cheaper hotels and rooms, handy for trains. Kossuth Square is about 15 minutes on foot.
+food:
+  - name: Debrecen sausage (debreceni kolbász)
+    text: A smoked pork sausage with paprika, famous all over Hungary. It is eaten grilled, with mustard.
+  - name: Lángos
+    text: Fried dough with garlic, sour cream and cheese, the cheapest street food, about 1000-1800 forints (about €3-4.5).
+  - name: Hortobágyi palacsinta
+    text: Thin pancakes filled with minced meat, topped with a paprika and sour cream sauce.
+  - name: Mézeskalács
+    text: Honey and spice gingerbread, an old tradition of the city and a good souvenir.
+airports:
+  DEB: >-
+    Debrecen International Airport is about 5-6 km south of the centre. A city bus (DKV) links the
+    airport with the railway station and the centre in about 20 minutes, but it does not run often:
+    check the timetable before you arrive. A ticket costs about 500 forints (about €1.3). A taxi
+    takes about 15 minutes to the centre and costs about 4000-6000 forints (about €10-15).
+transport: >-
+  The centre is walkable. Tram 1 is the most useful line: from the railway station (Nagyállomás) it
+  runs along Piac utca and through Kossuth Square to Nagyerdő. There are also DKV buses and
+  trolleybuses; a single ticket costs about 500 forints (about €1.3), more if you buy it from the
+  driver. InterCity trains to Budapest take about 2.5-3 hours.
+daytrips:
+  - name: Hortobágy National Park
+    text: >-
+      The great Hungarian steppe (puszta), on the UNESCO list, about 40 km west, about 40-60 minutes
+      by train or bus. See the Nine-Arch Bridge, the Hungarian grey cattle and the horse shows; in
+      summer there are lots of mosquitoes.
+  - name: Tokaj
+    text: >-
+      The small town of the sweet Tokaji Aszú wine, with underground cellars where you can taste it.
+      About 1.5-2 hours by train, changing at Nyíregyháza.
+  - name: Hajdúszoboszló baths
+    text: >-
+      One of the largest thermal complexes in Europe, about 20 km away, about 20 minutes by train or
+      bus. A day ticket is about 6000-9000 forints (about €15-23).
+budget: >-
+  A beer costs about 800-1200 forints (about €2-3), a coffee about 600-900 forints, a main course in
+  a restaurant about 3500-5500 forints (about €9-14). A double room in a simple hotel costs from
+  about 20000-35000 forints (about €50-90) a night. Without the flight and accommodation, allow
+  about €30-45 a day.
+when: >-
+  May-June and September-October have the best weather. The biggest event is the Flower Carnival,
+  around 20 August, with a parade of floats covered in flowers: that week hotels fill up and prices
+  rise. Winter is cold, with the Christmas market in December.
+tips:
+  - "Pay in forints, by card or with cash from bank ATMs. When the machine asks, choose to pay in HUF, not in euros."
+  - "Many museums are closed on Mondays: plan the Déri Museum and the Reformed College for other days."
+  - "For Aquaticum and Hajdúszoboszló bring a towel and flip-flops: renting them costs extra."
+faq:
+  - q: "Can I get from Debrecen to Budapest?"
+    a: "Yes. InterCity trains leave Nagyállomás almost every hour, take about 2.5-3 hours and cost about 5000-7000 forints (about €13-18)."
+  - q: "Is Debrecen worth a weekend?"
+    a: "Yes, if you want a quiet, cheap city with thermal baths and a day on the steppe. For nightlife, Budapest offers more."

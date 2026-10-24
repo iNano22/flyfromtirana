@@ -1,0 +1,82 @@
+city: Comiso
+slug: comiso
+tagline: Porta e barokut të Val di Noto dhe e detit të Sicilisë juglindore
+intro: >-
+  Comiso është mbi të gjitha aeroporti i Sicilisë juglindore: për rreth 30-45 minuta je në Ragusa
+  Ibla ose në Modica, dy nga qytetet barok të Val di Noto, të rindërtuara pas tërmetit të vitit 1693
+  dhe sot pjesë e trashëgimisë UNESCO. Pak më larg janë Noto, Scicli dhe plazhet e Marina di
+  Ragusa-s. Vetë Comiso është një qytet i vogël e i qetë. Katër-pesë ditë me makinë mjaftojnë për
+  qytetet barok dhe disa ditë deti.
+sights:
+  - name: Ragusa Ibla
+    text: Qyteti i vjetër mbi kodër, me rrugica guri dhe Duomo di San Giorgio, kishën barok me kube të shekullit XVIII. Në fund të tij është kopshti Giardino Ibleo.
+  - name: Duomo di San Giorgio në Modica
+    text: Fasada barok mbi një shkallë monumentale, simboli i Modica-s.
+  - name: Cattedrale di Noto
+    text: Katedralja e San Nicolò-s mbi një shkallë të gjerë në Corso Vittorio Emanuele. Kubeja ra në 1996 dhe u rihap në 2007; gjithë qyteti është ndërtuar me gur të artë.
+  - name: Via Mormino Penna në Scicli
+    text: Rruga më e bukur e Scicli-t, plot kisha e pallate barok. Bashkia e qytetit është komisariati i serialit «Komisari Montalbano».
+  - name: Punta Secca
+    text: Fshat peshkatarësh pranë Marina di Ragusa-s, me shtëpinë e Montalbanos buzë plazhit dhe një far të vogël.
+  - name: Qendra e Comiso-s
+    text: Piazza Fonte di Diana me shatërvanin e saj, Chiesa Madre dhe shtëpia ku lindi shkrimtari Gesualdo Bufalino.
+itinerary:
+  - "Nga aeroporti në Ragusa, rreth 30 minuta me makinë. Zbrit shkallët nga Ragusa Superiore në Ibla, shiko Duomo di San Giorgio dhe Giardino Ibleo, darkë në Ibla."
+  - "Modica në mëngjes: Duomo di San Giorgio dhe një provë çokollate në Corso Umberto I. Pasdite në Scicli për Via Mormino Penna dhe kishën e San Matteo-s."
+  - "Noto në mëngjes, para vapës, pastaj rezervati i Vendicari-t dhe plazhi i Calamosche-s. Perëndimin e diellit shihe në Marzamemi."
+  - "Ditë deti në Marina di Ragusa dhe Punta Secca. Në rrugë për aeroportin ndalo në qendër të Comiso-s."
+areas:
+  - name: Ragusa Ibla
+    text: Baza më e bukur, me B&B në pallate të vjetra. Në Ibla nuk hyhet me makinë (ZTL), prandaj zgjidh një vend me parkim pranë.
+  - name: Modica
+    text: Në mes të gjithçkaje, rreth 40 minuta nga aeroporti dhe afër Scicli-t e Noto-s.
+  - name: Marina di Ragusa
+    text: Bregu, me shëtitore buzë detit, plazhe me rërë dhe jetë nate në verë. Rreth 30 minuta nga aeroporti; në gusht rezervo herët.
+food:
+  - name: Cioccolato di Modica
+    text: Çokollatë e punuar në të ftohtë sipas një recete të vjetër, që mbetet kokrrizore. Vjen me erëza si kanella, vanilja ose spec djegës.
+  - name: Arancino
+    text: Top orizi i skuqur, i mbushur me ragù, me djathë ose me fëstëk. Në lindje të Sicilisë quhet «arancino».
+  - name: Cannolo
+    text: Tub brumi kërcitës i mbushur me rikotë delesh të ëmbël.
+  - name: Scaccia ragusana
+    text: Brumë i hollë i palosur disa herë, i mbushur me domate, djathë ose patëllxhan. Ushqim tipik rruge.
+airports:
+  CIY: >-
+    Aeroporti Pio La Torre është rreth 5 km nga Comiso dhe rreth 20 km nga Ragusa. Ka autobusë për
+    Comiso dhe Ragusa (rreth 30 minuta, rreth €4), por janë të pakët dhe nuk presin çdo fluturim:
+    kontrolloje orarin para nisjes. Makina me qira këshillohet fort: rezervoje përpara dhe merre
+    në aeroport. Taksia kushton rreth €40-50 deri në Ragusa dhe duhet porositur përpara, sepse
+    jashtë terminalit ka pak.
+transport: >-
+  Makina me qira është mënyra më e thjeshtë: qytetet barok janë 20-60 minuta larg njëri-tjetrit dhe
+  autobusët e AST-it e të Interbus-it kalojnë rrallë, sidomos të dielave. Treni lidh Ragusa-n,
+  Modica-n, Scicli-n dhe Noto-n, por kalon rrallë. Qendrat e Ibla-s, Noto-s dhe Modica-s kanë
+  zona ZTL: lëre makinën në parkimet jashtë tyre (rreth €1-1.50 në orë).
+daytrips:
+  - name: Noto
+    text: Kryevepra e barokut sicilian, me Katedralen, Palazzo Nicolaci dhe ballkonet e tij me figura guri. Rreth 1 orë me makinë nga Comiso.
+  - name: Syracuse dhe Ortigia
+    text: Ishulli i vjetër i Ortigia-s, me Duomon e ndërtuar mbi një tempull grek dhe Fonte Aretusa. Rreth 1.5 orë me makinë.
+  - name: Rezervati i Vendicari-t
+    text: Breg i mbrojtur mes Noto-s dhe Marzamemi-t, me këneta ku në vjeshtë e dimër ndalen flamingot, rrënojat e një tonnara-je dhe plazhe të egra.
+  - name: Marzamemi
+    text: Fshat peshkatarësh rreth një sheshi të vogël, i njohur për tonin. Rreth 1 orë e 15 minuta me makinë.
+budget: >-
+  Një espresso kushton rreth €1-1.20, një arancino €2-3, një cannolo €2.50-4 dhe një tabletë
+  çokollate Modica rreth €3-5. Një pica kushton €6-10. Makina me qira kushton rreth €25-45 në ditë
+  jashtë gushtit dhe dyfish në gusht. Një dhomë dyshe në Ibla ose Modica kushton rreth €60-90 nata.
+when: >-
+  Fluturimet nga Tirana janë sezonale, zakonisht në pranverë dhe verë: kontrollo datat çdo vit.
+  Maji, qershori dhe shtatori janë më të mirët, me det të ngrohtë dhe pa turmat e gushtit. Në gusht
+  temperatura kalon shpesh 35°C. Në maj Noto mban Infiorata-n, kur Via Nicolaci mbulohet me
+  piktura prej lulesh.
+tips:
+  - "Kishat dhe shumë dyqane mbyllen zakonisht nga ora 13:00 deri në 16:00: vizito në mëngjes dhe në mbrëmje."
+  - "Pyet përpara nëse pranohet patenta shqiptare apo duhet edhe patentë ndërkombëtare; për depozitën e makinës zakonisht duhet kartë krediti."
+  - "Në Modica shumë dyqane çokollate të lënë ta provosh falas para se ta blesh."
+faq:
+  - q: "A mund ta vizitoj zonën pa makinë?"
+    a: "Po, por me durim: autobusi nga aeroporti të çon në Ragusa, dhe nga aty autobusët dhe treni lidhin Modica-n, Scicli-n dhe Noto-n. Për Vendicari-n, Marzamemi-n dhe plazhet makina të kursen shumë kohë."
+  - q: "Sa para duhen në ditë?"
+    a: "Pa fluturimin dhe fjetjen, rreth €40-60 në ditë, plus makinën dhe karburantin. Sicilia juglindore është më e lirë se Taormina apo Palermo."

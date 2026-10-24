@@ -1988,5 +1988,245 @@
   "source_url": "https://unsplash.com/photos/CcxyQJmISeQ",
   "license": "Unsplash License",
   "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/pmf.webp",
+  "slot": "PMF",
+  "title": "Cathedral and bell tower, Parma",
+  "creator": "@bernardhermant",
+  "creator_url": "https://unsplash.com/@bernardhermant",
+  "source_url": "https://unsplash.com/photos/snWnVcfSn08",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/fkb.webp",
+  "slot": "FKB",
+  "title": "Baden-Baden",
+  "creator": "@rhweht",
+  "creator_url": "https://unsplash.com/@rhweht",
+  "source_url": "https://unsplash.com/photos/-GMJdjgikNU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/lba.webp",
+  "slot": "LBA",
+  "title": "Leeds Town Hall",
+  "creator": "@alelmes",
+  "creator_url": "https://unsplash.com/@alelmes",
+  "source_url": "https://unsplash.com/photos/yZAjIcXxpR0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/sdr.webp",
+  "slot": "SDR",
+  "title": "Colourful houses, Santander",
+  "creator": "@kaja_kadlecova",
+  "creator_url": "https://unsplash.com/@kaja_kadlecova",
+  "source_url": "https://unsplash.com/photos/E07znaU9m3Y",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/qsr.webp",
+  "slot": "QSR",
+  "title": "Salerno and its harbour",
+  "creator": "@gianpaoloantonucci_",
+  "creator_url": "https://unsplash.com/@gianpaoloantonucci_",
+  "source_url": "https://unsplash.com/photos/lHz9PksYL5E",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ciy.webp",
+  "slot": "CIY",
+  "title": "Baroque doorway, Ragusa Ibla",
+  "creator": "@mrpeppeocchipinti",
+  "creator_url": "https://unsplash.com/@mrpeppeocchipinti",
+  "source_url": "https://unsplash.com/photos/lwlgtGngxvA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/ktw.webp",
+  "slot": "KTW",
+  "title": "City centre street, Katowice",
+  "creator": "@vladuken",
+  "creator_url": "https://unsplash.com/@vladuken",
+  "source_url": "https://unsplash.com/photos/xZhVv2BbCsc",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/brq.webp",
+  "slot": "BRQ",
+  "title": "Cathedral of St Peter and Paul over Brno",
+  "creator": "@lnlnln",
+  "creator_url": "https://unsplash.com/@lnlnln",
+  "source_url": "https://unsplash.com/photos/V739idoOjMI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/deb.webp",
+  "slot": "DEB",
+  "title": "Debrecen",
+  "creator": "@vmxhu",
+  "creator_url": "https://unsplash.com/@vmxhu",
+  "source_url": "https://unsplash.com/photos/ecAXQKu86mA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/clj.webp",
+  "slot": "CLJ",
+  "title": "Church tower, Cluj-Napoca",
+  "creator": "@juneandrei",
+  "creator_url": "https://unsplash.com/@juneandrei",
+  "source_url": "https://unsplash.com/photos/MpZXt3Y9b_0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/rmo.webp",
+  "slot": "RMO",
+  "title": "Stephen the Great monument, Chișinău",
+  "creator": "@thecyclichedgehog",
+  "creator_url": "https://unsplash.com/@thecyclichedgehog",
+  "source_url": "https://unsplash.com/photos/f-NKfH_N7As",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/dest/lcj.webp",
+  "slot": "LCJ",
+  "title": "Red-brick factory, Łódź",
+  "creator": "@maksym_harbar",
+  "creator_url": "https://unsplash.com/@maksym_harbar",
+  "source_url": "https://unsplash.com/photos/9Nims61xBxU",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/parma.webp",
+  "slot": "guide-parma",
+  "title": "Piazza Garibaldi, Parma",
+  "creator": "@gabiontheroad",
+  "creator_url": "https://unsplash.com/@gabiontheroad",
+  "source_url": "https://unsplash.com/photos/Ci9gv52V0Cw",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/karlsruhe.webp",
+  "slot": "guide-karlsruhe",
+  "title": "Karlsruhe Palace",
+  "creator": "@lasmaa",
+  "creator_url": "https://unsplash.com/@lasmaa",
+  "source_url": "https://unsplash.com/photos/SPRaszW7DXI",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/leeds.webp",
+  "slot": "guide-leeds",
+  "title": "Leeds city centre from above",
+  "creator": "@benjaminelliott",
+  "creator_url": "https://unsplash.com/@benjaminelliott",
+  "source_url": "https://unsplash.com/photos/4zbITfP0-jM",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/santander.webp",
+  "slot": "guide-santander",
+  "title": "Magdalena Palace, Santander",
+  "creator": "@katiadejuan",
+  "creator_url": "https://unsplash.com/@katiadejuan",
+  "source_url": "https://unsplash.com/photos/xA5pQbxY4Ns",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/salerno.webp",
+  "slot": "guide-salerno",
+  "title": "The Amalfi Coast near Salerno",
+  "creator": "@silvinhatrigo",
+  "creator_url": "https://unsplash.com/@silvinhatrigo",
+  "source_url": "https://unsplash.com/photos/kAE6Kd7W2UA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/comiso.webp",
+  "slot": "guide-comiso",
+  "title": "Modica, near Comiso",
+  "creator": "@antony_sex",
+  "creator_url": "https://unsplash.com/@antony_sex",
+  "source_url": "https://unsplash.com/photos/WeOPzt_jf-I",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/katowice.webp",
+  "slot": "guide-katowice",
+  "title": "Spodek, Katowice",
+  "creator": "@nomadicjulien",
+  "creator_url": "https://unsplash.com/@nomadicjulien",
+  "source_url": "https://unsplash.com/photos/4PfUYGGLvD0",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/brno.webp",
+  "slot": "guide-brno",
+  "title": "Brno old town and cathedral",
+  "creator": "@lnlnln",
+  "creator_url": "https://unsplash.com/@lnlnln",
+  "source_url": "https://unsplash.com/photos/fLP4rIrzt7s",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/debrecen.webp",
+  "slot": "guide-debrecen",
+  "title": "Great Reformed Church, Debrecen",
+  "creator": "@zoltanbiro1988",
+  "creator_url": "https://unsplash.com/@zoltanbiro1988",
+  "source_url": "https://unsplash.com/photos/VzujbUsfgpQ",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/cluj-napoca.webp",
+  "slot": "guide-cluj-napoca",
+  "title": "St Michael's Church, Cluj-Napoca",
+  "creator": "@zoltanbiro1988",
+  "creator_url": "https://unsplash.com/@zoltanbiro1988",
+  "source_url": "https://unsplash.com/photos/Pt1a4mFBOOA",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/chisinau.webp",
+  "slot": "guide-chisinau",
+  "title": "Nativity Cathedral, Chișinău",
+  "creator": "@sometimesiedit",
+  "creator_url": "https://unsplash.com/@sometimesiedit",
+  "source_url": "https://unsplash.com/photos/Qhy0SX5vv8w",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
+ },
+ {
+  "file": "img/guides/lodz.webp",
+  "slot": "guide-lodz",
+  "title": "Piotrkowska Street, Łódź",
+  "creator": "@jakubzerdzicki",
+  "creator_url": "https://unsplash.com/@jakubzerdzicki",
+  "source_url": "https://unsplash.com/photos/S1oeJ0mmhik",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license"
  }
 ]

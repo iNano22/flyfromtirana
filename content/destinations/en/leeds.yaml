@@ -1,0 +1,80 @@
+city: Leeds
+slug: leeds
+tagline: Victorian arcades, markets and a gateway to Yorkshire
+intro: >-
+  Leeds is the largest city in Yorkshire, with glass-roofed Victorian arcades, one of the largest
+  covered markets in Europe and free museums. The centre is easy to walk, prices are lower than in
+  London and trains take you quickly to York and the Yorkshire Dales. Three days are enough for the
+  city, plus one day outside it.
+sights:
+  - name: The Victorian arcades and Kirkgate Market
+    text: The Victoria Quarter and County Arcade have glass roofs, mosaics and handsome shops. Next to them is Kirkgate Market, opened in 1857, where the first Marks & Spencer stall started in 1884. The market is closed on Sundays.
+  - name: Royal Armouries Museum
+    text: The national museum of arms and armour, at Leeds Dock on the River Aire, about 15 minutes on foot from the station. Entry is free.
+  - name: Roundhay Park
+    text: One of the largest city parks in Europe, with lakes and woods, about 20-30 minutes by bus from the centre. Inside is the tropical garden Tropical World, which charges entry.
+  - name: Leeds Art Gallery
+    text: The art gallery next to the town hall, with works by Henry Moore and Barbara Hepworth. Entry is free, as it is at Leeds City Museum.
+  - name: Kirkstall Abbey
+    text: The ruins of an abbey founded in 1152, about 5 km west of the centre. The surrounding park is free, while entry to the ruins costs about £5-7 for visitors from outside the city.
+airports:
+  LBA: >-
+    Leeds Bradford Airport is about 11 km north-west of the centre, on a hill. The A1 Flyer bus
+    leaves every 20-30 minutes and reaches Leeds railway station in about 35-45 minutes, for about
+    £2-3. Alternatively, take the bus to Horsforth station and the train from there to Leeds (about
+    10-15 minutes). A taxi costs about £25-35 and takes 20-30 minutes, depending on traffic.
+budget: >-
+  A coffee costs about £3-3.50, a simple meal £10-15 and a beer (pint) about £4-5.50. Simple hotels
+  cost about £60-90 a night, but get much more expensive during Leeds Festival. The main museums
+  are free.
+when: >-
+  May-September has the mildest weather (about 15-20 degrees) and long days, but it rains all year
+  round. At the end of August the city has the Leeds Festival music festival and the Leeds West
+  Indian Carnival, held since 1967.
+tips:
+  - "Many Kirkgate Market stalls close early in the afternoon: go in the morning or at lunchtime."
+  - "The airport sits on a hill and fog sometimes delays flights: leave some spare time after you land."
+  - "Bring a rain jacket: it rains often in Yorkshire, even in summer."
+itinerary:
+  - "The centre on foot: the Victoria Quarter and the arcades, lunch at Kirkgate Market, then the Corn Exchange. In the afternoon Leeds Art Gallery and Leeds City Museum (free), in the evening the bars of Call Lane."
+  - "The Royal Armouries Museum in the morning, then a walk along the River Aire and the canal to Granary Wharf. In the afternoon Kirkstall Abbey, in the evening the pubs of Headingley."
+  - "Roundhay Park with Tropical World in the morning. In the afternoon Leeds United's Elland Road stadium or the shops of Briggate."
+  - "A day out of town: York for its cathedral and medieval walls, or Haworth for the home of the Brontë sisters."
+areas:
+  - name: The centre and the station
+    text: "The most practical area: the airport bus and the trains to York and Harrogate leave from here, and everything is within walking distance."
+  - name: Call Lane and the Exchange Quarter
+    text: For those who want bars, restaurants and nightlife on the doorstep. It can be noisy at weekends.
+  - name: Leeds Dock and Granary Wharf
+    text: New hotels and apartments by the water, quieter, close to the Royal Armouries and the station.
+  - name: Headingley
+    text: The student area, about 15 minutes by bus from the centre, with pubs, cheaper guesthouses and the cricket ground.
+food:
+  - name: Yorkshire pudding
+    text: Puffed batter baked in the oven, served with roast meat and gravy at Sunday lunch, the Sunday roast.
+  - name: Fish and chips
+    text: Fried fish with chips. Bryan's in Headingley has been famous for decades, but almost every neighbourhood has its own chip shop.
+  - name: Kirkgate Market
+    text: Stalls with food from all over the world and cheap cafés, ideal for a quick lunch.
+  - name: Trinity Kitchen
+    text: The food hall in the Trinity Leeds shopping centre, with street food stalls that change often.
+transport: >-
+  The centre is small and easy to walk. Leeds has no metro or tram, but buses take you everywhere:
+  pay with a contactless bank card, about £2-3 per journey. Frequent trains to all of Yorkshire
+  leave from Leeds station.
+daytrips:
+  - name: York
+    text: A walled medieval city with the York Minster cathedral and The Shambles street, about 25 minutes by train.
+  - name: Harrogate
+    text: An old spa town with gardens and tea rooms, about 35-40 minutes by train.
+  - name: Yorkshire Dales
+    text: The national park of green hills and stone villages. The train to Skipton takes about 40 minutes, while the Settle-Carlisle line crosses the Ribblehead Viaduct.
+  - name: Haworth
+    text: The village of the Brontë sisters, whose home is now a museum. Take the train to Keighley (about 20-25 minutes), then the bus or the old steam train.
+faq:
+  - q: "How do I get from the airport to Leeds city centre?"
+    a: "The cheapest way is the A1 Flyer bus, about £2-3 and 35-45 minutes to Leeds station. A taxi costs about £25-35. If you land late at night, check the time of the last bus in advance."
+  - q: "Can I visit York from Leeds without staying overnight?"
+    a: "Yes. Trains leave several times an hour and the journey takes about 25 minutes. A ticket bought online a few days ahead usually costs less."
+  - q: "How much money do I need per day in Leeds?"
+    a: "Leaving out the flight and accommodation, count on £40-70 a day for food, transport and one paid entry. Many museums are free and Leeds is noticeably cheaper than London."
