@@ -249,3 +249,4 @@ js:
   nodeals: "No deals right now. Check again in a few hours, or follow the channel on Telegram."
   found: "{city}: cheapest €{price} on {date}. We highlighted it in the deals and in the list."
   choose: "Choose a destination to open the search."
+  more: "Show more ({n} left)"

@@ -288,3 +288,4 @@ js:
   nodeals: "Per ora non ci sono offerte. Riprova tra qualche ora, oppure segui il canale su Telegram."
   found: "{city}: prezzo più basso €{price} il {date}. L'abbiamo evidenziata tra le offerte e nell'elenco."
   choose: "Scegli una destinazione per aprire la ricerca."
+  more: "Mostra altri ({n})"

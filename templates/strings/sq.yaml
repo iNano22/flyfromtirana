@@ -249,3 +249,4 @@ js:
   nodeals: "Tani për tani s'ka oferta. Kontrollo sërish pas pak orësh, ose ndiq kanalin në Telegram."
   found: "{city}: më lirë €{price} më {date}. E theksuam te ofertat dhe në listë."
   choose: "Zgjidh një destinacion për të hapur kërkimin."
+  more: "Shfaq më shumë ({n} të tjera)"

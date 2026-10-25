@@ -224,6 +224,13 @@ h1 span { display: block; }
 .more { margin-top: 12px; margin-bottom: 0; }
 .more a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
 .more .ic { width: 18px; height: 18px; stroke-width: 2.5; }
+/* "Show more" under the long lists. Only with JavaScript: without it every row is already shown.
+   The guides' button is for wide screens only, where the tiles are a grid (on a phone they swipe). */
+.morebar, .gmore { display: none; justify-content: center; margin: 16px 0 0; }
+.js .morebar:not([hidden]) { display: flex; }
+.btn-more { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 6px; background: transparent; color: var(--ink); font: inherit; font-weight: 700; font-size: 16px; cursor: pointer; }
+.btn-more:hover { background: var(--ink); color: #ffffff; }
+.btn-more .ic { width: 18px; height: 18px; stroke-width: 2.5; }
 
 /* 5. The Premium block (templates/site_premium.html): black, with who gets a deal first */
 .premium { padding-top: 56px; }
@@ -364,6 +371,8 @@ h1 span { display: block; }
   .pbox { padding: 32px; }
   .btn-premium, .btn-tg { display: inline-flex; }
   .gtiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; overflow: visible; }
+  .js .gtiles > .is-extra { display: none; }
+  .js .gmore:not([hidden]) { display: flex; }
   .join-in { grid-template-columns: 1fr auto; align-items: center; padding-top: 56px; padding-bottom: 56px; }
   .fgrid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
   .fbrand { grid-column: auto; }
@@ -537,6 +546,7 @@ h1 span { display: block; }
       <div class="thead" aria-hidden="true" data-routes="{ROUTE_COUNT}"><span>{T_TH_CODE}</span><span>{T_TH_DESTINATION}</span><span>{T_DEPARTURE}</span><span>{T_TH_FLIGHT}</span><span>{T_TH_SAVING}</span><span>{T_ONE_WAY_PP}</span></div>
       <ol class="board-list list" aria-label="{T_EVERY_DESTINATION}">[[{DEAL_ROWS}]][[{PRICE_ROWS}]]</ol>
     </div>
+    <p class="morebar" hidden><button type="button" class="btn-more"><span></span><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button></p>
   </section>
   <section class="how wrap" id="si-funksionon" aria-labelledby="how-h">
     <div class="shead"><h2 id="how-h">{T_HOW}</h2></div>
@@ -546,7 +556,7 @@ h1 span { display: block; }
       <li><h3>{T_HOW_C_TITLE}</h3><p>{T_HOW_C_TEXT}</p></li>
     </ol>
   </section>
-  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul></section>
+  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul><p class="gmore wrap" hidden><button type="button" class="btn-more"><span></span><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button></p></section>
   <section class="extras" id="sherbime" aria-labelledby="extras-h">
     <div class="wrap shead"><h2 id="extras-h">{T_EXTRAS_TITLE}</h2><p class="hint">{T_EXTRAS_HINT}</p></div>
     <ul class="strip svcs" aria-label="{T_EXTRAS_LABEL}">
@@ -632,7 +642,9 @@ h1 span { display: block; }
    2) The search card builds a tracked Aviasales link from the chosen destination, date and
       passengers, re-using the query string of a Rezervo link so the affiliate marker is kept
       (also when that link is wrapped in a tp.media redirect).
-   3) The counters in the hero count up once. */
+   3) The counters in the hero count up once.
+   4) The long lists (the price table, the guides on wide screens) show their first rows, with a
+      "show more" button for the next ones. */
 (function () {
   var doc = document;
   doc.documentElement.classList.add('js');
@@ -656,7 +668,9 @@ h1 span { display: block; }
   var status = prices ? qs('.status', prices) : null;
   var sortBox = prices ? qs('.sort select', prices) : null;
   var cards = qs('.stories');
-  var state = { view: 'all', sort: 'deals', pick: '' };
+  var ROWS_STEP = 20;                     /* rows shown at first, and added by each "show more" */
+  var rowsMore = prices ? qs('.morebar', prices) : null;
+  var state = { view: 'all', sort: 'deals', pick: '', limit: ROWS_STEP };
   rows.forEach(function (row, i) { row.setAttribute('data-order', i); });
   function num(row, attr) { return parseFloat(row.getAttribute(attr)) || 0; }
   function byOrder(a, b) { return num(a, 'data-order') - num(b, 'data-order'); }
@@ -678,16 +692,24 @@ h1 span { display: block; }
       tab.setAttribute('aria-selected', on ? 'true' : 'false');
       tab.tabIndex = on ? 0 : -1;
     });
-    if (list) {
-      rows.slice().sort(sorters[state.sort] || byOrder).forEach(function (row) { list.appendChild(row); });
-    }
-    var shown = 0;
-    rows.forEach(function (row) {
-      var visible = state.view !== 'deals' || row.classList.contains('deal');
+    var ordered = rows.slice().sort(sorters[state.sort] || byOrder);
+    if (list) { ordered.forEach(function (row) { list.appendChild(row); }); }
+    /* The rows of the tab, in order: the first state.limit are shown, the rest wait for "show
+       more". A route picked in the search card is always shown. */
+    var shown = 0, left = 0;
+    ordered.forEach(function (row) {
+      var inTab = state.view !== 'deals' || row.classList.contains('deal');
+      var picked = !!state.pick && row.getAttribute('data-iata') === state.pick;
+      if (inTab) { shown++; }
+      var visible = inTab && (shown <= state.limit || picked);
+      if (inTab && !visible) { left++; }
       row.hidden = !visible;
-      if (visible) { shown++; }
-      row.classList.toggle('is-picked', !!state.pick && row.getAttribute('data-iata') === state.pick);
+      row.classList.toggle('is-picked', picked);
     });
+    if (rowsMore) {
+      rowsMore.hidden = left === 0;
+      qs('span', rowsMore).textContent = fill(words.more, { n: left });
+    }
     qsa('.dcard, .brow').forEach(function (card) {
       card.classList.toggle('is-picked', !!state.pick && card.getAttribute('data-iata') === state.pick);
     });
@@ -720,6 +742,7 @@ h1 span { display: block; }
         e.preventDefault();
         state.view = tab.getAttribute('data-filter');
         state.pick = '';
+        state.limit = ROWS_STEP;
         apply();
       });
       tab.addEventListener('keydown', function (e) {
@@ -729,6 +752,7 @@ h1 span { display: block; }
     });
   }
   if (sortBox) { sortBox.addEventListener('change', function () { state.sort = sortBox.value; apply(); }); }
+  if (rowsMore) { qs('button', rowsMore).addEventListener('click', function () { state.limit += ROWS_STEP; apply(); }); }
   if (status) {
     status.addEventListener('click', function (e) {
       if (e.target.hasAttribute('data-clear')) { pick(''); var to = qs('.sform [name="to"]'); if (to) { to.value = ''; } var found = qs('.sfound'); if (found) { found.hidden = true; } }
@@ -850,6 +874,22 @@ h1 span { display: block; }
       });
     }, { threshold: 0.5 });
     counters.forEach(function (c) { watch.observe(c); });
+  }
+
+  /* 4. The guides: on wide screens (a grid) the first tiles, then "show more" for the next ones.
+     The tiles past the limit get .is-extra, which the CSS hides only on wide screens. */
+  var GUIDES_STEP = 12;                   /* three rows of four, or four rows of three */
+  var guideList = qs('.gtiles'), guidesMore = qs('.gmore');
+  if (guideList && guidesMore) {
+    var tiles = qsa(':scope > li', guideList), guideLimit = GUIDES_STEP;
+    function showGuides() {
+      tiles.forEach(function (tile, i) { tile.classList.toggle('is-extra', i >= guideLimit); });
+      var rest = Math.max(0, tiles.length - guideLimit);
+      guidesMore.hidden = rest === 0;
+      qs('span', guidesMore).textContent = fill(words.more, { n: rest });
+    }
+    qs('button', guidesMore).addEventListener('click', function () { guideLimit += GUIDES_STEP; showGuides(); });
+    showGuides();
   }
 })();
 </script>
