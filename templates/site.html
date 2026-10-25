@@ -231,6 +231,14 @@ h1 span { display: block; }
 .btn-more { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 6px; background: transparent; color: var(--ink); font: inherit; font-weight: 700; font-size: 16px; cursor: pointer; }
 .btn-more:hover { background: var(--ink); color: #ffffff; }
 .btn-more .ic { width: 18px; height: 18px; stroke-width: 2.5; }
+/* The search boxes over the price table and the guides: they filter the list while you type. */
+.find { position: relative; align-items: center; flex: 1 1 260px; max-width: 420px; }
+.find .ic { position: absolute; left: 12px; width: 18px; height: 18px; stroke-width: 2.5; color: var(--muted); pointer-events: none; }
+.find input { width: 100%; min-height: 44px; padding: 0 12px 0 40px; border: 1.5px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); font: inherit; font-weight: 600; font-size: 16px; }
+.find input:focus { outline: 2px solid var(--ink); outline-offset: 1px; border-color: var(--ink); }
+.listbar .find { order: -1; flex-basis: 100%; max-width: none; }
+.gfind { margin-bottom: 16px; }
+.gnone { margin: 12px 0 0; font-size: 15px; color: var(--muted); }
 
 /* 5. The Premium block (templates/site_premium.html): black, with who gets a deal first */
 .premium { padding-top: 56px; }
@@ -416,6 +424,7 @@ h1 span { display: block; }
      two wrappers (.info, .fare) step aside so their parts line up in the line's grid; each part
      names its column, so a line without a saving (say) keeps the others in place. */
   .listbar { padding: 12px 20px; }
+  .listbar .find { order: 0; flex-basis: 260px; max-width: 380px; }   /* tabs, search and sort on one line */
   .thead, .row { display: grid; grid-template-columns: 64px minmax(0, 1.5fr) minmax(0, 1.1fr) minmax(0, 1.4fr) 68px 156px 104px; gap: 16px; align-items: center; }
   .thead { padding: 11px 20px; background: var(--ink); color: var(--board-muted); font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
   .row { min-height: 64px; padding: 10px 20px; }
@@ -540,6 +549,7 @@ h1 span { display: block; }
           <a class="tab is-on" href="#destinacionet" data-filter="all">{T_TAB_ALL}[[ <span class="n">{ROUTE_COUNT}</span>]]</a>
           <a class="tab" href="#ofertat" data-filter="deals">{T_DEALS}[[ <span class="n">{DEAL_COUNT}</span>]]</a>
         </div>
+        <label class="find js-only"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><input type="search" name="q" placeholder="{T_FIND_ROUTE}" aria-label="{T_FIND_ROUTE}" autocomplete="off" spellcheck="false"></label>
         <label class="sort js-only"><span>{T_SORT}</span><select name="sort"><option value="deals">{T_SORT_DEALS}</option><option value="price">{T_SORT_PRICE}</option><option value="saving">{T_SORT_SAVING}</option><option value="date">{T_SORT_DATE}</option></select></label>
       </div>
       <p class="status" hidden></p>
@@ -556,7 +566,7 @@ h1 span { display: block; }
       <li><h3>{T_HOW_C_TITLE}</h3><p>{T_HOW_C_TEXT}</p></li>
     </ol>
   </section>
-  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul><p class="gmore wrap" hidden><button type="button" class="btn-more"><span></span><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button></p></section>
+  <section class="guides" id="udhezues" aria-labelledby="guides-h"><div class="wrap shead"><h2 id="guides-h">{T_GUIDES_TITLE} <span class="count">{GUIDE_COUNT}</span></h2><p class="hint">{T_GUIDES_HINT}</p></div><div class="wrap gfind"><label class="find js-only"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><input type="search" name="q" placeholder="{T_FIND_GUIDE}" aria-label="{T_FIND_GUIDE}" autocomplete="off" spellcheck="false"></label><p class="gnone" hidden></p></div><ul class="strip gtiles" aria-label="{T_GUIDES_TITLE}">{GUIDE_TILES}</ul><p class="gmore wrap" hidden><button type="button" class="btn-more"><span></span><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button></p></section>
   <section class="extras" id="sherbime" aria-labelledby="extras-h">
     <div class="wrap shead"><h2 id="extras-h">{T_EXTRAS_TITLE}</h2><p class="hint">{T_EXTRAS_HINT}</p></div>
     <ul class="strip svcs" aria-label="{T_EXTRAS_LABEL}">
@@ -644,7 +654,7 @@ h1 span { display: block; }
       (also when that link is wrapped in a tp.media redirect).
    3) The counters in the hero count up once.
    4) The long lists (the price table, the guides on wide screens) show their first rows, with a
-      "show more" button for the next ones. */
+      "show more" button for the next ones, and a search box over each filters it while you type. */
 (function () {
   var doc = document;
   doc.documentElement.classList.add('js');
@@ -657,6 +667,12 @@ h1 span { display: block; }
   function fill(text, values) { return text.replace(/\{([a-z]+)\}/g, function (all, name) { return values[name]; }); }
   function qs(sel, el) { return (el || doc).querySelector(sel); }
   function qsa(sel, el) { return Array.prototype.slice.call((el || doc).querySelectorAll(sel)); }
+  /* Text made easy to compare with what someone types: lower case, without accents, so
+     "lodz" finds Łódź and "chisinau" finds Chișinău. */
+  function plain(s) {
+    return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/ł/g, 'l').replace(/ø/g, 'o').replace(/ß/g, 'ss').replace(/ı/g, 'i').replace(/\s+/g, ' ').trim();
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : '&quot;'; }); }
 
   /* 1. One state for the table: which tab, which sort, which route was picked in the search card */
@@ -670,8 +686,13 @@ h1 span { display: block; }
   var cards = qs('.stories');
   var ROWS_STEP = 20;                     /* rows shown at first, and added by each "show more" */
   var rowsMore = prices ? qs('.morebar', prices) : null;
-  var state = { view: 'all', sort: 'deals', pick: '', limit: ROWS_STEP };
-  rows.forEach(function (row, i) { row.setAttribute('data-order', i); });
+  var rowsFind = prices ? qs('.find input', prices) : null;
+  var state = { view: 'all', sort: 'deals', pick: '', limit: ROWS_STEP, find: '' };
+  rows.forEach(function (row, i) {
+    row.setAttribute('data-order', i);
+    /* What the search box looks in: the city, its airport and its code. */
+    row.findText = plain(qs('.city', row).textContent + ' ' + row.getAttribute('data-iata'));
+  });
   function num(row, attr) { return parseFloat(row.getAttribute(attr)) || 0; }
   function byOrder(a, b) { return num(a, 'data-order') - num(b, 'data-order'); }
   var sorters = {
@@ -694,14 +715,16 @@ h1 span { display: block; }
     });
     var ordered = rows.slice().sort(sorters[state.sort] || byOrder);
     if (list) { ordered.forEach(function (row) { list.appendChild(row); }); }
-    /* The rows of the tab, in order: the first state.limit are shown, the rest wait for "show
-       more". A route picked in the search card is always shown. */
+    /* The rows of the tab that match the search box, in order: the first state.limit are shown,
+       the rest wait for "show more" (while searching, every match is shown). A route picked in
+       the search card is always shown. */
     var shown = 0, left = 0;
     ordered.forEach(function (row) {
-      var inTab = state.view !== 'deals' || row.classList.contains('deal');
+      var inTab = (state.view !== 'deals' || row.classList.contains('deal')) &&
+                  (!state.find || row.findText.indexOf(state.find) !== -1);
       var picked = !!state.pick && row.getAttribute('data-iata') === state.pick;
       if (inTab) { shown++; }
-      var visible = inTab && (shown <= state.limit || picked);
+      var visible = picked || (inTab && (shown <= state.limit || !!state.find));
       if (inTab && !visible) { left++; }
       row.hidden = !visible;
       row.classList.toggle('is-picked', picked);
@@ -717,6 +740,9 @@ h1 span { display: block; }
     if (state.pick) {
       status.hidden = false;
       status.innerHTML = '<span>' + fill(words.picked, { city: '<b>' + esc(cityOf(state.pick)) + '</b>' }) + '</span><button type="button" class="linkish" data-jump>' + words.jump + '</button><button type="button" class="linkish" data-clear>' + words.clear + '</button>';
+    } else if (state.find && shown === 0) {
+      status.hidden = false;
+      status.textContent = fill(words.nomatch, { q: rowsFind.value.trim() });
     } else if (state.view === 'deals' && shown === 0) {
       status.hidden = false;
       status.textContent = words.nodeals;
@@ -753,6 +779,9 @@ h1 span { display: block; }
   }
   if (sortBox) { sortBox.addEventListener('change', function () { state.sort = sortBox.value; apply(); }); }
   if (rowsMore) { qs('button', rowsMore).addEventListener('click', function () { state.limit += ROWS_STEP; apply(); }); }
+  if (rowsFind) {
+    rowsFind.addEventListener('input', function () { state.find = plain(rowsFind.value); state.limit = ROWS_STEP; apply(); });
+  }
   if (status) {
     status.addEventListener('click', function (e) {
       if (e.target.hasAttribute('data-clear')) { pick(''); var to = qs('.sform [name="to"]'); if (to) { to.value = ''; } var found = qs('.sfound'); if (found) { found.hidden = true; } }
@@ -880,15 +909,28 @@ h1 span { display: block; }
      The tiles past the limit get .is-extra, which the CSS hides only on wide screens. */
   var GUIDES_STEP = 12;                   /* three rows of four, or four rows of three */
   var guideList = qs('.gtiles'), guidesMore = qs('.gmore');
+  var guidesFind = qs('.gfind input'), guidesNone = qs('.gnone');
   if (guideList && guidesMore) {
     var tiles = qsa(':scope > li', guideList), guideLimit = GUIDES_STEP;
+    tiles.forEach(function (tile) { tile.findText = plain(qs('b', tile).textContent); });
     function showGuides() {
-      tiles.forEach(function (tile, i) { tile.classList.toggle('is-extra', i >= guideLimit); });
-      var rest = Math.max(0, tiles.length - guideLimit);
+      var find = guidesFind ? plain(guidesFind.value) : '';
+      /* While searching every matching tile is shown; otherwise the first guideLimit. */
+      var matches = tiles.filter(function (tile) { return !find || tile.findText.indexOf(find) !== -1; });
+      tiles.forEach(function (tile) { tile.hidden = matches.indexOf(tile) === -1; });
+      matches.forEach(function (tile, i) { tile.classList.toggle('is-extra', !find && i >= guideLimit); });
+      var rest = find ? 0 : Math.max(0, tiles.length - guideLimit);
       guidesMore.hidden = rest === 0;
       qs('span', guidesMore).textContent = fill(words.more, { n: rest });
+      if (guidesNone) {
+        guidesNone.hidden = matches.length > 0;
+        guidesNone.textContent = matches.length ? '' : fill(words.noguide, { q: guidesFind.value.trim() });
+      }
     }
     qs('button', guidesMore).addEventListener('click', function () { guideLimit += GUIDES_STEP; showGuides(); });
+    if (guidesFind) {
+      guidesFind.addEventListener('input', function () { guideLimit = GUIDES_STEP; guideList.scrollLeft = 0; showGuides(); });
+    }
     showGuides();
   }
 })();

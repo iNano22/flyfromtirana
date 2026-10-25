@@ -334,7 +334,7 @@ def test_pages_say_the_prices_may_have_changed(config, storage):
     assert "të tjerë në Aviasales dhe mund të kenë ndryshuar." in page and "ditët e fundit" not in page
 
 
-def test_long_lists_have_a_show_more_button(config, storage):
+def test_long_lists_have_show_more_and_a_search_box(config, storage):
     # The price table and the guides get a "show more" button, hidden until the script fills it in
     # (without JavaScript every row is shown), and the script has the button's words.
     two_routes(storage)
@@ -342,6 +342,10 @@ def test_long_lists_have_a_show_more_button(config, storage):
     assert '<p class="morebar" hidden><button type="button" class="btn-more">' in page
     assert '<p class="gmore wrap" hidden><button type="button" class="btn-more">' in page
     assert '"more": "Shfaq më shumë ({n} të tjera)"' in page
+    # Both lists have a search box that filters them while you type.
+    assert 'placeholder="Kërko qytetin ose aeroportin"' in page
+    assert 'placeholder="Kërko udhëzuesin e një qyteti"' in page
+    assert '"nomatch": "Asnjë destinacion për „{q}”."' in page
 
 
 def test_site_templates_lose_their_comments():
