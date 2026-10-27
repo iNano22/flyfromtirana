@@ -291,7 +291,12 @@ class DMBot:
         with Storage(self.config.db_path) as storage:
             storage.prune_dms(self.clock() - timedelta(days=KEEP_DAYS))
             for entry in payload.get("entry") or []:
-                for event in entry.get("messaging") or []:
+                # Messages come under "messaging". The Test button in Meta's webhook settings sends
+                # its sample under "changes" instead, as {"field": "messages", "value": <the message>}.
+                events = list(entry.get("messaging") or [])
+                events += [change.get("value") or {} for change in entry.get("changes") or []
+                           if change.get("field") == "messages"]
+                for event in events:
                     try:
                         self.handle_event(event, storage)
                     except Exception:   # one bad message must not stop the others
@@ -321,6 +326,7 @@ class DMBot:
             return   # they mentioned the account in their story: nothing to reply to
         if not storage.save_dm(mid, person, "user", text or "[a photo, voice message or post]", now):
             return   # Meta sent this one before: it has its answer
+        log.info("A message from %s (%d characters)", person, len(text))
         paused = storage.dm_paused_until(person)
         if paused and paused > now:
             log.info("Not answering %s: the owner is talking to them", person)
@@ -343,7 +349,8 @@ class DMBot:
         return reply or TEXTS["error"].format(site=site_base_url(self.config) or self.config.channel_handle)
 
     def send(self, person: str, text: str, storage: Storage) -> None:
-        for part in split_message(text):
+        parts = split_message(text)
+        for part in parts:
             try:
                 mid = self.meta.send_instagram_message(person, part)
             except MetaError as exc:
@@ -351,6 +358,7 @@ class DMBot:
                 return
             # Saved before the next webhook is read, so its echo is known as the bot's, not the owner's.
             storage.save_dm(mid or f"bot-{uuid.uuid4()}", person, "assistant", part, self.clock())
+        log.info("Answered %s (%d characters)", person, len(text))
 
 
 def split_message(text: str, limit: int = INSTAGRAM_TEXT_BYTES) -> list[str]:
@@ -416,7 +424,8 @@ class WebhookHandler(BaseHTTPRequestHandler):
             return self.answer(413)
         body = self.rfile.read(length)
         if not signature_ok(body, self.headers.get("X-Hub-Signature-256", ""), self.server.app_secret):
-            log.warning("A webhook call without Meta's signature was refused")
+            log.warning("A webhook call without Meta's signature was refused. If it was Meta's, META_APP_SECRET "
+                        "is the wrong secret: it must be the Instagram app secret (README: Instagram private messages)")
             return self.answer(403)
         try:
             payload = json.loads(body)

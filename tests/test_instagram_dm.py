@@ -89,6 +89,16 @@ def test_a_question_gets_claudes_reply(config):
     assert "Albanian" in writer.chats[0]["rules"] and "never offer to book" in writer.chats[0]["rules"].lower()
 
 
+def test_the_sample_from_metas_test_button_is_read_too(config):
+    meta = FakeMeta()
+    sample = {"object": "instagram", "entry": [{"id": "0", "time": 1, "changes": [{"field": "messages", "value": {
+        "sender": {"id": "12334"}, "recipient": {"id": "23245"}, "timestamp": "1527459824",
+        "message": {"mid": "random_mid", "text": "random_text"}}}]}]}
+    make_bot(config, meta).handle_payload(sample)
+
+    assert meta.sent == [("12334", FakeWriter().answer)]
+
+
 def test_the_same_message_twice_is_answered_once(config):
     meta = FakeMeta()
     bot = make_bot(config, meta)

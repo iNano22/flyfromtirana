@@ -875,16 +875,23 @@ in config.yaml.
    - Under the Instagram use case's permissions add `instagram_manage_messages` and
      `pages_manage_metadata`, then make a new Page token the same way as before, with
      these two added to the six. Replace `META_PAGE_TOKEN` with it.
-   - App settings → Basic → **App secret** → `META_APP_SECRET`.
+   - Use cases → Instagram API → API setup with Instagram login → **Instagram app secret** →
+     `META_APP_SECRET`. Not the App secret under App settings → Basic: the webhook below is
+     set up in the Instagram section, and Meta signs its calls with the Instagram one.
    - `META_VERIFY_TOKEN`: any long random text you choose, e.g. the output of
      `python -c "import secrets; print(secrets.token_urlsafe(24))"`.
 4. Set the four variables in Coolify, push, and press **Deploy**. The scanner's log
    says "Answering Instagram messages".
-5. **The webhook:** in the app → Instagram use case → Configure webhooks: callback URL
+5. **The webhook:** in the app → Instagram use case → API setup with Instagram login →
+   Configure webhooks: callback URL
    `https://flyfromtirana.al/meta/webhook`, the verify token from step 3, **Verify and
    save**, then subscribe to the **messages** field. In the Graph API Explorer, with the
-   Page token, send `POST me/subscribed_apps` with `subscribed_fields=messages`, so the
-   Page's messages reach the app.
+   Page token, send `POST me/subscribed_apps` with `subscribed_fields=feed` (any Page field
+   links the Page to the app; `messages` would need Messenger's permission). Then publish
+   the app (Publish in the app's menu): Meta sends no webhooks to an unpublished app.
+   The **Test** button next to the messages field sends a sample message: the scanner's
+   log then says "A message from 12334" and, since that person doesn't exist, that the
+   reply could not be sent.
 6. **Test it:** while the app is in Development mode, Meta only delivers messages from
    people with a role in the app (App roles → add your personal account as a tester).
    Write to @flyfromtirana from that account.
