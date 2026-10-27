@@ -27,7 +27,8 @@ When a scan or a website build fails, the owner hears about it on Telegram
 (Alerts below), once when it starts failing and once when it works again.
 
 Alongside, a thread runs the bot's chat (src/bot.py): people set their price
-alerts there, and it notes who joins the channels.
+alerts there, and it notes who joins the channels. With instagram_dm.enabled, two
+more answer the Instagram account's private messages (src/instagram_dm.py).
 """
 from __future__ import annotations
 
@@ -48,6 +49,7 @@ from zoneinfo import ZoneInfo
 from src.bot import Bot
 from src.config import PROJECT_ROOT, Config, ConfigError, load_config
 from src.growth import channel_chats
+from src import instagram_dm
 from src.telegram import TelegramClient, TelegramError
 
 log = logging.getLogger("flyfromtirana.scheduler")
@@ -245,6 +247,7 @@ def main(argv: list[str] | None = None) -> int:
 
     alerts = Alerts.from_env(config)
     start_bot(config, bot_stop)
+    instagram_dm.start(config, bot_stop)
     # So the page exists right after a deploy instead of at the next slot.
     alerts.report("website build", run_step("website build", "src.website", SITE_TIMEOUT_SECONDS))
 

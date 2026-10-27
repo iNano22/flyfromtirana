@@ -66,6 +66,22 @@ CREATE TABLE IF NOT EXISTS alerts (
     created_at   TEXT NOT NULL,
     PRIMARY KEY (chat_id, city)
 );
+
+-- The Instagram private messages the bot answers (src/instagram_dm.py): the last few are sent
+-- back to Claude with each new one, so it knows what the conversation is about.
+CREATE TABLE IF NOT EXISTS dm_messages (
+    mid          TEXT PRIMARY KEY,   -- Instagram's id for the message: one sent twice is answered once
+    person       TEXT NOT NULL,      -- the other person's Instagram id (one only this account sees)
+    role         TEXT NOT NULL,      -- "user" = they wrote it, "assistant" = the bot or the owner did
+    text         TEXT NOT NULL,
+    at           TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_dm_person ON dm_messages (person, at);
+-- A person the owner answered by hand: the bot keeps quiet with them until `until`.
+CREATE TABLE IF NOT EXISTS dm_paused (
+    person       TEXT PRIMARY KEY,
+    until        TEXT NOT NULL
+);
 """
 
 
@@ -301,3 +317,46 @@ class Storage:
         """Delete all of a person's alerts. Returns how many there were."""
         with self.conn:
             return self.conn.execute("DELETE FROM alerts WHERE chat_id = ?", (chat_id,)).rowcount
+
+    # --- the Instagram private messages (src/instagram_dm.py) ---------------------------
+
+    def save_dm(self, mid: str, person: str, role: str, text: str, at: datetime) -> bool:
+        """Remember a message. False when it was already there (Instagram sent it twice)."""
+        with self.conn:
+            return self.conn.execute(
+                "INSERT OR IGNORE INTO dm_messages (mid, person, role, text, at) VALUES (?, ?, ?, ?, ?)",
+                (mid, person, role, text, to_iso(at)),
+            ).rowcount > 0
+
+    def has_dm(self, mid: str) -> bool:
+        return self.conn.execute("SELECT 1 FROM dm_messages WHERE mid = ?", (mid,)).fetchone() is not None
+
+    def dm_history(self, person: str, since: datetime, limit: int) -> list[tuple[str, str]]:
+        """The person's last `limit` messages since `since`, oldest first: [("user", "text"), ...]."""
+        rows = self.conn.execute(
+            "SELECT role, text FROM dm_messages WHERE person = ? AND at >= ? ORDER BY at DESC, rowid DESC LIMIT ?",
+            (person, to_iso(since), limit),
+        ).fetchall()
+        return [(row[0], row[1]) for row in reversed(rows)]
+
+    def count_dm_replies(self, person: str, since: datetime) -> int:
+        """How many times the bot (or the owner) wrote to the person since `since`."""
+        row = self.conn.execute(
+            "SELECT COUNT(*) FROM dm_messages WHERE person = ? AND role = 'assistant' AND at >= ?",
+            (person, to_iso(since)),
+        ).fetchone()
+        return row[0]
+
+    def pause_dm(self, person: str, until: datetime) -> None:
+        with self.conn:
+            self.conn.execute("INSERT OR REPLACE INTO dm_paused (person, until) VALUES (?, ?)", (person, to_iso(until)))
+
+    def dm_paused_until(self, person: str) -> datetime | None:
+        row = self.conn.execute("SELECT until FROM dm_paused WHERE person = ?", (person,)).fetchone()
+        return datetime.fromisoformat(row[0]) if row else None
+
+    def prune_dms(self, older_than: datetime) -> int:
+        """Forget messages older than `older_than` (and pauses that have ended). Returns how many messages."""
+        with self.conn:
+            self.conn.execute("DELETE FROM dm_paused WHERE until < ?", (to_iso(older_than),))
+            return self.conn.execute("DELETE FROM dm_messages WHERE at < ?", (to_iso(older_than),)).rowcount

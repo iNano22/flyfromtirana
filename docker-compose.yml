@@ -33,6 +33,14 @@ services:
       TELEGRAM_DRAFTS_CHAT_ID: ${TELEGRAM_DRAFTS_CHAT_ID:-}
       # The Facebook Page's token: with it the bot posts to Instagram and the Page itself.
       META_PAGE_TOKEN: ${META_PAGE_TOKEN:-}
+      # The bot that answers Instagram private messages (instagram_dm in config.yaml; README:
+      # "Instagram private messages"). It stays off until all three are set, plus META_PAGE_TOKEN.
+      META_APP_SECRET: ${META_APP_SECRET:-}       # the Meta app's secret: proves a webhook call is Meta's
+      META_VERIFY_TOKEN: ${META_VERIFY_TOKEN:-}   # any long random text, typed in the app's webhook settings too
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}   # Claude writes the replies
+    # The Instagram webhook's server; web/Caddyfile passes /meta/webhook to it. Not open to the internet.
+    expose:
+      - "8080"
     volumes:
       - data:/app/data      # prices.db: price history and what was already posted
       - site:/app/docs      # the generated website

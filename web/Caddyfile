@@ -6,6 +6,11 @@
 :80 {
 	root * /srv/site
 	encode zstd gzip
+
+	# Meta's calls with the Instagram private messages go to the scanner container, where
+	# src/instagram_dm.py answers them. Everything else is the website's files.
+	reverse_proxy /meta/webhook scanner:8080
+
 	file_server
 
 	# An address that doesn't exist gets the site's own "page not found" page,

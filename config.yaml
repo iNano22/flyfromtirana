@@ -136,6 +136,22 @@ alerts:
   max_per_person: 10
   sub_id: alerts                   # Travelpayouts SubID of the booking links in the alerts
 
+# --- Answering Instagram private messages --------------------------------------
+# The bot answers the messages people send to the Instagram account, in Albanian (or in their own
+# language), with the website's prices and the city's page, where they book themselves. It never
+# books or asks for anyone's details (src/instagram_dm.py; setup: README "Instagram private messages").
+# Off until META_APP_SECRET, META_VERIFY_TOKEN and ANTHROPIC_API_KEY are set on the server too.
+instagram_dm:
+  enabled: true
+  model: claude-haiku-5-5          # writes the replies: about $0.001 each (1,000 replies ≈ $1).
+                                   #   claude-sonnet-5-5 writes better Albanian at about 20 times the cost.
+  effort: low                      # how hard it thinks: low | medium | high. low is enough for a short reply
+  history_messages: 10             # earlier messages of the chat (last 24 hours) it reads with each new one
+  max_replies_per_day: 20          # per person: past this it stops answering them until the next day,
+                                   #   so a chatty or spamming account can't run up the bill
+  owner_pause_hours: 12            # after you answer someone yourself in the Instagram app, the bot keeps
+                                   #   quiet with them this long
+
 # --- Your own trip watches ------------------------------------------------------
 # Trips only you hear about: after each full scan (every 3 hours) the bot writes to your own chat
 # (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) when a trip that fits costs max_price

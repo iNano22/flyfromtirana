@@ -119,6 +119,24 @@ class SocialSettings:
     reels: bool = False
 
 
+EFFORTS = ("low", "medium", "high", "xhigh", "max")
+
+
+@dataclass(frozen=True)
+class InstagramDMSettings:
+    """The bot that answers Instagram private messages (src/instagram_dm.py): Claude writes the
+    replies, from the prices on the website. It never books: it sends people to the city's page."""
+
+    enabled: bool = False
+    model: str = "claude-haiku-5-5"  # the Claude model that writes the replies: the cheapest, ~$0.001 a reply
+    effort: str = "low"              # how hard it thinks: low is plenty for a short chat reply
+    history_messages: int = 10       # how many earlier messages of the chat it reads with each new one
+    max_replies_per_day: int = 20    # per person: past this the bot stops answering them until tomorrow
+    # After the owner answers someone by hand in the Instagram app, the bot keeps quiet with
+    # that person this long, so the two don't talk over each other.
+    owner_pause_hours: float = 12
+
+
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
 
 # The places that advertise the free channel, each with its own invite link (invite_links in
@@ -226,6 +244,7 @@ class Config:
     growth: GrowthSettings = field(default_factory=GrowthSettings)
     alerts: AlertSettings = field(default_factory=AlertSettings)
     trip_watches: tuple[TripWatch, ...] = ()
+    instagram_dm: InstagramDMSettings = field(default_factory=InstagramDMSettings)
 
 
 @dataclass(frozen=True)
@@ -334,7 +353,26 @@ def _build_config(raw: dict, base_dir: Path) -> Config:
         growth=_build_growth(raw.get("growth") or {}),
         alerts=_build_alerts(raw.get("alerts") or {}),
         trip_watches=tuple(_build_trip_watch(watch) for watch in raw.get("trip_watches") or []),
+        instagram_dm=_build_instagram_dm(raw.get("instagram_dm") or {}),
     )
+
+
+def _build_instagram_dm(raw: dict) -> InstagramDMSettings:
+    effort = str(raw.get("effort", "low")).strip().lower()
+    if effort not in EFFORTS:
+        raise ValueError(f"instagram_dm.effort must be one of {', '.join(EFFORTS)}, not {effort!r}")
+    settings = InstagramDMSettings(
+        enabled=bool(raw.get("enabled", False)),
+        model=str(raw.get("model") or "claude-haiku-5-5").strip(),
+        effort=effort,
+        history_messages=int(raw.get("history_messages", 10)),
+        max_replies_per_day=int(raw.get("max_replies_per_day", 20)),
+        owner_pause_hours=float(raw.get("owner_pause_hours", 12)),
+    )
+    if settings.history_messages < 0 or settings.max_replies_per_day < 1 or settings.owner_pause_hours < 0:
+        raise ValueError("instagram_dm: history_messages and owner_pause_hours must be 0 or more, "
+                         "max_replies_per_day at least 1")
+    return settings
 
 
 def _build_alerts(raw: dict) -> AlertSettings:

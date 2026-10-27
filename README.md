@@ -87,7 +87,8 @@ src/
   bot.py                 the bot's private chat: people set price alerts; it also notes channel joins
   alerts.py              sends the price alerts after each scan
   trips.py               your own trip watches (trip_watches): a cheap trip there and back, only to your chat
-  meta.py                Meta Graph API client: posts to Instagram and the Facebook Page
+  meta.py                Meta Graph API client: posts to Instagram and the Facebook Page, sends Instagram messages
+  instagram_dm.py        answers the Instagram account's private messages (Claude, the site's prices)
   website.py             renders docs/index.html and the city pages from the database (no API calls)
   guides.py              loads the city guides from content/destinations/
   i18n.py                the website's languages: loads a language's wording into the templates
@@ -834,6 +835,63 @@ Things to watch after the first automatic post: that Meta could fetch the pictur
 through Cloudflare (the report says "could not take the picture" otherwise: then allow
 `/social/` for Meta's crawler in Cloudflare's WAF), and Meta's limit of 100 Instagram
 posts a day through the API, far above the 2 made here.
+
+## Instagram private messages
+
+`src/instagram_dm.py` answers the messages people send to @flyfromtirana on Instagram,
+in Albanian (or in their own language when they write English or Italian). Claude
+(Anthropic's AI) writes each reply from the website's current prices: the cheapest
+price for the city, its dates, the flight back, and the city's page, where people book
+themselves. For particular dates ("Tiranë–Athinë 2 me 6 nëntor") it looks up every day
+in the database, both ways. It never books, never takes payments and never asks for
+names, passports or card details. For a group it gives the price per person and says
+children's fares show on the booking page.
+
+How it runs: Meta sends each message to `https://flyfromtirana.al/meta/webhook`; the
+`web` container (web/Caddyfile) passes that address to a small server on port 8080 in
+the scanner container. It checks Meta's signature, answers, and a second thread writes
+and sends the reply, usually within a few seconds. Settings are under `instagram_dm`
+in config.yaml.
+
+- **The owner takes over.** When you answer someone yourself in the Instagram app, the
+  bot keeps quiet with that person for `owner_pause_hours` (12). Turn off Instagram's
+  own automatic replies (Instant replies) so they don't count as you.
+- **Limits.** At most `max_replies_per_day` (20) replies per person a day. A photo or a
+  voice message gets a short line asking them to write. A mention in a story gets nothing.
+- **Cost.** With `claude-haiku-5-5` a reply costs about $0.001 (about 6,000 words of
+  prices and instructions in, 3 short lines out): 1,000 replies ≈ $1. One booking through
+  the site's links earns more than a year of replies. `claude-sonnet-5-5` writes better
+  Albanian at about 20 times the cost. Meta charges nothing for messages.
+- **Try a reply locally** (needs `ANTHROPIC_API_KEY` in `.env`; uses the local
+  database and sends nothing): `python -m src.instagram_dm "Sa kushton Londra?"`
+
+### Setting it up (once)
+
+1. **Instagram app:** Settings → Messages and calls → Connected tools → turn on
+   **Allow access to messages**.
+2. **A Claude key:** on console.anthropic.com create an API key and add a few dollars
+   of credit → `ANTHROPIC_API_KEY`.
+3. **The Meta app** (the one from "Instagram and Facebook posts"):
+   - Under the Instagram use case's permissions add `instagram_manage_messages` and
+     `pages_manage_metadata`, then make a new Page token the same way as before, with
+     these two added to the six. Replace `META_PAGE_TOKEN` with it.
+   - App settings → Basic → **App secret** → `META_APP_SECRET`.
+   - `META_VERIFY_TOKEN`: any long random text you choose, e.g. the output of
+     `python -c "import secrets; print(secrets.token_urlsafe(24))"`.
+4. Set the four variables in Coolify, push, and press **Deploy**. The scanner's log
+   says "Answering Instagram messages".
+5. **The webhook:** in the app → Instagram use case → Configure webhooks: callback URL
+   `https://flyfromtirana.al/meta/webhook`, the verify token from step 3, **Verify and
+   save**, then subscribe to the **messages** field. In the Graph API Explorer, with the
+   Page token, send `POST me/subscribed_apps` with `subscribed_fields=messages`, so the
+   Page's messages reach the app.
+6. **Test it:** while the app is in Development mode, Meta only delivers messages from
+   people with a role in the app (App roles → add your personal account as a tester).
+   Write to @flyfromtirana from that account.
+7. **App Review**, so it answers everyone: request Advanced Access for
+   `instagram_manage_messages` (and `pages_manage_metadata`), with a short screen
+   recording of a message getting its answer. Meta may ask for business verification
+   first. It usually takes a few days to two weeks.
 
 ## Price alerts (the bot)
 

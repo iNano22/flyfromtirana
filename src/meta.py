@@ -1,4 +1,4 @@
-"""Posts to Instagram and the Facebook Page through Meta's Graph API.
+"""Posts to Instagram and the Facebook Page through Meta's Graph API, and answers Instagram messages.
 
 One Page access token does everything: it belongs to the Facebook Page, and the
 Instagram business account is linked to that Page. The token is made once in
@@ -170,6 +170,20 @@ class MetaClient:
         address = f"https://www.facebook.com/{post_id}"
         log.info("Facebook post with %d pictures published: %s", len(image_urls), address)
         return address
+
+    # --- private messages (src/instagram_dm.py) -------------------------------------------
+
+    def send_instagram_message(self, recipient: str, text: str) -> str:
+        """Send a private message on Instagram to `recipient` (their Instagram id, from the webhook).
+        Returns the message's id. Instagram only allows this within 24 hours of their last message.
+
+        Needs the instagram_manage_messages permission on the token. Docs:
+        https://developers.facebook.com/docs/messenger-platform/instagram/features/send-message
+        """
+        page = self.whoami()["page_id"]
+        result = self._call("POST", f"{page}/messages", recipient=json.dumps({"id": recipient}),
+                            message=json.dumps({"text": text}), messaging_type="RESPONSE")
+        return result.get("message_id", "")
 
     def _wait_for_container(self, container: str, *, checks: int = CONTAINER_CHECKS,
                             wait: float = CONTAINER_WAIT_SECONDS, what: str = "the picture") -> None:
