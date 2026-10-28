@@ -203,7 +203,7 @@ def test_the_price_table_has_the_city_its_price_and_its_page(config):
 
     line = next(line for line in table.splitlines() if line.startswith("BGY |"))
     assert "Milan" in line and "Bergamo airport" in line
-    assert "€19 on 20 Nov, 22 Nov" in line and "from €24 on 27 Nov" in line
+    assert "€19 on 20 Nov, 22 Nov" in line and "from €24 on 27 Nov, after the 20 Nov flight out" in line
     assert line.endswith("https://flyfromtirana.al/milan/")
     assert "Today is Friday 9 Oct 2026." in table
     assert "no fresh price" in table and "Athens" in table   # a city without prices is still named
@@ -216,10 +216,22 @@ def test_the_lookup_gives_every_day_both_ways(config):
         answer = look_up_prices(config, storage, NOW,
                                 {"airport": "ath", "first_date": "2026-11-02", "last_date": "2026-11-06"})
 
-    out, back = answer.splitlines()
+    out, back, trips = answer.splitlines()
     assert out.startswith("TIA → ATH (Athens): 2 Nov 2026: €35") and "3 Nov 2026: €30" in out
     assert "20 Nov" not in out   # outside the dates asked about
     assert back.startswith("ATH → TIA (Athens): 6 Nov 2026: €57")
+    assert trips == ("Round trips, cheapest first: out 3 Nov 2026 €30 + back 6 Nov 2026 €57 = €87; "
+                     "out 2 Nov 2026 €35 + back 6 Nov 2026 €57 = €92")
+
+
+def test_a_round_trip_never_comes_back_before_it_leaves(config):
+    """The Frankfurt reply that started this: out on 18 Dec, "back" on 14 Dec."""
+    with Storage(config.db_path) as storage:
+        latest_scan(storage, "HHN", {date(2026, 12, 18): 39}, back={date(2026, 12, 14): 39})
+        answer = look_up_prices(config, storage, NOW,
+                                {"airport": "HHN", "first_date": "2026-12-01", "last_date": "2026-12-26"})
+
+    assert answer.splitlines()[-1] == "Round trips, cheapest first: none in these days"
 
 
 def test_the_lookup_says_when_an_airport_isnt_scanned_or_the_dates_are_wrong(config):

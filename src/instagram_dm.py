@@ -61,6 +61,7 @@ HISTORY_HOURS = 24               # Claude reads the chat's messages from this fa
 KEEP_DAYS = 30                   # messages are forgotten after this long
 MAX_TOOL_ROUNDS = 4              # price look-ups Claude may make for one reply
 MAX_LOOKUP_DAYS = 62             # the scan only goes lookahead_days (60) ahead anyway
+MAX_ROUND_TRIPS = 5              # the cheapest out-and-back pairs the lookup offers
 # Models that can hand a request they decline to another model (Anthropic's "server-side fallback").
 FALLBACK_MODELS = ("claude-opus-5-5", "claude-opus-5", "claude-fable-5-1", "claude-sonnet-5-5")
 
@@ -88,10 +89,14 @@ What you do:
 - Give the cheapest price we have for the city they ask about, its dates, the cheapest flight back \
 if there is one, and the link to the city's page, where they see every date and book. The table \
 below has each city's cheapest dates. When they ask about particular dates or a month, look them \
-up with the flight_prices tool (both ways for a return trip) instead of guessing.
+up with the flight_prices tool instead of guessing.
+- A return trip: the flight back is always after the flight out. Never pair dates yourself: quote \
+a pair from the tool's "round trips" list, or a table line's flight back with the departure it \
+names. If no pair fits what they asked, say so.
 - A city with several airports (London, Milan, Rome...): give the cheapest, and name its airport.
-- Prices are one-way, per person, found by travellers in the last two days: say in a few words \
-that they change quickly and are confirmed only on the booking page.
+- Prices are one-way, per person, found by travellers in the last two days. The first time you \
+give a price in a chat, add in a few words that prices change quickly and are confirmed on the \
+booking page; don't repeat it in later replies.
 - Several people or children: give the price per person, say that children's fares and seats for \
 the whole group show up on the booking page, where they enter the passengers.
 - No price for those dates, or a city we don't follow: say so honestly and send them to {site}. \
@@ -112,9 +117,10 @@ after the domain ({site}en/milan/), in Italian with /it/. Write each link in ful
 PRICES_TOOL = {
     "name": "flight_prices",
     "description": ("The prices we have for each day in a date range, both ways: from Tirana (TIA) to an "
-                    "airport, and from that airport back to Tirana. One-way, per person, in euros, found by "
-                    "travellers in the last two days. A day with no price is not listed. Only airports in the "
-                    "price table, and only about the next {days} days."),
+                    "airport, and from that airport back to Tirana; then the cheapest round trips in the range "
+                    "(the flight back always after the flight out, both prices added up). One-way, per person, "
+                    "in euros, found by travellers in the last two days. A day with no price is not listed. Only "
+                    "airports in the price table, and only about the next {days} days."),
     "input_schema": {
         "type": "object",
         "properties": {
@@ -179,8 +185,8 @@ def price_table(config: Config, storage: Storage, now: datetime) -> str:
         if offer.is_deal and offer.median:
             cheapest += f", a deal: usually about €{format_price(offer.median)}"
         back = offer.return_quote
-        back_text = (f"from €{format_price(back.price)} on {format_dates([back.depart_date], months)}"
-                     if back else "-")
+        back_text = (f"from €{format_price(back.price)} on {format_dates([back.depart_date], months)}, "
+                     f"after the {format_dates([best.depart_date], months)} flight out" if back else "-")
         page = page_url(config, config.website.languages[0], guide.slug if guide else None) or ""
         lines.append(f"{route.iata} | {city} {route.flag} | {cheapest} | {back_text} | {page}")
     waiting = [route.city for route in config.routes if route.city not in priced]
@@ -206,7 +212,11 @@ def look_up_prices(config: Config, storage: Storage, now: datetime, request: dic
         first, last = last, first
     last = min(last, first + timedelta(days=MAX_LOOKUP_DAYS))
     months = WORDS["en"]["months"]
-    lines = []
+
+    def day(d: date) -> str:
+        return f"{d.day} {months[d.month - 1]} {d.year}"
+
+    lines, found = [], []
     for origin, destination in ((config.origin, airport), (airport, config.origin)):
         quotes = [q for q in storage.latest_quotes(origin, destination) if first <= q.depart_date <= last]
         if origin == config.origin and config.premium.enabled:
@@ -217,11 +227,21 @@ def look_up_prices(config: Config, storage: Storage, now: datetime, request: dic
             cutoff = early_access_cutoff(now, config.premium.free_delay_hours)
             quotes = [q for q in quotes
                       if not is_premium_only(q, route, median, storage, config.premium.rules, now, cutoff)]
-        days = [f"{q.depart_date.day} {months[q.depart_date.month - 1]} {q.depart_date.year}: "
-                f"€{format_price(q.price)} ({config.airlines.get(q.airline, q.airline)}, "
+        found.append(quotes)
+        days = [f"{day(q.depart_date)}: €{format_price(q.price)} ({config.airlines.get(q.airline, q.airline)}, "
                 f"{'direct' if q.is_direct else 'with stops'})"
                 for q in sorted(quotes, key=lambda q: q.depart_date)]
         lines.append(f"{origin} → {destination} ({route.city}): " + ("; ".join(days) or "no prices for these days"))
+    # The pairs are made here, not left to Claude, which once paired a flight back with a later flight out.
+    outbound, inbound = found
+    trips = sorted(((out, back) for out in outbound for back in inbound if back.depart_date > out.depart_date),
+                   key=lambda trip: trip[0].price + trip[1].price)[:MAX_ROUND_TRIPS]
+    pairs = []
+    for out, back in trips:
+        there, home = format_price(out.price), format_price(back.price)   # whole euros, as quoted
+        pairs.append(f"out {day(out.depart_date)} €{there} + back {day(back.depart_date)} €{home} "
+                     f"= €{int(there) + int(home)}")
+    lines.append("Round trips, cheapest first: " + ("; ".join(pairs) or "none in these days"))
     return "\n".join(lines)
 
 

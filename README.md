@@ -892,9 +892,13 @@ in config.yaml.
    The **Test** button next to the messages field sends a sample message: the scanner's
    log then says "A message from 12334" and, since that person doesn't exist, that the
    reply could not be sent.
-6. **Test it:** while the app is in Development mode, Meta only delivers messages from
-   people with a role in the app (App roles → add your personal account as a tester).
-   Write to @flyfromtirana from that account.
+6. **Connect the Instagram account to the webhook** (without this Meta delivers nothing,
+   though its Test button works): App roles → Roles → Add People → **Instagram Tester** →
+   `flyfromtirana`; accept the invite logged in as @flyfromtirana on instagram.com
+   (Settings → Apps and websites → Tester invites); then Instagram API → API setup with
+   Instagram login → step 2 → **Add account** (log in as @flyfromtirana) and switch its
+   **Webhook Subscription** on. Write to @flyfromtirana from another account: the log
+   says "A message from ..." and "Answered ...".
 7. **App Review**, so it answers everyone: request Advanced Access for
    `instagram_manage_messages` (and `pages_manage_metadata`), with a short screen
    recording of a message getting its answer. Meta may ask for business verification
