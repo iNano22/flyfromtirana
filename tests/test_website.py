@@ -520,3 +520,16 @@ def test_service_card_without_a_link_is_left_out(config, storage):
                        updated_at=NOW, now=NOW)
     assert "img/services/hotel.webp" not in page       # config.yaml has no hotel link yet
     assert "img/services/esim.webp" in page
+
+
+def test_analytics_counts_taps_on_telegram_deal_and_partner_links(config):
+    links = LinkBuilder(config.website.links, "12345")
+    on = replace(config, website=replace(config.website, google_analytics_id="G-TEST"))
+    page = render_site([], on, links, updated_at=NOW, now=NOW)
+    for name in ("join_telegram", "deal_click", "partner_click", "share_whatsapp"):
+        assert f"'{name}'" in page                       # one event per kind of link...
+    assert "transport_type = 'beacon'" in page            # ...sent even when the link leaves the page
+    assert not PLACEHOLDER.search(page)
+    # Without Analytics there is nothing to send them to, so the script isn't there.
+    off = replace(config, website=replace(config.website, google_analytics_id=""))
+    assert "join_telegram" not in render_site([], off, links, updated_at=NOW, now=NOW)

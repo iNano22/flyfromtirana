@@ -10,6 +10,11 @@
      "ga-consent": yes / no), and any element with data-consent-open (the "Cilësimet e cookies"
      link in the footer) shows the box again. PRIVACY_URL is the way to the privacy page, linked
      from the box's text.
+     While Analytics is on, taps on these links are also sent to it as events, so the reports
+     show what visitors (an ad's too: their source is utm_source) did on the page:
+     join_telegram (t.me, with the button's class), deal_click (Aviasales, with the route's
+     destination and price), partner_click (any other rel="sponsored" link: Tiqets, GetYourGuide...,
+     with the partner's name) and share_whatsapp (wa.me, with the destination).
      Same rules as the other templates: never write an uppercase word in curly braces unless it
      is a value, never two opening square brackets in a row, JS variable names lowercase. -->
 <style>
@@ -76,5 +81,32 @@
     var opener = event.target.closest ? event.target.closest('[data-consent-open]') : null;
     if (opener) { event.preventDefault(); box.hidden = false; }
   });
+  /* Which kind of link was tapped: the event's name and its details, or null for any other link. */
+  function linkEvent(link) {
+    var host = link.hostname, place = link.closest('[data-iata]');
+    var where = place ? { destination: place.getAttribute('data-iata') } : {};
+    if (host === 't.me') { return ['join_telegram', { button: link.className || 'link' }]; }
+    if (host === 'wa.me') { return ['share_whatsapp', where]; }
+    if (host === 'aviasales.tp.st') {
+      if (place && place.getAttribute('data-price')) { where.price = Number(place.getAttribute('data-price')); }
+      return ['deal_click', where];
+    }
+    /* Every partner link is marked rel="sponsored"; its name is the address's first word
+       ("tiqets" from tiqets.tp.st, leaving out a "www."). */
+    if (/\bsponsored\b/.test(link.getAttribute('rel') || '')) {
+      return ['partner_click', { partner: host.replace(/^www\./, '').split('.')[0] }];
+    }
+    return null;
+  }
+  /* Capture phase, so the event is sent before a link that leaves the page (t.me) takes over;
+     'beacon' lets it finish even then. Nothing is sent while Analytics is off. */
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest ? event.target.closest('a[href]') : null;
+    var found = link && started && !window['ga-disable-' + id] ? linkEvent(link) : null;
+    if (!found) { return; }
+    found[1].link_url = link.href;
+    found[1].transport_type = 'beacon';
+    window.gtag('event', found[0], found[1]);
+  }, true);
 })();
 </script>
