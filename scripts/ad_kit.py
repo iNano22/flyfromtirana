@@ -126,7 +126,7 @@ def main() -> int:
         lines += [
             f"=== {name} ===",
             f"Files: {', '.join(files)}",
-            f"Website URL: {ad_url(config, campaign=kit['campaign'], content=name, page=str(ad.get('page') or ''))}",
+            f"Website URL: {ad_url(config, campaign=kit['campaign'], content=name, page=str(ad.get('page') or ''), pick=str(ad.get('pick') or ''))}",
             f"Button: {meta.get('button', '')}",
             f"Headline: {meta.get('headline', '')}",
             f"Description: {meta.get('description', '')}",

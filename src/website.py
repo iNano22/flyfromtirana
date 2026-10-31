@@ -272,6 +272,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
         "ROUTE_COUNT": str(len(offers)) if offers else None,
         "GUIDE_COUNT": str(len(guides)) if guides else None,
         "GA_ON": "1" if config.website.google_analytics_id else None,
+        "ADS_SOURCE": UTM_SOURCE,   # the head's script marks a visitor from a paid ad (html.from-ad)
         # The search card's date picker only allows dates the scanner actually covers.
         "DATE_MIN": (today + timedelta(days=1)).isoformat(),
         "DATE_MAX": (today + timedelta(days=config.lookahead_days)).isoformat(),

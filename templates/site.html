@@ -9,7 +9,7 @@
      photo cards, from site_card.html) PREMIUM (the block about the Premium channel, from
      site_premium.html, only while there is a premium channel) PHOTO_CREDITS (the footer's
      photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
-     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) ADS (the switch to the ads' Telegram link, site_ads.html) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their script, which counts the visits) DRIVE (the Travelpayouts Drive
+     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) ADS (the switch to the ads' Telegram link, site_ads.html) ADS_SOURCE (the ads' utm_source value: a visitor who came with it gets the board before the headline, html.from-ad) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their script, which counts the visits) DRIVE (the Travelpayouts Drive
      script, only when one is set) LANG (the page's language code) LANG_MENU (the language
      dropdown in the top bar, from site_lang.html) LANG_LINKS (the same links as a row, in the footer) HREFLANG (the tags that tell search engines about the other languages) ASSETS (the
      way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
@@ -128,6 +128,9 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .hero { background: var(--sun); }
 .hero-in { display: grid; gap: 26px; padding-top: 26px; padding-bottom: 100px; }
 .hero-text { min-width: 0; }
+/* From a paid ad (see the head's script): the board first, the headline under it. */
+html.from-ad .hero-in { padding-top: 14px; }
+html.from-ad .board { order: -1; }
 .kicker { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 20px; padding: 7px 12px 7px 9px; border-radius: 6px; background: var(--ink); color: #ffffff; font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
 .kicker .ic { width: 16px; height: 16px; stroke-width: 2.5; }
 h1 { margin: 0; font-size: clamp(60px, 17vw, 128px); line-height: 0.86; font-weight: 800; font-stretch: 72%; letter-spacing: -0.02em; }
@@ -391,6 +394,8 @@ h1 span { display: block; }
   .nav-in { gap: 16px; }
   .nav-links { display: flex; }
   .hero-in { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; align-items: end; padding-top: 56px; padding-bottom: 132px; }
+  html.from-ad .hero-in { padding-top: 56px; }
+  html.from-ad .board { order: 0; }   /* side by side here: the headline stays on the left */
   h1 { font-size: clamp(60px, 7.6vw, 112px); }
   .kicker { font-size: 13px; }
   .lead { margin-top: 28px; font-size: 20px; }
@@ -475,6 +480,20 @@ h1 span { display: block; }
   .book:active, .btn-go:active, .btn-tg:active, .btn-premium:active, .nav-tg:active, .fpill:active { transform: scale(0.97); }
 }
 </style>
+<script>
+/* A visitor from a paid ad (utm_source={ADS_SOURCE} in the address, or earlier in this visit:
+   sessionStorage "from-ad", shared with site_ads.html) came for a deal, so on a phone the board
+   with today's best prices goes before the headline (html.from-ad in the CSS). Decided here, in
+   the head, so the page is drawn that way from the start and never jumps. */
+(function () {
+  var from = false;
+  try {
+    from = new URLSearchParams(location.search).get('utm_source') === '{ADS_SOURCE}';
+    if (from) { sessionStorage.setItem('from-ad', '1'); } else { from = sessionStorage.getItem('from-ad') === '1'; }
+  } catch (e) { /* no storage or an old browser: the usual page */ }
+  if (from) { document.documentElement.className += ' from-ad'; }
+})();
+</script>
 {DRIVE}
 <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="{GYG_PARTNER}"></script>
 </head>
@@ -789,6 +808,33 @@ h1 span { display: block; }
     });
   }
   apply();
+
+  /* 1b. ?pick=MXP in the address (the paid ads' links, src/ads.py): that route goes to the top
+         of the board, built from its line in the list, and is marked like a route chosen in the
+         search card. A code the page doesn't have changes nothing. */
+  var wanted = '';
+  try { wanted = (new URLSearchParams(location.search).get('pick') || '').toUpperCase(); } catch (e) { /* old browser: no pick */ }
+  var wantedRow = wanted ? rows.filter(function (r) { return r.getAttribute('data-iata') === wanted; })[0] : null;
+  var board = qs('.board ol');
+  if (wantedRow && board) {
+    var shown = qsa('.brow', board).filter(function (b) { return b.getAttribute('data-iata') === wanted; })[0];
+    if (!shown) {
+      var book = qs('.book', wantedRow), flight = qs('.flight .meta', wantedRow), dates = qs('.dates', wantedRow);
+      var lbl = dates ? qs('.lbl', dates) : null;
+      var when = (dates ? dates.textContent.replace(lbl ? lbl.textContent : '', '') : '') + (flight ? ' · ' + flight.textContent : '');
+      var saving = wantedRow.getAttribute('data-saving');
+      shown = document.createElement('li');
+      shown.className = 'brow' + (wantedRow.classList.contains('deal') ? ' deal' : '');
+      shown.setAttribute('data-iata', wanted);
+      shown.innerHTML = '<a href="' + esc(book ? book.href : '#destinacionet') + '"' + (book ? ' target="_blank" rel="noopener sponsored"' : '') + '>' +
+        '<span class="bcode">' + esc(wanted) + '</span>' +
+        '<span class="bwhere"><b>' + esc(cityOf(wanted)) + '</b><span>' + esc(when.replace(/\s+/g, ' ').trim()) + '</span></span>' +
+        (saving ? '<span class="bsave">-' + esc(saving) + '%</span>' : '') +
+        '<span class="bprice"><b>€' + esc(wantedRow.getAttribute('data-price')) + '</b></span></a>';
+    }
+    board.insertBefore(shown, board.firstChild);
+    pick(wanted);
+  }
 
   /* 2. The search card */
   var form = qs('.sform');

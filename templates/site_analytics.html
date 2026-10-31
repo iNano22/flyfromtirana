@@ -25,6 +25,13 @@
 .consent .yes { background: #0f1114; color: #ffffff; }
 .consent .no { background: #eff1f3; color: #0f1114; }
 .consent :focus-visible { outline: 3px solid #2f6bff; outline-offset: 2px; }
+/* On a phone the box sits over the bottom of the page, so it is kept short: smaller text, the
+   buttons side by side in one row. */
+@media (max-width: 559px) {
+  .consent { padding: 12px 14px; font-size: 14px; line-height: 1.35; }
+  .consent p { margin-bottom: 10px; }
+  .consent button { flex: 1 1 0; min-height: 40px; padding: 0 10px; font-size: 14px; }
+}
 </style>
 <div class="consent" id="consent"[[ data-auto="{GA_AUTO}"]] role="dialog" aria-live="polite" aria-label="{T_COOKIES_LABEL}" hidden>
   <p data-ask="{GA_ASK}">{T_COOKIES_ASK}[[ <a href="{PRIVACY_URL}">{T_PRIVACY_MORE}</a>]]</p>

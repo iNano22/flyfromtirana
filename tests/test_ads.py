@@ -39,6 +39,10 @@ def test_ad_links_carry_the_utm_tags(config):
     assert parse_qs(parts.query) == {"utm_source": ["meta"], "utm_medium": ["paid"], "utm_campaign": ["launch"],
                                      "utm_content": ["photo-cheap"]}
     assert ad_url(config, campaign="c", content="a", page="/milan/").startswith("https://flyfromtirana.al/milan/?")
+    # An ad about one deal opens the page with that route picked (the page's script reads ?pick=).
+    picked = parse_qs(urlsplit(ad_url(config, campaign="c", content="a", pick="mxp")).query)
+    assert picked["pick"] == ["MXP"] and picked["utm_content"] == ["a"]
+    assert "pick" not in parse_qs(urlsplit(ad_url(config, campaign="c", content="a")).query)
 
 
 def test_ads_need_their_own_names(tmp_path):
@@ -75,10 +79,25 @@ def test_ad_visitors_get_the_ads_telegram_link(config):
         assert "{" + "ADS" not in text
 
 
+def test_ad_visitors_get_the_board_before_the_headline(config):
+    """The head's script marks a visitor from an ad (html.from-ad) before the page is drawn; the
+    CSS then puts the board first on a phone, and ?pick= puts the ad's route at its top."""
+    out = config.website.output_dir
+    build_site(config, "12345", now=NOW)
+    page = (out / "index.html").read_text(encoding="utf-8")
+    head = page[:page.index("</head>")]
+    assert "get('utm_source') === 'meta'" in head and "' from-ad'" in head and "sessionStorage.setItem('from-ad', '1')" in head
+    assert "html.from-ad .board { order: -1; }" in head and "html.from-ad .board { order: 0; }" in head
+    assert "get('pick')" in page and "board.insertBefore(shown, board.firstChild)" in page
+    # The city pages and the privacy page have no board: nothing of this there.
+    assert "from-ad" not in (out / "milan" / "index.html").read_text(encoding="utf-8")[:2000]
+
+
 def test_no_switch_without_an_ads_link(config):
     config = replace(config, invite_links={k: v for k, v in config.invite_links.items() if k != "meta_ads"})
     page = build_site(config, "12345", now=NOW).read_text(encoding="utf-8")
-    assert "from-ad" not in page
+    assert "adsLink" not in page                 # no Telegram switch (templates/site_ads.html)...
+    assert "html.from-ad .board" in page         # ...but the board still comes first for ad visitors
 
 
 def video_ad(config):

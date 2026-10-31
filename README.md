@@ -1007,6 +1007,13 @@ on every Telegram button for the rest of the visit (templates/site_ads.html), so
 weekly report lists the members the ads brought on their own line. Change `campaign`
 in content/ads.yaml when you start a new campaign.
 
+**Landing on the deal.** A visitor who arrives with `utm_source=meta` gets the main
+page with the black board of today's best prices before the headline (on a phone; the
+head's script sets `html.from-ad`, the CSS does the rest), because they came for a
+deal, not a headline. An ad about one deal can add `pick: MXP` in content/ads.yaml:
+its link then ends in `&pick=MXP`, and the page puts that route at the top of the
+board and marks it in the list, like a route chosen in the search card.
+
 ## Exit codes
 
 `0` OK · `1` the run failed (API down, bad token, a post failed) · `2` configuration

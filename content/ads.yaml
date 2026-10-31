@@ -14,7 +14,9 @@
 # src/ad_video.py instead, its four scenes under hook, cities, steps and end); the other keys at the top are what
 # the picture shows (photos are airport codes: assets/telegram/<code>.jpg). A headline is
 # a list of lines. No emoji on the pictures (the fonts have none); in the texts, fine.
-# `page` is where the ad leads: "" is the Albanian main page, "milan" a city page.
+# `page` is where the ad leads: "" is the Albanian main page, "milan" a city page. `pick` is
+# an airport code (MXP): the main page then opens with that route at the top of its board, so
+# an ad about one deal lands on that deal (leave it out for the evergreen ads).
 # `meta` is what goes in Ads Manager's boxes: primary_text (above the picture: keep the
 # first ~125 characters strong, the rest hides behind "...more"), headline (under the
 # picture, ~40 characters), description (under the headline, often hidden) and button.

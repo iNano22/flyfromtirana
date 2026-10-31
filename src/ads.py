@@ -24,14 +24,19 @@ UTM_SOURCE = "meta"       # the site's switch to the ads' invite link looks for 
 UTM_MEDIUM = "paid"
 
 
-def ad_url(config: Config, *, campaign: str, content: str, page: str = "") -> str:
+def ad_url(config: Config, *, campaign: str, content: str, page: str = "", pick: str = "") -> str:
     """The site's address with the ad's UTM tags: page "" is the main page, "milan" a city page,
-    "en/" the English main page. campaign names the Ads Manager campaign, content the ad."""
+    "en/" the English main page. campaign names the Ads Manager campaign, content the ad.
+
+    pick is an airport code ("MXP"): the main page then puts that route at the top of its
+    board and marks it in the list, so an ad about one deal lands on that deal (the page's
+    script reads ?pick=; a code the page doesn't have is ignored)."""
     base = config.website.url.rstrip("/") + "/"
     page = page.strip("/")
-    tags = urlencode({"utm_source": UTM_SOURCE, "utm_medium": UTM_MEDIUM, "utm_campaign": campaign,
-                      "utm_content": content})
-    return f"{base}{page + '/' if page else ''}?{tags}"
+    tags = {"utm_source": UTM_SOURCE, "utm_medium": UTM_MEDIUM, "utm_campaign": campaign, "utm_content": content}
+    if pick:
+        tags["pick"] = pick.upper()
+    return f"{base}{page + '/' if page else ''}?{urlencode(tags)}"
 
 
 def load_ads(path: Path = ADS_FILE) -> dict:
