@@ -402,10 +402,10 @@ Drive is Travelpayouts' own script for a site: it turns travel words in the text
 into affiliate links and can add offers and link previews. When its address is
 set, every page of the site loads it from its `<head>` (`templates/site_drive.html`).
 
-> **Switched off since October 2026.** Travelpayouts could not connect the project
-> to Booking.com and Viator, and Drive's keyword links do not work without those
-> programs. The script's address is kept in a comment in config.yaml, to put it
-> back once they are open to the project.
+> **Off from October 13 to 31, 2026**, because Travelpayouts could not connect the
+> project to Booking.com and Viator, and Drive's keyword links do nothing without
+> those programs. Put back on October 31: without the script the dashboard reports
+> Drive as not working.
 
 - The script belongs to the "Flyfromtirana" project. Its address is
   `website.travelpayouts_drive_script` in config.yaml: the one inside

@@ -231,6 +231,7 @@ def test_privacy_page_describes_what_the_site_uses(config):
     assert "vetëm pasi shtyp «Pranoj»" not in page              # ...so not the wording for asking first
     assert "<code>ga-consent</code>" in page
     assert "GetYourGuide</h2>" in page                          # the tours link has a Partner ID
+    assert "Travelpayouts Drive</h2>" in page                   # every page loads the Drive script
     assert '<link rel="canonical" href="https://flyfromtirana.al/privacy/">' in page
     assert "<!--" not in page and not PLACEHOLDER.search(page)
     # Linked from the footers and from the cookie box, and listed for search engines.
@@ -250,10 +251,11 @@ def test_privacy_page_leaves_out_what_the_site_does_not_use(config):
     # No Analytics, no contact address, no GetYourGuide: their parts are gone, the rest stays.
     partners = {name: link for name, link in config.website.links.partners.items() if name != "tours"}
     bare_links = replace(config.website.links, partners=partners)
-    bare = replace(config, website=replace(config.website, google_analytics_id="", contact_email="", links=bare_links))
+    bare = replace(config, website=replace(config.website, google_analytics_id="", contact_email="", links=bare_links,
+                                           travelpayouts_drive_script=""))
     page = render_privacy(bare, LinkBuilder(bare_links, "12345"), now=NOW)
     assert "Google Analytics</h2>" not in page and "ga-consent" not in page and "Cilësimet e cookies" not in page
-    assert "Kush jemi" not in page and "GetYourGuide" not in page
+    assert "Kush jemi" not in page and "GetYourGuide" not in page and "Drive" not in page
     assert "Google Fonts" in page and "Cloudflare" in page and "Të drejtat e tua" in page
     assert not PLACEHOLDER.search(page)
 

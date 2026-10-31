@@ -670,6 +670,7 @@ def render_privacy(config: Config, links: LinkBuilder, *, now: datetime, languag
         "GA_AUTO": "1" if analytics and not website.google_analytics_ask_first else None,
         "GA_ASK": "1" if analytics and website.google_analytics_ask_first else None,
         "GYG_ON": "1" if getyourguide_values(config, tours)["GYG_PARTNER"] else None,
+        "DRIVE_ON": "1" if website.travelpayouts_drive_script else None,
         "YEAR": str(now.astimezone(ZoneInfo(config.timezone)).year),
     }
     urls = {
