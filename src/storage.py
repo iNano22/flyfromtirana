@@ -339,6 +339,12 @@ class Storage:
         ).fetchall()
         return [(row[0], row[1]) for row in reversed(rows)]
 
+    def count_dms_from(self, person: str) -> int:
+        """How many messages the person has written (ever kept): a quick way to see if they wrote more."""
+        row = self.conn.execute("SELECT COUNT(*) FROM dm_messages WHERE person = ? AND role = 'user'",
+                                (person,)).fetchone()
+        return row[0]
+
     def count_dm_replies(self, person: str, since: datetime) -> int:
         """How many times the bot (or the owner) wrote to the person since `since`."""
         row = self.conn.execute(

@@ -132,6 +132,9 @@ class InstagramDMSettings:
     effort: str = "low"              # how hard it thinks: low is plenty for a short chat reply
     history_messages: int = 10       # how many earlier messages of the chat it reads with each new one
     max_replies_per_day: int = 20    # per person: past this the bot stops answering them until tomorrow
+    # People often split one question over several messages ("tirane berlin 6 nentor", "sa kushton").
+    # The bot waits this long after a message, and answers everything they wrote in one reply.
+    reply_delay_seconds: float = 12
     # After the owner answers someone by hand in the Instagram app, the bot keeps quiet with
     # that person this long, so the two don't talk over each other.
     owner_pause_hours: float = 12
@@ -367,11 +370,13 @@ def _build_instagram_dm(raw: dict) -> InstagramDMSettings:
         effort=effort,
         history_messages=int(raw.get("history_messages", 10)),
         max_replies_per_day=int(raw.get("max_replies_per_day", 20)),
+        reply_delay_seconds=float(raw.get("reply_delay_seconds", 12)),
         owner_pause_hours=float(raw.get("owner_pause_hours", 12)),
     )
-    if settings.history_messages < 0 or settings.max_replies_per_day < 1 or settings.owner_pause_hours < 0:
-        raise ValueError("instagram_dm: history_messages and owner_pause_hours must be 0 or more, "
-                         "max_replies_per_day at least 1")
+    if (settings.history_messages < 0 or settings.max_replies_per_day < 1 or settings.owner_pause_hours < 0
+            or settings.reply_delay_seconds < 0):
+        raise ValueError("instagram_dm: history_messages, reply_delay_seconds and owner_pause_hours must be "
+                         "0 or more, max_replies_per_day at least 1")
     return settings
 
 

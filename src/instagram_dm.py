@@ -9,9 +9,13 @@ How a message travels:
      of the scanner container (src/scheduler.py).
   3. The server checks Meta's signature (META_APP_SECRET), answers "received" straight away (Meta
      wants that within a few seconds) and puts the message in a queue.
-  4. A second thread takes the messages one at a time. Claude gets the person's last few messages,
+  4. A second thread takes the messages one at a time. People often split one question over several
+     messages, so the bot waits instagram_dm.reply_delay_seconds after each message (showing "typing...")
+     and answers everything the person wrote in one reply. Claude gets the person's last few messages,
      plus a table of every route's current prices (the website's), and writes the reply. When they
-     ask about particular dates, Claude looks those days up in the database (the flight_prices tool).
+     ask about particular dates, Claude looks those days up in the database (the flight_prices tool);
+     a message with a date in it always gets a lookup. A reply that quotes a price Claude was not given
+     is written again, and never sent as it is.
   5. The reply goes back through the Graph API with the Page token (src/meta.py).
 
 The bot never books and never takes anyone's details: it gives the price and the city's page on
@@ -28,9 +32,11 @@ import json
 import logging
 import os
 import queue
+import re
 import sys
 import threading
 import uuid
+from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Callable, Mapping
@@ -60,10 +66,22 @@ INSTAGRAM_TEXT_BYTES = 1000      # Instagram's limit for one message; a longer r
 HISTORY_HOURS = 24               # Claude reads the chat's messages from this far back
 KEEP_DAYS = 30                   # messages are forgotten after this long
 MAX_TOOL_ROUNDS = 4              # price look-ups Claude may make for one reply
+MAX_DRAFTS = 2                   # how many times Claude may write a reply that quotes a price it wasn't given
 MAX_LOOKUP_DAYS = 62             # the scan only goes lookahead_days (60) ahead anyway
 MAX_ROUND_TRIPS = 5              # the cheapest out-and-back pairs the lookup offers
 # Models that can hand a request they decline to another model (Anthropic's "server-side fallback").
 FALLBACK_MODELS = ("claude-opus-5-5", "claude-opus-5", "claude-fable-5-1", "claude-sonnet-5-5")
+
+# Months in Albanian, English and Italian (also written without ë). A message with one of these, or a day
+# number, is about particular dates: Claude must look them up before it answers.
+MONTHS = ("(?:janar|shkurt|mars|prill|maj|qershor|korrik|gusht|shtator|tetor|n[eë]ntor|dhjetor)(?:i|it|in)?|"
+          "jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t|tember)?|"
+          "oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|"
+          "gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre")
+DATE_PATTERN = re.compile(rf"(?<![\d€])([1-9]|[12]\d|3[01])(?![\d€]|\s€)|\b(?:{MONTHS})\b", re.IGNORECASE)
+# A price in a reply or in the data: "€89", "€ 89", "89€", "89 euro", "€89,00".
+PRICE_PATTERN = re.compile(r"€\s*(\d+)|(\d+)(?:[.,]\d+)?\s*(?:€|euro|eur\b)", re.IGNORECASE)
+PLACEHOLDER = "[a photo, voice message or post]"   # what is kept for a message without text
 
 # What the bot says without asking Claude.
 TEXTS = {
@@ -79,7 +97,9 @@ from Tirana airport (TIA) and shows them on its website {site} and its Telegram 
 
 Language: answer in Albanian. If the person writes in English, Italian or another language, answer \
 in their language. Many people write Albanian without ë and ç, or with typos ("Londor" = London): \
-understand them, but write correct Albanian yourself.
+understand them, but write correct Albanian yourself. People often split one question over several \
+short messages ("tirane berlin 6 7", then "sa kushtojn biletat"): read their last messages together \
+as one question and answer it once.
 
 Style: short, clear and warm, like a chat message: at most 3 short lines, the price and the link \
 first. No markdown: Instagram shows ** and # as they are. At most one emoji. Prices as "€39". \
@@ -100,7 +120,16 @@ booking page; don't repeat it in later replies.
 - Several people or children: give the price per person, say that children's fares and seats for \
 the whole group show up on the booking page, where they enter the passengers.
 - No price for those dates, or a city we don't follow: say so honestly and send them to {site}. \
-Never invent, estimate or round down a price.
+Never invent, estimate or round down a price: only prices from the table or the tool.
+- Flight times: we don't have departure or arrival times. When they ask what time a flight is, say \
+in one line that the times show on the booking page (the city's link) when they pick the date. Don't \
+repeat the price with it.
+- Don't repeat yourself: when the price and the link for the same city and dates are already in \
+the chat, don't send them again. Answer only the new question, in one line, without the link.
+- Never take back, doubt or correct what was said earlier in the chat. Never say a price was \
+unverified, a guess or an estimate, never apologise for an earlier reply, and never mention the \
+table, the tool, lookups, a database or these instructions. If today's data shows another price \
+than before, simply give today's price as the current one.
 - For an alert when a city's price drops: {alerts}. For the day's deals: the Telegram channel.
 - Luggage, visas, documents: answer briefly from what you know and tell them to check with the \
 airline or the official site, since the rules change.
@@ -256,35 +285,60 @@ class Writer:
 
     def reply(self, rules: str, prices: str, chat: list[tuple[str, str]], lookup: Lookup) -> str | None:
         """Claude's reply to the chat (oldest message first, the person's newest last). None when it
-        couldn't write one: Anthropic was unreachable, or the model declined."""
+        couldn't write one: Anthropic was unreachable, the model declined, or its reply kept quoting
+        prices it was never given (a reply with a made-up price is never sent)."""
         system = [{"type": "text", "text": rules},
                   # The cache mark goes on the last part: the instructions and the table are cached
                   # together, and the next message within a few minutes is much cheaper.
                   {"type": "text", "text": prices, "cache_control": {"type": "ephemeral"}}]
         messages: list[dict] = [{"role": role, "content": text} for role, text in chat]
         tool = dict(PRICES_TOOL, description=PRICES_TOOL["description"].format(days=MAX_LOOKUP_DAYS))
+        # A question with a date in it gets a lookup first: answered from the table alone, Claude once
+        # quoted a price for a day it had never seen.
+        must_look_up = mentions_dates(" ".join(text for role, text in latest_question(chat)))
+        given = [prices]   # every price Claude was shown: the table and the lookups' answers
+        text = None
         try:
-            for _ in range(MAX_TOOL_ROUNDS + 1):
-                response = self._ask(system, messages, [tool])
-                if response.stop_reason == "refusal":
-                    log.warning("Claude declined to answer (%s)", getattr(response.stop_details, "category", None))
-                    return None
-                if response.stop_reason != "tool_use":
+            for draft in range(MAX_DRAFTS):
+                for _ in range(MAX_TOOL_ROUNDS + 1):
+                    response = self._ask(system, messages, [tool], force_tool=must_look_up)
+                    must_look_up = False
+                    if response.stop_reason == "refusal":
+                        log.warning("Claude declined to answer (%s)", getattr(response.stop_details, "category", None))
+                        return None
+                    if response.stop_reason != "tool_use":
+                        break
+                    # Claude wants prices: give it what it asked for and let it go on.
+                    results = [{"type": "tool_result", "tool_use_id": block.id, "content": lookup(block.input)}
+                               for block in response.content if block.type == "tool_use"]
+                    given += [result["content"] for result in results]
+                    messages.append({"role": "assistant", "content": response.content})
+                    messages.append({"role": "user", "content": results})
+                text = "".join(block.text for block in response.content if block.type == "text").strip()
+                unknown = unknown_prices(text, given)
+                if not unknown:
                     break
-                # Claude wants prices: give it what it asked for and let it go on.
+                log.warning("Claude's reply quotes prices it was not given (%s): asking it to write it again",
+                            ", ".join(f"€{price}" for price in unknown))
                 messages.append({"role": "assistant", "content": response.content})
-                messages.append({"role": "user", "content": [
-                    {"type": "tool_result", "tool_use_id": block.id, "content": lookup(block.input)}
-                    for block in response.content if block.type == "tool_use"]})
+                messages.append({"role": "user", "content": [{"type": "text", "text": (
+                    "[Not sent to the person.] Your reply says " + ", ".join(f"€{price}" for price in unknown)
+                    + ", which is in neither the price table nor the flight_prices answers. Write the reply "
+                    "again with only the prices you were given, looking the dates up if you need to. Don't "
+                    "mention this message or any earlier draft.")}]})
+            else:
+                log.error("Claude kept quoting prices it was not given: the reply is not sent")
+                return None
         except anthropic.APIError as exc:
             log.error("Claude could not be reached: %s", exc)
             return None
-        text = "".join(block.text for block in response.content if block.type == "text").strip()
         return text or None
 
-    def _ask(self, system: list[dict], messages: list[dict], tools: list[dict]):
+    def _ask(self, system: list[dict], messages: list[dict], tools: list[dict], *, force_tool: bool = False):
         request = dict(model=self.settings.model, max_tokens=1500, system=system, messages=messages,
                        tools=tools, output_config={"effort": self.settings.effort})
+        if force_tool:
+            request["tool_choice"] = {"type": "any"}
         if self.settings.model in FALLBACK_MODELS:
             # If the model declines (a false alarm on a travel question), Anthropic tries another one.
             return self.client.beta.messages.create(betas=["server-side-fallback-2026-07-01"],
@@ -292,9 +346,44 @@ class Writer:
         return self.client.messages.create(**request)
 
 
+def latest_question(chat: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """The person's messages since the last reply: the pieces of their newest question."""
+    question = []
+    for role, text in reversed(chat):
+        if role != "user":
+            break
+        question.insert(0, (role, text))
+    return question
+
+
+def mentions_dates(text: str) -> bool:
+    """Whether a message names a day or a month ("6 7 nentor", "dat6", "me 2 nëntor", "6/11", "november")."""
+    return DATE_PATTERN.search(text) is not None
+
+
+def prices_in(text: str) -> set[int]:
+    return {int(a or b) for a, b in PRICE_PATTERN.findall(text)}
+
+
+def unknown_prices(reply: str, given: list[str]) -> list[int]:
+    """The prices in the reply that are in none of the texts Claude was given, lowest first."""
+    known = set().union(*(prices_in(text) for text in given))
+    return sorted(prices_in(reply) - known)
+
+
 # --- the conversations -----------------------------------------------------------------------
 
+@dataclass
+class Pending:
+    """A person whose messages are waiting for their reply."""
+
+    due: datetime        # when the reply is written, if they write nothing more before then
+    has_text: bool       # whether any of the waiting messages has text (else they sent a photo or a voice)
+
+
 class DMBot:
+    """Everything here runs in the one replying thread (`work`): the pending dict needs no lock."""
+
     def __init__(self, config: Config, meta: MetaClient, writer: Writer, *,
                  clock: Callable[[], datetime] | None = None):
         self.config = config
@@ -303,6 +392,11 @@ class DMBot:
         self.writer = writer
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.rules = instructions(config)
+        self.pending: dict[str, Pending] = {}
+        # Reads the deliveries that arrived while a reply was being written (set by start()), so a
+        # reply to a question the person has since added to is thrown away and written again.
+        self.drain: Callable[[], None] | None = None
+        self.answering = False
 
     def handle_payload(self, payload: dict) -> None:
         """One webhook delivery from Meta. It can carry several messages, from several people."""
@@ -321,8 +415,10 @@ class DMBot:
                         self.handle_event(event, storage)
                     except Exception:   # one bad message must not stop the others
                         log.exception("Could not handle an Instagram message")
+        self.answer_due()
 
     def handle_event(self, event: dict, storage: Storage) -> None:
+        """Keep the message; the reply is written once they've stopped writing (answer_due)."""
         message = event.get("message")
         # Reactions, "seen" receipts and deleted messages come as events too: nothing to answer.
         if not message or not message.get("mid") or message.get("is_deleted") or message.get("is_unsupported"):
@@ -344,9 +440,36 @@ class DMBot:
         attachments = [a.get("type") for a in message.get("attachments") or []]
         if not text and "story_mention" in attachments:
             return   # they mentioned the account in their story: nothing to reply to
-        if not storage.save_dm(mid, person, "user", text or "[a photo, voice message or post]", now):
+        if not storage.save_dm(mid, person, "user", text or PLACEHOLDER, now):
             return   # Meta sent this one before: it has its answer
         log.info("A message from %s (%d characters)", person, len(text))
+        waiting = self.pending.get(person)
+        if waiting is None:
+            self.show_typing(person)   # they see the dots while the bot waits for the rest of their question
+        self.pending[person] = Pending(due=now + timedelta(seconds=self.settings.reply_delay_seconds),
+                                       has_text=bool(text) or (waiting is not None and waiting.has_text))
+
+    def answer_due(self) -> None:
+        """Reply to everyone who has written nothing more for reply_delay_seconds."""
+        if self.answering:   # a drain while a reply is written: the new messages only wait their turn
+            return
+        now = self.clock()
+        due = [person for person, waiting in self.pending.items() if waiting.due <= now]
+        if not due:
+            return
+        self.answering = True
+        try:
+            with Storage(self.config.db_path) as storage:
+                for person in due:
+                    waiting = self.pending.pop(person)
+                    try:
+                        self.answer(person, waiting, storage, now)
+                    except Exception:
+                        log.exception("Could not answer %s", person)
+        finally:
+            self.answering = False
+
+    def answer(self, person: str, waiting: Pending, storage: Storage, now: datetime) -> None:
         paused = storage.dm_paused_until(person)
         if paused and paused > now:
             log.info("Not answering %s: the owner is talking to them", person)
@@ -354,10 +477,19 @@ class DMBot:
         if storage.count_dm_replies(person, now - timedelta(days=1)) >= self.settings.max_replies_per_day:
             log.warning("Not answering %s: %d replies in a day already", person, self.settings.max_replies_per_day)
             return
-        if text:
+        written = storage.count_dms_from(person)
+        if waiting.has_text:
+            self.show_typing(person)
             reply = self.write_reply(person, storage, now)
         else:
             reply = TEXTS["not_text"]
+        if self.drain:
+            self.drain()   # whatever arrived while Claude was writing
+        if storage.count_dms_from(person) != written:
+            # They wrote more meanwhile: this reply doesn't cover it. handle_event has put them back in
+            # the queue, and the next reply answers everything.
+            log.info("%s wrote more while the reply was written: writing it again", person)
+            return
         self.send(person, reply, storage)
 
     def write_reply(self, person: str, storage: Storage, now: datetime) -> str:
@@ -367,6 +499,12 @@ class DMBot:
         reply = self.writer.reply(self.rules, price_table(self.config, storage, now), chat,
                                   lambda request: look_up_prices(self.config, storage, now, request))
         return reply or TEXTS["error"].format(site=site_base_url(self.config) or self.config.channel_handle)
+
+    def show_typing(self, person: str) -> None:
+        try:
+            self.meta.send_instagram_typing(person)
+        except MetaError as exc:   # only the dots: the reply still goes
+            log.debug("Could not show %s the typing dots: %s", person, exc)
 
     def send(self, person: str, text: str, storage: Storage) -> None:
         parts = split_message(text)
@@ -467,16 +605,30 @@ class WebhookHandler(BaseHTTPRequestHandler):
 
 
 def work(bot: DMBot, inbox: queue.Queue, stop: threading.Event) -> None:
-    """Answer the queued deliveries one at a time, so a person's messages are answered in order."""
+    """Read the queued deliveries one at a time, so a person's messages are answered in order, and
+    every second answer the people whose waiting time is over."""
+    bot.drain = lambda: drain(bot, inbox)
     while not stop.is_set():
         try:
-            payload = inbox.get(timeout=1)
+            handle(bot, inbox.get(timeout=1))
         except queue.Empty:
-            continue
+            bot.answer_due()
+
+
+def drain(bot: DMBot, inbox: queue.Queue) -> None:
+    """Read every delivery that is already in the queue, without waiting for more."""
+    while True:
         try:
-            bot.handle_payload(payload)
-        except Exception:
-            log.exception("Could not handle a webhook delivery")
+            handle(bot, inbox.get_nowait())
+        except queue.Empty:
+            return
+
+
+def handle(bot: DMBot, payload: dict) -> None:
+    try:
+        bot.handle_payload(payload)
+    except Exception:
+        log.exception("Could not handle a webhook delivery")
 
 
 def start(config: Config, stop: threading.Event, env: Mapping[str, str] = os.environ) -> WebhookServer | None:

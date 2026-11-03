@@ -13,8 +13,8 @@ import pytest
 
 from src import instagram_dm
 from src.config import load_config
-from src.instagram_dm import (TEXTS, DMBot, WebhookServer, Writer, look_up_prices, price_table, signature_ok,
-                              split_message)
+from src.instagram_dm import (TEXTS, DMBot, WebhookServer, Writer, look_up_prices, mentions_dates, price_table,
+                              signature_ok, split_message, unknown_prices)
 from src.meta import GRAPH_URL, MetaClient, MetaError
 from src.storage import Storage
 from tests.conftest import NOW, FakeResponse, FakeSession
@@ -30,7 +30,7 @@ def config(tmp_path):
     base = load_config()
     return replace(base, db_path=tmp_path / "prices.db", premium=replace(base.premium, enabled=False),
                    instagram_dm=replace(base.instagram_dm, enabled=True, max_replies_per_day=3,
-                                        owner_pause_hours=12))
+                                        owner_pause_hours=12, reply_delay_seconds=0))
 
 
 class FakeMeta:
@@ -38,6 +38,7 @@ class FakeMeta:
 
     def __init__(self, fail: bool = False):
         self.sent: list[tuple[str, str]] = []
+        self.typing: list[str] = []
         self.fail = fail
 
     def send_instagram_message(self, recipient, text):
@@ -45,6 +46,11 @@ class FakeMeta:
             raise MetaError("Meta refused the call")
         self.sent.append((recipient, text))
         return f"bot-mid-{len(self.sent)}"
+
+    def send_instagram_typing(self, recipient):
+        if self.fail:
+            raise MetaError("Meta refused the call")
+        self.typing.append(recipient)
 
 
 class FakeWriter:
@@ -118,6 +124,54 @@ def test_the_chat_so_far_goes_to_claude(config):
                                        ("user", "Po me 2 nëntor?")]
 
 
+def test_a_question_in_pieces_gets_one_reply_once_they_stop_writing(config):
+    """The Berlin chat that started this: "tirane berlin data 6 7", then "sa kushtojm biletat", two replies."""
+    config = replace(config, instagram_dm=replace(config.instagram_dm, reply_delay_seconds=12))
+    meta, writer, clock = FakeMeta(), FakeWriter(), {"now": NOW}
+    bot = make_bot(config, meta, writer, clock=lambda: clock["now"])
+    bot.handle_payload(delivery(text_event("tirane berlin data 6 7", mid="m1")))
+    clock["now"] = NOW + timedelta(seconds=5)
+    bot.handle_payload(delivery(text_event("sa kushtojm biletat", mid="m2")))
+    clock["now"] = NOW + timedelta(seconds=15)   # 10s after the last piece: still waiting
+    bot.answer_due()
+    assert meta.sent == [] and meta.typing == [PERSON]   # the dots once, when the first piece came
+
+    clock["now"] = NOW + timedelta(seconds=17)
+    bot.answer_due()
+    assert meta.sent == [(PERSON, writer.answer)]
+    assert writer.chats[0]["chat"] == [("user", "tirane berlin data 6 7"), ("user", "sa kushtojm biletat")]
+    assert meta.typing == [PERSON, PERSON]   # and again while Claude wrote
+
+
+def test_a_reply_to_a_question_they_added_to_meanwhile_is_written_again(config):
+    config = replace(config, instagram_dm=replace(config.instagram_dm, reply_delay_seconds=12))
+    meta, writer, clock = FakeMeta(), FakeWriter(), {"now": NOW}
+    bot = make_bot(config, meta, writer, clock=lambda: clock["now"])
+    late = [delivery(text_event("me dat6", mid="m2"))]
+    bot.drain = lambda: [bot.handle_payload(payload) for payload in late] and late.clear()   # came while Claude wrote
+    bot.handle_payload(delivery(text_event("ca orarit ka kjo bileta", mid="m1")))
+    clock["now"] = NOW + timedelta(seconds=13)
+    bot.answer_due()
+    assert meta.sent == []   # the first draft is thrown away: it didn't know about "me dat6"
+
+    clock["now"] = NOW + timedelta(seconds=26)
+    bot.answer_due()
+    assert meta.sent == [(PERSON, writer.answer)]
+    assert writer.chats[-1]["chat"] == [("user", "ca orarit ka kjo bileta"), ("user", "me dat6")]
+
+
+def test_a_photo_followed_by_a_question_gets_claudes_reply(config):
+    config = replace(config, instagram_dm=replace(config.instagram_dm, reply_delay_seconds=12))
+    meta, writer, clock = FakeMeta(), FakeWriter(), {"now": NOW}
+    bot = make_bot(config, meta, writer, clock=lambda: clock["now"])
+    bot.handle_payload(delivery({"sender": {"id": PERSON}, "message": {"mid": "m1", "attachments": [{"type": "image"}]}}))
+    bot.handle_payload(delivery(text_event("sa kushton kjo?", mid="m2")))
+    clock["now"] = NOW + timedelta(seconds=13)
+    bot.answer_due()
+
+    assert meta.sent == [(PERSON, writer.answer)]
+
+
 def test_the_bots_own_echo_changes_nothing(config):
     meta = FakeMeta()
     bot = make_bot(config, meta)
@@ -139,6 +193,16 @@ def test_after_the_owner_answers_by_hand_the_bot_keeps_quiet(config):
     clock["now"] = NOW + timedelta(hours=13)   # past owner_pause_hours
     bot.handle_payload(delivery(text_event("Sa kushton Milano?", mid="m2")))
     assert len(meta.sent) == 1
+
+    # The owner answers during the waiting time: the bot drops its reply too.
+    config = replace(config, instagram_dm=replace(config.instagram_dm, reply_delay_seconds=12, owner_pause_hours=1))
+    meta, clock = FakeMeta(), {"now": NOW}
+    bot = make_bot(config, meta, clock=lambda: clock["now"])
+    bot.handle_payload(delivery(text_event("Sa kushton Milano?", mid="m3")))
+    bot.handle_payload(delivery(echo_event("Po e shoh tani", mid="owner-2")))
+    clock["now"] = NOW + timedelta(seconds=13)
+    bot.answer_due()
+    assert meta.sent == []
 
 
 def test_a_person_gets_at_most_max_replies_per_day(config):
@@ -282,6 +346,73 @@ def test_the_writer_looks_prices_up_when_claude_asks(config):
     assert first["system"][1]["cache_control"] == {"type": "ephemeral"}
 
 
+def test_a_question_with_a_date_gets_a_lookup_before_the_answer(config):
+    """Answered from the table alone, Claude once quoted "€70 më 18 nëntor" for a day it had never seen."""
+    tool_use = SimpleNamespace(type="tool_use", id="tu1", name="flight_prices",
+                               input={"airport": "BER", "first_date": "2026-11-06", "last_date": "2026-11-07"})
+    client = FakeAnthropic(SimpleNamespace(stop_reason="tool_use", content=[tool_use]),
+                           SimpleNamespace(stop_reason="end_turn", content=[text_block("6 nëntor: €89")]))
+    chat = [("user", "tirane berlin data 6 7"), ("user", "sa kushtojm biletat")]
+    Writer(config.instagram_dm, client).reply("rules", "BER | Berlin | €89 on 6 Nov", chat, lambda _: "€89")
+
+    assert client.requests[0]["tool_choice"] == {"type": "any"}
+    assert "tool_choice" not in client.requests[1]
+
+    client = FakeAnthropic(SimpleNamespace(stop_reason="end_turn", content=[text_block("Milano nga €19")]))
+    Writer(config.instagram_dm, client).reply("rules", "BGY | Milan | €19 on 20 Nov", [("user", "Sa kushton Milano?")],
+                                              lambda _: "")
+    assert "tool_choice" not in client.requests[0]
+
+
+def test_mentions_dates():
+    assert all(mentions_dates(text) for text in ("tirane berlin data 6 7", "me dat6", "Po me 2 nëntor?", "nentorit",
+                                                 "6/11", "in november", "Londra ne dhjetor", "a Roma il 3 marzo"))
+    assert not any(mentions_dates(text) for text in ("sa kushtojm biletat", "janë mirë", "maybe london", "€89",
+                                                     "Sa kushton Milano?"))
+
+
+def test_a_reply_with_a_price_claude_was_not_given_is_written_again(config):
+    """The chat where it said "€70 më 18 nëntor", then "nuk e kam verifikuar": never again."""
+    table = "BER | Berlin | €89 on 6 Nov | from €51 on 8 Nov | https://flyfromtirana.al/berlin/"
+    client = FakeAnthropic(SimpleNamespace(stop_reason="end_turn", content=[text_block("Direkt: €70 më 18 nëntor")]),
+                           SimpleNamespace(stop_reason="end_turn", content=[text_block("Berlin: €89 më 6 nëntor")]))
+    reply = Writer(config.instagram_dm, client).reply("rules", table, [("user", "aka naj bilet direkte")], lambda _: "")
+
+    assert reply == "Berlin: €89 më 6 nëntor"
+    note = client.requests[1]["messages"][-1]
+    assert note["role"] == "user" and "€70" in note["content"][0]["text"]
+    assert client.requests[1]["messages"][-2]["role"] == "assistant"
+
+    # Still making prices up on the second try: nothing is sent (the person gets the website).
+    client = FakeAnthropic(SimpleNamespace(stop_reason="end_turn", content=[text_block("€70")]),
+                           SimpleNamespace(stop_reason="end_turn", content=[text_block("€72")]))
+    assert Writer(config.instagram_dm, client).reply("rules", table, [("user", "direkt?")], lambda _: "") is None
+
+    # A price from a lookup is fine, and so are the sums the lookup gives.
+    tool_use = SimpleNamespace(type="tool_use", id="tu1", name="flight_prices",
+                               input={"airport": "BER", "first_date": "2026-11-18", "last_date": "2026-11-18"})
+    client = FakeAnthropic(SimpleNamespace(stop_reason="tool_use", content=[tool_use]),
+                           SimpleNamespace(stop_reason="end_turn", content=[text_block("18 nëntor €70, bashkë €121")]))
+    reply = Writer(config.instagram_dm, client).reply("rules", table, [("user", "18 nentor?")],
+                                                      lambda _: "TIA → BER: 18 Nov 2026: €70; out €70 + back €51 = €121")
+    assert reply == "18 nëntor €70, bashkë €121"
+
+
+def test_unknown_prices():
+    given = ["BER | €89 on 6 Nov | from €51", "out €30 + back €57 = €87"]
+    assert unknown_prices("€89 atje, kthimi 51 €, 72 euro, €38,00 dhe 87€ bashkë", given) == [38, 72]
+    assert unknown_prices("Orarin e shihni në faqen e rezervimit: https://flyfromtirana.al/berlin/ 2026", given) == []
+
+
+def test_the_rules_keep_the_bot_from_correcting_itself(config):
+    writer = FakeWriter()
+    make_bot(config, writer=writer).handle_payload(delivery(text_event("ca orarit ka kjo bileta")))
+    rules = writer.chats[0]["rules"]
+    assert "Never take back, doubt or correct" in rules and "never say a price was" in rules.lower()
+    assert "we don't have departure or arrival times" in rules.lower()
+    assert "read their last messages together" in rules.lower()
+
+
 def test_the_writer_gives_up_when_claude_declines(config):
     client = FakeAnthropic(SimpleNamespace(stop_reason="refusal", content=[], stop_details=None))
     assert Writer(config.instagram_dm, client).reply("r", "p", [("user", "hi")], lambda _: "") is None
@@ -317,6 +448,10 @@ def test_meta_sends_the_message_to_the_page_messages_endpoint():
     assert call["url"] == GRAPH_URL.format(path="PAGE1/messages")
     assert json.loads(call["data"]["recipient"]) == {"id": PERSON}
     assert json.loads(call["data"]["message"]) == {"text": "Përshëndetje"}
+
+    MetaClient("token", session).send_instagram_typing(PERSON)
+    call = session.calls[-1]
+    assert call["url"] == GRAPH_URL.format(path="PAGE1/messages") and call["data"]["sender_action"] == "typing_on"
 
 
 # --- the webhook ----------------------------------------------------------------------------

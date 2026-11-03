@@ -149,6 +149,8 @@ instagram_dm:
   history_messages: 10             # earlier messages of the chat (last 24 hours) it reads with each new one
   max_replies_per_day: 20          # per person: past this it stops answering them until the next day,
                                    #   so a chatty or spamming account can't run up the bill
+  reply_delay_seconds: 12          # people split one question over several messages: the bot waits this
+                                   #   long after each message and answers them all together, once
   owner_pause_hours: 12            # after you answer someone yourself in the Instagram app, the bot keeps
                                    #   quiet with them this long
 

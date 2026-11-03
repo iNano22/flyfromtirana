@@ -850,8 +850,19 @@ children's fares show on the booking page.
 How it runs: Meta sends each message to `https://flyfromtirana.al/meta/webhook`; the
 `web` container (web/Caddyfile) passes that address to a small server on port 8080 in
 the scanner container. It checks Meta's signature, answers, and a second thread writes
-and sends the reply, usually within a few seconds. Settings are under `instagram_dm`
-in config.yaml.
+and sends the reply. Settings are under `instagram_dm` in config.yaml.
+
+- **One reply per question.** People often split a question over several messages
+  ("tirane berlin 6 7", then "sa kushtojn biletat"). After each message the bot shows
+  the "typing..." dots and waits `reply_delay_seconds` (12); when the person has stopped
+  writing it answers everything together, once. If they write more while the reply is
+  being written, that reply is thrown away and written again with the new message.
+- **No made-up prices.** A question with a date in it always gets a lookup in the
+  database before the answer. Every price in a reply is checked against the price table
+  and the lookups' answers: a reply with a price Claude was never given is written again,
+  and if the second try is no better the person gets the website's link instead. The
+  bot is also told never to take back or doubt an earlier reply, and that it has no
+  flight times (it says the times show on the booking page).
 
 - **The owner takes over.** When you answer someone yourself in the Instagram app, the
   bot keeps quiet with that person for `owner_pause_hours` (12). Turn off Instagram's

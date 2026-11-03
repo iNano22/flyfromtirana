@@ -185,6 +185,11 @@ class MetaClient:
                             message=json.dumps({"text": text}), messaging_type="RESPONSE")
         return result.get("message_id", "")
 
+    def send_instagram_typing(self, recipient: str) -> None:
+        """Show `recipient` the "typing..." dots while the reply is being written (they last about 20s)."""
+        page = self.whoami()["page_id"]
+        self._call("POST", f"{page}/messages", recipient=json.dumps({"id": recipient}), sender_action="typing_on")
+
     def _wait_for_container(self, container: str, *, checks: int = CONTAINER_CHECKS,
                             wait: float = CONTAINER_WAIT_SECONDS, what: str = "the picture") -> None:
         """Instagram fetches the picture (or video) in the background: wait until it says FINISHED."""
