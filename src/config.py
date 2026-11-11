@@ -138,6 +138,13 @@ class InstagramDMSettings:
     # After the owner answers someone by hand in the Instagram app, the bot keeps quiet with
     # that person this long, so the two don't talk over each other.
     owner_pause_hours: float = 12
+    # A message that is only one of these words ("OFERTA") gets the day's best prices straight
+    # away, written by the code itself, not by Claude. deals_count is how many routes it lists.
+    deals_keywords: tuple[str, ...] = ("oferta", "ofertat", "oferte")
+    deals_count: int = 5
+    # The same word written as a comment under a post or reel ("OFERTA") gets that reply as a
+    # private message. False = comments are left alone.
+    deals_from_comments: bool = True
 
 
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
@@ -372,7 +379,13 @@ def _build_instagram_dm(raw: dict) -> InstagramDMSettings:
         max_replies_per_day=int(raw.get("max_replies_per_day", 20)),
         reply_delay_seconds=float(raw.get("reply_delay_seconds", 12)),
         owner_pause_hours=float(raw.get("owner_pause_hours", 12)),
+        deals_keywords=tuple(str(word).strip().lower() for word in raw.get("deals_keywords")
+                             or InstagramDMSettings.deals_keywords),
+        deals_count=int(raw.get("deals_count", 5)),
+        deals_from_comments=bool(raw.get("deals_from_comments", True)),
     )
+    if not 1 <= settings.deals_count <= 10:
+        raise ValueError("instagram_dm.deals_count must be between 1 and 10")
     if (settings.history_messages < 0 or settings.max_replies_per_day < 1 or settings.owner_pause_hours < 0
             or settings.reply_delay_seconds < 0):
         raise ValueError("instagram_dm: history_messages, reply_delay_seconds and owner_pause_hours must be "

@@ -185,6 +185,19 @@ class MetaClient:
                             message=json.dumps({"text": text}), messaging_type="RESPONSE")
         return result.get("message_id", "")
 
+    def send_instagram_private_reply(self, comment_id: str, text: str) -> tuple[str, str]:
+        """Send a private message to the person who wrote the comment `comment_id` under one of our
+        posts. Returns (their Instagram id, the message's id). Instagram allows one such message
+        per comment, within 7 days of the comment; more only after they write back.
+
+        Needs instagram_manage_comments next to instagram_manage_messages on the token. Docs:
+        https://developers.facebook.com/docs/messenger-platform/instagram/features/private-replies
+        """
+        page = self.whoami()["page_id"]
+        result = self._call("POST", f"{page}/messages", recipient=json.dumps({"comment_id": comment_id}),
+                            message=json.dumps({"text": text}))
+        return result.get("recipient_id", ""), result.get("message_id", "")
+
     def send_instagram_typing(self, recipient: str) -> None:
         """Show `recipient` the "typing..." dots while the reply is being written (they last about 20s)."""
         page = self.whoami()["page_id"]

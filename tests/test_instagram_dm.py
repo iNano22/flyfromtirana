@@ -13,11 +13,11 @@ import pytest
 
 from src import instagram_dm
 from src.config import load_config
-from src.instagram_dm import (TEXTS, DMBot, WebhookServer, Writer, look_up_prices, mentions_dates, price_table,
-                              signature_ok, split_message, unknown_prices)
+from src.instagram_dm import (TEXTS, DMBot, WebhookServer, Writer, asks_for_deals, deals_reply, look_up_prices,
+                              mentions_dates, price_table, signature_ok, split_message, unknown_prices)
 from src.meta import GRAPH_URL, MetaClient, MetaError
 from src.storage import Storage
-from tests.conftest import NOW, FakeResponse, FakeSession
+from tests.conftest import NOW, FakeResponse, FakeSession, seed_history
 from tests.test_website import latest_scan
 
 PERSON = "IGSID-1"
@@ -38,6 +38,7 @@ class FakeMeta:
 
     def __init__(self, fail: bool = False):
         self.sent: list[tuple[str, str]] = []
+        self.private_replies: list[tuple[str, str]] = []   # (the comment's id, the text)
         self.typing: list[str] = []
         self.fail = fail
 
@@ -46,6 +47,12 @@ class FakeMeta:
             raise MetaError("Meta refused the call")
         self.sent.append((recipient, text))
         return f"bot-mid-{len(self.sent)}"
+
+    def send_instagram_private_reply(self, comment_id, text):
+        if self.fail:
+            raise MetaError("Meta refused the call")
+        self.private_replies.append((comment_id, text))
+        return PERSON, f"bot-mid-c{len(self.private_replies)}"
 
     def send_instagram_typing(self, recipient):
         if self.fail:
@@ -78,6 +85,14 @@ def echo_event(text, mid, person=PERSON):
 
 def delivery(*events):
     return {"object": "instagram", "entry": [{"id": OUR_ACCOUNT, "time": 1, "messaging": list(events)}]}
+
+
+def comment_delivery(text, comment_id="c1", person=PERSON):
+    """A comment `person` wrote under one of our posts, as Meta's webhook sends it."""
+    value = {"id": comment_id, "text": text, "from": {"id": person, "username": "arta"},
+             "media": {"id": "media1", "media_product_type": "FEED"}}
+    return {"object": "instagram", "entry": [{"id": OUR_ACCOUNT, "time": 1,
+                                              "changes": [{"field": "comments", "value": value}]}]}
 
 
 def make_bot(config, meta=None, writer=None, clock=lambda: NOW):
@@ -221,6 +236,73 @@ def test_a_photo_gets_the_short_text_and_claude_is_not_asked(config):
 
     assert meta.sent == [(PERSON, TEXTS["not_text"])]
     assert writer.chats == []
+
+
+def test_the_word_oferta_gets_the_days_prices_without_claude(config):
+    with Storage(config.db_path) as storage:
+        seed_history(storage, [60] * 12, destination="BGY", days_ago=2)   # Bergamo is usually €60: €19 is a deal
+        latest_scan(storage, "BGY", {date(2026, 11, 20): 19})
+        latest_scan(storage, "VIE", {date(2026, 11, 12): 45})
+    meta, writer = FakeMeta(), FakeWriter()
+    make_bot(config, meta, writer).handle_payload(delivery(text_event("OFERTA 🔥")))
+
+    assert writer.chats == []                                   # Claude was not asked
+    (person, reply), = meta.sent
+    lines = reply.splitlines()
+    assert person == PERSON and lines[0].startswith("✈️ Çmimet më të mira sot nga Tirana")
+    assert lines[1] == "Milano (Bergamo) €19 · 20 Nën (zakonisht €60)"    # the deal first, with its Albanian name
+    assert lines[2] == "Vjenë €45 · 12 Nën"
+    assert lines[3] == "Të gjitha datat dhe rezervimi: https://flyfromtirana.al/?utm_source=igdm&utm_medium=dm"
+    assert "Shkruaj OFERTA" in lines[4]
+
+
+def test_only_the_keyword_alone_skips_claude(config):
+    settings = config.instagram_dm
+    for question in (["oferta"], ["Ofertat!"], ["OFERTË"], ["  oferta  ", "🙏"]):
+        assert asks_for_deals(question, settings), question
+    # A real question that happens to hold the word goes to Claude, like any other.
+    for question in (["oferta per ne Rome ne dhjetor"], ["sa kushton Londra"], ["oferta", "per Milano"], []):
+        assert not asks_for_deals(question, settings), question
+    meta, writer = FakeMeta(), FakeWriter()
+    make_bot(config, meta, writer).handle_payload(delivery(text_event("a keni oferta per Rome?")))
+    assert len(writer.chats) == 1 and meta.sent == [(PERSON, writer.answer)]
+
+
+def test_oferta_without_prices_sends_the_website(config):
+    with Storage(config.db_path) as storage:
+        reply = deals_reply(config, storage, NOW)
+    assert reply.startswith("Tani për tani s'kemi çmime të reja") and "https://flyfromtirana.al/?utm_source=igdm" in reply
+
+
+def test_oferta_as_a_comment_gets_the_prices_in_a_private_message(config):
+    with Storage(config.db_path) as storage:
+        latest_scan(storage, "VIE", {date(2026, 11, 12): 45})
+    meta, writer = FakeMeta(), FakeWriter()
+    bot = make_bot(config, meta, writer)
+    bot.handle_payload(comment_delivery("Oferta! 🔥"))
+    bot.handle_payload(comment_delivery("Oferta! 🔥"))          # Meta sends the same comment again
+
+    (comment_id, reply), = meta.private_replies               # one message, to the comment
+    assert comment_id == "c1" and "Vjenë €45 · 12 Nën" in reply
+    assert meta.sent == [] and writer.chats == []              # no ordinary message, and Claude was not asked
+
+    # The message's echo is the bot's own: the bot doesn't take it for the owner and go quiet.
+    bot.handle_payload(delivery(echo_event(reply, "bot-mid-c1")))
+    bot.handle_payload(delivery(text_event("po per Romen?", mid="m2")))
+    assert meta.sent == [(PERSON, writer.answer)]
+    assert writer.chats[0]["chat"][:2] == [("user", "Oferta! 🔥"), ("assistant", reply)]   # Claude sees both
+
+
+def test_other_comments_and_our_own_get_nothing(config):
+    meta = FakeMeta()
+    bot = make_bot(config, meta)
+    bot.handle_payload(comment_delivery("sa bukur 😍"))
+    bot.handle_payload(comment_delivery("a keni oferta per Rome?", "c2"))
+    bot.handle_payload(comment_delivery("OFERTA", "c3", person=OUR_ACCOUNT))   # our own comment
+    off = replace(config, instagram_dm=replace(config.instagram_dm, deals_from_comments=False))
+    make_bot(off, meta).handle_payload(comment_delivery("OFERTA", "c4"))
+    make_bot(config, FakeMeta(fail=True)).handle_payload(comment_delivery("OFERTA", "c5"))   # refused: only logged
+    assert meta.private_replies == [] and meta.sent == []
 
 
 def test_story_mentions_reactions_and_other_objects_get_nothing(config):
@@ -448,6 +530,11 @@ def test_meta_sends_the_message_to_the_page_messages_endpoint():
     assert call["url"] == GRAPH_URL.format(path="PAGE1/messages")
     assert json.loads(call["data"]["recipient"]) == {"id": PERSON}
     assert json.loads(call["data"]["message"]) == {"text": "Përshëndetje"}
+
+    assert MetaClient("token", session).send_instagram_private_reply("c1", "Çmimet") == (PERSON, "mid-77")
+    call = session.calls[-1]
+    assert call["url"] == GRAPH_URL.format(path="PAGE1/messages")
+    assert json.loads(call["data"]["recipient"]) == {"comment_id": "c1"}
 
     MetaClient("token", session).send_instagram_typing(PERSON)
     call = session.calls[-1]

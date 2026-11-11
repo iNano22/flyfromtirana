@@ -153,6 +153,12 @@ instagram_dm:
                                    #   long after each message and answers them all together, once
   owner_pause_hours: 12            # after you answer someone yourself in the Instagram app, the bot keeps
                                    #   quiet with them this long
+  deals_keywords: [oferta, ofertat, oferte]   # someone who sends only one of these words ("OFERTA") gets
+                                   #   the day's best prices at once, without Claude (no cost). Capital
+                                   #   letters, ë/e and punctuation make no difference
+  deals_count: 5                   # how many routes that reply lists (deals first)
+  deals_from_comments: true        # someone who writes the word as a comment under a post or reel gets
+                                   #   the same reply as a private message (one per comment: Instagram's rule)
 
 # --- Your own trip watches ------------------------------------------------------
 # Trips only you hear about: after each full scan (every 3 hours) the bot writes to your own chat

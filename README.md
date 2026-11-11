@@ -864,6 +864,21 @@ and sends the reply. Settings are under `instagram_dm` in config.yaml.
   bot is also told never to take back or doubt an earlier reply, and that it has no
   flight times (it says the times show on the booking page).
 
+- **"OFERTA" gets the day's prices.** A message that is only the word OFERTA (or another
+  of `deals_keywords`; capitals, ë/e and punctuation make no difference) is answered at
+  once with the first `deals_count` (5) routes of the website's list, deals first, and
+  the site's link. The code writes this reply itself, so it costs nothing and the prices
+  are exactly the website's. Instagram has no channel a program can post to: an account
+  may only write to people who wrote first, within 24 hours of their last message. So
+  this is the "subscription": followers send OFERTA whenever they want the latest.
+  Tell them so in the bio and the captions. To try it: `python -m src.instagram_dm OFERTA`.
+- **"OFERTA" as a comment works too.** Someone who writes only the word under a post or
+  reel gets the same reply as a private message (`deals_from_comments`). Instagram allows
+  one private message per comment, within 7 days; it lands in their inbox if they follow
+  the account, otherwise in their message requests. When they write back in the chat the
+  bot answers like with anyone else. A longer comment ("oferta per Rome?") gets nothing.
+  This needs step 8 of the setup below.
+
 - **The owner takes over.** When you answer someone yourself in the Instagram app, the
   bot keeps quiet with that person for `owner_pause_hours` (12). Turn off Instagram's
   own automatic replies (Instant replies) so they don't count as you.
@@ -914,6 +929,13 @@ and sends the reply. Settings are under `instagram_dm` in config.yaml.
    `instagram_manage_messages` (and `pages_manage_metadata`), with a short screen
    recording of a message getting its answer. Meta may ask for business verification
    first. It usually takes a few days to two weeks.
+8. **Comments ("OFERTA" under a post):** add the `instagram_manage_comments` permission
+   to the Instagram use case, make a new Page token with it added to the others (step 3)
+   and replace `META_PAGE_TOKEN`. In Configure webhooks (step 5) subscribe to the
+   **comments** field as well. Until App Review gives `instagram_manage_comments` Advanced
+   Access (request it like in step 7), it works only for accounts with a role on the app.
+   To try it: comment OFERTA under a post from another account; the log says
+   "Sent the prices to ...".
 
 ## Price alerts (the bot)
 

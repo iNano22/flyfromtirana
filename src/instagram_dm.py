@@ -18,6 +18,15 @@ How a message travels:
      is written again, and never sent as it is.
   5. The reply goes back through the Graph API with the Page token (src/meta.py).
 
+A message that is only the word "OFERTA" (instagram_dm.deals_keywords) skips Claude: the bot
+answers at once with the day's best prices from the website's list (deals_reply). Instagram lets
+an account write only to people who wrote to it first, within 24 hours of their last message,
+so this is how followers "subscribe": they send the word whenever they want the latest prices.
+
+The same word as a comment under a post or reel gets that reply too, as a private message
+(instagram_dm.deals_from_comments; handle_comment). Instagram allows one private message per
+comment; once the person writes back in the chat, the bot answers them like anyone else.
+
 The bot never books and never takes anyone's details: it gives the price and the city's page on
 the website, where people book themselves. When the owner answers someone by hand in the
 Instagram app, the bot keeps quiet with that person for instagram_dm.owner_pause_hours.
@@ -35,6 +44,7 @@ import queue
 import re
 import sys
 import threading
+import unicodedata
 import uuid
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
@@ -88,6 +98,11 @@ TEXTS = {
     "not_text": ("Përshëndetje! 🙂 Lexoj vetëm mesazhe me shkrim. Më shkruaj qytetin ku do të shkosh "
                  "dhe kur, e të them çmimin më të mirë nga Tirana."),
     "error": "Më fal, s'po arrij të përgjigjem tani. Çmimet e fundit nga Tirana i gjen këtu: {site}",
+    # The reply to "OFERTA" (deals_reply): its first line, its last lines, and what it says without prices.
+    "deals_top": "✈️ Çmimet më të mira sot nga Tirana (vajtje, për person):",
+    "deals_end": ("Të gjitha datat dhe rezervimi: {site}\n"
+                  "Çmimet ndryshojnë shpejt. Shkruaj {keyword} kur të duash për më të fundit."),
+    "no_deals": "Tani për tani s'kemi çmime të reja. Provo sërish pas pak orësh, ose shiko këtu: {site}",
 }
 
 # Claude's instructions. The parts in {braces} are filled in from config.yaml.
@@ -380,6 +395,48 @@ def unknown_prices(reply: str, given: list[str]) -> list[int]:
 
 # --- the conversations -----------------------------------------------------------------------
 
+def plain_words(text: str) -> str:
+    """A message as the keyword check reads it: small letters only, without accents, punctuation
+    or emoji, one space between words. "Ofertë!! 🔥" -> "oferte"."""
+    letters = unicodedata.normalize("NFKD", text.lower())
+    return " ".join(re.sub(r"[^a-z ]", " ", letters).split())
+
+
+def asks_for_deals(question: list[str], settings: InstagramDMSettings) -> bool:
+    """Whether the person's newest messages are just the keyword ("OFERTA"), and nothing else.
+
+    Anything longer ("oferta per ne Rome ne dhjetor") is a real question and goes to Claude."""
+    keywords = {plain_words(word) for word in settings.deals_keywords}
+    return plain_words(" ".join(question)) in keywords
+
+
+def deals_reply(config: Config, storage: Storage, now: datetime) -> str:
+    """The reply to "OFERTA": the first routes of the website's list (deals first), one per line,
+    then the site's link. Written here, not by Claude: the prices are exactly the website's."""
+    settings = config.instagram_dm
+    site = site_base_url(config) or config.channel_handle
+    if site.startswith("http"):
+        site += f"?utm_source={DM_UTM_SOURCE}&utm_medium=dm"   # counted as the DM bot's, like the city links
+    offers = build_offers(config, storage, now)[:settings.deals_count]
+    if not offers:
+        return TEXTS["no_deals"].format(site=site)
+    months = WORDS["sq"]["months"]
+    guides = site_guides(config)   # the cities' Albanian names
+    lines = [TEXTS["deals_top"]]
+    for offer in offers:
+        route, best = offer.route, offer.best
+        guide = guides.get(route.city)
+        city = guide.name if guide and guide.name else route.city
+        if route.airport:
+            city += f" ({route.airport})"
+        line = f"{city} €{format_price(best.price)} · {format_dates([best.depart_date], months)}"
+        if offer.is_deal and offer.median:
+            line += f" (zakonisht €{format_price(offer.median)})"
+        lines.append(line)
+    lines.append(TEXTS["deals_end"].format(site=site, keyword=settings.deals_keywords[0].upper()))
+    return "\n".join(lines)
+
+
 @dataclass
 class Pending:
     """A person whose messages are waiting for their reply."""
@@ -422,7 +479,49 @@ class DMBot:
                         self.handle_event(event, storage)
                     except Exception:   # one bad message must not stop the others
                         log.exception("Could not handle an Instagram message")
+                # Comments under our posts and reels come under "changes" too, as field "comments".
+                for change in entry.get("changes") or []:
+                    if change.get("field") != "comments":
+                        continue
+                    try:
+                        self.handle_comment(change.get("value") or {}, str(entry.get("id") or ""), storage)
+                    except Exception:
+                        log.exception("Could not handle an Instagram comment")
         self.answer_due()
+
+    def handle_comment(self, comment: dict, account: str, storage: Storage) -> None:
+        """A comment under one of our posts. If it is just the keyword ("OFERTA"), send its writer
+        the day's prices as a private message. Any other comment is left alone.
+
+        `comment` is {"id": ..., "text": ..., "from": {"id": ..., "username": ...}, "media": {...}}
+        and `account` is our own Instagram id."""
+        comment_id = str(comment.get("id") or "")
+        writer = comment.get("from") or {}
+        person = str(writer.get("id") or "")
+        text = (comment.get("text") or "").strip()
+        if not self.settings.deals_from_comments or not comment_id or not person or person == account:
+            return   # switched off, an incomplete notification, or our own comment
+        if not asks_for_deals([text], self.settings):
+            return
+        now = self.clock()
+        # Kept like a message, so the same comment is never answered twice (Meta sends a comment
+        # on a boosted post two times) and Claude sees it if the person writes back in the chat.
+        if not storage.save_dm(f"comment-{comment_id}", person, "user", text, now):
+            return
+        if storage.count_dm_replies(person, now - timedelta(days=1)) >= self.settings.max_replies_per_day:
+            log.warning("Not answering %s's comment: %d replies in a day already", person,
+                        self.settings.max_replies_per_day)
+            return
+        # One message only: Instagram allows no second one until the person writes back.
+        reply = split_message(deals_reply(self.config, storage, now))[0]
+        try:
+            recipient, mid = self.meta.send_instagram_private_reply(comment_id, reply)
+        except MetaError as exc:
+            log.error("Could not answer the comment of %s: %s", writer.get("username") or person, exc)
+            return
+        # Saved under the person's chat, so the message's echo is known as the bot's, not the owner's.
+        storage.save_dm(mid or f"bot-{uuid.uuid4()}", recipient or person, "assistant", reply, self.clock())
+        log.info("Sent the prices to %s, who commented %r", writer.get("username") or person, text)
 
     def handle_event(self, event: dict, storage: Storage) -> None:
         """Keep the message; the reply is written once they've stopped writing (answer_due)."""
@@ -485,7 +584,9 @@ class DMBot:
             log.warning("Not answering %s: %d replies in a day already", person, self.settings.max_replies_per_day)
             return
         written = storage.count_dms_from(person)
-        if waiting.has_text:
+        if waiting.has_text and asks_for_deals(self.question(person, storage, now), self.settings):
+            reply = deals_reply(self.config, storage, now)   # "OFERTA": the day's prices, without Claude
+        elif waiting.has_text:
             self.show_typing(person)
             reply = self.write_reply(person, storage, now)
         else:
@@ -498,6 +599,11 @@ class DMBot:
             log.info("%s wrote more while the reply was written: writing it again", person)
             return
         self.send(person, reply, storage)
+
+    def question(self, person: str, storage: Storage, now: datetime) -> list[str]:
+        """The texts the person sent since the bot's last reply."""
+        chat = storage.dm_history(person, now - timedelta(hours=HISTORY_HOURS), self.settings.history_messages + 1)
+        return [text for _, text in latest_question(chat)]
 
     def write_reply(self, person: str, storage: Storage, now: datetime) -> str:
         chat = storage.dm_history(person, now - timedelta(hours=HISTORY_HOURS), self.settings.history_messages + 1)
@@ -671,12 +777,16 @@ def main(argv: list[str] | None = None) -> int:
     if not args:
         print('Usage: python -m src.instagram_dm "Sa kushton Londra?"')
         return 2
+    config = load_config()
+    now = datetime.now(timezone.utc)
+    if asks_for_deals(args, config.instagram_dm):   # "OFERTA": answered without Claude
+        with Storage(config.db_path) as storage:
+            print(deals_reply(config, storage, now))
+        return 0
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not key:
         log.error("ANTHROPIC_API_KEY is not set (put it in .env)")
         return 2
-    config = load_config()
-    now = datetime.now(timezone.utc)
     writer = Writer(config.instagram_dm, anthropic.Anthropic(api_key=key))
     with Storage(config.db_path) as storage:
         reply = writer.reply(instructions(config), price_table(config, storage, now), [("user", " ".join(args))],

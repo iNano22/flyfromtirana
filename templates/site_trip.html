@@ -51,9 +51,10 @@
   var box = document.getElementById('trip'), shade = document.getElementById('trip-shade');
   function read(key) { try { return sessionStorage.getItem(key) || ''; } catch (err) { return ''; } }
   function save(key, value) { try { sessionStorage.setItem(key, value); } catch (err) { /* storage blocked: the box may show again */ } }
-  /* The Aviasales link, in the same two shapes the Analytics script knows. */
+  /* The Aviasales link: a partner link with "aviasales" in its address. Not told by its first
+     part: Travelpayouts' Drive script swaps tp.media for another address of theirs on the page. */
   function isFlight(link) {
-    return link.hostname === 'aviasales.tp.st' || (link.hostname === 'tp.media' && link.href.indexOf('aviasales') !== -1);
+    return /\bsponsored\b/.test(link.getAttribute('rel') || '') && link.href.indexOf('aviasales') !== -1;
   }
   /* The airport code of the tapped flight: its row or card has it, and for the search card's
      button it is the chosen destination. */
