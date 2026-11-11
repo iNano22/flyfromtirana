@@ -12,6 +12,7 @@
 # is left out is simply not on the page.
 # The page's wide photo is assets/img/guides/<slug>.webp (960x600), if there is one.
 city: Milan
+name: Milano
 slug: milan
 tagline: Modë, Duomo dhe aperitiv në Navigli
 intro: >-

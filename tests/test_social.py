@@ -473,7 +473,7 @@ def test_a_day_without_deals_gets_a_city_guide_at_the_last_posting_time(posting)
     assert items[1]["image_url"].endswith("/social/guide_milan_2_sights_20261009-1730.jpg")
     assert 5 <= len(items) <= 10
     carousel, = [d for d in creates if d.get("media_type") == "CAROUSEL"]
-    assert "📍 MILAN:" in carousel["caption"] and "flyfromtirana.al/milan/ — linku në bio" in carousel["caption"]
+    assert "📍 MILANO:" in carousel["caption"] and "flyfromtirana.al/milan/ — linku në bio" in carousel["caption"]
     assert "👀 Mos humb: " in carousel["caption"] and "🍴 Provo: " in carousel["caption"]
     assert "Fluturime nga Tirana nga €60" in carousel["caption"]   # BGY's cheapest current price
     story, = [d for d in creates if d.get("media_type") == "STORIES"]
@@ -490,7 +490,7 @@ def test_a_day_without_deals_gets_a_city_guide_at_the_last_posting_time(posting)
     session3 = quiet_world()
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session3,
                now=evening + timedelta(days=1)) == 0
-    assert "Udhëzues: Rome" in telegram_text(drafts(session3)[0])
+    assert "Udhëzues: Roma" in telegram_text(drafts(session3)[0])
 
 
 def test_no_guide_before_the_last_posting_time_or_when_a_deal_was_posted(posting):

@@ -102,13 +102,13 @@ def test_city_page_links_to_the_partners_pages_for_that_city(config, storage):
 
     # Under the sights: tickets for Milan's sights. Under the airports: a transfer in Milan.
     sights = page[page.index('id="shiko"'):page.index('id="itinerari"')]
-    assert f'<p class="gmore"><a href="{link("tickets")}"' in sights and "atraksionet në Milan →" in sights
+    assert f'<p class="gmore"><a href="{link("tickets")}"' in sights and "atraksionet në Milano →" in sights
     airports = page[page.index('id="aeroporti"'):page.index('id="transporti"')]
     assert f'<p class="gmore"><a href="{link("transfer")}"' in airports
     # And all three among the travel services at the bottom.
     pills = page[page.index('<ul class="pills">'):]
-    for name, label in (("tickets", "Bileta për atraksionet në Milan"), ("transfer", "Transfertë nga aeroporti"),
-                        ("luggage", "Ruajtje bagazhesh në Milan")):
+    for name, label in (("tickets", "Bileta për atraksionet në Milano"), ("transfer", "Transfertë nga aeroporti"),
+                        ("luggage", "Ruajtje bagazhesh në Milano")):
         assert f'<li><a href="{link(name)}" target="_blank" rel="noopener sponsored">{label}</a></li>' in pills
 
     # Without the partner links the guide's parts are still there, just without those lines.
@@ -124,17 +124,17 @@ def test_city_page_shows_getyourguides_widget_for_that_city(config, storage):
     link = "https://www.getyourguide.com/milan-l139/?partner_id=ABC123&amp;cmp=website"
     # The widget: Milan's number at GetYourGuide (the 139 in its address), 8 activities, the link's Partner ID.
     tours = page[page.index('<section class="block wrap" id="ture"'):page.index('<ul class="pills">')]
-    assert '<h2 id="tours-h">Ture dhe aktivitete në Milan</h2>' in tours
+    assert '<h2 id="tours-h">Ture dhe aktivitete në Milano</h2>' in tours
     assert ('data-gyg-widget="activities" data-gyg-location-id="139" data-gyg-number-of-items="8" '
             'data-gyg-locale-code="en-US" data-gyg-cmp="website" data-gyg-partner-id="ABC123"></div>') in tours
     # GetYourGuide's script draws it. It is in the page's head, once, as on every page of the site.
     script = 'pa.umd.production.min.js" data-gyg-partner-id="ABC123"></script>'
     assert page.count(script) == 1 and page.index(script) < page.index("</head>")
-    assert f'<p class="gmore"><a href="{link}"' in tours and "Shiko të gjitha turet dhe aktivitetet në Milan →" in tours
+    assert f'<p class="gmore"><a href="{link}"' in tours and "Shiko të gjitha turet dhe aktivitetet në Milano →" in tours
     # The same link under the day trips and among the services; "Në këtë faqe" leads to the widget.
     daytrips = page[page.index('id="udhetime-ditore"'):page.index('class="facts"')]
-    assert f'<p class="gmore"><a href="{link}"' in daytrips and "udhëtimet ditore nga Milan →" in daytrips
-    assert f'<li><a href="{link}" target="_blank" rel="noopener sponsored">Ture dhe aktivitete në Milan</a></li>' in page
+    assert f'<p class="gmore"><a href="{link}"' in daytrips and "udhëtimet ditore nga Milano →" in daytrips
+    assert f'<li><a href="{link}" target="_blank" rel="noopener sponsored">Ture dhe aktivitete në Milano</a></li>' in page
     assert '<li><a href="#ture" data-part="1">Ture dhe aktivitete</a></li>' in page
     assert not PLACEHOLDER.search(page)
 
@@ -165,7 +165,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     milan_prices(storage)
     page = milan_page(config, storage)
 
-    assert "<title>Fluturime të lira Tirana – Milan: çmime dhe udhëzues | FlyFromTirana</title>" in page
+    assert "<title>Fluturime të lira Tirana – Milano: çmime dhe udhëzues | FlyFromTirana</title>" in page
     assert '<link rel="canonical" href="https://flyfromtirana.al/milan/">' in page
     assert 'nga <b>€19</b> vajtje' in page                                   # the cheapest of the city's airports
     # One ticket per airport, cheapest first; only Bergamo is a deal.
@@ -181,7 +181,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert "<h2>Çfarë të hash</h2>" in page and "<li><b>Risotto alla milanese</b>" in page
     assert "<h3>Malpensa (MXP)</h3>" in page and "<h3>Bergamo (BGY)</h3>" in page
     assert "<h2>Si të lëvizësh në qytet</h2><p>Qendra përshkohet në këmbë" in page
-    assert "<h2>Udhëtime ditore nga Milan</h2>" in page and "<li><b>Liqeni i Komos</b>" in page
+    assert "<h2>Udhëtime ditore nga Milano</h2>" in page and "<li><b>Liqeni i Komos</b>" in page
     assert "Malpensa Express" in page and "<h3>Sa kushton</h3>" in page and "<h3>Kur të shkosh</h3>" in page
     # Questions: the city's own, the country's entry rules, and the one every page has.
     assert '<div class="qa"><h3>Malpensa apo Bergamo: cili aeroport është më i mirë?</h3>' in page
@@ -250,10 +250,10 @@ def test_main_page_links_to_the_city_pages(config, storage):
     milan = tiles[tiles.index('<a href="milan/">'):tiles.index('<a href="rome/">')]
     assert '<img src="./img/guides/milan.webp"' in milan                      # its wide photo
     assert "<small>nga</small> €19" in milan                                  # the city's cheapest price
-    assert "Milan</b>" in milan and "Modë, Duomo dhe aperitiv në Navigli" in milan and "Lexo udhëzuesin" in milan
+    assert "Milano</b>" in milan and "Modë, Duomo dhe aperitiv në Navigli" in milan and "Lexo udhëzuesin" in milan
     rome = tiles[tiles.index('<a href="rome/">'):tiles.index('<a href="bologna/">')]
-    assert "gprice" not in rome and "Rome</b>" in rome                        # no price yet: no sticker
-    assert '<a href="milan/">Udhëzues për Milan</a>' in page                  # on Milan's tickets
+    assert "gprice" not in rome and "Roma</b>" in rome                        # no price yet: no sticker
+    assert '<a href="milan/">Udhëzues për Milano</a>' in page                  # on Milan's tickets
     assert f"Udhëzues për {count} qytete" in page                             # footer
     assert 'Made by <a href="https://devbay.cloud">Devbay.cloud</a>' in page
     without = render_site([], config, LinkBuilder(config.website.links, "1"), updated_at=NOW, now=NOW)
