@@ -431,8 +431,11 @@ def test_site_uses_its_own_partner_links(config, storage):
                        updated_at=NOW, now=NOW)
     assert config.website.links.partners["esim"].url in page
     assert config.links.partners["esim"].url not in page
-    # Flight links go through the site's own Aviasales short link, with the search inside it.
+    # Flight links go through the site's own tracking redirect, which carries the site's
+    # SubID (marker.website), with the search inside it.
     redirect = config.website.links.flight_wrapper.split("{url}")[0]
+    assert "{marker}.{sub_id}" in redirect
+    redirect = redirect.format(marker="12345", sub_id="website").replace("&", "&amp;")
     assert redirect.startswith("https://") and config.links.flight_wrapper == ""
     assert f'class="book" href="{redirect}https%3A%2F%2Fwww.aviasales.com%2Fsearch%2FTIA2111BGY1%3F' in page
 

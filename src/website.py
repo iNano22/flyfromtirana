@@ -312,6 +312,7 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["JS_WORDS"] = script_words(strings)
     values["ANALYTICS"] = analytics_html(config, language, privacy_url(config, language, root))
     values["ADS"] = ads_html(config)
+    values["SOURCE"] = source_html(config)
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site.html", strings), values) + "\n"
 
@@ -604,6 +605,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values["HREFLANG"] = hreflang_links(config, guide.slug)
     values["ANALYTICS"] = analytics_html(config, language, privacy_url(config, language, root))
     values["ADS"] = ads_html(config)
+    values["SOURCE"] = source_html(config)
     values["DRIVE"] = drive_html(config)
     return render(load_site_template("site_dest.html", strings), values) + "\n"
 
@@ -687,6 +689,7 @@ def render_privacy(config: Config, links: LinkBuilder, *, now: datetime, languag
     values["HREFLANG"] = hreflang_links(config, PRIVACY_SLUG)
     values["ANALYTICS"] = analytics_html(config, language, "./")   # the cookie box's link: this same page
     values["ADS"] = ads_html(config)
+    values["SOURCE"] = source_html(config)
     return render(load_site_template("site_privacy.html", strings), values) + "\n"
 
 
@@ -738,6 +741,15 @@ def ads_html(config: Config) -> str | None:
     values = {"WEBSITE_TG": json.dumps(join_link(config, "website")), "ADS_TG": json.dumps(ads_link),
               "ADS_SOURCE": json.dumps(UTM_SOURCE)}
     return render(load_site_template("site_ads.html"), values)
+
+
+def source_html(config: Config) -> str | None:
+    """The script that adds the visitor's source to the affiliate links' SubID
+    (templates/site_source.html): "website" becomes "website-meta" for a visitor from an ad.
+    None when the site has no SubID."""
+    if not config.website.sub_id:
+        return None
+    return render(load_site_template("site_source.html"), {"SUB_ID": json.dumps(config.website.sub_id)})
 
 
 def drive_html(config: Config) -> str | None:

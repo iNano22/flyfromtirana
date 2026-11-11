@@ -121,3 +121,14 @@ def test_the_video_file_is_written(config, tmp_path):
                                  handle="@flyfromtirana", fps=2)
     assert video.name == "video-reel.mp4" and video.stat().st_size > 0
     assert cover.name == "video-reel_cover.jpg" and cover.exists()
+
+
+def test_links_get_the_visitors_source_in_their_subid(config):
+    """Every page carries the script that turns the SubID "website" into "website-meta" for a
+    visitor from an ad (templates/site_source.html); the flight link keeps its SubID."""
+    out = config.website.output_dir
+    build_site(config, "12345", now=NOW)
+    for page in (out / "index.html", out / "milan" / "index.html", out / "privacy" / "index.html"):
+        text = page.read_text(encoding="utf-8")
+        assert 'var subid = "website"' in text and "'visit-source'" in text
+        assert "{" + "SOURCE" not in text

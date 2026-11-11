@@ -173,7 +173,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     assert page.index("<span class=\"code\">BGY</span>") < page.index("<span class=\"code\">MXP</span>")
     assert '<li class="fare deal">' in page and page.count("<span class=\"tag deal\">") == 1
     assert "Kthimi nga €24" in page and "zakonisht €60 <b>-68%</b>" in page
-    assert 'class="btn-book" href="https://aviasales.tp.st/' in page         # the site's own tracked links
+    assert 'class="btn-book" href="https://tp.media/r?marker=' in page         # the site's own tracked links
     # The guide, part by part.
     assert "<li><b>Duomo di Milano</b>" in page
     assert '<h2>Itinerar për 3 ditë</h2><ol class="days"><li>Duomo me ngjitje në tarracë' in page

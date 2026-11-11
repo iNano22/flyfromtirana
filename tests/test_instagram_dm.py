@@ -268,7 +268,7 @@ def test_the_price_table_has_the_city_its_price_and_its_page(config):
     line = next(line for line in table.splitlines() if line.startswith("BGY |"))
     assert "Milan" in line and "Bergamo airport" in line
     assert "€19 on 20 Nov, 22 Nov" in line and "from €24 on 27 Nov, after the 20 Nov flight out" in line
-    assert line.endswith("https://flyfromtirana.al/milan/")
+    assert line.endswith("https://flyfromtirana.al/milan/?utm_source=igdm&utm_medium=dm")   # counted as the DM bot's
     assert "Today is Friday 9 Oct 2026." in table
     assert "no fresh price" in table and "Athens" in table   # a city without prices is still named
 

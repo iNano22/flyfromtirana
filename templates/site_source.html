@@ -1,0 +1,48 @@
+<!-- Where the visitor came from, added to the affiliate links' SubID, so the Travelpayouts
+     report (Group by SubID) and GetYourGuide's campaigns show which source earned a click:
+     "website" becomes "website-meta" for a visitor from an ad, "website-instagram" for one
+     from Instagram, and so on. A visitor with no known source keeps plain "website".
+     The source is the utm_source in the page's address (?utm_source=meta on the ads' links,
+     ?utm_source=igbio if the Instagram bio link is written that way), or else the site the
+     visitor arrived from (Instagram, Facebook, Telegram, Google). It is kept for the rest of
+     the visit (sessionStorage "visit-source"). SUB_ID is the site's SubID as a JS string with
+     its quotes (website.sub_id in config.yaml).
+     Same rules as the other templates: never write an uppercase word in curly braces unless it
+     is a value, never two opening square brackets in a row, JS variable names lowercase. -->
+<script>
+(function () {
+  var subid = {SUB_ID}, source = '';
+  /* Only small letters and digits, so the SubID stays a simple word like "website-meta". */
+  function clean(text) { return (text || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 20); }
+  /* The site the visitor arrived from, when the address has no utm_source. */
+  function fromReferrer() {
+    var host = '';
+    try { host = new URL(document.referrer).hostname; } catch (err) { return ''; }
+    if (/instagram\./.test(host)) { return 'instagram'; }
+    if (/facebook\.|fb\./.test(host)) { return 'facebook'; }
+    if (/(^|\.)t\.me$|telegram\./.test(host)) { return 'telegram'; }
+    if (/google\./.test(host)) { return 'google'; }
+    return '';
+  }
+  try {
+    source = clean(new URLSearchParams(location.search).get('utm_source')) || fromReferrer();
+    if (source) { sessionStorage.setItem('visit-source', source); } else { source = clean(sessionStorage.getItem('visit-source')); }
+  } catch (err) { /* storage blocked: only the first page of the visit knows the source */ }
+  if (!source) { return; }
+  /* The SubID inside a link: after "marker=12345." (Travelpayouts; "=" is "%3D" where one link
+     sits inside another) or after "cmp=" (the tours partner). Not followed by a letter or "-", so a
+     link that already has its source is left alone. */
+  var pattern = new RegExp('((?:marker(?:=|%3D)\\d+\\.|cmp=)' + subid + ')(?![\\w-])', 'g');
+  function tag(link) {
+    var href = link.getAttribute('href') || '';
+    var tagged = href.replace(pattern, '$1-' + source);
+    if (tagged !== href) { link.setAttribute('href', tagged); }
+  }
+  document.querySelectorAll('a[href]').forEach(tag);
+  /* Again at the tap, for links the page builds later (the search card's button). */
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest ? event.target.closest('a[href]') : null;
+    if (link) { tag(link); }
+  }, true);
+})();
+</script>

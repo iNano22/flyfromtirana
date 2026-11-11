@@ -140,7 +140,8 @@ seats, never take payments, never ask for names, passports, ID or card details. 
 themselves on the city's page.
 
 Links: the table gives each city's page in Albanian. In English use the same address with /en/ \
-after the domain ({site}en/milan/), in Italian with /it/. Write each link in full.
+after the domain ({site}en/milan/), in Italian with /it/. Write each link in full, with its \
+?utm_source=... ending exactly as the table has it.
 """
 
 PRICES_TOOL = {
@@ -180,6 +181,8 @@ def instructions(config: Config) -> str:
     )
 
 
+DM_UTM_SOURCE = "igdm"   # utm_source on the site links the bot sends
+
 def alerts_bot(config: Config) -> str | None:
     """Where people set price alerts (src/bot.py): the bot's chat, or None with alerts off."""
     alerts = config.alerts
@@ -217,6 +220,10 @@ def price_table(config: Config, storage: Storage, now: datetime) -> str:
         back_text = (f"from €{format_price(back.price)} on {format_dates([back.depart_date], months)}, "
                      f"after the {format_dates([best.depart_date], months)} flight out" if back else "-")
         page = page_url(config, config.website.languages[0], guide.slug if guide else None) or ""
+        if page:
+            # Marks the visit as coming from the DM bot: Google Analytics shows it as source
+            # "igdm", and the site adds it to the booking links' SubID (templates/site_source.html).
+            page += f"?utm_source={DM_UTM_SOURCE}&utm_medium=dm"
         lines.append(f"{route.iata} | {city} {route.flag} | {cheapest} | {back_text} | {page}")
     waiting = [route.city for route in config.routes if route.city not in priced]
     if waiting:

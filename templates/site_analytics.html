@@ -94,7 +94,9 @@
     var where = place ? { destination: place.getAttribute('data-iata') } : {};
     if (host === 't.me') { return ['join_telegram', { button: link.className || 'link' }]; }
     if (host === 'wa.me') { return ['share_whatsapp', where]; }
-    if (host === 'aviasales.tp.st') {
+    /* The Aviasales link: Travelpayouts' redirect with the Aviasales address inside (or the
+       short link the site used before). */
+    if (host === 'aviasales.tp.st' || (host === 'tp.media' && link.href.indexOf('aviasales') !== -1)) {
       if (place && place.getAttribute('data-price')) { where.price = Number(place.getAttribute('data-price')); }
       return ['deal_click', where];
     }

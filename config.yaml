@@ -220,12 +220,13 @@ website:
   # the link from `links:`.
   links:
     flight:
-      # The site's Aviasales short link, used as a redirect: with ?u=... added it
-      # opens that Aviasales page (a search for one route and date) instead of
-      # the homepage, and the click is counted under the site's project.
-      # Travelpayouts puts its own marker on the link, so the "website" SubID is
-      # not used here. Empty = the plain Aviasales link with marker.website.
-      wrapper: "https://aviasales.tp.st/XXen6cDo?u={url}"
+      # Travelpayouts' tracking redirect for Aviasales (program p=4114, campaign_id=100).
+      # trs=583818 is the "Flyfromtirana" project, so the click is counted there, and the
+      # marker carries the SubID ("website", or "website-meta" for a visitor from an ad:
+      # templates/site_source.html), so the Travelpayouts report (Group by SubID) shows
+      # which source the click came from. The short link used before
+      # (https://aviasales.tp.st/XXen6cDo?u={url}) dropped the SubID.
+      wrapper: "https://tp.media/r?marker={marker}.{sub_id}&trs=583818&p=4114&campaign_id=100&u={url}"
     partners:
       esim:
         url: "https://airalo.tp.st/3G2AG28z"          # Airalo
