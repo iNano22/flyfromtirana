@@ -9,7 +9,7 @@
      photo cards, from site_card.html) PREMIUM (the block about the Premium channel, from
      site_premium.html, only while there is a premium channel) PHOTO_CREDITS (the footer's
      photo credits, missing unless a photo's licence requires one) GUIDE_TILES and GUIDE_COUNT (the
-     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) ADS (the switch to the ads' Telegram link, site_ads.html) SOURCE (adds the visitor's source to the links' SubID, site_source.html) ADS_SOURCE (the ads' utm_source value: a visitor who came with it gets the board before the headline, html.from-ad) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their script, which counts the visits) DRIVE (the Travelpayouts Drive
+     photo tiles that open the city pages, each from site_guide.html) ANALYTICS and GA_ON (only with Google Analytics on) ADS (the switch to the ads' Telegram link, site_ads.html) SOURCE (adds the visitor's source to the links' SubID, site_source.html) TRIP (the box a visitor sees on coming back from a flight link, site_trip.html) TOURS_CITY, TOURS_PRICE, TOURS_GUIDE_URL, TOURS_CITY_LINK and the three TOURS_GYG_ values (the tours block: GetYourGuide's widget for the city at the top of today's prices; all missing, and the block with them, when no city fits) ADS_SOURCE (the ads' utm_source value: a visitor who came with it gets the board before the headline, html.from-ad) GYG_PARTNER (the GetYourGuide Partner ID: with it the page loads their script, which counts the visits) DRIVE (the Travelpayouts Drive
      script, only when one is set) LANG (the page's language code) LANG_MENU (the language
      dropdown in the top bar, from site_lang.html) LANG_LINKS (the same links as a row, in the footer) HREFLANG (the tags that tell search engines about the other languages) ASSETS (the
      way to the top of the site, in front of every photo's address) JS_WORDS (the script's words).
@@ -227,6 +227,8 @@ h1 span { display: block; }
 .more { margin-top: 12px; margin-bottom: 0; }
 .more a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
 .more .ic { width: 18px; height: 18px; stroke-width: 2.5; }
+/* The tours block: GetYourGuide's widget draws itself inside .gyg; two links under it. */
+.tours-more { display: flex; flex-wrap: wrap; gap: 4px 28px; }
 /* "Show more" under the long lists. Only with JavaScript: without it every row is already shown.
    The guides' button is for wide screens only, where the tiles are a grid (on a phone they swipe). */
 .morebar, .gmore { display: none; justify-content: center; margin: 16px 0 0; }
@@ -577,6 +579,7 @@ h1 span { display: block; }
     </div>
     <p class="morebar" hidden><button type="button" class="btn-more"><span></span><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button></p>
   </section>
+  [[<section class="tours wrap" id="ture" aria-labelledby="tours-h"><div class="shead"><h2 id="tours-h">{T_HOME_TOURS_TITLE}</h2><p class="hint">{T_HOME_TOURS_HINT}</p></div><div class="gyg" data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-widget="activities" data-gyg-location-id="{TOURS_GYG_CITY}" data-gyg-number-of-items="{TOURS_GYG_ITEMS}" data-gyg-locale-code="{T_GYG_LOCALE}" data-gyg-cmp="{TOURS_GYG_CMP}" data-gyg-partner-id="{GYG_PARTNER}"></div><p class="more tours-more"><a href="{TOURS_GUIDE_URL}">{T_HOME_TOURS_GUIDE}<svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a><a href="{TOURS_CITY_LINK}" target="_blank" rel="noopener sponsored">{T_HOME_TOURS_ALL}</a></p></section>]]
   <section class="how wrap" id="si-funksionon" aria-labelledby="how-h">
     <div class="shead"><h2 id="how-h">{T_HOW}</h2></div>
     <ol class="steps">
@@ -981,6 +984,7 @@ h1 span { display: block; }
   }
 })();
 </script>
+{TRIP}
 {ANALYTICS}
 {ADS}
 {SOURCE}

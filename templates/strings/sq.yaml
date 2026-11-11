@@ -175,6 +175,17 @@ page:
   D_TOURS_TITLE: "Ture dhe aktivitete në {CITY}"
   D_TOURS_HINT: "Ture me guidë, udhëtime ditore dhe aktivitete nga GetYourGuide, ku bëhet edhe rezervimi. Përshkrimet janë në anglisht."
   D_TOURS_ALL: "Shiko të gjitha turet dhe aktivitetet në {CITY} →"
+  # The main page's tours block (the city at the top of today's prices) and the box a visitor
+  # sees on coming back from a flight link (templates/site_trip.html; the script writes the
+  # city into data-trip-city).
+  HOME_TOURS_TITLE: "Çfarë të bësh në {TOURS_CITY}"
+  HOME_TOURS_HINT: "{TOURS_CITY} është në krye të çmimeve sot, nga €{TOURS_PRICE} vajtje. Ture dhe aktivitete nga GetYourGuide, ku bëhet edhe rezervimi. Përshkrimet janë në anglisht."
+  HOME_TOURS_GUIDE: "Udhëzuesi për {TOURS_CITY}"
+  HOME_TOURS_ALL: "Të gjitha turet në {TOURS_CITY} →"
+  TRIP_TITLE: "Po shkon në <span data-trip-city></span>?"
+  TRIP_HINT: "Bileta rezervohet në Aviasales. Pjesën tjetër të udhëtimit e gjen këtu:"
+  TRIP_ALERT: "Merr ofertat e radhës në Telegram"
+  TRIP_CLOSE: "Mbyll"
   # The language GetYourGuide's widget is shown in (it has no Albanian).
   GYG_LOCALE: "en-US"
   D_BUDGET: "Sa kushton"

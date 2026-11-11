@@ -14,7 +14,7 @@
      show what visitors (an ad's too: their source is utm_source) did on the page:
      join_telegram (t.me, with the button's class), deal_click (Aviasales, with the route's
      destination and price), partner_click (any other rel="sponsored" link: Tiqets, GetYourGuide...,
-     with the partner's name) and share_whatsapp (wa.me, with the destination).
+     with the partner's name, and place "trip_box" when the link is in the box of site_trip.html) and share_whatsapp (wa.me, with the destination).
      Same rules as the other templates: never write an uppercase word in curly braces unless it
      is a value, never two opening square brackets in a row, JS variable names lowercase. -->
 <style>
@@ -103,7 +103,7 @@
     /* Every partner link is marked rel="sponsored"; its name is the address's first word
        ("tiqets" from tiqets.tp.st, leaving out a "www."). */
     if (/\bsponsored\b/.test(link.getAttribute('rel') || '')) {
-      return ['partner_click', { partner: host.replace(/^www\./, '').split('.')[0] }];
+      return ['partner_click', { partner: host.replace(/^www\./, '').split('.')[0], place: link.closest('.tripbox') ? 'trip_box' : 'page' }];
     }
     return null;
   }

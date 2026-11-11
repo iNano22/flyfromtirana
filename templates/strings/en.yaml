@@ -175,6 +175,17 @@ page:
   D_TOURS_TITLE: "Tours and activities in {CITY}"
   D_TOURS_HINT: "Guided tours, day trips and activities from GetYourGuide, where the booking is made."
   D_TOURS_ALL: "See all tours and activities in {CITY} →"
+  # The main page's tours block (the city at the top of today's prices) and the box a visitor
+  # sees on coming back from a flight link (templates/site_trip.html; the script writes the
+  # city into data-trip-city).
+  HOME_TOURS_TITLE: "What to do in {TOURS_CITY}"
+  HOME_TOURS_HINT: "{TOURS_CITY} tops today's prices, from €{TOURS_PRICE} one way. Tours and activities from GetYourGuide, where the booking is made."
+  HOME_TOURS_GUIDE: "The {TOURS_CITY} guide"
+  HOME_TOURS_ALL: "All tours in {TOURS_CITY} →"
+  TRIP_TITLE: "Going to <span data-trip-city></span>?"
+  TRIP_HINT: "The ticket is booked on Aviasales. The rest of the trip is here:"
+  TRIP_ALERT: "Get the next deals on Telegram"
+  TRIP_CLOSE: "Close"
   # The language GetYourGuide's widget is shown in (it has no Albanian).
   GYG_LOCALE: "en-US"
   D_BUDGET: "What it costs"

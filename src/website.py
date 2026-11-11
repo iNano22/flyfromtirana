@@ -72,6 +72,9 @@ PRIVACY_SLUG = "privacy"
 # How many routes get a line on the black board at the top of the page ("Çmimet më të mira
 # sot"): the first ones of the page, so the deals, biggest saving first, then the cheapest.
 HERO_ROWS = 5
+# How many activities GetYourGuide's widget shows on the main page (the city pages show
+# website.getyourguide_activities of them).
+HOME_TOURS = 4
 
 # Photos for the page (ASSETS_DIR, from src/photos.py): assets/img/dest/<iata>.webp
 # for a route's card, assets/img/services/<partner>.webp for the travel services,
@@ -314,6 +317,8 @@ def render_site(offers: list[Deal], config: Config, links: LinkBuilder, *,
     values["ADS"] = ads_html(config)
     values["SOURCE"] = source_html(config)
     values["DRIVE"] = drive_html(config)
+    values["TRIP"] = trip_html(offers, config, links, strings, guides)
+    values.update(home_tours_values(offers, config, links, guides))
     return render(load_site_template("site.html", strings), values) + "\n"
 
 
@@ -607,6 +612,7 @@ def render_guide_page(guide: Guide, guides: dict[str, Guide], offers: list[Deal]
     values["ADS"] = ads_html(config)
     values["SOURCE"] = source_html(config)
     values["DRIVE"] = drive_html(config)
+    values["TRIP"] = trip_html(city_offers, config, links, strings, guides, pages=None)
     return render(load_site_template("site_dest.html", strings), values) + "\n"
 
 
@@ -750,6 +756,72 @@ def source_html(config: Config) -> str | None:
     if not config.website.sub_id:
         return None
     return render(load_site_template("site_source.html"), {"SUB_ID": json.dumps(config.website.sub_id)})
+
+
+def trip_html(offers: list[Deal], config: Config, links: LinkBuilder, strings: Strings,
+              guides: dict[str, Guide], *, pages: str | None = "") -> str | None:
+    """The box a visitor sees on coming back from a flight link (templates/site_trip.html):
+    "Po shkon në Milano?" with that city's tours, tickets, transfer and guide.
+
+    offers: the flights the page links to. pages: the way from the page to the city pages
+    ("" on the main page, "../" on a city page for the search of other cities), or None to
+    leave the guide's link out (a city page is the guide already).
+    None when the page has no flights.
+    """
+    trips = {}
+    for offer in offers:
+        route, checkin = offer.route, offer.best.depart_date
+        guide = guides.get(route.city)
+        trip = {"city": guide.display_name if guide else route.city,
+                "guide": f"{pages}{guide.slug}/" if guide and pages is not None else None}
+        for name in ("tours", "tickets", "transfer", "hotel"):
+            trip[name] = links.partner(name, route, checkin, checkin + timedelta(days=3))
+        trips[route.iata] = {key: value for key, value in trip.items() if value}
+    if not trips:
+        return None
+    first = offers[0]   # the eSIM link is the same for every city: any route and dates fill it
+    esim = links.partner("esim", first.route, first.best.depart_date, first.best.depart_date)
+    # Inside a <script> block a text must not look like HTML ("</script>" would end the block
+    # early), so the three HTML characters are written as JavaScript's own codes for them.
+    script_safe = {"<": "\\u003c", ">": "\\u003e", "&": "\\u0026"}
+    as_script = re.sub("[<>&]", lambda m: script_safe[m.group()], json.dumps(trips, ensure_ascii=False))
+    values = {
+        "TRIPS": as_script,
+        "ESIM_LINK": html.escape(esim, quote=True) if esim else None,
+        "TELEGRAM_URL": html.escape(join_link(config, "website"), quote=True),
+    }
+    # A kind of link no city has (hotels, before a hotel program is joined) gets no line in the box.
+    for name in ("tours", "tickets", "transfer", "hotel", "guide"):
+        values[f"HAS_{name.upper()}"] = "1" if any(name in trip for trip in trips.values()) else None
+    return render(load_site_template("site_trip.html", strings), values)
+
+
+def home_tours_values(offers: list[Deal], config: Config, links: LinkBuilder,
+                      guides: dict[str, Guide]) -> dict[str, str | None]:
+    """The main page's tours block: GetYourGuide's widget for the city at the top of today's prices.
+
+    The city is the first route on the page (deals come first) that has a guide and a page
+    at GetYourGuide. Its bookings are counted under the site's campaign name with "-home"
+    added ("website-home"), apart from the city pages' widget. Every value is None when no
+    city fits or the widget is off, and the block is then left out.
+    """
+    for offer in offers:
+        guide = guides.get(offer.route.city)
+        checkin = offer.best.depart_date
+        tours_link = links.partner("tours", offer.route, checkin, checkin + timedelta(days=3))
+        widget = getyourguide_values(config, tours_link)
+        if guide and widget["TOURS_ON"]:
+            return {
+                "TOURS_CITY": html.escape(guide.display_name, quote=False),
+                "TOURS_PRICE": format_price(offer.best.price),
+                "TOURS_GUIDE_URL": f"{guide.slug}/",
+                "TOURS_CITY_LINK": html.escape(tours_link, quote=True),
+                "TOURS_GYG_CITY": widget["GYG_CITY"],
+                "TOURS_GYG_ITEMS": str(min(HOME_TOURS, config.website.getyourguide_activities)),
+                "TOURS_GYG_CMP": html.escape(f"{widget['GYG_CMP']}-home", quote=True),
+            }
+    return dict.fromkeys(("TOURS_CITY", "TOURS_PRICE", "TOURS_GUIDE_URL", "TOURS_CITY_LINK",
+                          "TOURS_GYG_CITY", "TOURS_GYG_ITEMS", "TOURS_GYG_CMP"))
 
 
 def drive_html(config: Config) -> str | None:

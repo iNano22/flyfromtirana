@@ -1,5 +1,6 @@
 """The static website: which routes it lists, in what order, and what the page contains."""
 from dataclasses import replace
+import json
 import re
 from datetime import date, time, timedelta
 from urllib.parse import quote
@@ -16,7 +17,7 @@ from src.growth import join_link
 from src.guides import load_guides
 from src.photos import ASSETS_DIR
 from src.website import (build_offers, build_site, city_label, country_code, load_site_template, main,
-                         render_privacy, render_site)
+                         render_guide_page, render_privacy, render_site, site_guides)
 from tests.conftest import NOW, make_quote, seed_history, with_tours
 
 NOV = date(2026, 11, 1)
@@ -470,7 +471,9 @@ def test_tickets_transfer_and_luggage_cards_open_the_partners_general_pages(conf
         general = site.partners[name].wrapper.format(url=quote(site.partners[name].url, safe=""))
         assert page.count(f'href="{general}"') == 2                     # the card and the footer
         assert site.partners[name].wrapper != config.links.partners[name].wrapper
-    assert "attractions-c" not in page and "luggage-storage" not in page
+    # (The cities' own pages are only in the box a visitor sees after a flight link, as its data.)
+    hrefs = " ".join(re.findall(r'href="([^"]*)"', page))
+    assert "attractions-c" not in hrefs and "luggage-storage" not in hrefs
 
 
 def test_tours_card_opens_getyourguide_with_the_partner_id(config, storage):
@@ -538,3 +541,67 @@ def test_analytics_counts_taps_on_telegram_deal_and_partner_links(config):
     # Without Analytics there is nothing to send them to, so the script isn't there.
     off = replace(config, website=replace(config.website, google_analytics_id=""))
     assert "join_telegram" not in render_site([], off, links, updated_at=NOW, now=NOW)
+
+
+# --- the box after a flight link, and the main page's tours block -------------------
+
+def trip_data(page):
+    """The cities' links the box's script holds (var trips = {...};), as a dict."""
+    return json.loads(re.search(r"var trips = (\{.*\});", page).group(1))
+
+
+def test_trip_box_has_each_citys_links_for_after_a_flight_link(config, storage):
+    two_routes(storage)
+    config = with_tours(config)
+    guides = site_guides(config)
+    links = LinkBuilder(config.website.links, "12345")
+    offers = build_offers(config, storage, NOW)
+    page = render_site(offers, config, links, updated_at=NOW, now=NOW, guides=guides)
+    # The box is on the page, hidden: the script shows it when the visitor comes back.
+    assert '<div class="tripbox" id="trip" role="dialog" aria-labelledby="trip-h" hidden>' in page
+    assert "Po shkon në <span data-trip-city></span>?" in page
+    trips = trip_data(page)
+    assert set(trips) == {"BGY", "VIE"}
+    milan = trips["BGY"]
+    assert milan["city"] == "Milano" and milan["guide"] == "milan/"          # the Albanian name, the city's page
+    assert milan["tours"] == "https://www.getyourguide.com/milan-l139/?partner_id=ABC123&cmp=website"
+    assert "milan-attractions" in milan["tickets"] and "welcomepickups.com%2Fmilan" in milan["transfer"]
+    # No hotel program yet: no hotel link for any city, and no line for it in the box.
+    assert "hotel" not in milan and 'data-trip="hotel"' not in page and 'data-trip="tours"' in page
+    # Inside the <script> block the links' "&" is written as JavaScript's code for it.
+    assert "partner_id=ABC123\\u0026cmp=website" in page
+    assert not PLACEHOLDER.search(page)
+
+    # A city page: the same box for its own flights, without the guide's link (the page is the guide).
+    city = render_guide_page(guides["Milan"], guides, offers, config, links, updated_at=NOW, now=NOW)
+    assert set(trip_data(city)) == {"BGY"} and 'data-trip="guide"' not in city
+    assert '<li class="fare deal" data-iata="BGY">' in city                 # the script reads the code from here
+
+    # No prices, no flight links: no box.
+    empty = render_site([], config, links, updated_at=NOW, now=NOW, guides=guides)
+    assert 'id="trip"' not in empty and "var trips = {" not in empty
+
+
+def test_main_page_shows_tours_for_the_city_at_the_top_of_the_prices(config, storage):
+    two_routes(storage)
+    config = with_tours(config)
+    guides = site_guides(config)
+    links = LinkBuilder(config.website.links, "12345")
+    offers = build_offers(config, storage, NOW)
+    page = render_site(offers, config, links, updated_at=NOW, now=NOW, guides=guides)
+    block = page[page.index('<section class="tours wrap" id="ture"'):page.index('id="si-funksionon"')]
+    # Bergamo is the deal, so Milan: its name and price, GetYourGuide's number for it, 4 activities,
+    # and a campaign name of its own ("website-home") apart from the city pages' widget.
+    assert "Çfarë të bësh në Milano</h2>" in block and "nga €19 vajtje" in block
+    assert 'data-gyg-location-id="139"' in block and 'data-gyg-number-of-items="4"' in block
+    assert 'data-gyg-cmp="website-home"' in block and 'data-gyg-partner-id="ABC123"' in block
+    assert '<a href="milan/">Udhëzuesi për Milano' in block
+    assert 'href="https://www.getyourguide.com/milan-l139/?partner_id=ABC123&amp;cmp=website" target="_blank" rel="noopener sponsored">Të gjitha turet në Milano →</a>' in block
+
+    # Widget switched off, or no tours link: no block.
+    for off in (with_tours(config, activities=0),
+                replace(config, website=replace(config.website, links=replace(
+                    config.website.links, partners=dict(config.website.links.partners, tours=LinkTemplate()))))):
+        page = render_site(build_offers(off, storage, NOW), off, LinkBuilder(off.website.links, "12345"),
+                           updated_at=NOW, now=NOW, guides=guides)
+        assert 'id="ture"' not in page and "data-gyg-widget" not in page

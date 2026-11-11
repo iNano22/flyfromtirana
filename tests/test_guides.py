@@ -171,7 +171,7 @@ def test_city_page_shows_prices_then_the_guide(config, storage):
     # One ticket per airport, cheapest first; only Bergamo is a deal.
     assert page.count('<li class="fare') == 2
     assert page.index("<span class=\"code\">BGY</span>") < page.index("<span class=\"code\">MXP</span>")
-    assert '<li class="fare deal">' in page and page.count("<span class=\"tag deal\">") == 1
+    assert '<li class="fare deal" data-iata="BGY">' in page and page.count("<span class=\"tag deal\">") == 1
     assert "Kthimi nga €24" in page and "zakonisht €60 <b>-68%</b>" in page
     assert 'class="btn-book" href="https://tp.media/r?marker=' in page         # the site's own tracked links
     # The guide, part by part.

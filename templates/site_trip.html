@@ -1,0 +1,103 @@
+<!-- "Po shkon në Milano?": the box a visitor sees on coming back to the page after tapping a
+     flight link. The flight opens at Aviasales as before; nothing changes about that tap. When
+     the visitor returns (back to this tab, or back with the browser's arrow inside Instagram's
+     own browser), the box offers the rest of that trip: tours, tickets, the airport transfer,
+     an eSIM, the hotel link when there is one, the city's guide and the Telegram channel.
+     It is shown once per city in a visit, and not again in that visit after the visitor closes
+     it (sessionStorage "trip-seen" and "trip-off"; "trip-next" is the city waiting to be shown).
+     TRIPS is the cities' links as a JavaScript object, one entry per airport code:
+     { "BGY": { "city": "Milano", "guide": "milan/", "tours": "...", "tickets": "...",
+     "transfer": "...", "hotel": "..." } }; a link that is missing is left out of the box.
+     ESIM_LINK and TELEGRAM_URL are the same for every city, so they are written here.
+     HAS_TOURS, HAS_TICKETS, HAS_TRANSFER, HAS_HOTEL and HAS_GUIDE are "1" when at least one city
+     has that link; without it the link's line is left out of the page altogether.
+     Same rules as the other templates: never write an uppercase word in curly braces unless it
+     is a value, never two opening square brackets in a row, JS variable names lowercase. -->
+<style>
+.tripbox-shade { position: fixed; inset: 0; z-index: 50; background: rgba(15, 17, 20, 0.55); }
+.tripbox { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 51; max-width: 520px; max-height: calc(100vh - 24px); margin: 0 auto; overflow: auto; border-radius: 12px; background: #ffffff; color: #0f1114; box-shadow: 0 0 0 2px #0f1114, 0 18px 50px rgba(15, 17, 20, 0.45); font-size: 16px; line-height: 1.35; }
+.tripbox[hidden], .tripbox-shade[hidden], .tripbox li[hidden] { display: none; }
+.tripbox-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 16px 16px 14px 18px; background: #ffd60a; }
+.tripbox-head h2 { margin: 0; font-size: 26px; line-height: 1.05; font-weight: 800; font-stretch: 80%; }
+.tripbox-x { flex: 0 0 auto; width: 44px; height: 44px; margin: -6px -6px -6px 0; border: 0; border-radius: 6px; background: transparent; color: #0f1114; font: inherit; font-size: 28px; line-height: 1; cursor: pointer; }
+.tripbox-x:hover { background: rgba(15, 17, 20, 0.1); }
+.tripbox-hint { margin: 14px 18px 6px; font-size: 14px; color: #5b616b; }
+.tripbox ul { margin: 0; padding: 0 10px; list-style: none; }
+.tripbox li + li { border-top: 1px solid #e3e6ea; }
+.tripbox li a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 50px; padding: 4px 8px; color: inherit; font-weight: 700; text-decoration: none; }
+.tripbox li a::after { content: "→"; flex: 0 0 auto; font-weight: 400; }
+.tripbox li a:hover { background: #eff1f3; }
+.tripbox-tg { display: flex; align-items: center; justify-content: center; min-height: 50px; margin: 10px 18px 18px; padding: 0 16px; border-radius: 6px; background: #0f1114; color: #ffffff; font-weight: 700; text-align: center; text-decoration: none; }
+.tripbox-tg:hover { background: #2a2e35; }
+.tripbox :focus-visible { outline: 3px solid #2f6bff; outline-offset: 2px; }
+</style>
+<div class="tripbox-shade" id="trip-shade" hidden></div>
+<div class="tripbox" id="trip" role="dialog" aria-labelledby="trip-h" hidden>
+  <div class="tripbox-head"><h2 id="trip-h">{T_TRIP_TITLE}</h2><button type="button" class="tripbox-x" aria-label="{T_TRIP_CLOSE}">×</button></div>
+  <p class="tripbox-hint">{T_TRIP_HINT}</p>
+  <ul>
+    <li data-trip="tours" data-on="{HAS_TOURS}" hidden><a target="_blank" rel="noopener sponsored">{T_TOURS_TITLE}</a></li>
+    <li data-trip="tickets" data-on="{HAS_TICKETS}" hidden><a target="_blank" rel="noopener sponsored">{T_TICKETS_TITLE}</a></li>
+    <li data-trip="transfer" data-on="{HAS_TRANSFER}" hidden><a target="_blank" rel="noopener sponsored">{T_TRANSFER_TITLE}</a></li>
+    <li data-trip="hotel" data-on="{HAS_HOTEL}" hidden><a target="_blank" rel="noopener sponsored">{T_HOTEL_TITLE}</a></li>
+    <li><a href="{ESIM_LINK}" target="_blank" rel="noopener sponsored">{T_ESIM_TITLE}</a></li>
+    <li data-trip="guide" data-on="{HAS_GUIDE}" hidden><a>{T_READ_GUIDE}</a></li>
+  </ul>
+  <a class="tripbox-tg" href="{TELEGRAM_URL}">{T_TRIP_ALERT}</a>
+</div>
+<script>
+(function () {
+  var trips = {TRIPS};
+  var box = document.getElementById('trip'), shade = document.getElementById('trip-shade');
+  function read(key) { try { return sessionStorage.getItem(key) || ''; } catch (err) { return ''; } }
+  function save(key, value) { try { sessionStorage.setItem(key, value); } catch (err) { /* storage blocked: the box may show again */ } }
+  /* The Aviasales link, in the same two shapes the Analytics script knows. */
+  function isFlight(link) {
+    return link.hostname === 'aviasales.tp.st' || (link.hostname === 'tp.media' && link.href.indexOf('aviasales') !== -1);
+  }
+  /* The airport code of the tapped flight: its row or card has it, and for the search card's
+     button it is the chosen destination. */
+  function codeOf(link) {
+    var place = link.closest('[data-iata]');
+    if (place) { return place.getAttribute('data-iata'); }
+    var form = link.closest('form'), to = form ? form.querySelector('[name="to"]') : null;
+    return to ? to.value : '';
+  }
+  function close(off) {
+    box.hidden = true;
+    shade.hidden = true;
+    if (off) { save('trip-off', '1'); }
+  }
+  function show() {
+    var code = read('trip-next'), trip = trips[code];
+    if (!trip || read('trip-off') || !box.hidden) { return; }
+    save('trip-next', '');
+    save('trip-seen', read('trip-seen') + ' ' + code);
+    box.querySelector('[data-trip-city]').textContent = trip.city;
+    box.querySelectorAll('[data-trip]').forEach(function (item) {
+      var href = trip[item.getAttribute('data-trip')];
+      item.hidden = !href;
+      if (href) { item.querySelector('a').setAttribute('href', href); }
+    });
+    box.hidden = false;
+    shade.hidden = false;
+    if (window.gtag) { window.gtag('event', 'trip_box', { destination: code }); }
+  }
+  /* A tap on a flight link: remember its city. The box waits until the visitor is back. */
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link || !isFlight(link)) { return; }
+    var code = codeOf(link);
+    if (trips[code] && read('trip-seen').indexOf(code) === -1) { save('trip-next', code); }
+  });
+  /* Back on the page: the tab is in front again, or the browser's back arrow brought it back. */
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') { show(); } });
+  window.addEventListener('focus', show);
+  window.addEventListener('pageshow', show);
+  box.querySelector('.tripbox-x').addEventListener('click', function () { close(true); });
+  shade.addEventListener('click', function () { close(true); });
+  document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && !box.hidden) { close(true); } });
+  /* A tap on one of the box's own links closes it, without switching it off for the visit. */
+  box.addEventListener('click', function (event) { if (event.target.closest('a')) { close(false); } });
+})();
+</script>
