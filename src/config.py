@@ -154,7 +154,7 @@ class InstagramDMSettings:
     deals_from_comments: bool = True
     # After that message is sent, the bot also answers the comment in public with this short
     # line, so the person knows to look in their messages. Empty = no public answer.
-    comment_reply: str = "✅ Ta dërguam në mesazh! Shiko te mesazhet (ose te kërkesat për mesazh)."
+    comment_reply: str = "✅ Ta dërguam! Shiko mesazhet 📩"
 
 
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")

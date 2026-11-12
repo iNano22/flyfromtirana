@@ -68,9 +68,15 @@ def test_music_takes_turns_a_track_a_reel_then_the_next_part_of_it(tmp_path):
     picked = [pick_music(number, tmp_path) for number in range(7)]
     a, b = tmp_path / "a.m4a", tmp_path / "b.m4a"
     assert picked == [(a, 2.0), (b, 0.0),        # a missing file is skipped
-                      (a, 12.0), (b, 10.0),      # the list came round: the next 10 seconds
-                      (a, 22.0), (b, 20.0),
-                      (a, 2.0)]                  # a's 30 seconds are used up: from its start again
+                      (a, 17.0), (b, 15.0),      # the list came round: the next 15 seconds
+                      (a, 2.0), (b, 30.0),       # a's 30 seconds are used up: from its start again
+                      (a, 17.0)]
+
+
+def test_a_reel_is_long_enough_to_read_and_its_music_lasts_that_long():
+    from src.reels import END_SECONDS, MUSIC_PART
+    assert DEAL_SECONDS >= 10 and END_SECONDS >= 4       # 7 and 3 seconds were too short to read
+    assert MUSIC_PART >= SECONDS                         # a Reel never runs past its part of the track
 
 
 def test_the_music_in_the_repo_is_listed_with_its_licence():

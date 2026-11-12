@@ -292,7 +292,7 @@ def test_oferta_as_a_comment_gets_the_prices_in_a_private_message(config):
     assert "http" not in reply and ".al" not in reply         # no link: Instagram refuses it in this message
     assert "Na shkruaj këtu" in reply
     assert meta.sent == [] and writer.chats == []              # no ordinary message, and Claude was not asked
-    assert meta.public_replies == [("c1", "✅ Ta dërguam në mesazh! Shiko te mesazhet (ose te kërkesat për mesazh).")]
+    assert meta.public_replies == [("c1", "✅ Ta dërguam! Shiko mesazhet 📩")]
 
     # The message's echo is the bot's own: the bot doesn't take it for the owner and go quiet.
     bot.handle_payload(delivery(echo_event(reply, "bot-mid-c1")))

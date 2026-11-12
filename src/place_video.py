@@ -34,8 +34,8 @@ log = logging.getLogger(__name__)
 
 OWN_VIDEOS_DIR = ASSETS_DIR / "reel_videos"
 SEARCH_URL = "https://api.pexels.com/v1/videos/search"
-MIN_SECONDS = 6            # shorter clips are skipped (a Reel shows the city for about 7 seconds)
-MAX_SECONDS = 60           # and so are long films: a big download for 7 seconds of it
+MIN_SECONDS = 6            # shorter clips are skipped (a Reel shows the city for 11 seconds; a shorter clip plays again)
+MAX_SECONDS = 60           # and so are long films: a big download for 11 seconds of it
 MIN_HEIGHT = 1280          # the smallest picture worth stretching to a Reel's 1920
 MAX_BYTES = 80 * 1024 * 1024
 RETRY_DAYS = 30            # a city without a video is searched again after this long

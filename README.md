@@ -83,7 +83,7 @@ src/
   social.py              a social media post (deal, weekly top, city guide): pictures, captions, posting or drafting
   growth.py              the free channel's join links, the WhatsApp share link, and the weekly report
                          on both channels (who joined through which link, the member counts)
-  reels.py               turns a deal card into a 10-second Instagram Reel (Pillow frames + ffmpeg, music)
+  reels.py               turns a deal card into a 15-second Instagram Reel (Pillow frames + ffmpeg, music)
   bot.py                 the bot's private chat: people set price alerts; it also notes channel joins
   alerts.py              sends the price alerts after each scan
   trips.py               your own trip watches (trip_watches): a cheap trip there and back, only to your chat
@@ -734,8 +734,8 @@ The Facebook post keeps the picture.
 The sound is one of the 17 tracks in `assets/music` (free tracks from Pixabay under the
 Pixabay Content License, none registered with Content ID, each cut to 50 energetic
 seconds; authors and pages in `credits.json`). They take turns, one per Reel, and each
-time the list comes round the next 10 seconds of a track play, so the same sound comes
-back only after 85 Reels. To add a track: put the file in `assets/music` and a line in
+time the list comes round the next 15 seconds of a track play, so the same sound comes
+back only after 51 Reels. To add a track: put the file in `assets/music` and a line in
 `credits.json`. Instagram's own music library can't be used through the API.
 `python scripts/social_preview.py --reels` makes the sample deals' Reels in
 `ig_preview/reels/`, to watch them before any goes out.
@@ -923,7 +923,7 @@ and sends the reply. Settings are under `instagram_dm` in config.yaml.
   "Shkruaj OFERTA në koment: ..." (`comment_invite` in src/social.py). The line is left
   out while the bot or `deals_from_comments` is off. Facebook posts don't have it.
   After the message is sent the bot also answers the comment in public with
-  `comment_reply` ("✅ Ta dërguam në mesazh! ..."), so the person knows where to look;
+  `comment_reply` ("✅ Ta dërguam! Shiko mesazhet 📩"), so the person knows where to look;
   set it to "" for no public answer.
   This needs step 8 of the setup below.
 

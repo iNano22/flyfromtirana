@@ -1,13 +1,13 @@
 """Turns a deal's card into a short video for Instagram Reels.
 
-The Reel is the deal card brought to life: 10 seconds, 1080 x 1920, 30 frames a second.
+The Reel is the deal card brought to life: 15 seconds, 1080 x 1920, 30 frames a second.
 
-    0.0 s   the destination's photo, slowly zooming in until the closing card
-    0.1 s   the card's pieces come in one after the other (ENTRANCES): the route, the
-            giant price, the city, the saving sticker slapped on, the dates, the flight
-    7.0 s   a yellow closing card slides up: new deals every day, book through the
-            link in the bio, the free alerts on Telegram
-   10.0 s   the end (Instagram plays a Reel in a loop)
+    0.0 s   a video of the city (or its photo, slowly zooming in), the price already
+            popping in; the card's other pieces follow within 1.5 seconds (ENTRANCES):
+            the saving sticker slapped on, the city, the dates, the flight
+   11.0 s   a yellow closing card slides up: comment OFERTA for the day's prices (or:
+            new deals every day), book through the link in the bio, Telegram
+   15.0 s   the end (Instagram plays a Reel in a loop)
 
 The frames are drawn with Pillow from the card's own pieces (cards.deal_pieces, in
 the "reel" layout, which keeps the words clear of what Instagram lays over a Reel),
@@ -16,7 +16,7 @@ asks for: H.264 video, AAC sound, the index at the start of the file.
 
 The sound is a track from assets/music, listed in its credits.json (free-licence
 tracks from Pixabay, each cut to 50 energetic seconds). They take turns, one per
-Reel, and each time the list comes round again a Reel uses the next 10 seconds of
+Reel, and each time the list comes round again a Reel uses the next 15 seconds of
 its track (pick_music). With no track there, the Reel is silent. ffmpeg must be
 installed (the Dockerfile installs it; on a Mac: brew install ffmpeg).
 """
@@ -42,8 +42,9 @@ log = logging.getLogger(__name__)
 LAYOUT = LAYOUTS["reel"]
 SIZE = (LAYOUT.width, LAYOUT.height)
 FPS = 30
-DEAL_SECONDS = 7.0       # the deal itself
-END_SECONDS = 3.0        # the closing card
+# Long enough to read everything once without hurry: with 7 and 3 seconds people couldn't.
+DEAL_SECONDS = 11.0      # the deal itself
+END_SECONDS = 4.0        # the closing card
 SECONDS = DEAL_SECONDS + END_SECONDS
 ZOOM = 0.08              # the photo grows by 8% while the deal shows
 COME_IN = 0.45           # how long a piece of the card takes to come in (seconds)
@@ -76,7 +77,7 @@ END_BUTTON = "REZERVO: LINKU NË BIO"
 END_TELEGRAM = "Njoftime falas në Telegram"
 
 MUSIC_DIR = ASSETS_DIR / "music"
-MUSIC_PART = 10          # the seconds of a track that one Reel uses
+MUSIC_PART = 15          # the seconds of a track that one Reel uses (the Reel's length)
 
 
 class ReelError(Exception):
@@ -356,7 +357,7 @@ def pick_music(number: int, folder: Path = MUSIC_DIR) -> tuple[Path, float] | No
     [{"file": "pop.m4a", "seconds": 50, "start": 0, "title": ..., "author": ..., "source": ..., "licence": ...}].
     They take turns in that order, one per Reel, so two Reels in a row never share a track.
     Each time the list comes round again, the next MUSIC_PART seconds of the track play:
-    17 tracks of 50 seconds give 85 Reels before the same sound comes back.
+    17 tracks of 50 seconds give 51 Reels before the same sound comes back.
     """
     credits = folder / "credits.json"
     if not credits.exists():

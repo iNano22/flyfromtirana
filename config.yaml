@@ -91,7 +91,7 @@ social:
   hashtags: "#flyfromtirana #fluturime #oferta #tirana"   # a few, specific ones; each post adds its city's
                                    #   own tag after them (#milano, #vjene), the weekly top adds none
   publish: [instagram, facebook]   # instagram = a feed post + a story; facebook = a Page post with the link
-  reels: true                      # a deal goes to Instagram as a Reel (a 10-second video of its card, with
+  reels: true                      # a deal goes to Instagram as a Reel (a 15-second video of its card, with
                                    #   music from assets/music) instead of the feed picture; the story and
                                    #   Facebook keep the pictures. The weekly top and the guides stay carousels.
   reel_videos: true                # the Reel plays a short video of the city behind the deal (free videos
@@ -167,7 +167,7 @@ instagram_dm:
   deals_count: 5                   # how many routes that reply lists (deals first)
   deals_from_comments: true        # someone who writes the word as a comment under a post or reel gets
                                    #   the same reply as a private message (one per comment: Instagram's rule)
-  comment_reply: "✅ Ta dërguam në mesazh! Shiko te mesazhet (ose te kërkesat për mesazh)."
+  comment_reply: "✅ Ta dërguam! Shiko mesazhet 📩"
                                    # then the bot answers the comment in public with this line, so the
                                    #   person knows where to look. Empty ("") = no public answer
 
