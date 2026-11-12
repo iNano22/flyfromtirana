@@ -1,4 +1,4 @@
-✈️ TIRANA → {CITY_UPPER}[[ ({AIRPORT})]] nga €{PRICE} one way[[ 🔥 -{SAVING}%]]
+✈️ TIRANA → {CITY_UPPER}[[ ({AIRPORT})]] nga €{PRICE} vajtje[[ 🔥 -{SAVING}%]]
 [[💡 Zakonisht ~€{MEDIAN}]]
 
 📅 {DATES}

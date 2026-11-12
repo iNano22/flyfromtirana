@@ -28,12 +28,12 @@ import shutil
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Iterator
 
 from PIL import Image, ImageDraw
 
 from src.cards import (INK, LAYOUTS, SUN, archivo, cap_height, deal_background, deal_pieces, fit, mono,
-                       plane_mark, save_jpeg)
+                       plane_mark, save_jpeg, shade_for_words)
 from src.deals import Deal
 from src.photos import ASSETS_DIR
 
@@ -51,20 +51,27 @@ SLIDE_UP = 0.35          # how long the closing card takes to slide up
 COVER_AT = 5.0           # the moment whose frame is the Reel's cover: every piece in place
 
 # When each piece of the card comes in (seconds), and how (see `placed` below).
+# The price is the hook: it is already popping in on the very first frame (a start before 0),
+# and the saving is slapped on a moment later. People decide in the first second whether to
+# keep watching, so the rest follows quickly: everything is in place after 1.5 seconds.
 ENTRANCES = {
-    "brand": (0.10, "fade"),
-    "tag": (0.30, "slide"),
-    "price": (0.55, "pop"),
-    "city": (0.95, "rise"),
-    "sticker": (1.35, "slap"),
-    "dates": (1.70, "rise"),
-    "details": (1.95, "rise"),
-    "footer": (2.20, "fade"),
+    "brand": (-COME_IN, "fade"),
+    "tag": (-COME_IN, "slide"),
+    "price": (-0.25, "pop"),
+    "sticker": (0.20, "slap"),
+    "city": (0.40, "rise"),
+    "dates": (0.65, "rise"),
+    "details": (0.80, "rise"),
+    "invite": (0.95, "slide"),
+    "footer": (1.05, "fade"),
 }
 
 # The closing card's words. No emoji: the fonts have none.
 END_HEADLINE = ("OFERTA TË REJA", "ÇDO DITË")
 END_SUBTITLE = "Fluturime të lira nga Tirana"
+# With the keyword ("OFERTA"), the closing card asks for the comment instead.
+END_INVITE = ("SHKRUAJ «{keyword}»", "NË KOMENT")
+END_INVITE_SUBTITLE = "Të dërgojmë çmimet e ditës në mesazh"
 END_BUTTON = "REZERVO: LINKU NË BIO"
 END_TELEGRAM = "Njoftime falas në Telegram"
 
@@ -90,25 +97,65 @@ class Layer:
 
 def make_reel(deal: Deal, out_dir: Path, *, airline_names: dict[str, str], brand: str, handle: str,
               address: str, telegram: str, photo: Path | None, language: str = "sq",
-              music: tuple[Path, float] | None = None, fps: int = FPS) -> tuple[Path, Path]:
+              music: tuple[Path, float] | None = None, fps: int = FPS, keyword: str | None = None,
+              place_video: Path | None = None) -> tuple[Path, Path]:
     """Write the deal's Reel and its cover picture: (out_dir/bgy_reel.mp4, out_dir/bgy_reel.jpg).
 
     telegram: the channel's address as people type it ("t.me/flyfromtirana"), for the closing
     card. music: a track and the second to start it at (pick_music), or None for silence.
-    fps: frames a second (tests use fewer, to be quick).
+    fps: frames a second (tests use fewer, to be quick). keyword: the word to comment for the
+    day's prices ("OFERTA"), shown on the card and the closing card; None = not asked for.
+    place_video: a video of the city to play behind the deal instead of the still photo
+    (src/place_video.py); if it can't be read, the photo shows.
     """
     ffmpeg = shutil.which("ffmpeg")
     if not ffmpeg:
         raise ReelError("ffmpeg is not installed, so no Reel can be made")
     out_dir.mkdir(parents=True, exist_ok=True)
+    backdrop = video_frames(place_video, ffmpeg=ffmpeg, fps=fps) if place_video else None
     scene = Scene(deal, airline_names=airline_names, brand=brand, handle=handle, address=address,
-                  telegram=telegram, photo=photo, language=language)
+                  telegram=telegram, photo=photo, language=language, keyword=keyword, backdrop=backdrop)
     name = deal.route.iata.lower()
-    cover = save_jpeg(scene.frame(COVER_AT), out_dir / f"{name}_reel.jpg")
-    video = out_dir / f"{name}_reel.mp4"
-    frames = (scene.frame(number / fps) for number in range(round(SECONDS * fps)))
-    encode(frames, video, ffmpeg=ffmpeg, fps=fps, music=music)
+    cover, video = out_dir / f"{name}_reel.jpg", out_dir / f"{name}_reel.mp4"
+    cover_number = round(COVER_AT * fps)
+
+    def frames() -> Iterator[Image.Image]:
+        # In order, from the first to the last: a video behind the deal is read frame by frame.
+        for number in range(round(SECONDS * fps)):
+            frame = scene.frame(number / fps)
+            if number == cover_number:
+                save_jpeg(frame, cover)   # the cover is the Reel's own frame at COVER_AT
+            yield frame
+
+    try:
+        encode(frames(), video, ffmpeg=ffmpeg, fps=fps, music=music)
+    finally:
+        if backdrop is not None:
+            backdrop.close()   # stops the ffmpeg that was reading the city's video
     return video, cover
+
+
+def video_frames(video: Path, *, ffmpeg: str, fps: int) -> Iterator[Image.Image]:
+    """The frames of a video of the city, one after the other, each cut to fill a Reel's frame
+    (1080 x 1920). A clip shorter than the Reel starts again from its beginning. Stops quietly
+    if ffmpeg can't read the file: the Reel then goes on with the photo."""
+    width, height = SIZE
+    command = [
+        ffmpeg, "-loglevel", "error", "-stream_loop", "-1", "-i", str(video), "-an",
+        "-vf", f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},fps={fps}",
+        "-t", f"{DEAL_SECONDS + SLIDE_UP + 1:g}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-",
+    ]
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    size = width * height * 3
+    try:
+        while True:
+            pixels = process.stdout.read(size)
+            if len(pixels) < size:
+                return
+            yield Image.frombytes("RGB", SIZE, pixels)
+    finally:
+        process.kill()
+        process.wait()
 
 
 class Scene:
@@ -116,23 +163,27 @@ class Scene:
     and the closing card. frame(t) puts them together for the moment t (seconds)."""
 
     def __init__(self, deal: Deal, *, airline_names: dict[str, str], brand: str, handle: str, address: str,
-                 telegram: str, photo: Path | None, language: str):
+                 telegram: str, photo: Path | None, language: str, keyword: str | None = None,
+                 backdrop: Iterator[Image.Image] | None = None):
+        # backdrop: the frames of a video of the city (video_frames), to show instead of the photo.
+        # They can only be read in order, so frame(t) must then be asked for t going up.
+        self.backdrop = backdrop
         self.background = deal_background(photo, deal.route.iata, LAYOUT)
         self.layers = []
         for name, paint in deal_pieces(deal, LAYOUT, airline_names=airline_names, brand=brand, handle=handle,
-                                       address=address, language=language):
+                                       address=address, language=language, keyword=keyword):
             canvas = Image.new("RGBA", SIZE, (0, 0, 0, 0))
             paint(canvas, ImageDraw.Draw(canvas))
             box = canvas.getbbox()
             if box:   # a piece with nothing to draw has no layer
                 self.layers.append(Layer(name, canvas.crop(box), box[0], box[1]))
-        self.closing = closing_card(brand=brand, address=address, telegram=telegram)
+        self.closing = closing_card(brand=brand, address=address, telegram=telegram, keyword=keyword)
 
     def frame(self, t: float) -> Image.Image:
         """The frame at t seconds (RGB)."""
         if t >= DEAL_SECONDS + SLIDE_UP:
             return self.closing
-        frame = self.photo_at(t)
+        frame = self.backdrop_at(t)
         for layer in self.layers:
             shown = placed(layer, t)
             if shown:
@@ -142,6 +193,16 @@ class Scene:
             top = round(SIZE[1] * (1 - ease_out((t - DEAL_SECONDS) / SLIDE_UP)))
             frame.paste(self.closing, (0, top))
         return frame
+
+    def backdrop_at(self, t: float) -> Image.Image:
+        """What is behind the words at t: the video's next frame, darkened like the photo, or the photo."""
+        if self.backdrop is not None:
+            picture = next(self.backdrop, None)
+            if picture is not None:
+                return shade_for_words(picture, LAYOUT)
+            log.warning("[reel] The city's video ended or could not be read: the photo from here on")
+            self.backdrop = None
+        return self.photo_at(t)
 
     def photo_at(self, t: float) -> Image.Image:
         """The photo at t: zoomed in a little more every frame, towards a point above the middle
@@ -201,8 +262,11 @@ def ease_out_back(progress: float) -> float:
     return 1 + (overshoot + 1) * progress ** 3 + overshoot * progress ** 2
 
 
-def closing_card(*, brand: str, address: str, telegram: str) -> Image.Image:
-    """The last seconds: a yellow card saying there are new deals every day and where to find them."""
+def closing_card(*, brand: str, address: str, telegram: str, keyword: str | None = None) -> Image.Image:
+    """The last seconds: a yellow card saying there are new deals every day and where to find them.
+    With a keyword it asks for the comment instead: "SHKRUAJ «OFERTA» NË KOMENT"."""
+    lines = tuple(line.format(keyword=keyword) for line in END_INVITE) if keyword else END_HEADLINE
+    subtitle_text = END_INVITE_SUBTITLE if keyword else END_SUBTITLE
     card = Image.new("RGB", SIZE, SUN)
     draw = ImageDraw.Draw(card)
     width = SIZE[0]
@@ -215,15 +279,15 @@ def closing_card(*, brand: str, address: str, telegram: str) -> Image.Image:
     draw.text((pad + mark + 20, y + mark / 2), brand, font=archivo(46, 800, 88), fill=INK, anchor="lm")
     y += mark + 110
 
-    headline = fit(max(END_HEADLINE, key=len), room, size=190, weight=800, width_axis=72, smallest=90)
-    for line in END_HEADLINE:
+    headline = fit(max(lines, key=len), room, size=190, weight=800, width_axis=72, smallest=90)
+    for line in lines:
         y += cap_height(headline, line)
         draw.text((pad - 6, y), line, font=headline, fill=INK, anchor="ls")
         y += 34
     y += 30
-    subtitle = archivo(54, 600, 90)
+    subtitle = fit(subtitle_text, room, size=54, weight=600, width_axis=90, smallest=36)
     y += cap_height(subtitle)
-    draw.text((pad, y), END_SUBTITLE, font=subtitle, fill=INK, anchor="ls")
+    draw.text((pad, y), subtitle_text, font=subtitle, fill=INK, anchor="ls")
     y += 70
 
     # The button: black, with the words in yellow.

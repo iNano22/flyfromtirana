@@ -71,21 +71,21 @@ def test_draft_follows_the_channel_post(config):
     assert [item["type"] for item in media] == ["document", "document"]
     assert [item["media"] for item in media] == ["attach://file0", "attach://file1"]
     assert "Draft për Instagram dhe Facebook" in media[0]["caption"]
-    assert "TIRANA → MILAN (Bergamo) nga €19" in media[0]["caption"]
+    assert "TIRANA → MILANO (Bergamo) nga €19" in media[0]["caption"]
     assert files["files"]["file0"][0] == "bgy_feed.jpg"
     assert files["files"]["file1"][0] == "bgy_story.jpg"
     assert files["files"]["file0"][1][:2] == b"\xff\xd8"    # JPEG bytes
 
     # The caption: plain text with the deal, the bio link, the channel and the hashtags.
     text = telegram_text(caption)
-    assert "✈️ TIRANA → MILAN (Bergamo) nga €19 one way 🔥 -69%" in text
+    assert "✈️ TIRANA → MILANO (Bergamo) nga €19 vajtje 🔥 -69%" in text
     assert "💡 Zakonisht ~€62" in text
     assert "📅 20 Nën, 22 Nën" in text
     assert "🔁 Kthimi nga €24" in text
     assert "linku në bio: flyfromtirana.al" in text
     # The channel as an address to type: "@flyfromtirana" would be the Instagram account itself.
     assert "Telegram: t.me/flyfromtirana (linku në bio)" in text and "@flyfromtirana" not in text
-    assert text.endswith("#flyfromtirana #tirana")
+    assert text.endswith("#flyfromtirana #tirana #milano")   # the settings' tags, then the city's own
     assert "<a " not in text and "Foto:" not in text   # no link tags; the photo needs no credit
 
     # The booking link for Facebook has its own SubID.
@@ -101,7 +101,7 @@ def test_one_post_per_posting_time_and_never_the_same_city_twice_a_day(config):
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=noon, now=NOW) == 0   # 12:00
     assert methods(channel_posts(noon)) == ["sendPhoto"]      # the channel posts as always
     files, caption, link = drafts(noon)                       # one post, although two deals are on the site
-    assert "TIRANA → VIENNA nga €9" in telegram_text(caption)
+    assert "TIRANA → VJENË nga €9" in telegram_text(caption)
 
     quarter_past = fake_world()
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=quarter_past, now=NOW + timedelta(minutes=15)) == 0
@@ -111,7 +111,7 @@ def test_one_post_per_posting_time_and_never_the_same_city_twice_a_day(config):
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=evening,
                now=NOW + timedelta(hours=7, minutes=30)) == 0   # 19:30
     files, caption, link = drafts(evening)
-    assert "TIRANA → MILAN (Bergamo) nga €19" in telegram_text(caption)   # Vienna is still the best, but had its post
+    assert "TIRANA → MILANO (Bergamo) nga €19" in telegram_text(caption)   # Vienna is still the best, but had its post
 
     tomorrow = fake_world()
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=tomorrow, now=NOW + timedelta(days=1)) == 0
@@ -137,11 +137,23 @@ def test_a_destination_posted_at_this_price_is_skipped_whatever_the_date(config)
     assert drafts(session) == []
 
 
-def test_a_cheaper_price_is_news_again(config):
-    seed_social_post(config, "BGY", NOW - timedelta(days=2))   # Milan at €30 the other day
+def test_a_cheaper_price_is_news_again_once_the_city_has_rested(config):
+    seed_social_post(config, "BGY", NOW - timedelta(days=6))   # Milan at €30 last week
     session = fake_world()
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
     assert len(drafts(session)) == 3                          # €19 now: posted
+
+
+def test_a_city_posted_in_the_last_days_waits_even_when_it_got_cheaper(config):
+    seed_social_post(config, "BGY", NOW - timedelta(days=2))   # Milan at €30 the day before yesterday
+    session = fake_world()
+    assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert drafts(session) == []                              # €19 now, but Milan rests city_cooldown_days (5)
+    # With a rest of one day, only "not twice a day" holds, as before.
+    short = replace(config, social=replace(config.social, city_cooldown_days=1))
+    session = fake_world()
+    assert run(short, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert len(drafts(session)) == 3
 
 
 def test_failed_draft_flags_the_run_but_the_channel_post_stands(config):
@@ -197,7 +209,7 @@ def test_dry_run_prints_the_caption_and_keeps_the_cards(config):
     assert social_rows(config) == 0
     draft = [text for text in printed if "DRY RUN [social]" in text]
     assert len(draft) == 1
-    assert "✈️ TIRANA → MILAN (Bergamo) nga €19 one way" in draft[0]
+    assert "✈️ TIRANA → MILANO (Bergamo) nga €19 vajtje" in draft[0]
     folder = Path(re.search(r"pictures in (\S+) -----", draft[0]).group(1))
     try:
         assert sorted(path.name for path in folder.iterdir()) == ["bgy_feed.jpg", "bgy_story.jpg"]
@@ -274,19 +286,22 @@ def test_bot_posts_on_instagram_and_facebook_and_reports(posting):
     graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
     feed, story = [c["data"] for c in graph if c["url"].endswith("/media")]
     assert feed["image_url"] == "https://flyfromtirana.al/social/bgy_feed_20261009-1000.jpg"
-    assert feed["caption"].startswith("✈️ TIRANA → MILAN (Bergamo) nga €19 one way 🔥 -69%")
+    assert feed["caption"].startswith("✈️ TIRANA → MILANO (Bergamo) nga €19 vajtje 🔥 -69%")
     assert "linku në bio" in feed["caption"] and "&amp;" not in feed["caption"]
+    # Near the top, where people see it without opening the whole caption: comment OFERTA for the prices.
+    assert feed["caption"].splitlines()[2] == "💬 Shkruaj OFERTA në koment: të dërgojmë çmimet më të mira të ditës në mesazh."
     assert story == {"image_url": "https://flyfromtirana.al/social/bgy_story_20261009-1000.jpg", "media_type": "STORIES"}
     photo, = [c["data"] for c in graph if c["url"].endswith("/photos")]
     assert photo["url"] == feed["image_url"]
     assert "👉 Rezervo këtu: https://" in photo["message"] and "marker=12345.facebook" in photo["message"]
     assert "&amp;" not in photo["message"] and "linku në bio" not in photo["message"]
+    assert "në koment" not in photo["message"]                 # the comment bot is Instagram's only
     assert "Ofertat dalin të parat në Telegram: https://t.me/+fb\n" in photo["message"]   # Facebook's own invite link
 
     # The owner gets one report with the links, no draft; the deal is remembered.
     report, = drafts(session)
     text = telegram_text(report)
-    assert text.startswith("✅ <b>U postua</b> · TIRANA → MILAN (Bergamo) nga €19")
+    assert text.startswith("✅ <b>U postua</b> · TIRANA → MILANO (Bergamo) nga €19")
     assert "https://www.instagram.com/p/abc123/" in text
     assert "https://www.facebook.com/1348603305007068_777" in text
     assert "📱 Story: ✅" in text
@@ -386,7 +401,7 @@ def test_the_quick_premium_scan_keeps_the_posting_time(config):
     assert channel_posts(session) == []                       # the free channel waits for the full run
     files, caption, link = drafts(session)
     assert methods([files, caption, link]) == ["sendMediaGroup", "sendMessage", "sendMessage"]
-    assert "TIRANA → VIENNA nga €9" in telegram_text(caption)
+    assert "TIRANA → VJENË nga €9" in telegram_text(caption)
 
 
 def test_sunday_starts_with_the_weekly_carousel_and_a_deal_follows_in_the_evening(posting):
@@ -406,8 +421,8 @@ def test_sunday_starts_with_the_weekly_carousel_and_a_deal_follows_in_the_evenin
         "weekly_cover_20261011-1000.jpg", "weekly_1_vie_20261011-1000.jpg", "weekly_2_bgy_20261011-1000.jpg",
         "weekly_3_fco_20261011-1000.jpg"]   # best saving first: VIE €9 of a €35 threshold, BGY €19 of ~€62
     carousel, = [c["data"] for c in graph if c.get("data", {}).get("media_type") == "CAROUSEL"]
-    assert carousel["caption"].startswith("🏆 TOP 3 OFERTAT E JAVËS nga Tirana (11.10)\n\n1️⃣ Vienna nga €9")
-    assert "linku në bio" in carousel["caption"]
+    assert carousel["caption"].startswith("🏆 TOP 3 OFERTAT E JAVËS nga Tirana (11.10)\n\n1️⃣ Vjenë nga €9")
+    assert "linku në bio" in carousel["caption"] and "💬 Shkruaj OFERTA në koment: të dërgojmë çmimet më të mira të ditës në mesazh." in carousel["caption"]
     album, = [c["data"] for c in graph if c["url"].endswith("/feed")]
     assert "https://flyfromtirana.al/" in album["message"] and "attached_media[3]" in album
     assert len([c for c in graph if c["url"].endswith("/photos")]) == 4   # the album's unpublished pictures
@@ -422,7 +437,7 @@ def test_sunday_starts_with_the_weekly_carousel_and_a_deal_follows_in_the_evenin
     assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session3,
                now=SUNDAY + timedelta(hours=7, minutes=30)) == 0
     deal_report, = drafts(session3)
-    assert "TIRANA → VIENNA nga €9" in telegram_text(deal_report)
+    assert "TIRANA → VJENË nga €9" in telegram_text(deal_report)
 
 
 def test_weekly_needs_three_deals(posting):
@@ -475,6 +490,7 @@ def test_a_day_without_deals_gets_a_city_guide_at_the_last_posting_time(posting)
     carousel, = [d for d in creates if d.get("media_type") == "CAROUSEL"]
     assert "📍 MILANO:" in carousel["caption"] and "flyfromtirana.al/milan/ — linku në bio" in carousel["caption"]
     assert "👀 Mos humb: " in carousel["caption"] and "🍴 Provo: " in carousel["caption"]
+    assert "💬 Shkruaj OFERTA në koment: të dërgojmë çmimet më të mira të ditës në mesazh." in carousel["caption"]
     assert "Fluturime nga Tirana nga €60" in carousel["caption"]   # BGY's cheapest current price
     story, = [d for d in creates if d.get("media_type") == "STORIES"]
     assert story["image_url"].endswith("/social/guide_milan_story_20261009-1730.jpg")
@@ -551,7 +567,7 @@ def test_deal_goes_to_instagram_as_a_reel_with_its_cover(reels):
     assert reel["media_type"] == "REELS" and reel["share_to_feed"] == "true"
     assert reel["video_url"] == "https://flyfromtirana.al/social/bgy_reel_20261009-1000.mp4"
     assert reel["cover_url"] == "https://flyfromtirana.al/social/bgy_reel_20261009-1000.jpg"
-    assert reel["caption"].startswith("✈️ TIRANA → MILAN (Bergamo) nga €19")
+    assert reel["caption"].startswith("✈️ TIRANA → MILANO (Bergamo) nga €19")
     assert story == {"media_type": "STORIES",                          # the story is the Reel's video
                      "video_url": "https://flyfromtirana.al/social/bgy_reel_20261009-1000.mp4"}
     photo, = [c["data"] for c in graph if c["url"].endswith("/photos")]
@@ -613,3 +629,11 @@ def test_no_reel_without_ffmpeg_means_a_picture(posting, monkeypatch):
     assert all("media_type" not in c["data"] or c["data"]["media_type"] == "STORIES"
                for c in graph if c["url"].endswith("/media"))
     assert "📸 Instagram:" in telegram_text(drafts(session)[0])
+
+
+def test_no_caption_asks_for_a_comment_while_the_message_bot_is_off(config):
+    from src.social import comment_invite, invite_line
+    assert comment_invite(config).startswith("Shkruaj OFERTA në koment")
+    for off in (replace(config.instagram_dm, enabled=False), replace(config.instagram_dm, deals_from_comments=False)):
+        quiet = replace(config, instagram_dm=off)
+        assert comment_invite(quiet) == "" and invite_line(quiet) == ""

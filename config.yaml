@@ -88,11 +88,19 @@ social:
                                    #   quotes: YAML reads 12:00 as a number. Never the same city twice a day.
   handle: "@flyfromtirana"         # the account's name, shown on the cards
   sub_id: facebook                 # Travelpayouts SubID of the booking link in the Facebook post
-  hashtags: "#flyfromtirana #fluturime #oferta #udhetim #tirana #rinas #biletaavioni #pushime"
+  hashtags: "#flyfromtirana #fluturime #oferta #tirana"   # a few, specific ones; each post adds its city's
+                                   #   own tag after them (#milano, #vjene), the weekly top adds none
   publish: [instagram, facebook]   # instagram = a feed post + a story; facebook = a Page post with the link
   reels: true                      # a deal goes to Instagram as a Reel (a 10-second video of its card, with
                                    #   music from assets/music) instead of the feed picture; the story and
                                    #   Facebook keep the pictures. The weekly top and the guides stay carousels.
+  reel_videos: true                # the Reel plays a short video of the city behind the deal (free videos
+                                   #   from pexels.com, found by the city's name; needs PEXELS_API_KEY on the
+                                   #   server). A city without a video keeps its photo. Videos you don't like:
+                                   #   see README "Reels with a video of the city"
+  reel_video_skip: []              # airport codes whose Reels keep the photo, e.g. [NRN, FMM]
+  city_cooldown_days: 5            # a city that had a deal post is left alone this many days, whatever its
+                                   #   new price, so the same city never comes two days in a row
   keep_pictures_days: 7            # Instagram fetches the pictures from the website (/social/); kept this long
   # Keeping the accounts busy on quiet days:
   weekly_day: sunday               # on this day the first post is a "TOP 5 ofertat e javës" carousel (cover +
@@ -159,6 +167,9 @@ instagram_dm:
   deals_count: 5                   # how many routes that reply lists (deals first)
   deals_from_comments: true        # someone who writes the word as a comment under a post or reel gets
                                    #   the same reply as a private message (one per comment: Instagram's rule)
+  comment_reply: "✅ Ta dërguam në mesazh! Shiko te mesazhet (ose te kërkesat për mesazh)."
+                                   # then the bot answers the comment in public with this line, so the
+                                   #   person knows where to look. Empty ("") = no public answer
 
 # --- Your own trip watches ------------------------------------------------------
 # Trips only you hear about: after each full scan (every 3 hours) the bot writes to your own chat

@@ -198,6 +198,14 @@ class MetaClient:
                             message=json.dumps({"text": text}))
         return result.get("recipient_id", ""), result.get("message_id", "")
 
+    def reply_to_instagram_comment(self, comment_id: str, text: str) -> str:
+        """Answer a comment under one of our posts, in public, under that comment. Returns the reply's id.
+
+        Needs instagram_manage_comments on the token. Docs:
+        https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-comment/replies
+        """
+        return self._call("POST", f"{comment_id}/replies", message=text).get("id", "")
+
     def send_instagram_typing(self, recipient: str) -> None:
         """Show `recipient` the "typing..." dots while the reply is being written (they last about 20s)."""
         page = self.whoami()["page_id"]

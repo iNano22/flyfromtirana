@@ -541,6 +541,12 @@ class DMBot:
         # Saved under the person's chat, so the message's echo is known as the bot's, not the owner's.
         storage.save_dm(mid or f"bot-{uuid.uuid4()}", recipient or person, "assistant", reply, self.clock())
         log.info("Sent the prices to %s, who commented %r", writer.get("username") or person, text)
+        # And a short public answer under the comment, so they know to look in their messages.
+        if self.settings.comment_reply:
+            try:
+                self.meta.reply_to_instagram_comment(comment_id, self.settings.comment_reply)
+            except MetaError as exc:   # the prices are sent: this is only the courtesy
+                log.warning("Could not answer the comment of %s in public: %s", writer.get("username") or person, exc)
 
     def handle_event(self, event: dict, storage: Storage) -> None:
         """Keep the message; the reply is written once they've stopped writing (answer_due)."""

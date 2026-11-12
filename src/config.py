@@ -117,6 +117,13 @@ class SocialSettings:
     # Deal posts go to Instagram as a Reel (a short video of the card, src/reels.py) instead of
     # the feed picture. Needs ffmpeg; without it the post stays a picture.
     reels: bool = False
+    # A city that had a deal post is left alone this many days, whatever its new price, so
+    # the same city never comes two days in a row. 1 = only "not twice on the same day".
+    city_cooldown_days: int = 5
+    # A Reel plays a short video of the city behind the deal (src/place_video.py; needs
+    # PEXELS_API_KEY). Without a video for the city, the Reel shows its photo as before.
+    reel_videos: bool = True
+    reel_video_skip: tuple[str, ...] = ()   # airport codes whose Reels keep the photo (a video you didn't like)
 
 
 EFFORTS = ("low", "medium", "high", "xhigh", "max")
@@ -145,6 +152,9 @@ class InstagramDMSettings:
     # The same word written as a comment under a post or reel ("OFERTA") gets that reply as a
     # private message. False = comments are left alone.
     deals_from_comments: bool = True
+    # After that message is sent, the bot also answers the comment in public with this short
+    # line, so the person knows to look in their messages. Empty = no public answer.
+    comment_reply: str = "✅ Ta dërguam në mesazh! Shiko te mesazhet (ose te kërkesat për mesazh)."
 
 
 WEEKDAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
@@ -266,6 +276,7 @@ class Secrets:
     telegram_premium_channel_id: str = ""
     telegram_drafts_chat_id: str = ""      # where the Instagram/Facebook drafts and reports go; empty = none
     meta_page_token: str = ""              # the Facebook Page's token (posts to Instagram and the Page); empty = drafts only
+    pexels_api_key: str = ""               # finds a video of the city for its Reels (src/place_video.py); empty = photos
 
 
 def load_config(path: str | Path = DEFAULT_CONFIG_PATH) -> Config:
@@ -383,6 +394,7 @@ def _build_instagram_dm(raw: dict) -> InstagramDMSettings:
                              or InstagramDMSettings.deals_keywords),
         deals_count=int(raw.get("deals_count", 5)),
         deals_from_comments=bool(raw.get("deals_from_comments", True)),
+        comment_reply=str(raw.get("comment_reply", InstagramDMSettings.comment_reply) or "").strip(),
     )
     if not 1 <= settings.deals_count <= 10:
         raise ValueError("instagram_dm.deals_count must be between 1 and 10")
@@ -473,7 +485,18 @@ def _build_social(raw: dict) -> SocialSettings:
         weekly_day=weekly_day,
         weekly_count=weekly_count,
         reels=bool(raw.get("reels", False)),
+        city_cooldown_days=_at_least(raw.get("city_cooldown_days", 5), 1, "social.city_cooldown_days"),
+        reel_videos=bool(raw.get("reel_videos", True)),
+        reel_video_skip=tuple(str(code).strip().upper() for code in raw.get("reel_video_skip") or []),
     )
+
+
+def _at_least(raw, least: int, name: str) -> int:
+    """A whole number from config.yaml that must be `least` or more."""
+    number = int(raw)
+    if number < least:
+        raise ValueError(f"{name} must be at least {least}")
+    return number
 
 
 def _post_times(raw) -> tuple[time, ...]:
@@ -660,4 +683,5 @@ def load_secrets(*, dry_run: bool, premium: bool = False) -> Secrets:
         telegram_premium_channel_id=env.get("TELEGRAM_PREMIUM_CHANNEL_ID", ""),
         telegram_drafts_chat_id=drafts_chat,
         meta_page_token=os.environ.get("META_PAGE_TOKEN", "").strip(),
+        pexels_api_key=os.environ.get("PEXELS_API_KEY", "").strip(),
     )

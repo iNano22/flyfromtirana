@@ -836,6 +836,42 @@ through Cloudflare (the report says "could not take the picture" otherwise: then
 `/social/` for Meta's crawler in Cloudflare's WAF), and Meta's limit of 100 Instagram
 posts a day through the API, far above the 2 made here.
 
+### What a deal post looks like, and which deal it is
+
+- **Not the same city again.** A city that had a deal post rests `social.city_cooldown_days`
+  (5) days, whatever its new price: Dublin never comes two days in a row. After the rest, the
+  older rule still holds (not at the same price or dearer within `repost_cooldown_days`).
+- **Albanian names and words.** Cards and captions say "MILANO", "VJENË" (each guide's
+  `name`) and "vajtje", like the website. A city without a guide keeps the route's name.
+- **"SHKRUAJ «OFERTA» NË KOMENT"** is on the feed card and the Reel (a white label at the
+  top, and the Reel's closing card); the story says "NË MESAZH", since a reply to a story is
+  a message. The caption has the line too. All of it disappears while the message bot or
+  `instagram_dm.deals_from_comments` is off.
+- **The Reel opens on the price.** Its very first frame shows the price popping in, the
+  saving is slapped on a moment later, and everything is in place within 1.5 seconds.
+- **Hashtags.** `social.hashtags` (a few) and then the city's own tag: `#milano`, `#vjene`.
+
+### Reels with a video of the city
+
+With `social.reel_videos: true` a Reel plays a short video of the city behind the deal
+instead of the still photo (src/place_video.py). The story, the feed card and the Reel's
+last-resort fallback keep the photo. Where the video comes from, in this order:
+
+1. `assets/reel_videos/<code>.mp4` (e.g. `dub.mp4`): your own clip, committed here. It
+   always wins. Any size works: it is cut to fill the frame, and a short one plays again.
+2. A video found earlier on pexels.com, kept on the server in `data/reel_videos/`.
+3. A search on pexels.com by the city's English name, upright videos only. This needs a
+   free key: make an account on pexels.com, open pexels.com/api, copy **Your API key**
+   into `PEXELS_API_KEY` in Coolify, and deploy. The scanner's log says "Saved a video of
+   Dublin for its Reels: <its page on Pexels>". The caption names the author
+   ("🎥 Video: Jane Doe / Pexels").
+
+A city nothing is found for keeps its photo (and is searched again after 30 days). The
+search only takes a video whose title names the city, so a small town gets its photo, not
+some other place. If you don't like a city's video, add its code to
+`social.reel_video_skip` (e.g. `[NRN]`) to go back to the photo, or put your own clip in
+`assets/reel_videos/`.
+
 ## Instagram private messages
 
 `src/instagram_dm.py` answers the messages people send to @flyfromtirana on Instagram,
@@ -880,6 +916,12 @@ and sends the reply. Settings are under `instagram_dm` in config.yaml.
   This message has the prices but no link: Instagram refused it with a link in it
   ("Invalid message id"). Its last line asks the person to write back, and that reply,
   an ordinary message, carries the link.
+  Every Instagram caption (deals, the weekly top, the guides) says so near its top:
+  "Shkruaj OFERTA në koment: ..." (`comment_invite` in src/social.py). The line is left
+  out while the bot or `deals_from_comments` is off. Facebook posts don't have it.
+  After the message is sent the bot also answers the comment in public with
+  `comment_reply` ("✅ Ta dërguam në mesazh! ..."), so the person knows where to look;
+  set it to "" for no public answer.
   This needs step 8 of the setup below.
 
 - **The owner takes over.** When you answer someone yourself in the Instagram app, the

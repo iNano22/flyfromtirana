@@ -50,6 +50,7 @@ from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import post_photo
+from src.place_video import place_video
 from src.reels import pick_music
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
 from src.social import (GUIDE_CHANNEL, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL, WEEKLY_MIN_DEALS, Post,
@@ -175,7 +176,8 @@ def run(
             return publish_social(telegram=telegram_for(secrets.telegram_drafts_chat_id),
                                   drafts_chat=bool(secrets.telegram_drafts_chat_id),
                                   meta=meta_client(config, secrets, session, dry_run=dry_run),
-                                  marker=secrets.travelpayouts_marker, **common)
+                                  marker=secrets.travelpayouts_marker, pexels_key=secrets.pexels_api_key,
+                                  **common)
 
         def alerts(**options) -> int:
             """The price alerts people set with the bot (src/alerts.py)."""
@@ -341,15 +343,16 @@ def meta_client(config: Config, secrets: Secrets, session: requests.Session, *, 
 
 def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, telegram: TelegramClient | None,
                    drafts_chat: bool, meta: MetaClient | None, marker: str, dry_run: bool, now: datetime,
-                   local_now: datetime, output: Callable[[str], None]) -> int:
+                   local_now: datetime, output: Callable[[str], None], pexels_key: str = "") -> int:
     """The Instagram/Facebook post of this run, when one is due (src/social.py).
 
     The posts go out at social.post_times (local), one per time, at the first run
     at or after it: so they are hours apart, never two in a row. What goes out:
       1. on social.weekly_day, the day's first post is the week's top deals;
       2. otherwise the best deal the website shows that these accounts haven't
-         had: not a city already posted today, and not a city posted at this
-         price or cheaper within repost_cooldown_days, whatever the date or airport;
+         had: not a city posted in the last social.city_cooldown_days days, and not
+         a city posted at this price or cheaper within repost_cooldown_days,
+         whatever the date or airport;
       3. at the day's last time, when the day had no post at all, a city guide.
     With `meta` the bot posts and reports to the owner; a post that fails is sent
     as a draft, so it can go out by hand. Either way the post counts as made.
@@ -436,7 +439,13 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
         if deal is not None:
             # Each Reel gets the next track: how many deal posts came before it decides which.
             music = pick_music(storage.count_posts(SOCIAL_CHANNEL, EVER)) if social.reels else None
-            post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata), music=music)
+            # A video of the city for the Reel's background, if it has one (else the photo).
+            clip = None
+            if social.reels and social.reel_videos and deal.route.iata not in social.reel_video_skip:
+                clip = place_video(deal.route.iata, deal.route.city_en, config.db_path.parent / "reel_videos",
+                                   api_key=pexels_key)
+            post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata), music=music,
+                             place_video=clip)
             channel, quotes = SOCIAL_CHANNEL, deal.quotes
 
     # 3) Otherwise, at the day's last time, a city guide when the day had no post at all.
@@ -487,19 +496,24 @@ def choose_deal(deals: list[Deal], config: Config, storage: Storage, *, now: dat
                 day_start: datetime) -> Deal | None:
     """The best of the website's deals (best first) the social accounts haven't had, or None.
 
-    Skipped: a city already posted today, and a city posted at this price band or a
-    cheaper one within repost_cooldown_days, whatever the date or the airport: the post
-    shows a city at a price, so to a follower another date (or Malpensa instead of
-    Bergamo) at the same price is the same post. A cheaper price is news again.
+    Skipped:
+      - a city that had a deal post today or in the last social.city_cooldown_days days,
+        whatever its price now: followers shouldn't see Dublin two days in a row;
+      - after that, a city posted at this price band or a cheaper one within
+        repost_cooldown_days, whatever the date or the airport: the post shows a city at a
+        price, so to a follower another date (or Malpensa instead of Bergamo) at the same
+        price is the same post. A cheaper price is news again.
     """
     cities = {route.iata: route.city for route in config.routes}
-    cities_today = {cities.get(code, code) for code, at in storage.last_posts(SOCIAL_CHANNEL).items()
-                    if at >= day_start}
+    rest_since = min(day_start, now - timedelta(days=config.social.city_cooldown_days))
+    resting = {cities.get(code, code) for code, at in storage.last_posts(SOCIAL_CHANNEL).items()
+               if at >= rest_since}
     since = now - timedelta(days=config.rules.repost_cooldown_days)
     for deal in deals:
         city, best = deal.route.city, deal.best
-        if city in cities_today:
-            log.debug("[social] %s: %s was posted today already", deal.route.iata, city)
+        if city in resting:
+            log.debug("[social] %s: %s had a post in the last %d days", deal.route.iata, city,
+                      config.social.city_cooldown_days)
             continue
         band = price_band(best.price, config.rules.price_band_eur)
         airports = [code for code, name in cities.items() if name == city]

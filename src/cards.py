@@ -94,13 +94,13 @@ CARD_SIZES = ("feed", "story")   # the pictures save_cards writes (a Reel is dra
 
 
 def save_cards(deal: Deal, out_dir: Path, *, airline_names: dict[str, str], brand: str, handle: str,
-               address: str, photo: Path | None, language: str = "sq") -> dict[str, Path]:
+               address: str, photo: Path | None, language: str = "sq", keyword: str | None = None) -> dict[str, Path]:
     """Write both cards of a deal as JPEGs: {"feed": out_dir/bgy_feed.jpg, "story": out_dir/bgy_story.jpg}."""
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = {}
     for name in CARD_SIZES:
         card = draw_card(deal, name, airline_names=airline_names, brand=brand, handle=handle,
-                         address=address, photo=photo, language=language)
+                         address=address, photo=photo, language=language, keyword=keyword)
         paths[name] = save_jpeg(card, out_dir / f"{deal.route.iata.lower()}_{name}.jpg")
     return paths
 
@@ -201,21 +201,27 @@ def shorten(line: str, font: ImageFont.FreeTypeFont, max_width: int) -> str:
 # --- the deal card ---------------------------------------------------------------------
 
 def draw_card(deal: Deal, layout_name: str, *, airline_names: dict[str, str], brand: str, handle: str,
-              address: str, photo: Path | None, language: str = "sq") -> Image.Image:
+              address: str, photo: Path | None, language: str = "sq", keyword: str | None = None) -> Image.Image:
     """A deal's card as a Pillow image (RGB): the destination's photo filling the card, a giant
-    price and the city over its darkened lower half, the saving as a sticker. layout_name: "feed" or "story"."""
+    price and the city over its darkened lower half, the saving as a sticker. layout_name: "feed" or "story".
+    keyword: the word people write to get the day's prices ("OFERTA"); None = the card doesn't ask."""
     layout = LAYOUTS[layout_name]
     card = deal_background(photo, deal.route.iata, layout)
     draw = ImageDraw.Draw(card)
     for _, paint in deal_pieces(deal, layout, airline_names=airline_names, brand=brand, handle=handle,
-                                address=address, language=language):
+                                address=address, language=language, keyword=keyword):
         paint(card, draw)
     return card
 
 
 def deal_background(photo: Path | None, iata: str, layout: Layout) -> Image.Image:
     """A deal card's photo, darkened at the top (for the brand) and from the middle down (for the words)."""
-    card = full_photo(photo, iata, layout)
+    return shade_for_words(full_photo(photo, iata, layout), layout)
+
+
+def shade_for_words(card: Image.Image, layout: Layout) -> Image.Image:
+    """Darken a picture that fills the card so the words can be read on it: the top (the brand)
+    and from the middle down (the price and the city). A Reel does this to every frame of a video."""
     shade(card, 0, px(layout, 260) + layout.safe_top, start=150, end=0)
     shade(card, int(layout.sign_bottom * 0.4), layout.sign_bottom, start=0, end=240)
     if not layout.band:   # no black footer: the photo goes on below the words, almost black
@@ -227,13 +233,21 @@ def deal_background(photo: Path | None, iata: str, layout: Layout) -> Image.Imag
 Paint = Callable[[Image.Image, ImageDraw.ImageDraw], None]
 
 
+def invite_text(layout: Layout, keyword: str) -> str:
+    """The label that asks for the keyword. Under a post or a Reel people comment; a story has no
+    comments, but a reply to it is a message, and the bot answers the word there too."""
+    if layout.name == "story":
+        return f"NA SHKRUAJ «{keyword}» NË MESAZH"
+    return f"SHKRUAJ «{keyword}» NË KOMENT"
+
+
 def deal_pieces(deal: Deal, layout: Layout, *, airline_names: dict[str, str], brand: str, handle: str,
-                address: str, language: str = "sq") -> list[tuple[str, Paint]]:
+                address: str, language: str = "sq", keyword: str | None = None) -> list[tuple[str, Paint]]:
     """The words and labels of a deal card, each with the way to draw it: [("brand", paint), ...].
 
     draw_card paints them all on the photo, in this order. A Reel (src/reels.py) paints each
     on a layer of its own, to bring them in one after the other. The names: brand, footer,
-    sticker, details, dates, city, price, tag.
+    invite (only with a keyword), sticker, details, dates, city, price, tag.
     """
     words = WORDS[language]
     width, pad = layout.width, layout.padding
@@ -242,6 +256,17 @@ def deal_pieces(deal: Deal, layout: Layout, *, airline_names: dict[str, str], br
         ("brand", lambda card, draw: brand_over_photo(card, draw, brand, layout)),
         ("footer", lambda card, draw: footer(draw, layout, address=address, handle=handle)),
     ]
+
+    # "SHKRUAJ «OFERTA» NË KOMENT": a white label at the top right, level with the brand.
+    if keyword:
+        invite_middle = px(layout, 32) + layout.safe_top + px(layout, 64) / 2
+        # As big as fits next to the brand's mark and name, which start at the left margin.
+        brand_width = px(layout, 64) + 18 + archivo(px(layout, 38), 800, 88).getlength(brand)
+        invite_font = fit_mono(invite_text(layout, keyword), int(width - 2 * pad - brand_width - 70),
+                               size=px(layout, 28))
+        pieces.append(("invite", lambda card, draw: tag(draw, invite_text(layout, keyword), right=width - pad,
+                                                        middle=invite_middle, font=invite_font,
+                                                        fill=WHITE, color=INK)))
 
     # The saving as a sticker at the top right; without a usual price, "OFERTË".
     saving = saving_percent(deal)
@@ -291,7 +316,7 @@ def deal_pieces(deal: Deal, layout: Layout, *, airline_names: dict[str, str], br
     pieces.append(("price", paint_price))
     y -= cap_height(price_font) + px(layout, 50)
 
-    route = f"{deal.best.origin} → {deal.best.destination}  ·  ONE WAY"
+    route = f"{deal.best.origin} → {deal.best.destination}  ·  VAJTJE"
     pieces.append(("tag", lambda card, draw: tag(draw, route, left=pad, middle=y, font=mono(px(layout, 32)),
                                                  fill=INK, color=SUN)))
     return pieces

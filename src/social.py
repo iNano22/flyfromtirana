@@ -33,8 +33,10 @@ from __future__ import annotations
 
 import html
 import logging
+import re
 import shutil
-from dataclasses import dataclass
+import unicodedata
+from dataclasses import dataclass, replace
 from datetime import datetime
 from pathlib import Path
 
@@ -47,8 +49,10 @@ from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import PostPhoto
+from src.place_video import PlaceVideo
 from src.reels import ReelError, make_reel
 from src.telegram import TelegramClient
+from src.website import site_guides
 
 log = logging.getLogger(__name__)
 
@@ -87,25 +91,34 @@ class Online:
 # --- making the posts ----------------------------------------------------------------
 
 def deal_post(deal: Deal, config: Config, links: LinkBuilder, out_dir: Path, *, photo: PostPhoto | None,
-              music: tuple[Path, float] | None = None) -> Post:
+              music: tuple[Path, float] | None = None, place_video: PlaceVideo | None = None) -> Post:
     """A deal's post: its two cards, its Reel (with social.reels on) and the captions.
 
     `links` carries the social SubID. music: the Reel's track (reels.pick_music), or None.
-    A Reel that can't be made only leaves the post a picture, as before.
+    place_video: a video of the city to play behind the Reel's deal (src/place_video.py), or
+    None for the photo. A Reel that can't be made only leaves the post a picture, as before.
     """
+    deal = in_local_names(deal, config)   # "Milano", not "Milan", on the cards and in the caption
+    keyword = invite_keyword(config)   # "OFERTA" on the pictures too, while the bot answers it
     cards = save_cards(deal, out_dir, airline_names=config.airlines, brand=config.brand, handle=handle(config),
-                       address=site_address(config), photo=photo.path if photo else None, language=config.language)
+                       address=site_address(config), photo=photo.path if photo else None, language=config.language,
+                       keyword=keyword)
     video = cover = None
     if config.social.reels:
         try:
             video, cover = make_reel(deal, out_dir, airline_names=config.airlines, brand=config.brand,
                                      handle=handle(config), address=site_address(config),
                                      telegram=short_address(config), photo=photo.path if photo else None,
-                                     language=config.language, music=music)
+                                     language=config.language, music=music, keyword=keyword,
+                                     place_video=place_video.path if place_video else None)
         except ReelError as exc:
             log.warning("[social] No Reel for %s, the post is a picture: %s", deal.route.iata, exc)
     booking_link = links.flight(deal.best)
-    extra = {"HASHTAGS": config.social.hashtags, "WEBSITE": site_address(config), "BOOKING_LINK": booking_link}
+    extra = {"HASHTAGS": hashtags(config, deal.route.city).strip(), "WEBSITE": site_address(config),
+             "BOOKING_LINK": booking_link,
+             "COMMENT_INVITE": comment_invite(config) or None,   # None = the line is left out
+             # Named only when the Reel was made with the video (Pexels asks programs to say so).
+             "VIDEO_CREDIT": place_video.credit if place_video and video else None}
 
     def caption(template: str, telegram: str | None) -> str:
         # format_post writes Telegram HTML (values escaped); the platforms want plain text.
@@ -126,7 +139,7 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
 
     deals: the best first, at most social.weekly_count. photos: each route's photo by airport code.
     """
-    deals = deals[: config.social.weekly_count]
+    deals = [in_local_names(deal, config) for deal in deals[: config.social.weekly_count]]
     words = WORDS[config.language]
     first = photos.get(deals[0].route.iata) if deals else None
     cover = save_jpeg(draw_top_card(deals, brand=config.brand, handle=handle(config), address=site_address(config),
@@ -148,7 +161,8 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
         return (f"🔔 Ofertat dalin të parat në Telegram: {telegram}\n⏳ Çmimet ndryshojnë shpejt!"
                 + hashtags(config))
 
-    caption = head + f"👉 Rezervo nga linku në bio: {site_address(config)}\n" + tail(instagram_channel(config))
+    caption = (head + invite_line(config) + f"👉 Rezervo nga linku në bio: {site_address(config)}\n"
+               + tail(instagram_channel(config)))
     facebook_text = (head + f"👉 Të gjitha ofertat dhe rezervimi: {config.website.url}\n"
                      + tail(facebook_channel(config)))
     return Post(kind="weekly", title=f"TOP {len(deals)} ofertat e javës", pictures=pictures, story=None,
@@ -185,9 +199,10 @@ def guide_post(guide: Guide, iata: str, price: float | None, config: Config, out
     head = f"📍 {guide.display_name.upper()}: {guide.tagline}\n\n{guide.intro}\n\n{taste}{flights}"
 
     def tail(telegram: str) -> str:
-        return f"🔔 Ofertat dalin të parat në Telegram: {telegram}" + hashtags(config)
+        return f"🔔 Ofertat dalin të parat në Telegram: {telegram}" + hashtags(config, guide.display_name)
 
-    caption = (head + f"📖 Udhëzuesi i plotë (çfarë të shohësh, ku të flesh, çfarë të hash): {page} — linku në bio\n"
+    caption = (head + invite_line(config)
+               + f"📖 Udhëzuesi i plotë (çfarë të shohësh, ku të flesh, çfarë të hash): {page} — linku në bio\n"
                + tail(instagram_channel(config)))
     facebook_text = head + f"📖 Udhëzuesi i plotë: {page_url}\n" + tail(facebook_channel(config))
     return Post(kind="guide", title=f"Udhëzues: {guide.display_name}", pictures=pictures, story=story,
@@ -227,8 +242,54 @@ def guide_sections(guide: Guide) -> list[tuple[str, str, list[tuple[str | None, 
     return sections[:9]
 
 
-def hashtags(config: Config) -> str:
-    return f"\n\n{config.social.hashtags}" if config.social.hashtags else ""
+def comment_invite(config: Config) -> str:
+    """The line of an Instagram caption that tells people to comment the keyword ("OFERTA"): the
+    message bot then sends them the day's prices (src/instagram_dm.py, handle_comment).
+    Empty when that bot is off, so no caption promises a message nobody sends."""
+    keyword = invite_keyword(config)
+    if not keyword:
+        return ""
+    return f"Shkruaj {keyword} në koment: të dërgojmë çmimet më të mira të ditës në mesazh."
+
+
+def invite_keyword(config: Config) -> str | None:
+    """The word to comment ("OFERTA"), or None while the message bot doesn't answer comments."""
+    bot = config.instagram_dm
+    if not (bot.enabled and bot.deals_from_comments and bot.deals_keywords):
+        return None
+    return bot.deals_keywords[0].upper()
+
+
+def invite_line(config: Config) -> str:
+    """comment_invite as a caption line of its own, or nothing."""
+    invite = comment_invite(config)
+    return f"💬 {invite}\n" if invite else ""
+
+
+def local_name(config: Config, city: str) -> str:
+    """A city's name as the posts' language writes it: "Milano" for the route's "Milan". The names
+    are the guides' (guides/sq/*.yaml, `name`); a city without one keeps the route's name."""
+    guide = site_guides(config, config.language).get(city)
+    return guide.display_name if guide else city
+
+
+def in_local_names(deal: Deal, config: Config) -> Deal:
+    """The same deal with its city's name in the posts' language, for the cards and the caption."""
+    return replace(deal, route=replace(deal.route, city=local_name(config, deal.route.city)))
+
+
+def city_tag(city: str) -> str:
+    """A city's hashtag: "#vjene" for "Vjenë", "#telaviv" for "Tel Aviv" (plain small letters only)."""
+    plain = unicodedata.normalize("NFKD", city.lower()).replace("ł", "l")
+    return "#" + re.sub(r"[^a-z0-9]", "", plain)
+
+
+def hashtags(config: Config, city: str | None = None) -> str:
+    """The caption's last line, after an empty one: social.hashtags, then the city's own tag."""
+    tags = config.social.hashtags.split()
+    if city and len(city_tag(city)) > 1 and city_tag(city) not in tags:
+        tags.append(city_tag(city))
+    return "\n\n" + " ".join(tags) if tags else ""
 
 
 def handle(config: Config) -> str:

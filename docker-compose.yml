@@ -33,6 +33,8 @@ services:
       TELEGRAM_DRAFTS_CHAT_ID: ${TELEGRAM_DRAFTS_CHAT_ID:-}
       # The Facebook Page's token: with it the bot posts to Instagram and the Page itself.
       META_PAGE_TOKEN: ${META_PAGE_TOKEN:-}
+      # A free pexels.com key: the Reels then play a video of the city (README: "Reels with a video of the city").
+      PEXELS_API_KEY: ${PEXELS_API_KEY:-}
       # The bot that answers Instagram private messages (instagram_dm in config.yaml; README:
       # "Instagram private messages"). It stays off until all three are set, plus META_PAGE_TOKEN.
       META_APP_SECRET: ${META_APP_SECRET:-}       # the Instagram app secret: proves a webhook call is Meta's

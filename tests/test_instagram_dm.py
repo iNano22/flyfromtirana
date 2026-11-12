@@ -39,6 +39,7 @@ class FakeMeta:
     def __init__(self, fail: bool = False):
         self.sent: list[tuple[str, str]] = []
         self.private_replies: list[tuple[str, str]] = []   # (the comment's id, the text)
+        self.public_replies: list[tuple[str, str]] = []    # answers under a comment: (its id, the text)
         self.typing: list[str] = []
         self.fail = fail
 
@@ -53,6 +54,10 @@ class FakeMeta:
             raise MetaError("Meta refused the call")
         self.private_replies.append((comment_id, text))
         return PERSON, f"bot-mid-c{len(self.private_replies)}"
+
+    def reply_to_instagram_comment(self, comment_id, text):
+        self.public_replies.append((comment_id, text))
+        return "reply-1"
 
     def send_instagram_typing(self, recipient):
         if self.fail:
@@ -287,6 +292,7 @@ def test_oferta_as_a_comment_gets_the_prices_in_a_private_message(config):
     assert "http" not in reply and ".al" not in reply         # no link: Instagram refuses it in this message
     assert "Na shkruaj këtu" in reply
     assert meta.sent == [] and writer.chats == []              # no ordinary message, and Claude was not asked
+    assert meta.public_replies == [("c1", "✅ Ta dërguam në mesazh! Shiko te mesazhet (ose te kërkesat për mesazh).")]
 
     # The message's echo is the bot's own: the bot doesn't take it for the owner and go quiet.
     bot.handle_payload(delivery(echo_event(reply, "bot-mid-c1")))
@@ -304,7 +310,11 @@ def test_other_comments_and_our_own_get_nothing(config):
     off = replace(config, instagram_dm=replace(config.instagram_dm, deals_from_comments=False))
     make_bot(off, meta).handle_payload(comment_delivery("OFERTA", "c4"))
     make_bot(config, FakeMeta(fail=True)).handle_payload(comment_delivery("OFERTA", "c5"))   # refused: only logged
-    assert meta.private_replies == [] and meta.sent == []
+    assert meta.private_replies == [] and meta.sent == [] and meta.public_replies == []
+    # With the public answer switched off, the prices still go.
+    silent = replace(config, instagram_dm=replace(config.instagram_dm, comment_reply=""))
+    make_bot(silent, meta).handle_payload(comment_delivery("OFERTA", "c6"))
+    assert len(meta.private_replies) == 1 and meta.public_replies == []
 
 
 def test_story_mentions_reactions_and_other_objects_get_nothing(config):
@@ -537,6 +547,10 @@ def test_meta_sends_the_message_to_the_page_messages_endpoint():
     call = session.calls[-1]
     assert call["url"] == GRAPH_URL.format(path="PAGE1/messages")
     assert json.loads(call["data"]["recipient"]) == {"comment_id": "c1"}
+
+    MetaClient("token", session).reply_to_instagram_comment("c1", "✅ Ta dërguam")
+    call = session.calls[-1]
+    assert call["url"] == GRAPH_URL.format(path="c1/replies") and call["data"]["message"] == "✅ Ta dërguam"
 
     MetaClient("token", session).send_instagram_typing(PERSON)
     call = session.calls[-1]
