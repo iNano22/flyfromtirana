@@ -11,7 +11,7 @@ import pytest
 
 from src.config import Secrets, _post_times, load_config
 from src.deals import PREMIUM_CHANNEL, price_band
-from src.main import run
+from src.main import run, social_now
 from src.social import SOCIAL_CHANNEL
 from src.storage import Storage
 from tests.conftest import (NOW, FakeResponse, FakeSession, api_row, make_quote, telegram_chat, telegram_text,
@@ -124,6 +124,19 @@ def test_nothing_goes_out_before_the_first_posting_time(config):
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=morning) == 0
     assert methods(channel_posts(session)) == ["sendPhoto"]
     assert drafts(session) == []
+
+
+def test_social_now_posts_the_next_deal_whatever_the_clock_says(config):
+    night = NOW.replace(hour=1)   # 03:00 in Tirana: quiet hours, and long before the first posting time
+    session = fake_world()
+    assert run(replace(config, quiet_hours=None), SECRETS, dry_run=False, only_routes={"BGY"}, session=session,
+               now=night) == 0
+    assert drafts(session) == []                              # a normal run posts nothing at this hour
+    assert social_now(config, SECRETS, session=session, now=night) == 0
+    files, caption, link = drafts(session)                    # --social-now does
+    assert "TIRANA → MILANO (Bergamo) nga €19" in telegram_text(caption)
+    assert social_now(config, SECRETS, session=session, now=night) == 0
+    assert len(drafts(session)) == 3                          # and Milan now rests: not posted twice
 
 
 def test_a_destination_posted_at_this_price_is_skipped_whatever_the_date(config):

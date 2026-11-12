@@ -850,6 +850,9 @@ posts a day through the API, far above the 2 made here.
 - **The Reel opens on the price.** Its very first frame shows the price popping in, the
   saving is slapped on a moment later, and everything is in place within 1.5 seconds.
 - **Hashtags.** `social.hashtags` (a few) and then the city's own tag: `#milano`, `#vjene`.
+- **To try a change without waiting for a posting time:** `python -m src.main --social-now`
+  on the server (Coolify → the app → Terminal → the scanner container) posts the next deal
+  at once, whatever the clock says. It is a real post, and its city then rests like any other.
 
 ### Reels with a video of the city
 

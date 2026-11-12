@@ -79,6 +79,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.ignore_quiet_hours:
             config = replace(config, quiet_hours=None)
         secrets = load_secrets(dry_run=args.dry_run, premium=config.premium.enabled)
+        if args.social_now:
+            return social_now(config, secrets)
         only_routes = {code.strip().upper() for code in args.routes.split(",")} if args.routes else None
         return run(config, secrets, dry_run=args.dry_run, only_routes=only_routes,
                    premium_only=args.premium_only)
@@ -103,9 +105,32 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
                              "posts, prices are not saved)")
     parser.add_argument("--ignore-quiet-hours", action="store_true",
                         help="post even during quiet hours (e.g. a manual test at night)")
+    parser.add_argument("--social-now", action="store_true",
+                        help="post the next Instagram/Facebook deal right now, whatever the clock says "
+                             "(no scan, no channel posts): for trying a change to the posts")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH, help="path to config.yaml")
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
     return parser.parse_args(argv)
+
+
+def social_now(config: Config, secrets: Secrets, *, session: requests.Session | None = None,
+               now: datetime | None = None) -> int:
+    """`python -m src.main --social-now`: post the next Instagram/Facebook deal at once, from the
+    prices already in the database. Nothing is scanned and nothing goes to the Telegram channels.
+    It is a real post: it counts like any other, and its city then rests like any other.
+    `session` and `now` are only passed in by tests."""
+    now = now or datetime.now(timezone.utc)
+    session = session or requests.Session()
+    links = LinkBuilder(config.links, secrets.travelpayouts_marker, origin=config.origin, currency=config.currency)
+    links.validate()
+    owner = secrets.telegram_drafts_chat_id
+    with Storage(config.db_path) as storage:
+        return publish_social(config=config, links=links, storage=storage,
+                              telegram=TelegramClient(secrets.telegram_bot_token, owner, session),
+                              drafts_chat=bool(owner), meta=meta_client(config, secrets, session, dry_run=False),
+                              marker=secrets.travelpayouts_marker, pexels_key=secrets.pexels_api_key,
+                              dry_run=False, now=now, local_now=now.astimezone(ZoneInfo(config.timezone)),
+                              output=print, force=True)
 
 
 def run(
@@ -343,7 +368,8 @@ def meta_client(config: Config, secrets: Secrets, session: requests.Session, *, 
 
 def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, telegram: TelegramClient | None,
                    drafts_chat: bool, meta: MetaClient | None, marker: str, dry_run: bool, now: datetime,
-                   local_now: datetime, output: Callable[[str], None], pexels_key: str = "") -> int:
+                   local_now: datetime, output: Callable[[str], None], pexels_key: str = "",
+                   force: bool = False) -> int:
     """The Instagram/Facebook post of this run, when one is due (src/social.py).
 
     The posts go out at social.post_times (local), one per time, at the first run
@@ -358,7 +384,8 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     as a draft, so it can go out by hand. Either way the post counts as made.
     Returns 1 if the owner's chat could not be reached, else 0. A problem here
     never stops the Telegram posts: they are already out. A dry run shows the
-    post that would go out next, whatever the clock says.
+    post that would go out next, whatever the clock says. force (--social-now) posts
+    the next deal for real, whatever the clock and the quiet hours say.
     """
     social = config.social
     if not social.enabled:
@@ -366,7 +393,7 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     if not dry_run and not drafts_chat:
         log.warning("Social posts are on in config.yaml but TELEGRAM_DRAFTS_CHAT_ID is not set: nothing sent")
         return 0
-    if in_quiet_hours(local_now.time(), config.quiet_hours) and not dry_run:
+    if in_quiet_hours(local_now.time(), config.quiet_hours) and not dry_run and not force:
         return 0   # the channel posts wait for the morning, and so do these
 
     day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
@@ -377,6 +404,8 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     begun = posting_time(social.post_times, local_now)
     if dry_run:
         slot_start, last_of_day = day_start, True   # pretend: show what would go out next
+    elif force:
+        slot_start, last_of_day = day_start, False  # asked for by hand: a deal now, never a guide
     elif begun is None:
         return 0   # before the day's first posting time
     else:
@@ -423,7 +452,7 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     channel, quotes = "", []
 
     # 1) On the weekly day, the first post is the week's top deals.
-    if (social.weekly_day is not None and local_now.weekday() == social.weekly_day
+    if (not force and social.weekly_day is not None and local_now.weekday() == social.weekly_day
             and storage.count_posts(WEEKLY_CHANNEL, day_start) == 0):
         top = deals[: social.weekly_count]
         if len(top) < WEEKLY_MIN_DEALS:

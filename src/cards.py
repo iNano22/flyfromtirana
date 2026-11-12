@@ -262,7 +262,7 @@ def deal_pieces(deal: Deal, layout: Layout, *, airline_names: dict[str, str], br
         invite_middle = px(layout, 32) + layout.safe_top + px(layout, 64) / 2
         # As big as fits next to the brand's mark and name, which start at the left margin.
         brand_width = px(layout, 64) + 18 + archivo(px(layout, 38), 800, 88).getlength(brand)
-        invite_font = fit_mono(invite_text(layout, keyword), int(width - 2 * pad - brand_width - 70),
+        invite_font = fit_mono(invite_text(layout, keyword), int(width - 2 * pad - brand_width - 110),
                                size=px(layout, 28))
         pieces.append(("invite", lambda card, draw: tag(draw, invite_text(layout, keyword), right=width - pad,
                                                         middle=invite_middle, font=invite_font,
