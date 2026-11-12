@@ -284,6 +284,8 @@ def test_oferta_as_a_comment_gets_the_prices_in_a_private_message(config):
 
     (comment_id, reply), = meta.private_replies               # one message, to the comment
     assert comment_id == "c1" and "Vjenë €45 · 12 Nën" in reply
+    assert "http" not in reply and ".al" not in reply         # no link: Instagram refuses it in this message
+    assert "Na shkruaj këtu" in reply
     assert meta.sent == [] and writer.chats == []              # no ordinary message, and Claude was not asked
 
     # The message's echo is the bot's own: the bot doesn't take it for the owner and go quiet.

@@ -877,6 +877,9 @@ and sends the reply. Settings are under `instagram_dm` in config.yaml.
   one private message per comment, within 7 days; it lands in their inbox if they follow
   the account, otherwise in their message requests. When they write back in the chat the
   bot answers like with anyone else. A longer comment ("oferta per Rome?") gets nothing.
+  This message has the prices but no link: Instagram refused it with a link in it
+  ("Invalid message id"). Its last line asks the person to write back, and that reply,
+  an ordinary message, carries the link.
   This needs step 8 of the setup below.
 
 - **The owner takes over.** When you answer someone yourself in the Instagram app, the

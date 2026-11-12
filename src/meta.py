@@ -245,7 +245,9 @@ class MetaClient:
         error = body.get("error") if isinstance(body, dict) else None
         if response.status_code != 200 or error:
             error = error or {}
-            text = f"Meta refused the call (HTTP {response.status_code}, code {error.get('code', '?')}): " \
+            # The subcode says more than the code: Meta reuses one code for different refusals.
+            subcode = f", subcode {error['error_subcode']}" if error.get("error_subcode") else ""
+            text = f"Meta refused the call (HTTP {response.status_code}, code {error.get('code', '?')}{subcode}): " \
                    f"{error.get('message', 'no details')}"
             if error.get("code") == TOKEN_ERROR_CODE:
                 text += " — META_PAGE_TOKEN is no longer valid; make a new one (README: Instagram and Facebook posts)"

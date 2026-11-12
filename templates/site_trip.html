@@ -14,8 +14,8 @@
      Same rules as the other templates: never write an uppercase word in curly braces unless it
      is a value, never two opening square brackets in a row, JS variable names lowercase. -->
 <style>
-.tripbox-shade { position: fixed; inset: 0; z-index: 50; background: rgba(15, 17, 20, 0.55); }
-.tripbox { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 51; max-width: 520px; max-height: calc(100vh - 24px); margin: 0 auto; overflow: auto; border-radius: 12px; background: #ffffff; color: #0f1114; box-shadow: 0 0 0 2px #0f1114, 0 18px 50px rgba(15, 17, 20, 0.45); font-size: 16px; line-height: 1.35; }
+.tripbox-shade { position: fixed; inset: 0; z-index: 2147483647; background: rgba(15, 17, 20, 0.55); }
+.tripbox { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 2147483647; max-width: 520px; max-height: calc(100vh - 24px); margin: 0 auto; overflow: auto; border-radius: 12px; background: #ffffff; color: #0f1114; box-shadow: 0 0 0 2px #0f1114, 0 18px 50px rgba(15, 17, 20, 0.45); font-size: 16px; line-height: 1.35; }
 .tripbox[hidden], .tripbox-shade[hidden], .tripbox li[hidden] { display: none; }
 .tripbox-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 16px 16px 14px 18px; background: #ffd60a; }
 .tripbox-head h2 { margin: 0; font-size: 26px; line-height: 1.05; font-weight: 800; font-stretch: 80%; }
@@ -80,6 +80,11 @@
       item.hidden = !href;
       if (href) { item.querySelector('a').setAttribute('href', href); }
     });
+    /* Travelpayouts' own popup ("Search cheap flight tickets") sits at the end of the page with
+       the highest z-index there is. The box has the same z-index, so it is moved to the very end
+       of the page: of two equal ones, the later one is drawn on top. */
+    document.body.appendChild(shade);
+    document.body.appendChild(box);
     box.hidden = false;
     shade.hidden = false;
     if (window.gtag) { window.gtag('event', 'trip_box', { destination: code }); }

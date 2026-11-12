@@ -103,6 +103,13 @@ TEXTS = {
     "deals_end": ("Të gjitha datat dhe rezervimi: {site}\n"
                   "Çmimet ndryshojnë shpejt. Shkruaj {keyword} kur të duash për më të fundit."),
     "no_deals": "Tani për tani s'kemi çmime të reja. Provo sërish pas pak orësh, ose shiko këtu: {site}",
+    # The same two, for the private message a comment gets. No link in these: Instagram refused
+    # that message when it had one ("Invalid message id"). The person writes back, and the reply
+    # to that (an ordinary message) carries the link.
+    "deals_end_comment": ("Çmimet ndryshojnë shpejt. Na shkruaj këtu emrin e qytetit ose {keyword} "
+                          "dhe të dërgojmë linkun për rezervim."),
+    "no_deals_comment": ("Tani për tani s'kemi çmime të reja. Na shkruaj këtu emrin e qytetit "
+                         "dhe të themi çmimin e fundit."),
 }
 
 # Claude's instructions. The parts in {braces} are filled in from config.yaml.
@@ -410,16 +417,19 @@ def asks_for_deals(question: list[str], settings: InstagramDMSettings) -> bool:
     return plain_words(" ".join(question)) in keywords
 
 
-def deals_reply(config: Config, storage: Storage, now: datetime) -> str:
+def deals_reply(config: Config, storage: Storage, now: datetime, *, link: bool = True) -> str:
     """The reply to "OFERTA": the first routes of the website's list (deals first), one per line,
-    then the site's link. Written here, not by Claude: the prices are exactly the website's."""
+    then the site's link. Written here, not by Claude: the prices are exactly the website's.
+
+    link=False is for the private message a comment gets: no address in it, and a last line
+    asking the person to write back instead."""
     settings = config.instagram_dm
     site = site_base_url(config) or config.channel_handle
     if site.startswith("http"):
         site += f"?utm_source={DM_UTM_SOURCE}&utm_medium=dm"   # counted as the DM bot's, like the city links
     offers = build_offers(config, storage, now)[:settings.deals_count]
     if not offers:
-        return TEXTS["no_deals"].format(site=site)
+        return TEXTS["no_deals"].format(site=site) if link else TEXTS["no_deals_comment"]
     months = WORDS["sq"]["months"]
     guides = site_guides(config)   # the cities' Albanian names
     lines = [TEXTS["deals_top"]]
@@ -433,7 +443,8 @@ def deals_reply(config: Config, storage: Storage, now: datetime) -> str:
         if offer.is_deal and offer.median:
             line += f" (zakonisht €{format_price(offer.median)})"
         lines.append(line)
-    lines.append(TEXTS["deals_end"].format(site=site, keyword=settings.deals_keywords[0].upper()))
+    end = TEXTS["deals_end"] if link else TEXTS["deals_end_comment"]
+    lines.append(end.format(site=site, keyword=settings.deals_keywords[0].upper()))
     return "\n".join(lines)
 
 
@@ -513,7 +524,7 @@ class DMBot:
                         self.settings.max_replies_per_day)
             return
         # One message only: Instagram allows no second one until the person writes back.
-        reply = split_message(deals_reply(self.config, storage, now))[0]
+        reply = split_message(deals_reply(self.config, storage, now, link=False))[0]
         try:
             recipient, mid = self.meta.send_instagram_private_reply(comment_id, reply)
         except MetaError as exc:
