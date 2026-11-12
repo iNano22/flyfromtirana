@@ -99,15 +99,15 @@ TEXTS = {
                  "dhe kur, e të them çmimin më të mirë nga Tirana."),
     "error": "Më fal, s'po arrij të përgjigjem tani. Çmimet e fundit nga Tirana i gjen këtu: {site}",
     # The reply to "OFERTA" (deals_reply): its first line, its last lines, and what it says without prices.
-    "deals_top": "✈️ Çmimet më të mira sot nga Tirana (vajtje, për person):",
-    "deals_end": ("Të gjitha datat dhe rezervimi: {site}\n"
-                  "Çmimet ndryshojnë shpejt. Shkruaj {keyword} kur të duash për më të fundit."),
+    "deals_top": "✈️ OFERTAT E DITËS nga Tirana\nVajtje, për person",
+    "deals_usual": "zakonisht €{price}",   # after the date of a deal: what the route usually costs
+    "deals_end": ("👉 Të gjitha datat dhe rezervimi:\n{site}\n\n"
+                  "💬 Shkruaj {keyword} kur të duash për çmimet më të fundit."),
     "no_deals": "Tani për tani s'kemi çmime të reja. Provo sërish pas pak orësh, ose shiko këtu: {site}",
     # The same two, for the private message a comment gets. No link in these: Instagram refused
     # that message when it had one ("Invalid message id"). The person writes back, and the reply
     # to that (an ordinary message) carries the link.
-    "deals_end_comment": ("Çmimet ndryshojnë shpejt. Na shkruaj këtu emrin e qytetit ose {keyword} "
-                          "dhe të dërgojmë linkun për rezervim."),
+    "deals_end_comment": "💬 Na shkruaj këtu emrin e qytetit ose {keyword} dhe të dërgojmë linkun për rezervim.",
     "no_deals_comment": ("Tani për tani s'kemi çmime të reja. Na shkruaj këtu emrin e qytetit "
                          "dhe të themi çmimin e fundit."),
 }
@@ -418,8 +418,14 @@ def asks_for_deals(question: list[str], settings: InstagramDMSettings) -> bool:
 
 
 def deals_reply(config: Config, storage: Storage, now: datetime, *, link: bool = True) -> str:
-    """The reply to "OFERTA": the first routes of the website's list (deals first), one per line,
-    then the site's link. Written here, not by Claude: the prices are exactly the website's.
+    """The reply to "OFERTA": the first routes of the website's list (deals first), then the
+    site's link. Written here, not by Claude: the prices are exactly the website's.
+
+    Instagram shows plain text only, so the layout is made of short lines, empty lines and emoji.
+    Each route takes two short lines that fit a phone's width without wrapping:
+
+        🔥 Milano (Bergamo) · €19
+        20 Nën · zakonisht €60
 
     link=False is for the private message a comment gets: no address in it, and a last line
     asking the person to write back instead."""
@@ -432,20 +438,22 @@ def deals_reply(config: Config, storage: Storage, now: datetime, *, link: bool =
         return TEXTS["no_deals"].format(site=site) if link else TEXTS["no_deals_comment"]
     months = WORDS["sq"]["months"]
     guides = site_guides(config)   # the cities' Albanian names
-    lines = [TEXTS["deals_top"]]
+    blocks = [TEXTS["deals_top"]]   # the parts of the message; an empty line goes between them
     for offer in offers:
         route, best = offer.route, offer.best
         guide = guides.get(route.city)
         city = guide.name if guide and guide.name else route.city
         if route.airport:
             city += f" ({route.airport})"
-        line = f"{city} €{format_price(best.price)} · {format_dates([best.depart_date], months)}"
-        if offer.is_deal and offer.median:
-            line += f" (zakonisht €{format_price(offer.median)})"
-        lines.append(line)
+        deal = offer.is_deal and offer.median
+        when = format_dates([best.depart_date], months)
+        if deal:
+            when += " · " + TEXTS["deals_usual"].format(price=format_price(offer.median))
+        # 🔥 marks a deal (well under the route's usual price), ✈️ an ordinary cheapest price.
+        blocks.append(f"{'🔥' if deal else '✈️'} {city} · €{format_price(best.price)}\n{when}")
     end = TEXTS["deals_end"] if link else TEXTS["deals_end_comment"]
-    lines.append(end.format(site=site, keyword=settings.deals_keywords[0].upper()))
-    return "\n".join(lines)
+    blocks.append(end.format(site=site, keyword=settings.deals_keywords[0].upper()))
+    return "\n\n".join(blocks)
 
 
 @dataclass

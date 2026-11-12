@@ -248,12 +248,12 @@ def test_the_word_oferta_gets_the_days_prices_without_claude(config):
 
     assert writer.chats == []                                   # Claude was not asked
     (person, reply), = meta.sent
-    lines = reply.splitlines()
-    assert person == PERSON and lines[0].startswith("✈️ Çmimet më të mira sot nga Tirana")
-    assert lines[1] == "Milano (Bergamo) €19 · 20 Nën (zakonisht €60)"    # the deal first, with its Albanian name
-    assert lines[2] == "Vjenë €45 · 12 Nën"
-    assert lines[3] == "Të gjitha datat dhe rezervimi: https://flyfromtirana.al/?utm_source=igdm&utm_medium=dm"
-    assert "Shkruaj OFERTA" in lines[4]
+    top, deal, plain, link, end = reply.split("\n\n")              # the parts, an empty line between them
+    assert person == PERSON and top == "✈️ OFERTAT E DITËS nga Tirana\nVajtje, për person"
+    assert deal == "🔥 Milano (Bergamo) · €19\n20 Nën · zakonisht €60"   # the deal first, with its Albanian name
+    assert plain == "✈️ Vjenë · €45\n12 Nën"
+    assert link == "👉 Të gjitha datat dhe rezervimi:\nhttps://flyfromtirana.al/?utm_source=igdm&utm_medium=dm"
+    assert "Shkruaj OFERTA" in end
 
 
 def test_only_the_keyword_alone_skips_claude(config):
@@ -283,7 +283,7 @@ def test_oferta_as_a_comment_gets_the_prices_in_a_private_message(config):
     bot.handle_payload(comment_delivery("Oferta! 🔥"))          # Meta sends the same comment again
 
     (comment_id, reply), = meta.private_replies               # one message, to the comment
-    assert comment_id == "c1" and "Vjenë €45 · 12 Nën" in reply
+    assert comment_id == "c1" and "✈️ Vjenë · €45\n12 Nën" in reply
     assert "http" not in reply and ".al" not in reply         # no link: Instagram refuses it in this message
     assert "Na shkruaj këtu" in reply
     assert meta.sent == [] and writer.chats == []              # no ordinary message, and Claude was not asked
