@@ -134,6 +134,10 @@ class SocialSettings:
     # is left out of these for list_rest_days days. Not on weekly_day.
     list_reel: bool = False
     list_rest_days: int = 3
+    # Extra Instagram stories between the posts (local times): at each, the story card of the
+    # best deal that today's posts and stories haven't shown. Posted by the bot only (they
+    # need META_PAGE_TOKEN and "instagram" under publish); there is no draft for them.
+    story_times: tuple[time, ...] = ()
 
 
 EFFORTS = ("low", "medium", "high", "xhigh", "max")
@@ -501,6 +505,7 @@ def _build_social(raw: dict) -> SocialSettings:
         first_comment=bool(raw.get("first_comment", True)),
         list_reel=bool(raw.get("list_reel", False)),
         list_rest_days=_at_least(raw.get("list_rest_days", 3), 1, "social.list_rest_days"),
+        story_times=_post_times(raw["story_times"], "social.story_times") if raw.get("story_times") else (),
     )
 
 
@@ -512,21 +517,21 @@ def _at_least(raw, least: int, name: str) -> int:
     return number
 
 
-def _post_times(raw) -> tuple[time, ...]:
+def _post_times(raw, name: str = "social.post_times") -> tuple[time, ...]:
     """["12:00", "19:30"] -> (time(12, 0), time(19, 30)): 1 to 6 times, in order, an hour or more apart."""
     if not isinstance(raw, list) or not raw:
-        raise ValueError('social.post_times must be a list of times, e.g. ["12:00", "19:30"]')
+        raise ValueError(f'{name} must be a list of times, e.g. ["12:00", "19:30"]')
     if any(isinstance(item, int) for item in raw):
-        raise ValueError('social.post_times: write the times with quotes ("12:00"), YAML reads 12:00 as a number')
+        raise ValueError(f'{name}: write the times with quotes ("12:00"), YAML reads 12:00 as a number')
     try:
         times = tuple(time.fromisoformat(str(item).strip()) for item in raw)
     except ValueError as exc:
-        raise ValueError(f"social.post_times: {exc} (use HH:MM)") from None
+        raise ValueError(f"{name}: {exc} (use HH:MM)") from None
     if len(times) > 6:
-        raise ValueError("social.post_times: more than 6 posts a day is too many for Instagram")
+        raise ValueError(f"{name}: more than 6 a day is too many for Instagram")
     minutes = [t.hour * 60 + t.minute for t in times]
     if any(later - earlier < 60 for earlier, later in zip(minutes, minutes[1:])):
-        raise ValueError("social.post_times must be in order of the day and at least an hour apart,"
+        raise ValueError(f"{name} must be in order of the day and at least an hour apart,"
                          " so the posts never follow each other")
     return times
 

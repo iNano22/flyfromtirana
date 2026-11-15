@@ -82,7 +82,7 @@ premium:
 # caption as a draft to post by hand. README: "Instagram and Facebook posts".
 social:
   enabled: true
-  post_times: ["12:00", "19:30"]   # local; the post goes out at the first run at or after each time (the
+  post_times: ["09:00", "13:00", "19:30"]   # local; the post goes out at the first run at or after each time (the
                                    #   scanner wakes every 15 minutes). One post per time, so a day has at
                                    #   most this many, hours apart, when people are on their phones. Keep the
                                    #   quotes: YAML reads 12:00 as a number. Never the same city twice a day.
@@ -101,6 +101,10 @@ social:
   reel_video_skip: []              # airport codes whose Reels keep the photo, e.g. [NRN, FMM]
   city_cooldown_days: 5            # a city that had a deal post is left alone this many days, whatever its
                                    #   new price, so the same city never comes two days in a row
+  story_times: ["11:00", "16:30"]  # extra Instagram stories between the posts: at each, the story card of
+                                   #   the best deal that today's posts and stories haven't shown. With the
+                                   #   story each post sends, that makes 5 stories on a day with 3 posts
+                                   #   (4 on weekly_day: a carousel has no story). Empty = none
   first_comment: true              # the account leaves the first comment under each Instagram post:
                                    #   "👇 Shkruaj OFERTA këtu...". Only while the bot answers comments
   list_reel: true                  # the day's last post is a "3 QYTETE NËN €20" Reel (the three cheapest

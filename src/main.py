@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import shutil
 import sys
 import tempfile
@@ -50,12 +51,13 @@ from src.guides import Guide
 from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import post_photo
-from src.place_video import place_video
+from src.place_video import claude_judge, place_video
 from src.reels import pick_music
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
-from src.social import (GUIDE_CHANNEL, LIST_CHANNEL, LIST_COUNT, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL,
-                        WEEKLY_MIN_DEALS, Post, deal_post, failed, guide_post, list_post, post_on_platforms,
-                        prune_pictures, put_pictures_online, report, send_draft, weekly_post)
+from src.social import (GUIDE_CHANNEL, LIST_CHANNEL, LIST_COUNT, PICTURES_FOLDER, SOCIAL_CHANNEL, STORY_CHANNEL,
+                        WEEKLY_CHANNEL, WEEKLY_MIN_DEALS, Post, deal_post, failed, guide_post, list_post,
+                        post_on_platforms, prune_pictures, put_pictures_online, report, send_draft, story_card,
+                        weekly_post)
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
 from src.trips import send_trip_watches
@@ -198,11 +200,14 @@ def run(
         def social_post() -> int:
             """The Instagram/Facebook post whose time has come (social.post_times), if any: the
             best deal on the website, posted by the bot or sent to the owner as a draft."""
-            return publish_social(telegram=telegram_for(secrets.telegram_drafts_chat_id),
-                                  drafts_chat=bool(secrets.telegram_drafts_chat_id),
-                                  meta=meta_client(config, secrets, session, dry_run=dry_run),
+            meta = meta_client(config, secrets, session, dry_run=dry_run)
+            code = publish_social(telegram=telegram_for(secrets.telegram_drafts_chat_id),
+                                  drafts_chat=bool(secrets.telegram_drafts_chat_id), meta=meta,
                                   marker=secrets.travelpayouts_marker, pexels_key=secrets.pexels_api_key,
                                   **common)
+            if not dry_run:
+                publish_story(config=config, storage=storage, meta=meta, now=now, local_now=local_now)
+            return code
 
         def alerts(**options) -> int:
             """The price alerts people set with the bot (src/alerts.py)."""
@@ -490,8 +495,10 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
             # A video of the city for the Reel's background, if it has one (else the photo).
             clip = None
             if social.reels and social.reel_videos and deal.route.iata not in social.reel_video_skip:
+                # Claude picks the most beautiful of the videos found, when its key is there.
+                claude_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
                 clip = place_video(deal.route.iata, deal.route.city_en, config.db_path.parent / "reel_videos",
-                                   api_key=pexels_key)
+                                   api_key=pexels_key, judge=claude_judge(claude_key) if claude_key else None)
             post = deal_post(deal, config, social_links, folder, photo=post_photo(deal.route.iata), music=music,
                              place_video=clip)
             channel, quotes = SOCIAL_CHANNEL, deal.quotes
@@ -525,6 +532,50 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     if not dry_run:
         shutil.rmtree(folder, ignore_errors=True)
     return 1 if failures else 0
+
+
+def publish_story(*, config: Config, storage: Storage, meta: MetaClient | None, now: datetime,
+                  local_now: datetime) -> None:
+    """The extra Instagram story of this run, when one is due (social.story_times).
+
+    At each of those times, one story: the story card of the best deal on the website
+    that today's posts and stories haven't shown. Only the bot posts these (no `meta`, or
+    no "instagram" under social.publish: nothing happens). A story Instagram refuses is
+    logged and not tried again: the next time has its own.
+    """
+    social = config.social
+    if not (social.enabled and social.story_times and meta is not None and "instagram" in social.publish):
+        return
+    if in_quiet_hours(local_now.time(), config.quiet_hours):
+        return
+    begun = posting_time(social.story_times, local_now)
+    if begun is None or storage.count_posts(STORY_CHANNEL, begun[0]):
+        return   # before the day's first story time, or this time's story is out
+    day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
+    cities = {route.iata: route.city for route in config.routes}
+    shown_today = {cities.get(code, code)
+                   for channel in (SOCIAL_CHANNEL, LIST_CHANNEL, WEEKLY_CHANNEL, STORY_CHANNEL)
+                   for code, at in storage.last_posts(channel).items() if at >= day_start}
+    deals = [offer for offer in build_offers(config, storage, now) if offer.is_deal]
+    deal = next((deal for deal in deals if deal.route.city not in shown_today), None)
+    if deal is None:
+        log.info("[social] No story at %s: today's posts have shown every deal on the website",
+                 local_now.strftime("%H:%M"))
+        return
+    folder = Path(tempfile.mkdtemp(prefix="flyfromtirana-story-"))
+    try:
+        card = story_card(deal, config, folder, photo=post_photo(deal.route.iata))
+        story = Post(kind="story", title=deal.route.city, pictures=[], story=card, caption="", facebook_text="",
+                     link="")
+        online = put_pictures_online(story, config.website.output_dir / PICTURES_FOLDER, config.website.url, now)
+        meta.post_instagram(online.story, story=True)
+        log.info("[social] Story done for %s at €%.0f", deal.route.city, deal.best.price)
+    except MetaError as exc:
+        log.warning("[social] Instagram refused the story for %s: %s", deal.route.city, exc)
+    finally:
+        shutil.rmtree(folder, ignore_errors=True)
+    # Remembered either way, so a refused story isn't tried again every 15 minutes.
+    storage.record_post(STORY_CHANNEL, deal.best, price_band(deal.best.price, config.rules.price_band_eur), now)
 
 
 def posting_time(post_times: tuple[time, ...], local_now: datetime) -> tuple[datetime, bool] | None:

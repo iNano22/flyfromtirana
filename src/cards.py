@@ -49,6 +49,7 @@ SUN = (255, 214, 10)        # yellow
 WHITE = (255, 255, 255)
 BOARD_LINE = (42, 46, 53)   # the grey of the departures board's lines; the photo's stand-in too
 
+REEL_SHADE = 165            # how dark a Reel's picture gets behind the words (0-255); a card's photo: 240
 JPEG_QUALITY = 90
 
 
@@ -222,10 +223,16 @@ def deal_background(photo: Path | None, iata: str, layout: Layout) -> Image.Imag
 def shade_for_words(card: Image.Image, layout: Layout) -> Image.Image:
     """Darken a picture that fills the card so the words can be read on it: the top (the brand)
     and from the middle down (the price and the city). A Reel does this to every frame of a video."""
-    shade(card, 0, px(layout, 260) + layout.safe_top, start=150, end=0)
-    shade(card, int(layout.sign_bottom * 0.4), layout.sign_bottom, start=0, end=240)
-    if not layout.band:   # no black footer: the photo goes on below the words, almost black
-        shade(card, layout.sign_bottom, layout.height, start=240, end=215)
+    if layout.band:
+        shade(card, 0, px(layout, 260) + layout.safe_top, start=150, end=0)
+        shade(card, int(layout.sign_bottom * 0.4), layout.sign_bottom, start=0, end=240)
+        return card
+    # A Reel has no black footer, and its picture (often a video) is the reason people stop:
+    # only as dark as the words need, and lighter again below them, so the city stays in sight.
+    shade(card, 0, px(layout, 260) + layout.safe_top, start=110, end=0)
+    shade(card, int(layout.sign_bottom * 0.42), int(layout.sign_bottom * 0.62), start=0, end=REEL_SHADE)
+    shade(card, int(layout.sign_bottom * 0.62), layout.sign_bottom, start=REEL_SHADE, end=REEL_SHADE)
+    shade(card, layout.sign_bottom, layout.height, start=REEL_SHADE, end=90)
     return card
 
 

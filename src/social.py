@@ -60,6 +60,7 @@ SOCIAL_CHANNEL = "social"           # the deal posts' name in posted_deals
 WEEKLY_CHANNEL = "social_weekly"    # the week's top deals
 GUIDE_CHANNEL = "social_guide"      # the city guides (one row per city: the destination code)
 LIST_CHANNEL = "social_list"        # the "cities under a price" Reels (one row per city shown)
+STORY_CHANNEL = "social_story"      # the extra stories (social.story_times), one row per story
 LIST_COUNT = 3                      # how many deals such a Reel shows
 PICTURES_FOLDER = "social"          # under the website's folder: flyfromtirana.al/social/<picture>.jpg
 WEEKLY_MIN_DEALS = 3                # fewer deals than this: no "top of the week"
@@ -171,6 +172,16 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
     return Post(kind="weekly", title=f"TOP {len(deals)} ofertat e javës", pictures=pictures, story=None,
                 caption=caption, facebook_text=facebook_text, link=config.website.url,
                 first_comment=first_comment(config))
+
+
+def story_card(deal: Deal, config: Config, out_dir: Path, *, photo: PostPhoto | None) -> Path:
+    """A deal's story card alone (9:16), for the extra stories: out_dir/bgy_story.jpg.
+    With the message bot on it says "NA SHKRUAJ «OFERTA» NË MESAZH": a reply to a story is a message."""
+    deal = in_local_names(deal, config)
+    card = draw_card(deal, "story", airline_names=config.airlines, brand=config.brand, handle=handle(config),
+                     address=site_address(config), photo=photo.path if photo else None, language=config.language,
+                     keyword=invite_keyword(config))
+    return save_jpeg(card, out_dir / f"{deal.route.iata.lower()}_story.jpg")
 
 
 def list_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dict[str, PostPhoto | None],

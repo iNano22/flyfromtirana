@@ -28,7 +28,9 @@ def config(tmp_path):
     return replace(base, db_path=tmp_path / "prices.db", request_delay_seconds=0,
                    premium=replace(base.premium, enabled=False),
                    # Pictures here; the Reels have their own tests (the end of this file, and test_reels.py).
-                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana", reels=False),
+                   # Two posting times and no extra stories, whatever config.yaml has today.
+                   social=replace(base.social, enabled=True, hashtags="#flyfromtirana #tirana", reels=False,
+                                  post_times=(time(12, 0), time(19, 30)), story_times=()),
                    invite_links={"facebook": "https://t.me/+fb"})
 
 
@@ -232,7 +234,8 @@ def test_dry_run_prints_the_caption_and_keeps_the_cards(config):
 
 def test_config_yaml_settings():
     social = load_config().social
-    assert social.post_times == (time(12, 0), time(19, 30))
+    assert social.post_times == (time(9, 0), time(13, 0), time(19, 30))   # three posts a day
+    assert social.story_times == (time(11, 0), time(16, 30))              # and two stories between them
     assert social.sub_id == "facebook"
     assert social.hashtags.startswith("#")
 
@@ -730,3 +733,77 @@ def test_the_list_needs_three_different_cities(posting):
 
 def test_the_lists_title_names_a_round_price_above_every_deal():
     assert [price_above(price) for price in (9, 17, 19.99, 20, 24)] == [10, 20, 20, 25, 25]
+
+
+# --- the extra stories (social.story_times) -----------------------------------------------------
+
+from src.social import STORY_CHANNEL  # noqa: E402
+
+
+def story_calls(session) -> list[dict]:
+    return [c["data"] for c in session.calls
+            if c["url"].endswith("/media") and c.get("data", {}).get("media_type") == "STORIES"]
+
+
+def test_an_extra_story_shows_a_deal_todays_posts_have_not(posting):
+    stories = replace(posting, social=replace(posting.social, story_times=(time(14, 0),)))
+    seed_current_deals(stories, fetched_at=NOW)   # Vienna and Rome at €9, next to Bergamo
+    # 12:00: the day's post (and its own story). No extra story before 14:00.
+    session = with_graph(fake_world())
+    assert run(stories, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert len(story_calls(session)) == 1 and rows(stories, STORY_CHANNEL) == []
+    posted, = [code for code, _ in rows(stories, SOCIAL_CHANNEL)][:1]
+
+    # 14:00: one extra story, of a city the post didn't show, and nothing in the owner's chat.
+    session = with_graph(fake_world())
+    two = NOW + timedelta(hours=2)
+    assert run(stories, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=two) == 0
+    story, = story_calls(session)
+    (code, _), = rows(stories, STORY_CHANNEL)
+    assert code != posted
+    assert story["image_url"] == f"https://flyfromtirana.al/social/{code.lower()}_story_20261009-1200.jpg"
+    assert drafts(session) == []
+
+    # A quarter of an hour later: that time's story is out, no second one.
+    session = with_graph(fake_world())
+    assert run(stories, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session,
+               now=two + timedelta(minutes=15)) == 0
+    assert story_calls(session) == [] and len(rows(stories, STORY_CHANNEL)) == 1
+
+
+def test_no_extra_story_without_the_bot_or_when_every_deal_was_shown(posting, caplog):
+    stories = replace(posting, social=replace(posting.social, story_times=(time(12, 0),)))
+    session = with_graph(fake_world())   # one deal only (Bergamo), and the post takes it
+    with caplog.at_level("INFO"):
+        assert run(stories, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert len(story_calls(session)) == 1 and rows(stories, STORY_CHANNEL) == []
+    assert "No story at 12:00" in caplog.text
+
+    drafts_only = replace(stories, db_path=stories.db_path.with_name("drafts.db"))
+    seed_current_deals(drafts_only, fetched_at=NOW)
+    session = fake_world()               # no META_PAGE_TOKEN: the posts are drafts, and there are no stories
+    assert run(drafts_only, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert rows(drafts_only, STORY_CHANNEL) == []
+
+
+def test_a_refused_story_is_not_tried_again(posting, caplog):
+    stories = replace(posting, social=replace(posting.social, story_times=(time(14, 0),)))
+    seed_current_deals(stories, fetched_at=NOW + timedelta(hours=2))
+    session = with_graph(fake_world())
+    graph = session.handler
+
+    def handler(method, url, kwargs):
+        if url.endswith("/media") and kwargs.get("data", {}).get("media_type") == "STORIES":
+            return FakeResponse(400, {"error": {"message": "No stories today", "code": 100}})
+        return graph(method, url, kwargs)
+    session.handler = handler
+    seed_social_post(stories, "BGY", NOW)   # the day's post is out already
+    assert run(stories, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session,
+               now=NOW + timedelta(hours=2)) == 0
+    assert "Instagram refused the story" in caplog.text
+    assert len(rows(stories, STORY_CHANNEL)) == 1
+
+
+def test_story_times_are_checked_like_post_times():
+    with pytest.raises(ValueError, match="social.story_times"):
+        _post_times(["16:30", "11:00"], "social.story_times")

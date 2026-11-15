@@ -49,6 +49,7 @@ SECONDS = DEAL_SECONDS + END_SECONDS
 ZOOM = 0.08              # the photo grows by 8% while the deal shows
 COME_IN = 0.45           # how long a piece of the card takes to come in (seconds)
 SLIDE_UP = 0.35          # how long the closing card takes to slide up
+VIDEO_LOOK = "eq=saturation=1.25:contrast=1.04:brightness=0.03"   # ffmpeg's filter for the city's video
 COVER_AT = 5.0           # the moment whose frame is the Reel's cover: every piece in place
 
 # When each piece of the card comes in (seconds), and how (see `placed` below).
@@ -150,7 +151,9 @@ def video_frames(video: Path, *, ffmpeg: str, fps: int) -> Iterator[Image.Image]
     width, height = SIZE
     command = [
         ffmpeg, "-loglevel", "error", "-stream_loop", "-1", "-i", str(video), "-an",
-        "-vf", f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},fps={fps}",
+        # Cut to the frame, and a little more colour and light: stock videos are often flat.
+        "-vf", (f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},fps={fps},"
+                f"{VIDEO_LOOK}"),
         "-t", f"{DEAL_SECONDS + SLIDE_UP + 1:g}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-",
     ]
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)

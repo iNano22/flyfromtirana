@@ -19,7 +19,7 @@ src/scheduler.py (every 3h, in the `scanner` container)
                        skip anything already posted in the last 7 days at the same price band
        4. formatter.py build the Albanian post from templates/sq.txt (links from links.py)
        5. telegram.py  send it to the channel with the destination's photo (best deals first)
-          social.py    at 12:00 and 19:30 (social.post_times): the best deal on the site that
+          social.py    at 09:00, 13:00 and 19:30 (social.post_times): the best deal on the site that
           + meta.py    Instagram/Facebook haven't had, as a card + story + Facebook post
   └─ python -m src.website
        6. website.py   rebuild docs/index.html from the database (every route, deals first)
@@ -693,7 +693,7 @@ deduped separately. Premium's wording is in `templates/sq_premium.txt`.
 
 ## Instagram and Facebook posts
 
-Twice a day, at `social.post_times` (12:00 and 19:30 Tirana, when people are on
+Three times a day, at `social.post_times` (09:00, 13:00 and 19:30 Tirana, when people are on
 their phones), the best deal on the website that the accounts haven't had goes
 out on Instagram and Facebook (`social` in config.yaml): a feed card (1080×1350,
 the tallest picture Instagram's feed takes; Facebook takes it too) and a story
@@ -859,6 +859,12 @@ posts a day through the API, far above the 2 made here.
   Facebook gets the same deals as an album. The title's price is the next multiple of 5 above
   the dearest of the three. A city shown in one stays out of them for `social.list_rest_days`
   (3) days; with fewer than 3 cities to show, or on `weekly_day`, a normal deal goes out.
+- **Extra stories.** At each of `social.story_times` (11:00 and 16:30) the bot posts one more
+  Instagram story: the story card of the best deal that today's posts and stories haven't
+  shown. With the story each post sends, a day with 3 posts has 5 stories (4 on `weekly_day`:
+  a carousel has no story). They need the bot (`META_PAGE_TOKEN`, "instagram" under `publish`);
+  there is no draft and no report for them, only a line in the log. A refused story is not
+  tried again. `story_times: []` stops them.
 - **Hashtags.** `social.hashtags` (a few) and then the city's own tag: `#milano`, `#vjene`.
 - **To try a change without waiting for a posting time:** `python -m src.main --social-now`
   on the server (Coolify → the app → Terminal → the scanner container) posts the next deal
@@ -878,6 +884,18 @@ last-resort fallback keep the photo. Where the video comes from, in this order:
    into `PEXELS_API_KEY` in Coolify, and deploy. The scanner's log says "Saved a video of
    Dublin for its Reels: <its page on Pexels>". The caption names the author
    ("🎥 Video: Jane Doe / Pexels").
+
+**Which video.** Of the first 8 results that fit, Claude looks at each one's preview picture
+and picks the one that best advertises the city: bright daylight, a place people recognise,
+a wide view with the subject in the upper half (the words cover the lower half). Dark, grey
+or night videos, close-ups of people and anything with text are rejected; if none is good
+enough, the Reel keeps its photo. This uses `ANTHROPIC_API_KEY` (the message bot's key),
+one small request per city; the log says "Claude's pick for Dublin: video 3 of 8 (why)".
+Without the key the first result is taken. Videos saved before this are chosen again, once.
+
+**How it looks.** A Reel's picture is darkened only behind the words (`REEL_SHADE` in
+src/cards.py) and is light again below them; the city's video also gets a little more
+colour and light (`VIDEO_LOOK` in src/reels.py).
 
 A city nothing is found for keeps its photo (and is searched again after 30 days). The
 search only takes a video whose title names the city, so a small town gets its photo, not
