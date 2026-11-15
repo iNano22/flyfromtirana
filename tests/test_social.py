@@ -650,3 +650,83 @@ def test_no_caption_asks_for_a_comment_while_the_message_bot_is_off(config):
     for off in (replace(config.instagram_dm, enabled=False), replace(config.instagram_dm, deals_from_comments=False)):
         quiet = replace(config, instagram_dm=off)
         assert comment_invite(quiet) == "" and invite_line(quiet) == ""
+
+
+# --- the first comment, and the "cities under a price" post ------------------------------------
+
+from src.main import choose_list  # noqa: E402
+from src.social import LIST_CHANNEL, price_above  # noqa: E402
+
+FIRST_COMMENT = "👇 Shkruaj OFERTA këtu në koment dhe të dërgojmë në mesazh çmimet më të mira të ditës ✈️"
+
+
+def test_the_account_leaves_the_first_comment_under_its_instagram_post(posting):
+    session = with_graph(fake_world())
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    comment, = [c for c in session.calls if c["url"].endswith("MEDIA1/comments")]
+    assert comment["data"] == {"message": FIRST_COMMENT}
+    calls = graph_calls(session)   # right after the feed post, before the story
+    assert calls.index("POST MEDIA1/comments") < len(calls) - 1 - calls[::-1].index("POST 17841417241858036/media")
+
+    off = replace(posting, db_path=posting.db_path.with_name("off.db"),
+                  social=replace(posting.social, first_comment=False))
+    session = with_graph(fake_world())
+    assert run(off, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert "POST MEDIA1/comments" not in graph_calls(session)
+
+
+def test_a_first_comment_that_fails_does_not_spoil_the_post(posting, caplog):
+    session = with_graph(fake_world())
+    graph = session.handler
+
+    def handler(method, url, kwargs):
+        if url.endswith("/comments"):
+            return FakeResponse(400, {"error": {"message": "Comments are off", "code": 100}})
+        return graph(method, url, kwargs)
+    session.handler = handler
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
+    assert telegram_text(drafts(session)[0]).startswith("✅ <b>U postua</b>")
+    assert "Could not leave the first comment" in caplog.text
+
+
+def test_the_evening_post_is_the_three_cheapest_cities_together(posting):
+    evening = NOW + timedelta(hours=7, minutes=30)   # 19:30 in Tirana, the day's last posting time
+    seed_current_deals(posting, fetched_at=evening)
+    session = with_graph(fake_world())
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=evening) == 0
+
+    report, = drafts(session)
+    assert telegram_text(report).startswith("✅ <b>U postua</b> · 3 qytete nën €20")
+    graph = [c for c in session.calls if "graph.facebook.com" in c["url"]]
+    items = [c["data"]["image_url"].rsplit("/", 1)[1].split("_2026")[0] for c in graph
+             if c["url"].endswith("/media") and c["data"].get("is_carousel_item")]
+    cities = [name.split("_")[-1] for name in items]
+    assert cities[0] == "cover" and sorted(cities[1:3]) == ["fco", "vie"] and cities[3] == "bgy"   # €9, €9, €19
+    carousel, = [c["data"] for c in graph if c.get("data", {}).get("media_type") == "CAROUSEL"]
+    assert carousel["caption"].startswith("🔥 3 QYTETE NËN €20 nga Tirana (vajtje, për person)\n\n1️⃣ ")
+    assert "3️⃣ Milano (Bergamo) nga €19" in carousel["caption"]
+    assert [code for code, _ in rows(posting, LIST_CHANNEL)] == ["BGY", "FCO", "VIE"]
+    assert social_rows(posting) == 0   # no city had its own deal post: none of them rests for that
+
+    # The next evening those cities rest from such posts, so a normal deal goes out.
+    session = with_graph(fake_world())
+    later = evening + timedelta(days=1)
+    seed_current_deals(posting, fetched_at=later)
+    assert run(posting, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=later) == 0
+    assert "TIRANA → " in telegram_text(drafts(session)[0])
+
+    off = replace(posting, db_path=posting.db_path.with_name("off.db"),
+                  social=replace(posting.social, list_reel=False))
+    seed_current_deals(off, fetched_at=evening)
+    session = with_graph(fake_world())
+    assert run(off, META_SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=evening) == 0
+    assert "TIRANA → " in telegram_text(drafts(session)[0])
+
+
+def test_the_list_needs_three_different_cities(posting):
+    with Storage(posting.db_path) as storage:
+        assert choose_list([], posting, storage, now=NOW) == []
+
+
+def test_the_lists_title_names_a_round_price_above_every_deal():
+    assert [price_above(price) for price in (9, 17, 19.99, 20, 24)] == [10, 20, 20, 25, 25]

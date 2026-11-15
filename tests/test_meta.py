@@ -26,6 +26,8 @@ def graph_handler(*, container_checks: int = 1, container_status: str = "FINISHE
             return FakeResponse(200, {"id": "MEDIA1"})
         if path == "MEDIA1":
             return FakeResponse(200, {"permalink": "https://www.instagram.com/p/abc123/"})
+        if path == "MEDIA1/comments":
+            return FakeResponse(200, {"id": "COMMENT1"})
         if path.endswith("/photos"):
             if not facebook_ok:
                 return FakeResponse(400, {"error": {"message": "Invalid parameter", "code": 100}})
@@ -184,3 +186,15 @@ def test_video_story_is_a_stories_container_with_the_video_and_no_address():
     assert session.calls[1]["data"] == {"media_type": "STORIES", "video_url": "https://x/bgy_reel.mp4"}
     assert "GET MEDIA1" not in paths(session)
     assert waits == [5]   # waits like a video
+
+
+def test_the_account_comments_under_the_post_it_published_last():
+    session = FakeSession(graph_handler())
+    client = MetaClient(TOKEN, session, sleep=lambda seconds: None)
+    assert client.comment_on_last_instagram_post("👇 Shkruaj OFERTA") is None   # nothing published yet
+    assert session.calls == []
+
+    client.post_instagram_reel("https://flyfromtirana.al/social/bgy_reel.mp4", "caption")
+    assert client.comment_on_last_instagram_post("👇 Shkruaj OFERTA") == "COMMENT1"
+    assert paths(session)[-1] == "POST MEDIA1/comments"
+    assert session.calls[-1]["data"] == {"message": "👇 Shkruaj OFERTA"}

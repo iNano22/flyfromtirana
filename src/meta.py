@@ -46,6 +46,7 @@ class MetaClient:
         self.session = session or requests.Session()
         self.sleep = sleep or time.sleep   # tests pass a fake sleep so they don't really wait
         self._ids: dict | None = None      # whoami(), fetched once
+        self.last_media_id: str | None = None   # the feed post or Reel published last (for its first comment)
 
     # --- who the token belongs to --------------------------------------------------
 
@@ -93,6 +94,7 @@ class MetaClient:
         if story:
             log.info("Instagram story published (media %s)", media)
             return None
+        self.last_media_id = media
         permalink = self._call("GET", media, fields="permalink").get("permalink")
         log.info("Instagram post published: %s", permalink)
         return permalink
@@ -113,6 +115,7 @@ class MetaClient:
                               caption=caption)["id"]
         self._wait_for_container(carousel)
         media = self._call("POST", f"{instagram}/media_publish", creation_id=carousel)["id"]
+        self.last_media_id = media
         permalink = self._call("GET", media, fields="permalink").get("permalink")
         log.info("Instagram carousel published: %s", permalink)
         return permalink
@@ -131,6 +134,7 @@ class MetaClient:
         container = self._call("POST", f"{instagram}/media", **fields)["id"]
         self._wait_for_container(container, checks=VIDEO_CHECKS, wait=VIDEO_WAIT_SECONDS, what="the video")
         media = self._call("POST", f"{instagram}/media_publish", creation_id=container)["id"]
+        self.last_media_id = media
         permalink = self._call("GET", media, fields="permalink").get("permalink")
         log.info("Instagram Reel published: %s", permalink)
         return permalink
@@ -146,6 +150,14 @@ class MetaClient:
         self._wait_for_container(container, checks=VIDEO_CHECKS, wait=VIDEO_WAIT_SECONDS, what="the video")
         media = self._call("POST", f"{instagram}/media_publish", creation_id=container)["id"]
         log.info("Instagram video story published (media %s)", media)
+
+    def comment_on_last_instagram_post(self, text: str) -> str | None:
+        """Write a comment, as the account itself, under the feed post or Reel this client
+        published last (the stories don't count). Returns the comment's id, or None when nothing
+        was published. Needs the instagram_manage_comments permission."""
+        if not self.last_media_id:
+            return None
+        return self._call("POST", f"{self.last_media_id}/comments", message=text)["id"]
 
     def post_facebook(self, image_url: str, message: str) -> str:
         """Publish a picture with text on the Page. Returns the post's address."""

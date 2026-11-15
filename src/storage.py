@@ -353,6 +353,18 @@ class Storage:
         ).fetchone()
         return row[0]
 
+    def dm_counts(self, since: datetime) -> dict[str, int]:
+        """The Instagram bot's numbers since `since`, for the weekly report:
+        people (who wrote or commented), comments (the keyword under a post),
+        messages (private ones from people) and replies (sent by the bot or the owner)."""
+        row = self.conn.execute(
+            """SELECT COUNT(DISTINCT CASE WHEN role = 'user' THEN person END),
+                      COALESCE(SUM(role = 'user' AND mid LIKE 'comment-%'), 0),
+                      COALESCE(SUM(role = 'user' AND mid NOT LIKE 'comment-%'), 0),
+                      COALESCE(SUM(role = 'assistant'), 0)
+               FROM dm_messages WHERE at >= ?""", (to_iso(since),)).fetchone()
+        return {"people": row[0], "comments": row[1], "messages": row[2], "replies": row[3]}
+
     def pause_dm(self, person: str, until: datetime) -> None:
         with self.conn:
             self.conn.execute("INSERT OR REPLACE INTO dm_paused (person, until) VALUES (?, ?)", (person, to_iso(until)))

@@ -53,9 +53,9 @@ from src.photos import post_photo
 from src.place_video import place_video
 from src.reels import pick_music
 from src.scanner import PriceScanner, Quote, RouteFetchError, ScannerError
-from src.social import (GUIDE_CHANNEL, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL, WEEKLY_MIN_DEALS, Post,
-                        deal_post, failed, guide_post, post_on_platforms, prune_pictures, put_pictures_online,
-                        report, send_draft, weekly_post)
+from src.social import (GUIDE_CHANNEL, LIST_CHANNEL, LIST_COUNT, PICTURES_FOLDER, SOCIAL_CHANNEL, WEEKLY_CHANNEL,
+                        WEEKLY_MIN_DEALS, Post, deal_post, failed, guide_post, list_post, post_on_platforms,
+                        prune_pictures, put_pictures_online, report, send_draft, weekly_post)
 from src.storage import Storage
 from src.telegram import TelegramClient, TelegramError
 from src.trips import send_trip_watches
@@ -268,13 +268,16 @@ def scan_routes(scanner: PriceScanner, storage: Storage, config: Config, routes:
                 save: bool = True) -> tuple[dict[str, list[Quote]], dict[str, list[Quote]]]:
     """Fetch and save prices for every route, both directions.
 
-    Returns (outbound, inbound), keyed by destination code. Routes that failed
-    are left out; a route with no prices maps to an empty list.
+    Returns (outbound, inbound), keyed by destination code. Routes that failed, and
+    routes with `scan: false` in config.yaml, are left out; a route with no prices
+    maps to an empty list.
     save=False (the quick premium scan) leaves the price history as it is.
     """
     outbound: dict[str, list[Quote]] = {}
     inbound: dict[str, list[Quote]] = {}
     for route in routes:
+        if not route.scan:
+            continue   # the price API doesn't know this airport: asking only fails
         try:
             outbound[route.iata] = scanner.fetch_route(config.origin, route.iata, today, now)
         except RouteFetchError as exc:
@@ -375,11 +378,13 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     The posts go out at social.post_times (local), one per time, at the first run
     at or after it: so they are hours apart, never two in a row. What goes out:
       1. on social.weekly_day, the day's first post is the week's top deals;
-      2. otherwise the best deal the website shows that these accounts haven't
+      2. at the day's last time, with social.list_reel on, the three cheapest deals
+         as one Reel ("3 QYTETE NËN €20"); see choose_list;
+      3. otherwise the best deal the website shows that these accounts haven't
          had: not a city posted in the last social.city_cooldown_days days, and not
          a city posted at this price or cheaper within repost_cooldown_days,
          whatever the date or airport;
-      3. at the day's last time, when the day had no post at all, a city guide.
+      4. at the day's last time, when the day had no post at all, a city guide.
     With `meta` the bot posts and reports to the owner; a post that fails is sent
     as a draft, so it can go out by hand. Either way the post counts as made.
     Returns 1 if the owner's chat could not be reached, else 0. A problem here
@@ -399,7 +404,8 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
     day_start = local_now.replace(hour=0, minute=0, second=0, microsecond=0)
 
     def posts_since(moment: datetime) -> int:
-        return sum(storage.count_posts(name, moment) for name in (SOCIAL_CHANNEL, WEEKLY_CHANNEL, GUIDE_CHANNEL))
+        return sum(storage.count_posts(name, moment)
+                   for name in (SOCIAL_CHANNEL, WEEKLY_CHANNEL, LIST_CHANNEL, GUIDE_CHANNEL))
 
     begun = posting_time(social.post_times, local_now)
     if dry_run:
@@ -413,6 +419,8 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
         if posts_since(slot_start):
             return 0   # this time's post is out (quietly: the quick scan comes by every 15 minutes)
     posted_today = posts_since(day_start)
+    # The day's last posting time, by the clock (a dry run pretends about the rest, not this).
+    evening = begun is not None and begun[1]
 
     pictures_folder = config.website.output_dir / PICTURES_FOLDER
     if meta is not None:
@@ -462,7 +470,18 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
             post = weekly_post(top, config, folder, photos=photos, now=local_now)
             channel, quotes = WEEKLY_CHANNEL, [offer.best for offer in top]
 
-    # 2) Otherwise the best deal these accounts haven't had.
+    # 2) At the day's last time, the cheapest deals together as one Reel ("3 QYTETE NËN €20"),
+    #    so the day's posts don't look alike. Not on the weekly day: that has its list already.
+    weekly_today = social.weekly_day is not None and local_now.weekday() == social.weekly_day
+    if post is None and social.list_reel and evening and not force and not weekly_today:
+        cheapest = choose_list(deals, config, storage, now=now)
+        if cheapest:
+            photos = {offer.route.iata: post_photo(offer.route.iata) for offer in cheapest}
+            music = pick_music(storage.count_posts(SOCIAL_CHANNEL, EVER)) if social.reels else None
+            post = list_post(cheapest, config, folder, photos=photos, music=music)
+            channel, quotes = LIST_CHANNEL, [offer.best for offer in cheapest]
+
+    # 3) Otherwise the best deal these accounts haven't had.
     if post is None:
         deal = choose_deal(deals, config, storage, now=now, day_start=day_start)
         if deal is not None:
@@ -477,7 +496,7 @@ def publish_social(*, config: Config, links: LinkBuilder, storage: Storage, tele
                              place_video=clip)
             channel, quotes = SOCIAL_CHANNEL, deal.quotes
 
-    # 3) Otherwise, at the day's last time, a city guide when the day had no post at all.
+    # 4) Otherwise, at the day's last time, a city guide when the day had no post at all.
     if post is None and last_of_day and posted_today == 0:
         choice = choose_guide(config, storage)
         page = page_url(config, config.language, choice[0].slug) if choice else None
@@ -552,6 +571,24 @@ def choose_deal(deals: list[Deal], config: Config, storage: Storage, *, now: dat
             continue
         return deal
     return None
+
+
+def choose_list(deals: list[Deal], config: Config, storage: Storage, *, now: datetime) -> list[Deal]:
+    """The deals for a "3 QYTETE NËN €20" Reel: the LIST_COUNT cheapest of the website's deals,
+    cheapest first, each a different city, none of them a city such a Reel showed in the last
+    social.list_rest_days days. Empty when there aren't enough: a normal deal goes out instead.
+    """
+    cities = {route.iata: route.city for route in config.routes}
+    since = now - timedelta(days=config.social.list_rest_days)
+    resting = {cities.get(code, code) for code, at in storage.last_posts(LIST_CHANNEL).items() if at >= since}
+    chosen: list[Deal] = []
+    for deal in sorted(deals, key=lambda deal: deal.best.price):
+        if deal.route.city in resting or any(deal.route.city == other.route.city for other in chosen):
+            continue
+        chosen.append(deal)
+        if len(chosen) == LIST_COUNT:
+            return chosen
+    return []
 
 
 def choose_guide(config: Config, storage: Storage) -> tuple[Guide, str] | None:

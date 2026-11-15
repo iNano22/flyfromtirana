@@ -232,7 +232,28 @@ def test_report_text(config, storage):
     sources = lines[lines.index("Të rinj në kanalin falas: <b>5</b>. Nga erdhën:") + 1:]
     assert sources == ["📸 Instagram (linku në bio): 2", "💬 WhatsApp: 1", "🔗 Linku «posters»: 1",
                        "🔗 Pa linkun tonë (adresa publike, kërkimi, postime të përcjella): 1",
-                       "🚪 Dolën nga kanali falas: 1"]
+                       "🚪 Dolën nga kanali falas: 1",
+                       "", "📸 <b>Instagram, boti i mesazheve (7 ditë)</b>",
+                       "Askush nuk shkroi dhe askush nuk komentoi «OFERTA» këtë javë."]
+
+
+def test_report_counts_what_the_instagram_bot_did_in_the_week(config, storage):
+    day = MONDAY - timedelta(days=2)
+    storage.save_dm("comment-1", "ana", "user", "oferta", day)        # two people commented the keyword
+    storage.save_dm("comment-2", "beni", "user", "OFERTA", day)
+    storage.save_dm("m1", "ana", "user", "Roma", day)                 # one of them wrote back
+    for mid in ("r1", "r2", "r3"):
+        storage.save_dm(mid, "ana", "assistant", "...", day)
+    storage.save_dm("old", "cela", "user", "oferta", MONDAY - timedelta(days=9))   # before the week
+    text = report_text(config, storage, MONDAY, {FREE: 42})
+    assert text.splitlines()[-5:] == [
+        "📸 <b>Instagram, boti i mesazheve (7 ditë)</b>",
+        "👥 Njerëz që shkruan ose komentuan: <b>2</b>",
+        "💬 Komente «OFERTA» nën postime: <b>2</b>",
+        "✉️ Mesazhe private nga njerëzit: <b>1</b>",
+        "🤖 Përgjigje të dërguara: <b>3</b>"]
+    off = replace(config, instagram_dm=replace(config.instagram_dm, enabled=False))
+    assert "Instagram, boti" not in report_text(off, storage, MONDAY, {FREE: 42})
 
 
 def test_a_quiet_week_says_so(config, storage):

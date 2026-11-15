@@ -101,6 +101,13 @@ social:
   reel_video_skip: []              # airport codes whose Reels keep the photo, e.g. [NRN, FMM]
   city_cooldown_days: 5            # a city that had a deal post is left alone this many days, whatever its
                                    #   new price, so the same city never comes two days in a row
+  first_comment: true              # the account leaves the first comment under each Instagram post:
+                                   #   "👇 Shkruaj OFERTA këtu...". Only while the bot answers comments
+  list_reel: true                  # the day's last post is a "3 QYTETE NËN €20" Reel (the three cheapest
+                                   #   deals, one after the other) instead of a second deal Reel, so the
+                                   #   day's posts don't look alike. With fewer than 3 deals to show, or on
+                                   #   weekly_day, a normal deal goes out instead
+  list_rest_days: 3                # a city shown in such a Reel stays out of them this many days
   keep_pictures_days: 7            # Instagram fetches the pictures from the website (/social/); kept this long
   # Keeping the accounts busy on quiet days:
   weekly_day: sunday               # on this day the first post is a "TOP 5 ofertat e javës" carousel (cover +
@@ -945,7 +952,9 @@ routes:
   - { iata: BRQ, city: Brno, flag: "🇨🇿", absolute_threshold_eur: 30 }
   - { iata: OSR, city: Ostrava, flag: "🇨🇿", absolute_threshold_eur: 30 }
   - { iata: PED, city: Pardubice, flag: "🇨🇿", absolute_threshold_eur: 30 }
-  - { iata: JCL, city: České Budějovice, flag: "🇨🇿", absolute_threshold_eur: 30 }
+  # scan: false = the price API answers "unknown location code JCL", so the scanner doesn't ask.
+  # The city keeps its guide page. Take the flag away if the API learns the airport.
+  - { iata: JCL, city: České Budějovice, flag: "🇨🇿", absolute_threshold_eur: 30, scan: false }
   - { iata: BUD, city: Budapest, flag: "🇭🇺", absolute_threshold_eur: 20 }
   - { iata: DEB, city: Debrecen, flag: "🇭🇺", absolute_threshold_eur: 30 }
   - { iata: WAW, city: Warsaw, flag: "🇵🇱", airport: Chopin, absolute_threshold_eur: 25 }

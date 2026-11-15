@@ -211,7 +211,26 @@ def report_text(config: Config, storage: Storage, now: datetime, counts: dict[st
     left = storage.count_leaves(FREE, week_ago)
     if left:
         lines.append(f"🚪 Dolën nga kanali falas: {left}")
+    lines += instagram_lines(config, storage, week_ago)
     return "\n".join(lines)
+
+
+def instagram_lines(config: Config, storage: Storage, since: datetime) -> list[str]:
+    """The report's part about the Instagram message bot (src/instagram_dm.py): how many people
+    commented the keyword or wrote, since `since`. Nothing while that bot is off."""
+    if not config.instagram_dm.enabled:
+        return []
+    numbers = storage.dm_counts(since)
+    keyword = (config.instagram_dm.deals_keywords or ("OFERTA",))[0].upper()
+    lines = ["", "📸 <b>Instagram, boti i mesazheve (7 ditë)</b>"]
+    if not numbers["people"]:
+        return lines + [f"Askush nuk shkroi dhe askush nuk komentoi «{keyword}» këtë javë."]
+    return lines + [
+        f"👥 Njerëz që shkruan ose komentuan: <b>{numbers['people']}</b>",
+        f"💬 Komente «{keyword}» nën postime: <b>{numbers['comments']}</b>",
+        f"✉️ Mesazhe private nga njerëzit: <b>{numbers['messages']}</b>",
+        f"🤖 Përgjigje të dërguara: <b>{numbers['replies']}</b>",
+    ]
 
 
 # --- one run ---------------------------------------------------------------------------

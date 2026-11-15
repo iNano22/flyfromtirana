@@ -542,6 +542,7 @@ sips -s format jpeg -s formatOptions 82 assets/img/dest/vie.webp --out assets/te
 | `median_window_days` | 30 | Median is over every price seen for the route in this window |
 | `min_samples_for_median` | 10 | Median isn't trusted until we have this many prices |
 | `absolute_threshold_eur` (per route) | | A price at/below this is a deal, if it's also ≥ `threshold_min_discount_pct` (25%) below the median |
+| `scan: false` (per route) | | The scanner doesn't ask for this route's prices (the price API doesn't know the airport, as with JCL). The city keeps its page |
 | `repost_cooldown_days` | 7 | Same route + date + price band isn't reposted within this window |
 | `price_band_eur` | 10 | €20–29.99 is one band. A drop into a cheaper band *is* reposted |
 | `max_posts_per_run` | 2 | Best deals (biggest % saving) go first |
@@ -849,6 +850,15 @@ posts a day through the API, far above the 2 made here.
   `instagram_dm.deals_from_comments` is off.
 - **The Reel opens on the price.** Its very first frame shows the price popping in, the
   saving is slapped on a moment later, and everything is in place within 1.5 seconds.
+- **The first comment.** Right after an Instagram post goes out, the account comments under
+  it: "👇 Shkruaj OFERTA këtu në koment...". People read the first comment, and it shows them
+  where to write. `social.first_comment: false` stops it; a comment that fails is only logged.
+- **The evening post is a list.** With `social.list_reel` on, the day's last post is a
+  "3 QYTETE NËN €20" Reel: a yellow title card, then the three cheapest deals of the website
+  one after the other (each a different city), then the closing card, 15 seconds in all.
+  Facebook gets the same deals as an album. The title's price is the next multiple of 5 above
+  the dearest of the three. A city shown in one stays out of them for `social.list_rest_days`
+  (3) days; with fewer than 3 cities to show, or on `weekly_day`, a normal deal goes out.
 - **Hashtags.** `social.hashtags` (a few) and then the city's own tag: `#milano`, `#vjene`.
 - **To try a change without waiting for a posting time:** `python -m src.main --social-now`
   on the server (Coolify → the app → Terminal → the scanner container) posts the next deal
@@ -1052,7 +1062,8 @@ reports (only the link's place and the time, never who it was), and after every 
 run `python -m src.growth` notes both channels' member counts. On `growth.report_day` (Monday) after
 `report_time`, your chat (TELEGRAM_DRAFTS_CHAT_ID, or else TELEGRAM_ALERT_CHAT_ID) gets:
 the members of each channel and the change in 7 days, then where the free channel's
-new members came from. `python -m src.growth --report` sends it now; `--dry-run` prints
+new members came from, and what the Instagram message bot did in those 7 days (people who
+wrote or commented, OFERTA comments, private messages, replies sent). `python -m src.growth --report` sends it now; `--dry-run` prints
 it and saves nothing.
 
 ## Paid ads on Facebook and Instagram

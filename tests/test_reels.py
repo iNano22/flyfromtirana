@@ -7,7 +7,8 @@ from PIL import Image
 
 from src.cards import LAYOUTS, SUN
 from src.photos import POST_PHOTOS_DIR
-from src.reels import COVER_AT, DEAL_SECONDS, ENTRANCES, SECONDS, Scene, make_reel, pick_music, placed
+from src.reels import (COVER_AT, DEAL_SECONDS, ENTRANCES, LIST_DEAL_SECONDS, LIST_END_SECONDS, LIST_INTRO_SECONDS,
+                       SECONDS, SIZE, SLIDE_UP, Scene, make_list_reel, make_reel, pick_music, placed, rising, title_card)
 from tests.test_cards import AIRLINES, make_deal
 
 LOOK = dict(airline_names=AIRLINES, brand="FlyFromTirana", handle="@flyfromtirana", address="flyfromtirana.al",
@@ -110,3 +111,27 @@ def test_a_reel_plays_the_citys_video_behind_the_deal(route, tmp_path):
     video, cover = make_reel(make_deal(route), tmp_path / "again", photo=POST_PHOTOS_DIR / "bgy.jpg", fps=4,
                              place_video=broken, **LOOK)
     assert video.read_bytes()[4:8] == b"ftyp"
+
+
+def test_a_list_reel_of_three_deals_lasts_as_long_as_a_deals_reel():
+    assert LIST_INTRO_SECONDS + 3 * LIST_DEAL_SECONDS + LIST_END_SECONDS == SECONDS
+
+
+def test_one_part_of_a_list_reel_slides_up_over_the_one_before():
+    under, over = Image.new("RGB", SIZE, (0, 0, 0)), Image.new("RGB", SIZE, SUN)
+    half = rising(under, over, SLIDE_UP / 4)
+    assert half.getpixel((540, 10)) == (0, 0, 0) and half.getpixel((540, 1900)) == SUN
+    assert rising(under, over, SLIDE_UP) is over
+
+
+@pytest.mark.skipif(shutil.which("ffmpeg") is None, reason="ffmpeg is not installed")
+def test_make_list_reel_writes_an_mp4_and_the_title_card_as_its_cover(route, tmp_path):
+    deals = [make_deal(route)] * 3
+    video, cover = make_list_reel(deals, tmp_path, headline=("3 QYTETE", "NËN €20"), fps=2, keyword="OFERTA",
+                                  photos={route.iata: POST_PHOTOS_DIR / "bgy.jpg"}, **LOOK)
+    assert (video.name, cover.name) == ("list_reel.mp4", "list_reel.jpg")
+    assert video.read_bytes()[4:8] == b"ftyp"
+    with Image.open(cover) as picture:
+        assert (picture.format, picture.size) == ("JPEG", (1080, 1920))
+    assert title_card(("3 QYTETE", "NËN €20"), "x", brand="FlyFromTirana",
+                      address="flyfromtirana.al").getpixel((540, 1800)) == SUN

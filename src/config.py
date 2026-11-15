@@ -40,6 +40,8 @@ class Route:
     flag: str                                    # flag emoji
     airport: str = ""                            # optional label for multi-airport cities, e.g. "Bergamo"
     absolute_threshold_eur: float | None = None  # any price at/below this is a deal
+    scan: bool = True                            # False: the price API doesn't know this airport, so
+                                                 #   don't ask it. The city keeps its page on the site.
 
 
 @dataclass(frozen=True)
@@ -124,6 +126,14 @@ class SocialSettings:
     # PEXELS_API_KEY). Without a video for the city, the Reel shows its photo as before.
     reel_videos: bool = True
     reel_video_skip: tuple[str, ...] = ()   # airport codes whose Reels keep the photo (a video you didn't like)
+    # The account leaves the first comment under each of its Instagram posts: where to write the
+    # keyword ("OFERTA"). Only while the message bot answers comments.
+    first_comment: bool = True
+    # The day's last post is a "3 QYTETE NËN €20" Reel (the cheapest deals, one after the other)
+    # instead of a second deal, so the day's two posts don't look alike. A city shown in one
+    # is left out of these for list_rest_days days. Not on weekly_day.
+    list_reel: bool = False
+    list_rest_days: int = 3
 
 
 EFFORTS = ("low", "medium", "high", "xhigh", "max")
@@ -488,6 +498,9 @@ def _build_social(raw: dict) -> SocialSettings:
         city_cooldown_days=_at_least(raw.get("city_cooldown_days", 5), 1, "social.city_cooldown_days"),
         reel_videos=bool(raw.get("reel_videos", True)),
         reel_video_skip=tuple(str(code).strip().upper() for code in raw.get("reel_video_skip") or []),
+        first_comment=bool(raw.get("first_comment", True)),
+        list_reel=bool(raw.get("list_reel", False)),
+        list_rest_days=_at_least(raw.get("list_rest_days", 3), 1, "social.list_rest_days"),
     )
 
 
@@ -617,6 +630,7 @@ def _build_route(raw: dict) -> Route:
         flag=str(raw.get("flag", "")),
         airport=str(raw.get("airport") or ""),
         absolute_threshold_eur=float(threshold) if threshold is not None else None,
+        scan=bool(raw.get("scan", True)),
     )
 
 

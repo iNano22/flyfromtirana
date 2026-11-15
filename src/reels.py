@@ -76,6 +76,13 @@ END_INVITE_SUBTITLE = "Të dërgojmë çmimet e ditës në mesazh"
 END_BUTTON = "REZERVO: LINKU NË BIO"
 END_TELEGRAM = "Njoftime falas në Telegram"
 
+# The "cities under a price" Reel (make_list_reel): a yellow title card, then each deal's own
+# card for a few seconds, then the closing card. With 3 deals it lasts 15 seconds too.
+LIST_INTRO_SECONDS = 2.0     # the title card: "3 QYTETE / NËN €20"
+LIST_DEAL_SECONDS = 3.5      # each deal: its pieces are in place after 1.5 seconds
+LIST_END_SECONDS = 2.5       # the closing card
+LIST_SUBTITLE = "Vajtje nga Tirana · shiko cilat"
+
 MUSIC_DIR = ASSETS_DIR / "music"
 MUSIC_PART = 15          # the seconds of a track that one Reel uses (the Reel's length)
 
@@ -157,6 +164,57 @@ def video_frames(video: Path, *, ffmpeg: str, fps: int) -> Iterator[Image.Image]
     finally:
         process.kill()
         process.wait()
+
+
+def make_list_reel(deals: list[Deal], out_dir: Path, *, headline: tuple[str, str], airline_names: dict[str, str],
+                   brand: str, handle: str, address: str, telegram: str, photos: dict[str, Path | None],
+                   language: str = "sq", music: tuple[Path, float] | None = None, fps: int = FPS,
+                   keyword: str | None = None) -> tuple[Path, Path]:
+    """Write a Reel that shows several deals one after the other, and its cover picture:
+    (out_dir/list_reel.mp4, out_dir/list_reel.jpg).
+
+    headline: the title card's two big lines, e.g. ("3 QYTETE", "NËN €20"). photos: each deal's
+    photo by airport code (None = the plain background). The other arguments are make_reel's.
+    Each deal shows as in its own Reel (the price pops in, then the rest), over its photo.
+    """
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffmpeg:
+        raise ReelError("ffmpeg is not installed, so no Reel can be made")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    title = title_card(headline, LIST_SUBTITLE, brand=brand, address=address)
+    scenes = [Scene(deal, airline_names=airline_names, brand=brand, handle=handle, address=address,
+                    telegram=telegram, photo=photos.get(deal.route.iata), language=language, keyword=keyword)
+              for deal in deals]
+    closing = closing_card(brand=brand, address=address, telegram=telegram, keyword=keyword)
+    cover, video = save_jpeg(title, out_dir / "list_reel.jpg"), out_dir / "list_reel.mp4"
+    deals_end = LIST_INTRO_SECONDS + LIST_DEAL_SECONDS * len(scenes)
+    seconds = deals_end + LIST_END_SECONDS
+
+    def frame(t: float) -> Image.Image:
+        """The frame at t seconds: the title, then a deal, then the closing card. Each new
+        part slides up over the one before it."""
+        if t < LIST_INTRO_SECONDS:
+            return title
+        if t >= deals_end:
+            return rising(scenes[-1].frame(LIST_DEAL_SECONDS), closing, t - deals_end)
+        number = int((t - LIST_INTRO_SECONDS) // LIST_DEAL_SECONDS)
+        since = t - LIST_INTRO_SECONDS - number * LIST_DEAL_SECONDS   # seconds into this deal
+        before = scenes[number - 1].frame(LIST_DEAL_SECONDS) if number else title
+        return rising(before, scenes[number].frame(since), since)
+
+    encode((frame(number / fps) for number in range(round(seconds * fps))), video, ffmpeg=ffmpeg, fps=fps,
+           music=music, seconds=seconds)
+    return video, cover
+
+
+def rising(under: Image.Image, over: Image.Image, since: float) -> Image.Image:
+    """`over` sliding up from the bottom over `under`: `since` seconds after it began (it takes
+    SLIDE_UP seconds, then `over` covers the whole frame)."""
+    if since >= SLIDE_UP:
+        return over
+    frame = under.copy()
+    frame.paste(over, (0, round(SIZE[1] * (1 - ease_out(since / SLIDE_UP)))))
+    return frame
 
 
 class Scene:
@@ -267,7 +325,37 @@ def closing_card(*, brand: str, address: str, telegram: str, keyword: str | None
     """The last seconds: a yellow card saying there are new deals every day and where to find them.
     With a keyword it asks for the comment instead: "SHKRUAJ «OFERTA» NË KOMENT"."""
     lines = tuple(line.format(keyword=keyword) for line in END_INVITE) if keyword else END_HEADLINE
-    subtitle_text = END_INVITE_SUBTITLE if keyword else END_SUBTITLE
+    card, draw, y = yellow_card(lines, END_INVITE_SUBTITLE if keyword else END_SUBTITLE, brand=brand,
+                                address=address)
+    pad = LAYOUT.padding
+    y += 70
+
+    # The button: black, with the words in yellow.
+    button_font = archivo(52, 800, 84)
+    button_height = cap_height(button_font) + 64
+    button_width = int(draw.textlength(END_BUTTON, font=button_font)) + 80
+    draw.rounded_rectangle((pad, y, pad + button_width, y + button_height), radius=18, fill=INK)
+    draw.text((pad + 40, y + 32 + cap_height(button_font)), END_BUTTON, font=button_font, fill=SUN, anchor="ls")
+    y += button_height + 60
+
+    telegram_font = archivo(44, 700, 90)
+    y += cap_height(telegram_font)
+    draw.text((pad, y), END_TELEGRAM, font=telegram_font, fill=INK, anchor="ls")
+    y += 54
+    draw.text((pad, y + cap_height(mono(38))), telegram, font=mono(38), fill=INK, anchor="ls")
+    return card
+
+
+def title_card(lines: tuple[str, ...], subtitle: str, *, brand: str, address: str) -> Image.Image:
+    """A yellow card with only big words on it: how a "cities under a price" Reel begins."""
+    return yellow_card(lines, subtitle, brand=brand, address=address)[0]
+
+
+def yellow_card(lines: tuple[str, ...], subtitle_text: str, *, brand: str, address: str
+                ) -> tuple[Image.Image, ImageDraw.ImageDraw, int]:
+    """A yellow card with the brand, big lines, a smaller line under them, and the site's
+    address at the bottom. Returns (the card, its draw, the y where the words end), so the
+    closing card can go on below them."""
     card = Image.new("RGB", SIZE, SUN)
     draw = ImageDraw.Draw(card)
     width = SIZE[0]
@@ -289,25 +377,10 @@ def closing_card(*, brand: str, address: str, telegram: str, keyword: str | None
     subtitle = fit(subtitle_text, room, size=54, weight=600, width_axis=90, smallest=36)
     y += cap_height(subtitle)
     draw.text((pad, y), subtitle_text, font=subtitle, fill=INK, anchor="ls")
-    y += 70
-
-    # The button: black, with the words in yellow.
-    button_font = archivo(52, 800, 84)
-    button_height = cap_height(button_font) + 64
-    button_width = int(draw.textlength(END_BUTTON, font=button_font)) + 80
-    draw.rounded_rectangle((pad, y, pad + button_width, y + button_height), radius=18, fill=INK)
-    draw.text((pad + 40, y + 32 + cap_height(button_font)), END_BUTTON, font=button_font, fill=SUN, anchor="ls")
-    y += button_height + 60
-
-    telegram_font = archivo(44, 700, 90)
-    y += cap_height(telegram_font)
-    draw.text((pad, y), END_TELEGRAM, font=telegram_font, fill=INK, anchor="ls")
-    y += 54
-    draw.text((pad, y + cap_height(mono(38))), telegram, font=mono(38), fill=INK, anchor="ls")
 
     # The site's address where the card's footer has it.
     draw.text((pad, LAYOUT.sign_bottom + 42), address, font=mono(34), fill=INK, anchor="lm")
-    return card
+    return card, draw, y
 
 
 # --- the video file --------------------------------------------------------------------------

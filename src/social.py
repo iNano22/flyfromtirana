@@ -50,7 +50,7 @@ from src.links import LinkBuilder
 from src.meta import MetaClient, MetaError
 from src.photos import PostPhoto
 from src.place_video import PlaceVideo
-from src.reels import ReelError, make_reel
+from src.reels import ReelError, make_list_reel, make_reel
 from src.telegram import TelegramClient
 from src.website import site_guides
 
@@ -59,6 +59,8 @@ log = logging.getLogger(__name__)
 SOCIAL_CHANNEL = "social"           # the deal posts' name in posted_deals
 WEEKLY_CHANNEL = "social_weekly"    # the week's top deals
 GUIDE_CHANNEL = "social_guide"      # the city guides (one row per city: the destination code)
+LIST_CHANNEL = "social_list"        # the "cities under a price" Reels (one row per city shown)
+LIST_COUNT = 3                      # how many deals such a Reel shows
 PICTURES_FOLDER = "social"          # under the website's folder: flyfromtirana.al/social/<picture>.jpg
 WEEKLY_MIN_DEALS = 3                # fewer deals than this: no "top of the week"
 
@@ -67,7 +69,7 @@ WEEKLY_MIN_DEALS = 3                # fewer deals than this: no "top of the week
 class Post:
     """One social media post, ready to go out or to be sent as a draft."""
 
-    kind: str                   # "deal", "weekly" or "guide": the first part of the pictures' names
+    kind: str                   # "deal", "weekly", "list" or "guide": the first part of the pictures' names
     title: str                  # for the report and the draft, e.g. "TIRANA → MILAN (Bergamo) nga €14"
     pictures: list[Path]        # the feed pictures in order: one = a plain post, several = a carousel
     story: Path | None          # the story card, when there is one
@@ -76,6 +78,7 @@ class Post:
     link: str                   # the link the draft gives for the Facebook post
     video: Path | None = None   # the Reel (MP4): Instagram gets it instead of the feed picture
     cover: Path | None = None   # the Reel's cover picture, shown in the profile grid
+    first_comment: str | None = None   # the comment the account leaves under its own Instagram post
 
 
 @dataclass(frozen=True)
@@ -130,7 +133,7 @@ def deal_post(deal: Deal, config: Config, links: LinkBuilder, out_dir: Path, *, 
     return Post(kind="deal", title=deal_title(deal), pictures=[cards["feed"]], story=cards["story"],
                 caption=caption("social", instagram_channel(config)),
                 facebook_text=caption("facebook", facebook_channel(config)), link=booking_link,
-                video=video, cover=cover)
+                video=video, cover=cover, first_comment=first_comment(config))
 
 
 def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dict[str, PostPhoto | None],
@@ -166,7 +169,66 @@ def weekly_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dic
     facebook_text = (head + f"👉 Të gjitha ofertat dhe rezervimi: {config.website.url}\n"
                      + tail(facebook_channel(config)))
     return Post(kind="weekly", title=f"TOP {len(deals)} ofertat e javës", pictures=pictures, story=None,
-                caption=caption, facebook_text=facebook_text, link=config.website.url)
+                caption=caption, facebook_text=facebook_text, link=config.website.url,
+                first_comment=first_comment(config))
+
+
+def list_post(deals: list[Deal], config: Config, out_dir: Path, *, photos: dict[str, PostPhoto | None],
+              music: tuple[Path, float] | None = None) -> Post:
+    """Several cheap deals as one post, "3 QYTETE NËN €20": a Reel that shows them one after the
+    other (reels.make_list_reel) and, for Facebook, a cover card with each deal's card.
+
+    deals: the cheapest first, LIST_COUNT of them. photos: each route's photo by airport code.
+    Without ffmpeg the pictures go to Instagram as a carousel instead.
+    """
+    deals = [in_local_names(deal, config) for deal in deals]
+    words = WORDS[config.language]
+    keyword = invite_keyword(config)
+    limit = price_above(max(deal.best.price for deal in deals))
+    count_line, price_line = f"{len(deals)} QYTETE", f"NËN €{limit}"
+    paths = {code: photo.path if photo else None for code, photo in photos.items()}
+    first = paths.get(deals[0].route.iata)
+    pictures = [save_jpeg(draw_top_card(deals, brand=config.brand, handle=handle(config), address=site_address(config),
+                                        photo=first, title=price_line, subtitle=count_line),
+                          out_dir / "list_cover.jpg")]
+    lines = []
+    for number, deal in enumerate(deals, start=1):
+        card = draw_card(deal, "feed", airline_names=config.airlines, brand=config.brand, handle=handle(config),
+                         address=site_address(config), photo=paths.get(deal.route.iata), language=config.language,
+                         keyword=keyword)
+        pictures.append(save_jpeg(card, out_dir / f"list_{number}_{deal.route.iata.lower()}.jpg"))
+        where = deal.route.city + (f" ({deal.route.airport})" if deal.route.airport else "")
+        when = format_dates([q.depart_date for q in deal.quotes], words["months"])
+        lines.append(f"{number}️⃣ {where} nga €{format_price(deal.best.price)} · {when}")
+    video = cover = None
+    if config.social.reels:
+        try:
+            video, cover = make_list_reel(deals, out_dir, headline=(count_line, price_line),
+                                          airline_names=config.airlines, brand=config.brand, handle=handle(config),
+                                          address=site_address(config), telegram=short_address(config),
+                                          photos=paths, language=config.language, music=music, keyword=keyword)
+        except ReelError as exc:
+            log.warning("[social] No Reel for the list of deals, the post is a carousel: %s", exc)
+    title = f"{count_line} {price_line}"
+    head = f"🔥 {title} nga Tirana (vajtje, për person)\n\n" + "\n".join(lines) + "\n\n"
+
+    def tail(telegram: str) -> str:
+        return (f"🔔 Ofertat dalin të parat në Telegram: {telegram}\n⏳ Çmimet ndryshojnë shpejt!"
+                + hashtags(config))
+
+    caption = (head + invite_line(config) + f"👉 Rezervo nga linku në bio: {site_address(config)}\n"
+               + tail(instagram_channel(config)))
+    facebook_text = (head + f"👉 Të gjitha ofertat dhe rezervimi: {config.website.url}\n"
+                     + tail(facebook_channel(config)))
+    return Post(kind="list", title=f"{len(deals)} qytete nën €{limit}", pictures=pictures, story=None,
+                caption=caption, facebook_text=facebook_text, link=config.website.url, video=video, cover=cover,
+                first_comment=first_comment(config))
+
+
+def price_above(price: float) -> int:
+    """The round price a list's title names: the next multiple of 5 above the dearest deal,
+    so "NËN €20" is true for €17 and "NËN €25" for €20."""
+    return int(price // 5) * 5 + 5
 
 
 def guide_post(guide: Guide, iata: str, price: float | None, config: Config, out_dir: Path, *,
@@ -206,7 +268,7 @@ def guide_post(guide: Guide, iata: str, price: float | None, config: Config, out
                + tail(instagram_channel(config)))
     facebook_text = head + f"📖 Udhëzuesi i plotë: {page_url}\n" + tail(facebook_channel(config))
     return Post(kind="guide", title=f"Udhëzues: {guide.display_name}", pictures=pictures, story=story,
-                caption=caption, facebook_text=facebook_text, link=page_url)
+                caption=caption, facebook_text=facebook_text, link=page_url, first_comment=first_comment(config))
 
 
 def guide_sections(guide: Guide) -> list[tuple[str, str, list[tuple[str | None, str]]]]:
@@ -250,6 +312,16 @@ def comment_invite(config: Config) -> str:
     if not keyword:
         return ""
     return f"Shkruaj {keyword} në koment: të dërgojmë çmimet më të mira të ditës në mesazh."
+
+
+def first_comment(config: Config) -> str | None:
+    """The comment the account leaves under its own Instagram post, right after posting: people
+    read the first comment, and it shows them where to write the keyword. None with
+    social.first_comment off, or while the message bot doesn't answer comments."""
+    keyword = invite_keyword(config)
+    if not (config.social.first_comment and keyword):
+        return None
+    return f"👇 Shkruaj {keyword} këtu në koment dhe të dërgojmë në mesazh çmimet më të mira të ditës ✈️"
 
 
 def invite_keyword(config: Config) -> str | None:
@@ -373,6 +445,7 @@ def post_on_platforms(post: Post, meta: MetaClient, platforms: tuple[str, ...],
                 except MetaError as exc:
                     outcomes.append(("Instagram", exc))
                     continue   # no story without the post
+            leave_first_comment(post, meta)
             # The story is the Reel's video when the Reel went out; if Instagram refuses
             # the video as a story (or there is no Reel), the story picture goes instead.
             story_posted = False
@@ -396,6 +469,17 @@ def post_on_platforms(post: Post, meta: MetaClient, platforms: tuple[str, ...],
             except MetaError as exc:
                 outcomes.append(("Facebook", exc))
     return outcomes
+
+
+def leave_first_comment(post: Post, meta: MetaClient) -> None:
+    """Write post.first_comment under the Instagram post that just went out. A comment that
+    fails is only logged: the post itself is out, and that is what counts."""
+    if not post.first_comment:
+        return
+    try:
+        meta.comment_on_last_instagram_post(post.first_comment)
+    except MetaError as exc:
+        log.warning("[social] Could not leave the first comment under %s: %s", post.title, exc)
 
 
 def failed(outcomes: list[tuple[str, str | None | MetaError]]) -> list[str]:

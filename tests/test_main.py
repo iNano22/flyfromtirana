@@ -70,6 +70,17 @@ def test_dry_run_prints_posts_and_sends_nothing(config):
     assert posted_count(config) == 0  # dry runs don't mark anything as posted
 
 
+def test_a_route_marked_scan_false_is_not_asked_for(config):
+    """config.yaml marks JCL `scan: false`: the price API answers "unknown location code" for it."""
+    session = fake_world()
+    code = run(config, SECRETS, dry_run=True, only_routes={"BGY", "JCL"}, session=session, now=NOW,
+               output=[].append)
+
+    assert code == 0
+    asked = {c["params"]["origin"] for c in session.calls} | {c["params"]["destination"] for c in session.calls}
+    assert "BGY" in asked and "JCL" not in asked   # prices for Bergamo, no request for JCL
+
+
 def test_real_run_posts_once_then_dedupes(config):
     session = fake_world()
     assert run(config, SECRETS, dry_run=False, only_routes={"BGY"}, session=session, now=NOW) == 0
